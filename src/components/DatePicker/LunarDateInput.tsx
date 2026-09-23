@@ -37,8 +37,10 @@ export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps
 
   return (
     <div className={styles.lunarInput}>
-      <label className={styles.lunarField}>
-        <span className="field-label">Ngày</span>
+      <div className={styles.lunarField}>
+        <label className="field-label" htmlFor={`${id}-day`}>
+          Ngày
+        </label>
         <select
           id={`${id}-day`}
           className="input"
@@ -52,10 +54,13 @@ export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps
             </option>
           ))}
         </select>
-      </label>
-      <label className={styles.lunarField}>
-        <span className="field-label">Tháng</span>
+      </div>
+      <div className={styles.lunarField}>
+        <label className="field-label" htmlFor={`${id}-month`}>
+          Tháng
+        </label>
         <select
+          id={`${id}-month`}
           className="input"
           value={`${value.month}${value.isLeap ? 'L' : ''}`}
           onChange={(e) => {
@@ -72,10 +77,13 @@ export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps
             </option>
           ))}
         </select>
-      </label>
-      <label className={styles.lunarField}>
-        <span className="field-label">Năm</span>
+      </div>
+      <div className={styles.lunarField}>
+        <label className="field-label" htmlFor={`${id}-year`}>
+          Năm
+        </label>
         <input
+          id={`${id}-year`}
           className="input"
           type="number"
           min={MIN_YEAR}
@@ -86,7 +94,7 @@ export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps
             if (Number.isInteger(year) && year >= MIN_YEAR && year <= MAX_YEAR) update({ year })
           }}
         />
-      </label>
+      </div>
       <span className={styles.lunarYearName}>
         {value.year >= MIN_YEAR && value.year <= MAX_YEAR ? yearCanChi(value.year).name : ''}
       </span>

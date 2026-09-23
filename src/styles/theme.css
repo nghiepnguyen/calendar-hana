@@ -34,6 +34,8 @@
   --text: #111318;
   --text-muted: #5c6270;
   --text-lunar: #6b7180;
+  /* Ngày ngoài tháng đang xem: nhạt hơn nhưng vẫn đạt AA. */
+  --text-faint: #68686d;
   --separator: rgb(60 67 90 / 0.13);
   --separator-soft: rgb(60 67 90 / 0.07);
 
@@ -43,15 +45,18 @@
   --control-thumb: #ffffff;
 
   /* Màu nhấn */
-  --accent: #e0342b;
-  --accent-hover: #c92b23;
+  /* Đủ tương phản WCAG AA (>= 4.5:1) với chữ trắng và nền kính sáng. */
+  --accent: #cc2b22;
+  --accent-hover: #b3261e;
   --accent-contrast: #ffffff;
-  --accent-soft: rgb(224 52 43 / 0.12);
-  --sunday: #d7322a;
-  --holiday: #d7322a;
+  --accent-soft: rgb(204 43 34 / 0.12);
+  /* Chữ màu nhấn nhỏ đặt trên nền --accent-soft. */
+  --accent-text: #b3261e;
+  --sunday: #c8291f;
+  --holiday: #c8291f;
   --gold: #a35f00;
   --bad: #7a3fc0;
-  --now-line: #e0342b;
+  --now-line: #cc2b22;
   --focus: #0a64d8;
 
   /* Kiểu dáng cũ còn dùng ở vài nơi */
@@ -102,6 +107,8 @@
     --text: #f4f5f8;
     --text-muted: #a9afbd;
     --text-lunar: #9aa1b0;
+    --text-faint: #8d8e94;
+    --text-faint: #8d8e94;
     --separator: rgb(235 240 255 / 0.12);
     --separator-soft: rgb(235 240 255 / 0.06);
     --fill: rgb(140 148 170 / 0.2);
@@ -111,6 +118,7 @@
     --accent-hover: #ff7a70;
     --accent-contrast: #16080a;
     --accent-soft: rgb(255 90 79 / 0.18);
+    --accent-text: #ff7a70;
     --sunday: #ff6b61;
     --holiday: #ff6b61;
     --gold: #f0b54a;
@@ -140,6 +148,7 @@
   --text: #f4f5f8;
   --text-muted: #a9afbd;
   --text-lunar: #9aa1b0;
+  --text-faint: #8d8e94;
   --separator: rgb(235 240 255 / 0.12);
   --separator-soft: rgb(235 240 255 / 0.06);
   --fill: rgb(140 148 170 / 0.2);
@@ -149,6 +158,7 @@
   --accent-hover: #ff7a70;
   --accent-contrast: #16080a;
   --accent-soft: rgb(255 90 79 / 0.18);
+  --accent-text: #ff7a70;
   --sunday: #ff6b61;
   --holiday: #ff6b61;
   --gold: #f0b54a;

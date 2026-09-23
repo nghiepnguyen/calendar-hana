@@ -88,7 +88,7 @@ export function CalendarPage() {
       />
       <div className={styles.body}>
         <Sidebar date={date} today={today} settings={settings} onSelectDate={route.setDate} />
-        <main className={styles.main} aria-busy={occurrences === undefined}>
+        <main className={styles.main} aria-busy={occurrences === undefined} tabIndex={-1}>
           <View {...viewProps} />
         </main>
       </div>

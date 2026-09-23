@@ -55,9 +55,12 @@
 }
 
 .outside .solarDay,
-.outside .lunarDay,
+.outside .lunarDay {
+  color: var(--text-faint);
+}
+
 .outside .events {
-  opacity: 0.55;
+  opacity: 0.7;
 }
 
 .cellHead {

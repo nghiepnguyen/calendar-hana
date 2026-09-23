@@ -75,7 +75,13 @@ export function TimeGrid({ days, occurrences, colorOf, onOpenEvent, onCreate }: 
         </div>
       ) : null}
 
-      <div className={styles.scroll} ref={scrollRef}>
+      <div
+        className={styles.scroll}
+        ref={scrollRef}
+        tabIndex={0}
+        role="region"
+        aria-label="Lưới giờ, dùng phím mũi tên để cuộn"
+      >
         <div className={styles.grid}>
           <div className={styles.gutter} aria-hidden="true">
             {HOURS.map((h) => (

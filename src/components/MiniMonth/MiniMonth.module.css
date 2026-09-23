@@ -64,8 +64,11 @@
   color: var(--text-lunar);
 }
 
-.outside {
-  opacity: 0.45;
+.outside .solar,
+.outside .lunar,
+.outside.sunday .solar {
+  color: var(--text-faint);
+  font-weight: 500;
 }
 
 .sunday .solar {

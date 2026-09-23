@@ -16,7 +16,8 @@
     "generate-icons": "pwa-assets-generator",
     "test:emulator": "firebase emulators:exec --only auth,firestore --project demo-calendar-hana 'vitest run --config vitest.emulator.config.ts'",
     "emulators": "firebase emulators:start --only auth,firestore",
-    "build:functions": "npm --prefix functions run build"
+    "build:functions": "npm --prefix functions run build",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -31,6 +32,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@firebase/rules-unit-testing": "^5.0.2",
     "@playwright/test": "^1.63.0",
     "@testing-library/jest-dom": "^7.0.1",
