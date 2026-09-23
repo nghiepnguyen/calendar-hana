@@ -26,7 +26,7 @@ export default defineConfig({
         enabled: false,
         type: 'module',
       },
-      includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
+      includeAssets: ['favicon.ico', 'logo.png', 'apple-touch-icon-180x180.png'],
       manifest: {
         name: 'Lịch Việt — Lịch Dương & Âm',
         short_name: 'Lịch Việt',
