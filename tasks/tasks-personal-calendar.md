@@ -4,12 +4,12 @@
 
 - `package.json` - Dependencies và script (`dev`, `build`, `test`, `lint`).
 - `vite.config.ts` - Cấu hình Vite, `vite-plugin-pwa`, alias `@shared`.
-- `tsconfig.json` - Cấu hình TypeScript, path alias `@shared/*`.
+- `tsconfig.json`, `tsconfig.app.json`, `tsconfig.sw.json` - Cấu hình TypeScript (app, service worker), path alias `@shared/*`.
 - `vitest.config.ts` - Cấu hình Vitest (môi trường `jsdom`, `fake-indexeddb`).
-- `.eslintrc.cjs`, `.prettierrc` - Quy tắc lint và format.
+- `.oxlintrc.json`, `.prettierrc` - Quy tắc lint (oxlint, mặc định của template Vite hiện tại) và format.
 - `.env.example` - Mẫu biến môi trường Firebase (không commit file `.env` thật).
 - `firebase.json`, `.firebaserc` - Cấu hình Firebase Hosting, Firestore, Functions.
-- `public/icons/*` - Icon PWA (192px, 512px, maskable).
+- `public/*.png`, `public/favicon.svg`, `pwa-assets.config.ts` - Icon PWA sinh từ `favicon.svg` bằng `npm run generate-icons`.
 
 ### Code dùng chung (frontend + Cloud Functions)
 
@@ -108,6 +108,7 @@
 - Unit test đặt cạnh file code được test (ví dụ `lunar.ts` và `lunar.test.ts` cùng thư mục).
 - Chạy test bằng `npx vitest [đường/dẫn/file]`. Không truyền đường dẫn thì chạy toàn bộ test.
 - Chạy test end-to-end bằng `npx playwright test`.
+- Cài dependencies bằng npm 11 trở lên (`npx npm@11 install`). npm 10.9 bị lỗi `Cannot read properties of null (reading 'edgesOut')` với vitest 5.
 - Thư mục `shared/` **không được** import React, Dexie hay Firebase. Nó chỉ chứa logic thuần để cả frontend lẫn Cloud Functions dùng được.
 - Mọi phép tính ngày giờ dùng múi giờ `Asia/Ho_Chi_Minh`. Không dùng giờ local của máy.
 - Chạy Firebase Emulator (`firebase emulators:start`) khi phát triển task 6.0 và 7.0 để không đụng dữ liệu thật.
@@ -123,22 +124,22 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
 
 ## Tasks
 
-- [ ] 0.0 Khởi tạo git repository và tạo feature branch
-  - [ ] 0.1 Chạy `git init` trong thư mục project, tạo `.gitignore` (bỏ qua `node_modules`, `dist`, `.env`, `functions/lib`, `.firebase`).
-  - [ ] 0.2 Commit đầu tiên gồm `create-prd.md`, `generate-tasks.md` và thư mục `tasks/` trên nhánh `main`.
-  - [ ] 0.3 Tạo và chuyển sang nhánh mới: `git checkout -b feature/personal-calendar`.
+- [x] 0.0 Khởi tạo git repository và tạo feature branch
+  - [x] 0.1 Chạy `git init` trong thư mục project, tạo `.gitignore` (bỏ qua `node_modules`, `dist`, `.env`, `functions/lib`, `.firebase`).
+  - [x] 0.2 Commit đầu tiên gồm `create-prd.md`, `generate-tasks.md` và thư mục `tasks/` trên nhánh `main`.
+  - [x] 0.3 Tạo và chuyển sang nhánh mới: `git checkout -b feature/personal-calendar`.
 
-- [ ] 1.0 Dựng khung project (React + TypeScript + Vite, PWA, Vitest, ESLint/Prettier, cấu trúc thư mục, code dùng chung giữa frontend và Cloud Functions)
-  - [ ] 1.1 Tạo project bằng `npm create vite@latest . -- --template react-ts`, chạy thử `npm run dev`.
-  - [ ] 1.2 Cài dependencies chính: `dexie`, `dexie-react-hooks`, `zustand`, `date-fns`, `date-fns-tz`, `react-router-dom`, `firebase`.
-  - [ ] 1.3 Cài dev dependencies: `vitest`, `@testing-library/react`, `@testing-library/user-event`, `jsdom`, `fake-indexeddb`, `eslint`, `prettier`, `@playwright/test`.
-  - [ ] 1.4 Tạo `vitest.config.ts` (môi trường `jsdom`, setup file import `fake-indexeddb/auto`), thêm script `test` vào `package.json`, viết 1 test mẫu để kiểm tra cấu hình chạy được.
-  - [ ] 1.5 Cấu hình ESLint + Prettier, thêm script `lint`.
-  - [ ] 1.6 Tạo thư mục `shared/`, khai báo alias `@shared` trong `tsconfig.json` và `vite.config.ts`.
-  - [ ] 1.7 Tạo cấu trúc thư mục `src/` theo mục Relevant Files (`data`, `store`, `hooks`, `components`, `views`, `pages`, `reminders`, `firebase`, `styles`).
-  - [ ] 1.8 Cài `vite-plugin-pwa`, cấu hình manifest (tên "Lịch Hana", `lang: "vi"`, màu theme, icon trong `public/icons/`), chọn chế độ `injectManifest` để tự viết `src/sw.ts`.
-  - [ ] 1.9 Viết `shared/types.ts` theo mô hình dữ liệu trong PRD mục 7 (`CalendarEvent`, `LunarDate`, `Category`, `Reminder`, `Settings`).
-  - [ ] 1.10 Tạo `.env.example` với các biến `VITE_FIREBASE_*`.
+- [x] 1.0 Dựng khung project (React + TypeScript + Vite, PWA, Vitest, ESLint/Prettier, cấu trúc thư mục, code dùng chung giữa frontend và Cloud Functions)
+  - [x] 1.1 Tạo project bằng `npm create vite@latest . -- --template react-ts`, chạy thử `npm run dev`.
+  - [x] 1.2 Cài dependencies chính: `dexie`, `dexie-react-hooks`, `zustand`, `date-fns`, `date-fns-tz`, `react-router-dom`, `firebase`.
+  - [x] 1.3 Cài dev dependencies: `vitest`, `@testing-library/react`, `@testing-library/user-event`, `jsdom`, `fake-indexeddb`, `prettier`, `@playwright/test`.
+  - [x] 1.4 Tạo `vitest.config.ts` (môi trường `jsdom`, setup file import `fake-indexeddb/auto`), thêm script `test` vào `package.json`, viết 1 test mẫu để kiểm tra cấu hình chạy được.
+  - [x] 1.5 Cấu hình lint (oxlint thay cho ESLint, vì template Vite hiện tại dùng oxlint) + Prettier, thêm script `lint`, `format`.
+  - [x] 1.6 Tạo thư mục `shared/`, khai báo alias `@shared` trong `tsconfig.json` và `vite.config.ts`.
+  - [x] 1.7 Tạo cấu trúc thư mục `src/` theo mục Relevant Files (`data`, `store`, `hooks`, `components`, `views`, `pages`, `reminders`, `firebase`, `styles`).
+  - [x] 1.8 Cài `vite-plugin-pwa`, cấu hình manifest (tên "Lịch Hana", `lang: "vi"`, màu theme, icon trong `public/`), chọn chế độ `injectManifest` để tự viết `src/sw.ts`.
+  - [x] 1.9 Viết `shared/types.ts` theo mô hình dữ liệu trong PRD mục 7 (`CalendarEvent`, `LunarDate`, `Category`, `Reminder`, `Settings`).
+  - [x] 1.10 Tạo `.env.example` với các biến `VITE_FIREBASE_*`.
 
 - [ ] 2.0 Xây thư viện âm lịch (chuyển đổi dương ↔ âm UTC+7, tháng nhuận, Can Chi, tiết khí, ngày/giờ hoàng đạo, ngày kỵ, danh sách ngày lễ) kèm unit test đối chiếu lịch chuẩn
   - [ ] 2.1 Trong `shared/lunar/lunar.ts`, viết các hàm nền của thuật toán Hồ Ngọc Đức: `jdFromDate`, `jdToDate`, `getNewMoonDay`, `getSunLongitude`, `getLunarMonth11`, `getLeapMonthOffset` (tham số múi giờ = 7).
