@@ -1,0 +1,78 @@
+.mini {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.title {
+  flex: 1 1 auto;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+}
+
+.weekday {
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding-bottom: 2px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  line-height: 1.1;
+}
+
+.day:hover {
+  background: var(--surface-hover);
+}
+
+.solar {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lunar {
+  font-size: 9.5px;
+  color: var(--text-lunar);
+}
+
+.outside {
+  opacity: 0.45;
+}
+
+.sunday .solar {
+  color: var(--sunday);
+}
+
+.today .solar {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.selected {
+  background: var(--accent-soft);
+}
+
+.selected .solar {
+  color: var(--accent);
+}

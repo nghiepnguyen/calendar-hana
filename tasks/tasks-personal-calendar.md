@@ -54,7 +54,15 @@
 
 ### State và hooks
 
-- `src/store/viewStore.ts` - State chế độ xem, ngày đang xem, bộ lọc danh mục (Zustand).
+- `src/store/uiStore.ts` - State giao diện tạm thời: sidebar, form sự kiện, chi tiết, tìm kiếm (Zustand).
+- `src/hooks/useCalendarRoute.ts` - Chế độ xem và ngày đang xem lấy từ URL `/day/2026-09-23`, các hàm điều hướng.
+- `src/hooks/useNow.ts` - Hôm nay và giờ hiện tại theo giờ Việt Nam, cập nhật mỗi phút.
+- `src/hooks/useCategoryMap.ts` - Tra danh mục và màu theo id.
+- `src/hooks/useKeyboardShortcuts.ts` - Phím tắt T/D/W/M/N, mũi tên, `/`.
+- `src/calendar/range.ts` - Khoảng ngày cho từng chế độ xem, đầu tuần, trang trước/sau.
+- `src/calendar/range.test.ts` - Unit test cho `range.ts`.
+- `shared/time.ts` - Hôm nay, giờ hiện tại, đổi ngày giờ Việt Nam sang thời điểm tuyệt đối.
+- `shared/time.test.ts` - Unit test cho `time.ts`.
 - `src/hooks/useEventsInRange.ts` - Lấy sự kiện đã tính lần lặp trong khoảng ngày đang xem.
 - `src/hooks/useEventsInRange.test.tsx` - Test hook (lặp, lọc danh mục, tự cập nhật).
 - `src/hooks/useRepositoryData.ts` - Hook `useEvents`, `useCategories`, `useSettings` tự cập nhật theo repository.
@@ -66,6 +74,8 @@
 - `src/components/layout/AppHeader.tsx` - Thanh đầu: nút Hôm nay, trước/sau, chuyển Ngày/Tuần/Tháng, tìm kiếm, tài khoản.
 - `src/components/layout/Sidebar.tsx` - Lịch tháng nhỏ, danh sách danh mục để lọc.
 - `src/components/DatePicker/DatePicker.tsx` - Chọn ngày theo dương hoặc âm.
+- `src/components/DatePicker/LunarDateInput.tsx` - Ô chọn ngày/tháng (có tháng nhuận)/năm âm, dùng lại trong form sự kiện.
+- `src/components/MiniMonth/MiniMonth.tsx` - Lịch tháng nhỏ có ngày âm ở sidebar.
 - `src/components/DatePicker/DatePicker.test.tsx` - Test component.
 - `src/views/DayView/DayView.tsx` - Xem Ngày (màn hình mặc định).
 - `src/views/DayView/DayCard.tsx` - Thẻ ngày: ngày dương, âm, Can Chi, hoàng đạo, giờ tốt, tiết khí, ngày lễ.
@@ -74,7 +84,12 @@
 - `src/views/WeekView/WeekView.test.tsx` - Test component.
 - `src/views/MonthView/MonthView.tsx` - Xem Tháng.
 - `src/views/MonthView/MonthView.test.tsx` - Test component.
-- `src/components/TimeGrid/TimeGrid.tsx` - Lưới 24 giờ dùng chung cho Ngày và Tuần, xếp sự kiện chồng giờ.
+- `src/components/TimeGrid/TimeGrid.tsx` - Lưới 24 giờ dùng chung cho Ngày và Tuần.
+- `src/components/TimeGrid/layout.ts` - Xếp sự kiện trùng giờ thành cột cạnh nhau.
+- `src/components/TimeGrid/layout.test.ts` - Unit test cho `layout.ts`.
+- `src/pages/CalendarPage.tsx` - Trang lịch: header, sidebar, chế độ xem, nút +, phím tắt.
+- `src/views/viewProps.ts` - Props chung của 3 chế độ xem.
+- `src/test/fixtures.ts` - Dữ liệu và helper dùng chung cho test giao diện.
 - `src/components/EventChip/EventChip.tsx` - Hiển thị một sự kiện theo màu danh mục.
 - `src/components/EventForm/EventForm.tsx` - Form tạo/sửa sự kiện.
 - `src/components/EventForm/EventForm.test.tsx` - Test form (validate, đổi dương/âm, ngày quy đổi).
@@ -174,20 +189,20 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 3.11 Viết test cho recurrence: giỗ 12/3 âm các năm 2026–2030, rằm hằng tháng năm 2025 (có tháng 6 nhuận), sự kiện 30 âm rơi vào tháng thiếu, sự kiện tạo từ 10/4 nhuận 2020, lặp ngày 31 dương, 29/2, hằng tuần thứ Hai, `count` và `until`, ngoại lệ.
   - [x] 3.12 Viết `src/hooks/useEventsInRange.ts`: lấy sự kiện từ repository, tính lần lặp trong khoảng ngày, lọc theo danh mục đang bật, tự cập nhật khi dữ liệu thay đổi.
 
-- [ ] 4.0 Xây giao diện xem lịch Ngày / Tuần / Tháng (mặc định xem Ngày, thẻ ngày âm lịch, điều hướng, date picker dương/âm, highlight hôm nay, hiển thị ngày lễ và sự kiện theo màu danh mục)
-  - [ ] 4.1 Tạo `src/store/viewStore.ts`: `viewMode` (mặc định `'day'`), `currentDate` (mặc định hôm nay theo giờ Việt Nam), `hiddenCategoryIds`, các action `goToday`, `goPrev`, `goNext`, `setView`, `setDate`.
-  - [ ] 4.2 Tạo layout `App.tsx` + `AppHeader.tsx`: nút "Hôm nay", nút trước/sau, tiêu đề khoảng ngày đang xem, nút chuyển Ngày/Tuần/Tháng, ô tìm kiếm, nút tài khoản. Lưu chế độ xem vào URL (ví dụ `/day/2026-09-23`) để refresh không mất trạng thái.
-  - [ ] 4.3 Tạo `src/styles/theme.css`: token màu cho giao diện sáng/tối, màu đỏ cho Chủ nhật và ngày lễ, màu cho ngày âm (nhỏ, nhạt hơn).
-  - [ ] 4.4 Tạo `DatePicker.tsx`: tab Dương/Âm; ở tab Âm chọn ngày, tháng (có mục tháng nhuận nếu năm có nhuận), năm âm; luôn hiện ngày quy đổi. Viết test.
-  - [ ] 4.5 Tạo `DayCard.tsx`: ngày dương lớn, thứ, ngày âm, Can Chi ngày/tháng/năm, hoàng đạo/hắc đạo, ngày kỵ, danh sách giờ hoàng đạo, tiết khí, ngày lễ. Ẩn phần hoàng đạo nếu cài đặt tắt.
-  - [ ] 4.6 Tạo `TimeGrid.tsx`: lưới 24 giờ, khu vực sự kiện cả ngày ở trên, xếp các sự kiện trùng giờ thành cột cạnh nhau, vạch đỏ cho giờ hiện tại, tự cuộn tới giờ hiện tại khi mở.
-  - [ ] 4.7 Tạo `EventChip.tsx`: hiển thị tiêu đề, giờ, màu danh mục; có biểu tượng nhỏ nếu là sự kiện âm lịch hoặc sự kiện lặp.
-  - [ ] 4.8 Ghép `DayView.tsx` = `DayCard` + `TimeGrid` cho 1 ngày. Viết test (hiện đúng ngày âm, hiện sự kiện).
-  - [ ] 4.9 Tạo `WeekView.tsx`: 7 cột, đầu cột có thứ, ngày dương, ngày âm, ngày lễ; dùng `TimeGrid` nhiều cột; tuần bắt đầu theo cài đặt. Viết test.
-  - [ ] 4.10 Tạo `MonthView.tsx`: lưới 5–6 hàng; mỗi ô có ngày dương lớn, ngày âm nhỏ (mùng 1 hiện "1/tháng"), chấm hoàng đạo, ngày lễ, tối đa 3 sự kiện và "+N"; làm mờ ngày thuộc tháng khác; tiêu đề có tháng âm và năm Can Chi. Viết test.
-  - [ ] 4.11 Bấm vào ô ngày (Tháng) hoặc đầu cột (Tuần) thì chuyển sang xem Ngày của ngày đó. Bấm vào sự kiện thì mở `EventDetail`.
-  - [ ] 4.12 Tạo `Sidebar.tsx` (trên mobile là drawer): lịch tháng nhỏ có ngày âm để chọn nhanh, danh sách danh mục có checkbox để lọc.
-  - [ ] 4.13 Highlight ngày hôm nay ở cả 3 chế độ xem. Thêm phím tắt: `T` về hôm nay, `D`/`W`/`M` đổi chế độ xem, mũi tên trái/phải để chuyển trước/sau.
+- [x] 4.0 Xây giao diện xem lịch Ngày / Tuần / Tháng (mặc định xem Ngày, thẻ ngày âm lịch, điều hướng, date picker dương/âm, highlight hôm nay, hiển thị ngày lễ và sự kiện theo màu danh mục)
+  - [x] 4.1 Tạo `src/store/viewStore.ts`: `viewMode` (mặc định `'day'`), `currentDate` (mặc định hôm nay theo giờ Việt Nam), `hiddenCategoryIds`, các action `goToday`, `goPrev`, `goNext`, `setView`, `setDate`. _Đã làm khác: chế độ xem và ngày nằm trên URL qua hook `useCalendarRoute` (4.2); `hiddenCategoryIds` nằm trong Settings; `src/store/uiStore.ts` giữ state tạm (sidebar, form, chi tiết, tìm kiếm)._
+  - [x] 4.2 Tạo layout `App.tsx` + `AppHeader.tsx`: nút "Hôm nay", nút trước/sau, tiêu đề khoảng ngày đang xem, nút chuyển Ngày/Tuần/Tháng, ô tìm kiếm, nút tài khoản. Lưu chế độ xem vào URL (ví dụ `/day/2026-09-23`) để refresh không mất trạng thái.
+  - [x] 4.3 Tạo `src/styles/theme.css`: token màu cho giao diện sáng/tối, màu đỏ cho Chủ nhật và ngày lễ, màu cho ngày âm (nhỏ, nhạt hơn).
+  - [x] 4.4 Tạo `DatePicker.tsx`: tab Dương/Âm; ở tab Âm chọn ngày, tháng (có mục tháng nhuận nếu năm có nhuận), năm âm; luôn hiện ngày quy đổi. Viết test.
+  - [x] 4.5 Tạo `DayCard.tsx`: ngày dương lớn, thứ, ngày âm, Can Chi ngày/tháng/năm, hoàng đạo/hắc đạo, ngày kỵ, danh sách giờ hoàng đạo, tiết khí, ngày lễ. Ẩn phần hoàng đạo nếu cài đặt tắt.
+  - [x] 4.6 Tạo `TimeGrid.tsx`: lưới 24 giờ, khu vực sự kiện cả ngày ở trên, xếp các sự kiện trùng giờ thành cột cạnh nhau, vạch đỏ cho giờ hiện tại, tự cuộn tới giờ hiện tại khi mở.
+  - [x] 4.7 Tạo `EventChip.tsx`: hiển thị tiêu đề, giờ, màu danh mục; có biểu tượng nhỏ nếu là sự kiện âm lịch hoặc sự kiện lặp.
+  - [x] 4.8 Ghép `DayView.tsx` = `DayCard` + `TimeGrid` cho 1 ngày. Viết test (hiện đúng ngày âm, hiện sự kiện).
+  - [x] 4.9 Tạo `WeekView.tsx`: 7 cột, đầu cột có thứ, ngày dương, ngày âm, ngày lễ; dùng `TimeGrid` nhiều cột; tuần bắt đầu theo cài đặt. Viết test.
+  - [x] 4.10 Tạo `MonthView.tsx`: lưới 5–6 hàng; mỗi ô có ngày dương lớn, ngày âm nhỏ (mùng 1 hiện "1/tháng"), chấm hoàng đạo, ngày lễ, tối đa 3 sự kiện và "+N"; làm mờ ngày thuộc tháng khác; tiêu đề có tháng âm và năm Can Chi. Viết test.
+  - [x] 4.11 Bấm vào ô ngày (Tháng) hoặc đầu cột (Tuần) thì chuyển sang xem Ngày của ngày đó. Bấm vào sự kiện thì mở `EventDetail`.
+  - [x] 4.12 Tạo `Sidebar.tsx` (trên mobile là drawer): lịch tháng nhỏ có ngày âm để chọn nhanh, danh sách danh mục có checkbox để lọc.
+  - [x] 4.13 Highlight ngày hôm nay ở cả 3 chế độ xem. Thêm phím tắt: `T` về hôm nay, `D`/`W`/`M` đổi chế độ xem, mũi tên trái/phải để chuyển trước/sau.
 
 - [ ] 5.0 Xây chức năng quản lý sự kiện và danh mục (form tạo/sửa/xóa theo dương/âm, lặp lại, sửa/xóa sự kiện lặp theo 3 lựa chọn, tạo nhanh, tìm kiếm, CRUD danh mục, lọc theo danh mục)
   - [ ] 5.1 Tạo `EventForm.tsx` (modal trên desktop, toàn màn hình trên mobile) gồm các trường ở PRD mục 19. Công tắc Dương/Âm đặt trên cùng.
