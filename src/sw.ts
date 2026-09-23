@@ -43,7 +43,7 @@ function readPush(event: PushEvent): PushData {
 self.addEventListener('push', (event) => {
   const data = readPush(event)
   event.waitUntil(
-    self.registration.showNotification(data.title || 'Lịch Hana', {
+    self.registration.showNotification(data.title || 'Lịch Việt', {
       body: data.body,
       tag: data.tag,
       icon: '/pwa-192x192.png',

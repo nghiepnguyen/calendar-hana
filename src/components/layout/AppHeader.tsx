@@ -177,9 +177,9 @@ export function AppHeader({
         <List size={20} weight="bold" aria-hidden="true" />
       </button>
 
-      <Link to="/" className={styles.brand} aria-label="Lịch Hana, về hôm nay">
+      <Link to="/" className={styles.brand} aria-label="Lịch Việt, về hôm nay">
         <img src="/favicon.svg" alt="" width="28" height="28" />
-        <span>Lịch Hana</span>
+        <span>Lịch Việt</span>
       </Link>
 
       <div className={styles.nav}>

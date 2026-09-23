@@ -35,7 +35,7 @@ export function DomainMove() {
   return (
     <div className={`glass ${styles.notice}`} role="status">
       <p className={styles.text}>
-        Lịch Hana đã chuyển sang <strong>{CANONICAL_HOST}</strong>. Dữ liệu trên máy này không tự
+        Lịch Việt đã chuyển sang <strong>{CANONICAL_HOST}</strong>. Dữ liệu trên máy này không tự
         chuyển theo: vào Cài đặt, bấm Xuất dữ liệu, rồi Nhập ở địa chỉ mới.
       </p>
       <div className={styles.actions}>

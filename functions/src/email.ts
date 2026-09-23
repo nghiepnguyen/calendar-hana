@@ -57,7 +57,7 @@ export function renderReminderEmail(
   const html = `<!doctype html>
 <html lang="vi"><body style="margin:0;padding:24px;background:#eef0f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1c1c1e">
 <div style="max-width:520px;margin:0 auto">
-<p style="margin:0 0 16px;font-size:14px;color:#6e6e73">Lịch Hana nhắc bạn</p>
+<p style="margin:0 0 16px;font-size:14px;color:#6e6e73">Lịch Việt nhắc bạn</p>
 ${blocks
   .map(
     (b) => `<div style="background:#ffffff;border-radius:18px;padding:20px 22px;margin-bottom:12px">
@@ -74,7 +74,7 @@ ${b.rows
 </div>`,
   )
   .join('\n')}
-<p style="margin:16px 0 0;font-size:12px;color:#6e6e73">Bạn nhận email này vì đã bật nhắc hẹn qua email trong Lịch Hana. Tắt bằng cách sửa nhắc hẹn của sự kiện.</p>
+<p style="margin:16px 0 0;font-size:12px;color:#6e6e73">Bạn nhận email này vì đã bật nhắc hẹn qua email trong Lịch Việt. Tắt bằng cách sửa nhắc hẹn của sự kiện.</p>
 </div></body></html>`
 
   const text = blocks

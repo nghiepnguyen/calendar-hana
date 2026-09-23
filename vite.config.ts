@@ -28,8 +28,8 @@ export default defineConfig({
       },
       includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
       manifest: {
-        name: 'Lịch Hana — Lịch Dương & Âm',
-        short_name: 'Lịch Hana',
+        name: 'Lịch Việt — Lịch Dương & Âm',
+        short_name: 'Lịch Việt',
         description: 'Lịch cá nhân dương lịch và âm lịch Việt Nam, nhắc hẹn sự kiện.',
         lang: 'vi',
         start_url: '/',

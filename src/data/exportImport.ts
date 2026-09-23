@@ -47,7 +47,7 @@ export function downloadJson(data: unknown, fileName: string): void {
 }
 
 export class ImportFormatError extends Error {
-  constructor(message = 'File không đúng định dạng sao lưu của Lịch Hana.') {
+  constructor(message = 'File không đúng định dạng sao lưu của Lịch Việt.') {
     super(message)
     this.name = 'ImportFormatError'
   }
