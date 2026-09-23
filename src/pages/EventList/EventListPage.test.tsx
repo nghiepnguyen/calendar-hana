@@ -94,7 +94,7 @@ describe('Trang Danh sách sự kiện', () => {
     const save = vi.spyOn(repo, 'saveSettings')
     renderList()
     await row(/^Khám răng/)
-    await userEvent.click(screen.getByRole('button', { name: 'Sức khỏe', pressed: true }))
+    await userEvent.click(await screen.findByRole('button', { name: 'Sức khỏe', pressed: true }))
     expect(screen.queryByRole('button', { name: /^Khám răng/ })).not.toBeInTheDocument()
     expect(save).not.toHaveBeenCalled()
 
