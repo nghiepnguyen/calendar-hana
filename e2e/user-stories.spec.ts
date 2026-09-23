@@ -123,7 +123,10 @@ test('US-6: tạo danh mục riêng và lọc theo danh mục', async ({ app }) 
 test('US-8: dùng offline, không cần đăng nhập, dữ liệu còn sau khi tải lại', async ({
   app,
   context,
+  browserName,
 }) => {
+  // Playwright chỉ hỗ trợ service worker trên Chromium; Safari kiểm tra thủ công (task 8.8).
+  test.skip(browserName === 'webkit', 'Playwright WebKit không hỗ trợ service worker')
   await app.goto('/day/2026-09-23')
   await app.waitForFunction(() => navigator.serviceWorker.ready.then(() => true))
   await app.reload()

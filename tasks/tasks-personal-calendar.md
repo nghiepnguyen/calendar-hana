@@ -148,7 +148,9 @@
 
 ### Test end-to-end
 
-- `e2e/*.spec.ts` - Test Playwright cho các user story chính.
+- `e2e/*.spec.ts` - Test Playwright cho các user story chính (`user-stories.spec.ts`) và quét accessibility bằng axe (`a11y.spec.ts`).
+- `playwright.config.ts` - Cấu hình Playwright (chạy trên bản build).
+- `README.md` - Cài đặt, biến môi trường, chạy dev, Emulator, test, deploy.
 - `playwright.config.ts` - Cấu hình Playwright.
 
 ### Notes
@@ -165,6 +167,8 @@
 - Task 7: người đã đăng nhập mà chưa đăng ký được Web Push (chưa có `VITE_FIREBASE_VAPID_KEY`, trình duyệt không hỗ trợ) vẫn được nhắc bằng lịch local khi app đang mở.
 - Cloud Functions nằm trong `functions/` (package riêng, cài bằng `cd functions && npx npm@11 install`), bundle bằng esbuild để gói luôn code `shared/`. Vùng `asia-southeast1` (phải trùng vùng Firestore). Cần gói Blaze để deploy. Email qua Resend: `firebase functions:secrets:set RESEND_API_KEY`, `EMAIL_FROM` / `APP_URL` trong `functions/.env`.
 - Service worker chỉ được đăng ký ở bản build (`npm run build && npm run preview`); khi chạy dev, thông báo local dùng `new Notification`.
+- Task 8.7: Lighthouse 12 không còn mục PWA; kiểm tra cài được bằng CDP `Page.getInstallabilityErrors` (không lỗi). Lighthouse mobile: Performance 96, Accessibility 100, Best Practices 100. Mở lại có cache (CPU chậm 4 lần, 4G chậm): xem Ngày hiện trong dưới 100 ms. Firebase được tải khi cần: Auth tải lúc rảnh cho người chưa đăng nhập, Firestore chỉ tải sau khi đăng nhập.
+- Task 8.8: đã chạy e2e trên Chrome, Pixel 7, Firefox, Safari (WebKit) và iPhone. Test offline bị bỏ qua trên WebKit vì Playwright không hỗ trợ service worker ở đó. Còn phải thử bằng tay: cài PWA, nhận thông báo thật, đăng nhập Google thật, đồng bộ 2 thiết bị.
 
 ## Instructions for Completing Tasks
 
@@ -282,11 +286,11 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
 - [ ] 8.0 Hoàn thiện Cài đặt, giao diện và kiểm thử cuối (trang Cài đặt, sáng/tối, responsive 360px, offline PWA, accessibility, Lighthouse, kiểm thử end-to-end các user story)
   - [x] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản.
   - [x] 8.2 Áp dụng giao diện sáng/tối theo cài đặt (thuộc tính `data-theme` trên `<html>`, mặc định theo hệ thống).
-  - [ ] 8.3 Kiểm tra responsive ở 360px, 768px, 1280px: Tuần trên mobile cuộn ngang được, Tháng trên mobile chỉ hiện chấm màu thay cho tiêu đề sự kiện, không có thanh cuộn ngang toàn trang.
-  - [ ] 8.4 Hoàn thiện service worker: cache app shell và asset để mở offline; hiện thông báo "Có phiên bản mới" khi có bản cập nhật.
-  - [ ] 8.5 Accessibility: đủ tương phản màu (WCAG AA), dùng được bằng bàn phím (focus trap trong modal, `Esc` để đóng), `aria-label` cho nút icon và ô ngày (ví dụ "Thứ Tư, 23 tháng 9 năm 2026, ngày 12 tháng 8 âm lịch").
-  - [ ] 8.6 Viết test Playwright cho các user story: mở app thấy xem Ngày hôm nay (US-1), chuyển Ngày/Tuần/Tháng (US-2), tạo giỗ âm lặp hằng năm (US-3), tạo rằm/mùng 1 hằng tháng (US-4), họp thứ Hai hằng tuần (US-5), tạo và lọc danh mục (US-6), dùng offline không cần đăng nhập (US-8).
-  - [ ] 8.7 Chạy Lighthouse: PWA installable, Performance ≥ 90. Xem Ngày phải tải dưới 1 giây trên điện thoại tầm trung (dùng chế độ throttle).
+  - [x] 8.3 Kiểm tra responsive ở 360px, 768px, 1280px: Tuần trên mobile cuộn ngang được, Tháng trên mobile chỉ hiện chấm màu thay cho tiêu đề sự kiện, không có thanh cuộn ngang toàn trang.
+  - [x] 8.4 Hoàn thiện service worker: cache app shell và asset để mở offline; hiện thông báo "Có phiên bản mới" khi có bản cập nhật.
+  - [x] 8.5 Accessibility: đủ tương phản màu (WCAG AA), dùng được bằng bàn phím (focus trap trong modal, `Esc` để đóng), `aria-label` cho nút icon và ô ngày (ví dụ "Thứ Tư, 23 tháng 9 năm 2026, ngày 12 tháng 8 âm lịch").
+  - [x] 8.6 Viết test Playwright cho các user story: mở app thấy xem Ngày hôm nay (US-1), chuyển Ngày/Tuần/Tháng (US-2), tạo giỗ âm lặp hằng năm (US-3), tạo rằm/mùng 1 hằng tháng (US-4), họp thứ Hai hằng tuần (US-5), tạo và lọc danh mục (US-6), dùng offline không cần đăng nhập (US-8).
+  - [x] 8.7 Chạy Lighthouse: PWA installable, Performance ≥ 90. Xem Ngày phải tải dưới 1 giây trên điện thoại tầm trung (dùng chế độ throttle).
   - [ ] 8.8 Kiểm thử thủ công trên Chrome, Safari (macOS/iOS), Firefox: cài PWA, nhận thông báo, đăng nhập Google, đồng bộ giữa 2 thiết bị.
   - [ ] 8.9 Deploy lên Firebase Hosting và Functions (`firebase deploy`), kiểm tra lại nhắc hẹn email và push trên bản production.
-  - [ ] 8.10 Viết `README.md`: cách cài đặt, biến môi trường, chạy dev, chạy Emulator, chạy test, deploy.
+  - [x] 8.10 Viết `README.md`: cách cài đặt, biến môi trường, chạy dev, chạy Emulator, chạy test, deploy.
