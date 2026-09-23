@@ -71,3 +71,21 @@ export async function showReminderNotification(instance: ReminderInstance): Prom
     notification.close()
   }
 }
+
+/** Hiện một thông báo thử để người dùng kiểm tra hệ điều hành có chặn hay không. */
+export async function showTestNotification(): Promise<boolean> {
+  if (readPermission() !== 'granted') return false
+  const title = 'Lịch Việt'
+  const options = {
+    body: 'Thông báo đang hoạt động. Bạn sẽ nhận nhắc hẹn như thế này.',
+    tag: 'calendar-hana:test',
+    icon: '/pwa-192x192.png',
+    badge: '/pwa-64x64.png',
+    lang: 'vi',
+    data: { url: '/settings#notifications' },
+  } satisfies NotificationOptions
+  const registration = await navigator.serviceWorker?.getRegistration()
+  if (registration) await registration.showNotification(title, options)
+  else new Notification(title, options)
+  return true
+}

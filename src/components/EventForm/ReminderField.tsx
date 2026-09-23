@@ -1,4 +1,5 @@
 import { Plus, X } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import { MAX_REMINDERS, type Reminder } from '@shared/types'
 import {
   ALL_DAY_PRESETS,
@@ -151,8 +152,11 @@ export function ReminderField({
       )}
       {hasNotification && permission === 'denied' ? (
         <p className="field-error" role="status">
-          Trình duyệt đang chặn thông báo. Bấm biểu tượng ổ khóa cạnh thanh địa chỉ, chọn Thông báo
-          rồi chọn Cho phép.
+          Trình duyệt đang chặn thông báo nên bạn sẽ không nhận được nhắc hẹn.{' '}
+          {/* Mở tab mới để không mất sự kiện đang nhập. */}
+          <Link to="/settings#notifications" target="_blank" rel="noopener">
+            Xem cách bật lại
+          </Link>
         </p>
       ) : null}
       {hasNotification && permission === 'unsupported' ? (

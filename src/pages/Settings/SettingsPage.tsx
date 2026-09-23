@@ -7,6 +7,7 @@ import { useSettings } from '../../hooks/useRepositoryData'
 import { AccountSection } from './AccountSection'
 import { CategoryManager } from './CategoryManager'
 import { DataSection } from './DataSection'
+import { NotificationSection } from './NotificationSection'
 import styles from './SettingsPage.module.css'
 
 const THEMES: { value: ThemePreference; label: string }[] = [
@@ -125,8 +126,13 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
             </div>
           </section>
 
-          <section className={`glass ${styles.section}`} aria-labelledby="settings-reminders">
+          <section
+            className={`glass ${styles.section}`}
+            id="notifications"
+            aria-labelledby="settings-reminders"
+          >
             <h2 id="settings-reminders">Nhắc hẹn</h2>
+            <NotificationSection />
             <label className={styles.toggleRow}>
               <span>
                 <span className={styles.rowLabel}>Giờ nhắc cho sự kiện cả ngày</span>
