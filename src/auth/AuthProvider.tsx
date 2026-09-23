@@ -1,59 +1,78 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
-import {
-  deleteUser,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  reauthenticateWithPopup,
-  signInWithPopup,
-  signInWithRedirect,
-  signOut as firebaseSignOut,
-  type User,
-} from 'firebase/auth'
-import { FirestoreRepository } from '../data/firestoreRepository'
-import {
-  clearFirestoreCache,
-  getDb,
-  getFirebaseAuth,
-  isFirebaseConfigured,
-} from '../firebase/firebase'
-import { unregisterPushToken } from '../reminders/pushRegistration'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { isFirebaseConfigured } from '../firebase/config'
 import { AuthContext, type AuthContextValue, type AuthUser } from './authContext'
 
-function toAuthUser(user: User): AuthUser {
-  return {
-    uid: user.uid,
-    email: user.email,
-    displayName: user.displayName,
-    photoURL: user.photoURL,
+// Firebase Auth được tải động để lần mở app đầu tiên nhẹ và nhanh.
+const loadAuthService = () => import('./authService')
+
+/** Máy này từng đăng nhập: cần đợi Firebase trước khi hiện dữ liệu (tránh hiện nhầm dữ liệu local). */
+const SIGNED_IN_HINT = 'calendar-hana:signed-in'
+
+function readHint(): boolean {
+  try {
+    return localStorage.getItem(SIGNED_IN_HINT) === '1'
+  } catch {
+    return false
   }
 }
 
-function googleProvider(): GoogleAuthProvider {
-  const provider = new GoogleAuthProvider()
-  provider.setCustomParameters({ prompt: 'select_account' })
-  return provider
+function writeHint(signedIn: boolean): void {
+  try {
+    if (signedIn) localStorage.setItem(SIGNED_IN_HINT, '1')
+    else localStorage.removeItem(SIGNED_IN_HINT)
+  } catch {
+    // Không lưu được thì lần sau hiện dữ liệu local trước rồi mới chuyển sang cloud.
+  }
 }
 
-/** PWA cài trên điện thoại chặn popup, nên dùng redirect. */
-function prefersRedirect(): boolean {
-  return (
-    typeof window !== 'undefined' &&
-    window.matchMedia?.('(display-mode: standalone)').matches &&
-    /Android|iPhone|iPad/i.test(navigator.userAgent)
-  )
+/** Chạy khi trình duyệt rảnh, sau khi trang đã hiện. */
+function whenIdle(callback: () => void): () => void {
+  if ('requestIdleCallback' in window) {
+    const id = window.requestIdleCallback(callback, { timeout: 3000 })
+    return () => window.cancelIdleCallback(id)
+  }
+  const id = setTimeout(callback, 1500)
+  return () => clearTimeout(id)
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const available = isFirebaseConfigured()
   const [user, setUser] = useState<AuthUser | null>(null)
-  const [loading, setLoading] = useState(available)
+  // Chưa từng đăng nhập: hiện dữ liệu local ngay, không đợi Firebase.
+  const [loading, setLoading] = useState(() => available && readHint())
+  /** Bắt đầu theo dõi trạng thái đăng nhập ngay (không đợi lúc rảnh). */
+  const startNowRef = useRef<() => void>(() => {})
 
   useEffect(() => {
     if (!available) return
-    return onAuthStateChanged(getFirebaseAuth(), (u) => {
-      setUser(u ? toAuthUser(u) : null)
-      setLoading(false)
-    })
+    let cancelled = false
+    let unsubscribe: (() => void) | undefined
+    let started = false
+    const start = () => {
+      if (started) return
+      started = true
+      loadAuthService()
+        .then((service) => {
+          if (cancelled) return
+          unsubscribe = service.watchAuth((u) => {
+            setUser(u)
+            setLoading(false)
+            writeHint(!!u)
+          })
+        })
+        .catch((error) => {
+          // Offline lần đầu, chưa có chunk trong cache: dùng dữ liệu local.
+          console.warn('Không tải được Firebase Auth', error)
+          if (!cancelled) setLoading(false)
+        })
+    }
+    startNowRef.current = start
+    const cancelIdle = readHint() ? (start(), () => {}) : whenIdle(start)
+    return () => {
+      cancelled = true
+      cancelIdle()
+      unsubscribe?.()
+    }
   }, [available])
 
   const value = useMemo<AuthContextValue>(
@@ -62,37 +81,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       loading,
       user,
       signIn: async () => {
-        const auth = getFirebaseAuth()
-        if (prefersRedirect()) {
-          await signInWithRedirect(auth, googleProvider())
-          return
-        }
+        startNowRef.current()
+        const service = await loadAuthService()
+        // Đăng nhập bằng redirect: trang tải lại thì đợi Firebase ngay.
+        writeHint(true)
         try {
-          await signInWithPopup(auth, googleProvider())
+          await service.signIn()
         } catch (error) {
-          if ((error as { code?: string }).code === 'auth/popup-blocked') {
-            await signInWithRedirect(auth, googleProvider())
-            return
-          }
+          writeHint(false)
           throw error
         }
       },
       signOut: async () => {
-        const auth = getFirebaseAuth()
-        if (auth.currentUser) await unregisterPushToken(auth.currentUser.uid)
-        await firebaseSignOut(auth)
-        await clearFirestoreCache()
+        await (await loadAuthService()).signOut()
+        writeHint(false)
       },
       deleteAccount: async () => {
-        const auth = getFirebaseAuth()
-        const current = auth.currentUser
-        if (!current) return
-        // Firebase yêu cầu đăng nhập gần đây mới được xóa tài khoản.
-        await reauthenticateWithPopup(current, googleProvider())
-        await unregisterPushToken(current.uid)
-        await new FirestoreRepository(getDb(), current.uid).deleteAllData()
-        await deleteUser(current)
-        await clearFirestoreCache()
+        await (await loadAuthService()).deleteAccount()
+        writeHint(false)
       },
     }),
     [available, loading, user],

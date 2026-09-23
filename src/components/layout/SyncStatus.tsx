@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useAuth } from '../../auth/authContext'
-import { FirestoreRepository } from '../../data/firestoreRepository'
 import { useRepository } from '../../data/repositoryContext'
 import { useSyncStore } from '../../store/syncStore'
 import styles from './AppHeader.module.css'
@@ -30,10 +29,10 @@ export function SyncStatus() {
   const clearError = useSyncStore((s) => s.clearError)
 
   useEffect(() => {
-    if (repository instanceof FirestoreRepository) return repository.watchSyncState(setState)
+    return repository.watchSyncState?.(setState)
   }, [repository, setState])
 
-  if (!(repository instanceof FirestoreRepository) || !user) return null
+  if (repository.kind !== 'cloud' || !user) return null
 
   const label = error
     ? 'Lỗi đồng bộ'

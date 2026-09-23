@@ -7,23 +7,10 @@ import {
   type DocumentReference,
 } from 'firebase/firestore'
 import type { Category } from '@shared/types'
-import { createDefaultCategories } from './defaultCategories'
 import { toFirestoreData, type FirestoreRepository } from './firestoreRepository'
 import type { LocalRepository } from './localRepository'
 
 const BATCH_LIMIT = 400
-
-/** Máy có dữ liệu local đáng chuyển không: có sự kiện, hoặc danh mục đã bị sửa/thêm/xóa. */
-export async function hasLocalData(local: LocalRepository): Promise<boolean> {
-  if ((await local.db.events.count()) > 0) return true
-  const categories = await local.listCategories()
-  const defaults = createDefaultCategories('')
-  if (categories.length !== defaults.length) return true
-  return categories.some((c) => {
-    const d = defaults.find((x) => x.id === c.id)
-    return !d || d.name !== c.name || d.color !== c.color
-  })
-}
 
 export class MigrationError extends Error {
   constructor(message: string) {

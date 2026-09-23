@@ -6,7 +6,8 @@ import { CalendarDatabase } from './db'
 import { exportData, importData, parseImport } from './exportImport'
 import { FirestoreRepository } from './firestoreRepository'
 import { LocalRepository } from './localRepository'
-import { hasLocalData, migrateLocalToCloud } from './migrateLocalToCloud'
+import { hasLocalData } from './hasLocalData'
+import { migrateLocalToCloud } from './migrateLocalToCloud'
 import type { EventInput } from './repository'
 
 let env: RulesTestEnvironment

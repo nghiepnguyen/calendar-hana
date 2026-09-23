@@ -1,4 +1,5 @@
 import type { CalendarEvent, Category, Settings } from '@shared/types'
+import type { SyncState } from '../store/syncStore'
 
 export type Unsubscribe = () => void
 
@@ -35,6 +36,9 @@ export interface CalendarRepository {
   getSettings(): Promise<Settings>
   saveSettings(patch: Partial<Omit<Settings, 'updatedAt'>>): Promise<Settings>
   watchSettings(callback: (settings: Settings) => void): Unsubscribe
+
+  /** Chỉ có ở repository cloud: trạng thái đồng bộ với server. */
+  watchSyncState?(callback: (state: SyncState) => void): Unsubscribe
 }
 
 export class SystemCategoryError extends Error {

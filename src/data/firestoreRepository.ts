@@ -12,6 +12,7 @@ import {
   type DocumentReference,
   type Firestore,
 } from 'firebase/firestore'
+import type { SyncState } from '../store/syncStore'
 import type { CalendarEvent, Category, Settings } from '@shared/types'
 import { EventValidationError, validateEvent } from '@shared/validation'
 import {
@@ -34,8 +35,8 @@ export interface UserProfile {
   displayName: string | null
 }
 
-type ErrorReporter = (error: unknown) => void
-type SyncListener = (state: 'synced' | 'pending' | 'offline') => void
+export type ErrorReporter = (error: unknown) => void
+export type SyncListener = (state: SyncState) => void
 
 /** Firestore không nhận giá trị undefined: bỏ hết trước khi ghi. */
 export function toFirestoreData<T>(value: T): T {

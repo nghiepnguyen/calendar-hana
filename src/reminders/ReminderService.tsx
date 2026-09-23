@@ -4,7 +4,6 @@ import { useAuth } from '../auth/authContext'
 import { useEvents, useSettings } from '../hooks/useRepositoryData'
 import { LocalScheduler } from './localScheduler'
 import { OPEN_URL_EVENT, showReminderNotification, useNotificationStore } from './notifications'
-import { registerPushToken } from './pushRegistration'
 
 /**
  * Chạy nền cho nhắc hẹn:
@@ -26,7 +25,8 @@ export function ReminderService() {
   useEffect(() => {
     if (!uid || permission !== 'granted') return
     let cancelled = false
-    registerPushToken(uid)
+    import('./pushRegistration')
+      .then(({ registerPushToken }) => registerPushToken(uid))
       .then((token) => !cancelled && setPushUid(token ? uid : null))
       .catch((error) => console.warn('Không đăng ký được Web Push', error))
     return () => {

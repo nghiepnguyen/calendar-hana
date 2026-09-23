@@ -2,7 +2,9 @@
 // firebase/messaging được tải khi cần để không làm nặng lần tải đầu.
 
 import { deleteDoc, doc, setDoc } from 'firebase/firestore'
-import { getDb, getFirebaseApp, isFirebaseConfigured } from '../firebase/firebase'
+import { isFirebaseConfigured } from '../firebase/config'
+import { getFirebaseApp } from '../firebase/firebase'
+import { getDb } from '../firebase/firestore'
 
 const vapidKey = import.meta.env.VITE_FIREBASE_VAPID_KEY as string | undefined
 const TOKEN_KEY = 'calendar-hana:push-token'

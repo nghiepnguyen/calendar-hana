@@ -1,10 +1,8 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
 import { useAuth } from '../auth/authContext'
-import { getDb } from '../firebase/firebase'
 import { useSyncStore } from '../store/syncStore'
-import { FirestoreRepository } from './firestoreRepository'
-import { hasLocalData } from './migrateLocalToCloud'
-import { MigrationDialog } from './MigrationDialog'
+import type { FirestoreRepository } from './firestoreRepository'
+import { hasLocalData } from './hasLocalData'
 import type { CalendarRepository } from './repository'
 import { getLocalRepository, RepositoryContext } from './repositoryContext'
 
@@ -13,6 +11,10 @@ interface RepositoryProviderProps {
   /** Truyền repository riêng (dùng trong test). Khi có, bỏ qua trạng thái đăng nhập. */
   repository?: CalendarRepository
 }
+
+const MigrationDialog = lazy(() =>
+  import('./MigrationDialog').then((m) => ({ default: m.MigrationDialog })),
+)
 
 const DISMISS_KEY = 'calendar-hana:migration-dismissed:'
 
@@ -41,10 +43,21 @@ export function RepositoryProvider({ children, repository }: RepositoryProviderP
   const reportError = useSyncStore((s) => s.reportError)
   const uid = repository ? null : (user?.uid ?? null)
 
-  const cloud = useMemo(
-    () => (uid ? new FirestoreRepository(getDb(), uid, reportError) : null),
-    [uid, reportError],
-  )
+  const [loaded, setLoaded] = useState<FirestoreRepository | null>(null)
+  useEffect(() => {
+    if (!uid) return
+    let cancelled = false
+    import('./cloudRepository')
+      .then(({ createCloudRepository }) => {
+        if (!cancelled) setLoaded(createCloudRepository(uid, reportError))
+      })
+      .catch(reportError)
+    return () => {
+      cancelled = true
+    }
+  }, [uid, reportError])
+  // Repository của tài khoản khác (vừa đổi tài khoản) thì bỏ qua.
+  const cloud = uid && loaded?.uid === uid ? loaded : null
   const value: CalendarRepository = repository ?? cloud ?? getLocalRepository()
 
   const [askMigration, setAskMigration] = useState<string | null>(null)
@@ -68,21 +81,24 @@ export function RepositoryProvider({ children, repository }: RepositoryProviderP
     }
   }, [cloud, user])
 
-  if (loading && !repository) return null
+  // Đợi Firebase (người từng đăng nhập) hoặc đợi tải Firestore, để không hiện nhầm dữ liệu local.
+  if (!repository && (loading || (uid && !cloud))) return null
 
   return (
     <RepositoryContext.Provider value={value}>
       {children}
       {cloud && askMigration === cloud.uid ? (
-        <MigrationDialog
-          cloud={cloud}
-          local={getLocalRepository()}
-          onDone={() => setAskMigration(null)}
-          onSkip={() => {
-            dismiss(cloud.uid)
-            setAskMigration(null)
-          }}
-        />
+        <Suspense fallback={null}>
+          <MigrationDialog
+            cloud={cloud}
+            local={getLocalRepository()}
+            onDone={() => setAskMigration(null)}
+            onSkip={() => {
+              dismiss(cloud.uid)
+              setAskMigration(null)
+            }}
+          />
+        </Suspense>
       ) : null}
     </RepositoryContext.Provider>
   )
