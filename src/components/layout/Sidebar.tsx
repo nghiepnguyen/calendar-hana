@@ -99,15 +99,18 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
           </button>
         )}
 
-        <MiniMonth
-          selected={date}
-          today={today}
-          weekStartsOn={settings.weekStartsOn}
-          onSelect={(d) => {
-            setOpen(false)
-            onSelectDate(d)
-          }}
-        />
+        {/* Điện thoại chọn ngày qua bộ chọn trên header, dành chỗ trong menu cho chức năng khác. */}
+        {compact ? null : (
+          <MiniMonth
+            selected={date}
+            today={today}
+            weekStartsOn={settings.weekStartsOn}
+            onSelect={(d) => {
+              setOpen(false)
+              onSelectDate(d)
+            }}
+          />
+        )}
 
         <section className={styles.section}>
           <div className={styles.sectionHead}>
