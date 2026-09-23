@@ -30,7 +30,8 @@ export default defineConfig({
       manifest: {
         name: 'Lịch Việt — Lịch Dương & Âm',
         short_name: 'Lịch Việt',
-        description: 'Lịch cá nhân dương lịch và âm lịch Việt Nam, nhắc hẹn sự kiện.',
+        description:
+          'Lịch âm dương Việt Nam: Can Chi, ngày hoàng đạo, ngày lễ, nhắc giỗ, rằm, mùng 1 theo ngày âm.',
         lang: 'vi',
         start_url: '/',
         scope: '/',

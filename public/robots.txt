@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+# Trang cá nhân, không có nội dung công khai.
+Disallow: /settings
+Disallow: /events
+Disallow: /__/
+
+Sitemap: https://lich.thanhnghiep.top/sitemap.xml
