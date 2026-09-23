@@ -32,7 +32,9 @@
 }
 
 .brand img {
-  border-radius: 8px;
+  flex: 0 0 auto;
+  /* Logo đã có bóng và bo góc riêng. */
+  filter: drop-shadow(0 2px 4px rgb(204 43 34 / 0.25));
 }
 
 .nav {
