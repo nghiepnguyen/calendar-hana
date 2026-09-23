@@ -38,6 +38,9 @@ export async function sendPush(
     webpush: { headers: { Urgency: 'high', TTL: '3600' } },
   })
 
+  response.responses.forEach((r, i) => {
+    if (!r.success) console.warn(`FCM từ chối token ${tokens[i].slice(0, 12)}…`, r.error?.code)
+  })
   const dead = response.responses
     .map((r, i) => (!r.success && DEAD_TOKEN_ERRORS.has(r.error?.code ?? '') ? tokens[i] : null))
     .filter((t): t is string => t !== null)

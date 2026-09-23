@@ -25,7 +25,7 @@ export function createReminderSender(deps: SenderDeps): ReminderSender {
       if (channel === 'notification') {
         for (const instance of instances) {
           const { title, body } = formatReminderMessage(instance.event, instance.date, today)
-          await sendPush(deps.db, deps.messaging, uid, {
+          const delivered = await sendPush(deps.db, deps.messaging, uid, {
             title,
             body,
             tag: reminderTag(
@@ -35,6 +35,7 @@ export function createReminderSender(deps: SenderDeps): ReminderSender {
             ),
             url: occurrencePath(instance.date, instance.eventId, instance.occurrenceKey),
           })
+          console.log(`Push nhắc hẹn ${instance.eventId} cho ${uid}: ${delivered} trình duyệt nhận`)
         }
         return
       }

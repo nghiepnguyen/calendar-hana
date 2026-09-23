@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/authContext'
 import { useEvents, useSettings } from '../hooks/useRepositoryData'
@@ -7,8 +7,9 @@ import { OPEN_URL_EVENT, showReminderNotification, useNotificationStore } from '
 
 /**
  * Chạy nền cho nhắc hẹn:
- * - Đã đăng nhập và đăng ký được Web Push: server gửi thông báo, app không tự đặt lịch.
- * - Ngược lại: đặt lịch thông báo trong trình duyệt khi app đang mở.
+ * - Đã đăng nhập: đăng ký Web Push để server gửi thông báo cả khi đã đóng tab.
+ * - Khi app đang mở: luôn đặt lịch thông báo trong trình duyệt, kể cả khi đã có Web Push, để
+ *   không phụ thuộc vào việc push tới được. Hai nguồn dùng chung tag nên không hiện trùng.
  * - Bấm thông báo: mở app tại lần diễn ra của sự kiện.
  */
 export function ReminderService() {
@@ -18,23 +19,17 @@ export function ReminderService() {
   const events = useEvents()
   const settings = useSettings()
   const navigate = useNavigate()
-  const [pushUid, setPushUid] = useState<string | null>(null)
   const uid = user?.uid ?? null
 
   // Đăng ký Web Push khi đã đăng nhập và đã cấp quyền.
   useEffect(() => {
     if (!uid || permission !== 'granted') return
-    let cancelled = false
     import('./pushRegistration')
       .then(({ registerPushToken }) => registerPushToken(uid))
-      .then((token) => !cancelled && setPushUid(token ? uid : null))
       .catch((error) => console.warn('Không đăng ký được Web Push', error))
-    return () => {
-      cancelled = true
-    }
   }, [uid, permission])
 
-  const useLocal = permission === 'granted' && (!uid || pushUid !== uid)
+  const useLocal = permission === 'granted'
   const schedulerRef = useRef<LocalScheduler | null>(null)
 
   useEffect(() => {
