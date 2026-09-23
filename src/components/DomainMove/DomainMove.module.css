@@ -1,0 +1,27 @@
+.notice {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  left: 50%;
+  z-index: 70;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  width: min(640px, calc(100vw - 32px));
+  padding: 12px 12px 12px 18px;
+  border-radius: var(--radius-lg);
+  transform: translateX(-50%);
+}
+
+.text {
+  flex: 1 1 280px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

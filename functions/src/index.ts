@@ -24,7 +24,7 @@ const db = getFirestore()
 
 const resendApiKey = defineSecret('RESEND_API_KEY')
 const emailFrom = defineString('EMAIL_FROM', { default: 'Lịch Hana <onboarding@resend.dev>' })
-const appUrl = defineString('APP_URL', { default: 'https://calendar-hana.web.app' })
+const appUrl = defineString('APP_URL', { default: 'https://lich.thanhnghiep.top' })
 
 /** Sự kiện được tạo / sửa / xóa: cập nhật lần nhắc kế tiếp trong reminderQueue. */
 export const scheduleReminders = onDocumentWritten('users/{uid}/events/{eventId}', async (e) => {

@@ -126,7 +126,15 @@ Trước lần deploy functions đầu tiên:
 2. Kiểm tra vùng Firestore. Functions đặt ở `asia-southeast1` (trong `functions/src/index.ts`) và phải cùng vùng với Firestore.
 3. Đặt `RESEND_API_KEY` và tạo `functions/.env` như mục trên.
 
-Sau khi deploy Hosting, thêm tên miền của app vào Firebase Console > Authentication > Settings > Authorized domains nếu dùng tên miền riêng.
+### Tên miền riêng
+
+App chạy ở `https://lich.thanhnghiep.top`, đặt trong `.env.production` (`VITE_CANONICAL_HOST`). Bản trên `calendar-hana.web.app` và `calendar-hana.firebaseapp.com` tự chuyển sang tên miền này. Máy đang có dữ liệu chỉ lưu trên máy thì không bị chuyển: app hiện hướng dẫn xuất dữ liệu rồi nhập ở địa chỉ mới, vì dữ liệu trên máy gắn với từng tên miền.
+
+Khi đổi tên miền, cập nhật thêm:
+
+- Firebase Console > Authentication > Settings > Authorized domains: thêm tên miền.
+- `VITE_FIREBASE_AUTH_DOMAIN` trong `.env.local` đặt bằng tên miền, và thêm `https://<tên miền>/__/auth/handler` vào Authorized redirect URIs của OAuth client (Google Cloud Console > APIs & Services > Credentials).
+- `APP_URL` trong `functions/.env`.
 
 ## Nhắc hẹn hoạt động thế nào
 
