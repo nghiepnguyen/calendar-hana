@@ -142,3 +142,17 @@ test('US-8: dùng offline, không cần đăng nhập, dữ liệu còn sau khi 
   await expect(app.getByRole('button', { name: /^Việc lúc mất mạng/ })).toBeVisible()
   await context.setOffline(false)
 })
+
+test('service worker không trả app shell cho trang đăng nhập của Firebase (/__/auth/handler)', async ({
+  app,
+  browserName,
+}) => {
+  test.skip(browserName === 'webkit', 'Playwright WebKit không hỗ trợ service worker')
+  await app.goto('/day/2026-09-23')
+  await app.waitForFunction(() => navigator.serviceWorker.ready.then(() => true))
+  await app.reload()
+  await app.waitForFunction(() => navigator.serviceWorker.controller !== null)
+
+  const response = await app.goto('/__/auth/handler')
+  expect(response?.fromServiceWorker()).toBe(false)
+})

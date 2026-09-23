@@ -11,7 +11,11 @@ declare const self: ServiceWorkerGlobalScope
 // Cache app shell để mở được khi offline.
 cleanupOutdatedCaches()
 precacheAndRoute(self.__WB_MANIFEST)
-registerRoute(new NavigationRoute(createHandlerBoundToURL('/index.html')))
+// Trừ các trang dành riêng của Firebase Hosting (/__/auth/handler dùng khi đăng nhập):
+// trả app shell cho chúng thì popup đăng nhập hiện app thay vì trang Google.
+registerRoute(
+  new NavigationRoute(createHandlerBoundToURL('/index.html'), { denylist: [/^\/__\//] }),
+)
 
 // App gửi message này khi người dùng bấm "Cập nhật" trên thông báo có phiên bản mới.
 self.addEventListener('message', (event) => {
