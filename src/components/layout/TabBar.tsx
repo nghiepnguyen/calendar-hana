@@ -1,13 +1,5 @@
 import type { CSSProperties } from 'react'
-import {
-  CalendarDot,
-  Columns,
-  List,
-  MagnifyingGlass,
-  Plus,
-  SquaresFour,
-  type Icon,
-} from '@phosphor-icons/react'
+import { CalendarDot, Columns, List, Plus, SquaresFour, type Icon } from '@phosphor-icons/react'
 import { VIEW_LABELS, VIEW_MODES, type ViewMode } from '../../calendar/range'
 import { useUiStore } from '../../store/uiStore'
 import styles from './TabBar.module.css'
@@ -27,7 +19,6 @@ interface TabBarProps {
 /** Thanh tab nổi dưới đáy màn hình điện thoại, kiểu kính của iOS. */
 export function TabBar({ view, onViewChange, onCreate }: TabBarProps) {
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
-  const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const viewIndex = VIEW_MODES.indexOf(view)
 
   return (
@@ -57,15 +48,6 @@ export function TabBar({ view, onViewChange, onCreate }: TabBarProps) {
             )
           })}
         </div>
-        <button
-          type="button"
-          className={styles.tab}
-          onClick={() => setSearchOpen(true)}
-          aria-label="Tìm kiếm sự kiện"
-        >
-          <MagnifyingGlass size={24} aria-hidden="true" />
-          <span>Tìm kiếm</span>
-        </button>
         <button
           type="button"
           className={styles.tab}

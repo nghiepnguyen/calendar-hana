@@ -1,5 +1,13 @@
 import { useEffect, type CSSProperties } from 'react'
-import { CaretRight, GearSix, ListBullets, Plus, UserCircle, X } from '@phosphor-icons/react'
+import {
+  CaretRight,
+  GearSix,
+  ListBullets,
+  MagnifyingGlass,
+  Plus,
+  UserCircle,
+  X,
+} from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import type { Settings, SolarDateString } from '@shared/types'
 import { useAuth } from '../../auth/authContext'
@@ -24,6 +32,7 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
   const open = useUiStore((s) => s.sidebarOpen)
   const setOpen = useUiStore((s) => s.setSidebarOpen)
   const openCreate = useUiStore((s) => s.openCreate)
+  const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const { available: authAvailable, user } = useAuth()
   const hidden = new Set(settings.hiddenCategoryIds)
 
@@ -53,17 +62,30 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
         aria-label="Menu lịch"
       >
         {compact ? (
-          <div className={styles.sheetHead}>
-            <h2>Menu</h2>
+          <>
+            <div className={styles.sheetHead}>
+              <h2>Menu</h2>
+              <button
+                type="button"
+                className={`btn btn-icon ${styles.close}`}
+                onClick={() => setOpen(false)}
+                aria-label="Đóng menu"
+              >
+                <X size={16} weight="bold" aria-hidden="true" />
+              </button>
+            </div>
             <button
               type="button"
-              className={`btn btn-icon ${styles.close}`}
-              onClick={() => setOpen(false)}
-              aria-label="Đóng menu"
+              className={styles.search}
+              onClick={() => {
+                setOpen(false)
+                setSearchOpen(true)
+              }}
             >
-              <X size={16} weight="bold" aria-hidden="true" />
+              <MagnifyingGlass size={18} weight="bold" aria-hidden="true" />
+              Tìm kiếm sự kiện
             </button>
-          </div>
+          </>
         ) : (
           <button
             type="button"
