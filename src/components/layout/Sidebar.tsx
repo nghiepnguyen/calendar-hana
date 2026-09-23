@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, type CSSProperties } from 'react'
+import { Plus } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import type { Settings, SolarDateString } from '@shared/types'
 import { useRepository } from '../../data/repositoryContext'
@@ -43,7 +44,10 @@ export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
       {open ? (
         <div className={styles.overlay} onClick={() => setOpen(false)} aria-hidden="true" />
       ) : null}
-      <aside className={`${styles.sidebar} ${open ? styles.open : ''}`} aria-label="Menu lịch">
+      <aside
+        className={`glass ${styles.sidebar} ${open ? styles.open : ''}`}
+        aria-label="Menu lịch"
+      >
         <button
           type="button"
           className={`btn btn-primary ${styles.create}`}
@@ -52,7 +56,7 @@ export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
             openCreate({ date })
           }}
         >
-          <span aria-hidden="true">+</span> Tạo sự kiện
+          <Plus size={18} weight="bold" aria-hidden="true" /> Tạo sự kiện
         </button>
 
         <MiniMonth
@@ -78,11 +82,11 @@ export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
                 <label className={styles.category}>
                   <input
                     type="checkbox"
+                    className="check"
                     checked={!hidden.has(category.id)}
                     onChange={() => toggleCategory(category.id)}
-                    style={{ accentColor: category.color }}
+                    style={{ '--check-color': category.color } as CSSProperties}
                   />
-                  <span className={styles.swatch} style={{ background: category.color }} />
                   <span>{category.name}</span>
                 </label>
               </li>

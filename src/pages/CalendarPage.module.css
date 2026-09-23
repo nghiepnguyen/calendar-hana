@@ -7,8 +7,10 @@
 
 .body {
   display: flex;
+  gap: var(--gap);
   flex: 1 1 auto;
   min-height: 0;
+  padding: var(--gap);
 }
 
 .main {
@@ -17,32 +19,52 @@
   flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
-  padding: 12px 16px 16px;
   overflow-y: auto;
+  border-radius: var(--radius-lg);
 }
 
+/* Nút tạo nhanh: màu nhấn, viền kính sáng, nhấn thì lún nhẹ. */
 .fab {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 24px;
+  bottom: 24px;
   z-index: 30;
-  width: 56px;
-  height: 56px;
-  border: 0;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgb(255 255 255 / 0.35);
   border-radius: 50%;
   background: var(--accent);
   color: var(--accent-contrast);
-  font-size: 30px;
-  line-height: 1;
-  box-shadow: var(--shadow-md);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 12px 32px color-mix(in srgb, var(--accent) 45%, transparent);
+  transition:
+    transform 0.22s var(--ease-spring),
+    background-color 0.18s var(--ease);
 }
 
 .fab:hover {
   background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.fab:active {
+  transform: scale(0.94);
 }
 
 @media (max-width: 720px) {
+  .body {
+    padding: 8px;
+  }
+
   .main {
-    padding: 8px 8px 88px;
+    padding-bottom: 80px;
+  }
+
+  .fab {
+    right: 16px;
+    bottom: 16px;
   }
 }

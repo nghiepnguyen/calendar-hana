@@ -42,17 +42,17 @@ describe('format ngày dương', () => {
 
 describe('formatMonthTitle', () => {
   it('tháng dương nằm trong một năm âm', () => {
-    expect(formatMonthTitle(9, 2026)).toBe('Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ')
+    expect(formatMonthTitle(9, 2026)).toBe('Tháng 9/2026. Tháng 7-8 âm lịch, năm Bính Ngọ')
   })
 
   it('tháng dương vắt qua hai năm âm', () => {
     expect(formatMonthTitle(2, 2026)).toBe(
-      'Tháng 2/2026 — Tháng 12 năm Ất Tỵ – tháng 1 năm Bính Ngọ âm lịch',
+      'Tháng 2/2026. Tháng 12 năm Ất Tỵ - tháng 1 năm Bính Ngọ âm lịch',
     )
   })
 
   it('có tháng nhuận', () => {
     // 2025 nhuận tháng 6, bắt đầu 25/7/2025.
-    expect(formatMonthTitle(8, 2025)).toBe('Tháng 8/2025 — Tháng 6 nhuận–7 âm lịch, năm Ất Tỵ')
+    expect(formatMonthTitle(8, 2025)).toBe('Tháng 8/2025. Tháng 6 nhuận-7 âm lịch, năm Ất Tỵ')
   })
 })

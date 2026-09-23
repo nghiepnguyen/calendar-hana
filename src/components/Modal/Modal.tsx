@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
+import { X } from '@phosphor-icons/react'
 import styles from './Modal.module.css'
 
 interface ModalProps {
@@ -80,7 +81,7 @@ export function Modal({
     <div className={styles.backdrop} onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div
         ref={dialogRef}
-        className={`${styles.dialog} ${styles[size]}`}
+        className={`glass ${styles.dialog} ${styles[size]}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -95,7 +96,7 @@ export function Modal({
             onClick={onClose}
             aria-label="Đóng"
           >
-            ✕
+            <X size={18} weight="bold" aria-hidden="true" />
           </button>
         </div>
         <div className={styles.body}>{children}</div>

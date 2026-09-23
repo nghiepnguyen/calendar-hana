@@ -17,7 +17,7 @@ export function WeekView({
   return (
     <div className={styles.view}>
       <div className={styles.inner}>
-        <div className={styles.header}>
+        <div className={`glass ${styles.header}`}>
           <div className={styles.gutter} />
           {days.map((date) => {
             const info = getDayInfo(date)

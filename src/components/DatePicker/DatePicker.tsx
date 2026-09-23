@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { formatLunar, formatSolar } from '@shared/format'
 import { lunarToSolar, parseSolarDate, solarToLunar, toSolarDateString } from '@shared/lunar'
 import type { LunarDate, SolarDateString } from '@shared/types'
@@ -55,15 +55,18 @@ export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
   const target = tab === 'solar' ? (solarValid ? solar : null) : lunarAsSolar
 
   return (
-    <div className={styles.panel} ref={panelRef} role="dialog" aria-label="Chọn ngày">
-      <div className={styles.tabs} role="tablist">
+    <div className={`glass ${styles.panel}`} ref={panelRef} role="dialog" aria-label="Chọn ngày">
+      <div
+        className="segmented"
+        role="tablist"
+        style={{ '--active': tab === 'solar' ? 0 : 1, '--count': 2 } as CSSProperties}
+      >
         {(['solar', 'lunar'] as const).map((t) => (
           <button
             key={t}
             type="button"
             role="tab"
             aria-selected={tab === t}
-            className={`${styles.tab} ${tab === t ? styles.tabActive : ''}`}
             onClick={() => {
               // Giữ ngày đang chọn khi đổi tab.
               if (t === 'lunar' && solarValid) setLunar(toLunar(solar))

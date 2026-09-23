@@ -74,7 +74,7 @@ export function getAuspiciousHours(dayChi: number): AuspiciousHour[] {
       name: CHI[chi],
       startHour,
       endHour,
-      label: `${CHI[chi]} (${startHour}h–${endHour}h)`,
+      label: `${CHI[chi]} (${startHour}h-${endHour}h)`,
       god: god.name,
     })
   }

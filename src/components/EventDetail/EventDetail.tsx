@@ -31,7 +31,7 @@ export function EventDetail({
   const info = getDayInfo(date)
   const time = event.allDay
     ? 'Cả ngày'
-    : `${formatTime(event.startTime ?? '00:00')}${event.endTime ? `–${formatTime(event.endTime)}` : ''}`
+    : `${formatTime(event.startTime ?? '00:00')}${event.endTime ? `-${formatTime(event.endTime)}` : ''}`
 
   return (
     <Modal

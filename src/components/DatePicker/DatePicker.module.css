@@ -9,34 +9,18 @@
   flex-direction: column;
   gap: 12px;
   padding: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  background: var(--glass-strong);
+  box-shadow: var(--glass-highlight), var(--shadow-md);
+  animation: pop-in 0.26s var(--ease);
+  transform-origin: top center;
 }
 
-.tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-  padding: 3px;
-  border-radius: var(--radius-sm);
-  background: var(--surface-2);
-}
-
-.tab {
-  border: 0;
-  border-radius: 5px;
-  padding: 6px 8px;
-  background: transparent;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.tabActive {
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: var(--shadow-sm);
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-6px) scale(0.97);
+  }
 }
 
 .lunarInput {
@@ -68,9 +52,9 @@
 
 .converted {
   margin: 0;
-  padding: 8px 10px;
-  border-radius: var(--radius-sm);
-  background: var(--surface-2);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--fill);
   font-size: 14px;
   font-weight: 500;
 }

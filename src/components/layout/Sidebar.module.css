@@ -1,26 +1,18 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   width: var(--sidebar-width);
   flex: 0 0 var(--sidebar-width);
   padding: 16px;
-  border-right: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   overflow-y: auto;
-  background: var(--bg);
 }
 
 .create {
-  align-self: flex-start;
+  align-self: stretch;
   min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-}
-
-.create span {
-  font-size: 20px;
-  line-height: 1;
+  font-size: 15px;
 }
 
 .section {
@@ -37,15 +29,16 @@
 
 .sectionHead h2 {
   margin: 0;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .manage {
-  font-size: 13px;
+  font-size: 13.5px;
+  font-weight: 600;
   color: var(--accent);
+  text-decoration: none;
 }
 
 .categories {
@@ -60,26 +53,15 @@
 .category {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 6px;
-  border-radius: var(--radius-sm);
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: var(--radius);
   cursor: pointer;
+  transition: background-color 0.15s var(--ease);
 }
 
 .category:hover {
   background: var(--surface-hover);
-}
-
-.category input {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.swatch {
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
 }
 
 .overlay {
@@ -89,13 +71,15 @@
 @media (max-width: 1023px) {
   .sidebar {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
     z-index: 50;
-    transform: translateX(-100%);
-    transition: transform 0.2s ease;
-    box-shadow: var(--shadow-md);
+    background: var(--glass-strong);
+    transform: translateX(calc(-100% - 16px));
+    transition:
+      transform 0.38s var(--ease),
+      visibility 0.38s;
     visibility: hidden;
   }
 
@@ -110,5 +94,7 @@
     inset: 0;
     z-index: 45;
     background: var(--overlay);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
 }

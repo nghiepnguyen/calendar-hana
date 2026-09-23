@@ -1,6 +1,14 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
+import {
+  CaretDown,
+  CaretLeft,
+  CaretRight,
+  GearSix,
+  List,
+  MagnifyingGlass,
+} from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
-import { formatMonthTitle, formatSolar } from '@shared/format'
+import { formatMonthTitleParts, formatSolar } from '@shared/format'
 import { parseSolarDate } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
 import { VIEW_LABELS, VIEW_MODES, weekDays, type ViewMode } from '../../calendar/range'
@@ -30,21 +38,21 @@ function viewTitle(
   if (view === 'day') return { main: formatSolar(date) }
   if (view === 'month') {
     const { month, year } = parseSolarDate(date)
-    const [main, sub] = formatMonthTitle(month, year).split(' — ')
-    return { main, sub }
+    const { solar, lunar } = formatMonthTitleParts(month, year)
+    return { main: solar, sub: lunar }
   }
   const days = weekDays(date, weekStartsOn)
   const first = parseSolarDate(days[0])
   const last = parseSolarDate(days[6])
   if (first.year !== last.year) {
     return {
-      main: `${first.day}/${first.month}/${first.year} – ${last.day}/${last.month}/${last.year}`,
+      main: `${first.day}/${first.month}/${first.year} - ${last.day}/${last.month}/${last.year}`,
     }
   }
   if (first.month !== last.month) {
-    return { main: `${first.day}/${first.month} – ${last.day}/${last.month}/${last.year}` }
+    return { main: `${first.day}/${first.month} - ${last.day}/${last.month}/${last.year}` }
   }
-  return { main: `${first.day}–${last.day}/${last.month}/${last.year}` }
+  return { main: `${first.day}-${last.day}/${last.month}/${last.year}` }
 }
 
 const PREV_LABEL: Record<ViewMode, string> = {
@@ -74,21 +82,21 @@ export function AppHeader({
   const title = viewTitle(view, date, weekStartsOn)
   const { available: authAvailable, user } = useAuth()
 
+  const viewIndex = VIEW_MODES.indexOf(view)
+
   return (
-    <header className={styles.header}>
+    <header className={`glass ${styles.header}`}>
       <button
         type="button"
         className={`btn btn-ghost btn-icon ${styles.menu}`}
         onClick={() => setSidebarOpen(true)}
         aria-label="Mở menu"
       >
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-          <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.8" />
-        </svg>
+        <List size={20} weight="bold" aria-hidden="true" />
       </button>
 
       <Link to="/" className={styles.brand} aria-label="Lịch Hana, về hôm nay">
-        <img src="/favicon.svg" alt="" width="26" height="26" />
+        <img src="/favicon.svg" alt="" width="28" height="28" />
         <span>Lịch Hana</span>
       </Link>
 
@@ -96,24 +104,26 @@ export function AppHeader({
         <button type="button" className="btn" onClick={onToday} title="Hôm nay (T)">
           Hôm nay
         </button>
-        <button
-          type="button"
-          className="btn btn-ghost btn-icon"
-          onClick={onPrev}
-          aria-label={PREV_LABEL[view]}
-          title={`${PREV_LABEL[view]} (←)`}
-        >
-          ‹
-        </button>
-        <button
-          type="button"
-          className="btn btn-ghost btn-icon"
-          onClick={onNext}
-          aria-label={NEXT_LABEL[view]}
-          title={`${NEXT_LABEL[view]} (→)`}
-        >
-          ›
-        </button>
+        <div className={styles.arrows}>
+          <button
+            type="button"
+            className="btn btn-ghost btn-icon"
+            onClick={onPrev}
+            aria-label={PREV_LABEL[view]}
+            title={`${PREV_LABEL[view]} (←)`}
+          >
+            <CaretLeft size={18} weight="bold" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className="btn btn-ghost btn-icon"
+            onClick={onNext}
+            aria-label={NEXT_LABEL[view]}
+            title={`${NEXT_LABEL[view]} (→)`}
+          >
+            <CaretRight size={18} weight="bold" aria-hidden="true" />
+          </button>
+        </div>
         <div className={styles.titleWrap}>
           <button
             type="button"
@@ -124,17 +134,10 @@ export function AppHeader({
             title="Chọn ngày"
           >
             <h1>
-              {title.main}
-              {title.sub ? (
-                <span className={styles.titleSub}>
-                  <span className={styles.titleSep}> — </span>
-                  {title.sub}
-                </span>
-              ) : null}
+              <span className={styles.titleMain}>{title.main}</span>
+              {title.sub ? <span className={styles.titleSub}>{title.sub}</span> : null}
             </h1>
-            <span aria-hidden="true" className={styles.caret}>
-              ▾
-            </span>
+            <CaretDown size={14} weight="bold" className={styles.caret} aria-hidden="true" />
           </button>
           {pickerOpen ? (
             <DatePicker
@@ -151,14 +154,18 @@ export function AppHeader({
 
       <div className={styles.right}>
         <SyncStatus />
-        <div className={styles.views} role="radiogroup" aria-label="Chế độ xem">
+        <div
+          className={`segmented ${styles.views}`}
+          role="radiogroup"
+          aria-label="Chế độ xem"
+          style={{ '--active': viewIndex, '--count': VIEW_MODES.length } as CSSProperties}
+        >
           {VIEW_MODES.map((mode) => (
             <button
               key={mode}
               type="button"
               role="radio"
               aria-checked={view === mode}
-              className={`${styles.viewButton} ${view === mode ? styles.viewActive : ''}`}
               onClick={() => onViewChange(mode)}
               title={`${VIEW_LABELS[mode]} (${mode === 'day' ? 'D' : mode === 'week' ? 'W' : 'M'})`}
             >
@@ -173,10 +180,7 @@ export function AppHeader({
           aria-label="Tìm kiếm sự kiện"
           title="Tìm kiếm (/)"
         >
-          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
-            <circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M13 13l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
+          <MagnifyingGlass size={19} weight="bold" aria-hidden="true" />
         </button>
         <Link
           to="/settings"
@@ -184,15 +188,7 @@ export function AppHeader({
           aria-label="Cài đặt"
           title="Cài đặt"
         >
-          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
-            <circle cx="10" cy="10" r="2.6" fill="none" stroke="currentColor" strokeWidth="1.7" />
-            <path
-              d="M10 1.8v2.4M10 15.8v2.4M1.8 10h2.4M15.8 10h2.4M4.2 4.2l1.7 1.7M14.1 14.1l1.7 1.7M4.2 15.8l1.7-1.7M14.1 5.9l1.7-1.7"
-              stroke="currentColor"
-              strokeWidth="1.7"
-              strokeLinecap="round"
-            />
-          </svg>
+          <GearSix size={19} weight="bold" aria-hidden="true" />
         </Link>
         {user ? (
           <Link

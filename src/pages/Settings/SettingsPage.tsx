@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, type CSSProperties, type ReactNode } from 'react'
+import { CaretLeft } from '@phosphor-icons/react'
 import { Link, useLocation } from 'react-router-dom'
 import type { Settings, ThemePreference } from '@shared/types'
 import { useRepository } from '../../data/repositoryContext'
@@ -34,7 +35,7 @@ function Toggle({
       <input
         type="checkbox"
         role="switch"
-        className={styles.switch}
+        className="switch"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
       />
@@ -42,7 +43,7 @@ function Toggle({
   )
 }
 
-export function SettingsPage({ children }: { children?: React.ReactNode }) {
+export function SettingsPage({ children }: { children?: ReactNode }) {
   const repository = useRepository()
   const settings = useSettings()
   const location = useLocation()
@@ -57,9 +58,10 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <Link to="/" className="btn btn-ghost" aria-label="Quay lại lịch">
-          ‹ Lịch
+      <header className={`glass ${styles.header}`}>
+        <Link to="/" className={`btn btn-ghost ${styles.back}`} aria-label="Quay lại lịch">
+          <CaretLeft size={18} weight="bold" aria-hidden="true" />
+          Lịch
         </Link>
         <h1>Cài đặt</h1>
       </header>
@@ -68,7 +70,7 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
         <p className={styles.loading}>Đang tải…</p>
       ) : (
         <main className={styles.main}>
-          <section className={styles.section} aria-labelledby="settings-general">
+          <section className={`glass ${styles.section}`} aria-labelledby="settings-general">
             <h2 id="settings-general">Hiển thị</h2>
             <label className={styles.toggleRow}>
               <span className={styles.rowLabel}>Tuần bắt đầu từ</span>
@@ -97,14 +99,23 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
               <span className={styles.rowLabel} id="theme-label">
                 Giao diện
               </span>
-              <div className={styles.segmented} role="radiogroup" aria-labelledby="theme-label">
+              <div
+                className="segmented"
+                role="radiogroup"
+                aria-labelledby="theme-label"
+                style={
+                  {
+                    '--active': THEMES.findIndex((t) => t.value === settings.theme),
+                    '--count': THEMES.length,
+                  } as CSSProperties
+                }
+              >
                 {THEMES.map((t) => (
                   <button
                     key={t.value}
                     type="button"
                     role="radio"
                     aria-checked={settings.theme === t.value}
-                    className={settings.theme === t.value ? styles.segmentOn : undefined}
                     onClick={() => save({ theme: t.value })}
                   >
                     {t.label}
@@ -114,7 +125,7 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
             </div>
           </section>
 
-          <section className={styles.section} aria-labelledby="settings-reminders">
+          <section className={`glass ${styles.section}`} aria-labelledby="settings-reminders">
             <h2 id="settings-reminders">Nhắc hẹn</h2>
             <label className={styles.toggleRow}>
               <span>
@@ -130,17 +141,25 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
             </label>
           </section>
 
-          <section className={styles.section} id="categories" aria-labelledby="settings-categories">
+          <section
+            className={`glass ${styles.section}`}
+            id="categories"
+            aria-labelledby="settings-categories"
+          >
             <h2 id="settings-categories">Danh mục</h2>
             <CategoryManager />
           </section>
 
-          <section className={styles.section} id="account" aria-labelledby="settings-account">
+          <section
+            className={`glass ${styles.section}`}
+            id="account"
+            aria-labelledby="settings-account"
+          >
             <h2 id="settings-account">Tài khoản</h2>
             <AccountSection />
           </section>
 
-          <section className={styles.section} id="data" aria-labelledby="settings-data">
+          <section className={`glass ${styles.section}`} id="data" aria-labelledby="settings-data">
             <h2 id="settings-data">Sao lưu dữ liệu</h2>
             <DataSection />
           </section>

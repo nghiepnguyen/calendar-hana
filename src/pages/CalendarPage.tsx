@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Plus } from '@phosphor-icons/react'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString, TimeString } from '@shared/types'
 import { useAuth } from '../auth/authContext'
@@ -96,7 +97,7 @@ export function CalendarPage() {
         aria-label="Tạo sự kiện"
         title="Tạo sự kiện (N)"
       >
-        +
+        <Plus size={26} weight="bold" aria-hidden="true" />
       </button>
       <EventDialogs settings={settings} signedIn={!!user} />
       {searchOpen ? (

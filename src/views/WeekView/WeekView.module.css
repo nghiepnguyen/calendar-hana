@@ -17,13 +17,15 @@
 
 .header {
   display: grid;
-  grid-template-columns: 52px repeat(7, minmax(0, 1fr));
+  grid-template-columns: 56px repeat(7, minmax(0, 1fr));
   gap: 0;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  padding: 4px 0;
+  border-radius: var(--radius-lg);
 }
 
 .gutter {
-  width: 52px;
+  width: 56px;
 }
 
 .dayHead {
@@ -36,10 +38,11 @@
   border-radius: var(--radius);
   background: transparent;
   min-width: 0;
+  transition: background-color 0.15s var(--ease);
 }
 
 .dayHead:hover {
-  background: var(--surface-hover);
+  background: var(--fill);
 }
 
 .weekday {
@@ -49,12 +52,13 @@
 }
 
 .solarDay {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   line-height: 1.1;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 50%;

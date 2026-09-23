@@ -1,98 +1,186 @@
 /*
- * Token màu cho giao diện sáng/tối.
+ * Giao diện kiểu iOS với lớp kính mờ (glassmorphism).
+ *
+ * Lưu ý: đây là bản MÔ PHỎNG trên web bằng backdrop-filter + viền sáng + highlight,
+ * không phải "Liquid Glass" chính thức của Apple (Apple chỉ cung cấp cho nền tảng Apple).
+ *
+ * Quy tắc bo góc (dùng thống nhất toàn app):
+ *   - Panel / card / sheet: --radius-lg (22px)
+ *   - Nút, segmented control, chip, FAB: dạng viên thuốc (999px)
+ *   - Ô nhập, ô ngày, sự kiện: --radius (12px) / --radius-sm (8px)
+ *
+ * Màu nhấn duy nhất: --accent (đỏ lịch iOS). Màu danh mục là dữ liệu người dùng.
  * Mặc định theo hệ thống; người dùng chọn trong Cài đặt thì đặt data-theme trên <html>.
  */
 :root {
   color-scheme: light;
-  --bg: #fbf8f3;
-  --surface: #ffffff;
-  --surface-2: #f4efe6;
-  --surface-hover: #efe8dc;
-  --border: #e5ddd0;
-  --border-strong: #d4c8b6;
-  --text: #1f1a17;
-  --text-muted: #62584f;
-  --text-lunar: #736759;
-  --accent: #b91c1c;
-  --accent-hover: #991b1b;
+
+  /* Nền và lớp kính */
+  --bg: #eef0f5;
+  --wallpaper:
+    radial-gradient(60% 50% at 8% 0%, rgb(255 190 180 / 0.55), transparent 70%),
+    radial-gradient(50% 45% at 100% 10%, rgb(180 205 255 / 0.6), transparent 70%),
+    radial-gradient(55% 50% at 70% 100%, rgb(200 235 225 / 0.55), transparent 70%),
+    linear-gradient(180deg, #f3f4f8 0%, #e9ecf3 100%);
+  --glass: rgb(255 255 255 / 0.62);
+  --glass-strong: rgb(255 255 255 / 0.8);
+  --glass-border: rgb(255 255 255 / 0.7);
+  --glass-edge: rgb(15 23 42 / 0.06);
+  --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.85);
+  --glass-filter: blur(28px) saturate(180%);
+  --glass-shadow: 0 1px 2px rgb(30 41 70 / 0.05), 0 12px 40px rgb(30 41 70 / 0.1);
+
+  /* Màu chữ và vạch kẻ (theo thang label của iOS) */
+  --text: #111318;
+  --text-muted: #5c6270;
+  --text-lunar: #6b7180;
+  --separator: rgb(60 67 90 / 0.13);
+  --separator-soft: rgb(60 67 90 / 0.07);
+
+  /* Nền cho control (segmented, ô nhập) */
+  --fill: rgb(120 128 150 / 0.14);
+  --fill-hover: rgb(120 128 150 / 0.2);
+  --control-thumb: #ffffff;
+
+  /* Màu nhấn */
+  --accent: #e0342b;
+  --accent-hover: #c92b23;
   --accent-contrast: #ffffff;
-  --accent-soft: #fbe9e7;
-  --sunday: #c81e1e;
-  --holiday: #c81e1e;
-  --gold: #a16207;
-  --gold-soft: #fdf3dc;
-  --bad: #6b21a8;
-  --now-line: #dc2626;
-  --focus: #2563eb;
-  --shadow-sm: 0 1px 2px rgb(31 26 23 / 0.06);
-  --shadow-md: 0 8px 24px rgb(31 26 23 / 0.12), 0 2px 6px rgb(31 26 23 / 0.06);
-  --overlay: rgb(31 26 23 / 0.35);
+  --accent-soft: rgb(224 52 43 / 0.12);
+  --sunday: #d7322a;
+  --holiday: #d7322a;
+  --gold: #a35f00;
+  --bad: #7a3fc0;
+  --now-line: #e0342b;
+  --focus: #0a64d8;
 
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+  /* Kiểu dáng cũ còn dùng ở vài nơi */
+  --surface: var(--glass);
+  --surface-2: var(--fill);
+  --surface-hover: var(--fill-hover);
+  --border: var(--separator);
+  --border-strong: rgb(60 67 90 / 0.22);
+  --shadow-sm: 0 1px 2px rgb(30 41 70 / 0.08);
+  --shadow-md: 0 24px 64px rgb(30 41 70 / 0.22), 0 4px 12px rgb(30 41 70 / 0.08);
+  --overlay: rgb(20 24 36 / 0.28);
 
-  --radius-sm: 6px;
-  --radius: 10px;
-  --radius-lg: 16px;
-  --header-height: 56px;
-  --sidebar-width: 272px;
-  --hour-height: 48px;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI Variable', 'Segoe UI', Roboto,
+    'Helvetica Neue', sans-serif;
+  --font-display:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI Variable Display', 'Segoe UI',
+    Roboto, 'Helvetica Neue', sans-serif;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --header-height: 60px;
+  --sidebar-width: 280px;
+  --hour-height: 52px;
+  --gap: 12px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --bg: #15120f;
-    --surface: #1d1915;
-    --surface-2: #26211c;
-    --surface-hover: #2f2923;
-    --border: #3a332c;
-    --border-strong: #4d443b;
-    --text: #f3ede6;
-    --text-muted: #bdb2a6;
-    --text-lunar: #a89d92;
-    --accent: #f05252;
-    --accent-hover: #f87171;
-    --accent-contrast: #1d1915;
-    --accent-soft: #3b1f1c;
-    --sunday: #f87171;
-    --holiday: #f87171;
-    --gold: #e0a93b;
-    --gold-soft: #3a2e17;
-    --bad: #c4a1f0;
-    --now-line: #f87171;
-    --focus: #60a5fa;
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.5);
-    --overlay: rgb(0 0 0 / 0.55);
+    --bg: #07080c;
+    --wallpaper:
+      radial-gradient(55% 45% at 5% 0%, rgb(150 40 60 / 0.4), transparent 70%),
+      radial-gradient(50% 45% at 100% 5%, rgb(40 70 150 / 0.45), transparent 70%),
+      radial-gradient(55% 50% at 65% 100%, rgb(20 90 90 / 0.35), transparent 70%),
+      linear-gradient(180deg, #0b0c11 0%, #07080c 100%);
+    --glass: rgb(30 32 40 / 0.55);
+    --glass-strong: rgb(34 36 46 / 0.78);
+    --glass-border: rgb(255 255 255 / 0.1);
+    --glass-edge: rgb(0 0 0 / 0.4);
+    --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.1);
+    --glass-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 48px rgb(0 0 0 / 0.45);
+    --text: #f4f5f8;
+    --text-muted: #a9afbd;
+    --text-lunar: #9aa1b0;
+    --separator: rgb(235 240 255 / 0.12);
+    --separator-soft: rgb(235 240 255 / 0.06);
+    --fill: rgb(140 148 170 / 0.2);
+    --fill-hover: rgb(140 148 170 / 0.28);
+    --control-thumb: rgb(110 116 135 / 0.6);
+    --accent: #ff5a4f;
+    --accent-hover: #ff7a70;
+    --accent-contrast: #16080a;
+    --accent-soft: rgb(255 90 79 / 0.18);
+    --sunday: #ff6b61;
+    --holiday: #ff6b61;
+    --gold: #f0b54a;
+    --bad: #c6a4ff;
+    --now-line: #ff5a4f;
+    --focus: #5aa2ff;
+    --border-strong: rgb(235 240 255 / 0.2);
+    --shadow-md: 0 24px 64px rgb(0 0 0 / 0.6);
+    --overlay: rgb(0 0 0 / 0.45);
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #15120f;
-  --surface: #1d1915;
-  --surface-2: #26211c;
-  --surface-hover: #2f2923;
-  --border: #3a332c;
-  --border-strong: #4d443b;
-  --text: #f3ede6;
-  --text-muted: #bdb2a6;
-  --text-lunar: #a89d92;
-  --accent: #f05252;
-  --accent-hover: #f87171;
-  --accent-contrast: #1d1915;
-  --accent-soft: #3b1f1c;
-  --sunday: #f87171;
-  --holiday: #f87171;
-  --gold: #e0a93b;
-  --gold-soft: #3a2e17;
-  --bad: #c4a1f0;
-  --now-line: #f87171;
-  --focus: #60a5fa;
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.5);
-  --overlay: rgb(0 0 0 / 0.55);
+  --bg: #07080c;
+  --wallpaper:
+    radial-gradient(55% 45% at 5% 0%, rgb(150 40 60 / 0.4), transparent 70%),
+    radial-gradient(50% 45% at 100% 5%, rgb(40 70 150 / 0.45), transparent 70%),
+    radial-gradient(55% 50% at 65% 100%, rgb(20 90 90 / 0.35), transparent 70%),
+    linear-gradient(180deg, #0b0c11 0%, #07080c 100%);
+  --glass: rgb(30 32 40 / 0.55);
+  --glass-strong: rgb(34 36 46 / 0.78);
+  --glass-border: rgb(255 255 255 / 0.1);
+  --glass-edge: rgb(0 0 0 / 0.4);
+  --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.1);
+  --glass-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 48px rgb(0 0 0 / 0.45);
+  --text: #f4f5f8;
+  --text-muted: #a9afbd;
+  --text-lunar: #9aa1b0;
+  --separator: rgb(235 240 255 / 0.12);
+  --separator-soft: rgb(235 240 255 / 0.06);
+  --fill: rgb(140 148 170 / 0.2);
+  --fill-hover: rgb(140 148 170 / 0.28);
+  --control-thumb: rgb(110 116 135 / 0.6);
+  --accent: #ff5a4f;
+  --accent-hover: #ff7a70;
+  --accent-contrast: #16080a;
+  --accent-soft: rgb(255 90 79 / 0.18);
+  --sunday: #ff6b61;
+  --holiday: #ff6b61;
+  --gold: #f0b54a;
+  --bad: #c6a4ff;
+  --now-line: #ff5a4f;
+  --focus: #5aa2ff;
+  --border-strong: rgb(235 240 255 / 0.2);
+  --shadow-md: 0 24px 64px rgb(0 0 0 / 0.6);
+  --overlay: rgb(0 0 0 / 0.45);
+}
+
+/* Người dùng bật "Giảm trong suốt": dùng nền đặc, bỏ blur, vẫn đủ tương phản. */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass: #ffffff;
+    --glass-strong: #ffffff;
+    --glass-filter: none;
+    --wallpaper: #eef0f5;
+  }
+  :root[data-theme='dark'] {
+    --glass: #1b1d24;
+    --glass-strong: #22242d;
+    --wallpaper: #07080c;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --glass: #1b1d24;
+    --glass-strong: #22242d;
+    --wallpaper: #07080c;
+  }
 }
 
 body {
@@ -101,6 +189,17 @@ body {
   font-family: var(--font-sans);
   font-size: 15px;
   line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+
+/* Nền cố định phía sau lớp kính. Tách ra pseudo-element cố định để không repaint khi cuộn. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--wallpaper);
+  pointer-events: none;
 }
 
 :focus-visible {
@@ -118,6 +217,7 @@ textarea {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .visually-hidden {
@@ -132,35 +232,52 @@ button {
   border: 0;
 }
 
-/* Nút dùng chung */
+/* Lớp kính dùng chung */
+.glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+}
+
+/* Nút: dạng viên thuốc, nhấn thì lún nhẹ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   min-height: 36px;
-  padding: 0 14px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
   color: var(--text);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14.5px;
   white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 0.18s var(--ease),
+    transform 0.18s var(--ease);
 }
 
 .btn:hover {
-  background: var(--surface-hover);
+  background: var(--fill-hover);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.96);
 }
 
 .btn-primary {
   background: var(--accent);
-  border-color: var(--accent);
   color: var(--accent-contrast);
+  box-shadow: 0 6px 18px rgb(224 52 43 / 0.28);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  border-color: var(--accent-hover);
 }
 
 .btn-danger {
@@ -168,8 +285,11 @@ button {
 }
 
 .btn-ghost {
-  border-color: transparent;
   background: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--fill);
 }
 
 .btn-icon {
@@ -178,14 +298,14 @@ button {
 }
 
 .btn:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: not-allowed;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .field-label {
@@ -195,17 +315,31 @@ button {
 }
 
 .input {
-  min-height: 38px;
-  padding: 6px 10px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--fill);
   width: 100%;
+  transition:
+    background-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
+}
+
+.input:hover {
+  background: var(--fill-hover);
 }
 
 .input:focus {
-  outline: 2px solid var(--focus);
-  outline-offset: -1px;
+  outline: none;
+  background: var(--glass-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 35%, transparent);
+  border-color: var(--focus);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
 }
 
 .input[aria-invalid='true'] {
@@ -215,9 +349,148 @@ button {
 .field-error {
   color: var(--accent);
   font-size: 13px;
+  font-weight: 500;
 }
 
 .field-hint {
   color: var(--text-muted);
   font-size: 13px;
+}
+
+/* Segmented control kiểu iOS: nền xám, "viên" trắng trượt theo lựa chọn (--active, --count). */
+.segmented {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  isolation: isolate;
+}
+
+.segmented::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc((100% - 6px) / var(--count, 3));
+  border-radius: var(--radius-pill);
+  background: var(--control-thumb);
+  box-shadow:
+    0 3px 8px rgb(0 0 0 / 0.12),
+    0 1px 1px rgb(0 0 0 / 0.06);
+  transform: translateX(calc(var(--active, 0) * 100%));
+  transition: transform 0.32s var(--ease-spring);
+}
+
+.segmented > button {
+  border: 0;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s var(--ease);
+  white-space: nowrap;
+}
+
+.segmented > button[aria-checked='true'],
+.segmented > button[aria-selected='true'] {
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Công tắc kiểu iOS (dùng cho input type=checkbox role=switch). */
+.switch {
+  appearance: none;
+  position: relative;
+  flex: 0 0 auto;
+  width: 51px;
+  height: 31px;
+  margin: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill-hover);
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease);
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 3px 8px rgb(0 0 0 / 0.15),
+    0 1px 1px rgb(0 0 0 / 0.1);
+  transition: transform 0.32s var(--ease-spring);
+}
+
+.switch:checked {
+  background: var(--accent);
+}
+
+.switch:checked::after {
+  transform: translateX(20px);
+}
+
+/* Ô chọn tròn kiểu iOS, tô bằng --check-color (mặc định màu nhấn). */
+.check {
+  appearance: none;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid var(--check-color, var(--accent));
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.18s var(--ease),
+    transform 0.2s var(--ease-spring);
+}
+
+.check::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  margin-top: -2px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.check:checked {
+  background: var(--check-color, var(--accent));
+}
+
+.check:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.check:active {
+  transform: scale(0.88);
+}
+
+input[type='radio'],
+input[type='checkbox']:not(.check):not(.switch) {
+  accent-color: var(--accent);
 }

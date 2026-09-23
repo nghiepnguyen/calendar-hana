@@ -11,17 +11,26 @@
   line-height: 1.3;
   color: var(--text);
   overflow: hidden;
+  transition:
+    background-color 0.15s var(--ease),
+    transform 0.15s var(--ease);
 }
 
+.chip:active {
+  transform: scale(0.98);
+}
+
+/* Kiểu sự kiện của Lịch iOS: nền màu danh mục nhạt, vạch màu bên trái. */
 .inline {
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--event-color) 14%, var(--surface));
-  border-left: 3px solid var(--event-color);
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--event-color) 16%, transparent);
+  box-shadow: inset 3px 0 0 var(--event-color);
+  padding-left: 9px;
 }
 
 .inline:hover {
-  background: color-mix(in srgb, var(--event-color) 24%, var(--surface));
+  background: color-mix(in srgb, var(--event-color) 26%, transparent);
 }
 
 .block {
@@ -29,15 +38,16 @@
   flex-direction: column;
   align-items: stretch;
   gap: 1px;
-  padding: 3px 6px;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--event-color) 18%, var(--surface));
-  border-left: 3px solid var(--event-color);
-  box-shadow: 0 0 0 1px var(--surface);
+  padding: 4px 8px 4px 10px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--event-color) 20%, var(--glass-strong));
+  box-shadow:
+    inset 3px 0 0 var(--event-color),
+    0 1px 2px rgb(0 0 0 / 0.06);
 }
 
 .block:hover {
-  background: color-mix(in srgb, var(--event-color) 28%, var(--surface));
+  background: color-mix(in srgb, var(--event-color) 30%, var(--glass-strong));
   z-index: 2;
 }
 
@@ -56,35 +66,39 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   flex: 0 0 auto;
+  padding-right: 28px;
 }
 
 .time,
 .range {
-  color: var(--text-muted);
+  color: color-mix(in srgb, var(--event-color) 55%, var(--text));
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
   flex: 0 0 auto;
 }
 
 .icons {
-  color: var(--text-muted);
+  display: inline-flex;
+  gap: 2px;
+  color: color-mix(in srgb, var(--event-color) 55%, var(--text));
   flex: 0 0 auto;
-  font-size: 11px;
+  align-self: center;
 }
 
 .block .icons {
   position: absolute;
-  top: 3px;
-  right: 5px;
+  top: 5px;
+  right: 6px;
 }
 
 .compact {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
   padding: 0;
   border-radius: 50%;
-  border: 0;
   background: var(--event-color);
+  box-shadow: none;
 }
 
 .compact:hover {

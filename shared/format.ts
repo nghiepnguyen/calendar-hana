@@ -56,22 +56,34 @@ function lunarMonthLabel(lunar: LunarDate): string {
 }
 
 /**
- * Tiêu đề xem Tháng.
- * Ví dụ: "Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ".
- * Khi tháng dương nằm vắt qua hai năm âm: "Tháng 2/2026 — Tháng 12 năm Ất Tỵ – tháng 1 năm Bính Ngọ âm lịch".
+ * Tiêu đề xem Tháng gồm phần dương lịch và phần âm lịch.
+ * Ví dụ: { solar: "Tháng 9/2026", lunar: "Tháng 7-8 âm lịch, năm Bính Ngọ" }.
+ * Tháng dương vắt qua hai năm âm: lunar = "Tháng 12 năm Ất Tỵ - tháng 1 năm Bính Ngọ âm lịch".
  */
-export function formatMonthTitle(month: number, year: number): string {
+export function formatMonthTitleParts(
+  month: number,
+  year: number,
+): { solar: string; lunar: string } {
   const first = solarToLunar(1, month, year)
   const last = solarToLunar(daysInSolarMonth(month, year), month, year)
-  const solarPart = `Tháng ${month}/${year}`
+  const solar = `Tháng ${month}/${year}`
   if (first.year !== last.year) {
-    return `${solarPart} — Tháng ${lunarMonthLabel(first)} năm ${yearCanChi(first.year).name} – tháng ${lunarMonthLabel(last)} năm ${yearCanChi(last.year).name} âm lịch`
+    return {
+      solar,
+      lunar: `Tháng ${lunarMonthLabel(first)} năm ${yearCanChi(first.year).name} - tháng ${lunarMonthLabel(last)} năm ${yearCanChi(last.year).name} âm lịch`,
+    }
   }
   const sameMonth = first.month === last.month && first.isLeap === last.isLeap
   const range = sameMonth
     ? lunarMonthLabel(first)
-    : `${lunarMonthLabel(first)}–${lunarMonthLabel(last)}`
-  return `${solarPart} — Tháng ${range} âm lịch, năm ${yearCanChi(first.year).name}`
+    : `${lunarMonthLabel(first)}-${lunarMonthLabel(last)}`
+  return { solar, lunar: `Tháng ${range} âm lịch, năm ${yearCanChi(first.year).name}` }
+}
+
+/** Tiêu đề xem Tháng một dòng: "Tháng 9/2026. Tháng 7-8 âm lịch, năm Bính Ngọ". */
+export function formatMonthTitle(month: number, year: number): string {
+  const { solar, lunar } = formatMonthTitleParts(month, year)
+  return `${solar}. ${lunar}`
 }
 
 /** Giờ 'HH:mm' → "9:00" / "14:30". */

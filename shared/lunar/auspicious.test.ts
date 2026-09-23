@@ -17,9 +17,9 @@ describe('getAuspiciousHours', () => {
 
   it('ghi khung giờ đúng', () => {
     const [ty] = getAuspiciousHours(0)
-    expect(ty).toMatchObject({ name: 'Tý', startHour: 23, endHour: 1, label: 'Tý (23h–1h)' })
+    expect(ty).toMatchObject({ name: 'Tý', startHour: 23, endHour: 1, label: 'Tý (23h-1h)' })
     const dau = getAuspiciousHours(0).find((h) => h.name === 'Dậu')
-    expect(dau?.label).toBe('Dậu (17h–19h)')
+    expect(dau?.label).toBe('Dậu (17h-19h)')
   })
 })
 

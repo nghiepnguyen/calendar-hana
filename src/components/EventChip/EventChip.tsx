@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { MoonStars, Repeat } from '@phosphor-icons/react'
 import { formatTime } from '@shared/format'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import styles from './EventChip.module.css'
@@ -26,7 +27,7 @@ export function EventChip({
   const time = !event.allDay && event.startTime ? formatTime(event.startTime) : null
   const timeRange =
     !event.allDay && event.startTime && event.endTime
-      ? `${formatTime(event.startTime)}–${formatTime(event.endTime)}`
+      ? `${formatTime(event.startTime)}-${formatTime(event.endTime)}`
       : time
   const isLunar = event.calendarType === 'lunar' || event.recurrence?.calendar === 'lunar'
   const label = [event.title, timeRange ?? 'Cả ngày', isLunar ? 'âm lịch' : null]
@@ -53,8 +54,8 @@ export function EventChip({
             <span className={styles.range}>{timeRange}</span>
           ) : null}
           <span className={styles.icons} aria-hidden="true">
-            {isLunar ? '☾' : null}
-            {occurrence.isRecurring ? '↻' : null}
+            {isLunar ? <MoonStars size={12} weight="bold" /> : null}
+            {occurrence.isRecurring ? <Repeat size={12} weight="bold" /> : null}
           </span>
         </>
       )}

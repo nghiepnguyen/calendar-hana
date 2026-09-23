@@ -51,7 +51,7 @@ describe('DayView', () => {
       />,
     )
     expect(screen.getByText('Cả ngày')).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: /Họp team, 9:00–10:00/ }))
+    await userEvent.click(screen.getByRole('button', { name: /Họp team, 9:00-10:00/ }))
     expect(onOpenEvent).toHaveBeenCalledWith(
       expect.objectContaining({ event: expect.objectContaining({ title: 'Họp team' }) }),
     )

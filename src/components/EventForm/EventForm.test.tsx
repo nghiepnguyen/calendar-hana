@@ -49,7 +49,7 @@ describe('EventForm', () => {
     await userEvent.selectOptions(screen.getByLabelText('Danh mục'), 'Giỗ/Lễ')
     await userEvent.selectOptions(screen.getByLabelText('Kiểu lặp'), 'Hằng năm (âm lịch)')
     expect(screen.getByText('Lặp hằng năm vào ngày 12/3 âm lịch')).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: '+ Thêm nhắc hẹn' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Thêm nhắc hẹn' }))
     await userEvent.selectOptions(screen.getByLabelText('Thời điểm nhắc 1'), 'Trước 1 ngày (8:00)')
     // Chưa đăng nhập thì không chọn được email.
     expect(screen.getByRole('option', { name: 'Email (cần đăng nhập)' })).toBeDisabled()

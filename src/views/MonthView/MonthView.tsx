@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Plus } from '@phosphor-icons/react'
 import { formatAccessibleDate, formatLunarShort, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo, parseSolarDate } from '@shared/lunar'
 import { EventChip } from '../../components/EventChip/EventChip'
@@ -24,7 +25,7 @@ export function MonthView({
   const weekdayOrder = Array.from({ length: 7 }, (_, i) => (i + settings.weekStartsOn) % 7)
 
   return (
-    <div className={styles.view}>
+    <div className={`glass ${styles.view}`}>
       <div className={styles.weekdays} aria-hidden="true">
         {weekdayOrder.map((d) => (
           <div key={d} className={d === 0 ? styles.red : undefined}>
@@ -104,7 +105,7 @@ export function MonthView({
                 }}
                 aria-label={`Tạo sự kiện ngày ${formatAccessibleDate(day)}`}
               >
-                +
+                <Plus size={14} weight="bold" aria-hidden="true" />
               </button>
             </div>
           )

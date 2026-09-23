@@ -19,16 +19,14 @@ export function DayCard({ date, isToday, showHolidays, showAuspicious }: DayCard
   const isRed = isSunday || holidays.some((h) => h.isPublicHoliday)
 
   return (
-    <section className={styles.card} aria-label="Thông tin ngày">
+    <section className={`glass ${styles.card}`} aria-label="Thông tin ngày">
       <div className={styles.solar}>
-        <div className={styles.monthLine}>
-          Tháng {solar.month} năm {solar.year}
-          {isToday ? <span className={styles.todayBadge}>Hôm nay</span> : null}
-        </div>
+        <div className={styles.weekday}>{WEEKDAY_NAMES[info.weekday]}</div>
         <div className={`${styles.bigDay} ${isRed ? styles.red : ''}`}>{solar.day}</div>
-        <div className={`${styles.weekday} ${isRed ? styles.red : ''}`}>
-          {WEEKDAY_NAMES[info.weekday]}
+        <div className={styles.monthLine}>
+          Tháng {solar.month}, {solar.year}
         </div>
+        {isToday ? <span className={styles.todayBadge}>Hôm nay</span> : null}
       </div>
 
       <div className={styles.lunar}>
@@ -89,7 +87,7 @@ export function DayCard({ date, isToday, showHolidays, showAuspicious }: DayCard
                 <li key={h.chi}>
                   <strong>{h.name}</strong>{' '}
                   <span className={styles.muted}>
-                    {h.startHour}h–{h.endHour}h
+                    {h.startHour}h-{h.endHour}h
                   </span>
                 </li>
               ))}

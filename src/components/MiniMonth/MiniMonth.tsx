@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 import { formatAccessibleDate, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo, parseSolarDate } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
@@ -37,7 +38,7 @@ export function MiniMonth({ selected, today, weekStartsOn, onSelect }: MiniMonth
           onClick={() => setCursor(addMonths(cursor, -1))}
           aria-label="Tháng trước"
         >
-          ‹
+          <CaretLeft size={16} weight="bold" aria-hidden="true" />
         </button>
         <button
           type="button"
@@ -45,7 +46,7 @@ export function MiniMonth({ selected, today, weekStartsOn, onSelect }: MiniMonth
           onClick={() => setCursor(addMonths(cursor, 1))}
           aria-label="Tháng sau"
         >
-          ›
+          <CaretRight size={16} weight="bold" aria-hidden="true" />
         </button>
       </div>
       <div className={styles.grid}>

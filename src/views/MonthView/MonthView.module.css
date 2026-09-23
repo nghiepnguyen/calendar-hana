@@ -3,19 +3,17 @@
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  background: var(--surface-2);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--separator);
   font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--text-muted);
   text-align: center;
 }
@@ -38,9 +36,10 @@
   gap: 2px;
   padding: 4px;
   min-width: 0;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--separator-soft);
+  border-bottom: 1px solid var(--separator-soft);
   cursor: pointer;
+  transition: background-color 0.15s var(--ease);
 }
 
 .cell:nth-child(7n) {
@@ -48,11 +47,11 @@
 }
 
 .cell:hover {
-  background: var(--surface-hover);
+  background: var(--fill);
 }
 
 .outside {
-  background: color-mix(in srgb, var(--surface-2) 60%, transparent);
+  background: color-mix(in srgb, var(--fill) 45%, transparent);
 }
 
 .outside .solarDay,
@@ -75,10 +74,16 @@
   border: 0;
   border-radius: 50%;
   background: transparent;
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1;
+  transition: background-color 0.15s var(--ease);
+}
+
+.solarDay:hover {
+  background: var(--fill-hover);
 }
 
 .today .solarDay {
@@ -139,22 +144,28 @@
 
 .add {
   position: absolute;
-  right: 4px;
-  bottom: 4px;
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--border-strong);
+  right: 5px;
+  bottom: 5px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
   border-radius: 50%;
-  background: var(--surface);
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow-sm);
+  color: var(--accent);
   opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 0.15s var(--ease),
+    transform 0.2s var(--ease-spring);
 }
 
 .cell:hover .add,
 .add:focus-visible {
   opacity: 1;
+  transform: none;
 }
 
 .red {

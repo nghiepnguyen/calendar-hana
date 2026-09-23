@@ -1,3 +1,4 @@
+import { Plus, X } from '@phosphor-icons/react'
 import { MAX_REMINDERS, type Reminder } from '@shared/types'
 import {
   ALL_DAY_PRESETS,
@@ -131,7 +132,7 @@ export function ReminderField({
                 aria-label={`Xóa nhắc hẹn ${n}`}
                 onClick={() => onChange(reminders.filter((_, i) => i !== index))}
               >
-                ✕
+                <X size={16} weight="bold" aria-hidden="true" />
               </button>
             </li>
           )
@@ -139,7 +140,7 @@ export function ReminderField({
       </ul>
       {reminders.length < MAX_REMINDERS ? (
         <button type="button" className={`btn ${styles.addReminder}`} onClick={add}>
-          + Thêm nhắc hẹn
+          <Plus size={16} weight="bold" aria-hidden="true" /> Thêm nhắc hẹn
         </button>
       ) : (
         <p className="field-hint">Tối đa {MAX_REMINDERS} nhắc hẹn.</p>

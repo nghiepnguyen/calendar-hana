@@ -42,12 +42,12 @@ describe('App', () => {
   it('chuyển Ngày / Tuần / Tháng và đi trước / sau', async () => {
     renderApp()
     await userEvent.click(await screen.findByRole('radio', { name: 'Tuần' }))
-    expect(screen.getByRole('heading', { name: '21–27/9/2026' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '21-27/9/2026' })).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Tuần sau' }))
-    expect(screen.getByRole('heading', { name: '28/9 – 4/10/2026' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '28/9 - 4/10/2026' })).toBeInTheDocument()
     await userEvent.click(screen.getByRole('radio', { name: 'Tháng' }))
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ',
+      'Tháng 9/2026Tháng 7-8 âm lịch, năm Bính Ngọ',
     )
     await userEvent.click(screen.getByRole('button', { name: 'Hôm nay' }))
     await userEvent.keyboard('d')
@@ -82,7 +82,7 @@ describe('App', () => {
     await userEvent.click(within(form).getByRole('button', { name: 'Lưu' }))
 
     // Hiện trong xem Ngày.
-    const chip = await screen.findByRole('button', { name: /^Họp team, 9:00–10:00/ })
+    const chip = await screen.findByRole('button', { name: /^Họp team, 9:00-10:00/ })
     await userEvent.click(chip)
     const detail = await screen.findByRole('dialog', { name: 'Họp team' })
     expect(within(detail).getByText('Lặp hằng tuần vào Thứ Hai')).toBeInTheDocument()

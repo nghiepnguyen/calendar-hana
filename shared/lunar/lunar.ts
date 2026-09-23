@@ -101,7 +101,7 @@ export function getLeapMonthOffset(a11: number, timeZone = TIME_ZONE_OFFSET): nu
 
 function assertSupportedYear(year: number): void {
   if (year < MIN_YEAR - 1 || year > MAX_YEAR + 1) {
-    throw new RangeError(`Năm ${year} nằm ngoài khoảng hỗ trợ ${MIN_YEAR}–${MAX_YEAR}`)
+    throw new RangeError(`Năm ${year} nằm ngoài khoảng hỗ trợ ${MIN_YEAR}-${MAX_YEAR}`)
   }
 }
 

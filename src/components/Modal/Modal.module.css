@@ -6,17 +6,20 @@
   place-items: center;
   padding: 16px;
   background: var(--overlay);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: fade-in 0.22s var(--ease);
 }
 
+/* Sheet kính: nền đặc hơn panel thường để chữ trong form luôn dễ đọc. */
 .dialog {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-height: calc(100dvh - 32px);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: 28px;
+  background: var(--glass-strong);
+  animation: sheet-in 0.34s var(--ease);
 }
 
 .md {
@@ -31,22 +34,30 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 14px 10px 20px;
-  border-bottom: 1px solid var(--border);
+  padding: 16px 14px 10px 22px;
 }
 
 .title {
   flex: 1 1 auto;
   margin: 0;
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 19px;
   font-weight: 700;
+  letter-spacing: -0.02em;
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
+.head :global(.btn-icon) {
+  background: var(--fill);
+  width: 32px;
+  min-height: 32px;
+  color: var(--text-muted);
+}
+
 .body {
   flex: 1 1 auto;
-  padding: 16px 20px;
+  padding: 6px 22px 18px;
   overflow-y: auto;
 }
 
@@ -55,8 +66,27 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
-  padding: 12px 20px 16px;
-  border-top: 1px solid var(--border);
+  padding: 12px 18px 18px;
+  border-top: 1px solid var(--separator);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
 }
 
 @media (max-width: 640px) {
@@ -65,16 +95,34 @@
     place-items: end stretch;
   }
 
+  .dialog {
+    border-radius: 28px 28px 0 0;
+    border-bottom: 0;
+    animation: sheet-up 0.36s var(--ease);
+  }
+
+  /* Thanh kéo kiểu iOS. */
+  .dialog::before {
+    content: '';
+    align-self: center;
+    width: 38px;
+    height: 5px;
+    margin-top: 8px;
+    border-radius: var(--radius-pill);
+    background: var(--border-strong);
+  }
+
   .md {
     max-width: none;
-    height: 100dvh;
-    max-height: 100dvh;
-    border-radius: 0;
-    border: 0;
+    height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px);
   }
 
   .sm {
     max-width: none;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .footer {
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
   }
 }

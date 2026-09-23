@@ -51,7 +51,10 @@ export function TimeGrid({ days, occurrences, colorOf, onOpenEvent, onCreate }: 
   }
 
   return (
-    <div className={styles.wrapper} style={{ '--day-count': days.length } as CSSProperties}>
+    <div
+      className={`glass ${styles.wrapper}`}
+      style={{ '--day-count': days.length } as CSSProperties}
+    >
       {hasAllDay ? (
         <div className={styles.allDayRow}>
           <div className={styles.gutterLabel}>Cả ngày</div>

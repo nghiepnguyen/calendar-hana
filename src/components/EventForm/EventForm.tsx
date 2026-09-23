@@ -1,4 +1,4 @@
-import { useId, useState, type FormEvent } from 'react'
+import { useId, useState, type CSSProperties, type FormEvent } from 'react'
 import { formatLunar, formatSolar } from '@shared/format'
 import { parseSolarDate, solarToLunar } from '@shared/lunar'
 import { EVENT_NOTE_MAX, EVENT_TITLE_MAX, type Category } from '@shared/types'
@@ -101,14 +101,20 @@ export function EventForm({
     >
       <form id={`${id}-form`} data-form={id} className={styles.form} onSubmit={submit} noValidate>
         {!isSingle ? (
-          <div className={styles.calendarSwitch} role="radiogroup" aria-label="Loại lịch">
+          <div
+            className={`segmented ${styles.calendarSwitch}`}
+            role="radiogroup"
+            aria-label="Loại lịch"
+            style={
+              { '--active': draft.calendarType === 'solar' ? 0 : 1, '--count': 2 } as CSSProperties
+            }
+          >
             {(['solar', 'lunar'] as const).map((type) => (
               <button
                 key={type}
                 type="button"
                 role="radio"
                 aria-checked={draft.calendarType === type}
-                className={`${styles.switchButton} ${draft.calendarType === type ? styles.switchOn : ''}`}
                 onClick={() => setDraft((d) => switchCalendar(d, type))}
               >
                 {type === 'solar' ? 'Dương lịch' : 'Âm lịch'}
@@ -174,6 +180,8 @@ export function EventForm({
           <label className={styles.checkbox}>
             <input
               type="checkbox"
+              role="switch"
+              className="switch"
               checked={draft.allDay}
               onChange={(e) => update({ allDay: e.target.checked })}
             />
