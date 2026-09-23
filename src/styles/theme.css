@@ -129,7 +129,7 @@
     --accent-hover: #ff7a70;
     --accent-contrast: #16080a;
     --accent-soft: rgb(255 90 79 / 0.18);
-    --accent-text: #ff7a70;
+    --accent-text: #ff8f86;
     --sunday: #ff6b61;
     --holiday: #ff6b61;
     --gold: #f0b54a;
@@ -172,7 +172,7 @@
   --accent-hover: #ff7a70;
   --accent-contrast: #16080a;
   --accent-soft: rgb(255 90 79 / 0.18);
-  --accent-text: #ff7a70;
+  --accent-text: #ff8f86;
   --sunday: #ff6b61;
   --holiday: #ff6b61;
   --gold: #f0b54a;
@@ -312,7 +312,7 @@ button {
 }
 
 .btn-danger {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .btn-ghost {

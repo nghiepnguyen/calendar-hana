@@ -64,6 +64,28 @@
   background: var(--surface-hover);
 }
 
+.listLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius);
+  background: var(--fill);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s var(--ease);
+}
+
+.listLink:hover {
+  background: var(--fill-hover);
+}
+
+.listLink svg {
+  color: var(--accent);
+}
+
 .overlay {
   display: none;
 }

@@ -156,3 +156,84 @@ test('service worker không trả app shell cho trang đăng nhập của Fireba
   const response = await app.goto('/__/auth/handler')
   expect(response?.fromServiceWorker()).toBe(false)
 })
+
+async function openEventList(page: Page) {
+  // Màn hình nhỏ: mục nằm trong Menu.
+  const menu = page.getByRole('button', { name: 'Mở menu' })
+  if (await menu.isVisible()) await menu.click()
+  await page.getByRole('link', { name: 'Danh sách sự kiện' }).click()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Danh sách sự kiện')
+}
+
+async function createWeeklyMeeting(page: Page) {
+  await page.goto('/day/2026-09-21')
+  const form = await openCreateForm(page)
+  await form.getByLabel('Tiêu đề').fill('Họp giao ban')
+  const allDay = form.getByRole('switch', { name: 'Cả ngày' })
+  if ((await allDay.getAttribute('aria-checked')) === 'true') await allDay.click()
+  await form.getByLabel('Bắt đầu').fill('09:00')
+  await form.getByLabel('Kết thúc').fill('10:00')
+  await form.getByLabel('Danh mục').selectOption({ label: 'Công việc' })
+  await form.getByLabel('Kiểu lặp').selectOption({ label: 'Hằng tuần' })
+  await save(page)
+}
+
+test('US-L1/L3/L6: danh sách có ngày dương và âm, tìm không dấu', async ({ app }) => {
+  await app.goto('/day/2026-09-23')
+  const form = await openCreateForm(app)
+  await form.getByLabel('Tiêu đề').fill('Giỗ ông nội')
+  await form.getByRole('radio', { name: 'Âm lịch' }).click()
+  await form.getByLabel('Kiểu lặp').selectOption({ label: 'Hằng năm (âm lịch)' })
+  await save(app)
+  await createWeeklyMeeting(app)
+
+  await openEventList(app)
+  await expect(
+    app.getByRole('heading', { name: /Thứ Tư, 23\/9\/2026.*13\/8 âm lịch/ }),
+  ).toBeVisible()
+  await expect(app.getByRole('button', { name: /^Giỗ ông nội/ }).first()).toBeVisible()
+
+  await app.getByLabel('Tìm sự kiện trong danh sách').fill('gio')
+  await expect(app.getByText(/^\d+ kết quả$/)).toBeVisible()
+  await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(0)
+})
+
+test('US-L5/L7: lọc không đổi lịch, xoá nhiều lần của sự kiện lặp', async ({ app }) => {
+  await createWeeklyMeeting(app)
+  await openEventList(app)
+
+  // Tắt danh mục trên trang Danh sách không ẩn sự kiện ở lịch.
+  await app.getByRole('button', { name: 'Công việc', pressed: true }).click()
+  await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(0)
+  await app.getByRole('button', { name: 'Công việc', pressed: false }).click()
+
+  await app.getByRole('button', { name: 'Chọn', exact: true }).click()
+  await app.getByRole('checkbox', { name: /^Họp giao ban, .*Thứ Hai, 28 tháng 9 / }).check()
+  await app.getByRole('checkbox', { name: /^Họp giao ban, .*Thứ Hai, 5 tháng 10 / }).check()
+  const toolbar = app.getByRole('toolbar', { name: 'Thao tác đã chọn' })
+  await expect(toolbar.getByText('Đã chọn 2')).toBeVisible()
+  await toolbar.getByRole('button', { name: 'Xoá' }).click()
+  await app
+    .getByRole('dialog', { name: 'Xoá 2 sự kiện?' })
+    .getByRole('button', { name: 'Xoá' })
+    .click()
+  await expect(app.getByText('Đã xoá 2 sự kiện')).toBeVisible()
+
+  await app.getByRole('link', { name: 'Quay lại lịch' }).click()
+  await app.goto('/day/2026-09-28')
+  await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(0)
+  await app.goto('/day/2026-10-12')
+  await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(1)
+})
+
+test('US-L2: quay lại trang Danh sách thì về đúng chỗ đang xem', async ({ app }) => {
+  await createWeeklyMeeting(app)
+  await openEventList(app)
+  const target = app.getByRole('heading', { name: /^Thứ Hai, 1\/2\/2027/ })
+  await target.scrollIntoViewIfNeeded()
+  await app.waitForTimeout(500)
+  await app.getByRole('link', { name: 'Quay lại lịch' }).click()
+  await expect(app).toHaveURL(/\/day\//)
+  await openEventList(app)
+  await expect(target).toBeInViewport()
+})

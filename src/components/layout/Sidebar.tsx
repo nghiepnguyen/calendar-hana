@@ -1,5 +1,5 @@
 import { useEffect, type CSSProperties } from 'react'
-import { CaretRight, GearSix, Plus, UserCircle, X } from '@phosphor-icons/react'
+import { CaretRight, GearSix, ListBullets, Plus, UserCircle, X } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import type { Settings, SolarDateString } from '@shared/types'
 import { useAuth } from '../../auth/authContext'
@@ -90,7 +90,11 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
         <section className={styles.section}>
           <div className={styles.sectionHead}>
             <h2>Danh mục</h2>
-            <Link to="/settings#categories" className={styles.manage}>
+            <Link
+              to="/settings#categories"
+              className={styles.manage}
+              onClick={() => setOpen(false)}
+            >
               Quản lý
             </Link>
           </div>
@@ -112,11 +116,25 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
           </ul>
         </section>
 
+        {compact ? null : (
+          <Link to="/events" className={styles.listLink} onClick={() => setOpen(false)}>
+            <ListBullets size={20} weight="bold" aria-hidden="true" />
+            Danh sách sự kiện
+          </Link>
+        )}
+
         {compact ? (
           <ul className={styles.links}>
+            <li>
+              <Link to="/events" className={styles.link} onClick={() => setOpen(false)}>
+                <ListBullets size={28} aria-hidden="true" className={styles.linkIcon} />
+                <span className={styles.linkText}>Danh sách sự kiện</span>
+                <CaretRight size={16} weight="bold" aria-hidden="true" className={styles.chevron} />
+              </Link>
+            </li>
             {user || authAvailable ? (
               <li>
-                <Link to="/settings#account" className={styles.link}>
+                <Link to="/settings#account" className={styles.link} onClick={() => setOpen(false)}>
                   {user?.photoURL ? (
                     <img
                       src={user.photoURL}
@@ -145,7 +163,7 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
               </li>
             ) : null}
             <li>
-              <Link to="/settings" className={styles.link}>
+              <Link to="/settings" className={styles.link} onClick={() => setOpen(false)}>
                 <GearSix size={28} aria-hidden="true" className={styles.linkIcon} />
                 <span className={styles.linkText}>Cài đặt</span>
                 <CaretRight size={16} weight="bold" aria-hidden="true" className={styles.chevron} />
