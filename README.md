@@ -61,7 +61,7 @@ Copy từ `functions/.env.example`.
 | Biến | Ý nghĩa |
 |---|---|
 | `EMAIL_FROM` | Địa chỉ gửi email, ví dụ `Lịch Hana <nhac-hen@ten-mien.vn>`. Tên miền phải được xác minh trong Resend |
-| `APP_URL` | Địa chỉ app, dùng cho link trong email. Mặc định `https://calendar-hana.web.app` |
+| `APP_URL` | Địa chỉ app, dùng cho link trong email. Mặc định `https://lich.thanhnghiep.top` |
 
 API key của Resend là bí mật, **không** để trong file hay trong code. Lưu vào Secret Manager:
 
