@@ -13,6 +13,8 @@
 
 ### Code dùng chung (frontend + Cloud Functions)
 
+- `shared/lunar/julian.ts` - Số ngày Julius, cộng/trừ ngày, thứ trong tuần, parse chuỗi `YYYY-MM-DD` (không phụ thuộc múi giờ máy).
+- `shared/lunar/julian.test.ts` - Unit test cho `julian.ts`.
 - `shared/lunar/lunar.ts` - Chuyển đổi dương ↔ âm lịch (thuật toán Hồ Ngọc Đức, UTC+7), tháng nhuận, số ngày của tháng âm.
 - `shared/lunar/lunar.test.ts` - Unit test đối chiếu với lịch chuẩn.
 - `shared/lunar/canChi.ts` - Can Chi của ngày, tháng, năm.
@@ -24,6 +26,7 @@
 - `shared/lunar/holidays.ts` - Danh sách ngày lễ dương và âm, hàm lấy ngày lễ của một ngày.
 - `shared/lunar/holidays.test.ts` - Unit test cho `holidays.ts`.
 - `shared/lunar/index.ts` - Export chung, hàm `getDayInfo(date)` gom mọi thông tin của một ngày.
+- `shared/lunar/index.test.ts` - Unit test cho `getDayInfo`.
 - `shared/types.ts` - Kiểu `CalendarEvent`, `Category`, `Reminder`, `Settings`, `LunarDate`.
 - `shared/recurrence/recurrence.ts` - Tính các lần diễn ra của sự kiện trong một khoảng ngày (dương + âm, ngoại lệ).
 - `shared/recurrence/recurrence.test.ts` - Unit test cho mọi quy tắc lặp và trường hợp đặc biệt.
@@ -141,17 +144,17 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 1.9 Viết `shared/types.ts` theo mô hình dữ liệu trong PRD mục 7 (`CalendarEvent`, `LunarDate`, `Category`, `Reminder`, `Settings`).
   - [x] 1.10 Tạo `.env.example` với các biến `VITE_FIREBASE_*`.
 
-- [ ] 2.0 Xây thư viện âm lịch (chuyển đổi dương ↔ âm UTC+7, tháng nhuận, Can Chi, tiết khí, ngày/giờ hoàng đạo, ngày kỵ, danh sách ngày lễ) kèm unit test đối chiếu lịch chuẩn
-  - [ ] 2.1 Trong `shared/lunar/lunar.ts`, viết các hàm nền của thuật toán Hồ Ngọc Đức: `jdFromDate`, `jdToDate`, `getNewMoonDay`, `getSunLongitude`, `getLunarMonth11`, `getLeapMonthOffset` (tham số múi giờ = 7).
-  - [ ] 2.2 Viết `solarToLunar(dd, mm, yyyy): LunarDate` và `lunarToSolar(lunarDay, lunarMonth, lunarYear, isLeap)`. Hàm `lunarToSolar` trả `null` nếu ngày âm không tồn tại (ví dụ tháng nhuận không có trong năm đó).
-  - [ ] 2.3 Viết `getLunarMonthLength(month, year, isLeap)` (29 hoặc 30) và `getLeapMonth(year)` (trả số tháng nhuận hoặc `null`).
-  - [ ] 2.4 Viết test cho `lunar.ts`: ngày Tết các năm 2020–2030, các năm có tháng nhuận 2020 (4 nhuận), 2023 (2 nhuận), 2025 (6 nhuận), 2028 (5 nhuận), ngày biên 1900 và 2100, và kiểm tra chuyển đổi 2 chiều cho mọi ngày trong 1900–2100 (dương → âm → dương phải ra ngày ban đầu).
-  - [ ] 2.5 Viết `shared/lunar/canChi.ts`: Can Chi của năm, tháng (theo tháng âm và Can năm), ngày (từ số ngày Julius), kèm test với các ngày đã biết.
-  - [ ] 2.6 Viết `shared/lunar/solarTerms.ts`: xác định ngày bắt đầu của 24 tiết khí (Lập Xuân, Vũ Thủy...), kèm test với ngày tiết khí năm 2026.
-  - [ ] 2.7 Viết `shared/lunar/auspicious.ts`: ngày hoàng đạo/hắc đạo (theo tháng âm và Chi của ngày), 6 giờ hoàng đạo (theo Chi của ngày, kèm khung giờ như "Tý 23h–1h"), ngày Tam Nương (3, 7, 13, 18, 22, 27 âm) và Nguyệt Kỵ (5, 14, 23 âm). Ghi rõ nguồn tham chiếu trong comment đầu file (xem PRD mục 9, câu 1). Viết test.
-  - [ ] 2.8 Viết `shared/lunar/holidays.ts`: danh sách ngày lễ dương và âm theo PRD mục 17, hàm `getHolidays(solarDate)`. Giao thừa phải tính là ngày cuối tháng Chạp (29 hoặc 30). Viết test (ví dụ Tết 2026 là 17/2/2026).
-  - [ ] 2.9 Viết `shared/lunar/index.ts` với hàm `getDayInfo(date)` trả về một object gom: ngày âm, Can Chi, hoàng đạo, giờ tốt, ngày kỵ, tiết khí, ngày lễ. Có cache theo ngày để không tính lại.
-  - [ ] 2.10 Viết `shared/format.ts`: tên thứ tiếng Việt, format ngày dương, ngày âm ("12/3 âm lịch", "10/4 nhuận"), tiêu đề tháng ("Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ"). Viết test.
+- [x] 2.0 Xây thư viện âm lịch (chuyển đổi dương ↔ âm UTC+7, tháng nhuận, Can Chi, tiết khí, ngày/giờ hoàng đạo, ngày kỵ, danh sách ngày lễ) kèm unit test đối chiếu lịch chuẩn
+  - [x] 2.1 Trong `shared/lunar/lunar.ts`, viết các hàm nền của thuật toán Hồ Ngọc Đức: `jdFromDate`, `jdToDate`, `getNewMoonDay`, `getSunLongitude`, `getLunarMonth11`, `getLeapMonthOffset` (tham số múi giờ = 7).
+  - [x] 2.2 Viết `solarToLunar(dd, mm, yyyy): LunarDate` và `lunarToSolar(lunarDay, lunarMonth, lunarYear, isLeap)`. Hàm `lunarToSolar` trả `null` nếu ngày âm không tồn tại (ví dụ tháng nhuận không có trong năm đó).
+  - [x] 2.3 Viết `getLunarMonthLength(month, year, isLeap)` (29 hoặc 30) và `getLeapMonth(year)` (trả số tháng nhuận hoặc `null`).
+  - [x] 2.4 Viết test cho `lunar.ts`: ngày Tết các năm 2020–2030, các năm có tháng nhuận 2020 (4 nhuận), 2023 (2 nhuận), 2025 (6 nhuận), 2028 (5 nhuận), ngày biên 1900 và 2100, và kiểm tra chuyển đổi 2 chiều cho mọi ngày trong 1900–2100 (dương → âm → dương phải ra ngày ban đầu).
+  - [x] 2.5 Viết `shared/lunar/canChi.ts`: Can Chi của năm, tháng (theo tháng âm và Can năm), ngày (từ số ngày Julius), kèm test với các ngày đã biết.
+  - [x] 2.6 Viết `shared/lunar/solarTerms.ts`: xác định ngày bắt đầu của 24 tiết khí (Lập Xuân, Vũ Thủy...), kèm test với ngày tiết khí năm 2026.
+  - [x] 2.7 Viết `shared/lunar/auspicious.ts`: ngày hoàng đạo/hắc đạo (theo tháng âm và Chi của ngày), 6 giờ hoàng đạo (theo Chi của ngày, kèm khung giờ như "Tý 23h–1h"), ngày Tam Nương (3, 7, 13, 18, 22, 27 âm) và Nguyệt Kỵ (5, 14, 23 âm). Ghi rõ nguồn tham chiếu trong comment đầu file (xem PRD mục 9, câu 1). Viết test. _Đã làm: tính theo tháng âm lịch như lịch treo tường phổ biến; đổi nguồn thì chỉ sửa `auspicious.ts`._
+  - [x] 2.8 Viết `shared/lunar/holidays.ts`: danh sách ngày lễ dương và âm theo PRD mục 17, hàm `getHolidays(solarDate)`. Giao thừa phải tính là ngày cuối tháng Chạp (29 hoặc 30). Viết test (ví dụ Tết 2026 là 17/2/2026). _Lưu ý: Tết 2030 của Việt Nam là 2/2/2030 (Trung Quốc: 3/2), vì sóc rơi vào 23h07 giờ Việt Nam._
+  - [x] 2.9 Viết `shared/lunar/index.ts` với hàm `getDayInfo(date)` trả về một object gom: ngày âm, Can Chi, hoàng đạo, giờ tốt, ngày kỵ, tiết khí, ngày lễ. Có cache theo ngày để không tính lại.
+  - [x] 2.10 Viết `shared/format.ts`: tên thứ tiếng Việt, format ngày dương, ngày âm ("12/3 âm lịch", "10/4 nhuận"), tiêu đề tháng ("Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ"). Viết test.
 
 - [ ] 3.0 Xây lớp dữ liệu local và bộ tính lần lặp (Dexie cho sự kiện/danh mục/cài đặt, danh mục mặc định, recurrence engine dương + âm với các trường hợp đặc biệt, ngoại lệ từng lần)
   - [ ] 3.1 Tạo `src/data/db.ts`: Dexie database `calendar-hana` với bảng `events` (index `id`, `categoryId`, `updatedAt`), `categories`, `settings`.
