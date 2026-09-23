@@ -127,19 +127,24 @@
 - `src/components/layout/SyncStatus.tsx` - Hiện trạng thái đồng bộ trên header.
 - `src/pages/Settings/DataSection.tsx` - Xuất/nhập file JSON.
 - `vitest.emulator.config.ts`, `tsconfig.emulator.json` - Cấu hình test chạy trên Firebase Emulator (`npm run test:emulator`).
-- `src/reminders/localScheduler.ts` - Hẹn giờ thông báo khi tab đang mở (người chưa đăng nhập).
+- `shared/reminders/links.ts` - Đường dẫn mở một lần diễn ra (`/day/...?event=&occurrence=`) và tag thông báo.
+- `src/reminders/localScheduler.ts` - Hẹn giờ thông báo khi tab đang mở (người chưa đăng nhập, hoặc chưa có Web Push).
 - `src/reminders/localScheduler.test.ts` - Unit test (dùng fake timers).
-- `src/reminders/pushRegistration.ts` - Xin quyền thông báo, lấy FCM token, lưu token lên Firestore.
+- `src/reminders/notifications.ts` - Quyền thông báo (store Zustand), nội dung và hiện thông báo.
+- `src/reminders/pushRegistration.ts` - Lấy FCM token, lưu vào `users/{uid}/pushTokens`, gỡ khi đăng xuất.
+- `src/reminders/ReminderService.tsx` - Chạy nền: đăng ký Web Push hoặc lịch local, mở app khi bấm thông báo.
+- `src/reminders/serviceWorker.ts` - Đăng ký service worker.
+- `src/hooks/useOpenOccurrenceFromUrl.ts` - Mở chi tiết lần diễn ra từ link thông báo / email.
 - `src/sw.ts` - Service worker: cache offline, nhận Web Push, mở app khi bấm thông báo.
 - `firestore.rules` - Security Rules: mỗi user chỉ đọc/ghi dữ liệu của mình.
-- `firestore.indexes.json` - Index cho truy vấn nhắc hẹn đến hạn.
-- `functions/src/index.ts` - Export các Cloud Functions.
-- `functions/src/scheduleReminders.ts` - Trigger khi sự kiện thay đổi: tính và ghi lần nhắc kế tiếp vào collection `reminderQueue`.
-- `functions/src/sendDueReminders.ts` - Scheduler chạy mỗi phút: gửi push/email cho nhắc hẹn đến hạn.
+- `firestore.indexes.json` - Index (truy vấn nhắc hẹn đến hạn chỉ cần index tự động của `fireAt`).
+- `functions/src/index.ts` - Các Cloud Functions: `scheduleReminders` (trigger sự kiện), `onUserWritten` (đổi giờ nhắc / xóa tài khoản thì dọn hàng đợi), `sendDueReminders` (mỗi phút).
+- `functions/src/queue.ts` - Logic hàng đợi `reminderQueue`: tính lần nhắc kế tiếp, nhận và gửi nhắc đến hạn trong transaction.
+- `functions/src/sender.ts` - Gửi theo kênh: Web Push hoặc email.
 - `functions/src/email.ts` - Tạo nội dung email và gửi qua Resend.
-- `functions/src/push.ts` - Gửi Web Push qua FCM.
-- `functions/src/deleteAccount.ts` - Xóa toàn bộ dữ liệu khi user xóa tài khoản.
-- `functions/src/*.test.ts` - Unit test cho functions (dùng Firebase Emulator).
+- `functions/src/push.ts` - Gửi Web Push qua FCM, xóa token hết hạn.
+- `functions/src/email.test.ts` - Unit test nội dung email.
+- `functions/src/queue.emulator.test.ts` - Test hàng đợi và push trên Firebase Emulator.
 
 ### Test end-to-end
 
@@ -156,6 +161,10 @@
 - Mọi phép tính ngày giờ dùng múi giờ `Asia/Ho_Chi_Minh`. Không dùng giờ local của máy.
 - Chạy Firebase Emulator (`npm run emulators`, cần Java) khi phát triển task 6.0 và 7.0 để không đụng dữ liệu thật; đặt `VITE_USE_FIREBASE_EMULATOR=true` trong `.env.local`.
 - Test trên Emulator: `npm run test:emulator` (dùng project `demo-calendar-hana`, không bao giờ chạm project thật).
+- Task 7: hàng đợi nhắc hẹn giữ **1 document cho mỗi sự kiện** (`reminderQueue/{uid}__{eventId}`) chứa nhóm nhắc kế tiếp (các nhắc cùng thời điểm), không tạo 1 document cho mỗi kênh. Gửi theo kiểu "tối đa 1 lần": transaction chuyển hàng đợi sang nhóm kế tiếp trước rồi mới gửi. Nhắc trễ quá 1 giờ thì bỏ qua.
+- Task 7: người đã đăng nhập mà chưa đăng ký được Web Push (chưa có `VITE_FIREBASE_VAPID_KEY`, trình duyệt không hỗ trợ) vẫn được nhắc bằng lịch local khi app đang mở.
+- Cloud Functions nằm trong `functions/` (package riêng, cài bằng `cd functions && npx npm@11 install`), bundle bằng esbuild để gói luôn code `shared/`. Vùng `asia-southeast1` (phải trùng vùng Firestore). Cần gói Blaze để deploy. Email qua Resend: `firebase functions:secrets:set RESEND_API_KEY`, `EMAIL_FROM` / `APP_URL` trong `functions/.env`.
+- Service worker chỉ được đăng ký ở bản build (`npm run build && npm run preview`); khi chạy dev, thông báo local dùng `new Notification`.
 
 ## Instructions for Completing Tasks
 
@@ -257,18 +266,18 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 6.12 Viết `functions/src/deleteAccount.ts`: xóa toàn bộ `users/{uid}/**`, xóa hàng đợi nhắc hẹn của user, xóa user trong Auth. _Đã làm khác: xóa ngay từ client (`FirestoreRepository.deleteAllData` + `deleteUser`, có xác thực lại), chạy được ở gói miễn phí. Phần dọn `reminderQueue` sẽ làm ở task 7 bằng trigger khi user bị xóa._
   - [x] 6.13 Hiện trạng thái đồng bộ trên header (đã đồng bộ / đang offline, sẽ đồng bộ khi có mạng).
 
-- [ ] 7.0 Xây hệ thống nhắc hẹn (thông báo local khi tab mở, Web Push qua FCM và email qua Cloud Functions + Scheduler cho người đã đăng nhập, xin quyền thông báo, nội dung có ngày âm)
+- [x] 7.0 Xây hệ thống nhắc hẹn (thông báo local khi tab mở, Web Push qua FCM và email qua Cloud Functions + Scheduler cho người đã đăng nhập, xin quyền thông báo, nội dung có ngày âm)
   - [x] 7.1 Tạo `ReminderField.tsx`: tối đa 5 nhắc hẹn; chọn thời điểm (lúc diễn ra, 5 phút, 15 phút, 30 phút, 1 giờ, 1 ngày, 3 ngày, 1 tuần, tùy chỉnh) và kênh (Thông báo / Email). Email bị vô hiệu hóa kèm lời nhắc "Đăng nhập Google để dùng nhắc hẹn qua email" khi chưa đăng nhập. Người chưa đăng nhập thấy ghi chú "Thông báo chỉ hiện khi app đang mở".
-  - [ ] 7.2 Viết `shared/reminders/nextReminder.ts`: từ sự kiện (gồm lặp và âm lịch) và thời điểm hiện tại, tính lần nhắc kế tiếp cho từng nhắc hẹn. Sự kiện cả ngày dùng giờ nhắc mặc định trong cài đặt (8:00). Viết test (giỗ âm lịch nhắc trước 1 ngày, sự kiện hằng tuần nhắc trước 15 phút, lần đã bị xóa trong `exceptions`).
-  - [ ] 7.3 Tạo `pushRegistration.ts`: xin quyền `Notification` khi người dùng thêm nhắc hẹn thông báo lần đầu; nếu bị từ chối thì hiện hướng dẫn bật lại quyền trong trình duyệt; khi đã đăng nhập thì lấy FCM token và lưu vào `users/{uid}/pushTokens`.
-  - [ ] 7.4 Viết `localScheduler.ts` (người chưa đăng nhập): khi app mở, tính các nhắc hẹn trong 24 giờ tới, đặt `setTimeout`; tính lại khi dữ liệu thay đổi và khi tab được mở lại (`visibilitychange`); hiện thông báo qua `serviceWorkerRegistration.showNotification`. Viết test bằng fake timers.
-  - [ ] 7.5 Trong `src/sw.ts`: xử lý sự kiện `push` từ FCM để hiện thông báo, và `notificationclick` để mở app tại ngày của sự kiện.
-  - [ ] 7.6 Viết `functions/src/scheduleReminders.ts`: Firestore trigger khi sự kiện được tạo/sửa/xóa, dùng `nextReminder` (import từ `shared/`) để cập nhật document trong collection `reminderQueue` (`uid`, `eventId`, `occurrenceKey`, `channel`, `fireAt`).
-  - [ ] 7.7 Viết `functions/src/sendDueReminders.ts`: scheduled function chạy mỗi phút, lấy `reminderQueue` có `fireAt <= now`, gửi theo kênh, đánh dấu đã gửi để không gửi trùng (dùng transaction), rồi tính và ghi lần nhắc kế tiếp cho sự kiện lặp.
-  - [ ] 7.8 Viết `functions/src/push.ts`: gửi tới mọi FCM token của user; xóa token không còn hợp lệ.
-  - [ ] 7.9 Viết `functions/src/email.ts`: template HTML tiếng Việt gồm tiêu đề, ngày dương, ngày âm, giờ, địa điểm, ghi chú, link mở sự kiện; gửi qua Resend. API key lưu bằng Firebase Secret Manager, không để trong code.
-  - [ ] 7.10 Nội dung thông báo theo PRD mục 40 (ví dụ "Giỗ ông nội — Hôm nay, 12/3 âm lịch"), dùng chung hàm format trong `shared/format.ts`.
-  - [ ] 7.11 Viết test cho functions bằng Firebase Emulator: tạo sự kiện thì có hàng đợi, đến giờ thì gửi 1 lần, sự kiện lặp thì có lần nhắc kế tiếp, xóa sự kiện thì xóa hàng đợi.
+  - [x] 7.2 Viết `shared/reminders/nextReminder.ts`: từ sự kiện (gồm lặp và âm lịch) và thời điểm hiện tại, tính lần nhắc kế tiếp cho từng nhắc hẹn. Sự kiện cả ngày dùng giờ nhắc mặc định trong cài đặt (8:00). Viết test (giỗ âm lịch nhắc trước 1 ngày, sự kiện hằng tuần nhắc trước 15 phút, lần đã bị xóa trong `exceptions`).
+  - [x] 7.3 Tạo `pushRegistration.ts`: xin quyền `Notification` khi người dùng thêm nhắc hẹn thông báo lần đầu; nếu bị từ chối thì hiện hướng dẫn bật lại quyền trong trình duyệt; khi đã đăng nhập thì lấy FCM token và lưu vào `users/{uid}/pushTokens`.
+  - [x] 7.4 Viết `localScheduler.ts` (người chưa đăng nhập): khi app mở, tính các nhắc hẹn trong 24 giờ tới, đặt `setTimeout`; tính lại khi dữ liệu thay đổi và khi tab được mở lại (`visibilitychange`); hiện thông báo qua `serviceWorkerRegistration.showNotification`. Viết test bằng fake timers.
+  - [x] 7.5 Trong `src/sw.ts`: xử lý sự kiện `push` từ FCM để hiện thông báo, và `notificationclick` để mở app tại ngày của sự kiện.
+  - [x] 7.6 Viết `functions/src/scheduleReminders.ts`: Firestore trigger khi sự kiện được tạo/sửa/xóa, dùng `nextReminder` (import từ `shared/`) để cập nhật document trong collection `reminderQueue` (`uid`, `eventId`, `occurrenceKey`, `channel`, `fireAt`).
+  - [x] 7.7 Viết `functions/src/sendDueReminders.ts`: scheduled function chạy mỗi phút, lấy `reminderQueue` có `fireAt <= now`, gửi theo kênh, đánh dấu đã gửi để không gửi trùng (dùng transaction), rồi tính và ghi lần nhắc kế tiếp cho sự kiện lặp.
+  - [x] 7.8 Viết `functions/src/push.ts`: gửi tới mọi FCM token của user; xóa token không còn hợp lệ.
+  - [x] 7.9 Viết `functions/src/email.ts`: template HTML tiếng Việt gồm tiêu đề, ngày dương, ngày âm, giờ, địa điểm, ghi chú, link mở sự kiện; gửi qua Resend. API key lưu bằng Firebase Secret Manager, không để trong code.
+  - [x] 7.10 Nội dung thông báo theo PRD mục 40 (ví dụ "Giỗ ông nội — Hôm nay, 12/3 âm lịch"), dùng chung hàm format trong `shared/format.ts`.
+  - [x] 7.11 Viết test cho functions bằng Firebase Emulator: tạo sự kiện thì có hàng đợi, đến giờ thì gửi 1 lần, sự kiện lặp thì có lần nhắc kế tiếp, xóa sự kiện thì xóa hàng đợi.
 
 - [ ] 8.0 Hoàn thiện Cài đặt, giao diện và kiểm thử cuối (trang Cài đặt, sáng/tối, responsive 360px, offline PWA, accessibility, Lighthouse, kiểm thử end-to-end các user story)
   - [x] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản.

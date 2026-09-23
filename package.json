@@ -12,10 +12,11 @@
     "lint": "oxlint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc -b",
+    "typecheck": "tsc -b && npm --prefix functions run typecheck",
     "generate-icons": "pwa-assets-generator",
     "test:emulator": "firebase emulators:exec --only auth,firestore --project demo-calendar-hana 'vitest run --config vitest.emulator.config.ts'",
-    "emulators": "firebase emulators:start --only auth,firestore"
+    "emulators": "firebase emulators:start --only auth,firestore",
+    "build:functions": "npm --prefix functions run build"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
