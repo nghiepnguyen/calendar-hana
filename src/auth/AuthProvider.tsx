@@ -16,6 +16,7 @@ import {
   getFirebaseAuth,
   isFirebaseConfigured,
 } from '../firebase/firebase'
+import { unregisterPushToken } from '../reminders/pushRegistration'
 import { AuthContext, type AuthContextValue, type AuthUser } from './authContext'
 
 function toAuthUser(user: User): AuthUser {
@@ -77,7 +78,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
       },
       signOut: async () => {
-        await firebaseSignOut(getFirebaseAuth())
+        const auth = getFirebaseAuth()
+        if (auth.currentUser) await unregisterPushToken(auth.currentUser.uid)
+        await firebaseSignOut(auth)
         await clearFirestoreCache()
       },
       deleteAccount: async () => {
@@ -86,6 +89,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (!current) return
         // Firebase yêu cầu đăng nhập gần đây mới được xóa tài khoản.
         await reauthenticateWithPopup(current, googleProvider())
+        await unregisterPushToken(current.uid)
         await new FirestoreRepository(getDb(), current.uid).deleteAllData()
         await deleteUser(current)
         await clearFirestoreCache()

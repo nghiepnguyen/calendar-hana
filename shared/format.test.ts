@@ -5,6 +5,8 @@ import {
   formatLunarShort,
   formatLunarWithYear,
   formatMonthTitle,
+  formatRelativeDay,
+  formatReminderMessage,
   formatSolar,
   formatSolarShort,
   formatTime,
@@ -54,5 +56,27 @@ describe('formatMonthTitle', () => {
   it('có tháng nhuận', () => {
     // 2025 nhuận tháng 6, bắt đầu 25/7/2025.
     expect(formatMonthTitle(8, 2025)).toBe('Tháng 8/2025. Tháng 6 nhuận-7 âm lịch, năm Ất Tỵ')
+  })
+})
+
+describe('formatReminderMessage', () => {
+  it('sự kiện cả ngày hôm nay', () => {
+    expect(
+      formatReminderMessage({ title: 'Giỗ ông nội', allDay: true }, '2026-04-28', '2026-04-28'),
+    ).toEqual({ title: 'Giỗ ông nội', body: 'Hôm nay, 12/3 âm lịch' })
+  })
+
+  it('sự kiện có giờ ngày mai, có địa điểm', () => {
+    expect(
+      formatReminderMessage(
+        { title: 'Họp', allDay: false, startTime: '09:00', location: 'Phòng 2' },
+        '2026-09-24',
+        '2026-09-23',
+      ).body,
+    ).toBe('Ngày mai lúc 9:00, 14/8 âm lịch\nPhòng 2')
+  })
+
+  it('ngày xa ghi thứ và ngày dương', () => {
+    expect(formatRelativeDay('2026-09-26', '2026-09-23')).toBe('Thứ Bảy 26/9/2026')
   })
 })

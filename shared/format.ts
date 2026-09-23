@@ -1,9 +1,9 @@
 // Format ngày dương / âm bằng tiếng Việt.
 
 import { yearCanChi } from './lunar/canChi'
-import { daysInSolarMonth, dayOfWeek, parseSolarDate } from './lunar/julian'
+import { daysInSolarMonth, dayOfWeek, parseSolarDate, solarStringToJd } from './lunar/julian'
 import { solarToLunar } from './lunar/lunar'
-import type { LunarDate, SolarDateString } from './types'
+import type { CalendarEvent, LunarDate, SolarDateString } from './types'
 
 export const WEEKDAY_NAMES = [
   'Chủ nhật',
@@ -90,4 +90,33 @@ export function formatMonthTitle(month: number, year: number): string {
 export function formatTime(time: string): string {
   const [h, m] = time.split(':')
   return `${Number(h)}:${m}`
+}
+
+/** "Hôm nay", "Ngày mai", "Hôm qua" hoặc "Thứ Bảy 26/9/2026", so với ngày `today`. */
+export function formatRelativeDay(date: SolarDateString, today: SolarDateString): string {
+  const diff = solarStringToJd(date) - solarStringToJd(today)
+  if (diff === 0) return 'Hôm nay'
+  if (diff === 1) return 'Ngày mai'
+  if (diff === -1) return 'Hôm qua'
+  return `${WEEKDAY_NAMES[dayOfWeek(date)]} ${formatSolarShort(date)}`
+}
+
+/**
+ * Nội dung thông báo nhắc hẹn (PRD mục 40).
+ * Ví dụ: { title: "Giỗ ông nội", body: "Hôm nay, 12/3 âm lịch" }
+ * hoặc { title: "Họp nhóm", body: "Ngày mai lúc 9:00, 14/8 âm lịch" }.
+ */
+export function formatReminderMessage(
+  event: Pick<CalendarEvent, 'title' | 'allDay' | 'startTime' | 'location'>,
+  date: SolarDateString,
+  today: SolarDateString,
+): { title: string; body: string } {
+  const { day, month, year } = parseSolarDate(date)
+  const lunar = formatLunar(solarToLunar(day, month, year))
+  const time = !event.allDay && event.startTime ? ` lúc ${formatTime(event.startTime)}` : ''
+  const location = event.location ? `\n${event.location}` : ''
+  return {
+    title: event.title,
+    body: `${formatRelativeDay(date, today)}${time}, ${lunar}${location}`,
+  }
 }

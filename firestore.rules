@@ -58,8 +58,14 @@ service cloud.firestore {
             || !existsAfter(/databases/$(database)/documents/users/$(uid)));
       }
 
+      // FCM token của từng trình duyệt, id document chính là token.
       match /pushTokens/{token} {
-        allow read, write: if signedInAs(uid);
+        allow read, delete: if signedInAs(uid);
+        allow create, update: if signedInAs(uid)
+          && request.resource.data.keys().hasOnly(['token', 'userAgent', 'updatedAt'])
+          && request.resource.data.token == token
+          && optionalString(request.resource.data, 'userAgent', 300)
+          && request.resource.data.updatedAt is string;
       }
     }
   }

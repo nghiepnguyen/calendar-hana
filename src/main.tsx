@@ -6,6 +6,9 @@ import './styles/theme.css'
 import App from './App.tsx'
 import { AuthProvider } from './auth/AuthProvider'
 import { RepositoryProvider } from './data/RepositoryProvider'
+import { registerServiceWorker } from './reminders/serviceWorker'
+
+registerServiceWorker()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

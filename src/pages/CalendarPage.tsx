@@ -14,6 +14,7 @@ import { useCategoryMap } from '../hooks/useCategoryMap'
 import { useEventsInRange } from '../hooks/useEventsInRange'
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts'
 import { useNow } from '../hooks/useNow'
+import { useOpenOccurrenceFromUrl } from '../hooks/useOpenOccurrenceFromUrl'
 import { useSettings } from '../hooks/useRepositoryData'
 import { useUiStore } from '../store/uiStore'
 import { DayView } from '../views/DayView/DayView'
@@ -43,6 +44,7 @@ export function CalendarPage() {
     [view, date, settings.weekStartsOn],
   )
   const occurrences = useEventsInRange(range.start, range.end, settings.hiddenCategoryIds)
+  useOpenOccurrenceFromUrl(date)
 
   useKeyboardShortcuts({
     t: route.goToday,

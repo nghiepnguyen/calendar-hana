@@ -33,7 +33,6 @@ interface EventFormProps {
   signedIn: boolean
   onSave: (draft: EventDraft) => Promise<void>
   onCancel: () => void
-  onNotificationAdded?: () => void
 }
 
 export function EventForm({
@@ -44,7 +43,6 @@ export function EventForm({
   signedIn,
   onSave,
   onCancel,
-  onNotificationAdded,
 }: EventFormProps) {
   const id = useId()
   const [draft, setDraft] = useState(initialDraft)
@@ -249,7 +247,6 @@ export function EventForm({
           allDayReminderTime={allDayReminderTime}
           signedIn={signedIn}
           onChange={(reminders) => update({ reminders })}
-          onNotificationAdded={onNotificationAdded}
           error={errors.reminders}
         />
 

@@ -109,6 +109,17 @@ describe('firestore.rules', () => {
     await assertSucceeds(batch.commit())
   })
 
+  it('push token: id phải trùng token, không thêm trường lạ', async () => {
+    const db = env.authenticatedContext('alice').firestore()
+    const data = { token: 'tok:1', userAgent: 'Chrome', updatedAt: '2026-09-23T00:00:00.000Z' }
+    await assertSucceeds(setDoc(doc(db, 'users/alice/pushTokens/tok:1'), data))
+    await assertFails(setDoc(doc(db, 'users/alice/pushTokens/other'), data))
+    await assertFails(setDoc(doc(db, 'users/alice/pushTokens/tok:1'), { ...data, admin: true }))
+    await assertSucceeds(deleteDoc(doc(db, 'users/alice/pushTokens/tok:1')))
+    const bob = env.authenticatedContext('bob').firestore()
+    await assertFails(setDoc(doc(bob, 'users/alice/pushTokens/tok:1'), data))
+  })
+
   it('client không truy cập được hàng đợi nhắc hẹn', async () => {
     const db = env.authenticatedContext('alice').firestore()
     await assertFails(getDoc(doc(db, 'reminderQueue/x')))

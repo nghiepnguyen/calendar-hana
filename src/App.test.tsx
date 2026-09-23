@@ -59,6 +59,22 @@ describe('App', () => {
     expect(await screen.findByText('Tết Nguyên Đán')).toBeInTheDocument()
   })
 
+  it('link từ thông báo mở chi tiết lần diễn ra', async () => {
+    const event = await repo.saveEvent({
+      title: 'Giỗ ông nội',
+      calendarType: 'solar',
+      date: '2026-09-20',
+      allDay: true,
+      categoryId: 'memorial',
+      recurrence: { freq: 'weekly', calendar: 'solar' },
+      reminders: [],
+    })
+    renderApp(`/day/2026-09-27?event=${event.id}&occurrence=2026-09-27`)
+    const dialog = await screen.findByRole('dialog')
+    expect(within(dialog).getByText('Giỗ ông nội')).toBeInTheDocument()
+    expect(within(dialog).getByText(/27\/9\/2026/)).toBeInTheDocument()
+  })
+
   it('hiện danh mục trong sidebar và lọc được', async () => {
     renderApp()
     const checkbox = await screen.findByRole('checkbox', { name: 'Công việc' })

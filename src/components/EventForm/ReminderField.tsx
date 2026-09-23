@@ -9,6 +9,7 @@ import {
   UNIT_MINUTES,
   type ReminderUnit,
 } from './reminderOptions'
+import { useNotificationStore } from '../../reminders/notifications'
 import styles from './EventForm.module.css'
 
 interface ReminderFieldProps {
@@ -18,8 +19,6 @@ interface ReminderFieldProps {
   /** Đã đăng nhập Google: dùng được email và thông báo khi đóng app. */
   signedIn: boolean
   onChange: (reminders: Reminder[]) => void
-  /** Gọi khi người dùng thêm nhắc hẹn thông báo (để xin quyền thông báo). */
-  onNotificationAdded?: () => void
   error?: string
 }
 
@@ -31,22 +30,27 @@ export function ReminderField({
   allDayReminderTime,
   signedIn,
   onChange,
-  onNotificationAdded,
   error,
 }: ReminderFieldProps) {
   const presets = allDay ? ALL_DAY_PRESETS : TIMED_PRESETS
+  const permission = useNotificationStore((s) => s.permission)
+  const requestPermission = useNotificationStore((s) => s.request)
+  // Lần đầu thêm nhắc hẹn thông báo thì xin quyền (PRD mục 37).
+  const onNotificationAdded = () => {
+    if (permission === 'default') void requestPermission()
+  }
 
   const update = (index: number, patch: Partial<Reminder>) => {
     const next = reminders.map((r, i) => (i === index ? { ...r, ...patch } : r))
     onChange(next)
-    if (patch.channel === 'notification') onNotificationAdded?.()
+    if (patch.channel === 'notification') onNotificationAdded()
   }
 
   const add = () => {
     const used = new Set(reminders.map((r) => r.offsetMinutes))
     const offset = (allDay ? [0, 24 * 60] : [15, 60, 0]).find((o) => !used.has(o)) ?? presets[0]
     onChange([...reminders, { offsetMinutes: offset, channel: 'notification' }])
-    onNotificationAdded?.()
+    onNotificationAdded()
   }
 
   const hasNotification = reminders.some((r) => r.channel === 'notification')
@@ -145,6 +149,17 @@ export function ReminderField({
       ) : (
         <p className="field-hint">Tối đa {MAX_REMINDERS} nhắc hẹn.</p>
       )}
+      {hasNotification && permission === 'denied' ? (
+        <p className="field-error" role="status">
+          Trình duyệt đang chặn thông báo. Bấm biểu tượng ổ khóa cạnh thanh địa chỉ, chọn Thông báo
+          rồi chọn Cho phép.
+        </p>
+      ) : null}
+      {hasNotification && permission === 'unsupported' ? (
+        <p className="field-hint">
+          Trình duyệt này không hỗ trợ thông báo. Trên iPhone, hãy thêm app vào Màn hình chính.
+        </p>
+      ) : null}
       {!signedIn ? (
         <p className="field-hint">
           {hasNotification ? 'Thông báo chỉ hiện khi app đang mở. ' : ''}

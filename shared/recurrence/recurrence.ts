@@ -219,7 +219,7 @@ export function findNextOccurrence(
 }
 
 /** Ngày gốc lớn nhất trong các lần bị dời ngày, hoặc '' nếu không có. */
-function maxMovedKey(event: CalendarEvent): SolarDateString {
+export function maxMovedKey(event: CalendarEvent): SolarDateString {
   let result = ''
   for (const [key, exception] of Object.entries(event.exceptions ?? {})) {
     if (exception !== 'deleted' && exception.date && key > result) result = key

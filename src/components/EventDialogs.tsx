@@ -20,7 +20,6 @@ import { RecurringScopeDialog } from './RecurringScopeDialog'
 interface EventDialogsProps {
   settings: Settings
   signedIn: boolean
-  onNotificationAdded?: () => void
 }
 
 type Pending =
@@ -30,7 +29,7 @@ type Pending =
   | null
 
 /** Điều phối các hộp thoại sự kiện: chi tiết, form tạo/sửa, chọn phạm vi, xác nhận xóa. */
-export function EventDialogs({ settings, signedIn, onNotificationAdded }: EventDialogsProps) {
+export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
   const repository = useRepository()
   const events = useEvents()
   const { categories, get: getCategory } = useCategoryMap()
@@ -90,7 +89,6 @@ export function EventDialogs({ settings, signedIn, onNotificationAdded }: EventD
           categories={categories}
           allDayReminderTime={settings.allDayReminderTime}
           signedIn={signedIn}
-          onNotificationAdded={onNotificationAdded}
           onCancel={closeEditor}
           onSave={async (draft) => {
             if (editor.mode === 'create') await createEventFromDraft(repository, draft)
