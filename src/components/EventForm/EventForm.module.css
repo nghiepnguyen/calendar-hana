@@ -1,0 +1,188 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calendarSwitch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.switchButton {
+  border: 0;
+  border-radius: 7px;
+  padding: 8px;
+  background: transparent;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.switchOn {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.converted {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timeRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 20px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  font-weight: 500;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.times {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px;
+  flex: 1 1 260px;
+}
+
+.categorySelect {
+  position: relative;
+  display: block;
+}
+
+.categorySwatch {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.categorySelect select {
+  padding-left: 30px;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.fieldset legend {
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+.weekdays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.weekday {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weekday:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.weekdayOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.repeatEnd {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.inlineInput {
+  width: auto;
+  min-width: 150px;
+}
+
+.countInput {
+  width: 80px;
+}
+
+.reminders {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reminder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.reminder > select:first-child {
+  flex: 1 1 170px;
+  width: auto;
+}
+
+.reminder > select:nth-last-of-type(1) {
+  flex: 0 1 150px;
+  width: auto;
+}
+
+.custom {
+  display: flex;
+  gap: 6px;
+}
+
+.custom select {
+  width: auto;
+}
+
+.addReminder {
+  align-self: flex-start;
+}

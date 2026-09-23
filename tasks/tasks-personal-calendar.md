@@ -96,6 +96,20 @@
 - `src/components/EventForm/RecurrenceField.tsx` - Phần chọn kiểu lặp.
 - `src/components/EventForm/ReminderField.tsx` - Phần chọn nhắc hẹn.
 - `src/components/EventDetail/EventDetail.tsx` - Xem chi tiết, sửa, xóa sự kiện.
+- `src/components/EventForm/draft.ts` - Dữ liệu trên form và cách đổi qua lại với sự kiện (đổi Dương/Âm, dời giờ kết thúc).
+- `src/components/EventForm/draft.test.ts` - Unit test cho `draft.ts`.
+- `src/components/EventForm/reminderOptions.ts` - Mốc nhắc có sẵn và nhãn tiếng Việt.
+- `src/components/EventDialogs.tsx` - Điều phối hộp thoại chi tiết, form, chọn phạm vi, xác nhận xóa.
+- `src/components/Modal/Modal.tsx` - Hộp thoại dùng chung (focus trap, Esc, trả focus).
+- `src/components/ConfirmDialog.tsx` - Hộp thoại xác nhận.
+- `src/components/ThemeController.tsx` - Đặt `data-theme` theo cài đặt.
+- `src/components/SearchPanel/search.ts` - Tìm không phân biệt dấu, tính lần tới.
+- `src/components/SearchPanel/search.test.ts` - Unit test cho `search.ts`.
+- `src/data/eventActions.ts` - Lưu/xóa sự kiện theo phạm vi (một lần / lần này và sau / tất cả).
+- `src/data/eventActions.test.ts` - Test 3 phạm vi sửa/xóa với Dexie.
+- `shared/recurrence/editing.ts` - Tách sự kiện lặp, tạo ghi đè cho một lần, xóa theo phạm vi.
+- `shared/recurrence/editing.test.ts` - Unit test cho `editing.ts` và `describe.ts`.
+- `shared/recurrence/describe.ts` - Câu mô tả quy tắc lặp tiếng Việt.
 - `src/components/RecurringScopeDialog.tsx` - Hộp thoại "Chỉ sự kiện này / Sự kiện này và các sự kiện sau / Tất cả".
 - `src/components/SearchPanel/SearchPanel.tsx` - Tìm kiếm sự kiện.
 - `src/pages/Settings/SettingsPage.tsx` - Trang Cài đặt.
@@ -204,21 +218,21 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 4.12 Tạo `Sidebar.tsx` (trên mobile là drawer): lịch tháng nhỏ có ngày âm để chọn nhanh, danh sách danh mục có checkbox để lọc.
   - [x] 4.13 Highlight ngày hôm nay ở cả 3 chế độ xem. Thêm phím tắt: `T` về hôm nay, `D`/`W`/`M` đổi chế độ xem, mũi tên trái/phải để chuyển trước/sau.
 
-- [ ] 5.0 Xây chức năng quản lý sự kiện và danh mục (form tạo/sửa/xóa theo dương/âm, lặp lại, sửa/xóa sự kiện lặp theo 3 lựa chọn, tạo nhanh, tìm kiếm, CRUD danh mục, lọc theo danh mục)
-  - [ ] 5.1 Tạo `EventForm.tsx` (modal trên desktop, toàn màn hình trên mobile) gồm các trường ở PRD mục 19. Công tắc Dương/Âm đặt trên cùng.
-  - [ ] 5.2 Khi đổi Dương ↔ Âm trong form: tự quy đổi ngày đang chọn sang hệ lịch kia và luôn hiện dòng ngày quy đổi (ví dụ "Tức ngày 28/4/2026 dương lịch").
-  - [ ] 5.3 Validate: tiêu đề bắt buộc và tối đa 200 ký tự, ghi chú tối đa 2000 ký tự, giờ kết thúc phải sau giờ bắt đầu, ngày âm phải tồn tại. Hiện lỗi bằng tiếng Việt cạnh từng trường.
-  - [ ] 5.4 Tạo `RecurrenceField.tsx`: kiểu lặp hiện theo loại lịch (Dương: không lặp/ngày/tuần/tháng/năm, có chọn thứ trong tuần; Âm: không lặp/tháng âm/năm âm); điều kiện kết thúc (không bao giờ / đến ngày / sau N lần); hiện câu tóm tắt (ví dụ "Lặp hằng năm vào ngày 12/3 âm lịch").
-  - [ ] 5.5 Nút nổi "+" mở form trống. Bấm vào khung giờ trống (Ngày/Tuần) hoặc ô ngày (Tháng) mở form đã điền sẵn ngày/giờ.
-  - [ ] 5.6 Tạo `EventDetail.tsx`: hiện đủ thông tin (cả ngày dương và âm của lần diễn ra), nút Sửa, nút Xóa (có hỏi xác nhận).
-  - [ ] 5.7 Tạo `RecurringScopeDialog.tsx`. Khi sửa/xóa sự kiện lặp:
+- [x] 5.0 Xây chức năng quản lý sự kiện và danh mục (form tạo/sửa/xóa theo dương/âm, lặp lại, sửa/xóa sự kiện lặp theo 3 lựa chọn, tạo nhanh, tìm kiếm, CRUD danh mục, lọc theo danh mục)
+  - [x] 5.1 Tạo `EventForm.tsx` (modal trên desktop, toàn màn hình trên mobile) gồm các trường ở PRD mục 19. Công tắc Dương/Âm đặt trên cùng.
+  - [x] 5.2 Khi đổi Dương ↔ Âm trong form: tự quy đổi ngày đang chọn sang hệ lịch kia và luôn hiện dòng ngày quy đổi (ví dụ "Tức ngày 28/4/2026 dương lịch").
+  - [x] 5.3 Validate: tiêu đề bắt buộc và tối đa 200 ký tự, ghi chú tối đa 2000 ký tự, giờ kết thúc phải sau giờ bắt đầu, ngày âm phải tồn tại. Hiện lỗi bằng tiếng Việt cạnh từng trường.
+  - [x] 5.4 Tạo `RecurrenceField.tsx`: kiểu lặp hiện theo loại lịch (Dương: không lặp/ngày/tuần/tháng/năm, có chọn thứ trong tuần; Âm: không lặp/tháng âm/năm âm); điều kiện kết thúc (không bao giờ / đến ngày / sau N lần); hiện câu tóm tắt (ví dụ "Lặp hằng năm vào ngày 12/3 âm lịch").
+  - [x] 5.5 Nút nổi "+" mở form trống. Bấm vào khung giờ trống (Ngày/Tuần) hoặc ô ngày (Tháng) mở form đã điền sẵn ngày/giờ.
+  - [x] 5.6 Tạo `EventDetail.tsx`: hiện đủ thông tin (cả ngày dương và âm của lần diễn ra), nút Sửa, nút Xóa (có hỏi xác nhận).
+  - [x] 5.7 Tạo `RecurringScopeDialog.tsx`. Khi sửa/xóa sự kiện lặp:
     - "Chỉ sự kiện này": ghi vào `exceptions`.
     - "Sự kiện này và các sự kiện sau": đặt `until` của sự kiện cũ là ngày trước lần này, tạo sự kiện mới từ lần này.
     - "Tất cả": sửa trực tiếp sự kiện gốc.
-  - [ ] 5.8 Viết test cho `EventForm` (validate, quy đổi dương/âm, lưu sự kiện âm lặp hằng năm) và cho 3 lựa chọn sửa/xóa sự kiện lặp.
-  - [ ] 5.9 Tạo `SearchPanel.tsx`: tìm theo tiêu đề và ghi chú (không phân biệt hoa thường và dấu tiếng Việt), hiện kết quả kèm ngày lần diễn ra kế tiếp; bấm vào kết quả để nhảy tới ngày đó.
-  - [ ] 5.10 Tạo `CategoryManager.tsx`: danh sách danh mục; thêm, đổi tên, đổi màu (bảng 12 màu); xóa có hỏi xác nhận và báo số sự kiện sẽ chuyển sang "Khác"; không có nút xóa cho "Khác".
-  - [ ] 5.11 Nối bộ lọc danh mục ở `Sidebar` với `viewStore.hiddenCategoryIds` và lưu bộ lọc vào cài đặt.
+  - [x] 5.8 Viết test cho `EventForm` (validate, quy đổi dương/âm, lưu sự kiện âm lặp hằng năm) và cho 3 lựa chọn sửa/xóa sự kiện lặp.
+  - [x] 5.9 Tạo `SearchPanel.tsx`: tìm theo tiêu đề và ghi chú (không phân biệt hoa thường và dấu tiếng Việt), hiện kết quả kèm ngày lần diễn ra kế tiếp; bấm vào kết quả để nhảy tới ngày đó.
+  - [x] 5.10 Tạo `CategoryManager.tsx`: danh sách danh mục; thêm, đổi tên, đổi màu (bảng 12 màu); xóa có hỏi xác nhận và báo số sự kiện sẽ chuyển sang "Khác"; không có nút xóa cho "Khác".
+  - [x] 5.11 Nối bộ lọc danh mục ở `Sidebar` với `viewStore.hiddenCategoryIds` và lưu bộ lọc vào cài đặt.
 
 - [ ] 6.0 Tích hợp đăng nhập Google và lưu trữ cloud (Firebase Auth, Firestore + Security Rules, đồng bộ offline, chuyển dữ liệu local lên tài khoản, đăng xuất, xuất/nhập JSON, xóa tài khoản)
   - [ ] 6.1 Tạo Firebase project, bật Authentication (Google provider), Firestore, Hosting. Chạy `firebase init`, cấu hình Emulator Suite.
@@ -236,7 +250,7 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [ ] 6.13 Hiện trạng thái đồng bộ trên header (đã đồng bộ / đang offline, sẽ đồng bộ khi có mạng).
 
 - [ ] 7.0 Xây hệ thống nhắc hẹn (thông báo local khi tab mở, Web Push qua FCM và email qua Cloud Functions + Scheduler cho người đã đăng nhập, xin quyền thông báo, nội dung có ngày âm)
-  - [ ] 7.1 Tạo `ReminderField.tsx`: tối đa 5 nhắc hẹn; chọn thời điểm (lúc diễn ra, 5 phút, 15 phút, 30 phút, 1 giờ, 1 ngày, 3 ngày, 1 tuần, tùy chỉnh) và kênh (Thông báo / Email). Email bị vô hiệu hóa kèm lời nhắc "Đăng nhập Google để dùng nhắc hẹn qua email" khi chưa đăng nhập. Người chưa đăng nhập thấy ghi chú "Thông báo chỉ hiện khi app đang mở".
+  - [x] 7.1 Tạo `ReminderField.tsx`: tối đa 5 nhắc hẹn; chọn thời điểm (lúc diễn ra, 5 phút, 15 phút, 30 phút, 1 giờ, 1 ngày, 3 ngày, 1 tuần, tùy chỉnh) và kênh (Thông báo / Email). Email bị vô hiệu hóa kèm lời nhắc "Đăng nhập Google để dùng nhắc hẹn qua email" khi chưa đăng nhập. Người chưa đăng nhập thấy ghi chú "Thông báo chỉ hiện khi app đang mở".
   - [ ] 7.2 Viết `shared/reminders/nextReminder.ts`: từ sự kiện (gồm lặp và âm lịch) và thời điểm hiện tại, tính lần nhắc kế tiếp cho từng nhắc hẹn. Sự kiện cả ngày dùng giờ nhắc mặc định trong cài đặt (8:00). Viết test (giỗ âm lịch nhắc trước 1 ngày, sự kiện hằng tuần nhắc trước 15 phút, lần đã bị xóa trong `exceptions`).
   - [ ] 7.3 Tạo `pushRegistration.ts`: xin quyền `Notification` khi người dùng thêm nhắc hẹn thông báo lần đầu; nếu bị từ chối thì hiện hướng dẫn bật lại quyền trong trình duyệt; khi đã đăng nhập thì lấy FCM token và lưu vào `users/{uid}/pushTokens`.
   - [ ] 7.4 Viết `localScheduler.ts` (người chưa đăng nhập): khi app mở, tính các nhắc hẹn trong 24 giờ tới, đặt `setTimeout`; tính lại khi dữ liệu thay đổi và khi tab được mở lại (`visibilitychange`); hiện thông báo qua `serviceWorkerRegistration.showNotification`. Viết test bằng fake timers.
@@ -249,8 +263,8 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [ ] 7.11 Viết test cho functions bằng Firebase Emulator: tạo sự kiện thì có hàng đợi, đến giờ thì gửi 1 lần, sự kiện lặp thì có lần nhắc kế tiếp, xóa sự kiện thì xóa hàng đợi.
 
 - [ ] 8.0 Hoàn thiện Cài đặt, giao diện và kiểm thử cuối (trang Cài đặt, sáng/tối, responsive 360px, offline PWA, accessibility, Lighthouse, kiểm thử end-to-end các user story)
-  - [ ] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản.
-  - [ ] 8.2 Áp dụng giao diện sáng/tối theo cài đặt (thuộc tính `data-theme` trên `<html>`, mặc định theo hệ thống).
+  - [ ] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản. _Đã có: hiển thị, nhắc hẹn, danh mục. Còn thiếu: xuất/nhập (6.10), tài khoản (6.11)._
+  - [x] 8.2 Áp dụng giao diện sáng/tối theo cài đặt (thuộc tính `data-theme` trên `<html>`, mặc định theo hệ thống).
   - [ ] 8.3 Kiểm tra responsive ở 360px, 768px, 1280px: Tuần trên mobile cuộn ngang được, Tháng trên mobile chỉ hiện chấm màu thay cho tiêu đề sự kiện, không có thanh cuộn ngang toàn trang.
   - [ ] 8.4 Hoàn thiện service worker: cache app shell và asset để mở offline; hiện thông báo "Có phiên bản mới" khi có bản cập nhật.
   - [ ] 8.5 Accessibility: đủ tương phản màu (WCAG AA), dùng được bằng bàn phím (focus trap trong modal, `Esc` để đóng), `aria-label` cho nút icon và ô ngày (ví dụ "Thứ Tư, 23 tháng 9 năm 2026, ngày 12 tháng 8 âm lịch").

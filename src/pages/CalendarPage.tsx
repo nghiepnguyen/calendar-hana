@@ -2,7 +2,9 @@ import { useMemo } from 'react'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString, TimeString } from '@shared/types'
 import { viewRange } from '../calendar/range'
+import { EventDialogs } from '../components/EventDialogs'
 import { AppHeader } from '../components/layout/AppHeader'
+import { SearchPanel } from '../components/SearchPanel/SearchPanel'
 import { Sidebar } from '../components/layout/Sidebar'
 import { createDefaultSettings } from '../data/defaultCategories'
 import { useCalendarRoute } from '../hooks/useCalendarRoute'
@@ -31,6 +33,7 @@ export function CalendarPage() {
   const openDetail = useUiStore((s) => s.openDetail)
   const openCreate = useUiStore((s) => s.openCreate)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
+  const searchOpen = useUiStore((s) => s.searchOpen)
 
   const range = useMemo(
     () => viewRange(view, date, settings.weekStartsOn),
@@ -49,8 +52,9 @@ export function CalendarPage() {
     ArrowRight: route.goNext,
   })
 
+  // Tạo từ khung giờ: có giờ sẵn. Tạo từ ô tháng: sự kiện cả ngày.
   const onCreate = (d: SolarDateString, startTime?: TimeString) =>
-    openCreate(startTime ? { date: d, startTime, allDay: false } : { date: d })
+    openCreate(startTime ? { date: d, startTime, allDay: false } : { date: d, allDay: true })
 
   const View = VIEWS[view]
   const viewProps: CalendarViewProps = {
@@ -92,6 +96,17 @@ export function CalendarPage() {
       >
         +
       </button>
+      <EventDialogs settings={settings} signedIn={false} />
+      {searchOpen ? (
+        <SearchPanel
+          today={today}
+          onClose={() => setSearchOpen(false)}
+          onSelect={(d) => {
+            setSearchOpen(false)
+            route.openDay(d)
+          }}
+        />
+      ) : null}
     </div>
   )
 }
