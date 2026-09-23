@@ -32,6 +32,8 @@
 - `shared/recurrence/recurrence.test.ts` - Unit test cho mọi quy tắc lặp và trường hợp đặc biệt.
 - `shared/reminders/nextReminder.ts` - Tính thời điểm nhắc kế tiếp của một sự kiện.
 - `shared/reminders/nextReminder.test.ts` - Unit test cho `nextReminder.ts`.
+- `shared/validation.ts` - Kiểm tra dữ liệu sự kiện (dùng chung cho form và repository), thông báo lỗi tiếng Việt.
+- `shared/validation.test.ts` - Unit test cho `validation.ts`.
 - `shared/format.ts` - Format ngày dương/âm tiếng Việt (ví dụ "12/3 âm lịch", "Thứ Hai, 23/9/2026").
 - `shared/format.test.ts` - Unit test cho `format.ts`.
 
@@ -47,13 +49,15 @@
 - `src/data/migrateLocalToCloud.test.ts` - Unit test cho migrate.
 - `src/data/exportImport.ts` - Xuất/nhập file JSON.
 - `src/data/exportImport.test.ts` - Unit test cho xuất/nhập.
-- `src/data/RepositoryProvider.tsx` - React context chọn repository theo trạng thái đăng nhập.
+- `src/data/RepositoryProvider.tsx` - React provider chọn repository theo trạng thái đăng nhập.
+- `src/data/repositoryContext.ts` - Context, hook `useRepository()` và repository local dùng chung.
 
 ### State và hooks
 
 - `src/store/viewStore.ts` - State chế độ xem, ngày đang xem, bộ lọc danh mục (Zustand).
 - `src/hooks/useEventsInRange.ts` - Lấy sự kiện đã tính lần lặp trong khoảng ngày đang xem.
-- `src/hooks/useSettings.ts` - Đọc/ghi cài đặt.
+- `src/hooks/useEventsInRange.test.tsx` - Test hook (lặp, lọc danh mục, tự cập nhật).
+- `src/hooks/useRepositoryData.ts` - Hook `useEvents`, `useCategories`, `useSettings` tự cập nhật theo repository.
 - `src/hooks/useAuth.ts` - Trạng thái đăng nhập Google.
 
 ### Giao diện
@@ -156,19 +160,19 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 2.9 Viết `shared/lunar/index.ts` với hàm `getDayInfo(date)` trả về một object gom: ngày âm, Can Chi, hoàng đạo, giờ tốt, ngày kỵ, tiết khí, ngày lễ. Có cache theo ngày để không tính lại.
   - [x] 2.10 Viết `shared/format.ts`: tên thứ tiếng Việt, format ngày dương, ngày âm ("12/3 âm lịch", "10/4 nhuận"), tiêu đề tháng ("Tháng 9/2026 — Tháng 7–8 âm lịch, năm Bính Ngọ"). Viết test.
 
-- [ ] 3.0 Xây lớp dữ liệu local và bộ tính lần lặp (Dexie cho sự kiện/danh mục/cài đặt, danh mục mặc định, recurrence engine dương + âm với các trường hợp đặc biệt, ngoại lệ từng lần)
-  - [ ] 3.1 Tạo `src/data/db.ts`: Dexie database `calendar-hana` với bảng `events` (index `id`, `categoryId`, `updatedAt`), `categories`, `settings`.
-  - [ ] 3.2 Tạo `src/data/repository.ts`: interface `CalendarRepository` gồm `listEvents`, `getEvent`, `saveEvent`, `deleteEvent`, `listCategories`, `saveCategory`, `deleteCategory`, `getSettings`, `saveSettings`, `subscribe` (lắng nghe thay đổi).
-  - [ ] 3.3 Tạo `src/data/defaultCategories.ts`: 6 danh mục mặc định (Công việc, Cá nhân, Gia đình, Giỗ/Lễ, Sức khỏe, Khác) với id cố định, và bảng 12 màu. Đánh dấu "Khác" là `isSystem: true`.
-  - [ ] 3.4 Viết `src/data/localRepository.ts`: cài đặt interface bằng Dexie, tự tạo danh mục mặc định và cài đặt mặc định ở lần mở đầu. Tự cập nhật `updatedAt` khi lưu.
-  - [ ] 3.5 Trong `deleteCategory`: không cho xóa danh mục hệ thống; chuyển các sự kiện của danh mục bị xóa sang "Khác" trong cùng một transaction.
-  - [ ] 3.6 Viết test cho `localRepository.ts` (tạo, sửa, xóa, xóa danh mục chuyển sự kiện sang "Khác").
-  - [ ] 3.7 Viết `shared/recurrence/recurrence.ts` với hàm `expandOccurrences(event, rangeStart, rangeEnd)` trả về danh sách lần diễn ra (mỗi lần có `occurrenceKey` dạng `YYYY-MM-DD` và ngày dương cụ thể).
-  - [ ] 3.8 Cài đặt lặp **dương lịch**: hằng ngày, hằng tuần theo `byWeekday`, hằng tháng (bỏ qua tháng không có ngày 29/30/31), hằng năm (29/2 chỉ rơi vào năm nhuận).
-  - [ ] 3.9 Cài đặt lặp **âm lịch**: hằng tháng âm (gồm cả tháng nhuận), hằng năm âm. Áp dụng quy tắc PRD mục 28: ngày 30 thiếu thì lùi về 29, tạo từ tháng nhuận thì các năm sau dùng tháng thường, lặp hằng năm không tạo thêm ở tháng nhuận.
-  - [ ] 3.10 Cài đặt điều kiện kết thúc (`until`, `count`) và áp dụng `exceptions` (bỏ lần đã xóa, ghi đè lần đã sửa riêng).
-  - [ ] 3.11 Viết test cho recurrence: giỗ 12/3 âm các năm 2026–2030, rằm hằng tháng năm 2025 (có tháng 6 nhuận), sự kiện 30 âm rơi vào tháng thiếu, sự kiện tạo từ 10/4 nhuận 2020, lặp ngày 31 dương, 29/2, hằng tuần thứ Hai, `count` và `until`, ngoại lệ.
-  - [ ] 3.12 Viết `src/hooks/useEventsInRange.ts`: lấy sự kiện từ repository, tính lần lặp trong khoảng ngày, lọc theo danh mục đang bật, tự cập nhật khi dữ liệu thay đổi.
+- [x] 3.0 Xây lớp dữ liệu local và bộ tính lần lặp (Dexie cho sự kiện/danh mục/cài đặt, danh mục mặc định, recurrence engine dương + âm với các trường hợp đặc biệt, ngoại lệ từng lần)
+  - [x] 3.1 Tạo `src/data/db.ts`: Dexie database `calendar-hana` với bảng `events` (index `id`, `categoryId`, `updatedAt`), `categories`, `settings`.
+  - [x] 3.2 Tạo `src/data/repository.ts`: interface `CalendarRepository` gồm `listEvents`, `getEvent`, `saveEvent`, `deleteEvent`, `listCategories`, `saveCategory`, `deleteCategory`, `getSettings`, `saveSettings`, và `watchEvents` / `watchCategories` / `watchSettings` (lắng nghe thay đổi, khớp với `liveQuery` của Dexie và `onSnapshot` của Firestore).
+  - [x] 3.3 Tạo `src/data/defaultCategories.ts`: 6 danh mục mặc định (Công việc, Cá nhân, Gia đình, Giỗ/Lễ, Sức khỏe, Khác) với id cố định, và bảng 12 màu. Đánh dấu "Khác" là `isSystem: true`.
+  - [x] 3.4 Viết `src/data/localRepository.ts`: cài đặt interface bằng Dexie, tự tạo danh mục mặc định và cài đặt mặc định ở lần mở đầu. Tự cập nhật `updatedAt` khi lưu.
+  - [x] 3.5 Trong `deleteCategory`: không cho xóa danh mục hệ thống; chuyển các sự kiện của danh mục bị xóa sang "Khác" trong cùng một transaction.
+  - [x] 3.6 Viết test cho `localRepository.ts` (tạo, sửa, xóa, xóa danh mục chuyển sự kiện sang "Khác").
+  - [x] 3.7 Viết `shared/recurrence/recurrence.ts` với hàm `expandOccurrences(event, rangeStart, rangeEnd)` trả về danh sách lần diễn ra (mỗi lần có `occurrenceKey` dạng `YYYY-MM-DD` và ngày dương cụ thể).
+  - [x] 3.8 Cài đặt lặp **dương lịch**: hằng ngày, hằng tuần theo `byWeekday`, hằng tháng (bỏ qua tháng không có ngày 29/30/31), hằng năm (29/2 chỉ rơi vào năm nhuận).
+  - [x] 3.9 Cài đặt lặp **âm lịch**: hằng tháng âm (gồm cả tháng nhuận), hằng năm âm. Áp dụng quy tắc PRD mục 28: ngày 30 thiếu thì lùi về 29, tạo từ tháng nhuận thì các năm sau dùng tháng thường, lặp hằng năm không tạo thêm ở tháng nhuận.
+  - [x] 3.10 Cài đặt điều kiện kết thúc (`until`, `count`) và áp dụng `exceptions` (bỏ lần đã xóa, ghi đè lần đã sửa riêng).
+  - [x] 3.11 Viết test cho recurrence: giỗ 12/3 âm các năm 2026–2030, rằm hằng tháng năm 2025 (có tháng 6 nhuận), sự kiện 30 âm rơi vào tháng thiếu, sự kiện tạo từ 10/4 nhuận 2020, lặp ngày 31 dương, 29/2, hằng tuần thứ Hai, `count` và `until`, ngoại lệ.
+  - [x] 3.12 Viết `src/hooks/useEventsInRange.ts`: lấy sự kiện từ repository, tính lần lặp trong khoảng ngày, lọc theo danh mục đang bật, tự cập nhật khi dữ liệu thay đổi.
 
 - [ ] 4.0 Xây giao diện xem lịch Ngày / Tuần / Tháng (mặc định xem Ngày, thẻ ngày âm lịch, điều hướng, date picker dương/âm, highlight hôm nay, hiển thị ngày lễ và sự kiện theo màu danh mục)
   - [ ] 4.1 Tạo `src/store/viewStore.ts`: `viewMode` (mặc định `'day'`), `currentDate` (mặc định hôm nay theo giờ Việt Nam), `hiddenCategoryIds`, các action `goToday`, `goPrev`, `goNext`, `setView`, `setDate`.
@@ -207,7 +211,7 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [ ] 6.3 Tạo `src/hooks/useAuth.ts`: `signInWithGoogle` (popup, trên mobile dùng redirect), `signOut`, trạng thái `user`.
   - [ ] 6.4 Thiết kế cấu trúc Firestore: `users/{uid}` (profile, settings), `users/{uid}/events/{eventId}`, `users/{uid}/categories/{categoryId}`, `users/{uid}/pushTokens/{token}`.
   - [ ] 6.5 Viết `firestore.rules`: chỉ `request.auth.uid == uid` được đọc/ghi `users/{uid}/**`; validate độ dài tiêu đề và ghi chú. Test rules bằng `@firebase/rules-unit-testing`.
-  - [ ] 6.6 Viết `src/data/firestoreRepository.ts` cài đặt `CalendarRepository` bằng Firestore (dùng `onSnapshot` cho `subscribe`). Khi ghi dùng `updatedAt` để giữ bản mới nhất (last-write-wins).
+  - [ ] 6.6 Viết `src/data/firestoreRepository.ts` cài đặt `CalendarRepository` bằng Firestore (dùng `onSnapshot` cho các hàm `watch*`). Khi ghi dùng `updatedAt` để giữ bản mới nhất (last-write-wins).
   - [ ] 6.7 Tạo `RepositoryProvider.tsx`: chưa đăng nhập dùng `localRepository`, đã đăng nhập dùng `firestoreRepository`. Toàn bộ UI chỉ gọi qua interface, không gọi thẳng Dexie/Firestore.
   - [ ] 6.8 Viết `migrateLocalToCloud.ts`: khi đăng nhập lần đầu mà local có dữ liệu, hiện hộp thoại "Chuyển dữ liệu trên máy lên tài khoản" / "Bỏ qua". Chuyển theo batch, giữ nguyên id, đếm số bản ghi trước và sau để chắc chắn không mất dữ liệu; chỉ xóa local sau khi upload thành công. Viết test.
   - [ ] 6.9 Đăng xuất: xóa cache Firestore trên máy (`clearIndexedDbPersistence`), quay lại dùng dữ liệu local.
