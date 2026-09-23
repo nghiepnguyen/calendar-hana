@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { makeEvent } from '../../test/fixtures'
-import { normalizeText, searchEvents } from './search'
+import { matchesQuery, normalizeText, queryWords, searchEvents } from './search'
 
 describe('search', () => {
   it('bỏ dấu tiếng Việt', () => {
@@ -32,5 +32,24 @@ describe('search', () => {
       ['gio', '2027-04-18', false],
       ['cu', '2025-01-01', true],
     ])
+  })
+
+  describe('matchesQuery', () => {
+    const gio = { title: 'Giỗ ông nội', note: 'Làm cơm cúng', location: 'Quê Đà Nẵng' }
+
+    it('khớp không dấu, theo tiêu đề, ghi chú và địa điểm', () => {
+      expect(matchesQuery(gio, queryWords('gio'))).toBe(true)
+      expect(matchesQuery(gio, queryWords('COM CUNG'))).toBe(true)
+      expect(matchesQuery(gio, queryWords('da nang'))).toBe(true)
+    })
+
+    it('cần đủ mọi từ', () => {
+      expect(matchesQuery(gio, queryWords('gio hop'))).toBe(false)
+    })
+
+    it('từ khoá rỗng khớp tất cả', () => {
+      expect(queryWords('   ')).toEqual([])
+      expect(matchesQuery(gio, [])).toBe(true)
+    })
   })
 })

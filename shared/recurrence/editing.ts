@@ -6,7 +6,7 @@
 import { addDays, parseSolarDate } from '../lunar/julian'
 import { solarToLunar } from '../lunar/lunar'
 import type { CalendarEvent, EventOverride, SolarDateString } from '../types'
-import type { Occurrence } from './recurrence'
+import { iterateOccurrences, type Occurrence } from './recurrence'
 
 export type RecurringScope = 'single' | 'following' | 'all'
 
@@ -44,6 +44,22 @@ export function deleteOccurrence(
       exceptions: { ...event.exceptions, [occurrence.occurrenceKey]: 'deleted' },
     },
   }
+}
+
+/**
+ * Xoá nhiều lần của cùng một sự kiện trong một lần lưu: các lần của sự kiện lặp được ghi
+ * thành exception 'deleted' (giữ exceptions cũ). Không còn lần nào thì xoá hẳn sự kiện.
+ */
+export function deleteOccurrences(
+  event: CalendarEvent,
+  occurrences: readonly Pick<Occurrence, 'occurrenceKey'>[],
+): DeleteResult {
+  if (!event.recurrence) return { action: 'delete' }
+  const exceptions = { ...event.exceptions }
+  for (const { occurrenceKey } of occurrences) exceptions[occurrenceKey] = 'deleted'
+  const next: CalendarEvent = { ...event, exceptions }
+  if (iterateOccurrences(next).next().done) return { action: 'delete' }
+  return { action: 'update', event: next }
 }
 
 /** Sự kiện cũ dừng ngay trước lần occurrence (giữ exceptions trước đó). */

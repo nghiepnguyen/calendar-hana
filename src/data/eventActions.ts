@@ -4,6 +4,7 @@ import {
   applyOccurrenceOverride,
   buildOverride,
   deleteOccurrence,
+  deleteOccurrences,
   splitAt,
   type RecurringScope,
 } from '@shared/recurrence/editing'
@@ -69,4 +70,47 @@ export async function deleteEventOccurrence(
   const result = deleteOccurrence(base, occurrence, scope)
   if (result.action === 'delete') await repository.deleteEvent(base.id)
   else await repository.saveEvent(result.event)
+}
+
+/** Một lần diễn ra được chọn để xoá (chế độ chọn nhiều của trang Danh sách). */
+export interface OccurrenceSelection {
+  eventId: string
+  occurrenceKey: string
+}
+
+export interface BulkDeleteResult {
+  /** Số lần đã xoá (kể cả lần của sự kiện đã bị xoá ở nơi khác). */
+  deleted: number
+  /** Các lần chưa xoá được do lỗi ghi dữ liệu. */
+  failed: OccurrenceSelection[]
+}
+
+/**
+ * Xoá nhiều lần cùng lúc. Gom theo sự kiện và ghi mỗi sự kiện đúng một lần, vì ghi lần lượt
+ * từng lần của cùng một sự kiện lặp thì bản sau ghi đè exceptions của bản trước.
+ * Luôn đọc bản gốc từ repository, không dùng occurrence.event (đã gộp phần sửa riêng).
+ */
+export async function deleteEventOccurrences(
+  repository: CalendarRepository,
+  selections: readonly OccurrenceSelection[],
+): Promise<BulkDeleteResult> {
+  const byEvent = new Map<string, OccurrenceSelection[]>()
+  for (const selection of selections) {
+    const list = byEvent.get(selection.eventId)
+    if (list) list.push(selection)
+    else byEvent.set(selection.eventId, [selection])
+  }
+
+  const results = await Promise.allSettled(
+    [...byEvent].map(async ([eventId, group]) => {
+      const base = await repository.getEvent(eventId)
+      if (!base) return
+      const result = deleteOccurrences(base, group)
+      if (result.action === 'delete') await repository.deleteEvent(eventId)
+      else await repository.saveEvent(result.event)
+    }),
+  )
+
+  const failed = [...byEvent.values()].filter((_, i) => results[i].status === 'rejected').flat()
+  return { deleted: selections.length - failed.length, failed }
 }

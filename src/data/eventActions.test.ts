@@ -1,9 +1,9 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { expandOccurrences } from '@shared/recurrence/recurrence'
 import type { CalendarEvent } from '@shared/types'
 import { draftFromEvent } from '../components/EventForm/draft'
 import { CalendarDatabase } from './db'
-import { deleteEventOccurrence, updateEventFromDraft } from './eventActions'
+import { deleteEventOccurrence, deleteEventOccurrences, updateEventFromDraft } from './eventActions'
 import { LocalRepository } from './localRepository'
 
 let repo: LocalRepository
@@ -113,5 +113,52 @@ describe('xóa sự kiện lặp', () => {
   it('tất cả', async () => {
     await deleteEventOccurrence(repo, base, occ('2026-10-05'), 'all')
     expect(await repo.listEvents()).toEqual([])
+  })
+})
+
+describe('xoá nhiều lần cùng lúc', () => {
+  const pick = (occurrenceKey: string, eventId = base.id) => ({ eventId, occurrenceKey })
+
+  it('xoá sự kiện thường và các lần của sự kiện lặp', async () => {
+    const single = await repo.saveEvent({
+      title: 'Khám răng',
+      calendarType: 'solar',
+      date: '2026-09-30',
+      allDay: true,
+      categoryId: 'personal',
+      reminders: [],
+    })
+    const result = await deleteEventOccurrences(repo, [
+      pick('2026-09-28'),
+      pick('2026-09-30', single.id),
+      pick('2026-10-12'),
+    ])
+    expect(result).toEqual({ deleted: 3, failed: [] })
+    expect(await allOccurrences('2026-09-21', '2026-10-19')).toEqual([
+      '2026-09-21 Họp team 09:00',
+      '2026-10-05 Họp team 09:00',
+      '2026-10-19 Họp team 09:00',
+    ])
+  })
+
+  it('nhiều lần của cùng một sự kiện chỉ ghi một lần', async () => {
+    const save = vi.spyOn(repo, 'saveEvent')
+    await deleteEventOccurrences(repo, [pick('2026-09-21'), pick('2026-09-28'), pick('2026-10-05')])
+    expect(save).toHaveBeenCalledTimes(1)
+    expect(await allOccurrences('2026-09-21', '2026-10-12')).toEqual(['2026-10-12 Họp team 09:00'])
+  })
+
+  it('bỏ qua sự kiện đã bị xoá ở nơi khác', async () => {
+    await repo.deleteEvent(base.id)
+    expect(await deleteEventOccurrences(repo, [pick('2026-09-21')])).toEqual({
+      deleted: 1,
+      failed: [],
+    })
+  })
+
+  it('trả về các lần ghi lỗi', async () => {
+    vi.spyOn(repo, 'saveEvent').mockRejectedValueOnce(new Error('offline'))
+    const result = await deleteEventOccurrences(repo, [pick('2026-09-21')])
+    expect(result).toEqual({ deleted: 0, failed: [pick('2026-09-21')] })
   })
 })

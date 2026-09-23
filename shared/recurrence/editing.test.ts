@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import type { CalendarEvent } from '../types'
 import { describeRecurrence } from './describe'
-import { applyOccurrenceOverride, buildOverride, deleteOccurrence, splitAt } from './editing'
+import {
+  applyOccurrenceOverride,
+  buildOverride,
+  deleteOccurrence,
+  deleteOccurrences,
+  splitAt,
+} from './editing'
 import { expandOccurrences } from './recurrence'
 
 const weekly: CalendarEvent = {
@@ -155,5 +161,43 @@ describe('describeRecurrence', () => {
         recurrence: { freq: 'monthly', calendar: 'lunar', until: '2026-12-31' },
       }),
     ).toBe('Lặp hằng tháng vào ngày 15 âm lịch, đến hết 31/12/2026')
+  })
+})
+
+describe('deleteOccurrences', () => {
+  it('sự kiện không lặp thì xoá hẳn', () => {
+    const single = { ...weekly, recurrence: undefined }
+    expect(deleteOccurrences(single, [{ occurrenceKey: '2026-09-21' }])).toEqual({
+      action: 'delete',
+    })
+  })
+
+  it('gộp nhiều lần vào một bản, giữ exceptions cũ', () => {
+    const edited: CalendarEvent = {
+      ...weekly,
+      exceptions: { '2026-10-12': { title: 'Họp dời' }, '2026-10-19': 'deleted' },
+    }
+    const result = deleteOccurrences(edited, [
+      { occurrenceKey: '2026-09-28' },
+      { occurrenceKey: '2026-10-05' },
+    ])
+    if (result.action !== 'update') throw new Error('phải là update')
+    expect(result.event.exceptions).toEqual({
+      '2026-09-28': 'deleted',
+      '2026-10-05': 'deleted',
+      '2026-10-12': { title: 'Họp dời' },
+      '2026-10-19': 'deleted',
+    })
+    expect(dates(result.event)).toEqual(['2026-09-21', '2026-10-12', '2026-10-26'])
+    expect(edited.exceptions?.['2026-09-28']).toBeUndefined()
+  })
+
+  it('xoá hết các lần của chuỗi có số lần thì xoá hẳn', () => {
+    const three = { ...weekly, recurrence: { ...weekly.recurrence!, count: 3 } }
+    const keys = ['2026-09-21', '2026-09-28', '2026-10-05'].map((occurrenceKey) => ({
+      occurrenceKey,
+    }))
+    expect(deleteOccurrences(three, keys)).toEqual({ action: 'delete' })
+    expect(deleteOccurrences(three, keys.slice(0, 2)).action).toBe('update')
   })
 })

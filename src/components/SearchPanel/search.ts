@@ -11,6 +11,21 @@ export function normalizeText(text: string): string {
     .toLowerCase()
 }
 
+/** Các từ khoá đã bỏ dấu, viết thường. Chuỗi rỗng hoặc toàn khoảng trắng: []. */
+export function queryWords(query: string): string[] {
+  return normalizeText(query).trim().split(/\s+/).filter(Boolean)
+}
+
+/** Tiêu đề, ghi chú hoặc địa điểm chứa đủ mọi từ. Không có từ nào thì luôn khớp. */
+export function matchesQuery(
+  event: Pick<CalendarEvent, 'title' | 'note' | 'location'>,
+  words: readonly string[],
+): boolean {
+  if (words.length === 0) return true
+  const haystack = normalizeText(`${event.title} ${event.note ?? ''} ${event.location ?? ''}`)
+  return words.every((w) => haystack.includes(w))
+}
+
 export interface SearchResult {
   event: CalendarEvent
   /** Ngày để nhảy tới: lần kế tiếp từ hôm nay, hoặc lần đầu nếu đã qua hết. */
@@ -25,12 +40,11 @@ export function searchEvents(
   today: SolarDateString,
   limit = 50,
 ): SearchResult[] {
-  const words = normalizeText(query).trim().split(/\s+/).filter(Boolean)
+  const words = queryWords(query)
   if (words.length === 0) return []
   const results: SearchResult[] = []
   for (const event of events) {
-    const haystack = normalizeText(`${event.title} ${event.note ?? ''} ${event.location ?? ''}`)
-    if (!words.every((w) => haystack.includes(w))) continue
+    if (!matchesQuery(event, words)) continue
     const next = findNextOccurrence(event, today)
     results.push(
       next
