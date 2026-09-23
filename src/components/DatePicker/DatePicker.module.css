@@ -16,6 +16,12 @@
   transform-origin: top center;
 }
 
+/* Portal ra body, định vị theo nút mở (xem DatePicker.tsx). */
+.floating {
+  position: fixed;
+  z-index: 60;
+}
+
 @keyframes pop-in {
   from {
     opacity: 0;

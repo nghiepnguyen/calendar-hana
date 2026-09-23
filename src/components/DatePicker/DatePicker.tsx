@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type RefObject,
+} from 'react'
+import { createPortal } from 'react-dom'
 import { formatLunar, formatSolar } from '@shared/format'
 import { lunarToSolar, parseSolarDate, solarToLunar, toSolarDateString } from '@shared/lunar'
 import type { LunarDate, SolarDateString } from '@shared/types'
@@ -9,6 +17,41 @@ interface DatePickerProps {
   value: SolarDateString
   onSelect: (date: SolarDateString) => void
   onClose: () => void
+  /**
+   * Nút mở bảng. Có thì bảng được portal ra body và định vị cố định dưới nút, vì
+   * backdrop-filter lồng trong phần tử kính khác (header) không làm mờ được trang phía sau.
+   */
+  anchorRef?: RefObject<HTMLElement | null>
+  /** Trên màn hẹp, bảng trải rộng bằng phần tử này (header) và nằm ngay dưới nó. */
+  boundsRef?: RefObject<HTMLElement | null>
+}
+
+const VIEWPORT_GUTTER = 16
+const ANCHOR_GAP = 6
+const NARROW_QUERY = '(max-width: 720px)'
+
+interface PanelPosition {
+  left: number
+  top: number
+  width?: number
+}
+
+/** Tâm ngang và mép trên của bảng, giữ bảng nằm trọn trong màn hình. */
+function anchorPosition(
+  anchor: HTMLElement,
+  bounds: HTMLElement | null | undefined,
+  panelWidth: number,
+): PanelPosition {
+  if (bounds && window.matchMedia(NARROW_QUERY).matches) {
+    const rect = bounds.getBoundingClientRect()
+    return { left: rect.left + rect.width / 2, top: rect.bottom + ANCHOR_GAP, width: rect.width }
+  }
+  const rect = anchor.getBoundingClientRect()
+  const half = panelWidth / 2
+  const center = rect.left + rect.width / 2
+  const min = VIEWPORT_GUTTER + half
+  const max = window.innerWidth - VIEWPORT_GUTTER - half
+  return { left: Math.max(min, Math.min(center, max)), top: rect.bottom + ANCHOR_GAP }
 }
 
 function toLunar(date: SolarDateString): LunarDate {
@@ -17,11 +60,33 @@ function toLunar(date: SolarDateString): LunarDate {
 }
 
 /** Bảng chọn nhanh một ngày theo dương lịch hoặc âm lịch, luôn hiện ngày quy đổi. */
-export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
+export function DatePicker({
+  value,
+  onSelect,
+  onClose,
+  anchorRef,
+  boundsRef,
+}: DatePickerProps) {
   const [tab, setTab] = useState<'solar' | 'lunar'>('solar')
   const [solar, setSolar] = useState(value)
   const [lunar, setLunar] = useState<LunarDate>(() => toLunar(value))
   const panelRef = useRef<HTMLDivElement>(null)
+  const [position, setPosition] = useState<PanelPosition | null>(null)
+
+  useLayoutEffect(() => {
+    const anchor = anchorRef?.current
+    if (!anchor) return
+    const update = () => {
+      setPosition(anchorPosition(anchor, boundsRef?.current, panelRef.current?.offsetWidth ?? 0))
+    }
+    update()
+    window.addEventListener('resize', update)
+    window.addEventListener('scroll', update, true)
+    return () => {
+      window.removeEventListener('resize', update)
+      window.removeEventListener('scroll', update, true)
+    }
+  }, [anchorRef, boundsRef])
 
   useEffect(() => {
     panelRef.current?.querySelector<HTMLElement>('input, select, button')?.focus()
@@ -29,7 +94,10 @@ export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
       if (e.key === 'Escape') onClose()
     }
     const onPointer = (e: PointerEvent) => {
-      if (panelRef.current && !panelRef.current.contains(e.target as Node)) onClose()
+      const target = e.target as Node
+      // Bấm lại nút mở thì để nút tự đóng bảng, tránh đóng rồi mở lại ngay.
+      if (anchorRef?.current?.contains(target)) return
+      if (panelRef.current && !panelRef.current.contains(target)) onClose()
     }
     document.addEventListener('keydown', onKey)
     document.addEventListener('pointerdown', onPointer)
@@ -37,7 +105,7 @@ export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
       document.removeEventListener('keydown', onKey)
       document.removeEventListener('pointerdown', onPointer)
     }
-  }, [onClose])
+  }, [onClose, anchorRef])
 
   const lunarAsSolar = (() => {
     const result = lunarToSolar(lunar.day, lunar.month, lunar.year, lunar.isLeap)
@@ -54,8 +122,20 @@ export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
 
   const target = tab === 'solar' ? (solarValid ? solar : null) : lunarAsSolar
 
-  return (
-    <div className={`glass ${styles.panel}`} ref={panelRef} role="dialog" aria-label="Chọn ngày">
+  const panel = (
+    <div
+      className={`glass ${styles.panel} ${anchorRef ? styles.floating : ''}`}
+      ref={panelRef}
+      role="dialog"
+      aria-label="Chọn ngày"
+      style={
+        anchorRef
+          ? position
+            ? position
+            : { visibility: 'hidden' }
+          : undefined
+      }
+    >
       <div
         className="segmented"
         role="tablist"
@@ -118,4 +198,6 @@ export function DatePicker({ value, onSelect, onClose }: DatePickerProps) {
       </div>
     </div>
   )
+
+  return anchorRef ? createPortal(panel, document.body) : panel
 }

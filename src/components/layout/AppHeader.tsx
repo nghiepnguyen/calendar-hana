@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react'
+import { useRef, useState, type CSSProperties } from 'react'
 import {
   CaretDown,
   CaretLeft,
@@ -77,6 +77,8 @@ export function AppHeader({
   onDateChange,
 }: AppHeaderProps) {
   const [pickerOpen, setPickerOpen] = useState(false)
+  const titleRef = useRef<HTMLButtonElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const title = viewTitle(view, date, weekStartsOn)
@@ -85,7 +87,7 @@ export function AppHeader({
   const viewIndex = VIEW_MODES.indexOf(view)
 
   return (
-    <header className={`glass ${styles.header}`}>
+    <header ref={headerRef} className={`glass ${styles.header}`}>
       <button
         type="button"
         className={`btn btn-ghost btn-icon ${styles.menu}`}
@@ -126,6 +128,7 @@ export function AppHeader({
         </div>
         <div className={styles.titleWrap}>
           <button
+            ref={titleRef}
             type="button"
             className={styles.title}
             onClick={() => setPickerOpen((open) => !open)}
@@ -142,6 +145,8 @@ export function AppHeader({
           {pickerOpen ? (
             <DatePicker
               value={date}
+              anchorRef={titleRef}
+              boundsRef={headerRef}
               onClose={() => setPickerOpen(false)}
               onSelect={(next) => {
                 setPickerOpen(false)
