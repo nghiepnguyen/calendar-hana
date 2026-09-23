@@ -21,9 +21,7 @@ describe('search', () => {
 
   it('tìm không phân biệt dấu, theo tiêu đề và ghi chú', () => {
     expect(searchEvents(events, 'gio', '2026-09-23').map((r) => r.event.id)).toEqual(['gio'])
-    expect(searchEvents(events, 'nha khoa', '2026-09-23').map((r) => r.event.id)).toEqual([
-      'kham',
-    ])
+    expect(searchEvents(events, 'nha khoa', '2026-09-23').map((r) => r.event.id)).toEqual(['kham'])
     expect(searchEvents(events, '   ', '2026-09-23')).toEqual([])
   })
 

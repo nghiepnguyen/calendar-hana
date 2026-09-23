@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString, TimeString } from '@shared/types'
+import { useAuth } from '../auth/authContext'
 import { viewRange } from '../calendar/range'
 import { EventDialogs } from '../components/EventDialogs'
 import { AppHeader } from '../components/layout/AppHeader'
@@ -30,6 +31,7 @@ export function CalendarPage() {
   const settings = useSettings() ?? FALLBACK_SETTINGS
   const { today } = useNow()
   const { colorOf } = useCategoryMap()
+  const { user } = useAuth()
   const openDetail = useUiStore((s) => s.openDetail)
   const openCreate = useUiStore((s) => s.openCreate)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
@@ -96,7 +98,7 @@ export function CalendarPage() {
       >
         +
       </button>
-      <EventDialogs settings={settings} signedIn={false} />
+      <EventDialogs settings={settings} signedIn={!!user} />
       {searchOpen ? (
         <SearchPanel
           today={today}

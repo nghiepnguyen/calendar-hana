@@ -66,7 +66,6 @@
 - `src/hooks/useEventsInRange.ts` - Lấy sự kiện đã tính lần lặp trong khoảng ngày đang xem.
 - `src/hooks/useEventsInRange.test.tsx` - Test hook (lặp, lọc danh mục, tự cập nhật).
 - `src/hooks/useRepositoryData.ts` - Hook `useEvents`, `useCategories`, `useSettings` tự cập nhật theo repository.
-- `src/hooks/useAuth.ts` - Trạng thái đăng nhập Google.
 
 ### Giao diện
 
@@ -119,7 +118,15 @@
 
 ### Firebase và nhắc hẹn
 
-- `src/firebase/firebase.ts` - Khởi tạo Firebase app, Auth, Firestore (bật offline persistence), Messaging.
+- `src/firebase/firebase.ts` - Khởi tạo Firebase app, Auth, Firestore (bật offline persistence), kết nối Emulator khi dev.
+- `src/firebase/rules.emulator.test.ts` - Test Security Rules trên Emulator.
+- `src/auth/AuthProvider.tsx`, `src/auth/authContext.ts` - Đăng nhập Google (popup, redirect trên PWA mobile), đăng xuất, xóa tài khoản, thông báo lỗi tiếng Việt.
+- `src/data/MigrationDialog.tsx` - Hộp thoại chuyển dữ liệu local lên tài khoản.
+- `src/data/firestoreRepository.emulator.test.ts` - Test repository Firestore, chuyển dữ liệu, xuất/nhập trên Emulator.
+- `src/store/syncStore.ts` - Trạng thái đồng bộ và lỗi ghi lên cloud.
+- `src/components/layout/SyncStatus.tsx` - Hiện trạng thái đồng bộ trên header.
+- `src/pages/Settings/DataSection.tsx` - Xuất/nhập file JSON.
+- `vitest.emulator.config.ts`, `tsconfig.emulator.json` - Cấu hình test chạy trên Firebase Emulator (`npm run test:emulator`).
 - `src/reminders/localScheduler.ts` - Hẹn giờ thông báo khi tab đang mở (người chưa đăng nhập).
 - `src/reminders/localScheduler.test.ts` - Unit test (dùng fake timers).
 - `src/reminders/pushRegistration.ts` - Xin quyền thông báo, lấy FCM token, lưu token lên Firestore.
@@ -147,7 +154,8 @@
 - Cài dependencies bằng npm 11 trở lên (`npx npm@11 install`). npm 10.9 bị lỗi `Cannot read properties of null (reading 'edgesOut')` với vitest 5.
 - Thư mục `shared/` **không được** import React, Dexie hay Firebase. Nó chỉ chứa logic thuần để cả frontend lẫn Cloud Functions dùng được.
 - Mọi phép tính ngày giờ dùng múi giờ `Asia/Ho_Chi_Minh`. Không dùng giờ local của máy.
-- Chạy Firebase Emulator (`firebase emulators:start`) khi phát triển task 6.0 và 7.0 để không đụng dữ liệu thật.
+- Chạy Firebase Emulator (`npm run emulators`, cần Java) khi phát triển task 6.0 và 7.0 để không đụng dữ liệu thật; đặt `VITE_USE_FIREBASE_EMULATOR=true` trong `.env.local`.
+- Test trên Emulator: `npm run test:emulator` (dùng project `demo-calendar-hana`, không bao giờ chạm project thật).
 
 ## Instructions for Completing Tasks
 
@@ -234,20 +242,20 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [x] 5.10 Tạo `CategoryManager.tsx`: danh sách danh mục; thêm, đổi tên, đổi màu (bảng 12 màu); xóa có hỏi xác nhận và báo số sự kiện sẽ chuyển sang "Khác"; không có nút xóa cho "Khác".
   - [x] 5.11 Nối bộ lọc danh mục ở `Sidebar` với `viewStore.hiddenCategoryIds` và lưu bộ lọc vào cài đặt.
 
-- [ ] 6.0 Tích hợp đăng nhập Google và lưu trữ cloud (Firebase Auth, Firestore + Security Rules, đồng bộ offline, chuyển dữ liệu local lên tài khoản, đăng xuất, xuất/nhập JSON, xóa tài khoản)
-  - [ ] 6.1 Tạo Firebase project, bật Authentication (Google provider), Firestore, Hosting. Chạy `firebase init`, cấu hình Emulator Suite.
-  - [ ] 6.2 Tạo `src/firebase/firebase.ts`: khởi tạo app từ biến môi trường, bật Firestore offline persistence (`persistentLocalCache`), kết nối Emulator khi chạy dev.
-  - [ ] 6.3 Tạo `src/hooks/useAuth.ts`: `signInWithGoogle` (popup, trên mobile dùng redirect), `signOut`, trạng thái `user`.
-  - [ ] 6.4 Thiết kế cấu trúc Firestore: `users/{uid}` (profile, settings), `users/{uid}/events/{eventId}`, `users/{uid}/categories/{categoryId}`, `users/{uid}/pushTokens/{token}`.
-  - [ ] 6.5 Viết `firestore.rules`: chỉ `request.auth.uid == uid` được đọc/ghi `users/{uid}/**`; validate độ dài tiêu đề và ghi chú. Test rules bằng `@firebase/rules-unit-testing`.
-  - [ ] 6.6 Viết `src/data/firestoreRepository.ts` cài đặt `CalendarRepository` bằng Firestore (dùng `onSnapshot` cho các hàm `watch*`). Khi ghi dùng `updatedAt` để giữ bản mới nhất (last-write-wins).
-  - [ ] 6.7 Tạo `RepositoryProvider.tsx`: chưa đăng nhập dùng `localRepository`, đã đăng nhập dùng `firestoreRepository`. Toàn bộ UI chỉ gọi qua interface, không gọi thẳng Dexie/Firestore.
-  - [ ] 6.8 Viết `migrateLocalToCloud.ts`: khi đăng nhập lần đầu mà local có dữ liệu, hiện hộp thoại "Chuyển dữ liệu trên máy lên tài khoản" / "Bỏ qua". Chuyển theo batch, giữ nguyên id, đếm số bản ghi trước và sau để chắc chắn không mất dữ liệu; chỉ xóa local sau khi upload thành công. Viết test.
-  - [ ] 6.9 Đăng xuất: xóa cache Firestore trên máy (`clearIndexedDbPersistence`), quay lại dùng dữ liệu local.
-  - [ ] 6.10 Viết `exportImport.ts`: xuất JSON gồm version, events, categories, settings; nhập có kiểm tra định dạng và hỏi "Gộp" hoặc "Thay thế". Viết test.
-  - [ ] 6.11 Tạo `AccountSection.tsx`: hiện avatar/email, nút đăng nhập/đăng xuất, nút xóa tài khoản (bắt gõ lại chữ "XÓA" để xác nhận) gọi Cloud Function `deleteAccount`.
-  - [ ] 6.12 Viết `functions/src/deleteAccount.ts`: xóa toàn bộ `users/{uid}/**`, xóa hàng đợi nhắc hẹn của user, xóa user trong Auth.
-  - [ ] 6.13 Hiện trạng thái đồng bộ trên header (đã đồng bộ / đang offline, sẽ đồng bộ khi có mạng).
+- [x] 6.0 Tích hợp đăng nhập Google và lưu trữ cloud (Firebase Auth, Firestore + Security Rules, đồng bộ offline, chuyển dữ liệu local lên tài khoản, đăng xuất, xuất/nhập JSON, xóa tài khoản)
+  - [x] 6.1 Tạo Firebase project, bật Authentication (Google provider), Firestore, Hosting. Chạy `firebase init`, cấu hình Emulator Suite.
+  - [x] 6.2 Tạo `src/firebase/firebase.ts`: khởi tạo app từ biến môi trường, bật Firestore offline persistence (`persistentLocalCache`), kết nối Emulator khi chạy dev.
+  - [x] 6.3 Tạo `src/hooks/useAuth.ts`: `signInWithGoogle` (popup, trên mobile dùng redirect), `signOut`, trạng thái `user`.
+  - [x] 6.4 Thiết kế cấu trúc Firestore: `users/{uid}` (profile, settings), `users/{uid}/events/{eventId}`, `users/{uid}/categories/{categoryId}`, `users/{uid}/pushTokens/{token}`.
+  - [x] 6.5 Viết `firestore.rules`: chỉ `request.auth.uid == uid` được đọc/ghi `users/{uid}/**`; validate độ dài tiêu đề và ghi chú. Test rules bằng `@firebase/rules-unit-testing`.
+  - [x] 6.6 Viết `src/data/firestoreRepository.ts` cài đặt `CalendarRepository` bằng Firestore (dùng `onSnapshot` cho các hàm `watch*`). Khi ghi dùng `updatedAt` để giữ bản mới nhất (last-write-wins).
+  - [x] 6.7 Tạo `RepositoryProvider.tsx`: chưa đăng nhập dùng `localRepository`, đã đăng nhập dùng `firestoreRepository`. Toàn bộ UI chỉ gọi qua interface, không gọi thẳng Dexie/Firestore.
+  - [x] 6.8 Viết `migrateLocalToCloud.ts`: khi đăng nhập lần đầu mà local có dữ liệu, hiện hộp thoại "Chuyển dữ liệu trên máy lên tài khoản" / "Bỏ qua". Chuyển theo batch, giữ nguyên id, đếm số bản ghi trước và sau để chắc chắn không mất dữ liệu; chỉ xóa local sau khi upload thành công. Viết test.
+  - [x] 6.9 Đăng xuất: xóa cache Firestore trên máy (`clearIndexedDbPersistence`), quay lại dùng dữ liệu local.
+  - [x] 6.10 Viết `exportImport.ts`: xuất JSON gồm version, events, categories, settings; nhập có kiểm tra định dạng và hỏi "Gộp" hoặc "Thay thế". Viết test.
+  - [x] 6.11 Tạo `AccountSection.tsx`: hiện avatar/email, nút đăng nhập/đăng xuất, nút xóa tài khoản (bắt gõ lại chữ "XÓA" để xác nhận).
+  - [x] 6.12 Viết `functions/src/deleteAccount.ts`: xóa toàn bộ `users/{uid}/**`, xóa hàng đợi nhắc hẹn của user, xóa user trong Auth. _Đã làm khác: xóa ngay từ client (`FirestoreRepository.deleteAllData` + `deleteUser`, có xác thực lại), chạy được ở gói miễn phí. Phần dọn `reminderQueue` sẽ làm ở task 7 bằng trigger khi user bị xóa._
+  - [x] 6.13 Hiện trạng thái đồng bộ trên header (đã đồng bộ / đang offline, sẽ đồng bộ khi có mạng).
 
 - [ ] 7.0 Xây hệ thống nhắc hẹn (thông báo local khi tab mở, Web Push qua FCM và email qua Cloud Functions + Scheduler cho người đã đăng nhập, xin quyền thông báo, nội dung có ngày âm)
   - [x] 7.1 Tạo `ReminderField.tsx`: tối đa 5 nhắc hẹn; chọn thời điểm (lúc diễn ra, 5 phút, 15 phút, 30 phút, 1 giờ, 1 ngày, 3 ngày, 1 tuần, tùy chỉnh) và kênh (Thông báo / Email). Email bị vô hiệu hóa kèm lời nhắc "Đăng nhập Google để dùng nhắc hẹn qua email" khi chưa đăng nhập. Người chưa đăng nhập thấy ghi chú "Thông báo chỉ hiện khi app đang mở".
@@ -263,7 +271,7 @@ Cập nhật file sau mỗi sub-task, không đợi xong cả parent task.
   - [ ] 7.11 Viết test cho functions bằng Firebase Emulator: tạo sự kiện thì có hàng đợi, đến giờ thì gửi 1 lần, sự kiện lặp thì có lần nhắc kế tiếp, xóa sự kiện thì xóa hàng đợi.
 
 - [ ] 8.0 Hoàn thiện Cài đặt, giao diện và kiểm thử cuối (trang Cài đặt, sáng/tối, responsive 360px, offline PWA, accessibility, Lighthouse, kiểm thử end-to-end các user story)
-  - [ ] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản. _Đã có: hiển thị, nhắc hẹn, danh mục. Còn thiếu: xuất/nhập (6.10), tài khoản (6.11)._
+  - [x] 8.1 Tạo `SettingsPage.tsx` với các mục ở PRD mục 49: ngày bắt đầu tuần, bật/tắt ngày lễ, bật/tắt hoàng đạo, giờ nhắc mặc định cho sự kiện cả ngày, giao diện sáng/tối/theo hệ thống, quản lý danh mục, xuất/nhập, tài khoản.
   - [x] 8.2 Áp dụng giao diện sáng/tối theo cài đặt (thuộc tính `data-theme` trên `<html>`, mặc định theo hệ thống).
   - [ ] 8.3 Kiểm tra responsive ở 360px, 768px, 1280px: Tuần trên mobile cuộn ngang được, Tháng trên mobile chỉ hiện chấm màu thay cho tiêu đề sự kiện, không có thanh cuộn ngang toàn trang.
   - [ ] 8.4 Hoàn thiện service worker: cache app shell và asset để mở offline; hiện thông báo "Có phiên bản mới" khi có bản cập nhật.

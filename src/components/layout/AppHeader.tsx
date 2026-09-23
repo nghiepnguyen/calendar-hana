@@ -5,7 +5,9 @@ import { parseSolarDate } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
 import { VIEW_LABELS, VIEW_MODES, weekDays, type ViewMode } from '../../calendar/range'
 import { useUiStore } from '../../store/uiStore'
+import { useAuth } from '../../auth/authContext'
 import { DatePicker } from '../DatePicker/DatePicker'
+import { SyncStatus } from './SyncStatus'
 import styles from './AppHeader.module.css'
 
 interface AppHeaderProps {
@@ -70,6 +72,7 @@ export function AppHeader({
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const title = viewTitle(view, date, weekStartsOn)
+  const { available: authAvailable, user } = useAuth()
 
   return (
     <header className={styles.header}>
@@ -147,6 +150,7 @@ export function AppHeader({
       </div>
 
       <div className={styles.right}>
+        <SyncStatus />
         <div className={styles.views} role="radiogroup" aria-label="Chế độ xem">
           {VIEW_MODES.map((mode) => (
             <button
@@ -190,6 +194,26 @@ export function AppHeader({
             />
           </svg>
         </Link>
+        {user ? (
+          <Link
+            to="/settings#account"
+            className={styles.avatarLink}
+            aria-label={`Tài khoản ${user.email ?? ''}`}
+            title={user.email ?? 'Tài khoản'}
+          >
+            {user.photoURL ? (
+              <img src={user.photoURL} alt="" width={30} height={30} referrerPolicy="no-referrer" />
+            ) : (
+              <span aria-hidden="true">
+                {(user.displayName ?? user.email ?? '?').charAt(0).toUpperCase()}
+              </span>
+            )}
+          </Link>
+        ) : authAvailable ? (
+          <Link to="/settings#account" className={`btn ${styles.signIn}`}>
+            Đăng nhập
+          </Link>
+        ) : null}
       </div>
     </header>
   )

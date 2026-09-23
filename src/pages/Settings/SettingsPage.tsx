@@ -3,7 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import type { Settings, ThemePreference } from '@shared/types'
 import { useRepository } from '../../data/repositoryContext'
 import { useSettings } from '../../hooks/useRepositoryData'
+import { AccountSection } from './AccountSection'
 import { CategoryManager } from './CategoryManager'
+import { DataSection } from './DataSection'
 import styles from './SettingsPage.module.css'
 
 const THEMES: { value: ThemePreference; label: string }[] = [
@@ -131,6 +133,16 @@ export function SettingsPage({ children }: { children?: React.ReactNode }) {
           <section className={styles.section} id="categories" aria-labelledby="settings-categories">
             <h2 id="settings-categories">Danh mục</h2>
             <CategoryManager />
+          </section>
+
+          <section className={styles.section} id="account" aria-labelledby="settings-account">
+            <h2 id="settings-account">Tài khoản</h2>
+            <AccountSection />
+          </section>
+
+          <section className={styles.section} id="data" aria-labelledby="settings-data">
+            <h2 id="settings-data">Sao lưu dữ liệu</h2>
+            <DataSection />
           </section>
 
           {children}

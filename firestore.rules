@@ -1,0 +1,66 @@
+rules_version = '2';
+
+// Mỗi người dùng chỉ đọc/ghi được dữ liệu của chính mình trong users/{uid}/**.
+// Collection reminderQueue (nhắc hẹn phía server) không cho client truy cập;
+// chỉ Cloud Functions (Admin SDK, bỏ qua rules) được đọc/ghi.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInAs(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function optionalString(data, field, maxSize) {
+      return !(field in data) || (data[field] is string && data[field].size() <= maxSize);
+    }
+
+    function validEvent(data, eventId) {
+      return data.id == eventId
+        && data.title is string
+        && data.title.size() >= 1
+        && data.title.size() <= 200
+        && data.calendarType in ['solar', 'lunar']
+        && data.allDay is bool
+        && data.categoryId is string
+        && data.reminders is list
+        && data.reminders.size() <= 5
+        && data.createdAt is string
+        && data.updatedAt is string
+        && optionalString(data, 'note', 2000)
+        && optionalString(data, 'location', 500);
+    }
+
+    function validCategory(data, categoryId) {
+      return data.id == categoryId
+        && data.name is string
+        && data.name.size() >= 1
+        && data.name.size() <= 40
+        && data.color is string
+        && data.order is number
+        && data.updatedAt is string;
+    }
+
+    match /users/{uid} {
+      allow read, create, update, delete: if signedInAs(uid);
+
+      match /events/{eventId} {
+        allow read, delete: if signedInAs(uid);
+        allow create, update: if signedInAs(uid) && validEvent(request.resource.data, eventId);
+      }
+
+      match /categories/{categoryId} {
+        allow read: if signedInAs(uid);
+        allow create, update: if signedInAs(uid) && validCategory(request.resource.data, categoryId);
+        // Danh mục hệ thống ("Khác") không xóa được, trừ khi xóa cả tài khoản
+        // (hồ sơ users/{uid} bị xóa trong cùng batch).
+        allow delete: if signedInAs(uid)
+          && (resource == null
+            || resource.data.get('isSystem', false) != true
+            || !existsAfter(/databases/$(database)/documents/users/$(uid)));
+      }
+
+      match /pushTokens/{token} {
+        allow read, write: if signedInAs(uid);
+      }
+    }
+  }
+}

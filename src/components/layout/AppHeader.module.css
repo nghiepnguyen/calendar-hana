@@ -163,3 +163,73 @@
     padding: 5px 9px;
   }
 }
+
+.avatarLink {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-left: 2px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.avatarLink img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.signIn {
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.syncDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+}
+
+.syncPending .syncDot {
+  background: var(--gold);
+}
+
+.syncError {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.syncError .syncDot {
+  background: var(--accent);
+}
+
+@media (max-width: 1180px) {
+  .syncText {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .signIn {
+    display: none;
+  }
+}

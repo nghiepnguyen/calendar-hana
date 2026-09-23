@@ -13,6 +13,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}', 'shared/**/*.test.ts'],
+    exclude: ['**/node_modules/**', '**/*.emulator.test.ts'],
     // Mọi phép tính ngày giờ chạy theo giờ Việt Nam, kể cả khi CI ở múi giờ khác.
     env: { TZ: 'Asia/Ho_Chi_Minh' },
   },
