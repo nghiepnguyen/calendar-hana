@@ -10,6 +10,7 @@ import { createPortal } from 'react-dom'
 import { formatLunar, formatSolar } from '@shared/format'
 import { lunarToSolar, parseSolarDate, solarToLunar, toSolarDateString } from '@shared/lunar'
 import type { LunarDate, SolarDateString } from '@shared/types'
+import { COMPACT_QUERY } from '../../hooks/useMediaQuery'
 import { LunarDateInput } from './LunarDateInput'
 import styles from './DatePicker.module.css'
 
@@ -28,7 +29,6 @@ interface DatePickerProps {
 
 const VIEWPORT_GUTTER = 16
 const ANCHOR_GAP = 6
-const NARROW_QUERY = '(max-width: 720px)'
 
 interface PanelPosition {
   left: number
@@ -42,7 +42,7 @@ function anchorPosition(
   bounds: HTMLElement | null | undefined,
   panelWidth: number,
 ): PanelPosition {
-  if (bounds && window.matchMedia(NARROW_QUERY).matches) {
+  if (bounds && window.matchMedia(COMPACT_QUERY).matches) {
     const rect = bounds.getBoundingClientRect()
     return { left: rect.left + rect.width / 2, top: rect.bottom + ANCHOR_GAP, width: rect.width }
   }
@@ -60,13 +60,7 @@ function toLunar(date: SolarDateString): LunarDate {
 }
 
 /** Bảng chọn nhanh một ngày theo dương lịch hoặc âm lịch, luôn hiện ngày quy đổi. */
-export function DatePicker({
-  value,
-  onSelect,
-  onClose,
-  anchorRef,
-  boundsRef,
-}: DatePickerProps) {
+export function DatePicker({ value, onSelect, onClose, anchorRef, boundsRef }: DatePickerProps) {
   const [tab, setTab] = useState<'solar' | 'lunar'>('solar')
   const [solar, setSolar] = useState(value)
   const [lunar, setLunar] = useState<LunarDate>(() => toLunar(value))
@@ -128,13 +122,7 @@ export function DatePicker({
       ref={panelRef}
       role="dialog"
       aria-label="Chọn ngày"
-      style={
-        anchorRef
-          ? position
-            ? position
-            : { visibility: 'hidden' }
-          : undefined
-      }
+      style={anchorRef ? (position ? position : { visibility: 'hidden' }) : undefined}
     >
       <div
         className="segmented"

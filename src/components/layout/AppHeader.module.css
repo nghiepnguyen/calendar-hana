@@ -265,3 +265,52 @@
     display: none;
   }
 }
+
+/* Điện thoại: một dòng gọn (tiêu đề, Hôm nay, mũi tên), phần còn lại nằm ở thanh tab dưới đáy. */
+.compact {
+  top: max(8px, env(safe-area-inset-top));
+  flex-wrap: nowrap;
+  gap: 4px;
+  min-height: 56px;
+  margin: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) 0
+    max(8px, env(safe-area-inset-left));
+  padding: 6px 6px 6px 4px;
+  border-radius: 28px;
+}
+
+.compact .titleWrap {
+  flex: 1 1 auto;
+}
+
+.compact .title {
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.compact .title h1 {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.compact .titleSub {
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.compactNav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.today {
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.compact .arrows :global(.btn-icon) {
+  width: 40px;
+  min-height: 40px;
+}

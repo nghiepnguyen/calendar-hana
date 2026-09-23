@@ -29,6 +29,11 @@
   --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.85);
   --glass-filter: blur(28px) saturate(180%);
   --glass-shadow: 0 1px 2px rgb(30 41 70 / 0.05), 0 12px 40px rgb(30 41 70 / 0.1);
+  /* Thanh tab dưới đáy: trong hơn panel, blur mạnh hơn để nội dung cuộn phía sau vẫn đọc được. */
+  --glass-bar: rgb(255 255 255 / 0.72);
+  --glass-bar-filter: blur(20px) saturate(200%) brightness(1.04);
+  /* Sheet nổi trên nội dung (menu điện thoại): gần như đặc để chữ bên dưới không lẫn vào. */
+  --glass-sheet: rgb(246 247 251 / 0.97);
 
   /* Màu chữ và vạch kẻ (theo thang label của iOS) */
   --text: #111318;
@@ -81,6 +86,9 @@
   --radius-lg: 22px;
   --radius-pill: 999px;
   --header-height: 60px;
+  --tabbar-height: 62px;
+  /* Khoảng trống cuối nội dung để không bị thanh tab che. */
+  --tabbar-space: calc(var(--tabbar-height) + 24px + env(safe-area-inset-bottom));
   --sidebar-width: 280px;
   --hour-height: 52px;
   --gap: 12px;
@@ -104,6 +112,9 @@
     --glass-edge: rgb(0 0 0 / 0.4);
     --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.1);
     --glass-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 48px rgb(0 0 0 / 0.45);
+    --glass-bar: rgb(36 38 48 / 0.66);
+    --glass-bar-filter: blur(20px) saturate(180%);
+    --glass-sheet: rgb(28 30 38 / 0.96);
     --text: #f4f5f8;
     --text-muted: #a9afbd;
     --text-lunar: #9aa1b0;
@@ -145,6 +156,9 @@
   --glass-edge: rgb(0 0 0 / 0.4);
   --glass-highlight: inset 0 1px 0 rgb(255 255 255 / 0.1);
   --glass-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 48px rgb(0 0 0 / 0.45);
+  --glass-bar: rgb(36 38 48 / 0.66);
+  --glass-bar-filter: blur(20px) saturate(180%);
+  --glass-sheet: rgb(28 30 38 / 0.96);
   --text: #f4f5f8;
   --text-muted: #a9afbd;
   --text-lunar: #9aa1b0;
@@ -175,12 +189,17 @@
   :root {
     --glass: #ffffff;
     --glass-strong: #ffffff;
+    --glass-bar: #ffffff;
+    --glass-sheet: #ffffff;
     --glass-filter: none;
+    --glass-bar-filter: none;
     --wallpaper: #eef0f5;
   }
   :root[data-theme='dark'] {
     --glass: #1b1d24;
     --glass-strong: #22242d;
+    --glass-bar: #22242d;
+    --glass-sheet: #22242d;
     --wallpaper: #07080c;
   }
 }
@@ -189,6 +208,8 @@
   :root:not([data-theme='light']) {
     --glass: #1b1d24;
     --glass-strong: #22242d;
+    --glass-bar: #22242d;
+    --glass-sheet: #22242d;
     --wallpaper: #07080c;
   }
 }

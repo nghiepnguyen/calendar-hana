@@ -54,17 +54,14 @@
   transform: scale(0.94);
 }
 
+/* Điện thoại: nội dung cuộn tới sát đáy, trượt dưới thanh tab kính. */
 @media (max-width: 720px) {
   .body {
-    padding: 8px;
+    padding: 8px max(8px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left));
   }
 
   .main {
-    padding-bottom: 80px;
-  }
-
-  .fab {
-    right: 16px;
-    bottom: 16px;
+    padding-bottom: var(--tabbar-space);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 }

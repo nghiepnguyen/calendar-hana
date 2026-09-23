@@ -8,11 +8,13 @@ import { EventDialogs } from '../components/EventDialogs'
 import { AppHeader } from '../components/layout/AppHeader'
 import { SearchPanel } from '../components/SearchPanel/SearchPanel'
 import { Sidebar } from '../components/layout/Sidebar'
+import { TabBar } from '../components/layout/TabBar'
 import { createDefaultSettings } from '../data/defaultCategories'
 import { useCalendarRoute } from '../hooks/useCalendarRoute'
 import { useCategoryMap } from '../hooks/useCategoryMap'
 import { useEventsInRange } from '../hooks/useEventsInRange'
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts'
+import { useIsCompact } from '../hooks/useMediaQuery'
 import { useNow } from '../hooks/useNow'
 import { useOpenOccurrenceFromUrl } from '../hooks/useOpenOccurrenceFromUrl'
 import { useSettings } from '../hooks/useRepositoryData'
@@ -38,6 +40,7 @@ export function CalendarPage() {
   const openCreate = useUiStore((s) => s.openCreate)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const searchOpen = useUiStore((s) => s.searchOpen)
+  const compact = useIsCompact()
 
   const range = useMemo(
     () => viewRange(view, date, settings.weekStartsOn),
@@ -87,20 +90,30 @@ export function CalendarPage() {
         onDateChange={route.setDate}
       />
       <div className={styles.body}>
-        <Sidebar date={date} today={today} settings={settings} onSelectDate={route.setDate} />
+        <Sidebar
+          date={date}
+          today={today}
+          settings={settings}
+          compact={compact}
+          onSelectDate={route.setDate}
+        />
         <main className={styles.main} aria-busy={occurrences === undefined} tabIndex={-1}>
           <View {...viewProps} />
         </main>
       </div>
-      <button
-        type="button"
-        className={styles.fab}
-        onClick={() => openCreate({ date })}
-        aria-label="Tạo sự kiện"
-        title="Tạo sự kiện (N)"
-      >
-        <Plus size={26} weight="bold" aria-hidden="true" />
-      </button>
+      {compact ? (
+        <TabBar view={view} onViewChange={route.setView} onCreate={() => openCreate({ date })} />
+      ) : (
+        <button
+          type="button"
+          className={styles.fab}
+          onClick={() => openCreate({ date })}
+          aria-label="Tạo sự kiện"
+          title="Tạo sự kiện (N)"
+        >
+          <Plus size={26} weight="bold" aria-hidden="true" />
+        </button>
+      )}
       <EventDialogs settings={settings} signedIn={!!user} />
       {searchOpen ? (
         <SearchPanel

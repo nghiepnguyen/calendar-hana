@@ -14,6 +14,7 @@ import type { SolarDateString } from '@shared/types'
 import { VIEW_LABELS, VIEW_MODES, weekDays, type ViewMode } from '../../calendar/range'
 import { useUiStore } from '../../store/uiStore'
 import { useAuth } from '../../auth/authContext'
+import { useIsCompact } from '../../hooks/useMediaQuery'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SyncStatus } from './SyncStatus'
 import styles from './AppHeader.module.css'
@@ -83,8 +84,87 @@ export function AppHeader({
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const title = viewTitle(view, date, weekStartsOn)
   const { available: authAvailable, user } = useAuth()
+  const compact = useIsCompact()
 
   const viewIndex = VIEW_MODES.indexOf(view)
+
+  const todayButton = (
+    <button
+      type="button"
+      className={`btn ${compact ? styles.today : ''}`}
+      onClick={onToday}
+      title="Hôm nay (T)"
+    >
+      Hôm nay
+    </button>
+  )
+  const arrows = (
+    <div className={styles.arrows}>
+      <button
+        type="button"
+        className="btn btn-ghost btn-icon"
+        onClick={onPrev}
+        aria-label={PREV_LABEL[view]}
+        title={`${PREV_LABEL[view]} (←)`}
+      >
+        <CaretLeft size={18} weight="bold" aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        className="btn btn-ghost btn-icon"
+        onClick={onNext}
+        aria-label={NEXT_LABEL[view]}
+        title={`${NEXT_LABEL[view]} (→)`}
+      >
+        <CaretRight size={18} weight="bold" aria-hidden="true" />
+      </button>
+    </div>
+  )
+  const titlePicker = (
+    <div className={styles.titleWrap}>
+      <button
+        ref={titleRef}
+        type="button"
+        className={styles.title}
+        onClick={() => setPickerOpen((open) => !open)}
+        aria-haspopup="dialog"
+        aria-expanded={pickerOpen}
+        title="Chọn ngày"
+      >
+        <h1>
+          <span className={styles.titleMain}>{title.main}</span>
+          {title.sub ? <span className={styles.titleSub}>{title.sub}</span> : null}
+        </h1>
+        <CaretDown size={14} weight="bold" className={styles.caret} aria-hidden="true" />
+      </button>
+      {pickerOpen ? (
+        <DatePicker
+          value={date}
+          anchorRef={titleRef}
+          boundsRef={headerRef}
+          onClose={() => setPickerOpen(false)}
+          onSelect={(next) => {
+            setPickerOpen(false)
+            onDateChange(next)
+          }}
+        />
+      ) : null}
+    </div>
+  )
+
+  // Điện thoại: chế độ xem, tìm kiếm, menu nằm ở thanh tab dưới đáy (TabBar).
+  if (compact) {
+    return (
+      <header ref={headerRef} className={`glass ${styles.header} ${styles.compact}`}>
+        {titlePicker}
+        <SyncStatus />
+        <div className={styles.compactNav}>
+          {todayButton}
+          {arrows}
+        </div>
+      </header>
+    )
+  }
 
   return (
     <header ref={headerRef} className={`glass ${styles.header}`}>
@@ -103,58 +183,9 @@ export function AppHeader({
       </Link>
 
       <div className={styles.nav}>
-        <button type="button" className="btn" onClick={onToday} title="Hôm nay (T)">
-          Hôm nay
-        </button>
-        <div className={styles.arrows}>
-          <button
-            type="button"
-            className="btn btn-ghost btn-icon"
-            onClick={onPrev}
-            aria-label={PREV_LABEL[view]}
-            title={`${PREV_LABEL[view]} (←)`}
-          >
-            <CaretLeft size={18} weight="bold" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className="btn btn-ghost btn-icon"
-            onClick={onNext}
-            aria-label={NEXT_LABEL[view]}
-            title={`${NEXT_LABEL[view]} (→)`}
-          >
-            <CaretRight size={18} weight="bold" aria-hidden="true" />
-          </button>
-        </div>
-        <div className={styles.titleWrap}>
-          <button
-            ref={titleRef}
-            type="button"
-            className={styles.title}
-            onClick={() => setPickerOpen((open) => !open)}
-            aria-haspopup="dialog"
-            aria-expanded={pickerOpen}
-            title="Chọn ngày"
-          >
-            <h1>
-              <span className={styles.titleMain}>{title.main}</span>
-              {title.sub ? <span className={styles.titleSub}>{title.sub}</span> : null}
-            </h1>
-            <CaretDown size={14} weight="bold" className={styles.caret} aria-hidden="true" />
-          </button>
-          {pickerOpen ? (
-            <DatePicker
-              value={date}
-              anchorRef={titleRef}
-              boundsRef={headerRef}
-              onClose={() => setPickerOpen(false)}
-              onSelect={(next) => {
-                setPickerOpen(false)
-                onDateChange(next)
-              }}
-            />
-          ) : null}
-        </div>
+        {todayButton}
+        {arrows}
+        {titlePicker}
       </div>
 
       <div className={styles.right}>

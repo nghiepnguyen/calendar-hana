@@ -1,7 +1,8 @@
 import { useEffect, type CSSProperties } from 'react'
-import { Plus } from '@phosphor-icons/react'
+import { CaretRight, GearSix, Plus, UserCircle, X } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import type { Settings, SolarDateString } from '@shared/types'
+import { useAuth } from '../../auth/authContext'
 import { useRepository } from '../../data/repositoryContext'
 import { useCategoryMap } from '../../hooks/useCategoryMap'
 import { useUiStore } from '../../store/uiStore'
@@ -12,15 +13,18 @@ interface SidebarProps {
   date: SolarDateString
   today: SolarDateString
   settings: Settings
+  /** Điện thoại: hiện dạng sheet từ đáy, kèm lối vào Cài đặt và tài khoản (thay cho header). */
+  compact?: boolean
   onSelectDate: (date: SolarDateString) => void
 }
 
-export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
+export function Sidebar({ date, today, settings, compact, onSelectDate }: SidebarProps) {
   const repository = useRepository()
   const { categories } = useCategoryMap()
   const open = useUiStore((s) => s.sidebarOpen)
   const setOpen = useUiStore((s) => s.setSidebarOpen)
   const openCreate = useUiStore((s) => s.openCreate)
+  const { available: authAvailable, user } = useAuth()
   const hidden = new Set(settings.hiddenCategoryIds)
 
   useEffect(() => {
@@ -48,16 +52,30 @@ export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
         className={`glass ${styles.sidebar} ${open ? styles.open : ''}`}
         aria-label="Menu lịch"
       >
-        <button
-          type="button"
-          className={`btn btn-primary ${styles.create}`}
-          onClick={() => {
-            setOpen(false)
-            openCreate({ date })
-          }}
-        >
-          <Plus size={18} weight="bold" aria-hidden="true" /> Tạo sự kiện
-        </button>
+        {compact ? (
+          <div className={styles.sheetHead}>
+            <h2>Menu</h2>
+            <button
+              type="button"
+              className={`btn btn-icon ${styles.close}`}
+              onClick={() => setOpen(false)}
+              aria-label="Đóng menu"
+            >
+              <X size={16} weight="bold" aria-hidden="true" />
+            </button>
+          </div>
+        ) : (
+          <button
+            type="button"
+            className={`btn btn-primary ${styles.create}`}
+            onClick={() => {
+              setOpen(false)
+              openCreate({ date })
+            }}
+          >
+            <Plus size={18} weight="bold" aria-hidden="true" /> Tạo sự kiện
+          </button>
+        )}
 
         <MiniMonth
           selected={date}
@@ -93,6 +111,48 @@ export function Sidebar({ date, today, settings, onSelectDate }: SidebarProps) {
             ))}
           </ul>
         </section>
+
+        {compact ? (
+          <ul className={styles.links}>
+            {user || authAvailable ? (
+              <li>
+                <Link to="/settings#account" className={styles.link}>
+                  {user?.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      width={28}
+                      height={28}
+                      referrerPolicy="no-referrer"
+                      className={styles.avatar}
+                    />
+                  ) : (
+                    <UserCircle size={28} aria-hidden="true" className={styles.linkIcon} />
+                  )}
+                  <span className={styles.linkText}>
+                    {user ? (user.displayName ?? user.email ?? 'Tài khoản') : 'Đăng nhập'}
+                    {user?.email && user.displayName ? (
+                      <span className={styles.linkHint}>{user.email}</span>
+                    ) : null}
+                  </span>
+                  <CaretRight
+                    size={16}
+                    weight="bold"
+                    aria-hidden="true"
+                    className={styles.chevron}
+                  />
+                </Link>
+              </li>
+            ) : null}
+            <li>
+              <Link to="/settings" className={styles.link}>
+                <GearSix size={28} aria-hidden="true" className={styles.linkIcon} />
+                <span className={styles.linkText}>Cài đặt</span>
+                <CaretRight size={16} weight="bold" aria-hidden="true" className={styles.chevron} />
+              </Link>
+            </li>
+          </ul>
+        ) : null}
       </aside>
     </>
   )

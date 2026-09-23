@@ -1,0 +1,122 @@
+/*
+ * Thanh tab nổi kiểu iOS: viên kính chứa các tab, nút tạo tròn tách riêng bên phải.
+ * Nội dung cuộn bên dưới thanh (CalendarPage chừa khoảng trống --tabbar-space).
+ */
+.bar {
+  position: fixed;
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.bar > * {
+  pointer-events: auto;
+}
+
+.tabs {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: var(--tabbar-height);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bar);
+  -webkit-backdrop-filter: var(--glass-bar-filter);
+  backdrop-filter: var(--glass-bar-filter);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+}
+
+.views {
+  position: relative;
+  display: flex;
+  flex: 3 1 0;
+  min-width: 0;
+  isolation: isolate;
+}
+
+/* Viên sáng trượt theo chế độ xem đang chọn. */
+.views::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto 0 0;
+  width: calc(100% / var(--count, 3));
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  transform: translateX(calc(var(--active, 0) * 100%));
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.tab {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+  transition:
+    color 0.2s var(--ease),
+    transform 0.25s var(--ease-spring);
+}
+
+.tab span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab:active {
+  transform: scale(0.9);
+}
+
+.tab[aria-checked='true'] {
+  color: var(--accent);
+}
+
+.tab:focus-visible {
+  outline-offset: -2px;
+}
+
+.create {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: var(--tabbar-height);
+  height: var(--tabbar-height);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 10px 28px color-mix(in srgb, var(--accent) 40%, transparent);
+  transition:
+    transform 0.25s var(--ease-spring),
+    background-color 0.18s var(--ease);
+}
+
+.create:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 360px) {
+  .tab {
+    font-size: 10px;
+  }
+}
