@@ -1,0 +1,132 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main, 'feature/**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  NODE_VERSION: 22
+
+jobs:
+  test:
+    name: Typecheck, lint, test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            functions/package-lock.json
+
+      # npm 10 lỗi khi cài vitest 5 (xem README).
+      - run: npm install -g npm@11 firebase-tools
+
+      - name: Install
+        run: |
+          npm ci
+          npm ci --prefix functions
+
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Emulator tests
+        run: npm run test:emulator
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end tests
+        run: npx playwright test --project=desktop --project=mobile
+        env:
+          CI: true
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: test-results/
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Firebase
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      HAS_CREDENTIALS: ${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}
+    steps:
+      - name: Check credentials
+        if: env.HAS_CREDENTIALS != 'true'
+        run: echo "::warning::Chưa có secret FIREBASE_SERVICE_ACCOUNT, bỏ qua deploy."
+
+      - uses: actions/checkout@v4
+        if: env.HAS_CREDENTIALS == 'true'
+
+      - uses: actions/setup-node@v4
+        if: env.HAS_CREDENTIALS == 'true'
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            functions/package-lock.json
+
+      - name: Install
+        if: env.HAS_CREDENTIALS == 'true'
+        run: |
+          npm install -g npm@11 firebase-tools
+          npm ci
+          npm ci --prefix functions
+
+      # Cấu hình Firebase Web app là công khai (nằm trong bundle), lưu ở Repository variables.
+      - name: Build web app
+        if: env.HAS_CREDENTIALS == 'true'
+        run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ vars.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_VAPID_KEY: ${{ vars.VITE_FIREBASE_VAPID_KEY }}
+
+      - name: Write functions/.env
+        if: env.HAS_CREDENTIALS == 'true'
+        run: |
+          {
+            echo "EMAIL_FROM=\"${EMAIL_FROM}\""
+            echo "APP_URL=\"${APP_URL}\""
+          } > functions/.env
+        env:
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          APP_URL: ${{ vars.APP_URL }}
+
+      - uses: google-github-actions/auth@v2
+        if: env.HAS_CREDENTIALS == 'true'
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      # RESEND_API_KEY đã nằm trong Secret Manager, không cần truyền ở đây.
+      - name: Deploy
+        if: env.HAS_CREDENTIALS == 'true'
+        run: firebase deploy --only firestore,hosting,functions --project calendar-hana --non-interactive --force

@@ -126,6 +126,34 @@ Trước lần deploy functions đầu tiên:
 2. Kiểm tra vùng Firestore. Functions đặt ở `asia-southeast1` (trong `functions/src/index.ts`) và phải cùng vùng với Firestore.
 3. Đặt `RESEND_API_KEY` và tạo `functions/.env` như mục trên.
 
+### Tự động qua GitHub Actions
+
+Workflow [.github/workflows/ci.yml](.github/workflows/ci.yml):
+
+- Mỗi lần push hoặc mở PR: typecheck, lint, unit test, test Emulator, e2e (Chrome desktop và Pixel 7).
+- Push vào `main` và test qua hết: build rồi `firebase deploy --only firestore,hosting,functions`.
+
+Cấu hình trên GitHub (Settings > Secrets and variables > Actions):
+
+| Loại | Tên | Nội dung |
+|---|---|---|
+| Variables | `VITE_FIREBASE_*` (7 biến) | Giống `.env.local`, là cấu hình công khai |
+| Variables | `EMAIL_FROM`, `APP_URL` | Giống `functions/.env` |
+| Secret | `FIREBASE_SERVICE_ACCOUNT` | Nội dung file JSON key của service account dùng để deploy |
+
+Chưa có `FIREBASE_SERVICE_ACCOUNT` thì bước deploy được bỏ qua, chỉ chạy test. `RESEND_API_KEY` vẫn nằm trong Secret Manager, không cần đưa lên GitHub.
+
+Tạo service account ở Google Cloud Console > IAM & Admin > Service Accounts, cấp các role:
+
+- Firebase Admin
+- Cloud Functions Admin
+- Service Account User
+- Secret Manager Viewer
+- Cloud Scheduler Admin
+- Artifact Registry Administrator
+
+Rồi tạo key JSON và dán nội dung vào secret `FIREBASE_SERVICE_ACCOUNT`.
+
 ### Tên miền riêng
 
 App chạy ở `https://lich.thanhnghiep.top`, đặt trong `.env.production` (`VITE_CANONICAL_HOST`). Bản trên `calendar-hana.web.app` và `calendar-hana.firebaseapp.com` tự chuyển sang tên miền này. Máy đang có dữ liệu chỉ lưu trên máy thì không bị chuyển: app hiện hướng dẫn xuất dữ liệu rồi nhập ở địa chỉ mới, vì dữ liệu trên máy gắn với từng tên miền.
