@@ -1,0 +1,56 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  padding: 8px 8px 8px 16px;
+  border-radius: var(--radius-pill);
+  transform: translateX(-50%);
+  animation: rise 0.35s var(--ease-spring);
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 4px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+@media (max-width: 720px) {
+  /* Tránh đè nút tạo sự kiện ở góc phải. */
+  .toast {
+    left: 16px;
+    right: 88px;
+    transform: none;
+    animation-name: rise-mobile;
+  }
+
+  .text {
+    white-space: normal;
+  }
+}
+
+@keyframes rise-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
