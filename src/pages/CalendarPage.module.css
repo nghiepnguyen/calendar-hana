@@ -61,7 +61,19 @@
   }
 
   .main {
-    padding-bottom: var(--tabbar-space);
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  /*
+   * Xem không được co nhỏ hơn nội dung: nếu co, phần tràn (lưới giờ của xem Ngày) đè lên khoảng
+   * chừa cho thanh tab và bị thanh tab che. Khoảng chừa là phần tử đệm cuối khung cuộn.
+   */
+  .main > * {
+    flex-shrink: 0;
+  }
+
+  .main::after {
+    content: '';
+    flex: 0 0 var(--tabbar-space);
   }
 }
