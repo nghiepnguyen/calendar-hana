@@ -169,6 +169,7 @@
 - Service worker chỉ được đăng ký ở bản build (`npm run build && npm run preview`); khi chạy dev, thông báo local dùng `new Notification`.
 - Task 8.7: Lighthouse 12 không còn mục PWA; kiểm tra cài được bằng CDP `Page.getInstallabilityErrors` (không lỗi). Lighthouse mobile: Performance 96, Accessibility 100, Best Practices 100. Mở lại có cache (CPU chậm 4 lần, 4G chậm): xem Ngày hiện trong dưới 100 ms. Firebase được tải khi cần: Auth tải lúc rảnh cho người chưa đăng nhập, Firestore chỉ tải sau khi đăng nhập.
 - Task 8.8: đã chạy e2e trên Chrome, Pixel 7, Firefox, Safari (WebKit) và iPhone. Test offline bị bỏ qua trên WebKit vì Playwright không hỗ trợ service worker ở đó. Còn phải thử bằng tay: cài PWA, nhận thông báo thật, đăng nhập Google thật, đồng bộ 2 thiết bị.
+- Task 8.9: đã deploy Firestore rules/indexes, Hosting và 3 functions (`asia-southeast1`) ngày 23/9/2026. Lần deploy functions đầu lỗi quyền Eventarc (chờ quyền có hiệu lực), deploy lại thì thành công. Còn kiểm tra nhắc hẹn push/email trên production.
 
 ## Instructions for Completing Tasks
 
