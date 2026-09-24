@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { getLeapMonth, getLunarMonthLength, MAX_YEAR, MIN_YEAR, yearCanChi } from '@shared/lunar'
 import type { LunarDate } from '@shared/types'
 import styles from './DatePicker.module.css'
@@ -12,9 +12,23 @@ interface LunarDateInputProps {
 
 const DAYS = Array.from({ length: 30 }, (_, i) => i + 1)
 
+function isSupportedYear(year: number): boolean {
+  return Number.isInteger(year) && year >= MIN_YEAR && year <= MAX_YEAR
+}
+
 /** Chọn ngày / tháng (có tháng nhuận) / năm âm lịch. */
 export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps) {
   const id = useId()
+  // Chữ đang gõ trong ô Năm. Năm dở dang (2, 20, 202…) chỉ nằm ở đây, chưa đổi value;
+  // nếu gắn thẳng ô với value thì mỗi lần xoá/gõ dở ô lại nhảy về năm cũ.
+  const [yearText, setYearText] = useState(String(value.year))
+  const [shownYear, setShownYear] = useState(value.year)
+  if (value.year !== shownYear) {
+    // Năm đổi từ ngoài (đổi Dương → Âm, chọn ngày khác): hiện năm mới.
+    setShownYear(value.year)
+    setYearText(String(value.year))
+  }
+  const yearInvalid = !isSupportedYear(Number(yearText))
   const leapMonth =
     value.year >= MIN_YEAR && value.year <= MAX_YEAR ? getLeapMonth(value.year) : null
   const monthLength =
@@ -85,19 +99,35 @@ export function LunarDateInput({ value, onChange, invalid }: LunarDateInputProps
         <input
           id={`${id}-year`}
           className="input"
-          type="number"
-          min={MIN_YEAR}
-          max={MAX_YEAR}
-          value={value.year}
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          maxLength={4}
+          autoComplete="off"
+          value={yearText}
+          aria-invalid={yearInvalid}
+          aria-describedby={yearInvalid ? `${id}-year-error` : undefined}
           onChange={(e) => {
-            const year = Number(e.target.value)
-            if (Number.isInteger(year) && year >= MIN_YEAR && year <= MAX_YEAR) update({ year })
+            const text = e.target.value.replace(/\D/g, '')
+            setYearText(text)
+            const year = Number(text)
+            if (isSupportedYear(year)) {
+              setShownYear(year)
+              update({ year })
+            }
           }}
+          // Rời ô khi năm chưa hợp lệ thì trả về năm đang dùng.
+          onBlur={() => setYearText(String(value.year))}
         />
       </div>
       <span className={styles.lunarYearName}>
         {value.year >= MIN_YEAR && value.year <= MAX_YEAR ? yearCanChi(value.year).name : ''}
       </span>
+      {yearInvalid ? (
+        <p id={`${id}-year-error`} className="field-error">
+          Năm từ {MIN_YEAR} đến {MAX_YEAR}.
+        </p>
+      ) : null}
       {monthLength !== null && value.day > monthLength ? (
         <p className="field-error" role="alert">
           Tháng này chỉ có {monthLength} ngày.
