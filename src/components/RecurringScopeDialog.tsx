@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import type { RecurringScope } from '@shared/recurrence/editing'
 import { Modal } from './Modal/Modal'
+import styles from './RecurringScopeDialog.module.css'
 
 interface RecurringScopeDialogProps {
   action: 'edit' | 'delete'
@@ -8,10 +9,10 @@ interface RecurringScopeDialogProps {
   onCancel: () => void
 }
 
-const OPTIONS: { value: RecurringScope; label: string }[] = [
-  { value: 'single', label: 'Chỉ sự kiện này' },
-  { value: 'following', label: 'Sự kiện này và các sự kiện sau' },
-  { value: 'all', label: 'Tất cả' },
+const OPTIONS: { value: RecurringScope; label: string; hint: string }[] = [
+  { value: 'single', label: 'Chỉ sự kiện này', hint: 'Các lần khác giữ nguyên' },
+  { value: 'following', label: 'Sự kiện này và các sự kiện sau', hint: 'Các lần trước giữ nguyên' },
+  { value: 'all', label: 'Tất cả', hint: 'Mọi lần lặp của sự kiện' },
 ]
 
 /** Hỏi phạm vi khi sửa / xóa sự kiện lặp (PRD mục 30). */
@@ -43,18 +44,28 @@ export function RecurringScopeDialog({ action, onConfirm, onCancel }: RecurringS
       <div
         role="radiogroup"
         aria-label={`Phạm vi ${verb.toLowerCase()}`}
-        style={{ display: 'grid', gap: 10 }}
+        className={styles.options}
       >
         {OPTIONS.map((option) => (
-          <label key={option.value} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          <label key={option.value} className={styles.option}>
             <input
               type="radio"
+              className={styles.radio}
               name={id}
               value={option.value}
               checked={scope === option.value}
               onChange={() => setScope(option.value)}
+              aria-labelledby={`${id}-${option.value}`}
+              aria-describedby={`${id}-${option.value}-hint`}
             />
-            {option.label}
+            <span className={styles.text}>
+              <span id={`${id}-${option.value}`} className={styles.label}>
+                {option.label}
+              </span>
+              <span id={`${id}-${option.value}-hint`} className={styles.hint}>
+                {option.hint}
+              </span>
+            </span>
           </label>
         ))}
       </div>
