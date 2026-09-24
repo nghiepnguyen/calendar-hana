@@ -15,10 +15,11 @@ interface Options {
 
 /**
  * Cuộn vô hạn hai chiều trên cửa sổ: mốc đầu/cuối lọt vào màn hình thì mở rộng khoảng ngày.
- * Chèn thêm phía trên thì bù scrollY để phần đang xem không bị đẩy xuống.
+ * Chèn thêm phía trên thì cuộn thêm đúng phần vừa chèn để phần đang xem không bị đẩy xuống.
  */
 export function useInfiniteRange({ range, setRange, topRef, bottomRef, enabled }: Options) {
-  const prepend = useRef<{ height: number; y: number } | null>(null)
+  // Chiều cao trang trước khi chèn thêm phía trên.
+  const prepend = useRef<number | null>(null)
   const autoLoads = useRef(0)
 
   useEffect(() => {
@@ -38,10 +39,7 @@ export function useInfiniteRange({ range, setRange, topRef, bottomRef, enabled }
           if (!entry.isIntersecting || autoLoads.current >= MAX_AUTO_LOADS) continue
           if (entry.target === topRef.current && !isAtStart(range)) {
             autoLoads.current++
-            prepend.current = {
-              height: document.documentElement.scrollHeight,
-              y: window.scrollY,
-            }
+            prepend.current = document.documentElement.scrollHeight
             setRange(extendBefore(range))
             return
           }
@@ -60,10 +58,12 @@ export function useInfiniteRange({ range, setRange, topRef, bottomRef, enabled }
   }, [enabled, range, setRange, topRef, bottomRef])
 
   useLayoutEffect(() => {
-    const saved = prepend.current
-    if (!saved) return
+    const height = prepend.current
+    if (height === null) return
     prepend.current = null
-    const added = document.documentElement.scrollHeight - saved.height
-    if (added > 0) window.scrollTo(0, saved.y + added)
+    const added = document.documentElement.scrollHeight - height
+    // Cuộn tương đối, không về scrollY lúc bắt đầu tải: người dùng có thể đã cuộn tiếp
+    // trong lúc đó, quay về vị trí cũ sẽ giật trang ngược lại.
+    if (added > 0) window.scrollBy(0, added)
   }, [range])
 }

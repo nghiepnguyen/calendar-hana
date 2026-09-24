@@ -262,6 +262,8 @@ test('US-L2: quay lại trang Danh sách thì về đúng chỗ đang xem', asyn
   const target = app.getByRole('heading', { name: /^Thứ Hai, 1\/2\/2027/ })
   await target.scrollIntoViewIfNeeded()
   await app.waitForTimeout(500)
+  // Tải thêm phía trên trong lúc cuộn không được kéo trang ngược lại.
+  await expect(target).toBeInViewport()
   await backToCalendar(app)
   await expect(app).toHaveURL(/\/day\//)
   await openEventList(app)
