@@ -11,6 +11,7 @@ import {
   draftSolarDate,
   draftToInput,
   setAllDay,
+  setCategory,
   switchCalendar,
   type EventDraft,
 } from './draft'
@@ -236,7 +237,7 @@ export function EventForm({
               className="input"
               value={draft.categoryId}
               aria-invalid={!!errors.categoryId}
-              onChange={(e) => update({ categoryId: e.target.value })}
+              onChange={(e) => setDraft((d) => setCategory(d, e.target.value, !isSingle))}
             >
               {categories.map((c) => (
                 <option key={c.id} value={c.id}>

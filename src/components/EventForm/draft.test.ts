@@ -7,6 +7,7 @@ import {
   draftSolarDate,
   draftToInput,
   setAllDay,
+  setCategory,
   switchCalendar,
 } from './draft'
 
@@ -115,5 +116,22 @@ describe('ngày dương đang gõ dở', () => {
     for (const solarDate of ['0001-04-28', '']) {
       expect(switchCalendar({ ...draft, solarDate }, 'lunar').lunarDate).toEqual(draft.lunarDate)
     }
+  })
+})
+
+describe('setCategory', () => {
+  it('chọn Giỗ/Lễ khi đang không lặp thì lặp hằng năm', () => {
+    const draft = draftFromDefaults({ date: '2026-04-28' })
+    expect(setCategory(draft, 'memorial')).toMatchObject({
+      categoryId: 'memorial',
+      repeat: 'yearly',
+    })
+    expect(setCategory(draft, 'work').repeat).toBe('none')
+  })
+
+  it('giữ kiểu lặp đã chọn, và không lặp khi sửa riêng một lần', () => {
+    const draft = draftFromDefaults({ date: '2026-04-28' })
+    expect(setCategory({ ...draft, repeat: 'monthly' }, 'memorial').repeat).toBe('monthly')
+    expect(setCategory(draft, 'memorial', false).repeat).toBe('none')
   })
 })

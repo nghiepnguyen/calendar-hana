@@ -18,6 +18,8 @@ export const CATEGORY_COLORS = [
 
 export const OTHER_CATEGORY_ID = 'other'
 export const DEFAULT_EVENT_CATEGORY_ID = 'personal'
+/** Giỗ/Lễ: chọn danh mục này thì sự kiện mặc định lặp hằng năm. */
+export const MEMORIAL_CATEGORY_ID = 'memorial'
 
 /** Danh mục mặc định với id cố định, để dữ liệu local và cloud khớp nhau. */
 export function createDefaultCategories(now = new Date().toISOString()): Category[] {
@@ -25,7 +27,7 @@ export function createDefaultCategories(now = new Date().toISOString()): Categor
     { id: 'work', name: 'Công việc', color: '#2563eb', order: 0, updatedAt: now },
     { id: 'personal', name: 'Cá nhân', color: '#16a34a', order: 1, updatedAt: now },
     { id: 'family', name: 'Gia đình', color: '#ea580c', order: 2, updatedAt: now },
-    { id: 'memorial', name: 'Giỗ/Lễ', color: '#dc2626', order: 3, updatedAt: now },
+    { id: MEMORIAL_CATEGORY_ID, name: 'Giỗ/Lễ', color: '#dc2626', order: 3, updatedAt: now },
     { id: 'health', name: 'Sức khỏe', color: '#0d9488', order: 4, updatedAt: now },
     {
       id: OTHER_CATEGORY_ID,

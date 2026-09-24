@@ -20,7 +20,7 @@ import {
   type SolarDateString,
   type TimeString,
 } from '@shared/types'
-import { DEFAULT_EVENT_CATEGORY_ID } from '../../data/defaultCategories'
+import { DEFAULT_EVENT_CATEGORY_ID, MEMORIAL_CATEGORY_ID } from '../../data/defaultCategories'
 import type { EventInput } from '../../data/repository'
 import type { EventDraftDefaults } from '../../store/uiStore'
 
@@ -99,6 +99,18 @@ export function setAllDay(draft: EventDraft, allDay: boolean): EventDraft {
     ? defaultReminders(allDay)
     : draft.reminders
   return { ...draft, allDay, reminders }
+}
+
+/**
+ * Đổi danh mục. Giỗ/Lễ thường lặp hằng năm nên tự chọn "Hằng năm" nếu đang không lặp;
+ * kiểu lặp người dùng đã chọn thì giữ nguyên. canRepeat = false khi sửa riêng một lần.
+ */
+export function setCategory(draft: EventDraft, categoryId: string, canRepeat = true): EventDraft {
+  const repeat =
+    canRepeat && categoryId === MEMORIAL_CATEGORY_ID && draft.repeat === 'none'
+      ? 'yearly'
+      : draft.repeat
+  return { ...draft, categoryId, repeat }
 }
 
 export function draftFromDefaults(defaults: EventDraftDefaults): EventDraft {

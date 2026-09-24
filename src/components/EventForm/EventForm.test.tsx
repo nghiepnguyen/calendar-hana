@@ -53,6 +53,14 @@ describe('EventForm', () => {
     expect(onSave).not.toHaveBeenCalled()
   })
 
+  it('chọn danh mục Giỗ/Lễ thì tự lặp hằng năm', async () => {
+    renderForm()
+    await userEvent.click(screen.getByRole('radio', { name: 'Âm lịch' }))
+    await userEvent.selectOptions(screen.getByLabelText('Danh mục'), 'Giỗ/Lễ')
+    expect(screen.getByLabelText('Kiểu lặp')).toHaveDisplayValue('Hằng năm (âm lịch)')
+    expect(screen.getByText('Lặp hằng năm vào ngày 12/3 âm lịch')).toBeInTheDocument()
+  })
+
   it('đổi Dương ↔ Âm luôn hiện ngày quy đổi', async () => {
     renderForm()
     expect(screen.getByText('Tức ngày 12/3 âm lịch')).toBeInTheDocument()
