@@ -17,6 +17,23 @@ interface ModalProps {
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
+// Khoá cuộn trang dùng chung cho mọi hộp thoại đang mở. Đếm số hộp thoại thay vì mỗi hộp
+// thoại tự lưu/trả lại overflow: nhiều hộp thoại đóng cùng lúc theo thứ tự bất kỳ sẽ trả
+// nhầm 'hidden' và khoá cuộn vĩnh viễn (trang Danh sách cuộn bằng window nên bị kẹt).
+let scrollLocks = 0
+let savedOverflow = ''
+
+function lockScroll() {
+  if (scrollLocks++ === 0) {
+    savedOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+  }
+}
+
+function unlockScroll() {
+  if (--scrollLocks === 0) document.body.style.overflow = savedOverflow
+}
+
 /** Hộp thoại có focus trap, Esc để đóng, trả focus về chỗ cũ khi đóng. */
 export function Modal({
   title,
@@ -68,11 +85,10 @@ export function Modal({
       }
     }
     document.addEventListener('keydown', onKey)
-    const { overflow } = document.body.style
-    document.body.style.overflow = 'hidden'
+    lockScroll()
     return () => {
       document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = overflow
+      unlockScroll()
       previous?.focus?.()
     }
   }, [initialFocusSelector])
