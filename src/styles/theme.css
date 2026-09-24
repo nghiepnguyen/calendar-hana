@@ -394,6 +394,19 @@ select.input {
   .input:not(textarea) {
     height: 44px;
   }
+
+  /*
+   * iOS Safari giữ chiều rộng gốc của ô ngày/giờ, bỏ qua width: 100% nên tràn khỏi khung
+   * hẹp (bảng chọn ngày trên header). Bỏ giao diện gốc thì ô co theo khung; bấm vẫn mở
+   * bảng chọn của hệ điều hành.
+   */
+  .input[type='date'],
+  .input[type='time'] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    max-width: 100%;
+  }
 }
 
 .input:hover {
