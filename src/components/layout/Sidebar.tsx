@@ -4,7 +4,6 @@ import {
   GearSix,
   ListBullets,
   MagnifyingGlass,
-  Plus,
   UserCircle,
   X,
 } from '@phosphor-icons/react'
@@ -31,7 +30,6 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
   const { categories } = useCategoryMap()
   const open = useUiStore((s) => s.sidebarOpen)
   const setOpen = useUiStore((s) => s.setSidebarOpen)
-  const openCreate = useUiStore((s) => s.openCreate)
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const { available: authAvailable, user } = useAuth()
   const hidden = new Set(settings.hiddenCategoryIds)
@@ -87,16 +85,11 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
             </button>
           </>
         ) : (
-          <button
-            type="button"
-            className={`btn btn-primary ${styles.create}`}
-            onClick={() => {
-              setOpen(false)
-              openCreate({ date })
-            }}
-          >
-            <Plus size={18} weight="bold" aria-hidden="true" /> Tạo sự kiện
-          </button>
+          // Tạo sự kiện bằng nút + ở góc màn hình; điện thoại vào danh sách bằng tab Sự kiện.
+          <Link to="/events" className={styles.listLink} onClick={() => setOpen(false)}>
+            <ListBullets size={20} weight="bold" aria-hidden="true" />
+            Danh sách sự kiện
+          </Link>
         )}
 
         {/* Điện thoại chọn ngày qua bộ chọn trên header, dành chỗ trong menu cho chức năng khác. */}
@@ -140,14 +133,6 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
             ))}
           </ul>
         </section>
-
-        {/* Điện thoại vào Danh sách sự kiện bằng tab Sự kiện. */}
-        {compact ? null : (
-          <Link to="/events" className={styles.listLink} onClick={() => setOpen(false)}>
-            <ListBullets size={20} weight="bold" aria-hidden="true" />
-            Danh sách sự kiện
-          </Link>
-        )}
 
         {compact ? (
           <ul className={styles.links}>

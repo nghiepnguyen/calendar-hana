@@ -87,11 +87,14 @@ describe('App', () => {
 
   it('tạo sự kiện, mở chi tiết, sửa riêng một lần và xóa', async () => {
     renderApp('/day/2026-09-21')
-    await userEvent.click(
-      within(await screen.findByRole('complementary', { name: 'Menu lịch' })).getByRole('button', {
-        name: 'Tạo sự kiện',
-      }),
+    // Sidebar desktop có link Danh sách sự kiện; tạo sự kiện bằng nút + ở góc.
+    const sidebar = await screen.findByRole('complementary', { name: 'Menu lịch' })
+    expect(within(sidebar).getByRole('link', { name: 'Danh sách sự kiện' })).toHaveAttribute(
+      'href',
+      '/events',
     )
+    expect(within(sidebar).queryByRole('button', { name: 'Tạo sự kiện' })).not.toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Tạo sự kiện' }))
     const form = await screen.findByRole('dialog', { name: 'Tạo sự kiện' })
     await userEvent.type(within(form).getByLabelText('Tiêu đề'), 'Họp team')
     await userEvent.selectOptions(within(form).getByLabelText('Kiểu lặp'), 'Hằng tuần')
