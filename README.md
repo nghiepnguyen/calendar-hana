@@ -3,10 +3,12 @@
 Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và cài được như app (PWA).
 
 - Xem theo Ngày, Tuần, Tháng. Mặc định mở xem Ngày của hôm nay.
-- Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo.
-- Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1).
+- Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
+- Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
+- Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
+- Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
 - Danh mục có màu, sửa và thêm được. Lọc lịch theo danh mục.
-- Nhắc hẹn bằng thông báo hệ thống hoặc email.
+- Nhắc hẹn bằng thông báo hệ thống hoặc email. Sự kiện mới có sẵn một nhắc hẹn thông báo (trước 15 phút, hoặc trong ngày với sự kiện cả ngày).
 - Không cần tài khoản: dữ liệu lưu trên máy và dùng được offline. Đăng nhập Google để lưu lên cloud và đồng bộ nhiều thiết bị.
 
 Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md).
@@ -100,7 +102,7 @@ npm run build && npm run preview   # http://localhost:4173
 | `npm run format` | Prettier |
 | `npm test` | Unit test (Vitest, jsdom, múi giờ `Asia/Ho_Chi_Minh`) |
 | `npm run test:emulator` | Test Security Rules, Firestore repository và hàng đợi nhắc hẹn trên Emulator. Dùng project `demo-calendar-hana`, không bao giờ chạm project thật. Cần Java |
-| `npm run test:e2e` | Playwright cho các user story và quét accessibility (axe), trên Chrome desktop và Pixel 7. Tự build và chạy preview |
+| `npm run test:e2e` | Playwright cho các user story, giao diện điện thoại và quét accessibility (axe), trên Chrome desktop và Pixel 7. Tự build và chạy preview |
 | `npx playwright test --project=firefox --project=webkit --project=iphone` | Chạy e2e thêm trên Firefox, Safari và iPhone. Cài trình duyệt trước bằng `npx playwright install firefox webkit` |
 
 Playwright chỉ hỗ trợ service worker trên Chromium. Vì vậy test offline (US-8) bị bỏ qua trên WebKit, cần kiểm tra Safari bằng tay.
@@ -180,7 +182,7 @@ src/
   reminders/   Quyền thông báo, lịch nhắc local, Web Push, đăng ký service worker
   views/       Xem Ngày, Tuần, Tháng
   components/  Form sự kiện, chọn ngày, lưới giờ, hộp thoại...
-  pages/       Trang lịch và trang Cài đặt
+  pages/       Trang lịch, Danh sách sự kiện và Cài đặt
   styles/      Theme (kính mờ kiểu iOS, sáng/tối)
   sw.ts        Service worker: cache offline, Web Push, bấm thông báo
 functions/     Cloud Functions (bundle bằng esbuild, gói luôn shared/)
