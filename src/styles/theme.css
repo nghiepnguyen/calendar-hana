@@ -355,24 +355,54 @@ button {
 }
 
 .input {
-  min-height: 40px;
+  /* Chiều cao cố định: Safari tự tính chiều cao ô ngày/giờ và select khác hẳn ô chữ. */
+  height: 40px;
   padding: 8px 12px;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  background: var(--fill);
+  background-color: var(--fill);
   width: 100%;
+  min-width: 0;
   transition:
     background-color 0.15s var(--ease),
     box-shadow 0.15s var(--ease);
 }
 
+textarea.input {
+  height: auto;
+  min-height: 40px;
+}
+
+/* Bỏ giao diện gốc của select (Safari bỏ qua chiều cao và padding), tự vẽ mũi tên. */
+select.input {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%238a909c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+/* iOS canh giữa chữ trong ô ngày/giờ và cho nó chiều rộng tối thiểu riêng. */
+.input::-webkit-date-and-time-value {
+  min-height: 1.45em;
+  text-align: left;
+}
+
+@media (pointer: coarse) {
+  .input:not(textarea) {
+    height: 44px;
+  }
+}
+
 .input:hover {
-  background: var(--fill-hover);
+  background-color: var(--fill-hover);
 }
 
 .input:focus {
   outline: none;
-  background: var(--glass-strong);
+  background-color: var(--glass-strong);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 35%, transparent);
   border-color: var(--focus);
 }
