@@ -8,21 +8,11 @@ interface EventChipProps {
   occurrence: Occurrence
   color: string
   onOpen: (occurrence: Occurrence) => void
-  /** 'block': khối trong lưới giờ; 'inline': dòng trong ô tháng / cả ngày. */
-  variant?: 'block' | 'inline'
-  style?: CSSProperties
   /** Chỉ hiện chấm màu (ô tháng trên điện thoại). */
   compact?: boolean
 }
 
-export function EventChip({
-  occurrence,
-  color,
-  onOpen,
-  variant = 'inline',
-  style,
-  compact,
-}: EventChipProps) {
+export function EventChip({ occurrence, color, onOpen, compact }: EventChipProps) {
   const { event } = occurrence
   const time = !event.allDay && event.startTime ? formatTime(event.startTime) : null
   const timeRange =
@@ -37,8 +27,8 @@ export function EventChip({
   return (
     <button
       type="button"
-      className={`${styles.chip} ${styles[variant]} ${compact ? styles.compact : ''}`}
-      style={{ ...style, '--event-color': color } as CSSProperties}
+      className={`${styles.chip} ${styles.inline} ${compact ? styles.compact : ''}`}
+      style={{ '--event-color': color } as CSSProperties}
       onClick={(e) => {
         e.stopPropagation()
         onOpen(occurrence)
@@ -48,11 +38,8 @@ export function EventChip({
     >
       {compact ? null : (
         <>
-          {variant === 'inline' && time ? <span className={styles.time}>{time}</span> : null}
+          {time ? <span className={styles.time}>{time}</span> : null}
           <span className={styles.title}>{event.title}</span>
-          {variant === 'block' && timeRange ? (
-            <span className={styles.range}>{timeRange}</span>
-          ) : null}
           <span className={styles.icons} aria-hidden="true">
             {isLunar ? <MoonStars size={12} weight="bold" /> : null}
             {occurrence.isRecurring ? <Repeat size={12} weight="bold" /> : null}

@@ -3,16 +3,16 @@ import { ArrowsClockwise } from '@phosphor-icons/react'
 import { formatAccessibleDate } from '@shared/format'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import { timeLabel } from './listFormat'
-import styles from './EventListPage.module.css'
+import styles from './EventList.module.css'
 
 interface EventRowProps {
   occurrence: Occurrence
   color: string
   categoryName?: string
-  selecting: boolean
-  selected: boolean
+  selecting?: boolean
+  selected?: boolean
   onOpen: (occurrence: Occurrence) => void
-  onToggle: (occurrence: Occurrence) => void
+  onToggle?: (occurrence: Occurrence) => void
 }
 
 /** Một lần diễn ra trong danh sách. Ở chế độ chọn, cả dòng là ô chọn. */
@@ -20,8 +20,8 @@ export function EventRow({
   occurrence,
   color,
   categoryName,
-  selecting,
-  selected,
+  selecting = false,
+  selected = false,
   onOpen,
   onToggle,
 }: EventRowProps) {
@@ -61,7 +61,7 @@ export function EventRow({
           type="checkbox"
           className="check"
           checked={selected}
-          onChange={() => onToggle(occurrence)}
+          onChange={() => onToggle?.(occurrence)}
           aria-label={label}
         />
         {content}

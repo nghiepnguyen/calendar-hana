@@ -2,28 +2,33 @@ import { formatLunar, formatLunarShort, formatSolar, WEEKDAY_SHORT } from '@shar
 import { getDayInfo } from '@shared/lunar'
 import { dayOfWeek } from '@shared/lunar/julian'
 import type { Occurrence } from '@shared/recurrence/recurrence'
-import type { Category } from '@shared/types'
-import { EventRow } from './EventRow'
-import { selectionKey } from './listFormat'
-import type { DayGroupData } from './groupList'
-import styles from './EventListPage.module.css'
+import type { Category, SolarDateString } from '@shared/types'
+import { EventRows } from './EventRows'
+import styles from './EventList.module.css'
+
+export interface DayGroupData {
+  date: SolarDateString
+  isToday: boolean
+  isPast: boolean
+  occurrences: Occurrence[]
+}
 
 interface DayGroupProps {
   day: DayGroupData
   colorOf: (categoryId: string) => string
   getCategory: (id: string) => Category | undefined
-  selecting: boolean
-  selectedKeys: ReadonlySet<string>
+  selecting?: boolean
+  selectedKeys?: ReadonlySet<string>
   onOpen: (occurrence: Occurrence) => void
-  onToggle: (occurrence: Occurrence) => void
+  onToggle?: (occurrence: Occurrence) => void
 }
 
-/** Một hàng trong thẻ tháng: ô ngày (thứ, dương to, âm nhỏ bên dưới) và các sự kiện bên cạnh. */
+/** Một hàng ngày (trong thẻ tháng của trang Danh sách, hoặc xem Tuần): ô ngày (thứ, dương to, âm nhỏ bên dưới) và các sự kiện bên cạnh. */
 export function DayGroup({
   day,
   colorOf,
   getCategory,
-  selecting,
+  selecting = false,
   selectedKeys,
   onOpen,
   onToggle,
@@ -61,24 +66,15 @@ export function DayGroup({
       {occurrences.length === 0 ? (
         <p className={styles.noEvents}>Không có sự kiện</p>
       ) : (
-        <ul className={styles.rows}>
-          {occurrences.map((occurrence) => {
-            const key = selectionKey(occurrence)
-            return (
-              <li key={key}>
-                <EventRow
-                  occurrence={occurrence}
-                  color={colorOf(occurrence.event.categoryId)}
-                  categoryName={getCategory(occurrence.event.categoryId)?.name}
-                  selecting={selecting}
-                  selected={selectedKeys.has(key)}
-                  onOpen={onOpen}
-                  onToggle={onToggle}
-                />
-              </li>
-            )
-          })}
-        </ul>
+        <EventRows
+          occurrences={occurrences}
+          colorOf={colorOf}
+          getCategory={getCategory}
+          selecting={selecting}
+          selectedKeys={selectedKeys}
+          onOpen={onOpen}
+          onToggle={onToggle}
+        />
       )}
     </li>
   )

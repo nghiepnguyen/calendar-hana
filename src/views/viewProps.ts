@@ -1,5 +1,5 @@
 import type { Occurrence } from '@shared/recurrence/recurrence'
-import type { Settings, SolarDateString, TimeString } from '@shared/types'
+import type { Category, Settings, SolarDateString } from '@shared/types'
 
 /** Props chung cho 3 chế độ xem. */
 export interface CalendarViewProps {
@@ -9,7 +9,9 @@ export interface CalendarViewProps {
   occurrences: Occurrence[]
   settings: Settings
   colorOf: (categoryId: string) => string
+  getCategory: (id: string) => Category | undefined
   onOpenDay: (date: SolarDateString) => void
   onOpenEvent: (occurrence: Occurrence) => void
-  onCreate: (date: SolarDateString, startTime?: TimeString) => void
+  /** Bấm vào ô ngày trống ở xem Tháng: tạo sự kiện cả ngày. */
+  onCreate: (date: SolarDateString) => void
 }

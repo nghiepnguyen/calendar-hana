@@ -14,6 +14,8 @@ import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString } from '@shared/types'
 import { useAuth } from '../../auth/authContext'
 import { ConfirmDialog } from '../../components/ConfirmDialog'
+import { DayGroup } from '../../components/EventList/DayGroup'
+import { selectionKey } from '../../components/EventList/listFormat'
 import { CreateFab } from '../../components/CreateFab/CreateFab'
 import { EventDialogs } from '../../components/EventDialogs'
 import { Sidebar } from '../../components/layout/Sidebar'
@@ -33,9 +35,7 @@ import { useNow } from '../../hooks/useNow'
 import { useEvents, useSettings } from '../../hooks/useRepositoryData'
 import { useUiStore } from '../../store/uiStore'
 import { CategoryChips } from './CategoryChips'
-import { DayGroup } from './DayGroup'
 import { groupByMonthAndDay, groupByYear } from './groupList'
-import { selectionKey } from './listFormat'
 import {
   defaultRange,
   extendAfter,

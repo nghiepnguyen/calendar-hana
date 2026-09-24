@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Occurrence } from '@shared/recurrence/recurrence'
-import type { SolarDateString, TimeString } from '@shared/types'
+import type { SolarDateString } from '@shared/types'
 import { useAuth } from '../auth/authContext'
 import { viewRange } from '../calendar/range'
 import { CreateFab } from '../components/CreateFab/CreateFab'
@@ -35,7 +35,7 @@ export function CalendarPage() {
   const { view, date } = route
   const settings = useSettings() ?? FALLBACK_SETTINGS
   const { today } = useNow()
-  const { colorOf } = useCategoryMap()
+  const { colorOf, get: getCategory } = useCategoryMap()
   const { user } = useAuth()
   const openDetail = useUiStore((s) => s.openDetail)
   const openCreate = useUiStore((s) => s.openCreate)
@@ -62,10 +62,6 @@ export function CalendarPage() {
     ArrowRight: route.goNext,
   })
 
-  // Tạo từ khung giờ: có giờ sẵn. Tạo từ ô tháng: sự kiện cả ngày.
-  const onCreate = (d: SolarDateString, startTime?: TimeString) =>
-    openCreate(startTime ? { date: d, startTime, allDay: false } : { date: d, allDay: true })
-
   const View = VIEWS[view]
   const viewProps: CalendarViewProps = {
     date,
@@ -74,9 +70,10 @@ export function CalendarPage() {
     occurrences: occurrences ?? [],
     settings,
     colorOf,
+    getCategory,
     onOpenDay: route.openDay,
     onOpenEvent: (o: Occurrence) => openDetail(o),
-    onCreate,
+    onCreate: (d: SolarDateString) => openCreate({ date: d, allDay: true }),
   }
 
   return (

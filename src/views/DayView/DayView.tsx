@@ -1,4 +1,4 @@
-import { TimeGrid } from '../../components/TimeGrid/TimeGrid'
+import { EventRows } from '../../components/EventList/EventRows'
 import type { CalendarViewProps } from '../viewProps'
 import { DayCard } from './DayCard'
 import styles from './DayView.module.css'
@@ -9,8 +9,8 @@ export function DayView({
   occurrences,
   settings,
   colorOf,
+  getCategory,
   onOpenEvent,
-  onCreate,
 }: CalendarViewProps) {
   return (
     <div className={styles.view}>
@@ -20,18 +20,18 @@ export function DayView({
         showHolidays={settings.showHolidays}
         showAuspicious={settings.showAuspicious}
       />
-      {occurrences.length === 0 ? (
-        <p className={styles.empty}>
-          Chưa có sự kiện nào trong ngày. Bấm vào khung giờ hoặc nút + để tạo.
-        </p>
-      ) : null}
-      <TimeGrid
-        days={[date]}
-        occurrences={occurrences}
-        colorOf={colorOf}
-        onOpenEvent={onOpenEvent}
-        onCreate={onCreate}
-      />
+      <section className={`glass ${styles.events}`} aria-label="Sự kiện trong ngày">
+        {occurrences.length === 0 ? (
+          <p className={styles.empty}>Chưa có sự kiện nào trong ngày. Bấm nút + để tạo.</p>
+        ) : (
+          <EventRows
+            occurrences={occurrences}
+            colorOf={colorOf}
+            getCategory={getCategory}
+            onOpen={onOpenEvent}
+          />
+        )}
+      </section>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 
 Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và cài được như app (PWA).
 
-- Xem theo Ngày, Tuần, Tháng. Mặc định mở xem Ngày của hôm nay.
+- Xem theo Ngày, Tuần, Tháng. Mặc định mở xem Ngày của hôm nay. Xem Ngày và Tuần liệt kê sự kiện từng ngày như trang Danh sách.
 - Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
 - Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
 - Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
@@ -181,7 +181,7 @@ src/
   data/        Repository local (Dexie) và cloud (Firestore), chuyển dữ liệu, xuất/nhập JSON
   reminders/   Quyền thông báo, lịch nhắc local, Web Push, đăng ký service worker
   views/       Xem Ngày, Tuần, Tháng
-  components/  Form sự kiện, chọn ngày, lưới giờ, hộp thoại...
+  components/  Form sự kiện, chọn ngày, dòng sự kiện, hộp thoại...
   pages/       Trang lịch, Danh sách sự kiện và Cài đặt
   styles/      Theme (kính mờ kiểu iOS, sáng/tối)
   sw.ts        Service worker: cache offline, Web Push, bấm thông báo

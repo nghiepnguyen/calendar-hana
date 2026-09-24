@@ -102,7 +102,7 @@ describe('App', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('Đã tạo sự kiện “Họp team”')
 
     // Hiện trong xem Ngày.
-    const chip = await screen.findByRole('button', { name: /^Họp team, 9:00-10:00/ })
+    const chip = await screen.findByRole('button', { name: /^Họp team, 9:00 – 10:00/ })
     await userEvent.click(chip)
     const detail = await screen.findByRole('dialog', { name: 'Họp team' })
     expect(within(detail).getByText('Lặp hằng tuần vào Thứ Hai')).toBeInTheDocument()

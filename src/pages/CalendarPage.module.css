@@ -34,7 +34,7 @@
   }
 
   /*
-   * Xem không được co nhỏ hơn nội dung: nếu co, phần tràn (lưới giờ của xem Ngày) đè lên khoảng
+   * Xem không được co nhỏ hơn nội dung: nếu co, phần tràn đè lên khoảng
    * chừa cho thanh tab và bị thanh tab che. Khoảng chừa là phần tử đệm cuối khung cuộn.
    */
   .main > * {

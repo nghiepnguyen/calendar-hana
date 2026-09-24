@@ -31,6 +31,7 @@ export function viewProps(overrides: Partial<CalendarViewProps> = {}): CalendarV
     occurrences: [],
     settings: createDefaultSettings(''),
     colorOf: () => '#2563eb',
+    getCategory: () => undefined,
     onOpenDay: vi.fn(),
     onOpenEvent: vi.fn(),
     onCreate: vi.fn(),

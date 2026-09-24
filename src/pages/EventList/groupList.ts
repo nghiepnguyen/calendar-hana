@@ -1,13 +1,7 @@
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString } from '@shared/types'
+import type { DayGroupData } from '../../components/EventList/DayGroup'
 import type { DateRange } from './listRange'
-
-export interface DayGroupData {
-  date: SolarDateString
-  isToday: boolean
-  isPast: boolean
-  occurrences: Occurrence[]
-}
 
 export interface MonthGroupData {
   /** "2026-09", dùng làm key. */
