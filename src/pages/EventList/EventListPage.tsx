@@ -8,20 +8,25 @@ import {
   useState,
 } from 'react'
 import { CaretLeft, MagnifyingGlass } from '@phosphor-icons/react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { formatMonthTitleParts } from '@shared/format'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString } from '@shared/types'
 import { useAuth } from '../../auth/authContext'
 import { ConfirmDialog } from '../../components/ConfirmDialog'
 import { EventDialogs } from '../../components/EventDialogs'
+import { Sidebar } from '../../components/layout/Sidebar'
+import { SearchPanel } from '../../components/SearchPanel/SearchPanel'
+import { TabBar } from '../../components/layout/TabBar'
 import { matchesQuery, queryWords } from '../../components/SearchPanel/search'
 import { Toast } from '../../components/Toast/Toast'
 import { createDefaultSettings } from '../../data/defaultCategories'
 import { deleteEventOccurrences, type OccurrenceSelection } from '../../data/eventActions'
 import { useRepository } from '../../data/repositoryContext'
+import { calendarPath } from '../../hooks/useCalendarRoute'
 import { useCategoryMap } from '../../hooks/useCategoryMap'
 import { useEventsInRange } from '../../hooks/useEventsInRange'
+import { useIsCompact } from '../../hooks/useMediaQuery'
 import { useNow } from '../../hooks/useNow'
 import { useEvents, useSettings } from '../../hooks/useRepositoryData'
 import { useUiStore } from '../../store/uiStore'
@@ -75,6 +80,10 @@ export function EventListPage() {
   const { categories, colorOf, get: getCategory } = useCategoryMap()
   const openDetail = useUiStore((s) => s.openDetail)
   const openCreate = useUiStore((s) => s.openCreate)
+  const compact = useIsCompact()
+  const navigate = useNavigate()
+  const searchOpen = useUiStore((s) => s.searchOpen)
+  const setSearchOpen = useUiStore((s) => s.setSearchOpen)
 
   const [saved] = useState(loadPosition)
   const [range, setRange] = useState<DateRange>(() =>
@@ -241,7 +250,11 @@ export function EventListPage() {
   const clearToast = useCallback(() => setToast(null), [])
 
   return (
-    <div className={`${styles.page} ${selecting ? styles.selecting : ''}`}>
+    <div
+      className={[styles.page, selecting ? styles.selecting : '', compact ? styles.withTabBar : '']
+        .filter(Boolean)
+        .join(' ')}
+    >
       <header ref={headerRef} className={`glass ${styles.header}`}>
         <Link to="/" className={`btn btn-ghost ${styles.back}`} aria-label="Quay lại lịch">
           <CaretLeft size={18} weight="bold" aria-hidden="true" />
@@ -374,6 +387,24 @@ export function EventListPage() {
         </div>
       </main>
 
+      {/* Điện thoại: thanh tab như trang lịch; đang chọn thì nhường chỗ cho thanh chọn. */}
+      {compact ? (
+        <Sidebar
+          date={today}
+          today={today}
+          settings={settings}
+          compact
+          onSelectDate={(d) => navigate(calendarPath('day', d))}
+        />
+      ) : null}
+      {compact && !selecting ? (
+        <TabBar
+          active="events"
+          onSelect={(tab) => tab !== 'events' && navigate(calendarPath(tab, today))}
+          onCreate={() => openCreate({ date: today })}
+        />
+      ) : null}
+
       {/* Ẩn khi hỏi xác nhận: sheet xác nhận trên điện thoại nằm đè đúng chỗ thanh này. */}
       {selecting && !confirming ? (
         <>
@@ -408,6 +439,17 @@ export function EventListPage() {
 
       {toast ? <Toast message={toast} onDone={clearToast} /> : null}
       <EventDialogs settings={settings} signedIn={!!user} />
+      {/* Mở từ nút tìm kiếm trong Menu. */}
+      {searchOpen ? (
+        <SearchPanel
+          today={today}
+          onClose={() => setSearchOpen(false)}
+          onSelect={(d) => {
+            setSearchOpen(false)
+            navigate(calendarPath('day', d))
+          }}
+        />
+      ) : null}
     </div>
   )
 }

@@ -141,6 +141,7 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
           </ul>
         </section>
 
+        {/* Điện thoại vào Danh sách sự kiện bằng tab Sự kiện. */}
         {compact ? null : (
           <Link to="/events" className={styles.listLink} onClick={() => setOpen(false)}>
             <ListBullets size={20} weight="bold" aria-hidden="true" />
@@ -150,13 +151,6 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
 
         {compact ? (
           <ul className={styles.links}>
-            <li>
-              <Link to="/events" className={styles.link} onClick={() => setOpen(false)}>
-                <ListBullets size={28} aria-hidden="true" className={styles.linkIcon} />
-                <span className={styles.linkText}>Danh sách sự kiện</span>
-                <CaretRight size={16} weight="bold" aria-hidden="true" className={styles.chevron} />
-              </Link>
-            </li>
             {user || authAvailable ? (
               <li>
                 <Link to="/settings#account" className={styles.link} onClick={() => setOpen(false)}>

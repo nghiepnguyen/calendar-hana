@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Plus } from '@phosphor-icons/react'
+import { useNavigate } from 'react-router-dom'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString, TimeString } from '@shared/types'
 import { useAuth } from '../auth/authContext'
@@ -41,6 +42,7 @@ export function CalendarPage() {
   const setSearchOpen = useUiStore((s) => s.setSearchOpen)
   const searchOpen = useUiStore((s) => s.searchOpen)
   const compact = useIsCompact()
+  const navigate = useNavigate()
 
   const range = useMemo(
     () => viewRange(view, date, settings.weekStartsOn),
@@ -102,7 +104,11 @@ export function CalendarPage() {
         </main>
       </div>
       {compact ? (
-        <TabBar view={view} onViewChange={route.setView} onCreate={() => openCreate({ date })} />
+        <TabBar
+          active={view === 'week' ? null : view}
+          onSelect={(tab) => (tab === 'events' ? navigate('/events') : route.setView(tab))}
+          onCreate={() => openCreate({ date })}
+        />
       ) : (
         <button
           type="button"

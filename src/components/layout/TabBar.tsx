@@ -1,53 +1,52 @@
 import type { CSSProperties } from 'react'
-import { CalendarDot, Columns, List, Plus, SquaresFour, type Icon } from '@phosphor-icons/react'
-import { VIEW_LABELS, VIEW_MODES, type ViewMode } from '../../calendar/range'
+import { CalendarDot, List, ListBullets, Plus, SquaresFour, type Icon } from '@phosphor-icons/react'
 import { useUiStore } from '../../store/uiStore'
 import styles from './TabBar.module.css'
 
-const VIEW_ICONS: Record<ViewMode, Icon> = {
-  day: CalendarDot,
-  week: Columns,
-  month: SquaresFour,
-}
+/** Các tab trên điện thoại. Xem Tuần quá chật trên màn hình nhỏ nên không có tab riêng. */
+export type Tab = 'day' | 'month' | 'events'
+
+const TABS: { tab: Tab; label: string; icon: Icon }[] = [
+  { tab: 'day', label: 'Ngày', icon: CalendarDot },
+  { tab: 'month', label: 'Tháng', icon: SquaresFour },
+  { tab: 'events', label: 'Sự kiện', icon: ListBullets },
+]
 
 interface TabBarProps {
-  view: ViewMode
-  onViewChange: (view: ViewMode) => void
+  /** Tab đang mở; null khi đang ở màn không có tab (vd. xem Tuần mở từ URL). */
+  active: Tab | null
+  onSelect: (tab: Tab) => void
   onCreate: () => void
 }
 
-/** Thanh tab nổi dưới đáy màn hình điện thoại, kiểu kính của iOS. */
-export function TabBar({ view, onViewChange, onCreate }: TabBarProps) {
+/** Thanh tab nổi dưới đáy màn hình điện thoại, kiểu kính của iOS: Ngày, Tháng, Sự kiện, Menu. */
+export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
-  const viewIndex = VIEW_MODES.indexOf(view)
+  const activeIndex = TABS.findIndex((t) => t.tab === active)
 
   return (
     <nav className={styles.bar} aria-label="Điều hướng">
-      <div className={styles.tabs}>
-        <div
-          className={styles.views}
-          role="radiogroup"
-          aria-label="Chế độ xem"
-          style={{ '--active': viewIndex, '--count': VIEW_MODES.length } as CSSProperties}
-        >
-          {VIEW_MODES.map((mode) => {
-            const ViewIcon = VIEW_ICONS[mode]
-            const active = view === mode
-            return (
-              <button
-                key={mode}
-                type="button"
-                role="radio"
-                aria-checked={active}
-                className={styles.tab}
-                onClick={() => onViewChange(mode)}
-              >
-                <ViewIcon size={24} weight={active ? 'fill' : 'regular'} aria-hidden="true" />
-                <span>{VIEW_LABELS[mode]}</span>
-              </button>
-            )
-          })}
-        </div>
+      <div
+        className={styles.tabs}
+        data-active={activeIndex >= 0 ? '' : undefined}
+        // Viên sáng chia đều cho các tab và nút Menu.
+        style={{ '--active': activeIndex, '--count': TABS.length + 1 } as CSSProperties}
+      >
+        {TABS.map(({ tab, label, icon: TabIcon }) => {
+          const current = tab === active
+          return (
+            <button
+              key={tab}
+              type="button"
+              className={styles.tab}
+              aria-current={current ? 'page' : undefined}
+              onClick={() => onSelect(tab)}
+            >
+              <TabIcon size={24} weight={current ? 'fill' : 'regular'} aria-hidden="true" />
+              <span>{label}</span>
+            </button>
+          )
+        })}
         <button
           type="button"
           className={styles.tab}

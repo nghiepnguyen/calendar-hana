@@ -8,6 +8,34 @@ function solarPath(view: string, lunar: [number, number, number]) {
   return `/${view}/${s.year}-${pad(s.month)}-${pad(s.day)}`
 }
 
+// Điện thoại: chế độ xem nằm ở thanh tab (không có Tuần), trang Danh sách về lịch bằng tab Ngày.
+const tabBar = (page: Page) => page.getByRole('navigation', { name: 'Điều hướng' })
+
+async function selectView(page: Page, name: 'Ngày' | 'Tuần' | 'Tháng', weekPath: string) {
+  if (!(await tabBar(page).isVisible())) return page.getByRole('radio', { name }).click()
+  if (name === 'Tuần') return page.goto(weekPath)
+  return tabBar(page).getByRole('button', { name, exact: true }).click()
+}
+
+async function expectView(page: Page, name: 'Ngày' | 'Tháng') {
+  if (await tabBar(page).isVisible()) {
+    await expect(tabBar(page).getByRole('button', { name, exact: true })).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
+  } else {
+    await expect(page.getByRole('radio', { name })).toBeChecked()
+  }
+}
+
+async function backToCalendar(page: Page) {
+  if (await tabBar(page).isVisible()) {
+    await tabBar(page).getByRole('button', { name: 'Ngày', exact: true }).click()
+  } else {
+    await page.getByRole('link', { name: 'Quay lại lịch' }).click()
+  }
+}
+
 async function save(page: Page) {
   const form = page.getByRole('dialog', { name: 'Tạo sự kiện' })
   await form.getByRole('button', { name: 'Lưu' }).click()
@@ -18,7 +46,7 @@ test('US-1: mở app thấy xem Ngày của hôm nay kèm âm lịch', async ({ 
   await app.goto('/')
   await expect(app).toHaveURL(/\/day\/2026-09-23$/)
   await expect(app.getByRole('heading', { level: 1 })).toHaveText('Thứ Tư, 23/9/2026')
-  await expect(app.getByRole('radio', { name: 'Ngày' })).toBeChecked()
+  await expectView(app, 'Ngày')
   const info = app.getByRole('region', { name: 'Thông tin ngày' })
   await expect(info).toContainText('Tháng 8 âm lịch')
   await expect(info).toContainText('Canh Tý')
@@ -26,13 +54,13 @@ test('US-1: mở app thấy xem Ngày của hôm nay kèm âm lịch', async ({ 
 
 test('US-2: chuyển Ngày / Tuần / Tháng, refresh giữ nguyên', async ({ app }) => {
   await app.goto('/')
-  await app.getByRole('radio', { name: 'Tuần' }).click()
+  await selectView(app, 'Tuần', '/week/2026-09-23')
   await expect(app).toHaveURL(/\/week\/2026-09-23$/)
   await expect(app.getByRole('heading', { level: 1 })).toHaveText('21-27/9/2026')
-  await app.getByRole('radio', { name: 'Tháng' }).click()
+  await selectView(app, 'Tháng', '/week/2026-09-23')
   await expect(app.getByRole('heading', { level: 1 })).toContainText('Tháng 9/2026')
   await app.reload()
-  await expect(app.getByRole('radio', { name: 'Tháng' })).toBeChecked()
+  await expectView(app, 'Tháng')
   await app.getByRole('banner').getByRole('button', { name: 'Tháng sau' }).click()
   await expect(app.getByRole('heading', { level: 1 })).toContainText('Tháng 10/2026')
 })
@@ -158,10 +186,12 @@ test('service worker không trả app shell cho trang đăng nhập của Fireba
 })
 
 async function openEventList(page: Page) {
-  // Màn hình nhỏ: mục nằm trong Menu.
-  const menu = page.getByRole('button', { name: 'Mở menu' })
-  if (await menu.isVisible()) await menu.click()
-  await page.getByRole('link', { name: 'Danh sách sự kiện' }).click()
+  // Màn hình nhỏ: tab Sự kiện ở thanh tab.
+  if (await tabBar(page).isVisible()) {
+    await tabBar(page).getByRole('button', { name: 'Sự kiện', exact: true }).click()
+  } else {
+    await page.getByRole('link', { name: 'Danh sách sự kiện' }).click()
+  }
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Danh sách sự kiện')
 }
 
@@ -219,7 +249,7 @@ test('US-L5/L7: lọc không đổi lịch, xoá nhiều lần của sự kiện
     .click()
   await expect(app.getByText('Đã xoá 2 sự kiện')).toBeVisible()
 
-  await app.getByRole('link', { name: 'Quay lại lịch' }).click()
+  await backToCalendar(app)
   await app.goto('/day/2026-09-28')
   await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(0)
   await app.goto('/day/2026-10-12')
@@ -232,7 +262,7 @@ test('US-L2: quay lại trang Danh sách thì về đúng chỗ đang xem', asyn
   const target = app.getByRole('heading', { name: /^Thứ Hai, 1\/2\/2027/ })
   await target.scrollIntoViewIfNeeded()
   await app.waitForTimeout(500)
-  await app.getByRole('link', { name: 'Quay lại lịch' }).click()
+  await backToCalendar(app)
   await expect(app).toHaveURL(/\/day\//)
   await openEventList(app)
   await expect(target).toBeInViewport()

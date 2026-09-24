@@ -19,6 +19,7 @@
 }
 
 .tabs {
+  position: relative;
   display: flex;
   flex: 1 1 auto;
   min-width: 0;
@@ -30,23 +31,18 @@
   -webkit-backdrop-filter: var(--glass-bar-filter);
   backdrop-filter: var(--glass-bar-filter);
   box-shadow: var(--glass-highlight), var(--glass-shadow);
-}
-
-.views {
-  position: relative;
-  display: flex;
-  flex: 3 1 0;
-  min-width: 0;
   isolation: isolate;
 }
 
-/* Viên sáng trượt theo chế độ xem đang chọn. */
-.views::before {
+/* Viên sáng trượt theo tab đang mở (ẩn khi không có tab nào). */
+.tabs[data-active]::before {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 0 auto 0 0;
-  width: calc(100% / var(--count, 3));
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 8px) / var(--count, 3));
   border-radius: var(--radius-pill);
   background: var(--fill);
   transform: translateX(calc(var(--active, 0) * 100%));
@@ -85,7 +81,7 @@
   transform: scale(0.9);
 }
 
-.tab[aria-checked='true'] {
+.tab[aria-current='page'] {
   color: var(--accent);
 }
 

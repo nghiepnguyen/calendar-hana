@@ -64,6 +64,10 @@
   padding: 16px 12px 64px;
 }
 
+.withTabBar .main {
+  padding-bottom: calc(var(--tabbar-space) + 16px);
+}
+
 .selecting .main {
   padding-bottom: calc(120px + env(safe-area-inset-bottom));
 }
@@ -539,6 +543,15 @@
 
   .header h1 {
     font-size: 16px;
+  }
+
+  /* Có thanh tab để về lịch nên bỏ nút quay lại. */
+  .withTabBar .back {
+    display: none;
+  }
+
+  .withTabBar .header {
+    padding-left: 16px;
   }
 
   /* Chỉ giữ mũi tên để tiêu đề đủ chỗ. */
