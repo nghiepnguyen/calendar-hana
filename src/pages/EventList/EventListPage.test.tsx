@@ -70,7 +70,7 @@ describe('Trang Danh sách sự kiện', () => {
     renderList()
     expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('Danh sách sự kiện')
     const month = await screen.findByRole('region', { name: /^Tháng 9\/2026/ })
-    expect(within(month).getByRole('heading', { level: 2 })).toHaveTextContent(
+    expect(within(month).getByRole('heading', { level: 3 })).toHaveTextContent(
       'Tháng 7-8 âm lịch, năm Bính Ngọ',
     )
     expect(

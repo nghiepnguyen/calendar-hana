@@ -1,6 +1,5 @@
 /*
- * Trang Danh sách sự kiện: header kính dính trên cùng, tiêu đề tháng dính ngay dưới header,
- * mỗi ngày là một nhóm "inset grouped" kiểu iOS.
+ * Trang Danh sách sự kiện: header kính dính trên cùng, tiêu đề năm phân cách, mỗi tháng là một thẻ kính, mỗi ngày là một hàng (ô ngày + sự kiện).
  */
 .page {
   --list-header-top: 10px;
@@ -191,17 +190,46 @@
   padding: 8px 0;
 }
 
-/* Tháng */
-.months {
+/* Năm: tiêu đề phân cách lớn giữa các năm. */
+.years {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 32px;
 }
 
-.month {
+.year {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.yearHead {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  margin: 0;
+  padding: 0 6px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.yearHead::after {
+  content: '';
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--separator);
+}
+
+/* Tháng: một thẻ kính, tiêu đề tháng (kèm năm) dính ngay dưới header. */
+.month {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
 }
 
 .monthHead {
@@ -213,9 +241,11 @@
   flex-wrap: wrap;
   column-gap: 10px;
   margin: 0;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  background: var(--glass-sheet);
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--separator);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  /* Đục hẳn: nằm trên thẻ kính nên nền gần đặc vẫn lộ chữ của các hàng cuộn bên dưới. */
+  background: linear-gradient(var(--glass-sheet), var(--glass-sheet)), var(--bg);
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
@@ -229,82 +259,102 @@
   color: var(--text-muted);
 }
 
-/* Ngày */
+/* Ngày: ô ngày bên trái, sự kiện bên phải. */
 .days {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
 .day {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: start;
+  padding: 6px 6px 6px 0;
   /* Cuộn tới ngày thì không bị header và tiêu đề tháng che. */
-  scroll-margin-top: calc(var(--list-sticky-top) + 52px);
+  scroll-margin-top: calc(var(--list-sticky-top) + 64px);
 }
 
-.dayHead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 0;
-  padding: 0 6px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+.day + .day {
+  border-top: 1px solid var(--separator);
 }
 
-.solar {
-  display: inline-flex;
+.dateCell {
+  /* Thứ bên trái số ngày dương, ngày âm ngay dưới số ngày. */
+  display: grid;
+  grid-template-columns: 22px auto;
+  grid-template-areas:
+    'weekday solar'
+    '. lunar';
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  column-gap: 2px;
+  margin: 0;
+  /* Tâm cụm ngày dương + âm trùng tâm hàng sự kiện đầu tiên (cao 56px). */
+  padding: 2px 0 4px;
 }
 
-.lunar {
-  flex: 0 0 auto;
+.weekday {
+  grid-area: weekday;
   font-size: 13px;
-  font-weight: 500;
-  /* Nằm thẳng trên nền wallpaper (không có kính), nên dùng màu đậm hơn --text-lunar. */
+  font-weight: 600;
+  text-align: right;
   color: var(--text-muted);
 }
 
-.sunday .solar {
+.solar {
+  grid-area: solar;
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.lunar {
+  grid-area: lunar;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-lunar);
+  margin-top: -1px;
+}
+
+.sunday .solar,
+.sunday .weekday {
   color: var(--sunday);
 }
 
-.past .dayHead,
+.past .solar,
 .past .rowTitle {
   color: var(--text-muted);
 }
 
-.todayBadge {
-  padding: 1px 8px;
-  border-radius: var(--radius-pill);
+.today .solar {
   background: var(--accent);
   color: var(--accent-contrast);
-  font-size: 12px;
+}
+
+.today .weekday,
+.today .lunar {
+  color: var(--accent-text);
   font-weight: 700;
 }
 
-.today .rows,
-.today .noEvents {
-  box-shadow:
-    0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent),
-    var(--glass-shadow);
+.today .lunar {
+  margin-top: 2px;
 }
 
 .noEvents {
   margin: 0;
-  padding: 14px 16px;
-  border-radius: var(--radius-lg);
-  background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-filter);
-  backdrop-filter: var(--glass-filter);
+  padding: 16px 10px;
   color: var(--text-muted);
   font-size: 14px;
 }
@@ -313,17 +363,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-filter);
-  backdrop-filter: var(--glass-filter);
-  box-shadow: var(--glass-highlight), var(--glass-shadow);
-  overflow: hidden;
 }
 
-.rows li + li .row {
-  border-top: 1px solid var(--separator);
+.rows li + li {
+  border-top: 1px solid var(--separator-soft);
 }
 
 .row {
@@ -332,8 +375,9 @@
   gap: 12px;
   width: 100%;
   min-height: 56px;
-  padding: 10px 16px;
+  padding: 8px 10px;
   border: 0;
+  border-radius: 14px;
   background: transparent;
   color: var(--text);
   text-align: left;
@@ -522,9 +566,12 @@
     padding: 2px 8px;
   }
 
-  .dayHead {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+  .day {
+    grid-template-columns: 70px minmax(0, 1fr);
+    padding-right: 4px;
+  }
+
+  .row {
+    padding: 8px;
   }
 }

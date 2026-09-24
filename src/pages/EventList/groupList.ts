@@ -53,3 +53,19 @@ export function groupByMonthAndDay(
   }
   return months
 }
+
+export interface YearGroupData {
+  year: number
+  months: MonthGroupData[]
+}
+
+/** Gom các tháng (đã sắp xếp) theo năm dương lịch. */
+export function groupByYear(months: readonly MonthGroupData[]): YearGroupData[] {
+  const years: YearGroupData[] = []
+  for (const month of months) {
+    const last = years.at(-1)
+    if (last?.year === month.year) last.months.push(month)
+    else years.push({ year: month.year, months: [month] })
+  }
+  return years
+}

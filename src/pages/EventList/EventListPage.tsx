@@ -27,7 +27,7 @@ import { useEvents, useSettings } from '../../hooks/useRepositoryData'
 import { useUiStore } from '../../store/uiStore'
 import { CategoryChips } from './CategoryChips'
 import { DayGroup } from './DayGroup'
-import { groupByMonthAndDay } from './groupList'
+import { groupByMonthAndDay, groupByYear } from './groupList'
 import { selectionKey } from './listFormat'
 import {
   defaultRange,
@@ -120,6 +120,7 @@ export function EventListPage() {
     () => groupByMonthAndDay(visible, today, filtering ? undefined : range),
     [visible, today, filtering, range],
   )
+  const years = useMemo(() => groupByYear(months), [months])
 
   useInfiniteRange({ range, setRange, topRef, bottomRef, enabled: ready })
 
@@ -332,36 +333,39 @@ export function EventListPage() {
         </div>
 
         {occurrences !== undefined ? (
-          <div className={styles.months}>
-            {months.map((month) => {
-              const title = formatMonthTitleParts(month.month, month.year)
-              return (
-                <section
-                  key={month.key}
-                  className={styles.month}
-                  aria-labelledby={`m-${month.key}`}
-                >
-                  <h2 id={`m-${month.key}`} className={`glass ${styles.monthHead}`}>
-                    <span>{title.solar}</span>
-                    <span className={styles.monthLunar}>{title.lunar}</span>
-                  </h2>
-                  <ul className={styles.days}>
-                    {month.days.map((day) => (
-                      <DayGroup
-                        key={day.date}
-                        day={day}
-                        colorOf={colorOf}
-                        getCategory={getCategory}
-                        selecting={selecting}
-                        selectedKeys={selectedKeys}
-                        onOpen={openDetail}
-                        onToggle={toggleSelected}
-                      />
-                    ))}
-                  </ul>
-                </section>
-              )
-            })}
+          <div className={styles.years}>
+            {years.map(({ year, months }) => (
+              <section key={year} className={styles.year} aria-labelledby={`y-${year}`}>
+                <h2 id={`y-${year}`} className={styles.yearHead}>
+                  {year}
+                </h2>
+                {months.map((month) => {
+                  const title = formatMonthTitleParts(month.month, month.year)
+                  return (
+                    <section key={month.key} className={styles.month} aria-label={title.solar}>
+                      <h3 className={styles.monthHead}>
+                        <span>{title.solar}</span>
+                        <span className={styles.monthLunar}>{title.lunar}</span>
+                      </h3>
+                      <ul className={styles.days}>
+                        {month.days.map((day) => (
+                          <DayGroup
+                            key={day.date}
+                            day={day}
+                            colorOf={colorOf}
+                            getCategory={getCategory}
+                            selecting={selecting}
+                            selectedKeys={selectedKeys}
+                            onOpen={openDetail}
+                            onToggle={toggleSelected}
+                          />
+                        ))}
+                      </ul>
+                    </section>
+                  )
+                })}
+              </section>
+            ))}
           </div>
         ) : null}
 

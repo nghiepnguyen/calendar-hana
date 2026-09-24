@@ -1,4 +1,4 @@
-import { formatLunar, formatSolar } from '@shared/format'
+import { formatLunar, formatLunarShort, formatSolar, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo } from '@shared/lunar'
 import { dayOfWeek } from '@shared/lunar/julian'
 import type { Occurrence } from '@shared/recurrence/recurrence'
@@ -18,7 +18,7 @@ interface DayGroupProps {
   onToggle: (occurrence: Occurrence) => void
 }
 
-/** Tiêu đề ngày (dương + âm) và các sự kiện của ngày đó. */
+/** Một hàng trong thẻ tháng: ô ngày (thứ, dương to, âm nhỏ bên dưới) và các sự kiện bên cạnh. */
 export function DayGroup({
   day,
   colorOf,
@@ -30,22 +30,31 @@ export function DayGroup({
 }: DayGroupProps) {
   const { date, isToday, isPast, occurrences } = day
   const lunar = getDayInfo(date).lunar
+  const weekday = dayOfWeek(date)
   const classes = [
     styles.day,
     isToday ? styles.today : '',
     isPast ? styles.past : '',
-    dayOfWeek(date) === 0 ? styles.sunday : '',
+    weekday === 0 ? styles.sunday : '',
   ]
 
   return (
     <li className={classes.join(' ')} data-date={date}>
-      <h3 className={styles.dayHead}>
-        <span className={styles.solar}>
-          {formatSolar(date)}
-          {isToday ? <span className={styles.todayBadge}>Hôm nay</span> : null}
+      <h4 className={styles.dateCell}>
+        <span className="visually-hidden">
+          {formatSolar(date)}, {formatLunar(lunar)}
+          {isToday ? ', hôm nay' : ''}
         </span>
-        <span className={styles.lunar}>{formatLunar(lunar)}</span>
-      </h3>
+        <span className={styles.weekday} aria-hidden="true">
+          {WEEKDAY_SHORT[weekday]}
+        </span>
+        <span className={styles.solar} aria-hidden="true">
+          {Number(date.slice(8))}
+        </span>
+        <span className={styles.lunar} aria-hidden="true">
+          {formatLunarShort(lunar)}
+        </span>
+      </h4>
       {occurrences.length === 0 ? (
         <p className={styles.noEvents}>Không có sự kiện</p>
       ) : (

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { compareOccurrences } from '@shared/recurrence/recurrence'
 import { makeEvent, occurrencesOf } from '../../test/fixtures'
-import { groupByMonthAndDay } from './groupList'
+import { groupByMonthAndDay, groupByYear } from './groupList'
 
 const TODAY = '2026-09-23'
 const RANGE = { start: '2026-08-01', end: '2026-11-30' }
@@ -49,6 +49,23 @@ describe('groupByMonthAndDay', () => {
     const occurrences = occurrencesOf([weekly], '2026-09-01', '2026-09-20').sort(compareOccurrences)
     expect(shape(groupByMonthAndDay(occurrences, TODAY))).toEqual([
       ['2026-09', ['2026-09-07:1', '2026-09-16:1']],
+    ])
+  })
+})
+
+describe('groupByYear', () => {
+  it('gom các tháng liên tiếp cùng năm', () => {
+    const events = [
+      makeEvent({ id: 'a', date: '2026-11-10' }),
+      makeEvent({ id: 'b', date: '2026-12-01' }),
+      makeEvent({ id: 'c', date: '2027-01-05' }),
+    ]
+    const range = { start: '2026-11-01', end: '2027-01-31' }
+    const occurrences = occurrencesOf(events, range.start, range.end).sort(compareOccurrences)
+    const years = groupByYear(groupByMonthAndDay(occurrences, TODAY, range))
+    expect(years.map((y) => [y.year, y.months.map((m) => m.key)])).toEqual([
+      [2026, ['2026-11', '2026-12']],
+      [2027, ['2027-01']],
     ])
   })
 })
