@@ -6,6 +6,7 @@ import {
   draftFromEvent,
   draftSolarDate,
   draftToInput,
+  setAllDay,
   switchCalendar,
 } from './draft'
 
@@ -43,9 +44,8 @@ describe('draft sự kiện', () => {
 
   it('tạo dữ liệu lưu cho giỗ âm lặp hằng năm', () => {
     const draft = {
-      ...switchCalendar(draftFromDefaults({ date: '2026-04-28' }), 'lunar'),
+      ...setAllDay(switchCalendar(draftFromDefaults({ date: '2026-04-28' }), 'lunar'), true),
       title: '  Giỗ ông nội ',
-      allDay: true,
       repeat: 'yearly' as const,
       categoryId: 'memorial',
     }
@@ -55,7 +55,7 @@ describe('draft sự kiện', () => {
       date: { day: 12, month: 3, year: 2026, isLeap: false },
       allDay: true,
       categoryId: 'memorial',
-      reminders: [],
+      reminders: [{ offsetMinutes: 0, channel: 'notification' }],
       recurrence: { freq: 'yearly', calendar: 'lunar' },
     })
   })
@@ -84,5 +84,27 @@ describe('draft sự kiện', () => {
     const draft = draftFromEvent(event, '2026-09-25')
     expect(draft.solarDate).toBe('2026-09-25')
     expect(draft.lunarDate).toEqual({ day: 15, month: 8, year: 2026, isLeap: false })
+  })
+})
+
+describe('nhắc hẹn mặc định', () => {
+  it('sự kiện mới có sẵn một thông báo: trước 15 phút, cả ngày thì trong ngày', () => {
+    expect(draftFromDefaults({ date: '2026-09-23' }).reminders).toEqual([
+      { offsetMinutes: 15, channel: 'notification' },
+    ])
+    expect(draftFromDefaults({ date: '2026-09-23', allDay: true }).reminders).toEqual([
+      { offsetMinutes: 0, channel: 'notification' },
+    ])
+  })
+
+  it('bật/tắt cả ngày đổi nhắc hẹn mặc định theo, giữ nhắc hẹn đã chỉnh', () => {
+    const draft = draftFromDefaults({ date: '2026-09-23' })
+    const allDay = setAllDay(draft, true)
+    expect(allDay.reminders).toEqual([{ offsetMinutes: 0, channel: 'notification' }])
+    expect(setAllDay(allDay, false).reminders).toEqual(draft.reminders)
+
+    const custom = { ...draft, reminders: [{ offsetMinutes: 60, channel: 'email' as const }] }
+    expect(setAllDay(custom, true).reminders).toEqual(custom.reminders)
+    expect(setAllDay({ ...draft, reminders: [] }, true).reminders).toEqual([])
   })
 })

@@ -3,12 +3,14 @@ import { formatLunar, formatSolar } from '@shared/format'
 import { parseSolarDate, solarToLunar } from '@shared/lunar'
 import { EVENT_NOTE_MAX, EVENT_TITLE_MAX, type Category } from '@shared/types'
 import { validateEvent, type EventErrors } from '@shared/validation'
+import { useNotificationStore } from '../../reminders/notifications'
 import { LunarDateInput } from '../DatePicker/LunarDateInput'
 import { Modal } from '../Modal/Modal'
 import {
   changeStartTime,
   draftSolarDate,
   draftToInput,
+  setAllDay,
   switchCalendar,
   type EventDraft,
 } from './draft'
@@ -50,6 +52,8 @@ export function EventForm({
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
   const isSingle = mode === 'single'
+  const permission = useNotificationStore((s) => s.permission)
+  const requestPermission = useNotificationStore((s) => s.request)
 
   const update = (patch: Partial<EventDraft>) => setDraft((d) => ({ ...d, ...patch }))
 
@@ -71,6 +75,10 @@ export function EventForm({
         document.querySelector<HTMLElement>(`[data-form="${id}"] [aria-invalid="true"]`)?.focus(),
       )
       return
+    }
+    // Nhắc hẹn thêm sẵn chưa qua bước xin quyền: xin lúc bấm Lưu (cần thao tác của người dùng).
+    if (permission === 'default' && draft.reminders.some((r) => r.channel === 'notification')) {
+      void requestPermission()
     }
     setSaving(true)
     setSaveError(null)
@@ -181,7 +189,7 @@ export function EventForm({
               role="switch"
               className="switch"
               checked={draft.allDay}
-              onChange={(e) => update({ allDay: e.target.checked })}
+              onChange={(e) => setDraft((d) => setAllDay(d, e.target.checked))}
             />
             Cả ngày
           </label>

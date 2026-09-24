@@ -71,14 +71,38 @@ function defaultStartTime(date: SolarDateString): TimeString {
   return minutesToTime(Math.min(next, 23 * 60))
 }
 
+/** Nhắc hẹn thêm sẵn cho sự kiện mới: thông báo trước 15 phút, hoặc trong ngày nếu cả ngày. */
+export function defaultReminders(allDay: boolean): Reminder[] {
+  return [{ offsetMinutes: allDay ? 0 : 15, channel: 'notification' }]
+}
+
+function sameReminders(a: readonly Reminder[], b: readonly Reminder[]): boolean {
+  return (
+    a.length === b.length &&
+    a.every((r, i) => r.offsetMinutes === b[i].offsetMinutes && r.channel === b[i].channel)
+  )
+}
+
+/**
+ * Bật/tắt "Cả ngày". Nhắc hẹn còn nguyên mặc định thì đổi theo (15 phút trước không có
+ * nghĩa với sự kiện cả ngày); nhắc hẹn người dùng đã chỉnh thì giữ nguyên.
+ */
+export function setAllDay(draft: EventDraft, allDay: boolean): EventDraft {
+  const reminders = sameReminders(draft.reminders, defaultReminders(draft.allDay))
+    ? defaultReminders(allDay)
+    : draft.reminders
+  return { ...draft, allDay, reminders }
+}
+
 export function draftFromDefaults(defaults: EventDraftDefaults): EventDraft {
   const startTime = defaults.startTime ?? defaultStartTime(defaults.date)
+  const allDay = defaults.allDay ?? false
   return {
     title: '',
     calendarType: 'solar',
     solarDate: defaults.date,
     lunarDate: lunarOf(defaults.date),
-    allDay: defaults.allDay ?? false,
+    allDay,
     startTime,
     endTime: addHour(startTime),
     categoryId: DEFAULT_EVENT_CATEGORY_ID,
@@ -87,7 +111,7 @@ export function draftFromDefaults(defaults: EventDraftDefaults): EventDraft {
     repeatEnd: 'never',
     until: defaults.date,
     count: 10,
-    reminders: [],
+    reminders: defaultReminders(allDay),
     location: '',
     note: '',
   }
