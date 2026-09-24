@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react'
 import { ArrowsClockwise } from '@phosphor-icons/react'
 import { formatAccessibleDate } from '@shared/format'
 import type { Occurrence } from '@shared/recurrence/recurrence'
+import { locationText } from '../EventDetail/locationLinks'
 import { timeLabel } from './listFormat'
 import styles from './EventList.module.css'
 
@@ -46,7 +47,9 @@ export function EventRow({
           {categoryName ? <span>{categoryName}</span> : null}
           {event.calendarType === 'lunar' ? <span className={styles.lunarTag}>Âm lịch</span> : null}
         </span>
-        {event.location ? <span className={styles.rowLocation}>{event.location}</span> : null}
+        {event.location ? (
+          <span className={styles.rowLocation}>{locationText(event.location)}</span>
+        ) : null}
       </span>
       {occurrence.isRecurring ? (
         <ArrowsClockwise size={16} className={styles.repeat} aria-hidden="true" />

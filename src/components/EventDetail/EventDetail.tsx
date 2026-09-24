@@ -1,3 +1,4 @@
+import { MapPin } from '@phosphor-icons/react'
 import { formatLunarWithYear, formatSolar, formatTime } from '@shared/format'
 import { getDayInfo } from '@shared/lunar'
 import { describeRecurrence } from '@shared/recurrence/describe'
@@ -6,6 +7,7 @@ import type { Category, CalendarEvent } from '@shared/types'
 import { Modal } from '../Modal/Modal'
 import { channelLabel, reminderLabel } from '../EventForm/reminderOptions'
 import styles from './EventDetail.module.css'
+import { splitLocation } from './locationLinks'
 
 interface EventDetailProps {
   occurrence: Occurrence
@@ -102,7 +104,25 @@ export function EventDetail({
         {event.location ? (
           <div>
             <dt>Địa điểm</dt>
-            <dd>{event.location}</dd>
+            <dd>
+              {splitLocation(event.location).map((part, i) =>
+                part.type === 'link' ? (
+                  <a
+                    key={i}
+                    className={styles.link}
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={part.href}
+                  >
+                    <MapPin size={15} weight="fill" aria-hidden="true" />
+                    {part.label}
+                  </a>
+                ) : (
+                  <span key={i}>{part.text}</span>
+                ),
+              )}
+            </dd>
           </div>
         ) : null}
         {event.note ? (
