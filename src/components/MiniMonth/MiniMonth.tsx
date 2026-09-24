@@ -75,7 +75,7 @@ export function MiniMonth({ selected, today, weekStartsOn, onSelect }: MiniMonth
               aria-pressed={day === selected}
             >
               <span className={styles.solar}>{info.solar.day}</span>
-              <span className={styles.lunar}>
+              <span className={`${styles.lunar} ${info.lunar.day === 1 ? styles.lunarFirst : ''}`}>
                 {info.lunar.day === 1 ? `${info.lunar.day}/${info.lunar.month}` : info.lunar.day}
               </span>
             </button>

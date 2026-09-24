@@ -331,6 +331,12 @@
   margin-top: -1px;
 }
 
+/* Mùng 1 âm lịch: đỏ để dễ thấy đầu tháng âm. */
+.lunarFirst {
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
 .sunday .solar,
 .sunday .weekday {
   color: var(--sunday);

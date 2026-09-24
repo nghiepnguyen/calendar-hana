@@ -31,7 +31,9 @@ export function DayCard({ date, isToday, showHolidays, showAuspicious }: DayCard
 
       <div className={styles.lunar}>
         <div className={styles.lunarMain}>
-          <span className={styles.lunarDay}>{lunar.day}</span>
+          <span className={`${styles.lunarDay} ${lunar.day === 1 ? styles.lunarFirst : ''}`}>
+            {lunar.day}
+          </span>
           <span className={styles.lunarMeta}>
             <span>
               Tháng {lunar.month}

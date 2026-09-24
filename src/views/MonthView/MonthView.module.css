@@ -110,9 +110,10 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Mùng 1 âm lịch: đỏ để dễ thấy đầu tháng âm. */
 .lunarFirst {
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--accent-text);
 }
 
 .holiday {

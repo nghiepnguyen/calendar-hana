@@ -51,7 +51,10 @@ export function DayGroup({
         <span className={styles.solar} aria-hidden="true">
           {Number(date.slice(8))}
         </span>
-        <span className={styles.lunar} aria-hidden="true">
+        <span
+          className={`${styles.lunar} ${lunar.day === 1 ? styles.lunarFirst : ''}`}
+          aria-hidden="true"
+        >
           {formatLunarShort(lunar)}
         </span>
       </h4>

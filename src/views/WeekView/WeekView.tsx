@@ -39,7 +39,7 @@ export function WeekView({
                 <span className={`${styles.solarDay} ${isRed ? styles.red : ''}`}>
                   {info.solar.day}
                 </span>
-                <span className={styles.lunarDay}>
+                <span className={`${styles.lunarDay} ${isFirstLunarDay ? styles.lunarFirst : ''}`}>
                   {isFirstLunarDay ? formatLunarShort(info.lunar) : info.lunar.day}
                 </span>
                 {holidays[0] ? (
