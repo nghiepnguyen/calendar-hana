@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createDefaultCategories } from '../../data/defaultCategories'
@@ -30,6 +30,26 @@ describe('EventForm', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Lưu' }))
     expect(screen.getByText('Vui lòng nhập tiêu đề.')).toBeInTheDocument()
     expect(screen.getByLabelText('Tiêu đề')).toHaveAttribute('aria-invalid', 'true')
+    expect(onSave).not.toHaveBeenCalled()
+  })
+
+  it('đang gõ năm dở dang (0001, 0019…) không làm sập form', async () => {
+    const onSave = renderForm()
+    const date = screen.getByLabelText('Ngày')
+    // Gõ năm từng chữ số: trình duyệt báo lần lượt 0001, 0019, 0192, 1926.
+    for (const value of ['0001-04-28', '0019-04-28', '0192-04-28', '']) {
+      fireEvent.change(date, { target: { value } })
+      expect(screen.getByRole('dialog', { name: 'Tạo sự kiện' })).toBeInTheDocument()
+      expect(screen.queryByText(/^Tức ngày/)).not.toBeInTheDocument()
+    }
+    fireEvent.change(date, { target: { value: '1926-04-28' } })
+    expect(screen.getByText(/^Tức ngày/)).toBeInTheDocument()
+
+    // Lưu khi năm ngoài 1900–2100 thì báo lỗi ngày, không lưu.
+    fireEvent.change(date, { target: { value: '0019-04-28' } })
+    await userEvent.type(screen.getByLabelText('Tiêu đề'), 'Họp')
+    await userEvent.click(screen.getByRole('button', { name: 'Lưu' }))
+    expect(date).toHaveAttribute('aria-invalid', 'true')
     expect(onSave).not.toHaveBeenCalled()
   })
 

@@ -1,6 +1,13 @@
 // Dữ liệu trên form sự kiện và cách đổi qua lại với CalendarEvent.
 
-import { lunarToSolar, parseSolarDate, solarToLunar, toSolarDateString } from '@shared/lunar'
+import {
+  lunarToSolar,
+  MAX_YEAR,
+  MIN_YEAR,
+  parseSolarDate,
+  solarToLunar,
+  toSolarDateString,
+} from '@shared/lunar'
 import { getEventStartDate } from '@shared/recurrence/recurrence'
 import { minutesNowInVietnam, minutesToTime, timeToMinutes, todayInVietnam } from '@shared/time'
 import {
@@ -151,7 +158,11 @@ export function switchCalendar(draft: EventDraft, calendarType: CalendarType): E
   if (draft.calendarType === calendarType) return draft
   const next: EventDraft = { ...draft, calendarType }
   if (calendarType === 'lunar') {
-    next.lunarDate = lunarOf(draft.solarDate)
+    // Ngày dương đang dở (trống, năm ngoài 1900–2100) thì giữ ngày âm cũ.
+    const year = Number(draft.solarDate.slice(0, 4))
+    if (draft.solarDate && year >= MIN_YEAR && year <= MAX_YEAR) {
+      next.lunarDate = lunarOf(draft.solarDate)
+    }
     if (draft.repeat === 'daily' || draft.repeat === 'weekly') next.repeat = 'none'
   } else {
     const solar = draftSolarDate(draft)

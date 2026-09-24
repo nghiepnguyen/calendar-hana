@@ -23,6 +23,12 @@ describe('validateEvent', () => {
     expect(validateEvent({ ...valid, title: 'a'.repeat(200) }).title).toBeUndefined()
   })
 
+  it('năm dương lịch phải trong 1900–2100', () => {
+    expect(validateEvent({ ...valid, date: '0019-09-21' }).date).toBe('Năm phải từ 1900 đến 2100.')
+    expect(validateEvent({ ...valid, date: '2101-01-01' }).date).toBe('Năm phải từ 1900 đến 2100.')
+    expect(validateEvent({ ...valid, date: '1900-01-01' }).date).toBeUndefined()
+  })
+
   it('ghi chú tối đa 2000 ký tự', () => {
     expect(validateEvent({ ...valid, note: 'a'.repeat(2001) }).note).toMatch(/2000/)
   })

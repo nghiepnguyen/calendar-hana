@@ -1,6 +1,6 @@
 import { useId, useState, type CSSProperties, type FormEvent } from 'react'
 import { formatLunar, formatSolar } from '@shared/format'
-import { parseSolarDate, solarToLunar } from '@shared/lunar'
+import { MAX_YEAR, MIN_YEAR, parseSolarDate, solarToLunar } from '@shared/lunar'
 import { EVENT_NOTE_MAX, EVENT_TITLE_MAX, type Category } from '@shared/types'
 import { validateEvent, type EventErrors } from '@shared/validation'
 import { useNotificationStore } from '../../reminders/notifications'
@@ -62,6 +62,8 @@ export function EventForm({
     if (!solarDate) return null
     if (draft.calendarType === 'lunar') return `Tức ${formatSolar(solarDate)} dương lịch`
     const { day, month, year } = parseSolarDate(solarDate)
+    // Đang gõ năm dở (0001, 0019…): chưa quy đổi được, đợi gõ xong.
+    if (year < MIN_YEAR || year > MAX_YEAR) return null
     return `Tức ngày ${formatLunar(solarToLunar(day, month, year))}`
   })()
 

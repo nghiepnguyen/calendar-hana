@@ -108,3 +108,12 @@ describe('nhắc hẹn mặc định', () => {
     expect(setAllDay({ ...draft, reminders: [] }, true).reminders).toEqual([])
   })
 })
+
+describe('ngày dương đang gõ dở', () => {
+  it('đổi sang âm lịch khi năm chưa gõ xong thì giữ ngày âm cũ', () => {
+    const draft = draftFromDefaults({ date: '2026-04-28' })
+    for (const solarDate of ['0001-04-28', '']) {
+      expect(switchCalendar({ ...draft, solarDate }, 'lunar').lunarDate).toEqual(draft.lunarDate)
+    }
+  })
+})

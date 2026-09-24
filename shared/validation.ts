@@ -1,6 +1,6 @@
 // Kiểm tra dữ liệu sự kiện. Dùng chung cho form (hiện lỗi) và repository (chặn dữ liệu sai).
 
-import { lunarToSolar } from './lunar/lunar'
+import { lunarToSolar, MAX_YEAR, MIN_YEAR } from './lunar/lunar'
 import { parseSolarDate } from './lunar/julian'
 import { getEventStartDate } from './recurrence/recurrence'
 import {
@@ -68,8 +68,12 @@ export function validateEvent(event: EventLike): EventErrors {
     errors.date = 'Ngày dương lịch không hợp lệ.'
   } else {
     try {
-      parseSolarDate(event.date)
-      startDate = event.date
+      const { year } = parseSolarDate(event.date)
+      if (year < MIN_YEAR || year > MAX_YEAR) {
+        errors.date = `Năm phải từ ${MIN_YEAR} đến ${MAX_YEAR}.`
+      } else {
+        startDate = event.date
+      }
     } catch {
       errors.date = 'Ngày dương lịch không hợp lệ.'
     }
