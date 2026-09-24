@@ -97,3 +97,14 @@ test('menu không có mục Danh sách sự kiện (đã có tab Sự kiện)', 
   await expect(menu.getByRole('heading', { name: 'Danh mục' })).toBeVisible()
   await expect(menu.getByRole('link', { name: 'Danh sách sự kiện' })).toHaveCount(0)
 })
+
+test('thông báo "dùng được offline" nằm trên thanh tab, không che tab', async ({ app }) => {
+  await app.goto('/day/2026-09-23')
+  const toast = app.getByRole('status').filter({ hasText: 'khi không có mạng' })
+  await expect(toast).toBeVisible({ timeout: 15_000 })
+  const toastBox = (await toast.boundingBox())!
+  const barBox = (await tabBar(app).boundingBox())!
+  expect(toastBox.y + toastBox.height).toBeLessThanOrEqual(barBox.y)
+  await tabBar(app).getByRole('button', { name: 'Tháng' }).click()
+  await expect(app).toHaveURL(/\/month\/2026-09-23$/)
+})

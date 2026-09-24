@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { todayInVietnam } from '@shared/time'
 import { DomainMove } from './components/DomainMove/DomainMove'
 import { ThemeController } from './components/ThemeController'
+import { ToastRegionProvider } from './components/Toast/ToastRegion'
 import { UpdatePrompt } from './components/UpdatePrompt/UpdatePrompt'
 import { calendarPath } from './hooks/useCalendarRoute'
 import { CalendarPage } from './pages/CalendarPage'
@@ -11,7 +12,7 @@ import { ReminderService } from './reminders/ReminderService'
 
 function App() {
   return (
-    <>
+    <ToastRegionProvider>
       <ThemeController />
       <ReminderService />
       <UpdatePrompt />
@@ -23,7 +24,7 @@ function App() {
         <Route path="/:view/:date" element={<CalendarPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </>
+    </ToastRegionProvider>
   )
 }
 

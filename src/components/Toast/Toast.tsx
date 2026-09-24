@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { CheckCircle } from '@phosphor-icons/react'
+import { InToastRegion } from './ToastRegion'
 import styles from './Toast.module.css'
 
 interface ToastProps {
@@ -17,9 +18,11 @@ export function Toast({ message, onDone, duration = 3000 }: ToastProps) {
   }, [message, onDone, duration])
 
   return (
-    <div className={`glass ${styles.toast}`} role="status">
-      <CheckCircle size={20} weight="fill" className={styles.icon} aria-hidden="true" />
-      <span>{message}</span>
-    </div>
+    <InToastRegion>
+      <div className={`glass ${styles.toast}`} role="status">
+        <CheckCircle size={20} weight="fill" className={styles.icon} aria-hidden="true" />
+        <span>{message}</span>
+      </div>
+    </InToastRegion>
   )
 }
