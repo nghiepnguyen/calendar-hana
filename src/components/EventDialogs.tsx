@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { splitAt, type RecurringScope } from '@shared/recurrence/editing'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { CalendarEvent, Settings } from '@shared/types'
@@ -16,6 +16,7 @@ import { EventDetail } from './EventDetail/EventDetail'
 import { draftFromDefaults, draftFromEvent, type EventDraft } from './EventForm/draft'
 import { EventForm } from './EventForm/EventForm'
 import { RecurringScopeDialog } from './RecurringScopeDialog'
+import { Toast } from './Toast/Toast'
 
 interface EventDialogsProps {
   settings: Settings
@@ -28,6 +29,11 @@ type Pending =
   | { kind: 'delete-confirm'; occurrence: Occurrence }
   | null
 
+/** Tiêu đề dài thì cắt bớt cho vừa toast. */
+function shorten(title: string, max = 40): string {
+  return title.length > max ? `${title.slice(0, max - 1)}…` : title
+}
+
 /** Điều phối các hộp thoại sự kiện: chi tiết, form tạo/sửa, chọn phạm vi, xác nhận xóa. */
 export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
   const repository = useRepository()
@@ -39,6 +45,8 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
   const closeEditor = useUiStore((s) => s.closeEditor)
   const openEdit = useUiStore((s) => s.openEdit)
   const [pending, setPending] = useState<Pending>(null)
+  const [toast, setToast] = useState<string | null>(null)
+  const clearToast = useCallback(() => setToast(null), [])
 
   const findEvent = (id: string): CalendarEvent | undefined => events?.find((e) => e.id === id)
 
@@ -50,7 +58,10 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
   const removeOccurrence = async (occurrence: Occurrence, scope: RecurringScope) => {
     setPending(null)
     const base = findEvent(occurrence.eventId)
-    if (base) await deleteEventOccurrence(repository, base, occurrence, scope)
+    if (base) {
+      await deleteEventOccurrence(repository, base, occurrence, scope)
+      setToast('Đã xoá sự kiện')
+    }
     closeDetail()
   }
 
@@ -91,9 +102,13 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
           signedIn={signedIn}
           onCancel={closeEditor}
           onSave={async (draft) => {
-            if (editor.mode === 'create') await createEventFromDraft(repository, draft)
-            else if (base)
+            if (editor.mode === 'create') {
+              await createEventFromDraft(repository, draft)
+              setToast(`Đã tạo sự kiện “${shorten(draft.title.trim())}”`)
+            } else if (base) {
               await updateEventFromDraft(repository, base, draft, editor.scope, editor.occurrence)
+              setToast('Đã lưu thay đổi')
+            }
             closeEditor()
           }}
         />
@@ -151,6 +166,8 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
           Sự kiện “{pending.occurrence.event.title}” sẽ bị xóa và không khôi phục được.
         </ConfirmDialog>
       ) : null}
+
+      {toast ? <Toast message={toast} onDone={clearToast} /> : null}
     </>
   )
 }

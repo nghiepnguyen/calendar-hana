@@ -99,6 +99,7 @@ describe('App', () => {
     await userEvent.type(within(form).getByLabelText('Tiêu đề'), 'Họp team')
     await userEvent.selectOptions(within(form).getByLabelText('Kiểu lặp'), 'Hằng tuần')
     await userEvent.click(within(form).getByRole('button', { name: 'Lưu' }))
+    expect(await screen.findByRole('status')).toHaveTextContent('Đã tạo sự kiện “Họp team”')
 
     // Hiện trong xem Ngày.
     const chip = await screen.findByRole('button', { name: /^Họp team, 9:00-10:00/ })
@@ -116,6 +117,7 @@ describe('App', () => {
     await userEvent.type(title, 'Họp online')
     await userEvent.click(within(edit).getByRole('button', { name: 'Lưu' }))
     expect(await screen.findByRole('button', { name: /^Họp online/ })).toBeInTheDocument()
+    expect(await screen.findByRole('status')).toHaveTextContent('Đã lưu thay đổi')
 
     // Tuần sau vẫn là tên cũ.
     await userEvent.click(screen.getByRole('radio', { name: 'Tuần' }))
@@ -129,6 +131,7 @@ describe('App', () => {
     await userEvent.click(within(delScope).getByLabelText('Tất cả'))
     await userEvent.click(within(delScope).getByRole('button', { name: 'Xóa' }))
     await vi.waitFor(async () => expect(await repo.listEvents()).toEqual([]))
+    expect(await screen.findByRole('status')).toHaveTextContent('Đã xoá sự kiện')
   })
 
   it('tìm kiếm sự kiện và nhảy tới ngày', async () => {
