@@ -246,6 +246,15 @@ textarea {
   color: inherit;
 }
 
+/* iOS Safari tự phóng to trang khi chạm vào ô nhập có chữ nhỏ hơn 16px. */
+@media (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+}
+
 button {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
