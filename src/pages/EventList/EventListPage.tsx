@@ -105,7 +105,10 @@ export function EventListPage() {
   const [toast, setToast] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  useKeyboardShortcuts({ n: () => openCreate({ date: today }) }, !selecting)
+  useKeyboardShortcuts(
+    { n: () => openCreate({ date: today }), '?': () => navigate('/settings#shortcuts') },
+    !selecting,
+  )
 
   const headerRef = useRef<HTMLElement>(null)
   const topRef = useRef<HTMLDivElement>(null)

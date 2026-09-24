@@ -191,6 +191,13 @@ describe('Trang Danh sách sự kiện', () => {
     expect(screen.queryByRole('button', { name: 'Tạo sự kiện' })).not.toBeInTheDocument()
   })
 
+  it('phím ? mở hướng dẫn phím tắt', async () => {
+    renderList()
+    await screen.findByRole('heading', { name: 'Danh sách sự kiện' })
+    await userEvent.keyboard('?')
+    expect(await screen.findByRole('region', { name: 'Phím tắt' })).toBeInTheDocument()
+  })
+
   it('vào từ Menu', async () => {
     renderList('/day/2026-09-23')
     await userEvent.click(await screen.findByRole('link', { name: 'Danh sách sự kiện' }))

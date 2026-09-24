@@ -3,11 +3,13 @@ import { CaretLeft } from '@phosphor-icons/react'
 import { Link, useLocation } from 'react-router-dom'
 import type { Settings, ThemePreference } from '@shared/types'
 import { useRepository } from '../../data/repositoryContext'
+import { useIsCompact } from '../../hooks/useMediaQuery'
 import { useSettings } from '../../hooks/useRepositoryData'
 import { AccountSection } from './AccountSection'
 import { CategoryManager } from './CategoryManager'
 import { DataSection } from './DataSection'
 import { NotificationSection } from './NotificationSection'
+import { ShortcutSection } from './ShortcutSection'
 import styles from './SettingsPage.module.css'
 
 const THEMES: { value: ThemePreference; label: string }[] = [
@@ -48,11 +50,12 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
   const repository = useRepository()
   const settings = useSettings()
   const location = useLocation()
+  const compact = useIsCompact()
 
   // Mở /settings#categories thì cuộn tới phần danh mục.
   useEffect(() => {
     if (!settings || !location.hash) return
-    document.getElementById(location.hash.slice(1))?.scrollIntoView()
+    document.getElementById(location.hash.slice(1))?.scrollIntoView?.()
   }, [settings, location.hash])
 
   const save = (patch: Partial<Omit<Settings, 'updatedAt'>>) => void repository.saveSettings(patch)
@@ -155,6 +158,18 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
             <h2 id="settings-categories">Danh mục</h2>
             <CategoryManager />
           </section>
+
+          {/* Điện thoại không có bàn phím vật lý nên ẩn. */}
+          {compact ? null : (
+            <section
+              className={`glass ${styles.section}`}
+              id="shortcuts"
+              aria-labelledby="settings-shortcuts"
+            >
+              <h2 id="settings-shortcuts">Phím tắt</h2>
+              <ShortcutSection />
+            </section>
+          )}
 
           <section
             className={`glass ${styles.section}`}

@@ -51,6 +51,7 @@ export function CalendarPage() {
   const occurrences = useEventsInRange(range.start, range.end, settings.hiddenCategoryIds)
   useOpenOccurrenceFromUrl(date)
 
+  // Đổi phím tắt thì sửa cả hướng dẫn ở Settings/ShortcutSection.
   useKeyboardShortcuts({
     t: route.goToday,
     d: () => route.setView('day'),
@@ -58,6 +59,7 @@ export function CalendarPage() {
     m: () => route.setView('month'),
     n: () => openCreate({ date }),
     '/': () => setSearchOpen(true),
+    '?': () => navigate('/settings#shortcuts'),
     ArrowLeft: route.goPrev,
     ArrowRight: route.goNext,
   })

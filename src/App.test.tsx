@@ -177,4 +177,19 @@ describe('App', () => {
     await userEvent.click(within(confirm).getByRole('button', { name: 'Xóa danh mục' }))
     await vi.waitFor(async () => expect((await repo.getEvent(event.id))?.categoryId).toBe('other'))
   })
+
+  it('Cài đặt có hướng dẫn phím tắt trên máy tính', async () => {
+    renderApp('/settings')
+    const section = await screen.findByRole('region', { name: 'Phím tắt' })
+    const create = within(section).getByText('Tạo sự kiện').closest('li')!
+    expect(within(create).getByText('N').tagName).toBe('KBD')
+    expect(within(section).getByText('Tìm kiếm sự kiện')).toBeInTheDocument()
+  })
+
+  it('phím ? mở hướng dẫn phím tắt', async () => {
+    renderApp('/day/2026-09-23')
+    await screen.findByRole('link', { name: 'Danh sách sự kiện' })
+    await userEvent.keyboard('?')
+    expect(await screen.findByRole('region', { name: 'Phím tắt' })).toBeInTheDocument()
+  })
 })

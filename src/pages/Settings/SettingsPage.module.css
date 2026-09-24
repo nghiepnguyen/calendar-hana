@@ -50,6 +50,8 @@
   flex-direction: column;
   padding: 16px 18px;
   border-radius: var(--radius-lg);
+  /* Mở bằng #id thì không bị header dính che. */
+  scroll-margin-top: 80px;
 }
 
 .section h2 {
@@ -252,4 +254,62 @@
   gap: 4px;
   font-size: 14px;
   line-height: 1.45;
+}
+
+/* Phím tắt */
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shortcuts > p {
+  margin: 0;
+}
+
+.shortcutGroup h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.shortcutGroup ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shortcutGroup li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid var(--separator);
+}
+
+.shortcutGroup li:first-child {
+  border-top: 0;
+}
+
+.keys {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.keys kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-strong);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
 }
