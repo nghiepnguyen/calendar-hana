@@ -14,6 +14,7 @@ import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString } from '@shared/types'
 import { useAuth } from '../../auth/authContext'
 import { ConfirmDialog } from '../../components/ConfirmDialog'
+import { CreateFab } from '../../components/CreateFab/CreateFab'
 import { EventDialogs } from '../../components/EventDialogs'
 import { Sidebar } from '../../components/layout/Sidebar'
 import { SearchPanel } from '../../components/SearchPanel/SearchPanel'
@@ -26,6 +27,7 @@ import { useRepository } from '../../data/repositoryContext'
 import { calendarPath } from '../../hooks/useCalendarRoute'
 import { useCategoryMap } from '../../hooks/useCategoryMap'
 import { useEventsInRange } from '../../hooks/useEventsInRange'
+import { useKeyboardShortcuts } from '../../hooks/useKeyboardShortcuts'
 import { useIsCompact } from '../../hooks/useMediaQuery'
 import { useNow } from '../../hooks/useNow'
 import { useEvents, useSettings } from '../../hooks/useRepositoryData'
@@ -102,6 +104,8 @@ export function EventListPage() {
   const [deleting, setDeleting] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+
+  useKeyboardShortcuts({ n: () => openCreate({ date: today }) }, !selecting)
 
   const headerRef = useRef<HTMLElement>(null)
   const topRef = useRef<HTMLDivElement>(null)
@@ -404,6 +408,8 @@ export function EventListPage() {
           onCreate={() => openCreate({ date: today })}
         />
       ) : null}
+      {/* Máy tính: nút + ở góc như trang lịch; đang chọn thì nhường chỗ cho thanh chọn. */}
+      {!compact && !selecting ? <CreateFab onClick={() => openCreate({ date: today })} /> : null}
 
       {/* Ẩn khi hỏi xác nhận: sheet xác nhận trên điện thoại nằm đè đúng chỗ thanh này. */}
       {selecting && !confirming ? (

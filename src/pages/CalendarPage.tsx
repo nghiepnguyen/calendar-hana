@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
-import { Plus } from '@phosphor-icons/react'
 import { useNavigate } from 'react-router-dom'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString, TimeString } from '@shared/types'
 import { useAuth } from '../auth/authContext'
 import { viewRange } from '../calendar/range'
+import { CreateFab } from '../components/CreateFab/CreateFab'
 import { EventDialogs } from '../components/EventDialogs'
 import { AppHeader } from '../components/layout/AppHeader'
 import { SearchPanel } from '../components/SearchPanel/SearchPanel'
@@ -110,15 +110,7 @@ export function CalendarPage() {
           onCreate={() => openCreate({ date })}
         />
       ) : (
-        <button
-          type="button"
-          className={styles.fab}
-          onClick={() => openCreate({ date })}
-          aria-label="Tạo sự kiện"
-          title="Tạo sự kiện (N)"
-        >
-          <Plus size={26} weight="bold" aria-hidden="true" />
-        </button>
+        <CreateFab onClick={() => openCreate({ date })} />
       )}
       <EventDialogs settings={settings} signedIn={!!user} />
       {searchOpen ? (

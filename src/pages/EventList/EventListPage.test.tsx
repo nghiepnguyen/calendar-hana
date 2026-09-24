@@ -168,8 +168,27 @@ describe('Trang Danh sách sự kiện', () => {
 
   it('chưa có sự kiện thì mời tạo sự kiện', async () => {
     renderList()
-    await userEvent.click(await screen.findByRole('button', { name: 'Tạo sự kiện' }))
+    const empty = await screen.findByText(/Chưa có sự kiện/)
+    await userEvent.click(
+      within(empty.closest('div')!).getByRole('button', { name: 'Tạo sự kiện' }),
+    )
     expect(await screen.findByRole('dialog', { name: 'Tạo sự kiện' })).toBeInTheDocument()
+  })
+
+  it('máy tính có nút + ở góc và phím N để tạo sự kiện, ẩn khi đang chọn', async () => {
+    await seed()
+    renderList()
+    await row(/^Khám răng/)
+    await userEvent.click(screen.getByRole('button', { name: 'Tạo sự kiện' }))
+    const dialog = await screen.findByRole('dialog', { name: 'Tạo sự kiện' })
+    await userEvent.click(within(dialog).getByRole('button', { name: 'Hủy' }))
+
+    await userEvent.keyboard('n')
+    expect(await screen.findByRole('dialog', { name: 'Tạo sự kiện' })).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Hủy' }))
+
+    await userEvent.click(screen.getByRole('button', { name: 'Chọn' }))
+    expect(screen.queryByRole('button', { name: 'Tạo sự kiện' })).not.toBeInTheDocument()
   })
 
   it('vào từ Menu', async () => {
