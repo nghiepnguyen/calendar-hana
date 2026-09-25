@@ -13,8 +13,12 @@ cleanupOutdatedCaches()
 precacheAndRoute(self.__WB_MANIFEST)
 // Trừ các trang dành riêng của Firebase Hosting (/__/auth/handler dùng khi đăng nhập):
 // trả app shell cho chúng thì popup đăng nhập hiện app thay vì trang Google.
+// Trừ cả đường dẫn có đuôi file (/sitemap.xml, /robots.txt): mở trực tiếp thì lấy file thật,
+// không thì app nhận đường dẫn lạ và chuyển về trang chủ.
 registerRoute(
-  new NavigationRoute(createHandlerBoundToURL('/index.html'), { denylist: [/^\/__\//] }),
+  new NavigationRoute(createHandlerBoundToURL('/index.html'), {
+    denylist: [/^\/__\//, /\/[^/]+\.[a-z0-9]+$/i],
+  }),
 )
 
 // App gửi message này khi người dùng bấm "Cập nhật" trên thông báo có phiên bản mới.

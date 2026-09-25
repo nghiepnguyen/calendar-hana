@@ -191,6 +191,23 @@ test('service worker không trả app shell cho trang đăng nhập của Fireba
   expect(response?.fromServiceWorker()).toBe(false)
 })
 
+test('service worker không trả app shell cho sitemap.xml và robots.txt', async ({
+  app,
+  browserName,
+}) => {
+  test.skip(browserName === 'webkit', 'Playwright WebKit không hỗ trợ service worker')
+  await app.goto('/day/2026-09-23')
+  await app.waitForFunction(() => navigator.serviceWorker.ready.then(() => true))
+  await app.reload()
+  await app.waitForFunction(() => navigator.serviceWorker.controller !== null)
+
+  for (const path of ['/sitemap.xml', '/robots.txt']) {
+    const response = await app.goto(path)
+    expect(response?.fromServiceWorker()).toBe(false)
+    expect(app.url()).toMatch(new RegExp(`${path.replace('.', '\\.')}$`))
+  }
+})
+
 async function openEventList(page: Page) {
   // Màn hình nhỏ: tab Sự kiện ở thanh tab.
   if (isCompact(page)) {
