@@ -61,6 +61,11 @@
   --holiday: #c8291f;
   --gold: #a35f00;
   --bad: #7a3fc0;
+  /* Lịch vạn niên: giờ / sao / ngày tốt (xanh lá) và sao xấu (đỏ nhạt). */
+  --almanac-good: #13702f;
+  --almanac-good-bg: rgb(26 140 60 / 0.13);
+  --almanac-bad: #b3261e;
+  --almanac-bad-bg: rgb(204 43 34 / 0.1);
   --now-line: #cc2b22;
   --focus: #0a64d8;
 
@@ -134,6 +139,10 @@
     --holiday: #ff6b61;
     --gold: #f0b54a;
     --bad: #c6a4ff;
+    --almanac-good: #5fd58a;
+    --almanac-good-bg: rgb(95 213 138 / 0.16);
+    --almanac-bad: #ff8f86;
+    --almanac-bad-bg: rgb(255 90 79 / 0.16);
     --now-line: #ff5a4f;
     --focus: #5aa2ff;
     --border-strong: rgb(235 240 255 / 0.2);
@@ -177,6 +186,10 @@
   --holiday: #ff6b61;
   --gold: #f0b54a;
   --bad: #c6a4ff;
+  --almanac-good: #5fd58a;
+  --almanac-good-bg: rgb(95 213 138 / 0.16);
+  --almanac-bad: #ff8f86;
+  --almanac-bad-bg: rgb(255 90 79 / 0.16);
   --now-line: #ff5a4f;
   --focus: #5aa2ff;
   --border-strong: rgb(235 240 255 / 0.2);

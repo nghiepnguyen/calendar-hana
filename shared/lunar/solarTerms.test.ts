@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { jdFromDate } from './julian'
-import { getSolarTerm } from './solarTerms'
+import { jdFromDate, solarStringToJd } from './julian'
+import { getSolarTerm, solarTermMonthChi } from './solarTerms'
 
 describe('getSolarTerm', () => {
   // Ngày bắt đầu tiết khí năm 2026 theo giờ Việt Nam.
@@ -27,5 +27,16 @@ describe('getSolarTerm', () => {
       if (getSolarTerm(jd).startsToday) count++
     }
     expect(count).toBe(24)
+  })
+})
+
+describe('solarTermMonthChi', () => {
+  it('tiết giao lúc nào trong ngày thì ngày đó đã sang tháng mới', () => {
+    // Lập xuân 2026 giao khoảng 3h sáng 4/2; Bạch lộ 2026 giao khoảng 21h45 ngày 7/9.
+    expect(solarTermMonthChi(solarStringToJd('2026-02-03'))).toBe(1) // Sửu
+    expect(solarTermMonthChi(solarStringToJd('2026-02-04'))).toBe(2) // Dần
+    expect(solarTermMonthChi(solarStringToJd('2026-09-06'))).toBe(8) // Thân
+    expect(solarTermMonthChi(solarStringToJd('2026-09-07'))).toBe(9) // Dậu
+    expect(solarTermMonthChi(solarStringToJd('2026-12-31'))).toBe(0) // Tý (sau Đại tuyết)
   })
 })

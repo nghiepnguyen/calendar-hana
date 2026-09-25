@@ -120,7 +120,7 @@ test('US-5: họp thứ Hai hằng tuần có giờ', async ({ app }) => {
   await save(app)
 
   await app.goto('/week/2026-10-05')
-  await expect(app.getByRole('button', { name: /^Họp giao ban, 9:00-10:00/ })).toHaveCount(1)
+  await expect(app.getByRole('button', { name: /^Họp giao ban, 9:00 – 10:00/ })).toHaveCount(1)
   await app.goto('/day/2026-10-06')
   await expect(app.getByRole('button', { name: /^Họp giao ban/ })).toHaveCount(0)
 })
@@ -268,4 +268,63 @@ test('US-L2: quay lại trang Danh sách thì về đúng chỗ đang xem', asyn
   await expect(app).toHaveURL(/\/day\//)
   await openEventList(app)
   await expect(target).toBeInViewport()
+})
+
+test('US-A1..A8: xem Ngày có khối Lịch vạn niên, bấm sao xem giải thích, tắt được', async ({
+  app,
+}) => {
+  await app.goto('/day/2026-09-25')
+  const panel = app.getByRole('region', { name: 'Lịch vạn niên' })
+  await expect(panel).toBeVisible()
+  await expect(panel.getByText('Thu phân')).toBeVisible()
+  await expect(panel.getByText('Kim Bạch Kim')).toBeVisible()
+  await expect(panel.getByRole('button', { name: /^Sao Ngưu/ })).toBeVisible()
+  await expect(panel.getByText('Nam', { exact: true })).toBeVisible()
+  await expect(panel.getByRole('listitem', { name: /^Giờ / })).toHaveCount(12)
+
+  await panel.getByRole('button', { name: 'Thiên Đức' }).click()
+  const dialog = app.getByRole('dialog', { name: 'Sao Thiên Đức' })
+  await expect(dialog.getByText('Tốt cho mọi việc.')).toBeVisible()
+  await dialog.getByRole('button', { name: 'Đóng' }).click()
+  await expect(dialog).toBeHidden()
+
+  await app.goto('/settings')
+  const toggle = app.getByRole('switch', { name: /Hiện ngày hoàng đạo và lịch vạn niên/ })
+  await toggle.click()
+  await expect(toggle).not.toBeChecked()
+  // Đợi cài đặt ghi xong vào IndexedDB rồi mới tải lại trang.
+  await app.waitForTimeout(300)
+  await app.goto('/day/2026-09-25')
+  await expect(app.getByRole('region', { name: 'Sự kiện trong ngày' })).toBeVisible()
+  await expect(app.getByRole('region', { name: 'Lịch vạn niên' })).toHaveCount(0)
+})
+
+test('US-A: khối Lịch vạn niên đổi theo ngày khi chuyển ngày', async ({ app, isMobile }) => {
+  await app.goto('/day/2026-09-25')
+  const panel = app.getByRole('region', { name: 'Lịch vạn niên' })
+  const title = panel.getByText(/^Ngày\s/).first()
+  await expect(title).toHaveText('Ngày Nhâm Dần')
+  await expect(panel.getByRole('button', { name: /^Sao Ngưu/ })).toBeVisible()
+
+  // Nút "Ngày sau" trên thanh tiêu đề.
+  await app.getByRole('button', { name: 'Ngày sau' }).click()
+  await expect(app).toHaveURL(/\/day\/2026-09-26/)
+  await expect(title).toHaveText('Ngày Quý Mão')
+  await expect(panel.getByRole('button', { name: /^Sao Nữ/ })).toBeVisible()
+  await expect(panel.getByRole('button', { name: /^Trực Phá/ })).toBeVisible()
+
+  // Phím mũi tên trái quay về ngày trước.
+  await app.keyboard.press('ArrowLeft')
+  await expect(app).toHaveURL(/\/day\/2026-09-25/)
+  await expect(title).toHaveText('Ngày Nhâm Dần')
+
+  // Chọn ngày trên lịch nhỏ ở sidebar (chỉ có trên màn hình rộng).
+  if (!isMobile) {
+    await app
+      .getByRole('button', { name: /20 tháng 9 năm 2026/ })
+      .first()
+      .click()
+    await expect(app).toHaveURL(/\/day\/2026-09-20/)
+    await expect(title).toHaveText('Ngày Đinh Dậu')
+  }
 })

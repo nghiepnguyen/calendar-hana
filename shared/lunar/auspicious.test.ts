@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { getAuspiciousHours, getBadDays, getDayGod } from './auspicious'
+import { getAllHours, getAuspiciousHours, getBadDays, getDayGod } from './auspicious'
+import { CHI } from './canChi'
+import { solarStringToJd } from './julian'
 
 describe('getAuspiciousHours', () => {
   it.each([
@@ -51,4 +53,38 @@ describe('getBadDays', () => {
     expect(getBadDays(14).map((d) => d.name)).toEqual(['Nguyệt Kỵ'])
     expect(getBadDays(1)).toEqual([])
   })
+})
+
+describe('getAllHours', () => {
+  it('ngày mẫu 25/9/2026 (Nhâm Dần): đủ 12 giờ, Thanh Long ở giờ Tý', () => {
+    const jd = solarStringToJd('2026-09-25')
+    const hours = getAllHours(jd, 2)
+    expect(hours.map((h) => h.name)).toEqual([...CHI])
+    expect(hours.map((h) => h.god)).toEqual([
+      'Thanh Long',
+      'Minh Đường',
+      'Thiên Hình',
+      'Chu Tước',
+      'Kim Quỹ',
+      'Kim Đường',
+      'Bạch Hổ',
+      'Ngọc Đường',
+      'Thiên Lao',
+      'Huyền Vũ',
+      'Tư Mệnh',
+      'Câu Trận',
+    ])
+    // Ngày Nhâm: giờ Tý là Canh Tý.
+    expect(hours[0].canChi.name).toBe('Canh Tý')
+    expect(hours[11].canChi.name).toBe('Tân Hợi')
+  })
+
+  it.each([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])(
+    'ngày có Chi %i: 6 giờ tốt trùng với getAuspiciousHours',
+    (dayChi) => {
+      const good = getAllHours(2461309, dayChi).filter((h) => h.isGood)
+      expect(good).toHaveLength(6)
+      expect(good.map((h) => h.name)).toEqual(getAuspiciousHours(dayChi).map((h) => h.name))
+    },
+  )
 })

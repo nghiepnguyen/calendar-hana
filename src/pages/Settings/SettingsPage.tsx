@@ -94,8 +94,8 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
               onChange={(showHolidays) => save({ showHolidays })}
             />
             <Toggle
-              label="Hiện thông tin hoàng đạo"
-              hint="Ngày hoàng đạo / hắc đạo, giờ tốt, ngày kỵ"
+              label="Hiện ngày hoàng đạo và lịch vạn niên"
+              hint="Ngày hoàng đạo / hắc đạo, ngày kỵ, sao tốt xấu, giờ tốt, hướng xuất hành"
               checked={settings.showAuspicious}
               onChange={(showAuspicious) => save({ showAuspicious })}
             />

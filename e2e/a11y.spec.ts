@@ -44,6 +44,26 @@ for (const scheme of ['light', 'dark'] as const) {
       ).toEqual([])
     })
 
+    test('hộp giải thích sao trong khối Lịch vạn niên', async ({ app }) => {
+      await app.goto('/day/2026-09-25')
+      await app
+        .getByRole('region', { name: 'Lịch vạn niên' })
+        .getByRole('button', { name: 'Thiên Đức' })
+        .click()
+      await expect(app.getByRole('dialog')).toBeVisible()
+      await app.waitForFunction(() =>
+        document.getAnimations().every((a) => a.playState === 'finished'),
+      )
+      // Chỉ đo hộp thoại: nội dung phía sau bị lớp nền mờ phủ nên không đo tương phản được.
+      const result = await new AxeBuilder({ page: app })
+        .include('[role="dialog"]')
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+        .analyze()
+      expect(
+        result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target).join(' | ')}`),
+      ).toEqual([])
+    })
+
     test('danh sách ở chế độ chọn và hộp xác nhận xoá', async ({ app }) => {
       await app.goto('/day/2026-09-23')
       const form = await openCreateForm(app)

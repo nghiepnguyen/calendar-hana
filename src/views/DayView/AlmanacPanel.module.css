@@ -1,0 +1,845 @@
+/*
+ * Khối "Lịch vạn niên": vỏ kính ngoài (glass) chứa các ô bento bên trong, mỗi ô là một tấm
+ * đặc hơn có viền sáng mảnh phía trên (kiểu kính đặt trong khay). Bố cục theo độ rộng của chính
+ * khối (container query) nên dùng được cả ở cột hẹp trên máy tính lẫn điện thoại.
+ */
+
+.panel {
+  --tile-radius: calc(var(--radius-lg) - 6px);
+  --spring: cubic-bezier(0.32, 0.72, 0, 1);
+  /* Màu ngũ hành (chỉ dùng cho icon và chữ nhỏ). */
+  --el-kim: var(--gold);
+  --el-moc: var(--almanac-good);
+  --el-thuy: #1f63c2;
+  --el-hoa: var(--accent-text);
+  --el-tho: #8a5a26;
+  --hy: #c2336b;
+  --tai: var(--gold);
+
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  border-radius: var(--radius-lg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .panel {
+    --el-thuy: #6fa8ff;
+    --el-tho: #d6a56b;
+    --hy: #ff7aa8;
+  }
+}
+
+:global(:root[data-theme='dark']) .panel {
+  --el-thuy: #6fa8ff;
+  --el-tho: #d6a56b;
+  --hy: #ff7aa8;
+}
+
+/* ---------- Đầu khối ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 14px;
+  align-items: stretch;
+  padding: 16px 16px 14px 18px;
+}
+
+.heroMain {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.eyebrow {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 6cqi, 34px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.heroLabel {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.heroFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 4px 0 0;
+}
+
+.heroFacts div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heroFacts dt {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.heroFacts dd {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.heroTerm {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heroTerm svg {
+  color: var(--gold);
+}
+
+.relation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: var(--tile-radius);
+  box-shadow: var(--glass-highlight);
+}
+
+.relationGood {
+  background: var(--almanac-good-bg);
+  color: var(--almanac-good);
+}
+
+.relationBad {
+  background: var(--almanac-bad-bg);
+  color: var(--almanac-bad);
+}
+
+.relationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.relationName {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+}
+
+.relationText {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* ---------- Lưới bento ---------- */
+
+.bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+}
+
+@container (min-width: 520px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .spanTwo,
+  .spanFull {
+    grid-column: 1 / -1;
+  }
+}
+
+@container (min-width: 820px) {
+  .bento {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .spanTwo {
+    grid-column: span 2;
+  }
+}
+
+@container (max-width: 519px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 14px 12px 10px;
+  }
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border-radius: var(--tile-radius);
+  background: var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
+  animation: tile-rise 0.7s var(--spring) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+}
+
+@keyframes tile-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    animation: none;
+  }
+}
+
+.tileHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tileIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--fill);
+  color: var(--text);
+}
+
+.tileTitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tileAside {
+  margin-left: auto;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Cả ô là một nút mở giải thích. */
+.tileButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 1 auto;
+  margin: -6px;
+  padding: 6px 40px 6px 6px;
+  border: 0;
+  border-radius: calc(var(--tile-radius) - 6px);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.5s var(--spring),
+    background-color 0.3s var(--spring);
+}
+
+.tileButton:hover {
+  background: var(--fill);
+}
+
+.tileButton:active {
+  transform: scale(0.985);
+}
+
+.openIcon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--fill);
+  color: var(--text-muted);
+  transition: transform 0.5s var(--spring);
+}
+
+.tileButton:hover .openIcon {
+  transform: translate(2px, -2px) scale(1.06);
+  color: var(--text);
+}
+
+.bigValue {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.bigPrefix {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.subtle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.doLine {
+  display: flex;
+  gap: 7px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.doLine svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+/* Ô 28 tú chỉ tóm tắt; đủ nội dung nằm trong hộp giải thích. */
+.clamp > span:last-child {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.doIcon {
+  color: var(--almanac-good);
+}
+
+.avoidIcon {
+  color: var(--almanac-bad);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.pillGood {
+  color: var(--almanac-good);
+  background: var(--almanac-good-bg);
+}
+
+.pillBad {
+  color: var(--almanac-bad);
+  background: var(--almanac-bad-bg);
+}
+
+.elementChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px 3px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.elementChip svg {
+  color: var(--el);
+}
+
+.elKim {
+  --el: var(--el-kim);
+}
+.elMoc {
+  --el: var(--el-moc);
+}
+.elThuy {
+  --el: var(--el-thuy);
+}
+.elHoa {
+  --el: var(--el-hoa);
+}
+.elTho {
+  --el: var(--el-tho);
+}
+
+/* ---------- Hướng xuất hành ---------- */
+
+.directions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.compass {
+  position: relative;
+  flex: 0 0 auto;
+  width: 132px;
+  height: 132px;
+}
+
+.compassDial {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.compassRing {
+  fill: var(--fill);
+  stroke: var(--separator);
+  stroke-width: 1;
+}
+
+.compassInner {
+  fill: none;
+  stroke: var(--separator-soft);
+  stroke-width: 1;
+}
+
+.tick {
+  stroke: var(--separator);
+  stroke-width: 1;
+}
+
+.tickMajor {
+  stroke: var(--text-muted);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.compassLabel {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.needleHy,
+.needleTai {
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 2 3;
+}
+
+.needleHy {
+  stroke: var(--hy);
+}
+
+.needleTai {
+  stroke: var(--tai);
+}
+
+.compassHub {
+  fill: var(--text);
+}
+
+.compassPin {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  box-shadow:
+    0 0 0 1px var(--glass-edge),
+    0 4px 12px rgb(30 41 70 / 0.12);
+  animation: pin-in 0.8s var(--spring) both;
+  animation-delay: 0.35s;
+}
+
+@keyframes pin-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compassPin {
+    animation: none;
+  }
+}
+
+.pinHy,
+.hyIcon {
+  color: var(--hy);
+}
+
+.pinTai,
+.taiIcon {
+  color: var(--tai);
+}
+
+.dirLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  min-width: 0;
+}
+
+.dirLegend dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.dirLegend dd {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Tuổi xung ---------- */
+
+.clashGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.groupLabel {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.ageChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ageChip {
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--almanac-bad-bg);
+  color: var(--almanac-bad);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.ageChipSoft {
+  background: var(--fill);
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ---------- Sao tốt, sao xấu ---------- */
+
+.starColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+@container (min-width: 520px) {
+  .starColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.starGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.starTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.starGroupGood .starTitle {
+  color: var(--almanac-good);
+}
+
+.starGroupBad .starTitle {
+  color: var(--almanac-bad);
+}
+
+.none {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  position: relative;
+  min-height: 34px;
+  padding: 6px 13px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.45s var(--spring);
+}
+
+/* Vùng bấm tối thiểu khoảng 44px chiều cao. */
+.chip::after {
+  content: '';
+  position: absolute;
+  inset: -5px 0;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chipGood {
+  color: var(--almanac-good);
+  background: var(--almanac-good-bg);
+}
+
+.chipBad {
+  color: var(--almanac-bad);
+  background: var(--almanac-bad-bg);
+}
+
+/* ---------- Giờ trong ngày ---------- */
+
+.hourGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@container (min-width: 520px) {
+  .hourGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 820px) {
+  .hourGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.hour {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  padding: 9px 10px 10px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+}
+
+.hourGood {
+  background: var(--almanac-good-bg);
+  color: var(--almanac-good);
+}
+
+.hourBad {
+  background: var(--fill);
+  color: var(--text-muted);
+}
+
+.hourNow {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.hourTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.hourName {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hourIcon {
+  flex: 0 0 auto;
+}
+
+.hourRange {
+  margin-bottom: 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hourSub {
+  font-size: 11.5px;
+  opacity: 0.85;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nowBadge {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.hourLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.hourLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legendGood {
+  color: var(--almanac-good);
+}
+
+/* ---------- Hộp giải thích ---------- */
+
+.explain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+
+.explain p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.explainList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.explainList dt {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.explainList dd {
+  margin: 2px 0 0;
+  line-height: 1.5;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

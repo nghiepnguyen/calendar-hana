@@ -10,7 +10,7 @@ interface DayCardProps {
   showAuspicious: boolean
 }
 
-/** Thẻ ngày kiểu lịch bloc: ngày dương to, ngày âm, Can Chi, hoàng đạo, giờ tốt. */
+/** Thẻ ngày kiểu lịch bloc: ngày dương to, ngày âm, Can Chi, hoàng đạo. Giờ tốt nằm ở khối Lịch vạn niên. */
 export function DayCard({ date, isToday, showHolidays, showAuspicious }: DayCardProps) {
   const info = getDayInfo(date)
   const { solar, lunar, canChi, dayGod } = info
@@ -83,20 +83,6 @@ export function DayCard({ date, isToday, showHolidays, showAuspicious }: DayCard
                 </span>
               ))}
             </p>
-            <p className={styles.hoursTitle}>Giờ hoàng đạo</p>
-            <ul className={styles.hours}>
-              {info.auspiciousHours.map((h) => (
-                <li key={h.chi}>
-                  <strong>{h.name}</strong>{' '}
-                  <span className={styles.muted}>
-                    {h.startHour}h-{h.endHour}h
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {!info.solarTerm.startsToday ? (
-              <p className={styles.muted}>Tiết khí: {info.solarTerm.name}</p>
-            ) : null}
           </div>
         ) : null}
       </div>

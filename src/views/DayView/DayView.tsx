@@ -1,5 +1,6 @@
 import { EventRows } from '../../components/EventList/EventRows'
 import type { CalendarViewProps } from '../viewProps'
+import { AlmanacPanel } from './AlmanacPanel'
 import { DayCard } from './DayCard'
 import styles from './DayView.module.css'
 
@@ -32,6 +33,7 @@ export function DayView({
           />
         )}
       </section>
+      {settings.showAuspicious ? <AlmanacPanel date={date} isToday={date === today} /> : null}
     </div>
   )
 }

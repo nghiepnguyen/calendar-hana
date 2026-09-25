@@ -5,7 +5,7 @@
 // tiết khí), vì phần lớn lịch treo tường Việt Nam tính như vậy. Tháng nhuận dùng quy tắc của
 // tháng thường cùng số. Nếu đổi nguồn (PRD mục 9, câu hỏi 1), chỉ cần sửa file này.
 
-import { CHI } from './canChi'
+import { CHI, hourCanChi, type CanChi } from './canChi'
 
 /** 12 vị thần theo thứ tự luân phiên, bắt đầu từ Thanh Long. */
 export const TWELVE_GODS = [
@@ -63,22 +63,39 @@ function hourRange(chi: number): { startHour: number; endHour: number } {
  * Mão, Dậu → Dần; Thìn, Tuất → Thìn; Tỵ, Hợi → Ngọ.
  */
 export function getAuspiciousHours(dayChi: number): AuspiciousHour[] {
+  return getHourGods(dayChi)
+    .filter((h) => h.isGood)
+    .map(({ isGood: _isGood, ...hour }) => hour)
+}
+
+/** Thần trực của đủ 12 giờ trong ngày (Tý..Hợi), dựa vào Chi của ngày. */
+function getHourGods(dayChi: number): (AuspiciousHour & { isGood: boolean })[] {
   const startChi = (8 + (dayChi % 6) * 2) % 12
-  const hours: AuspiciousHour[] = []
-  for (let chi = 0; chi < 12; chi++) {
+  return CHI.map((name, chi) => {
     const god = TWELVE_GODS[(chi - startChi + 12) % 12]
-    if (!god.good) continue
     const { startHour, endHour } = hourRange(chi)
-    hours.push({
+    return {
       chi,
-      name: CHI[chi],
+      name,
       startHour,
       endHour,
-      label: `${CHI[chi]} (${startHour}h-${endHour}h)`,
+      label: `${name} (${startHour}h-${endHour}h)`,
       god: god.name,
-    })
-  }
-  return hours
+      isGood: god.good,
+    }
+  })
+}
+
+export interface DayHour extends AuspiciousHour {
+  /** Can Chi của giờ, ví dụ "Canh Tý". */
+  canChi: CanChi
+  /** true = giờ hoàng đạo (tốt). */
+  isGood: boolean
+}
+
+/** Đủ 12 giờ của ngày jd theo thứ tự Tý..Hợi, kèm Can Chi giờ và giờ tốt/xấu. */
+export function getAllHours(jd: number, dayChi: number): DayHour[] {
+  return getHourGods(dayChi).map((h) => ({ ...h, canChi: hourCanChi(jd, h.chi) }))
 }
 
 export interface BadDay {

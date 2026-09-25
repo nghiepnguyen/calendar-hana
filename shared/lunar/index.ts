@@ -17,10 +17,19 @@ import { getSolarTerm, type SolarTermInfo } from './solarTerms'
 
 export * from './auspicious'
 export * from './canChi'
+export * from './clashes'
+export * from './directions'
+export * from './elements'
 export * from './holidays'
 export * from './julian'
 export * from './lunar'
+export * from './mansions'
+export * from './napAm'
+export * from './officers'
 export * from './solarTerms'
+export * from './stars'
+// almanac.ts không export ở đây để tránh vòng import (nó dùng getDayInfo); import thẳng
+// từ '@shared/lunar/almanac'.
 
 export interface DayInfo {
   date: SolarDateString

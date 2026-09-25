@@ -9,7 +9,7 @@ beforeEach(() => freezeNow())
 afterEach(() => vi.useRealTimers())
 
 describe('DayView', () => {
-  it('hiện thẻ ngày có ngày âm, Can Chi, hoàng đạo và giờ tốt', () => {
+  it('hiện thẻ ngày có ngày âm, Can Chi, hoàng đạo', () => {
     render(<DayView {...viewProps()} />)
     const card = screen.getByRole('region', { name: 'Thông tin ngày' })
     expect(within(card).getByText('23')).toBeInTheDocument()
@@ -20,14 +20,24 @@ describe('DayView', () => {
     expect(within(card).getByText('Năm Bính Ngọ')).toBeInTheDocument()
     expect(within(card).getByText('Đinh Dậu')).toBeInTheDocument()
     expect(within(card).getByText('Tiết Thu phân')).toBeInTheDocument()
-    expect(within(card).getByText('Giờ hoàng đạo')).toBeInTheDocument()
-    expect(within(card).getAllByRole('listitem').length).toBeGreaterThanOrEqual(6)
+    expect(within(card).getByText('Ngày hoàng đạo')).toBeInTheDocument()
+    // Giờ tốt đã chuyển sang khối Lịch vạn niên.
+    expect(within(card).queryByText('Giờ hoàng đạo')).not.toBeInTheDocument()
+  })
+
+  it('khối Lịch vạn niên nằm sau danh sách sự kiện', () => {
+    render(<DayView {...viewProps()} />)
+    const events = screen.getByRole('region', { name: 'Sự kiện trong ngày' })
+    const almanac = screen.getByRole('region', { name: 'Lịch vạn niên' })
+    expect(events.compareDocumentPosition(almanac) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(within(almanac).getAllByRole('listitem', { name: /^Giờ / })).toHaveLength(12)
   })
 
   it('ẩn hoàng đạo và ngày lễ theo cài đặt', () => {
     const settings = { ...createDefaultSettings(''), showAuspicious: false, showHolidays: false }
     render(<DayView {...viewProps({ date: '2026-09-02', days: ['2026-09-02'], settings })} />)
-    expect(screen.queryByText('Giờ hoàng đạo')).not.toBeInTheDocument()
+    expect(screen.queryByText(/Ngày (hoàng|hắc) đạo/)).not.toBeInTheDocument()
+    expect(screen.queryByRole('region', { name: 'Lịch vạn niên' })).not.toBeInTheDocument()
     expect(screen.queryByText('Quốc khánh')).not.toBeInTheDocument()
   })
 
