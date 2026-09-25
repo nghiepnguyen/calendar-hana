@@ -229,6 +229,14 @@
   gap: 8px;
 }
 
+.dataNotes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding-left: 18px;
+}
+
 .help {
   display: flex;
   flex-direction: column;

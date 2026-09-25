@@ -1,6 +1,10 @@
-import type { CalendarEvent, Category, Settings } from '@shared/types'
+import type { CalendarEvent, Category, Settings, SolarDateString } from '@shared/types'
+import { todayInVietnam } from '@shared/time'
 import { isValidEvent } from '@shared/validation'
 import { OTHER_CATEGORY_ID } from './defaultCategories'
+import type { InteropContext } from './interop/common'
+import { exportGoogleCsv, parseGoogleCsv } from './interop/googleCsv'
+import { exportIcs, parseIcs } from './interop/ics'
 import type { CalendarRepository } from './repository'
 
 export const EXPORT_APP = 'calendar-hana'
@@ -31,19 +35,28 @@ export async function exportData(repository: CalendarRepository): Promise<Export
   }
 }
 
-export function exportFileName(date = new Date()): string {
-  return `lich-hana-${date.toISOString().slice(0, 10)}.json`
+/** Tên file theo ngày Việt Nam (xuất lúc sáng sớm vẫn đúng ngày). */
+export function exportFileName(
+  date = new Date(),
+  extension: 'json' | 'ics' | 'csv' = 'json',
+): string {
+  return `lich-hana-${todayInVietnam(date)}.${extension}`
 }
 
-/** Tải file JSON xuống máy. */
-export function downloadJson(data: unknown, fileName: string): void {
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+/** Tải file xuống máy. */
+export function downloadFile(content: string, fileName: string, type: string): void {
+  const blob = new Blob([content], { type })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
   a.download = fileName
   a.click()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+/** Tải file JSON xuống máy. */
+export function downloadJson(data: unknown, fileName: string): void {
+  downloadFile(JSON.stringify(data, null, 2), fileName, 'application/json')
 }
 
 export class ImportFormatError extends Error {
@@ -97,10 +110,15 @@ export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedA
   return result
 }
 
+export type ImportFormat = 'json' | 'ics' | 'csv'
+
 export interface ParsedImport {
+  format: ImportFormat
   file: ExportFile
   /** Số bản ghi bị bỏ qua vì không hợp lệ. */
   skipped: number
+  /** ICS: sự kiện lặp có quy tắc app không hỗ trợ, chỉ nhập lần đầu. */
+  simplified: number
 }
 
 /** Đọc và kiểm tra nội dung file. Bỏ qua từng bản ghi sai thay vì từ chối cả file. */
@@ -122,6 +140,8 @@ export function parseImport(text: string): ParsedImport {
   const events = rawEvents.filter(isEvent)
   const categories = rawCategories.filter(isCategory)
   return {
+    format: 'json',
+    simplified: 0,
     file: {
       app: EXPORT_APP,
       version: raw.version,
@@ -132,6 +152,60 @@ export function parseImport(text: string): ParsedImport {
     },
     skipped: rawEvents.length - events.length + (rawCategories.length - categories.length),
   }
+}
+
+/** Nhận biết định dạng theo đuôi file, không có đuôi quen thì theo nội dung. */
+export function detectFormat(fileName: string, text: string): ImportFormat {
+  const extension = fileName.toLowerCase().split('.').pop()
+  if (extension === 'ics' || extension === 'ical' || extension === 'ifb') return 'ics'
+  if (extension === 'csv') return 'csv'
+  if (extension === 'json') return 'json'
+  const start = text.replace(/^\uFEFF/, '').trimStart()
+  if (start.startsWith('BEGIN:VCALENDAR')) return 'ics'
+  return start.startsWith('{') ? 'json' : 'csv'
+}
+
+/**
+ * Đọc file sao lưu JSON của app, file .ics hoặc .csv (Google Calendar). ICS / CSV chỉ có sự
+ * kiện, không có danh mục và cài đặt.
+ */
+export function parseImportFile(fileName: string, text: string, ctx: InteropContext): ParsedImport {
+  const format = detectFormat(fileName, text)
+  if (format === 'json') return parseImport(text)
+  const parsed = format === 'ics' ? parseIcs(text, ctx) : parseGoogleCsv(text)
+  if (parsed.events.length === 0 && parsed.skipped === 0) {
+    throw new ImportFormatError('File không có sự kiện nào.')
+  }
+  return {
+    format,
+    file: {
+      app: EXPORT_APP,
+      version: EXPORT_VERSION,
+      exportedAt: '',
+      events: parsed.events,
+      categories: [],
+      settings: {} as Settings,
+    },
+    skipped: parsed.skipped,
+    simplified: parsed.simplified,
+  }
+}
+
+/** File .ics chứa toàn bộ sự kiện. */
+export function toIcs(data: ExportFile, today: SolarDateString): string {
+  return exportIcs(
+    {
+      events: data.events,
+      categories: data.categories,
+      allDayTime: data.settings.allDayReminderTime,
+    },
+    today,
+  )
+}
+
+/** File .csv theo mẫu Google Calendar. */
+export function toGoogleCsv(data: ExportFile, today: SolarDateString): string {
+  return exportGoogleCsv(data.events, today)
 }
 
 export type ImportMode = 'merge' | 'replace'

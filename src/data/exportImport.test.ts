@@ -1,11 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { CalendarDatabase } from './db'
 import {
+  detectFormat,
   exportData,
   importData,
   ImportFormatError,
   parseImport,
+  parseImportFile,
   sanitizeSettings,
+  toGoogleCsv,
+  toIcs,
 } from './exportImport'
 import { LocalRepository } from './localRepository'
 import type { EventInput } from './repository'
@@ -90,5 +94,65 @@ describe('xuất rồi nhập', () => {
     expect(events.map((e) => e.id)).toEqual([event.id])
     expect(events[0].categoryId).toBe('other')
     expect((await b.listCategories()).map((c) => c.id)).not.toContain('rieng')
+  })
+})
+
+describe('ICS và CSV', () => {
+  const ctx = async (repo: LocalRepository) => ({
+    categories: await repo.listCategories(),
+    allDayReminderTime: '08:00',
+  })
+
+  it('nhận biết định dạng theo đuôi file, rồi theo nội dung', () => {
+    expect(detectFormat('google.ics', '')).toBe('ics')
+    expect(detectFormat('lich.CSV', '')).toBe('csv')
+    expect(detectFormat('backup', '{"app":"calendar-hana"}')).toBe('json')
+    expect(detectFormat('tai-xuong', 'BEGIN:VCALENDAR\r\n')).toBe('ics')
+    expect(detectFormat('tai-xuong', 'Subject,Start Date')).toBe('csv')
+  })
+
+  it('xuất ICS từ app này rồi nhập vào app khác; nhập lại không tạo bản trùng', async () => {
+    await a.saveEvent({ ...gio, categoryId: 'family' })
+    await a.saveEvent({
+      title: 'Họp team',
+      calendarType: 'solar',
+      date: '2026-09-21',
+      allDay: false,
+      startTime: '09:00',
+      endTime: '10:00',
+      categoryId: 'work',
+      recurrence: { freq: 'weekly', calendar: 'solar' },
+      reminders: [],
+    })
+    const ics = toIcs(await exportData(a), '2026-09-25')
+
+    const parsed = parseImportFile('lich.ics', ics, await ctx(b))
+    expect(parsed.format).toBe('ics')
+    await importData(b, parsed.file, 'merge')
+    const events = await b.listEvents()
+    const weekly = events.find((e) => e.title === 'Họp team')
+    expect(weekly?.recurrence).toEqual({ freq: 'weekly', calendar: 'solar' })
+    expect(weekly?.categoryId).toBe('work')
+    // Giỗ âm lịch được trải ra từng năm (2026 → 2036).
+    expect(events.filter((e) => e.title === 'Giỗ ông nội')).toHaveLength(11)
+
+    const again = await importData(b, parseImportFile('lich.ics', ics, await ctx(b)).file, 'merge')
+    expect(again.events).toBe(0)
+    expect(await b.listEvents()).toHaveLength(events.length)
+  })
+
+  it('CSV chỉ có sự kiện, không nhận file rỗng', async () => {
+    await a.saveEvent({ ...gio, categoryId: 'family' })
+    const csv = toGoogleCsv(await exportData(a), '2026-09-25')
+    const parsed = parseImportFile('lich.csv', csv, await ctx(b))
+    expect(parsed.format).toBe('csv')
+    expect(parsed.file.categories).toEqual([])
+    expect(parsed.file.events.length).toBeGreaterThan(0)
+    expect(() =>
+      parseImportFile('rong.csv', 'Subject,Start Date\r\n', {
+        categories: [],
+        allDayReminderTime: '08:00',
+      }),
+    ).toThrow(ImportFormatError)
   })
 })
