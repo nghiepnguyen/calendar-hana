@@ -5,13 +5,15 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 - Xem theo Ngày, Tuần, Tháng. Mặc định mở xem Ngày của hôm nay. Xem Ngày và Tuần liệt kê sự kiện từng ngày như trang Danh sách.
 - Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
 - Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
+- Xem Ngày có khối Lịch vạn niên: niên mệnh (nạp âm), quan hệ Can Chi, Nhị thập bát tú, Thập nhị trực kèm việc nên làm / nên kiêng, hướng Hỷ Thần và Tài Thần trên la bàn, tuổi xung ngày và tháng, sao tốt và sao xấu theo Ngọc Hạp Thông Thư (bấm để xem giải thích), đủ 12 giờ trong ngày có đánh dấu giờ hiện tại. Bật/tắt cùng công tắc hoàng đạo trong Cài đặt. Số liệu tính ngay trên máy, đã đối chiếu với licham.vn, xemngay.com, lichviet.me và thoigian.com.vn.
 - Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
 - Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
 - Danh mục có màu, sửa và thêm được. Lọc lịch theo danh mục.
 - Nhắc hẹn bằng thông báo hệ thống hoặc email. Sự kiện mới có sẵn một nhắc hẹn thông báo (trước 15 phút, hoặc trong ngày với sự kiện cả ngày).
+- Sao lưu và chuyển dữ liệu trong Cài đặt: JSON (đầy đủ), ICS và CSV theo chuẩn Google Calendar. Nhập được file .ics / .csv xuất từ Google Calendar.
 - Không cần tài khoản: dữ liệu lưu trên máy và dùng được offline. Đăng nhập Google để lưu lên cloud và đồng bộ nhiều thiết bị.
 
-Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md).
+Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md). Lịch vạn niên: [tasks/prd-day-almanac.md](tasks/prd-day-almanac.md), [tasks/tasks-day-almanac.md](tasks/tasks-day-almanac.md).
 
 ## Công nghệ
 
@@ -175,12 +177,12 @@ Khi đổi tên miền, cập nhật thêm:
 ## Cấu trúc thư mục
 
 ```
-shared/        Logic thuần: lịch âm, Can Chi, ngày lễ, lặp sự kiện, giờ nhắc, format tiếng Việt
+shared/        Logic thuần: lịch âm, Can Chi, ngày lễ, lịch vạn niên (28 tú, trực, sao Ngọc Hạp...), lặp sự kiện, giờ nhắc, format tiếng Việt
 src/
   auth/        Đăng nhập Google (Firebase Auth tải khi cần)
-  data/        Repository local (Dexie) và cloud (Firestore), chuyển dữ liệu, xuất/nhập JSON
+  data/        Repository local (Dexie) và cloud (Firestore), chuyển dữ liệu, xuất/nhập JSON, ICS, CSV (Google Calendar)
   reminders/   Quyền thông báo, lịch nhắc local, Web Push, đăng ký service worker
-  views/       Xem Ngày, Tuần, Tháng
+  views/       Xem Ngày (kèm khối Lịch vạn niên), Tuần, Tháng
   components/  Form sự kiện, chọn ngày, dòng sự kiện, hộp thoại...
   pages/       Trang lịch, Danh sách sự kiện và Cài đặt
   styles/      Theme (kính mờ kiểu iOS, sáng/tối)
