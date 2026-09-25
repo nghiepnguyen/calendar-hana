@@ -167,6 +167,11 @@ Khi đổi tên miền, cập nhật thêm:
 - Firebase Console > Authentication > Settings > Authorized domains: thêm tên miền.
 - `VITE_FIREBASE_AUTH_DOMAIN` trong `.env.local` đặt bằng tên miền, và thêm `https://<tên miền>/__/auth/handler` vào Authorized redirect URIs của OAuth client (Google Cloud Console > APIs & Services > Credentials).
 - `APP_URL` trong `functions/.env`.
+- `SITE_URL` trong `shared/seo/daySeo.ts`, các URL trong `index.html` và `public/robots.txt`.
+
+### SEO trang ngày
+
+`npm run build` tạo sẵn `dist/day/YYYY-MM-DD.html` cho mọi ngày từ đầu năm trước tới cuối năm sau (`scripts/prerenderDays.ts`), mỗi trang có title, description, canonical, Open Graph, JSON-LD và nội dung lịch vạn niên dạng HTML tĩnh, và ghi `dist/sitemap.xml` liệt kê các trang này. Firebase Hosting (`cleanUrls`) phục vụ `/day/2026-09-25` từ file tương ứng; ngày ngoài khoảng vẫn mở được qua rewrite, app tự cập nhật `<head>` (`src/hooks/usePageHead.ts`). Xem Tuần và Tháng có `noindex, follow`. Service worker không precache các trang này. Khoảng ngày trượt theo năm build, nên cần deploy lại ít nhất mỗi năm.
 
 ## Nhắc hẹn hoạt động thế nào
 

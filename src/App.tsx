@@ -1,10 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { todayInVietnam } from '@shared/time'
 import { DomainMove } from './components/DomainMove/DomainMove'
 import { ThemeController } from './components/ThemeController'
 import { ToastRegionProvider } from './components/Toast/ToastRegion'
 import { UpdatePrompt } from './components/UpdatePrompt/UpdatePrompt'
-import { calendarPath } from './hooks/useCalendarRoute'
 import { CalendarPage } from './pages/CalendarPage'
 import { EventListPage } from './pages/EventList/EventListPage'
 import { SettingsPage } from './pages/Settings/SettingsPage'
@@ -18,7 +16,9 @@ function App() {
       <UpdatePrompt />
       <DomainMove />
       <Routes>
-        <Route path="/" element={<Navigate to={calendarPath('day', todayInVietnam())} replace />} />
+        {/* Trang chủ hiện xem Ngày của hôm nay ngay tại "/", không chuyển sang /day/...: giữ
+            canonical "/" cho trang chủ, mỗi /day/YYYY-MM-DD là một trang riêng. */}
+        <Route path="/" element={<CalendarPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/events" element={<EventListPage />} />
         <Route path="/:view/:date" element={<CalendarPage />} />

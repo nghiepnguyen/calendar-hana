@@ -49,7 +49,8 @@ async function save(page: Page) {
 
 test('US-1: mở app thấy xem Ngày của hôm nay kèm âm lịch', async ({ app }) => {
   await app.goto('/')
-  await expect(app).toHaveURL(/\/day\/2026-09-23$/)
+  // Trang chủ giữ URL "/" (canonical của trang chủ), không chuyển sang /day/...
+  await expect(app).toHaveURL(/\/$/)
   await expect(app.getByRole('heading', { level: 1 })).toHaveText('Thứ Tư, 23/9/2026')
   await expectView(app, 'Ngày')
   const info = app.getByRole('region', { name: 'Thông tin ngày' })
@@ -270,7 +271,8 @@ test('US-L2: quay lại trang Danh sách thì về đúng chỗ đang xem', asyn
   // Tải thêm phía trên trong lúc cuộn không được kéo trang ngược lại.
   await expect(target).toBeInViewport()
   await backToCalendar(app)
-  await expect(app).toHaveURL(/\/day\//)
+  // "Quay lại lịch" về trang chủ "/" (xem Ngày hôm nay).
+  await expect(app.getByRole('region', { name: 'Thông tin ngày' })).toBeVisible()
   await openEventList(app)
   await expect(target).toBeInViewport()
 })

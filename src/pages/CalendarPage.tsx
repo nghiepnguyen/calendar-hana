@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { SolarDateString } from '@shared/types'
 import { useAuth } from '../auth/authContext'
@@ -13,6 +13,7 @@ import { TabBar } from '../components/layout/TabBar'
 import { createDefaultSettings } from '../data/defaultCategories'
 import { useCalendarRoute } from '../hooks/useCalendarRoute'
 import { useCategoryMap } from '../hooks/useCategoryMap'
+import { useCalendarHead } from '../hooks/usePageHead'
 import { useEventsInRange } from '../hooks/useEventsInRange'
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts'
 import { useIsCompact } from '../hooks/useMediaQuery'
@@ -43,6 +44,7 @@ export function CalendarPage() {
   const searchOpen = useUiStore((s) => s.searchOpen)
   const compact = useIsCompact()
   const navigate = useNavigate()
+  useCalendarHead(view, date, useLocation().pathname === '/')
 
   const range = useMemo(
     () => viewRange(view, date, settings.weekStartsOn),

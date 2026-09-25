@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { prerenderDays } from './scripts/prerenderDays.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -21,6 +22,8 @@ export default defineConfig({
       injectRegister: false,
       injectManifest: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        // Trang ngày tạo sẵn cho máy tìm kiếm (prerenderDays): app cài rồi dùng index.html.
+        globIgnores: ['day/**'],
       },
       devOptions: {
         enabled: false,
@@ -51,5 +54,6 @@ export default defineConfig({
         ],
       },
     }),
+    prerenderDays(),
   ],
 })

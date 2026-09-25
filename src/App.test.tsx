@@ -54,6 +54,32 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Thứ Tư, 23/9/2026' })).toBeInTheDocument()
   })
 
+  it('trang Ngày có title và canonical riêng, trang chủ giữ canonical "/"', async () => {
+    const view = renderApp('/day/2026-09-25')
+    expect(await screen.findByRole('region', { name: 'Thông tin ngày' })).toBeInTheDocument()
+    expect(document.title).toBe('Lịch âm ngày 25/9/2026: 15/8 âm lịch, Tết Trung Thu | Lịch Việt')
+    expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      'https://lich.thanhnghiep.top/day/2026-09-25',
+    )
+    expect(document.getElementById('page-ld')).not.toBeNull()
+    view.unmount()
+    expect(document.getElementById('page-ld')).toBeNull()
+
+    renderApp('/')
+    expect(await screen.findByRole('region', { name: 'Thông tin ngày' })).toBeInTheDocument()
+    expect(document.getElementById('page-ld')).toBeNull()
+  })
+
+  it('xem Tuần, Tháng không cho lập chỉ mục', async () => {
+    renderApp('/month/2026-09-23')
+    expect(await screen.findByRole('radio', { name: 'Tháng' })).toBeChecked()
+    expect(document.querySelector('meta[name="robots"]')).toHaveAttribute(
+      'content',
+      'noindex, follow',
+    )
+  })
+
   it('mở đúng ngày từ URL, URL sai thì về mặc định', async () => {
     renderApp('/month/2026-02-17')
     expect(await screen.findByText('Tết Nguyên Đán')).toBeInTheDocument()

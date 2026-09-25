@@ -21,6 +21,7 @@
   },
   "include": [
     "vite.config.ts",
+    "scripts/prerenderDays.ts",
     "vitest.config.ts",
     "playwright.config.ts",
     "vitest.emulator.config.ts"
