@@ -11,14 +11,19 @@ function solarPath(view: string, lunar: [number, number, number]) {
 // Điện thoại: chế độ xem nằm ở thanh tab (không có Tuần), trang Danh sách về lịch bằng tab Ngày.
 const tabBar = (page: Page) => page.getByRole('navigation', { name: 'Điều hướng' })
 
+// Xác định theo độ rộng màn hình (cùng ngưỡng COMPACT_QUERY 720px của app), không theo việc thanh tab
+// đã hiện hay chưa: isVisible() không chờ, nên ngay sau goto() trên máy CI chậm có thể trả về false
+// dù đang ở điện thoại.
+const isCompact = (page: Page) => (page.viewportSize()?.width ?? 1280) <= 720
+
 async function selectView(page: Page, name: 'Ngày' | 'Tuần' | 'Tháng', weekPath: string) {
-  if (!(await tabBar(page).isVisible())) return page.getByRole('radio', { name }).click()
+  if (!isCompact(page)) return page.getByRole('radio', { name }).click()
   if (name === 'Tuần') return page.goto(weekPath)
   return tabBar(page).getByRole('button', { name, exact: true }).click()
 }
 
 async function expectView(page: Page, name: 'Ngày' | 'Tháng') {
-  if (await tabBar(page).isVisible()) {
+  if (isCompact(page)) {
     await expect(tabBar(page).getByRole('button', { name, exact: true })).toHaveAttribute(
       'aria-current',
       'page',
@@ -29,7 +34,7 @@ async function expectView(page: Page, name: 'Ngày' | 'Tháng') {
 }
 
 async function backToCalendar(page: Page) {
-  if (await tabBar(page).isVisible()) {
+  if (isCompact(page)) {
     await tabBar(page).getByRole('button', { name: 'Ngày', exact: true }).click()
   } else {
     await page.getByRole('link', { name: 'Quay lại lịch' }).click()
@@ -187,7 +192,7 @@ test('service worker không trả app shell cho trang đăng nhập của Fireba
 
 async function openEventList(page: Page) {
   // Màn hình nhỏ: tab Sự kiện ở thanh tab.
-  if (await tabBar(page).isVisible()) {
+  if (isCompact(page)) {
     await tabBar(page).getByRole('button', { name: 'Sự kiện', exact: true }).click()
   } else {
     await page.getByRole('link', { name: 'Danh sách sự kiện' }).click()
