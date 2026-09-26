@@ -1,5 +1,6 @@
-import { act, render, screen, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { AuthContext, type AuthContextValue, type AuthUser } from '../../auth/authContext'
 import { CalendarDatabase } from '../../data/db'
 import { LocalRepository } from '../../data/localRepository'
 import { RepositoryProvider } from '../../data/RepositoryProvider'
@@ -31,13 +32,25 @@ afterEach(async () => {
   await repo.db.delete()
 })
 
-function renderBar() {
+function renderBar(user: AuthUser | null = null) {
+  const auth = { available: true, loading: false, user } as AuthContextValue
   return render(
-    <RepositoryProvider repository={repo}>
-      <TabBar active="month" onSelect={() => {}} onCreate={() => {}} />
-    </RepositoryProvider>,
+    <AuthContext.Provider value={auth}>
+      <RepositoryProvider repository={repo}>
+        <TabBar active="month" onSelect={() => {}} onCreate={() => {}} />
+      </RepositoryProvider>
+    </AuthContext.Provider>,
   )
 }
+
+const google: AuthUser = {
+  uid: 'u1',
+  email: 'lan@gmail.com',
+  displayName: 'Lan Nguyễn',
+  photoURL: 'https://lh3.googleusercontent.com/a/lan',
+}
+
+const menu = () => screen.getByRole('button', { name: 'Mở menu' })
 
 describe('TabBar', () => {
   it('đủ chỗ thì hiện icon và nhãn', async () => {
@@ -65,5 +78,35 @@ describe('TabBar', () => {
     renderBar()
     resize(600)
     await waitFor(() => expect(screen.getByText('Sự kiện')).toBeInTheDocument())
+  })
+
+  describe('nút Menu', () => {
+    it('chưa đăng nhập: icon Menu', () => {
+      renderBar()
+      expect(menu().querySelector('img')).toBeNull()
+      expect(menu().querySelector('svg')).not.toBeNull()
+      expect(menu()).toHaveTextContent('Menu')
+    })
+
+    it('đã đăng nhập Google: avatar thay icon, vẫn có nhãn và tên đọc được', () => {
+      renderBar(google)
+      const img = menu().querySelector('img')!
+      expect(img).toHaveAttribute('src', google.photoURL)
+      expect(img).toHaveAttribute('referrerpolicy', 'no-referrer')
+      expect(menu().querySelector('svg')).toBeNull()
+      expect(menu()).toHaveTextContent('Menu')
+    })
+
+    it('ảnh lỗi hoặc không có ảnh: chữ cái đầu của tên', () => {
+      renderBar(google)
+      fireEvent.error(menu().querySelector('img')!)
+      expect(menu().querySelector('img')).toBeNull()
+      expect(menu()).toHaveTextContent(/^LMenu$/)
+    })
+
+    it('không có ảnh và tên: chữ cái đầu của email', () => {
+      renderBar({ ...google, photoURL: null, displayName: null })
+      expect(menu()).toHaveTextContent(/^LMenu$/)
+    })
   })
 })

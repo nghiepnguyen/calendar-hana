@@ -1,5 +1,6 @@
-import { useRef, type CSSProperties } from 'react'
+import { useRef, useState, type CSSProperties } from 'react'
 import { CalendarDot, List, ListBullets, Plus, SquaresFour, type Icon } from '@phosphor-icons/react'
+import { useAuth, type AuthUser } from '../../auth/authContext'
 import { useElementWidth } from '../../hooks/useElementWidth'
 import { useSettings } from '../../hooks/useRepositoryData'
 import { useUiStore } from '../../store/uiStore'
@@ -28,6 +29,7 @@ interface TabBarProps {
 /** Thanh tab nổi dưới đáy màn hình điện thoại, kiểu kính của iOS: Ngày, Tháng, Sự kiện, Menu. */
 export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
+  const { user } = useAuth()
   const activeIndex = TABS.findIndex((t) => t.tab === active)
   const count = TABS.length + 1
 
@@ -73,7 +75,7 @@ export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
           onClick={() => setSidebarOpen(true)}
           aria-label="Mở menu"
         >
-          <List size={iconSize(24)} aria-hidden="true" />
+          {user ? <Avatar user={user} /> : <List size={iconSize(24)} aria-hidden="true" />}
           {iconOnly ? null : <span>Menu</span>}
         </button>
       </div>
@@ -81,5 +83,25 @@ export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
         <Plus size={iconSize(26)} weight="bold" aria-hidden="true" />
       </button>
     </nav>
+  )
+}
+
+/** Đã đăng nhập: avatar Google thay cho icon Menu. Không có ảnh hoặc ảnh lỗi thì hiện chữ cái đầu. */
+function Avatar({ user }: { user: AuthUser }) {
+  const [broken, setBroken] = useState(false)
+  const initial = (user.displayName ?? user.email ?? '?').charAt(0).toUpperCase()
+  return (
+    <span className={styles.avatar} aria-hidden="true">
+      {user.photoURL && !broken ? (
+        <img
+          src={user.photoURL}
+          alt=""
+          referrerPolicy="no-referrer"
+          onError={() => setBroken(true)}
+        />
+      ) : (
+        initial
+      )}
+    </span>
   )
 }

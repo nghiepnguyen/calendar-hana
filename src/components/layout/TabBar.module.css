@@ -117,12 +117,38 @@
   }
 }
 
+/* Avatar tài khoản ở chỗ icon Menu: cùng cỡ icon, viền sáng để tách khỏi nền kính. */
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: calc(26px * var(--ui-scale));
+  height: calc(26px * var(--ui-scale));
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  line-height: 1;
+  box-shadow:
+    0 0 0 1.5px var(--glass-border),
+    0 0 0 2.5px var(--separator);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Chỉ icon (chữ to, màn hẹp): icon to hơn một chút, tab đang mở vẫn có viên sáng và màu nhấn. */
 .iconOnly .tab {
   gap: 0;
 }
 
-.iconOnly .tab svg {
+.iconOnly .tab svg,
+.iconOnly .avatar {
   width: calc(28px * var(--ui-scale));
   height: calc(28px * var(--ui-scale));
 }
