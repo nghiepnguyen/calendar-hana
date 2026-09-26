@@ -39,6 +39,16 @@ describe('DatePicker', () => {
     expect(screen.getByRole('button', { name: 'Đến ngày này' })).toBeDisabled()
   })
 
+  it('không sập khi đang gõ dở năm dương lịch', () => {
+    render(<DatePicker value="2026-09-23" onSelect={vi.fn()} onClose={vi.fn()} />)
+    const input = screen.getByLabelText('Ngày dương lịch')
+    fireEvent.change(input, { target: { value: '0002-09-23' } })
+    expect(screen.getByText('Ngày không hợp lệ')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Đến ngày này' })).toBeDisabled()
+    fireEvent.change(input, { target: { value: '2027-09-23' } })
+    expect(screen.getByRole('button', { name: 'Đến ngày này' })).toBeEnabled()
+  })
+
   it('đóng khi bấm Esc', async () => {
     const onClose = vi.fn()
     render(<DatePicker value="2026-09-23" onSelect={vi.fn()} onClose={onClose} />)

@@ -5,6 +5,7 @@ import './index.css'
 import './styles/theme.css'
 import App from './App.tsx'
 import { AuthProvider } from './auth/AuthProvider'
+import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary'
 import { RepositoryProvider } from './data/RepositoryProvider'
 import { registerServiceWorker } from './reminders/serviceWorker'
 import { listenForInstallPrompt } from './store/installStore'
@@ -14,12 +15,14 @@ listenForInstallPrompt()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <RepositoryProvider>
-          <App />
-        </RepositoryProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AuthProvider>
+          <RepositoryProvider>
+            <App />
+          </RepositoryProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
   </StrictMode>,
 )

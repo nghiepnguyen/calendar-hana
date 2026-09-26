@@ -8,7 +8,14 @@ import {
 } from 'react'
 import { createPortal } from 'react-dom'
 import { formatLunar, formatSolar } from '@shared/format'
-import { lunarToSolar, parseSolarDate, solarToLunar, toSolarDateString } from '@shared/lunar'
+import {
+  lunarToSolar,
+  MAX_YEAR,
+  MIN_YEAR,
+  parseSolarDate,
+  solarToLunar,
+  toSolarDateString,
+} from '@shared/lunar'
 import type { LunarDate, SolarDateString } from '@shared/types'
 import { COMPACT_QUERY } from '../../hooks/useMediaQuery'
 import { LunarDateInput } from './LunarDateInput'
@@ -107,8 +114,9 @@ export function DatePicker({ value, onSelect, onClose, anchorRef, boundsRef }: D
   })()
   const solarValid = (() => {
     try {
-      parseSolarDate(solar)
-      return true
+      // Đang gõ năm dở (0002, 0020…): ô date vẫn trả ngày hợp lệ nhưng chưa quy đổi được.
+      const { year } = parseSolarDate(solar)
+      return year >= MIN_YEAR && year <= MAX_YEAR
     } catch {
       return false
     }
