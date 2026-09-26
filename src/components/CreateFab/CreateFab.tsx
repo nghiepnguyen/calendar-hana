@@ -1,4 +1,5 @@
 import { Plus } from '@phosphor-icons/react'
+import { iconSize } from '../../styles/textSize'
 import styles from './CreateFab.module.css'
 
 /** Nút tạo sự kiện nổi ở góc phải dưới (máy tính; điện thoại dùng nút trên thanh tab). */
@@ -11,7 +12,7 @@ export function CreateFab({ onClick }: { onClick: () => void }) {
       aria-label="Tạo sự kiện"
       title="Tạo sự kiện (N)"
     >
-      <Plus size={26} weight="bold" aria-hidden="true" />
+      <Plus size={iconSize(26)} weight="bold" aria-hidden="true" />
     </button>
   )
 }

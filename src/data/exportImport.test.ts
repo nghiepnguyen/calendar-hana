@@ -68,6 +68,14 @@ describe('parseImport', () => {
       sanitizeSettings({ allDayReminderTime: '07:30', hiddenCategoryIds: ['a', 1], theme: 'x' }),
     ).toEqual({ allDayReminderTime: '07:30', hiddenCategoryIds: ['a'] })
   })
+
+  it('sanitizeSettings nhận cỡ chữ hợp lệ, bỏ giá trị lạ', () => {
+    expect(sanitizeSettings({ textSize: 'xlarge', boldText: true })).toEqual({
+      textSize: 'xlarge',
+      boldText: true,
+    })
+    expect(sanitizeSettings({ textSize: 'huge', boldText: 'yes' })).toEqual({})
+  })
 })
 
 describe('xuất rồi nhập', () => {

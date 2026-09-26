@@ -1,14 +1,14 @@
 .panel {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + calc(6px * var(--ui-scale)));
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
-  width: min(360px, calc(100vw - 32px));
+  width: min(calc(360px * var(--ui-scale)), calc(100vw - 32px));
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 14px;
+  gap: calc(12px * var(--ui-scale));
+  padding: calc(14px * var(--ui-scale));
   border-radius: var(--radius-lg);
   background: var(--glass-strong);
   box-shadow: var(--glass-highlight), var(--shadow-md);
@@ -31,24 +31,24 @@
 
 .lunarInput {
   display: grid;
-  grid-template-columns: 72px 1fr 88px;
-  gap: 8px;
+  grid-template-columns: calc(72px * var(--ui-scale)) 1fr calc(88px * var(--ui-scale));
+  gap: calc(8px * var(--ui-scale));
   align-items: end;
 }
 
 .lunarField {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
   min-width: 0;
 }
 
 .lunarYearName {
   grid-column: 1 / -1;
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   color: var(--text-muted);
   text-align: right;
-  margin-top: -4px;
+  margin-top: calc(-4px * var(--ui-scale));
 }
 
 .lunarInput :global(.field-error) {
@@ -58,15 +58,15 @@
 
 .converted {
   margin: 0;
-  padding: 10px 12px;
+  padding: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale));
   border-radius: var(--radius);
   background: var(--fill);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-500);
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
 }

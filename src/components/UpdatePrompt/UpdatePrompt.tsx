@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { ArrowClockwise, CloudCheck, X } from '@phosphor-icons/react'
 import { useAppUpdateStore } from '../../store/appUpdateStore'
 import { InToastRegion } from '../Toast/ToastRegion'
+import { iconSize } from '../../styles/textSize'
 import styles from './UpdatePrompt.module.css'
 
 /** Thông báo nhỏ ở cuối màn hình: có phiên bản mới, hoặc app đã dùng được offline. */
@@ -22,7 +23,12 @@ export function UpdatePrompt() {
       <div className={`glass ${styles.toast}`} role="status">
         {needRefresh ? (
           <>
-            <ArrowClockwise size={20} weight="bold" className={styles.icon} aria-hidden="true" />
+            <ArrowClockwise
+              size={iconSize(20)}
+              weight="bold"
+              className={styles.icon}
+              aria-hidden="true"
+            />
             <span className={styles.text}>Có phiên bản mới.</span>
             <button type="button" className="btn btn-primary" onClick={update}>
               Cập nhật
@@ -33,7 +39,12 @@ export function UpdatePrompt() {
           </>
         ) : (
           <>
-            <CloudCheck size={20} weight="bold" className={styles.icon} aria-hidden="true" />
+            <CloudCheck
+              size={iconSize(20)}
+              weight="bold"
+              className={styles.icon}
+              aria-hidden="true"
+            />
             <span className={styles.text}>App đã dùng được khi không có mạng.</span>
             <button
               type="button"
@@ -41,7 +52,7 @@ export function UpdatePrompt() {
               onClick={dismiss}
               aria-label="Đóng"
             >
-              <X size={16} weight="bold" aria-hidden="true" />
+              <X size={iconSize(16)} weight="bold" aria-hidden="true" />
             </button>
           </>
         )}

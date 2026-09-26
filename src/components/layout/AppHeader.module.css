@@ -2,14 +2,15 @@
 .header {
   flex: 0 0 auto;
   position: sticky;
-  top: 10px;
+  top: calc(10px * var(--ui-scale));
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
   min-height: var(--header-height);
-  margin: 10px 12px 0;
-  padding: 8px 10px 8px 12px;
+  margin: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale)) 0;
+  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale)) calc(8px * var(--ui-scale))
+    calc(12px * var(--ui-scale));
   border-radius: var(--radius-lg);
 }
 
@@ -20,19 +21,23 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
   color: var(--text);
   text-decoration: none;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: var(--fw-700);
+  font-size: calc(18px * var(--ui-scale));
   letter-spacing: -0.02em;
-  width: calc(var(--sidebar-width) - 30px);
+  width: calc(var(--sidebar-width) - calc(30px * var(--ui-scale)));
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
   flex: 0 0 auto;
 }
 
 .brand img {
   flex: 0 0 auto;
+  width: calc(32px * var(--ui-scale));
+  height: calc(32px * var(--ui-scale));
   /* Logo đã có bóng và bo góc riêng. */
   filter: drop-shadow(0 2px 4px rgb(204 43 34 / 0.25));
 }
@@ -40,7 +45,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
   min-width: 0;
   flex: 1 1 auto;
 }
@@ -57,12 +62,12 @@
 .title {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
   max-width: 100%;
   min-width: 0;
   border: 0;
   background: transparent;
-  padding: 4px 10px;
+  padding: calc(4px * var(--ui-scale)) calc(10px * var(--ui-scale));
   border-radius: var(--radius);
   text-align: left;
   transition: background-color 0.18s var(--ease);
@@ -75,12 +80,12 @@
 .title h1 {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
   margin: 0;
   min-width: 0;
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: calc(20px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.025em;
   line-height: 1.2;
 }
@@ -96,8 +101,8 @@
   /* Thiếu chỗ thì phần âm lịch bị cắt trước tiêu đề chính. */
   flex: 0 1000 auto;
   min-width: 0;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-500);
   letter-spacing: -0.01em;
   color: var(--text-muted);
   overflow: hidden;
@@ -113,25 +118,25 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
   flex: 0 0 auto;
 }
 
 .views {
-  margin-right: 4px;
+  margin-right: calc(4px * var(--ui-scale));
 }
 
 .avatarLink {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  margin-left: 4px;
+  width: calc(34px * var(--ui-scale));
+  height: calc(34px * var(--ui-scale));
+  margin-left: calc(4px * var(--ui-scale));
   border-radius: 50%;
   overflow: hidden;
   background: var(--accent-soft);
   color: var(--accent);
-  font-weight: 700;
+  font-weight: var(--fw-700);
   text-decoration: none;
   box-shadow: 0 0 0 2px var(--glass-border);
 }
@@ -143,26 +148,26 @@
 }
 
 .signIn {
-  margin-left: 4px;
+  margin-left: calc(4px * var(--ui-scale));
 }
 
 .sync {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
+  gap: calc(6px * var(--ui-scale));
+  padding: calc(5px * var(--ui-scale)) calc(10px * var(--ui-scale));
   border: 0;
   border-radius: var(--radius-pill);
   background: transparent;
-  font-size: 12.5px;
-  font-weight: 500;
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-500);
   color: var(--text-muted);
   cursor: default;
 }
 
 .syncDot {
-  width: 7px;
-  height: 7px;
+  width: calc(7px * var(--ui-scale));
+  height: calc(7px * var(--ui-scale));
   border-radius: 50%;
   background: #1fa855;
 }
@@ -221,7 +226,7 @@
 @media (max-width: 900px) {
   .header {
     flex-wrap: wrap;
-    row-gap: 6px;
+    row-gap: calc(6px * var(--ui-scale));
   }
 
   .nav {
@@ -241,26 +246,26 @@
 
 @media (max-width: 720px) {
   .header {
-    margin: 8px 8px 0;
-    top: 8px;
-    padding: 6px 8px;
+    margin: calc(8px * var(--ui-scale)) calc(8px * var(--ui-scale)) 0;
+    top: calc(8px * var(--ui-scale));
+    padding: calc(6px * var(--ui-scale)) calc(8px * var(--ui-scale));
   }
 
   .title h1 {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    font-size: 17px;
+    font-size: calc(17px * var(--ui-scale));
   }
 
   .titleSub {
     display: block;
-    font-size: 12px;
+    font-size: calc(12px * var(--ui-scale));
     white-space: normal;
   }
 
   .views > button {
-    padding: 5px 10px;
+    padding: calc(5px * var(--ui-scale)) calc(10px * var(--ui-scale));
   }
 
   .signIn {
@@ -272,11 +277,12 @@
 .compact {
   top: max(8px, env(safe-area-inset-top));
   flex-wrap: nowrap;
-  gap: 4px;
-  min-height: 56px;
+  gap: calc(4px * var(--ui-scale));
+  min-height: calc(56px * var(--ui-scale));
   margin: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) 0
     max(8px, env(safe-area-inset-left));
-  padding: 6px 6px 6px 4px;
+  padding: calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale))
+    calc(4px * var(--ui-scale));
   border-radius: 28px;
 }
 
@@ -285,7 +291,7 @@
 }
 
 .compact .title {
-  padding: 4px 8px;
+  padding: calc(4px * var(--ui-scale)) calc(8px * var(--ui-scale));
   border-radius: 20px;
 }
 
@@ -302,17 +308,111 @@
 .compactNav {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
   flex: 0 0 auto;
 }
 
 .today {
-  min-height: 40px;
-  padding: 0 12px;
-  font-size: 14px;
+  min-height: calc(40px * var(--ui-scale));
+  padding: 0 calc(12px * var(--ui-scale));
+  font-size: calc(14px * var(--ui-scale));
 }
 
 .compact .arrows :global(.btn-icon) {
-  width: 40px;
-  min-height: 40px;
+  width: calc(40px * var(--ui-scale));
+  min-height: calc(40px * var(--ui-scale));
+}
+
+/*
+ * Cỡ chữ Lớn / Rất lớn: header cần nhiều chỗ hơn theo --ui-scale, nên các mốc thu gọn ở trên
+ * dịch lên theo cùng tỉ lệ (@media không dùng được biến CSS). Lớn = mốc × 1.25, Rất lớn = × 1.5.
+ */
+@media (max-width: 1600px) {
+  :global(:root[data-text-size='large']) .syncText {
+    display: none;
+  }
+}
+
+@media (max-width: 1920px) {
+  :global(:root[data-text-size='xlarge']) .syncText {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1475px) {
+  :global(:root[data-text-size='large']) .brand {
+    width: auto;
+  }
+
+  :global(:root[data-text-size='large']) .brand span {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1770px) {
+  :global(:root[data-text-size='xlarge']) .brand {
+    width: auto;
+  }
+
+  :global(:root[data-text-size='xlarge']) .brand span {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1125px) {
+  :global(:root[data-text-size='large']) .header {
+    flex-wrap: wrap;
+    row-gap: calc(6px * var(--ui-scale));
+  }
+
+  :global(:root[data-text-size='large']) .nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  :global(:root[data-text-size='large']) .right {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1350px) {
+  :global(:root[data-text-size='xlarge']) .header {
+    flex-wrap: wrap;
+    row-gap: calc(6px * var(--ui-scale));
+  }
+
+  :global(:root[data-text-size='xlarge']) .nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  :global(:root[data-text-size='xlarge']) .right {
+    margin-left: auto;
+  }
+}
+
+/* Điện thoại, chữ to: tiêu đề một dòng riêng đọc được đủ; đồng bộ, Hôm nay và mũi tên ở dòng dưới. */
+:global(:root[data-text-size]) .compact {
+  flex-wrap: wrap;
+  row-gap: calc(2px * var(--ui-scale));
+  border-radius: var(--radius-lg);
+}
+
+:global(:root[data-text-size]) .compact .titleWrap {
+  flex-basis: 100%;
+}
+
+:global(:root[data-text-size]) .compact .titleSub {
+  white-space: normal;
+}
+
+/* Dòng dưới: chấm đồng bộ (khi đã đăng nhập), Hôm nay, mũi tên cùng một hàng. */
+:global(:root[data-text-size]) .compact .compactNav {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: space-between;
+}
+
+:global(:root[data-text-size]) .compact .sync {
+  flex: 0 0 auto;
 }

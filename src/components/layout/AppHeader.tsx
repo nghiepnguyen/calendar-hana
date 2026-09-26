@@ -17,6 +17,7 @@ import { useAuth } from '../../auth/authContext'
 import { useIsCompact } from '../../hooks/useMediaQuery'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SyncStatus } from './SyncStatus'
+import { iconSize } from '../../styles/textSize'
 import styles from './AppHeader.module.css'
 
 interface AppHeaderProps {
@@ -107,7 +108,7 @@ export function AppHeader({
         aria-label={PREV_LABEL[view]}
         title={`${PREV_LABEL[view]} (←)`}
       >
-        <CaretLeft size={18} weight="bold" aria-hidden="true" />
+        <CaretLeft size={iconSize(18)} weight="bold" aria-hidden="true" />
       </button>
       <button
         type="button"
@@ -116,7 +117,7 @@ export function AppHeader({
         aria-label={NEXT_LABEL[view]}
         title={`${NEXT_LABEL[view]} (→)`}
       >
-        <CaretRight size={18} weight="bold" aria-hidden="true" />
+        <CaretRight size={iconSize(18)} weight="bold" aria-hidden="true" />
       </button>
     </div>
   )
@@ -135,7 +136,7 @@ export function AppHeader({
           <span className={styles.titleMain}>{title.main}</span>
           {title.sub ? <span className={styles.titleSub}>{title.sub}</span> : null}
         </h1>
-        <CaretDown size={14} weight="bold" className={styles.caret} aria-hidden="true" />
+        <CaretDown size={iconSize(14)} weight="bold" className={styles.caret} aria-hidden="true" />
       </button>
       {pickerOpen ? (
         <DatePicker
@@ -174,7 +175,7 @@ export function AppHeader({
         onClick={() => setSidebarOpen(true)}
         aria-label="Mở menu"
       >
-        <List size={20} weight="bold" aria-hidden="true" />
+        <List size={iconSize(20)} weight="bold" aria-hidden="true" />
       </button>
 
       <Link to="/" className={styles.brand} aria-label="Lịch Việt, về hôm nay">
@@ -216,7 +217,7 @@ export function AppHeader({
           aria-label="Tìm kiếm sự kiện"
           title="Tìm kiếm (/)"
         >
-          <MagnifyingGlass size={19} weight="bold" aria-hidden="true" />
+          <MagnifyingGlass size={iconSize(19)} weight="bold" aria-hidden="true" />
         </button>
         <Link
           to="/settings"
@@ -224,7 +225,7 @@ export function AppHeader({
           aria-label="Cài đặt"
           title="Cài đặt"
         >
-          <GearSix size={19} weight="bold" aria-hidden="true" />
+          <GearSix size={iconSize(19)} weight="bold" aria-hidden="true" />
         </Link>
         {user ? (
           <Link

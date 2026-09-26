@@ -11,6 +11,7 @@ import {
   type ReminderUnit,
 } from './reminderOptions'
 import { useNotificationStore } from '../../reminders/notifications'
+import { iconSize } from '../../styles/textSize'
 import styles from './EventForm.module.css'
 
 interface ReminderFieldProps {
@@ -137,7 +138,7 @@ export function ReminderField({
                 aria-label={`Xóa nhắc hẹn ${n}`}
                 onClick={() => onChange(reminders.filter((_, i) => i !== index))}
               >
-                <X size={16} weight="bold" aria-hidden="true" />
+                <X size={iconSize(16)} weight="bold" aria-hidden="true" />
               </button>
             </li>
           )
@@ -145,7 +146,7 @@ export function ReminderField({
       </ul>
       {reminders.length < MAX_REMINDERS ? (
         <button type="button" className={`btn ${styles.addReminder}`} onClick={add}>
-          <Plus size={16} weight="bold" aria-hidden="true" /> Thêm nhắc hẹn
+          <Plus size={iconSize(16)} weight="bold" aria-hidden="true" /> Thêm nhắc hẹn
         </button>
       ) : (
         <p className="field-hint">Tối đa {MAX_REMINDERS} nhắc hẹn.</p>

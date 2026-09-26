@@ -1,10 +1,10 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: calc(22px * var(--ui-scale));
   width: var(--sidebar-width);
   flex: 0 0 var(--sidebar-width);
-  padding: 16px;
+  padding: calc(16px * var(--ui-scale));
   border-radius: var(--radius-lg);
   overflow-y: auto;
 }
@@ -12,7 +12,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
 }
 
 .sectionHead {
@@ -23,14 +23,17 @@
 
 .sectionHead h2 {
   margin: 0;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: calc(15px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.01em;
 }
 
 .manage {
-  font-size: 13.5px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  font-size: calc(13.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--accent);
   text-decoration: none;
 }
@@ -41,14 +44,15 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
 }
 
 .category {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 7px 8px;
+  min-height: var(--tap-min);
+  gap: calc(10px * var(--ui-scale));
+  padding: calc(7px * var(--ui-scale)) calc(8px * var(--ui-scale));
   border-radius: var(--radius);
   cursor: pointer;
   transition: background-color 0.15s var(--ease);
@@ -61,13 +65,13 @@
 .listLink {
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 0 12px;
+  gap: calc(10px * var(--ui-scale));
+  min-height: calc(44px * var(--ui-scale));
+  padding: 0 calc(12px * var(--ui-scale));
   border-radius: var(--radius);
   background: var(--fill);
   color: var(--text);
-  font-weight: 600;
+  font-weight: var(--fw-600);
   text-decoration: none;
   transition: background-color 0.15s var(--ease);
 }
@@ -87,9 +91,9 @@
 @media (max-width: 1023px) {
   .sidebar {
     position: fixed;
-    top: 8px;
-    bottom: 8px;
-    left: 8px;
+    top: calc(8px * var(--ui-scale));
+    bottom: calc(8px * var(--ui-scale));
+    left: calc(8px * var(--ui-scale));
     z-index: 50;
     background: var(--glass-strong);
     transform: translateX(calc(-100% - 16px));
@@ -124,8 +128,8 @@
     bottom: max(8px, env(safe-area-inset-bottom));
     width: auto;
     max-height: calc(100dvh - 72px);
-    gap: 18px;
-    padding: 6px 16px 16px;
+    gap: calc(18px * var(--ui-scale));
+    padding: calc(6px * var(--ui-scale)) calc(16px * var(--ui-scale)) calc(16px * var(--ui-scale));
     border-radius: 34px;
     background: var(--glass-sheet);
     overscroll-behavior: contain;
@@ -140,8 +144,8 @@
     content: '';
     flex: 0 0 auto;
     align-self: center;
-    width: 38px;
-    height: 5px;
+    width: calc(38px * var(--ui-scale));
+    height: calc(5px * var(--ui-scale));
     border-radius: var(--radius-pill);
     background: var(--border-strong);
   }
@@ -156,7 +160,7 @@
   }
 
   .category {
-    min-height: 44px;
+    min-height: calc(44px * var(--ui-scale));
   }
 }
 
@@ -164,20 +168,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -6px;
+  margin-top: calc(-6px * var(--ui-scale));
 }
 
 .sheetHead h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 700;
+  font-size: calc(22px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.025em;
 }
 
 .close {
-  width: 32px;
-  min-height: 32px;
+  width: max(var(--tap-min), calc(32px * var(--ui-scale)));
+  min-height: max(var(--tap-min), calc(32px * var(--ui-scale)));
   color: var(--text-muted);
 }
 
@@ -198,12 +202,12 @@
 .link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 8px 14px;
+  gap: calc(12px * var(--ui-scale));
+  min-height: calc(52px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale)) calc(14px * var(--ui-scale));
   color: var(--text);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--fw-600);
   transition: background-color 0.15s var(--ease);
 }
 
@@ -233,8 +237,8 @@
 }
 
 .linkHint {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-400);
   color: var(--text-muted);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -249,16 +253,16 @@
 .search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
   width: 100%;
-  min-height: 44px;
-  padding: 0 12px;
+  min-height: calc(44px * var(--ui-scale));
+  padding: 0 calc(12px * var(--ui-scale));
   border: 0;
   border-radius: var(--radius);
   background: var(--fill);
   color: var(--text-muted);
   font: inherit;
-  font-size: 16px;
+  font-size: calc(16px * var(--ui-scale));
   text-align: left;
   transition: background-color 0.15s var(--ease);
 }

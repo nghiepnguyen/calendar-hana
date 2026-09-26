@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from '@phosphor-icons/react'
+import { iconSize } from '../../styles/textSize'
 import styles from './Modal.module.css'
 
 interface ModalProps {
@@ -112,7 +113,7 @@ export function Modal({
             onClick={onClose}
             aria-label="Đóng"
           >
-            <X size={18} weight="bold" aria-hidden="true" />
+            <X size={iconSize(18)} weight="bold" aria-hidden="true" />
           </button>
         </div>
         <div className={styles.body}>{children}</div>

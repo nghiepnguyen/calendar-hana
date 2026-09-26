@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { expect, openCreateForm, test } from './fixtures'
+import { chooseTextSize, expect, openCreateForm, test } from './fixtures'
 
 const pages = ['/day/2026-09-23', '/week/2026-09-23', '/month/2026-09-23', '/settings', '/events']
 
@@ -25,6 +25,16 @@ for (const scheme of ['light', 'dark'] as const) {
         ).toEqual([])
       })
     }
+
+    test('lưới Tháng khi rê chuột lên ô và số ngày ngoài tháng', async ({ app }) => {
+      await app.goto('/month/2026-09-23')
+      await expect(app.locator('h1').first()).toBeVisible()
+      for (const day of [/^Thứ Sáu, 25 tháng 9/, /^Thứ Hai, 31 tháng 8/]) {
+        await app.getByRole('button', { name: day }).last().hover()
+        const result = await new AxeBuilder({ page: app }).withRules(['color-contrast']).analyze()
+        expect(result.violations.flatMap((v) => v.nodes.map((n) => n.target.join(' ')))).toEqual([])
+      }
+    })
 
     test('form tạo sự kiện', async ({ app }) => {
       await app.goto('/day/2026-09-23')
@@ -87,4 +97,38 @@ for (const scheme of ['light', 'dark'] as const) {
       ).toEqual([])
     })
   })
+}
+
+// Cỡ chữ Lớn / Rất lớn (kèm chữ đậm): bố cục đổi (lưới Tháng chỉ icon, thanh tab chỉ icon,
+// header xuống dòng) nên đo lại toàn bộ.
+for (const scheme of ['light', 'dark'] as const) {
+  for (const size of ['Lớn', 'Rất lớn'] as const) {
+    test(`accessibility (${scheme}, cỡ chữ ${size}, chữ đậm)`, async ({ app }) => {
+      await app.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
+      await chooseTextSize(app, size)
+      await app.getByRole('switch', { name: /Chữ đậm hơn/ }).click()
+      await app.goto('/day/2026-09-23')
+      const form = await openCreateForm(app)
+      await form.getByLabel('Tiêu đề').fill('Giỗ ông nội')
+      await form.getByRole('button', { name: 'Lưu' }).click()
+      await expect(form).toBeHidden()
+      for (const path of pages) {
+        await app.goto(path)
+        await expect(app.locator('h1').first()).toBeVisible()
+        const result = await new AxeBuilder({ page: app })
+          .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+          .analyze()
+        expect(
+          result.violations.map(
+            (v) =>
+              `${v.id}: ${v.nodes
+                .map((n) => n.target.join(' '))
+                .slice(0, 5)
+                .join(' | ')}`,
+          ),
+          path,
+        ).toEqual([])
+      }
+    })
+  }
 }

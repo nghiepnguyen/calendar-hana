@@ -28,6 +28,7 @@ import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
 import { Compass } from './Compass'
 import { HourGrid } from './HourGrid'
 import { StarChips } from './StarChips'
+import { iconSize } from '../../styles/textSize'
 import styles from './AlmanacPanel.module.css'
 
 interface AlmanacPanelProps {
@@ -55,7 +56,7 @@ function ElementChip({ element, children }: { element: NguHanh; children?: React
   const ElementIcon = ELEMENT_ICONS[element]
   return (
     <span className={`${styles.elementChip} ${ELEMENT_CLASS[element]}`}>
-      <ElementIcon size={14} weight="duotone" aria-hidden="true" />
+      <ElementIcon size={iconSize(14)} weight="duotone" aria-hidden="true" />
       {children ?? element}
     </span>
   )
@@ -90,7 +91,7 @@ function Tile({
     >
       <header className={styles.tileHead}>
         <span className={styles.tileIcon} aria-hidden="true">
-          <TileIcon size={16} weight="light" />
+          <TileIcon size={iconSize(16)} weight="light" />
         </span>
         <h3 className={styles.tileTitle}>{title}</h3>
         {aside ? <span className={styles.tileAside}>{aside}</span> : null}
@@ -112,7 +113,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
       <header className={styles.hero}>
         <div className={styles.heroMain}>
           <h2 className={styles.eyebrow}>
-            <YinYang size={12} weight="bold" aria-hidden="true" />
+            <YinYang size={iconSize(12)} weight="bold" aria-hidden="true" />
             Lịch vạn niên
           </h2>
           <p className={styles.heroTitle}>
@@ -128,7 +129,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             <div>
               <dt>Tiết khí</dt>
               <dd className={styles.heroTerm}>
-                <SunHorizon size={16} weight="light" aria-hidden="true" />
+                <SunHorizon size={iconSize(16)} weight="light" aria-hidden="true" />
                 {a.solarTerm.name}
               </dd>
             </div>
@@ -138,7 +139,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
           className={`${styles.relation} ${a.relation.isGood ? styles.relationGood : styles.relationBad}`}
         >
           <span className={styles.relationBadge}>
-            <RelationIcon size={18} weight="duotone" aria-hidden="true" />
+            <RelationIcon size={iconSize(18)} weight="duotone" aria-hidden="true" />
             <span className={styles.relationName}>{a.relation.dayName}</span>
           </span>
           <p className={styles.relationText}>
@@ -172,7 +173,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             <span className={styles.subtle}>{a.mansion.animal}</span>
             <span className={`${styles.doLine} ${styles.clamp}`}>
               <CheckCircle
-                size={15}
+                size={iconSize(15)}
                 weight="duotone"
                 className={styles.doIcon}
                 aria-hidden="true"
@@ -184,7 +185,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             </span>
             <span className={`${styles.doLine} ${styles.clamp}`}>
               <Prohibit
-                size={15}
+                size={iconSize(15)}
                 weight="duotone"
                 className={styles.avoidIcon}
                 aria-hidden="true"
@@ -195,7 +196,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
               </span>
             </span>
             <span className={styles.openIcon} aria-hidden="true">
-              <ArrowUpRight size={14} weight="bold" />
+              <ArrowUpRight size={iconSize(14)} weight="bold" />
             </span>
           </button>
         </Tile>
@@ -223,7 +224,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             </span>
             <span className={styles.doLine}>
               <CheckCircle
-                size={15}
+                size={iconSize(15)}
                 weight="duotone"
                 className={styles.doIcon}
                 aria-hidden="true"
@@ -235,7 +236,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             </span>
             <span className={styles.doLine}>
               <Prohibit
-                size={15}
+                size={iconSize(15)}
                 weight="duotone"
                 className={styles.avoidIcon}
                 aria-hidden="true"
@@ -246,7 +247,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
               </span>
             </span>
             <span className={styles.openIcon} aria-hidden="true">
-              <ArrowUpRight size={14} weight="bold" />
+              <ArrowUpRight size={iconSize(14)} weight="bold" />
             </span>
           </button>
         </Tile>
@@ -257,14 +258,24 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             <dl className={styles.dirLegend}>
               <div>
                 <dt>
-                  <Heart size={14} weight="fill" className={styles.hyIcon} aria-hidden="true" />
+                  <Heart
+                    size={iconSize(14)}
+                    weight="fill"
+                    className={styles.hyIcon}
+                    aria-hidden="true"
+                  />
                   Hỷ Thần
                 </dt>
                 <dd>{a.directions.hyThan}</dd>
               </div>
               <div>
                 <dt>
-                  <Coins size={14} weight="fill" className={styles.taiIcon} aria-hidden="true" />
+                  <Coins
+                    size={iconSize(14)}
+                    weight="fill"
+                    className={styles.taiIcon}
+                    aria-hidden="true"
+                  />
                   Tài Thần
                 </dt>
                 <dd>{a.directions.taiThan}</dd>

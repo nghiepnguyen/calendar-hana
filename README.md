@@ -10,10 +10,11 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 - Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
 - Danh mục có màu, sửa và thêm được. Lọc lịch theo danh mục.
 - Nhắc hẹn bằng thông báo hệ thống hoặc email. Sự kiện mới có sẵn một nhắc hẹn thông báo (trước 15 phút, hoặc trong ngày với sự kiện cả ngày).
+- Cỡ chữ cho người lớn tuổi (Cài đặt > Hiển thị > Cỡ chữ): Mặc định, Lớn (×1.25), Rất lớn (×1.5). Chữ, icon, nút và khoảng cách to cùng tỉ lệ, vùng bấm tối thiểu 44px. Có công tắc chữ đậm hơn và ô xem trước. Trên màn hẹp, lưới Tháng chỉ hiện chấm/icon sự kiện, thanh tab chỉ hiện icon. Cài đặt đồng bộ theo tài khoản.
 - Sao lưu và chuyển dữ liệu trong Cài đặt: JSON (đầy đủ), ICS và CSV theo chuẩn Google Calendar. Nhập được file .ics / .csv xuất từ Google Calendar.
 - Không cần tài khoản: dữ liệu lưu trên máy và dùng được offline. Đăng nhập Google để lưu lên cloud và đồng bộ nhiều thiết bị.
 
-Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md). Lịch vạn niên: [tasks/prd-day-almanac.md](tasks/prd-day-almanac.md), [tasks/tasks-day-almanac.md](tasks/tasks-day-almanac.md).
+Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md). Lịch vạn niên: [tasks/prd-day-almanac.md](tasks/prd-day-almanac.md), [tasks/tasks-day-almanac.md](tasks/tasks-day-almanac.md). Cỡ chữ: [tasks/prd-text-size.md](tasks/prd-text-size.md), [tasks/tasks-text-size.md](tasks/tasks-text-size.md).
 
 ## Công nghệ
 
@@ -106,6 +107,10 @@ npm run build && npm run preview   # http://localhost:4173
 | `npm run test:emulator` | Test Security Rules, Firestore repository và hàng đợi nhắc hẹn trên Emulator. Dùng project `demo-calendar-hana`, không bao giờ chạm project thật. Cần Java |
 | `npm run test:e2e` | Playwright cho các user story, giao diện điện thoại và quét accessibility (axe), trên Chrome desktop và Pixel 7. Tự build và chạy preview |
 | `npx playwright test --project=firefox --project=webkit --project=iphone` | Chạy e2e thêm trên Firefox, Safari và iPhone. Cài trình duyệt trước bằng `npx playwright install firefox webkit` |
+
+`e2e/visual-default.spec.ts` so ảnh các màn chính ở cỡ chữ Mặc định (Chromium, chỉ chạy trên macOS vì ảnh chuẩn chụp trên macOS; CI Linux bỏ qua) để chắc phóng to chữ không làm lệch giao diện gốc. Chỉ cập nhật ảnh chuẩn khi cố ý đổi giao diện: `npx playwright test visual-default --project=desktop --project=mobile --update-snapshots`.
+
+CSS mới: viết cỡ chữ, khoảng cách, kích thước dạng `calc(Npx * var(--ui-scale))` và icon dạng `size={iconSize(N)}` (`src/styles/textSize.ts`). Không nhân tỉ lệ cho viền, bo góc, bóng, blur và lề trang.
 
 Playwright chỉ hỗ trợ service worker trên Chromium. Vì vậy test offline (US-8) bị bỏ qua trên WebKit, cần kiểm tra Safari bằng tay.
 

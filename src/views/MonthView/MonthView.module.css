@@ -11,21 +11,21 @@
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   border-bottom: 1px solid var(--separator);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
   letter-spacing: 0.02em;
   color: var(--text-muted);
   text-align: center;
 }
 
 .weekdays > div {
-  padding: 6px 0;
+  padding: calc(6px * var(--ui-scale)) 0;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  grid-auto-rows: minmax(96px, 1fr);
+  grid-auto-rows: minmax(calc(96px * var(--ui-scale)), 1fr);
   flex: 1 1 auto;
 }
 
@@ -33,8 +33,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 4px;
+  gap: calc(2px * var(--ui-scale));
+  padding: calc(4px * var(--ui-scale));
   min-width: 0;
   border-right: 1px solid var(--separator-soft);
   border-bottom: 1px solid var(--separator-soft);
@@ -63,25 +63,35 @@
   opacity: 0.7;
 }
 
+/* Nền ô khi rê chuột đậm hơn: chữ âm lịch / ngày ngoài tháng đậm lên để vẫn đạt AA (4.5:1). */
+.cell:hover .lunarDay:not(.lunarFirst),
+.outside:hover .solarDay {
+  color: var(--text-muted);
+}
+
+.outside .solarDay:hover {
+  color: var(--text);
+}
+
 .cellHead {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
 }
 
 .solarDay {
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: calc(28px * var(--ui-scale));
+  height: calc(28px * var(--ui-scale));
   /* Bỏ padding mặc định của button, nếu không số hai chữ số tràn lệch khỏi vòng tròn. */
   padding: 0;
   border: 0;
   border-radius: 50%;
   background: transparent;
   font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: calc(16px * var(--ui-scale));
+  font-weight: var(--fw-600);
   letter-spacing: -0.02em;
   line-height: 1;
   transition: background-color 0.15s var(--ease);
@@ -97,28 +107,28 @@
 }
 
 .goodDot {
-  width: 6px;
-  height: 6px;
+  width: calc(6px * var(--ui-scale));
+  height: calc(6px * var(--ui-scale));
   border-radius: 50%;
   background: var(--gold);
 }
 
 .lunarDay {
   margin-left: auto;
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-scale));
   color: var(--text-lunar);
   font-variant-numeric: tabular-nums;
 }
 
 /* Mùng 1 âm lịch: đỏ để dễ thấy đầu tháng âm. */
 .lunarFirst {
-  font-weight: 700;
+  font-weight: var(--fw-700);
   color: var(--accent-text);
 }
 
 .holiday {
-  font-size: 11.5px;
-  font-weight: 600;
+  font-size: calc(11.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--holiday);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -128,14 +138,14 @@
 .events {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
   min-width: 0;
 }
 
 .more {
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-scale));
   color: var(--text-muted);
-  padding-left: 6px;
+  padding-left: calc(6px * var(--ui-scale));
 }
 
 .dots {
@@ -143,19 +153,19 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: calc(6px * var(--ui-scale));
+  height: calc(6px * var(--ui-scale));
   border-radius: 50%;
 }
 
 .add {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: calc(5px * var(--ui-scale));
+  bottom: calc(5px * var(--ui-scale));
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
+  width: calc(26px * var(--ui-scale));
+  height: calc(26px * var(--ui-scale));
   border: 0;
   border-radius: 50%;
   background: var(--glass-strong);
@@ -181,11 +191,11 @@
 /* Điện thoại: ô nhỏ, chỉ hiện chấm màu thay cho tiêu đề sự kiện. */
 @media (max-width: 640px) {
   .grid {
-    grid-auto-rows: minmax(64px, 1fr);
+    grid-auto-rows: minmax(calc(64px * var(--ui-scale)), 1fr);
   }
 
   .cell {
-    padding: 2px;
+    padding: calc(2px * var(--ui-scale));
   }
 
   .cellHead {
@@ -195,7 +205,7 @@
 
   .lunarDay {
     margin-left: 0;
-    font-size: 10.5px;
+    font-size: calc(10.5px * var(--ui-scale));
   }
 
   .goodDot {
@@ -203,7 +213,7 @@
   }
 
   .holiday {
-    font-size: 9.5px;
+    font-size: calc(9.5px * var(--ui-scale));
     text-align: center;
   }
 
@@ -214,12 +224,60 @@
   .dots {
     display: flex;
     justify-content: center;
-    gap: 3px;
+    gap: calc(3px * var(--ui-scale));
     margin-top: auto;
-    padding-bottom: 2px;
+    padding-bottom: calc(2px * var(--ui-scale));
   }
 
   .add {
     display: none;
   }
+}
+
+/*
+ * Cỡ chữ Lớn / Rất lớn: MonthView đo ô thật rồi đặt một trong hai lớp dưới cho lưới, thắng
+ * @media ở trên. Ô hẹp: chỉ chấm/icon sự kiện (có tên đọc được) và "+N"; ô rộng: chip có chữ.
+ */
+.chipsMode .events {
+  display: flex;
+}
+
+.chipsMode .dots {
+  display: none;
+}
+
+.markersMode .events,
+.markersMode .add {
+  display: none;
+}
+
+.markersMode .dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: calc(3px * var(--ui-scale));
+  margin-top: auto;
+  padding-bottom: calc(2px * var(--ui-scale));
+}
+
+.marker {
+  display: inline-grid;
+  place-items: center;
+  width: calc(9px * var(--ui-scale));
+  height: calc(11px * var(--ui-scale));
+}
+
+.markerDot {
+  width: calc(8px * var(--ui-scale));
+  height: calc(8px * var(--ui-scale));
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.markerMore {
+  font-size: calc(10px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  line-height: 1;
+  color: var(--text-muted);
 }

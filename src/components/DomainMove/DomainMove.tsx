@@ -4,6 +4,7 @@ import { X } from '@phosphor-icons/react'
 import { hasLocalData } from '../../data/hasLocalData'
 import { getLocalRepository } from '../../data/repositoryContext'
 import { CANONICAL_HOST, canonicalUrl } from './canonicalHost'
+import { iconSize } from '../../styles/textSize'
 import styles from './DomainMove.module.css'
 
 /**
@@ -51,7 +52,7 @@ export function DomainMove() {
           aria-label="Ẩn thông báo"
           onClick={() => setShowNotice(false)}
         >
-          <X size={16} weight="bold" aria-hidden="true" />
+          <X size={iconSize(16)} weight="bold" aria-hidden="true" />
         </button>
       </div>
     </div>

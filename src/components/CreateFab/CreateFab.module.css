@@ -1,13 +1,13 @@
 /* Nút tạo nhanh: màu nhấn, viền kính sáng, nhấn thì lún nhẹ. */
 .fab {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: calc(24px * var(--ui-scale));
+  bottom: calc(24px * var(--ui-scale));
   z-index: 30;
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
+  width: calc(58px * var(--ui-scale));
+  height: calc(58px * var(--ui-scale));
   border: 1px solid rgb(255 255 255 / 0.35);
   border-radius: 50%;
   background: var(--accent);

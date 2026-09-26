@@ -102,6 +102,9 @@ export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedA
   }
   if (raw.theme === 'light' || raw.theme === 'dark' || raw.theme === 'system')
     result.theme = raw.theme
+  if (raw.textSize === 'default' || raw.textSize === 'large' || raw.textSize === 'xlarge')
+    result.textSize = raw.textSize
+  if (typeof raw.boldText === 'boolean') result.boldText = raw.boldText
   if (Array.isArray(raw.hiddenCategoryIds)) {
     result.hiddenCategoryIds = raw.hiddenCategoryIds.filter(
       (x): x is string => typeof x === 'string',

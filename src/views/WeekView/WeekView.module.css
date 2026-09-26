@@ -1,7 +1,7 @@
 .view {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
   flex: 1 1 auto;
   min-height: 0;
 }
@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
-  padding: 4px;
+  padding: calc(4px * var(--ui-scale));
   border-radius: var(--radius-lg);
 }
 
@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1px;
-  padding: 6px 2px;
+  padding: calc(6px * var(--ui-scale)) calc(2px * var(--ui-scale));
   border: 0;
   border-radius: var(--radius);
   background: transparent;
@@ -40,19 +40,19 @@
 }
 
 .weekday {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--text-muted);
 }
 
 .solarDay {
   font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
+  font-size: calc(22px * var(--ui-scale));
+  font-weight: var(--fw-600);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  width: 40px;
-  height: 40px;
+  width: calc(40px * var(--ui-scale));
+  height: calc(40px * var(--ui-scale));
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -64,20 +64,20 @@
 }
 
 .lunarDay {
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-scale));
   color: var(--text-lunar);
 }
 
 /* Mùng 1 âm lịch: đỏ để dễ thấy đầu tháng âm. */
 .lunarFirst {
-  font-weight: 700;
+  font-weight: var(--fw-700);
   color: var(--accent-text);
 }
 
 .holiday {
-  font-size: 11px;
+  font-size: calc(11px * var(--ui-scale));
   color: var(--holiday);
-  font-weight: 600;
+  font-weight: var(--fw-600);
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

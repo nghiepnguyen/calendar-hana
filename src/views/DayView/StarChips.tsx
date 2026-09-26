@@ -1,5 +1,6 @@
 import { Sparkle, WarningCircle } from '@phosphor-icons/react'
 import type { Star } from '@shared/lunar'
+import { iconSize } from '../../styles/textSize'
 import styles from './AlmanacPanel.module.css'
 
 interface StarChipsProps {
@@ -16,7 +17,7 @@ export function StarChips({ title, good, stars, onOpen }: StarChipsProps) {
   return (
     <div className={`${styles.starGroup} ${good ? styles.starGroupGood : styles.starGroupBad}`}>
       <h4 className={styles.starTitle}>
-        <GroupIcon size={15} weight="duotone" aria-hidden="true" />
+        <GroupIcon size={iconSize(15)} weight="duotone" aria-hidden="true" />
         {title} ({stars.length})
       </h4>
       {stars.length === 0 ? (

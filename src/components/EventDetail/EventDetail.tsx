@@ -6,6 +6,7 @@ import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { Category, CalendarEvent } from '@shared/types'
 import { Modal } from '../Modal/Modal'
 import { channelLabel, reminderLabel } from '../EventForm/reminderOptions'
+import { iconSize } from '../../styles/textSize'
 import styles from './EventDetail.module.css'
 import { splitLocation } from './locationLinks'
 
@@ -115,7 +116,7 @@ export function EventDetail({
                     rel="noopener noreferrer"
                     title={part.href}
                   >
-                    <MapPin size={15} weight="fill" aria-hidden="true" />
+                    <MapPin size={iconSize(15)} weight="fill" aria-hidden="true" />
                     {part.label}
                   </a>
                 ) : (

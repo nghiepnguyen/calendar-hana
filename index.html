@@ -12,6 +12,17 @@
     <link rel="canonical" href="https://lich.thanhnghiep.top/" />
     <meta name="theme-color" content="#cc2b22" />
 
+    <!-- Áp cỡ chữ đã chọn trước lần vẽ đầu tiên, tránh nháy cỡ mặc định (src/styles/textSize.ts). -->
+    <script>
+      try {
+        var size = localStorage.getItem('hana:text-size')
+        if (size === 'large' || size === 'xlarge')
+          document.documentElement.setAttribute('data-text-size', size)
+        if (localStorage.getItem('hana:bold-text') === '1')
+          document.documentElement.setAttribute('data-bold-text', '')
+      } catch (e) {}
+    </script>
+
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/png" sizes="96x96" href="/logo.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />

@@ -15,11 +15,12 @@
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 8px;
-  max-width: 720px;
+  gap: calc(8px * var(--ui-scale));
+  max-width: calc(720px * var(--ui-scale));
   min-height: var(--list-header-height);
   margin: var(--list-header-top) auto 0;
-  padding: 8px 10px 8px 12px;
+  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale)) calc(8px * var(--ui-scale))
+    calc(12px * var(--ui-scale));
   border-radius: var(--radius-lg);
   background: var(--glass-sheet);
 }
@@ -29,8 +30,8 @@
   min-width: 0;
   margin: 0;
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: calc(20px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.025em;
   white-space: nowrap;
   overflow: hidden;
@@ -39,44 +40,44 @@
 
 .back {
   color: var(--accent-text);
-  padding: 0 12px 0 8px;
-  gap: 2px;
+  padding: 0 calc(12px * var(--ui-scale)) 0 calc(8px * var(--ui-scale));
+  gap: calc(2px * var(--ui-scale));
 }
 
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
   flex: 0 0 auto;
 }
 
 .selectButton {
-  min-width: 64px;
+  min-width: calc(64px * var(--ui-scale));
   color: var(--accent-text);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 720px;
+  gap: calc(14px * var(--ui-scale));
+  max-width: calc(720px * var(--ui-scale));
   margin: 0 auto;
-  padding: 16px 12px 64px;
+  padding: calc(16px * var(--ui-scale)) calc(12px * var(--ui-scale)) calc(64px * var(--ui-scale));
 }
 
 .withTabBar .main {
-  padding-bottom: calc(var(--tabbar-space) + 16px);
+  padding-bottom: calc(var(--tabbar-space) + calc(16px * var(--ui-scale)));
 }
 
 .selecting .main {
-  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  padding-bottom: calc(calc(120px * var(--ui-scale)) + env(safe-area-inset-bottom));
 }
 
 /* Tìm kiếm và lọc */
 .filters {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
 }
 
 .search {
@@ -85,8 +86,8 @@
 }
 
 .search :global(.input) {
-  min-height: 44px;
-  padding-left: 40px;
+  min-height: calc(44px * var(--ui-scale));
+  padding-left: calc(40px * var(--ui-scale));
   border-radius: var(--radius-pill);
   background: var(--glass);
   -webkit-backdrop-filter: var(--glass-filter);
@@ -97,7 +98,7 @@
 .searchIcon {
   position: absolute;
   top: 50%;
-  left: 14px;
+  left: calc(14px * var(--ui-scale));
   transform: translateY(-50%);
   color: var(--text-muted);
   pointer-events: none;
@@ -105,9 +106,10 @@
 
 .chips {
   display: flex;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
+  /* Tràn sát lề trang (lề trang không phóng theo cỡ chữ) nên giữ px. */
   margin: 0 -12px;
-  padding: 2px 12px;
+  padding: calc(2px * var(--ui-scale)) 12px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -119,16 +121,16 @@
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
   flex: 0 0 auto;
-  min-height: 44px;
-  padding: 0 16px 0 12px;
+  min-height: calc(44px * var(--ui-scale));
+  padding: 0 calc(16px * var(--ui-scale)) 0 calc(12px * var(--ui-scale));
   border: 1px solid var(--separator);
   border-radius: var(--radius-pill);
   background: transparent;
   color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-600);
   transition:
     background-color 0.18s var(--ease),
     color 0.18s var(--ease),
@@ -147,8 +149,8 @@
 }
 
 .chipDot {
-  width: 10px;
-  height: 10px;
+  width: calc(10px * var(--ui-scale));
+  height: calc(10px * var(--ui-scale));
   border-radius: 50%;
   border: 2px solid var(--swatch);
 }
@@ -162,60 +164,60 @@
 }
 
 .status {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--text-muted);
-  padding: 0 4px;
+  padding: 0 calc(4px * var(--ui-scale));
 }
 
 .notice {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 28px 16px;
+  gap: calc(10px * var(--ui-scale));
+  padding: calc(28px * var(--ui-scale)) calc(16px * var(--ui-scale));
   text-align: center;
   color: var(--text-muted);
 }
 
 .notice p {
   margin: 0;
-  font-weight: 600;
+  font-weight: var(--fw-600);
 }
 
 .sentinel {
   min-height: 1px;
   text-align: center;
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   color: var(--text-muted);
 }
 
 .sentinel:not(:empty) {
-  padding: 8px 0;
+  padding: calc(8px * var(--ui-scale)) 0;
 }
 
 /* Năm: tiêu đề phân cách lớn giữa các năm. */
 .years {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: calc(32px * var(--ui-scale));
 }
 
 .year {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(16px * var(--ui-scale));
 }
 
 .yearHead {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(12px * var(--ui-scale));
   margin: 0;
-  padding: 0 6px;
+  padding: 0 calc(6px * var(--ui-scale));
   font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 800;
+  font-size: calc(30px * var(--ui-scale));
+  font-weight: var(--fw-800);
   letter-spacing: -0.035em;
 }
 
@@ -243,22 +245,22 @@
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  column-gap: 10px;
+  column-gap: calc(10px * var(--ui-scale));
   margin: 0;
-  padding: 12px 16px 10px;
+  padding: calc(12px * var(--ui-scale)) calc(16px * var(--ui-scale)) calc(10px * var(--ui-scale));
   border-bottom: 1px solid var(--separator);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   /* Đục hẳn: nằm trên thẻ kính nên nền gần đặc vẫn lộ chữ của các hàng cuộn bên dưới. */
   background: linear-gradient(var(--glass-sheet), var(--glass-sheet)), var(--bg);
   font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: calc(18px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.02em;
 }
 
 .monthLunar {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-500);
   letter-spacing: 0;
   color: var(--text-muted);
 }
@@ -274,11 +276,11 @@
 .skeleton {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: calc(14px * var(--ui-scale));
 }
 
 .skeletonDay {
-  height: 96px;
+  height: calc(96px * var(--ui-scale));
   border-radius: var(--radius-lg);
   background: var(--fill);
   animation: pulse 1.4s ease-in-out infinite;
@@ -299,10 +301,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  width: min(560px, calc(100% - 24px));
-  min-height: 62px;
-  padding: 8px;
+  gap: calc(8px * var(--ui-scale));
+  width: min(calc(560px * var(--ui-scale)), calc(100% - 24px));
+  min-height: calc(62px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale));
   border-radius: var(--radius-pill);
   background: var(--glass-bar);
   -webkit-backdrop-filter: var(--glass-bar-filter);
@@ -311,7 +313,7 @@
 }
 
 .selectionBar :global(.btn) {
-  min-height: 44px;
+  min-height: calc(44px * var(--ui-scale));
 }
 
 .selectionBar :global(.btn-danger) {
@@ -320,24 +322,24 @@
 }
 
 .selectionCount {
-  font-weight: 700;
-  font-size: 14.5px;
+  font-weight: var(--fw-700);
+  font-size: calc(14.5px * var(--ui-scale));
   white-space: nowrap;
 }
 
 .error {
   position: fixed;
   left: 50%;
-  bottom: calc(max(12px, env(safe-area-inset-bottom)) + 74px);
+  bottom: calc(max(12px, env(safe-area-inset-bottom)) + calc(74px * var(--ui-scale)));
   z-index: 30;
-  width: min(560px, calc(100% - 24px));
+  width: min(calc(560px * var(--ui-scale)), calc(100% - 24px));
   margin: 0;
-  padding: 12px 16px;
+  padding: calc(12px * var(--ui-scale)) calc(16px * var(--ui-scale));
   border-radius: var(--radius-lg);
   background: var(--glass-sheet);
   color: var(--accent-text);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-600);
   transform: translateX(-50%);
 }
 
@@ -349,12 +351,13 @@
   .header {
     margin: var(--list-header-top) max(8px, env(safe-area-inset-right)) 0
       max(8px, env(safe-area-inset-left));
-    padding: 6px 6px 6px 4px;
+    padding: calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale))
+      calc(4px * var(--ui-scale));
     border-radius: 28px;
   }
 
   .header h1 {
-    font-size: 16px;
+    font-size: calc(16px * var(--ui-scale));
   }
 
   /* Có thanh tab để về lịch nên bỏ nút quay lại. */
@@ -363,13 +366,13 @@
   }
 
   .withTabBar .header {
-    padding-left: 16px;
+    padding-left: calc(16px * var(--ui-scale));
   }
 
   /* Chỉ giữ mũi tên để tiêu đề đủ chỗ. */
   .back {
-    width: 40px;
-    min-height: 40px;
+    width: calc(40px * var(--ui-scale));
+    min-height: calc(40px * var(--ui-scale));
     padding: 0;
   }
 
@@ -378,8 +381,8 @@
   }
 
   .headerActions :global(.btn) {
-    min-height: 40px;
-    padding: 0 12px;
+    min-height: calc(40px * var(--ui-scale));
+    padding: 0 calc(12px * var(--ui-scale));
   }
 
   .main {
@@ -388,6 +391,6 @@
 
   .chips {
     margin: 0 -8px;
-    padding: 2px 8px;
+    padding: calc(2px * var(--ui-scale)) 8px;
   }
 }

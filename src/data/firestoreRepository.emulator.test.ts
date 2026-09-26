@@ -101,12 +101,20 @@ describe('FirestoreRepository', () => {
   it('lưu cài đặt', async () => {
     const { repo, db } = cloudFor('alice')
     await repo.ensureInitialized({ email: null, displayName: null })
-    await repo.saveSettings({ theme: 'dark', hiddenCategoryIds: ['work'] })
+    expect(await repo.getSettings()).toMatchObject({ textSize: 'default', boldText: false })
+    await repo.saveSettings({
+      theme: 'dark',
+      hiddenCategoryIds: ['work'],
+      textSize: 'xlarge',
+      boldText: true,
+    })
     await waitForPendingWrites(db)
     expect(await repo.getSettings()).toMatchObject({
       theme: 'dark',
       hiddenCategoryIds: ['work'],
       showHolidays: true,
+      textSize: 'xlarge',
+      boldText: true,
     })
   })
 

@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest'
 import App from './App'
 import { CalendarDatabase } from './data/db'
 import { LocalRepository } from './data/localRepository'
@@ -218,6 +218,27 @@ describe('App', () => {
     await userEvent.keyboard('{ArrowDown}')
     expect(screen.getByRole('tab', { name: 'Sao lưu' })).toHaveFocus()
     expect(screen.getByRole('region', { name: 'Sao lưu dữ liệu' })).toBeInTheDocument()
+  })
+
+  it('Cỡ chữ nằm trong tab Hiển thị; link cũ #text-size mở đúng tab và cuộn tới mục', async () => {
+    const original = Element.prototype.scrollIntoView
+    const scrollIntoView = vi.fn()
+    Element.prototype.scrollIntoView = scrollIntoView
+    onTestFinished(() => {
+      Element.prototype.scrollIntoView = original
+    })
+    renderApp('/settings#text-size')
+    expect(await screen.findByRole('tab', { name: 'Hiển thị' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    expect(screen.queryByRole('tab', { name: 'Cỡ chữ' })).not.toBeInTheDocument()
+    const section = screen.getByRole('region', { name: 'Hiển thị' })
+    expect(within(section).getByRole('heading', { name: 'Cỡ chữ' })).toBeInTheDocument()
+    expect(within(section).getByRole('radiogroup', { name: 'Cỡ chữ' })).toBeInTheDocument()
+    await vi.waitFor(() =>
+      expect(scrollIntoView.mock.contexts).toContain(document.getElementById('text-size')),
+    )
   })
 
   it('Cài đặt có hướng dẫn phím tắt trên máy tính', async () => {

@@ -1,11 +1,11 @@
 /* Hàng ngày (ô ngày + sự kiện) và dòng sự kiện, dùng ở trang Danh sách và xem Ngày, Tuần. */
 .day {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
+  grid-template-columns: calc(76px * var(--ui-scale)) minmax(0, 1fr);
   align-items: start;
-  padding: 6px 6px 6px 0;
+  padding: calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale)) calc(6px * var(--ui-scale)) 0;
   /* Cuộn tới ngày thì không bị header và tiêu đề tháng che. */
-  scroll-margin-top: calc(var(--list-sticky-top, 0px) + 64px);
+  scroll-margin-top: calc(var(--list-sticky-top, 0px) + calc(64px * var(--ui-scale)));
 }
 
 .day + .day {
@@ -15,22 +15,22 @@
 .dateCell {
   /* Thứ bên trái số ngày dương, ngày âm ngay dưới số ngày. */
   display: grid;
-  grid-template-columns: 22px auto;
+  grid-template-columns: calc(22px * var(--ui-scale)) auto;
   grid-template-areas:
     'weekday solar'
     '. lunar';
   justify-content: center;
   align-items: center;
-  column-gap: 2px;
+  column-gap: calc(2px * var(--ui-scale));
   margin: 0;
   /* Tâm cụm ngày dương + âm trùng tâm hàng sự kiện đầu tiên (cao 56px). */
-  padding: 2px 0 4px;
+  padding: calc(2px * var(--ui-scale)) 0 calc(4px * var(--ui-scale));
 }
 
 .weekday {
   grid-area: weekday;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
   text-align: right;
   color: var(--text-muted);
 }
@@ -39,21 +39,21 @@
   grid-area: solar;
   display: grid;
   place-items: center;
-  min-width: 38px;
-  height: 38px;
-  padding: 0 4px;
+  min-width: calc(38px * var(--ui-scale));
+  height: calc(38px * var(--ui-scale));
+  padding: 0 calc(4px * var(--ui-scale));
   border-radius: var(--radius-pill);
   font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 700;
+  font-size: calc(26px * var(--ui-scale));
+  font-weight: var(--fw-700);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
 }
 
 .lunar {
   grid-area: lunar;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-500);
   line-height: 1.2;
   text-align: center;
   color: var(--text-lunar);
@@ -62,7 +62,7 @@
 
 /* Mùng 1 âm lịch: đỏ để dễ thấy đầu tháng âm. */
 .lunarFirst {
-  font-weight: 700;
+  font-weight: var(--fw-700);
   color: var(--accent-text);
 }
 
@@ -84,18 +84,18 @@
 .today .weekday,
 .today .lunar {
   color: var(--accent-text);
-  font-weight: 700;
+  font-weight: var(--fw-700);
 }
 
 .today .lunar {
-  margin-top: 2px;
+  margin-top: calc(2px * var(--ui-scale));
 }
 
 .noEvents {
   margin: 0;
-  padding: 16px 10px;
+  padding: calc(16px * var(--ui-scale)) calc(10px * var(--ui-scale));
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: calc(14px * var(--ui-scale));
 }
 
 .rows {
@@ -111,10 +111,10 @@
 .row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(12px * var(--ui-scale));
   width: 100%;
-  min-height: 56px;
-  padding: 8px 10px;
+  min-height: calc(56px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale));
   border: 0;
   border-radius: 14px;
   background: transparent;
@@ -143,8 +143,8 @@
 .swatch {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 4px;
-  min-height: 32px;
+  width: calc(4px * var(--ui-scale));
+  min-height: calc(32px * var(--ui-scale));
   border-radius: var(--radius-pill);
   background: var(--swatch);
 }
@@ -154,34 +154,34 @@
   flex-direction: column;
   flex: 1 1 auto;
   min-width: 0;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
 }
 
 .rowTitle {
-  font-weight: 600;
+  font-weight: var(--fw-600);
   overflow-wrap: anywhere;
 }
 
 .rowMeta {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 8px;
-  font-size: 13px;
+  column-gap: calc(8px * var(--ui-scale));
+  font-size: calc(13px * var(--ui-scale));
   color: var(--text-muted);
 }
 
 .rowMeta > span + span::before {
   content: '·';
-  margin-right: 8px;
+  margin-right: calc(8px * var(--ui-scale));
 }
 
 .lunarTag {
   color: var(--gold);
-  font-weight: 600;
+  font-weight: var(--fw-600);
 }
 
 .rowLocation {
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -195,11 +195,11 @@
 
 @media (max-width: 720px) {
   .day {
-    grid-template-columns: 70px minmax(0, 1fr);
-    padding-right: 4px;
+    grid-template-columns: calc(70px * var(--ui-scale)) minmax(0, 1fr);
+    padding-right: calc(4px * var(--ui-scale));
   }
 
   .row {
-    padding: 8px;
+    padding: calc(8px * var(--ui-scale));
   }
 }

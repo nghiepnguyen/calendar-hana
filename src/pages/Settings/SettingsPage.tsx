@@ -21,6 +21,9 @@ import { DataSection } from './DataSection'
 import { InstallSection } from './InstallSection'
 import { NotificationSection } from './NotificationSection'
 import { ShortcutSection } from './ShortcutSection'
+import { TextSizeSection } from './TextSizeSection'
+import { Toggle } from './Toggle'
+import { iconSize } from '../../styles/textSize'
 import styles from './SettingsPage.module.css'
 
 const THEMES: { value: ThemePreference; label: string }[] = [
@@ -28,34 +31,6 @@ const THEMES: { value: ThemePreference; label: string }[] = [
   { value: 'light', label: 'Sáng' },
   { value: 'dark', label: 'Tối' },
 ]
-
-function Toggle({
-  label,
-  hint,
-  checked,
-  onChange,
-}: {
-  label: string
-  hint?: string
-  checked: boolean
-  onChange: (checked: boolean) => void
-}) {
-  return (
-    <label className={styles.toggleRow}>
-      <span>
-        <span className={styles.rowLabel}>{label}</span>
-        {hint ? <span className="field-hint">{hint}</span> : null}
-      </span>
-      <input
-        type="checkbox"
-        role="switch"
-        className="switch"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-      />
-    </label>
-  )
-}
 
 function GeneralSection({ settings, save }: SectionProps) {
   return (
@@ -111,6 +86,7 @@ function GeneralSection({ settings, save }: SectionProps) {
           ))}
         </div>
       </div>
+      <TextSizeSection settings={settings} save={save} />
     </>
   )
 }
@@ -135,7 +111,7 @@ function ReminderSection({ settings, save }: SectionProps) {
   )
 }
 
-interface SectionProps {
+export interface SectionProps {
   settings: Settings
   save: (patch: Partial<Omit<Settings, 'updatedAt'>>) => void
 }
@@ -151,6 +127,8 @@ interface Tab {
   render: (props: SectionProps) => ReactNode
   /** Chỉ hiện trên máy tính. */
   desktopOnly?: boolean
+  /** #hash của mục con trong tab, ví dụ #text-size: mở tab này rồi cuộn tới mục đó. */
+  anchors?: string[]
 }
 
 // Hay dùng xếp trước. Id giữ nguyên để các link cũ (#notifications, #account…) vẫn đúng tab.
@@ -161,6 +139,8 @@ const TABS: Tab[] = [
     title: 'Hiển thị',
     icon: SlidersHorizontal,
     render: (props) => <GeneralSection {...props} />,
+    // Cỡ chữ từng là tab riêng: link cũ /settings#text-size vẫn mở đúng chỗ.
+    anchors: ['text-size'],
   },
   {
     id: 'notifications',
@@ -217,7 +197,10 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
   const tabList = useRef<HTMLDivElement>(null)
 
   const tabs = compact ? TABS.filter((t) => !t.desktopOnly) : TABS
-  const active = tabs.find((t) => `#${t.id}` === location.hash) ?? tabs[0]
+  const hash = location.hash.slice(1)
+  const active = tabs.find((t) => t.id === hash || t.anchors?.includes(hash)) ?? tabs[0]
+  const anchor = active.anchors?.includes(hash) ? hash : null
+  const loaded = settings !== undefined
 
   // Trên điện thoại thanh tab cuộn ngang: giữ tab đang chọn trong tầm nhìn.
   useEffect(() => {
@@ -225,6 +208,11 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
       ?.querySelector<HTMLElement>('[aria-selected="true"]')
       ?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' })
   }, [active.id, settings])
+
+  // Mở bằng #mục-con: cuộn tới mục đó khi nội dung đã hiện (cần settings tải xong).
+  useEffect(() => {
+    if (anchor && loaded) document.getElementById(anchor)?.scrollIntoView?.({ block: 'start' })
+  }, [anchor, loaded])
 
   const select = (tab: Tab, focus = false) => {
     navigate({ hash: tab.id }, { replace: true })
@@ -254,7 +242,7 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
     <div className={styles.page}>
       <header className={`glass ${styles.header}`}>
         <Link to="/" className={`btn btn-ghost ${styles.back}`} aria-label="Quay lại lịch">
-          <CaretLeft size={18} weight="bold" aria-hidden="true" />
+          <CaretLeft size={iconSize(18)} weight="bold" aria-hidden="true" />
           Lịch
         </Link>
         <h1>Cài đặt</h1>
@@ -287,7 +275,11 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
                   tabIndex={selected ? 0 : -1}
                   onClick={() => select(tab)}
                 >
-                  <TabIcon size={18} weight={selected ? 'fill' : 'regular'} aria-hidden="true" />
+                  <TabIcon
+                    size={iconSize(18)}
+                    weight={selected ? 'fill' : 'regular'}
+                    aria-hidden="true"
+                  />
                   {tab.label}
                 </button>
               )

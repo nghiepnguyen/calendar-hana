@@ -1,6 +1,7 @@
 import { Moon, Sun } from '@phosphor-icons/react'
 import type { DayHour } from '@shared/lunar'
 import { useNow } from '../../hooks/useNow'
+import { iconSize } from '../../styles/textSize'
 import styles from './AlmanacPanel.module.css'
 import { hourIndexAt } from './hourIndex'
 
@@ -41,7 +42,7 @@ export function HourGrid({ hours, isToday }: HourGridProps) {
               <span className={styles.hourTop} aria-hidden="true">
                 <span className={styles.hourName}>{h.name}</span>
                 <HourIcon
-                  size={15}
+                  size={iconSize(15)}
                   weight={h.isGood ? 'duotone' : 'light'}
                   className={styles.hourIcon}
                 />
@@ -66,10 +67,11 @@ export function HourGrid({ hours, isToday }: HourGridProps) {
       </ul>
       <p className={styles.hourLegend} aria-hidden="true">
         <span>
-          <Sun size={13} weight="duotone" className={styles.legendGood} /> Giờ hoàng đạo (tốt)
+          <Sun size={iconSize(13)} weight="duotone" className={styles.legendGood} /> Giờ hoàng đạo
+          (tốt)
         </span>
         <span>
-          <Moon size={13} weight="light" /> Giờ hắc đạo
+          <Moon size={iconSize(13)} weight="light" /> Giờ hắc đạo
         </span>
       </p>
     </>

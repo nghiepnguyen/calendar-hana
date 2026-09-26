@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { EventValidationError } from '@shared/validation'
-import { CalendarDatabase } from './db'
+import { CalendarDatabase, SETTINGS_KEY, type SettingsRow } from './db'
 import { LocalRepository } from './localRepository'
 import { SystemCategoryError, type EventInput } from './repository'
 
@@ -53,6 +53,19 @@ describe('LocalRepository — danh mục và cài đặt mặc định', () => {
       theme: 'dark',
       showHolidays: true,
     })
+  })
+
+  it('bản ghi cài đặt cũ chưa có cỡ chữ thì dùng mặc định, giữ các trường khác', async () => {
+    const row = await repo.db.settings.get(SETTINGS_KEY)
+    const { textSize: _t, boldText: _b, ...old } = row!
+    await repo.db.settings.put({ ...old, theme: 'dark' } as SettingsRow)
+    expect(await repo.getSettings()).toMatchObject({
+      theme: 'dark',
+      textSize: 'default',
+      boldText: false,
+    })
+    await repo.saveSettings({ textSize: 'xlarge', boldText: true })
+    expect(await repo.getSettings()).toMatchObject({ textSize: 'xlarge', boldText: true })
   })
 })
 

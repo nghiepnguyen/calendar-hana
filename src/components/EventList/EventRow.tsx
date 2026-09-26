@@ -4,6 +4,7 @@ import { formatAccessibleDate } from '@shared/format'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import { locationText } from '../EventDetail/locationLinks'
 import { timeLabel } from './listFormat'
+import { iconSize } from '../../styles/textSize'
 import styles from './EventList.module.css'
 
 interface EventRowProps {
@@ -52,7 +53,7 @@ export function EventRow({
         ) : null}
       </span>
       {occurrence.isRecurring ? (
-        <ArrowsClockwise size={16} className={styles.repeat} aria-hidden="true" />
+        <ArrowsClockwise size={iconSize(16)} className={styles.repeat} aria-hidden="true" />
       ) : null}
     </>
   )

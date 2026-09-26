@@ -4,71 +4,71 @@
 
 .header {
   position: sticky;
-  top: 10px;
+  top: calc(10px * var(--ui-scale));
   z-index: 10;
   display: flex;
   align-items: center;
-  gap: 8px;
-  max-width: 960px;
-  min-height: 56px;
-  margin: 10px auto 0;
-  padding: 8px 12px;
+  gap: calc(8px * var(--ui-scale));
+  max-width: calc(960px * var(--ui-scale));
+  min-height: calc(56px * var(--ui-scale));
+  margin: calc(10px * var(--ui-scale)) auto 0;
+  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
   border-radius: var(--radius-lg);
 }
 
 .header h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: calc(20px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.025em;
 }
 
 .back {
   color: var(--accent);
-  padding: 0 12px 0 8px;
-  gap: 2px;
+  padding: 0 calc(12px * var(--ui-scale)) 0 calc(8px * var(--ui-scale));
+  gap: calc(2px * var(--ui-scale));
 }
 
 .loading {
-  padding: 24px 16px;
+  padding: calc(24px * var(--ui-scale)) calc(16px * var(--ui-scale));
   color: var(--text-muted);
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 208px minmax(0, 1fr);
+  grid-template-columns: calc(208px * var(--ui-scale)) minmax(0, 1fr);
   align-items: start;
-  gap: 18px;
-  max-width: 960px;
+  gap: calc(18px * var(--ui-scale));
+  max-width: calc(960px * var(--ui-scale));
   margin: 0 auto;
-  padding: 18px 12px 48px;
+  padding: calc(18px * var(--ui-scale)) calc(12px * var(--ui-scale)) calc(48px * var(--ui-scale));
 }
 
 /* Máy tính: danh sách tab dọc dính bên trái. */
 .tabs {
   position: sticky;
-  top: 86px;
+  top: calc(86px * var(--ui-scale));
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 8px;
+  gap: calc(2px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale));
   border-radius: var(--radius-lg);
 }
 
 .tab {
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-height: 40px;
-  padding: 0 12px;
+  gap: calc(10px * var(--ui-scale));
+  min-height: calc(40px * var(--ui-scale));
+  padding: 0 calc(12px * var(--ui-scale));
   border: 0;
   border-radius: var(--radius);
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: calc(15px * var(--ui-scale));
+  font-weight: var(--fw-500);
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
@@ -82,13 +82,13 @@
 .tab[aria-selected='true'] {
   background: var(--accent-soft);
   color: var(--accent-text);
-  font-weight: 600;
+  font-weight: var(--fw-600);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: calc(18px * var(--ui-scale));
   min-width: 0;
 }
 
@@ -96,16 +96,16 @@
 @media (max-width: 720px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    padding-top: 12px;
+    gap: calc(12px * var(--ui-scale));
+    padding-top: calc(12px * var(--ui-scale));
   }
 
   .tabs {
-    top: 76px;
+    top: calc(76px * var(--ui-scale));
     z-index: 5;
     flex-direction: row;
-    gap: 4px;
-    padding: 6px;
+    gap: calc(4px * var(--ui-scale));
+    padding: calc(6px * var(--ui-scale));
     border-radius: var(--radius-pill);
     overflow-x: auto;
     scrollbar-width: none;
@@ -118,10 +118,10 @@
 
   .tab {
     flex: 0 0 auto;
-    min-height: 36px;
-    padding: 0 14px;
+    min-height: calc(36px * var(--ui-scale));
+    padding: 0 calc(14px * var(--ui-scale));
     border-radius: var(--radius-pill);
-    font-size: 14px;
+    font-size: calc(14px * var(--ui-scale));
   }
 }
 
@@ -129,17 +129,17 @@
 .section {
   display: flex;
   flex-direction: column;
-  padding: 16px 18px;
+  padding: calc(16px * var(--ui-scale)) calc(18px * var(--ui-scale));
   border-radius: var(--radius-lg);
   /* Mở bằng #id thì không bị header dính che. */
-  scroll-margin-top: 80px;
+  scroll-margin-top: calc(80px * var(--ui-scale));
 }
 
 .section h2 {
-  margin: 0 0 6px;
+  margin: 0 0 calc(6px * var(--ui-scale));
   font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 700;
+  font-size: calc(17px * var(--ui-scale));
+  font-weight: var(--fw-700);
   letter-spacing: -0.015em;
 }
 
@@ -147,8 +147,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 12px 0;
+  gap: calc(16px * var(--ui-scale));
+  padding: calc(12px * var(--ui-scale)) 0;
   border-top: 1px solid var(--separator);
 }
 
@@ -159,22 +159,37 @@
 .toggleRow > span:first-child {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
 }
 
 .rowLabel {
-  font-weight: 500;
+  font-weight: var(--fw-500);
+}
+
+/*
+ * Dòng có công tắc: không bao giờ xuống dòng (kể cả màn hẹp, chữ to). Chữ co lại và tự xuống
+ * dòng bên trái, công tắc giữ nguyên cỡ và canh giữa theo chiều dọc bên phải.
+ */
+.switchRow,
+.switchRow.toggleRow {
+  flex-wrap: nowrap;
+}
+
+.switchRow > span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .select {
   width: auto;
-  min-width: 140px;
+  min-width: calc(140px * var(--ui-scale));
 }
 
 .categoryManager {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(16px * var(--ui-scale));
 }
 
 .categoryList {
@@ -183,34 +198,34 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
 }
 
 .categoryRow {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr) auto auto;
+  grid-template-columns: calc(32px * var(--ui-scale)) minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
 }
 
 .swatchButton {
-  width: 28px;
-  height: 28px;
+  width: calc(28px * var(--ui-scale));
+  height: calc(28px * var(--ui-scale));
   border: 2px solid var(--glass-strong);
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--border-strong);
 }
 
 .count {
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   color: var(--text-muted);
   white-space: nowrap;
 }
 
 .systemNote {
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-scale));
   color: var(--text-muted);
-  padding: 0 12px;
+  padding: 0 calc(12px * var(--ui-scale));
 }
 
 .colorRow {
@@ -220,12 +235,12 @@
 .colors {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
 }
 
 .color {
-  width: 30px;
-  height: 30px;
+  width: calc(30px * var(--ui-scale));
+  height: calc(30px * var(--ui-scale));
   border: 2px solid var(--glass-strong);
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--border-strong);
@@ -243,8 +258,8 @@
 .newCategory {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 14px;
+  gap: calc(10px * var(--ui-scale));
+  padding-top: calc(14px * var(--ui-scale));
   border-top: 1px solid var(--separator);
 }
 
@@ -254,7 +269,7 @@
 
 @media (max-width: 560px) {
   .categoryRow {
-    grid-template-columns: 32px minmax(0, 1fr) auto;
+    grid-template-columns: calc(32px * var(--ui-scale)) minmax(0, 1fr) auto;
   }
 
   .count {
@@ -270,7 +285,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
 }
 
 .account p {
@@ -280,13 +295,13 @@
 .profile {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(12px * var(--ui-scale));
 }
 
 .profile img,
 .avatarFallback {
-  width: 44px;
-  height: 44px;
+  width: calc(44px * var(--ui-scale));
+  height: calc(44px * var(--ui-scale));
   border-radius: 50%;
 }
 
@@ -295,8 +310,8 @@
   place-items: center;
   background: var(--accent-soft);
   color: var(--accent);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: var(--fw-700);
+  font-size: calc(18px * var(--ui-scale));
 }
 
 .profile > span:last-child {
@@ -307,22 +322,22 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: calc(8px * var(--ui-scale));
 }
 
 .dataNotes {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(2px * var(--ui-scale));
   margin: 0;
-  padding-left: 18px;
+  padding-left: calc(18px * var(--ui-scale));
 }
 
 .help {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 0 0 12px;
+  gap: calc(10px * var(--ui-scale));
+  padding: 0 0 calc(12px * var(--ui-scale));
 }
 
 .help p {
@@ -332,16 +347,16 @@
 .helpBlock {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
 }
 
 .steps {
   margin: 0;
-  padding-left: 20px;
+  padding-left: calc(20px * var(--ui-scale));
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 14px;
+  gap: calc(4px * var(--ui-scale));
+  font-size: calc(14px * var(--ui-scale));
   line-height: 1.45;
 }
 
@@ -349,7 +364,7 @@
 .shortcuts {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: calc(14px * var(--ui-scale));
 }
 
 .shortcuts > p {
@@ -357,9 +372,9 @@
 }
 
 .shortcutGroup h3 {
-  margin: 0 0 4px;
-  font-size: 13px;
-  font-weight: 600;
+  margin: 0 0 calc(4px * var(--ui-scale));
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--text-muted);
 }
 
@@ -373,8 +388,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 8px 0;
+  gap: calc(16px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale)) 0;
   border-top: 1px solid var(--separator);
 }
 
@@ -384,21 +399,21 @@
 
 .keys {
   display: flex;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
   flex: 0 0 auto;
 }
 
 .keys kbd {
   display: inline-grid;
   place-items: center;
-  min-width: 28px;
-  height: 28px;
-  padding: 0 8px;
+  min-width: calc(28px * var(--ui-scale));
+  height: calc(28px * var(--ui-scale));
+  padding: 0 calc(8px * var(--ui-scale));
   border: 1px solid var(--border-strong);
   border-bottom-width: 2px;
   border-radius: var(--radius-sm);
   background: var(--glass-strong);
   font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
 }

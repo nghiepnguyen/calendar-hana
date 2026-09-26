@@ -14,6 +14,7 @@ import { useRepository } from '../../data/repositoryContext'
 import { useCategoryMap } from '../../hooks/useCategoryMap'
 import { useUiStore } from '../../store/uiStore'
 import { MiniMonth } from '../MiniMonth/MiniMonth'
+import { iconSize } from '../../styles/textSize'
 import styles from './Sidebar.module.css'
 
 interface SidebarProps {
@@ -69,7 +70,7 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
                 onClick={() => setOpen(false)}
                 aria-label="Đóng menu"
               >
-                <X size={16} weight="bold" aria-hidden="true" />
+                <X size={iconSize(16)} weight="bold" aria-hidden="true" />
               </button>
             </div>
             <button
@@ -80,14 +81,14 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
                 setSearchOpen(true)
               }}
             >
-              <MagnifyingGlass size={18} weight="bold" aria-hidden="true" />
+              <MagnifyingGlass size={iconSize(18)} weight="bold" aria-hidden="true" />
               Tìm kiếm sự kiện
             </button>
           </>
         ) : (
           // Tạo sự kiện bằng nút + ở góc màn hình; điện thoại vào danh sách bằng tab Sự kiện.
           <Link to="/events" className={styles.listLink} onClick={() => setOpen(false)}>
-            <ListBullets size={20} weight="bold" aria-hidden="true" />
+            <ListBullets size={iconSize(20)} weight="bold" aria-hidden="true" />
             Danh sách sự kiện
           </Link>
         )}
@@ -149,7 +150,11 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
                       className={styles.avatar}
                     />
                   ) : (
-                    <UserCircle size={28} aria-hidden="true" className={styles.linkIcon} />
+                    <UserCircle
+                      size={iconSize(28)}
+                      aria-hidden="true"
+                      className={styles.linkIcon}
+                    />
                   )}
                   <span className={styles.linkText}>
                     {user ? (user.displayName ?? user.email ?? 'Tài khoản') : 'Đăng nhập'}
@@ -158,7 +163,7 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
                     ) : null}
                   </span>
                   <CaretRight
-                    size={16}
+                    size={iconSize(16)}
                     weight="bold"
                     aria-hidden="true"
                     className={styles.chevron}
@@ -168,9 +173,14 @@ export function Sidebar({ date, today, settings, compact, onSelectDate }: Sideba
             ) : null}
             <li>
               <Link to="/settings" className={styles.link} onClick={() => setOpen(false)}>
-                <GearSix size={28} aria-hidden="true" className={styles.linkIcon} />
+                <GearSix size={iconSize(28)} aria-hidden="true" className={styles.linkIcon} />
                 <span className={styles.linkText}>Cài đặt</span>
-                <CaretRight size={16} weight="bold" aria-hidden="true" className={styles.chevron} />
+                <CaretRight
+                  size={iconSize(16)}
+                  weight="bold"
+                  aria-hidden="true"
+                  className={styles.chevron}
+                />
               </Link>
             </li>
           </ul>

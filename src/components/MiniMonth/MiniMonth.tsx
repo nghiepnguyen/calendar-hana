@@ -4,6 +4,7 @@ import { formatAccessibleDate, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo, parseSolarDate } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
 import { addMonths, monthGridDays } from '../../calendar/range'
+import { iconSize } from '../../styles/textSize'
 import styles from './MiniMonth.module.css'
 
 interface MiniMonthProps {
@@ -38,7 +39,7 @@ export function MiniMonth({ selected, today, weekStartsOn, onSelect }: MiniMonth
           onClick={() => setCursor(addMonths(cursor, -1))}
           aria-label="Tháng trước"
         >
-          <CaretLeft size={16} weight="bold" aria-hidden="true" />
+          <CaretLeft size={iconSize(16)} weight="bold" aria-hidden="true" />
         </button>
         <button
           type="button"
@@ -46,7 +47,7 @@ export function MiniMonth({ selected, today, weekStartsOn, onSelect }: MiniMonth
           onClick={() => setCursor(addMonths(cursor, 1))}
           aria-label="Tháng sau"
         >
-          <CaretRight size={16} weight="bold" aria-hidden="true" />
+          <CaretRight size={iconSize(16)} weight="bold" aria-hidden="true" />
         </button>
       </div>
       <div className={styles.grid}>

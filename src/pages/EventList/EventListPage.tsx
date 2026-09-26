@@ -48,6 +48,7 @@ import {
 import { loadPosition, savePosition } from './savedPosition'
 import { SelectionBar } from './SelectionBar'
 import { useInfiniteRange } from './useInfiniteRange'
+import { iconSize } from '../../styles/textSize'
 import styles from './EventListPage.module.css'
 
 const FALLBACK_SETTINGS = createDefaultSettings('')
@@ -264,7 +265,7 @@ export function EventListPage() {
     >
       <header ref={headerRef} className={`glass ${styles.header}`}>
         <Link to="/" className={`btn btn-ghost ${styles.back}`} aria-label="Quay lại lịch">
-          <CaretLeft size={18} weight="bold" aria-hidden="true" />
+          <CaretLeft size={iconSize(18)} weight="bold" aria-hidden="true" />
           <span className={styles.backText}>Lịch</span>
         </Link>
         <h1>Danh sách sự kiện</h1>
@@ -285,7 +286,7 @@ export function EventListPage() {
       <main className={styles.main}>
         <div className={styles.filters}>
           <label className={styles.search}>
-            <MagnifyingGlass size={18} aria-hidden="true" className={styles.searchIcon} />
+            <MagnifyingGlass size={iconSize(18)} aria-hidden="true" className={styles.searchIcon} />
             <input
               className="input"
               type="search"

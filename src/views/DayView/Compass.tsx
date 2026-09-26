@@ -1,4 +1,5 @@
 import { Coins, Heart } from '@phosphor-icons/react'
+import { iconSize } from '../../styles/textSize'
 import styles from './AlmanacPanel.module.css'
 
 /** Góc (độ, 0 = Bắc, theo chiều kim đồng hồ) của 8 hướng. */
@@ -15,6 +16,9 @@ const ANGLES: Record<string, number> = {
 
 const SIZE = 132
 const C = SIZE / 2
+
+/** Vị trí ghim theo tỉ lệ cỡ chữ, khớp với khung la bàn (calc(132px * var(--ui-scale))). */
+const scaled = (px: number) => `calc(${px}px * var(--ui-scale))`
 
 function point(direction: string, radius: number) {
   const a = ((ANGLES[direction] ?? 0) * Math.PI) / 180
@@ -73,11 +77,17 @@ export function Compass({ hyThan, taiThan }: CompassProps) {
         <line x1={C} y1={C} x2={tai.x} y2={tai.y} className={styles.needleTai} />
         <circle cx={C} cy={C} r={3.5} className={styles.compassHub} />
       </svg>
-      <span className={`${styles.compassPin} ${styles.pinHy}`} style={{ left: hy.x, top: hy.y }}>
-        <Heart size={13} weight="fill" />
+      <span
+        className={`${styles.compassPin} ${styles.pinHy}`}
+        style={{ left: scaled(hy.x), top: scaled(hy.y) }}
+      >
+        <Heart size={iconSize(13)} weight="fill" />
       </span>
-      <span className={`${styles.compassPin} ${styles.pinTai}`} style={{ left: tai.x, top: tai.y }}>
-        <Coins size={13} weight="fill" />
+      <span
+        className={`${styles.compassPin} ${styles.pinTai}`}
+        style={{ left: scaled(tai.x), top: scaled(tai.y) }}
+      >
+        <Coins size={iconSize(13)} weight="fill" />
       </span>
     </div>
   )

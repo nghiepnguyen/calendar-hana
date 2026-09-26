@@ -1,0 +1,110 @@
+/* Mục "Cỡ chữ" nằm cuối tab Hiển thị, tách bằng vạch kẻ như các dòng cài đặt. */
+.group {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--separator);
+  padding-top: calc(14px * var(--ui-scale));
+  /* Mở bằng /settings#text-size thì không bị header dính che. */
+  scroll-margin-top: calc(80px * var(--ui-scale));
+}
+
+.heading {
+  margin: 0 0 calc(8px * var(--ui-scale));
+  font-family: var(--font-display);
+  font-size: calc(16px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.01em;
+}
+
+/* Ô xem trước: dùng CSS thật của lưới Tháng và chip sự kiện, đổi theo cỡ chữ ngay. */
+.preview {
+  position: relative;
+  margin: calc(4px * var(--ui-scale)) 0 calc(12px * var(--ui-scale));
+  padding: calc(30px * var(--ui-scale)) calc(14px * var(--ui-scale)) calc(14px * var(--ui-scale));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+}
+
+.previewLabel {
+  position: absolute;
+  top: calc(8px * var(--ui-scale));
+  left: calc(14px * var(--ui-scale));
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.previewBody {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: calc(14px * var(--ui-scale));
+}
+
+.previewCell {
+  flex: 0 0 auto;
+  width: calc(128px * var(--ui-scale));
+  min-height: calc(84px * var(--ui-scale));
+  border: 1px solid var(--separator);
+  border-radius: var(--radius);
+  background: var(--glass-strong);
+  cursor: default;
+}
+
+.previewEvents {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(6px * var(--ui-scale));
+}
+
+.previewText {
+  display: flex;
+  flex: 1 1 calc(180px * var(--ui-scale));
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(10px * var(--ui-scale));
+  min-width: 0;
+}
+
+.previewText p {
+  margin: 0;
+}
+
+.row {
+  padding: calc(4px * var(--ui-scale)) 0 calc(12px * var(--ui-scale));
+}
+
+.sizes > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(2px * var(--ui-scale));
+  padding-block: calc(8px * var(--ui-scale));
+}
+
+/* Chữ "A" to dần theo mức, tương đối với cỡ chữ đang dùng. */
+.sample {
+  font-family: var(--font-display);
+  font-weight: var(--fw-700);
+  line-height: 1;
+}
+
+.sample[data-size='default'] {
+  font-size: calc(16px * var(--ui-scale));
+}
+
+.sample[data-size='large'] {
+  font-size: calc(20px * var(--ui-scale));
+}
+
+.sample[data-size='xlarge'] {
+  font-size: calc(24px * var(--ui-scale));
+}
+
+.reset {
+  padding-top: calc(12px * var(--ui-scale));
+  border-top: 1px solid var(--separator);
+}

@@ -84,6 +84,9 @@ export interface Category {
 
 export type ThemePreference = 'light' | 'dark' | 'system'
 
+/** Cỡ chữ toàn app. Chữ, icon, nút và khoảng cách cùng phóng theo tỉ lệ. */
+export type TextSize = 'default' | 'large' | 'xlarge'
+
 export interface Settings {
   /** 1 = Thứ Hai, 0 = Chủ nhật. */
   weekStartsOn: 0 | 1
@@ -92,6 +95,9 @@ export interface Settings {
   /** Giờ gửi nhắc hẹn cho sự kiện cả ngày, dạng 'HH:mm'. */
   allDayReminderTime: TimeString
   theme: ThemePreference
+  textSize: TextSize
+  /** Làm chữ đậm hơn để dễ đọc trên nền kính mờ. */
+  boldText: boolean
   hiddenCategoryIds: string[]
   updatedAt: string
 }

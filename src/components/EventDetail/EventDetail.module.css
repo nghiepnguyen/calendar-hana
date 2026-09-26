@@ -1,12 +1,12 @@
 .title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(10px * var(--ui-scale));
 }
 
 .swatch {
-  width: 14px;
-  height: 14px;
+  width: calc(14px * var(--ui-scale));
+  height: calc(14px * var(--ui-scale));
   border-radius: 4px;
   flex: 0 0 auto;
 }
@@ -14,20 +14,20 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px * var(--ui-scale));
   margin: 0;
 }
 
 .list > div {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 12px;
+  grid-template-columns: calc(96px * var(--ui-scale)) 1fr;
+  gap: calc(12px * var(--ui-scale));
 }
 
 .list dt {
   color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
   padding-top: 1px;
 }
 
@@ -40,12 +40,12 @@
 .sub {
   display: block;
   color: var(--text-muted);
-  font-size: 13.5px;
+  font-size: calc(13.5px * var(--ui-scale));
 }
 
 .reminders {
   margin: 0;
-  padding-left: 18px;
+  padding-left: calc(18px * var(--ui-scale));
 }
 
 .note {
@@ -56,9 +56,9 @@
 .link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: calc(4px * var(--ui-scale));
   color: var(--accent-text);
-  font-weight: 600;
+  font-weight: var(--fw-600);
   text-decoration: none;
 }
 

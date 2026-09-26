@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { DomainMove } from './components/DomainMove/DomainMove'
+import { TextSizeController } from './components/TextSizeController'
 import { ThemeController } from './components/ThemeController'
 import { ToastRegionProvider } from './components/Toast/ToastRegion'
 import { UpdatePrompt } from './components/UpdatePrompt/UpdatePrompt'
@@ -12,6 +13,7 @@ function App() {
   return (
     <ToastRegionProvider>
       <ThemeController />
+      <TextSizeController />
       <ReminderService />
       <UpdatePrompt />
       <DomainMove />

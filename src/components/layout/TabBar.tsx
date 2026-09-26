@@ -1,6 +1,9 @@
-import type { CSSProperties } from 'react'
+import { useRef, type CSSProperties } from 'react'
 import { CalendarDot, List, ListBullets, Plus, SquaresFour, type Icon } from '@phosphor-icons/react'
+import { useElementWidth } from '../../hooks/useElementWidth'
+import { useSettings } from '../../hooks/useRepositoryData'
 import { useUiStore } from '../../store/uiStore'
+import { iconSize, TEXT_SIZE_SCALE } from '../../styles/textSize'
 import styles from './TabBar.module.css'
 
 /** Các tab trên điện thoại. Xem Tuần quá chật trên màn hình nhỏ nên không có tab riêng. */
@@ -11,6 +14,9 @@ const TABS: { tab: Tab; label: string; icon: Icon }[] = [
   { tab: 'month', label: 'Tháng', icon: SquaresFour },
   { tab: 'events', label: 'Sự kiện', icon: ListBullets },
 ]
+
+/** Mỗi tab hẹp hơn (px ở tỉ lệ 1) thì nhãn dài nhất ("Sự kiện") không còn vừa. */
+const LABEL_MIN_WIDTH = 50
 
 interface TabBarProps {
   /** Tab đang mở; null khi đang ở màn không có tab (vd. xem Tuần mở từ URL). */
@@ -23,14 +29,23 @@ interface TabBarProps {
 export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
   const setSidebarOpen = useUiStore((s) => s.setSidebarOpen)
   const activeIndex = TABS.findIndex((t) => t.tab === active)
+  const count = TABS.length + 1
+
+  // Chữ to trên màn hẹp: bỏ nhãn, chỉ còn icon (tên tab chuyển sang aria-label). Quyết định theo
+  // chiều rộng cả thanh, không theo nhãn, để ẩn nhãn không làm kết quả đo đổi theo.
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const scale = TEXT_SIZE_SCALE[useSettings()?.textSize ?? 'default']
+  const width = useElementWidth(tabsRef)
+  const iconOnly = width > 0 && (width - 8 * scale) / count < LABEL_MIN_WIDTH * scale
 
   return (
     <nav className={styles.bar} aria-label="Điều hướng">
       <div
-        className={styles.tabs}
+        ref={tabsRef}
+        className={`${styles.tabs} ${iconOnly ? styles.iconOnly : ''}`}
         data-active={activeIndex >= 0 ? '' : undefined}
         // Viên sáng chia đều cho các tab và nút Menu.
-        style={{ '--active': activeIndex, '--count': TABS.length + 1 } as CSSProperties}
+        style={{ '--active': activeIndex, '--count': count } as CSSProperties}
       >
         {TABS.map(({ tab, label, icon: TabIcon }) => {
           const current = tab === active
@@ -40,10 +55,15 @@ export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
               type="button"
               className={styles.tab}
               aria-current={current ? 'page' : undefined}
+              aria-label={iconOnly ? label : undefined}
               onClick={() => onSelect(tab)}
             >
-              <TabIcon size={24} weight={current ? 'fill' : 'regular'} aria-hidden="true" />
-              <span>{label}</span>
+              <TabIcon
+                size={iconSize(24)}
+                weight={current ? 'fill' : 'regular'}
+                aria-hidden="true"
+              />
+              {iconOnly ? null : <span>{label}</span>}
             </button>
           )
         })}
@@ -53,12 +73,12 @@ export function TabBar({ active, onSelect, onCreate }: TabBarProps) {
           onClick={() => setSidebarOpen(true)}
           aria-label="Mở menu"
         >
-          <List size={24} aria-hidden="true" />
-          <span>Menu</span>
+          <List size={iconSize(24)} aria-hidden="true" />
+          {iconOnly ? null : <span>Menu</span>}
         </button>
       </div>
       <button type="button" className={styles.create} onClick={onCreate} aria-label="Tạo sự kiện">
-        <Plus size={26} weight="bold" aria-hidden="true" />
+        <Plus size={iconSize(26)} weight="bold" aria-hidden="true" />
       </button>
     </nav>
   )

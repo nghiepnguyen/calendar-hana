@@ -17,3 +17,14 @@ export async function openCreateForm(page: Page) {
   await page.getByRole('button', { name: 'Tạo sự kiện' }).last().click()
   return page.getByRole('dialog', { name: 'Tạo sự kiện' })
 }
+
+export type TextSizeLabel = 'Mặc định' | 'Lớn' | 'Rất lớn'
+
+/** Chọn cỡ chữ trong Cài đặt > Hiển thị > Cỡ chữ (lưu vào Settings như người dùng thật), rồi quay lại `back`. */
+export async function chooseTextSize(page: Page, label: TextSizeLabel, back?: string) {
+  await page.goto('/settings#text-size')
+  const option = page.getByRole('radio', { name: label, exact: true })
+  await option.click()
+  await expect(option).toHaveAttribute('aria-checked', 'true')
+  if (back) await page.goto(back)
+}

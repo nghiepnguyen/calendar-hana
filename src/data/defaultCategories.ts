@@ -47,6 +47,8 @@ export function createDefaultSettings(now = new Date().toISOString()): Settings 
     showAuspicious: true,
     allDayReminderTime: '08:00',
     theme: 'system',
+    textSize: 'default',
+    boldText: false,
     hiddenCategoryIds: [],
     updatedAt: now,
   }

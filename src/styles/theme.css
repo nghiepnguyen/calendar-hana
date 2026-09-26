@@ -10,6 +10,11 @@
  *   - Ô nhập, ô ngày, sự kiện: --radius (12px) / --radius-sm (8px)
  *
  * Màu nhấn duy nhất: --accent (đỏ lịch iOS). Màu danh mục là dữ liệu người dùng.
+ *
+ * Cỡ chữ (Cài đặt > Hiển thị > Cỡ chữ): mọi cỡ chữ, icon, vùng bấm và khoảng cách viết dạng
+ * calc(Npx * var(--ui-scale)). Mức mặc định --ui-scale = 1 nên giữ nguyên từng pixel.
+ * Không nhân tỉ lệ cho viền, bo góc, blur, bóng. Tỉ lệ khớp với src/styles/textSize.ts.
+ * Độ đậm dùng --fw-N thay cho số, để "Chữ đậm hơn" nâng mỗi độ đậm lên một bậc.
  * Mặc định theo hệ thống; người dùng chọn trong Cài đặt thì đặt data-theme trên <html>.
  */
 :root {
@@ -90,13 +95,24 @@
   --radius: 12px;
   --radius-lg: 22px;
   --radius-pill: 999px;
-  --header-height: 60px;
-  --tabbar-height: 62px;
+
+  --ui-scale: 1;
+  /* Vùng bấm tối thiểu khi phóng to chữ (WCAG 2.5.5). 0 ở mức mặc định để không đổi bố cục. */
+  --tap-min: 0px;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  --header-height: calc(60px * var(--ui-scale));
+  --tabbar-height: calc(62px * var(--ui-scale));
   /* Khoảng trống cuối nội dung để không bị thanh tab che. */
   --tabbar-space: calc(var(--tabbar-height) + 24px + env(safe-area-inset-bottom));
-  --sidebar-width: 280px;
-  --hour-height: 52px;
-  --gap: 12px;
+  --sidebar-width: calc(280px * var(--ui-scale));
+  --hour-height: calc(52px * var(--ui-scale));
+  --gap: calc(12px * var(--ui-scale));
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
@@ -227,11 +243,43 @@
   }
 }
 
+:root[data-text-size='large'] {
+  --ui-scale: 1.25;
+  --tap-min: 44px;
+}
+
+:root[data-text-size='xlarge'] {
+  --ui-scale: 1.5;
+  --tap-min: 44px;
+}
+
+:root[data-bold-text] {
+  --fw-300: 400;
+  --fw-400: 500;
+  --fw-500: 600;
+  --fw-600: 700;
+  --fw-700: 800;
+  --fw-800: 800;
+}
+
+b,
+strong,
+th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-700);
+}
+
 body {
+  font-weight: var(--fw-400);
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: calc(15px * var(--ui-scale));
   line-height: 1.45;
   letter-spacing: -0.005em;
 }
@@ -268,6 +316,25 @@ textarea {
   }
 }
 
+/*
+ * Vùng bấm tối thiểu khi phóng to chữ. Specificity 0 (:where) nên component đặt min-height lớn
+ * hơn vẫn thắng; chỗ nào đặt nhỏ hơn thì phải tự dùng max(var(--tap-min), ...).
+ * data-tap-exempt: chip sự kiện trong lưới Tháng / lưới giờ, vị trí theo ngày giờ, cả ô là vùng bấm.
+ */
+:where(:root[data-text-size])
+  :where(
+    button,
+    select,
+    [role='button'],
+    [role='radio'],
+    [role='switch'],
+    [role='tab'],
+    input:not([type='checkbox'], [type='radio'], [type='hidden'])
+  ):where(:not([data-tap-exempt])) {
+  min-height: var(--tap-min);
+  min-width: var(--tap-min);
+}
+
 button {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -299,15 +366,15 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-height: 36px;
-  padding: 0 16px;
+  gap: calc(6px * var(--ui-scale));
+  min-height: calc(36px * var(--ui-scale));
+  padding: 0 calc(16px * var(--ui-scale));
   border: 0;
   border-radius: var(--radius-pill);
   background: var(--fill);
   color: var(--text);
-  font-weight: 600;
-  font-size: 14.5px;
+  font-weight: var(--fw-600);
+  font-size: calc(14.5px * var(--ui-scale));
   white-space: nowrap;
   text-decoration: none;
   transition:
@@ -346,7 +413,7 @@ button {
 }
 
 .btn-icon {
-  width: 36px;
+  width: calc(36px * var(--ui-scale));
   padding: 0;
 }
 
@@ -358,19 +425,19 @@ button {
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(6px * var(--ui-scale));
 }
 
 .field-label {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
   color: var(--text-muted);
 }
 
 .input {
   /* Chiều cao cố định: Safari tự tính chiều cao ô ngày/giờ và select khác hẳn ô chữ. */
-  height: 40px;
-  padding: 8px 12px;
+  height: calc(40px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
   border: 1px solid transparent;
   border-radius: var(--radius);
   background-color: var(--fill);
@@ -383,14 +450,14 @@ button {
 
 textarea.input {
   height: auto;
-  min-height: 40px;
+  min-height: calc(40px * var(--ui-scale));
 }
 
 /* Bỏ giao diện gốc của select (Safari bỏ qua chiều cao và padding), tự vẽ mũi tên. */
 select.input {
   -webkit-appearance: none;
   appearance: none;
-  padding-right: 34px;
+  padding-right: calc(34px * var(--ui-scale));
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%238a909c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 4.5 6 7.5 9 4.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
@@ -405,7 +472,7 @@ select.input {
 
 @media (pointer: coarse) {
   .input:not(textarea) {
-    height: 44px;
+    height: calc(44px * var(--ui-scale));
   }
 
   /*
@@ -444,13 +511,13 @@ select.input {
 
 .field-error {
   color: var(--accent);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-500);
 }
 
 .field-hint {
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
 }
 
 /* Segmented control kiểu iOS: nền xám, "viên" trắng trượt theo lựa chọn (--active, --count). */
@@ -459,7 +526,7 @@ select.input {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
-  padding: 3px;
+  padding: calc(3px * var(--ui-scale));
   border-radius: var(--radius-pill);
   background: var(--fill);
   isolation: isolate;
@@ -469,10 +536,10 @@ select.input {
   content: '';
   position: absolute;
   z-index: -1;
-  top: 3px;
-  bottom: 3px;
-  left: 3px;
-  width: calc((100% - 6px) / var(--count, 3));
+  top: calc(3px * var(--ui-scale));
+  bottom: calc(3px * var(--ui-scale));
+  left: calc(3px * var(--ui-scale));
+  width: calc((100% - calc(6px * var(--ui-scale))) / var(--count, 3));
   border-radius: var(--radius-pill);
   background: var(--control-thumb);
   box-shadow:
@@ -485,13 +552,25 @@ select.input {
 .segmented > button {
   border: 0;
   background: transparent;
-  padding: 6px 14px;
+  padding: calc(6px * var(--ui-scale)) calc(14px * var(--ui-scale));
   border-radius: var(--radius-pill);
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--fw-600);
+  font-size: calc(14px * var(--ui-scale));
   color: var(--text-muted);
   transition: color 0.2s var(--ease);
   white-space: nowrap;
+}
+
+/* Chữ to: lựa chọn dài ("Theo hệ thống") xuống dòng trong ô của nó thay vì đè lên ô bên cạnh. */
+:root[data-text-size] .segmented {
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+:root[data-text-size] .segmented > button {
+  padding-inline: calc(8px * var(--ui-scale));
+  line-height: 1.15;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .segmented > button[aria-checked='true'],
@@ -513,8 +592,8 @@ select.input {
   appearance: none;
   position: relative;
   flex: 0 0 auto;
-  width: 51px;
-  height: 31px;
+  width: calc(51px * var(--ui-scale));
+  height: calc(31px * var(--ui-scale));
   margin: 0;
   border-radius: var(--radius-pill);
   background: var(--fill-hover);
@@ -525,10 +604,10 @@ select.input {
 .switch::after {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 27px;
-  height: 27px;
+  top: calc(2px * var(--ui-scale));
+  left: calc(2px * var(--ui-scale));
+  width: calc(27px * var(--ui-scale));
+  height: calc(27px * var(--ui-scale));
   border-radius: 50%;
   background: #fff;
   box-shadow:
@@ -551,8 +630,8 @@ select.input {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 20px;
-  height: 20px;
+  width: calc(20px * var(--ui-scale));
+  height: calc(20px * var(--ui-scale));
   margin: 0;
   border-radius: 50%;
   border: 2px solid var(--check-color, var(--accent));
@@ -565,9 +644,9 @@ select.input {
 
 .check::after {
   content: '';
-  width: 5px;
-  height: 9px;
-  margin-top: -2px;
+  width: calc(5px * var(--ui-scale));
+  height: calc(9px * var(--ui-scale));
+  margin-top: calc(-2px * var(--ui-scale));
   border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) scale(0);
