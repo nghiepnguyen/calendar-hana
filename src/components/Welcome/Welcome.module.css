@@ -1,0 +1,200 @@
+/* Hero: icon app nổi trên quầng sáng, hai huy hiệu lơ lửng hai bên. */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: calc(128px * var(--ui-scale));
+  margin: calc(4px * var(--ui-scale)) 0 calc(8px * var(--ui-scale));
+}
+
+.halo {
+  position: absolute;
+  width: calc(150px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 68%);
+  animation: breathe 4.8s var(--ease) infinite alternate;
+}
+
+/* Vỏ kép: khay mờ bên ngoài, lõi icon bên trong, bo góc đồng tâm. */
+.appIcon {
+  position: relative;
+  padding: calc(6px * var(--ui-scale));
+  border-radius: calc(26px * var(--ui-scale));
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    var(--glass-highlight),
+    0 18px 40px rgb(204 43 34 / 0.18),
+    0 2px 6px rgb(30 41 70 / 0.06);
+  animation: pop 0.7s var(--ease-spring) both;
+}
+
+.appIconCore {
+  display: grid;
+  place-items: center;
+  width: calc(76px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: calc(20px * var(--ui-scale));
+  background: linear-gradient(160deg, var(--glass-strong), var(--fill));
+  box-shadow: inset 0 1px 1px rgb(255 255 255 / 0.5);
+}
+
+.appIconCore img {
+  width: calc(52px * var(--ui-scale));
+  height: auto;
+}
+
+.badge {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: calc(34px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  color: var(--accent);
+  box-shadow:
+    var(--glass-highlight),
+    0 8px 20px rgb(30 41 70 / 0.12);
+  animation:
+    appear 0.5s var(--ease) both,
+    float 3.2s var(--ease) infinite alternate;
+}
+
+.badgeLeft {
+  top: calc(20px * var(--ui-scale));
+  left: calc(50% - 88px * var(--ui-scale));
+  animation-delay: 0.18s, 0.8s;
+}
+
+.badgeRight {
+  bottom: calc(18px * var(--ui-scale));
+  left: calc(50% + 54px * var(--ui-scale));
+  animation-delay: 0.28s, 0s;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(6px * var(--ui-scale));
+  width: max-content;
+  margin: 0 auto calc(10px * var(--ui-scale));
+  padding: calc(4px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: calc(11.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.intro {
+  margin: 0 0 calc(14px * var(--ui-scale));
+  text-align: center;
+  font-size: calc(15px * var(--ui-scale));
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.perks {
+  display: grid;
+  gap: calc(8px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: calc(12px * var(--ui-scale));
+  padding: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  animation: rise 0.6s var(--ease) both;
+  animation-delay: calc(0.12s + var(--i) * 0.07s);
+}
+
+.perkIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: calc(38px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: calc(11px * var(--ui-scale));
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+.perkTitle {
+  display: block;
+  font-size: calc(14.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  color: var(--text);
+}
+
+.perkText {
+  display: block;
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* Nút chính có mũi tên nằm trong vòng tròn riêng, rê chuột thì mũi tên nhích lên. */
+.ctaIcon {
+  display: grid;
+  place-items: center;
+  width: calc(24px * var(--ui-scale));
+  aspect-ratio: 1;
+  margin-right: calc(-8px * var(--ui-scale));
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.2);
+  transition: transform 0.35s var(--ease-spring);
+}
+
+:global(.btn):hover > .ctaIcon {
+  transform: translateX(2px) scale(1.06);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(8px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes breathe {
+  from {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}

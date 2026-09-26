@@ -4,6 +4,7 @@ import { TextSizeController } from './components/TextSizeController'
 import { ThemeController } from './components/ThemeController'
 import { ToastRegionProvider } from './components/Toast/ToastRegion'
 import { UpdatePrompt } from './components/UpdatePrompt/UpdatePrompt'
+import { Welcome } from './components/Welcome/Welcome'
 import { CalendarPage } from './pages/CalendarPage'
 import { EventListPage } from './pages/EventList/EventListPage'
 import { SettingsPage } from './pages/Settings/SettingsPage'
@@ -17,6 +18,7 @@ function App() {
       <ReminderService />
       <UpdatePrompt />
       <DomainMove />
+      <Welcome />
       <Routes>
         {/* Trang chủ hiện xem Ngày của hôm nay ngay tại "/", không chuyển sang /day/...: giữ
             canonical "/" cho trang chủ, mỗi /day/YYYY-MM-DD là một trang riêng. */}

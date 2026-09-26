@@ -353,3 +353,26 @@ test('US-A: khối Lịch vạn niên đổi theo ngày khi chuyển ngày', asy
     await expect(title).toHaveText('Ngày Đinh Dậu')
   }
 })
+
+// Dùng `page` trần (không qua fixture `app`) để trình duyệt thật sự là lần đầu mở app.
+test('lần đầu mở app: chào mừng, Xem hướng dẫn mở tab Cài app, lần sau không chào lại', async ({
+  page,
+}) => {
+  await page.goto('/')
+  const welcome = page.getByRole('dialog', { name: 'Chào mừng đến với Lịch Việt' })
+  await expect(welcome).toBeVisible()
+  await welcome.getByRole('button', { name: 'Xem hướng dẫn' }).click()
+  await expect(page).toHaveURL(/\/settings#install$/)
+  await expect(page.getByRole('tab', { name: 'Cài app' })).toHaveAttribute('aria-selected', 'true')
+  await page.goto('/')
+  await expect(page.getByRole('button', { name: 'Hôm nay' }).first()).toBeVisible()
+  await expect(welcome).toHaveCount(0)
+})
+
+test('lần đầu mở app: Bỏ qua thì đóng popup và ở lại lịch', async ({ page }) => {
+  await page.goto('/day/2026-09-23')
+  const welcome = page.getByRole('dialog', { name: 'Chào mừng đến với Lịch Việt' })
+  await welcome.getByRole('button', { name: 'Bỏ qua' }).click()
+  await expect(welcome).toHaveCount(0)
+  await expect(page).toHaveURL(/\/day\/2026-09-23$/)
+})

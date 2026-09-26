@@ -6,6 +6,8 @@ export const NOW = new Date('2026-09-23T03:00:00Z')
 export const test = base.extend<{ app: Page }>({
   app: async ({ page }, provide) => {
     await page.clock.setFixedTime(NOW)
+    // Popup chào lần đầu che trang: coi như đã chào. Test của popup dùng `page` trần.
+    await page.addInitScript(() => localStorage.setItem('hana:welcome-seen', '1'))
     await provide(page)
   },
 })

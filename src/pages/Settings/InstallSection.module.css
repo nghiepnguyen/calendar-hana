@@ -1,0 +1,287 @@
+/* Thẻ giới thiệu: icon app trong vỏ kép, lợi ích dạng chip, nút cài bên phải. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(16px * var(--ui-scale));
+  margin-bottom: calc(16px * var(--ui-scale));
+  padding: calc(16px * var(--ui-scale));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--accent-soft) 0%, transparent 55%), var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  animation: rise 0.6s var(--ease) both;
+}
+
+.appIcon {
+  flex: 0 0 auto;
+  padding: calc(5px * var(--ui-scale));
+  border-radius: calc(22px * var(--ui-scale));
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    var(--glass-highlight),
+    0 12px 28px rgb(204 43 34 / 0.18);
+}
+
+.appIconCore {
+  display: grid;
+  place-items: center;
+  width: calc(60px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: calc(17px * var(--ui-scale));
+  background: linear-gradient(160deg, var(--glass-strong), var(--fill));
+  box-shadow: inset 0 1px 1px rgb(255 255 255 / 0.5);
+}
+
+.appIconCore img {
+  width: calc(42px * var(--ui-scale));
+  height: auto;
+}
+
+.heroBody {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: calc(16px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  color: var(--text);
+}
+
+.heroText {
+  margin: calc(2px * var(--ui-scale)) 0 calc(10px * var(--ui-scale));
+  font-size: calc(13.5px * var(--ui-scale));
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perks li {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(5px * var(--ui-scale));
+  padding: calc(4px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--glass-strong);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  color: var(--text);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-500);
+}
+
+.perks svg {
+  color: var(--accent);
+}
+
+.installButton {
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.installed {
+  display: flex;
+  align-items: center;
+  gap: calc(10px * var(--ui-scale));
+  margin: 0;
+  padding: calc(14px * var(--ui-scale)) calc(16px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: calc(14.5px * var(--ui-scale));
+  font-weight: var(--fw-500);
+}
+
+.installed svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+/* Hướng dẫn theo từng nền tảng */
+.guides {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--ui-scale));
+}
+
+.guide {
+  padding: calc(12px * var(--ui-scale)) calc(14px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  animation: rise 0.6s var(--ease) both;
+  animation-delay: 0.08s;
+}
+
+.guide + .guide {
+  animation-delay: 0.14s;
+}
+
+.guideTitle {
+  display: flex;
+  align-items: center;
+  gap: calc(10px * var(--ui-scale));
+  margin: 0;
+  font-size: calc(15px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  color: var(--text);
+}
+
+summary.guideTitle {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary.guideTitle::-webkit-details-marker {
+  display: none;
+}
+
+.caret {
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: transform 0.35s var(--ease-spring);
+}
+
+details[open] .caret {
+  transform: rotate(180deg);
+}
+
+.platformIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: calc(32px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: calc(10px * var(--ui-scale));
+  background: var(--glass-strong);
+  box-shadow:
+    inset 0 0 0 1px var(--separator-soft),
+    var(--shadow-sm);
+  color: var(--text);
+}
+
+/* Dòng thời gian: số thứ tự nối nhau bằng một vạch dọc. */
+.steps {
+  display: flex;
+  flex-direction: column;
+  margin: calc(12px * var(--ui-scale)) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: calc(10px * var(--ui-scale));
+  padding-bottom: calc(12px * var(--ui-scale));
+  animation: rise 0.5s var(--ease) both;
+  animation-delay: calc(0.12s + var(--i) * 0.06s);
+}
+
+.step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: calc(26px * var(--ui-scale));
+  bottom: calc(2px * var(--ui-scale));
+  left: calc(12px * var(--ui-scale) - 1px);
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(var(--accent-soft), var(--separator-soft));
+}
+
+.stepMarker {
+  display: grid;
+  place-items: center;
+  width: calc(24px * var(--ui-scale));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  box-shadow: 0 4px 10px rgb(204 43 34 / 0.25);
+}
+
+.stepIcon {
+  display: grid;
+  place-items: center;
+  width: calc(24px * var(--ui-scale));
+  aspect-ratio: 1;
+  color: var(--accent);
+}
+
+.stepText {
+  padding-top: calc(2px * var(--ui-scale));
+  font-size: calc(14px * var(--ui-scale));
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.note {
+  margin: 0;
+  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-sm);
+  background: var(--glass-strong);
+  font-size: calc(12.5px * var(--ui-scale));
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+  gap: calc(10px * var(--ui-scale));
+  margin: 0;
+  padding: calc(12px * var(--ui-scale)) calc(14px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  font-size: calc(14px * var(--ui-scale));
+  color: var(--text);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: calc(12px * var(--ui-scale));
+    padding: calc(14px * var(--ui-scale));
+  }
+
+  .appIconCore {
+    width: calc(48px * var(--ui-scale));
+    border-radius: calc(14px * var(--ui-scale));
+  }
+
+  .appIconCore img {
+    width: calc(34px * var(--ui-scale));
+  }
+
+  .appIcon {
+    border-radius: calc(18px * var(--ui-scale));
+  }
+
+  .installButton {
+    flex: 1 1 100%;
+  }
+}
