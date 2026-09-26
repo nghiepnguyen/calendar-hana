@@ -16,6 +16,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  /*
+   * Ô lưới mặc định không co nhỏ hơn cỡ "tự nhiên" của nội dung (ô nhập tính theo font). Chữ to
+   * cộng font rộng (Arial, DejaVu trên Linux) làm hộp thoại rộng hơn màn hình 360px.
+   */
+  min-width: 0;
   max-height: calc(100dvh - 32px);
   border-radius: 28px;
   background: var(--glass-strong);
