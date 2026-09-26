@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  max-width: 720px;
+  max-width: 960px;
   min-height: 56px;
   margin: 10px auto 0;
   padding: 8px 12px;
@@ -35,13 +35,94 @@
   color: var(--text-muted);
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 208px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 12px 48px;
+}
+
+/* Máy tính: danh sách tab dọc dính bên trái. */
+.tabs {
+  position: sticky;
+  top: 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.tab:hover {
+  background: var(--fill);
+}
+
+.tab[aria-selected='true'] {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 18px 12px 48px;
+  min-width: 0;
+}
+
+/* Điện thoại: thanh tab dạng viên thuốc cuộn ngang, dính dưới header. */
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .tabs {
+    top: 76px;
+    z-index: 5;
+    flex-direction: row;
+    gap: 4px;
+    padding: 6px;
+    border-radius: var(--radius-pill);
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-padding-inline: 6px;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+  }
 }
 
 /* Nhóm cài đặt kiểu "inset grouped" của iOS. */

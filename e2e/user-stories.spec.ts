@@ -133,6 +133,7 @@ test('US-5: họp thứ Hai hằng tuần có giờ', async ({ app }) => {
 
 test('US-6: tạo danh mục riêng và lọc theo danh mục', async ({ app }) => {
   await app.goto('/settings')
+  await app.getByRole('tab', { name: 'Danh mục' }).click()
   await app.getByLabel('Thêm danh mục').fill('Du lịch')
   await app.getByRole('button', { name: 'Thêm', exact: true }).click()
   await expect(app.getByLabel('Tên danh mục Du lịch')).toBeVisible()

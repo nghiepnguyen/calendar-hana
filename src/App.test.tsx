@@ -190,6 +190,7 @@ describe('App', () => {
       reminders: [],
     })
     renderApp('/settings')
+    await userEvent.click(await screen.findByRole('tab', { name: 'Danh mục' }))
     await userEvent.type(await screen.findByLabelText('Thêm danh mục'), 'Du lịch')
     await userEvent.click(screen.getByRole('button', { name: 'Thêm' }))
     expect(await screen.findByLabelText('Tên danh mục Du lịch')).toBeInTheDocument()
@@ -204,8 +205,23 @@ describe('App', () => {
     await vi.waitFor(async () => expect((await repo.getEvent(event.id))?.categoryId).toBe('other'))
   })
 
+  it('Cài đặt chia tab, mở đúng tab theo #hash và đổi tab bằng phím mũi tên', async () => {
+    renderApp('/settings#account')
+    expect(await screen.findByRole('tab', { name: 'Tài khoản' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    expect(screen.getByRole('region', { name: 'Tài khoản' })).toBeInTheDocument()
+    expect(screen.queryByRole('region', { name: 'Hiển thị' })).not.toBeInTheDocument()
+
+    screen.getByRole('tab', { name: 'Tài khoản' }).focus()
+    await userEvent.keyboard('{ArrowDown}')
+    expect(screen.getByRole('tab', { name: 'Sao lưu' })).toHaveFocus()
+    expect(screen.getByRole('region', { name: 'Sao lưu dữ liệu' })).toBeInTheDocument()
+  })
+
   it('Cài đặt có hướng dẫn phím tắt trên máy tính', async () => {
-    renderApp('/settings')
+    renderApp('/settings#shortcuts')
     const section = await screen.findByRole('region', { name: 'Phím tắt' })
     const create = within(section).getByText('Tạo sự kiện').closest('li')!
     expect(within(create).getByText('N').tagName).toBe('KBD')
