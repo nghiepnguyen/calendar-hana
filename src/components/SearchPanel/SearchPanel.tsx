@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { formatLunar, formatSolar } from '@shared/format'
 import { getDayInfo } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
+import { track } from '../../analytics'
 import { useCategoryMap } from '../../hooks/useCategoryMap'
 import { useEvents } from '../../hooks/useRepositoryData'
 import { Modal } from '../Modal/Modal'
@@ -42,7 +43,14 @@ export function SearchPanel({ today, onSelect, onClose }: SearchPanelProps) {
         <ul className={styles.results}>
           {results.map(({ event, date, isPast }) => (
             <li key={event.id}>
-              <button type="button" className={styles.result} onClick={() => onSelect(date)}>
+              <button
+                type="button"
+                className={styles.result}
+                onClick={() => {
+                  track('select_search_result')
+                  onSelect(date)
+                }}
+              >
                 <span
                   className={styles.swatch}
                   style={{ background: colorOf(event.categoryId) }}

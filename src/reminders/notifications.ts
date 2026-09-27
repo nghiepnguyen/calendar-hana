@@ -1,6 +1,7 @@
 // Quyền thông báo của trình duyệt và hiện thông báo nhắc hẹn.
 
 import { create } from 'zustand'
+import { track } from '../analytics'
 import { formatReminderMessage } from '@shared/format'
 import { occurrencePath, reminderTag } from '@shared/reminders/links'
 import type { ReminderInstance } from '@shared/reminders/nextReminder'
@@ -32,6 +33,7 @@ export const useNotificationStore = create<NotificationState>((set) => ({
       } catch {
         permission = readPermission()
       }
+      track('notification_permission', { result: permission })
     }
     set({ permission })
     return permission

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { track } from '../analytics'
 import { Modal } from '../components/Modal/Modal'
 import type { FirestoreRepository } from './firestoreRepository'
 import type { LocalRepository } from './localRepository'
@@ -26,7 +27,9 @@ export function MigrationDialog({ local, cloud, onDone, onSkip }: MigrationDialo
     setStatus('running')
     setError(null)
     try {
-      setResult(await migrateLocalToCloud(local, cloud))
+      const migrated = await migrateLocalToCloud(local, cloud)
+      track('migrate_to_cloud')
+      setResult(migrated)
       setStatus('done')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Không chuyển được dữ liệu.')

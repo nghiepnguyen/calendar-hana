@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { track } from '../analytics'
 import { isFirebaseConfigured } from '../firebase/config'
 import { AuthContext, type AuthContextValue, type AuthUser } from './authContext'
 
@@ -87,6 +88,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         writeHint(true)
         try {
           await service.signIn()
+          // Đăng nhập bằng redirect rời trang trước khi tới đây, nên chỉ đếm được popup.
+          track('login', { method: 'google' })
         } catch (error) {
           writeHint(false)
           throw error
@@ -94,10 +97,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       },
       signOut: async () => {
         await (await loadAuthService()).signOut()
+        track('logout')
         writeHint(false)
       },
       deleteAccount: async () => {
         await (await loadAuthService()).deleteAccount()
+        track('delete_account')
         writeHint(false)
       },
     }),

@@ -24,6 +24,7 @@ import { TabBar } from '../../components/layout/TabBar'
 import { matchesQuery, queryWords } from '../../components/SearchPanel/search'
 import { Toast } from '../../components/Toast/Toast'
 import { createDefaultSettings } from '../../data/defaultCategories'
+import { track } from '../../analytics'
 import { deleteEventOccurrences, type OccurrenceSelection } from '../../data/eventActions'
 import { useRepository } from '../../data/repositoryContext'
 import { calendarPath } from '../../hooks/useCalendarRoute'
@@ -237,6 +238,7 @@ export function EventListPage() {
     setError(null)
     try {
       const { deleted, failed } = await deleteEventOccurrences(repository, [...selected.values()])
+      track('delete_events_bulk', { count: deleted, failed: failed.length })
       if (failed.length === 0) {
         stopSelecting()
         setToast(`Đã xoá ${deleted} sự kiện`)

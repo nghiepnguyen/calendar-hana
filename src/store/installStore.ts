@@ -1,6 +1,7 @@
 // Cài app (PWA): giữ sự kiện beforeinstallprompt của Chrome/Edge để hiện nút Cài app.
 
 import { create } from 'zustand'
+import { track } from '../analytics'
 
 /** Sự kiện chỉ có ở trình duyệt Chromium, chưa có trong lib.dom. */
 interface BeforeInstallPromptEvent extends Event {
@@ -29,6 +30,7 @@ export const useInstallStore = create<InstallState>((set) => ({
     set({ canPrompt: false })
     await event.prompt()
     const { outcome } = await event.userChoice
+    track('install_prompt', { outcome })
     return outcome === 'accepted'
   },
 }))
@@ -41,6 +43,7 @@ export function listenForInstallPrompt(): void {
     useInstallStore.setState({ canPrompt: true })
   })
   window.addEventListener('appinstalled', () => {
+    track('app_installed')
     deferred = null
     useInstallStore.setState({ canPrompt: false, installed: true })
   })

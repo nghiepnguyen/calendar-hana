@@ -12,6 +12,7 @@ import {
 } from '@phosphor-icons/react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import type { Settings, ThemePreference } from '@shared/types'
+import { track } from '../../analytics'
 import { useRepository } from '../../data/repositoryContext'
 import { useIsCompact } from '../../hooks/useMediaQuery'
 import { useSettings } from '../../hooks/useRepositoryData'
@@ -236,7 +237,13 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
     select(tabs[(next + tabs.length) % tabs.length], true)
   }
 
-  const save = (patch: Partial<Omit<Settings, 'updatedAt'>>) => void repository.saveSettings(patch)
+  const save = (patch: Partial<Omit<Settings, 'updatedAt'>>) => {
+    for (const [setting, value] of Object.entries(patch)) {
+      if (['string', 'number', 'boolean'].includes(typeof value))
+        track('change_setting', { setting, value: value as string | number | boolean })
+    }
+    void repository.saveSettings(patch)
+  }
 
   return (
     <div className={styles.page}>

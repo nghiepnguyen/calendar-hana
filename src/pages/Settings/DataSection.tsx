@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { track } from '../../analytics'
 import { Modal } from '../../components/Modal/Modal'
 import { todayInVietnam } from '@shared/time'
 import {
@@ -53,6 +54,7 @@ export function DataSection() {
 
   const exportAs = async (format: 'json' | 'ics' | 'csv') => {
     const data = await exportData(repository)
+    track('export_data', { format })
     const fileName = exportFileName(new Date(), format)
     if (format === 'json') downloadJson(data, fileName)
     else if (format === 'ics') {
@@ -137,6 +139,11 @@ export function DataSection() {
                       parsed.file,
                       external ? 'merge' : mode,
                     )
+                    track('import_data', {
+                      format: parsed.format,
+                      mode: external ? 'merge' : mode,
+                      events: result.events,
+                    })
                     setMessage(
                       (external
                         ? `Đã nhập ${result.events} sự kiện.`

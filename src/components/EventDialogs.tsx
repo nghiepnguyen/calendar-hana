@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import { splitAt, type RecurringScope } from '@shared/recurrence/editing'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import type { CalendarEvent, Settings } from '@shared/types'
+import { track } from '../analytics'
 import {
   createEventFromDraft,
   deleteEventOccurrence,
@@ -34,6 +35,16 @@ function shorten(title: string, max = 40): string {
   return title.length > max ? `${title.slice(0, max - 1)}…` : title
 }
 
+/** Thông tin gửi analytics khi lưu sự kiện, không kèm tiêu đề hay ghi chú. */
+function draftParams(draft: EventDraft) {
+  return {
+    calendar_type: draft.calendarType,
+    repeat: draft.repeat,
+    all_day: draft.allDay,
+    reminders: draft.reminders.length,
+  }
+}
+
 /** Điều phối các hộp thoại sự kiện: chi tiết, form tạo/sửa, chọn phạm vi, xác nhận xóa. */
 export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
   const repository = useRepository()
@@ -60,6 +71,7 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
     const base = findEvent(occurrence.eventId)
     if (base) {
       await deleteEventOccurrence(repository, base, occurrence, scope)
+      track('delete_event', { scope, recurring: occurrence.isRecurring })
       setToast('Đã xoá sự kiện')
     }
     closeDetail()
@@ -104,9 +116,11 @@ export function EventDialogs({ settings, signedIn }: EventDialogsProps) {
           onSave={async (draft) => {
             if (editor.mode === 'create') {
               await createEventFromDraft(repository, draft)
+              track('create_event', draftParams(draft))
               setToast(`Đã tạo sự kiện “${shorten(draft.title.trim())}”`)
             } else if (base) {
               await updateEventFromDraft(repository, base, draft, editor.scope, editor.occurrence)
+              track('update_event', { ...draftParams(draft), scope: editor.scope })
               setToast('Đã lưu thay đổi')
             }
             closeEditor()
