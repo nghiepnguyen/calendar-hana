@@ -73,6 +73,8 @@ export interface CanChiRelation {
   dayName: string
   /** true = ngày cát, false = ngày hung. */
   isGood: boolean
+  /** "cát", "cát trung bình" hoặc "hung". */
+  rating: string
   /** Ví dụ "Can sinh Chi (Thủy sinh Mộc), là ngày cát (bảo nhật)." */
   text: string
 }
@@ -138,6 +140,7 @@ export function getCanChiRelation({ can, chi }: CanChi): CanChiRelation {
     chiElement: b,
     dayName: r.dayName,
     isGood: r.isGood,
+    rating: r.rating,
     text: `${r.label} (${detail}), là ngày ${r.rating} (${r.dayName}).`,
   }
 }

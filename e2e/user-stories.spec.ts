@@ -327,7 +327,8 @@ test('US-A1..A8: xem Ngày có khối Lịch vạn niên, bấm sao xem giải t
 test('US-A: khối Lịch vạn niên đổi theo ngày khi chuyển ngày', async ({ app, isMobile }) => {
   await app.goto('/day/2026-09-25')
   const panel = app.getByRole('region', { name: 'Lịch vạn niên' })
-  const title = panel.getByText(/^Ngày\s/).first()
+  // Bỏ nhãn "Ngày cát" / "Ngày hung" ở banner quan hệ Can Chi.
+  const title = panel.getByText(/^Ngày\s(?!cát|hung)/).first()
   await expect(title).toHaveText('Ngày Nhâm Dần')
   await expect(panel.getByRole('button', { name: /^Sao Ngưu/ })).toBeVisible()
 

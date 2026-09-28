@@ -1,5 +1,7 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import {
+  ArrowLeft,
+  ArrowRight,
   ArrowUpRight,
   CheckCircle,
   Clock,
@@ -7,6 +9,7 @@ import {
   Compass as CompassIcon,
   Diamond,
   Drop,
+  Equals,
   Fire,
   Heart,
   Mountains,
@@ -22,6 +25,7 @@ import {
   type Icon,
 } from '@phosphor-icons/react'
 import type { NguHanh } from '@shared/lunar'
+import type { CanChiRelation } from '@shared/lunar/elements'
 import { getAlmanac } from '@shared/lunar/almanac'
 import type { SolarDateString } from '@shared/types'
 import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
@@ -68,6 +72,67 @@ function Pill({ good, children }: { good: boolean; children: ReactNode }) {
   )
 }
 
+/** Hành của Can hoặc Chi, vẽ thành viên tròn trong sơ đồ quan hệ. */
+function ElementOrb({ role, element }: { role: string; element: NguHanh }) {
+  const ElementIcon = ELEMENT_ICONS[element]
+  return (
+    <span className={`${styles.orb} ${ELEMENT_CLASS[element]}`}>
+      <span className={styles.orbDisc}>
+        <ElementIcon size={iconSize(22)} weight="duotone" />
+      </span>
+      <span className={styles.orbLabel}>
+        {role} · {element}
+      </span>
+    </span>
+  )
+}
+
+/** Sơ đồ Can → Chi: mũi tên chỉ hành chủ động sinh hay khắc hành kia. */
+function RelationFlow({ relation }: { relation: CanChiRelation }) {
+  const { kind } = relation
+  const Connector = kind === 'dongHanh' ? Equals : kind.startsWith('chi') ? ArrowLeft : ArrowRight
+  const verb = kind === 'dongHanh' ? 'hòa' : kind.includes('Sinh') ? 'sinh' : 'khắc'
+  return (
+    <div className={styles.flow} aria-hidden="true">
+      <ElementOrb role="Can" element={relation.canElement} />
+      <span className={styles.flowLink}>
+        <span className={styles.flowVerb}>{verb}</span>
+        <Connector size={iconSize(16)} weight="bold" />
+      </span>
+      <ElementOrb role="Chi" element={relation.chiElement} />
+    </div>
+  )
+}
+
+/** Kết luận của ngày theo quan hệ Can Chi: bên phải đầu khối (máy tính), dưới tên ngày (điện thoại). */
+function RelationBanner({ relation }: { relation: CanChiRelation }) {
+  const VerdictIcon = relation.isGood ? SealCheck : SealWarning
+  const tone = !relation.isGood
+    ? styles.relationBad
+    : relation.rating === 'cát'
+      ? styles.relationGood
+      : styles.relationMid
+  return (
+    <div className={`${styles.relation} ${tone}`}>
+      <RelationFlow relation={relation} />
+      <div className={styles.relationBody}>
+        <p className={styles.relationEyebrow}>Quan hệ Can Chi</p>
+        <p className={styles.relationHeadline}>
+          <span className={styles.relationName}>{relation.dayName}</span>
+          <span className={styles.verdict}>
+            <VerdictIcon size={iconSize(14)} weight="fill" aria-hidden="true" />
+            Ngày {relation.rating}
+          </span>
+        </p>
+        <p className={styles.relationText}>
+          <span className={styles.srOnly}>Quan hệ Can Chi: </span>
+          {relation.text}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 /** Một ô trong lưới bento. `index` dùng để lệch thời gian hiện dần. */
 function Tile({
   index,
@@ -105,7 +170,6 @@ function Tile({
 export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
   const a = useMemo(() => getAlmanac(date), [date])
   const [explain, setExplain] = useState<ExplainItem | null>(null)
-  const RelationIcon = a.relation.isGood ? SealCheck : SealWarning
 
   return (
     // key theo ngày để hiệu ứng hiện dần chạy lại khi đổi ngày.
@@ -135,18 +199,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             </div>
           </dl>
         </div>
-        <div
-          className={`${styles.relation} ${a.relation.isGood ? styles.relationGood : styles.relationBad}`}
-        >
-          <span className={styles.relationBadge}>
-            <RelationIcon size={iconSize(18)} weight="duotone" aria-hidden="true" />
-            <span className={styles.relationName}>{a.relation.dayName}</span>
-          </span>
-          <p className={styles.relationText}>
-            <span className={styles.srOnly}>Quan hệ Can Chi: </span>
-            {a.relation.text}
-          </p>
-        </div>
+        <RelationBanner relation={a.relation} />
       </header>
 
       <div className={styles.bento}>
