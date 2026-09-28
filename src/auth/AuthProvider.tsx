@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { track } from '../analytics'
+import { identifyUser, track } from '../analytics'
 import { isFirebaseConfigured } from '../firebase/config'
 import { AuthContext, type AuthContextValue, type AuthUser } from './authContext'
 
@@ -58,6 +58,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           unsubscribe = service.watchAuth((u) => {
             setUser(u)
             setLoading(false)
+            identifyUser(u?.uid ?? null)
             writeHint(!!u)
           })
         })
