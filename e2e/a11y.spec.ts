@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { chooseTextSize, expect, openCreateForm, test } from './fixtures'
+import { chooseTextSize, expect, NOW, openCreateForm, test } from './fixtures'
 
 const pages = ['/day/2026-09-23', '/week/2026-09-23', '/month/2026-09-23', '/settings', '/events']
 
@@ -34,6 +34,18 @@ for (const scheme of ['light', 'dark'] as const) {
         const result = await new AxeBuilder({ page: app }).withRules(['color-contrast']).analyze()
         expect(result.violations.flatMap((v) => v.nodes.map((n) => n.target.join(' ')))).toEqual([])
       }
+    })
+
+    test('gợi ý vuốt lần đầu', async ({ page }, testInfo) => {
+      test.skip(!testInfo.project.use.hasTouch, 'gợi ý chỉ hiện trên máy cảm ứng')
+      await page.clock.setFixedTime(NOW)
+      await page.addInitScript(() => localStorage.setItem('hana:welcome-seen', '1'))
+      await page.goto('/day/2026-09-23')
+      await expect(page.getByRole('button', { name: 'Đóng gợi ý' })).toBeVisible()
+      const result = await new AxeBuilder({ page })
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+        .analyze()
+      expect(result.violations.map((v) => v.id)).toEqual([])
     })
 
     test('form tạo sự kiện', async ({ app }) => {

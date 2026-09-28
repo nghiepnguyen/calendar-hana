@@ -13,6 +13,7 @@ import { parseSolarDate } from '@shared/lunar'
 import type { SolarDateString } from '@shared/types'
 import { VIEW_LABELS, VIEW_MODES, weekDays, type ViewMode } from '../../calendar/range'
 import { useUiStore } from '../../store/uiStore'
+import { track } from '../../analytics'
 import { useAuth } from '../../auth/authContext'
 import { useIsCompact } from '../../hooks/useMediaQuery'
 import { DatePicker } from '../DatePicker/DatePicker'
@@ -25,6 +26,9 @@ interface AppHeaderProps {
   date: SolarDateString
   weekStartsOn: 0 | 1
   onToday: () => void
+  /** false ở mép khoảng năm hỗ trợ (1900, 2100): khóa nút tương ứng. */
+  canPrev?: boolean
+  canNext?: boolean
   onPrev: () => void
   onNext: () => void
   onViewChange: (view: ViewMode) => void
@@ -73,6 +77,8 @@ export function AppHeader({
   date,
   weekStartsOn,
   onToday,
+  canPrev = true,
+  canNext = true,
   onPrev,
   onNext,
   onViewChange,
@@ -104,7 +110,11 @@ export function AppHeader({
       <button
         type="button"
         className="btn btn-ghost btn-icon"
-        onClick={onPrev}
+        onClick={() => {
+          track('nav_button', { view, direction: 'prev', input: 'button' })
+          onPrev()
+        }}
+        disabled={!canPrev}
         aria-label={PREV_LABEL[view]}
         title={`${PREV_LABEL[view]} (←)`}
       >
@@ -113,7 +123,11 @@ export function AppHeader({
       <button
         type="button"
         className="btn btn-ghost btn-icon"
-        onClick={onNext}
+        onClick={() => {
+          track('nav_button', { view, direction: 'next', input: 'button' })
+          onNext()
+        }}
+        disabled={!canNext}
         aria-label={NEXT_LABEL[view]}
         title={`${NEXT_LABEL[view]} (→)`}
       >

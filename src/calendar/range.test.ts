@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { addMonths, monthGridDays, shiftDate, startOfWeek, viewRange, weekDays } from './range'
+import {
+  addMonths,
+  canShift,
+  monthGridDays,
+  shiftDate,
+  startOfWeek,
+  viewRange,
+  weekDays,
+} from './range'
 
 describe('range', () => {
   it('đầu tuần theo Thứ Hai hoặc Chủ nhật', () => {
@@ -51,5 +59,21 @@ describe('range', () => {
     expect(shiftDate('day', '2026-09-23', 1)).toBe('2026-09-24')
     expect(shiftDate('week', '2026-09-23', -1)).toBe('2026-09-16')
     expect(shiftDate('month', '2026-09-23', 1)).toBe('2026-10-23')
+  })
+})
+
+describe('canShift', () => {
+  it('không đi ra ngoài 1900–2100', () => {
+    expect(canShift('day', '1900-01-01', -1)).toBe(false)
+    expect(canShift('day', '1900-01-01', 1)).toBe(true)
+    expect(canShift('day', '2100-12-31', 1)).toBe(false)
+    expect(canShift('week', '2100-12-28', 1)).toBe(false)
+    expect(canShift('month', '2100-12-15', 1)).toBe(false)
+    expect(canShift('month', '1900-01-15', -1)).toBe(false)
+  })
+
+  it('ngày bình thường thì đi được cả hai phía', () => {
+    expect(canShift('day', '2026-09-28', -1)).toBe(true)
+    expect(canShift('month', '2026-09-28', 1)).toBe(true)
   })
 })

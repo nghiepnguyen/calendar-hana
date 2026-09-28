@@ -7,6 +7,7 @@ import {
   parseSolarDate,
   toSolarDateString,
 } from '@shared/lunar/julian'
+import { MAX_YEAR, MIN_YEAR } from '@shared/lunar/lunar'
 import type { SolarDateString } from '@shared/types'
 
 export type ViewMode = 'day' | 'week' | 'month'
@@ -77,4 +78,20 @@ export function shiftDate(view: ViewMode, date: SolarDateString, delta: -1 | 1):
   if (view === 'day') return addDays(date, delta)
   if (view === 'week') return addDays(date, delta * 7)
   return addMonths(date, delta)
+}
+
+/** Ngày hợp lệ và nằm trong khoảng năm app hỗ trợ (1900–2100). */
+export function isSupportedDate(value: string | undefined): value is SolarDateString {
+  if (!value) return false
+  try {
+    const { year } = parseSolarDate(value)
+    return year >= MIN_YEAR && year <= MAX_YEAR
+  } catch {
+    return false
+  }
+}
+
+/** Trang trước (-1) / sau (+1) còn nằm trong khoảng năm app hỗ trợ không. */
+export function canShift(view: ViewMode, date: SolarDateString, delta: -1 | 1): boolean {
+  return isSupportedDate(shiftDate(view, date, delta))
 }

@@ -42,6 +42,10 @@ export function ShortcutSection() {
         Trên máy tính, có thể dùng bàn phím để điều khiển nhanh. Phím tắt không có tác dụng khi đang
         gõ trong ô nhập.
       </p>
+      <p className="field-hint">
+        Vuốt ngang trên lịch (hoặc vuốt 2 ngón trên trackpad) để sang ngày, tuần hoặc tháng trước
+        hoặc sau.
+      </p>
       {GROUPS.map((group) => (
         <div key={group.title} className={styles.shortcutGroup}>
           <h3>{group.title}</h3>

@@ -1,0 +1,59 @@
+/* Gợi ý vuốt lần đầu: viên thuốc kính nổi trên thanh tab, nằm trong vùng thông báo chung. */
+.hint {
+  display: flex;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+  max-width: 100%;
+  padding: calc(4px * var(--ui-scale)) calc(4px * var(--ui-scale)) calc(4px * var(--ui-scale))
+    calc(14px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--glass-strong);
+  color: var(--text);
+  font-size: calc(14.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  animation: rise 0.2s ease-out;
+}
+
+.hint[data-leaving] {
+  animation: fade 0.2s ease-in forwards;
+}
+
+.hand {
+  flex: 0 0 auto;
+  color: var(--accent);
+  animation: wave 0.9s ease-in-out 0.3s 2;
+}
+
+/* Vùng bấm 44px quanh nút 36px. */
+.close {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.close::before {
+  content: '';
+  position: absolute;
+  inset: calc(-4px * var(--ui-scale));
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}

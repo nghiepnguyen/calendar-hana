@@ -20,7 +20,25 @@
   min-width: 0;
   min-height: 0;
   overflow-y: auto;
+  /* Nội dung trượt ngang khi vuốt không được làm hiện thanh cuộn ngang. */
+  overflow-x: hidden;
+  /* Trình duyệt tự cuộn dọc và phóng to; vuốt ngang để app đổi trang. */
+  touch-action: pan-y pinch-zoom;
+  /* Chrome/Edge: vuốt 2 ngón trên trackpad trong vùng lịch không Back/Forward trang. */
+  overscroll-behavior-x: none;
   border-radius: var(--radius-lg);
+}
+
+/* Phần tử dịch theo ngón tay khi vuốt; bố cục như thể xem nằm thẳng trong .main. */
+.swipeContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.swipeContent[data-swiping] {
+  will-change: transform;
 }
 
 /* Điện thoại: nội dung cuộn tới sát đáy, trượt dưới thanh tab kính. */
@@ -37,7 +55,8 @@
    * Xem không được co nhỏ hơn nội dung: nếu co, phần tràn đè lên khoảng
    * chừa cho thanh tab và bị thanh tab che. Khoảng chừa là phần tử đệm cuối khung cuộn.
    */
-  .main > * {
+  .main > *,
+  .swipeContent > * {
     flex-shrink: 0;
   }
 

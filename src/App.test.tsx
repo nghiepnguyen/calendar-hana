@@ -3,10 +3,16 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest'
 import App from './App'
+import { track } from './analytics'
 import { CalendarDatabase } from './data/db'
 import { LocalRepository } from './data/localRepository'
 import { RepositoryProvider } from './data/RepositoryProvider'
 import { freezeNow } from './test/fixtures'
+
+vi.mock('./analytics', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('./analytics')>()),
+  track: vi.fn(),
+}))
 
 let repo: LocalRepository
 let counter = 0
@@ -52,6 +58,92 @@ describe('App', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Hôm nay' }))
     await userEvent.keyboard('d')
     expect(screen.getByRole('heading', { name: 'Thứ Tư, 23/9/2026' })).toBeInTheDocument()
+  })
+
+  it('ở mép năm 1900 / 2100 thì đứng yên, không nhảy về hôm nay', async () => {
+    renderApp('/day/1900-01-01')
+    expect(await screen.findByRole('heading', { name: 'Thứ Hai, 1/1/1900' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Ngày trước' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Ngày sau' })).toBeEnabled()
+    await userEvent.keyboard('{ArrowLeft}')
+    expect(screen.getByRole('heading', { name: 'Thứ Hai, 1/1/1900' })).toBeInTheDocument()
+
+    await userEvent.click(screen.getByRole('radio', { name: 'Tháng' }))
+    expect(
+      within(screen.getByRole('banner')).getByRole('button', { name: 'Tháng trước' }),
+    ).toBeDisabled()
+  })
+
+  it('xem Tháng 12/2100 không sang được tháng sau', async () => {
+    renderApp('/month/2100-12-15')
+    expect(
+      within(await screen.findByRole('banner')).getByRole('button', { name: 'Tháng sau' }),
+    ).toBeDisabled()
+    expect(
+      within(screen.getByRole('banner')).getByRole('button', { name: 'Tháng trước' }),
+    ).toBeEnabled()
+    await userEvent.keyboard('{ArrowRight}')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Tháng 12/2100')
+  })
+
+  it('đổi ngày thì cuộn về đầu, chỉ đổi chế độ xem thì giữ chỗ', async () => {
+    renderApp('/day/2026-09-23')
+    await screen.findByRole('region', { name: 'Thông tin ngày' })
+    const main = screen.getByRole('main')
+    const scrollTo = vi.fn()
+    main.scrollTo = scrollTo
+
+    await userEvent.click(screen.getByRole('button', { name: 'Ngày sau' }))
+    expect(screen.getByRole('heading', { name: 'Thứ Năm, 24/9/2026' })).toBeInTheDocument()
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'instant' })
+
+    scrollTo.mockClear()
+    await userEvent.click(screen.getByRole('radio', { name: 'Tháng' }))
+    expect(scrollTo).not.toHaveBeenCalled()
+  })
+
+  it('nút ‹ › và phím mũi tên gửi analytics nav_button', async () => {
+    renderApp('/day/2026-09-23')
+    await userEvent.click(await screen.findByRole('button', { name: 'Ngày sau' }))
+    expect(track).toHaveBeenCalledWith('nav_button', {
+      view: 'day',
+      direction: 'next',
+      input: 'button',
+    })
+    await userEvent.keyboard('{ArrowLeft}')
+    expect(track).toHaveBeenCalledWith('nav_button', {
+      view: 'day',
+      direction: 'prev',
+      input: 'keyboard',
+    })
+  })
+
+  it('vuốt trái trên vùng lịch sang ngày sau', async () => {
+    renderApp('/day/2026-09-23')
+    await screen.findByRole('region', { name: 'Thông tin ngày' })
+    const main = screen.getByRole('main')
+    let time = 0
+    const send = (type: string, x: number) => {
+      const event = new PointerEvent(type, {
+        bubbles: true,
+        clientX: x,
+        clientY: 300,
+        pointerId: 1,
+        pointerType: 'touch',
+        isPrimary: true,
+      })
+      Object.defineProperty(event, 'timeStamp', { value: (time += 16) })
+      main.dispatchEvent(event)
+    }
+    send('pointerdown', 700)
+    for (const x of [650, 600, 550, 500, 450]) send('pointermove', x)
+    send('pointerup', 450)
+    expect(await screen.findByRole('heading', { name: 'Thứ Năm, 24/9/2026' })).toBeInTheDocument()
+    expect(track).toHaveBeenCalledWith('swipe_navigate', {
+      view: 'day',
+      direction: 'next',
+      input: 'touch',
+    })
   })
 
   it('trang Ngày có title và canonical riêng, trang chủ giữ canonical "/"', async () => {
