@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { DomainMove } from './components/DomainMove/DomainMove'
 import { TextSizeController } from './components/TextSizeController'
@@ -9,8 +10,12 @@ import { CalendarPage } from './pages/CalendarPage'
 import { EventListPage } from './pages/EventList/EventListPage'
 import { SettingsPage } from './pages/Settings/SettingsPage'
 import { ReminderService } from './reminders/ReminderService'
+import { hideSplash } from './splash'
 
 function App() {
+  // App chỉ vẽ khi RepositoryProvider đã sẵn sàng (xong đăng nhập, tải dữ liệu) nên gỡ splash ở đây.
+  useEffect(hideSplash, [])
+
   return (
     <ToastRegionProvider>
       <ThemeController />

@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react'
+import { hideSplash } from '../../splash'
 import styles from './ErrorBoundary.module.css'
 
 interface ErrorBoundaryProps {
@@ -22,6 +23,8 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.error('Lỗi giao diện:', error, info.componentStack)
+    // Lỗi trước khi app kịp vẽ thì splash còn che thông báo lỗi.
+    hideSplash()
   }
 
   render() {
