@@ -17,7 +17,8 @@ precacheAndRoute(self.__WB_MANIFEST)
 // không thì app nhận đường dẫn lạ và chuyển về trang chủ.
 registerRoute(
   new NavigationRoute(createHandlerBoundToURL('/index.html'), {
-    denylist: [/^\/__\//, /\/[^/]+\.[a-z0-9]+$/i],
+    // privacy/terms là HTML công khai; không thay bằng giao diện lịch.
+    denylist: [/^\/__\//, /\/[^/]+\.[a-z0-9]+$/i, /^\/(privacy|terms)\/?$/],
   }),
 )
 

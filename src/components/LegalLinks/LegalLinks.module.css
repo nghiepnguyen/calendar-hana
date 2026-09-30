@@ -1,0 +1,23 @@
+.legal {
+  flex-shrink: 0;
+  padding: calc(16px * var(--ui-scale)) calc(8px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.6;
+}
+
+.legal p {
+  margin: 0 0 calc(6px * var(--ui-scale));
+}
+.legal nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 calc(20px * var(--ui-scale));
+}
+.legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent-text);
+  text-underline-offset: 3px;
+}

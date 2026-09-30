@@ -1,5 +1,19 @@
 .page {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.footer {
+  width: 100%;
+  max-width: calc(960px * var(--ui-scale));
+  margin: auto auto 0;
+  padding: 0 calc(12px * var(--ui-scale)) calc(24px * var(--ui-scale));
+}
+
+.footer nav {
+  justify-content: center;
 }
 
 .birthInfo {
@@ -53,6 +67,7 @@
 }
 
 .header {
+  width: 100%;
   position: sticky;
   top: calc(10px * var(--ui-scale));
   z-index: 10;
@@ -86,6 +101,7 @@
 }
 
 .layout {
+  width: 100%;
   display: grid;
   grid-template-columns: calc(208px * var(--ui-scale)) minmax(0, 1fr);
   align-items: start;

@@ -178,6 +178,26 @@ Khi đổi tên miền, cập nhật thêm:
 
 `npm run build` tạo sẵn `dist/day/YYYY-MM-DD.html` cho mọi ngày từ đầu năm trước tới cuối năm sau (`scripts/prerenderDays.ts`), mỗi trang có title, description, canonical, Open Graph, JSON-LD và nội dung lịch vạn niên dạng HTML tĩnh, và ghi `dist/sitemap.xml` liệt kê các trang này. Firebase Hosting (`cleanUrls`) phục vụ `/day/2026-09-25` từ file tương ứng; ngày ngoài khoảng vẫn mở được qua rewrite, app tự cập nhật `<head>` (`src/hooks/usePageHead.ts`). Xem Tuần và Tháng có `noindex, follow`. Service worker không precache các trang này. Khoảng ngày trượt theo năm build, nên cần deploy lại ít nhất mỗi năm.
 
+## Các trang chính sách cho Google OAuth
+
+Hai trang HTML công khai (không cần JavaScript hay đăng nhập):
+
+- Privacy policy: `https://lich.thanhnghiep.top/privacy`
+- Terms of service: `https://lich.thanhnghiep.top/terms`
+
+Nội dung ở `public/privacy.html` và `public/terms.html`, CSS chung ở `public/legal.css`.
+Tên app là **Lịch Việt**, email liên hệ **thanhnghiep.top@gmail.com**. Trang chủ và footer
+cuối trang Cài đặt (ngoài các tab) có liên kết; sitemap có hai URL; service worker cache các trang cho offline.
+Firebase Hosting với `cleanUrls: true` phục vụ chúng từ file HTML tương ứng.
+Vite dev dùng `scripts/publicLegalPages.ts` để ánh xạ `/privacy` và `/terms` sang HTML công khai,
+giữ nguyên URL trên trình duyệt. Kiểm tra riêng dev bằng
+`npx playwright test --config playwright.dev.config.ts --project=desktop --project=mobile`.
+
+Sau khi deploy, điền các URL trên vào Google Auth Platform > Branding (cùng trang chủ
+`https://lich.thanhnghiep.top/`), xác minh tên miền `thanhnghiep.top`, khai báo scope
+`user.birthday.read` trong Data Access và thực hiện quy trình xác minh Google yêu cầu.
+Việc có hai trang không tự bật People API hoặc tự hoàn tất xét duyệt OAuth.
+
 ## Thông tin ngày sinh
 
 Cài đặt > Tài khoản có ngày, tháng, năm sinh theo dương lịch và giờ sinh 24 giờ (tùy chọn).

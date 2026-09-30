@@ -91,7 +91,12 @@ function renderPage(template: string, seo: DaySeoModule, date: string): string {
 }
 
 function sitemap(siteUrl: string, dates: string[]): string {
-  const urls = [`${siteUrl}/`, ...dates.map((d) => `${siteUrl}/day/${d}`)]
+  const urls = [
+    `${siteUrl}/`,
+    `${siteUrl}/privacy`,
+    `${siteUrl}/terms`,
+    ...dates.map((d) => `${siteUrl}/day/${d}`),
+  ]
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

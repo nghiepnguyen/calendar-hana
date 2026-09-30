@@ -24,6 +24,7 @@
     "scripts/prerenderDays.ts",
     "vitest.config.ts",
     "playwright.config.ts",
+    "playwright.dev.config.ts",
     "vitest.emulator.config.ts"
   ]
 }

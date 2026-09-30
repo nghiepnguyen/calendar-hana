@@ -23,6 +23,7 @@ import { InstallSection } from './InstallSection'
 import { NotificationSection } from './NotificationSection'
 import { ShortcutSection } from './ShortcutSection'
 import { TextSizeSection } from './TextSizeSection'
+import { LegalLinks } from '../../components/LegalLinks/LegalLinks'
 import { Toggle } from './Toggle'
 import { iconSize } from '../../styles/textSize'
 import styles from './SettingsPage.module.css'
@@ -312,6 +313,9 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
           </main>
         </div>
       )}
+      <footer className={styles.footer}>
+        <LegalLinks />
+      </footer>
     </div>
   )
 }

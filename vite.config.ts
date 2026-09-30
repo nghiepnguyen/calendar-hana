@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { prerenderDays } from './scripts/prerenderDays.ts'
+import { publicLegalPages } from './scripts/publicLegalPages.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    publicLegalPages(),
     react(),
     VitePWA({
       // Tự viết service worker (src/sw.ts) để xử lý Web Push và bấm thông báo.

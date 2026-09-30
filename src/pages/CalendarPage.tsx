@@ -6,6 +6,7 @@ import { track } from '../analytics'
 import { useAuth } from '../auth/authContext'
 import { viewRange } from '../calendar/range'
 import { CreateFab } from '../components/CreateFab/CreateFab'
+import { LegalLinks } from '../components/LegalLinks/LegalLinks'
 import { EventDialogs } from '../components/EventDialogs'
 import { AppHeader } from '../components/layout/AppHeader'
 import { SearchPanel } from '../components/SearchPanel/SearchPanel'
@@ -35,6 +36,7 @@ const FALLBACK_SETTINGS = createDefaultSettings('')
 const VIEWS = { day: DayView, week: WeekView, month: MonthView }
 
 export function CalendarPage() {
+  const { pathname } = useLocation()
   const route = useCalendarRoute()
   const { view, date } = route
   const settings = useSettings() ?? FALLBACK_SETTINGS
@@ -47,7 +49,7 @@ export function CalendarPage() {
   const searchOpen = useUiStore((s) => s.searchOpen)
   const compact = useIsCompact()
   const navigate = useNavigate()
-  useCalendarHead(view, date, useLocation().pathname === '/')
+  useCalendarHead(view, date, pathname === '/')
 
   const range = useMemo(
     () => viewRange(view, date, settings.weekStartsOn),
@@ -145,6 +147,7 @@ export function CalendarPage() {
           <div ref={contentRef} className={styles.swipeContent}>
             <View {...viewProps} />
           </div>
+          {pathname === '/' ? <LegalLinks introduction /> : null}
         </main>
       </div>
       {compact ? (
