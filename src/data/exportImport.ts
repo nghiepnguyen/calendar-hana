@@ -1,6 +1,7 @@
 import type { CalendarEvent, Category, Settings, SolarDateString } from '@shared/types'
 import { todayInVietnam } from '@shared/time'
 import { isValidEvent } from '@shared/validation'
+import { isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
 import { OTHER_CATEGORY_ID } from './defaultCategories'
 import type { InteropContext } from './interop/common'
 import { exportGoogleCsv, parseGoogleCsv } from './interop/googleCsv'
@@ -94,6 +95,8 @@ function isEvent(value: unknown): value is CalendarEvent {
 export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedAt'>> {
   if (!isObject(raw)) return {}
   const result: Partial<Omit<Settings, 'updatedAt'>> = {}
+  if (raw.birthDate === null || isValidBirthDate(raw.birthDate)) result.birthDate = raw.birthDate
+  if (raw.birthTime === null || isValidBirthTime(raw.birthTime)) result.birthTime = raw.birthTime
   if (raw.weekStartsOn === 0 || raw.weekStartsOn === 1) result.weekStartsOn = raw.weekStartsOn
   if (typeof raw.showHolidays === 'boolean') result.showHolidays = raw.showHolidays
   if (typeof raw.showAuspicious === 'boolean') result.showAuspicious = raw.showAuspicious

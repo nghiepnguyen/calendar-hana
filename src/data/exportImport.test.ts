@@ -39,6 +39,17 @@ const gio: EventInput = {
 }
 
 describe('parseImport', () => {
+  it('giữ ngày sinh và giờ sinh hợp lệ trong bản sao lưu, bỏ dữ liệu sai', () => {
+    expect(sanitizeSettings({ birthDate: '2000-02-29', birthTime: '00:00' })).toEqual({
+      birthDate: '2000-02-29',
+      birthTime: '00:00',
+    })
+    expect(sanitizeSettings({ birthDate: null, birthTime: null })).toEqual({
+      birthDate: null,
+      birthTime: null,
+    })
+    expect(sanitizeSettings({ birthDate: '2001-02-29', birthTime: '25:00' })).toEqual({})
+  })
   it('từ chối file không phải JSON hoặc không phải của app', () => {
     expect(() => parseImport('không phải json')).toThrow(ImportFormatError)
     expect(() => parseImport('{"app":"khac","version":1}')).toThrow(ImportFormatError)

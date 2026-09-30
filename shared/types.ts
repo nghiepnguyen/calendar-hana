@@ -88,6 +88,10 @@ export type ThemePreference = 'light' | 'dark' | 'system'
 export type TextSize = 'default' | 'large' | 'xlarge'
 
 export interface Settings {
+  /** Ngày sinh dương lịch. null = đã xóa; undefined = chưa nhập ở bản cũ. */
+  birthDate?: SolarDateString | null
+  /** Giờ sinh 24 giờ, tùy chọn, không tự suy ra từ Google. */
+  birthTime?: TimeString | null
   /** 1 = Thứ Hai, 0 = Chủ nhật. */
   weekStartsOn: 0 | 1
   showHolidays: boolean

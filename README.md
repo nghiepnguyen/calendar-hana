@@ -178,6 +178,28 @@ Khi đổi tên miền, cập nhật thêm:
 
 `npm run build` tạo sẵn `dist/day/YYYY-MM-DD.html` cho mọi ngày từ đầu năm trước tới cuối năm sau (`scripts/prerenderDays.ts`), mỗi trang có title, description, canonical, Open Graph, JSON-LD và nội dung lịch vạn niên dạng HTML tĩnh, và ghi `dist/sitemap.xml` liệt kê các trang này. Firebase Hosting (`cleanUrls`) phục vụ `/day/2026-09-25` từ file tương ứng; ngày ngoài khoảng vẫn mở được qua rewrite, app tự cập nhật `<head>` (`src/hooks/usePageHead.ts`). Xem Tuần và Tháng có `noindex, follow`. Service worker không precache các trang này. Khoảng ngày trượt theo năm build, nên cần deploy lại ít nhất mỗi năm.
 
+## Thông tin ngày sinh
+
+Cài đặt > Tài khoản có ngày, tháng, năm sinh theo dương lịch và giờ sinh 24 giờ (tùy chọn).
+Nhập tay và bấm **Lưu thông tin** để lưu trên máy hoặc đồng bộ vào tài khoản đang đăng nhập.
+**Xóa thông tin ngày sinh** làm trống form; bấm lưu để xác nhận xóa. Thông tin này đi cùng
+bản sao lưu JSON, không gửi vào analytics. Khi chuyển dữ liệu local lên cloud, ngày sinh local
+chỉ được điền nếu tài khoản chưa từng lưu ngày sinh.
+
+Sau khi đăng nhập, **Lấy ngày sinh từ Google** xin thêm quyền
+`https://www.googleapis.com/auth/user.birthday.read`, đọc Google People API và điền vào form.
+Người dùng kiểm tra rồi bấm lưu; năm sinh Google không cung cấp thì cần nhập bổ sung.
+Giờ sinh luôn nhập tay. OAuth access token chỉ dùng cho yêu cầu API, không được lưu.
+
+Để bật lấy từ Google trên production, bật **People API** trong Google Cloud Console của
+project Firebase và cấu hình scope ngày sinh trong Google Auth Platform > Data Access.
+Thực hiện xác minh OAuth theo yêu cầu Google trước khi mở quyền này cho mọi người.
+Nếu API chưa bật, người dùng từ chối quyền hoặc trình duyệt/PWA chặn popup, app báo lỗi
+và vẫn cho phép nhập thủ công. Luồng này dùng popup để xin quyền cho đúng tài khoản hiện tại.
+
+Xem [Google People API](https://developers.google.com/people/api/rest/v1/people/get)
+và [Firebase Google Auth](https://firebase.google.com/docs/auth/web/google-signin).
+
 ## Nhắc hẹn hoạt động thế nào
 
 - **Chưa đăng nhập:** app tự hẹn giờ các nhắc hẹn trong 24 giờ tới và hiện thông báo khi app đang mở (`src/reminders/localScheduler.ts`).

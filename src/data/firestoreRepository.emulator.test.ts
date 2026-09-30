@@ -48,6 +48,35 @@ function newLocal() {
 }
 
 describe('FirestoreRepository', () => {
+  it('lưu và đọc lại ngày sinh và giờ sinh trên cloud', async () => {
+    const { repo, db } = cloudFor('birthday-user')
+    await repo.ensureInitialized({ email: 'a@x.vn', displayName: 'An' })
+    await repo.saveSettings({ birthDate: '2000-02-29', birthTime: '23:45' })
+    await waitForPendingWrites(db)
+    expect(await repo.getSettings()).toMatchObject({ birthDate: '2000-02-29', birthTime: '23:45' })
+    await repo.saveSettings({ birthDate: null, birthTime: null })
+    await waitForPendingWrites(db)
+    expect(await repo.getSettings()).toMatchObject({ birthDate: null, birthTime: null })
+  })
+
+  it('chuyển thông tin ngày sinh local vào tài khoản đã có cài đặt mặc định', async () => {
+    const local = newLocal()
+    try {
+      await local.saveSettings({ birthDate: '1995-05-15', birthTime: '07:30' })
+      const { repo: cloud, db } = cloudFor('birthday-migration')
+      await cloud.ensureInitialized({ email: 'a@x.vn', displayName: 'An' })
+      await cloud.saveSettings({ theme: 'dark' })
+      await waitForPendingWrites(db)
+      await migrateLocalToCloud(local, cloud)
+      expect(await cloud.getSettings()).toMatchObject({
+        birthDate: '1995-05-15',
+        birthTime: '07:30',
+        theme: 'dark',
+      })
+    } finally {
+      await local.db.delete()
+    }
+  })
   it('khởi tạo danh mục và cài đặt mặc định ở lần đầu', async () => {
     const { repo, db, onError } = cloudFor('alice')
     expect(await repo.ensureInitialized({ email: 'a@x.vn', displayName: 'Alice' })).toBe(true)
@@ -130,6 +159,35 @@ describe('FirestoreRepository', () => {
 })
 
 describe('migrateLocalToCloud', () => {
+  it('giữ ngày sinh đã lưu hoặc đã xóa trên cloud khi chuyển dữ liệu local', async () => {
+    for (const birthDate of ['1990-01-01', null]) {
+      const local = newLocal()
+      try {
+        await local.saveSettings({ birthDate: '1995-05-15', birthTime: '07:30' })
+        const { repo: cloud, db } = cloudFor(`existing-birthday-${birthDate ?? 'cleared'}`)
+        await cloud.ensureInitialized({ email: null, displayName: null })
+        await cloud.saveSettings({ birthDate, birthTime: null })
+        await waitForPendingWrites(db)
+        await migrateLocalToCloud(local, cloud)
+        expect(await cloud.getSettings()).toMatchObject({ birthDate, birthTime: null })
+      } finally {
+        await local.db.delete()
+      }
+    }
+  })
+
+  it('chuyển ngày sinh không có giờ khi tài khoản chưa có cài đặt', async () => {
+    const local = newLocal()
+    try {
+      await local.saveSettings({ birthDate: '1995-05-15' })
+      const { repo: cloud } = cloudFor('new-birthday-user')
+      await migrateLocalToCloud(local, cloud)
+      expect(await cloud.getSettings()).toMatchObject({ birthDate: '1995-05-15', birthTime: null })
+    } finally {
+      await local.db.delete()
+    }
+  })
+
   it('chuyển sự kiện và danh mục lên cloud, rồi xóa local', async () => {
     const local = newLocal()
     const { repo: cloud, db } = cloudFor('alice')

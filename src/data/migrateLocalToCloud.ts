@@ -7,6 +7,7 @@ import {
   type DocumentReference,
 } from 'firebase/firestore'
 import type { Category } from '@shared/types'
+import { isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
 import { toFirestoreData, type FirestoreRepository } from './firestoreRepository'
 import type { LocalRepository } from './localRepository'
 
@@ -61,8 +62,19 @@ export async function migrateLocalToCloud(
     ...categoriesToWrite.map((c): [DocumentReference, object] => [doc(categoriesCol, c.id), c]),
   ]
   // Cài đặt local chỉ dùng khi tài khoản chưa có cài đặt.
-  if (!userSnap.data()?.settings) {
-    writes.push([cloud.userDoc, { settings: localSettings }])
+  const cloudSettings = userSnap.data()?.settings
+  const birthInfo =
+    isValidBirthDate(localSettings.birthDate) && cloudSettings?.birthDate === undefined
+      ? {
+          birthDate: localSettings.birthDate,
+          birthTime: isValidBirthTime(localSettings.birthTime) ? localSettings.birthTime : null,
+        }
+      : null
+  if (!cloudSettings) {
+    writes.push([cloud.userDoc, { settings: { ...localSettings, ...birthInfo } }])
+  } else if (birthInfo) {
+    // Không ghi đè ngày sinh đã nhập/xóa trên tài khoản hay các cài đặt khác.
+    writes.push([cloud.userDoc, { settings: birthInfo }])
   }
 
   for (let i = 0; i < writes.length; i += BATCH_LIMIT) {
@@ -81,6 +93,16 @@ export async function migrateLocalToCloud(
     throw new MigrationError(
       `Còn ${missing.length} sự kiện chưa lên được tài khoản. Dữ liệu trên máy vẫn được giữ.`,
     )
+  }
+
+  if (birthInfo) {
+    const serverUser = await getDocFromServer(cloud.userDoc)
+    const saved = serverUser.data()?.settings
+    if (saved?.birthDate !== birthInfo.birthDate || saved?.birthTime !== birthInfo.birthTime) {
+      throw new MigrationError(
+        'Chưa chuyển được thông tin ngày sinh. Dữ liệu trên máy vẫn được giữ.',
+      )
+    }
   }
 
   await local.clearAll()

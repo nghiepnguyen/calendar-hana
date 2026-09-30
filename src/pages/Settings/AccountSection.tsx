@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { authErrorMessage, useAuth } from '../../auth/authContext'
 import { Modal } from '../../components/Modal/Modal'
+import { useSettings } from '../../hooks/useRepositoryData'
+import { BirthInfoForm } from './BirthInfoForm'
 import styles from './SettingsPage.module.css'
 
 const CONFIRM_WORD = 'XÓA'
@@ -62,17 +64,10 @@ function DeleteAccountDialog({ onClose }: { onClose: () => void }) {
 
 export function AccountSection() {
   const { available, user, signIn, signOut } = useAuth()
+  const settings = useSettings()
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [deleting, setDeleting] = useState(false)
-
-  if (!available) {
-    return (
-      <p className="field-hint">
-        Chưa cấu hình Firebase nên chỉ lưu dữ liệu trên máy. Xem README để bật đăng nhập Google.
-      </p>
-    )
-  }
 
   const run = async (action: () => Promise<void>) => {
     setBusy(true)
@@ -119,7 +114,7 @@ export function AccountSection() {
             </button>
           </div>
         </>
-      ) : (
+      ) : available ? (
         <>
           <p className="field-hint" style={{ marginTop: 0 }}>
             Đang lưu dữ liệu trên máy này. Đăng nhập Google để lưu lên cloud, dùng trên nhiều thiết
@@ -134,7 +129,12 @@ export function AccountSection() {
             Đăng nhập bằng Google
           </button>
         </>
+      ) : (
+        <p className="field-hint">Đang lưu dữ liệu trên máy này.</p>
       )}
+      {settings ? (
+        <BirthInfoForm key={user?.uid ?? 'local'} settings={settings} signedIn={!!user} />
+      ) : null}
       {error ? (
         <p className="field-error" role="alert">
           {error}

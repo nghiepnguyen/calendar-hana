@@ -87,8 +87,9 @@ export function MigrationDialog({ local, cloud, onDone, onSkip }: MigrationDialo
         Máy này đang có {eventCount ?? '…'} sự kiện được tạo khi chưa đăng nhập.
       </p>
       <p>
-        <strong>Chuyển dữ liệu</strong>: đưa các sự kiện và danh mục lên tài khoản Google, xóa bản
-        trên máy sau khi chuyển xong.
+        <strong>Chuyển dữ liệu</strong>: đưa các sự kiện, danh mục và thông tin ngày sinh lên tài
+        khoản Google, xóa bản trên máy sau khi chuyển xong. Ngày sinh đã có trên tài khoản được giữ
+        nguyên.
       </p>
       <p style={{ marginBottom: 0 }}>
         <strong>Bỏ qua</strong>: giữ riêng dữ liệu trên máy. Bạn sẽ thấy lại chúng khi đăng xuất.
