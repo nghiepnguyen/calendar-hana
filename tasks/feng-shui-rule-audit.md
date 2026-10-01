@@ -10,7 +10,7 @@ Hoàn tất rà soát: **01/10/2026** (bắt đầu đối chiếu 30/09/2026). 
 
 Trạng thái kiểm chứng tách khỏi trạng thái áp dụng: `applies/notApplicable/insufficientData/unsupported`. “Không áp dụng”, “chưa đủ dữ liệu”, “chưa hỗ trợ” không phải “không phạm”. `verified` chỉ cho phép chọn quy tắc; kết quả ứng dụng còn phụ thuộc input, module tính toán và bộ nhóm bắt buộc của tính năng.
 
-Snapshot kết thúc task 1 có **26 mục: 10 verified, 15 pending, 1 rejected**. Registry sau task 3 có **27 mục: 14 verified, 12 pending, 1 rejected**, chi tiết ở mục 8. Mục pending bao gồm engine thời gian và luận Bát Tự chưa có, không chỉ bảng tra. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
+Snapshot kết thúc task 1 có **26 mục: 10 verified, 15 pending, 1 rejected**. Registry sau task 3 có **27 mục: 14 verified, 12 pending, 1 rejected**; sau task 5 có **15 verified, 11 pending, 1 rejected**, chi tiết ở mục 8–9. Mục pending bao gồm engine thời gian và luận Bát Tự chưa có, không chỉ bảng tra. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
 
 ## 2. Tài liệu và nguồn đã đối chiếu
 
@@ -51,7 +51,7 @@ Metadata đầy đủ cho **từng ID** nằm trong registry: `version`, `scope`
 | `personal.summary-policy` | verified | Quy tắc sản phẩm đã mô tả rõ trong PRD 4.6. | Chỉ input cá nhân ngày; engine/fixture MVP vẫn chưa được triển khai. |
 | `personal.hour-policy` | verified | PRD 4.7 và giờ chung hiện có. | Mốc 00h của app; không bị thay thế bởi policy Bát Tự. |
 | `personal.attachment-can-xung` | rejected | MAP attachment gọi cả Giáp–Mậu là xung; nguồn phân biệt mục khắc và xung. | Loại MAP gộp; giữ Can khắc có hướng trong MVP. |
-| `personal.can-xung` | pending | Có nguồn phân biệt Can xung riêng. | Task 5 phải chốt trường phái, bảng và ưu tiên khi trùng Can hợp/khắc, cùng fixture trước bật. |
+| `personal.can-xung` | verified tại task 5 | `選擇紀要` tách Can xung khỏi Can khắc; PRD P2 chọn bốn cặp được nêu rõ. | Chỉ thêm lý do, không đổi summary MVP; Mậu/Kỷ không có cặp trong policy v1. |
 | `personal.thai-tue` | pending | Attachment chỉ so Chi ngày == Chi tuổi; nguồn quyển 3 không xác nhận phép rút gọn này. | Cần nguồn cho mốc năm/tháng/ngày và cách áp dụng cá nhân. Giữ nhãn Cùng Chi ở MVP. |
 | `personal.tue-pha` | pending | Lục xung là quan hệ riêng đã xác nhận; tên Tuế Phá có ngữ cảnh riêng. | Cần xác định cặp operand/mốc và nguồn; chưa đổi tên Xung tuổi thành Tuế Phá. |
 | `personal.tam-sat` | pending | Nguồn quyển 34 có phương vị và việc xây sửa. | Cần bằng chứng phép tuổi→ngày, direction nếu cần và mục đích; không triển khai MAP như universal day warning. |
@@ -163,3 +163,22 @@ Các quy tắc khác giữ version/status P0. Tổng hiện tại: **27 mục, 1
 `assessAnnualFengShui` không giữ state/cache. Mỗi hạn phải có đủ nominal-age, application-policy và chính rule trong scope annual. Pending/rejected/missing/sai scope trả unsupported, không value hoặc hit giả; thiếu ngày/đối tượng và mục đích bị loại giữ trạng thái riêng. Missing rule có version/verificationStatus null. Tuổi/năm không được dẫn xuất khi nominal-age chưa sẵn sàng; metadata nguồn là snapshot, không chia sẻ mảng với cấu hình caller.
 
 Nghiệm thu: **360 test annual + 17 test registry đạt**; toàn dự án **879 test / 75 file** đạt; typecheck/lint/format/build đạt. Test bao phủ fixture đầy đủ, tất cả 54 tổ hợp purpose/role và 4 kiểu lỗi readiness cho cả 5 nhóm annual. Không thay lịch chung, UI, dữ liệu lưu trữ hoặc dependency. npm audit bị lỗi DNS tới registry; không kết luận dependency đã sạch lỗ hổng. Chi tiết command/cảnh báo và giới hạn nghiệm thu ở PRD mục 10. Task 4 chưa triển khai.
+
+## 9. Bổ sung task 5 — quan hệ cá nhân mở rộng P2 (01/10/2026)
+
+`personal.can-xung@1.0.0` chuyển từ pending sang verified trong phạm vi PRD
+`prd-personal-feng-shui-stars.md`. Nguồn `selection` nêu riêng bốn cặp Giáp–Canh, Ất–Tân,
+Bính–Nhâm, Đinh–Quý và có chú giải một cách đọc Mậu/Kỷ không xung. Policy v1 dùng đúng bốn cặp
+đối xứng, không lấy sáu cặp Can khắc bổ sung từ attachment và không thực hiện hóa hợp.
+
+Can xung chỉ là evidence bổ sung (`affectsDaySummary:false`). Bốn cặp đã nằm trong quan hệ ngũ
+hành khắc của MVP, nên không đổi `personal.stem-relations`, `personal.summary-policy`, summary ngày
+hoặc lọc giờ. `personal.attachment-can-xung` tiếp tục rejected.
+
+Các rule `personal.thai-tue`, `personal.tue-pha`, `personal.tam-sat`, `personal.sat-chu` giữ
+pending. Cùng Chi/lục xung vẫn dùng nhãn MVP, không đổi thành Thái Tuế/Tuế Phá. Tam Sát chưa được
+chuyển từ hướng/xây sửa thành tuổi→ngày. Sát Chủ/Thụ Tử trong dữ liệu hiện có vẫn là sao chung;
+`common.sat-chu-duong` tiếp tục pending và không ghi đè bảng Sát Chủ.
+
+Registry hiện có **27 mục: 15 verified / 11 pending / 1 rejected**. Nghiệm thu và giới hạn ở
+`tasks/validation-personal-feng-shui-task-5.md`.

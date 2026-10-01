@@ -20,6 +20,7 @@ const SOURCE_LABELS: Record<string, readonly [string, string]> = {
     'Trích đoạn Khởi sự',
     'II.1.a, trang in 2 / PDF 3; không ghi tác giả hoặc ấn bản. Chỉ sử dụng bảng Chi Tam Tai',
   ],
+  personalStarsSpec: ['Quy ước quan hệ cá nhân mở rộng', 'Phiên bản 1.0.0, mục 2–7'],
 }
 const RULE_LABELS: Record<string, string> = {
   'personal.branch-relations': 'Quan hệ Địa chi',
@@ -28,6 +29,7 @@ const RULE_LABELS: Record<string, string> = {
   'personal.birth-year-boundary': 'Mốc năm sinh',
   'personal.summary-policy': 'Tổng hợp ngày',
   'personal.hour-policy': 'Chọn giờ cá nhân',
+  'personal.can-xung': 'Thiên can xung',
   'annual.nominal-age': 'Tuổi mụ',
   'annual.application-policy': 'Mục đích và vai trò',
   'annual.kim-lau': 'Kim Lâu',

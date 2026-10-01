@@ -81,6 +81,9 @@ for (const size of ['Mặc định', 'Lớn', 'Rất lớn'] as TextSizeLabel[])
       await panel.getByText('Cách tính hạn năm và nguồn', { exact: true }).focus()
       await app.keyboard.press('Enter')
       await expect(panel.getByText(/Tuổi mụ = năm âm đang xem/)).toBeVisible()
+      await panel.getByText('Phạm vi và nguồn quan hệ mở rộng', { exact: true }).focus()
+      await app.keyboard.press('Enter')
+      await expect(panel.getByText(/Thụ Tử và Sát Chủ vẫn là sao chung/)).toBeVisible()
       expect(await app.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       )

@@ -96,3 +96,16 @@ it('refreshes year at Tet and birth profile independently of the hour or day sum
   rerender(<DayView {...props('1990-07-01')} date="2026-02-17" />)
   expect(screen.getByText(/Năm âm lịch đang xem: 2026 · Tuổi mụ: 37/)).toBeInTheDocument()
 })
+
+it('shows reviewed stem clash separately and does not duplicate common stars', () => {
+  const p = props('1993-07-01')
+  render(<DayView {...p} date="2026-09-20" />)
+  const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
+  const extended = within(panel).getByRole('region', { name: 'Quan hệ cá nhân mở rộng' })
+  expect(within(extended).getByText('Thiên can xung')).toBeInTheDocument()
+  expect(within(extended).getByText(/Can ngày Đinh xung với Can tuổi Quý/)).toBeInTheDocument()
+  expect(within(extended).getByText(/không làm đổi kết luận ngày/)).toBeInTheDocument()
+  expect(within(panel).getByTestId('personal-day-summary')).toHaveTextContent('Có yếu tố cần lưu ý')
+  expect(within(extended).getByText(/Thụ Tử và Sát Chủ vẫn là sao chung/)).toBeInTheDocument()
+  expect(within(extended).queryByText('Thái Tuế')).not.toBeInTheDocument()
+})

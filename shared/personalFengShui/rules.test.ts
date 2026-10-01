@@ -57,6 +57,33 @@ describe('rule registry', () => {
     )
   })
 
+  it('opens only the reviewed P2 stem-clash rule and keeps the other personal proposals blocked', () => {
+    const registry = rulesModule.createRuleRegistry(rulesModule.FENG_SHUI_RULES)
+    const ready = registry.getReadiness('personalDay', ['personal.can-xung'])
+    expect(ready.status).toBe('ready')
+    expect(ready.rules[0]).toMatchObject({
+      id: 'personal.can-xung',
+      version: '1.0.0',
+      verificationStatus: 'verified',
+      sourceIds: expect.arrayContaining(['selection', 'personalStarsSpec']),
+    })
+    const blocked = registry.getReadiness('personalDay', [
+      'personal.thai-tue',
+      'personal.tue-pha',
+      'personal.tam-sat',
+      'personal.sat-chu',
+    ])
+    expect(blocked.status).toBe('blocked')
+    if (blocked.status === 'blocked') {
+      expect(blocked.unavailable).toEqual([
+        { id: 'personal.thai-tue', reason: 'pending' },
+        { id: 'personal.tue-pha', reason: 'pending' },
+        { id: 'personal.tam-sat', reason: 'pending' },
+        { id: 'personal.sat-chu', reason: 'pending' },
+      ])
+    }
+  })
+
   it('allows only the requested verified rules in the selected scope', async () => {
     const { createRuleRegistry, FENG_SHUI_RULES } = await loadRules()
     const result = createRuleRegistry(FENG_SHUI_RULES).getReadiness('personalDay', [

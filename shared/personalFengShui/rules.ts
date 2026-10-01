@@ -12,6 +12,10 @@ export interface RuleSource {
 
 export const RULE_SOURCES: Readonly<Record<string, RuleSource>> = Object.freeze({
   mvp: Object.freeze({ reference: 'tasks/prd-personal-feng-shui.md', locator: '4.2–4.7, 7.2' }),
+  personalStarsSpec: Object.freeze({
+    reference: 'tasks/prd-personal-feng-shui-stars.md',
+    locator: 'v1.0.0: sections 2–7; tasks/fixtures/personal-feng-shui-stars.v1.json',
+  }),
   attachmentCan: Object.freeze({
     reference: '1. canchi.ts',
     locator: 'CAN_XUNG_MAP, LUC_XUNG_MAP, TAM_SAT_MAP, THU_TU_MAP, SAT_CHU_DUONG_MAP',
@@ -217,14 +221,14 @@ export const FENG_SHUI_RULES: readonly RuleDefinition[] = Object.freeze([
   definition(
     'personal.can-xung',
     'personalDay',
-    'pending',
-    ['selection', 'attachmentCan'],
+    'verified',
+    ['selection', 'personalStarsSpec'],
     ['dayCan', 'birthYearCan'],
-    'Pending scope and priority policy',
-    'Day-year comparison proposed',
+    'Civil day at 00:00 Vietnam; birth year at lunar New Year',
+    'Vietnamese lunar birth year; civil viewed date',
     ['general'],
     ['self'],
-    'Separate clash reference found; P2 school choice and interaction with MVP combine/overcome still need specification.',
+    'Four explicit pairs only: Giáp–Canh, Ất–Tân, Bính–Nhâm, Đinh–Quý; Mậu/Kỷ have no selected clash. Adds a reason but does not change the MVP summary.',
   ),
   definition(
     'personal.thai-tue',

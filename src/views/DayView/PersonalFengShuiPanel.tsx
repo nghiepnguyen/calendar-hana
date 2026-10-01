@@ -132,6 +132,47 @@ export function PersonalFengShuiPanel({
               </ul>
             </details>
           </div>
+          <section className={styles.section} aria-label="Quan hệ cá nhân mở rộng">
+            <h3>Quan hệ cá nhân mở rộng</h3>
+            {result.personalStars.status === 'ready' ? (
+              <>
+                <div className={styles.result}>
+                  <h4>Thiên can xung</h4>
+                  <p
+                    className={result.personalStars.stemClash.hit ? styles.caution : styles.neutral}
+                  >
+                    {result.personalStars.stemClash.reason}
+                  </p>
+                  <p className={styles.muted}>
+                    Đây là lý do bổ sung và không làm đổi kết luận ngày của MVP.
+                  </p>
+                </div>
+                <details className={styles.details}>
+                  <summary>Phạm vi và nguồn quan hệ mở rộng</summary>
+                  <p>
+                    Chỉ dùng bốn cặp Can xung đã được đối chiếu: Giáp–Canh, Ất–Tân, Bính–Nhâm và
+                    Đinh–Quý. Không suy thêm cặp cho Mậu/Kỷ và không dùng phép hóa hợp.
+                  </p>
+                  <p>
+                    Thái Tuế, Tuế Phá, Tam Sát cá nhân và Sát Chủ cá nhân chưa đủ căn cứ để tính nên
+                    không xuất kết luận. Thụ Tử và Sát Chủ vẫn là sao chung trong Lịch vạn niên,
+                    không được đếm lại thành sao cá nhân.
+                  </p>
+                  <FengShuiSources
+                    rules={[
+                      {
+                        id: result.personalStars.stemClash.ruleId,
+                        version: result.personalStars.stemClash.version,
+                        sourceIds: result.personalStars.stemClash.sourceIds,
+                      },
+                    ]}
+                  />
+                </details>
+              </>
+            ) : (
+              <p>{result.personalStars.reason}</p>
+            )}
+          </section>
           <details className={styles.details}>
             <summary>Cách tính ngày, giờ và nguồn</summary>
             <p>

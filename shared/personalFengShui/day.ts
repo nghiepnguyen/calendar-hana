@@ -6,6 +6,7 @@ import { canElement, type NguHanh } from '../lunar/elements'
 import { getNapAm } from '../lunar/napAm'
 import { getAllHours } from '../lunar/auspicious'
 import { createRuleRegistry, FENG_SHUI_RULES, type RuleDefinition } from './rules'
+import { assessPersonalStars } from './stars'
 
 export type Tone = 'favorable' | 'neutral' | 'caution'
 export const SUMMARY_LABELS: Record<Tone, string> = {
@@ -125,6 +126,7 @@ export function assessPersonalDay(
   if (readiness.status === 'blocked')
     return unavailable('unsupported', 'Quy tắc cá nhân chưa đủ kiểm chứng để tính.')
   const lunarBirth = solarToLunar(birth.day, birth.month, birth.year)
+  const viewedLunar = solarToLunar(view.day, view.month, view.year)
   const profile = yearCanChi(lunarBirth.year)
   const profileNapAm = getNapAm(profile)
   const jd = solarStringToJd(input.viewDate)
@@ -133,6 +135,10 @@ export function assessPersonalDay(
   const branch = branchRelation(day.chi, profile.chi)
   const stem = stemRelation(day.can, profile.can)
   const napAm = elementRelation(dayNapAm.element, profileNapAm.element)
+  const personalStars = assessPersonalStars(
+    { birthYear: profile, viewedDay: day, lunarMonth: viewedLunar.month },
+    definitions,
+  )
   const tones = [branch.tone, stem.tone, napAm.tone]
   const summary: Tone = tones.includes('caution')
     ? 'caution'
@@ -163,6 +169,7 @@ export function assessPersonalDay(
     branch,
     stem,
     napAm,
+    personalStars,
     summary,
     hours,
     rules: readiness.rules,

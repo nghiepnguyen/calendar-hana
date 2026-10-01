@@ -49,13 +49,16 @@
 - `src/hooks/useSettingsIdentity.test.tsx`, `src/views/DayView/personalProfileChanges.test.tsx` - Chuyển repository/tài khoản, xóa hồ sơ và cập nhật quy tắc/giờ.
 - `src/data/personalFengShuiSettings.test.ts`, `src/pages/Settings/birthInfoAnchor.test.tsx` - Round-trip JSON/công tắc và focus liên kết hồ sơ.
 - `tasks/validation-personal-feng-shui-task-4.md` - Bằng chứng triển khai task 4 và nghiệm thu phát hành còn lại.
+- `shared/personalFengShui/stars.ts`, `stars.test.ts` - P2 Can xung có gate, validation Can Chi/tháng và danh sách quy tắc hoãn.
+- `tasks/prd-personal-feng-shui-stars.md`, `tasks/fixtures/personal-feng-shui-stars.v1.json` - Đặc tả và fixture độc lập P2.
+- `tasks/validation-personal-feng-shui-task-5.md` - Bằng chứng nghiệm thu task 5 và phạm vi P2 còn pending.
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0, task 1, đặc tả task 2 và module hạn năm task 3; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 4.0 đã tích hợp UI P1 và triển khai phần MVP ngày/giờ còn thiếu; task 5.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
+- Trạng thái: đã hoàn tất bước 0 và task 1–5; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 5 chỉ phát hành Can xung đã kiểm chứng; Thái Tuế/Tuế Phá/Tam Sát/Sát Chủ cá nhân vẫn pending. Task 6.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
 - Kiểm tra bước 0 ban đầu chưa có MVP. Trong task 4 đã triển khai `shared/personalFengShui/day.ts`, `PersonalFengShuiPanel` và `showPersonalFengShui`, rồi tích hợp hạn năm. Bằng chứng và giới hạn nghiệm thu: `tasks/validation-personal-feng-shui-task-4.md`.
-- Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected): thêm policy annual, kiểm chứng ba bảng trong phạm vi PRD. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
+- Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected); sau task 5 có 15 verified, 11 pending, 1 rejected. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
 - Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2; registry đã đồng bộ ở task 3, không mở gate chỉ từ fixture.
 - Kết quả task 3: 360 test annual và 17 test registry đạt; toàn dự án 879 test / 75 file đạt, typecheck/lint/format/build đạt. Không thêm cache, persist, UI, dependency hoặc thay lịch chung. `npm audit` chưa hoàn tất do DNS `ENOTFOUND registry.npmjs.org`.
 - Đường dẫn trong Relevant Files tương đối với gốc repository; file ghi “mới” hoặc “đề xuất” chưa tồn tại. Điều chỉnh tên theo kiến trúc MVP thực tế và ghi lại quyết định khi triển khai.
@@ -122,14 +125,14 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 4.7 Dùng scale/theme hiện có, nhãn chữ kèm màu, vùng bấm 44px, bàn phím/đọc màn hình; hỗ trợ 360px và ba cỡ chữ mà không tràn ngang.
   - [x] 4.8 Thêm component test cho thứ tự khối, đổi purpose/role, hồ sơ thiếu/xóa và không đổi nhãn ngày; thêm E2E luồng P1 và test JSON/repository nếu có trường persist mới.
 
-- [ ] 5.0 Đặc tả và triển khai thần sát cá nhân đủ căn cứ (P2, có điều kiện): xác minh Can xung, Thái Tuế/Tuế Phá, Tam Sát và Sát Chủ; không nhân đôi Thụ Tử chung hoặc ghi đè bảng sao hiện tại bằng bảng chưa kiểm chứng.
-  - [ ] 5.1 Dựa audit 1.0, liệt kê quy tắc verified có đầu vào thực sự cá nhân; ghi phần chưa đủ nguồn và hoãn nó, không cản P3.
-  - [ ] 5.2 Với quy tắc verified, tạo `prd-personal-feng-shui-stars.md` chốt scope năm/tháng/ngày, tháng âm/tiết khí, mục đích, toán hạng, nhãn và cách xử lý tháng nhuận.
-  - [ ] 5.3 Chốt quan hệ với Can hợp/khắc MVP và phép tổng hợp ngày mới; nếu thay kết luận MVP, version quy tắc và cập nhật PRD/fixture minh bạch trước khi viết mã. Không gộp vào boolean `isHarmfulToUser`.
-  - [ ] 5.4 Soạn fixture độc lập theo từng quy tắc verified, gồm cùng ngày với tuổi khác và dữ liệu không đủ; trường hợp cùng Chi không mặc định đổi thành Thái Tuế.
-  - [ ] 5.5 Tạo logic `stars.ts`/test theo scope đã chốt, validate Can Chi hợp lệ trong 60 Hoa Giáp và tháng hợp lệ; không copy nguyên `FengShuiUtils` attachment.
-  - [ ] 5.6 Tích hợp giải thích cá nhân riêng trong panel; tái sử dụng Thụ Tử chung, tránh đếm đôi Sát Chủ hoặc âm thầm ghi đè bảng sao hiện tại.
-  - [ ] 5.7 Chạy test phân lớp/scope/version và regression sao chung; ghi danh sách phần P2 có thể phát hành và phần vẫn pending. Chỉ đánh dấu 5.0 hoàn tất khi phạm vi đã chốt thực sự nghiệm thu, không vì bị hoãn.
+- [x] 5.0 Đặc tả và triển khai thần sát cá nhân đủ căn cứ (P2, có điều kiện): xác minh Can xung, Thái Tuế/Tuế Phá, Tam Sát và Sát Chủ; không nhân đôi Thụ Tử chung hoặc ghi đè bảng sao hiện tại bằng bảng chưa kiểm chứng.
+  - [x] 5.1 Dựa audit 1.0, liệt kê quy tắc verified có đầu vào thực sự cá nhân; ghi phần chưa đủ nguồn và hoãn nó, không cản P3.
+  - [x] 5.2 Với quy tắc verified, tạo `prd-personal-feng-shui-stars.md` chốt scope năm/tháng/ngày, tháng âm/tiết khí, mục đích, toán hạng, nhãn và cách xử lý tháng nhuận.
+  - [x] 5.3 Chốt quan hệ với Can hợp/khắc MVP và phép tổng hợp ngày mới; nếu thay kết luận MVP, version quy tắc và cập nhật PRD/fixture minh bạch trước khi viết mã. Không gộp vào boolean `isHarmfulToUser`.
+  - [x] 5.4 Soạn fixture độc lập theo từng quy tắc verified, gồm cùng ngày với tuổi khác và dữ liệu không đủ; trường hợp cùng Chi không mặc định đổi thành Thái Tuế.
+  - [x] 5.5 Tạo logic `stars.ts`/test theo scope đã chốt, validate Can Chi hợp lệ trong 60 Hoa Giáp và tháng hợp lệ; không copy nguyên `FengShuiUtils` attachment.
+  - [x] 5.6 Tích hợp giải thích cá nhân riêng trong panel; tái sử dụng Thụ Tử chung, tránh đếm đôi Sát Chủ hoặc âm thầm ghi đè bảng sao hiện tại.
+  - [x] 5.7 Chạy test phân lớp/scope/version và regression sao chung; ghi danh sách phần P2 có thể phát hành và phần vẫn pending. Chỉ đánh dấu 5.0 hoàn tất khi phạm vi đã chốt thực sự nghiệm thu, không vì bị hoãn.
 
 - [ ] 6.0 Hoàn thiện PRD và lựa chọn nền tảng thời gian sinh (P3): chốt nơi sinh, múi giờ lịch sử, UTC/TST, thời điểm giao tiết, quy ước giờ Tý và bất định; benchmark engine/fixture, giấy phép, dung lượng và offline trước khi chọn phương pháp.
   - [ ] 6.1 Tạo `prd-birth-time-normalization.md`, chốt vùng/năm hỗ trợ; đề xuất ngày sinh dương trước, nơi sinh Việt Nam trước; chỉ thêm nhập ngày âm khi có quy ước lịch và tháng nhuận được xác nhận.

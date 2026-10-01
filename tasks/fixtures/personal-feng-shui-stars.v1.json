@@ -1,0 +1,36 @@
+{
+  "specVersion": "1.0.0",
+  "provenance": {
+    "source": "選擇紀要 / 上編, 天干相沖; expected transcribed independently",
+    "reviewedOn": "2026-10-01",
+    "policy": "Four explicit symmetric pairs; Mậu/Kỷ have no selected clash"
+  },
+  "stemClashCases": [
+    { "birthCan": 0, "dayCan": 6, "hit": true, "label": "Giáp–Canh" },
+    { "birthCan": 6, "dayCan": 0, "hit": true, "label": "Canh–Giáp" },
+    { "birthCan": 1, "dayCan": 7, "hit": true, "label": "Ất–Tân" },
+    { "birthCan": 7, "dayCan": 1, "hit": true, "label": "Tân–Ất" },
+    { "birthCan": 2, "dayCan": 8, "hit": true, "label": "Bính–Nhâm" },
+    { "birthCan": 8, "dayCan": 2, "hit": true, "label": "Nhâm–Bính" },
+    { "birthCan": 3, "dayCan": 9, "hit": true, "label": "Đinh–Quý" },
+    { "birthCan": 9, "dayCan": 3, "hit": true, "label": "Quý–Đinh" },
+    { "birthCan": 4, "dayCan": 8, "hit": false, "label": "Mậu–Nhâm: khắc, không xung" },
+    { "birthCan": 5, "dayCan": 9, "hit": false, "label": "Kỷ–Quý: khắc, không xung" },
+    { "birthCan": 0, "dayCan": 4, "hit": false, "label": "Giáp–Mậu: khắc, không xung" },
+    { "birthCan": 1, "dayCan": 5, "hit": false, "label": "Ất–Kỷ: khắc, không xung" },
+    { "birthCan": 0, "dayCan": 0, "hit": false, "label": "Cùng Can" },
+    { "birthCan": 0, "dayCan": 5, "hit": false, "label": "Can hợp" }
+  ],
+  "dateProfileCases": [
+    { "viewDate": "2026-09-20", "birthDate": "1993-07-01", "dayName": "Đinh Dậu", "birthYearName": "Quý Dậu", "hit": true },
+    { "viewDate": "2026-09-20", "birthDate": "1990-07-01", "dayName": "Đinh Dậu", "birthYearName": "Canh Ngọ", "hit": false }
+  ],
+  "invalidCases": [
+    { "viewedDay": { "can": 0, "chi": 0 }, "lunarMonth": 1, "reasonCode": "missingBirthYear" },
+    { "birthYear": { "can": 0, "chi": 0 }, "lunarMonth": 1, "reasonCode": "missingViewedDay" },
+    { "birthYear": { "can": 0, "chi": 0 }, "viewedDay": { "can": 0, "chi": 0 }, "reasonCode": "missingLunarMonth" },
+    { "birthYear": { "can": 0, "chi": 1 }, "viewedDay": { "can": 0, "chi": 0 }, "lunarMonth": 1, "reasonCode": "invalidBirthYear" },
+    { "birthYear": { "can": 0, "chi": 0 }, "viewedDay": { "can": 10, "chi": 0 }, "lunarMonth": 1, "reasonCode": "invalidViewedDay" },
+    { "birthYear": { "can": 0, "chi": 0 }, "viewedDay": { "can": 0, "chi": 0 }, "lunarMonth": 13, "reasonCode": "invalidLunarMonth" }
+  ]
+}

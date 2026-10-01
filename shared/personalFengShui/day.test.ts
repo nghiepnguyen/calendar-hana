@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { FENG_SHUI_RULES } from './rules'
+import fixtures from '../../tasks/fixtures/personal-feng-shui-stars.v1.json'
 
 import * as api from './day'
 function engine() {
@@ -152,5 +153,55 @@ describe('personal day and hour policy', () => {
         [],
       ).status,
     ).toBe('unsupported')
+  })
+
+  it('adds reviewed stem clash as separate evidence without changing the MVP summary', () => {
+    const result = engine().assessPersonalDay({
+      viewDate: '2026-09-20', // Đinh Dậu
+      birthDate: '1993-07-01', // Quý Dậu
+      today: '2026-10-01',
+    })
+    expect(result.status).toBe('ready')
+    if (result.status !== 'ready') return
+    expect(result.stem.text).toContain('Thủy khắc Hỏa')
+    expect(result.summary).toBe('caution')
+    expect(result.personalStars.stemClash).toMatchObject({
+      hit: true,
+      affectsDaySummary: false,
+    })
+  })
+
+  it('matches the same-day, different-profile P2 fixtures', () => {
+    for (const fixture of fixtures.dateProfileCases) {
+      const result = engine().assessPersonalDay({
+        viewDate: fixture.viewDate,
+        birthDate: fixture.birthDate,
+        today: '2026-10-01',
+      })
+      expect(result.status).toBe('ready')
+      if (result.status !== 'ready') continue
+      expect(result.day.name).toBe(fixture.dayName)
+      expect(result.profile.name).toBe(fixture.birthYearName)
+      expect(result.personalStars.status).toBe('ready')
+      if (result.personalStars.status === 'ready') {
+        expect(result.personalStars.stemClash.hit).toBe(fixture.hit)
+      }
+    }
+  })
+
+  it('keeps the MVP assessment available when the optional P2 rule is blocked', () => {
+    const rules = FENG_SHUI_RULES.map((rule) =>
+      rule.id === 'personal.can-xung' ? { ...rule, verificationStatus: 'pending' as const } : rule,
+    )
+    const result = engine().assessPersonalDay(
+      { viewDate: '2026-09-20', birthDate: '1993-07-01', today: '2026-10-01' },
+      rules,
+    )
+    expect(result.status).toBe('ready')
+    if (result.status !== 'ready') return
+    expect(result.personalStars).toMatchObject({
+      status: 'unsupported',
+      reasonCode: 'unverifiedRule',
+    })
   })
 })
