@@ -100,6 +100,8 @@ export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedA
   if (raw.weekStartsOn === 0 || raw.weekStartsOn === 1) result.weekStartsOn = raw.weekStartsOn
   if (typeof raw.showHolidays === 'boolean') result.showHolidays = raw.showHolidays
   if (typeof raw.showAuspicious === 'boolean') result.showAuspicious = raw.showAuspicious
+  if (typeof raw.showPersonalFengShui === 'boolean')
+    result.showPersonalFengShui = raw.showPersonalFengShui
   if (typeof raw.allDayReminderTime === 'string' && /^\d{2}:\d{2}$/.test(raw.allDayReminderTime)) {
     result.allDayReminderTime = raw.allDayReminderTime
   }

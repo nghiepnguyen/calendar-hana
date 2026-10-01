@@ -2,6 +2,7 @@ import { EventRows } from '../../components/EventList/EventRows'
 import type { CalendarViewProps } from '../viewProps'
 import { AlmanacPanel } from './AlmanacPanel'
 import { DayCard } from './DayCard'
+import { PersonalFengShuiPanel } from './PersonalFengShuiPanel'
 import styles from './DayView.module.css'
 
 export function DayView({
@@ -33,6 +34,9 @@ export function DayView({
           />
         )}
       </section>
+      {settings.showPersonalFengShui !== false ? (
+        <PersonalFengShuiPanel date={date} settings={settings} />
+      ) : null}
       {settings.showAuspicious ? <AlmanacPanel date={date} isToday={date === today} /> : null}
     </div>
   )

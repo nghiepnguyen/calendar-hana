@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
 import { todayInVietnam } from '@shared/time'
 import type { Settings } from '@shared/types'
@@ -18,7 +18,22 @@ function fromSettings(settings: Settings): Draft {
   return { day, month, year, time: settings.birthTime ?? '' }
 }
 
-export function BirthInfoForm({ settings, signedIn }: { settings: Settings; signedIn: boolean }) {
+export function BirthInfoForm({
+  settings,
+  signedIn,
+  focusBirth = false,
+}: {
+  settings: Settings
+  signedIn: boolean
+  focusBirth?: boolean
+}) {
+  const dateInput = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if (focusBirth) {
+      dateInput.current?.focus()
+      dateInput.current?.scrollIntoView?.({ block: 'center' })
+    }
+  }, [focusBirth])
   const repository = useRepository()
   const [draft, setDraft] = useState<Draft | null>(null)
   const [busy, setBusy] = useState(false)
@@ -95,7 +110,7 @@ export function BirthInfoForm({ settings, signedIn }: { settings: Settings; sign
   }
 
   return (
-    <form className={styles.birthInfo} onSubmit={save} noValidate>
+    <form id="birth-info" className={styles.birthInfo} onSubmit={save} noValidate>
       <h3>Thông tin ngày sinh</h3>
       <p className="field-hint">
         Nhập ngày sinh theo dương lịch. Có thể bỏ trống nếu chưa muốn cung cấp.
@@ -113,6 +128,7 @@ export function BirthInfoForm({ settings, signedIn }: { settings: Settings; sign
             <label className="field" key={key}>
               <span className="field-label">{label}</span>
               <input
+                ref={key === 'day' ? dateInput : undefined}
                 className="input"
                 type="number"
                 inputMode="numeric"

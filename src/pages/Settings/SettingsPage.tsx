@@ -60,6 +60,12 @@ function GeneralSection({ settings, save }: SectionProps) {
         checked={settings.showAuspicious}
         onChange={(showAuspicious) => save({ showAuspicious })}
       />
+      <Toggle
+        label="Hiện phong thủy cá nhân"
+        hint="Can Chi, nạp âm, giờ cá nhân và hạn theo năm trong tab Ngày"
+        checked={settings.showPersonalFengShui !== false}
+        onChange={(showPersonalFengShui) => save({ showPersonalFengShui })}
+      />
       <div className={styles.toggleRow}>
         <span className={styles.rowLabel} id="theme-label">
           Giao diện
@@ -114,6 +120,7 @@ function ReminderSection({ settings, save }: SectionProps) {
 }
 
 export interface SectionProps {
+  focusBirth?: boolean
   settings: Settings
   save: (patch: Partial<Omit<Settings, 'updatedAt'>>) => void
 }
@@ -160,10 +167,11 @@ const TABS: Tab[] = [
   },
   {
     id: 'account',
+    anchors: ['birth-info'],
     label: 'Tài khoản',
     title: 'Tài khoản',
     icon: UserCircle,
-    render: () => <AccountSection />,
+    render: (props) => <AccountSection focusBirth={props.focusBirth} />,
   },
   {
     id: 'data',
@@ -307,7 +315,7 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
               aria-labelledby={`settings-${active.id}`}
             >
               <h2 id={`settings-${active.id}`}>{active.title}</h2>
-              {active.render({ settings, save })}
+              {active.render({ settings, save, focusBirth: anchor === 'birth-info' })}
             </section>
             {children}
           </main>

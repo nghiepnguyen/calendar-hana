@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { CalendarEvent, Category, Settings } from '@shared/types'
 import { useRepository } from '../data/repositoryContext'
+import type { CalendarRepository } from '../data/repository'
 
 /** Danh sách sự kiện gốc (chưa tính lần lặp), tự cập nhật. undefined = đang tải. */
 export function useEvents(): CalendarEvent[] | undefined {
@@ -21,7 +22,11 @@ export function useCategories(): Category[] | undefined {
 /** Cài đặt hiện tại, tự cập nhật. undefined = đang tải. */
 export function useSettings(): Settings | undefined {
   const repository = useRepository()
-  const [settings, setSettings] = useState<Settings>()
-  useEffect(() => repository.watchSettings(setSettings), [repository])
-  return settings
+  const [saved, setSaved] = useState<{ repository: CalendarRepository; settings: Settings }>()
+  useEffect(
+    () => repository.watchSettings((settings) => setSaved({ repository, settings })),
+    [repository],
+  )
+  // Switching accounts must not expose the previous profile while the next snapshot loads.
+  return saved?.repository === repository ? saved.settings : undefined
 }

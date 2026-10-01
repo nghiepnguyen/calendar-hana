@@ -48,6 +48,43 @@ function newLocal() {
 }
 
 describe('FirestoreRepository', () => {
+  it('đồng bộ công tắc cá nhân độc lập và giữ false qua sao lưu JSON/cloud migration', async () => {
+    const { repo: cloud, db, onError } = cloudFor('personal-toggle')
+    await cloud.ensureInitialized({ email: null, displayName: null })
+    expect((await cloud.getSettings()).showPersonalFengShui).toBe(true)
+    const updates: boolean[] = []
+    const stop = cloud.watchSettings((settings) =>
+      updates.push(settings.showPersonalFengShui !== false),
+    )
+    const local = newLocal()
+    try {
+      await cloud.saveSettings({ showPersonalFengShui: false, showAuspicious: true })
+      await waitForPendingWrites(db)
+      await vi.waitFor(() => expect(updates).toContain(false))
+      const reader = new FirestoreRepository(db, 'personal-toggle', onError)
+      expect(await reader.getSettings()).toMatchObject({
+        showPersonalFengShui: false,
+        showAuspicious: true,
+      })
+      const backup = parseImport(JSON.stringify(await exportData(cloud)))
+      await importData(local, backup.file, 'replace')
+      expect(await local.getSettings()).toMatchObject({
+        showPersonalFengShui: false,
+        showAuspicious: true,
+      })
+      await local.saveSettings({ showPersonalFengShui: true, birthDate: '1990-07-01' })
+      await migrateLocalToCloud(local, cloud)
+      expect(await cloud.getSettings()).toMatchObject({
+        showPersonalFengShui: false,
+        birthDate: '1990-07-01',
+      })
+      expect(onError).not.toHaveBeenCalled()
+    } finally {
+      stop()
+      await local.db.delete()
+    }
+  })
+
   it('lưu và đọc lại ngày sinh và giờ sinh trên cloud', async () => {
     const { repo, db } = cloudFor('birthday-user')
     await repo.ensureInitialized({ email: 'a@x.vn', displayName: 'An' })

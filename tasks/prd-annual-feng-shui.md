@@ -1,6 +1,6 @@
 # PRD — Hạn năm theo mục đích (P1)
 
-Phiên bản đặc tả: **1.0.0**, ngày **01/10/2026**. Task nguồn: **2.0** trong `tasks-personal-feng-shui-expansion.md`. Module thuần đã triển khai ở task 3; UI hạn năm thuộc task 4, chưa triển khai.
+Phiên bản đặc tả: **1.0.0**, ngày **01/10/2026**. Task nguồn: **2.0** trong `tasks-personal-feng-shui-expansion.md`. Module thuần đã triển khai ở task 3; UI hạn năm đã triển khai ở task 4; bằng chứng và giới hạn nghiệm thu tại `tasks/validation-personal-feng-shui-task-4.md`.
 
 ## 1. Kết quả cần đạt
 
@@ -204,3 +204,12 @@ Evaluator không có cache/state, không ghi storage hoặc log, không gọi d�
 - `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run build`: đạt. Build vẫn có cảnh báo chunk lớn và tùy chọn PWA deprecated.
 - `npm audit --audit-level=high`: chưa hoàn tất vì DNS `ENOTFOUND registry.npmjs.org`; không thay dependency.
 - Chưa chạy Emulator/E2E vì không đổi UI, lưu trữ hoặc rules. Task 4 cần MVP và kiểm thử tích hợp riêng; chưa deploy.
+
+
+## 10. Triển khai UI task 4
+
+`AnnualFengShuiSection` nằm trong `PersonalFengShuiPanel` dưới phần đánh giá ngày/giờ. Hai lớp dùng evaluator riêng và không lưu kết quả dẫn xuất. Chọn purpose/role chỉ ở state tạm; đổi purpose đặt role về self cho general, unspecified cho các mục đích khác; xóa hồ sơ/đổi tài khoản/remount về general/self. Không tự xác nhận cô dâu/gia chủ/người đứng chính.
+
+Không thêm trường persist cho purpose/role. Trường `Settings.showPersonalFengShui` thuộc MVP, mặc định true cho bản cũ, sanitize chỉ nhận boolean, độc lập với `showAuspicious`; dùng repository, JSON và sync hiện có. Migration giữ các cài đặt cloud đã có, bao gồm false, theo policy hiện tại. Link `/settings#birth-info` mở tab Tài khoản và focus ô ngày sinh.
+
+Bằng chứng task 4: `tasks/validation-personal-feng-shui-task-4.md`. Hoàn thành triển khai không đồng nghĩa đã nghiệm thu phát hành hoặc deploy.

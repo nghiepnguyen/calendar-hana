@@ -96,6 +96,8 @@ export interface Settings {
   weekStartsOn: 0 | 1
   showHolidays: boolean
   showAuspicious: boolean
+  /** Độc lập với lịch vạn niên; bản cũ chưa có trường này mặc định bật. */
+  showPersonalFengShui?: boolean
   /** Giờ gửi nhắc hẹn cho sự kiện cả ngày, dạng 'HH:mm'. */
   allDayReminderTime: TimeString
   theme: ThemePreference

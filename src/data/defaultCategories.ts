@@ -45,6 +45,7 @@ export function createDefaultSettings(now = new Date().toISOString()): Settings 
     weekStartsOn: 1,
     showHolidays: true,
     showAuspicious: true,
+    showPersonalFengShui: true,
     allDayReminderTime: '08:00',
     theme: 'system',
     textSize: 'default',

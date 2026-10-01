@@ -1,0 +1,104 @@
+.panel {
+  display: grid;
+  gap: calc(16px * var(--ui-scale));
+  padding: calc(20px * var(--ui-scale));
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  font-size: calc(14px * var(--ui-scale));
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.panel h2,
+.panel h3,
+.panel h4,
+.panel p {
+  margin: 0;
+}
+.panel h2 {
+  font-size: calc(18px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+.panel h3 {
+  font-size: calc(16px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+.panel h4 {
+  font-size: inherit;
+  font-weight: var(--fw-600);
+}
+.section {
+  display: grid;
+  gap: calc(12px * var(--ui-scale));
+  min-width: 0;
+  border-top: 1px solid var(--separator);
+  padding-top: calc(16px * var(--ui-scale));
+}
+.muted {
+  color: var(--text-muted);
+}
+.favorable {
+  color: var(--almanac-good);
+}
+.caution {
+  color: var(--almanac-bad);
+}
+.neutral {
+  color: var(--text);
+}
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(200px * var(--ui-scale))), 1fr));
+  gap: calc(12px * var(--ui-scale));
+}
+.controls label {
+  display: grid;
+  gap: calc(6px * var(--ui-scale));
+  min-width: 0;
+}
+.controls select {
+  width: 100%;
+  min-width: 0;
+  min-height: calc(44px * var(--ui-scale));
+}
+.results,
+.hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: calc(10px * var(--ui-scale));
+}
+.results {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(210px * var(--ui-scale))), 1fr));
+}
+.result,
+.hours li {
+  padding: calc(12px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--glass-strong);
+  border: 1px solid var(--separator);
+  min-width: 0;
+}
+.details {
+  min-width: 0;
+}
+.details summary {
+  min-height: calc(44px * var(--ui-scale));
+  cursor: pointer;
+  align-content: center;
+  font-weight: var(--fw-600);
+}
+.details summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+.details ul {
+  padding-left: calc(20px * var(--ui-scale));
+}
+.now {
+  display: inline-block;
+  font-weight: var(--fw-600);
+  color: var(--accent-text);
+  margin-left: calc(8px * var(--ui-scale));
+}

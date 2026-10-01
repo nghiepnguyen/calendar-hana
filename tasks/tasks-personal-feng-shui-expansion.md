@@ -42,14 +42,19 @@
 - `src/views/DayView/DayView.tsx`, `DayView.test.tsx`, `AlmanacPanel.test.tsx` - Thứ tự khối và regression công tắc/lịch chung.
 - `src/styles/textSize.ts`, `src/styles/theme.css` - Tận dụng scale, icon và màu sáng/tối hiện có.
 - `src/analytics.ts`, `src/sw.ts`, `shared/seo/daySeo.ts`, `scripts/prerenderDays.ts`, `public/privacy.html` - Kiểm tra dữ liệu riêng tư, cache offline, SEO/prerender và cập nhật mô tả chính sách nếu có dữ liệu mới.
-- `e2e/personal-feng-shui-expansion.spec.ts` (mới), `e2e/birth-info.spec.ts`, `e2e/a11y.spec.ts`, `e2e/mobile-layout.spec.ts`, `e2e/text-size.spec.ts` - Luồng mở rộng, migration hồ sơ, mobile/cỡ chữ và accessibility.
+- `e2e/personal-feng-shui.spec.ts` (mới), `e2e/birth-info.spec.ts`, `e2e/a11y.spec.ts`, `e2e/mobile-layout.spec.ts`, `e2e/text-size.spec.ts` - Luồng mở rộng, migration hồ sơ, mobile/cỡ chữ và accessibility.
 - `package.json`, lockfile, cấu hình Vite/Playwright hiện có - Chỉ chỉnh khi lựa chọn engine, script tham chiếu hoặc test cần; không nâng cấp dependency ngoài phạm vi.
+
+- `shared/personalFengShui/day.ts`, `day.test.ts` - MVP quan hệ Can/Chi, nạp âm, tổng hợp và lọc 12 giờ; không dùng cache lịch chung cho hồ sơ.
+- `src/hooks/useSettingsIdentity.test.tsx`, `src/views/DayView/personalProfileChanges.test.tsx` - Chuyển repository/tài khoản, xóa hồ sơ và cập nhật quy tắc/giờ.
+- `src/data/personalFengShuiSettings.test.ts`, `src/pages/Settings/birthInfoAnchor.test.tsx` - Round-trip JSON/công tắc và focus liên kết hồ sơ.
+- `tasks/validation-personal-feng-shui-task-4.md` - Bằng chứng triển khai task 4 và nghiệm thu phát hành còn lại.
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0, task 1, đặc tả task 2 và module hạn năm task 3; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Các task 4.0–9.0 chưa làm; UI vẫn phụ thuộc MVP.
+- Trạng thái: đã hoàn tất bước 0, task 1, đặc tả task 2 và module hạn năm task 3; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 4.0 đã tích hợp UI P1 và triển khai phần MVP ngày/giờ còn thiếu; task 5.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
-- MVP hiện chưa có `PersonalFengShuiPanel`, logic đánh giá cá nhân ngày/giờ hoặc cài đặt hiển thị cá nhân trong `src/`/`shared/`; `shared/personalFengShui/` hiện có registry P0 từ task 1. Phải hoàn tất MVP theo `tasks/prd-personal-feng-shui.md` trước tích hợp UI ở 4.0/7.0; vẫn có thể làm audit/đặc tả và logic độc lập trước đó.
+- Kiểm tra bước 0 ban đầu chưa có MVP. Trong task 4 đã triển khai `shared/personalFengShui/day.ts`, `PersonalFengShuiPanel` và `showPersonalFengShui`, rồi tích hợp hạn năm. Bằng chứng và giới hạn nghiệm thu: `tasks/validation-personal-feng-shui-task-4.md`.
 - Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected): thêm policy annual, kiểm chứng ba bảng trong phạm vi PRD. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
 - Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2; registry đã đồng bộ ở task 3, không mở gate chỉ từ fixture.
 - Kết quả task 3: 360 test annual và 17 test registry đạt; toàn dự án 879 test / 75 file đạt, typecheck/lint/format/build đạt. Không thêm cache, persist, UI, dependency hoặc thay lịch chung. `npm audit` chưa hoàn tất do DNS `ENOTFOUND registry.npmjs.org`.
@@ -107,15 +112,15 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 3.8 Nếu cần cache, khóa theo ngày/hồ sơ/ngữ cảnh tài khoản/purpose/role/ruleset version, xử lý invalidation; không persist kết quả dẫn xuất hoặc log ngày sinh. Quyết định P1: không cần cache; evaluator không có state, storage hoặc logging.
   - [x] 3.9 Chạy unit test module, typecheck/lint cho thay đổi; xác nhận không có quy tắc pending chạy và không có dữ liệu sai bị trả thành “không phạm”.
 
-- [ ] 4.0 Tích hợp hạn năm vào khối Phong thủy cá nhân (P1): chọn mục đích/vai trò, hiển thị riêng theo năm và đồng bộ lưu trữ/JSON; giữ một hồ sơ và xử lý đúng dữ liệu thiếu hoặc cũ.
-  - [ ] 4.1 Kiểm tra điều kiện 0.3: dùng `PersonalFengShuiPanel` từ MVP đã hoàn tất; giữ thẻ ngày → sự kiện → khối cá nhân → Lịch vạn niên và hai công tắc độc lập theo PRD MVP.
-  - [ ] 4.2 Thêm `AnnualFengShuiSection` có chọn mục đích/vai trò và hiển thị năm âm/tuổi mụ, kết quả/lý do từng hạn; không tự chọn vai trò cô dâu/gia chủ theo tài khoản.
-  - [ ] 4.3 Thêm trạng thái chưa nhập, dữ liệu sai, không áp dụng, chưa đủ dữ liệu và chưa hỗ trợ; liên kết sửa thông tin sinh trong Cài đặt, không yêu cầu giờ/nơi sinh cho hạn năm.
-  - [ ] 4.4 Quyết định và ghi trong PRD những lựa chọn purpose/role cần lưu; nếu lưu, cập nhật `Settings`, mặc định, sanitize JSON, repository và sync tương thích dữ liệu cũ.
-  - [ ] 4.5 Cập nhật tính toán khi lưu/sync hồ sơ, thay ngày, mục đích/vai trò, phiên bản hoặc tài khoản; dữ liệu chưa lưu không được dùng, xóa sinh/đăng xuất không còn kết quả cũ.
-  - [ ] 4.6 Thêm giải thích nguồn/phiên bản và phân biệt hạn năm với hoàng đạo chung/đánh giá ngày; nội dung không hứa kết quả sức khỏe/tài chính, không thêm nghi thức hóa giải.
-  - [ ] 4.7 Dùng scale/theme hiện có, nhãn chữ kèm màu, vùng bấm 44px, bàn phím/đọc màn hình; hỗ trợ 360px và ba cỡ chữ mà không tràn ngang.
-  - [ ] 4.8 Thêm component test cho thứ tự khối, đổi purpose/role, hồ sơ thiếu/xóa và không đổi nhãn ngày; thêm E2E luồng P1 và test JSON/repository nếu có trường persist mới.
+- [x] 4.0 Tích hợp hạn năm vào khối Phong thủy cá nhân (P1): chọn mục đích/vai trò, hiển thị riêng theo năm và đồng bộ lưu trữ/JSON; giữ một hồ sơ và xử lý đúng dữ liệu thiếu hoặc cũ.
+  - [x] 4.1 Kiểm tra điều kiện 0.3: dùng `PersonalFengShuiPanel` từ MVP đã hoàn tất; giữ thẻ ngày → sự kiện → khối cá nhân → Lịch vạn niên và hai công tắc độc lập theo PRD MVP.
+  - [x] 4.2 Thêm `AnnualFengShuiSection` có chọn mục đích/vai trò và hiển thị năm âm/tuổi mụ, kết quả/lý do từng hạn; không tự chọn vai trò cô dâu/gia chủ theo tài khoản.
+  - [x] 4.3 Thêm trạng thái chưa nhập, dữ liệu sai, không áp dụng, chưa đủ dữ liệu và chưa hỗ trợ; liên kết sửa thông tin sinh trong Cài đặt, không yêu cầu giờ/nơi sinh cho hạn năm.
+  - [x] 4.4 Quyết định và ghi trong PRD những lựa chọn purpose/role cần lưu; nếu lưu, cập nhật `Settings`, mặc định, sanitize JSON, repository và sync tương thích dữ liệu cũ.
+  - [x] 4.5 Cập nhật tính toán khi lưu/sync hồ sơ, thay ngày, mục đích/vai trò, phiên bản hoặc tài khoản; dữ liệu chưa lưu không được dùng, xóa sinh/đăng xuất không còn kết quả cũ.
+  - [x] 4.6 Thêm giải thích nguồn/phiên bản và phân biệt hạn năm với hoàng đạo chung/đánh giá ngày; nội dung không hứa kết quả sức khỏe/tài chính, không thêm nghi thức hóa giải.
+  - [x] 4.7 Dùng scale/theme hiện có, nhãn chữ kèm màu, vùng bấm 44px, bàn phím/đọc màn hình; hỗ trợ 360px và ba cỡ chữ mà không tràn ngang.
+  - [x] 4.8 Thêm component test cho thứ tự khối, đổi purpose/role, hồ sơ thiếu/xóa và không đổi nhãn ngày; thêm E2E luồng P1 và test JSON/repository nếu có trường persist mới.
 
 - [ ] 5.0 Đặc tả và triển khai thần sát cá nhân đủ căn cứ (P2, có điều kiện): xác minh Can xung, Thái Tuế/Tuế Phá, Tam Sát và Sát Chủ; không nhân đôi Thụ Tử chung hoặc ghi đè bảng sao hiện tại bằng bảng chưa kiểm chứng.
   - [ ] 5.1 Dựa audit 1.0, liệt kê quy tắc verified có đầu vào thực sự cá nhân; ghi phần chưa đủ nguồn và hoãn nó, không cản P3.

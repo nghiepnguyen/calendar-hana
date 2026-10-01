@@ -62,7 +62,7 @@ function DeleteAccountDialog({ onClose }: { onClose: () => void }) {
   )
 }
 
-export function AccountSection() {
+export function AccountSection({ focusBirth = false }: { focusBirth?: boolean } = {}) {
   const { available, user, signIn, signOut } = useAuth()
   const settings = useSettings()
   const [error, setError] = useState<string | null>(null)
@@ -133,7 +133,12 @@ export function AccountSection() {
         <p className="field-hint">Đang lưu dữ liệu trên máy này.</p>
       )}
       {settings ? (
-        <BirthInfoForm key={user?.uid ?? 'local'} settings={settings} signedIn={!!user} />
+        <BirthInfoForm
+          key={user?.uid ?? 'local'}
+          settings={settings}
+          signedIn={!!user}
+          focusBirth={focusBirth}
+        />
       ) : null}
       {error ? (
         <p className="field-error" role="alert">
