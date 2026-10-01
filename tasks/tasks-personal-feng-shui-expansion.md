@@ -7,7 +7,8 @@
 ### Tài liệu và nguồn cần tạo
 
 - `tasks/feng-shui-rule-audit.md` (đã tạo, P0) - Danh mục nguồn, khác biệt, trạng thái và quyết định cho từng quy tắc.
-- `tasks/prd-annual-feng-shui.md` (mới) - Hạn năm theo mục đích/vai trò, toàn miền tuổi và trạng thái đầu ra.
+- `tasks/prd-annual-feng-shui.md` (đã tạo, P1 spec) - Hạn năm theo mục đích/vai trò, miền tuổi được hỗ trợ và trạng thái đầu ra.
+- `tasks/fixtures/annual-feng-shui.v1.json` (đã tạo, P1 spec) - Expected tĩnh có provenance: Kim Lâu, toàn miền Hoang Ốc 10–69, Tam Tai 12×12, context và ma trận áp dụng; chưa dùng trong production.
 - `tasks/prd-personal-feng-shui-stars.md` (mới, có điều kiện) - Chỉ các thần sát cá nhân đủ nguồn; phép tổng hợp và ranh giới với sao chung.
 - `tasks/prd-birth-time-normalization.md` (mới) - Hồ sơ sinh, UTC/TST, múi giờ lịch sử, giao tiết, giờ Tý và chuẩn độ chính xác.
 - `tasks/bazi-engine-evaluation.md` (mới) - So sánh engine/dữ liệu, sai số, giấy phép, dung lượng và quyết định lựa chọn.
@@ -46,10 +47,11 @@
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0 và task 1; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 1.0 đã hoàn tất audit P0 và registry; các task 2.0–9.0 chưa triển khai.
+- Trạng thái: đã hoàn tất bước 0, task 1 và đặc tả task 2; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Các task triển khai 3.0–9.0 chưa làm.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
-- MVP hiện chưa có `PersonalFengShuiPanel`, module `shared/personalFengShui/` hoặc cài đặt hiển thị cá nhân trong `src/`/`shared/`. Phải hoàn tất MVP theo `tasks/prd-personal-feng-shui.md` trước tích hợp UI ở 4.0/7.0; vẫn có thể làm audit/đặc tả và logic độc lập trước đó.
+- MVP hiện chưa có `PersonalFengShuiPanel`, logic đánh giá cá nhân ngày/giờ hoặc cài đặt hiển thị cá nhân trong `src/`/`shared/`; `shared/personalFengShui/` hiện có registry P0 từ task 1. Phải hoàn tất MVP theo `tasks/prd-personal-feng-shui.md` trước tích hợp UI ở 4.0/7.0; vẫn có thể làm audit/đặc tả và logic độc lập trước đó.
 - Kết quả P0: 26 mục (10 verified, 15 pending, 1 rejected) trong `shared/personalFengShui/rules.ts`; bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`. Pending vẫn chưa được phép tính, dù công việc audit đã hoàn tất.
+- Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2. Task 3 phải đồng bộ registry, version và test readiness trước khi chạy từng hạn; task 2 không tự mở gate P0.
 - Đường dẫn trong Relevant Files tương đối với gốc repository; file ghi “mới” hoặc “đề xuất” chưa tồn tại. Điều chỉnh tên theo kiến trúc MVP thực tế và ghi lại quyết định khi triển khai.
 - Giữ một hồ sơ và khối riêng dưới sự kiện trong tab Ngày. Nếu MVP chưa triển khai, hoàn tất MVP theo PRD riêng trước khi tích hợp các lớp mở rộng vào UI.
 - Phụ thuộc: P0 → P1; P0 → P2; P0 → P3 → P4. Thần sát P2 có thể hoãn mà không chặn nền tảng Tứ Trụ P3.
@@ -82,19 +84,19 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 1.7 Định nghĩa registry quy tắc trong `shared/personalFengShui/rules.ts` hoặc mở rộng registry MVP: tách trạng thái kiểm chứng khỏi trạng thái áp dụng, kiểm tra ID duy nhất/version và chỉ cho chạy quy tắc verified.
   - [x] 1.8 Thêm test registry: pending/rejected không tham gia tổng hợp, thiếu nhóm bắt buộc không thành kết quả trung tính; hoàn tất audit P0 trước task triển khai tương ứng.
 
-- [ ] 2.0 Hoàn thiện đặc tả hạn năm (P1): chốt tuổi mụ, toàn miền tuổi Hoang Ốc, bảng Kim Lâu/Tam Tai, ma trận mục đích–vai trò và trạng thái không áp dụng/thiếu dữ liệu/chưa hỗ trợ.
-  - [ ] 2.1 Tạo `tasks/prd-annual-feng-shui.md` mô tả một hồ sơ, năm âm đang xem và phần kết quả riêng; ghi rõ không đổi nhãn đánh giá ngày, không khóa tạo sự kiện.
-  - [ ] 2.2 Định nghĩa input/output: ngày xem/ngày sinh dương, mục đích/vai trò, năm âm, tuổi mụ, từng hạn, toán hạng, rule ID/version và trạng thái `applies/notApplicable/insufficientData/unsupported`; kết quả có/không phạm chỉ có khi `applies`.
-  - [ ] 2.3 Chốt tuổi mụ theo năm âm sau quy đổi cả hai ngày; ngày xem trước ngày sinh không áp dụng, ngày ngoài khoảng hỗ trợ không âm thầm tính.
-  - [ ] 2.4 Chốt Kim Lâu bằng số dư chia 9; định nghĩa loại hạn và nội dung diễn giải dựa nguồn; không triển khai mẹo tổng chữ số một lần hoặc dự đoán tác hại cụ thể.
-  - [ ] 2.5 Chốt bảng/công thức Hoang Ốc cho toàn miền tuổi được hỗ trợ, gồm dưới 10 và từ 70 trở lên. Nếu chưa đủ nguồn, giới hạn rõ miền tính và trả `unsupported` ngoài miền; không extrapolate.
-  - [ ] 2.6 Chốt bảng Tam Tai theo 12 Chi năm sinh và năm xem; phân biệt năm đầu/giữa/cuối với mức độ diễn giải chưa được kiểm chứng.
-  - [ ] 2.7 Chốt ma trận mục đích–vai trò: xem chung, cưới hỏi, động thổ/xây dựng, khai trương/đầu tư; không suy vai trò từ giới tính/tên tài khoản, không tính cả cặp với một hồ sơ.
-  - [ ] 2.8 Chốt trạng thái cho mua xe, mua/sửa nhà, nhập trạch và nghi thức chưa được nguồn xác nhận; không trình bày “không phạm” thay cho “không xét”.
-  - [ ] 2.9 Soạn fixture kỳ vọng độc lập và tiêu chí nghiệm thu kèm nguồn, đủ chín số dư Kim Lâu, miền Hoang Ốc và 12×12 tổ hợp Tam Tai; chốt các quyết định chặn P1 trước task 3.0.
+- [x] 2.0 Hoàn thiện đặc tả hạn năm (P1): chốt tuổi mụ, toàn miền tuổi Hoang Ốc, bảng Kim Lâu/Tam Tai, ma trận mục đích–vai trò và trạng thái không áp dụng/thiếu dữ liệu/chưa hỗ trợ.
+  - [x] 2.1 Tạo `tasks/prd-annual-feng-shui.md` mô tả một hồ sơ, năm âm đang xem và phần kết quả riêng; ghi rõ không đổi nhãn đánh giá ngày, không khóa tạo sự kiện.
+  - [x] 2.2 Định nghĩa input/output: ngày xem/ngày sinh dương, mục đích/vai trò, năm âm, tuổi mụ, từng hạn, toán hạng, rule ID/version và trạng thái `applies/notApplicable/insufficientData/unsupported`; kết quả có/không phạm chỉ có khi `applies`.
+  - [x] 2.3 Chốt tuổi mụ theo năm âm sau quy đổi cả hai ngày; ngày xem trước ngày sinh không áp dụng, ngày ngoài khoảng hỗ trợ không âm thầm tính.
+  - [x] 2.4 Chốt Kim Lâu bằng số dư chia 9; định nghĩa loại hạn và nội dung diễn giải dựa nguồn; không triển khai mẹo tổng chữ số một lần hoặc dự đoán tác hại cụ thể.
+  - [x] 2.5 Chốt bảng/công thức Hoang Ốc cho toàn miền tuổi được hỗ trợ, gồm dưới 10 và từ 70 trở lên. Nếu chưa đủ nguồn, giới hạn rõ miền tính và trả `unsupported` ngoài miền; không extrapolate.
+  - [x] 2.6 Chốt bảng Tam Tai theo 12 Chi năm sinh và năm xem; phân biệt năm đầu/giữa/cuối với mức độ diễn giải chưa được kiểm chứng.
+  - [x] 2.7 Chốt ma trận mục đích–vai trò: xem chung, cưới hỏi, động thổ/xây dựng, khai trương/đầu tư; không suy vai trò từ giới tính/tên tài khoản, không tính cả cặp với một hồ sơ.
+  - [x] 2.8 Chốt trạng thái cho mua xe, mua/sửa nhà, nhập trạch và nghi thức chưa được nguồn xác nhận; không trình bày “không phạm” thay cho “không xét”.
+  - [x] 2.9 Soạn fixture kỳ vọng độc lập và tiêu chí nghiệm thu kèm nguồn, đủ chín số dư Kim Lâu, miền Hoang Ốc và 12×12 tổ hợp Tam Tai; chốt các quyết định chặn P1 trước task 3.0.
 
 - [ ] 3.0 Triển khai module hạn năm đã kiểm chứng (P1): hàm thuần, kết quả có lý do và ID quy tắc, validation và fixture độc lập; hạn năm không thay đổi nhãn đánh giá ngày.
-  - [ ] 3.1 Tạo kiểu trong `annual/types.ts` theo PRD 2.0; các hàm không phụ thuộc React/Firebase và không gọi dịch vụ bên ngoài.
+  - [ ] 3.1 Đồng bộ nguồn/miền/policy và tăng version các rule annual trong registry theo PRD 2.0, cập nhật test readiness; chỉ đổi verified trong phạm vi bằng chứng đã ghi. Sau đó tạo kiểu trong `annual/types.ts`; các hàm không phụ thuộc React/Firebase và không gọi dịch vụ bên ngoài.
   - [ ] 3.2 Tạo `annual/context.ts` để validate ngày, quy đổi năm âm và tính tuổi mụ; thêm test trước/đúng Tết, sinh trước Tết, ngày xem trước sinh và biên năm hỗ trợ.
   - [ ] 3.3 Tạo `kimLau.ts` và test số dư/loại hạn, đặc biệt tuổi 19/28; giữ phép tính tách khỏi quyết định áp dụng cho mục đích.
   - [ ] 3.4 Tạo `hoangOc.ts` theo bảng/công thức đã verified; test mốc 10–60, 19→20, 59→60, 69→70 và miền tuổi ngoài hỗ trợ.

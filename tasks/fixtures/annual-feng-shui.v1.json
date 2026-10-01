@@ -1,0 +1,125 @@
+{
+  "specVersion": "1.0.0",
+  "reviewedOn": "2026-10-01",
+  "usage": "Static specification fixtures; not a production ruleset. Registry readiness is still required.",
+  "provenance": {
+    "kimLau": {
+      "source": "batTrachCourse",
+      "reference": "https://tuvithuchanh.com/wp-content/uploads/2025/03/Phong-thuy-bat-trach-ban-rut-gon.pdf#page=47",
+      "locator": "Uong Sy Can; Bai 7.I; printed pages 47-48 / PDF pages 47-48",
+      "method": "Remainder table transcribed; sample ages calculated by long division, without production code."
+    },
+    "hoangOc": {
+      "source": "batTrachCourse",
+      "reference": "https://tuvithuchanh.com/wp-content/uploads/2025/03/Phong-thuy-bat-trach-ban-rut-gon.pdf#page=48",
+      "locator": "Bai 7.II; printed page 48 / PDF page 48",
+      "method": "Each decade row starts at its printed anchor; units manually count the six-palace cycle. No age extrapolation."
+    },
+    "tamTai": {
+      "source": "khoiSuExtract",
+      "reference": "https://www.tuviglobal.com/static/upload/books/demo/1352132109_khoi%20su_2.pdf#page=3",
+      "locator": "Phan thu tu: Khoi su; II.1.a; printed page 2 / PDF page 3",
+      "limitation": "Author and edition absent from extract. Only branch table used; source gender/activity assertions excluded.",
+      "method": "Four groups expanded by hand into twelve rows; 0 means no hit, 1/2/3 mean sequential cycle position."
+    },
+    "context": {
+      "source": "localCalendar and annualSpec",
+      "locator": "shared/lunar/lunar.test.ts Tet anchors; PRD sections 3-4",
+      "method": "Static app calendar regression anchors plus manual lunar-year subtraction; not independent astronomy certification."
+    },
+    "matrix": {
+      "source": "annualSpec",
+      "locator": "tasks/prd-annual-feng-shui.md sections 6-7",
+      "method": "Product policy; application eligibility below assumes valid supported dates and verified required rules."
+    }
+  },
+  "chiOrder": ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"],
+  "kimLau": [
+    { "age": 18, "remainder": 0, "hit": false, "kind": null },
+    { "age": 10, "remainder": 1, "hit": true, "kind": "than" },
+    { "age": 11, "remainder": 2, "hit": false, "kind": null },
+    { "age": 12, "remainder": 3, "hit": true, "kind": "the" },
+    { "age": 13, "remainder": 4, "hit": false, "kind": null },
+    { "age": 14, "remainder": 5, "hit": false, "kind": null },
+    { "age": 15, "remainder": 6, "hit": true, "kind": "tu" },
+    { "age": 16, "remainder": 7, "hit": false, "kind": null },
+    { "age": 17, "remainder": 8, "hit": true, "kind": "suc" },
+    { "age": 19, "remainder": 1, "hit": true, "kind": "than" },
+    { "age": 28, "remainder": 1, "hit": true, "kind": "than" },
+    { "age": 53, "remainder": 8, "hit": true, "kind": "suc" },
+    { "age": 94, "remainder": 4, "hit": false, "kind": null }
+  ],
+  "hoangOc": {
+    "minAge": 10,
+    "maxAge": 69,
+    "hitPalaces": [3, 5, 6],
+    "palaceIds": ["nhatCat", "nhiNghi", "tamDiaSat", "tuTanTai", "nguThoTu", "lucHoangOc"],
+    "rows": [
+      { "startAge": 10, "palaces": [1, 2, 3, 4, 5, 6, 1, 2, 3, 4] },
+      { "startAge": 20, "palaces": [2, 3, 4, 5, 6, 1, 2, 3, 4, 5] },
+      { "startAge": 30, "palaces": [3, 4, 5, 6, 1, 2, 3, 4, 5, 6] },
+      { "startAge": 40, "palaces": [4, 5, 6, 1, 2, 3, 4, 5, 6, 1] },
+      { "startAge": 50, "palaces": [5, 6, 1, 2, 3, 4, 5, 6, 1, 2] },
+      { "startAge": 60, "palaces": [6, 1, 2, 3, 4, 5, 6, 1, 2, 3] }
+    ],
+    "outsideDomain": [
+      { "age": 1, "status": "unsupported", "reasonCode": "ageOutOfRange" },
+      { "age": 9, "status": "unsupported", "reasonCode": "ageOutOfRange" },
+      { "age": 70, "status": "unsupported", "reasonCode": "ageOutOfRange" },
+      { "age": 202, "status": "unsupported", "reasonCode": "ageOutOfRange" }
+    ]
+  },
+  "tamTai": {
+    "rows": [
+      [0, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0],
+      [2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 0],
+      [0, 0, 0, 0, 0, 1, 2, 3, 0, 0, 0, 0],
+      [0, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0],
+      [2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 0],
+      [0, 0, 0, 0, 0, 1, 2, 3, 0, 0, 0, 0],
+      [0, 0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0],
+      [2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 0],
+      [0, 0, 0, 0, 0, 1, 2, 3, 0, 0, 0, 0]
+    ]
+  },
+  "context": [
+    { "birthDate": "2000-02-04", "viewDate": "2026-02-16", "status": "applies", "birthLunarYear": 1999, "viewLunarYear": 2025, "nominalAge": 27, "birthYearChi": 3, "viewYearChi": 5 },
+    { "birthDate": "2000-02-04", "viewDate": "2026-02-17", "status": "applies", "birthLunarYear": 1999, "viewLunarYear": 2026, "nominalAge": 28, "birthYearChi": 3, "viewYearChi": 6 },
+    { "birthDate": "2000-02-05", "viewDate": "2026-02-17", "status": "applies", "birthLunarYear": 2000, "viewLunarYear": 2026, "nominalAge": 27, "birthYearChi": 4, "viewYearChi": 6 },
+    { "birthDate": "2000-02-04", "viewDate": "2026-02-04", "status": "applies", "birthLunarYear": 1999, "viewLunarYear": 2025, "nominalAge": 27, "birthYearChi": 3, "viewYearChi": 5 },
+    { "birthDate": "2000-02-04", "viewDate": "2026-09-01", "status": "applies", "birthLunarYear": 1999, "viewLunarYear": 2026, "nominalAge": 28, "birthYearChi": 3, "viewYearChi": 6 },
+    { "birthDate": "2024-02-09", "viewDate": "2024-02-10", "status": "applies", "birthLunarYear": 2023, "viewLunarYear": 2024, "nominalAge": 2, "birthYearChi": 3, "viewYearChi": 4 },
+    { "birthDate": "2024-02-10", "viewDate": "2024-02-10", "status": "applies", "birthLunarYear": 2024, "viewLunarYear": 2024, "nominalAge": 1, "birthYearChi": 4, "viewYearChi": 4 },
+    { "birthDate": "1900-01-01", "viewDate": "1900-01-31", "status": "applies", "birthLunarYear": 1899, "viewLunarYear": 1900, "nominalAge": 2, "birthYearChi": 11, "viewYearChi": 0 },
+    { "birthDate": "1900-01-01", "viewDate": "2100-12-31", "status": "applies", "birthLunarYear": 1899, "viewLunarYear": 2100, "nominalAge": 202, "birthYearChi": 11, "viewYearChi": 8 },
+    { "birthDate": "2024-02-10", "viewDate": "2024-02-09", "status": "notApplicable", "reasonCode": "beforeBirth" },
+    { "birthDate": "2024-05-01", "viewDate": "2024-04-30", "status": "notApplicable", "reasonCode": "beforeBirth" },
+    { "viewDate": "2026-02-17", "status": "insufficientData", "reasonCode": "missingBirthDate" },
+    { "birthDate": "2000-02-30", "viewDate": "2026-02-17", "status": "insufficientData", "reasonCode": "invalidBirthDate" },
+    { "birthDate": "2000-02-05", "viewDate": "2026-02-30", "status": "insufficientData", "reasonCode": "invalidViewDate" },
+    { "birthDate": "1899-12-31", "viewDate": "2026-02-17", "status": "unsupported", "reasonCode": "dateOutOfRange" },
+    { "birthDate": "2000-02-05", "viewDate": "2101-01-01", "status": "unsupported", "reasonCode": "dateOutOfRange" }
+  ],
+  "matrix": {
+    "ruleOrder": ["annual.kim-lau", "annual.hoang-oc", "annual.tam-tai"],
+    "roleOrder": ["self", "bride", "owner", "principal", "other", "unspecified"],
+    "legend": { "A": "applies", "N": "notApplicable", "I": "insufficientData", "U": "unsupported" },
+    "supportedPurposeRows": {
+      "general": [["N", "N", "A"], ["U", "U", "U"], ["U", "U", "U"], ["U", "U", "U"], ["U", "U", "U"], ["U", "U", "U"]],
+      "wedding": [["I", "N", "A"], ["A", "N", "A"], ["U", "U", "U"], ["U", "U", "U"], ["I", "N", "A"], ["I", "N", "A"]],
+      "construction": [["I", "I", "I"], ["U", "U", "U"], ["A", "A", "A"], ["U", "U", "U"], ["I", "I", "I"], ["I", "I", "I"]],
+      "business": [["N", "N", "I"], ["U", "U", "U"], ["U", "U", "U"], ["N", "N", "A"], ["N", "N", "I"], ["N", "N", "I"]]
+    },
+    "unsupportedPurposes": ["carPurchase", "housePurchase", "repair", "moveIn", "ritual"],
+    "unsupportedPurposeAllRoles": ["U", "U", "U"]
+  },
+  "readiness": [
+    { "condition": "pending", "status": "unsupported", "reasonCode": "unverifiedRule", "hasValue": false },
+    { "condition": "rejected", "status": "unsupported", "reasonCode": "rejectedRule", "hasValue": false },
+    { "condition": "missing", "status": "unsupported", "reasonCode": "missingRule", "hasValue": false },
+    { "condition": "scopeMismatch", "status": "unsupported", "reasonCode": "scopeMismatch", "hasValue": false }
+  ]
+}

@@ -127,3 +127,19 @@ Audit P0 hoàn tất khi mọi đề xuất có quyết định và câu hỏi c
 - `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run build`: đạt. Build có cảnh báo chunk lớn và tùy chọn PWA đã deprecated; task này không thay cấu hình/bundle ứng dụng.
 - `npm audit --audit-level=high`: đã thử nhưng không hoàn tất do DNS `ENOTFOUND registry.npmjs.org`; không kết luận dependency không có lỗ hổng. Không thêm hoặc thay dependency ở task 1.
 - Chưa chạy Emulator/E2E vì không đổi UI, lưu trữ hoặc security rules; chưa commit/deploy. Các kiểm tra đó nằm ở task tích hợp sau.
+
+## 7. Bổ sung task 2 — đặc tả P1 (01/10/2026)
+
+Đã tạo `prd-annual-feng-shui.md` v1.0.0 và `fixtures/annual-feng-shui.v1.json`. Nội dung P0 ở trên là snapshot đợt audit trước; registry **vẫn giữ nguyên 26 mục và trạng thái**, không có engine mới trong task 2.
+
+Nguồn bổ sung và phạm vi sử dụng được định vị tại PRD mục 2:
+
+- `batTrachCourse`: giáo trình Uông Sỹ Cần, bản PDF do website trung tâm công bố, Bài 7 / trang thực tế 47–48. Đối chiếu phép số dư và mốc sáu cung; không dùng lời dự đoán hoặc kéo miền tuổi vượt các mốc được chọn.
+- `khoiSuExtract`: bản trích *Phần thứ tư: Khởi sự*, II.1.a / trang in 2, PDF 3. Đối chiếu bảng Chi; bản trích thiếu tác giả/ấn bản và có phạm vi giới tính khác attachment. PRD ghi rõ giới hạn provenance, chỉ lấy bảng, không chuyển toàn bộ lời kiêng việc thành policy.
+- `annualSpec`: ma trận vai trò, mốc Tết UTC+7, miền tuổi và cách trình bày là policy sản phẩm; không gán chúng cho toàn bộ các trường phái.
+
+Đã chốt Hoang Ốc 10–69 inclusive; ngoài miền trả unsupported. Kim Lâu dùng mod 9; Tam Tai chỉ trả vị trí chu kỳ, không mức độ. Các hoạt động mua xe/mua nhà/sửa nhà/nhập trạch/nghi thức chưa hỗ trợ. Purpose/role tạm thời, không persist; không đánh giá cả cặp với một hồ sơ.
+
+Fixture tĩnh bao phủ 9 số dư và 4 ví dụ bổ sung, 60 tuổi, 144 cặp Chi, 54 tổ hợp purpose/role, 16 context ngày và 4 tình huống gate. Expected ghi từ bảng/đếm tay, không sinh bằng engine production. Chín context hợp lệ được so với bộ lịch hiện có; đây là regression của quy ước app, không benchmark thiên văn độc lập.
+
+**Điều kiện task 3:** đồng bộ metadata nguồn, phạm vi và version registry với đặc tả trước khi chạy; kiểm tra readiness cho từng hạn và nominal-age. Không dùng fixture để vượt gate pending. Giới hạn nguồn của Tam Tai phải xuất hiện trong metadata/lý do; nếu yêu cầu nguồn có tác giả/ấn bản đầy đủ thì giữ riêng hạn đó pending và unsupported, không tạo kết quả thay thế. Task 2 đóng các quyết định đặc tả, chưa chứng nhận module hoặc UI.
