@@ -6,6 +6,66 @@ const policies = [
   { path: '/terms', title: 'Điều khoản sử dụng' },
 ]
 
+for (const policy of policies) {
+  test(`mở lại cài đặt sau khi đọc ${policy.path}`, async ({ app }) => {
+    await app.goto('/settings')
+    const dark = app.getByRole('radio', { name: 'Tối', exact: true })
+    await dark.click()
+    await expect(dark).toHaveAttribute('aria-checked', 'true')
+    await app.evaluate(() => Reflect.set(window, '__legalNavigationSession', 'active'))
+    const label = policy.path === '/privacy' ? 'Quyền riêng tư' : 'Điều khoản sử dụng'
+    for (let i = 0; i < 3; i++) {
+      await app.getByRole('contentinfo').getByRole('link', { name: label, exact: true }).click()
+      await expect(app.getByRole('heading', { level: 1, name: policy.title })).toBeVisible()
+      await expect(app).toHaveTitle(`${policy.title} | Lịch Việt`)
+      expect(await app.evaluate(() => Reflect.get(window, '__legalNavigationSession'))).toBe(
+        'active',
+      )
+      if (i === 0) {
+        const result = await new AxeBuilder({ page: app })
+          .include('header')
+          .include('main')
+          .include('footer')
+          .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+          .analyze()
+        expect(result.violations.map((v) => v.id)).toEqual([])
+        await app.screenshot({ path: test.info().outputPath('policy-in-app.png'), fullPage: true })
+      }
+      await app.getByRole('link', { name: 'Mở Lịch Việt' }).click()
+      expect(await app.evaluate(() => Reflect.get(window, '__legalNavigationSession'))).toBe(
+        'active',
+      )
+      await expect(app.getByRole('region', { name: 'Thông tin ngày' })).toBeVisible()
+      const menu = app.getByRole('button', { name: 'Mở menu', exact: true })
+      if (await menu.isVisible()) await menu.click()
+      await app.getByRole('link', { name: 'Cài đặt', exact: true }).click()
+      await expect(app.getByRole('tab', { name: 'Hiển thị' })).toBeVisible()
+      await expect(dark).toHaveAttribute('aria-checked', 'true')
+      await expect(app.getByText('Đang tải…', { exact: true })).toHaveCount(0)
+    }
+  })
+}
+
+test('chuyển giữa các chính sách và quay lại bằng lịch sử trong cùng phiên app', async ({
+  app,
+}) => {
+  await app.goto('/settings#account')
+  await expect(app.getByRole('tab', { name: 'Tài khoản' })).toBeVisible()
+  await app.evaluate(() => Reflect.set(window, '__legalNavigationSession', 'active'))
+  await app.getByRole('link', { name: 'Điều khoản sử dụng', exact: true }).click()
+  await expect(app.getByRole('heading', { level: 1 })).toHaveText('Điều khoản sử dụng')
+  await app.getByRole('link', { name: 'Chính sách quyền riêng tư', exact: true }).first().click()
+  await expect(app.getByRole('heading', { level: 1 })).toHaveText('Chính sách quyền riêng tư')
+  await app.goBack()
+  await expect(app.getByRole('heading', { level: 1 })).toHaveText('Điều khoản sử dụng')
+  await app.getByRole('link', { name: 'Chính sách quyền riêng tư', exact: true }).first().click()
+  await app.getByRole('link', { name: 'Điều khoản sử dụng', exact: true }).click()
+  await app.getByRole('link', { name: 'Chính sách quyền riêng tư', exact: true }).last().click()
+  await expect(app).toHaveURL(/\/privacy#control$/)
+  await expect(app.getByRole('heading', { name: /6\. Xem, xuất/ })).toBeInViewport()
+  expect(await app.evaluate(() => Reflect.get(window, '__legalNavigationSession'))).toBe('active')
+})
+
 test.describe('Trang pháp lý công khai', () => {
   test.use({ javaScriptEnabled: false })
   for (const policy of policies) {
