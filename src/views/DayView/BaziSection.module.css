@@ -1,0 +1,33 @@
+.section {
+  display: grid;
+  gap: calc(12px * var(--ui-scale));
+  min-width: 0;
+  border-top: 1px solid var(--separator);
+  padding-top: calc(16px * var(--ui-scale));
+}
+.section h3,
+.section h4,
+.section p {
+  margin: 0;
+}
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(8px * var(--ui-scale));
+}
+.pillar {
+  min-width: 0;
+  padding: calc(10px * var(--ui-scale));
+  text-align: center;
+  border: 1px solid var(--separator);
+  border-radius: var(--radius);
+  background: var(--glass-strong);
+}
+.muted {
+  color: var(--text-muted);
+}
+@media (max-width: 420px) {
+  .pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

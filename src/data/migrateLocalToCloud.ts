@@ -6,12 +6,30 @@ import {
   writeBatch,
   type DocumentReference,
 } from 'firebase/firestore'
-import type { Category } from '@shared/types'
-import { isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
+import type { Category, Settings } from '@shared/types'
+import { BIRTH_METADATA_KEYS, isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
 import { toFirestoreData, type FirestoreRepository } from './firestoreRepository'
 import type { LocalRepository } from './localRepository'
 
 const BATCH_LIMIT = 400
+
+function stableJson(value: unknown): string | undefined {
+  if (value === undefined) return undefined
+  if (Array.isArray(value))
+    return JSON.stringify(value.map((item) => JSON.parse(stableJson(item)!)))
+  if (value && typeof value === 'object') {
+    const sorted = Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, item]) => [
+          key,
+          item && typeof item === 'object' ? JSON.parse(stableJson(item)!) : item,
+        ]),
+    )
+    return JSON.stringify(sorted)
+  }
+  return JSON.stringify(value)
+}
 
 export class MigrationError extends Error {
   constructor(message: string) {
@@ -63,11 +81,17 @@ export async function migrateLocalToCloud(
   ]
   // Cài đặt local chỉ dùng khi tài khoản chưa có cài đặt.
   const cloudSettings = userSnap.data()?.settings
-  const birthInfo =
+  const birthInfo: Partial<Settings> | null =
     isValidBirthDate(localSettings.birthDate) && cloudSettings?.birthDate === undefined
       ? {
           birthDate: localSettings.birthDate,
           birthTime: isValidBirthTime(localSettings.birthTime) ? localSettings.birthTime : null,
+          ...Object.fromEntries(
+            BIRTH_METADATA_KEYS.filter((key) => key !== 'birthTime').map((key) => [
+              key,
+              localSettings[key],
+            ]),
+          ),
         }
       : null
   if (!cloudSettings) {
@@ -98,9 +122,18 @@ export async function migrateLocalToCloud(
   if (birthInfo) {
     const serverUser = await getDocFromServer(cloud.userDoc)
     const saved = serverUser.data()?.settings
-    if (saved?.birthDate !== birthInfo.birthDate || saved?.birthTime !== birthInfo.birthTime) {
+    const missingBirthFields = [
+      ...(saved?.birthDate === birthInfo.birthDate ? [] : ['birthDate']),
+      ...BIRTH_METADATA_KEYS.filter(
+        (key) =>
+          birthInfo[key] !== null &&
+          birthInfo[key] !== undefined &&
+          stableJson(saved?.[key]) !== stableJson(birthInfo[key]),
+      ),
+    ]
+    if (missingBirthFields.length > 0) {
       throw new MigrationError(
-        'Chưa chuyển được thông tin ngày sinh. Dữ liệu trên máy vẫn được giữ.',
+        `Chưa chuyển được thông tin ngày sinh (${missingBirthFields.join(', ')}). Dữ liệu trên máy vẫn được giữ.`,
       )
     }
   }

@@ -7,6 +7,10 @@ test('nhập và lưu ngày sinh, giữ sau khi tải lại, xóa được', asy
   await app.getByLabel('Tháng sinh', { exact: true }).fill('2')
   await app.getByLabel('Năm sinh', { exact: true }).fill('2000')
   await app.getByLabel('Giờ sinh (tùy chọn)', { exact: true }).fill('00:15')
+  await app.getByLabel('Nơi sinh', { exact: true }).selectOption('hcm')
+  await app.getByLabel('Độ chắc chắn của giờ sinh').selectOption('estimated')
+  await app.getByLabel('Sai số ước lượng (phút)').fill('15')
+  await app.getByLabel('Quy ước giờ Tý').selectOption('dayStartsAt23')
   await app.getByRole('button', { name: 'Lưu thông tin', exact: true }).click()
   await expect(app.getByRole('tabpanel').getByRole('status')).toContainText(
     'Đã lưu thông tin ngày sinh.',
@@ -15,6 +19,13 @@ test('nhập và lưu ngày sinh, giữ sau khi tải lại, xóa được', asy
   await app.reload()
   await expect(app.getByLabel('Năm sinh', { exact: true })).toHaveValue('2000')
   await expect(app.getByLabel('Giờ sinh (tùy chọn)', { exact: true })).toHaveValue('00:15')
+  await expect(app.getByLabel('Nơi sinh', { exact: true })).toHaveValue('hcm')
+  await expect(app.getByLabel('Độ chắc chắn của giờ sinh')).toHaveValue('estimated')
+  await expect(app.getByLabel('Sai số ước lượng (phút)')).toHaveValue('15')
+  await expect(app.getByLabel('Quy ước giờ Tý')).toHaveValue('dayStartsAt23')
+  await app.goto('/day/2026-09-23')
+  await expect(app.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).toContainText('TST')
+  await app.goto('/settings#account')
   await app.getByRole('button', { name: 'Xóa thông tin ngày sinh', exact: true }).click()
   await app.getByRole('button', { name: 'Lưu thông tin', exact: true }).click()
   await expect(app.getByRole('tabpanel').getByRole('status')).toContainText(
@@ -22,6 +33,7 @@ test('nhập và lưu ngày sinh, giữ sau khi tải lại, xóa được', asy
   )
   await app.reload()
   await expect(app.getByLabel('Năm sinh', { exact: true })).toHaveValue('')
+  await expect(app.getByLabel('Nơi sinh', { exact: true })).toHaveValue('')
 })
 
 test('tab tài khoản không tràn ngang ở chữ rất lớn và đạt WCAG AA', async ({ app }) => {

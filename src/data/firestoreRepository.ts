@@ -14,6 +14,7 @@ import {
 } from 'firebase/firestore'
 import type { SyncState } from '../store/syncStore'
 import type { CalendarEvent, Category, Settings } from '@shared/types'
+import { withBirthDeletion } from '@shared/birthInfo'
 import { EventValidationError, validateEvent } from '@shared/validation'
 import {
   createDefaultCategories,
@@ -191,8 +192,7 @@ export class FirestoreRepository implements CalendarRepository {
 
   async saveSettings(patch: Partial<Omit<Settings, 'updatedAt'>>): Promise<Settings> {
     const next: Settings = {
-      ...(await this.getSettings()),
-      ...patch,
+      ...withBirthDeletion(await this.getSettings(), patch),
       updatedAt: new Date().toISOString(),
     }
     this.write(setDoc(this.userDoc, { settings: toFirestoreData(next) }, { merge: true }))

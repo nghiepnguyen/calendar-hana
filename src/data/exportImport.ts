@@ -1,7 +1,7 @@
 import type { CalendarEvent, Category, Settings, SolarDateString } from '@shared/types'
 import { todayInVietnam } from '@shared/time'
 import { isValidEvent } from '@shared/validation'
-import { isValidBirthDate, isValidBirthTime } from '@shared/birthInfo'
+import { isValidBirthDate, isValidBirthPlace, isValidBirthTime } from '@shared/birthInfo'
 import { OTHER_CATEGORY_ID } from './defaultCategories'
 import type { InteropContext } from './interop/common'
 import { exportGoogleCsv, parseGoogleCsv } from './interop/googleCsv'
@@ -97,6 +97,49 @@ export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedA
   const result: Partial<Omit<Settings, 'updatedAt'>> = {}
   if (raw.birthDate === null || isValidBirthDate(raw.birthDate)) result.birthDate = raw.birthDate
   if (raw.birthTime === null || isValidBirthTime(raw.birthTime)) result.birthTime = raw.birthTime
+  if (isValidBirthDate(raw.birthDate)) {
+    if (
+      raw.birthTimePrecision === null ||
+      raw.birthTimePrecision === 'exact' ||
+      raw.birthTimePrecision === 'estimated' ||
+      raw.birthTimePrecision === 'unknown'
+    )
+      result.birthTimePrecision = raw.birthTimePrecision
+    if (
+      raw.birthTimeUncertaintyMinutes === null ||
+      (typeof raw.birthTimeUncertaintyMinutes === 'number' &&
+        Number.isFinite(raw.birthTimeUncertaintyMinutes) &&
+        raw.birthTimeUncertaintyMinutes >= 0)
+    )
+      result.birthTimeUncertaintyMinutes = raw.birthTimeUncertaintyMinutes as number | null
+    if (raw.birthPlace === null || isValidBirthPlace(raw.birthPlace))
+      result.birthPlace = raw.birthPlace
+    if (
+      raw.birthTimezoneId === null ||
+      raw.birthTimezoneId === 'Asia/Ho_Chi_Minh' ||
+      raw.birthTimezoneId === 'Asia/Bangkok'
+    )
+      result.birthTimezoneId = raw.birthTimezoneId
+    if (
+      raw.birthTimezoneSource === null ||
+      raw.birthTimezoneSource === 'bundledMapping' ||
+      raw.birthTimezoneSource === 'userConfirmed'
+    )
+      result.birthTimezoneSource = raw.birthTimezoneSource
+    if (
+      raw.birthConfirmedOffsetMinutes === null ||
+      (typeof raw.birthConfirmedOffsetMinutes === 'number' &&
+        Number.isInteger(raw.birthConfirmedOffsetMinutes) &&
+        Math.abs(raw.birthConfirmedOffsetMinutes) <= 840)
+    )
+      result.birthConfirmedOffsetMinutes = raw.birthConfirmedOffsetMinutes as number | null
+    if (
+      raw.birthZiPolicy === null ||
+      raw.birthZiPolicy === 'splitZi' ||
+      raw.birthZiPolicy === 'dayStartsAt23'
+    )
+      result.birthZiPolicy = raw.birthZiPolicy
+  }
   if (raw.weekStartsOn === 0 || raw.weekStartsOn === 1) result.weekStartsOn = raw.weekStartsOn
   if (typeof raw.showHolidays === 'boolean') result.showHolidays = raw.showHolidays
   if (typeof raw.showAuspicious === 'boolean') result.showAuspicious = raw.showAuspicious

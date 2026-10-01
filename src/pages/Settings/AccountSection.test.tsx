@@ -68,6 +68,28 @@ describe('Thông tin ngày sinh trong Tài khoản', () => {
     expect(screen.getByLabelText('Giờ sinh (tùy chọn)')).toHaveValue('23:45')
   })
 
+  it('lưu nơi sinh, độ chắc chắn và quy ước giờ Tý mà không dùng vị trí thiết bị', async () => {
+    const { repository } = await setup()
+    enterDate('4', '2', '2024')
+    fireEvent.change(screen.getByLabelText('Giờ sinh (tùy chọn)'), { target: { value: '15:30' } })
+    await userEvent.selectOptions(screen.getByLabelText('Nơi sinh'), 'hcm')
+    await userEvent.selectOptions(screen.getByLabelText('Độ chắc chắn của giờ sinh'), 'estimated')
+    fireEvent.change(screen.getByLabelText('Sai số ước lượng (phút)'), {
+      target: { value: '20' },
+    })
+    await userEvent.selectOptions(screen.getByLabelText('Quy ước giờ Tý'), 'dayStartsAt23')
+    await userEvent.click(screen.getByRole('button', { name: 'Lưu thông tin' }))
+    await screen.findByText('Đã lưu thông tin ngày sinh.')
+    expect(await repository.getSettings()).toMatchObject({
+      birthPlace: { label: 'TP. Hồ Chí Minh', longitude: 106.66 },
+      birthTimezoneId: 'Asia/Ho_Chi_Minh',
+      birthTimezoneSource: 'bundledMapping',
+      birthTimePrecision: 'estimated',
+      birthTimeUncertaintyMinutes: 20,
+      birthZiPolicy: 'dayStartsAt23',
+    })
+  })
+
   it('giờ sinh có thể bỏ trống, xóa thông tin đã lưu được', async () => {
     const { repository } = await setup()
     enterDate('15', '5', '1995')

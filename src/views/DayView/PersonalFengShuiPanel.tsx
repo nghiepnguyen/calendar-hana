@@ -6,6 +6,7 @@ import { FENG_SHUI_RULES, type RuleDefinition } from '@shared/personalFengShui/r
 import { useAuth } from '../../auth/authContext'
 import { useNow } from '../../hooks/useNow'
 import { AnnualFengShuiSection } from './AnnualFengShuiSection'
+import { BaziSection } from './BaziSection'
 import { FengShuiSources } from './FengShuiSources'
 import { hourIndexAt } from './hourIndex'
 import styles from './PersonalFengShuiPanel.module.css'
@@ -204,6 +205,7 @@ export function PersonalFengShuiPanel({
         birthDate={settings.birthDate}
         rules={rules}
       />
+      <BaziSection settings={settings} />
     </section>
   )
 }

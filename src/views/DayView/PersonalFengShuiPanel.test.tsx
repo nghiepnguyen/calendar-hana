@@ -109,3 +109,37 @@ it('shows reviewed stem clash separately and does not duplicate common stars', (
   expect(within(extended).getByText(/Thụ Tử và Sát Chủ vẫn là sao chung/)).toBeInTheDocument()
   expect(within(extended).queryByText('Thái Tuế')).not.toBeInTheDocument()
 })
+
+it('shows four pillars only from a complete saved birth profile', () => {
+  const p = props('2024-02-04')
+  render(
+    <DayView
+      {...p}
+      settings={{
+        ...p.settings,
+        birthDate: '2024-02-04',
+        birthTime: '15:30',
+        birthTimePrecision: 'exact',
+        birthTimeUncertaintyMinutes: 0,
+        birthPlace: {
+          countryCode: 'VN',
+          subdivisionCode: 'VN-SG',
+          label: 'TP. Hồ Chí Minh',
+          latitude: 10.76,
+          longitude: 106.66,
+          coordinateSource: 'bundledGazetteer',
+          coordinateAccuracyKm: 10,
+        },
+        birthTimezoneId: 'Asia/Ho_Chi_Minh',
+        birthTimezoneSource: 'bundledMapping',
+        birthConfirmedOffsetMinutes: null,
+        birthZiPolicy: 'splitZi',
+      }}
+    />,
+  )
+  const bazi = screen.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })
+  expect(within(bazi).getByText('Giáp Thìn')).toBeInTheDocument()
+  expect(within(bazi).getByText('Bính Dần')).toBeInTheDocument()
+  expect(within(bazi).getAllByText(/TST/).length).toBeGreaterThan(0)
+  expect(within(bazi).getByText(/Astronomy Engine 2.1.19/)).toBeInTheDocument()
+})

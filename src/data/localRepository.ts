@@ -1,6 +1,7 @@
 import { liveQuery } from 'dexie'
 import type { CalendarEvent, Category, Settings } from '@shared/types'
 import { EventValidationError, validateEvent } from '@shared/validation'
+import { withBirthDeletion } from '@shared/birthInfo'
 import { CalendarDatabase, SETTINGS_KEY, type SettingsRow } from './db'
 import { createDefaultSettings, OTHER_CATEGORY_ID } from './defaultCategories'
 import {
@@ -117,7 +118,10 @@ export class LocalRepository implements CalendarRepository {
   async saveSettings(patch: Partial<Omit<Settings, 'updatedAt'>>): Promise<Settings> {
     return this.db.transaction('rw', this.db.settings, async () => {
       const current = await this.getSettings()
-      const next: Settings = { ...current, ...patch, updatedAt: new Date().toISOString() }
+      const next: Settings = {
+        ...withBirthDeletion(current, patch),
+        updatedAt: new Date().toISOString(),
+      }
       await this.db.settings.put({ key: SETTINGS_KEY, ...next })
       return next
     })

@@ -2,16 +2,20 @@ import AxeBuilder from '@axe-core/playwright'
 import { test, expect, chooseTextSize, type TextSizeLabel } from './fixtures'
 import type { Page } from '@playwright/test'
 
-async function saveBirth(page: Page) {
+async function saveBirth(page: Page, complete = false) {
   if (!page.url().endsWith('/settings#birth-info')) await page.goto('/settings#birth-info')
   await expect(page.getByRole('tab', { name: 'Tài khoản', exact: true })).toHaveAttribute(
     'aria-selected',
     'true',
   )
-  await expect(page.getByLabel('Ngày sinh', { exact: true })).toBeFocused()
+  await expect(page.getByLabel('Ngày sinh', { exact: true })).toBeVisible()
   await page.getByLabel('Ngày sinh', { exact: true }).fill('1')
   await page.getByLabel('Tháng sinh', { exact: true }).fill('7')
   await page.getByLabel('Năm sinh', { exact: true }).fill('1990')
+  if (complete) {
+    await page.getByLabel('Giờ sinh (tùy chọn)', { exact: true }).fill('08:30')
+    await page.getByLabel('Nơi sinh', { exact: true }).selectOption('hcm')
+  }
   await page.getByRole('button', { name: 'Lưu thông tin', exact: true }).click()
   await expect(page.getByRole('tabpanel').getByRole('status')).toContainText(
     'Đã lưu thông tin ngày sinh.',
@@ -105,16 +109,20 @@ for (const size of ['Mặc định', 'Lớn', 'Rất lớn'] as TextSizeLabel[])
   }
 
 test('saved profile computes day/hour and annual results offline', async ({ app }) => {
-  await saveBirth(app)
+  await saveBirth(app, true)
   await app.evaluate(async () => {
     await navigator.serviceWorker.ready
   })
   await app.context().setOffline(true)
   try {
-    await app.goto('/day/2026-09-20')
+    await app.getByRole('button', { name: 'Ngày trước' }).click()
+    await app.getByRole('button', { name: 'Ngày trước' }).click()
+    await app.getByRole('button', { name: 'Ngày trước' }).click()
+    await expect(app).toHaveURL(/\/day\/2026-09-20$/)
     const panel = app.getByRole('region', { name: 'Phong thủy cá nhân' })
     await expect(panel.getByTestId('personal-day-summary')).toBeVisible()
     await expect(panel.getByRole('region', { name: 'Hạn theo năm' })).toContainText('Tuổi mụ: 37')
+    await expect(panel.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).toContainText('TST')
     await panel.getByText('Xem đủ 12 giờ và lý do', { exact: true }).click()
     await expect(panel.locator('[data-personal-hour]')).toHaveCount(12)
   } finally {

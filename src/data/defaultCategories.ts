@@ -42,6 +42,13 @@ export function createDefaultCategories(now = new Date().toISOString()): Categor
 
 export function createDefaultSettings(now = new Date().toISOString()): Settings {
   return {
+    birthTimePrecision: null,
+    birthTimeUncertaintyMinutes: null,
+    birthPlace: null,
+    birthTimezoneId: null,
+    birthTimezoneSource: null,
+    birthConfirmedOffsetMinutes: null,
+    birthZiPolicy: 'splitZi',
     weekStartsOn: 1,
     showHolidays: true,
     showAuspicious: true,

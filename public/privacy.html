@@ -24,7 +24,7 @@
       <p class="legal-kicker">PRIVACY POLICY</p>
       <h1>Chính sách quyền riêng tư</h1>
       <p class="legal-date">
-        Có hiệu lực và cập nhật lần cuối: <time datetime="2026-09-30">30/09/2026</time>
+        Có hiệu lực và cập nhật lần cuối: <time datetime="2026-10-02">02/10/2026</time>
       </p>
       <p>
         Lịch Việt tại <a href="https://lich.thanhnghiep.top/">lich.thanhnghiep.top</a> là ứng dụng
@@ -33,9 +33,9 @@
       </p>
       <div class="legal-summary">
         <strong>Bạn kiểm soát thông tin của mình.</strong> Có thể dùng lịch không cần tài khoản,
-        nhập ngày sinh thủ công hoặc bỏ trống. Quyền đọc ngày sinh Google chỉ được yêu cầu khi bạn
-        chọn chức năng đó. Ngày sinh và nội dung lịch không được gửi vào công cụ analytics của ứng
-        dụng.
+        nhập hồ sơ sinh thủ công hoặc bỏ trống. Quyền đọc ngày sinh Google chỉ được yêu cầu khi bạn
+        chọn chức năng đó. Ngày sinh, giờ sinh, nơi sinh và nội dung lịch không được gửi vào công cụ
+        analytics của ứng dụng.
       </div>
 
       <section aria-labelledby="collection">
@@ -43,8 +43,9 @@
         <ul>
           <li>
             <strong>Dữ liệu bạn nhập:</strong> sự kiện, tiêu đề, ngày và giờ, quy tắc lặp, nhắc hẹn,
-            ghi chú, địa điểm, danh mục, cài đặt và ngày sinh, giờ sinh nếu bạn chọn cung cấp. File
-            nhập có thể chứa dữ liệu lịch từ ứng dụng khác.
+            ghi chú, địa điểm, danh mục, cài đặt và hồ sơ sinh nếu bạn chọn cung cấp. Hồ sơ sinh có
+            thể gồm ngày, giờ, độ chắc chắn, nơi sinh, tọa độ địa danh đã chọn, múi giờ và quy ước
+            giờ Tý. File nhập có thể chứa dữ liệu lịch từ ứng dụng khác.
           </li>
           <li>
             <strong>Thông tin tài khoản Google:</strong> khi đăng nhập, ứng dụng nhận tên hiển thị,
@@ -115,6 +116,11 @@
           khoản, ứng dụng chỉ xóa bản local sau khi kiểm tra dữ liệu đã được chuyển.
         </p>
         <p>
+          Tứ Trụ được tính ngay trong ứng dụng bằng dữ liệu thiên văn đóng gói để dùng được offline.
+          Ứng dụng không gửi hồ sơ sinh tới dịch vụ luận giải bên ngoài và không lưu lá số dẫn xuất
+          vào cache công khai của service worker.
+        </p>
+        <p>
           Để gửi nhắc hẹn cloud, Cloud Functions xử lý sự kiện và thời điểm nhắc. Firebase Cloud
           Messaging nhận thông tin thông báo để gửi Web Push. Khi bạn chọn email, Resend xử lý địa
           chỉ email và nội dung nhắc hẹn, có thể bao gồm tiêu đề, thời gian, địa điểm và ghi chú sự
@@ -131,8 +137,8 @@
         <p>
           Lịch Việt sử dụng Google Analytics 4 và PostHog để đo lượt truy cập, các thao tác sử dụng
           và cải thiện ứng dụng. Khi đăng nhập, mã người dùng Firebase được gửi tới PostHog để liên
-          kết các thao tác của cùng tài khoản; ứng dụng không gửi tên, email, ngày sinh hoặc giờ
-          sinh qua chức năng nhận diện này.
+          kết các thao tác của cùng tài khoản; ứng dụng không gửi tên, email, ngày sinh, giờ sinh,
+          nơi sinh hoặc kết quả Tứ Trụ qua chức năng nhận diện này.
         </p>
         <p>
           Ứng dụng không gửi tiêu đề, ghi chú, địa điểm sự kiện hoặc từ khóa tìm kiếm trong các sự

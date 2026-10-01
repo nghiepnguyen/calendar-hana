@@ -87,11 +87,32 @@ export type ThemePreference = 'light' | 'dark' | 'system'
 /** Cỡ chữ toàn app. Chữ, icon, nút và khoảng cách cùng phóng theo tỉ lệ. */
 export type TextSize = 'default' | 'large' | 'xlarge'
 
+export type BirthTimePrecision = 'exact' | 'estimated' | 'unknown'
+export type BirthTimezoneId = 'Asia/Ho_Chi_Minh' | 'Asia/Bangkok'
+export type BirthTimezoneSource = 'bundledMapping' | 'userConfirmed'
+export type BirthZiPolicy = 'splitZi' | 'dayStartsAt23'
+export interface BirthPlace {
+  countryCode: 'VN'
+  subdivisionCode: string | null
+  label: string
+  latitude: number
+  longitude: number
+  coordinateSource: 'bundledGazetteer' | 'userSelected' | 'userEntered'
+  coordinateAccuracyKm: number | null
+}
+
 export interface Settings {
   /** Ngày sinh dương lịch. null = đã xóa; undefined = chưa nhập ở bản cũ. */
   birthDate?: SolarDateString | null
   /** Giờ sinh 24 giờ, tùy chọn, không tự suy ra từ Google. */
   birthTime?: TimeString | null
+  birthTimePrecision?: BirthTimePrecision | null
+  birthTimeUncertaintyMinutes?: number | null
+  birthPlace?: BirthPlace | null
+  birthTimezoneId?: BirthTimezoneId | null
+  birthTimezoneSource?: BirthTimezoneSource | null
+  birthConfirmedOffsetMinutes?: number | null
+  birthZiPolicy?: BirthZiPolicy | null
   /** 1 = Thứ Hai, 0 = Chủ nhật. */
   weekStartsOn: 0 | 1
   showHolidays: boolean

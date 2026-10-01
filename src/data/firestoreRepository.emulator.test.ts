@@ -85,21 +85,68 @@ describe('FirestoreRepository', () => {
     }
   })
 
-  it('lưu và đọc lại ngày sinh và giờ sinh trên cloud', async () => {
+  it('lưu, đọc và xóa liên đới toàn bộ hồ sơ sinh trên cloud', async () => {
     const { repo, db } = cloudFor('birthday-user')
     await repo.ensureInitialized({ email: 'a@x.vn', displayName: 'An' })
-    await repo.saveSettings({ birthDate: '2000-02-29', birthTime: '23:45' })
+    const birthPlace = {
+      countryCode: 'VN' as const,
+      subdivisionCode: 'VN-SG',
+      label: 'TP. Hồ Chí Minh',
+      latitude: 10.76,
+      longitude: 106.66,
+      coordinateSource: 'bundledGazetteer' as const,
+      coordinateAccuracyKm: 10,
+    }
+    await repo.saveSettings({
+      birthDate: '2000-02-29',
+      birthTime: '23:45',
+      birthTimePrecision: 'estimated',
+      birthTimeUncertaintyMinutes: 15,
+      birthPlace,
+      birthTimezoneId: 'Asia/Ho_Chi_Minh',
+      birthTimezoneSource: 'bundledMapping',
+      birthZiPolicy: 'splitZi',
+    })
     await waitForPendingWrites(db)
-    expect(await repo.getSettings()).toMatchObject({ birthDate: '2000-02-29', birthTime: '23:45' })
-    await repo.saveSettings({ birthDate: null, birthTime: null })
+    expect(await repo.getSettings()).toMatchObject({
+      birthDate: '2000-02-29',
+      birthTime: '23:45',
+      birthPlace,
+      birthTimePrecision: 'estimated',
+      birthZiPolicy: 'splitZi',
+    })
+    await repo.saveSettings({ birthDate: null })
     await waitForPendingWrites(db)
-    expect(await repo.getSettings()).toMatchObject({ birthDate: null, birthTime: null })
+    expect(await repo.getSettings()).toMatchObject({
+      birthDate: null,
+      birthTime: null,
+      birthPlace: null,
+      birthTimezoneId: null,
+      birthTimePrecision: null,
+      birthZiPolicy: null,
+    })
   })
 
   it('chuyển thông tin ngày sinh local vào tài khoản đã có cài đặt mặc định', async () => {
     const local = newLocal()
     try {
-      await local.saveSettings({ birthDate: '1995-05-15', birthTime: '07:30' })
+      await local.saveSettings({
+        birthDate: '1995-05-15',
+        birthTime: '07:30',
+        birthTimePrecision: 'exact',
+        birthPlace: {
+          countryCode: 'VN',
+          subdivisionCode: 'VN-HN',
+          label: 'Hà Nội',
+          latitude: 21.03,
+          longitude: 105.85,
+          coordinateSource: 'bundledGazetteer',
+          coordinateAccuracyKm: 10,
+        },
+        birthTimezoneId: 'Asia/Bangkok',
+        birthTimezoneSource: 'bundledMapping',
+        birthZiPolicy: 'splitZi',
+      })
       const { repo: cloud, db } = cloudFor('birthday-migration')
       await cloud.ensureInitialized({ email: 'a@x.vn', displayName: 'An' })
       await cloud.saveSettings({ theme: 'dark' })
@@ -108,6 +155,9 @@ describe('FirestoreRepository', () => {
       expect(await cloud.getSettings()).toMatchObject({
         birthDate: '1995-05-15',
         birthTime: '07:30',
+        birthTimePrecision: 'exact',
+        birthTimezoneId: 'Asia/Bangkok',
+        birthZiPolicy: 'splitZi',
         theme: 'dark',
       })
     } finally {

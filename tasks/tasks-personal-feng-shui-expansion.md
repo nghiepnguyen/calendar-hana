@@ -57,7 +57,7 @@
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0 và task 1–6; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 6 chốt PRD/engine/dữ liệu cho P3 nhưng chưa cài dependency hoặc triển khai Tứ Trụ. Task 7.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
+- Trạng thái: đã hoàn tất bước 0 và task 1–7; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 7 tích hợp hồ sơ sinh mở rộng, Astronomy Engine và Tứ Trụ offline; task 8.0–9.0 chưa làm. Nghiệm thu phát hành vẫn cần đo trên điện thoại thật và thử với người dùng.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
 - Kiểm tra bước 0 ban đầu chưa có MVP. Trong task 4 đã triển khai `shared/personalFengShui/day.ts`, `PersonalFengShuiPanel` và `showPersonalFengShui`, rồi tích hợp hạn năm. Bằng chứng và giới hạn nghiệm thu: `tasks/validation-personal-feng-shui-task-4.md`.
 - Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected); sau task 5 có 15 verified, 11 pending, 1 rejected; sau task 6 có 19 verified, 7 pending, 1 rejected. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
@@ -149,19 +149,19 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 6.10 So sánh phương pháp/engine: mục tiêu ≤30 giây cho TST và instant giao tiết trên ma trận đã chốt, giấy phép, khả năng tái lập, dung lượng và offline; ghi kết quả từng ca vào `bazi-engine-evaluation.md`.
   - [x] 6.11 Chọn phương pháp đạt yêu cầu hoặc sửa yêu cầu với bằng chứng nếu chưa đạt; chốt nguồn dữ liệu/phiên bản, cách build/cache và các quyết định chặn P3 trước task 7.0. Không gọi JPL live bằng thông tin sinh thật.
 
-- [ ] 7.0 Triển khai hồ sơ sinh mở rộng và module Tứ Trụ (P3): migration tương thích ngược, chuẩn hóa thời gian, giao tiết theo instant và bốn trụ; chỉ xuất kết quả khi đủ dữ liệu và thể hiện rõ các trường hợp không chắc chắn.
-  - [ ] 7.1 Thêm schema metadata theo PRD 6.0 vào `Settings`/kiểu dùng chung, giữ `birthDate`/`birthTime`; quy định `null`/thiếu trường và xóa liên đới nơi sinh/offset/uncertainty khi người dùng xóa toàn hồ sơ.
-  - [ ] 7.2 Cập nhật local/cloud, migration nếu cần, mặc định, sanitize/JSON và chuyển local lên cloud; giữ chính sách không ghi đè hồ sơ cloud đã lưu, không persist lá số dẫn xuất.
-  - [ ] 7.3 Mở rộng `BirthInfoForm` để nhập nơi sinh/giờ ước lượng/offset hoặc policy khi cần; giữ luồng Google chỉ điền ngày sinh, không tự suy metadata mới.
-  - [ ] 7.4 Tạo `shared/bazi/validation.ts` và `birthTime.ts`: wall time → một/nhiều UTC instant theo timezone version; kiểm tra năm, tọa độ, offset, gap/overlap và nguồn dữ liệu lịch sử.
-  - [ ] 7.5 Tạo `solarTime.ts` theo engine đã chọn, trả độ lệch kinh độ/EoT/TST có ngày và uncertainty; test offset lẻ/DST, năm nhuận, đổi ngày và tính bất biến khi đổi cách biểu diễn cùng instant.
-  - [ ] 7.6 Tạo `termInstants.ts` theo thời điểm chính xác và dữ liệu/engine đã chọn; nếu cần, bổ sung script sinh bảng có version và provenance. Test Lập Xuân/các tiết mở tháng trước–đúng–sau mốc, vòng 345°→0°→15°.
-  - [ ] 7.7 Tạo `ziPolicy.ts` cho đủ giờ trong ngày, cả hai policy; test biên 22:59/23:00/23:59/00:00/00:59/01:00 trên TST, ngày tính trụ ngày và ngày tính Can giờ trả riêng.
-  - [ ] 7.8 Tạo `pillars.ts`: trụ năm/tháng theo instant và tiết đã chốt, trụ ngày/giờ theo TST/policy; dùng thuật toán Can Chi có fixture kiểm chứng, test Can giờ Tý cho đủ 10 Can ngày.
-  - [ ] 7.9 Gom pipeline trong `shared/bazi/index.ts`, version toàn engine/data/policy; propagate thiếu dữ liệu/ứng viên, không chọn lá số duy nhất khi khoảng đầu vào cắt mốc; invalidate cache theo hồ sơ/tài khoản/version.
-  - [ ] 7.10 Thêm `BaziSection`: bốn trụ, giờ hành chính/TST, hiệu chỉnh, nguồn, policy và giới hạn; dữ liệu thiếu có nút bổ sung hồ sơ, không ảnh hưởng MVP/hạn năm.
-  - [ ] 7.11 Đóng gói/cache engine và dữ liệu cần dùng offline sau lần tải; không lưu hồ sơ cá nhân vào service worker cache công khai, SEO/prerender hoặc telemetry.
-  - [ ] 7.12 Thêm unit/component/JSON/repository/E2E cho hồ sơ mới, xóa/sync/đổi tài khoản, DST và bất định; chạy kiểm tra kiểu/lint/build và benchmark regression trước nghiệm thu P3.
+- [x] 7.0 Triển khai hồ sơ sinh mở rộng và module Tứ Trụ (P3): migration tương thích ngược, chuẩn hóa thời gian, giao tiết theo instant và bốn trụ; chỉ xuất kết quả khi đủ dữ liệu và thể hiện rõ các trường hợp không chắc chắn.
+  - [x] 7.1 Thêm schema metadata theo PRD 6.0 vào `Settings`/kiểu dùng chung, giữ `birthDate`/`birthTime`; quy định `null`/thiếu trường và xóa liên đới nơi sinh/offset/uncertainty khi người dùng xóa toàn hồ sơ.
+  - [x] 7.2 Cập nhật local/cloud, migration nếu cần, mặc định, sanitize/JSON và chuyển local lên cloud; giữ chính sách không ghi đè hồ sơ cloud đã lưu, không persist lá số dẫn xuất.
+  - [x] 7.3 Mở rộng `BirthInfoForm` để nhập nơi sinh/giờ ước lượng/offset hoặc policy khi cần; giữ luồng Google chỉ điền ngày sinh, không tự suy metadata mới.
+  - [x] 7.4 Tạo `shared/bazi/validation.ts` và `birthTime.ts`: wall time → một/nhiều UTC instant theo timezone version; kiểm tra năm, tọa độ, offset, gap/overlap và nguồn dữ liệu lịch sử.
+  - [x] 7.5 Tạo `solarTime.ts` theo engine đã chọn, trả độ lệch kinh độ/EoT/TST có ngày và uncertainty; test offset lẻ/DST, năm nhuận, đổi ngày và tính bất biến khi đổi cách biểu diễn cùng instant.
+  - [x] 7.6 Tạo `termInstants.ts` theo thời điểm chính xác và dữ liệu/engine đã chọn; nếu cần, bổ sung script sinh bảng có version và provenance. Test Lập Xuân/các tiết mở tháng trước–đúng–sau mốc, vòng 345°→0°→15°.
+  - [x] 7.7 Tạo `ziPolicy.ts` cho đủ giờ trong ngày, cả hai policy; test biên 22:59/23:00/23:59/00:00/00:59/01:00 trên TST, ngày tính trụ ngày và ngày tính Can giờ trả riêng.
+  - [x] 7.8 Tạo `pillars.ts`: trụ năm/tháng theo instant và tiết đã chốt, trụ ngày/giờ theo TST/policy; dùng thuật toán Can Chi có fixture kiểm chứng, test Can giờ Tý cho đủ 10 Can ngày.
+  - [x] 7.9 Gom pipeline trong `shared/bazi/index.ts`, version toàn engine/data/policy; propagate thiếu dữ liệu/ứng viên, không chọn lá số duy nhất khi khoảng đầu vào cắt mốc; invalidate cache theo hồ sơ/tài khoản/version.
+  - [x] 7.10 Thêm `BaziSection`: bốn trụ, giờ hành chính/TST, hiệu chỉnh, nguồn, policy và giới hạn; dữ liệu thiếu có nút bổ sung hồ sơ, không ảnh hưởng MVP/hạn năm.
+  - [x] 7.11 Đóng gói/cache engine và dữ liệu cần dùng offline sau lần tải; không lưu hồ sơ cá nhân vào service worker cache công khai, SEO/prerender hoặc telemetry.
+  - [x] 7.12 Thêm unit/component/JSON/repository/E2E cho hồ sơ mới, xóa/sync/đổi tài khoản, DST và bất định; chạy kiểm tra kiểu/lint/build và benchmark regression trước nghiệm thu P3.
 
 - [ ] 8.0 Kiểm thử, nghiệm thu và chuẩn bị phát hành từng lớp độc lập (P1/P2/P3): kiểm tra fixture, biên thời gian, local/cloud/JSON, riêng tư, offline, mobile/a11y và regression lịch chung; chỉ mở UI cho lớp đạt điều kiện nghiệm thu.
   - [ ] 8.1 Lập `feng-shui-release-checklist.md` chia P1/P2/P3, liên kết PRD, ruleset/engine version, nguồn/fixture, trường hợp chưa hỗ trợ và bằng chứng nghiệm thu từng lớp.

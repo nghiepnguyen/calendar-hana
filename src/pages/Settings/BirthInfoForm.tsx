@@ -11,11 +11,60 @@ interface Draft {
   month: string
   year: string
   time: string
+  place: '' | 'hanoi' | 'hcm'
+  precision: 'exact' | 'estimated' | 'unknown'
+  uncertainty: string
+  historicalOffset: '' | '420' | '480'
+  ziPolicy: 'splitZi' | 'dayStartsAt23'
+}
+
+const PLACES = {
+  hanoi: {
+    countryCode: 'VN' as const,
+    subdivisionCode: 'VN-HN',
+    label: 'Hà Nội',
+    latitude: 21.03,
+    longitude: 105.85,
+    coordinateSource: 'bundledGazetteer' as const,
+    coordinateAccuracyKm: 10,
+    timezoneId: 'Asia/Bangkok' as const,
+  },
+  hcm: {
+    countryCode: 'VN' as const,
+    subdivisionCode: 'VN-SG',
+    label: 'TP. Hồ Chí Minh',
+    latitude: 10.76,
+    longitude: 106.66,
+    coordinateSource: 'bundledGazetteer' as const,
+    coordinateAccuracyKm: 10,
+    timezoneId: 'Asia/Ho_Chi_Minh' as const,
+  },
 }
 
 function fromSettings(settings: Settings): Draft {
   const [year = '', month = '', day = ''] = (settings.birthDate ?? '').split('-')
-  return { day, month, year, time: settings.birthTime ?? '' }
+  const place =
+    settings.birthPlace?.subdivisionCode === 'VN-HN'
+      ? 'hanoi'
+      : settings.birthPlace?.subdivisionCode === 'VN-SG'
+        ? 'hcm'
+        : ''
+  return {
+    day,
+    month,
+    year,
+    time: settings.birthTime ?? '',
+    place,
+    precision: settings.birthTimePrecision ?? 'exact',
+    uncertainty: String(settings.birthTimeUncertaintyMinutes ?? 15),
+    historicalOffset:
+      settings.birthConfirmedOffsetMinutes === 420
+        ? '420'
+        : settings.birthConfirmedOffsetMinutes === 480
+          ? '480'
+          : '',
+    ziPolicy: settings.birthZiPolicy ?? 'splitZi',
+  }
 }
 
 export function BirthInfoForm({
@@ -51,7 +100,8 @@ export function BirthInfoForm({
     e.preventDefault()
     setError(null)
     setMessage(null)
-    const { day, month, year, time } = values
+    const { day, month, year, time, place, precision, uncertainty, historicalOffset, ziPolicy } =
+      values
     const hasDate = !!(day || month || year)
     const date = `${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
     if (hasDate && (!day || !month || !year)) {
@@ -72,9 +122,43 @@ export function BirthInfoForm({
       )
       return
     }
+    const uncertaintyMinutes = precision === 'estimated' ? Number(uncertainty) : 0
+    if (
+      time &&
+      precision === 'estimated' &&
+      (!Number.isInteger(uncertaintyMinutes) || uncertaintyMinutes <= 0 || uncertaintyMinutes > 720)
+    ) {
+      setError('Khoảng ước lượng phải từ 1 đến 720 phút.')
+      return
+    }
+    const selectedPlace = place ? PLACES[place] : null
     setBusy(true)
     try {
-      await repository.saveSettings({ birthDate: hasDate ? date : null, birthTime: time || null })
+      await repository.saveSettings({
+        birthDate: hasDate ? date : null,
+        birthTime: time || null,
+        birthTimePrecision: time ? precision : null,
+        birthTimeUncertaintyMinutes: time ? uncertaintyMinutes : null,
+        birthPlace: selectedPlace
+          ? {
+              countryCode: selectedPlace.countryCode,
+              subdivisionCode: selectedPlace.subdivisionCode,
+              label: selectedPlace.label,
+              latitude: selectedPlace.latitude,
+              longitude: selectedPlace.longitude,
+              coordinateSource: selectedPlace.coordinateSource,
+              coordinateAccuracyKm: selectedPlace.coordinateAccuracyKm,
+            }
+          : null,
+        birthTimezoneId: selectedPlace?.timezoneId ?? null,
+        birthTimezoneSource: historicalOffset
+          ? 'userConfirmed'
+          : selectedPlace
+            ? 'bundledMapping'
+            : null,
+        birthConfirmedOffsetMinutes: historicalOffset ? Number(historicalOffset) : null,
+        birthZiPolicy: time ? ziPolicy : null,
+      })
       setMessage('Đã lưu thông tin ngày sinh.')
       setDraft(null)
     } catch {
@@ -155,6 +239,73 @@ export function BirthInfoForm({
             Giờ địa phương tại nơi sinh, định dạng 24 giờ. Nếu không biết, để trống.
           </span>
         </label>
+        <label className="field">
+          <span className="field-label">Nơi sinh (để lập Tứ Trụ)</span>
+          <select
+            className="input"
+            aria-label="Nơi sinh"
+            value={values.place}
+            onChange={(e) => change('place', e.target.value)}
+          >
+            <option value="">Chưa chọn</option>
+            <option value="hanoi">Hà Nội / miền Bắc</option>
+            <option value="hcm">TP. Hồ Chí Minh / miền Nam</option>
+          </select>
+          <span className="field-hint">Không dùng vị trí hiện tại của thiết bị.</span>
+        </label>
+        <label className="field">
+          <span className="field-label">Độ chắc chắn của giờ sinh</span>
+          <select
+            className="input"
+            aria-label="Độ chắc chắn của giờ sinh"
+            value={values.precision}
+            onChange={(e) => change('precision', e.target.value)}
+          >
+            <option value="exact">Chính xác</option>
+            <option value="estimated">Ước lượng</option>
+            <option value="unknown">Không biết giờ</option>
+          </select>
+        </label>
+        {values.precision === 'estimated' ? (
+          <label className="field">
+            <span className="field-label">Sai số ước lượng (phút)</span>
+            <input
+              className="input"
+              type="number"
+              min={1}
+              max={720}
+              value={values.uncertainty}
+              onChange={(e) => change('uncertainty', e.target.value)}
+            />
+          </label>
+        ) : null}
+        {Number(values.year) > 0 && Number(values.year) < 1970 ? (
+          <label className="field">
+            <span className="field-label">Xác nhận múi giờ lịch sử</span>
+            <select
+              className="input"
+              aria-label="Xác nhận múi giờ lịch sử"
+              value={values.historicalOffset}
+              onChange={(e) => change('historicalOffset', e.target.value)}
+            >
+              <option value="">Chưa xác nhận</option>
+              <option value="420">UTC+7</option>
+              <option value="480">UTC+8</option>
+            </select>
+          </label>
+        ) : null}
+        <label className="field">
+          <span className="field-label">Quy ước giờ Tý</span>
+          <select
+            className="input"
+            aria-label="Quy ước giờ Tý"
+            value={values.ziPolicy}
+            onChange={(e) => change('ziPolicy', e.target.value)}
+          >
+            <option value="splitZi">Tách Dạ Tý / Chính Tý</option>
+            <option value="dayStartsAt23">Đổi ngày từ 23:00</option>
+          </select>
+        </label>
         {signedIn ? (
           <>
             <button type="button" className="btn" onClick={() => void importGoogle()}>
@@ -172,7 +323,17 @@ export function BirthInfoForm({
               type="button"
               className="btn btn-ghost"
               onClick={() => {
-                setDraft({ day: '', month: '', year: '', time: '' })
+                setDraft({
+                  day: '',
+                  month: '',
+                  year: '',
+                  time: '',
+                  place: '',
+                  precision: 'exact',
+                  uncertainty: '15',
+                  historicalOffset: '',
+                  ziPolicy: 'splitZi',
+                })
                 setError(null)
                 setMessage('Đã xóa trên form. Bấm Lưu thông tin để xác nhận.')
               }}

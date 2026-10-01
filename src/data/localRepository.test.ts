@@ -67,6 +67,36 @@ describe('LocalRepository — danh mục và cài đặt mặc định', () => {
     await repo.saveSettings({ textSize: 'xlarge', boldText: true })
     expect(await repo.getSettings()).toMatchObject({ textSize: 'xlarge', boldText: true })
   })
+
+  it('xóa ngày sinh thì xóa toàn bộ metadata Bát Tự liên đới', async () => {
+    await repo.saveSettings({
+      birthDate: '2000-02-29',
+      birthTime: '23:45',
+      birthTimePrecision: 'exact',
+      birthTimeUncertaintyMinutes: 0,
+      birthPlace: {
+        countryCode: 'VN',
+        subdivisionCode: 'VN-SG',
+        label: 'TP. Hồ Chí Minh',
+        latitude: 10.76,
+        longitude: 106.66,
+        coordinateSource: 'bundledGazetteer',
+        coordinateAccuracyKm: 10,
+      },
+      birthTimezoneId: 'Asia/Ho_Chi_Minh',
+      birthTimezoneSource: 'bundledMapping',
+      birthZiPolicy: 'splitZi',
+    })
+    const deleted = await repo.saveSettings({ birthDate: null })
+    expect(deleted).toMatchObject({
+      birthDate: null,
+      birthTime: null,
+      birthPlace: null,
+      birthTimezoneId: null,
+      birthTimePrecision: null,
+      birthZiPolicy: null,
+    })
+  })
 })
 
 describe('LocalRepository — sự kiện', () => {

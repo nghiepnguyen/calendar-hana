@@ -50,6 +50,33 @@ describe('parseImport', () => {
     })
     expect(sanitizeSettings({ birthDate: '2001-02-29', birthTime: '25:00' })).toEqual({})
   })
+  it('giữ metadata Bát Tự hợp lệ và bỏ metadata không có hồ sơ gốc', () => {
+    const birthPlace = {
+      countryCode: 'VN',
+      subdivisionCode: 'VN-SG',
+      label: 'TP. Hồ Chí Minh',
+      latitude: 10.76,
+      longitude: 106.66,
+      coordinateSource: 'bundledGazetteer',
+      coordinateAccuracyKm: 10,
+    }
+    expect(
+      sanitizeSettings({
+        birthDate: '2000-02-29',
+        birthTime: '23:45',
+        birthTimePrecision: 'estimated',
+        birthTimeUncertaintyMinutes: 15,
+        birthPlace,
+        birthTimezoneId: 'Asia/Ho_Chi_Minh',
+        birthTimezoneSource: 'bundledMapping',
+        birthConfirmedOffsetMinutes: null,
+        birthZiPolicy: 'splitZi',
+      }),
+    ).toMatchObject({ birthPlace, birthTimePrecision: 'estimated', birthZiPolicy: 'splitZi' })
+    expect(sanitizeSettings({ birthDate: null, birthPlace, birthZiPolicy: 'splitZi' })).toEqual({
+      birthDate: null,
+    })
+  })
   it('từ chối file không phải JSON hoặc không phải của app', () => {
     expect(() => parseImport('không phải json')).toThrow(ImportFormatError)
     expect(() => parseImport('{"app":"khac","version":1}')).toThrow(ImportFormatError)
