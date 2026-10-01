@@ -189,6 +189,8 @@ Nội dung ở `public/privacy.html` và `public/terms.html`, CSS chung ở `pub
 Tên app là **Lịch Việt**, email liên hệ **thanhnghiep.top@gmail.com**. Trang chủ và footer
 cuối trang Cài đặt (ngoài các tab) có liên kết; sitemap có hai URL; service worker cache các trang cho offline.
 Firebase Hosting với `cleanUrls: true` phục vụ chúng từ file HTML tương ứng.
+Trong app, các liên kết này dùng React Router và hiển thị nội dung từ cùng file HTML,
+giữ nguyên phiên đăng nhập và kết nối Firestore khi quay lại lịch trên PWA iOS.
 Vite dev dùng `scripts/publicLegalPages.ts` để ánh xạ `/privacy` và `/terms` sang HTML công khai,
 giữ nguyên URL trên trình duyệt. Kiểm tra riêng dev bằng
 `npx playwright test --config playwright.dev.config.ts --project=desktop --project=mobile`.
