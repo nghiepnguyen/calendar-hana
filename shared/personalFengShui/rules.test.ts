@@ -16,11 +16,45 @@ async function loadRules(): Promise<RulesModule> {
 describe('rule registry', () => {
   it('provides a registry that blocks required rules without verified evidence', async () => {
     const module = await loadRules()
-    const registry = module.createRuleRegistry(module.FENG_SHUI_RULES)
+    const registry = module.createRuleRegistry(
+      module.FENG_SHUI_RULES.map((rule) =>
+        rule.id === 'annual.hoang-oc' ? { ...rule, verificationStatus: 'pending' } : rule,
+      ),
+    )
     const result = registry.getReadiness('annual', ['annual.hoang-oc'])
     expect(result.status).toBe('blocked')
     expect(result.unavailable).toEqual([{ id: 'annual.hoang-oc', reason: 'pending' }])
     expect(result.rules).toEqual([])
+  })
+
+  it('opens bounded annual calculations only with reviewed sources and the application policy', () => {
+    const registry = rulesModule.createRuleRegistry(rulesModule.FENG_SHUI_RULES)
+    const ids = [
+      'annual.nominal-age',
+      'annual.application-policy',
+      'annual.kim-lau',
+      'annual.hoang-oc',
+      'annual.tam-tai',
+    ]
+    const ready = registry.getReadiness('annual', ids)
+    expect(ready.status).toBe('ready')
+    expect(ready.rules.map((rule) => rule.id)).toEqual(ids)
+    for (const id of ['annual.kim-lau', 'annual.hoang-oc']) {
+      expect(ready.rules.find((rule) => rule.id === id)).toMatchObject({
+        version: '1.1.0',
+        sourceIds: expect.arrayContaining(['batTrachCourse', 'annualSpec']),
+      })
+    }
+    expect(ready.rules.find((rule) => rule.id === 'annual.tam-tai')).toMatchObject({
+      version: '1.1.0',
+      sourceIds: expect.arrayContaining(['khoiSuExtract', 'annualSpec']),
+      reason: expect.stringContaining('Unattributed'),
+    })
+    expect(ready.rules.find((rule) => rule.id === 'annual.hoang-oc')?.reason).toContain('10–69')
+    expect(ready.rules.find((rule) => rule.id === 'annual.nominal-age')?.version).toBe('1.1.0')
+    expect(ready.rules.find((rule) => rule.id === 'annual.application-policy')?.version).toBe(
+      '1.0.0',
+    )
   })
 
   it('allows only the requested verified rules in the selected scope', async () => {

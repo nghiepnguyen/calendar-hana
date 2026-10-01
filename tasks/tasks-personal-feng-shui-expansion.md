@@ -18,9 +18,9 @@
 ### Logic thuần và dữ liệu đề xuất
 
 - `shared/personalFengShui/rules.ts`, `rules.test.ts` (đã tạo, P0) - ID, version, scope, nguồn, trạng thái kiểm chứng và lọc quy tắc được phép chạy.
-- `shared/personalFengShui/annual/types.ts`, `context.ts`, `context.test.ts` (mới) - Kiểu mục đích/vai trò, trạng thái và năm âm/tuổi mụ.
-- `shared/personalFengShui/annual/kimLau.ts`, `hoangOc.ts`, `tamTai.ts` và các file `.test.ts` cùng tên (mới) - Từng phép tính hạn năm theo nguồn đã chốt.
-- `shared/personalFengShui/annual/index.ts`, `index.test.ts`, `annual.fixtures.ts` (mới) - Gom kết quả, ma trận áp dụng và fixture độc lập.
+- `shared/personalFengShui/annual/types.ts`, `context.ts`, `context.test.ts` (đã tạo, P1) - Kiểu mục đích/vai trò, trạng thái và năm âm/tuổi mụ; gate tuổi mụ chạy trước quy đổi.
+- `shared/personalFengShui/annual/kimLau.ts`, `hoangOc.ts`, `tamTai.ts` và các file `.test.ts` cùng tên (đã tạo, P1) - Từng phép tính hạn năm theo nguồn đã chốt; hàm số học từ chối operand ngoài miền bằng RangeError.
+- `shared/personalFengShui/annual/index.ts`, `index.test.ts`, `annual.fixtures.ts` (đã tạo, P1) - API `assessAnnualFengShui`, ma trận áp dụng và fixture đặc tả dùng trong test, không import trong production.
 - `shared/personalFengShui/stars.ts`, `stars.test.ts`, `stars.fixtures.ts` (mới, có điều kiện) - Thần sát thực sự cá nhân, chỉ tạo khi đạt bước xác minh.
 - `shared/bazi/types.ts`, `validation.ts`, `validation.test.ts` (mới) - Input/metadata hồ sơ, uncertainty và lỗi miền dữ liệu.
 - `shared/bazi/birthTime.ts`, `solarTime.ts`, `termInstants.ts`, `ziPolicy.ts`, `pillars.ts`, `index.ts` và các file `.test.ts` tương ứng (mới) - Pipeline thời gian và Tứ Trụ tách khỏi lịch chung.
@@ -47,11 +47,12 @@
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0, task 1 và đặc tả task 2; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Các task triển khai 3.0–9.0 chưa làm.
+- Trạng thái: đã hoàn tất bước 0, task 1, đặc tả task 2 và module hạn năm task 3; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Các task 4.0–9.0 chưa làm; UI vẫn phụ thuộc MVP.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
 - MVP hiện chưa có `PersonalFengShuiPanel`, logic đánh giá cá nhân ngày/giờ hoặc cài đặt hiển thị cá nhân trong `src/`/`shared/`; `shared/personalFengShui/` hiện có registry P0 từ task 1. Phải hoàn tất MVP theo `tasks/prd-personal-feng-shui.md` trước tích hợp UI ở 4.0/7.0; vẫn có thể làm audit/đặc tả và logic độc lập trước đó.
-- Kết quả P0: 26 mục (10 verified, 15 pending, 1 rejected) trong `shared/personalFengShui/rules.ts`; bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`. Pending vẫn chưa được phép tính, dù công việc audit đã hoàn tất.
-- Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2. Task 3 phải đồng bộ registry, version và test readiness trước khi chạy từng hạn; task 2 không tự mở gate P0.
+- Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected): thêm policy annual, kiểm chứng ba bảng trong phạm vi PRD. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
+- Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2; registry đã đồng bộ ở task 3, không mở gate chỉ từ fixture.
+- Kết quả task 3: 360 test annual và 17 test registry đạt; toàn dự án 879 test / 75 file đạt, typecheck/lint/format/build đạt. Không thêm cache, persist, UI, dependency hoặc thay lịch chung. `npm audit` chưa hoàn tất do DNS `ENOTFOUND registry.npmjs.org`.
 - Đường dẫn trong Relevant Files tương đối với gốc repository; file ghi “mới” hoặc “đề xuất” chưa tồn tại. Điều chỉnh tên theo kiến trúc MVP thực tế và ghi lại quyết định khi triển khai.
 - Giữ một hồ sơ và khối riêng dưới sự kiện trong tab Ngày. Nếu MVP chưa triển khai, hoàn tất MVP theo PRD riêng trước khi tích hợp các lớp mở rộng vào UI.
 - Phụ thuộc: P0 → P1; P0 → P2; P0 → P3 → P4. Thần sát P2 có thể hoãn mà không chặn nền tảng Tứ Trụ P3.
@@ -95,16 +96,16 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 2.8 Chốt trạng thái cho mua xe, mua/sửa nhà, nhập trạch và nghi thức chưa được nguồn xác nhận; không trình bày “không phạm” thay cho “không xét”.
   - [x] 2.9 Soạn fixture kỳ vọng độc lập và tiêu chí nghiệm thu kèm nguồn, đủ chín số dư Kim Lâu, miền Hoang Ốc và 12×12 tổ hợp Tam Tai; chốt các quyết định chặn P1 trước task 3.0.
 
-- [ ] 3.0 Triển khai module hạn năm đã kiểm chứng (P1): hàm thuần, kết quả có lý do và ID quy tắc, validation và fixture độc lập; hạn năm không thay đổi nhãn đánh giá ngày.
-  - [ ] 3.1 Đồng bộ nguồn/miền/policy và tăng version các rule annual trong registry theo PRD 2.0, cập nhật test readiness; chỉ đổi verified trong phạm vi bằng chứng đã ghi. Sau đó tạo kiểu trong `annual/types.ts`; các hàm không phụ thuộc React/Firebase và không gọi dịch vụ bên ngoài.
-  - [ ] 3.2 Tạo `annual/context.ts` để validate ngày, quy đổi năm âm và tính tuổi mụ; thêm test trước/đúng Tết, sinh trước Tết, ngày xem trước sinh và biên năm hỗ trợ.
-  - [ ] 3.3 Tạo `kimLau.ts` và test số dư/loại hạn, đặc biệt tuổi 19/28; giữ phép tính tách khỏi quyết định áp dụng cho mục đích.
-  - [ ] 3.4 Tạo `hoangOc.ts` theo bảng/công thức đã verified; test mốc 10–60, 19→20, 59→60, 69→70 và miền tuổi ngoài hỗ trợ.
-  - [ ] 3.5 Tạo `tamTai.ts`; test đủ 12 Chi tuổi ×12 Chi năm, đúng thứ tự đầu/giữa/cuối và không tự thêm mức độ chưa có nguồn.
-  - [ ] 3.6 Tạo hàm gom `annual/index.ts`: áp dụng ma trận purpose/role, trả trạng thái/lý do từng hạn; thiếu hồ sơ người cần xét không tự dùng hồ sơ bản thân thay thế.
-  - [ ] 3.7 Thêm `annual.fixtures.ts` có provenance và test tích hợp: cùng năm âm/cùng hồ sơ có cùng hạn dù ngày xem đổi; hạn năm không can thiệp module đánh giá ngày MVP.
-  - [ ] 3.8 Nếu cần cache, khóa theo ngày/hồ sơ/ngữ cảnh tài khoản/purpose/role/ruleset version, xử lý invalidation; không persist kết quả dẫn xuất hoặc log ngày sinh.
-  - [ ] 3.9 Chạy unit test module, typecheck/lint cho thay đổi; xác nhận không có quy tắc pending chạy và không có dữ liệu sai bị trả thành “không phạm”.
+- [x] 3.0 Triển khai module hạn năm đã kiểm chứng (P1): hàm thuần, kết quả có lý do và ID quy tắc, validation và fixture độc lập; hạn năm không thay đổi nhãn đánh giá ngày.
+  - [x] 3.1 Đồng bộ nguồn/miền/policy và tăng version các rule annual trong registry theo PRD 2.0, cập nhật test readiness; chỉ đổi verified trong phạm vi bằng chứng đã ghi. Sau đó tạo kiểu trong `annual/types.ts`; các hàm không phụ thuộc React/Firebase và không gọi dịch vụ bên ngoài.
+  - [x] 3.2 Tạo `annual/context.ts` để validate ngày, quy đổi năm âm và tính tuổi mụ; thêm test trước/đúng Tết, sinh trước Tết, ngày xem trước sinh và biên năm hỗ trợ.
+  - [x] 3.3 Tạo `kimLau.ts` và test số dư/loại hạn, đặc biệt tuổi 19/28; giữ phép tính tách khỏi quyết định áp dụng cho mục đích.
+  - [x] 3.4 Tạo `hoangOc.ts` theo bảng/công thức đã verified; test mốc 10–60, 19→20, 59→60, 69→70 và miền tuổi ngoài hỗ trợ.
+  - [x] 3.5 Tạo `tamTai.ts`; test đủ 12 Chi tuổi ×12 Chi năm, đúng thứ tự đầu/giữa/cuối và không tự thêm mức độ chưa có nguồn.
+  - [x] 3.6 Tạo hàm gom `annual/index.ts`: áp dụng ma trận purpose/role, trả trạng thái/lý do từng hạn; thiếu hồ sơ người cần xét không tự dùng hồ sơ bản thân thay thế.
+  - [x] 3.7 Thêm `annual.fixtures.ts` có provenance và test tích hợp: cùng năm âm/cùng hồ sơ có cùng hạn dù ngày xem đổi; hạn năm không can thiệp module đánh giá ngày MVP.
+  - [x] 3.8 Nếu cần cache, khóa theo ngày/hồ sơ/ngữ cảnh tài khoản/purpose/role/ruleset version, xử lý invalidation; không persist kết quả dẫn xuất hoặc log ngày sinh. Quyết định P1: không cần cache; evaluator không có state, storage hoặc logging.
+  - [x] 3.9 Chạy unit test module, typecheck/lint cho thay đổi; xác nhận không có quy tắc pending chạy và không có dữ liệu sai bị trả thành “không phạm”.
 
 - [ ] 4.0 Tích hợp hạn năm vào khối Phong thủy cá nhân (P1): chọn mục đích/vai trò, hiển thị riêng theo năm và đồng bộ lưu trữ/JSON; giữ một hồ sơ và xử lý đúng dữ liệu thiếu hoặc cũ.
   - [ ] 4.1 Kiểm tra điều kiện 0.3: dùng `PersonalFengShuiPanel` từ MVP đã hoàn tất; giữ thẻ ngày → sự kiện → khối cá nhân → Lịch vạn niên và hai công tắc độc lập theo PRD MVP.

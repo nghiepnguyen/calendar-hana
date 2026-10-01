@@ -1,6 +1,6 @@
 # PRD — Hạn năm theo mục đích (P1)
 
-Phiên bản đặc tả: **1.0.0**, ngày **01/10/2026**. Task nguồn: **2.0** trong `tasks-personal-feng-shui-expansion.md`. Đây là đặc tả để triển khai task 3; chưa có engine hay UI hạn năm.
+Phiên bản đặc tả: **1.0.0**, ngày **01/10/2026**. Task nguồn: **2.0** trong `tasks-personal-feng-shui-expansion.md`. Module thuần đã triển khai ở task 3; UI hạn năm thuộc task 4, chưa triển khai.
 
 ## 1. Kết quả cần đạt
 
@@ -26,7 +26,7 @@ Hai PDF là văn bản trình bày phương pháp trực tiếp; không lấy se
 
 Nguồn Tam Tai nêu giới hạn theo nam giới khác attachment. P1 **chỉ sử dụng bảng Chi** của bản trích; việc cho xem thông tin chu kỳ của hồ sơ bản thân không phụ thuộc giới tính là policy sản phẩm. Không đưa khẳng định kiêng việc theo giới tính vào UI. Vai trò cô dâu/gia chủ/người đứng đầu lấy từ lựa chọn rõ ràng của người dùng, theo phạm vi đề xuất trong attachment; không tuyên bố ma trận đó là kết luận của cả hai PDF.
 
-Registry P0 hiện giữ ba hạn `pending@1.0.0`. **Task 3 phải đồng bộ nguồn, miền tính và policy này vào registry, tăng version quy tắc có thay đổi rồi kiểm tra readiness trước khi chạy.** Không tự mở gate chỉ vì có fixture; nếu không chấp nhận giới hạn provenance của `khoiSuExtract`, giữ riêng Tam Tai `unsupported/unverifiedRule`, không suy nguồn cổ hoặc tạo kết quả thay thế. Đây là điều kiện kiểm chứng rõ cho triển khai, không phải nguồn mới của P2/P3.
+Kết thúc task 2, registry P0 giữ ba hạn `pending@1.0.0`. **Task 3 đã đồng bộ nguồn, miền tính và policy này: ba hạn và tuổi mụ ở version 1.1.0, thêm `annual.application-policy@1.0.0`; các mục này verified trong phạm vi mô tả.** Mỗi phép tính vẫn kiểm tra readiness trước khi chạy. Không mở gate chỉ vì có fixture; nếu cấu hình Tam Tai về pending do yêu cầu provenance đầy đủ hơn, trả riêng `unsupported/unverifiedRule`, không suy nguồn cổ hoặc tạo kết quả thay thế. Không dùng nguồn này để mở gate P2/P3.
 
 ## 3. Input và miền ngày
 
@@ -189,4 +189,18 @@ Fixture: `tasks/fixtures/annual-feng-shui.v1.json`. Dữ liệu số ghi tĩnh, 
 
 Task 2 hoàn tất khi đặc tả và fixture được đóng, các quyết định miền tuổi/role/persistence đã rõ. Task 3 hoàn tất chỉ khi registry được đồng bộ và test engine thực sự chạy qua fixture này, unit/typecheck/lint đạt. Task 4 còn phụ thuộc MVP và kiểm thử UI; **đặc tả không chứng nhận engine hoặc UI đã đạt**.
 
-Kiểm tra task 2: JSON parse/cấu trúc và coverage đạt; 9 context hợp lệ khớp `solarToLunar`/`yearCanChi` hiện có. Regression registry/lịch âm: **165 test đạt / 16 file**; `git diff --check` đạt. Chưa kiểm tra engine hạn năm vì chưa triển khai. Không đổi mã chạy, dependency, UI hoặc lưu trữ.
+Kiểm tra tại task 2, trước triển khai: JSON parse/cấu trúc và coverage đạt; 9 context hợp lệ khớp `solarToLunar`/`yearCanChi` hiện có. Regression registry/lịch âm: **165 test đạt / 16 file**; `git diff --check` đạt. Task 2 chỉ thay tài liệu/fixture.
+
+## 10. Triển khai và nghiệm thu task 3
+
+API `assessAnnualFengShui(input, definitions?)` tại `shared/personalFengShui/annual/index.ts` nhận dữ liệu runtime cần validation; `AnnualInput` là kiểu đầu vào hợp lệ cho caller. Trả context và đủ ba mục, metadata nguồn/phiên bản của mọi nhóm bắt buộc, reasonCode, operands và value có kiểu riêng. Tham số definitions là cấu hình quy tắc tin cậy, mặc định registry đóng gói; cấu hình sai metadata bị registry từ chối, không nhận cấu hình này từ hồ sơ người dùng.
+
+Các hàm `calculateKimLau`, `calculateHoangOc`, `calculateTamTai` chỉ phân loại số học, không tự quyết định purpose/readiness. Operand sai hoặc ngoài miền gây RangeError; caller thông thường dùng evaluator để nhận trạng thái có lý do. `buildAnnualContext` validate view/birth date, miền ngày và trước sinh, rồi kiểm tra gate nominal-age trước khi quy đổi; gate lỗi không xuất tuổi/năm/Chi dẫn xuất.
+
+Evaluator không có cache/state, không ghi storage hoặc log, không gọi dịch vụ bên ngoài. Fixture test tái sử dụng nguyên expected/provenance của task 2 qua `annual.fixtures.ts`, không được import vào code production. Không thay `shared/lunar/`, UI, Settings, dependency hoặc dữ liệu sự kiện. MVP cá nhân ngày/giờ chưa triển khai nên phân lớp được bảo đảm bằng module độc lập và regression lịch chung, chưa có test tích hợp UI MVP.
+
+- TDD: test registry mới thất bại khi gate còn đóng; test module mới thất bại vì chưa có implementation; test nominal-age unavailable thất bại trước khi bổ sung gate. Sau triển khai/refactor, **360 test annual + 17 test registry đạt**.
+- `npm test`: **879 test / 75 file đạt**; có cảnh báo jsdom `window.scrollTo` từ test UI hiện có.
+- `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run build`: đạt. Build vẫn có cảnh báo chunk lớn và tùy chọn PWA deprecated.
+- `npm audit --audit-level=high`: chưa hoàn tất vì DNS `ENOTFOUND registry.npmjs.org`; không thay dependency.
+- Chưa chạy Emulator/E2E vì không đổi UI, lưu trữ hoặc rules. Task 4 cần MVP và kiểm thử tích hợp riêng; chưa deploy.

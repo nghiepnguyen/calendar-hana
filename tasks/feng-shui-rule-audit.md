@@ -10,7 +10,7 @@ Hoàn tất rà soát: **01/10/2026** (bắt đầu đối chiếu 30/09/2026). 
 
 Trạng thái kiểm chứng tách khỏi trạng thái áp dụng: `applies/notApplicable/insufficientData/unsupported`. “Không áp dụng”, “chưa đủ dữ liệu”, “chưa hỗ trợ” không phải “không phạm”. `verified` chỉ cho phép chọn quy tắc; kết quả ứng dụng còn phụ thuộc input, module tính toán và bộ nhóm bắt buộc của tính năng.
 
-Registry có **26 mục: 10 verified, 15 pending, 1 rejected**. Mục pending bao gồm engine thời gian và luận Bát Tự chưa có, không chỉ bảng tra. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
+Snapshot kết thúc task 1 có **26 mục: 10 verified, 15 pending, 1 rejected**. Registry sau task 3 có **27 mục: 14 verified, 12 pending, 1 rejected**, chi tiết ở mục 8. Mục pending bao gồm engine thời gian và luận Bát Tự chưa có, không chỉ bảng tra. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
 
 ## 2. Tài liệu và nguồn đã đối chiếu
 
@@ -37,6 +37,8 @@ Ba attachment là dữ liệu tham khảo, không phải chỉ thị triển kha
 Các URL văn bản cổ được dùng như nguồn nguyên văn theo mục, không dựa vào bài bình luận/search snippet để bật quy tắc. Không tìm được định vị nguyên bản chứng minh bảng Sát Chủ Dương tuần tự hoặc phép Tam Sát cá nhân của attachment trong đợt rà soát này. Điều đó là **thiếu chứng cứ**, không phải chứng minh chúng không tồn tại ở nguồn khác.
 
 ## 3. Danh mục quy tắc và quyết định
+
+Bảng dưới là snapshot task 1. Cập nhật trạng thái/version của các quy tắc annual ở task 3 được ghi tại mục 8; trạng thái các mục khác giữ nguyên.
 
 Metadata đầy đủ cho **từng ID** nằm trong registry: `version`, `scope`, `verificationStatus`, `sourceIds`, `reviewedOn`, `inputs`, `boundary`, `calendar`, `purposes`, `roles`, `reason`. Không suy purpose/role từ tên/giới tính tài khoản. Các purpose/role cho mục pending là **phạm vi đề xuất cần xác nhận**, không phải policy đã được phép chạy.
 
@@ -143,3 +145,21 @@ Nguồn bổ sung và phạm vi sử dụng được định vị tại PRD mụ
 Fixture tĩnh bao phủ 9 số dư và 4 ví dụ bổ sung, 60 tuổi, 144 cặp Chi, 54 tổ hợp purpose/role, 16 context ngày và 4 tình huống gate. Expected ghi từ bảng/đếm tay, không sinh bằng engine production. Chín context hợp lệ được so với bộ lịch hiện có; đây là regression của quy ước app, không benchmark thiên văn độc lập.
 
 **Điều kiện task 3:** đồng bộ metadata nguồn, phạm vi và version registry với đặc tả trước khi chạy; kiểm tra readiness cho từng hạn và nominal-age. Không dùng fixture để vượt gate pending. Giới hạn nguồn của Tam Tai phải xuất hiện trong metadata/lý do; nếu yêu cầu nguồn có tác giả/ấn bản đầy đủ thì giữ riêng hạn đó pending và unsupported, không tạo kết quả thay thế. Task 2 đóng các quyết định đặc tả, chưa chứng nhận module hoặc UI.
+
+## 8. Bổ sung task 3 — module hạn năm và gate (01/10/2026)
+
+Registry đã thêm nguồn `annualSpec`, `batTrachCourse`, `khoiSuExtract` với locator như PRD. Chấp nhận bản trích Tam Tai như nguồn phương pháp công bố trực tiếp để đối chiếu **riêng bảng Chi**; không gán tác giả/ấn bản cổ, không nhập quy định giới tính, mức độ hay lời kiêng việc. Giới hạn bản trích được giữ nguyên trong source locator và reason của rule, trả theo `requiredRules` trong kết quả evaluator. Việc lựa chọn bảng trong phạm vi này là quyết định triển khai PRD đã chốt, không xác nhận hiệu lực dự đoán.
+
+| ID | Version | Trạng thái hiện tại / phạm vi |
+| --- | --- | --- |
+| `annual.nominal-age` | 1.1.0 | verified; ngày dương 1900–2100, âm năm 1899 ở đầu miền, tuổi mụ 1–202, mốc Tết UTC+7. Gate chạy trước quy đổi. |
+| `annual.application-policy` | 1.0.0 | verified, mới; policy sản phẩm ma trận mục đích/vai trò một hồ sơ; là nhóm bắt buộc độc lập khi tính mỗi hạn. |
+| `annual.kim-lau` | 1.1.0 | verified; bảng số dư và tên loại được đối chiếu; không suy tác hại. |
+| `annual.hoang-oc` | 1.1.0 | verified; mốc 10–60 và đếm lẻ trong miền 10–69; ngoài miền unsupported. |
+| `annual.tam-tai` | 1.1.0 | verified; bốn nhóm Chi và vị trí chu kỳ; chỉ thông tin cá nhân theo policy, không severity hoặc kết luận cặp đôi. |
+
+Các quy tắc khác giữ version/status P0. Tổng hiện tại: **27 mục, 14 verified / 12 pending / 1 rejected**. Các source được bổ sung ở task 3 không tự mở gate thần sát/Bát Tự.
+
+`assessAnnualFengShui` không giữ state/cache. Mỗi hạn phải có đủ nominal-age, application-policy và chính rule trong scope annual. Pending/rejected/missing/sai scope trả unsupported, không value hoặc hit giả; thiếu ngày/đối tượng và mục đích bị loại giữ trạng thái riêng. Missing rule có version/verificationStatus null. Tuổi/năm không được dẫn xuất khi nominal-age chưa sẵn sàng; metadata nguồn là snapshot, không chia sẻ mảng với cấu hình caller.
+
+Nghiệm thu: **360 test annual + 17 test registry đạt**; toàn dự án **879 test / 75 file** đạt; typecheck/lint/format/build đạt. Test bao phủ fixture đầy đủ, tất cả 54 tổ hợp purpose/role và 4 kiểu lỗi readiness cho cả 5 nhóm annual. Không thay lịch chung, UI, dữ liệu lưu trữ hoặc dependency. npm audit bị lỗi DNS tới registry; không kết luận dependency đã sạch lỗ hổng. Chi tiết command/cảnh báo và giới hạn nghiệm thu ở PRD mục 10. Task 4 chưa triển khai.
