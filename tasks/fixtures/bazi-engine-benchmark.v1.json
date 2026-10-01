@@ -1,0 +1,76 @@
+{
+  "fixtureVersion": "1.0.0",
+  "generatedOn": "2026-10-01",
+  "syntheticDataOnly": true,
+  "supportWindow": { "fromYear": 1900, "toYear": 2100, "country": "VN" },
+  "reference": {
+    "provider": "NASA/JPL Horizons API",
+    "apiVersionObserved": "1.2",
+    "ephemeris": "DE441",
+    "calendar": "Gregorian",
+    "termQuery": {
+      "target": "Sun (10)",
+      "center": "500@399",
+      "quantity": 31,
+      "coordinate": "observer-centered IAU76/80 ecliptic-of-date apparent longitude",
+      "timeScale": "UT output; Horizons dynamics use TDB with documented conversion",
+      "step": "1 minute",
+      "interpolation": "linear between the two samples bracketing the target longitude"
+    },
+    "solarTimeQuery": {
+      "target": "Sun (10)",
+      "center": "coord@399",
+      "quantity": 34,
+      "coordinateType": "geodetic",
+      "timeScale": "UT input/output",
+      "atmosphere": "airless"
+    }
+  },
+  "candidates": {
+    "astronomyEngine": {
+      "version": "2.1.19",
+      "license": "MIT",
+      "browserMinifiedBytes": 116424,
+      "termApi": "SearchSunLongitude",
+      "solarTimeApi": "HourAngle(Sun) + 12 hours modulo 24"
+    },
+    "noaaFractionalYear": {
+      "role": "comparison only",
+      "source": "NOAA General Solar Position Calculations",
+      "selected": false
+    }
+  },
+  "termCases": [
+    { "longitude": 315, "engineUtc": "2024-02-04T08:26:49.630Z", "referenceUtc": "2024-02-04T08:27:08.695Z", "absoluteErrorSeconds": 19.065 },
+    { "longitude": 345, "engineUtc": "2024-03-05T02:22:28.877Z", "referenceUtc": "2024-03-05T02:22:47.254Z", "absoluteErrorSeconds": 18.377 },
+    { "longitude": 15, "engineUtc": "2024-04-04T07:02:14.725Z", "referenceUtc": "2024-04-04T07:02:18.833Z", "absoluteErrorSeconds": 4.108 },
+    { "longitude": 45, "engineUtc": "2024-05-05T00:10:08.464Z", "referenceUtc": "2024-05-05T00:10:06.204Z", "absoluteErrorSeconds": 2.26 },
+    { "longitude": 75, "engineUtc": "2024-06-05T04:09:54.092Z", "referenceUtc": "2024-06-05T04:09:54.829Z", "absoluteErrorSeconds": 0.737 },
+    { "longitude": 105, "engineUtc": "2024-07-06T14:20:07.101Z", "referenceUtc": "2024-07-06T14:20:04.573Z", "absoluteErrorSeconds": 2.528 },
+    { "longitude": 135, "engineUtc": "2024-08-07T00:09:30.136Z", "referenceUtc": "2024-08-07T00:09:17.613Z", "absoluteErrorSeconds": 12.523 },
+    { "longitude": 165, "engineUtc": "2024-09-07T03:11:41.910Z", "referenceUtc": "2024-09-07T03:11:21.984Z", "absoluteErrorSeconds": 19.926 },
+    { "longitude": 195, "engineUtc": "2024-10-07T19:00:06.976Z", "referenceUtc": "2024-10-07T18:59:58.468Z", "absoluteErrorSeconds": 8.508 },
+    { "longitude": 225, "engineUtc": "2024-11-06T22:19:55.550Z", "referenceUtc": "2024-11-06T22:20:05.664Z", "absoluteErrorSeconds": 10.114 },
+    { "longitude": 255, "engineUtc": "2024-12-06T15:16:48.690Z", "referenceUtc": "2024-12-06T15:17:03.727Z", "absoluteErrorSeconds": 15.037 },
+    { "longitude": 285, "engineUtc": "2025-01-05T02:32:41.099Z", "referenceUtc": "2025-01-05T02:32:47.447Z", "absoluteErrorSeconds": 6.348 }
+  ],
+  "solarTimeCases": [
+    { "instantUtc": "1900-01-15T00:00:00Z", "longitude": 105.85, "latitude": 21.03, "noaaErrorSeconds": 56.724, "astronomyEngineErrorSeconds": 0.001 },
+    { "instantUtc": "1954-07-21T12:34:00Z", "longitude": 105.85, "latitude": 21.03, "noaaErrorSeconds": 5.999, "astronomyEngineErrorSeconds": 0.017 },
+    { "instantUtc": "1975-06-13T16:30:00Z", "longitude": 106.66, "latitude": 10.76, "noaaErrorSeconds": 15.632, "astronomyEngineErrorSeconds": 0.297 },
+    { "instantUtc": "2000-02-29T23:59:00Z", "longitude": 102.15, "latitude": 22.4, "noaaErrorSeconds": 28.305, "astronomyEngineErrorSeconds": 0.323 },
+    { "instantUtc": "2024-02-04T08:00:00Z", "longitude": 106.66, "latitude": 10.76, "noaaErrorSeconds": 13.489, "astronomyEngineErrorSeconds": 0.034 },
+    { "instantUtc": "2024-04-04T07:02:00Z", "longitude": 109.2, "latitude": 12.24, "noaaErrorSeconds": 23.569, "astronomyEngineErrorSeconds": 0.056 },
+    { "instantUtc": "2024-06-05T04:10:00Z", "longitude": 102.15, "latitude": 22.4, "noaaErrorSeconds": 25.802, "astronomyEngineErrorSeconds": 0.063 },
+    { "instantUtc": "2024-09-07T03:11:00Z", "longitude": 109.46, "latitude": 8.55, "noaaErrorSeconds": 20.85, "astronomyEngineErrorSeconds": 0.022 },
+    { "instantUtc": "2024-12-06T15:17:00Z", "longitude": 104.14, "latitude": 8.6, "noaaErrorSeconds": 0.952, "astronomyEngineErrorSeconds": 0.139 },
+    { "instantUtc": "2038-01-19T03:14:00Z", "longitude": 106.66, "latitude": 10.76, "noaaErrorSeconds": 43.814, "astronomyEngineErrorSeconds": 0.044 },
+    { "instantUtc": "2050-07-01T00:00:00Z", "longitude": 105.85, "latitude": 21.03, "noaaErrorSeconds": 32.996, "astronomyEngineErrorSeconds": 0.077 },
+    { "instantUtc": "2100-12-31T23:59:00Z", "longitude": 106.66, "latitude": 10.76, "noaaErrorSeconds": 24.849, "astronomyEngineErrorSeconds": 0.263 }
+  ],
+  "acceptance": {
+    "maximumAbsoluteErrorSeconds": 30,
+    "astronomyEngine": { "termMaxSeconds": 19.926, "solarTimeMaxSeconds": 0.323, "passes": true },
+    "noaaFractionalYear": { "solarTimeMaxSeconds": 56.724, "passes": false }
+  }
+}

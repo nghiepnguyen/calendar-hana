@@ -10,7 +10,7 @@ Hoàn tất rà soát: **01/10/2026** (bắt đầu đối chiếu 30/09/2026). 
 
 Trạng thái kiểm chứng tách khỏi trạng thái áp dụng: `applies/notApplicable/insufficientData/unsupported`. “Không áp dụng”, “chưa đủ dữ liệu”, “chưa hỗ trợ” không phải “không phạm”. `verified` chỉ cho phép chọn quy tắc; kết quả ứng dụng còn phụ thuộc input, module tính toán và bộ nhóm bắt buộc của tính năng.
 
-Snapshot kết thúc task 1 có **26 mục: 10 verified, 15 pending, 1 rejected**. Registry sau task 3 có **27 mục: 14 verified, 12 pending, 1 rejected**; sau task 5 có **15 verified, 11 pending, 1 rejected**, chi tiết ở mục 8–9. Mục pending bao gồm engine thời gian và luận Bát Tự chưa có, không chỉ bảng tra. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
+Snapshot kết thúc task 1 có **26 mục: 10 verified, 15 pending, 1 rejected**. Registry sau task 3 có **27 mục: 14 verified, 12 pending, 1 rejected**; sau task 5 có **15 verified, 11 pending, 1 rejected**; sau task 6 có **19 verified, 7 pending, 1 rejected**, chi tiết ở mục 8–10. Không đưa bất cứ bảng pending nào vào code tính toán. Giữ nguyên `shared/lunar/`.
 
 ## 2. Tài liệu và nguồn đã đối chiếu
 
@@ -62,12 +62,12 @@ Metadata đầy đủ cho **từng ID** nằm trong registry: `version`, `scope`
 | `annual.kim-lau` | pending | Có thuật toán mod 9 trong attachment. | Cần nguồn phân loại, purpose/role và fixture độc lập tại task 2; phép chia đúng không tự chứng minh ý nghĩa hạn. |
 | `annual.hoang-oc` | pending | Attachment có mốc 10–60 và đếm tuổi lẻ. | Cần miền tuổi <10, ≥70, chuyển chu kỳ và activity; nếu thiếu thì giới hạn miền rõ. |
 | `annual.tam-tai` | pending | Attachment cho bốn nhóm và thứ tự ba năm. | Cần nguồn, bảng 12×12 và phạm vi diễn giải/mức độ; không áp vào kết luận ngày. |
-| `birth.historical-timezone` | pending | IANA có dữ liệu và lưu ý bất định vùng/lịch sử. | Cần version cố định, mapping nơi sinh, pre-1970, gap/overlap và xác nhận offset; thuộc task 6. |
+| `birth.historical-timezone` | verified tại task 6 | Chọn tzdb 2026d và policy vùng/offset/gap/overlap trong PRD P3. | Auto 1970–2100; 1900–1969 cần xác nhận offset nếu mapping lịch sử không chắc. |
 | `birth.solar-time-formula` | verified | NOAA xác nhận dấu/đơn vị công thức hiệu chỉnh. | Chỉ quan hệ công thức; không certify approximation hay precision. |
-| `birth.solar-time-engine` | pending | Chưa có lựa chọn và benchmark. | Engine/fixture/uncertainty/độ chính xác theo task 6. |
-| `birth.solar-term-angles` | verified | Bảng góc HKO và các tên khớp `solarTerms.ts`. | Chưa chứng minh instant tính từ `sunLongitude` đủ chính xác; phương pháp trụ tháng vẫn cần đặc tả. |
-| `birth.term-instant-engine` | pending | API hiện có tính theo cuối ngày, thiếu instant. | Chốt biểu kiến địa tâm, timescale, thuật toán và benchmark tại task 6–7. |
-| `birth.zi-policy` | pending | Có hai phương án attachment nhưng default/source/output chưa đủ. | Chốt school/default và ngày tính Can giờ; không ảnh hưởng giờ chung MVP. |
+| `birth.solar-time-engine` | verified tại task 6 | Astronomy Engine 2.1.19 đạt max 0,323 giây trên 12 ca JPL quantity 34. | NOAA fractional-year vượt ngưỡng; implementation/uncertainty thuộc task 7. |
+| `birth.solar-term-angles` | verified, v1.1 task 6 | Chuỗi mở tháng 315° + 30k; Thanh Minh 15°. | Không thay API tiết khí theo ngày của lịch chung. |
+| `birth.term-instant-engine` | verified tại task 6 | Astronomy Engine 2.1.19 đạt max 19,926 giây trên 12 mốc so JPL DE441 quantity 31. | Task 7 phải mở rộng regression nhiều năm và đóng gói offline. |
+| `birth.zi-policy` | verified tại task 6 | Chốt `splitZi` mặc định, `dayStartsAt23` opt-in và tách ngày trụ ngày/ngày lấy Can giờ. | Quy ước sản phẩm, không thay giờ chung MVP; task 7 triển khai đủ 24h. |
 | `interpretation.thap-than` | pending | Nguồn quan hệ chưa phải đặc tả luận giải. | Task 9 chốt Nhật chủ/âm dương, ma trận và ý nghĩa; không gán cát/hung theo tên. |
 | `interpretation.dung-than` | pending | Attachment không cung cấp phương pháp xác định. | Task 9 cần tàng can/mùa/vượng suy/trường phái và uncertainty; không tính từ đếm hành thiếu. |
 
@@ -182,3 +182,20 @@ chuyển từ hướng/xây sửa thành tuổi→ngày. Sát Chủ/Thụ Tử t
 
 Registry hiện có **27 mục: 15 verified / 11 pending / 1 rejected**. Nghiệm thu và giới hạn ở
 `tasks/validation-personal-feng-shui-task-5.md`.
+
+## 10. Bổ sung task 6 — nền tảng thời gian sinh P3 (01/10/2026)
+
+PRD `prd-birth-time-normalization.md` v1.0.0 đã chốt Việt Nam/ngày dương 1900–2100, tự động múi
+giờ 1970–2100, tzdb 2026d, pipeline wall time → UTC instant → TST, uncertainty và hai Zi policy.
+Trước 1970 cần xác nhận offset nếu mapping vùng không chắc; gap bị từ chối và overlap trả ứng viên.
+
+Astronomy Engine 2.1.19 được chọn sau benchmark độc lập với JPL Horizons DE441. Trên fixture hiện
+tại, 12 ca TST đạt sai số tuyệt đối tối đa **0,323 giây** và 12 tiết mở tháng đạt tối đa **19,926
+giây**, dưới ngưỡng 30 giây. Công thức NOAA fractional-year có ca 56,724 giây nên chỉ giữ làm tài
+liệu giải thích. JPL không được gọi lúc runtime và fixture không chứa dữ liệu sinh thật.
+
+Các rule `birth.historical-timezone`, `birth.solar-time-engine`, `birth.term-instant-engine` và
+`birth.zi-policy` chuyển sang verified v1.1.0; `birth.solar-term-angles` lên v1.1.0 để gắn PRD và
+chuỗi 315° + 30k. Đây là gate thiết kế cho task 7, không tuyên bố engine/schema/UI đã triển khai.
+Registry hiện có **27 mục: 19 verified / 7 pending / 1 rejected**. Chi tiết benchmark và giới hạn ở
+`tasks/bazi-engine-evaluation.md` và `tasks/validation-personal-feng-shui-task-6.md`.

@@ -134,15 +134,26 @@ describe('rule registry', () => {
     expect(registry.getReadiness('commonDay', ['common.thu-tu']).status).toBe('ready')
   })
 
-  it('does not certify an engine merely because its angle reference is verified', async () => {
+  it('opens the reviewed birth-time foundation with pinned data and benchmark evidence', async () => {
     const { createRuleRegistry, FENG_SHUI_RULES } = await loadRules()
-    const result = createRuleRegistry(FENG_SHUI_RULES).getReadiness('birthTime', [
+    const ids = [
+      'birth.historical-timezone',
+      'birth.solar-time-engine',
       'birth.solar-term-angles',
       'birth.term-instant-engine',
-    ])
-    expect(result.status).toBe('blocked')
-    expect(result.rules).toEqual([])
-    expect(result.unavailable).toEqual([{ id: 'birth.term-instant-engine', reason: 'pending' }])
+      'birth.zi-policy',
+    ]
+    const result = createRuleRegistry(FENG_SHUI_RULES).getReadiness('birthTime', ids)
+    expect(result.status).toBe('ready')
+    expect(result.rules.map((rule) => rule.id)).toEqual(ids)
+    for (const rule of result.rules) {
+      expect(rule.version).toBe('1.1.0')
+      expect(rule.sourceIds).toContain('birthTimeSpec')
+    }
+    expect(result.rules.find((rule) => rule.id === 'birth.solar-time-engine')).toMatchObject({
+      sourceIds: expect.arrayContaining(['astronomyEngine', 'jpl']),
+      reason: expect.stringContaining('Astronomy Engine 2.1.19'),
+    })
   })
 
   it('rejects duplicate IDs even when versions differ', async () => {

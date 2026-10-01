@@ -10,8 +10,10 @@
 - `tasks/prd-annual-feng-shui.md` (đã tạo, P1 spec) - Hạn năm theo mục đích/vai trò, miền tuổi được hỗ trợ và trạng thái đầu ra.
 - `tasks/fixtures/annual-feng-shui.v1.json` (đã tạo, P1 spec) - Expected tĩnh có provenance: Kim Lâu, toàn miền Hoang Ốc 10–69, Tam Tai 12×12, context và ma trận áp dụng; chưa dùng trong production.
 - `tasks/prd-personal-feng-shui-stars.md` (mới, có điều kiện) - Chỉ các thần sát cá nhân đủ nguồn; phép tổng hợp và ranh giới với sao chung.
-- `tasks/prd-birth-time-normalization.md` (mới) - Hồ sơ sinh, UTC/TST, múi giờ lịch sử, giao tiết, giờ Tý và chuẩn độ chính xác.
-- `tasks/bazi-engine-evaluation.md` (mới) - So sánh engine/dữ liệu, sai số, giấy phép, dung lượng và quyết định lựa chọn.
+- `tasks/prd-birth-time-normalization.md` (đã tạo, P3 spec) - Hồ sơ sinh, UTC/TST, múi giờ lịch sử, giao tiết, giờ Tý và chuẩn độ chính xác.
+- `tasks/bazi-engine-evaluation.md` (đã tạo, P3 spec) - So sánh engine/dữ liệu, sai số, giấy phép, dung lượng và quyết định lựa chọn.
+- `tasks/fixtures/bazi-engine-benchmark.v1.json` (đã tạo, P3 spec) - 12 ca TST và 12 giao tiết đối chiếu JPL bằng dữ liệu giả.
+- `tasks/validation-personal-feng-shui-task-6.md` - Bằng chứng nghiệm thu và giới hạn Task 6.
 - `tasks/prd-bazi-interpretation.md`, `tasks/tasks-bazi-interpretation.md` (mới, P4) - Đặc tả và task luận Nhật chủ/Thập thần/Dụng thần ở giai đoạn sau.
 - `tasks/feng-shui-release-checklist.md` (mới) - Bằng chứng nghiệm thu, lớp được phát hành và các phần chưa hỗ trợ.
 
@@ -55,10 +57,10 @@
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0 và task 1–5; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 5 chỉ phát hành Can xung đã kiểm chứng; Thái Tuế/Tuế Phá/Tam Sát/Sát Chủ cá nhân vẫn pending. Task 6.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
+- Trạng thái: đã hoàn tất bước 0 và task 1–6; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 6 chốt PRD/engine/dữ liệu cho P3 nhưng chưa cài dependency hoặc triển khai Tứ Trụ. Task 7.0–9.0 chưa làm. Nghiệm thu phát hành MVP còn cần đo trên điện thoại thật và thử với người dùng.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
 - Kiểm tra bước 0 ban đầu chưa có MVP. Trong task 4 đã triển khai `shared/personalFengShui/day.ts`, `PersonalFengShuiPanel` và `showPersonalFengShui`, rồi tích hợp hạn năm. Bằng chứng và giới hạn nghiệm thu: `tasks/validation-personal-feng-shui-task-4.md`.
-- Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected); sau task 5 có 15 verified, 11 pending, 1 rejected. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
+- Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected); sau task 5 có 15 verified, 11 pending, 1 rejected; sau task 6 có 19 verified, 7 pending, 1 rejected. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
 - Kết quả task 2: PRD P1 v1.0.0 và fixture đã đóng; Hoang Ốc chỉ hỗ trợ 10–69, purpose/role không persist. Nguồn PDF/giới hạn provenance và policy ở PRD mục 2; registry đã đồng bộ ở task 3, không mở gate chỉ từ fixture.
 - Kết quả task 3: 360 test annual và 17 test registry đạt; toàn dự án 879 test / 75 file đạt, typecheck/lint/format/build đạt. Không thêm cache, persist, UI, dependency hoặc thay lịch chung. `npm audit` chưa hoàn tất do DNS `ENOTFOUND registry.npmjs.org`.
 - Đường dẫn trong Relevant Files tương đối với gốc repository; file ghi “mới” hoặc “đề xuất” chưa tồn tại. Điều chỉnh tên theo kiến trúc MVP thực tế và ghi lại quyết định khi triển khai.
@@ -134,18 +136,18 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 5.6 Tích hợp giải thích cá nhân riêng trong panel; tái sử dụng Thụ Tử chung, tránh đếm đôi Sát Chủ hoặc âm thầm ghi đè bảng sao hiện tại.
   - [x] 5.7 Chạy test phân lớp/scope/version và regression sao chung; ghi danh sách phần P2 có thể phát hành và phần vẫn pending. Chỉ đánh dấu 5.0 hoàn tất khi phạm vi đã chốt thực sự nghiệm thu, không vì bị hoãn.
 
-- [ ] 6.0 Hoàn thiện PRD và lựa chọn nền tảng thời gian sinh (P3): chốt nơi sinh, múi giờ lịch sử, UTC/TST, thời điểm giao tiết, quy ước giờ Tý và bất định; benchmark engine/fixture, giấy phép, dung lượng và offline trước khi chọn phương pháp.
-  - [ ] 6.1 Tạo `prd-birth-time-normalization.md`, chốt vùng/năm hỗ trợ; đề xuất ngày sinh dương trước, nơi sinh Việt Nam trước; chỉ thêm nhập ngày âm khi có quy ước lịch và tháng nhuận được xác nhận.
-  - [ ] 6.2 Chốt schema ngày/giờ hành chính, giờ chính xác/ước lượng, tọa độ/nguồn tọa độ, múi giờ, offset được xác nhận và khoảng bất định; không suy nơi sinh từ vị trí thiết bị.
-  - [ ] 6.3 Chốt nguồn timezone phiên bản cố định, chính sách miền Bắc/Nam/lịch sử trước 1970, thiếu dữ liệu, gap/overlap và xác nhận offset; không hardcode mốc attachment hoặc dựa duy nhất vào `Intl`.
-  - [ ] 6.4 Định nghĩa pipeline và time scales: hành chính → UTC instant; instant dùng so giao tiết; TST dùng phân giải ngày/giờ luận trụ; không biến TST thành instant mới hoặc hiệu chỉnh hai lần.
-  - [ ] 6.5 Chốt định nghĩa EoT/TST, dấu kinh độ, đơn vị, ngày sau hiệu chỉnh và metadata; tách sai số engine khỏi độ chắc chắn giờ/tọa độ đầu vào.
-  - [ ] 6.6 Chốt 12 tiết mở tháng từ 315° theo bước 30°, Thanh Minh 15°; so thời điểm địa tâm biểu kiến theo nguồn đã chọn, không dùng tiết khí cuối ngày hoặc tháng âm cho trụ năm/tháng.
-  - [ ] 6.7 Chốt default và bảng quyết định `splitZi`/`dayStartsAt23`; output có ngày tính trụ ngày, ngày tính Can giờ, Chi giờ và policy cho đủ 24h; reject enum sai, không cố định Canh Tý.
-  - [ ] 6.8 Định nghĩa chế độ thiếu dữ liệu/bất định: không tự điền giờ 12h; khoảng cắt qua Chi giờ/giao tiết trả ứng viên hoặc chưa xác định; ghi cách hiển thị và giới hạn số ứng viên.
-  - [ ] 6.9 Tạo dữ liệu benchmark tham chiếu có cấu hình NOAA/JPL/tzdb, tọa độ, UTC/UT1/TT phù hợp và nguồn; profile thử giả, fixture độc lập với hàm sản xuất.
-  - [ ] 6.10 So sánh phương pháp/engine: mục tiêu ≤30 giây cho TST và instant giao tiết trên ma trận đã chốt, giấy phép, khả năng tái lập, dung lượng và offline; ghi kết quả từng ca vào `bazi-engine-evaluation.md`.
-  - [ ] 6.11 Chọn phương pháp đạt yêu cầu hoặc sửa yêu cầu với bằng chứng nếu chưa đạt; chốt nguồn dữ liệu/phiên bản, cách build/cache và các quyết định chặn P3 trước task 7.0. Không gọi JPL live bằng thông tin sinh thật.
+- [x] 6.0 Hoàn thiện PRD và lựa chọn nền tảng thời gian sinh (P3): chốt nơi sinh, múi giờ lịch sử, UTC/TST, thời điểm giao tiết, quy ước giờ Tý và bất định; benchmark engine/fixture, giấy phép, dung lượng và offline trước khi chọn phương pháp.
+  - [x] 6.1 Tạo `prd-birth-time-normalization.md`, chốt vùng/năm hỗ trợ; đề xuất ngày sinh dương trước, nơi sinh Việt Nam trước; chỉ thêm nhập ngày âm khi có quy ước lịch và tháng nhuận được xác nhận.
+  - [x] 6.2 Chốt schema ngày/giờ hành chính, giờ chính xác/ước lượng, tọa độ/nguồn tọa độ, múi giờ, offset được xác nhận và khoảng bất định; không suy nơi sinh từ vị trí thiết bị.
+  - [x] 6.3 Chốt nguồn timezone phiên bản cố định, chính sách miền Bắc/Nam/lịch sử trước 1970, thiếu dữ liệu, gap/overlap và xác nhận offset; không hardcode mốc attachment hoặc dựa duy nhất vào `Intl`.
+  - [x] 6.4 Định nghĩa pipeline và time scales: hành chính → UTC instant; instant dùng so giao tiết; TST dùng phân giải ngày/giờ luận trụ; không biến TST thành instant mới hoặc hiệu chỉnh hai lần.
+  - [x] 6.5 Chốt định nghĩa EoT/TST, dấu kinh độ, đơn vị, ngày sau hiệu chỉnh và metadata; tách sai số engine khỏi độ chắc chắn giờ/tọa độ đầu vào.
+  - [x] 6.6 Chốt 12 tiết mở tháng từ 315° theo bước 30°, Thanh Minh 15°; so thời điểm địa tâm biểu kiến theo nguồn đã chọn, không dùng tiết khí cuối ngày hoặc tháng âm cho trụ năm/tháng.
+  - [x] 6.7 Chốt default và bảng quyết định `splitZi`/`dayStartsAt23`; output có ngày tính trụ ngày, ngày tính Can giờ, Chi giờ và policy cho đủ 24h; reject enum sai, không cố định Canh Tý.
+  - [x] 6.8 Định nghĩa chế độ thiếu dữ liệu/bất định: không tự điền giờ 12h; khoảng cắt qua Chi giờ/giao tiết trả ứng viên hoặc chưa xác định; ghi cách hiển thị và giới hạn số ứng viên.
+  - [x] 6.9 Tạo dữ liệu benchmark tham chiếu có cấu hình NOAA/JPL/tzdb, tọa độ, UTC/UT1/TT phù hợp và nguồn; profile thử giả, fixture độc lập với hàm sản xuất.
+  - [x] 6.10 So sánh phương pháp/engine: mục tiêu ≤30 giây cho TST và instant giao tiết trên ma trận đã chốt, giấy phép, khả năng tái lập, dung lượng và offline; ghi kết quả từng ca vào `bazi-engine-evaluation.md`.
+  - [x] 6.11 Chọn phương pháp đạt yêu cầu hoặc sửa yêu cầu với bằng chứng nếu chưa đạt; chốt nguồn dữ liệu/phiên bản, cách build/cache và các quyết định chặn P3 trước task 7.0. Không gọi JPL live bằng thông tin sinh thật.
 
 - [ ] 7.0 Triển khai hồ sơ sinh mở rộng và module Tứ Trụ (P3): migration tương thích ngược, chuẩn hóa thời gian, giao tiết theo instant và bốn trụ; chỉ xuất kết quả khi đủ dữ liệu và thể hiện rõ các trường hợp không chắc chắn.
   - [ ] 7.1 Thêm schema metadata theo PRD 6.0 vào `Settings`/kiểu dùng chung, giữ `birthDate`/`birthTime`; quy định `null`/thiếu trường và xóa liên đới nơi sinh/offset/uncertainty khi người dùng xóa toàn hồ sơ.
