@@ -54,6 +54,16 @@ const OVERCOMES: Record<NguHanh, NguHanh> = {
   Kim: 'Mộc',
 }
 
+/** Hành mà `element` sinh ra: Mộc sinh Hỏa. */
+export function generatedBy(element: NguHanh): NguHanh {
+  return GENERATES[element]
+}
+
+/** Hành mà `element` khắc: Mộc khắc Thổ. */
+export function overcomeBy(element: NguHanh): NguHanh {
+  return OVERCOMES[element]
+}
+
 /** Hành sinh ra `element` (mẹ sinh con): Thủy sinh Mộc, nên generatorOf('Mộc') = 'Thủy'. */
 export function generatorOf(element: NguHanh): NguHanh {
   return (Object.keys(GENERATES) as NguHanh[]).find((from) => GENERATES[from] === element)!

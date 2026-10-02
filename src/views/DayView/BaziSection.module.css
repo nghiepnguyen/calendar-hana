@@ -23,6 +23,7 @@
 }
 
 .pillar {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,4 +377,113 @@
   align-items: center;
   justify-content: space-between;
   gap: calc(8px * var(--ui-scale));
+}
+
+/* ---------- Thập thần & Tàng can ---------- */
+
+/* Nhãn nổi trên mép trên của trụ Tháng, không đẩy lệch hàng chữ so với các trụ khác. */
+.monthCommand {
+  position: absolute;
+  top: calc(-9px * var(--ui-scale));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px calc(7px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--gold) 22%, var(--glass-strong));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 30%, transparent);
+  color: color-mix(in srgb, var(--gold) 80%, var(--text));
+  font-size: calc(10.5px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  white-space: nowrap;
+}
+
+.tenGod {
+  max-width: 100%;
+  padding: calc(2px * var(--ui-scale)) calc(8px * var(--ui-scale));
+  border-radius: 10px;
+  background: var(--glass-strong);
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.tenGodSelf {
+  color: var(--el);
+}
+
+.hidden {
+  align-self: stretch;
+  min-width: 0;
+  text-align: left;
+}
+
+.hidden summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(5px * var(--ui-scale));
+  min-height: 32px;
+  color: var(--text-muted);
+  font-size: calc(11.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  list-style: none;
+  cursor: pointer;
+}
+
+.hidden summary::-webkit-details-marker {
+  display: none;
+}
+
+.hidden summary::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.25s ease;
+}
+
+.hidden[open] summary::after {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.hidden summary:hover {
+  color: var(--text);
+}
+
+.hidden summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.hidden ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--ui-scale));
+  margin: calc(4px * var(--ui-scale)) 0 0;
+  padding: calc(8px * var(--ui-scale)) 0 0;
+  border-top: 1px dashed var(--separator);
+  list-style: none;
+}
+
+.hidden li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.hiddenName {
+  color: var(--el);
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.hiddenMeta {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
 }

@@ -60,3 +60,40 @@ it('gates the strength score by its own rule', () => {
   expect(screen.getByRole('region', { name: 'Nhật Nguyên và ngũ hành' })).toBeInTheDocument()
   expect(screen.queryByRole('region', { name: 'Độ vượng suy' })).not.toBeInTheDocument()
 })
+
+it('labels Ten Gods under each stem, marks the month command and lists hidden stems', () => {
+  render(<BaziSection settings={settings} />)
+  const bazi = screen.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })
+  const pillars = within(bazi)
+    .getAllByRole('listitem')
+    .filter((li) => li.querySelector('p'))
+  expect(pillars).toHaveLength(4)
+  expect(pillars[2]).toHaveTextContent('Nhật Nguyên')
+  expect(pillars[1]).toHaveTextContent('Nguyệt lệnh')
+  // Mỗi trụ có một mục Tàng can; Chi Thìn của trụ năm Giáp Thìn có Mậu, Ất, Quý.
+  const year = within(pillars[0]).getByRole('list', { name: 'Tàng can của Thìn' })
+  expect(
+    within(year)
+      .getAllByRole('listitem')
+      .map((li) => li.textContent),
+  ).toEqual([
+    expect.stringMatching(/^Mậubản khí, /),
+    expect.stringMatching(/^Ấttrung khí, /),
+    expect.stringMatching(/^Quýdư khí, /),
+  ])
+})
+
+it('hides Ten God and hidden-stem layers when their rules are not verified', () => {
+  const rules = FENG_SHUI_RULES.map((rule) =>
+    rule.id === 'interpretation.thap-than' || rule.id === 'interpretation.hidden-stems'
+      ? { ...rule, verificationStatus: 'pending' as const }
+      : rule,
+  )
+  render(<BaziSection settings={settings} rules={rules} />)
+  const bazi = screen.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })
+  expect(bazi).not.toHaveTextContent('Nguyệt lệnh')
+  expect(within(bazi).queryByText('Tàng can')).not.toBeInTheDocument()
+  expect(
+    within(bazi).queryByText(/^(Chính|Thiên|Thất|Tỷ|Kiếp|Thực|Thương) /),
+  ).not.toBeInTheDocument()
+})

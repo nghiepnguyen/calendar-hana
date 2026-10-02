@@ -21,7 +21,14 @@ import type { Occurrence } from '@shared/recurrence/recurrence'
 import { CAN, CHI } from '@shared/lunar/canChi'
 import { canElement } from '@shared/lunar/elements'
 import { assessPersonalDay, SUMMARY_LABELS, type Tone } from '@shared/personalFengShui/day'
-import { FENG_SHUI_RULES, type RuleDefinition } from '@shared/personalFengShui/rules'
+import { calculateBazi } from '@shared/bazi'
+import { tenGodOf } from '@shared/bazi/interpretation/tenGods'
+import { viewedDayTenGod } from '@shared/bazi/interpretation/transit'
+import {
+  createRuleRegistry,
+  FENG_SHUI_RULES,
+  type RuleDefinition,
+} from '@shared/personalFengShui/rules'
 import { useAuth } from '../../auth/authContext'
 import { useNow } from '../../hooks/useNow'
 import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
@@ -191,6 +198,14 @@ function BirthInvite({ missing, reason }: { missing: boolean; reason: string }) 
   )
 }
 
+const RELATION_VERB = {
+  same: 'cùng hành với',
+  generates: 'sinh ra',
+  controls: 'khắc',
+  controlledBy: 'bị khắc bởi',
+  generatedBy: 'được sinh bởi',
+} as const
+
 const GROUP_LABEL = {
   priority: 'Ưu tiên',
   consider: 'Có thể cân nhắc',
@@ -218,6 +233,29 @@ export function PersonalFengShuiPanel({
   const ready = result.status === 'ready'
   const nowChi = date === today ? hourChiOf(Math.floor(minutes / 60)) : null
   const nowHour = ready && nowChi !== null ? result.hours.find((h) => h.chi === nowChi) : undefined
+  const tenGodReady = useMemo(
+    () =>
+      createRuleRegistry(rules).getReadiness('interpretation', [
+        'interpretation.day-master',
+        'interpretation.thap-than',
+      ]).status === 'ready',
+    [rules],
+  )
+  const chart = useMemo(() => calculateBazi(settings), [settings])
+  const transit = ready && tenGodReady ? viewedDayTenGod(chart, result.day.can) : null
+  const explainStemWithTransit = () => {
+    if (!ready) return
+    const item = explainStem(result)
+    if (transit?.status === 'ready') {
+      const dayMasterCan = CAN.indexOf(transit.dayMaster as (typeof CAN)[number])
+      const t = tenGodOf(dayMasterCan, result.day.can)
+      item.reasons = [
+        ...(item.reasons ?? []),
+        `Thập thần ngày: Nhật Nguyên ${transit.dayMaster} ${RELATION_VERB[t.relation]} ${transit.viewedStem}, ${t.samePolarity ? 'cùng' : 'khác'} âm dương, nên ${transit.viewedStem} là ${t.name}. Chỉ mô tả quan hệ, không đổi kết luận ngày.`,
+      ]
+    }
+    setExplain(item)
+  }
   const eventNotes = ready
     ? eventHourNotes(
         result,
@@ -352,7 +390,7 @@ export function PersonalFengShuiPanel({
                 <TileAside
                   tone={result.stem.tone}
                   label="Thiên can"
-                  onExplain={() => setExplain(explainStem(result))}
+                  onExplain={explainStemWithTransit}
                 />
               }
             >
@@ -373,6 +411,31 @@ export function PersonalFengShuiPanel({
               <p className={`${styles.statement} ${TONE_TEXT[result.stem.tone]}`}>
                 {result.stem.text}
               </p>
+              {transit ? (
+                <div
+                  className={styles.transit}
+                  role="group"
+                  aria-label="Thập thần của ngày đang xem"
+                >
+                  <span className={styles.transitLabel}>Thập thần ngày</span>
+                  {transit.status === 'ready' ? (
+                    <span>
+                      Ngày {transit.viewedStem}: <strong>{transit.tenGod}</strong> với Nhật Nguyên{' '}
+                      {transit.dayMaster}
+                    </span>
+                  ) : transit.status === 'ambiguous' ? (
+                    <span>
+                      Ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên
+                      khác nhau.
+                    </span>
+                  ) : (
+                    <span>
+                      <a href="/settings#birth-info">Nhập giờ và nơi sinh</a> để xem Thập thần của
+                      ngày.
+                    </span>
+                  )}
+                </div>
+              ) : null}
               <section className={styles.extra} aria-label="Quan hệ cá nhân mở rộng">
                 {result.personalStars.status === 'ready' ? (
                   <>

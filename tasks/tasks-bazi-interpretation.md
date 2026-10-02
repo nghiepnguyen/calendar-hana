@@ -44,20 +44,20 @@ Làm xong sub-task nào thì đổi `- [ ]` thành `- [x]`. Chỉ đánh dấu t
   - [ ] 1.4 Viết test gate: pending/rejected không thể trả `ready`, version thiếu không fallback âm thầm.
 
 - [ ] 2.0 Triển khai Nhật chủ và Thập thần P4a bằng TDD
-  - [ ] 2.1 Viết test đỏ từ ma trận 10×10 và input Can sai range/parity trước implementation.
-  - [ ] 2.2 Tạo bảng Can có hành/âm dương; lấy Nhật chủ duy nhất từ Can ngày của từng candidate P3.
-  - [ ] 2.3 Tạo hàm quan hệ có hướng và gán đúng mười Thập thần; không thêm cát/hung hoặc score.
-  - [ ] 2.4 Gắn Thập thần cho Can lộ năm/tháng/giờ, giữ pillar/operand/reason/source/version.
-  - [ ] 2.5 Thêm lớp tùy chọn Can ngày/giờ xem, không sửa lá số hoặc summary ngày.
-  - [ ] 2.6 Test property toàn 100 tổ hợp, chiều quan hệ, polarity và regression Can Chi hiện có.
+  - [x] 2.1 Viết test đỏ từ ma trận 10×10 và input Can sai range/parity trước implementation.
+  - [x] 2.2 Tạo bảng Can có hành/âm dương; lấy Nhật chủ duy nhất từ Can ngày của từng candidate P3.
+  - [x] 2.3 Tạo hàm quan hệ có hướng và gán đúng mười Thập thần; không thêm cát/hung hoặc score.
+  - [x] 2.4 Gắn Thập thần cho Can lộ năm/tháng/giờ, giữ pillar/operand/reason/source/version.
+  - [x] 2.5 Thêm lớp tùy chọn Can ngày/giờ xem, không sửa lá số hoặc summary ngày. (Chỉ Can ngày; Can giờ xem chưa làm vì cần instant/địa điểm theo PRD 8.2.)
+  - [x] 2.6 Test property toàn 100 tổ hợp, chiều quan hệ, polarity và regression Can Chi hiện có.
 
 - [ ] 3.0 Triển khai tàng can và bằng chứng vượng/suy P4b bằng TDD
-  - [ ] 3.1 Viết test đỏ cho 12 Chi, thứ tự bản/trung/dư và tổng 28 tàng can.
-  - [ ] 3.2 Trả tàng can theo từng trụ, rank và Thập thần; không gán tỷ trọng hoặc tự biến hóa do hợp/xung.
+  - [x] 3.1 Viết test đỏ cho 12 Chi, thứ tự bản/trung/dư và tổng 28 tàng can.
+  - [x] 3.2 Trả tàng can theo từng trụ, rank và Thập thần; không gán tỷ trọng hoặc tự biến hóa do hợp/xung.
   - [ ] 3.3 Định nghĩa evidence item cho tháng lệnh, thông căn, Can lộ, sinh/trợ, tiết/khắc và tương tác.
   - [ ] 3.4 Dùng Chi tháng P3 làm tháng lệnh; không dùng tháng âm hoặc nạp âm.
   - [ ] 3.5 Test fixture có cùng hành khác Can, nhiều gốc, không gốc và candidate khác nhau.
-  - [ ] 3.6 Xác nhận API/UI không xuất `strengthScore` hoặc kết luận thân vượng/nhược ngoài coverage.
+  - [ ] 3.6 Xác nhận API/UI không xuất `strengthScore` hoặc kết luận thân vượng/nhược ngoài coverage. (PRD v1.2.0 mục 6.4a đã cho phép phương pháp `weighted-v1` riêng; task cần viết lại theo PRD mới.)
 
 - [ ] 4.0 Xây pipeline candidate, uncertainty và version
   - [ ] 4.1 Tạo contract status `ready/ambiguous/insufficientData/unsupported` và reason codes.
@@ -76,7 +76,7 @@ Làm xong sub-task nào thì đổi `- [ ]` thành `- [x]`. Chỉ đánh dấu t
 
 - [ ] 6.0 Tích hợp UI theo gate từng lớp
   - [ ] 6.1 Thêm disclosure “Giải nghĩa Bát Tự” vào `BaziSection`, sau bốn trụ hiện có.
-  - [ ] 6.2 Hiển thị Nhật chủ và Thập thần bằng chữ, lý do ngắn, glossary và source/version.
+  - [x] 6.2 Hiển thị Nhật chủ và Thập thần bằng chữ, lý do ngắn, glossary và source/version.
   - [ ] 6.3 Hiển thị tàng can/evidence theo progressive disclosure; không dùng màu làm tín hiệu duy nhất.
   - [ ] 6.4 Hiển thị nhiều candidate, `unsupported` và `indeterminate` với hành động sửa hồ sơ khi phù hợp.
   - [ ] 6.5 Chỉ render Dụng thần khi feature gate và method coverage đạt; không dùng placeholder như kết luận.

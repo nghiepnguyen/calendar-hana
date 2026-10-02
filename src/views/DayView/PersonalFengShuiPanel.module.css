@@ -160,6 +160,26 @@
   line-height: 1.25;
 }
 
+/* Thập thần của ngày đang xem so với Nhật Nguyên. */
+.transit {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2px * var(--ui-scale));
+  padding: calc(9px * var(--ui-scale)) calc(11px * var(--ui-scale));
+  border-radius: 12px;
+  background: var(--fill);
+  font-size: calc(13.5px * var(--ui-scale));
+  line-height: 1.4;
+}
+
+.transitLabel {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Can xung: lớp giải thích riêng, không đổi kết luận ngày. */
 .extra {
   display: grid;

@@ -6,7 +6,9 @@ import {
   elementDistribution,
   type FourPillars,
 } from '@shared/bazi/interpretation/dayMaster'
+import { hiddenStemsOf, type HiddenStemRank } from '@shared/bazi/interpretation/hiddenStems'
 import { assessStrength } from '@shared/bazi/interpretation/strength'
+import { tenGodOf } from '@shared/bazi/interpretation/tenGods'
 import {
   createRuleRegistry,
   FENG_SHUI_RULES,
@@ -42,26 +44,41 @@ function solarTimeLabel(birthDate: string | null | undefined, tstDateTime: strin
   return date === birthDate ? time.slice(0, 5) : `${time.slice(0, 5)} ngày ${date}`
 }
 
+const RANK_LABEL: Record<HiddenStemRank, string> = {
+  main: 'bản khí',
+  middle: 'trung khí',
+  residual: 'dư khí',
+}
+
 /** Một trụ: Can trên, Chi dưới, mỗi chữ mang màu hành của nó như lá số truyền thống. */
 function Pillar({
   label,
   pillar,
   index,
   dayMaster = false,
+  dayMasterCan = null,
+  showHidden = false,
+  monthCommand = false,
 }: {
   label: string
   pillar: { can: number; chi: number }
   index: number
   dayMaster?: boolean
+  /** Can của Nhật Nguyên khi lớp Thập thần đã mở; null thì không hiện Thập thần. */
+  dayMasterCan?: number | null
+  showHidden?: boolean
+  monthCommand?: boolean
 }) {
   const canEl = canElement(pillar.can)
   const chiEl = chiElement(pillar.chi)
+  const hidden = showHidden ? hiddenStemsOf(pillar.chi, dayMasterCan ?? pillar.can) : []
   return (
     <li
       className={`${styles.pillar} ${dayMaster ? `${styles.dayPillar} ${ELEMENT_CLASS[canEl]}` : ''}`}
       style={{ '--j': index } as CSSProperties}
     >
       <span className={styles.pillarLabel}>{label}</span>
+      {monthCommand ? <span className={styles.monthCommand}>Nguyệt lệnh</span> : null}
       <p className={styles.pillarName}>
         <span className={`${styles.glyph} ${ELEMENT_CLASS[canEl]}`}>{CAN[pillar.can]}</span>{' '}
         <span className={`${styles.glyph} ${ELEMENT_CLASS[chiEl]}`}>{CHI[pillar.chi]}</span>
@@ -69,6 +86,29 @@ function Pillar({
       <span className={styles.pillarElements}>
         {canEl} · {chiEl}
       </span>
+      {dayMasterCan !== null ? (
+        <span className={`${styles.tenGod} ${dayMaster ? styles.tenGodSelf : ''}`}>
+          {dayMaster ? 'Nhật Nguyên' : tenGodOf(dayMasterCan, pillar.can).name}
+        </span>
+      ) : null}
+      {hidden.length ? (
+        <details className={styles.hidden}>
+          <summary>Tàng can</summary>
+          <ul aria-label={`Tàng can của ${CHI[pillar.chi]}`}>
+            {hidden.map((h) => (
+              <li key={h.can}>
+                <span className={`${styles.hiddenName} ${ELEMENT_CLASS[canElement(h.can)]}`}>
+                  {h.name}
+                </span>
+                <span className={styles.hiddenMeta}>
+                  {RANK_LABEL[h.rank]}
+                  {dayMasterCan !== null ? `, ${h.tenGod}` : ''}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ) : null}
     </li>
   )
 }
@@ -245,6 +285,25 @@ function baziSummary(
 
 const INSIGHT_RULES = ['interpretation.day-master', 'interpretation.element-count'] as const
 const STRENGTH_RULES = ['interpretation.strength-score'] as const
+const TEN_GOD_RULES = ['interpretation.day-master', 'interpretation.thap-than'] as const
+const HIDDEN_RULES = ['interpretation.hidden-stems'] as const
+
+const TEN_GOD_EXPLAIN: ExplainItem = {
+  title: 'Thập thần và Tàng can',
+  isGood: true,
+  verdict: { label: 'Mô tả quan hệ', tone: 'neutral' },
+  meaning:
+    'Thập thần là tên quan hệ của mỗi Can với Nhật Nguyên, đọc từ Nhật Nguyên sang Can đó. Tên chỉ mô tả quan hệ sinh khắc, không mang nghĩa tốt hay xấu.',
+  reasons: [
+    'Cùng hành: Tỷ Kiên (cùng âm dương) hoặc Kiếp Tài.',
+    'Nhật Nguyên sinh ra: Thực Thần hoặc Thương Quan.',
+    'Nhật Nguyên khắc: Thiên Tài hoặc Chính Tài.',
+    'Khắc Nhật Nguyên: Thất Sát hoặc Chính Quan.',
+    'Sinh ra Nhật Nguyên: Thiên Ấn hoặc Chính Ấn.',
+    'Tàng can là các Can ẩn trong mỗi Chi, xếp theo bản khí, trung khí, dư khí. Chi tháng (Nguyệt lệnh) là trục mùa của lá số. Tàng can không được cộng vào điểm vượng suy.',
+    'Theo Tam Mệnh Thông Hội (三命通會), quyển 5 và 7.',
+  ],
+}
 
 export function BaziSection({
   settings,
@@ -258,11 +317,15 @@ export function BaziSection({
   onExplain?: (item: ExplainItem) => void
 }) {
   const result = useMemo(() => calculateBazi(settings), [settings])
-  const { insightReady, strengthReady } = useMemo(() => {
+  const { insightReady, strengthReady, tenGodReady, hiddenReady } = useMemo(() => {
     const registry = createRuleRegistry(rules)
+    const ready = (ids: readonly string[]) =>
+      registry.getReadiness('interpretation', ids).status === 'ready'
     return {
-      insightReady: registry.getReadiness('interpretation', INSIGHT_RULES).status === 'ready',
-      strengthReady: registry.getReadiness('interpretation', STRENGTH_RULES).status === 'ready',
+      insightReady: ready(INSIGHT_RULES),
+      strengthReady: ready(STRENGTH_RULES),
+      tenGodReady: ready(TEN_GOD_RULES),
+      hiddenReady: ready(HIDDEN_RULES),
     }
   }, [rules])
   return (
@@ -272,6 +335,11 @@ export function BaziSection({
       icon={Columns}
       title="Tứ Trụ theo giờ sinh"
       label="Tứ Trụ theo giờ sinh"
+      aside={
+        (tenGodReady || hiddenReady) && onExplain && result.status !== 'insufficientData' ? (
+          <InfoButton label="Thập thần và Tàng can" onClick={() => onExplain(TEN_GOD_EXPLAIN)} />
+        ) : undefined
+      }
     >
       {result.status === 'insufficientData' ? (
         <div className={styles.empty}>
@@ -307,6 +375,9 @@ export function BaziSection({
                     pillar={pillar}
                     index={i}
                     dayMaster={insightReady && label === 'Ngày'}
+                    dayMasterCan={tenGodReady ? candidate.pillars.day.can : null}
+                    showHidden={hiddenReady}
+                    monthCommand={hiddenReady && label === 'Tháng'}
                   />
                 ))}
               </ul>

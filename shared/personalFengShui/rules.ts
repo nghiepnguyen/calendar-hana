@@ -95,6 +95,18 @@ export const RULE_SOURCES: Readonly<Record<string, RuleSource>> = Object.freeze(
     locator:
       '理論吉凶日篇, 九耀星君值男女命限圖: thứ tự 9 sao Nam (La Hầu 1) và Nữ (Kế Đô 1) theo tuổi',
   }),
+  sanmingTongHui5: Object.freeze({
+    reference: 'https://zh.wikisource.org/wiki/三命通會_(四庫全書本)/卷05',
+    locator: '生我者…立名印綬；我生者…立名食神；同我者 Tỷ/Kiếp (định nghĩa Thập thần)',
+  }),
+  sanmingTongHui7: Object.freeze({
+    reference: 'https://zh.wikisource.org/zh-hant/三命通會/卷七',
+    locator: '論六親: 我克者為財，克我者為官; phân chính/thiên theo âm dương',
+  }),
+  baziFixture: Object.freeze({
+    reference: 'tasks/fixtures/bazi-interpretation.v1.json',
+    locator: 'v1.0.0: tenGodMatrix 10×10; hiddenStems 12 Chi',
+  }),
   baziInterpretationSpec: Object.freeze({
     reference: 'tasks/prd-bazi-interpretation.md',
     locator: 'v1.2.0: 6.1 Nhật chủ; 6.1a thống kê ngũ hành 8 chữ; 6.4a điểm trọng số',
@@ -527,14 +539,26 @@ export const FENG_SHUI_RULES: readonly RuleDefinition[] = Object.freeze([
   definition(
     'interpretation.thap-than',
     'interpretation',
-    'pending',
-    ['selection', 'attachmentBirth'],
+    'verified',
+    ['sanmingTongHui5', 'sanmingTongHui7', 'baziInterpretationSpec', 'baziFixture'],
     ['pillars', 'dayMaster', 'yinYang'],
-    'Requires complete or explicitly partial chart policy',
-    'Depends on verified Bát Tự conventions',
+    'Directed Day Master → stem; visible stems, hidden stems and the viewed day stem',
+    'Bát Tự pillars from P3; viewed day from the common calendar',
     ['bazi'],
     ['self'],
-    'P4 interpretation and fixtures not specified; source relation alone is not a complete engine.',
+    'Five directed element relations plus polarity (same = Tỷ Kiên/Thực Thần/Thiên Tài/Thất Sát/Thiên Ấn). Fixture checked by an independent derivation; no human content review recorded yet. Names only, never good/bad.',
+  ),
+  definition(
+    'interpretation.hidden-stems',
+    'interpretation',
+    'verified',
+    ['baziInterpretationSpec', 'baziFixture'],
+    ['pillars.chi'],
+    'Ordered main → middle → residual; 28 stems over 12 branches',
+    'Bát Tự pillars from P3',
+    ['bazi'],
+    ['self'],
+    'Table fixed by PRD 6.3 and fixture; no weights, no transformation by combination or clash, not added to the strength score.',
   ),
   definition(
     'interpretation.dung-than',

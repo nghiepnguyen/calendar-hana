@@ -237,3 +237,11 @@ Theo `bazi_calculation_engine_spec.md` và PRD `prd-bazi-interpretation.md` v1.1
 - `annual.han-tuoi` pending và bị ẩn trên UI. Không tìm được sách gốc; các bảng dân gian đã công bố dùng
   chu kỳ 9 năm, tuổi tròn chục lặp hạn năm trước (Nam 36 Huỳnh Tuyền, 37 Tam Kheo) và có Diêm Vương. Cách
   tính cũ `tuổi mụ mod 8` mâu thuẫn với các bảng này (tuổi mụ 37 ra Địa Võng).
+
+## 13. Thập thần và Tàng can (02/10/2026)
+
+- `interpretation.thap-than@1.0.0` verified: nguồn 三命通會 quyển 5 và 7, PRD 6.2 và fixture. Fixture
+  được kiểm bằng một phép suy ra độc lập trong test, khớp cả 100 ô. Chưa có review nội dung của người;
+  xem `validation-bazi-interpretation.md`.
+- `interpretation.hidden-stems@1.0.0` verified theo bảng PRD 6.3 và fixture; không tỷ trọng, không
+  biến hóa do hợp/xung, không cộng vào điểm vượng suy.

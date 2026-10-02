@@ -21,7 +21,11 @@ const SOURCE_LABELS: Record<string, readonly [string, string]> = {
   ],
   personalStarsSpec: ['Quy ước quan hệ cá nhân mở rộng', 'Phiên bản 1.0.0, mục 2–7'],
   baziInterpretationSpec: ['Quy ước giải nghĩa Bát Tự', 'Phiên bản 1.1.0, mục 6.1 và 6.1a'],
-  attachmentBaziEngine: ['Tài liệu engine Nhật Nguyên được cung cấp', 'Mục 3.1–3.2 và 5.1'],
+  attachmentBaziEngine: ['Tài liệu engine Nhật Nguyên được cung cấp', 'Mục 3.1–3.2 và 5.1–5.3'],
+  sanmingTongHui5: ['Tam Mệnh Thông Hội (三命通會)', 'Quyển 5, định nghĩa Thập thần'],
+  sanmingTongHui7: ['Tam Mệnh Thông Hội (三命通會)', 'Quyển 7, Luận lục thân'],
+  baziFixture: ['Bảng kiểm Thập thần và Tàng can', 'Phiên bản 1.0.0'],
+  yuXiaJi: ['Ngọc Hạp Ký (玉匣記)', 'Cửu Diệu tinh quân trị nam nữ mệnh hạn'],
 }
 const RULE_LABELS: Record<string, string> = {
   'personal.branch-relations': 'Quan hệ Địa chi',
@@ -38,6 +42,10 @@ const RULE_LABELS: Record<string, string> = {
   'annual.tam-tai': 'Tam Tai',
   'interpretation.day-master': 'Nhật Nguyên',
   'interpretation.element-count': 'Thống kê ngũ hành 8 chữ',
+  'interpretation.strength-score': 'Điểm vượng suy',
+  'interpretation.thap-than': 'Thập thần',
+  'interpretation.hidden-stems': 'Tàng can',
+  'annual.sao-chieu-menh': 'Sao chiếu mệnh',
 }
 export function FengShuiSources({
   rules,

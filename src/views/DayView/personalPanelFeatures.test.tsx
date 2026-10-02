@@ -135,4 +135,42 @@ describe('personal panel features', () => {
     expect(dialog).toHaveTextContent('Ngọc Hạp Ký')
     expect(dialog).not.toHaveTextContent(/^Xấu|Hung tinh/)
   })
+
+  it('shows the viewed day Ten God inside the Thiên can tile', () => {
+    at('10:00')
+    const full = settings({
+      birthTime: '08:30',
+      birthTimePrecision: 'exact',
+      birthTimeUncertaintyMinutes: 0,
+      birthPlace: {
+        countryCode: 'VN',
+        subdivisionCode: 'VN-SG',
+        label: 'TP. Hồ Chí Minh',
+        latitude: 10.76,
+        longitude: 106.66,
+        coordinateSource: 'bundledGazetteer',
+        coordinateAccuracyKm: 10,
+      },
+      birthTimezoneId: 'Asia/Ho_Chi_Minh',
+      birthTimezoneSource: 'bundledMapping',
+      birthConfirmedOffsetMinutes: null,
+      birthZiPolicy: 'splitZi',
+    })
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={full} />)
+    // 1/7/1990 08:30 TP.HCM: Nhật Nguyên Đinh; ngày 23/9/2026 là Canh Tý → Chính Tài.
+    const stem = screen.getByRole('region', { name: 'Quan hệ Thiên can' })
+    expect(
+      within(stem).getByRole('group', { name: 'Thập thần của ngày đang xem' }),
+    ).toHaveTextContent('Ngày Canh: Chính Tài với Nhật Nguyên Đinh')
+  })
+
+  it('asks for birth time and place before showing the viewed day Ten God', () => {
+    at('10:00')
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
+    const group = screen.getByRole('group', { name: 'Thập thần của ngày đang xem' })
+    expect(within(group).getByRole('link', { name: 'Nhập giờ và nơi sinh' })).toHaveAttribute(
+      'href',
+      '/settings#birth-info',
+    )
+  })
 })
