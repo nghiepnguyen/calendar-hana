@@ -10,11 +10,15 @@ Không deploy production trong quy trình này.
 | P1 | Kim Lâu, Hoang Ốc 10–69, Tam Tai theo mục đích/vai trò | rules 1.0.0 | Đạt nghiệm thu tự động |
 | P2 | Can xung cá nhân, hiển thị tách khỏi summary ngày | `personal.can-xung@1.0.0` | Đạt nghiệm thu tự động |
 | P3 | Hồ sơ sinh Việt Nam 1900–2100, UTC/TST, giao tiết, giờ Tý, Tứ Trụ | rules 1.1.0; Astronomy 2.1.19; tzdb 2026d | Đạt nghiệm thu tự động |
+| P4a/P4b | Nhật Nguyên, ngũ hành 8 chữ, điểm vượng suy `weighted-v1.0.0`, Thập thần (lá số và ngày đang xem), tàng can | interpretation 1.0.0 | Đạt nghiệm thu tự động; Thập thần chưa có review của người |
+| Hạn năm | Sao chiếu mệnh (tên sao theo 玉匣記); Hạn tuổi ẩn | `annual.sao-chieu-menh@1.0.0`; `annual.han-tuoi` pending | Sao mở; Hạn tuổi chưa có nguồn |
 
 PRD: [`prd-personal-feng-shui.md`](prd-personal-feng-shui.md),
 [`prd-annual-feng-shui.md`](prd-annual-feng-shui.md),
 [`prd-personal-feng-shui-stars.md`](prd-personal-feng-shui-stars.md) và
-[`prd-birth-time-normalization.md`](prd-birth-time-normalization.md). Registry nguồn và gate nằm ở
+[`prd-birth-time-normalization.md`](prd-birth-time-normalization.md),
+[`prd-bazi-interpretation.md`](prd-bazi-interpretation.md) (v1.2.0). Nghiệm thu P4 ở
+[`validation-bazi-interpretation.md`](validation-bazi-interpretation.md). Registry nguồn và gate nằm ở
 [`feng-shui-rule-audit.md`](feng-shui-rule-audit.md).
 
 ## Bằng chứng phát hành
@@ -59,14 +63,16 @@ PRD: [`prd-personal-feng-shui.md`](prd-personal-feng-shui.md),
 - P2 vẫn hoãn Thái Tuế, Tuế Phá, Tam Sát và Sát Chủ cá nhân; không suy từ rule sao chung.
 - P3 chưa hỗ trợ ngoài Việt Nam, ngày âm/tháng nhuận làm input, tự dò vị trí thiết bị hoặc tự đoán
   offset trước 1970. Form hiện có Hà Nội/miền Bắc và TP. Hồ Chí Minh/miền Nam.
-- P4 đã có PRD, fixture và task triển khai riêng; chưa có engine/UI và chưa được phát hành. Nhật chủ,
-  Thập thần hoặc Dụng thần không được suy ngầm từ tên trụ trong P1–P3.
+- P4c Dụng thần, lớp bằng chứng vượng suy (PRD 6.4) và Can giờ đang xem chưa làm. Nhật Nguyên và
+  Thập thần chỉ mô tả quan hệ, không gắn tốt/xấu và không đổi kết luận ngày.
+- `annual.han-tuoi` tạm ẩn: chưa có sách nguồn; cách tính cũ `tuổi mụ mod 8` mâu thuẫn bảng đã công bố.
+- Sao chiếu mệnh không gắn cát/hung vì sách gốc mô tả mỗi sao khác nhau theo Nam/Nữ mạng.
 - Chưa đo trên điện thoại tầm trung thật, chưa thử với người dùng thật hoặc screen reader thật.
   WebKit/iPhone trong Playwright là mô phỏng engine/thiết bị. Các bước thủ công này phải hoàn tất
   trước tuyên bố đạt success metrics sản phẩm rộng hơn.
 
 ## Quyết định phát hành
 
-P1, phần Can xung P2 và nền tảng Tứ Trụ P3 đủ bằng chứng tự động để tạo release candidate. Không mở
-các rule pending hoặc P4. Trước deploy production cần review thay đổi, kiểm tra thiết bị thật và thực
+P1, phần Can xung P2, nền tảng Tứ Trụ P3 và các lớp P4a/P4b đã mở đủ bằng chứng tự động để tạo
+release candidate. Không mở các rule pending (Hạn tuổi, Dụng thần, Thái Tuế, Tuế Phá, Tam Sát, Sát Chủ). Trước deploy production cần review thay đổi, kiểm tra thiết bị thật và thực
 hiện quy trình phát hành riêng.

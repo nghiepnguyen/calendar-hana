@@ -6,7 +6,14 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 - Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
 - Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
 - Xem Ngày có khối Lịch vạn niên: niên mệnh (nạp âm), quan hệ Can Chi, Nhị thập bát tú, Thập nhị trực kèm việc nên làm / nên kiêng, hướng Hỷ Thần và Tài Thần trên la bàn, tuổi xung ngày và tháng, sao tốt và sao xấu theo Ngọc Hạp Thông Thư (bấm để xem giải thích), đủ 12 giờ trong ngày có đánh dấu giờ hiện tại. Bật/tắt cùng công tắc hoàng đạo trong Cài đặt. Số liệu tính ngay trên máy, đã đối chiếu với licham.vn, xemngay.com, lichviet.me và thoigian.com.vn.
-- Phong thủy cá nhân trong xem Ngày gồm quan hệ Can Chi/nạp âm, giờ phù hợp, Kim Lâu, Hoang Ốc, Tam Tai, Can xung và Tứ Trụ. Tứ Trụ cần ngày, giờ và nơi sinh; hỗ trợ Việt Nam 1900–2100, giờ ước lượng và hai quy ước giờ Tý. Kết quả mang tính tham khảo theo quy ước đã công bố, không gồm Nhật chủ, Thập thần hoặc Dụng thần.
+- Phong thủy cá nhân trong xem Ngày, cùng ngôn ngữ thiết kế với Lịch vạn niên:
+  - Chưa có ngày sinh hợp lệ thì chỉ hiện lời mời nhập ngày sinh (và nút đăng nhập cho khách nếu có tài khoản Firebase), kèm vòng 12 con giáp.
+  - Kết luận ngày nêu rõ yếu tố quyết định (ví dụ "Vì Địa chi xung tuổi (Ngọ xung Tý)"). Ô Địa chi, Thiên can, Nạp âm có nút ⓘ giải thích. Ô Thiên can có Thập thần của ngày đang xem so với Nhật Nguyên.
+  - Giờ cá nhân đánh dấu giờ hiện tại và nhắc khi sự kiện có giờ rơi vào giờ không hợp tuổi (chỉ là gợi ý, không đổi kết luận).
+  - Hạn theo năm: Sao chiếu mệnh theo Ngọc Hạp Ký (chỉ tên sao, không gắn cát/hung), Kim Lâu, Hoang Ốc, Tam Tai. Hạn tuổi tạm ẩn vì chưa có nguồn. Nam/Nữ mạng lấy theo giới tính đã lưu.
+  - Tứ Trụ (cần ngày, giờ và nơi sinh; Việt Nam 1900–2100, giờ ước lượng, hai quy ước giờ Tý): lá số có Thập thần, tàng can, Nguyệt lệnh; Nhật Nguyên, điểm vượng suy (bản đơn giản theo trọng số vị trí) và thống kê ngũ hành 8 chữ.
+  - Trên điện thoại, Hạn theo năm và Tứ Trụ thu gọn thành một dòng tóm tắt.
+  - Mỗi lớp đi qua gate quy tắc có nguồn và version. Kết quả mang tính tham khảo theo quy ước đã công bố; chưa có Dụng thần.
 - Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
 - Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
 - Danh mục có màu, sửa và thêm được. Lọc lịch theo danh mục.
@@ -15,7 +22,7 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 - Sao lưu và chuyển dữ liệu trong Cài đặt: JSON (đầy đủ), ICS và CSV theo chuẩn Google Calendar. Nhập được file .ics / .csv xuất từ Google Calendar.
 - Không cần tài khoản: dữ liệu lưu trên máy và dùng được offline. Đăng nhập Google để lưu lên cloud và đồng bộ nhiều thiết bị.
 
-Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md). Lịch vạn niên: [tasks/prd-day-almanac.md](tasks/prd-day-almanac.md), [tasks/tasks-day-almanac.md](tasks/tasks-day-almanac.md). Cỡ chữ: [tasks/prd-text-size.md](tasks/prd-text-size.md), [tasks/tasks-text-size.md](tasks/tasks-text-size.md).
+Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-calendar.md). Danh sách task: [tasks/tasks-personal-calendar.md](tasks/tasks-personal-calendar.md). Lịch vạn niên: [tasks/prd-day-almanac.md](tasks/prd-day-almanac.md), [tasks/tasks-day-almanac.md](tasks/tasks-day-almanac.md). Cỡ chữ: [tasks/prd-text-size.md](tasks/prd-text-size.md), [tasks/tasks-text-size.md](tasks/tasks-text-size.md). Giải nghĩa Bát Tự: [tasks/prd-bazi-interpretation.md](tasks/prd-bazi-interpretation.md), [tasks/tasks-bazi-interpretation.md](tasks/tasks-bazi-interpretation.md). Kế hoạch SEO: [tasks/tasks-seo-audit.md](tasks/tasks-seo-audit.md).
 
 ## Công nghệ
 
@@ -185,6 +192,8 @@ Khi đổi tên miền, cập nhật thêm:
 
 `npm run build` tạo sẵn `dist/day/YYYY-MM-DD.html` cho mọi ngày từ đầu năm trước tới cuối năm sau (`scripts/prerenderDays.ts`), mỗi trang có title, description, canonical, Open Graph, JSON-LD và nội dung lịch vạn niên dạng HTML tĩnh, và ghi `dist/sitemap.xml` liệt kê các trang này. Firebase Hosting (`cleanUrls`) phục vụ `/day/2026-09-25` từ file tương ứng; ngày ngoài khoảng vẫn mở được qua rewrite, app tự cập nhật `<head>` (`src/hooks/usePageHead.ts`). Xem Tuần và Tháng có `noindex, follow`. Service worker không precache các trang này. Khoảng ngày trượt theo năm build, nên cần deploy lại ít nhất mỗi năm.
 
+Kết quả audit SEO 02/10/2026 và kế hoạch sửa (hiệu năng mobile, liên kết nội bộ, trang tháng, soft 404) nằm ở [`tasks/tasks-seo-audit.md`](tasks/tasks-seo-audit.md).
+
 ## Các trang chính sách cho Google OAuth
 
 Hai trang HTML công khai (không cần JavaScript hay đăng nhập):
@@ -209,9 +218,13 @@ Việc có hai trang không tự bật People API hoặc tự hoàn tất xét d
 
 ## Thông tin ngày sinh
 
-Cài đặt > Tài khoản có ngày, tháng, năm sinh theo dương lịch và giờ sinh 24 giờ (tùy chọn).
+Cài đặt > Tài khoản có ngày, tháng, năm sinh theo dương lịch và giới tính (tùy chọn, dùng cho Sao
+chiếu mệnh theo Nam/Nữ mạng) trên cùng một hàng. Nhóm **Giờ và nơi sinh** (để lập Tứ Trụ) có giờ sinh
+24 giờ và nơi sinh; độ chắc chắn và sai số chỉ hiện khi đã nhập giờ; quy ước giờ Tý nằm trong
+**Tùy chọn nâng cao** và tự mở khi hồ sơ dùng quy ước khác mặc định.
 Nhập tay và bấm **Lưu thông tin** để lưu trên máy hoặc đồng bộ vào tài khoản đang đăng nhập.
-**Xóa thông tin ngày sinh** làm trống form; bấm lưu để xác nhận xóa. Thông tin này đi cùng
+**Xóa thông tin ngày sinh** làm trống form; bấm lưu để xác nhận xóa (giới tính và các trường giờ,
+nơi sinh bị xóa cùng). Thông tin này đi cùng
 bản sao lưu JSON, không gửi vào analytics. Khi chuyển dữ liệu local lên cloud, ngày sinh local
 chỉ được điền nếu tài khoản chưa từng lưu ngày sinh.
 

@@ -31,6 +31,12 @@ khác Nhật Nguyên trả `ambiguous`.
 - Can giờ đang xem: chưa làm, cần instant và địa điểm (PRD 8.2).
 - `annual.han-tuoi`: pending và ẩn trên UI, xem `feng-shui-rule-audit.md` mục 12.
 
-## Kết quả kiểm tra
+## Kết quả kiểm tra (02/10/2026)
 
-Xem kết quả lệnh ở phần cuối commit tương ứng; cập nhật số liệu ở đây khi chạy lại trước phát hành.
+- Unit/fixture: **1035 test trong 97 file** đạt, gồm `dayMaster`, `strength`, `tenGods`,
+  `hiddenStems`, `transit` và test UI `BaziSection`, `personalPanelFeatures`.
+- Playwright desktop + mobile (Chromium): **207 đạt**, gồm axe, 360px, ba cỡ chữ và ảnh chuẩn.
+  `visual-default` week/month dark mobile từng fail một lượt rồi đạt khi chạy lại 3 lần (flaky).
+- Lint (oxlint), Prettier, typecheck sạch.
+- Giao diện: ô Tứ Trụ dạng lá số gọn kèm tấm tóm tắt; Thập thần ngày nằm trong ô Thiên can; tàng can
+  mở bằng một nút chung, trụ Tháng có nhãn Nguyệt lệnh.
