@@ -1,4 +1,7 @@
-/* Ô Tứ Trụ trong khối Phong thủy cá nhân; màu ngũ hành (--el) lấy từ AlmanacPanel.module.css. */
+/*
+ * Ô Tứ Trụ: lá số (khay hai lớp: vỏ nhạt + lõi kính) bên trái, tấm tóm tắt bên phải.
+ * Màu ngũ hành (--el) và --spring lấy từ AlmanacPanel.module.css.
+ */
 
 .candidate {
   display: flex;
@@ -13,10 +16,52 @@
   font-weight: var(--fw-600);
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: calc(10px * var(--ui-scale));
+}
+
+@container (min-width: 640px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* Vỏ ngoài: khay nhạt có viền mảnh; lõi: tấm kính có ánh sáng viền trên. */
+.chart,
+.insight {
+  padding: calc(5px * var(--ui-scale));
+  border-radius: 22px;
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+}
+
+.chartCore,
+.insightCore {
+  height: 100%;
+  border-radius: 17px;
+  background: var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 1px 2px color-mix(in srgb, var(--text) 4%, transparent),
+    0 12px 32px -22px color-mix(in srgb, var(--text) 30%, transparent);
+}
+
+/* ---------- Lá số ---------- */
+
+.chartCore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(4px * var(--ui-scale));
+  padding: calc(18px * var(--ui-scale)) calc(6px * var(--ui-scale)) calc(8px * var(--ui-scale));
+}
+
 .pillars {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: calc(6px * var(--ui-scale));
   margin: 0;
   padding: 0;
   list-style: none;
@@ -27,37 +72,108 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(6px * var(--ui-scale));
+  gap: calc(4px * var(--ui-scale));
   min-width: 0;
-  padding: calc(12px * var(--ui-scale)) calc(6px * var(--ui-scale));
-  border-radius: 16px;
-  background: linear-gradient(180deg, var(--fill), transparent 140%);
-  box-shadow: inset 0 0 0 1px var(--separator-soft, var(--separator));
+  margin: 0 calc(2px * var(--ui-scale));
+  padding: calc(10px * var(--ui-scale)) calc(2px * var(--ui-scale));
+  border-radius: 14px;
   text-align: center;
-  animation: pillar-in 0.7s cubic-bezier(0.32, 0.72, 0, 1) both;
-  animation-delay: calc(var(--j, 0) * 80ms + 420ms);
+  animation: pillar-in 0.8s var(--spring, cubic-bezier(0.32, 0.72, 0, 1)) both;
+  animation-delay: calc(var(--j, 0) * 70ms + 380ms);
+}
+
+/* Đường chia cột mờ dần hai đầu, không dùng viền xám cứng. */
+.pillar + .pillar::before {
+  content: '';
+  position: absolute;
+  top: 14%;
+  bottom: 14%;
+  left: calc(-3px * var(--ui-scale));
+  width: 1px;
+  background: linear-gradient(transparent, var(--separator), transparent);
+}
+
+/* Trụ Ngày đã có nền riêng: bỏ đường chia hai bên nó. */
+.dayPillar + .pillar::before,
+.dayPillar::before {
+  display: none;
+}
+
+/* Trụ Ngày nổi lên như một viên kính màu theo hành của Nhật Nguyên. */
+.dayPillar {
+  background:
+    radial-gradient(
+      120% 70% at 50% 0%,
+      color-mix(in srgb, var(--el) 16%, transparent),
+      transparent
+    ),
+    color-mix(in srgb, var(--el) 6%, var(--glass-strong));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--el) 30%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.4),
+    0 14px 30px -20px var(--el);
 }
 
 .pillarLabel {
   color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
+  font-size: calc(10px * var(--ui-scale));
   font-weight: var(--fw-600);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-/* Can trên, Chi dưới: mỗi chữ một dòng như lá số. */
+.dayPillar .pillarLabel {
+  color: var(--el);
+}
+
+/* Nhãn nổi trên mép trên của trụ Tháng, không đẩy lệch hàng chữ. */
+.monthCommand {
+  position: absolute;
+  top: calc(-11px * var(--ui-scale));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 calc(7px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--gold) 18%, var(--glass-strong));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--gold) 28%, transparent),
+    0 4px 10px -6px var(--gold);
+  color: color-mix(in srgb, var(--gold) 78%, var(--text));
+  font-size: calc(9.5px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.tenGod {
+  max-width: 100%;
+  padding: 0 calc(7px * var(--ui-scale));
+  border-radius: 9px;
+  background: var(--fill);
+  color: var(--text-muted);
+  font-size: calc(10.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  line-height: 1.35;
+  padding-block: calc(2px * var(--ui-scale));
+}
+
+.tenGodSelf {
+  background: color-mix(in srgb, var(--el) 14%, transparent);
+  color: var(--el);
+}
+
+/* Can trên, Chi dưới như lá số. */
 .pillarName {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(2px * var(--ui-scale));
-  margin: 0;
+  margin: calc(4px * var(--ui-scale)) 0 0;
   font-family: var(--font-display);
-  font-size: calc(clamp(18px, 4.6cqi, 26px) * var(--ui-scale));
+  font-size: calc(clamp(17px, 3.8cqi, 23px) * var(--ui-scale));
   font-weight: var(--fw-700);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 
 .glyph {
@@ -66,13 +182,366 @@
 
 .pillarElements {
   color: var(--text-muted);
-  font-size: calc(11.5px * var(--ui-scale));
+  font-size: calc(10px * var(--ui-scale));
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
+
+.hidden {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--ui-scale));
+  align-self: stretch;
+  margin: calc(6px * var(--ui-scale)) 0 0;
+  padding: calc(8px * var(--ui-scale)) 0 0;
+  border-top: 1px dashed var(--separator);
+  list-style: none;
+  animation: reveal 0.5s var(--spring, cubic-bezier(0.32, 0.72, 0, 1)) both;
+}
+
+.hidden li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.hiddenName {
+  color: var(--el);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.hiddenMeta {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-muted);
+  font-size: calc(10.5px * var(--ui-scale));
+}
+
+/* Dấu phẩy chỉ để đọc liền khi sao chép hoặc với trình đọc màn hình. */
+.sep {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Nút viên thuốc, mũi tên nằm trong vòng tròn riêng. */
+.hiddenToggle {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+  min-height: 36px;
+  margin-top: calc(4px * var(--ui-scale));
+  padding: calc(3px * var(--ui-scale)) calc(4px * var(--ui-scale)) calc(3px * var(--ui-scale))
+    calc(14px * var(--ui-scale));
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--text);
+  font: inherit;
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition:
+    transform 0.5s var(--spring, cubic-bezier(0.32, 0.72, 0, 1)),
+    background-color 0.3s var(--spring, cubic-bezier(0.32, 0.72, 0, 1));
+}
+
+.hiddenToggleIcon {
+  display: grid;
+  place-items: center;
+  width: calc(24px * var(--ui-scale));
+  height: calc(24px * var(--ui-scale));
+  border-radius: 50%;
+  background: var(--glass-strong);
+  box-shadow: var(--glass-highlight);
+  color: var(--text-muted);
+  transition: transform 0.5s var(--spring, cubic-bezier(0.32, 0.72, 0, 1));
+}
+
+.hiddenToggle:hover {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.hiddenToggle:hover .hiddenToggleIcon {
+  transform: translateY(1px) scale(1.06);
+  color: var(--text);
+}
+
+.hiddenToggle[aria-expanded='true'] .hiddenToggleIcon {
+  transform: rotate(180deg);
+}
+
+.hiddenToggle:active {
+  transform: scale(0.97);
+}
+
+.hiddenToggle:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Tấm tóm tắt ---------- */
+
+.insightCore {
+  display: flex;
+  flex-direction: column;
+  padding: calc(4px * var(--ui-scale)) calc(14px * var(--ui-scale));
+}
+
+.fact,
+.elements {
+  min-width: 0;
+  padding: calc(12px * var(--ui-scale)) 0;
+  animation: reveal 0.8s var(--spring, cubic-bezier(0.32, 0.72, 0, 1)) both;
+}
+
+.fact:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.elements {
+  animation-delay: 160ms;
+}
+
+.fact + .fact,
+.fact + .elements {
+  border-top: 1px solid var(--separator-soft);
+}
+
+/* Một dòng: nhãn | giá trị | nút giải thích. */
+.fact {
+  display: grid;
+  grid-template-columns: calc(92px * var(--ui-scale)) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+}
+
+.factLabel {
+  color: var(--text-muted);
+  font-size: calc(10px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.factValue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+  min-width: 0;
+}
+
+.dayMasterName {
+  color: var(--el);
+  font-family: var(--font-display);
+  font-size: calc(26px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.polarity {
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.gauge {
+  flex: 0 0 auto;
+  width: calc(38px * var(--ui-scale));
+  height: calc(38px * var(--ui-scale));
+}
+
+.gaugeTrack {
+  fill: none;
+  stroke: color-mix(in srgb, var(--text) 10%, transparent);
+  stroke-width: 3.5;
+}
+
+.gaugeValue {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke: currentColor;
+  background: none;
+}
+
+.gaugeTick {
+  fill: var(--text-muted);
+}
+
+.strengthText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(2px * var(--ui-scale));
+}
+
+.strengthPill {
+  padding: calc(1px * var(--ui-scale)) calc(9px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.strong {
+  color: var(--almanac-good);
+  background: var(--almanac-good-bg);
+}
+
+.weak {
+  color: var(--text-muted);
+  background: var(--fill);
+}
+
+.gaugeValue.strong,
+.gaugeValue.weak {
+  background: none;
+}
+
+.strengthScore {
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+  font-variant-numeric: tabular-nums;
+}
+
+.strengthScore strong {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: calc(18px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--ui-scale));
+}
+
+.elementList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: calc(4px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.elementItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  min-width: 0;
+  text-align: center;
+}
+
+/* Viên ngũ hành: đậm dần theo số chữ (--fill do component đặt). */
+.elementOrb {
+  display: grid;
+  place-items: center;
+  width: calc(40px * var(--ui-scale));
+  height: calc(40px * var(--ui-scale));
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, rgb(255 255 255 / 0.5), transparent 58%),
+    color-mix(in srgb, var(--el) var(--fill, 10%), var(--glass-strong));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--el) 28%, transparent),
+    0 8px 18px -12px var(--el);
+  transition: transform 0.5s var(--spring, cubic-bezier(0.32, 0.72, 0, 1));
+}
+
+.elementItem:hover .elementOrb {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.elementOwn .elementOrb {
+  box-shadow:
+    0 0 0 2px var(--glass-strong),
+    0 0 0 3.5px color-mix(in srgb, var(--el) 70%, transparent),
+    0 10px 22px -12px var(--el);
+}
+
+.elementCount {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: calc(17px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.elementName {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(3px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.elementName svg {
+  color: var(--el);
+}
+
+.elementOwn .elementName {
+  color: var(--el);
+}
+
+.elementNone .elementOrb {
+  background: var(--fill);
+  box-shadow: inset 0 0 0 1px var(--separator-soft);
+}
+
+.elementNone .elementCount {
+  color: var(--text-muted);
+}
+
+.insightNote {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Hẹp: nhãn lên trên, giá trị xuống dưới, nút giải thích ở góc phải. */
+@container (max-width: 459px) {
+  /* Chip Thập thần có thể xuống 2 dòng: giữ cùng chiều cao để Can Chi các cột thẳng hàng. */
+  .tenGod {
+    display: grid;
+    place-items: center;
+    min-height: 2.75em;
+    font-size: calc(10px * var(--ui-scale));
+  }
+
+  .fact {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: calc(6px * var(--ui-scale));
+  }
+
+  .fact .factValue {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* ---------- Khác ---------- */
 
 .meta {
   margin: 0;
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: calc(11.5px * var(--ui-scale));
 }
 
 .empty {
@@ -87,278 +556,21 @@
   color: var(--text-muted);
 }
 
-/* Trụ Ngày chứa Nhật Nguyên: viền theo màu hành của Can ngày. */
-.dayPillar {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--el) 14%, transparent), transparent 120%),
-    var(--fill);
-  box-shadow:
-    inset 0 0 0 1.5px color-mix(in srgb, var(--el) 55%, transparent),
-    0 10px 24px -16px var(--el);
-}
-
-.dayPillar .pillarLabel {
-  color: var(--el);
-}
-
-/* ---------- Nhật Nguyên & ngũ hành ---------- */
-
-.insight {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: calc(6px * var(--ui-scale));
-}
-
-@container (min-width: 560px) {
-  .insight {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  }
-}
-
-.dayMaster,
-.elements {
-  display: flex;
-  flex-direction: column;
-  gap: calc(8px * var(--ui-scale));
-  min-width: 0;
-  padding: calc(14px * var(--ui-scale));
-  border-radius: 16px;
-  background: var(--fill);
-}
-
-.dayMaster {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--el) 16%, transparent), transparent 70%),
-    var(--fill);
-}
-
-/* Quầng sáng góc theo màu hành, cùng kiểu banner Lịch vạn niên. */
-.dayMaster::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: -45%;
-  right: -20%;
-  width: 70%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(
-    closest-side,
-    color-mix(in srgb, var(--el) 22%, transparent),
-    transparent
-  );
-  pointer-events: none;
-}
-
-.insightLabel {
-  color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
-  font-weight: var(--fw-600);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.dayMasterName {
-  margin: 0;
-  color: var(--el);
-  font-family: var(--font-display);
-  font-size: calc(clamp(30px, 7cqi, 40px) * var(--ui-scale));
-  font-weight: var(--fw-700);
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.dayMasterMeta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: calc(6px * var(--ui-scale));
-}
-
-.polarity {
-  display: inline-flex;
-  align-items: center;
-  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
-  border-radius: var(--radius-pill);
-  background: var(--glass-strong);
-  font-size: calc(13px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-
-.insightNote {
-  color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
-  line-height: 1.45;
-}
-
-/* ---------- Độ vượng suy ---------- */
-
-.strength {
-  display: flex;
-  flex-direction: column;
-  gap: calc(8px * var(--ui-scale));
-  margin-top: calc(4px * var(--ui-scale));
-  padding-top: calc(12px * var(--ui-scale));
-  border-top: 1px dashed color-mix(in srgb, var(--el) 30%, var(--separator));
-}
-
-.strengthHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: calc(10px * var(--ui-scale));
-  margin: 0;
-}
-
-.strengthPill {
-  display: inline-flex;
-  align-items: center;
-  align-self: center;
-  padding: calc(4px * var(--ui-scale)) calc(12px * var(--ui-scale));
-  border-radius: var(--radius-pill);
-  font-size: calc(14px * var(--ui-scale));
-  font-weight: var(--fw-700);
-}
-
-.strong {
-  color: var(--el);
-  background: color-mix(in srgb, var(--el) 16%, var(--glass-strong));
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--el) 35%, transparent);
-}
-
-.weak {
-  color: var(--text);
-  background: var(--glass-strong);
-  box-shadow: inset 0 0 0 1px var(--separator);
-}
-
-.strengthScore {
-  color: var(--text-muted);
-  font-size: calc(14px * var(--ui-scale));
-  font-variant-numeric: tabular-nums;
-}
-
-.strengthScore strong {
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: calc(26px * var(--ui-scale));
-  font-weight: var(--fw-700);
-  letter-spacing: -0.02em;
-}
-
-.supportList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: calc(5px * var(--ui-scale));
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.supportChip {
-  padding: calc(3px * var(--ui-scale)) calc(9px * var(--ui-scale));
-  border-radius: var(--radius-pill);
-  background: var(--glass-strong);
-  font-size: calc(12px * var(--ui-scale));
-}
-
-.supportChip strong {
-  color: var(--el);
-  font-variant-numeric: tabular-nums;
-}
-
-.elementList {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: calc(6px * var(--ui-scale));
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.elementItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: calc(2px * var(--ui-scale));
-  min-width: 0;
-  padding: calc(10px * var(--ui-scale)) calc(4px * var(--ui-scale)) calc(9px * var(--ui-scale));
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--el) 13%, transparent), transparent),
-    var(--glass-strong);
-  text-align: center;
-  animation: pillar-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
-  animation-delay: calc(var(--j, 0) * 60ms + 560ms);
-}
-
-.elementOwn {
-  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--el) 55%, transparent);
-}
-
-.elementNone {
-  background: var(--glass-strong);
-}
-
-.elementNone .elementIcon,
-.elementNone .elementCount,
-.elementNone .elementName {
-  color: var(--text-muted);
-}
-
-.elementIcon {
-  display: grid;
-  color: var(--el);
-}
-
-.elementCount {
-  font-family: var(--font-display);
-  font-size: calc(24px * var(--ui-scale));
-  font-weight: var(--fw-700);
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.elementName {
-  font-size: calc(12.5px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-
-.elementPct {
-  color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
-  font-variant-numeric: tabular-nums;
-}
-
-/* Mỗi chữ một vạch nhỏ, không có rãnh nền: số lượng nhìn được bằng mắt. */
-.pips {
-  display: flex;
-  gap: 2px;
-  min-height: 4px;
-  margin-top: calc(4px * var(--ui-scale));
-}
-
-.pip {
-  width: calc(8px * var(--ui-scale));
-  height: 4px;
-  border-radius: 2px;
-  background: var(--el);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .elementItem {
-    animation: none;
-  }
-}
-
 @keyframes pillar-in {
   from {
     opacity: 0;
-    transform: translateY(10px) scale(0.97);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -367,123 +579,16 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pillar {
+  .pillar,
+  .hidden,
+  .fact,
+  .elements {
     animation: none;
   }
-}
 
-.labelRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: calc(8px * var(--ui-scale));
-}
-
-/* ---------- Thập thần & Tàng can ---------- */
-
-/* Nhãn nổi trên mép trên của trụ Tháng, không đẩy lệch hàng chữ so với các trụ khác. */
-.monthCommand {
-  position: absolute;
-  top: calc(-9px * var(--ui-scale));
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1px calc(7px * var(--ui-scale));
-  border-radius: var(--radius-pill);
-  background: color-mix(in srgb, var(--gold) 22%, var(--glass-strong));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 30%, transparent);
-  color: color-mix(in srgb, var(--gold) 80%, var(--text));
-  font-size: calc(10.5px * var(--ui-scale));
-  font-weight: var(--fw-700);
-  white-space: nowrap;
-}
-
-.tenGod {
-  max-width: 100%;
-  padding: calc(2px * var(--ui-scale)) calc(8px * var(--ui-scale));
-  border-radius: 10px;
-  background: var(--glass-strong);
-  font-size: calc(12px * var(--ui-scale));
-  font-weight: var(--fw-600);
-  line-height: 1.3;
-  text-align: center;
-}
-
-.tenGodSelf {
-  color: var(--el);
-}
-
-.hidden {
-  align-self: stretch;
-  min-width: 0;
-  text-align: left;
-}
-
-.hidden summary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: calc(5px * var(--ui-scale));
-  min-height: 32px;
-  color: var(--text-muted);
-  font-size: calc(11.5px * var(--ui-scale));
-  font-weight: var(--fw-600);
-  list-style: none;
-  cursor: pointer;
-}
-
-.hidden summary::-webkit-details-marker {
-  display: none;
-}
-
-.hidden summary::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
-  transition: transform 0.25s ease;
-}
-
-.hidden[open] summary::after {
-  transform: rotate(-135deg) translateY(-1px);
-}
-
-.hidden summary:hover {
-  color: var(--text);
-}
-
-.hidden summary:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-.hidden ul {
-  display: flex;
-  flex-direction: column;
-  gap: calc(6px * var(--ui-scale));
-  margin: calc(4px * var(--ui-scale)) 0 0;
-  padding: calc(8px * var(--ui-scale)) 0 0;
-  border-top: 1px dashed var(--separator);
-  list-style: none;
-}
-
-.hidden li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  line-height: 1.25;
-}
-
-.hiddenName {
-  color: var(--el);
-  font-size: calc(14px * var(--ui-scale));
-  font-weight: var(--fw-700);
-}
-
-.hiddenMeta {
-  color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
+  .hiddenToggle,
+  .hiddenToggleIcon,
+  .elementOrb {
+    transition: none;
+  }
 }

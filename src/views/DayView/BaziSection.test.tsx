@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { expect, it } from 'vitest'
 import { FENG_SHUI_RULES } from '@shared/personalFengShui/rules'
 import type { Settings } from '@shared/types'
@@ -70,7 +70,15 @@ it('labels Ten Gods under each stem, marks the month command and lists hidden st
   expect(pillars).toHaveLength(4)
   expect(pillars[2]).toHaveTextContent('Nhật Nguyên')
   expect(pillars[1]).toHaveTextContent('Nguyệt lệnh')
-  // Mỗi trụ có một mục Tàng can; Chi Thìn của trụ năm Giáp Thìn có Mậu, Ất, Quý.
+  // Một nút Tàng can chung cho cả lá số; mở ra thì Chi Thìn của trụ năm Giáp Thìn có Mậu, Ất, Quý.
+  const toggle = within(bazi).getByRole('button', { name: 'Tàng can' })
+  expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  expect(within(bazi).queryByRole('list', { name: 'Tàng can của Thìn' })).not.toBeInTheDocument()
+  fireEvent.click(toggle)
+  expect(within(bazi).getByRole('button', { name: 'Ẩn tàng can' })).toHaveAttribute(
+    'aria-expanded',
+    'true',
+  )
   const year = within(pillars[0]).getByRole('list', { name: 'Tàng can của Thìn' })
   expect(
     within(year)

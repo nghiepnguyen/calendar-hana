@@ -1,5 +1,5 @@
-import { useMemo, type CSSProperties } from 'react'
-import { Columns } from '@phosphor-icons/react'
+import { useMemo, useState, type CSSProperties } from 'react'
+import { CaretDown, Columns } from '@phosphor-icons/react'
 import { calculateBazi } from '@shared/bazi'
 import {
   dayMasterOf,
@@ -50,7 +50,7 @@ const RANK_LABEL: Record<HiddenStemRank, string> = {
   residual: 'dư khí',
 }
 
-/** Một trụ: Can trên, Chi dưới, mỗi chữ mang màu hành của nó như lá số truyền thống. */
+/** Một cột của lá số: Thập thần, Can, Chi; tàng can chỉ hiện khi mở chung cho cả lá số. */
 function Pillar({
   label,
   pillar,
@@ -77,8 +77,13 @@ function Pillar({
       className={`${styles.pillar} ${dayMaster ? `${styles.dayPillar} ${ELEMENT_CLASS[canEl]}` : ''}`}
       style={{ '--j': index } as CSSProperties}
     >
-      <span className={styles.pillarLabel}>{label}</span>
       {monthCommand ? <span className={styles.monthCommand}>Nguyệt lệnh</span> : null}
+      <span className={styles.pillarLabel}>{label}</span>
+      {dayMasterCan !== null ? (
+        <span className={`${styles.tenGod} ${dayMaster ? styles.tenGodSelf : ''}`}>
+          {dayMaster ? 'Nhật Nguyên' : tenGodOf(dayMasterCan, pillar.can).name}
+        </span>
+      ) : null}
       <p className={styles.pillarName}>
         <span className={`${styles.glyph} ${ELEMENT_CLASS[canEl]}`}>{CAN[pillar.can]}</span>{' '}
         <span className={`${styles.glyph} ${ELEMENT_CLASS[chiEl]}`}>{CHI[pillar.chi]}</span>
@@ -86,28 +91,25 @@ function Pillar({
       <span className={styles.pillarElements}>
         {canEl} · {chiEl}
       </span>
-      {dayMasterCan !== null ? (
-        <span className={`${styles.tenGod} ${dayMaster ? styles.tenGodSelf : ''}`}>
-          {dayMaster ? 'Nhật Nguyên' : tenGodOf(dayMasterCan, pillar.can).name}
-        </span>
-      ) : null}
       {hidden.length ? (
-        <details className={styles.hidden}>
-          <summary>Tàng can</summary>
-          <ul aria-label={`Tàng can của ${CHI[pillar.chi]}`}>
-            {hidden.map((h) => (
-              <li key={h.can}>
-                <span className={`${styles.hiddenName} ${ELEMENT_CLASS[canElement(h.can)]}`}>
-                  {h.name}
-                </span>
-                <span className={styles.hiddenMeta}>
-                  {RANK_LABEL[h.rank]}
-                  {dayMasterCan !== null ? `, ${h.tenGod}` : ''}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </details>
+        <ul className={styles.hidden} aria-label={`Tàng can của ${CHI[pillar.chi]}`}>
+          {hidden.map((h) => (
+            <li key={h.can}>
+              <span className={`${styles.hiddenName} ${ELEMENT_CLASS[canElement(h.can)]}`}>
+                {h.name}
+              </span>
+              <span className={styles.hiddenMeta}>
+                <span>{RANK_LABEL[h.rank]}</span>
+                {dayMasterCan !== null ? (
+                  <>
+                    <span className={styles.sep}>, </span>
+                    <span>{h.tenGod}</span>
+                  </>
+                ) : null}
+              </span>
+            </li>
+          ))}
+        </ul>
       ) : null}
     </li>
   )
@@ -123,7 +125,38 @@ const POSITION_LABEL: Record<string, string> = {
   'hour.chi': 'Chi giờ',
 }
 
-/** Điểm vượng suy theo trọng số vị trí (PRD 6.4a), kèm các vị trí cộng điểm để truy vết. */
+/** Vòng đo 0–100 với vạch ngưỡng; chỉ minh họa, con số nằm ở chữ bên cạnh. */
+function StrengthGauge({
+  score,
+  threshold,
+  strong,
+}: {
+  score: number
+  threshold: number
+  strong: boolean
+}) {
+  const r = 15
+  const c = 2 * Math.PI * r
+  const angle = (threshold / 100) * 360 - 90
+  const tx = 18 + r * Math.cos((angle * Math.PI) / 180)
+  const ty = 18 + r * Math.sin((angle * Math.PI) / 180)
+  return (
+    <svg className={styles.gauge} viewBox="0 0 36 36" aria-hidden="true">
+      <circle className={styles.gaugeTrack} cx="18" cy="18" r={r} />
+      <circle
+        className={`${styles.gaugeValue} ${strong ? styles.strong : styles.weak}`}
+        cx="18"
+        cy="18"
+        r={r}
+        strokeDasharray={`${(score / 100) * c} ${c}`}
+        transform="rotate(-90 18 18)"
+      />
+      <circle className={styles.gaugeTick} cx={tx} cy={ty} r="1.6" />
+    </svg>
+  )
+}
+
+/** Dòng Vượng suy: nhãn và điểm; các vị trí cộng điểm nằm trong hộp giải thích. */
 function StrengthScore({
   pillars,
   onExplain,
@@ -133,59 +166,45 @@ function StrengthScore({
 }) {
   const result = assessStrength(pillars)
   const strong = result.strength === 'Thân Vượng'
-  const support = result.contributions.filter((c) => c.supports)
   return (
-    <section className={styles.strength} aria-label="Độ vượng suy">
-      <span className={styles.labelRow}>
-        <span className={styles.insightLabel}>Độ vượng suy</span>
-        {onExplain ? (
-          <InfoButton
-            label="Độ vượng suy"
-            onClick={() =>
-              onExplain({
-                title: 'Độ vượng suy',
-                isGood: strong,
-                verdict: { label: result.strength, tone: 'neutral' },
-                meaning:
-                  'Cộng trọng số các vị trí có hành cùng Nhật Nguyên hoặc sinh ra Nhật Nguyên. Trọng số: Chi tháng 35, Chi ngày 15, Can tháng 12, Can giờ 12, Chi giờ 10, Chi năm 10, Can năm 6; Can ngày không tính.',
-                reasons: [
-                  ...result.contributions.map(
-                    (c) =>
-                      `${POSITION_LABEL[c.position]} ${c.name} (${c.element}): ${c.supports ? `+${c.weight}` : 'không trợ lực'}`,
-                  ),
-                  `Tổng ${result.score}/100; từ ${result.threshold} là Thân Vượng.`,
-                ],
-              })
-            }
-          />
-        ) : null}
+    <section className={styles.fact} aria-label="Độ vượng suy">
+      <span className={styles.factLabel}>Vượng suy</span>
+      <span className={styles.factValue}>
+        <StrengthGauge score={result.score} threshold={result.threshold} strong={strong} />
+        <span className={styles.strengthText}>
+          <span className={`${styles.strengthPill} ${strong ? styles.strong : styles.weak}`}>
+            {result.strength}
+          </span>
+          <span className={styles.strengthScore}>
+            <strong>{result.score}</strong>/100
+          </span>
+        </span>
       </span>
-      <p className={styles.strengthHead}>
-        <span className={`${styles.strengthPill} ${strong ? styles.strong : styles.weak}`}>
-          {result.strength}
-        </span>
-        <span className={styles.strengthScore}>
-          <strong>{result.score}</strong>/100
-        </span>
-      </p>
-      {support.length ? (
-        <ul className={styles.supportList} aria-label="Vị trí trợ lực">
-          {support.map((c) => (
-            <li key={c.position} className={styles.supportChip}>
-              {POSITION_LABEL[c.position]} {c.name} <strong>+{c.weight}</strong>
-            </li>
-          ))}
-        </ul>
+      {onExplain ? (
+        <InfoButton
+          label="Độ vượng suy"
+          onClick={() =>
+            onExplain({
+              title: 'Độ vượng suy',
+              isGood: strong,
+              verdict: { label: result.strength, tone: 'neutral' },
+              meaning: `Cộng trọng số các vị trí có hành ${result.supportElements.join(' hoặc ')} (cùng hành hoặc sinh ra Nhật Nguyên). Từ ${result.threshold} điểm là Thân Vượng. Bản đơn giản theo trọng số vị trí, chưa xét tàng can và hợp xung.`,
+              reasons: [
+                ...result.contributions.map(
+                  (c) =>
+                    `${POSITION_LABEL[c.position]} ${c.name} (${c.element}): ${c.supports ? `+${c.weight}` : 'không trợ lực'}`,
+                ),
+                `Tổng ${result.score}/100. Trọng số: Chi tháng 35, Chi ngày 15, Can tháng 12, Can giờ 12, Chi giờ 10, Chi năm 10, Can năm 6; Can ngày không tính.`,
+              ],
+            })
+          }
+        />
       ) : null}
-      <span className={styles.insightNote}>
-        Trợ lực là {result.supportElements.join(' và ')}; từ {result.threshold} điểm là Thân Vượng.
-        Bản đơn giản theo trọng số vị trí, chưa xét tàng can và hợp xung.
-      </span>
     </section>
   )
 }
 
-/** Nhật Nguyên và thống kê ngũ hành 8 chữ của một lá số. */
+/** Cột tóm tắt bên cạnh lá số: Nhật Nguyên, Vượng suy, Ngũ hành; mỗi mục một dòng. */
 function DayMasterInsight({
   pillars,
   showStrength,
@@ -199,9 +218,14 @@ function DayMasterInsight({
   const distribution = elementDistribution(pillars)
   return (
     <section className={styles.insight} aria-label="Nhật Nguyên và ngũ hành">
-      <div className={`${styles.dayMaster} ${ELEMENT_CLASS[dayMaster.element]}`}>
-        <span className={styles.labelRow}>
-          <span className={styles.insightLabel}>Nhật Nguyên</span>
+      <div className={styles.insightCore}>
+        <div className={`${styles.fact} ${ELEMENT_CLASS[dayMaster.element]}`}>
+          <span className={styles.factLabel}>Nhật Nguyên</span>
+          <span className={styles.factValue}>
+            <strong className={styles.dayMasterName}>{dayMaster.name}</strong>
+            <ElementChip element={dayMaster.element} />
+            <span className={styles.polarity}>{dayMaster.polarity}</span>
+          </span>
           {onExplain ? (
             <InfoButton
               label="Nhật Nguyên"
@@ -222,46 +246,39 @@ function DayMasterInsight({
               }
             />
           ) : null}
-        </span>
-        <p className={styles.dayMasterName}>{dayMaster.name}</p>
-        <span className={styles.dayMasterMeta}>
-          <ElementChip element={dayMaster.element} />
-          <span className={styles.polarity}>{dayMaster.polarity}</span>
-        </span>
-        <span className={styles.insightNote}>Can của trụ Ngày, trục để xét bảy chữ còn lại.</span>
+        </div>
         {showStrength ? <StrengthScore pillars={pillars} onExplain={onExplain} /> : null}
-      </div>
-      <div className={styles.elements}>
-        <span className={styles.insightLabel}>Ngũ hành trong 8 chữ</span>
-        <ul className={styles.elementList} aria-label="Số chữ theo ngũ hành">
-          {distribution.entries.map(({ element, count, percentage, positions }, i) => {
-            const ElementIcon = ELEMENT_ICONS[element]
-            const own = element === dayMaster.element
-            return (
-              <li
-                key={element}
-                className={`${styles.elementItem} ${ELEMENT_CLASS[element]} ${own ? styles.elementOwn : ''} ${count === 0 ? styles.elementNone : ''}`}
-                style={{ '--j': i } as CSSProperties}
-                title={positions.map((p) => p.name).join(', ') || undefined}
-              >
-                <span className={styles.elementIcon} aria-hidden="true">
-                  <ElementIcon size={iconSize(18)} weight="duotone" />
-                </span>
-                <span className={styles.elementCount}>{count}</span>
-                <span className={styles.elementName}>{element}</span>
-                <span className={styles.elementPct}>{percentage}%</span>
-                <span className={styles.pips} aria-hidden="true">
-                  {positions.map((p) => (
-                    <span key={`${p.pillar}:${p.part}`} className={styles.pip} />
-                  ))}
-                </span>
-              </li>
-            )
-          })}
-        </ul>
-        <span className={styles.insightNote}>
-          Đếm 4 Can và hành chính của 4 Chi. Đây là thống kê, không phải độ vượng suy.
-        </span>
+        <div className={styles.elements}>
+          <span className={styles.factLabel}>Ngũ hành</span>
+          <ul className={styles.elementList} aria-label="Số chữ theo ngũ hành">
+            {distribution.entries.map(({ element, count, percentage, positions }, i) => {
+              const ElementIcon = ELEMENT_ICONS[element]
+              const own = element === dayMaster.element
+              return (
+                <li
+                  key={element}
+                  className={`${styles.elementItem} ${ELEMENT_CLASS[element]} ${own ? styles.elementOwn : ''} ${count === 0 ? styles.elementNone : ''}`}
+                  style={{ '--j': i } as CSSProperties}
+                  title={`${element}: ${count}/8 chữ (${percentage}%)${positions.length ? `: ${positions.map((p) => p.name).join(', ')}` : ''}`}
+                >
+                  <span
+                    className={styles.elementOrb}
+                    style={{ '--fill': `${Math.min(count, 4) * 9 + 6}%` } as CSSProperties}
+                  >
+                    <span className={styles.elementCount}>{count}</span>
+                  </span>
+                  <span className={styles.elementName}>
+                    <ElementIcon size={iconSize(12)} weight="light" aria-hidden="true" />
+                    {element}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
+          <span className={styles.insightNote}>
+            Đếm 4 Can và hành chính của 4 Chi; không phải độ vượng suy.
+          </span>
+        </div>
       </div>
     </section>
   )
@@ -317,6 +334,7 @@ export function BaziSection({
   onExplain?: (item: ExplainItem) => void
 }) {
   const result = useMemo(() => calculateBazi(settings), [settings])
+  const [hiddenOpen, setHiddenOpen] = useState(false)
   const { insightReady, strengthReady, tenGodReady, hiddenReady } = useMemo(() => {
     const registry = createRuleRegistry(rules)
     const ready = (ids: readonly string[]) =>
@@ -360,34 +378,53 @@ export function BaziSection({
               {result.candidates.length > 1 ? (
                 <h4 className={styles.candidateTitle}>Khả năng {candidateIndex + 1}</h4>
               ) : null}
-              <ul className={styles.pillars}>
-                {(
-                  [
-                    ['Năm', candidate.pillars.year],
-                    ['Tháng', candidate.pillars.month],
-                    ['Ngày', candidate.pillars.day],
-                    ['Giờ', candidate.pillars.hour],
-                  ] as const
-                ).map(([label, pillar], i) => (
-                  <Pillar
-                    key={label}
-                    label={label}
-                    pillar={pillar}
-                    index={i}
-                    dayMaster={insightReady && label === 'Ngày'}
-                    dayMasterCan={tenGodReady ? candidate.pillars.day.can : null}
-                    showHidden={hiddenReady}
-                    monthCommand={hiddenReady && label === 'Tháng'}
+              <div className={styles.layout}>
+                <div className={styles.chart}>
+                  <div className={styles.chartCore}>
+                    <ul className={styles.pillars}>
+                      {(
+                        [
+                          ['Năm', candidate.pillars.year],
+                          ['Tháng', candidate.pillars.month],
+                          ['Ngày', candidate.pillars.day],
+                          ['Giờ', candidate.pillars.hour],
+                        ] as const
+                      ).map(([label, pillar], i) => (
+                        <Pillar
+                          key={label}
+                          label={label}
+                          pillar={pillar}
+                          index={i}
+                          dayMaster={insightReady && label === 'Ngày'}
+                          dayMasterCan={tenGodReady ? candidate.pillars.day.can : null}
+                          showHidden={hiddenReady && hiddenOpen}
+                          monthCommand={hiddenReady && label === 'Tháng'}
+                        />
+                      ))}
+                    </ul>
+                    {hiddenReady ? (
+                      <button
+                        type="button"
+                        className={styles.hiddenToggle}
+                        aria-expanded={hiddenOpen}
+                        onClick={() => setHiddenOpen((open) => !open)}
+                      >
+                        <span>{hiddenOpen ? 'Ẩn tàng can' : 'Tàng can'}</span>
+                        <span className={styles.hiddenToggleIcon} aria-hidden="true">
+                          <CaretDown size={iconSize(12)} weight="bold" />
+                        </span>
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
+                {insightReady ? (
+                  <DayMasterInsight
+                    pillars={candidate.pillars}
+                    showStrength={strengthReady}
+                    onExplain={onExplain}
                   />
-                ))}
-              </ul>
-              {insightReady ? (
-                <DayMasterInsight
-                  pillars={candidate.pillars}
-                  showStrength={strengthReady}
-                  onExplain={onExplain}
-                />
-              ) : null}
+                ) : null}
+              </div>
               <p className={styles.meta}>
                 Giờ mặt trời thật (TST){' '}
                 {solarTimeLabel(settings.birthDate, candidate.solarTime.tstDateTime)}, lệch{' '}
