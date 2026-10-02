@@ -91,6 +91,10 @@ export function BirthInfoForm({
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
   const values = draft ?? fromSettings(settings)
+  // Mục nâng cao tự mở khi hồ sơ đã chọn quy ước khác mặc định.
+  // null = người dùng chưa tự mở/đóng: mở sẵn nếu hồ sơ đã dùng quy ước giờ Tý khác mặc định.
+  const [advancedToggled, setAdvancedOpen] = useState<boolean | null>(null)
+  const advancedOpen = advancedToggled ?? (settings.birthZiPolicy ?? 'splitZi') !== 'splitZi'
 
   const change = (key: keyof Draft, value: string) => {
     setDraft({ ...values, [key]: value })
@@ -209,12 +213,10 @@ export function BirthInfoForm({
   return (
     <form id="birth-info" className={styles.birthInfo} onSubmit={save} noValidate>
       <h3>Thông tin ngày sinh</h3>
-      <p className="field-hint">
-        Nhập ngày sinh theo dương lịch. Có thể bỏ trống nếu chưa muốn cung cấp.
-      </p>
+      <p className="field-hint">Ngày sinh dương lịch. Có thể bỏ trống nếu chưa muốn cung cấp.</p>
       <fieldset disabled={busy} className={styles.birthFields}>
         <legend className="visually-hidden">Ngày tháng năm sinh</legend>
-        <div className={styles.birthDate}>
+        <div className={styles.birthBasics}>
           {(
             [
               ['day', 'Ngày sinh', 31, 'Ngày'],
@@ -222,7 +224,7 @@ export function BirthInfoForm({
               ['year', 'Năm sinh', Number(todayInVietnam().slice(0, 4)), 'Năm'],
             ] as const
           ).map(([key, label, max, placeholder]) => (
-            <label className="field" key={key}>
+            <label className={`field ${styles.birthDatePart}`} key={key}>
               <span className="field-label">{label}</span>
               <input
                 ref={key === 'day' ? dateInput : undefined}
@@ -238,125 +240,144 @@ export function BirthInfoForm({
               />
             </label>
           ))}
-        </div>
-        <label className="field">
-          <span className="field-label">Giới tính (tùy chọn)</span>
-          <select
-            className="input"
-            aria-label="Giới tính (tùy chọn)"
-            value={values.gender}
-            onChange={(e) => change('gender', e.target.value)}
-          >
-            <option value="">Chưa chọn</option>
-            <option value="male">Nam</option>
-            <option value="female">Nữ</option>
-          </select>
-          <span className="field-hint">
-            Dùng để xem Sao chiếu mệnh và Hạn tuổi theo Nam mạng hoặc Nữ mạng.
-          </span>
-        </label>
-        <label className="field">
-          <span className="field-label">Giờ sinh (tùy chọn)</span>
-          <input
-            className="input"
-            type="time"
-            aria-label="Giờ sinh (tùy chọn)"
-            value={values.time}
-            onChange={(e) => change('time', e.target.value)}
-          />
-          <span className="field-hint">
-            Giờ địa phương tại nơi sinh, định dạng 24 giờ. Nếu không biết, để trống.
-          </span>
-        </label>
-        <label className="field">
-          <span className="field-label">Nơi sinh (để lập Tứ Trụ)</span>
-          <select
-            className="input"
-            aria-label="Nơi sinh"
-            value={values.place}
-            onChange={(e) => change('place', e.target.value)}
-          >
-            <option value="">Chưa chọn</option>
-            <option value="hanoi">Hà Nội / miền Bắc</option>
-            <option value="hcm">TP. Hồ Chí Minh / miền Nam</option>
-          </select>
-          <span className="field-hint">Không dùng vị trí hiện tại của thiết bị.</span>
-        </label>
-        <label className="field">
-          <span className="field-label">Độ chắc chắn của giờ sinh</span>
-          <select
-            className="input"
-            aria-label="Độ chắc chắn của giờ sinh"
-            value={values.precision}
-            onChange={(e) => change('precision', e.target.value)}
-          >
-            <option value="exact">Chính xác</option>
-            <option value="estimated">Ước lượng</option>
-            <option value="unknown">Không biết giờ</option>
-          </select>
-        </label>
-        {values.precision === 'estimated' ? (
-          <label className="field">
-            <span className="field-label">Sai số ước lượng (phút)</span>
-            <input
-              className="input"
-              type="number"
-              min={1}
-              max={720}
-              value={values.uncertainty}
-              onChange={(e) => change('uncertainty', e.target.value)}
-            />
-          </label>
-        ) : null}
-        {Number(values.year) > 0 && Number(values.year) < 1970 ? (
-          <label className="field">
-            <span className="field-label">Xác nhận múi giờ lịch sử</span>
+          <label className={`field ${styles.birthGender}`}>
+            <span className="field-label">Giới tính (tùy chọn)</span>
             <select
               className="input"
-              aria-label="Xác nhận múi giờ lịch sử"
-              value={values.historicalOffset}
-              onChange={(e) => change('historicalOffset', e.target.value)}
+              aria-label="Giới tính (tùy chọn)"
+              value={values.gender}
+              onChange={(e) => change('gender', e.target.value)}
             >
-              <option value="">Chưa xác nhận</option>
-              <option value="420">UTC+7</option>
-              <option value="480">UTC+8</option>
+              <option value="">Chưa chọn</option>
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
             </select>
           </label>
-        ) : null}
-        <label className="field">
-          <span className="field-label">Quy ước giờ Tý</span>
-          <select
-            className="input"
-            aria-label="Quy ước giờ Tý"
-            aria-describedby="birth-zi-policy-hint"
-            value={values.ziPolicy}
-            onChange={(e) => change('ziPolicy', e.target.value)}
+        </div>
+
+        <div className={styles.birthGroup}>
+          <div className={styles.birthGroupHead}>
+            <h4>Giờ và nơi sinh</h4>
+            <p className="field-hint">
+              Tùy chọn, để lập Tứ Trụ. Giờ địa phương tại nơi sinh (24 giờ); không dùng vị trí của
+              thiết bị.
+            </p>
+          </div>
+          <div className={`${styles.birthRow} ${styles.birthRowStack}`}>
+            <label className="field">
+              <span className="field-label">Giờ sinh (tùy chọn)</span>
+              <input
+                className="input"
+                type="time"
+                aria-label="Giờ sinh (tùy chọn)"
+                value={values.time}
+                onChange={(e) => change('time', e.target.value)}
+              />
+            </label>
+            <label className="field">
+              <span className="field-label">Nơi sinh</span>
+              <select
+                className="input"
+                aria-label="Nơi sinh"
+                value={values.place}
+                onChange={(e) => change('place', e.target.value)}
+              >
+                <option value="">Chưa chọn</option>
+                <option value="hanoi">Hà Nội / miền Bắc</option>
+                <option value="hcm">TP. Hồ Chí Minh / miền Nam</option>
+              </select>
+            </label>
+          </div>
+          {values.time ? (
+            <div className={styles.birthRow}>
+              <label className="field">
+                <span className="field-label">Độ chắc chắn của giờ sinh</span>
+                <select
+                  className="input"
+                  aria-label="Độ chắc chắn của giờ sinh"
+                  value={values.precision}
+                  onChange={(e) => change('precision', e.target.value)}
+                >
+                  <option value="exact">Chính xác</option>
+                  <option value="estimated">Ước lượng</option>
+                  <option value="unknown">Không biết giờ</option>
+                </select>
+              </label>
+              {values.precision === 'estimated' ? (
+                <label className="field">
+                  <span className="field-label">Sai số ước lượng (phút)</span>
+                  <input
+                    className="input"
+                    type="number"
+                    min={1}
+                    max={720}
+                    value={values.uncertainty}
+                    onChange={(e) => change('uncertainty', e.target.value)}
+                  />
+                </label>
+              ) : null}
+            </div>
+          ) : null}
+          {Number(values.year) > 0 && Number(values.year) < 1970 ? (
+            <label className="field">
+              <span className="field-label">Xác nhận múi giờ lịch sử</span>
+              <select
+                className="input"
+                aria-label="Xác nhận múi giờ lịch sử"
+                value={values.historicalOffset}
+                onChange={(e) => change('historicalOffset', e.target.value)}
+              >
+                <option value="">Chưa xác nhận</option>
+                <option value="420">UTC+7</option>
+                <option value="480">UTC+8</option>
+              </select>
+            </label>
+          ) : null}
+          <details
+            className={styles.birthAdvanced}
+            open={advancedOpen}
+            onToggle={(e) => setAdvancedOpen(e.currentTarget.open)}
           >
-            <option value="splitZi">Tách Dạ Tý / Chính Tý</option>
-            <option value="dayStartsAt23">Đổi ngày từ 23:00</option>
-          </select>
-          <span id="birth-zi-policy-hint" className="field-hint">
-            Nếu chưa có chỉ dẫn riêng, nên giữ “Tách Dạ Tý / Chính Tý” (mặc định). Chỉ chọn “Đổi
-            ngày từ 23:00” khi trường phái hoặc người lập lá số của bạn dùng quy ước này. Lựa chọn
-            chỉ làm thay đổi trụ ngày với người sinh từ 23:00–23:59 theo giờ Mặt Trời thật.
-          </span>
-        </label>
-        {signedIn ? (
-          <>
-            <button type="button" className="btn" onClick={() => void importGoogle()}>
-              Lấy ngày sinh từ Google
-            </button>
-            <p className="field-hint">Google sẽ hỏi quyền đọc ngày sinh. Giờ sinh cần nhập tay.</p>
-          </>
-        ) : null}
+            <summary>Tùy chọn nâng cao</summary>
+            <label className="field">
+              <span className="field-label">Quy ước giờ Tý</span>
+              <select
+                className="input"
+                aria-label="Quy ước giờ Tý"
+                aria-describedby="birth-zi-policy-hint"
+                value={values.ziPolicy}
+                onChange={(e) => change('ziPolicy', e.target.value)}
+              >
+                <option value="splitZi">Tách Dạ Tý / Chính Tý</option>
+                <option value="dayStartsAt23">Đổi ngày từ 23:00</option>
+              </select>
+              <span id="birth-zi-policy-hint" className="field-hint">
+                Nếu chưa có chỉ dẫn riêng, nên giữ “Tách Dạ Tý / Chính Tý” (mặc định). Chỉ chọn “Đổi
+                ngày từ 23:00” khi trường phái hoặc người lập lá số của bạn dùng quy ước này. Lựa
+                chọn chỉ làm thay đổi trụ ngày với người sinh từ 23:00–23:59 theo giờ Mặt Trời thật.
+              </span>
+            </label>
+          </details>
+        </div>
+
         <div className={styles.buttons}>
           <button type="submit" className="btn btn-primary">
             {busy ? 'Đang xử lý…' : 'Lưu thông tin'}
           </button>
+          {signedIn ? (
+            <button
+              type="button"
+              className="btn"
+              title="Google sẽ hỏi quyền đọc ngày sinh. Giờ sinh cần nhập tay."
+              onClick={() => void importGoogle()}
+            >
+              Lấy ngày sinh từ Google
+            </button>
+          ) : null}
           {values.day || values.month || values.year || values.time ? (
             <button
               type="button"
-              className="btn btn-ghost"
+              className={`btn btn-ghost ${styles.clearBirth}`}
               onClick={() => {
                 setDraft({
                   day: '',

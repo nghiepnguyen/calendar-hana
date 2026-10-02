@@ -42,10 +42,104 @@
   gap: calc(12px * var(--ui-scale));
 }
 
-.birthDate {
+/* Ngày | Tháng | Năm | Giới tính trên một hàng; hẹp thì giới tính xuống hàng riêng. */
+.birthBasics {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  grid-template-columns:
+    minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1.1fr)
+    minmax(0, 1.3fr);
   gap: calc(8px * var(--ui-scale));
+}
+
+.birthDatePart,
+.birthGender {
+  min-width: 0;
+}
+
+/* Nhóm Tứ Trụ: một khay nhạt để tách khỏi phần cơ bản. */
+.birthGroup {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--ui-scale));
+  padding: calc(14px * var(--ui-scale));
+  border-radius: var(--radius);
+  background: var(--fill);
+}
+
+.birthGroupHead {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2px * var(--ui-scale));
+}
+
+.birthGroupHead h4 {
+  margin: 0;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.birthGroupHead p {
+  margin: 0;
+}
+
+.birthRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: calc(8px * var(--ui-scale));
+}
+
+.birthAdvanced {
+  min-width: 0;
+}
+
+.birthAdvanced summary {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+  list-style: none;
+  min-height: 44px;
+  color: var(--text-muted);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  cursor: pointer;
+}
+
+.birthAdvanced summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Mũi tên thay cho marker mặc định (bị ẩn khi summary là flex). */
+.birthAdvanced summary::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.25s ease;
+}
+
+.birthAdvanced[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.birthAdvanced summary:hover {
+  color: var(--text);
+}
+
+.birthAdvanced summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.birthAdvanced[open] summary {
+  margin-bottom: calc(6px * var(--ui-scale));
+}
+
+.clearBirth {
+  margin-left: auto;
 }
 
 .birthFields .input {
@@ -60,9 +154,24 @@
   padding-block: calc(8px * var(--ui-scale));
 }
 
-@media (max-width: 400px) {
-  .birthDate {
+@media (max-width: 640px) {
+  .birthBasics {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1.1fr);
+  }
+
+  .birthGender {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tên nơi sinh dài: giờ và nơi sinh xếp dọc; hai ô ngắn còn lại vẫn cạnh nhau. */
+  .birthRowStack {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clearBirth {
+    margin-left: 0;
   }
 }
 
