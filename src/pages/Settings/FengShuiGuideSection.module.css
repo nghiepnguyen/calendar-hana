@@ -1,0 +1,35 @@
+.guide {
+  display: grid;
+  gap: calc(8px * var(--ui-scale));
+  min-width: 0;
+  line-height: 1.6;
+}
+.guide p {
+  margin: 0;
+}
+.intro {
+  padding-bottom: calc(8px * var(--ui-scale));
+  color: var(--text-muted);
+}
+.guide details {
+  border-top: 1px solid var(--separator);
+  padding: calc(4px * var(--ui-scale)) 0;
+}
+.guide summary {
+  min-height: calc(44px * var(--ui-scale));
+  align-content: center;
+  cursor: pointer;
+  font-weight: var(--fw-600);
+}
+.guide details > :not(summary) {
+  margin-top: calc(8px * var(--ui-scale));
+}
+.guide ul {
+  display: grid;
+  gap: calc(5px * var(--ui-scale));
+  margin: calc(8px * var(--ui-scale)) 0 0;
+  padding-left: calc(20px * var(--ui-scale));
+}
+.muted {
+  color: var(--text-muted);
+}

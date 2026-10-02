@@ -7,19 +7,14 @@ import {
   Clock,
   Coins,
   Compass as CompassIcon,
-  Diamond,
-  Drop,
   Equals,
-  Fire,
   Heart,
-  Mountains,
   Prohibit,
   SealCheck,
   SealWarning,
   Sparkle,
   Star,
   SunHorizon,
-  Tree,
   Warning,
   YinYang,
   type Icon,
@@ -30,6 +25,7 @@ import { getAlmanac } from '@shared/lunar/almanac'
 import type { SolarDateString } from '@shared/types'
 import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
 import { Compass } from './Compass'
+import { ELEMENT_ICONS } from './elementIcons'
 import { HourGrid } from './HourGrid'
 import { StarChips } from './StarChips'
 import { iconSize } from '../../styles/textSize'
@@ -40,14 +36,6 @@ interface AlmanacPanelProps {
   isToday: boolean
 }
 
-const ELEMENT_ICONS: Record<NguHanh, Icon> = {
-  Kim: Diamond,
-  Mộc: Tree,
-  Thủy: Drop,
-  Hỏa: Fire,
-  Thổ: Mountains,
-}
-
 const ELEMENT_CLASS: Record<NguHanh, string> = {
   Kim: styles.elKim,
   Mộc: styles.elMoc,
@@ -56,7 +44,7 @@ const ELEMENT_CLASS: Record<NguHanh, string> = {
   Thổ: styles.elTho,
 }
 
-function ElementChip({ element, children }: { element: NguHanh; children?: ReactNode }) {
+export function ElementChip({ element, children }: { element: NguHanh; children?: ReactNode }) {
   const ElementIcon = ELEMENT_ICONS[element]
   return (
     <span className={`${styles.elementChip} ${ELEMENT_CLASS[element]}`}>
@@ -133,12 +121,17 @@ function RelationBanner({ relation }: { relation: CanChiRelation }) {
   )
 }
 
-/** Một ô trong lưới bento. `index` dùng để lệch thời gian hiện dần. */
-function Tile({
+/**
+ * Một ô trong lưới bento. `index` dùng để lệch thời gian hiện dần.
+ * Dùng chung với khối Phong thủy cá nhân để hai khối cùng một ngôn ngữ.
+ */
+export function Tile({
   index,
   wide,
   icon: TileIcon,
   title,
+  label,
+  className,
   aside,
   children,
 }: {
@@ -146,13 +139,16 @@ function Tile({
   wide?: 'full' | 'two'
   icon: Icon
   title: string
+  label?: string
+  className?: string
   aside?: ReactNode
   children: ReactNode
 }) {
   return (
     <section
-      className={`${styles.tile} ${wide === 'full' ? styles.spanFull : wide === 'two' ? styles.spanTwo : ''}`}
+      className={`${styles.tile} ${wide === 'full' ? styles.spanFull : wide === 'two' ? styles.spanTwo : ''} ${className ?? ''}`}
       style={{ '--i': index } as CSSProperties}
+      aria-label={label}
     >
       <header className={styles.tileHead}>
         <span className={styles.tileIcon} aria-hidden="true">

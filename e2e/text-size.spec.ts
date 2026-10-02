@@ -144,7 +144,7 @@ for (const width of [320, 360, 1280]) {
       test(`${size}: công tắc luôn bên phải, cùng hàng với chữ`, async ({ app }) => {
         await chooseTextSize(app, size)
         const switches = app.getByRole('switch')
-        await expect(switches).toHaveCount(3)
+        await expect(switches).toHaveCount(4)
         for (const toggle of await switches.all()) {
           const [sw, row, text] = await toggle.evaluate((el) => {
             const label = el.closest('label')!

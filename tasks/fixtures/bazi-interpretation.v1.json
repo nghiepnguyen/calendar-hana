@@ -1,0 +1,48 @@
+{
+  "fixtureVersion": "1.0.0",
+  "generatedOn": "2026-10-02",
+  "syntheticDataOnly": true,
+  "provenance": {
+    "method": "Zi Ping: day stem as Day Master; directed five-element relation plus polarity for Ten Gods",
+    "sources": ["ditiansui-09", "sanming-07", "ditiansui-17", "ziping-08-10"],
+    "policy": "No auspiciousness score; no useful-god answer from element counts"
+  },
+  "stemOrder": ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"],
+  "tenGodMatrix": {
+    "columns": ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"],
+    "rows": [
+      {"dayMaster":"Giáp","expected":["Tỷ Kiên","Kiếp Tài","Thực Thần","Thương Quan","Thiên Tài","Chính Tài","Thất Sát","Chính Quan","Thiên Ấn","Chính Ấn"]},
+      {"dayMaster":"Ất","expected":["Kiếp Tài","Tỷ Kiên","Thương Quan","Thực Thần","Chính Tài","Thiên Tài","Chính Quan","Thất Sát","Chính Ấn","Thiên Ấn"]},
+      {"dayMaster":"Bính","expected":["Thiên Ấn","Chính Ấn","Tỷ Kiên","Kiếp Tài","Thực Thần","Thương Quan","Thiên Tài","Chính Tài","Thất Sát","Chính Quan"]},
+      {"dayMaster":"Đinh","expected":["Chính Ấn","Thiên Ấn","Kiếp Tài","Tỷ Kiên","Thương Quan","Thực Thần","Chính Tài","Thiên Tài","Chính Quan","Thất Sát"]},
+      {"dayMaster":"Mậu","expected":["Thất Sát","Chính Quan","Thiên Ấn","Chính Ấn","Tỷ Kiên","Kiếp Tài","Thực Thần","Thương Quan","Thiên Tài","Chính Tài"]},
+      {"dayMaster":"Kỷ","expected":["Chính Quan","Thất Sát","Chính Ấn","Thiên Ấn","Kiếp Tài","Tỷ Kiên","Thương Quan","Thực Thần","Chính Tài","Thiên Tài"]},
+      {"dayMaster":"Canh","expected":["Thiên Tài","Chính Tài","Thất Sát","Chính Quan","Thiên Ấn","Chính Ấn","Tỷ Kiên","Kiếp Tài","Thực Thần","Thương Quan"]},
+      {"dayMaster":"Tân","expected":["Chính Tài","Thiên Tài","Chính Quan","Thất Sát","Chính Ấn","Thiên Ấn","Kiếp Tài","Tỷ Kiên","Thương Quan","Thực Thần"]},
+      {"dayMaster":"Nhâm","expected":["Thực Thần","Thương Quan","Thiên Tài","Chính Tài","Thất Sát","Chính Quan","Thiên Ấn","Chính Ấn","Tỷ Kiên","Kiếp Tài"]},
+      {"dayMaster":"Quý","expected":["Thương Quan","Thực Thần","Chính Tài","Thiên Tài","Chính Quan","Thất Sát","Chính Ấn","Thiên Ấn","Kiếp Tài","Tỷ Kiên"]}
+    ]
+  },
+  "hiddenStems": [
+    {"branch":"Tý","expected":["Quý"]},
+    {"branch":"Sửu","expected":["Kỷ","Quý","Tân"]},
+    {"branch":"Dần","expected":["Giáp","Bính","Mậu"]},
+    {"branch":"Mão","expected":["Ất"]},
+    {"branch":"Thìn","expected":["Mậu","Ất","Quý"]},
+    {"branch":"Tỵ","expected":["Bính","Mậu","Canh"]},
+    {"branch":"Ngọ","expected":["Đinh","Kỷ"]},
+    {"branch":"Mùi","expected":["Kỷ","Đinh","Ất"]},
+    {"branch":"Thân","expected":["Canh","Nhâm","Mậu"]},
+    {"branch":"Dậu","expected":["Tân"]},
+    {"branch":"Tuất","expected":["Mậu","Tân","Đinh"]},
+    {"branch":"Hợi","expected":["Nhâm","Giáp"]}
+  ],
+  "statusCases": [
+    {"id":"single-ready-candidate","p3Status":"ready","candidateDayStems":["Giáp"],"expected":"ready"},
+    {"id":"same-day-master-candidates","p3Status":"ambiguous","candidateDayStems":["Giáp","Giáp"],"expected":"ambiguous","note":"Preserve candidates even when this layer agrees"},
+    {"id":"different-day-master-candidates","p3Status":"ambiguous","candidateDayStems":["Giáp","Ất"],"expected":"ambiguous"},
+    {"id":"missing-p3-data","p3Status":"insufficientData","candidateDayStems":[],"expected":"insufficientData"},
+    {"id":"uncovered-useful-god-rule","p3Status":"ready","candidateDayStems":["Giáp"],"expectedUsefulGod":"unsupported"},
+    {"id":"conflicting-useful-god-rules","p3Status":"ready","candidateDayStems":["Giáp"],"expectedUsefulGod":"indeterminate"}
+  ]
+}

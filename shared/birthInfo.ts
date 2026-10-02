@@ -45,6 +45,7 @@ export const BIRTH_METADATA_KEYS = [
   'birthTimezoneSource',
   'birthConfirmedOffsetMinutes',
   'birthZiPolicy',
+  'birthGender',
 ] as const
 
 export function withBirthDeletion(

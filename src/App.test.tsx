@@ -308,8 +308,22 @@ describe('App', () => {
 
     screen.getByRole('tab', { name: 'Tài khoản' }).focus()
     await userEvent.keyboard('{ArrowDown}')
+    expect(screen.getByRole('tab', { name: 'Phong thủy' })).toHaveFocus()
+    expect(screen.getByRole('region', { name: 'Tìm hiểu Phong thủy cá nhân' })).toBeInTheDocument()
+    await userEvent.keyboard('{ArrowDown}')
     expect(screen.getByRole('tab', { name: 'Sao lưu' })).toHaveFocus()
     expect(screen.getByRole('region', { name: 'Sao lưu dữ liệu' })).toBeInTheDocument()
+  })
+
+  it('mở trang giải thích Phong thủy cá nhân từ hash trong Cài đặt', async () => {
+    renderApp('/settings#feng-shui-guide')
+    expect(await screen.findByRole('tab', { name: 'Phong thủy' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    const section = screen.getByRole('region', { name: 'Tìm hiểu Phong thủy cá nhân' })
+    expect(within(section).getByText('Ngày và giờ cá nhân')).toBeInTheDocument()
+    expect(within(section).getByText('Nguồn và giới hạn')).toBeInTheDocument()
   })
 
   it('Cỡ chữ nằm trong tab Hiển thị; link cũ #text-size mở đúng tab và cuộn tới mục', async () => {

@@ -35,7 +35,7 @@ export function DayView({
         )}
       </section>
       {settings.showPersonalFengShui !== false ? (
-        <PersonalFengShuiPanel date={date} settings={settings} />
+        <PersonalFengShuiPanel date={date} settings={settings} occurrences={occurrences} />
       ) : null}
       {settings.showAuspicious ? <AlmanacPanel date={date} isToday={date === today} /> : null}
     </div>

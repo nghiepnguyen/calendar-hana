@@ -1,104 +1,977 @@
+/*
+ * Khối "Phong thủy cá nhân": kế thừa vỏ kính, lưới bento, ô và banner kết luận của
+ * AlmanacPanel.module.css (class `panel`, `tile`, `relation`...), file này chỉ thêm phần riêng.
+ */
+
 .panel {
-  display: grid;
-  gap: calc(16px * var(--ui-scale));
-  padding: calc(20px * var(--ui-scale));
-  min-width: 0;
-  border-radius: var(--radius-lg);
-  font-size: calc(14px * var(--ui-scale));
-  line-height: 1.6;
   overflow-wrap: anywhere;
 }
-.panel h2,
-.panel h3,
+
 .panel h4,
 .panel p {
   margin: 0;
 }
-.panel h2 {
-  font-size: calc(18px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-.panel h3 {
-  font-size: calc(16px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-.panel h4 {
-  font-size: inherit;
-  font-weight: var(--fw-600);
-}
-.section {
-  display: grid;
-  gap: calc(12px * var(--ui-scale));
-  min-width: 0;
-  border-top: 1px solid var(--separator);
-  padding-top: calc(16px * var(--ui-scale));
-}
+
 .muted {
   color: var(--text-muted);
 }
+
 .favorable {
   color: var(--almanac-good);
 }
+
 .caution {
   color: var(--almanac-bad);
 }
+
 .neutral {
   color: var(--text);
 }
-.controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(200px * var(--ui-scale))), 1fr));
-  gap: calc(12px * var(--ui-scale));
-}
-.controls label {
-  display: grid;
+
+/* ---------- Đầu khối ---------- */
+
+.editProfile {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
   gap: calc(6px * var(--ui-scale));
-  min-width: 0;
-}
-.controls select {
-  width: 100%;
-  min-width: 0;
-  min-height: calc(44px * var(--ui-scale));
-}
-.results,
-.hours {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: calc(10px * var(--ui-scale));
-}
-.results {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(210px * var(--ui-scale))), 1fr));
-}
-.result,
-.hours li {
-  padding: calc(12px * var(--ui-scale));
-  border-radius: var(--radius);
-  background: var(--glass-strong);
-  border: 1px solid var(--separator);
-  min-width: 0;
-}
-.details {
-  min-width: 0;
-}
-.details summary {
-  min-height: calc(44px * var(--ui-scale));
-  cursor: pointer;
-  align-content: center;
+  min-height: max(var(--tap-min, 44px), calc(36px * var(--ui-scale)));
+  margin-top: calc(-4px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(13px * var(--ui-scale));
   font-weight: var(--fw-600);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.details summary:focus-visible {
+
+.editProfile:hover {
+  color: var(--accent-text);
+}
+
+.editProfile:focus-visible,
+.guideLink:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
-.details ul {
-  padding-left: calc(20px * var(--ui-scale));
+
+.emptyHero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(8px * var(--ui-scale));
+  padding: calc(14px * var(--ui-scale)) calc(12px * var(--ui-scale)) calc(10px * var(--ui-scale));
 }
-.now {
-  display: inline-block;
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: calc(24px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.emptyText {
+  max-width: 60ch;
+  color: var(--text-muted);
+  font-size: calc(14px * var(--ui-scale));
+}
+
+/* Emoji con giáp trong viên tròn của banner: nền sáng để con vật màu tối vẫn rõ. */
+.zodiacDisc {
+  --el: var(--tone);
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .zodiacDisc {
+    background: color-mix(in srgb, var(--text) 32%, transparent);
+  }
+}
+
+:global(:root[data-theme='dark']) .zodiacDisc {
+  background: color-mix(in srgb, var(--text) 32%, transparent);
+}
+
+.zodiacGlyph {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: calc(24px * var(--ui-scale));
+  line-height: 1;
+}
+
+.zodiacGlyphSmall {
+  font-size: calc(15px * var(--ui-scale));
+}
+
+/* ---------- Ô quan hệ ---------- */
+
+.tonePill {
+  display: inline-flex;
+  align-items: center;
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  font-size: calc(12px * var(--ui-scale));
   font-weight: var(--fw-600);
+  white-space: nowrap;
+}
+
+.pill_favorable {
+  color: var(--almanac-good);
+  background: var(--almanac-good-bg);
+}
+
+.pill_neutral {
+  color: var(--text);
+  background: var(--fill);
+}
+
+.pill_caution {
+  color: var(--almanac-bad);
+  background: var(--almanac-bad-bg);
+}
+
+.pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+}
+
+.pairItem {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  padding: calc(3px * var(--ui-scale)) calc(11px * var(--ui-scale)) calc(3px * var(--ui-scale))
+    calc(8px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.pairLink {
+  color: var(--text-muted);
+}
+
+.statement {
+  font-family: var(--font-display);
+  font-size: calc(19px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Can xung: lớp giải thích riêng, không đổi kết luận ngày. */
+.extra {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: calc(8px * var(--ui-scale));
+  margin-top: auto;
+  padding-top: calc(10px * var(--ui-scale));
+  border-top: 1px dashed var(--separator);
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.45;
+}
+
+.extra > span {
+  display: grid;
+  padding-top: calc(1px * var(--ui-scale));
+}
+
+.extra h4 {
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.extra h4 + p,
+.extra p + p {
+  margin-top: calc(2px * var(--ui-scale));
+}
+
+.extra .muted {
+  font-size: calc(12px * var(--ui-scale));
+}
+
+/* Hai cột: ô Nạp âm (thứ ba) trải hết hàng, không để trống một ô. */
+@container (min-width: 520px) and (max-width: 819px) {
+  .napAmTile {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Giờ cá nhân ---------- */
+
+.hourGroups {
+  display: grid;
+  gap: calc(12px * var(--ui-scale));
+}
+
+@container (min-width: 520px) {
+  .hourGroups {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.hourGroup {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--ui-scale));
+  min-width: 0;
+}
+
+.groupLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.hourGroup:first-child .groupLabel svg {
+  color: var(--almanac-good);
+}
+
+.hourGroup:last-child .groupLabel svg {
+  color: var(--gold);
+}
+
+.hourCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(132px * var(--ui-scale)), 1fr));
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hourCard {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2px * var(--ui-scale));
+  min-width: 0;
+  padding: calc(10px * var(--ui-scale)) calc(11px * var(--ui-scale));
+  border-radius: 14px;
+  animation: cell-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+  animation-delay: calc(var(--j, 0) * 70ms + 320ms);
+  transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.hourCard:hover {
+  transform: translateY(-2px);
+}
+
+.priority {
+  color: var(--almanac-good);
+  background:
+    radial-gradient(
+      120% 90% at 100% 0%,
+      color-mix(in srgb, var(--almanac-good) 14%, transparent),
+      transparent 70%
+    ),
+    var(--almanac-good-bg);
+}
+
+.consider {
+  color: color-mix(in srgb, var(--gold) 82%, var(--text));
+  background:
+    radial-gradient(
+      120% 90% at 100% 0%,
+      color-mix(in srgb, var(--gold) 16%, transparent),
+      transparent 70%
+    ),
+    color-mix(in srgb, var(--gold) 12%, transparent);
+}
+
+.hourTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(6px * var(--ui-scale));
+}
+
+.hourTop strong {
+  font-size: calc(17px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.01em;
+}
+
+.hourTop .zodiacGlyphSmall {
+  font-size: calc(19px * var(--ui-scale));
+}
+
+.hourRange {
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.emptyHours {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  align-self: flex-start;
+  padding: calc(6px * var(--ui-scale)) calc(11px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+}
+
+/* ---------- Hạn theo năm ---------- */
+
+.annualMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(10px * var(--ui-scale));
+}
+
+.annualContext {
+  color: var(--text-muted);
+  font-size: calc(13.5px * var(--ui-scale));
+  font-weight: var(--fw-500);
+}
+
+.genderPicker {
+  display: flex;
+  align-items: center;
+  gap: calc(2px * var(--ui-scale));
+  margin: 0;
+  padding: calc(3px * var(--ui-scale));
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--fill);
+}
+
+.genderPicker legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.genderPicker label {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(36px * var(--ui-scale));
+  padding: 0 calc(14px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  transition:
+    background-color 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.genderPicker input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.genderPicker label:has(input:checked) {
+  color: var(--text);
+  background: var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge),
+    0 4px 12px -6px rgb(30 41 70 / 0.25);
+}
+
+.genderPicker label:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.featureGrid,
+.hanGrid {
+  display: grid;
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featureCell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--ui-scale));
+  min-width: 0;
+  padding: calc(14px * var(--ui-scale));
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--gold) 9%, transparent), transparent 55%),
+    var(--fill);
+}
+
+/* Quầng sáng góc như banner Lịch vạn niên. */
+.featureCell::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  right: -12%;
+  width: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--gold) 14%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.featureLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.featureLabel svg {
+  color: var(--gold);
+}
+
+.featureValue {
+  font-family: var(--font-display);
+  font-size: calc(clamp(22px, 5cqi, 28px) * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.featureEmpty {
+  color: var(--text-muted);
+  font-size: calc(14px * var(--ui-scale));
+}
+
+.hanGrid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@container (min-width: 620px) {
+  .hanGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hanCell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: calc(10px * var(--ui-scale));
+  min-width: 0;
+  padding: calc(12px * var(--ui-scale));
+  border-radius: 16px;
+  background: var(--fill);
+  animation: cell-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+  animation-delay: calc(var(--j, 0) * 70ms + 380ms);
+}
+
+.hanHit {
+  background: linear-gradient(135deg, var(--almanac-bad-bg), transparent 75%), var(--fill);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--almanac-bad) 22%, transparent);
+}
+
+.hanIcon {
+  display: grid;
+  padding-top: calc(1px * var(--ui-scale));
+}
+
+.hanBody {
+  min-width: 0;
+}
+
+.hanBody h4 {
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.hanValue {
+  margin-top: calc(3px * var(--ui-scale));
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  line-height: 1.35;
+}
+
+.hanEmpty {
+  color: var(--text-muted);
+  font-weight: var(--fw-500);
+}
+
+.annualNotice {
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+}
+
+@keyframes cell-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hourCard,
+  .hanCell {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ---------- Chân khối ---------- */
+
+.guideLink {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  min-height: calc(40px * var(--ui-scale));
+  margin: 0 calc(8px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.guideLink:hover {
   color: var(--accent-text);
-  margin-left: calc(8px * var(--ui-scale));
+}
+
+/* ---------- Hẹp ---------- */
+
+@container (max-width: 519px) {
+  .genderPicker label {
+    min-height: calc(44px * var(--ui-scale));
+  }
+}
+
+@container (max-width: 379px) {
+  .featureGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Lời mời nhập ngày sinh ---------- */
+
+.invite {
+  --wheel: calc(176px * var(--ui-scale));
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  gap: calc(18px * var(--ui-scale));
+  padding: calc(24px * var(--ui-scale)) calc(16px * var(--ui-scale)) calc(20px * var(--ui-scale));
+  border-radius: var(--tile-radius);
+  background:
+    radial-gradient(70% 90% at 50% 0%, var(--accent-soft), transparent 70%), var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
+  animation: invite-rise 0.7s var(--spring) both;
+}
+
+.inviteBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(10px * var(--ui-scale));
+  max-width: 46ch;
+  text-align: center;
+}
+
+.inviteTitle {
+  font-family: var(--font-display);
+  font-size: calc(clamp(24px, 5.6cqi, 32px) * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.inviteText {
+  color: var(--text-muted);
+  font-size: calc(14.5px * var(--ui-scale));
+  line-height: 1.5;
+}
+
+.inviteActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(8px * var(--ui-scale));
+  margin-top: calc(4px * var(--ui-scale));
+}
+
+.inviteCta {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8px * var(--ui-scale));
+  min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
+  padding-inline: calc(20px * var(--ui-scale));
+  white-space: nowrap;
+}
+
+.inviteSecondary {
+  color: var(--text);
+  background: var(--fill);
+}
+
+.inviteCta svg {
+  transition: transform 0.45s var(--spring);
+}
+
+.inviteCta:hover svg {
+  transform: translateX(3px);
+}
+
+.inviteHint {
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+}
+
+/* Rộng: chữ bên trái, vòng con giáp bên phải. */
+@container (min-width: 560px) {
+  .invite {
+    --wheel: calc(208px * var(--ui-scale));
+
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    justify-items: stretch;
+    gap: calc(28px * var(--ui-scale));
+    padding: calc(28px * var(--ui-scale)) calc(32px * var(--ui-scale));
+    background:
+      radial-gradient(55% 120% at 88% 50%, var(--accent-soft), transparent 70%), var(--glass-strong);
+  }
+
+  .inviteBody {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .inviteActions {
+    justify-content: flex-start;
+  }
+
+  .wheel {
+    order: 2;
+  }
+}
+
+.wheel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--wheel);
+  height: var(--wheel);
+}
+
+.wheelGlow {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+  filter: blur(8px);
+}
+
+.wheelRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--separator);
+  animation: wheel-spin 90s linear infinite;
+}
+
+/* Mỗi con giáp đặt trên vòng tròn, cách nhau 30 độ, và tự xoay ngược để luôn đứng thẳng. */
+.wheelItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(36px * var(--ui-scale));
+  height: calc(36px * var(--ui-scale));
+  margin: calc(-18px * var(--ui-scale)) 0 0 calc(-18px * var(--ui-scale));
+  transform: rotate(calc(var(--k) * 30deg))
+    translateY(calc(var(--wheel) / -2 + 18px * var(--ui-scale)));
+}
+
+.wheelEmoji {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge),
+    0 6px 14px -8px rgb(30 41 70 / 0.35);
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: calc(18px * var(--ui-scale));
+  line-height: 1;
+  transform: rotate(calc(var(--k) * -30deg));
+  animation: wheel-unspin 90s linear infinite;
+}
+
+.wheelCore {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: calc(76px * var(--ui-scale));
+  height: calc(76px * var(--ui-scale));
+  border-radius: 50%;
+  color: var(--accent-text);
+  background:
+    radial-gradient(circle at 30% 25%, rgb(255 255 255 / 0.6), transparent 60%),
+    color-mix(in srgb, var(--accent) 14%, var(--glass-strong));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 12px 28px -14px var(--accent);
+}
+
+@keyframes invite-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes wheel-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheel-unspin {
+  from {
+    transform: rotate(calc(var(--k) * -30deg));
+  }
+  to {
+    transform: rotate(calc(var(--k) * -30deg - 360deg));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .wheelEmoji {
+    background: color-mix(in srgb, var(--text) 26%, var(--glass-strong));
+  }
+}
+
+:global(:root[data-theme='dark']) .wheelEmoji {
+  background: color-mix(in srgb, var(--text) 26%, var(--glass-strong));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invite,
+  .wheelRing,
+  .wheelEmoji {
+    animation: none;
+  }
+}
+
+/* ---------- Nút giải thích ---------- */
+
+.asideGroup,
+.hanAside {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+}
+
+.infoButton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: calc(28px * var(--ui-scale));
+  height: calc(28px * var(--ui-scale));
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--fill);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    transform 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+    color 0.2s ease;
+}
+
+/* Vùng bấm tối thiểu khoảng 44px. */
+.infoButton::after {
+  content: '';
+  position: absolute;
+  inset: calc(-8px * var(--ui-scale));
+}
+
+.infoButton:hover {
+  color: var(--text);
+  transform: scale(1.08);
+}
+
+.infoButton:active {
+  transform: scale(0.94);
+}
+
+.infoButton:focus-visible,
+.collapseToggle:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Giờ hiện tại & sự kiện ---------- */
+
+.hourCard {
+  position: relative;
+}
+
+.hourNow {
+  box-shadow:
+    inset 0 0 0 1.5px var(--accent),
+    0 0 0 4px var(--accent-soft);
+}
+
+.nowBadge {
+  position: absolute;
+  top: calc(-8px * var(--ui-scale));
+  right: calc(8px * var(--ui-scale));
+  padding: 1px calc(7px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: calc(10.5px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.nowNote {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+}
+
+.eventNotes {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eventNotes li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(8px * var(--ui-scale));
+  padding: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-radius: 14px;
+  background: var(--almanac-bad-bg);
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.45;
+}
+
+.eventNotes svg {
+  flex: 0 0 auto;
+  margin-top: calc(1px * var(--ui-scale));
+  color: var(--almanac-bad);
+}
+
+/* ---------- Thu gọn trên điện thoại ---------- */
+
+.collapse {
+  display: contents;
+}
+
+.collapseToggle {
+  display: none;
+}
+
+.collapseBody {
+  display: contents;
+}
+
+@container (max-width: 519px) {
+  .collapse {
+    display: flex;
+    flex-direction: column;
+    gap: calc(12px * var(--ui-scale));
+  }
+
+  .collapseToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(10px * var(--ui-scale));
+    width: 100%;
+    min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
+    padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
+    border: 0;
+    border-radius: 14px;
+    background: var(--fill);
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .collapseSummary {
+    min-width: 0;
+    font-size: calc(14px * var(--ui-scale));
+    font-weight: var(--fw-600);
+  }
+
+  .collapseAction {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(4px * var(--ui-scale));
+    flex: 0 0 auto;
+    color: var(--text-muted);
+    font-size: calc(12.5px * var(--ui-scale));
+    font-weight: var(--fw-600);
+  }
+
+  .collapseAction svg {
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .collapse[data-open='true'] .collapseAction svg {
+    transform: rotate(180deg);
+  }
+
+  .collapseBody {
+    display: flex;
+    flex-direction: column;
+    gap: calc(12px * var(--ui-scale));
+  }
+
+  .collapse[data-open='false'] .collapseBody {
+    display: none;
+  }
 }

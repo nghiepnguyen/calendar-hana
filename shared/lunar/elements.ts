@@ -54,6 +54,11 @@ const OVERCOMES: Record<NguHanh, NguHanh> = {
   Kim: 'Mộc',
 }
 
+/** Hành sinh ra `element` (mẹ sinh con): Thủy sinh Mộc, nên generatorOf('Mộc') = 'Thủy'. */
+export function generatorOf(element: NguHanh): NguHanh {
+  return (Object.keys(GENERATES) as NguHanh[]).find((from) => GENERATES[from] === element)!
+}
+
 export function canElement(can: number): NguHanh {
   return CAN_ELEMENTS[can]
 }

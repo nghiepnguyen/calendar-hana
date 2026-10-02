@@ -6,6 +6,7 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 - Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
 - Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
 - Xem Ngày có khối Lịch vạn niên: niên mệnh (nạp âm), quan hệ Can Chi, Nhị thập bát tú, Thập nhị trực kèm việc nên làm / nên kiêng, hướng Hỷ Thần và Tài Thần trên la bàn, tuổi xung ngày và tháng, sao tốt và sao xấu theo Ngọc Hạp Thông Thư (bấm để xem giải thích), đủ 12 giờ trong ngày có đánh dấu giờ hiện tại. Bật/tắt cùng công tắc hoàng đạo trong Cài đặt. Số liệu tính ngay trên máy, đã đối chiếu với licham.vn, xemngay.com, lichviet.me và thoigian.com.vn.
+- Phong thủy cá nhân trong xem Ngày gồm quan hệ Can Chi/nạp âm, giờ phù hợp, Kim Lâu, Hoang Ốc, Tam Tai, Can xung và Tứ Trụ. Tứ Trụ cần ngày, giờ và nơi sinh; hỗ trợ Việt Nam 1900–2100, giờ ước lượng và hai quy ước giờ Tý. Kết quả mang tính tham khảo theo quy ước đã công bố, không gồm Nhật chủ, Thập thần hoặc Dụng thần.
 - Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
 - Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
 - Danh mục có màu, sửa và thêm được. Lọc lịch theo danh mục.
@@ -27,6 +28,12 @@ Tài liệu yêu cầu: [tasks/prd-personal-calendar.md](tasks/prd-personal-cale
 | Test | Vitest, Testing Library, Firebase Emulator, Playwright, axe-core |
 
 Logic lịch âm, lặp sự kiện và tính giờ nhắc nằm trong `shared/`. Thư mục này không phụ thuộc React hay Firebase, nên cả app lẫn Cloud Functions dùng chung.
+
+Hồ sơ sinh được lưu cùng cài đặt trên thiết bị hoặc tài khoản, có thể xuất/nhập bằng JSON và được
+xóa liên đới khi xóa ngày sinh. Phép tính phong thủy và Tứ Trụ chạy trong ứng dụng, dùng được offline;
+ngày, giờ, nơi sinh và kết quả không được đưa vào analytics, URL, SEO/prerender hoặc dịch vụ luận
+giải bên ngoài. Xem phạm vi, nguồn và bằng chứng phát hành tại
+[`tasks/feng-shui-release-checklist.md`](tasks/feng-shui-release-checklist.md).
 
 ## Cài đặt
 

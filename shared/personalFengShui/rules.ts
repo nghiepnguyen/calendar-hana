@@ -90,6 +90,14 @@ export const RULE_SOURCES: Readonly<Record<string, RuleSource>> = Object.freeze(
     reference: 'tasks/prd-birth-time-normalization.md',
     locator: 'v1.0.0; tasks/fixtures/bazi-engine-benchmark.v1.json',
   }),
+  baziInterpretationSpec: Object.freeze({
+    reference: 'tasks/prd-bazi-interpretation.md',
+    locator: 'v1.2.0: 6.1 Nhật chủ; 6.1a thống kê ngũ hành 8 chữ; 6.4a điểm trọng số',
+  }),
+  attachmentBaziEngine: Object.freeze({
+    reference: 'bazi_calculation_engine_spec.md',
+    locator: '3.1–3.2 bảng Can/Chi; 5.1–5.3 đã sửa ở PRD 6.4a (không dùng ví dụ 2.2)',
+  }),
 })
 
 export interface RuleDefinition {
@@ -450,6 +458,42 @@ export const FENG_SHUI_RULES: readonly RuleDefinition[] = Object.freeze([
     ['self'],
     'Product default is splitZi: 23:00–23:59 keeps the TST civil date for the day pillar and advances only the date basis used for the hour stem; dayStartsAt23 is explicit opt-in. Hour stem always varies with its day-stem basis.',
     '1.1.0',
+  ),
+  definition(
+    'interpretation.day-master',
+    'interpretation',
+    'verified',
+    ['baziInterpretationSpec', 'attachmentBaziEngine', 'localElements'],
+    ['pillars.day.can'],
+    'Each P3 candidate separately; never from nạp âm',
+    'Bát Tự pillars from P3',
+    ['bazi'],
+    ['self'],
+    'Day Master is the day-pillar stem; element from CAN_ELEMENTS, even index Dương, odd index Âm.',
+  ),
+  definition(
+    'interpretation.element-count',
+    'interpretation',
+    'verified',
+    ['baziInterpretationSpec', 'attachmentBaziEngine', 'localElements'],
+    ['pillars.can', 'pillars.chi'],
+    'Four visible stems plus main element of four branches; total 8',
+    'Bát Tự pillars from P3',
+    ['bazi'],
+    ['self'],
+    'Descriptive count only: no hidden-stem weights, no position weights, no strength or useful-god conclusion.',
+  ),
+  definition(
+    'interpretation.strength-score',
+    'interpretation',
+    'verified',
+    ['baziInterpretationSpec', 'attachmentBaziEngine', 'localElements'],
+    ['pillars', 'positionWeights', 'dayMaster'],
+    'Seven positions weighted 35/15/12/12/10/10/6 = 100, day stem excluded; support = same element + generating element; ≥ 50 Thân Vượng',
+    'Bát Tự pillars from P3; branch main element only',
+    ['bazi'],
+    ['self'],
+    'Simplified weighted method weighted-v1 (PRD 6.4a). No hidden stems, combinations or seasons beyond position weight; never selects Dụng thần.',
   ),
   definition(
     'interpretation.thap-than',

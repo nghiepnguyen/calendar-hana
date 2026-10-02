@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
+import { AuthContext, type AuthContextValue } from '../../auth/authContext'
 import { DayView } from './DayView'
 import { viewProps } from '../../test/fixtures'
 import { createDefaultSettings } from '../../data/defaultCategories'
@@ -40,29 +41,27 @@ describe('personal panel integration', () => {
     })
     expect(sanitizeSettings({ showPersonalFengShui: 'false' })).toEqual({})
   })
-  it('requires explicit role, leaves the day rating unchanged and clears saved birth results', async () => {
+  it('shows the annual overview and clears saved birth results', async () => {
     const p = props()
     const { rerender } = render(<DayView {...p} />)
     const personal = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
     const label = within(personal).getByTestId('personal-day-summary').textContent
     const annual = within(personal).getByRole('region', { name: 'Hạn theo năm' })
-    expect(within(annual).getByText(/Tuổi mụ: 37/)).toBeInTheDocument()
-    await userEvent.selectOptions(
-      within(annual).getByLabelText('Mục đích xem hạn năm'),
-      'construction',
-    )
-    expect(within(annual).getByLabelText('Vai trò của bạn')).toHaveValue('unspecified')
-    expect(within(annual).getAllByText('Chưa đủ dữ liệu')).toHaveLength(3)
-    await userEvent.selectOptions(within(annual).getByLabelText('Vai trò của bạn'), 'owner')
-    expect(within(annual).getByText('Tứ Tấn Tài')).toBeInTheDocument()
+    expect(within(annual).getByText(/tuổi mụ 37/)).toBeInTheDocument()
+    expect(within(annual).getByText('Yếu tố vận hạn')).toBeInTheDocument()
+    expect(within(annual).getByText('Sao chiếu mệnh')).toBeInTheDocument()
+    expect(within(annual).queryByText('Lời khuyên hành sự trong năm')).not.toBeInTheDocument()
+    expect(within(annual).getByRole('radio', { name: 'Nam mạng' })).toBeChecked()
+    expect(within(annual).getByText('La Hầu')).toBeInTheDocument()
+    expect(within(annual).getByRole('radio', { name: 'Nữ mạng' })).not.toBeChecked()
+    await userEvent.click(within(annual).getByRole('radio', { name: 'Nữ mạng' }))
+    expect(within(annual).getByRole('radio', { name: 'Nữ mạng' })).toBeChecked()
+    expect(within(annual).getByText('Kế Đô')).toBeInTheDocument()
     expect(within(personal).getByTestId('personal-day-summary').textContent).toBe(label)
-    await userEvent.selectOptions(within(annual).getByLabelText('Mục đích xem hạn năm'), 'general')
-    expect(within(annual).getByLabelText('Vai trò của bạn')).toHaveValue('self')
-    await userEvent.selectOptions(within(annual).getByLabelText('Mục đích xem hạn năm'), 'repair')
-    expect(within(annual).getAllByText('Chưa hỗ trợ')).toHaveLength(3)
     rerender(<DayView {...p} settings={{ ...p.settings, birthDate: null }} />)
-    expect(screen.getByLabelText('Mục đích xem hạn năm')).toHaveValue('general')
-    expect(screen.getByLabelText('Vai trò của bạn')).toHaveValue('self')
+    // Chưa có ngày sinh: ẩn toàn bộ kết quả, chỉ còn lời mời nhập.
+    expect(screen.queryByRole('region', { name: 'Hạn theo năm' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).not.toBeInTheDocument()
     expect(screen.queryByTestId('personal-day-summary')).not.toBeInTheDocument()
     expect(screen.queryByText(/Tuổi mụ: 37/)).not.toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Nhập ngày sinh' })).toHaveAttribute(
@@ -70,31 +69,42 @@ describe('personal panel integration', () => {
       '/settings#birth-info',
     )
   })
-  it('distinguishes invalid data and shows all 12 hours with split Ty interval', () => {
+  it('keeps the hour result concise and links to the separate explanation page', () => {
     const p = props()
     const { rerender } = render(<DayView {...p} />)
     const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
-    expect(within(panel).getByText('00:00–01:00 và 23:00–24:00')).toBeInTheDocument()
-    expect(within(panel).getByText(/^Ưu tiên:/).parentElement).toHaveTextContent('05:00–07:00')
+    expect(within(panel).getByLabelText('Giờ ưu tiên')).toHaveTextContent('05:00–07:00')
+    expect(within(panel).queryByText('Xem đủ 12 giờ và lý do')).not.toBeInTheDocument()
     expect(
-      within(panel)
-        .getAllByRole('listitem', { hidden: true })
-        .filter((n) => n.getAttribute('data-personal-hour') !== null),
-    ).toHaveLength(12)
+      within(panel).getByRole('link', { name: 'Tìm hiểu cách tính và nguồn tham khảo' }),
+    ).toHaveAttribute('href', '/settings#feng-shui-guide')
     rerender(<DayView {...props('1990-02-30')} />)
     expect(screen.getByText('Ngày sinh không hợp lệ. Hãy sửa trong Cài đặt.')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Sửa ngày sinh' })).toBeInTheDocument()
+  })
+
+  it('prioritizes the personal-day summary with labeled relation cards and compact hour groups', () => {
+    render(<DayView {...props()} />)
+    const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
+    expect(within(panel).getByLabelText('Tóm tắt ngày cá nhân')).toBeInTheDocument()
+    expect(within(panel).getByLabelText('Quan hệ Địa chi')).toBeInTheDocument()
+    expect(within(panel).getByLabelText('Quan hệ Thiên can')).toBeInTheDocument()
+    expect(within(panel).getByLabelText('Quan hệ Nạp âm')).toBeInTheDocument()
+    expect(within(panel).getByLabelText('Giờ cá nhân trong ngày')).toBeInTheDocument()
+    expect(
+      within(panel).queryByText('Đang xem theo tuổi và nạp âm năm sinh'),
+    ).not.toBeInTheDocument()
   })
 })
 
 it('refreshes year at Tet and birth profile independently of the hour or day summary', () => {
   const p = props('2000-02-04')
   const { rerender } = render(<DayView {...p} date="2026-02-16" />)
-  expect(screen.getByText(/Năm âm lịch đang xem: 2025 · Tuổi mụ: 27/)).toBeInTheDocument()
+  expect(screen.getByText(/Năm âm lịch 2025, tuổi mụ 27/)).toBeInTheDocument()
   rerender(<DayView {...p} date="2026-02-17" />)
-  expect(screen.getByText(/Năm âm lịch đang xem: 2026 · Tuổi mụ: 28/)).toBeInTheDocument()
+  expect(screen.getByText(/Năm âm lịch 2026, tuổi mụ 28/)).toBeInTheDocument()
   rerender(<DayView {...props('1990-07-01')} date="2026-02-17" />)
-  expect(screen.getByText(/Năm âm lịch đang xem: 2026 · Tuổi mụ: 37/)).toBeInTheDocument()
+  expect(screen.getByText(/Năm âm lịch 2026, tuổi mụ 37/)).toBeInTheDocument()
 })
 
 it('shows reviewed stem clash separately and does not duplicate common stars', () => {
@@ -104,10 +114,8 @@ it('shows reviewed stem clash separately and does not duplicate common stars', (
   const extended = within(panel).getByRole('region', { name: 'Quan hệ cá nhân mở rộng' })
   expect(within(extended).getByText('Thiên can xung')).toBeInTheDocument()
   expect(within(extended).getByText(/Can ngày Đinh xung với Can tuổi Quý/)).toBeInTheDocument()
-  expect(within(extended).getByText(/không làm đổi kết luận ngày/)).toBeInTheDocument()
   expect(within(panel).getByTestId('personal-day-summary')).toHaveTextContent('Có yếu tố cần lưu ý')
-  expect(within(extended).getByText(/Thụ Tử và Sát Chủ vẫn là sao chung/)).toBeInTheDocument()
-  expect(within(extended).queryByText('Thái Tuế')).not.toBeInTheDocument()
+  expect(within(extended).queryByText(/Thụ Tử và Sát Chủ vẫn là sao chung/)).not.toBeInTheDocument()
 })
 
 it('shows four pillars only from a complete saved birth profile', () => {
@@ -138,8 +146,56 @@ it('shows four pillars only from a complete saved birth profile', () => {
     />,
   )
   const bazi = screen.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })
-  expect(within(bazi).getByText('Giáp Thìn')).toBeInTheDocument()
-  expect(within(bazi).getByText('Bính Dần')).toBeInTheDocument()
+  // Can và Chi là hai chữ riêng (mỗi chữ một màu ngũ hành) nên kiểm theo nội dung ô.
+  expect(bazi).toHaveTextContent('Giáp Thìn')
+  expect(bazi).toHaveTextContent('Bính Dần')
   expect(within(bazi).getAllByText(/TST/).length).toBeGreaterThan(0)
-  expect(within(bazi).getByText(/Astronomy Engine 2.1.19/)).toBeInTheDocument()
+  expect(within(bazi).queryByText(/Astronomy Engine 2.1.19/)).not.toBeInTheDocument()
+  const insight = within(bazi).getByRole('region', { name: 'Nhật Nguyên và ngũ hành' })
+  expect(within(insight).getByText('Nhật Nguyên')).toBeInTheDocument()
+  const counts = within(
+    within(insight).getByRole('list', { name: 'Số chữ theo ngũ hành' }),
+  ).getAllByRole('listitem')
+  expect(counts.map((item) => item.textContent?.match(/^(\d)/)?.[1])).toHaveLength(5)
+  expect(
+    counts.reduce((sum, item) => sum + Number(item.textContent?.match(/^(\d)/)?.[1] ?? 0), 0),
+  ).toBe(8)
+  const strength = within(insight).getByRole('region', { name: 'Độ vượng suy' })
+  expect(strength).toHaveTextContent(/Thân (Vượng|Nhược)/)
+  expect(strength).toHaveTextContent(/\d+\/100/)
+})
+
+it('shows only the birth invite without a profile and offers sign-in to guests', () => {
+  const auth = (signedIn: boolean): AuthContextValue => ({
+    available: true,
+    loading: false,
+    user: signedIn ? { uid: 'a', email: null, displayName: null, photoURL: null } : null,
+    signIn: async () => {},
+    signOut: async () => {},
+    deleteAccount: async () => {},
+  })
+  const p = props(null)
+  const { rerender } = render(
+    <AuthContext.Provider value={auth(false)}>
+      <DayView {...p} />
+    </AuthContext.Provider>,
+  )
+  const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
+  expect(within(panel).getByRole('link', { name: 'Nhập ngày sinh' })).toHaveAttribute(
+    'href',
+    '/settings#birth-info',
+  )
+  expect(within(panel).getByRole('link', { name: 'Đăng nhập' })).toHaveAttribute(
+    'href',
+    '/settings#account',
+  )
+  expect(within(panel).queryByRole('region', { name: 'Hạn theo năm' })).not.toBeInTheDocument()
+  expect(within(panel).queryByRole('link', { name: /Tìm hiểu cách tính/ })).not.toBeInTheDocument()
+  rerender(
+    <AuthContext.Provider value={auth(true)}>
+      <DayView {...p} />
+    </AuthContext.Provider>,
+  )
+  expect(screen.queryByRole('link', { name: 'Đăng nhập' })).not.toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'Nhập ngày sinh' })).toBeInTheDocument()
 })

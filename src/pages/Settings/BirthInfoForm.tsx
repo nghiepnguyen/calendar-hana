@@ -16,6 +16,7 @@ interface Draft {
   uncertainty: string
   historicalOffset: '' | '420' | '480'
   ziPolicy: 'splitZi' | 'dayStartsAt23'
+  gender: '' | 'male' | 'female'
 }
 
 const PLACES = {
@@ -64,6 +65,7 @@ function fromSettings(settings: Settings): Draft {
           ? '480'
           : '',
     ziPolicy: settings.birthZiPolicy ?? 'splitZi',
+    gender: settings.birthGender ?? '',
   }
 }
 
@@ -100,8 +102,18 @@ export function BirthInfoForm({
     e.preventDefault()
     setError(null)
     setMessage(null)
-    const { day, month, year, time, place, precision, uncertainty, historicalOffset, ziPolicy } =
-      values
+    const {
+      day,
+      month,
+      year,
+      time,
+      place,
+      precision,
+      uncertainty,
+      historicalOffset,
+      ziPolicy,
+      gender,
+    } = values
     const hasDate = !!(day || month || year)
     const date = `${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
     if (hasDate && (!day || !month || !year)) {
@@ -158,6 +170,7 @@ export function BirthInfoForm({
             : null,
         birthConfirmedOffsetMinutes: historicalOffset ? Number(historicalOffset) : null,
         birthZiPolicy: time ? ziPolicy : null,
+        birthGender: hasDate && gender ? gender : null,
       })
       setMessage('Đã lưu thông tin ngày sinh.')
       setDraft(null)
@@ -226,6 +239,22 @@ export function BirthInfoForm({
             </label>
           ))}
         </div>
+        <label className="field">
+          <span className="field-label">Giới tính (tùy chọn)</span>
+          <select
+            className="input"
+            aria-label="Giới tính (tùy chọn)"
+            value={values.gender}
+            onChange={(e) => change('gender', e.target.value)}
+          >
+            <option value="">Chưa chọn</option>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+          </select>
+          <span className="field-hint">
+            Dùng để xem Sao chiếu mệnh và Hạn tuổi theo Nam mạng hoặc Nữ mạng.
+          </span>
+        </label>
         <label className="field">
           <span className="field-label">Giờ sinh (tùy chọn)</span>
           <input
@@ -299,12 +328,18 @@ export function BirthInfoForm({
           <select
             className="input"
             aria-label="Quy ước giờ Tý"
+            aria-describedby="birth-zi-policy-hint"
             value={values.ziPolicy}
             onChange={(e) => change('ziPolicy', e.target.value)}
           >
             <option value="splitZi">Tách Dạ Tý / Chính Tý</option>
             <option value="dayStartsAt23">Đổi ngày từ 23:00</option>
           </select>
+          <span id="birth-zi-policy-hint" className="field-hint">
+            Nếu chưa có chỉ dẫn riêng, nên giữ “Tách Dạ Tý / Chính Tý” (mặc định). Chỉ chọn “Đổi
+            ngày từ 23:00” khi trường phái hoặc người lập lá số của bạn dùng quy ước này. Lựa chọn
+            chỉ làm thay đổi trụ ngày với người sinh từ 23:00–23:59 theo giờ Mặt Trời thật.
+          </span>
         </label>
         {signedIn ? (
           <>
@@ -333,6 +368,7 @@ export function BirthInfoForm({
                   uncertainty: '15',
                   historicalOffset: '',
                   ziPolicy: 'splitZi',
+                  gender: '',
                 })
                 setError(null)
                 setMessage('Đã xóa trên form. Bấm Lưu thông tin để xác nhận.')

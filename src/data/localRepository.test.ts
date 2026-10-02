@@ -86,6 +86,7 @@ describe('LocalRepository — danh mục và cài đặt mặc định', () => {
       birthTimezoneId: 'Asia/Ho_Chi_Minh',
       birthTimezoneSource: 'bundledMapping',
       birthZiPolicy: 'splitZi',
+      birthGender: 'female',
     })
     const deleted = await repo.saveSettings({ birthDate: null })
     expect(deleted).toMatchObject({
@@ -95,6 +96,7 @@ describe('LocalRepository — danh mục và cài đặt mặc định', () => {
       birthTimezoneId: null,
       birthTimePrecision: null,
       birthZiPolicy: null,
+      birthGender: null,
     })
   })
 })

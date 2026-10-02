@@ -134,6 +134,10 @@ test('trang chủ có liên kết và trang cài đặt đặt liên kết ở f
     ).toHaveCount(0)
   }
   await app.screenshot({ path: test.info().outputPath('settings-footer.png'), fullPage: true })
+  const deferUpdate = app.getByRole('button', { name: 'Để sau', exact: true })
+  if (await deferUpdate.isVisible()) await deferUpdate.click()
+  const toastClose = app.getByRole('button', { name: 'Đóng', exact: true })
+  if (await toastClose.isVisible()) await toastClose.click()
   await app
     .getByRole('contentinfo')
     .getByRole('link', { name: 'Quyền riêng tư', exact: true })

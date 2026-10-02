@@ -8,6 +8,7 @@ import {
   SlidersHorizontal,
   Tag,
   UserCircle,
+  YinYang,
   type Icon,
 } from '@phosphor-icons/react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -23,6 +24,7 @@ import { InstallSection } from './InstallSection'
 import { NotificationSection } from './NotificationSection'
 import { ShortcutSection } from './ShortcutSection'
 import { TextSizeSection } from './TextSizeSection'
+import { FengShuiGuideSection } from './FengShuiGuideSection'
 import { LegalLinks } from '../../components/LegalLinks/LegalLinks'
 import { Toggle } from './Toggle'
 import { iconSize } from '../../styles/textSize'
@@ -172,6 +174,13 @@ const TABS: Tab[] = [
     title: 'Tài khoản',
     icon: UserCircle,
     render: (props) => <AccountSection focusBirth={props.focusBirth} />,
+  },
+  {
+    id: 'feng-shui-guide',
+    label: 'Phong thủy',
+    title: 'Tìm hiểu Phong thủy cá nhân',
+    icon: YinYang,
+    render: () => <FengShuiGuideSection />,
   },
   {
     id: 'data',

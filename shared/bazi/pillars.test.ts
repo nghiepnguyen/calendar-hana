@@ -13,4 +13,16 @@ describe('calculatePillars', () => {
       expect(result.pillars.hour.can).toBe((dayStem % 5) * 2)
     }
   })
+
+  // bazi_calculation_engine_spec.md mục 2.2 ghi Bính Dần/Nhâm Thìn, nhưng công thức JDN của chính spec
+  // cho JDN 2448119: (JDN+9) mod 10 = 8 (Nhâm), (JDN+1) mod 12 = 0 (Tý); giờ Thìn ngày Nhâm là Giáp.
+  it('matches the spec formula for 1990-08-15 08:30 UTC+7, not its illustrative output', () => {
+    const result = calculatePillars('1990-08-15T01:30:00.000Z', '1990-08-15T08:30:00', 'splitZi')
+    expect(Object.values(result.pillars).map((pillar) => pillar.name)).toEqual([
+      'Canh Ngọ',
+      'Giáp Thân',
+      'Nhâm Tý',
+      'Giáp Thìn',
+    ])
+  })
 })

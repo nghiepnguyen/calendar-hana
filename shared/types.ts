@@ -91,6 +91,8 @@ export type BirthTimePrecision = 'exact' | 'estimated' | 'unknown'
 export type BirthTimezoneId = 'Asia/Ho_Chi_Minh' | 'Asia/Bangkok'
 export type BirthTimezoneSource = 'bundledMapping' | 'userConfirmed'
 export type BirthZiPolicy = 'splitZi' | 'dayStartsAt23'
+/** Dùng cho Sao chiếu mệnh và Hạn tuổi (Nam mạng/Nữ mạng). */
+export type BirthGender = 'male' | 'female'
 export interface BirthPlace {
   countryCode: 'VN'
   subdivisionCode: string | null
@@ -113,6 +115,7 @@ export interface Settings {
   birthTimezoneSource?: BirthTimezoneSource | null
   birthConfirmedOffsetMinutes?: number | null
   birthZiPolicy?: BirthZiPolicy | null
+  birthGender?: BirthGender | null
   /** 1 = Thứ Hai, 0 = Chủ nhật. */
   weekStartsOn: 0 | 1
   showHolidays: boolean

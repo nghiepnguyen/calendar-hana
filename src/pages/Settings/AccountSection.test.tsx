@@ -48,6 +48,16 @@ function enterDate(day: string, month: string, year: string) {
 }
 
 describe('Thông tin ngày sinh trong Tài khoản', () => {
+  it('giải thích cách chọn quy ước giờ Tý và liên kết ghi chú với ô chọn', async () => {
+    await setup()
+    const select = screen.getByLabelText('Quy ước giờ Tý')
+    const note = screen.getByText(/Nếu chưa có chỉ dẫn riêng, nên giữ/)
+    expect(select).toHaveAttribute('aria-describedby', note.id)
+    expect(note).toHaveTextContent('Tách Dạ Tý / Chính Tý')
+    expect(note).toHaveTextContent('23:00–23:59 theo giờ Mặt Trời thật')
+    expect(note).toHaveTextContent('Đổi ngày từ 23:00')
+  })
+
   it('lưu ngày sinh và giờ sinh trên máy dù chưa cấu hình Firebase', async () => {
     const { repository, unmount } = await setup()
     enterDate('29', '2', '2000')

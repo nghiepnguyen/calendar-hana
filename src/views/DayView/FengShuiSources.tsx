@@ -1,5 +1,4 @@
 import { RULE_SOURCES } from '@shared/personalFengShui/rules'
-import styles from './PersonalFengShuiPanel.module.css'
 
 interface Evidence {
   id: string
@@ -21,6 +20,8 @@ const SOURCE_LABELS: Record<string, readonly [string, string]> = {
     'II.1.a, trang in 2 / PDF 3; không ghi tác giả hoặc ấn bản. Chỉ sử dụng bảng Chi Tam Tai',
   ],
   personalStarsSpec: ['Quy ước quan hệ cá nhân mở rộng', 'Phiên bản 1.0.0, mục 2–7'],
+  baziInterpretationSpec: ['Quy ước giải nghĩa Bát Tự', 'Phiên bản 1.1.0, mục 6.1 và 6.1a'],
+  attachmentBaziEngine: ['Tài liệu engine Nhật Nguyên được cung cấp', 'Mục 3.1–3.2 và 5.1'],
 }
 const RULE_LABELS: Record<string, string> = {
   'personal.branch-relations': 'Quan hệ Địa chi',
@@ -35,8 +36,16 @@ const RULE_LABELS: Record<string, string> = {
   'annual.kim-lau': 'Kim Lâu',
   'annual.hoang-oc': 'Hoang Ốc',
   'annual.tam-tai': 'Tam Tai',
+  'interpretation.day-master': 'Nhật Nguyên',
+  'interpretation.element-count': 'Thống kê ngũ hành 8 chữ',
 }
-export function FengShuiSources({ rules }: { rules: readonly Evidence[] }) {
+export function FengShuiSources({
+  rules,
+  mutedClassName,
+}: {
+  rules: readonly Evidence[]
+  mutedClassName?: string
+}) {
   const uniqueRules = [...new Map(rules.map((rule) => [rule.id, rule])).values()]
   const sources = [...new Set(rules.flatMap((rule) => rule.sourceIds))]
   return (
@@ -63,7 +72,7 @@ export function FengShuiSources({ rules }: { rules: readonly Evidence[] }) {
               ) : (
                 <span>{label[0]}</span>
               )}{' '}
-              — <span className={styles.muted}>{label[1]}</span>
+              <span className={mutedClassName}>{label[1]}</span>
             </li>
           )
         })}

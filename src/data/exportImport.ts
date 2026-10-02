@@ -139,6 +139,8 @@ export function sanitizeSettings(raw: unknown): Partial<Omit<Settings, 'updatedA
       raw.birthZiPolicy === 'dayStartsAt23'
     )
       result.birthZiPolicy = raw.birthZiPolicy
+    if (raw.birthGender === null || raw.birthGender === 'male' || raw.birthGender === 'female')
+      result.birthGender = raw.birthGender
   }
   if (raw.weekStartsOn === 0 || raw.weekStartsOn === 1) result.weekStartsOn = raw.weekStartsOn
   if (typeof raw.showHolidays === 'boolean') result.showHolidays = raw.showHolidays

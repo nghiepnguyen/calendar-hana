@@ -77,6 +77,15 @@ describe('parseImport', () => {
       birthDate: null,
     })
   })
+  it('giữ giới tính hợp lệ chỉ khi có ngày sinh, bỏ giá trị lạ', () => {
+    expect(sanitizeSettings({ birthDate: '1990-07-01', birthGender: 'female' })).toMatchObject({
+      birthGender: 'female',
+    })
+    expect(sanitizeSettings({ birthDate: '1990-07-01', birthGender: 'other' })).not.toHaveProperty(
+      'birthGender',
+    )
+    expect(sanitizeSettings({ birthDate: null, birthGender: 'male' })).toEqual({ birthDate: null })
+  })
   it('từ chối file không phải JSON hoặc không phải của app', () => {
     expect(() => parseImport('không phải json')).toThrow(ImportFormatError)
     expect(() => parseImport('{"app":"khac","version":1}')).toThrow(ImportFormatError)

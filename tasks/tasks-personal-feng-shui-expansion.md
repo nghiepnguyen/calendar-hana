@@ -14,8 +14,9 @@
 - `tasks/bazi-engine-evaluation.md` (đã tạo, P3 spec) - So sánh engine/dữ liệu, sai số, giấy phép, dung lượng và quyết định lựa chọn.
 - `tasks/fixtures/bazi-engine-benchmark.v1.json` (đã tạo, P3 spec) - 12 ca TST và 12 giao tiết đối chiếu JPL bằng dữ liệu giả.
 - `tasks/validation-personal-feng-shui-task-6.md` - Bằng chứng nghiệm thu và giới hạn Task 6.
-- `tasks/prd-bazi-interpretation.md`, `tasks/tasks-bazi-interpretation.md` (mới, P4) - Đặc tả và task luận Nhật chủ/Thập thần/Dụng thần ở giai đoạn sau.
+- `tasks/prd-bazi-interpretation.md`, `tasks/tasks-bazi-interpretation.md`, `tasks/fixtures/bazi-interpretation.v1.json` - Đặc tả, fixture và task P4; chưa triển khai luận giải.
 - `tasks/feng-shui-release-checklist.md` (mới) - Bằng chứng nghiệm thu, lớp được phát hành và các phần chưa hỗ trợ.
+- `tasks/validation-personal-feng-shui-task-9.md` - Bằng chứng Task 9 chỉ hoàn tất đặc tả/fixture/task, chưa mở P4 runtime.
 
 ### Logic thuần và dữ liệu đề xuất
 
@@ -57,7 +58,7 @@
 
 ### Notes
 
-- Trạng thái: đã hoàn tất bước 0 và task 1–7; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. Task 7 tích hợp hồ sơ sinh mở rộng, Astronomy Engine và Tứ Trụ offline; task 8.0–9.0 chưa làm. Nghiệm thu phát hành vẫn cần đo trên điện thoại thật và thử với người dùng.
+- Trạng thái: đã hoàn tất bước 0 và task 1–9; đang ở nhánh `codex/personal-feng-shui-expansion`, tạo từ `main`. P1, phần Can xung P2 và nền tảng Tứ Trụ P3 đã đạt nghiệm thu tự động; P4 đã có PRD/fixture/task riêng nhưng chưa triển khai. Trước phát hành production vẫn cần đo trên điện thoại thật và thử với người dùng.
 - Kiểm tra bước 0: không tìm thấy `AGENTS.md` trong repository hoặc các thư mục cha áp dụng. Trước khi tạo nhánh chỉ có ba tài liệu phong thủy chưa được Git theo dõi; đã giữ nguyên, không reset/stash/xóa hoặc commit.
 - Kiểm tra bước 0 ban đầu chưa có MVP. Trong task 4 đã triển khai `shared/personalFengShui/day.ts`, `PersonalFengShuiPanel` và `showPersonalFengShui`, rồi tích hợp hạn năm. Bằng chứng và giới hạn nghiệm thu: `tasks/validation-personal-feng-shui-task-4.md`.
 - Snapshot P0: 26 mục (10 verified, 15 pending, 1 rejected). Sau task 3, registry có 27 mục (14 verified, 12 pending, 1 rejected); sau task 5 có 15 verified, 11 pending, 1 rejected; sau task 6 có 19 verified, 7 pending, 1 rejected. Bằng chứng và câu hỏi chặn từng quy tắc ở `tasks/feng-shui-rule-audit.md`; pending vẫn chưa được phép tính.
@@ -163,22 +164,22 @@ Làm xong task nào thì đổi `- [ ]` thành `- [x]`. Sau khi bổ sung sub-ta
   - [x] 7.11 Đóng gói/cache engine và dữ liệu cần dùng offline sau lần tải; không lưu hồ sơ cá nhân vào service worker cache công khai, SEO/prerender hoặc telemetry.
   - [x] 7.12 Thêm unit/component/JSON/repository/E2E cho hồ sơ mới, xóa/sync/đổi tài khoản, DST và bất định; chạy kiểm tra kiểu/lint/build và benchmark regression trước nghiệm thu P3.
 
-- [ ] 8.0 Kiểm thử, nghiệm thu và chuẩn bị phát hành từng lớp độc lập (P1/P2/P3): kiểm tra fixture, biên thời gian, local/cloud/JSON, riêng tư, offline, mobile/a11y và regression lịch chung; chỉ mở UI cho lớp đạt điều kiện nghiệm thu.
-  - [ ] 8.1 Lập `feng-shui-release-checklist.md` chia P1/P2/P3, liên kết PRD, ruleset/engine version, nguồn/fixture, trường hợp chưa hỗ trợ và bằng chứng nghiệm thu từng lớp.
-  - [ ] 8.2 Chạy unit/fixture theo phạm vi thực tế: ma trận hạn năm, mục đích/vai trò, phân lớp sao/ngày/năm, múi giờ lịch sử/gap/overlap, TST/giao tiết/giờ Tý và uncertainty.
-  - [ ] 8.3 Chạy `npm run test:emulator` cho thay đổi repository/rules; xác nhận tài khoản khác không đọc/ghi hồ sơ, offline/sync và JSON cũ/mới không mất dữ liệu hoặc giữ kết quả hồ sơ trước.
-  - [ ] 8.4 Chạy Playwright desktop/mobile cho luồng đã đổi; kiểm tra sáng/tối, ba cỡ chữ, 360px, bàn phím/đọc màn hình/dialog và axe; kiểm tra Safari/iPhone cho nền tảng thời gian/offline khi hỗ trợ.
-  - [ ] 8.5 Kiểm tra không có ngày/giờ/nơi sinh hoặc kết quả trong URL, analytics/session replay, log, SEO/prerender, cache công khai hay request luận giải bên ngoài; cập nhật mô tả chính sách dữ liệu nếu cần.
-  - [ ] 8.6 Chạy regression âm lịch, Can Chi, tiết khí theo ngày, sao/giờ chung và đánh giá ngày MVP; không cập nhật fixture cũ chỉ để hợp với kết quả mới sai quy ước.
-  - [ ] 8.7 Ghi thời gian tính, bundle và benchmark sai số trên môi trường xác định; kiểm tra offline với dữ liệu đã tải, nêu rõ độ chính xác engine và độ chắc chắn hồ sơ là hai tiêu chí khác nhau.
-  - [ ] 8.8 Chạy các check dự án phù hợp (`typecheck`, `lint`, `format:check`, `build`, unit/E2E), sửa lỗi trong phạm vi và ghi limitation thực tế; chỉ mở UI lớp có đủ nguồn và đạt nghiệm thu.
-  - [ ] 8.9 Cập nhật README/hướng dẫn về tính năng đã đạt, phạm vi và dữ liệu hồ sơ; chuẩn bị bản thay đổi có thể review, không tự deploy production hoặc mở P4 chưa đặc tả.
+- [x] 8.0 Kiểm thử, nghiệm thu và chuẩn bị phát hành từng lớp độc lập (P1/P2/P3): kiểm tra fixture, biên thời gian, local/cloud/JSON, riêng tư, offline, mobile/a11y và regression lịch chung; chỉ mở UI cho lớp đạt điều kiện nghiệm thu.
+  - [x] 8.1 Lập `feng-shui-release-checklist.md` chia P1/P2/P3, liên kết PRD, ruleset/engine version, nguồn/fixture, trường hợp chưa hỗ trợ và bằng chứng nghiệm thu từng lớp.
+  - [x] 8.2 Chạy unit/fixture theo phạm vi thực tế: ma trận hạn năm, mục đích/vai trò, phân lớp sao/ngày/năm, múi giờ lịch sử/gap/overlap, TST/giao tiết/giờ Tý và uncertainty.
+  - [x] 8.3 Chạy `npm run test:emulator` cho thay đổi repository/rules; xác nhận tài khoản khác không đọc/ghi hồ sơ, offline/sync và JSON cũ/mới không mất dữ liệu hoặc giữ kết quả hồ sơ trước.
+  - [x] 8.4 Chạy Playwright desktop/mobile cho luồng đã đổi; kiểm tra sáng/tối, ba cỡ chữ, 360px, bàn phím/đọc màn hình/dialog và axe; kiểm tra Safari/iPhone cho nền tảng thời gian/offline khi hỗ trợ.
+  - [x] 8.5 Kiểm tra không có ngày/giờ/nơi sinh hoặc kết quả trong URL, analytics/session replay, log, SEO/prerender, cache công khai hay request luận giải bên ngoài; cập nhật mô tả chính sách dữ liệu nếu cần.
+  - [x] 8.6 Chạy regression âm lịch, Can Chi, tiết khí theo ngày, sao/giờ chung và đánh giá ngày MVP; không cập nhật fixture cũ chỉ để hợp với kết quả mới sai quy ước.
+  - [x] 8.7 Ghi thời gian tính, bundle và benchmark sai số trên môi trường xác định; kiểm tra offline với dữ liệu đã tải, nêu rõ độ chính xác engine và độ chắc chắn hồ sơ là hai tiêu chí khác nhau.
+  - [x] 8.8 Chạy các check dự án phù hợp (`typecheck`, `lint`, `format:check`, `build`, unit/E2E), sửa lỗi trong phạm vi và ghi limitation thực tế; chỉ mở UI lớp có đủ nguồn và đạt nghiệm thu.
+  - [x] 8.9 Cập nhật README/hướng dẫn về tính năng đã đạt, phạm vi và dữ liệu hồ sơ; chuẩn bị bản thay đổi có thể review, không tự deploy production hoặc mở P4 chưa đặc tả.
 
-- [ ] 9.0 Đặc tả Nhật chủ, Thập thần và Dụng thần sau nền tảng Tứ Trụ (P4): chốt trường phái, nguồn, tàng can/vượng suy, cách xét ngày giờ và fixture; tạo PRD/task riêng trước khi triển khai luận giải.
-  - [ ] 9.1 Xác nhận nền tảng Tứ Trụ đạt nghiệm thu và đọc các output/uncertainty/version hiện có trước khi thiết kế lớp luận giải.
-  - [ ] 9.2 Chốt nguồn/trường phái cho Nhật chủ, âm dương Can, Thập thần, tàng can, vượng/suy và Dụng thần; phân biệt điều có thể tính bằng bảng với điều còn phụ thuộc phương pháp.
-  - [ ] 9.3 Tạo `prd-bazi-interpretation.md` với input/output từng lớp, yêu cầu đủ dữ liệu, quan hệ ngày/giờ xem với Nhật chủ, lý do/nguồn/version và ranh giới với nạp âm MVP.
-  - [ ] 9.4 Đặc tả Thập thần bằng quan hệ có hướng và âm dương với Nhật chủ, fixture đủ tổ hợp; không tự gán cát/hung chỉ từ tên Thập thần.
-  - [ ] 9.5 Đặc tả Dụng thần theo phương pháp xác nhận, tàng can/tháng tiết khí/vượng suy và các ngoại lệ; không xác định bằng đếm hành thiếu hoặc nạp âm năm sinh.
-  - [ ] 9.6 Định nghĩa ứng xử khi có nhiều lá số ứng viên, phương pháp chưa đủ nguồn hoặc kết quả khác giữa trường phái; không trả kết luận chắc chắn từ đầu vào bất định.
-  - [ ] 9.7 Soạn fixture độc lập có nguồn và tiêu chí nghiệm thu, sau đó tạo `tasks-bazi-interpretation.md` theo quy trình task áp dụng; dừng ở tài liệu/task, chưa viết mã luận giải P4.
+- [x] 9.0 Đặc tả Nhật chủ, Thập thần và Dụng thần sau nền tảng Tứ Trụ (P4): chốt trường phái, nguồn, tàng can/vượng suy, cách xét ngày giờ và fixture; tạo PRD/task riêng trước khi triển khai luận giải.
+  - [x] 9.1 Xác nhận nền tảng Tứ Trụ đạt nghiệm thu và đọc các output/uncertainty/version hiện có trước khi thiết kế lớp luận giải.
+  - [x] 9.2 Chốt nguồn/trường phái cho Nhật chủ, âm dương Can, Thập thần, tàng can, vượng/suy và Dụng thần; phân biệt điều có thể tính bằng bảng với điều còn phụ thuộc phương pháp.
+  - [x] 9.3 Tạo `prd-bazi-interpretation.md` với input/output từng lớp, yêu cầu đủ dữ liệu, quan hệ ngày/giờ xem với Nhật chủ, lý do/nguồn/version và ranh giới với nạp âm MVP.
+  - [x] 9.4 Đặc tả Thập thần bằng quan hệ có hướng và âm dương với Nhật chủ, fixture đủ tổ hợp; không tự gán cát/hung chỉ từ tên Thập thần.
+  - [x] 9.5 Đặc tả Dụng thần theo phương pháp xác nhận, tàng can/tháng tiết khí/vượng suy và các ngoại lệ; không xác định bằng đếm hành thiếu hoặc nạp âm năm sinh.
+  - [x] 9.6 Định nghĩa ứng xử khi có nhiều lá số ứng viên, phương pháp chưa đủ nguồn hoặc kết quả khác giữa trường phái; không trả kết luận chắc chắn từ đầu vào bất định.
+  - [x] 9.7 Soạn fixture độc lập có nguồn và tiêu chí nghiệm thu, sau đó tạo `tasks-bazi-interpretation.md` theo quy trình task áp dụng; dừng ở tài liệu/task, chưa viết mã luận giải P4.

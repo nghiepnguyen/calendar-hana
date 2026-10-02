@@ -1,33 +1,379 @@
-.section {
-  display: grid;
-  gap: calc(12px * var(--ui-scale));
-  min-width: 0;
-  border-top: 1px solid var(--separator);
-  padding-top: calc(16px * var(--ui-scale));
+/* Ô Tứ Trụ trong khối Phong thủy cá nhân; màu ngũ hành (--el) lấy từ AlmanacPanel.module.css. */
+
+.candidate {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--ui-scale));
 }
-.section h3,
-.section h4,
-.section p {
+
+.candidateTitle {
   margin: 0;
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
 }
+
 .pillars {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: calc(8px * var(--ui-scale));
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
 .pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
   min-width: 0;
-  padding: calc(10px * var(--ui-scale));
+  padding: calc(12px * var(--ui-scale)) calc(6px * var(--ui-scale));
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--fill), transparent 140%);
+  box-shadow: inset 0 0 0 1px var(--separator-soft, var(--separator));
   text-align: center;
-  border: 1px solid var(--separator);
-  border-radius: var(--radius);
-  background: var(--glass-strong);
+  animation: pillar-in 0.7s cubic-bezier(0.32, 0.72, 0, 1) both;
+  animation-delay: calc(var(--j, 0) * 80ms + 420ms);
 }
-.muted {
+
+.pillarLabel {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Can trên, Chi dưới: mỗi chữ một dòng như lá số. */
+.pillarName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(2px * var(--ui-scale));
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: calc(clamp(18px, 4.6cqi, 26px) * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.glyph {
+  color: var(--el);
+}
+
+.pillarElements {
+  color: var(--text-muted);
+  font-size: calc(11.5px * var(--ui-scale));
+}
+
+.meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(10px * var(--ui-scale));
+}
+
+.empty p {
+  margin: 0;
   color: var(--text-muted);
 }
-@media (max-width: 420px) {
-  .pillars {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+/* Trụ Ngày chứa Nhật Nguyên: viền theo màu hành của Can ngày. */
+.dayPillar {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--el) 14%, transparent), transparent 120%),
+    var(--fill);
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in srgb, var(--el) 55%, transparent),
+    0 10px 24px -16px var(--el);
+}
+
+.dayPillar .pillarLabel {
+  color: var(--el);
+}
+
+/* ---------- Nhật Nguyên & ngũ hành ---------- */
+
+.insight {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: calc(6px * var(--ui-scale));
+}
+
+@container (min-width: 560px) {
+  .insight {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   }
+}
+
+.dayMaster,
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--ui-scale));
+  min-width: 0;
+  padding: calc(14px * var(--ui-scale));
+  border-radius: 16px;
+  background: var(--fill);
+}
+
+.dayMaster {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--el) 16%, transparent), transparent 70%),
+    var(--fill);
+}
+
+/* Quầng sáng góc theo màu hành, cùng kiểu banner Lịch vạn niên. */
+.dayMaster::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -45%;
+  right: -20%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--el) 22%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.insightLabel {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dayMasterName {
+  margin: 0;
+  color: var(--el);
+  font-family: var(--font-display);
+  font-size: calc(clamp(30px, 7cqi, 40px) * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.dayMasterMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+}
+
+.polarity {
+  display: inline-flex;
+  align-items: center;
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--glass-strong);
+  font-size: calc(13px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.insightNote {
+  color: var(--text-muted);
+  font-size: calc(12px * var(--ui-scale));
+  line-height: 1.45;
+}
+
+/* ---------- Độ vượng suy ---------- */
+
+.strength {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--ui-scale));
+  margin-top: calc(4px * var(--ui-scale));
+  padding-top: calc(12px * var(--ui-scale));
+  border-top: 1px dashed color-mix(in srgb, var(--el) 30%, var(--separator));
+}
+
+.strengthHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: calc(10px * var(--ui-scale));
+  margin: 0;
+}
+
+.strengthPill {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: calc(4px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-700);
+}
+
+.strong {
+  color: var(--el);
+  background: color-mix(in srgb, var(--el) 16%, var(--glass-strong));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--el) 35%, transparent);
+}
+
+.weak {
+  color: var(--text);
+  background: var(--glass-strong);
+  box-shadow: inset 0 0 0 1px var(--separator);
+}
+
+.strengthScore {
+  color: var(--text-muted);
+  font-size: calc(14px * var(--ui-scale));
+  font-variant-numeric: tabular-nums;
+}
+
+.strengthScore strong {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: calc(26px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  letter-spacing: -0.02em;
+}
+
+.supportList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(5px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.supportChip {
+  padding: calc(3px * var(--ui-scale)) calc(9px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: var(--glass-strong);
+  font-size: calc(12px * var(--ui-scale));
+}
+
+.supportChip strong {
+  color: var(--el);
+  font-variant-numeric: tabular-nums;
+}
+
+.elementList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: calc(6px * var(--ui-scale));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.elementItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(2px * var(--ui-scale));
+  min-width: 0;
+  padding: calc(10px * var(--ui-scale)) calc(4px * var(--ui-scale)) calc(9px * var(--ui-scale));
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--el) 13%, transparent), transparent),
+    var(--glass-strong);
+  text-align: center;
+  animation: pillar-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+  animation-delay: calc(var(--j, 0) * 60ms + 560ms);
+}
+
+.elementOwn {
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--el) 55%, transparent);
+}
+
+.elementNone {
+  background: var(--glass-strong);
+}
+
+.elementNone .elementIcon,
+.elementNone .elementCount,
+.elementNone .elementName {
+  color: var(--text-muted);
+}
+
+.elementIcon {
+  display: grid;
+  color: var(--el);
+}
+
+.elementCount {
+  font-family: var(--font-display);
+  font-size: calc(24px * var(--ui-scale));
+  font-weight: var(--fw-700);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.elementName {
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.elementPct {
+  color: var(--text-muted);
+  font-size: calc(11px * var(--ui-scale));
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mỗi chữ một vạch nhỏ, không có rãnh nền: số lượng nhìn được bằng mắt. */
+.pips {
+  display: flex;
+  gap: 2px;
+  min-height: 4px;
+  margin-top: calc(4px * var(--ui-scale));
+}
+
+.pip {
+  width: calc(8px * var(--ui-scale));
+  height: 4px;
+  border-radius: 2px;
+  background: var(--el);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementItem {
+    animation: none;
+  }
+}
+
+@keyframes pillar-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar {
+    animation: none;
+  }
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(8px * var(--ui-scale));
 }

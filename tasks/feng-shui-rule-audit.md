@@ -68,8 +68,8 @@ Metadata đầy đủ cho **từng ID** nằm trong registry: `version`, `scope`
 | `birth.solar-term-angles` | verified, v1.1 task 6 | Chuỗi mở tháng 315° + 30k; Thanh Minh 15°. | Không thay API tiết khí theo ngày của lịch chung. |
 | `birth.term-instant-engine` | verified tại task 6 | Astronomy Engine 2.1.19 đạt max 19,926 giây trên 12 mốc so JPL DE441 quantity 31. | Task 7 phải mở rộng regression nhiều năm và đóng gói offline. |
 | `birth.zi-policy` | verified tại task 6 | Chốt `splitZi` mặc định, `dayStartsAt23` opt-in và tách ngày trụ ngày/ngày lấy Can giờ. | Quy ước sản phẩm, không thay giờ chung MVP; task 7 triển khai đủ 24h. |
-| `interpretation.thap-than` | pending | Nguồn quan hệ chưa phải đặc tả luận giải. | Task 9 chốt Nhật chủ/âm dương, ma trận và ý nghĩa; không gán cát/hung theo tên. |
-| `interpretation.dung-than` | pending | Attachment không cung cấp phương pháp xác định. | Task 9 cần tàng can/mùa/vượng suy/trường phái và uncertainty; không tính từ đếm hành thiếu. |
+| `interpretation.thap-than` | pending triển khai | PRD P4 v1 đã chốt Nhật chủ, âm dương và ma trận 10×10; engine chưa có. | Fixture độc lập đã có; task P4a phải đạt đủ 100 tổ hợp và không gán cát/hung theo tên. |
+| `interpretation.dung-than` | pending theo rule | PRD P4 v1 chọn Tử Bình tháng lệnh–cách cục; chưa có bảng quyết định hai review. | Chỉ rule có passage/fixture/review mới được verified; không tính từ đếm hành thiếu hoặc nạp âm. |
 
 ## 4. Bằng chứng so sánh trực tiếp và cách sửa
 
@@ -164,6 +164,19 @@ Các quy tắc khác giữ version/status P0. Tổng hiện tại: **27 mục, 1
 
 Nghiệm thu: **360 test annual + 17 test registry đạt**; toàn dự án **879 test / 75 file** đạt; typecheck/lint/format/build đạt. Test bao phủ fixture đầy đủ, tất cả 54 tổ hợp purpose/role và 4 kiểu lỗi readiness cho cả 5 nhóm annual. Không thay lịch chung, UI, dữ liệu lưu trữ hoặc dependency. npm audit bị lỗi DNS tới registry; không kết luận dependency đã sạch lỗ hổng. Chi tiết command/cảnh báo và giới hạn nghiệm thu ở PRD mục 10. Task 4 chưa triển khai.
 
+## 8.1. Bổ sung task 9 — đặc tả luận giải P4 (02/10/2026)
+
+`prd-bazi-interpretation.md` chọn Tử Bình lấy Nhật can làm Nhật chủ và tháng lệnh làm trục. Quan hệ
+Thập thần được đóng thành ma trận 10×10 theo sinh/khắc có hướng và âm dương; tàng can đóng thành
+bảng 12 Chi/28 Can có thứ tự nhưng không có tỷ trọng. Bằng chứng vượng/suy là danh sách có nguồn,
+không phải điểm số.
+
+Dụng thần tiếp tục pending ở cấp runtime. PRD đã chốt phương pháp tháng lệnh–cách cục và cấm phép
+đếm hành thiếu, nhưng từng nhánh thành–bại/cứu ứng chỉ được verified sau khi có passage, fixture
+positive/near-miss/conflict và hai review nội dung. P4a Nhật chủ/Thập thần có thể triển khai độc lập;
+P4c không được mở theo trạng thái của P4a. Fixture và task triển khai nằm ở
+`fixtures/bazi-interpretation.v1.json` và `tasks-bazi-interpretation.md`.
+
 ## 9. Bổ sung task 5 — quan hệ cá nhân mở rộng P2 (01/10/2026)
 
 `personal.can-xung@1.0.0` chuyển từ pending sang verified trong phạm vi PRD
@@ -199,3 +212,16 @@ Các rule `birth.historical-timezone`, `birth.solar-time-engine`, `birth.term-in
 chuỗi 315° + 30k. Đây là gate thiết kế cho task 7, không tuyên bố engine/schema/UI đã triển khai.
 Registry hiện có **27 mục: 19 verified / 7 pending / 1 rejected**. Chi tiết benchmark và giới hạn ở
 `tasks/bazi-engine-evaluation.md` và `tasks/validation-personal-feng-shui-task-6.md`.
+
+## 11. Bổ sung Nhật Nguyên và thống kê ngũ hành (02/10/2026)
+
+Theo `bazi_calculation_engine_spec.md` và PRD `prd-bazi-interpretation.md` v1.1.0 mục 6.1/6.1a:
+
+- `interpretation.day-master@1.0.0` verified: Can trụ Ngày của từng candidate P3, hành theo
+  `CAN_ELEMENTS`, chỉ số chẵn Dương/lẻ Âm.
+- `interpretation.element-count@1.0.0` verified: đếm 4 Can và hành chính 4 Chi, tổng 8, chỉ mô tả.
+- `interpretation.strength-score@1.0.0` verified sau khi sửa (PRD v1.2.0 mục 6.4a): tài liệu gốc cho
+  trọng số cộng 105%, không nói Can ngày và có nhánh ngưỡng “hoặc” chưa định nghĩa. Bản sửa lấy Chi
+  tháng 35 (trong khoảng 30–40) để 7 vị trí cộng 100, loại Can ngày, ngưỡng ≥ 50 là Thân Vượng.
+- Ví dụ đầu ra mục 2.2 của tài liệu bị từ chối: theo công thức JDN của chính tài liệu, 15/08/1990 là
+  Nhâm Tý (JDN 2448119), giờ Thìn là Giáp Thìn. Regression nằm ở `shared/bazi/pillars.test.ts`.

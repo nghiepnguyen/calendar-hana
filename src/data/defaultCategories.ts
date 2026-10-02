@@ -49,6 +49,7 @@ export function createDefaultSettings(now = new Date().toISOString()): Settings 
     birthTimezoneSource: null,
     birthConfirmedOffsetMinutes: null,
     birthZiPolicy: 'splitZi',
+    birthGender: null,
     weekStartsOn: 1,
     showHolidays: true,
     showAuspicious: true,
