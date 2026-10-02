@@ -29,24 +29,21 @@
   }
 }
 
-/* Vỏ ngoài: khay nhạt có viền mảnh; lõi: tấm kính có ánh sáng viền trên. */
+/* Hai phần chính dùng cùng ngôn ngữ tile với các ô trong Lịch vạn niên. */
 .chart,
 .insight {
-  padding: calc(5px * var(--ui-scale));
-  border-radius: 22px;
-  background: var(--fill);
-  box-shadow: inset 0 0 0 1px var(--separator-soft);
+  padding: calc(14px * var(--ui-scale));
+  border-radius: var(--tile-radius);
+  background: var(--glass-strong);
+  box-shadow:
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
 }
 
 .chartCore,
 .insightCore {
   height: 100%;
-  border-radius: 17px;
-  background: var(--glass-strong);
-  box-shadow:
-    var(--glass-highlight),
-    0 1px 2px color-mix(in srgb, var(--text) 4%, transparent),
-    0 12px 32px -22px color-mix(in srgb, var(--text) 30%, transparent);
+  min-width: 0;
 }
 
 /* ---------- Lá số ---------- */
@@ -56,7 +53,7 @@
   flex-direction: column;
   justify-content: center;
   gap: calc(4px * var(--ui-scale));
-  padding: calc(18px * var(--ui-scale)) calc(6px * var(--ui-scale)) calc(8px * var(--ui-scale));
+  padding: calc(4px * var(--ui-scale)) 0 0;
 }
 
 .pillars {

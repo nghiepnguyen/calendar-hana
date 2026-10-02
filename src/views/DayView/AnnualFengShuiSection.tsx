@@ -9,7 +9,9 @@ import {
 } from '@phosphor-icons/react'
 import { isValidBirthDate } from '@shared/birthInfo'
 import { assessAnnualFengShui, type AnnualRuleResult } from '@shared/personalFengShui/annual'
+import { assessPersonalAnnualAfflictions } from '@shared/personalFengShui/annual/afflictions'
 import { calculateSaoHan } from '@shared/personalFengShui/annual/saoHan'
+import { CHI } from '@shared/lunar/canChi'
 import {
   createRuleRegistry,
   FENG_SHUI_RULES,
@@ -37,6 +39,13 @@ const PALACES = {
   lucHoangOc: 'Lục Hoang Ốc',
 }
 const KINDS = { than: 'Thân', the: 'Thê', tu: 'Tử', suc: 'Súc' }
+const THAI_TUE_LABELS = {
+  truc: 'Trực Thái Tuế',
+  xung: 'Xung Thái Tuế (Tuế Phá)',
+  hinh: 'Hình Thái Tuế',
+  hai: 'Hại Thái Tuế',
+  pha: 'Phá Thái Tuế',
+} as const
 function valueLabel(result: AnnualRuleResult) {
   if (result.status !== 'applies') return 'Chưa có dữ liệu'
   if (result.ruleId === 'annual.hoang-oc') return PALACES[result.value.palaceId]
@@ -166,6 +175,10 @@ export function AnnualFengShuiSection({
   }, [rules])
   const saoHan =
     context.status === 'applies' ? calculateSaoHan(context.nominalAge, annualView) : null
+  const afflictions = useMemo(
+    () => (birthDate ? assessPersonalAnnualAfflictions(birthDate, date) : null),
+    [birthDate, date],
+  )
   const sao = saoReady ? saoHan?.sao : undefined
   const hanTuoi = hanReady ? saoHan?.han : undefined
   const resultFor = (assessment: typeof assessments.general, ruleId: keyof typeof FACTOR_NAMES) =>
@@ -228,56 +241,142 @@ export function AnnualFengShuiSection({
       aside={context.status === 'applies' ? `Phạm ${hitCount}/3 hạn` : undefined}
     >
       <Collapsible summary={summary}>
-        <div className={styles.annualMeta}>
-          <p className={styles.annualContext}>
-            {context.status === 'applies'
-              ? `Năm âm lịch ${context.viewLunarYear}, tuổi mụ ${context.nominalAge}`
-              : context.reason}
-          </p>
-          <fieldset className={styles.genderPicker}>
-            <legend>Nhóm xem</legend>
-            {(['male', 'female'] as const).map((value) => (
-              <label key={value}>
-                <input
-                  type="radio"
-                  name="annual-view"
-                  value={value}
-                  checked={annualView === value}
-                  onChange={() => setAnnualView(value)}
+        <div className={styles.annualSurface}>
+          <div className={styles.annualMeta}>
+            <div>
+              <p className={styles.annualContext}>
+                {context.status === 'applies'
+                  ? `Năm âm lịch ${context.viewLunarYear}, tuổi mụ ${context.nominalAge}`
+                  : context.reason}
+              </p>
+            </div>
+            <fieldset className={styles.genderPicker}>
+              <legend>Nhóm xem</legend>
+              {(['male', 'female'] as const).map((value) => (
+                <label key={value}>
+                  <input
+                    type="radio"
+                    name="annual-view"
+                    value={value}
+                    checked={annualView === value}
+                    onChange={() => setAnnualView(value)}
+                  />
+                  {value === 'male' ? 'Nam mạng' : 'Nữ mạng'}
+                </label>
+              ))}
+            </fieldset>
+          </div>
+
+          <section className={styles.annualCluster} aria-label="Yếu tố vận hạn">
+            <div className={styles.annualSectionHead}>
+              <h4>Yếu tố vận hạn</h4>
+            </div>
+            <ul className={styles.featureGrid}>
+              <FeatureCell
+                label="Sao chiếu mệnh"
+                value={sao}
+                icon={Planet}
+                onExplain={explainSao}
+              />
+              {hanReady ? (
+                <FeatureCell label="Hạn tuổi (Năm)" value={hanTuoi} icon={HourglassMedium} />
+              ) : null}
+            </ul>
+            <ul className={styles.hanGrid}>
+              {han.map(({ ruleId, assessment }, i) => (
+                <HanCell
+                  key={ruleId}
+                  index={i}
+                  label={FACTOR_NAMES[ruleId]}
+                  result={resultFor(assessment, ruleId)}
+                  onExplain={explainHan(ruleId)}
                 />
-                {value === 'male' ? 'Nam mạng' : 'Nữ mạng'}
-              </label>
-            ))}
-          </fieldset>
-        </div>
-        <h4 className={styles.groupLabel}>Yếu tố vận hạn</h4>
-        <ul className={styles.featureGrid}>
-          <FeatureCell label="Sao chiếu mệnh" value={sao} icon={Planet} onExplain={explainSao} />
-          {hanReady ? (
-            <FeatureCell label="Hạn tuổi (Năm)" value={hanTuoi} icon={HourglassMedium} />
-          ) : null}
-        </ul>
-        <ul className={styles.hanGrid}>
-          {han.map(({ ruleId, assessment }, i) => (
-            <HanCell
-              key={ruleId}
-              index={i}
-              label={FACTOR_NAMES[ruleId]}
-              result={resultFor(assessment, ruleId)}
-              onExplain={explainHan(ruleId)}
-            />
-          ))}
-        </ul>
-        <p className={styles.annualNotice}>
-          {annualView === 'male' ? 'Đang xem theo Nam mạng.' : 'Đang xem theo Nữ mạng.'}{' '}
-          {savedGender ? null : (
+              ))}
+            </ul>
+          </section>
+
+          {afflictions?.status === 'ready' ? (
             <>
-              <a href="/settings#birth-info">Lưu giới tính trong hồ sơ sinh</a> để không phải chọn
-              lại.{' '}
+              <section className={styles.afflictionSection} aria-label="Phạm theo tuổi">
+                <div className={styles.annualSectionHead}>
+                  <h4>Phạm theo tuổi</h4>
+                  <p>
+                    Tuổi {CHI[afflictions.birthYearChi]} gặp năm {CHI[afflictions.viewYearChi]}.
+                  </p>
+                </div>
+                <ul className={styles.afflictionList}>
+                  {afflictions.thaiTue.length ? (
+                    afflictions.thaiTue.map((kind) => (
+                      <li className={styles.afflictionHit} key={kind}>
+                        <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                        {kind === 'hinh' && afflictions.birthYearChi === afflictions.viewYearChi
+                          ? 'Tự Hình Thái Tuế'
+                          : THAI_TUE_LABELS[kind]}
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                      Không phạm Thái Tuế theo các quan hệ đang xét
+                    </li>
+                  )}
+                  {!afflictions.tuePha ? (
+                    <li>
+                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                      Không phạm Tuế Phá
+                    </li>
+                  ) : null}
+                  <li className={afflictions.tamSat.hit ? styles.afflictionHit : undefined}>
+                    {afflictions.tamSat.hit ? (
+                      <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                    ) : (
+                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                    )}
+                    {afflictions.tamSat.hit ? 'Phạm Tam Sát' : 'Không phạm Tam Sát'}
+                  </li>
+                </ul>
+              </section>
+              <section className={styles.afflictionSection} aria-label="Sát Chủ của ngày">
+                <div className={styles.annualSectionHead}>
+                  <h4>Sát Chủ của ngày</h4>
+                  <p>
+                    Tháng {afflictions.satChu.lunarMonth} âm lịch · ngày{' '}
+                    {CHI[afflictions.satChu.dayBranch]}; tính theo ngày, không theo tuổi.
+                  </p>
+                </div>
+                <ul className={styles.afflictionList}>
+                  {afflictions.satChu.am || afflictions.satChu.duong ? (
+                    <>
+                      {afflictions.satChu.am ? (
+                        <li className={styles.afflictionHit}>
+                          <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                          Sát Chủ Âm
+                        </li>
+                      ) : null}
+                      {afflictions.satChu.duong ? (
+                        <li className={styles.afflictionHit}>
+                          <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                          Sát Chủ Dương
+                        </li>
+                      ) : null}
+                    </>
+                  ) : (
+                    <li>
+                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                      Không phạm Sát Chủ Âm hoặc Dương
+                    </li>
+                  )}
+                </ul>
+              </section>
             </>
-          )}
-          {hanReady ? null : 'Hạn tuổi tạm ẩn trong lúc kiểm chứng nguồn.'}
-        </p>
+          ) : null}
+          {!savedGender ? (
+            <p className={styles.annualProfileHint}>
+              <a href="/settings#birth-info">Lưu giới tính trong hồ sơ sinh</a> để không phải chọn
+              lại.
+            </p>
+          ) : null}
+        </div>
       </Collapsible>
     </Tile>
   )

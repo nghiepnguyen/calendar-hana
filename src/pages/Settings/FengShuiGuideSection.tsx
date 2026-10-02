@@ -30,8 +30,13 @@ export function FengShuiGuideSection() {
           Nhâm và Đinh với Quý. Kết quả này là lý do bổ sung, không làm đổi kết luận ngày.
         </p>
         <p>
-          Thái Tuế, Tuế Phá, Tam Sát và Sát Chủ cá nhân chưa đủ căn cứ để tính. Thụ Tử và Sát Chủ
-          vẫn là sao chung của Lịch vạn niên, không được tính lại như sao cá nhân.
+          Phạm Thái Tuế so chi tuổi với chi năm theo năm quan hệ Trực, Xung, Hình, Hại và Phá. Tuế
+          Phá mặc định là Lục Xung; khi trùng Xung Thái Tuế, giao diện chỉ trình bày một sự kiện.
+          Tam Sát lấy nhóm Tam Hợp của tuổi và bộ ba chi năm kỵ tương ứng.
+        </p>
+        <p>
+          Sát Chủ là quy tắc chung của ngày theo tháng âm lịch và chi ngày, không phải hạn theo
+          tuổi. Tháng nhuận dùng bảng của tháng chính.
         </p>
       </details>
       <details>
@@ -43,6 +48,11 @@ export function FengShuiGuideSection() {
         <p>
           Kim Lâu chỉ xét cô dâu khi cưới hỏi hoặc gia chủ khi xây nhà. Hoang Ốc chỉ xét gia chủ xây
           nhà. Tam Tai cần xác nhận người đứng chính khi khai trương.
+        </p>
+        <p>
+          Theo quan niệm lịch pháp truyền thống; chỉ dùng để tham khảo. Bảng Sát Chủ là quy tắc dân
+          gian, không khẳng định ngày được xét chắc chắn gây bất lợi. Nhóm Nam mạng hoặc Nữ mạng chỉ
+          là lựa chọn cách xem sao hạn.
         </p>
       </details>
       <details>

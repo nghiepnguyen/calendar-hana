@@ -24,6 +24,28 @@ afterEach(() => {
 })
 
 describe('personal panel features', () => {
+  it('shows personal Thái Tuế and Tam Sát results inside the annual section', () => {
+    at('10:00')
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
+    const annual = screen.getByRole('region', { name: 'Hạn theo năm' })
+    const afflictions = within(annual).getByRole('region', { name: 'Phạm theo tuổi' })
+    expect(afflictions).toHaveTextContent('Trực Thái Tuế')
+    expect(afflictions).toHaveTextContent('Tự Hình Thái Tuế')
+    expect(afflictions).toHaveTextContent('Không phạm Tuế Phá')
+    expect(afflictions).toHaveTextContent('Không phạm Tam Sát')
+  })
+
+  it('shows Sát Chủ separately as a day rule rather than an age rule', () => {
+    at('10:00')
+    render(<PersonalFengShuiPanel date="2023-07-21" settings={settings()} />)
+    const satChu = screen.getByRole('region', { name: 'Sát Chủ của ngày' })
+    expect(satChu).toHaveTextContent('Sát Chủ Dương')
+    expect(satChu).toHaveTextContent('tính theo ngày, không theo tuổi')
+    expect(
+      within(screen.getByRole('region', { name: 'Phạm theo tuổi' })).queryByText(/Sát Chủ/),
+    ).not.toBeInTheDocument()
+  })
+
   it('uses the saved gender for the annual view', () => {
     at('10:00')
     render(
@@ -123,7 +145,14 @@ describe('personal panel features', () => {
     const annual = screen.getByRole('region', { name: 'Hạn theo năm' })
     expect(within(annual).getByText('La Hầu')).toBeInTheDocument()
     expect(within(annual).queryByText('Hạn tuổi (Năm)')).not.toBeInTheDocument()
-    expect(annual).toHaveTextContent('Hạn tuổi tạm ẩn trong lúc kiểm chứng nguồn.')
+    expect(annual).not.toHaveTextContent('Hạn tuổi tạm ẩn trong lúc kiểm chứng nguồn.')
+    expect(annual).not.toHaveTextContent('Đang xem theo Nam mạng.')
+    expect(annual).not.toHaveTextContent(
+      'Theo quan niệm lịch pháp truyền thống; chỉ dùng để tham khảo.',
+    )
+    expect(annual).not.toHaveTextContent(
+      'Bảng Sát Chủ dân gian; không khẳng định ngày này chắc chắn gây bất lợi.',
+    )
   })
 
   it('explains the star source without a cát/hung label', async () => {
