@@ -403,6 +403,10 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.featureGrid > :only-child {
+  grid-column: 1 / -1;
+}
+
 .featureCell {
   position: relative;
   isolation: isolate;
@@ -434,6 +438,13 @@
     transparent
   );
   pointer-events: none;
+}
+
+.featureHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(8px * var(--ui-scale));
 }
 
 .featureLabel {

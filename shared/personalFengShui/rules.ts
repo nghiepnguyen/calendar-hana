@@ -90,6 +90,11 @@ export const RULE_SOURCES: Readonly<Record<string, RuleSource>> = Object.freeze(
     reference: 'tasks/prd-birth-time-normalization.md',
     locator: 'v1.0.0; tasks/fixtures/bazi-engine-benchmark.v1.json',
   }),
+  yuXiaJi: Object.freeze({
+    reference: 'https://zh.wikisource.org/zh-hant/玉匣記',
+    locator:
+      '理論吉凶日篇, 九耀星君值男女命限圖: thứ tự 9 sao Nam (La Hầu 1) và Nữ (Kế Đô 1) theo tuổi',
+  }),
   baziInterpretationSpec: Object.freeze({
     reference: 'tasks/prd-bazi-interpretation.md',
     locator: 'v1.2.0: 6.1 Nhật chủ; 6.1a thống kê ngũ hành 8 chữ; 6.4a điểm trọng số',
@@ -368,6 +373,30 @@ export const FENG_SHUI_RULES: readonly RuleDefinition[] = Object.freeze([
     ['owner'],
     'Reviewed anchors 10–60 and six-palace unit counting for ages 10–69 only; other ages unsupported. Construction eligibility is product policy; no extrapolation or harm prediction.',
     '1.1.0',
+  ),
+  definition(
+    'annual.sao-chieu-menh',
+    'annual',
+    'verified',
+    ['yuXiaJi', 'localCalendar'],
+    ['nominalAge', 'gender'],
+    'Lunar New Year (tuổi mụ)',
+    'Vietnamese lunar years; tuổi mụ chia 9',
+    ['general'],
+    ['self'],
+    'Name of the governing star only. The source gives a gender-dependent verse per star, not a fixed cát/hung class; the popular 3 cát/3 hung/3 trung split has no primary source and conflicts with it (Thủy, Hỏa, Thổ), so no label is shown.',
+  ),
+  definition(
+    'annual.han-tuoi',
+    'annual',
+    'pending',
+    ['localCalendar'],
+    ['nominalAge', 'gender'],
+    'Lunar New Year (tuổi mụ)',
+    'Vietnamese lunar years',
+    ['general'],
+    ['self'],
+    'No primary source found. Published folk tables use a 9-year cycle where ages ending in 0 repeat the previous hạn (e.g. Nam 36 Huỳnh Tuyền, 37 Tam Kheo) and include Diêm Vương; the former tuổi mụ mod 8 calculation contradicts them. Hidden until sourced.',
   ),
   definition(
     'annual.tam-tai',

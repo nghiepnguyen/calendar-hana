@@ -111,8 +111,28 @@ describe('personal panel features', () => {
     at('10:00')
     render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
     const annual = screen.getByRole('region', { name: 'Hạn theo năm' })
-    expect(
-      within(annual).getByRole('button', { name: /Sao La Hầu, hạn Địa Võng/ }),
-    ).toHaveAttribute('aria-expanded', 'false')
+    expect(within(annual).getByRole('button', { name: /^Sao La Hầu/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    )
+  })
+
+  it('hides Hạn tuổi until its rule is sourced, keeping the sourced star name', () => {
+    at('10:00')
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
+    const annual = screen.getByRole('region', { name: 'Hạn theo năm' })
+    expect(within(annual).getByText('La Hầu')).toBeInTheDocument()
+    expect(within(annual).queryByText('Hạn tuổi (Năm)')).not.toBeInTheDocument()
+    expect(annual).toHaveTextContent('Hạn tuổi tạm ẩn trong lúc kiểm chứng nguồn.')
+  })
+
+  it('explains the star source without a cát/hung label', async () => {
+    at('10:00')
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
+    await user.click(screen.getByRole('button', { name: 'Giải thích Sao chiếu mệnh' }))
+    const dialog = screen.getByRole('dialog', { name: 'Sao La Hầu' })
+    expect(dialog).toHaveTextContent('Ngọc Hạp Ký')
+    expect(dialog).not.toHaveTextContent(/^Xấu|Hung tinh/)
   })
 })

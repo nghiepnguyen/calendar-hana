@@ -225,3 +225,15 @@ Theo `bazi_calculation_engine_spec.md` và PRD `prd-bazi-interpretation.md` v1.1
   tháng 35 (trong khoảng 30–40) để 7 vị trí cộng 100, loại Can ngày, ngưỡng ≥ 50 là Thân Vượng.
 - Ví dụ đầu ra mục 2.2 của tài liệu bị từ chối: theo công thức JDN của chính tài liệu, 15/08/1990 là
   Nhâm Tý (JDN 2448119), giờ Thìn là Giáp Thìn. Regression nằm ở `shared/bazi/pillars.test.ts`.
+
+## 12. Sao chiếu mệnh và Hạn tuổi (02/10/2026)
+
+- `annual.sao-chieu-menh@1.0.0` verified, chỉ cho tên sao. Nguồn gốc: 《玉匣記》, mục 理論吉凶日篇 /
+  九耀星君值男女命限圖 (Wikisource). Thứ tự Nam bắt đầu La Hầu ở tuổi 1, Nữ bắt đầu Kế Đô; tuổi mụ chia
+  9. Bảng trong `saoHan.ts` khớp cả hai giới.
+- Không gắn nhãn cát/hung: sách gốc cho mỗi sao một bài thơ phụ thuộc giới (ví dụ 太陽 “男子重重喜，女人有
+  災殃”), không có nhóm cố định. Cách chia phổ biến 3 cát/3 hung/3 trung không có nguồn gốc và mâu thuẫn
+  với sách gốc ở Thủy, Hỏa, Thổ.
+- `annual.han-tuoi` pending và bị ẩn trên UI. Không tìm được sách gốc; các bảng dân gian đã công bố dùng
+  chu kỳ 9 năm, tuổi tròn chục lặp hạn năm trước (Nam 36 Huỳnh Tuyền, 37 Tam Kheo) và có Diêm Vương. Cách
+  tính cũ `tuổi mụ mod 8` mâu thuẫn với các bảng này (tuổi mụ 37 ra Địa Võng).

@@ -10,7 +10,11 @@ import {
 import { isValidBirthDate } from '@shared/birthInfo'
 import { assessAnnualFengShui, type AnnualRuleResult } from '@shared/personalFengShui/annual'
 import { calculateSaoHan } from '@shared/personalFengShui/annual/saoHan'
-import { FENG_SHUI_RULES, type RuleDefinition } from '@shared/personalFengShui/rules'
+import {
+  createRuleRegistry,
+  FENG_SHUI_RULES,
+  type RuleDefinition,
+} from '@shared/personalFengShui/rules'
 import type { ExplainItem } from './AlmanacExplain'
 import { Tile } from './AlmanacPanel'
 import { HAN_MEANING } from './personalExplain'
@@ -46,16 +50,21 @@ function FeatureCell({
   label,
   value,
   icon: CellIcon,
+  onExplain,
 }: {
   label: string
   value?: string
   icon: typeof Planet
+  onExplain?: () => void
 }) {
   return (
     <li className={styles.featureCell}>
-      <span className={styles.featureLabel}>
-        <CellIcon size={iconSize(15)} weight="duotone" aria-hidden="true" />
-        {label}
+      <span className={styles.featureHead}>
+        <span className={styles.featureLabel}>
+          <CellIcon size={iconSize(15)} weight="duotone" aria-hidden="true" />
+          {label}
+        </span>
+        {onExplain ? <InfoButton label={label} onClick={onExplain} /> : null}
       </span>
       <span className={value ? styles.featureValue : styles.featureEmpty}>
         {value ?? 'Chưa có dữ liệu'}
@@ -147,8 +156,18 @@ export function AnnualFengShuiSection({
     }
   }, [date, birthDate, rules])
   const context = assessments.general.context
+  // Mỗi phần có gate riêng: Cửu Diệu có nguồn Ngọc Hạp Ký; Hạn tuổi chưa có nguồn nên ẩn.
+  const { saoReady, hanReady } = useMemo(() => {
+    const registry = createRuleRegistry(rules)
+    return {
+      saoReady: registry.getReadiness('annual', ['annual.sao-chieu-menh']).status === 'ready',
+      hanReady: registry.getReadiness('annual', ['annual.han-tuoi']).status === 'ready',
+    }
+  }, [rules])
   const saoHan =
     context.status === 'applies' ? calculateSaoHan(context.nominalAge, annualView) : null
+  const sao = saoReady ? saoHan?.sao : undefined
+  const hanTuoi = hanReady ? saoHan?.han : undefined
   const resultFor = (assessment: typeof assessments.general, ruleId: keyof typeof FACTOR_NAMES) =>
     assessment.results.find((result) => result.ruleId === ruleId)
   const han = [
@@ -179,10 +198,25 @@ export function AnnualFengShuiSection({
   }
   const summary =
     context.status === 'applies'
-      ? saoHan
-        ? `Sao ${saoHan.sao}, hạn ${saoHan.han}`
+      ? sao
+        ? `Sao ${sao}${hanTuoi ? `, hạn ${hanTuoi}` : ''}`
         : `Phạm ${hitCount}/3 hạn`
       : context.reason
+  const explainSao =
+    sao && saoHan && onExplain
+      ? () =>
+          onExplain({
+            title: `Sao ${sao}`,
+            isGood: true,
+            verdict: { label: annualView === 'male' ? 'Nam mạng' : 'Nữ mạng', tone: 'neutral' },
+            meaning:
+              'Theo bảng Cửu Diệu trong Ngọc Hạp Ký (玉匣記): lấy tuổi mụ chia 9, Nam bắt đầu từ La Hầu, Nữ bắt đầu từ Kế Đô.',
+            reasons: [
+              `Tuổi mụ ${saoHan.nominalAge} chia 9 dư ${saoHan.saoRemainder}.`,
+              'Chưa gắn nhãn cát hay hung: sách gốc mô tả mỗi sao khác nhau theo Nam mạng và Nữ mạng, không chia nhóm cố định.',
+            ],
+          })
+      : undefined
 
   return (
     <Tile
@@ -218,8 +252,10 @@ export function AnnualFengShuiSection({
         </div>
         <h4 className={styles.groupLabel}>Yếu tố vận hạn</h4>
         <ul className={styles.featureGrid}>
-          <FeatureCell label="Sao chiếu mệnh" value={saoHan?.sao} icon={Planet} />
-          <FeatureCell label="Hạn tuổi (Năm)" value={saoHan?.han} icon={HourglassMedium} />
+          <FeatureCell label="Sao chiếu mệnh" value={sao} icon={Planet} onExplain={explainSao} />
+          {hanReady ? (
+            <FeatureCell label="Hạn tuổi (Năm)" value={hanTuoi} icon={HourglassMedium} />
+          ) : null}
         </ul>
         <ul className={styles.hanGrid}>
           {han.map(({ ruleId, assessment }, i) => (
@@ -240,7 +276,7 @@ export function AnnualFengShuiSection({
               lại.{' '}
             </>
           )}
-          Bộ sao chiếu mệnh và lời khuyên theo giới tính đang được bổ sung.
+          {hanReady ? null : 'Hạn tuổi tạm ẩn trong lúc kiểm chứng nguồn.'}
         </p>
       </Collapsible>
     </Tile>
