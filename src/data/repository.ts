@@ -35,7 +35,11 @@ export interface CalendarRepository {
 
   getSettings(): Promise<Settings>
   saveSettings(patch: Partial<Omit<Settings, 'updatedAt'>>): Promise<Settings>
-  watchSettings(callback: (settings: Settings) => void): Unsubscribe
+  /** onError: đọc lỗi (ví dụ IndexedDB hỏng), để giao diện không chờ mãi. */
+  watchSettings(
+    callback: (settings: Settings) => void,
+    onError?: (error: unknown) => void,
+  ): Unsubscribe
 
   /** Chỉ có ở repository cloud: trạng thái đồng bộ với server. */
   watchSyncState?(callback: (state: SyncState) => void): Unsubscribe

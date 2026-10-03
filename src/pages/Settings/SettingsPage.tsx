@@ -16,7 +16,7 @@ import type { Settings, ThemePreference } from '@shared/types'
 import { track } from '../../analytics'
 import { useRepository } from '../../data/repositoryContext'
 import { useIsCompact } from '../../hooks/useMediaQuery'
-import { useSettings } from '../../hooks/useRepositoryData'
+import { useSettingsStatus } from '../../hooks/useRepositoryData'
 import { AccountSection } from './AccountSection'
 import { CategoryManager } from './CategoryManager'
 import { DataSection } from './DataSection'
@@ -209,7 +209,7 @@ const TABS: Tab[] = [
 
 export function SettingsPage({ children }: { children?: ReactNode }) {
   const repository = useRepository()
-  const settings = useSettings()
+  const { settings, error: loadFailed, slow } = useSettingsStatus()
   const location = useLocation()
   const navigate = useNavigate()
   const compact = useIsCompact()
@@ -273,7 +273,18 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
         <h1>Cài đặt</h1>
       </header>
 
-      {!settings ? (
+      {!settings && (loadFailed || slow) ? (
+        <div className={styles.loading} role="alert">
+          <p>
+            {loadFailed
+              ? 'Không tải được cài đặt.'
+              : 'Cài đặt tải lâu hơn bình thường. Tải lại thường sẽ khắc phục được.'}
+          </p>
+          <button type="button" className="btn" onClick={() => window.location.reload()}>
+            Tải lại
+          </button>
+        </div>
+      ) : !settings ? (
         <p className={styles.loading}>Đang tải…</p>
       ) : (
         <div className={styles.layout}>

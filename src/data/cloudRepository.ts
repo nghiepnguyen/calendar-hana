@@ -1,7 +1,10 @@
 // Tải động: Firestore chỉ được tải khi người dùng đã đăng nhập.
-import { getDb } from '../firebase/firestore'
+import { initDb } from '../firebase/firestore'
 import { FirestoreRepository, type ErrorReporter } from './firestoreRepository'
 
-export function createCloudRepository(uid: string, onError: ErrorReporter): FirestoreRepository {
-  return new FirestoreRepository(getDb(), uid, onError)
+export async function createCloudRepository(
+  uid: string,
+  onError: ErrorReporter,
+): Promise<FirestoreRepository> {
+  return new FirestoreRepository(await initDb(), uid, onError)
 }

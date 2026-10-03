@@ -20,10 +20,17 @@ function toSettings(row: SettingsRow | undefined): Settings {
   return { ...createDefaultSettings(), ...settings }
 }
 
-function watch<T>(query: () => Promise<T>, callback: (value: T) => void): Unsubscribe {
+function watch<T>(
+  query: () => Promise<T>,
+  callback: (value: T) => void,
+  onError?: (error: unknown) => void,
+): Unsubscribe {
   const subscription = liveQuery(query).subscribe({
     next: callback,
-    error: (error) => console.error('Lỗi đọc dữ liệu local', error),
+    error: (error) => {
+      console.error('Lỗi đọc dữ liệu local', error)
+      onError?.(error)
+    },
   })
   return () => subscription.unsubscribe()
 }
@@ -127,8 +134,11 @@ export class LocalRepository implements CalendarRepository {
     })
   }
 
-  watchSettings(callback: (settings: Settings) => void): Unsubscribe {
-    return watch(() => this.getSettings(), callback)
+  watchSettings(
+    callback: (settings: Settings) => void,
+    onError?: (error: unknown) => void,
+  ): Unsubscribe {
+    return watch(() => this.getSettings(), callback, onError)
   }
 
   /** Xóa toàn bộ dữ liệu local (dùng sau khi chuyển dữ liệu lên tài khoản). */

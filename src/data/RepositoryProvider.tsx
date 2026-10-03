@@ -48,8 +48,9 @@ export function RepositoryProvider({ children, repository }: RepositoryProviderP
     if (!uid) return
     let cancelled = false
     import('./cloudRepository')
-      .then(({ createCloudRepository }) => {
-        if (!cancelled) setLoaded(createCloudRepository(uid, reportError))
+      .then(({ createCloudRepository }) => createCloudRepository(uid, reportError))
+      .then((cloud) => {
+        if (!cancelled) setLoaded(cloud)
       })
       .catch(reportError)
     return () => {

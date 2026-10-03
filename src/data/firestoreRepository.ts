@@ -199,11 +199,17 @@ export class FirestoreRepository implements CalendarRepository {
     return next
   }
 
-  watchSettings(callback: (settings: Settings) => void): Unsubscribe {
+  watchSettings(
+    callback: (settings: Settings) => void,
+    onError?: (error: unknown) => void,
+  ): Unsubscribe {
     return onSnapshot(
       this.userDoc,
       (snapshot) => callback(this.toSettings(snapshot.data())),
-      this.onError,
+      (error) => {
+        this.onError(error)
+        onError?.(error)
+      },
     )
   }
 
