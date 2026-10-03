@@ -67,7 +67,7 @@ function FeatureCell({
   onExplain?: () => void
 }) {
   return (
-    <li className={styles.featureCell}>
+    <li className={`${styles.annualBox} ${styles.featureCell}`}>
       <span className={styles.featureHead}>
         <span className={styles.featureLabel}>
           <CellIcon size={iconSize(15)} weight="duotone" aria-hidden="true" />
@@ -98,39 +98,41 @@ function HanCell({
   const hit = applies && result.value.hit
   return (
     <li
-      className={`${styles.hanCell} ${hit ? styles.hanHit : ''}`}
+      className={`${styles.annualBox} ${styles.hanCell} ${hit ? styles.hanHit : ''}`}
       style={{ '--j': index } as CSSProperties}
     >
-      <span
-        className={`${styles.hanIcon} ${!applies ? styles.muted : hit ? styles.caution : styles.favorable}`}
-        aria-hidden="true"
-      >
-        {!applies ? (
-          <MinusCircle size={iconSize(18)} weight="fill" />
-        ) : hit ? (
-          <WarningCircle size={iconSize(18)} weight="fill" />
-        ) : (
-          <CheckCircle size={iconSize(18)} weight="fill" />
-        )}
-      </span>
-      <div className={styles.hanBody}>
-        <h4>{label}</h4>
-        <p
-          className={`${styles.hanValue} ${hit ? styles.caution : ''} ${applies ? '' : styles.hanEmpty}`}
+      <span className={styles.hanHead}>
+        <span
+          className={`${styles.hanIcon} ${!applies ? styles.muted : hit ? styles.caution : styles.favorable}`}
+          aria-hidden="true"
         >
-          {result ? valueLabel(result) : 'Chưa có dữ liệu'}
-        </p>
-      </div>
-      <span className={styles.hanAside}>
-        {applies ? (
-          <span
-            className={`${styles.tonePill} ${hit ? styles.pill_caution : styles.pill_favorable}`}
-          >
-            {hit ? 'Phạm' : 'Không phạm'}
-          </span>
-        ) : null}
-        {onExplain ? <InfoButton label={label} onClick={onExplain} /> : null}
+          {!applies ? (
+            <MinusCircle size={iconSize(16)} weight="fill" />
+          ) : hit ? (
+            <WarningCircle size={iconSize(16)} weight="fill" />
+          ) : (
+            <CheckCircle size={iconSize(16)} weight="fill" />
+          )}
+        </span>
+        <h4>{label}</h4>
       </span>
+      {onExplain ? (
+        <span className={styles.hanAside}>
+          <InfoButton label={label} onClick={onExplain} />
+        </span>
+      ) : null}
+      <p
+        className={`${styles.hanValue} ${hit ? styles.caution : ''} ${applies ? '' : styles.hanEmpty}`}
+      >
+        {result ? valueLabel(result) : 'Chưa có dữ liệu'}
+      </p>
+      {applies ? (
+        <span
+          className={`${styles.hanPill} ${styles.tonePill} ${hit ? styles.pill_caution : styles.pill_favorable}`}
+        >
+          {hit ? 'Phạm' : 'Không phạm'}
+        </span>
+      ) : null}
     </li>
   )
 }
@@ -243,13 +245,11 @@ export function AnnualFengShuiSection({
       <Collapsible summary={summary}>
         <div className={styles.annualSurface}>
           <div className={styles.annualMeta}>
-            <div>
-              <p className={styles.annualContext}>
-                {context.status === 'applies'
-                  ? `Năm âm lịch ${context.viewLunarYear}, tuổi mụ ${context.nominalAge}`
-                  : context.reason}
-              </p>
-            </div>
+            <p className={styles.annualContext}>
+              {context.status === 'applies'
+                ? `Năm âm lịch ${context.viewLunarYear}, tuổi mụ ${context.nominalAge}`
+                : context.reason}
+            </p>
             <fieldset className={styles.genderPicker}>
               <legend>Nhóm xem</legend>
               {(['male', 'female'] as const).map((value) => (
@@ -296,8 +296,11 @@ export function AnnualFengShuiSection({
           </section>
 
           {afflictions?.status === 'ready' ? (
-            <>
-              <section className={styles.afflictionSection} aria-label="Phạm theo tuổi">
+            <div className={styles.afflictionGrid}>
+              <section
+                className={`${styles.annualBox} ${styles.afflictionSection}`}
+                aria-label="Phạm theo tuổi"
+              >
                 <div className={styles.annualSectionHead}>
                   <h4>Phạm theo tuổi</h4>
                   <p>
@@ -336,7 +339,10 @@ export function AnnualFengShuiSection({
                   </li>
                 </ul>
               </section>
-              <section className={styles.afflictionSection} aria-label="Sát Chủ của ngày">
+              <section
+                className={`${styles.annualBox} ${styles.afflictionSection}`}
+                aria-label="Sát Chủ của ngày"
+              >
                 <div className={styles.annualSectionHead}>
                   <h4>Sát Chủ của ngày</h4>
                   <p>
@@ -368,7 +374,7 @@ export function AnnualFengShuiSection({
                   )}
                 </ul>
               </section>
-            </>
+            </div>
           ) : null}
           {!savedGender ? (
             <p className={styles.annualProfileHint}>
