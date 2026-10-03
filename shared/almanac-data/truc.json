@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "1.0.0",
+  "tradition": "xiejibianfangshu_normalized",
+  "calculation": {
+    "basis": "solar_month_branch",
+    "order": [
+      "kien",
+      "tru",
+      "man",
+      "binh",
+      "dinh",
+      "chap",
+      "pha",
+      "nguy",
+      "thanh",
+      "thu",
+      "khai",
+      "be"
+    ]
+  },
+  "items": [
+    {
+      "id": "kien",
+      "han": "建",
+      "label": "Kiến",
+      "theme": "khởi lập",
+      "activityRules": [
+        {
+          "activityId": "wedding",
+          "level": "bad",
+          "weight": -15
+        },
+        {
+          "activityId": "burial",
+          "level": "bad",
+          "weight": -15
+        }
+      ]
+    },
+    {
+      "id": "tru",
+      "han": "除",
+      "label": "Trừ",
+      "theme": "loại bỏ, làm sạch",
+      "activityRules": [
+        {
+          "activityId": "medical",
+          "level": "good",
+          "weight": 20
+        },
+      {
+        "activityId": "cleaning",
+        "level": "strong_good",
+        "weight": 25
+      },
+      {
+        "activityId": "wedding",
+        "level": "good",
+        "weight": 15,
+        "sourceRef": "lichviet.me:2026-10-03"
+      },
+      {
+        "activityId": "construction",
+        "level": "good",
+        "weight": 15,
+        "sourceRef": "lichviet.me:2026-10-03"
+      },
+      {
+        "activityId": "groundbreaking",
+        "level": "good",
+        "weight": 15,
+        "sourceRef": "lichviet.me:2026-10-03"
+      },
+      {
+        "activityId": "burial",
+        "level": "good",
+        "weight": 15,
+        "sourceRef": "lichviet.me:2026-10-03"
+      },
+      {
+        "activityId": "planting",
+        "level": "good",
+        "weight": 15,
+        "sourceRef": "lichviet.me:2026-10-03"
+      }
+      ]
+    },
+    {
+      "id": "man",
+      "han": "滿",
+      "label": "Mãn",
+      "theme": "đầy đủ, tích tụ",
+      "activityRules": [
+        {
+          "activityId": "opening",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "contract",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "transaction",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "finance",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "warehouse",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "wedding",
+          "level": "bad",
+          "weight": -15
+        },
+        {
+          "activityId": "medical",
+          "level": "bad",
+          "weight": -15
+        }
+      ]
+    },
+    {
+      "id": "binh",
+      "han": "平",
+      "label": "Bình",
+      "theme": "san bằng, bình ổn",
+      "activityRules": [
+        {
+          "activityId": "renovation",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "wedding",
+          "level": "bad",
+          "weight": -15
+        },
+        {
+          "activityId": "moving",
+          "level": "bad",
+          "weight": -15
+        }
+      ]
+    },
+    {
+      "id": "dinh",
+      "han": "定",
+      "label": "Định",
+      "theme": "ổn định, hoạch định",
+      "activityRules": [
+        {
+          "activityId": "contract",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "transaction",
+          "level": "good",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "chap",
+      "han": "執",
+      "label": "Chấp",
+      "theme": "nắm giữ, thi hành",
+      "activityRules": []
+    },
+    {
+      "id": "pha",
+      "han": "破",
+      "label": "Phá",
+      "theme": "phá bỏ, chữa trị",
+      "activityRules": [
+        {
+          "activityId": "medical",
+          "level": "strong_good",
+          "weight": 25
+        },
+        {
+          "activityId": "demolition",
+          "level": "strong_good",
+          "weight": 25
+        },
+        {
+          "activityId": "wedding",
+          "level": "strong_bad",
+          "weight": -25
+        },
+        {
+          "activityId": "opening",
+          "level": "strong_bad",
+          "weight": -25
+        }
+      ]
+    },
+    {
+      "id": "nguy",
+      "han": "危",
+      "label": "Nguy",
+      "theme": "cẩn trọng, an định trong nguy",
+      "activityRules": [
+        {
+          "activityId": "bed_installation",
+          "level": "strong_good",
+          "weight": 25
+        }
+      ]
+    },
+    {
+      "id": "thanh",
+      "han": "成",
+      "label": "Thành",
+      "theme": "thành tựu, hoàn tất",
+      "activityRules": [
+        {
+          "activityId": "study",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "moving",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "opening",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "wedding",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "engagement",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "medical",
+          "level": "good",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "thu",
+      "han": "收",
+      "label": "Thu",
+      "theme": "thu nhận, tích chứa",
+      "activityRules": [
+        {
+          "activityId": "finance",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "warehouse",
+          "level": "good",
+          "weight": 15
+        },
+        {
+          "activityId": "wedding",
+          "level": "bad",
+          "weight": -15
+        },
+        {
+          "activityId": "moving",
+          "level": "bad",
+          "weight": -15
+        }
+      ]
+    },
+    {
+      "id": "khai",
+      "han": "開",
+      "label": "Khai",
+      "theme": "mở ra, khai mở",
+      "activityRules": [
+        {
+          "activityId": "moving",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "opening",
+          "level": "strong_good",
+          "weight": 25
+        },
+        {
+          "activityId": "business",
+          "level": "good",
+          "weight": 20
+        },
+        {
+          "activityId": "contract",
+          "level": "good",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "be",
+      "han": "閉",
+      "label": "Bế",
+      "theme": "đóng, ngăn, kết thúc",
+      "activityRules": [
+        {
+          "activityId": "wedding",
+          "level": "bad",
+          "weight": -20
+        },
+        {
+          "activityId": "moving",
+          "level": "bad",
+          "weight": -20
+        },
+        {
+          "activityId": "opening",
+          "level": "strong_bad",
+          "weight": -25
+        }
+      ]
+    }
+  ]
+}

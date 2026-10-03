@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0.0",
+  "items": [
+    {
+      "id": "worship",
+      "label": "Cúng tế",
+      "group": "spiritual",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "pray_blessing",
+      "label": "Cầu phúc",
+      "group": "spiritual",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "pray_children",
+      "label": "Cầu tự",
+      "group": "spiritual",
+      "personalSensitivity": 0.8,
+      "enabled": true
+    },
+    {
+      "id": "wedding",
+      "label": "Cưới hỏi",
+      "group": "relationship",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "engagement",
+      "label": "Ăn hỏi / Nạp thái",
+      "group": "relationship",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "moving",
+      "label": "Nhập trạch / Chuyển nhà",
+      "group": "home",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "bed_installation",
+      "label": "An giường",
+      "group": "home",
+      "personalSensitivity": 0.9,
+      "enabled": true
+    },
+    {
+      "id": "opening",
+      "label": "Khai trương",
+      "group": "business",
+      "personalSensitivity": 0.8,
+      "enabled": true
+    },
+    {
+      "id": "business",
+      "label": "Kinh doanh",
+      "group": "business",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "contract",
+      "label": "Ký kết / Lập khế ước",
+      "group": "business",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "transaction",
+      "label": "Giao dịch",
+      "group": "business",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "finance",
+      "label": "Nạp tài / Cầu tài",
+      "group": "business",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "travel",
+      "label": "Xuất hành",
+      "group": "movement",
+      "personalSensitivity": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "meeting",
+      "label": "Gặp gỡ / Hội họp",
+      "group": "social",
+      "personalSensitivity": 0.3,
+      "enabled": true
+    },
+    {
+      "id": "study",
+      "label": "Nhập học / Học tập",
+      "group": "education",
+      "personalSensitivity": 0.2,
+      "enabled": true
+    },
+    {
+      "id": "medical",
+      "label": "Cầu y / Chữa bệnh",
+      "group": "health",
+      "personalSensitivity": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "cleaning",
+      "label": "Dọn dẹp / Tảo xá",
+      "group": "home",
+      "personalSensitivity": 0.1,
+      "enabled": true
+    },
+    {
+      "id": "groundbreaking",
+      "label": "Động thổ",
+      "group": "construction",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "construction",
+      "label": "Xây dựng",
+      "group": "construction",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "renovation",
+      "label": "Sửa chữa",
+      "group": "construction",
+      "personalSensitivity": 0.9,
+      "enabled": true
+    },
+    {
+      "id": "beam_raising",
+      "label": "Thượng lương",
+      "group": "construction",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "warehouse",
+      "label": "Kho tàng / Mở kho",
+      "group": "business",
+      "personalSensitivity": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "planting",
+      "label": "Trồng trọt",
+      "group": "agriculture",
+      "personalSensitivity": 0.3,
+      "enabled": true
+    },
+    {
+      "id": "livestock",
+      "label": "Chăn nuôi / Nạp súc",
+      "group": "agriculture",
+      "personalSensitivity": 0.3,
+      "enabled": true
+    },
+    {
+      "id": "burial",
+      "label": "An táng",
+      "group": "funeral",
+      "personalSensitivity": 1,
+      "enabled": true
+    },
+    {
+      "id": "demolition",
+      "label": "Phá dỡ",
+      "group": "construction",
+      "personalSensitivity": 0.6,
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "resolutionOrder": [
+    "raw_rules",
+    "contextual_exceptions",
+    "conflict_resolution",
+    "caps",
+    "personal_layer",
+    "classification"
+  ],
+  "items": [
+    {
+      "id": "de_virtues_reduce_yem_doi",
+      "when": {
+        "targetPresent": "yem_doi",
+        "anyPresent": [
+          "thien_duc",
+          "nguyet_duc",
+          "thien_duc_hop",
+          "nguyet_duc_hop",
+          "thien_xa"
+        ]
+      },
+      "action": "reduce_bad",
+      "factor": 0.5,
+      "activityIds": [
+        "wedding"
+      ],
+      "sourcePolicy": "classical_exception_requires_runtime_source_verification",
+      "enabled": false
+    },
+    {
+      "id": "month_break_not_auto_cancelled",
+      "when": {
+        "targetPresent": "nguyet_pha"
+      },
+      "action": "preserve_bad",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "opening",
+        "construction",
+        "groundbreaking"
+      ],
+      "enabled": true
+    }
+  ]
+}

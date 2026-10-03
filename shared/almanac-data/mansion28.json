@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "1.0.0",
+  "tradition": "xiejibianfangshu_28_mansion_sequence",
+  "scoringPolicy": "disabled_until_activity_rules_are_source_audited",
+  "defaultModifier": 0,
+  "order": [
+    "giac",
+    "cang",
+    "de",
+    "phong",
+    "tam",
+    "vi",
+    "co",
+    "dau",
+    "nguu",
+    "nu",
+    "hu",
+    "nguy",
+    "that",
+    "bich",
+    "khue",
+    "lau",
+    "vi2",
+    "mao",
+    "tat",
+    "chuy",
+    "sam",
+    "tinh",
+    "quy",
+    "lieu",
+    "tinh2",
+    "truong",
+    "duc",
+    "chan"
+  ],
+  "items": [
+    {
+      "id": "giac",
+      "han": "角",
+      "label": "Giác",
+      "fullName": "Giác Mộc Giao",
+      "quadrant": "east",
+      "planetaryClass": "wood",
+      "activityRules": []
+    },
+    {
+      "id": "cang",
+      "han": "亢",
+      "label": "Cang",
+      "fullName": "Cang Kim Long",
+      "quadrant": "east",
+      "planetaryClass": "metal",
+      "activityRules": []
+    },
+    {
+      "id": "de",
+      "han": "氐",
+      "label": "Đê",
+      "fullName": "Đê Thổ Lạc",
+      "quadrant": "east",
+      "planetaryClass": "earth",
+      "activityRules": []
+    },
+    {
+      "id": "phong",
+      "han": "房",
+      "label": "Phòng",
+      "fullName": "Phòng Nhật Thố",
+      "quadrant": "east",
+      "planetaryClass": "sun",
+      "activityRules": []
+    },
+    {
+      "id": "tam",
+      "han": "心",
+      "label": "Tâm",
+      "fullName": "Tâm Nguyệt Hồ",
+      "quadrant": "east",
+      "planetaryClass": "moon",
+      "activityRules": []
+    },
+    {
+      "id": "vi",
+      "han": "尾",
+      "label": "Vĩ",
+      "fullName": "Vĩ Hỏa Hổ",
+      "quadrant": "east",
+      "planetaryClass": "fire",
+      "activityRules": []
+    },
+    {
+      "id": "co",
+      "han": "箕",
+      "label": "Cơ",
+      "fullName": "Cơ Thủy Báo",
+      "quadrant": "east",
+      "planetaryClass": "water",
+      "activityRules": []
+    },
+    {
+      "id": "dau",
+      "han": "斗",
+      "label": "Đẩu",
+      "fullName": "Đẩu Mộc Giải",
+      "quadrant": "north",
+      "planetaryClass": "wood",
+      "activityRules": []
+    },
+    {
+      "id": "nguu",
+      "han": "牛",
+      "label": "Ngưu",
+      "fullName": "Ngưu Kim Ngưu",
+      "quadrant": "north",
+      "planetaryClass": "metal",
+      "activityRules": []
+    },
+    {
+      "id": "nu",
+      "han": "女",
+      "label": "Nữ",
+      "fullName": "Nữ Thổ Bức",
+      "quadrant": "north",
+      "planetaryClass": "earth",
+      "activityRules": []
+    },
+    {
+      "id": "hu",
+      "han": "虛",
+      "label": "Hư",
+      "fullName": "Hư Nhật Thử",
+      "quadrant": "north",
+      "planetaryClass": "sun",
+      "activityRules": []
+    },
+    {
+      "id": "nguy",
+      "han": "危",
+      "label": "Nguy",
+      "fullName": "Nguy Nguyệt Yến",
+      "quadrant": "north",
+      "planetaryClass": "moon",
+      "activityRules": []
+    },
+    {
+      "id": "that",
+      "han": "室",
+      "label": "Thất",
+      "fullName": "Thất Hỏa Trư",
+      "quadrant": "north",
+      "planetaryClass": "fire",
+      "activityRules": []
+    },
+    {
+      "id": "bich",
+      "han": "壁",
+      "label": "Bích",
+      "fullName": "Bích Thủy Du",
+      "quadrant": "north",
+      "planetaryClass": "water",
+      "activityRules": []
+    },
+    {
+      "id": "khue",
+      "han": "奎",
+      "label": "Khuê",
+      "fullName": "Khuê Mộc Lang",
+      "quadrant": "west",
+      "planetaryClass": "wood",
+      "activityRules": []
+    },
+    {
+      "id": "lau",
+      "han": "婁",
+      "label": "Lâu",
+      "fullName": "Lâu Kim Cẩu",
+      "quadrant": "west",
+      "planetaryClass": "metal",
+      "activityRules": []
+    },
+    {
+      "id": "vi2",
+      "han": "胃",
+      "label": "Vị",
+      "fullName": "Vị Thổ Trĩ",
+      "quadrant": "west",
+      "planetaryClass": "earth",
+      "activityRules": []
+    },
+    {
+      "id": "mao",
+      "han": "昴",
+      "label": "Mão",
+      "fullName": "Mão Nhật Kê",
+      "quadrant": "west",
+      "planetaryClass": "sun",
+      "activityRules": []
+    },
+    {
+      "id": "tat",
+      "han": "畢",
+      "label": "Tất",
+      "fullName": "Tất Nguyệt Ô",
+      "quadrant": "west",
+      "planetaryClass": "moon",
+      "activityRules": []
+    },
+    {
+      "id": "chuy",
+      "han": "觜",
+      "label": "Chủy",
+      "fullName": "Chủy Hỏa Hầu",
+      "quadrant": "west",
+      "planetaryClass": "fire",
+      "activityRules": []
+    },
+    {
+      "id": "sam",
+      "han": "參",
+      "label": "Sâm",
+      "fullName": "Sâm Thủy Viên",
+      "quadrant": "west",
+      "planetaryClass": "water",
+      "activityRules": []
+    },
+    {
+      "id": "tinh",
+      "han": "井",
+      "label": "Tỉnh",
+      "fullName": "Tỉnh Mộc Hãn",
+      "quadrant": "south",
+      "planetaryClass": "wood",
+      "activityRules": []
+    },
+    {
+      "id": "quy",
+      "han": "鬼",
+      "label": "Quỷ",
+      "fullName": "Quỷ Kim Dương",
+      "quadrant": "south",
+      "planetaryClass": "metal",
+      "activityRules": []
+    },
+    {
+      "id": "lieu",
+      "han": "柳",
+      "label": "Liễu",
+      "fullName": "Liễu Thổ Chương",
+      "quadrant": "south",
+      "planetaryClass": "earth",
+      "activityRules": []
+    },
+    {
+      "id": "tinh2",
+      "han": "星",
+      "label": "Tinh",
+      "fullName": "Tinh Nhật Mã",
+      "quadrant": "south",
+      "planetaryClass": "sun",
+      "activityRules": []
+    },
+    {
+      "id": "truong",
+      "han": "張",
+      "label": "Trương",
+      "fullName": "Trương Nguyệt Lộc",
+      "quadrant": "south",
+      "planetaryClass": "moon",
+      "activityRules": []
+    },
+    {
+      "id": "duc",
+      "han": "翼",
+      "label": "Dực",
+      "fullName": "Dực Hỏa Xà",
+      "quadrant": "south",
+      "planetaryClass": "fire",
+      "activityRules": []
+    },
+    {
+      "id": "chan",
+      "han": "軫",
+      "label": "Chẩn",
+      "fullName": "Chẩn Thủy Dẫn",
+      "quadrant": "south",
+      "planetaryClass": "water",
+      "activityRules": []
+    }
+  ]
+}

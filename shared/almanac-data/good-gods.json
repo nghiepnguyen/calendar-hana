@@ -1,0 +1,313 @@
+{
+  "schemaVersion": "1.0.0",
+  "weights": {
+    "major": 15,
+    "medium": 10,
+    "minor": 5
+  },
+  "capPerActivity": 25,
+  "items": [
+    {
+      "id": "thien_duc",
+      "han": "天德",
+      "label": "Thiên Đức",
+      "tier": "major",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
+        "engagement",
+        "moving",
+        "medical",
+        "construction",
+        "groundbreaking",
+        "beam_raising",
+        "burial"
+      ]
+    },
+    {
+      "id": "nguyet_duc",
+      "han": "月德",
+      "label": "Nguyệt Đức",
+      "tier": "major",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
+        "engagement",
+        "moving",
+        "medical",
+        "construction",
+        "groundbreaking",
+        "beam_raising",
+        "burial"
+      ]
+    },
+    {
+      "id": "thien_duc_hop",
+      "han": "天德合",
+      "label": "Thiên Đức Hợp",
+      "tier": "major",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
+        "engagement",
+        "moving",
+        "medical",
+        "construction",
+        "groundbreaking",
+        "beam_raising",
+        "burial"
+      ]
+    },
+    {
+      "id": "nguyet_duc_hop",
+      "han": "月德合",
+      "label": "Nguyệt Đức Hợp",
+      "tier": "major",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
+        "engagement",
+        "moving",
+        "medical",
+        "construction",
+        "groundbreaking",
+        "beam_raising",
+        "burial"
+      ]
+    },
+    {
+      "id": "thien_xa",
+      "han": "天赦",
+      "label": "Thiên Xá",
+      "tier": "major",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "wedding",
+        "engagement",
+        "moving"
+      ]
+    },
+    {
+      "id": "thien_nguyen",
+      "han": "天願",
+      "label": "Thiên Nguyện",
+      "tier": "medium",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving"
+      ]
+    },
+    {
+      "id": "nguyet_an",
+      "han": "月恩",
+      "label": "Nguyệt Ân",
+      "tier": "medium",
+      "activityIds": [
+        "engagement",
+        "moving"
+      ]
+    },
+    {
+      "id": "tu_tuong",
+      "han": "四相",
+      "label": "Tứ Tướng",
+      "tier": "medium",
+      "activityIds": [
+        "engagement",
+        "moving"
+      ]
+    },
+    {
+      "id": "thoi_duc",
+      "han": "時德",
+      "label": "Thời Đức",
+      "tier": "medium",
+      "activityIds": [
+        "engagement",
+        "moving"
+      ]
+    },
+    {
+      "id": "dan_nhat",
+      "han": "民日",
+      "label": "Dân Nhật",
+      "tier": "medium",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "opening",
+        "contract",
+        "transaction",
+        "finance",
+        "livestock"
+      ]
+    },
+    {
+      "id": "tam_hop",
+      "han": "三合",
+      "label": "Tam Hợp",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "contract",
+        "transaction",
+        "finance",
+        "construction",
+        "groundbreaking",
+        "beam_raising",
+        "livestock"
+      ]
+    },
+    {
+      "id": "thien_hy",
+      "han": "天喜",
+      "label": "Thiên Hỷ",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "luc_hop",
+      "han": "六合",
+      "label": "Lục Hợp",
+      "tier": "medium",
+      "activityIds": [
+        "wedding",
+        "contract",
+        "transaction"
+      ]
+    },
+    {
+      "id": "ngu_hop",
+      "han": "五合",
+      "label": "Ngũ Hợp",
+      "tier": "medium",
+      "activityIds": [
+        "wedding",
+        "contract",
+        "transaction"
+      ]
+    },
+    {
+      "id": "bat_tuong",
+      "han": "不將",
+      "label": "Bất Tương",
+      "tier": "major",
+      "activityIds": [
+        "wedding"
+      ]
+    },
+    {
+      "id": "ngu_phu",
+      "han": "五富",
+      "label": "Ngũ Phú",
+      "tier": "medium",
+      "activityIds": [
+        "opening",
+        "contract",
+        "transaction",
+        "finance",
+        "warehouse",
+        "planting",
+        "livestock"
+      ]
+    },
+    {
+      "id": "thien_thuong",
+      "han": "天倉",
+      "label": "Thiên Thương",
+      "tier": "medium",
+      "activityIds": [
+        "finance",
+        "livestock",
+        "warehouse"
+      ]
+    },
+    {
+      "id": "giai_than",
+      "han": "解神",
+      "label": "Giải Thần",
+      "tier": "medium",
+      "activityIds": [
+        "medical",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "tru_than",
+      "han": "除神",
+      "label": "Trừ Thần",
+      "tier": "medium",
+      "activityIds": [
+        "medical",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "pho_ho",
+      "han": "普護",
+      "label": "Phổ Hộ",
+      "tier": "medium",
+      "activityIds": [
+        "worship",
+        "pray_blessing"
+      ]
+    },
+    {
+      "id": "phuc_sinh",
+      "han": "福生",
+      "label": "Phúc Sinh",
+      "tier": "medium",
+      "activityIds": [
+        "worship",
+        "pray_blessing"
+      ]
+    },
+    {
+      "id": "thanh_tam",
+      "han": "聖心",
+      "label": "Thánh Tâm",
+      "tier": "medium",
+      "activityIds": [
+        "worship",
+        "pray_blessing"
+      ]
+    },
+    {
+      "id": "ich_hau",
+      "han": "益後",
+      "label": "Ích Hậu",
+      "tier": "medium",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children"
+      ]
+    },
+    {
+      "id": "tuc_the",
+      "han": "續世",
+      "label": "Tục Thế",
+      "tier": "medium",
+      "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children"
+      ]
+    }
+  ]
+}

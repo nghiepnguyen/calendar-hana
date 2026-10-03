@@ -16,6 +16,43 @@
   color: var(--text-muted);
 }
 
+.recommendationRow {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(6px * var(--ui-scale));
+}
+
+.recommendationRow > section {
+  min-height: calc(132px * var(--ui-scale));
+}
+
+@container (max-width: 519px) {
+  .recommendationRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.recommendationGood .afflictionList li {
+  background: color-mix(in srgb, var(--almanac-good-bg) 78%, var(--glass-strong));
+}
+
+.recommendationAvoid .afflictionList li {
+  background: color-mix(in srgb, var(--gold-bg, var(--fill)) 78%, var(--glass-strong));
+}
+
+.recommendationAvoid .afflictionList .afflictionHit {
+  background: var(--almanac-bad-bg);
+}
+
+.afflictionList .afflictionWatch {
+  color: color-mix(in srgb, var(--gold) 82%, var(--text));
+}
+
+.afflictionList .afflictionWatch svg {
+  color: var(--gold);
+}
+
 .favorable {
   color: var(--almanac-good);
 }
@@ -229,7 +266,7 @@
 
 @container (min-width: 520px) {
   .hourGroups {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -635,6 +672,12 @@
 .afflictionList li svg {
   color: var(--almanac-good);
   flex: none;
+}
+
+.afflictionList .emptyRecommendation {
+  color: var(--text-muted);
+  background: var(--fill);
+  font-weight: var(--fw-500);
 }
 
 .afflictionList .afflictionHit {

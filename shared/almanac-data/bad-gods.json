@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "weights": {
+    "critical": -25,
+    "major": -15,
+    "medium": -10,
+    "minor": -5
+  },
+  "capPerActivity": -30,
+  "items": [
+    {
+      "id": "nguyet_pha",
+      "han": "月破",
+      "label": "Nguyệt Phá",
+      "tier": "critical",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation",
+        "opening",
+        "contract",
+        "transaction",
+        "finance",
+        "construction",
+        "groundbreaking",
+        "beam_raising"
+      ]
+    },
+    {
+      "id": "kiep_sat",
+      "han": "劫煞",
+      "label": "Kiếp Sát",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "tai_sat",
+      "han": "災煞",
+      "label": "Tai Sát",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "nguyet_sat",
+      "han": "月煞",
+      "label": "Nguyệt Sát",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "nguyet_hinh",
+      "han": "月刑",
+      "label": "Nguyệt Hình",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "nguyet_hai",
+      "han": "月害",
+      "label": "Nguyệt Hại",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "nguyet_yem",
+      "han": "月厭",
+      "label": "Nguyệt Yếm",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "yem_doi",
+      "han": "厭對",
+      "label": "Yếm Đối",
+      "tier": "major",
+      "activityIds": [
+        "wedding"
+      ]
+    },
+    {
+      "id": "dai_thoi",
+      "han": "大時",
+      "label": "Đại Thời",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "thien_lai",
+      "han": "天吏",
+      "label": "Thiên Lại",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation",
+        "travel"
+      ]
+    },
+    {
+      "id": "tu_phe",
+      "han": "四廢",
+      "label": "Tứ Phế",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "tu_ky",
+      "han": "四忌",
+      "label": "Tứ Kỵ",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "tu_cung",
+      "han": "四窮",
+      "label": "Tứ Cùng",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "ngu_mo",
+      "han": "五墓",
+      "label": "Ngũ Mộ",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "ngu_ly",
+      "han": "五離",
+      "label": "Ngũ Ly",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "vang_vong",
+      "han": "往亡",
+      "label": "Vãng Vong",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "moving",
+        "bed_installation"
+      ]
+    },
+    {
+      "id": "bat_chuyen",
+      "han": "八專",
+      "label": "Bát Chuyên",
+      "tier": "major",
+      "activityIds": [
+        "wedding",
+        "engagement"
+      ]
+    },
+    {
+      "id": "quy_ky",
+      "han": "歸忌",
+      "label": "Quy Kỵ",
+      "tier": "major",
+      "activityIds": [
+        "moving",
+        "travel"
+      ]
+    }
+  ]
+}

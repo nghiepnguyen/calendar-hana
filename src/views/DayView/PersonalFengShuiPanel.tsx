@@ -21,6 +21,8 @@ import type { Settings } from '@shared/types'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import { CAN, CHI } from '@shared/lunar/canChi'
 import { canElement } from '@shared/lunar/elements'
+import { getAlmanac } from '@shared/lunar/almanac'
+import { getActivityAvoidances } from '@shared/lunar/activityRecommendations'
 import { assessPersonalDay, SUMMARY_LABELS, type Tone } from '@shared/personalFengShui/day'
 import { calculateBazi } from '@shared/bazi'
 import { tenGodOf } from '@shared/bazi/interpretation/tenGods'
@@ -232,6 +234,19 @@ export function PersonalFengShuiPanel({
     [date, settings.birthDate, today, rules],
   )
   const ready = result.status === 'ready'
+  const activityRecommendations = useMemo(
+    () => getAlmanac(date).activityRecommendations.filter((item) => item.status === 'recommended').slice(0, 6),
+    [date],
+  )
+  const activityAvoidances = useMemo(
+    () => getActivityAvoidances({
+      officerId: ['kien', 'tru', 'man', 'binh', 'dinh', 'chap', 'pha', 'nguy', 'thanh', 'thu', 'khai', 'be'][getAlmanac(date).officer.index],
+      mansion: getAlmanac(date).mansion,
+    })
+      .filter((item) => item.status !== 'neutral')
+      .slice(0, 5),
+    [date],
+  )
   const nowChi = date === today ? hourChiOf(Math.floor(minutes / 60)) : null
   const nowHour = ready && nowChi !== null ? result.hours.find((h) => h.chi === nowChi) : undefined
   const tenGodReady = useMemo(
@@ -572,12 +587,57 @@ export function PersonalFengShuiPanel({
                 </ul>
               ) : null}
             </Tile>
+
+            <div className={styles.recommendationRow}>
+              <Tile
+                index={4}
+                className={styles.recommendationGood}
+                icon={CheckCircle}
+                title="Việc nên làm trong ngày"
+                label="Việc nên làm trong ngày"
+                aside="Theo Trực"
+              >
+                <ul className={styles.afflictionList} aria-label="Danh sách việc nên làm trong ngày">
+                  {activityRecommendations.length ? activityRecommendations.map((item) => (
+                    <li key={item.activityId}>
+                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                      {item.label}
+                    </li>
+                  )) : <li className={styles.emptyRecommendation}>Chưa có việc nên làm nổi bật</li>}
+                </ul>
+              </Tile>
+
+              <Tile
+                index={5}
+                className={styles.recommendationAvoid}
+                icon={WarningCircle}
+                title="Việc Không Nên Làm"
+                label="Việc Không Nên Làm"
+                aside="Theo Trực"
+              >
+                <ul className={styles.afflictionList} aria-label="Danh sách việc không nên làm">
+                  {activityAvoidances.length ? activityAvoidances.map((item) => (
+                    <li
+                      className={
+                        item.status === 'avoid' || item.status === 'strong_avoid'
+                          ? styles.afflictionHit
+                          : styles.afflictionWatch
+                      }
+                      key={item.activityId}
+                    >
+                      <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
+                      {item.label}
+                    </li>
+                  )) : <li className={styles.emptyRecommendation}>Không có việc kỵ nổi bật</li>}
+                </ul>
+              </Tile>
+            </div>
           </>
         ) : null}
 
         <AnnualFengShuiSection
           key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}
-          index={ready ? 4 : 0}
+          index={ready ? 6 : 0}
           date={date}
           birthDate={settings.birthDate}
           savedGender={settings.birthGender ?? null}
@@ -585,7 +645,7 @@ export function PersonalFengShuiPanel({
           onExplain={setExplain}
         />
         <BaziSection
-          index={ready ? 5 : 1}
+          index={ready ? 7 : 1}
           settings={settings}
           rules={rules}
           onExplain={setExplain}

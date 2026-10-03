@@ -15,6 +15,7 @@ import { getNapAm, sexagenaryIndex, type NapAm } from './napAm'
 import { getOfficer, type Officer } from './officers'
 import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
+import { getActivityRecommendations, type ActivityRecommendation } from './activityRecommendations'
 
 export interface Almanac {
   date: SolarDateString
@@ -30,6 +31,7 @@ export interface Almanac {
   dayClashes: readonly string[]
   monthClashes: readonly string[]
   stars: { good: Star[]; bad: Star[] }
+  activityRecommendations: ActivityRecommendation[]
   /** Đủ 12 giờ, Tý..Hợi. */
   hours: DayHour[]
 }
@@ -67,6 +69,10 @@ export function getAlmanac(date: SolarDateString): Almanac {
       canChi: sexagenaryIndex(day),
       officer: officer.index,
       mansion: mansion.index,
+    }),
+    activityRecommendations: getActivityRecommendations({
+      officerId: ['kien', 'tru', 'man', 'binh', 'dinh', 'chap', 'pha', 'nguy', 'thanh', 'thu', 'khai', 'be'][officer.index],
+      mansion,
     }),
     hours: getAllHours(jd, day.chi),
   }

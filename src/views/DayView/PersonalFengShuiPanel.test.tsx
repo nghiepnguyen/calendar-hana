@@ -92,6 +92,11 @@ describe('personal panel integration', () => {
     expect(within(panel).getByLabelText('Quan hệ Thiên can')).toBeInTheDocument()
     expect(within(panel).getByLabelText('Quan hệ Nạp âm')).toBeInTheDocument()
     expect(within(panel).getByLabelText('Giờ cá nhân trong ngày')).toBeInTheDocument()
+    const personalHours = within(panel).getByLabelText('Giờ cá nhân trong ngày')
+    const recommendations = within(panel).getByRole('region', {
+      name: 'Việc nên làm trong ngày',
+    })
+    expect(personalHours.compareDocumentPosition(recommendations) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(
       within(panel).queryByText('Đang xem theo tuổi và nạp âm năm sinh'),
     ).not.toBeInTheDocument()

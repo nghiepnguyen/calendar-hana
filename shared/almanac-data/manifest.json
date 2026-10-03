@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetVersion": "1.0.0",
+  "locale": "vi-VN",
+  "timezoneDefault": "Asia/Ho_Chi_Minh",
+  "baseScore": 50,
+  "scoreRange": [
+    0,
+    100
+  ],
+  "ruleLevelWeights": {
+    "strong_good": 25,
+    "good": 15,
+    "neutral": 0,
+    "bad": -15,
+    "strong_bad": -25
+  },
+  "files": [
+    "activities.json",
+    "truc.json",
+    "mansion28.json",
+    "good-gods.json",
+    "bad-gods.json",
+    "overrides.json"
+  ],
+  "policies": {
+    "aiMayChangeScore": false,
+    "mansion28ScoringEnabled": false,
+    "unknownRuleMeansNeutral": false,
+    "unknownRuleMeansNoEvidence": true,
+    "hardVetoFromClassicalJi": false
+  },
+  "sources": [
+    {
+      "id": "xiejibianfangshu",
+      "title": "欽定協紀辨方書",
+      "role": "primary classical source",
+      "scope": [
+        "12_truc",
+        "good_gods",
+        "bad_gods",
+        "exceptions"
+      ]
+    },
+    {
+      "id": "xiejibianfangshu_28",
+      "title": "欽定協紀辨方書 — 二十八宿配日",
+      "role": "primary source for sequence/origin caution",
+      "scope": [
+        "28_mansions"
+      ]
+    }
+  ],
+  "notes": [
+    "Weights are product policy, not values stated by classical sources.",
+    "28-mansion activity scoring is intentionally disabled in v1 until one consistent tradition is audited per activity."
+  ]
+}
