@@ -1,7 +1,7 @@
-import activitiesText from '../almanac-data/activities.json?raw'
-import badGodsText from '../almanac-data/bad-gods.json?raw'
-import goodGodsText from '../almanac-data/good-gods.json?raw'
-import trucText from '../almanac-data/truc.json?raw'
+import activitiesData from '../almanac-data/activities.json'
+import badGodsData from '../almanac-data/bad-gods.json'
+import goodGodsData from '../almanac-data/good-gods.json'
+import trucData from '../almanac-data/truc.json'
 
 export type ActivityStatus = 'recommended' | 'neutral' | 'avoid' | 'watch' | 'strong_avoid' | 'consider'
 export interface ActivityRecommendation {
@@ -86,12 +86,12 @@ function classify(score: number, positiveMagnitude: number, negativeMagnitude: n
   return 'neutral'
 }
 
-const activities = JSON.parse(activitiesText).items as Activity[]
-const truc = JSON.parse(trucText).items as Truc[]
-const goodGods = JSON.parse(goodGodsText).items as GoodGod[]
-const badGods = JSON.parse(badGodsText).items as BadGod[]
-const goodWeights: Record<string, number> = JSON.parse(goodGodsText).weights
-const badWeights: Record<string, number> = JSON.parse(badGodsText).weights
+const activities = activitiesData.items as Activity[]
+const truc = trucData.items as Truc[]
+const goodGods = goodGodsData.items as GoodGod[]
+const badGods = badGodsData.items as BadGod[]
+const goodWeights: Record<string, number> = goodGodsData.weights
+const badWeights: Record<string, number> = badGodsData.weights
 
 export function getActivityAvoidances(input: {
   officerId: string
