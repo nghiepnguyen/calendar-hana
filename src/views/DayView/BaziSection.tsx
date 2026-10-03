@@ -1,4 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import { CaretDown, Columns } from '@phosphor-icons/react'
 import { calculateBazi } from '@shared/bazi'
 import {
@@ -362,9 +363,9 @@ export function BaziSection({
       {result.status === 'insufficientData' ? (
         <div className={styles.empty}>
           <p>{result.reason}</p>
-          <a className="btn" href="/settings#birth-info">
+          <Link className="btn" to="/settings#birth-info">
             Bổ sung hồ sơ sinh
-          </a>
+          </Link>
         </div>
       ) : (
         <Collapsible summary={baziSummary(result.candidates, insightReady, strengthReady)}>

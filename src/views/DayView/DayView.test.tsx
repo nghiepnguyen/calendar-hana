@@ -1,4 +1,5 @@
-import { render, screen, within } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
+import { render } from '../../test/render'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createDefaultSettings } from '../../data/defaultCategories'

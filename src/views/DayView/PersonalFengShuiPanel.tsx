@@ -1,4 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -175,17 +176,17 @@ function BirthInvite({ missing, reason }: { missing: boolean; reason: string }) 
             : reason}
         </p>
         <div className={styles.inviteActions}>
-          <a className={`btn btn-primary ${styles.inviteCta}`} href="/settings#birth-info">
+          <Link className={`btn btn-primary ${styles.inviteCta}`} to="/settings#birth-info">
             {missing ? 'Nhập ngày sinh' : 'Sửa ngày sinh'}
             <ArrowRight size={iconSize(16)} weight="bold" aria-hidden="true" />
-          </a>
+          </Link>
           {offerSignIn ? (
-            <a
+            <Link
               className={`btn ${styles.inviteCta} ${styles.inviteSecondary}`}
-              href="/settings#account"
+              to="/settings#account"
             >
               Đăng nhập
-            </a>
+            </Link>
           ) : null}
         </div>
         {offerSignIn ? (
@@ -314,10 +315,10 @@ export function PersonalFengShuiPanel({
                 </dd>
               </div>
             </dl>
-            <a className={styles.editProfile} href="/settings#birth-info">
+            <Link className={styles.editProfile} to="/settings#birth-info">
               <PencilSimple size={iconSize(14)} weight="bold" aria-hidden="true" />
               Sửa thông tin sinh
-            </a>
+            </Link>
           </div>
           <section
             className={`${almanac.relation} ${TONE_BANNER[result.summary]}`}
@@ -430,7 +431,7 @@ export function PersonalFengShuiPanel({
                     </span>
                   ) : (
                     <span>
-                      <a href="/settings#birth-info">Nhập giờ và nơi sinh</a> để xem Thập thần của
+                      <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link> để xem Thập thần của
                       ngày.
                     </span>
                   )}
@@ -591,11 +592,11 @@ export function PersonalFengShuiPanel({
         />
       </div>
 
-      <a className={styles.guideLink} href="/settings#feng-shui-guide">
+      <Link className={styles.guideLink} to="/settings#feng-shui-guide">
         <BookOpen size={iconSize(15)} weight="light" aria-hidden="true" />
         Tìm hiểu cách tính và nguồn tham khảo
         <ArrowUpRight size={iconSize(13)} weight="bold" aria-hidden="true" />
-      </a>
+      </Link>
       {explain ? <AlmanacExplain item={explain} onClose={() => setExplain(null)} /> : null}
     </section>
   )

@@ -1,4 +1,5 @@
-import { render, screen, within } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
+import { render } from '../../test/render'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'

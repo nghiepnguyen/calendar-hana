@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { screen, fireEvent } from '@testing-library/react'
+import { render } from '../../test/render'
 import { expect, it } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'
 import { DayView } from './DayView'

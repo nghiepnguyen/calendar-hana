@@ -1,4 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import {
   CalendarCheck,
   CheckCircle,
@@ -378,7 +379,7 @@ export function AnnualFengShuiSection({
           ) : null}
           {!savedGender ? (
             <p className={styles.annualProfileHint}>
-              <a href="/settings#birth-info">Lưu giới tính trong hồ sơ sinh</a> để không phải chọn
+              <Link to="/settings#birth-info">Lưu giới tính trong hồ sơ sinh</Link> để không phải chọn
               lại.
             </p>
           ) : null}

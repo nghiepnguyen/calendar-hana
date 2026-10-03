@@ -24,7 +24,7 @@ export function LegalPage({ policy }: { policy: keyof typeof content }) {
     else window.scrollTo?.({ top: 0 })
   }, [policy, hash])
 
-  // Các link giữa hai chính sách trong HTML cũng giữ nguyên phiên Firestore của PWA.
+  // Link trong HTML (giữa hai chính sách, về trang chủ) cũng giữ nguyên phiên Firestore của PWA.
   function onClick(event: MouseEvent<HTMLElement>) {
     if (
       event.defaultPrevented ||
@@ -38,7 +38,7 @@ export function LegalPage({ policy }: { policy: keyof typeof content }) {
     const link = (event.target as Element).closest('a')
     if (!link || link.target || link.hasAttribute('download')) return
     const url = new URL(link.href)
-    if (url.origin === window.location.origin && /^\/(privacy|terms)\/?$/.test(url.pathname)) {
+    if (url.origin === window.location.origin && /^\/((privacy|terms)\/?)?$/.test(url.pathname)) {
       event.preventDefault()
       navigate(url.pathname + url.search + url.hash)
     }
