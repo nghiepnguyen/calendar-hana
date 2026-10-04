@@ -86,7 +86,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Tháng 12/2100')
   })
 
-  it('đổi ngày thì cuộn về đầu, chỉ đổi chế độ xem thì giữ chỗ', async () => {
+  it('đổi ngày hoặc chế độ xem thì cuộn nội dung mới về đầu', async () => {
     renderApp('/day/2026-09-23')
     await screen.findByRole('region', { name: 'Thông tin ngày' })
     const main = screen.getByRole('main')
@@ -99,7 +99,7 @@ describe('App', () => {
 
     scrollTo.mockClear()
     await userEvent.click(screen.getByRole('radio', { name: 'Tháng' }))
-    expect(scrollTo).not.toHaveBeenCalled()
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'instant' })
   })
 
   it('nút ‹ › và phím mũi tên gửi analytics nav_button', async () => {

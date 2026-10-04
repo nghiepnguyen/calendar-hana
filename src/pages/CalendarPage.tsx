@@ -73,13 +73,13 @@ export function CalendarPage() {
     },
   })
 
-  // Sang ngày khác (bằng bất kỳ cách nào) thì xem từ đầu; chỉ đổi chế độ xem thì giữ chỗ đang đọc.
-  const shownDate = useRef(date)
+  // Nội dung của mỗi ngày và mỗi chế độ xem bắt đầu ở đầu, tránh tab mới thừa hưởng scroll cũ.
+  const shownRoute = useRef({ date, view })
   useEffect(() => {
-    if (shownDate.current === date) return
-    shownDate.current = date
+    if (shownRoute.current.date === date && shownRoute.current.view === view) return
+    shownRoute.current = { date, view }
     mainRef.current?.scrollTo?.({ top: 0, behavior: 'instant' })
-  }, [date])
+  }, [date, view])
 
   // Đổi phím tắt thì sửa cả hướng dẫn ở Settings/ShortcutSection.
   useKeyboardShortcuts({
