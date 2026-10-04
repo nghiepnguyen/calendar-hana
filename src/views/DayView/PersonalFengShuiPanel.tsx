@@ -621,6 +621,7 @@ export function PersonalFengShuiPanel({
                 </div>
                 <select
                   id="personal-event-filter"
+                  className={`input ${styles.eventSelect}`}
                   value={selectedEvent}
                   onChange={(event) => setSelectedEvent(event.target.value)}
                 >

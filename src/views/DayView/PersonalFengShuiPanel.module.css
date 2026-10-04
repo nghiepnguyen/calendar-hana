@@ -118,16 +118,9 @@
   text-transform: uppercase;
 }
 
-.eventFilter select {
-  min-height: max(var(--tap-min, 44px), calc(36px * var(--ui-scale)));
+.eventSelect {
+  grid-column: 2;
   min-width: 0;
-  padding: 0 calc(10px * var(--ui-scale));
-  border: 1px solid var(--glass-edge);
-  border-radius: var(--radius-sm);
-  background: var(--glass-strong);
-  color: var(--text);
-  font: inherit;
-  cursor: pointer;
 }
 
 .eventFilter span {
@@ -142,6 +135,7 @@
   }
 
   .eventFilter select {
+    grid-column: 1;
     width: 100%;
   }
 }
