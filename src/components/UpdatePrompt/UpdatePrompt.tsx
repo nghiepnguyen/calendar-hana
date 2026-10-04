@@ -20,22 +20,27 @@ export function UpdatePrompt() {
 
   return (
     <InToastRegion>
-      <div className={`glass ${styles.toast}`} role="status">
+      <div className={`glass ${styles.toast} ${needRefresh ? styles.updateToast : ''}`} role={needRefresh ? 'alert' : 'status'}>
         {needRefresh ? (
           <>
             <ArrowClockwise
-              size={iconSize(20)}
+              size={iconSize(24)}
               weight="bold"
               className={styles.icon}
               aria-hidden="true"
             />
-            <span className={styles.text}>Có phiên bản mới.</span>
-            <button type="button" className="btn btn-primary" onClick={update}>
-              Cập nhật
-            </button>
-            <button type="button" className="btn btn-ghost" onClick={dismiss}>
-              Để sau
-            </button>
+            <div className={styles.updateMessage}>
+              <strong className={styles.updateTitle}>Có phiên bản mới.</strong>
+              <span className={styles.updateHint}>Cập nhật để dùng bản mới nhất.</span>
+            </div>
+            <div className={styles.updateActions}>
+              <button type="button" className="btn btn-primary" onClick={update}>
+                Cập nhật
+              </button>
+              <button type="button" className="btn btn-ghost" onClick={dismiss}>
+                Để sau
+              </button>
+            </div>
           </>
         ) : (
           <>

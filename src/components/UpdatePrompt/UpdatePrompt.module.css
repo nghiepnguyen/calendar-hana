@@ -9,6 +9,47 @@
   animation: rise 0.35s var(--ease-spring);
 }
 
+.updateToast {
+  width: min(100%, 560px);
+  gap: calc(12px * var(--ui-scale));
+  padding: calc(14px * var(--ui-scale)) calc(16px * var(--ui-scale));
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--glass-edge));
+  border-radius: var(--radius-lg);
+  box-shadow:
+    var(--glass-highlight),
+    0 12px 30px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.updateToast .icon {
+  color: var(--accent);
+}
+
+.updateMessage {
+  display: grid;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: calc(2px * var(--ui-scale));
+}
+
+.updateTitle {
+  color: var(--text);
+  font-size: calc(16px * var(--ui-scale));
+  line-height: 1.2;
+}
+
+.updateHint {
+  color: var(--text-muted);
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.35;
+}
+
+.updateActions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+}
+
 .icon {
   flex: 0 0 auto;
   color: var(--accent);
@@ -33,5 +74,19 @@
 @media (max-width: 720px) {
   .text {
     white-space: normal;
+  }
+
+  .updateToast {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .updateActions {
+    width: 100%;
+    padding-left: calc(36px * var(--ui-scale));
+  }
+
+  .updateActions .btn {
+    flex: 1 1 0;
   }
 }
