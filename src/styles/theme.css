@@ -392,7 +392,7 @@ button {
     transform 0.18s var(--ease);
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
   background: var(--fill-hover);
 }
 
@@ -406,7 +406,7 @@ button {
   box-shadow: 0 6px 18px rgb(224 52 43 / 0.28);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
 }
 
@@ -418,7 +418,7 @@ button {
   background: transparent;
 }
 
-.btn-ghost:hover {
+.btn-ghost:hover:not(:disabled) {
   background: var(--fill);
 }
 

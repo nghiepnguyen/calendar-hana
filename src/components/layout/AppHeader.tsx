@@ -16,6 +16,7 @@ import { useUiStore } from '../../store/uiStore'
 import { track } from '../../analytics'
 import { useAuth } from '../../auth/authContext'
 import { useIsCompact } from '../../hooks/useMediaQuery'
+import { useNow } from '../../hooks/useNow'
 import { DatePicker } from '../DatePicker/DatePicker'
 import { SyncStatus } from './SyncStatus'
 import { iconSize } from '../../styles/textSize'
@@ -92,6 +93,9 @@ export function AppHeader({
   const title = viewTitle(view, date, weekStartsOn)
   const { available: authAvailable, user } = useAuth()
   const compact = useIsCompact()
+  const { today } = useNow()
+  // Đang xem đúng ngày hôm nay thì nút không còn tác dụng.
+  const isToday = date === today
 
   const viewIndex = VIEW_MODES.indexOf(view)
 
@@ -100,7 +104,8 @@ export function AppHeader({
       type="button"
       className={`btn ${compact ? styles.today : ''}`}
       onClick={onToday}
-      title="Hôm nay (T)"
+      disabled={isToday}
+      title={isToday ? 'Đang xem hôm nay' : 'Hôm nay (T)'}
     >
       Hôm nay
     </button>

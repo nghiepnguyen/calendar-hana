@@ -43,6 +43,9 @@ describe('App', () => {
     expect(await screen.findByRole('heading', { name: 'Thứ Tư, 23/9/2026' })).toBeInTheDocument()
     expect(screen.getByRole('radio', { name: 'Ngày' })).toBeChecked()
     expect(screen.getByRole('region', { name: 'Thông tin ngày' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Hôm nay' })).toBeDisabled()
+    await userEvent.click(screen.getByRole('button', { name: 'Ngày sau' }))
+    expect(screen.getByRole('button', { name: 'Hôm nay' })).toBeEnabled()
   })
 
   it('chuyển Ngày / Tuần / Tháng và đi trước / sau', async () => {
