@@ -48,11 +48,40 @@ const category = {
 describe('firestore.rules', () => {
   it('người dùng đọc/ghi được dữ liệu của mình', async () => {
     const db = env.authenticatedContext('alice').firestore()
-    await assertSucceeds(setDoc(doc(db, 'users/alice'), { settings: {} }))
+    await assertSucceeds(
+      setDoc(doc(db, 'users/alice'), {
+        email: 'alice@example.com',
+        displayName: 'Alice',
+        createdAt: '2026-01-01T00:00:00.000Z',
+        settings: {},
+      }),
+    )
     await assertSucceeds(setDoc(doc(db, 'users/alice/events/e1'), event))
     await assertSucceeds(getDoc(doc(db, 'users/alice/events/e1')))
     await assertSucceeds(setDoc(doc(db, 'users/alice/categories/travel'), category))
     await assertSucceeds(deleteDoc(doc(db, 'users/alice/events/e1')))
+  })
+
+  it('hồ sơ không nhận field lạ và không cho sửa createdAt', async () => {
+    const db = env.authenticatedContext('alice').firestore()
+    const path = 'users/alice'
+    await assertSucceeds(
+      setDoc(doc(db, path), {
+        email: 'alice@example.com',
+        displayName: 'Alice',
+        createdAt: '2026-01-01T00:00:00.000Z',
+        settings: {},
+      }),
+    )
+    await assertFails(setDoc(doc(db, path), { settings: {}, admin: true }))
+    await assertFails(
+      setDoc(doc(db, path), {
+        email: 'alice@example.com',
+        displayName: 'Alice',
+        createdAt: '2026-02-01T00:00:00.000Z',
+        settings: {},
+      }),
+    )
   })
 
   it('không đọc/ghi được dữ liệu của người khác hoặc khi chưa đăng nhập', async () => {

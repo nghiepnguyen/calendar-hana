@@ -39,8 +39,26 @@ service cloud.firestore {
         && data.updatedAt is string;
     }
 
+    function validUserProfile(data) {
+      return data.keys().hasOnly(['email', 'displayName', 'createdAt', 'settings'])
+        && optionalString(data, 'email', 320)
+        && optionalString(data, 'displayName', 200)
+        && (!( 'createdAt' in data) || data.createdAt is string)
+        && (!( 'settings' in data) || data.settings is map);
+    }
+
+    function keepsCreatedAt(data) {
+      return !( 'createdAt' in data)
+        || !('createdAt' in resource.data)
+        || data.createdAt == resource.data.createdAt;
+    }
+
     match /users/{uid} {
-      allow read, create, update, delete: if signedInAs(uid);
+      allow read, delete: if signedInAs(uid);
+      allow create: if signedInAs(uid) && validUserProfile(request.resource.data);
+      allow update: if signedInAs(uid)
+        && validUserProfile(request.resource.data)
+        && keepsCreatedAt(request.resource.data);
 
       match /events/{eventId} {
         allow read, delete: if signedInAs(uid);

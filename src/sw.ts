@@ -34,6 +34,16 @@ interface PushData {
   url?: string
 }
 
+function notificationText(value: unknown, maxLength: number): string | undefined {
+  if (typeof value !== 'string') return undefined
+  return value.slice(0, maxLength)
+}
+
+function internalUrl(value: unknown): string {
+  if (typeof value !== 'string' || !value.startsWith('/') || value.startsWith('//')) return '/'
+  return value
+}
+
 /** Server gửi FCM data message: { data: { title, body, tag, url } }. */
 function readPush(event: PushEvent): PushData {
   try {
@@ -48,13 +58,13 @@ function readPush(event: PushEvent): PushData {
 self.addEventListener('push', (event) => {
   const data = readPush(event)
   event.waitUntil(
-    self.registration.showNotification(data.title || 'Lịch Việt', {
-      body: data.body,
-      tag: data.tag,
+    self.registration.showNotification(notificationText(data.title, 120) || 'Lịch Việt', {
+      body: notificationText(data.body, 500),
+      tag: notificationText(data.tag, 100),
       icon: '/pwa-192x192.png',
       badge: '/pwa-64x64.png',
       lang: 'vi',
-      data: { url: data.url?.startsWith('/') ? data.url : '/' },
+      data: { url: internalUrl(data.url) },
     }),
   )
 })
@@ -62,7 +72,7 @@ self.addEventListener('push', (event) => {
 // Bấm thông báo: mở app tại ngày của sự kiện. Có tab đang mở thì dùng lại tab đó.
 self.addEventListener('notificationclick', (event) => {
   event.notification.close()
-  const url: string = event.notification.data?.url ?? '/'
+  const url = internalUrl(event.notification.data?.url)
   event.waitUntil(
     (async () => {
       const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
