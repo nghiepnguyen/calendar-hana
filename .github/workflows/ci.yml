@@ -6,21 +6,24 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 env:
   NODE_VERSION: 22
+  NODE_CACHE_KEY: ${{ runner.os }}-node-22-${{ hashFiles('package-lock.json', 'functions/package-lock.json') }}
 
 jobs:
-  test:
-    name: Typecheck, lint, test
+  prepare:
+    name: Prepare dependencies
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -28,40 +31,101 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             functions/package-lock.json
-
-      # npm 10 lỗi khi cài vitest 5 (xem README).
-      - run: npm install -g npm@11 firebase-tools
-
-      - name: Install
+      - name: Install dependencies
         run: |
+          npm install --global npm@11
           npm ci
           npm ci --prefix functions
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ env.NODE_CACHE_KEY }}
 
+  static-analysis:
+    name: Typecheck and lint
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ env.NODE_CACHE_KEY }}
       - run: npm run typecheck
       - run: npm run lint
-      - run: npm test
 
+  unit-tests:
+    name: Unit and emulator tests
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ env.NODE_CACHE_KEY }}
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
+      - name: Install Firebase CLI
+        run: npm install --global firebase-tools
+      - run: npm test
+      - run: npm run test:emulator
 
-      - name: Emulator tests
-        run: npm run test:emulator
-
+  e2e-tests:
+    name: Playwright tests
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ env.NODE_CACHE_KEY }}
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
-
       - name: End-to-end tests
         run: npx playwright test --project=desktop --project=mobile
         env:
           CI: true
-
       - name: Public pages on Vite dev
         run: npx playwright test --config playwright.dev.config.ts --project=desktop --project=mobile
         env:
           CI: true
-
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
@@ -71,7 +135,7 @@ jobs:
 
   deploy:
     name: Deploy to Firebase
-    needs: test
+    needs: [static-analysis, unit-tests, e2e-tests]
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -82,27 +146,24 @@ jobs:
       - name: Check credentials
         if: env.HAS_CREDENTIALS != 'true'
         run: echo "::warning::Chưa có secret FIREBASE_SERVICE_ACCOUNT, bỏ qua deploy."
-
       - uses: actions/checkout@v4
         if: env.HAS_CREDENTIALS == 'true'
-
       - uses: actions/setup-node@v4
         if: env.HAS_CREDENTIALS == 'true'
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            functions/package-lock.json
-
-      - name: Install
+      - name: Restore dependencies
         if: env.HAS_CREDENTIALS == 'true'
-        run: |
-          npm install -g npm@11 firebase-tools
-          npm ci
-          npm ci --prefix functions
-
-      # Cấu hình Firebase Web app là công khai (nằm trong bundle), lưu ở Repository variables.
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ env.NODE_CACHE_KEY }}
+      - name: Install Firebase CLI
+        if: env.HAS_CREDENTIALS == 'true'
+        run: npm install --global firebase-tools
       - name: Build web app
         if: env.HAS_CREDENTIALS == 'true'
         run: npm run build
@@ -114,7 +175,6 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_VAPID_KEY: ${{ vars.VITE_FIREBASE_VAPID_KEY }}
-
       - name: Write functions/.env
         if: env.HAS_CREDENTIALS == 'true'
         run: |
@@ -125,13 +185,10 @@ jobs:
         env:
           EMAIL_FROM: ${{ vars.EMAIL_FROM }}
           APP_URL: ${{ vars.APP_URL }}
-
       - uses: google-github-actions/auth@v2
         if: env.HAS_CREDENTIALS == 'true'
         with:
           credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-
-      # RESEND_API_KEY đã nằm trong Secret Manager, không cần truyền ở đây.
       - name: Deploy
         if: env.HAS_CREDENTIALS == 'true'
         run: firebase deploy --only firestore,hosting,functions --project calendar-hana --non-interactive --force
