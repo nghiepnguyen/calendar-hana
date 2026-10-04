@@ -10,7 +10,9 @@ service cloud.firestore {
     }
 
     function optionalString(data, field, maxSize) {
-      return !(field in data) || (data[field] is string && data[field].size() <= maxSize);
+      return !(field in data)
+        || data[field] == null
+        || (data[field] is string && data[field].size() <= maxSize);
     }
 
     function validEvent(data, eventId) {
