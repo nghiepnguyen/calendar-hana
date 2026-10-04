@@ -1,5 +1,12 @@
 import AxeBuilder from '@axe-core/playwright'
-import { test, expect, chooseTextSize, openCreateForm, type TextSizeLabel } from './fixtures'
+import {
+  test,
+  expect,
+  chooseTextSize,
+  openAdvancedDetails,
+  openCreateForm,
+  type TextSizeLabel,
+} from './fixtures'
 import type { Page } from '@playwright/test'
 
 async function saveBirth(page: Page, complete = false) {
@@ -33,6 +40,7 @@ test('P1: missing profile → settings anchor → saved profile → explicit rol
   const annual = panel.getByRole('region', { name: 'Hạn theo năm' })
   const summary = await panel.getByTestId('personal-day-summary').textContent()
   const dayLabel = await app.getByRole('region', { name: 'Thông tin ngày' }).textContent()
+  await openAdvancedDetails(app)
   await expect(annual).toContainText('tuổi mụ 37')
   await expect(annual).toContainText('Yếu tố vận hạn')
   await expect(panel.getByTestId('personal-day-summary')).toHaveText(summary!)
@@ -68,19 +76,26 @@ for (const size of ['Mặc định', 'Lớn', 'Rất lớn'] as TextSizeLabel[])
   for (const theme of ['Sáng', 'Tối']) {
     test(`360px, ${size}, ${theme}: accessible panel with separate explanation page`, async ({
       app,
-    }) => {
+    }, testInfo) => {
       await app.setViewportSize({ width: 360, height: 800 })
+      // Tắt hiệu ứng hiện dần để axe không đo độ tương phản lúc ô còn mờ.
+      await app.emulateMedia({ reducedMotion: 'reduce' })
       await saveBirth(app)
       await chooseTextSize(app, size)
       await app.getByRole('radio', { name: theme, exact: true }).click()
       await app.goto('/day/2026-09-23')
       const panel = app.getByRole('region', { name: 'Phong thủy cá nhân' })
+      // Chờ hồ sơ sinh nạp xong, tránh audit lúc panel còn hiện lời mời đang chạy hiệu ứng.
+      await expect(panel.getByTestId('personal-day-summary')).toBeVisible()
+      await openAdvancedDetails(app)
       await expect(panel.getByText('Xem đủ 12 giờ và lý do', { exact: true })).toHaveCount(0)
       expect(await app.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       )
-      for (const control of await panel.locator('select').all())
-        expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+      // Ô nhập cao 40px với chuột ở cỡ chữ mặc định; 44px khi cảm ứng hoặc phóng to chữ (theme.css).
+      if (testInfo.project.use.hasTouch || size !== 'Mặc định')
+        for (const control of await panel.locator('select').all())
+          expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44)
       const audit = await new AxeBuilder({ page: app })
         .include('[aria-label="Phong thủy cá nhân"]')
         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
@@ -114,6 +129,7 @@ test('saved profile computes day/hour and annual results offline', async ({ app 
     await expect(app).toHaveURL(/\/day\/2026-09-20$/)
     const panel = app.getByRole('region', { name: 'Phong thủy cá nhân' })
     await expect(panel.getByTestId('personal-day-summary')).toBeVisible()
+    await openAdvancedDetails(app)
     await expect(panel.getByRole('region', { name: 'Hạn theo năm' })).toContainText('tuổi mụ 37')
     await expect(panel.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).toContainText('TST')
     await expect(panel.getByText('Xem đủ 12 giờ và lý do', { exact: true })).toHaveCount(0)
@@ -122,7 +138,7 @@ test('saved profile computes day/hour and annual results offline', async ({ app 
   }
 })
 
-test('saved gender, event-hour note and mobile collapse', async ({ app }, testInfo) => {
+test('saved gender, event-hour note and advanced collapse', async ({ app }) => {
   await app.goto('/settings#birth-info')
   await app.getByLabel('Giới tính (tùy chọn)', { exact: true }).selectOption('female')
   await saveBirth(app)
@@ -142,14 +158,9 @@ test('saved gender, event-hour note and mobile collapse', async ({ app }, testIn
     panel.getByRole('list', { name: 'Sự kiện rơi vào giờ không hợp tuổi' }),
   ).toContainText('Họp tổ lúc 10:00 rơi vào giờ Tỵ')
 
-  const toggle = annual.getByRole('button', { name: /Sao Kế Đô/ })
-  if (testInfo.project.name === 'mobile') {
-    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
-    await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeHidden()
-    await toggle.click()
-    await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeVisible()
-  } else {
-    await expect(toggle).toBeHidden()
-  }
+  // Hạn theo năm nằm trong mục nâng cao, mặc định thu gọn trên mọi khổ màn hình.
+  await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeHidden()
+  await openAdvancedDetails(app)
+  await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeVisible()
   await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeChecked()
 })

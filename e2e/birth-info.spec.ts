@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { chooseTextSize, expect, test } from './fixtures'
+import { chooseTextSize, expect, openAdvancedDetails, test } from './fixtures'
 
 test('nhập và lưu ngày sinh, giữ sau khi tải lại, xóa được', async ({ app }) => {
   await app.goto('/settings#account')
@@ -27,6 +27,7 @@ test('nhập và lưu ngày sinh, giữ sau khi tải lại, xóa được', asy
   // Quy ước khác mặc định thì mục nâng cao tự mở sau khi tải lại.
   await expect(app.getByLabel('Quy ước giờ Tý')).toBeVisible()
   await app.goto('/day/2026-09-23')
+  await openAdvancedDetails(app)
   await expect(app.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).toContainText('TST')
   await app.goto('/settings#account')
   await app.getByRole('button', { name: 'Xóa thông tin ngày sinh', exact: true }).click()

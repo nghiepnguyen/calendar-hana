@@ -23,6 +23,15 @@ export async function openCreateForm(page: Page) {
   return page.getByRole('dialog', { name: 'Tạo sự kiện' })
 }
 
+/** Mở mục "Chi tiết luận đoán nâng cao" (Hạn theo năm, Tứ Trụ) trong panel Phong thủy cá nhân. */
+export async function openAdvancedDetails(page: Page) {
+  const toggle = page
+    .getByRole('region', { name: 'Phong thủy cá nhân' })
+    .getByRole('button', { name: /Chi tiết luận đoán nâng cao/ })
+  if ((await toggle.getAttribute('aria-expanded')) !== 'true') await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+}
+
 export type TextSizeLabel = 'Mặc định' | 'Lớn' | 'Rất lớn'
 
 /** Chọn cỡ chữ trong Cài đặt > Hiển thị > Cỡ chữ (lưu vào Settings như người dùng thật), rồi quay lại `back`. */
