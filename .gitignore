@@ -14,3 +14,9 @@ test-results/
 firebase-debug.log*
 firestore-debug.log*
 ui-debug.log*
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
