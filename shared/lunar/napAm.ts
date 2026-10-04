@@ -31,7 +31,7 @@ export const NAP_AM = [
   'Phú Đăng Hỏa',
   'Thiên Hà Thủy',
   'Đại Trạch Thổ',
-  'Thoa Chủy Kim',
+  'Thoa Xuyến Kim',
   'Tang Đố Mộc',
   'Đại Khê Thủy',
   'Sa Trung Thổ',

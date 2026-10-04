@@ -29,6 +29,14 @@ describe('explainBranch', () => {
     expect(item.verdict).toEqual({ label: 'Lưu ý', tone: 'bad' })
     expect(item.meaning).toMatch(/lục xung/)
   })
+
+  it('names the trine group of the birth branch', () => {
+    // Tuổi Canh Ngọ xem ngày Nhâm Dần: Dần Ngọ Tuất tam hợp.
+    const item = explainBranch(ready('1990-07-01', '2026-09-25'))
+    expect(item.reasons).toContain(
+      'Tam hợp: nhóm tuổi Dần, Ngọ, Tuất hỗ trợ năng lượng tích cực lẫn nhau.',
+    )
+  })
 })
 
 describe('trineGroup', () => {

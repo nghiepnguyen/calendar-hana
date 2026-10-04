@@ -213,10 +213,10 @@ describe('personal panel features', () => {
     ])
   })
 
-  it('shows corrected nap am name for Tân Hợi', () => {
+  it('shows the nap am name for Tân Hợi', () => {
     at('10:00')
     render(<PersonalFengShuiPanel date="2026-09-23" settings={settings({ birthDate: '1971-01-29' })} />)
-    expect(screen.getByRole('region', { name: 'Quan hệ Nạp âm' })).toHaveTextContent('Thoa Chủy Kim')
+    expect(screen.getByRole('region', { name: 'Quan hệ Nạp âm' })).toHaveTextContent('Thoa Xuyến Kim')
   })
 
   it('asks for birth time and place before showing the viewed day Ten God', () => {

@@ -71,7 +71,7 @@ export function explainBranch(r: Ready): ExplainItem {
     reasons: [
       `Chi tuổi: ${birth}. Chi ngày: ${day}.`,
       ...(r.branch.kind === 'trine'
-        ? ['Tam hợp: Nhóm tuổi Mão - Mùi - Hợi hỗ trợ năng lượng tích cực lẫn nhau.']
+        ? [`Tam hợp: nhóm tuổi ${trineGroup(r.profile.chi)} hỗ trợ năng lượng tích cực lẫn nhau.`]
         : []),
     ],
   }
