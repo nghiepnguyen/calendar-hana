@@ -70,9 +70,9 @@
   border-radius: var(--radius-pill);
   background: var(--fill);
   color: var(--text-muted);
-  font-size: calc(10.5px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -104,14 +104,14 @@
 }
 
 .heroFacts dt {
-  font-size: calc(11.5px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
   color: var(--text-muted);
 }
 
 .heroFacts dd {
   margin: 0;
-  font-size: calc(14.5px * var(--ui-scale));
+  font-size: var(--day-body);
   font-weight: var(--fw-600);
 }
 
@@ -242,9 +242,9 @@
 
 .relationEyebrow {
   margin: 0;
-  font-size: calc(11px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -259,7 +259,7 @@
 
 .relationName {
   font-family: var(--font-display);
-  font-size: calc(24px * var(--ui-scale));
+  font-size: var(--day-metric);
   font-weight: var(--fw-700);
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -285,7 +285,7 @@
 
 .relationText {
   margin: calc(2px * var(--ui-scale)) 0 0;
-  font-size: calc(13.5px * var(--ui-scale));
+  font-size: var(--day-body);
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -500,14 +500,14 @@
 }
 
 .subtle {
-  font-size: calc(14px * var(--ui-scale));
+  font-size: var(--day-body);
   color: var(--text-muted);
 }
 
 .doLine {
   display: flex;
   gap: calc(7px * var(--ui-scale));
-  font-size: calc(13.5px * var(--ui-scale));
+  font-size: var(--day-body);
   line-height: 1.45;
 }
 

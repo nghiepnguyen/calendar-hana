@@ -22,11 +22,19 @@ export function InfoButton({ label, onClick }: { label: string; onClick: () => v
  * Khối chỉ thu gọn khi panel hẹp (container query): lộ dòng tóm tắt và nút mở.
  * Trên màn rộng luôn mở và ẩn nút. Nội dung vẫn nằm trong DOM khi thu gọn.
  */
-export function Collapsible({ summary, children }: { summary: ReactNode; children: ReactNode }) {
+export function Collapsible({
+  summary,
+  children,
+  desktop = false,
+}: {
+  summary: ReactNode
+  children: ReactNode
+  desktop?: boolean
+}) {
   const [open, setOpen] = useState(false)
   const id = useId()
   return (
-    <div className={styles.collapse} data-open={open}>
+    <div className={`${styles.collapse} ${desktop ? styles.desktopCollapse : ''}`} data-open={open}>
       <button
         type="button"
         className={styles.collapseToggle}

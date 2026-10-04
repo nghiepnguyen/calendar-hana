@@ -27,6 +27,24 @@
   gap: var(--section-gap);
 }
 
+.advancedGrid {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--section-gap);
+  align-items: start;
+}
+
+.advancedGrid > * {
+  min-width: 0;
+}
+
+@container (max-width: 767px) {
+  .advancedGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .goalCluster {
   display: grid;
   grid-column: 1 / -1;
@@ -62,7 +80,7 @@
 
 .eventVerdictEvent {
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -83,7 +101,7 @@
   padding-top: calc(5px * var(--ui-scale));
   border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
   color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 .eventNextDate strong {
@@ -112,10 +130,21 @@
 
 .eventFilter label {
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.eventFilterTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6px * var(--ui-scale));
+}
+
+.eventFilterTitle svg {
+  flex: 0 0 auto;
+  color: var(--accent);
 }
 
 .eventSelect {
@@ -125,7 +154,7 @@
 
 .eventFilter span {
   color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 @container (max-width: 519px) {
@@ -308,7 +337,7 @@
 
 .statement {
   font-family: var(--font-display);
-  font-size: calc(19px * var(--ui-scale));
+  font-size: var(--day-metric);
   font-weight: var(--fw-700);
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -322,13 +351,13 @@
   padding: calc(9px * var(--ui-scale)) calc(11px * var(--ui-scale));
   border-radius: 12px;
   background: var(--fill);
-  font-size: calc(13.5px * var(--ui-scale));
+  font-size: var(--day-body);
   line-height: 1.4;
 }
 
 .transitLabel {
   color: var(--text-muted);
-  font-size: calc(11px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -466,7 +495,7 @@
 }
 
 .hourTop strong {
-  font-size: calc(17px * var(--ui-scale));
+  font-size: var(--day-title);
   font-weight: var(--fw-700);
   letter-spacing: -0.01em;
 }
@@ -476,7 +505,7 @@
 }
 
 .hourRange {
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   font-variant-numeric: tabular-nums;
 }
@@ -511,7 +540,7 @@
 
 .annualContext {
   color: var(--text-muted);
-  font-size: calc(13.5px * var(--ui-scale));
+  font-size: var(--day-body);
   font-weight: var(--fw-600);
 }
 
@@ -542,7 +571,7 @@
   border-radius: var(--radius-pill);
   color: var(--text-muted);
   cursor: pointer;
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   transition:
     background-color 0.35s cubic-bezier(0.32, 0.72, 0, 1),
@@ -583,14 +612,14 @@
 .annualSectionHead h4 {
   color: var(--text);
   font-family: var(--font-display);
-  font-size: calc(15px * var(--ui-scale));
+  font-size: var(--day-title);
   font-weight: var(--fw-700);
   letter-spacing: -0.02em;
 }
 
 .annualSectionHead p {
   color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
   line-height: 1.45;
 }
 
@@ -1211,14 +1240,107 @@
 /* ---------- Thu gọn trên điện thoại ---------- */
 
 .collapse {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--ui-scale));
 }
 
 .collapseToggle {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(10px * var(--ui-scale));
+  width: 100%;
+  min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
+  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border: 0;
+  border-radius: 14px;
+  background: var(--fill);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .collapseBody {
+  display: none;
+}
+
+.collapse[data-open='true'] .collapseBody {
+  display: contents;
+}
+
+.collapseSummary {
+  min-width: 0;
+  font-size: calc(14px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.collapseAction {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.collapseAction svg {
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.collapse[data-open='true'] .collapseAction svg {
+  transform: rotate(180deg);
+}
+
+/* Khối luận đoán nâng cao: gọn mặc định trên desktop, vẫn mở được khi cần. */
+.desktopCollapse {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--ui-scale));
+}
+
+.desktopCollapse .collapseToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(10px * var(--ui-scale));
+  width: 100%;
+  min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
+  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border: 0;
+  border-radius: 14px;
+  background: var(--fill);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.desktopCollapse .collapseAction {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: calc(12.5px * var(--ui-scale));
+  font-weight: var(--fw-600);
+}
+
+.desktopCollapse .collapseAction svg {
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.desktopCollapse[data-open='true'] .collapseAction svg {
+  transform: rotate(180deg);
+}
+
+.desktopCollapse[data-open='false'] .collapseBody {
+  display: none;
+}
+
+.desktopCollapse[data-open='true'] .collapseBody {
   display: contents;
 }
 
@@ -1278,5 +1400,9 @@
 
   .collapse[data-open='false'] .collapseBody {
     display: none;
+  }
+
+  .desktopCollapse .collapseBody {
+    display: flex;
   }
 }

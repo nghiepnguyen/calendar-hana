@@ -21,7 +21,7 @@ import {
 import type { ExplainItem } from './AlmanacExplain'
 import { Tile } from './AlmanacPanel'
 import { HAN_MEANING } from './personalExplain'
-import { Collapsible, InfoButton } from './personalUi'
+import { InfoButton } from './personalUi'
 import { iconSize } from '../../styles/textSize'
 import styles from './PersonalFengShuiPanel.module.css'
 
@@ -212,12 +212,6 @@ export function AnnualFengShuiSection({
         reasons: [`Kết quả: ${valueLabel(result)}.`, ...(result.reason ? [result.reason] : [])],
       })
   }
-  const summary =
-    context.status === 'applies'
-      ? sao
-        ? `Sao ${sao}${hanTuoi ? `, hạn ${hanTuoi}` : ''}`
-        : `Phạm ${hitCount}/3 hạn`
-      : context.reason
   const explainSao =
     sao && saoHan && onExplain
       ? () =>
@@ -243,7 +237,7 @@ export function AnnualFengShuiSection({
       label="Hạn theo năm"
       aside={context.status === 'applies' ? `Phạm ${hitCount}/3 hạn` : undefined}
     >
-      <Collapsible summary={summary}>
+      <div>
         <div className={styles.annualSurface}>
           <div className={styles.annualMeta}>
             <p className={styles.annualContext}>
@@ -384,7 +378,7 @@ export function AnnualFengShuiSection({
             </p>
           ) : null}
         </div>
-      </Collapsible>
+      </div>
     </Tile>
   )
 }

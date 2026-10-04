@@ -130,14 +130,12 @@ describe('personal panel features', () => {
     expect(notes).toHaveTextContent('Họp tổ lúc 10:00 rơi vào giờ Tỵ')
   })
 
-  it('keeps a short summary for the collapsed mobile view', () => {
+  it('renders annual details directly inside the outer disclosure', () => {
     at('10:00')
     render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
     const annual = screen.getByRole('region', { name: 'Hạn theo năm' })
-    expect(within(annual).getByRole('button', { name: /^Sao La Hầu/ })).toHaveAttribute(
-      'aria-expanded',
-      'false',
-    )
+    expect(within(annual).queryByRole('button', { name: /^Sao La Hầu/ })).not.toBeInTheDocument()
+    expect(annual).toHaveTextContent('La Hầu')
   })
 
   it('hides Hạn tuổi until its rule is sourced, keeping the sourced star name', () => {

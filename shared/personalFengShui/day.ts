@@ -71,7 +71,7 @@ export function elementRelation(day: NguHanh, birth: NguHanh) {
   const tone: Tone =
     kind === 'same' || kind === 'generates'
       ? 'favorable'
-      : kind === 'generatedBy'
+      : kind === 'generatedBy' || kind === 'overcomeBy'
         ? 'neutral'
         : 'caution'
   return { kind, text, tone }

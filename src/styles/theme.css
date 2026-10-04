@@ -97,6 +97,13 @@
   --radius-pill: 999px;
 
   --ui-scale: 1;
+  /* Type scale for data-dense calendar surfaces: label → metadata → body → title → metric. */
+  --day-label: calc(11px * var(--ui-scale));
+  --day-meta: calc(12px * var(--ui-scale));
+  --day-body: calc(14px * var(--ui-scale));
+  --day-title: calc(16px * var(--ui-scale));
+  --day-metric: calc(20px * var(--ui-scale));
+  --day-display: calc(24px * var(--ui-scale));
   /* Vùng bấm tối thiểu khi phóng to chữ (WCAG 2.5.5). 0 ở mức mặc định để không đổi bố cục. */
   --tap-min: 0px;
   --fw-300: 300;

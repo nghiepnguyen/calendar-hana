@@ -123,7 +123,7 @@
 }
 
 .canChi dt {
-  font-size: calc(11.5px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-600);
   color: var(--text-muted);
 }
@@ -131,7 +131,7 @@
 .canChi dd {
   margin: 0;
   font-weight: var(--fw-600);
-  font-size: calc(14.5px * var(--ui-scale));
+  font-size: var(--day-body);
 }
 
 .tags {
@@ -144,7 +144,7 @@
 }
 
 .tag {
-  font-size: calc(13px * var(--ui-scale));
+  font-size: var(--day-body);
   font-weight: var(--fw-500);
   padding: calc(4px * var(--ui-scale)) calc(12px * var(--ui-scale));
   border-radius: var(--radius-pill);
@@ -170,7 +170,7 @@
 }
 
 .dayGod {
-  font-size: calc(14.5px * var(--ui-scale));
+  font-size: var(--day-body);
 }
 
 .good {

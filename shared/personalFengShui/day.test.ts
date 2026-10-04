@@ -70,7 +70,7 @@ describe('personal day and hour policy', () => {
       expect(r.tone).toBe(
         kind === 'same' || kind === 'generates'
           ? 'favorable'
-          : kind === 'generatedBy'
+          : kind === 'generatedBy' || kind === 'overcomeBy'
             ? 'neutral'
             : 'caution',
       )
@@ -83,8 +83,8 @@ describe('personal day and hour policy', () => {
     ['1993-07-01', 'same', 'Kiếm Phong Kim', 'caution'],
     ['1994-07-01', 'none', 'Sơn Đầu Hỏa', 'favorable'],
     ['1995-07-01', 'none', 'Sơn Đầu Hỏa', 'favorable'],
-    ['1996-07-01', 'none', 'Giản Hạ Thủy', 'caution'],
-    ['1997-07-01', 'trine', 'Giản Hạ Thủy', 'caution'],
+    ['1996-07-01', 'none', 'Giản Hạ Thủy', 'neutral'],
+    ['1997-07-01', 'trine', 'Giản Hạ Thủy', 'favorable'],
     ['1998-07-01', 'none', 'Thành Đầu Thổ', 'favorable'],
     ['1999-07-01', 'clash', 'Thành Đầu Thổ', 'caution'],
     ['2000-07-01', 'combination', 'Bạch Lạp Kim', 'caution'],

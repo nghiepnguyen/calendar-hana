@@ -2,9 +2,10 @@ import { describe, expect, it } from 'vitest'
 import { getNapAm, NAP_AM, sexagenaryIndex } from './napAm'
 
 describe('getNapAm', () => {
-  it('Giáp Tý là Hải Trung Kim, Nhâm Dần là Kim Bạch Kim, Quý Hợi là Đại Hải Thủy', () => {
+  it('Giáp Tý là Hải Trung Kim, Nhâm Dần là Kim Bạch Kim, Tân Hợi là Thoa Xuyến Kim', () => {
     expect(getNapAm({ can: 0, chi: 0 })).toEqual({ name: 'Hải Trung Kim', element: 'Kim' })
     expect(getNapAm({ can: 8, chi: 2 }).name).toBe('Kim Bạch Kim')
+    expect(getNapAm({ can: 7, chi: 11 }).name).toBe('Thoa Xuyến Kim')
     expect(getNapAm({ can: 9, chi: 11 }).name).toBe('Đại Hải Thủy')
   })
 

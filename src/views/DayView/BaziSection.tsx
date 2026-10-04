@@ -21,7 +21,7 @@ import type { Settings } from '@shared/types'
 import type { ExplainItem } from './AlmanacExplain'
 import { ElementChip, Tile } from './AlmanacPanel'
 import { ELEMENT_ICONS } from './elementIcons'
-import { Collapsible, InfoButton } from './personalUi'
+import { InfoButton } from './personalUi'
 import { iconSize } from '../../styles/textSize'
 import almanac from './AlmanacPanel.module.css'
 import styles from './BaziSection.module.css'
@@ -285,22 +285,6 @@ function DayMasterInsight({
   )
 }
 
-/** Dòng tóm tắt khi thu gọn trên điện thoại. */
-function baziSummary(
-  candidates: readonly { pillars: FourPillars }[],
-  insightReady: boolean,
-  strengthReady: boolean,
-): string {
-  if (candidates.length > 1) return `${candidates.length} lá số ứng viên`
-  const pillars = candidates[0].pillars
-  if (!insightReady) return `Ngày ${CAN[pillars.day.can]} ${CHI[pillars.day.chi]}`
-  const dayMaster = dayMasterOf(pillars)
-  const base = `Nhật Nguyên ${dayMaster.name} (${dayMaster.element})`
-  if (!strengthReady) return base
-  const strength = assessStrength(pillars)
-  return `${base}, ${strength.strength} ${strength.score}`
-}
-
 const INSIGHT_RULES = ['interpretation.day-master', 'interpretation.element-count'] as const
 const STRENGTH_RULES = ['interpretation.strength-score'] as const
 const TEN_GOD_RULES = ['interpretation.day-master', 'interpretation.thap-than'] as const
@@ -368,7 +352,7 @@ export function BaziSection({
           </Link>
         </div>
       ) : (
-        <Collapsible summary={baziSummary(result.candidates, insightReady, strengthReady)}>
+        <div>
           {result.status === 'ambiguous' ? (
             <p className={styles.meta}>
               Có {result.candidates.length} khả năng vì giờ sinh hoặc múi giờ nằm sát ranh giới.
@@ -434,7 +418,7 @@ export function BaziSection({
               </p>
             </div>
           ))}
-        </Collapsible>
+        </div>
       )}
     </Tile>
   )

@@ -97,6 +97,14 @@ describe('personal panel integration', () => {
     expect(within(panel).getByLabelText('Quan hệ Địa chi')).toBeInTheDocument()
     expect(within(panel).getByLabelText('Quan hệ Thiên can')).toBeInTheDocument()
     expect(within(panel).getByLabelText('Quan hệ Nạp âm')).toBeInTheDocument()
+    const transit = within(panel).getByLabelText('Thập thần ngày')
+    expect(within(transit).getByText('Nhật Nguyên và Can ngày')).toBeInTheDocument()
+    expect(within(transit).getByLabelText('Thập thần của ngày đang xem')).toBeInTheDocument()
+    expect(
+      within(within(panel).getByLabelText('Quan hệ Thiên can')).queryByLabelText(
+        'Thập thần của ngày đang xem',
+      ),
+    ).not.toBeInTheDocument()
     expect(within(panel).getByLabelText('Giờ cá nhân trong ngày')).toBeInTheDocument()
     const personalHours = within(panel).getByLabelText('Giờ cá nhân trong ngày')
     const recommendations = within(panel).getByRole('region', {

@@ -12,6 +12,7 @@ import {
   SealCheck,
   SealWarning,
   Sparkle,
+  Target,
   BookOpen,
   CalendarX,
   WarningCircle,
@@ -49,7 +50,7 @@ import {
   hourChiOf,
   summarySentence,
 } from './personalExplain'
-import { InfoButton } from './personalUi'
+import { Collapsible, InfoButton } from './personalUi'
 import { iconSize } from '../../styles/textSize'
 import almanac from './AlmanacPanel.module.css'
 import styles from './PersonalFengShuiPanel.module.css'
@@ -105,8 +106,8 @@ const TONE_BANNER: Record<Tone, string> = {
   caution: almanac.relationBad,
 }
 
-function TonePill({ tone }: { tone: Tone }) {
-  return <span className={`${styles.tonePill} ${styles[`pill_${tone}`]}`}>{TONE_LABEL[tone]}</span>
+function TonePill({ tone, label = TONE_LABEL[tone] }: { tone: Tone; label?: string }) {
+  return <span className={`${styles.tonePill} ${styles[`pill_${tone}`]}`}>{label}</span>
 }
 
 /** Góc phải tiêu đề ô: nhãn kết quả và nút giải thích. */
@@ -114,14 +115,16 @@ function TileAside({
   tone,
   label,
   onExplain,
+  toneLabel,
 }: {
   tone: Tone
   label: string
   onExplain: () => void
+  toneLabel?: string
 }) {
   return (
     <span className={styles.asideGroup}>
-      <TonePill tone={tone} />
+      <TonePill tone={tone} label={toneLabel} />
       <InfoButton label={label} onClick={onExplain} />
     </span>
   )
@@ -297,6 +300,21 @@ export function PersonalFengShuiPanel({
     }
     setExplain(item)
   }
+  const explainTransit = () => {
+    if (transit?.status !== 'ready') return
+    const dayMasterCan = CAN.indexOf(transit.dayMaster as (typeof CAN)[number])
+    const relation = tenGodOf(dayMasterCan, result.day.can)
+    setExplain({
+      title: 'Thập thần ngày',
+      isGood: true,
+      verdict: { label: transit.tenGod, tone: 'neutral' },
+      meaning: `Thập thần mô tả quan hệ giữa Nhật Nguyên ${transit.dayMaster} và Can ngày đang xem ${transit.viewedStem}; đây không phải kết luận tốt hay xấu của ngày.`,
+      reasons: [
+        `Nhật Nguyên ${transit.dayMaster} ${RELATION_VERB[relation.relation]} ${transit.viewedStem}, ${relation.samePolarity ? 'cùng' : 'khác'} âm dương.`,
+        `Vì vậy Can ngày ${transit.viewedStem} được gọi là ${transit.tenGod}.`,
+      ],
+    })
+  }
   const eventNotes = ready
     ? eventHourNotes(
         result,
@@ -432,6 +450,7 @@ export function PersonalFengShuiPanel({
                   tone={result.stem.tone}
                   label="Thiên can"
                   onExplain={explainStemWithTransit}
+                  toneLabel={result.stem.element.kind === 'overcomeBy' ? 'Tự chủ' : undefined}
                 />
               }
             >
@@ -452,55 +471,17 @@ export function PersonalFengShuiPanel({
               <p className={`${styles.statement} ${TONE_TEXT[result.stem.tone]}`}>
                 {result.stem.text}
               </p>
-              {transit ? (
-                <div
-                  className={styles.transit}
-                  role="group"
-                  aria-label="Thập thần của ngày đang xem"
-                >
-                  <span className={styles.transitLabel}>Thập thần ngày</span>
-                  {transit.status === 'ready' ? (
-                    <span>
-                      Ngày {transit.viewedStem}: <strong>{transit.tenGod}</strong> với Nhật Nguyên{' '}
-                      {transit.dayMaster}
-                    </span>
-                  ) : transit.status === 'ambiguous' ? (
-                    <span>
-                      Ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên
-                      khác nhau.
-                    </span>
-                  ) : (
-                    <span>
-                      <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link> để xem Thập thần của
-                      ngày.
-                    </span>
-                  )}
-                </div>
+              {result.personalStars.status === 'ready' && result.personalStars.stemClash.hit ? (
+                <section className={styles.extra} aria-label="Quan hệ cá nhân mở rộng">
+                  <span className={styles.caution} aria-hidden="true">
+                    <WarningCircle size={iconSize(16)} weight="fill" />
+                  </span>
+                  <div>
+                    <h4>Thiên can xung</h4>
+                    <p>{result.personalStars.stemClash.reason}</p>
+                  </div>
+                </section>
               ) : null}
-              <section className={styles.extra} aria-label="Quan hệ cá nhân mở rộng">
-                {result.personalStars.status === 'ready' ? (
-                  <>
-                    <span
-                      className={
-                        result.personalStars.stemClash.hit ? styles.caution : styles.favorable
-                      }
-                      aria-hidden="true"
-                    >
-                      {result.personalStars.stemClash.hit ? (
-                        <WarningCircle size={iconSize(16)} weight="fill" />
-                      ) : (
-                        <CheckCircle size={iconSize(16)} weight="fill" />
-                      )}
-                    </span>
-                    <div>
-                      <h4>Thiên can xung</h4>
-                      <p>{result.personalStars.stemClash.reason}</p>
-                    </div>
-                  </>
-                ) : (
-                  <p className={styles.muted}>{result.personalStars.reason}</p>
-                )}
-              </section>
             </Tile>
 
             <Tile
@@ -534,8 +515,41 @@ export function PersonalFengShuiPanel({
               </p>
             </Tile>
 
+            {transit ? (
+              <Tile
+                index={3}
+                wide="full"
+                icon={YinYang}
+                title="Thập thần ngày"
+                label="Thập thần ngày"
+                aside={
+                  transit.status === 'ready' ? (
+                    <span className={styles.asideGroup}>
+                      <span className={styles.tonePill}>{transit.tenGod}</span>
+                      <InfoButton label="Thập thần ngày" onClick={explainTransit} />
+                    </span>
+                  ) : undefined
+                }
+              >
+                <div className={styles.transit} role="group" aria-label="Thập thần của ngày đang xem">
+                  <span className={styles.transitLabel}>Nhật Nguyên và Can ngày</span>
+                  {transit.status === 'ready' ? (
+                    <span>
+                      Nhật Nguyên <strong>{transit.dayMaster}</strong> · Can ngày{' '}
+                      <strong>{transit.viewedStem}</strong>: <strong>{transit.tenGod}</strong>
+                    </span>
+                  ) : transit.status === 'ambiguous' ? (
+                    <span>
+                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên
+                      khác nhau.
+                    </span>
+                  ) : null}
+                </div>
+              </Tile>
+            ) : null}
+
             <Tile
-              index={3}
+              index={4}
               wide="full"
               icon={Clock}
               title="Giờ cá nhân"
@@ -616,7 +630,10 @@ export function PersonalFengShuiPanel({
             <section className={styles.goalCluster} aria-label="Mục tiêu và kết luận trong ngày">
               <div className={styles.eventFilter}>
                 <div className={styles.eventFilterLabel}>
-                  <label htmlFor="personal-event-filter">Mục tiêu trong ngày</label>
+                  <label className={styles.eventFilterTitle} htmlFor="personal-event-filter">
+                    <Target size={iconSize(14)} weight="bold" aria-hidden="true" />
+                    Mục tiêu trong ngày
+                  </label>
                   <span>Chọn việc bạn đang cân nhắc hôm nay.</span>
                 </div>
                 <select
@@ -651,7 +668,7 @@ export function PersonalFengShuiPanel({
 
             <div className={styles.recommendationRow}>
               <Tile
-                index={4}
+                index={5}
                 className={styles.recommendationGood}
                 icon={CheckCircle}
                 title="Việc nên làm trong ngày"
@@ -669,7 +686,7 @@ export function PersonalFengShuiPanel({
               </Tile>
 
               <Tile
-                index={5}
+                index={6}
                 className={styles.recommendationAvoid}
                 icon={WarningCircle}
                 title="Việc Không Nên Làm"
@@ -696,21 +713,25 @@ export function PersonalFengShuiPanel({
           </>
         ) : null}
 
-        <AnnualFengShuiSection
-          key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}
-          index={ready ? 6 : 0}
-          date={date}
-          birthDate={settings.birthDate}
-          savedGender={settings.birthGender ?? null}
-          rules={rules}
-          onExplain={setExplain}
-        />
-        <BaziSection
-          index={ready ? 7 : 1}
-          settings={settings}
-          rules={rules}
-          onExplain={setExplain}
-        />
+        <Collapsible desktop summary="Chi tiết luận đoán nâng cao">
+          <div className={styles.advancedGrid}>
+            <AnnualFengShuiSection
+              key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}
+              index={ready ? 7 : 0}
+              date={date}
+              birthDate={settings.birthDate}
+              savedGender={settings.birthGender ?? null}
+              rules={rules}
+              onExplain={setExplain}
+            />
+            <BaziSection
+              index={ready ? 8 : 1}
+              settings={settings}
+              rules={rules}
+              onExplain={setExplain}
+            />
+          </div>
+        </Collapsible>
       </div>
 
       <Link className={styles.guideLink} to="/settings#feng-shui-guide">
