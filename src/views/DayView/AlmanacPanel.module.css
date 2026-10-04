@@ -21,6 +21,8 @@
   --tai: var(--gold);
 
   container-type: inline-size;
+  /* Khai báo lại thay vì thừa kế: WebKit không tính lại color thừa kế trong container khi đổi theme. */
+  color: var(--text);
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
