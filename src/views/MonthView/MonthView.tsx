@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react'
-import { MoonStars, Plus } from '@phosphor-icons/react'
+import { MoonStars, Plus, Star } from '@phosphor-icons/react'
 import { formatAccessibleDate, formatLunarShort, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo, parseSolarDate } from '@shared/lunar'
 import { EventChip } from '../../components/EventChip/EventChip'
@@ -79,14 +79,16 @@ export function MonthView({
                     e.stopPropagation()
                     onOpenDay(day)
                   }}
-                  aria-label={`${formatAccessibleDate(day)}${holidays.length ? `, ${holidays.map((h) => h.name).join(', ')}` : ''}${items.length ? `, ${items.length} sự kiện` : ''}`}
+                  aria-label={`${formatAccessibleDate(day)}${holidays.length ? `, ${holidays.map((h) => h.name).join(', ')}` : ''}${items.length ? `, ${items.length} sự kiện` : ''}${settings.showAuspicious && info.dayGod.isHoangDao ? ', ngày hoàng đạo' : ''}`}
                   aria-current={day === today ? 'date' : undefined}
                 >
                   {info.solar.day}
+                  {settings.showAuspicious && info.dayGod.isHoangDao ? (
+                    <span className={styles.goodStar} title="Ngày hoàng đạo" aria-hidden="true">
+                      <Star size={iconSize(12)} weight="fill" />
+                    </span>
+                  ) : null}
                 </button>
-                {settings.showAuspicious && info.dayGod.isHoangDao ? (
-                  <span className={styles.goodDot} title="Ngày hoàng đạo" aria-hidden="true" />
-                ) : null}
                 <span
                   className={`${styles.lunarDay} ${info.lunar.day === 1 ? styles.lunarFirst : ''}`}
                   aria-hidden="true"
@@ -140,6 +142,12 @@ export function MonthView({
           )
         })}
       </div>
+      {settings.showAuspicious ? (
+        <div className={styles.legend}>
+          <Star size={iconSize(14)} weight="fill" aria-hidden="true" />
+          <span>Ngày hoàng đạo</span>
+        </div>
+      ) : null}
     </div>
   )
 }

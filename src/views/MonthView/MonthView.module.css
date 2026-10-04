@@ -80,6 +80,8 @@
 }
 
 .solarDay {
+  position: relative;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
   width: calc(28px * var(--ui-scale));
@@ -106,11 +108,32 @@
   color: var(--accent-contrast);
 }
 
-.goodDot {
-  width: calc(6px * var(--ui-scale));
-  height: calc(6px * var(--ui-scale));
-  border-radius: 50%;
-  background: var(--gold);
+.goodStar {
+  position: absolute;
+  top: calc(7px * var(--ui-scale));
+  right: calc(-11px * var(--ui-scale));
+  display: grid;
+  place-items: center;
+  width: calc(14px * var(--ui-scale));
+  height: calc(14px * var(--ui-scale));
+  color: var(--gold);
+  pointer-events: none;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(6px * var(--ui-scale));
+  padding: calc(7px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-top: 1px solid var(--separator-soft);
+  font-size: calc(11px * var(--ui-scale));
+  color: var(--text-muted);
+}
+
+.legend svg {
+  flex-shrink: 0;
+  color: var(--gold);
 }
 
 .lunarDay {
@@ -206,10 +229,6 @@
   .lunarDay {
     margin-left: 0;
     font-size: calc(10.5px * var(--ui-scale));
-  }
-
-  .goodDot {
-    display: none;
   }
 
   .holiday {
