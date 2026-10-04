@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "events": {
+    "cut_hair": { "severity": "low", "activities": ["cut_hair"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "event_fit", "age_clash", "truc"] },
+    "receive_vehicle": { "severity": "high", "activities": ["transaction", "travel"], "mustHave": ["calendar_validity", "good_hour"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "taboo_day"] },
+    "buy_vehicle": { "severity": "high", "activities": ["transaction", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "truc", "lunar_lodge", "bad_stars", "element_fit", "taboo_day"] },
+    "sign_contract": { "severity": "high", "activities": ["contract", "transaction"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "truc", "age_clash", "age_harmony", "taboo_day"] },
+    "buy_property": { "severity": "very_high", "activities": ["moving", "transaction", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "participant_alignment", "taboo_day"] },
+    "property_handover": { "severity": "high", "activities": ["moving", "transaction"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] },
+    "move_house": { "severity": "high", "activities": ["moving", "cleaning"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] },
+    "open_business": { "severity": "very_high", "activities": ["opening", "business", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "truc", "lunar_lodge", "good_stars", "age_clash", "age_harmony", "taboo_day"] },
+    "groundbreaking": { "severity": "very_high", "activities": ["groundbreaking", "construction"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "direction", "taboo_day"] },
+    "wedding": { "severity": "very_high", "activities": ["wedding", "engagement"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "lunar_lodge", "age_clash", "age_harmony", "element_fit", "participant_alignment", "taboo_day"] },
+    "start_journey": { "severity": "medium", "activities": ["travel"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] }
+  }
+}

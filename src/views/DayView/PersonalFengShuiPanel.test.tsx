@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'
 import { DayView } from './DayView'
+import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { viewProps } from '../../test/fixtures'
 import { createDefaultSettings } from '../../data/defaultCategories'
 import { sanitizeSettings } from '../../data/exportImport'
@@ -12,6 +13,11 @@ function props(birthDate: string | null = '1990-07-01') {
   return viewProps({ settings: { ...createDefaultSettings(''), birthDate } })
 }
 describe('personal panel integration', () => {
+  it('finds the next good date for a selected event', () => {
+    expect(findNextGoodEventDate('2026-09-23', 'cut_hair', 30)).toBeTruthy()
+    expect(findNextGoodEventDate('2026-09-23', 'cut_hair', 30)).not.toBe('2026-09-23')
+  })
+
   it('keeps event → personal → almanac order and independent toggles', () => {
     const p = props()
     const { rerender } = render(<DayView {...p} />)
@@ -100,6 +106,23 @@ describe('personal panel integration', () => {
     expect(
       within(panel).queryByText('Đang xem theo tuổi và nạp âm năm sinh'),
     ).not.toBeInTheDocument()
+  })
+
+  it('filters activity boxes by selected event', async () => {
+    render(<DayView {...props()} />)
+    const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
+    const selector = within(panel).getByRole('combobox', { name: 'Mục tiêu trong ngày' })
+    expect(selector).toHaveValue('')
+    await userEvent.selectOptions(selector, 'open_business')
+    expect(selector).toHaveValue('open_business')
+    expect(within(panel).getByRole('region', { name: 'Việc nên làm trong ngày' })).toBeInTheDocument()
+    expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
+      /Event đang chọn:\s*Khai trương/,
+    )
+    expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
+      /Nên làm|Không nên làm|Cân nhắc/,
+    )
+    expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).not.toHaveTextContent('Có ít nhất một hoạt động')
   })
 })
 

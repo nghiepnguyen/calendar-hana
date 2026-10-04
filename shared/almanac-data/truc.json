@@ -48,6 +48,12 @@
           "level": "good",
           "weight": 20
         },
+        {
+          "activityId": "cut_hair",
+          "level": "good",
+          "weight": 20,
+          "sourceRef": "event-mapping:cut_hair"
+        },
       {
         "activityId": "cleaning",
         "level": "strong_good",

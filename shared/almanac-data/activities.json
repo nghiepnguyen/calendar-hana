@@ -121,6 +121,13 @@
       "enabled": true
     },
     {
+      "id": "cut_hair",
+      "label": "Cắt tóc",
+      "group": "personal_care",
+      "personalSensitivity": 0.4,
+      "enabled": true
+    },
+    {
       "id": "groundbreaking",
       "label": "Động thổ",
       "group": "construction",

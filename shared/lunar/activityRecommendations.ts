@@ -108,13 +108,15 @@ export function getActivityAvoidances(input: {
     .map((activity) => {
       const mansion = mansionEvidence(input.mansion, activity.id)
       const mansionConflict = mansion.good && mansion.bad
-      const officerWeight = input.mansion ? 0 : officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
-      const positiveMagnitude =
-        Math.max(officerWeight, 0) +
+      const officerWeight = officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
+      const positiveMagnitude = Math.min(30,
+        Math.max(officerWeight, 0) + (mansion.good ? 15 : 0) +
         goodGods.filter((god) => good.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (goodWeights[god.tier] ?? 0), 0)
-      const negativeMagnitude =
+      )
+      const negativeMagnitude = Math.min(30,
         (mansion.bad ? 25 : 0) + Math.abs(Math.min(officerWeight, 0)) +
         Math.abs(badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (badWeights[god.tier] ?? 0), 0))
+      )
       const score = Math.max(0, Math.min(100, 50 - negativeMagnitude + positiveMagnitude))
       const status: ActivityAvoidance['status'] = mansionConflict || positiveMagnitude >= 30 && negativeMagnitude >= 30
         ? 'consider'
@@ -164,7 +166,7 @@ export function getActivityRecommendations(input: {
 
   return activities.map((activity) => {
     const mansion = mansionEvidence(input.mansion, activity.id)
-    const officerWeight = input.mansion ? 0 : officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
+    const officerWeight = officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
     const mansionConflict = mansion.good && mansion.bad
     const mansionWeight = mansionConflict ? 0 : mansion.good ? 15 : mansion.bad ? -25 : 0
     const generalScore = Math.max(0, Math.min(100, 50 + officerWeight + mansionWeight +
@@ -172,8 +174,8 @@ export function getActivityRecommendations(input: {
       badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (badWeights[god.tier] ?? 0), 0)))
     const personalModifier = input.personalModifier ?? 0
     const score = Math.max(0, Math.min(100, generalScore + personalModifier))
-    const positiveMagnitude = Math.max(officerWeight, 0) + (mansion.good ? 15 : 0)
-    const negativeMagnitude = Math.abs(Math.min(officerWeight, 0)) + (mansion.bad ? 25 : 0)
+    const positiveMagnitude = Math.min(30, Math.max(officerWeight, 0) + (mansion.good ? 15 : 0))
+    const negativeMagnitude = Math.min(30, Math.abs(Math.min(officerWeight, 0)) + (mansion.bad ? 25 : 0))
     const evidence = [
       ...(input.mansion && (mansion.good || mansion.bad) ? [`Sao ${input.mansion.name}`] : officer?.activityRules.some((rule) => rule.activityId === activity.id) ? [`Trực ${officer.label}`] : []),
       ...goodGods.filter((god) => good.has(god.id) && god.activityIds.includes(activity.id)).map((god) => god.label),
