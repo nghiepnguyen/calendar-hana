@@ -100,6 +100,11 @@ const TONE_TEXT: Record<Tone, string> = {
   neutral: styles.neutral,
   caution: styles.caution,
 }
+const TONE_TILE: Record<Tone, string> = {
+  favorable: styles.tile_favorable,
+  neutral: '',
+  caution: styles.tile_caution,
+}
 const TONE_BANNER: Record<Tone, string> = {
   favorable: almanac.relationGood,
   neutral: almanac.relationMid,
@@ -373,12 +378,6 @@ export function PersonalFengShuiPanel({
                   <ElementChip element={result.dayNapAm.element}>{result.day.name}</ElementChip>
                 </dd>
               </div>
-              {transit?.status === 'ready' ? (
-                <div>
-                  <dt>Nhật Nguyên</dt>
-                  <dd>{transit.dayMaster}</dd>
-                </div>
-              ) : null}
             </dl>
             <Link className={styles.editProfile} to="/settings#birth-info">
               <PencilSimple size={iconSize(14)} weight="bold" aria-hidden="true" />
@@ -419,23 +418,38 @@ export function PersonalFengShuiPanel({
                 icon={YinYang}
                 title="Thập thần ngày"
                 label="Thập thần ngày"
-                className={`${styles.coreTile} ${styles.relationTile} ${styles.tenGodTile}`}
+                className={`${styles.coreTile} ${styles.relationTile}`}
                 aside={
                   transit.status === 'ready' ? (
-                    <span className={styles.asideGroup}>
-                      <span className={styles.tonePill}>{transit.tenGod}</span>
-                      <InfoButton label="Thập thần ngày" onClick={explainTransit} />
-                    </span>
+                    <InfoButton label="Thập thần ngày" onClick={explainTransit} />
                   ) : undefined
                 }
               >
+                {transit.status === 'ready' ? (
+                  <div className={styles.pair}>
+                    <ElementChip
+                      element={canElement(CAN.indexOf(transit.dayMaster as (typeof CAN)[number]))}
+                    >
+                      {transit.dayMaster}
+                    </ElementChip>
+                    <ArrowsLeftRight
+                      size={iconSize(16)}
+                      weight="bold"
+                      className={styles.pairLink}
+                      aria-hidden="true"
+                    />
+                    <ElementChip element={canElement(result.day.can)}>
+                      {transit.viewedStem}
+                    </ElementChip>
+                  </div>
+                ) : null}
                 <div className={styles.transit} role="group" aria-label="Thập thần của ngày đang xem">
-                  <span className={styles.transitLabel}>Nhật Nguyên và Can ngày</span>
+                  <span className="visually-hidden">Nhật Nguyên và Can ngày</span>
                   {transit.status === 'ready' ? (
-                    <span>
-                      Nhật Nguyên <strong>{transit.dayMaster}</strong> · Can ngày{' '}
-                      <strong>{transit.viewedStem}</strong>: <strong>{transit.tenGod}</strong>
-                    </span>
+                    <p className={`${styles.statement} ${styles.neutral}`}>
+                      Nhật Nguyên {transit.dayMaster} · Can ngày {transit.viewedStem}:{' '}
+                      <strong>{transit.tenGod}</strong>
+                    </p>
                   ) : transit.status === 'ambiguous' ? (
                     <span>
                       Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên khác nhau.
@@ -451,7 +465,7 @@ export function PersonalFengShuiPanel({
               icon={Compass}
               title="Địa chi"
               label="Quan hệ Địa chi"
-              className={`${styles.coreTile} ${styles.relationTile} ${styles.branchTile}`}
+              className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.branch.tone]}`}
               aside={
                 <TileAside
                   tone={result.branch.tone}
@@ -486,7 +500,7 @@ export function PersonalFengShuiPanel({
               icon={YinYang}
               title="Thiên can"
               label="Quan hệ Thiên can"
-              className={`${styles.coreTile} ${styles.relationTile} ${styles.stemTile}`}
+              className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.stem.tone]}`}
               aside={
                 <TileAside
                   tone={result.stem.tone}
@@ -531,7 +545,7 @@ export function PersonalFengShuiPanel({
               icon={Diamond}
               title="Nạp âm"
               label="Quan hệ Nạp âm"
-              className={`${styles.coreTile} ${styles.relationTile} ${styles.napAmTile} ${styles.napTile}`}
+              className={`${styles.coreTile} ${styles.relationTile} ${styles.napAmTile} ${TONE_TILE[result.napAm.tone]}`}
               aside={
                 <TileAside
                   tone={result.napAm.tone}

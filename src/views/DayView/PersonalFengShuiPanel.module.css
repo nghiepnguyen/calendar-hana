@@ -18,40 +18,31 @@
 
 /* Bốn thẻ lõi dùng cùng một khung; dữ liệu khác nhau, nhịp đọc không đổi. */
 .coreTile {
-  min-height: calc(190px * var(--ui-scale));
   gap: calc(14px * var(--ui-scale));
 }
 
+/* Viền trên theo kết luận của thẻ: cùng màu với nhãn Thuận / Bình hòa / Lưu ý. Thập thần luôn trung tính. */
 .relationTile {
-  border-top: 3px solid var(--accent);
-}
-
-.branchTile {
-  border-top-color: var(--almanac-good);
+  --tile-accent: color-mix(in srgb, var(--text) 25%, transparent);
+  border-top: 3px solid var(--tile-accent);
   box-shadow:
-    inset 0 3px 0 var(--almanac-good),
+    inset 0 3px 0 var(--tile-accent),
     var(--glass-highlight),
     0 0 0 1px var(--glass-edge);
 }
 
-.stemTile {
-  border-top-color: var(--gold);
-  box-shadow:
-    inset 0 3px 0 var(--gold),
-    var(--glass-highlight),
-    0 0 0 1px var(--glass-edge);
+/* Tiêu đề bốn thẻ được xuống dòng thay vì bị cắt "THẬP …" khi lưới 4 cột chật. */
+.relationTile h3 {
+  flex: 1 1 auto;
+  white-space: normal;
 }
 
-.napTile {
-  border-top-color: var(--accent);
-  box-shadow:
-    inset 0 3px 0 var(--accent),
-    var(--glass-highlight),
-    0 0 0 1px var(--glass-edge);
+.tile_favorable {
+  --tile-accent: var(--almanac-good);
 }
 
-.tenGodTile {
-  border-top-color: var(--accent);
+.tile_caution {
+  --tile-accent: var(--almanac-bad);
 }
 
 /* Core grid: mobile 1 cột, tablet 2 cột, desktop 4 cột. */
@@ -70,14 +61,13 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  /* Bốn cột hẹp: bỏ icon tròn ở đầu thẻ để tiêu đề và nhãn kết quả nằm trên một dòng. */
+  .relationTile > header > [aria-hidden='true']:first-child {
+    display: none;
+  }
+
   .coreGrid > .coreTile {
     grid-column: auto;
-  }
-}
-
-@container (max-width: 519px) {
-  .coreTile {
-    min-height: calc(176px * var(--ui-scale));
   }
 }
 
@@ -400,32 +390,17 @@
   color: var(--text-muted);
 }
 
+/* Dòng diễn giải quan hệ: cỡ chữ thân, không lấn chip và nhãn kết quả. */
 .statement {
-  font-family: var(--font-display);
-  font-size: var(--day-metric);
-  font-weight: var(--fw-700);
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  font-size: var(--day-body);
+  font-weight: var(--fw-600);
+  line-height: 1.4;
 }
 
 /* Thập thần của ngày đang xem so với Nhật Nguyên. */
 .transit {
-  display: flex;
-  flex-direction: column;
-  gap: calc(2px * var(--ui-scale));
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
   font-size: var(--day-body);
   line-height: 1.4;
-}
-
-.transitLabel {
-  color: var(--text-muted);
-  font-size: var(--day-label);
-  font-weight: var(--fw-600);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* Can xung: lớp giải thích riêng, không đổi kết luận ngày. */
