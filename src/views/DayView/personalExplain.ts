@@ -68,7 +68,12 @@ export function explainBranch(r: Ready): ExplainItem {
     isGood: r.branch.tone !== 'caution',
     verdict: VERDICT[r.branch.tone],
     meaning,
-    reasons: [`Chi tuổi: ${birth}. Chi ngày: ${day}.`],
+    reasons: [
+      `Chi tuổi: ${birth}. Chi ngày: ${day}.`,
+      ...(r.branch.kind === 'trine'
+        ? ['Tam hợp: Nhóm tuổi Mão - Mùi - Hợi hỗ trợ năng lượng tích cực lẫn nhau.']
+        : []),
+    ],
   }
 }
 
@@ -84,6 +89,9 @@ export function explainStem(r: Ready): ExplainItem {
       : `So ngũ hành của Can ngày ${day} với Can tuổi ${birth}: ${r.stem.element.text}.`,
     reasons: [
       'Sinh nhập (hành ngày sinh hành tuổi) và cùng hành là thuận; sinh xuất là bình hòa; khắc là lưu ý.',
+      ...(r.stem.element.kind === 'overcomeBy'
+        ? ['Khắc xuất: Tuổi của bạn khắc được năng lượng ngày, chủ về chủ động kiểm soát công việc nhưng tốn chút sức lực.']
+        : []),
       ...(day === birth ? ['Cùng Thiên can được xem là bình hòa.'] : []),
     ],
   }

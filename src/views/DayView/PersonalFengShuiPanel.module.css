@@ -16,6 +16,71 @@
   margin: 0;
 }
 
+/* Bốn thẻ lõi dùng cùng một khung; dữ liệu khác nhau, nhịp đọc không đổi. */
+.coreTile {
+  min-height: calc(190px * var(--ui-scale));
+  gap: calc(14px * var(--ui-scale));
+}
+
+.relationTile {
+  border-top: 3px solid var(--accent);
+}
+
+.branchTile {
+  border-top-color: var(--almanac-good);
+  box-shadow:
+    inset 0 3px 0 var(--almanac-good),
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
+}
+
+.stemTile {
+  border-top-color: var(--gold);
+  box-shadow:
+    inset 0 3px 0 var(--gold),
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
+}
+
+.napTile {
+  border-top-color: var(--accent);
+  box-shadow:
+    inset 0 3px 0 var(--accent),
+    var(--glass-highlight),
+    0 0 0 1px var(--glass-edge);
+}
+
+.tenGodTile {
+  border-top-color: var(--accent);
+}
+
+/* Core grid: mobile 1 cột, tablet 2 cột, desktop 4 cột. */
+@container (min-width: 520px) and (max-width: 819px) {
+  .coreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .coreGrid > .coreTile {
+    grid-column: auto;
+  }
+}
+
+@container (min-width: 820px) {
+  .coreGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .coreGrid > .coreTile {
+    grid-column: auto;
+  }
+}
+
+@container (max-width: 519px) {
+  .coreTile {
+    min-height: calc(176px * var(--ui-scale));
+  }
+}
+
 .muted {
   color: var(--text-muted);
 }
@@ -348,9 +413,9 @@
   display: flex;
   flex-direction: column;
   gap: calc(2px * var(--ui-scale));
-  padding: calc(9px * var(--ui-scale)) calc(11px * var(--ui-scale));
-  border-radius: 12px;
-  background: var(--fill);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
   font-size: var(--day-body);
   line-height: 1.4;
 }

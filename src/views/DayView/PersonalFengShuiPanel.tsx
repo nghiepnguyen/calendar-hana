@@ -372,6 +372,12 @@ export function PersonalFengShuiPanel({
                   <ElementChip element={result.dayNapAm.element}>{result.day.name}</ElementChip>
                 </dd>
               </div>
+              {transit?.status === 'ready' ? (
+                <div>
+                  <dt>Nhật Nguyên</dt>
+                  <dd>{transit.dayMaster}</dd>
+                </div>
+              ) : null}
             </dl>
             <Link className={styles.editProfile} to="/settings#birth-info">
               <PencilSimple size={iconSize(14)} weight="bold" aria-hidden="true" />
@@ -403,14 +409,48 @@ export function PersonalFengShuiPanel({
         </header>
       )}
 
-      <div className={almanac.bento}>
+      <div className={`${almanac.bento} ${styles.coreGrid}`}>
         {ready ? (
           <>
+            {transit ? (
+              <Tile
+                index={0}
+                icon={YinYang}
+                title="Thập thần ngày"
+                label="Thập thần ngày"
+                className={`${styles.coreTile} ${styles.relationTile} ${styles.tenGodTile}`}
+                aside={
+                  transit.status === 'ready' ? (
+                    <span className={styles.asideGroup}>
+                      <span className={styles.tonePill}>{transit.tenGod}</span>
+                      <InfoButton label="Thập thần ngày" onClick={explainTransit} />
+                    </span>
+                  ) : undefined
+                }
+              >
+                <div className={styles.transit} role="group" aria-label="Thập thần của ngày đang xem">
+                  <span className={styles.transitLabel}>Nhật Nguyên và Can ngày</span>
+                  {transit.status === 'ready' ? (
+                    <span>
+                      Nhật Nguyên <strong>{transit.dayMaster}</strong> · Can ngày{' '}
+                      <strong>{transit.viewedStem}</strong>: <strong>{transit.tenGod}</strong>
+                    </span>
+                  ) : transit.status === 'ambiguous' ? (
+                    <span>
+                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên khác nhau.
+                    </span>
+                  ) : (
+                    <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link>
+                  )}
+                </div>
+              </Tile>
+            ) : null}
             <Tile
-              index={0}
+              index={1}
               icon={Compass}
               title="Địa chi"
               label="Quan hệ Địa chi"
+              className={`${styles.coreTile} ${styles.relationTile} ${styles.branchTile}`}
               aside={
                 <TileAside
                   tone={result.branch.tone}
@@ -441,10 +481,11 @@ export function PersonalFengShuiPanel({
             </Tile>
 
             <Tile
-              index={1}
+              index={2}
               icon={YinYang}
               title="Thiên can"
               label="Quan hệ Thiên can"
+              className={`${styles.coreTile} ${styles.relationTile} ${styles.stemTile}`}
               aside={
                 <TileAside
                   tone={result.stem.tone}
@@ -485,11 +526,11 @@ export function PersonalFengShuiPanel({
             </Tile>
 
             <Tile
-              index={2}
+              index={3}
               icon={Diamond}
               title="Nạp âm"
               label="Quan hệ Nạp âm"
-              className={styles.napAmTile}
+              className={`${styles.coreTile} ${styles.relationTile} ${styles.napAmTile} ${styles.napTile}`}
               aside={
                 <TileAside
                   tone={result.napAm.tone}
@@ -514,39 +555,6 @@ export function PersonalFengShuiPanel({
                 {result.napAm.text}
               </p>
             </Tile>
-
-            {transit ? (
-              <Tile
-                index={3}
-                wide="full"
-                icon={YinYang}
-                title="Thập thần ngày"
-                label="Thập thần ngày"
-                aside={
-                  transit.status === 'ready' ? (
-                    <span className={styles.asideGroup}>
-                      <span className={styles.tonePill}>{transit.tenGod}</span>
-                      <InfoButton label="Thập thần ngày" onClick={explainTransit} />
-                    </span>
-                  ) : undefined
-                }
-              >
-                <div className={styles.transit} role="group" aria-label="Thập thần của ngày đang xem">
-                  <span className={styles.transitLabel}>Nhật Nguyên và Can ngày</span>
-                  {transit.status === 'ready' ? (
-                    <span>
-                      Nhật Nguyên <strong>{transit.dayMaster}</strong> · Can ngày{' '}
-                      <strong>{transit.viewedStem}</strong>: <strong>{transit.tenGod}</strong>
-                    </span>
-                  ) : transit.status === 'ambiguous' ? (
-                    <span>
-                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên
-                      khác nhau.
-                    </span>
-                  ) : null}
-                </div>
-              </Tile>
-            ) : null}
 
             <Tile
               index={4}
