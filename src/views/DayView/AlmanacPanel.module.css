@@ -7,6 +7,10 @@
 .panel {
   --tile-radius: calc(var(--radius-lg) - 6px);
   --spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --section-gap: calc(8px * var(--ui-scale));
+  --section-gap-lg: calc(12px * var(--ui-scale));
+  --section-pad: calc(10px * var(--ui-scale));
+  --tile-pad: calc(12px * var(--ui-scale));
   /* Màu ngũ hành (chỉ dùng cho icon và chữ nhỏ). */
   --el-kim: var(--gold);
   --el-moc: var(--almanac-good);
@@ -19,7 +23,7 @@
   container-type: inline-size;
   display: flex;
   flex-direction: column;
-  gap: calc(6px * var(--ui-scale));
+  gap: var(--section-gap);
   padding: calc(6px * var(--ui-scale));
   border-radius: var(--radius-lg);
 }
@@ -43,10 +47,9 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: calc(14px * var(--ui-scale));
+  gap: var(--section-gap-lg);
   align-items: stretch;
-  padding: calc(10px * var(--ui-scale)) calc(10px * var(--ui-scale)) calc(8px * var(--ui-scale))
-    calc(12px * var(--ui-scale));
+  padding: var(--section-pad) var(--section-pad) calc(8px * var(--ui-scale));
 }
 
 .heroMain {
@@ -291,7 +294,7 @@
 @container (max-width: 519px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
-    padding: calc(12px * var(--ui-scale)) calc(8px * var(--ui-scale)) calc(8px * var(--ui-scale));
+    padding: var(--section-pad) calc(8px * var(--ui-scale)) calc(8px * var(--ui-scale));
   }
 
   .heroMain {
@@ -304,8 +307,8 @@
   .relation {
     grid-template-columns: minmax(0, 1fr);
     justify-items: start;
-    gap: calc(12px * var(--ui-scale));
-    padding: calc(14px * var(--ui-scale));
+    gap: var(--section-gap);
+    padding: var(--tile-pad);
   }
 }
 
@@ -313,8 +316,8 @@
   .relation {
     grid-template-columns: minmax(0, 1fr);
     justify-items: start;
-    gap: calc(12px * var(--ui-scale));
-    padding: calc(14px * var(--ui-scale));
+    gap: var(--section-gap);
+    padding: var(--tile-pad);
   }
 }
 
@@ -329,7 +332,7 @@
 .bento {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: calc(6px * var(--ui-scale));
+  gap: var(--section-gap);
 }
 
 @container (min-width: 520px) {
@@ -357,9 +360,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: calc(12px * var(--ui-scale));
+  gap: var(--section-gap);
   min-width: 0;
-  padding: calc(14px * var(--ui-scale));
+  padding: var(--tile-pad);
   border-radius: var(--tile-radius);
   background: var(--glass-strong);
   box-shadow:
@@ -1015,4 +1018,13 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

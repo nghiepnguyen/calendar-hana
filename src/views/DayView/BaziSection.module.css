@@ -6,7 +6,7 @@
 .candidate {
   display: flex;
   flex-direction: column;
-  gap: calc(10px * var(--ui-scale));
+  gap: calc(8px * var(--ui-scale));
 }
 
 .candidateTitle {
@@ -19,7 +19,7 @@
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: calc(10px * var(--ui-scale));
+  gap: calc(8px * var(--ui-scale));
 }
 
 @container (min-width: 640px) {
@@ -32,7 +32,8 @@
 /* Hai phần chính dùng cùng ngôn ngữ tile với các ô trong Lịch vạn niên. */
 .chart,
 .insight {
-  padding: calc(14px * var(--ui-scale));
+  /* Tile ngoài đã tạo khoảng thở; box trong chỉ giữ đệm tối thiểu. */
+  padding: calc(6px * var(--ui-scale));
   border-radius: var(--tile-radius);
   background: var(--glass-strong);
   box-shadow:
@@ -52,8 +53,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: calc(4px * var(--ui-scale));
-  padding: calc(4px * var(--ui-scale)) 0 0;
+  gap: calc(2px * var(--ui-scale));
+  padding: 0;
 }
 
 .pillars {
@@ -69,10 +70,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(4px * var(--ui-scale));
+  gap: calc(3px * var(--ui-scale));
   min-width: 0;
   margin: 0 calc(2px * var(--ui-scale));
-  padding: calc(10px * var(--ui-scale)) calc(2px * var(--ui-scale));
+  padding: calc(6px * var(--ui-scale)) calc(2px * var(--ui-scale));
   border-radius: 14px;
   text-align: center;
   animation: pillar-in 0.8s var(--spring, cubic-bezier(0.32, 0.72, 0, 1)) both;
