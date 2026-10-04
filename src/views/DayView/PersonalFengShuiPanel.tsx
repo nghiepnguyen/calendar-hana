@@ -107,7 +107,7 @@ const TONE_TILE: Record<Tone, string> = {
 }
 const TONE_BANNER: Record<Tone, string> = {
   favorable: almanac.relationGood,
-  neutral: almanac.relationMid,
+  neutral: styles.relationNeutral,
   caution: almanac.relationBad,
 }
 
@@ -447,8 +447,7 @@ export function PersonalFengShuiPanel({
                   <span className="visually-hidden">Nhật Nguyên và Can ngày</span>
                   {transit.status === 'ready' ? (
                     <p className={`${styles.statement} ${styles.neutral}`}>
-                      Nhật Nguyên {transit.dayMaster} · Can ngày {transit.viewedStem}:{' '}
-                      <strong>{transit.tenGod}</strong>
+                      Thập thần: <strong>{transit.tenGod}</strong>
                     </p>
                   ) : transit.status === 'ambiguous' ? (
                     <span>
@@ -653,11 +652,15 @@ export function PersonalFengShuiPanel({
             <section className={styles.goalCluster} aria-label="Mục tiêu và kết luận trong ngày">
               <div className={styles.eventFilter}>
                 <div className={styles.eventFilterLabel}>
-                  <label className={styles.eventFilterTitle} htmlFor="personal-event-filter">
-                    <Target size={iconSize(14)} weight="bold" aria-hidden="true" />
-                    Mục tiêu trong ngày
-                  </label>
-                  <span>Chọn việc bạn đang cân nhắc hôm nay.</span>
+                  <header className={almanac.tileHead}>
+                    <span className={almanac.tileIcon} aria-hidden="true">
+                      <Target size={iconSize(16)} weight="light" />
+                    </span>
+                    <h3 className={almanac.tileTitle}>
+                      <label htmlFor="personal-event-filter">Mục tiêu trong ngày</label>
+                    </h3>
+                  </header>
+                  <span className={styles.eventFilterHint}>Chọn việc bạn đang cân nhắc hôm nay.</span>
                 </div>
                 <select
                   id="personal-event-filter"
@@ -674,7 +677,9 @@ export function PersonalFengShuiPanel({
 
               {eventVerdict ? (
                 <section className={`${styles.eventVerdict} ${styles[`eventVerdict_${eventVerdict.tone}`]}`} aria-label="Kết luận mục tiêu">
-                  <span className={styles.eventVerdictEvent}>Event đang chọn: <strong>{eventLabel}</strong></span>
+                  <span className={styles.eventVerdictEvent}>
+                    Việc đang chọn: <strong>{eventLabel}</strong>
+                  </span>
                   <strong className={styles.eventVerdictStatus}>{eventVerdict.label}</strong>
                   {nextGoodEventDate ? (
                     <span className={styles.eventNextDate} role="note">
@@ -712,8 +717,8 @@ export function PersonalFengShuiPanel({
                 index={6}
                 className={styles.recommendationAvoid}
                 icon={WarningCircle}
-                title="Việc Không Nên Làm"
-                label="Việc Không Nên Làm"
+                title="Việc không nên làm"
+                label="Việc không nên làm"
                 aside="Theo Trực + Tú"
               >
                 <ul className={styles.afflictionList} aria-label="Danh sách việc không nên làm">
@@ -736,7 +741,7 @@ export function PersonalFengShuiPanel({
           </>
         ) : null}
 
-        <Collapsible desktop summary="Chi tiết luận đoán nâng cao">
+        <Collapsible desktop heading summary="Chi tiết luận đoán nâng cao">
           <div className={styles.advancedGrid}>
             <AnnualFengShuiSection
               key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}

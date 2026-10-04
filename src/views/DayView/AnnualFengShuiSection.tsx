@@ -70,10 +70,10 @@ function FeatureCell({
   return (
     <li className={`${styles.annualBox} ${styles.featureCell}`}>
       <span className={styles.featureHead}>
-        <span className={styles.featureLabel}>
-          <CellIcon size={iconSize(15)} weight="duotone" aria-hidden="true" />
+        <h5 className={styles.featureLabel}>
+          <CellIcon size={iconSize(16)} weight="duotone" aria-hidden="true" />
           {label}
-        </span>
+        </h5>
         {onExplain ? <InfoButton label={label} onClick={onExplain} /> : null}
       </span>
       <span className={value ? styles.featureValue : styles.featureEmpty}>
@@ -115,7 +115,7 @@ function HanCell({
             <CheckCircle size={iconSize(16)} weight="fill" />
           )}
         </span>
-        <h4>{label}</h4>
+        <h5>{label}</h5>
       </span>
       {onExplain ? (
         <span className={styles.hanAside}>

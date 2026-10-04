@@ -71,6 +71,8 @@
   --almanac-good-bg: rgb(26 140 60 / 0.13);
   --almanac-bad: #b3261e;
   --almanac-bad-bg: rgb(204 43 34 / 0.1);
+  /* Mức cân nhắc (giữa tốt và xấu): chữ --gold trên nền vàng nhạt. */
+  --almanac-warn-bg: rgb(163 95 0 / 0.12);
   --now-line: #cc2b22;
   --focus: #0a64d8;
 
@@ -147,7 +149,6 @@
     --text-muted: #a9afbd;
     --text-lunar: #9aa1b0;
     --text-faint: #8d8e94;
-    --text-faint: #8d8e94;
     --separator: rgb(235 240 255 / 0.12);
     --separator-soft: rgb(235 240 255 / 0.06);
     --fill: rgb(140 148 170 / 0.2);
@@ -166,6 +167,7 @@
     --almanac-good-bg: rgb(95 213 138 / 0.16);
     --almanac-bad: #ff8f86;
     --almanac-bad-bg: rgb(255 90 79 / 0.16);
+    --almanac-warn-bg: rgb(240 181 74 / 0.15);
     --now-line: #ff5a4f;
     --focus: #5aa2ff;
     --border-strong: rgb(235 240 255 / 0.2);
@@ -213,6 +215,7 @@
   --almanac-good-bg: rgb(95 213 138 / 0.16);
   --almanac-bad: #ff8f86;
   --almanac-bad-bg: rgb(255 90 79 / 0.16);
+  --almanac-warn-bg: rgb(240 181 74 / 0.15);
   --now-line: #ff5a4f;
   --focus: #5aa2ff;
   --border-strong: rgb(235 240 255 / 0.2);

@@ -26,28 +26,34 @@ export function Collapsible({
   summary,
   children,
   desktop = false,
+  heading = false,
 }: {
   summary: ReactNode
   children: ReactNode
   desktop?: boolean
+  /** Bọc nút trong h3 để khối nội dung bên trong có tiêu đề nhóm trong cây heading. */
+  heading?: boolean
 }) {
   const [open, setOpen] = useState(false)
   const id = useId()
+  const toggle = (
+    <button
+      type="button"
+      className={styles.collapseToggle}
+      aria-expanded={open}
+      aria-controls={id}
+      onClick={() => setOpen((value) => !value)}
+    >
+      <span className={styles.collapseSummary}>{summary}</span>
+      <span className={styles.collapseAction}>
+        {open ? 'Thu gọn' : 'Xem chi tiết'}
+        <CaretDown size={iconSize(14)} weight="bold" aria-hidden="true" />
+      </span>
+    </button>
+  )
   return (
     <div className={`${styles.collapse} ${desktop ? styles.desktopCollapse : ''}`} data-open={open}>
-      <button
-        type="button"
-        className={styles.collapseToggle}
-        aria-expanded={open}
-        aria-controls={id}
-        onClick={() => setOpen((value) => !value)}
-      >
-        <span className={styles.collapseSummary}>{summary}</span>
-        <span className={styles.collapseAction}>
-          {open ? 'Thu gọn' : 'Xem chi tiết'}
-          <CaretDown size={iconSize(14)} weight="bold" aria-hidden="true" />
-        </span>
-      </button>
+      {heading ? <h3 className={styles.collapseHeading}>{toggle}</h3> : toggle}
       <div id={id} className={styles.collapseBody}>
         {children}
       </div>

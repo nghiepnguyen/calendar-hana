@@ -175,7 +175,7 @@
 
 .relationMid {
   --tone: var(--gold);
-  --tone-bg: color-mix(in srgb, var(--gold) 13%, transparent);
+  --tone-bg: var(--almanac-warn-bg);
 }
 
 .relationBad {

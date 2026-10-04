@@ -125,7 +125,7 @@ describe('personal panel integration', () => {
     expect(selector).toHaveValue('open_business')
     expect(within(panel).getByRole('region', { name: 'Việc nên làm trong ngày' })).toBeInTheDocument()
     expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
-      /Event đang chọn:\s*Khai trương/,
+      /Việc đang chọn:\s*Khai trương/,
     )
     expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
       /Nên làm|Không nên làm|Cân nhắc/,

@@ -18,7 +18,7 @@
 
 /* Bốn thẻ lõi dùng cùng một khung; dữ liệu khác nhau, nhịp đọc không đổi. */
 .coreTile {
-  gap: calc(14px * var(--ui-scale));
+  gap: var(--section-gap-lg);
 }
 
 /* Viền trên theo kết luận của thẻ: cùng màu với nhãn Thuận / Bình hòa / Lưu ý. Thập thần luôn trung tính. */
@@ -103,7 +103,7 @@
 .goalCluster {
   display: grid;
   grid-column: 1 / -1;
-  gap: calc(6px * var(--ui-scale));
+  gap: var(--section-gap);
   padding: var(--tile-pad);
   border-radius: var(--tile-radius);
   background: var(--glass-strong);
@@ -116,18 +116,25 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
   align-items: center;
-  gap: calc(6px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  gap: var(--section-gap) var(--section-gap-lg);
 }
 
 .eventFilterLabel {
   display: grid;
-  gap: calc(2px * var(--ui-scale));
+  gap: calc(4px * var(--ui-scale));
+}
+
+/* Gợi ý dưới tiêu đề: thụt vào bằng icon tròn (28px) + khe (8px) để thẳng hàng với chữ tiêu đề. */
+.eventFilterHint {
+  padding-left: calc(36px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: var(--day-meta);
 }
 
 .eventVerdict {
   display: grid;
-  gap: calc(5px * var(--ui-scale));
-  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  gap: calc(4px * var(--ui-scale));
+  padding: var(--section-pad) var(--tile-pad);
   border-left: 3px solid currentColor;
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, currentColor 8%, var(--fill));
@@ -136,9 +143,7 @@
 .eventVerdictEvent {
   color: var(--text-muted);
   font-size: var(--day-meta);
-  font-weight: var(--fw-600);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: var(--fw-500);
 }
 
 .eventVerdictEvent strong {
@@ -147,13 +152,13 @@
 }
 
 .eventVerdictStatus {
-  font-size: calc(17px * var(--ui-scale));
+  font-size: var(--day-title);
   line-height: 1.15;
 }
 
 .eventNextDate {
   display: block;
-  padding-top: calc(5px * var(--ui-scale));
+  padding-top: calc(4px * var(--ui-scale));
   border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
   color: var(--text-muted);
   font-size: var(--day-meta);
@@ -176,40 +181,16 @@
 
 .eventVerdict_caution {
   color: var(--gold);
-  background: var(--gold-bg, var(--fill));
+  background: var(--almanac-warn-bg);
 }
 
 .eventVerdict_neutral {
   color: var(--text-muted);
 }
 
-.eventFilter label {
-  color: var(--text-muted);
-  font-size: var(--day-label);
-  font-weight: var(--fw-600);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.eventFilterTitle {
-  display: inline-flex;
-  align-items: center;
-  gap: calc(6px * var(--ui-scale));
-}
-
-.eventFilterTitle svg {
-  flex: 0 0 auto;
-  color: var(--accent);
-}
-
 .eventSelect {
   grid-column: 2;
   min-width: 0;
-}
-
-.eventFilter span {
-  color: var(--text-muted);
-  font-size: var(--day-meta);
 }
 
 @container (max-width: 519px) {
@@ -224,10 +205,6 @@
   }
 }
 
-.recommendationRow > section {
-  min-height: calc(132px * var(--ui-scale));
-}
-
 @container (max-width: 519px) {
   .recommendationRow {
     grid-template-columns: minmax(0, 1fr);
@@ -239,7 +216,7 @@
 }
 
 .recommendationAvoid .afflictionList li {
-  background: color-mix(in srgb, var(--gold-bg, var(--fill)) 78%, var(--glass-strong));
+  background: var(--almanac-warn-bg);
 }
 
 .recommendationAvoid .afflictionList .afflictionHit {
@@ -266,6 +243,12 @@
   color: var(--text);
 }
 
+/* Banner kết luận "Bình hòa": trung tính như nhãn và viền ô, không dùng vàng (vàng dành cho "Cân nhắc"). */
+.relationNeutral {
+  --tone: var(--text);
+  --tone-bg: var(--fill);
+}
+
 /* ---------- Đầu khối ---------- */
 
 .editProfile {
@@ -276,10 +259,10 @@
   min-height: max(var(--tap-min, 44px), calc(36px * var(--ui-scale)));
   margin-top: calc(-4px * var(--ui-scale));
   color: var(--text-muted);
-  font-size: calc(13px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s var(--ease);
 }
 
 .editProfile:hover {
@@ -303,7 +286,7 @@
 
 .emptyTitle {
   font-family: var(--font-display);
-  font-size: calc(24px * var(--ui-scale));
+  font-size: var(--day-display);
   font-weight: var(--fw-700);
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -312,7 +295,7 @@
 .emptyText {
   max-width: 60ch;
   color: var(--text-muted);
-  font-size: calc(14px * var(--ui-scale));
+  font-size: var(--day-body);
 }
 
 /* Emoji con giáp trong viên tròn của banner: nền sáng để con vật màu tối vẫn rõ. */
@@ -347,7 +330,7 @@
   align-items: center;
   padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
   border-radius: var(--radius-pill);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   white-space: nowrap;
 }
@@ -412,7 +395,7 @@
   margin-top: auto;
   padding-top: calc(10px * var(--ui-scale));
   border-top: 1px dashed var(--separator);
-  font-size: calc(13px * var(--ui-scale));
+  font-size: var(--day-meta);
   line-height: 1.45;
 }
 
@@ -423,17 +406,13 @@
 
 .extra h4 {
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
 }
 
 .extra h4 + p,
 .extra p + p {
   margin-top: calc(2px * var(--ui-scale));
-}
-
-.extra .muted {
-  font-size: calc(12px * var(--ui-scale));
 }
 
 /* Hai cột: ô Nạp âm (thứ ba) trải hết hàng, không để trống một ô. */
@@ -468,7 +447,7 @@
   align-items: center;
   gap: calc(6px * var(--ui-scale));
   color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
 }
 
@@ -494,15 +473,10 @@
   flex-direction: column;
   gap: calc(2px * var(--ui-scale));
   min-width: 0;
-  padding: calc(10px * var(--ui-scale)) calc(11px * var(--ui-scale));
-  border-radius: 14px;
+  padding: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  border-radius: var(--radius);
   animation: cell-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
   animation-delay: calc(var(--j, 0) * 70ms + 320ms);
-  transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.hourCard:hover {
-  transform: translateY(-2px);
 }
 
 .priority {
@@ -524,7 +498,7 @@
       color-mix(in srgb, var(--gold) 16%, transparent),
       transparent 70%
     ),
-    color-mix(in srgb, var(--gold) 12%, transparent);
+    var(--almanac-warn-bg);
 }
 
 .hourTop {
@@ -559,7 +533,7 @@
   border-radius: var(--radius-pill);
   background: var(--fill);
   color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 /* ---------- Hạn theo năm ---------- */
@@ -614,9 +588,9 @@
   font-size: var(--day-meta);
   font-weight: var(--fw-600);
   transition:
-    background-color 0.35s cubic-bezier(0.32, 0.72, 0, 1),
-    color 0.35s cubic-bezier(0.32, 0.72, 0, 1),
-    box-shadow 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
 }
 
 .genderPicker input {
@@ -665,14 +639,14 @@
 
 .annualProfileHint {
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 /* Ô con trong khối: nền nhạt hơn nền ô cha để tách lớp như ô của Lịch vạn niên. */
 .annualBox {
   min-width: 0;
-  padding: calc(14px * var(--ui-scale));
-  border-radius: calc(var(--tile-radius) - 4px);
+  padding: var(--tile-pad);
+  border-radius: var(--radius);
   background: var(--fill);
 }
 
@@ -711,8 +685,9 @@
   display: inline-flex;
   align-items: center;
   gap: calc(6px * var(--ui-scale));
+  margin: 0;
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -732,7 +707,7 @@
 
 .featureEmpty {
   color: var(--text-muted);
-  font-size: calc(14px * var(--ui-scale));
+  font-size: var(--day-body);
 }
 
 .hanGrid {
@@ -772,9 +747,10 @@
   min-width: 0;
 }
 
-.hanHead h4 {
+.hanHead h5 {
+  margin: 0;
   color: var(--text-muted);
-  font-size: calc(12px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -791,14 +767,14 @@
 
 .hanValue {
   grid-area: value;
-  font-size: calc(16px * var(--ui-scale));
+  font-size: var(--day-title);
   font-weight: var(--fw-700);
   line-height: 1.3;
 }
 
 .hanEmpty {
   color: var(--text-muted);
-  font-size: calc(14px * var(--ui-scale));
+  font-size: var(--day-body);
   font-weight: var(--fw-500);
 }
 
@@ -851,7 +827,7 @@
   border-radius: var(--radius-pill);
   background: var(--almanac-good-bg);
   color: var(--text);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-600);
 }
 
@@ -904,10 +880,10 @@
   min-height: calc(40px * var(--ui-scale));
   margin: 0 calc(8px * var(--ui-scale));
   color: var(--text-muted);
-  font-size: calc(13px * var(--ui-scale));
+  font-size: var(--day-meta);
   font-weight: var(--fw-500);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s var(--ease);
 }
 
 .guideLink:hover {
@@ -932,10 +908,6 @@
   .genderPicker label {
     flex: 1;
     justify-content: center;
-  }
-
-  .annualBox {
-    padding: calc(12px * var(--ui-scale));
   }
 
   .featureValue {
@@ -989,7 +961,7 @@
 
 .inviteText {
   color: var(--text-muted);
-  font-size: calc(14.5px * var(--ui-scale));
+  font-size: var(--day-body);
   line-height: 1.5;
 }
 
@@ -1016,7 +988,7 @@
 }
 
 .inviteCta svg {
-  transition: transform 0.45s var(--spring);
+  transition: transform 0.2s var(--ease);
 }
 
 .inviteCta:hover svg {
@@ -1025,7 +997,7 @@
 
 .inviteHint {
   color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 /* Rộng: chữ bên trái, vòng con giáp bên phải. */
@@ -1193,8 +1165,8 @@
   color: var(--text-muted);
   cursor: pointer;
   transition:
-    transform 0.4s cubic-bezier(0.32, 0.72, 0, 1),
-    color 0.2s ease;
+    transform 0.2s var(--ease),
+    color 0.2s var(--ease);
 }
 
 /* Vùng bấm tối thiểu khoảng 44px. */
@@ -1239,7 +1211,7 @@
   border-radius: var(--radius-pill);
   background: var(--accent);
   color: var(--accent-contrast);
-  font-size: calc(10.5px * var(--ui-scale));
+  font-size: var(--day-label);
   font-weight: var(--fw-700);
 }
 
@@ -1248,7 +1220,7 @@
   align-items: center;
   gap: calc(6px * var(--ui-scale));
   color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
+  font-size: var(--day-meta);
 }
 
 .eventNotes {
@@ -1265,9 +1237,9 @@
   align-items: flex-start;
   gap: calc(8px * var(--ui-scale));
   padding: calc(10px * var(--ui-scale)) calc(12px * var(--ui-scale));
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: var(--almanac-bad-bg);
-  font-size: calc(13px * var(--ui-scale));
+  font-size: var(--day-meta);
   line-height: 1.45;
 }
 
@@ -1277,12 +1249,23 @@
   color: var(--almanac-bad);
 }
 
-/* ---------- Thu gọn trên điện thoại ---------- */
+/* ---------- Thu gọn ---------- */
 
 .collapse {
   display: flex;
   flex-direction: column;
-  gap: calc(12px * var(--ui-scale));
+  gap: var(--section-gap-lg);
+}
+
+/* Khối luận đoán nâng cao: gọn mặc định, trải hết lưới bento. */
+.desktopCollapse {
+  grid-column: 1 / -1;
+  gap: var(--section-gap);
+}
+
+.collapseHeading {
+  margin: 0;
+  font: inherit;
 }
 
 .collapseToggle {
@@ -1292,14 +1275,43 @@
   gap: calc(10px * var(--ui-scale));
   width: 100%;
   min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
-  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
+  padding: calc(8px * var(--ui-scale)) var(--tile-pad);
   border: 0;
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: var(--fill);
   color: var(--text);
   font: inherit;
   text-align: left;
   cursor: pointer;
+  transition: background-color 0.2s var(--ease);
+}
+
+.collapseToggle:hover {
+  background: var(--fill-hover);
+}
+
+.collapseSummary {
+  min-width: 0;
+  font-size: var(--day-body);
+  font-weight: var(--fw-600);
+}
+
+.collapseAction {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: var(--day-meta);
+  font-weight: var(--fw-600);
+}
+
+.collapseAction svg {
+  transition: transform 0.2s var(--ease);
+}
+
+.collapse[data-open='true'] .collapseAction svg {
+  transform: rotate(180deg);
 }
 
 .collapseBody {
@@ -1310,139 +1322,11 @@
   display: contents;
 }
 
-.collapseSummary {
-  min-width: 0;
-  font-size: calc(14px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-
-.collapseAction {
-  display: inline-flex;
-  align-items: center;
-  gap: calc(4px * var(--ui-scale));
-  flex: 0 0 auto;
-  color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-
-.collapseAction svg {
-  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.collapse[data-open='true'] .collapseAction svg {
-  transform: rotate(180deg);
-}
-
-/* Khối luận đoán nâng cao: gọn mặc định trên desktop, vẫn mở được khi cần. */
-.desktopCollapse {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: calc(8px * var(--ui-scale));
-}
-
-.desktopCollapse .collapseToggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: calc(10px * var(--ui-scale));
-  width: 100%;
-  min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
-  padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
-  border: 0;
-  border-radius: 14px;
-  background: var(--fill);
-  color: var(--text);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
-.desktopCollapse .collapseAction {
-  display: inline-flex;
-  align-items: center;
-  gap: calc(4px * var(--ui-scale));
-  color: var(--text-muted);
-  font-size: calc(12.5px * var(--ui-scale));
-  font-weight: var(--fw-600);
-}
-
-.desktopCollapse .collapseAction svg {
-  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.desktopCollapse[data-open='true'] .collapseAction svg {
-  transform: rotate(180deg);
-}
-
-.desktopCollapse[data-open='false'] .collapseBody {
-  display: none;
-}
-
-.desktopCollapse[data-open='true'] .collapseBody {
-  display: contents;
-}
-
+/* Hẹp: khối thường (không phải luận đoán nâng cao) xếp nội dung thành cột riêng. */
 @container (max-width: 519px) {
-  .collapse {
+  .collapse:not(.desktopCollapse)[data-open='true'] .collapseBody {
     display: flex;
     flex-direction: column;
-    gap: calc(12px * var(--ui-scale));
-  }
-
-  .collapseToggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: calc(10px * var(--ui-scale));
-    width: 100%;
-    min-height: max(var(--tap-min, 44px), calc(44px * var(--ui-scale)));
-    padding: calc(8px * var(--ui-scale)) calc(12px * var(--ui-scale));
-    border: 0;
-    border-radius: 14px;
-    background: var(--fill);
-    color: var(--text);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .collapseSummary {
-    min-width: 0;
-    font-size: calc(14px * var(--ui-scale));
-    font-weight: var(--fw-600);
-  }
-
-  .collapseAction {
-    display: inline-flex;
-    align-items: center;
-    gap: calc(4px * var(--ui-scale));
-    flex: 0 0 auto;
-    color: var(--text-muted);
-    font-size: calc(12.5px * var(--ui-scale));
-    font-weight: var(--fw-600);
-  }
-
-  .collapseAction svg {
-    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-
-  .collapse[data-open='true'] .collapseAction svg {
-    transform: rotate(180deg);
-  }
-
-  .collapseBody {
-    display: flex;
-    flex-direction: column;
-    gap: calc(12px * var(--ui-scale));
-  }
-
-  .collapse[data-open='false'] .collapseBody {
-    display: none;
-  }
-
-  .desktopCollapse .collapseBody {
-    display: flex;
+    gap: var(--section-gap-lg);
   }
 }

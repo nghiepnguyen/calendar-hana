@@ -189,7 +189,7 @@ describe('personal panel features', () => {
     const stem = screen.getByRole('region', { name: 'Quan hệ Thiên can' })
     expect(within(stem).queryByRole('group', { name: 'Thập thần của ngày đang xem' })).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Thập thần ngày' })).toHaveTextContent(
-      'Nhật Nguyên Đinh · Can ngày Canh: Chính Tài',
+      'Thập thần: Chính Tài',
     )
   })
 
