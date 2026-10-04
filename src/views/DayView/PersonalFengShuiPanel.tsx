@@ -303,7 +303,8 @@ export function PersonalFengShuiPanel({
   const explainTransit = () => {
     if (transit?.status !== 'ready') return
     const dayMasterCan = CAN.indexOf(transit.dayMaster as (typeof CAN)[number])
-    const relation = tenGodOf(dayMasterCan, result.day.can)
+    const viewedDayCan = CAN.indexOf(transit.viewedStem as (typeof CAN)[number])
+    const relation = tenGodOf(dayMasterCan, viewedDayCan)
     setExplain({
       title: 'Thập thần ngày',
       isGood: true,
