@@ -1,16 +1,284 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "events": {
-    "cut_hair": { "severity": "low", "activities": ["cut_hair"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "event_fit", "age_clash", "truc"] },
-    "receive_vehicle": { "severity": "high", "activities": ["transaction", "travel"], "mustHave": ["calendar_validity", "good_hour"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "taboo_day"] },
-    "buy_vehicle": { "severity": "high", "activities": ["transaction", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "truc", "lunar_lodge", "bad_stars", "element_fit", "taboo_day"] },
-    "sign_contract": { "severity": "high", "activities": ["contract", "transaction"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "truc", "age_clash", "age_harmony", "taboo_day"] },
-    "buy_property": { "severity": "very_high", "activities": ["moving", "transaction", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "participant_alignment", "taboo_day"] },
-    "property_handover": { "severity": "high", "activities": ["moving", "transaction"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] },
-    "move_house": { "severity": "high", "activities": ["moving", "cleaning"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] },
-    "open_business": { "severity": "very_high", "activities": ["opening", "business", "finance"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "truc", "lunar_lodge", "good_stars", "age_clash", "age_harmony", "taboo_day"] },
-    "groundbreaking": { "severity": "very_high", "activities": ["groundbreaking", "construction"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "element_fit", "direction", "taboo_day"] },
-    "wedding": { "severity": "very_high", "activities": ["wedding", "engagement"], "mustHave": ["calendar_validity", "event_fit"], "criteria": ["hoang_dao", "good_hour", "lunar_lodge", "age_clash", "age_harmony", "element_fit", "participant_alignment", "taboo_day"] },
-    "start_journey": { "severity": "medium", "activities": ["travel"], "mustHave": ["calendar_validity"], "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"] }
+    "cut_hair": {
+      "severity": "low",
+      "activities": [
+        {
+          "activityId": "cut_hair",
+          "role": "primary",
+          "multiplier": 1
+        }
+      ],
+      "mustHave": ["calendar_validity"],
+      "criteria": ["hoang_dao", "event_fit", "age_clash", "truc"],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "receive_vehicle": {
+      "severity": "high",
+      "activities": [
+        {
+          "activityId": "transaction",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "travel",
+          "role": "conditional",
+          "multiplier": 0.3,
+          "condition": "vehicle_departure"
+        }
+      ],
+      "mustHave": ["calendar_validity", "good_hour"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "age_clash",
+        "age_harmony",
+        "element_fit",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "buy_vehicle": {
+      "severity": "high",
+      "activities": [
+        {
+          "activityId": "transaction",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "finance",
+          "role": "supporting",
+          "multiplier": 0.5
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "age_clash",
+        "age_harmony",
+        "truc",
+        "lunar_lodge",
+        "bad_stars",
+        "element_fit",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "sign_contract": {
+      "severity": "high",
+      "activities": [
+        {
+          "activityId": "contract",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "transaction",
+          "role": "supporting",
+          "multiplier": 0.5
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": ["hoang_dao", "good_hour", "truc", "age_clash", "age_harmony", "taboo_day"],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "buy_property": {
+      "severity": "very_high",
+      "activities": [
+        {
+          "activityId": "transaction",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "finance",
+          "role": "supporting",
+          "multiplier": 0.5
+        },
+        {
+          "activityId": "moving",
+          "role": "conditional",
+          "multiplier": 0.3,
+          "condition": "move_in"
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "age_clash",
+        "age_harmony",
+        "element_fit",
+        "participant_alignment",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "property_handover": {
+      "severity": "high",
+      "activities": [
+        {
+          "activityId": "transaction",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "moving",
+          "role": "supporting",
+          "multiplier": 0.5
+        }
+      ],
+      "mustHave": ["calendar_validity"],
+      "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "move_house": {
+      "severity": "high",
+      "activities": [
+        {
+          "activityId": "moving",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "cleaning",
+          "role": "supporting",
+          "multiplier": 0.3
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "open_business": {
+      "severity": "very_high",
+      "activities": [
+        {
+          "activityId": "opening",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "business",
+          "role": "supporting",
+          "multiplier": 0.5
+        },
+        {
+          "activityId": "finance",
+          "role": "supporting",
+          "multiplier": 0.3
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "truc",
+        "lunar_lodge",
+        "good_stars",
+        "age_clash",
+        "age_harmony",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "groundbreaking": {
+      "severity": "very_high",
+      "activities": [
+        {
+          "activityId": "groundbreaking",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "construction",
+          "role": "supporting",
+          "multiplier": 0.5
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "age_clash",
+        "age_harmony",
+        "element_fit",
+        "direction",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "wedding": {
+      "severity": "very_high",
+      "activities": [
+        {
+          "activityId": "wedding",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "engagement",
+          "role": "supporting",
+          "multiplier": 0.5
+        }
+      ],
+      "mustHave": ["calendar_validity", "event_fit"],
+      "criteria": [
+        "hoang_dao",
+        "good_hour",
+        "lunar_lodge",
+        "age_clash",
+        "age_harmony",
+        "element_fit",
+        "participant_alignment",
+        "taboo_day"
+      ],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    "start_journey": {
+      "severity": "medium",
+      "activities": [
+        {
+          "activityId": "travel",
+          "role": "primary",
+          "multiplier": 1
+        },
+        {
+          "activityId": "water_travel",
+          "role": "conditional",
+          "multiplier": 1,
+          "condition": "water_transport"
+        }
+      ],
+      "mustHave": ["calendar_validity"],
+      "criteria": ["hoang_dao", "good_hour", "age_clash", "age_harmony", "direction", "taboo_day"],
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    }
   }
 }

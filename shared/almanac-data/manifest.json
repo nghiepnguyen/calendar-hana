@@ -1,13 +1,10 @@
 {
-  "schemaVersion": "1.0.0",
-  "datasetVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
+  "datasetVersion": "1.2.0",
   "locale": "vi-VN",
   "timezoneDefault": "Asia/Ho_Chi_Minh",
   "baseScore": 50,
-  "scoreRange": [
-    0,
-    100
-  ],
+  "scoreRange": [0, 100],
   "ruleLevelWeights": {
     "strong_good": 25,
     "good": 15,
@@ -21,38 +18,47 @@
     "mansion28.json",
     "good-gods.json",
     "bad-gods.json",
-    "overrides.json"
+    "overrides.json",
+    "event-mapping.json",
+    "mansion-patterns.json",
+    "audited-mansion-evidence.json",
+    "golden-tests-mansion-mapping.json",
+    "xiejibianfangshu-yiji.json"
   ],
   "policies": {
     "aiMayChangeScore": false,
     "mansion28ScoringEnabled": false,
     "unknownRuleMeansNeutral": false,
     "unknownRuleMeansNoEvidence": true,
-    "hardVetoFromClassicalJi": false
+    "hardVetoFromClassicalJi": false,
+    "requireScopeForScoring": true,
+    "conflictResolutionRequired": true,
+    "lowSeverityNoTabooMeansNeutral": true
   },
   "sources": [
     {
       "id": "xiejibianfangshu",
       "title": "欽定協紀辨方書",
       "role": "primary classical source",
-      "scope": [
-        "12_truc",
-        "good_gods",
-        "bad_gods",
-        "exceptions"
-      ]
+      "scope": ["12_truc", "good_gods", "bad_gods", "exceptions"]
+    },
+    {
+      "id": "xiejibianfangshu_vol11",
+      "title": "欽定協紀辨方書 卷十一 用事 (四庫全書本, Wikisource)",
+      "role": "primary source for Trực and god activity lists",
+      "scope": ["12_truc", "good_gods", "bad_gods"],
+      "file": "xiejibianfangshu-yiji.json"
     },
     {
       "id": "xiejibianfangshu_28",
       "title": "欽定協紀辨方書 — 二十八宿配日",
       "role": "primary source for sequence/origin caution",
-      "scope": [
-        "28_mansions"
-      ]
+      "scope": ["28_mansions"]
     }
   ],
   "notes": [
     "Weights are product policy, not values stated by classical sources.",
-    "28-mansion activity scoring is intentionally disabled in v1 until one consistent tradition is audited per activity."
+    "28-mansion activity scoring is intentionally disabled in v1 until one consistent tradition is audited per activity.",
+    "lowSeverityNoTabooMeansNeutral is product policy: a low-severity event whose primary activity meets no rule (so no taboo either) is neutral instead of insufficient evidence."
   ]
 }

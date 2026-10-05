@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "tradition": "xiejibianfangshu_normalized",
+  "tradition": "xiejibianfangshu_vol11",
   "calculation": {
     "basis": "solar_month_branch",
     "order": [
@@ -26,14 +26,124 @@
       "theme": "khởi lập",
       "activityRules": [
         {
+          "activityId": "pray_blessing",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "pray_children",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求嗣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
           "activityId": "wedding",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "cut_hair",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 整容剃頭",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 營建宮室/興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修倉庫",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "planting",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 栽種",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "burial",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安葬",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "demolition",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 破屋壞垣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -44,51 +154,37 @@
       "theme": "loại bỏ, làm sạch",
       "activityRules": [
         {
+          "activityId": "travel",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
           "activityId": "medical",
           "level": "good",
-          "weight": 20
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "cleaning",
+          "level": "strong_good",
+          "weight": 25,
+          "sourceRef": "協紀辨方書 卷十一 掃舍宇",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "cut_hair",
           "level": "good",
           "weight": 20,
-          "sourceRef": "event-mapping:cut_hair"
-        },
-      {
-        "activityId": "cleaning",
-        "level": "strong_good",
-        "weight": 25
-      },
-      {
-        "activityId": "wedding",
-        "level": "good",
-        "weight": 15,
-        "sourceRef": "lichviet.me:2026-10-03"
-      },
-      {
-        "activityId": "construction",
-        "level": "good",
-        "weight": 15,
-        "sourceRef": "lichviet.me:2026-10-03"
-      },
-      {
-        "activityId": "groundbreaking",
-        "level": "good",
-        "weight": 15,
-        "sourceRef": "lichviet.me:2026-10-03"
-      },
-      {
-        "activityId": "burial",
-        "level": "good",
-        "weight": 15,
-        "sourceRef": "lichviet.me:2026-10-03"
-      },
-      {
-        "activityId": "planting",
-        "level": "good",
-        "weight": 15,
-        "sourceRef": "lichviet.me:2026-10-03"
-      }
+          "sourceRef": "協紀辨方書 卷十一 整容剃頭",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        }
       ]
     },
     {
@@ -98,39 +194,92 @@
       "theme": "đầy đủ, tích tụ",
       "activityRules": [
         {
-          "activityId": "opening",
+          "activityId": "worship",
           "level": "good",
-          "weight": 15
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 祭祀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
-          "activityId": "contract",
+          "activityId": "pray_blessing",
           "level": "good",
-          "weight": 15
-        },
-        {
-          "activityId": "transaction",
-          "level": "good",
-          "weight": 15
-        },
-        {
-          "activityId": "finance",
-          "level": "good",
-          "weight": 15
-        },
-        {
-          "activityId": "warehouse",
-          "level": "good",
-          "weight": 15
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "wedding",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "opening",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "contract",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "transaction",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "finance",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 納財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "medical",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 修倉庫",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -141,19 +290,188 @@
       "theme": "san bằng, bình ổn",
       "activityRules": [
         {
-          "activityId": "renovation",
-          "level": "good",
-          "weight": 15
+          "activityId": "pray_blessing",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "pray_children",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求嗣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "wedding",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻/嫁娶",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "moving",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "bed_installation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安牀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "contract",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "transaction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "finance",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "cut_hair",
+          "level": "neutral",
+          "weight": 0,
+          "sourceRef": "協紀辨方書 卷十 平日 \"止不忌…整容剃頭\"",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 營建宮室/興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修倉庫",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "planting",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 栽種",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "livestock",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 牧養/納畜",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "burial",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安葬",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -162,18 +480,8 @@
       "han": "定",
       "label": "Định",
       "theme": "ổn định, hoạch định",
-      "activityRules": [
-        {
-          "activityId": "contract",
-          "level": "good",
-          "weight": 15
-        },
-        {
-          "activityId": "transaction",
-          "level": "good",
-          "weight": 15
-        }
-      ]
+      "activityRules": [],
+      "subsumesGods": ["tam_hop"]
     },
     {
       "id": "chap",
@@ -189,26 +497,199 @@
       "theme": "phá bỏ, chữa trị",
       "activityRules": [
         {
-          "activityId": "medical",
-          "level": "strong_good",
-          "weight": 25
+          "activityId": "pray_blessing",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
-          "activityId": "demolition",
-          "level": "strong_good",
-          "weight": 25
+          "activityId": "pray_children",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 求嗣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "wedding",
           "level": "strong_bad",
-          "weight": -25
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻/嫁娶",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "moving",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "bed_installation",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 安牀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "opening",
           "level": "strong_bad",
-          "weight": -25
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "contract",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "transaction",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "finance",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 納財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "strong_good",
+          "weight": 25,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "cut_hair",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 整容剃頭",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 營建宮室/興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 修倉庫",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "planting",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 栽種",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "livestock",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 牧養/納畜",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "burial",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 安葬",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "demolition",
+          "level": "strong_good",
+          "weight": 25,
+          "sourceRef": "協紀辨方書 卷十一 破屋壞垣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
-      ]
+      ],
+      "subsumesGods": ["nguyet_pha"]
     },
     {
       "id": "nguy",
@@ -219,7 +700,10 @@
         {
           "activityId": "bed_installation",
           "level": "strong_good",
-          "weight": 25
+          "weight": 25,
+          "sourceRef": "協紀辨方書 卷十一 安牀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -230,36 +714,79 @@
       "theme": "thành tựu, hoàn tất",
       "activityRules": [
         {
-          "activityId": "study",
-          "level": "good",
-          "weight": 15
-        },
-        {
-          "activityId": "moving",
-          "level": "good",
-          "weight": 20
-        },
-        {
-          "activityId": "opening",
-          "level": "good",
-          "weight": 20
-        },
-        {
           "activityId": "wedding",
           "level": "good",
-          "weight": 20
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻/嫁娶",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "engagement",
           "level": "good",
-          "weight": 20
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "moving",
+          "level": "good",
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "opening",
+          "level": "good",
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "study",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 入學",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "medical",
           "level": "good",
-          "weight": 15
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
-      ]
+      ],
+      "subsumesGods": ["tam_hop", "thien_hy"]
     },
     {
       "id": "thu",
@@ -268,24 +795,180 @@
       "theme": "thu nhận, tích chứa",
       "activityRules": [
         {
-          "activityId": "finance",
-          "level": "good",
-          "weight": 15
+          "activityId": "pray_blessing",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
-          "activityId": "warehouse",
-          "level": "good",
-          "weight": 15
+          "activityId": "pray_children",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求嗣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "wedding",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻/嫁娶",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "moving",
           "level": "bad",
-          "weight": -15
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "bed_installation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安牀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "contract",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "transaction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 立券交易",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "finance",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 納財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "cut_hair",
+          "level": "neutral",
+          "weight": 0,
+          "sourceRef": "協紀辨方書 卷十 收日 \"止不忌…整容剃頭\"",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 營建宮室/興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 修倉庫",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "livestock",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 納畜",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "burial",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安葬",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -296,24 +979,140 @@
       "theme": "mở ra, khai mở",
       "activityRules": [
         {
+          "activityId": "worship",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 祭祀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "pray_blessing",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 祈福",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "pray_children",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 求嗣",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
           "activityId": "moving",
           "level": "good",
-          "weight": 20
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "opening",
           "level": "strong_good",
-          "weight": 25
+          "weight": 25,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "business",
           "level": "good",
-          "weight": 20
+          "weight": 20,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
-          "activityId": "contract",
+          "activityId": "travel",
           "level": "good",
-          "weight": 15
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "study",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 入學",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "planting",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 栽種",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "livestock",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 牧養",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "burial",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十 開日",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     },
@@ -326,17 +1125,106 @@
         {
           "activityId": "wedding",
           "level": "bad",
-          "weight": -20
+          "weight": -20,
+          "sourceRef": "協紀辨方書 卷十一 結婚姻/嫁娶",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "engagement",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 納采問名",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "moving",
           "level": "bad",
-          "weight": -20
+          "weight": -20,
+          "sourceRef": "協紀辨方書 卷十一 般移",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "bed_installation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 安牀",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         },
         {
           "activityId": "opening",
           "level": "strong_bad",
-          "weight": -25
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "business",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開市",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "travel",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 行幸遣使",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "meeting",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 宴會",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "medical",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 求醫療病",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "groundbreaking",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "construction",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 營建宮室/興造動土",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "renovation",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 修宮室",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "beam_raising",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-05"
         }
       ]
     }

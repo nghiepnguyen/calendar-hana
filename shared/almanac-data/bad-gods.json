@@ -14,18 +14,30 @@
       "label": "Nguyệt Phá",
       "tier": "critical",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
         "bed_installation",
         "opening",
+        "business",
         "contract",
         "transaction",
         "finance",
-        "construction",
+        "travel",
+        "meeting",
+        "cut_hair",
         "groundbreaking",
-        "beam_raising"
-      ]
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "kiep_sat",
@@ -33,11 +45,32 @@
       "label": "Kiếp Sát",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "cut_hair",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tai_sat",
@@ -45,11 +78,32 @@
       "label": "Tai Sát",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "cut_hair",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_sat",
@@ -57,11 +111,32 @@
       "label": "Nguyệt Sát",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "cut_hair",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_hinh",
@@ -69,11 +144,32 @@
       "label": "Nguyệt Hình",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "cut_hair",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_hai",
@@ -81,9 +177,22 @@
       "label": "Nguyệt Hại",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
-        "engagement"
-      ]
+        "engagement",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "meeting",
+        "medical",
+        "warehouse",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_yem",
@@ -91,20 +200,40 @@
       "label": "Nguyệt Yếm",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "cut_hair",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "yem_doi",
       "han": "厭對",
       "label": "Yếm Đối",
       "tier": "major",
-      "activityIds": [
-        "wedding"
-      ]
+      "activityIds": ["wedding"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "dai_thoi",
@@ -112,11 +241,28 @@
       "label": "Đại Thời",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_lai",
@@ -124,12 +270,28 @@
       "label": "Thiên Lại",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
         "bed_installation",
-        "travel"
-      ]
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tu_phe",
@@ -137,21 +299,38 @@
       "label": "Tứ Phế",
       "tier": "major",
       "activityIds": [
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tu_ky",
       "han": "四忌",
       "label": "Tứ Kỵ",
       "tier": "major",
-      "activityIds": [
-        "wedding",
-        "engagement"
-      ]
+      "activityIds": ["wedding", "engagement", "burial"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tu_cung",
@@ -160,8 +339,16 @@
       "tier": "major",
       "activityIds": [
         "wedding",
-        "engagement"
-      ]
+        "engagement",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "warehouse",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "ngu_mo",
@@ -172,49 +359,76 @@
         "wedding",
         "engagement",
         "moving",
-        "bed_installation"
-      ]
+        "bed_installation",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "travel",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "planting",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "ngu_ly",
       "han": "五離",
       "label": "Ngũ Ly",
       "tier": "major",
-      "activityIds": [
-        "wedding",
-        "engagement"
-      ]
+      "activityIds": ["wedding", "engagement", "contract", "transaction", "meeting"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "vang_vong",
       "han": "往亡",
       "label": "Vãng Vong",
       "tier": "major",
-      "activityIds": [
-        "wedding",
-        "moving",
-        "bed_installation"
-      ]
+      "activityIds": ["wedding", "moving", "travel", "medical"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "bat_chuyen",
       "han": "八專",
       "label": "Bát Chuyên",
       "tier": "major",
-      "activityIds": [
-        "wedding",
-        "engagement"
-      ]
+      "activityIds": ["wedding", "engagement"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "quy_ky",
       "han": "歸忌",
       "label": "Quy Kỵ",
       "tier": "major",
-      "activityIds": [
-        "moving",
-        "travel"
-      ]
+      "activityIds": ["moving"],
+      "sourceRef": "協紀辨方書 卷十一"
+    },
+    {
+      "id": "dinh_nhat",
+      "han": "丁日",
+      "label": "Ngày Đinh (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["cut_hair"],
+      "sourceRef": "協紀辨方書 卷十一 整容剃頭; 卷十 百忌日 \"丁日忌剃頭\"",
+      "rule": {
+        "dayCan": [3]
+      }
+    },
+    {
+      "id": "nhan_than_toc",
+      "han": "每月十二日十五日",
+      "label": "Nhân Thần (ngày 12, 15 âm)",
+      "tier": "medium",
+      "activityIds": ["cut_hair"],
+      "sourceRef": "協紀辨方書 卷十一 整容剃頭; 卷十 人神所在日 \"十二日在髮際十五日在徧身忌剃頭\"",
+      "rule": {
+        "lunarDay": [12, 15]
+      }
     }
   ]
 }

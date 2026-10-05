@@ -1,0 +1,2842 @@
+{
+  "schemaVersion": "1.1.0",
+  "cases": [
+    {
+      "id": "M001",
+      "input": {
+        "mansionId": "giac",
+        "index": 0,
+        "name": "Giác",
+        "element": "Mộc",
+        "animal": "Giao (Giao long)",
+        "isGood": true,
+        "shouldDo": "Khởi tạo mọi việc, cưới gả, cầu công danh, thi cử.",
+        "shouldAvoid": "Chôn cất, sửa mồ mả.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Giác",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Giác:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Khởi tạo mọi việc",
+            "sourceRef": "shared/lunar/mansions.ts#Giác",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Giác"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Giác:study:positive:43",
+            "activityId": "study",
+            "scope": "study",
+            "polarity": "positive",
+            "sourcePhrase": "thi cử",
+            "sourceRef": "shared/lunar/mansions.ts#Giác",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Giác"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Giác:wedding:positive:19",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Giác",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Giác"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Giác:grave_repair:negative:10",
+            "activityId": "grave_repair",
+            "scope": "funeral_grave_repair",
+            "polarity": "negative",
+            "sourcePhrase": "sửa mồ mả",
+            "sourceRef": "shared/lunar/mansions.ts#Giác",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Giác"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Giác:burial:negative:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Giác",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Giác"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "wedding",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "study",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "burial",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": ["groundbreaking"]
+    },
+    {
+      "id": "M002",
+      "input": {
+        "mansionId": "cang",
+        "index": 1,
+        "name": "Cang",
+        "element": "Kim",
+        "animal": "Long (Rồng)",
+        "isGood": false,
+        "shouldDo": "Cắt may áo màn.",
+        "shouldAvoid": "Chôn cất, cưới gả, kiện tụng, xây dựng nhà cửa.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Cang",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Cang:construction:negative:30",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "xây dựng",
+            "sourceRef": "shared/lunar/mansions.ts#Cang",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Cang"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cang:burial:negative:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Cang",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Cang"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cang:wedding:negative:10",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Cang",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Cang"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "burial",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "construction",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M003",
+      "input": {
+        "mansionId": "de",
+        "index": 2,
+        "name": "Đê",
+        "element": "Thổ",
+        "animal": "Lạc (Lạc đà)",
+        "isGood": false,
+        "shouldDo": "Không hợp việc lớn nào.",
+        "shouldAvoid": "Khởi công xây dựng, chôn cất, cưới gả, xuất hành, nhất là đi đường thủy.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Đê",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Đê:general_negative:negative:0",
+            "activityId": "",
+            "scope": "general_negative",
+            "polarity": "negative",
+            "sourcePhrase": "Không hợp việc lớn nào",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:water_travel:negative:58",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "đi đường thủy",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:travel:negative:39",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "negative",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:groundbreaking:negative:0",
+            "activityId": "groundbreaking",
+            "scope": "construction_groundbreaking",
+            "polarity": "negative",
+            "sourcePhrase": "Khởi công",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:construction:negative:10",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "xây dựng",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:burial:negative:20",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đê:wedding:negative:30",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Đê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đê"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M004",
+      "input": {
+        "mansionId": "phong",
+        "index": 3,
+        "name": "Phòng",
+        "element": "Hỏa",
+        "animal": "Thố (Thỏ)",
+        "isGood": true,
+        "shouldDo": "Mọi việc đều tốt, nhất là cưới gả, xuất hành, xây nhà, chôn cất, mua bán lớn.",
+        "shouldAvoid": "Không kỵ việc gì.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Phòng",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Mọi việc đều tốt",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:travel:positive:35",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "positive",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:burial:positive:55",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:business:positive:65",
+            "activityId": "business",
+            "scope": "business",
+            "polarity": "positive",
+            "sourcePhrase": "mua bán",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:construction:positive:46",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:wedding:positive:26",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Phòng"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Phòng:general_no_taboos:neutral:0",
+            "activityId": "",
+            "scope": "general_no_taboos",
+            "polarity": "neutral",
+            "sourcePhrase": "Không kỵ việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Phòng",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Phòng"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M005",
+      "input": {
+        "mansionId": "tam",
+        "index": 4,
+        "name": "Tâm",
+        "element": "Thủy",
+        "animal": "Hồ (Chồn)",
+        "isGood": false,
+        "shouldDo": "Không hợp việc gì.",
+        "shouldAvoid": "Cưới gả, đóng giường, xây cất, chôn cất, kiện tụng.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Tâm",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Tâm:general_negative:negative:0",
+            "activityId": "",
+            "scope": "general_negative",
+            "polarity": "negative",
+            "sourcePhrase": "Không hợp việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Tâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Tâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tâm:bed_installation:negative:9",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Tâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tâm:burial:negative:31",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tâm:construction:negative:22",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tâm:wedding:negative:0",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "Cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Tâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tâm"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "bed_installation",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "burial",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M006",
+      "input": {
+        "mansionId": "vi",
+        "index": 5,
+        "name": "Vĩ",
+        "element": "Hỏa",
+        "animal": "Hổ (Cọp)",
+        "isGood": true,
+        "shouldDo": "Khởi tạo, chôn cất, cưới gả, xây cất, đào ao giếng, làm thủy lợi.",
+        "shouldAvoid": "Đóng giường, đi thuyền, mua sắm lớn.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Vĩ:burial:positive:10",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vĩ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vĩ:construction:positive:29",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vĩ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vĩ:wedding:positive:20",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vĩ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vĩ:bed_installation:negative:0",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "Đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Vĩ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vĩ:water_travel:negative:13",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Vĩ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Vĩ"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "construction",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M007",
+      "input": {
+        "mansionId": "co",
+        "index": 6,
+        "name": "Cơ",
+        "element": "Thủy",
+        "animal": "Báo (Beo)",
+        "isGood": true,
+        "shouldDo": "Chôn cất, khai trương, xuất hành, sửa mồ mả, trổ cửa, làm thủy lợi.",
+        "shouldAvoid": "Đóng giường, lót giường, đi thuyền.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Cơ",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:opening:positive:10",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "positive",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Cơ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:travel:positive:23",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "positive",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Cơ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:grave_repair:positive:34",
+            "activityId": "grave_repair",
+            "scope": "funeral_grave_repair",
+            "polarity": "positive",
+            "sourcePhrase": "sửa mồ mả",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Cơ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:burial:positive:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Cơ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:bed_installation:negative:0",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "Đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Cơ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Cơ:water_travel:negative:25",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Cơ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Cơ"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "grave_repair",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M008",
+      "input": {
+        "mansionId": "dau",
+        "index": 7,
+        "name": "Đẩu",
+        "element": "Mộc",
+        "animal": "Giải (Cua)",
+        "isGood": true,
+        "shouldDo": "Xây đắp, sửa mộ, trổ cửa, thủy lợi, may mặc, kinh doanh, cầu công danh.",
+        "shouldAvoid": "Đi thuyền.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Đẩu",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Đẩu:business:positive:45",
+            "activityId": "business",
+            "scope": "business",
+            "polarity": "positive",
+            "sourcePhrase": "kinh doanh",
+            "sourceRef": "shared/lunar/mansions.ts#Đẩu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Đẩu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đẩu:construction:positive:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "Xây đắp",
+            "sourceRef": "shared/lunar/mansions.ts#Đẩu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Đẩu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đẩu:grave_repair:positive:9",
+            "activityId": "grave_repair",
+            "scope": "funeral_grave_repair",
+            "polarity": "positive",
+            "sourcePhrase": "sửa mộ",
+            "sourceRef": "shared/lunar/mansions.ts#Đẩu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Đẩu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Đẩu:water_travel:negative:0",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "Đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Đẩu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Đẩu"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "grave_repair",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M009",
+      "input": {
+        "mansionId": "nguu",
+        "index": 8,
+        "name": "Ngưu",
+        "element": "Kim",
+        "animal": "Ngưu (Trâu)",
+        "isGood": false,
+        "shouldDo": "Đi thuyền, cắt may áo mão.",
+        "shouldAvoid": "Xây cất, trổ cửa, cưới gả, xuất hành đường bộ, gieo cấy, khai trương.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:water_travel:positive:0",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "positive",
+            "sourcePhrase": "Đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Ngưu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:travel:negative:27",
+            "activityId": "travel",
+            "scope": "travel_road",
+            "polarity": "negative",
+            "sourcePhrase": "xuất hành đường bộ",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Ngưu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:opening:negative:57",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "negative",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Ngưu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:planting:negative:47",
+            "activityId": "planting",
+            "scope": "planting",
+            "polarity": "negative",
+            "sourcePhrase": "gieo cấy",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Ngưu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:construction:negative:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "Xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Ngưu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Ngưu:wedding:negative:18",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Ngưu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Ngưu"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "travel",
+          "polarity": "negative",
+          "scope": "travel_road"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M010",
+      "input": {
+        "mansionId": "nu",
+        "index": 9,
+        "name": "Nữ",
+        "element": "Thổ",
+        "animal": "Bức (Dơi)",
+        "isGood": false,
+        "shouldDo": "Kết màn, may áo.",
+        "shouldAvoid": "Tháo nước, trổ cửa, kiện cáo, chôn cất.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Nữ",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Nữ:burial:negative:30",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Nữ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Nữ"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "burial",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M011",
+      "input": {
+        "mansionId": "hu",
+        "index": 10,
+        "name": "Hư",
+        "element": "Hỏa",
+        "animal": "Thử (Chuột)",
+        "isGood": false,
+        "shouldDo": "Không hợp việc gì.",
+        "shouldAvoid": "Xây cất, khai trương, cưới gả, trổ cửa, đào kênh, tháo nước.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Hư",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Hư:general_negative:negative:0",
+            "activityId": "",
+            "scope": "general_negative",
+            "polarity": "negative",
+            "sourcePhrase": "Không hợp việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Hư",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Hư"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Hư:opening:negative:9",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "negative",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Hư",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Hư"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Hư:construction:negative:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "Xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Hư",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Hư"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Hư:wedding:negative:22",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Hư",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Hư"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "opening",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "construction",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M012",
+      "input": {
+        "mansionId": "nguy",
+        "index": 11,
+        "name": "Nguy",
+        "element": "Thủy",
+        "animal": "Yến (Chim én)",
+        "isGood": false,
+        "shouldDo": "Lót giường, chôn cất.",
+        "shouldAvoid": "Dựng nhà, gác đòn dông, tháo nước, đào mương, đi thuyền, trổ cửa.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Nguy",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Nguy:bed_installation:positive:0",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "positive",
+            "sourcePhrase": "Lót giường",
+            "sourceRef": "shared/lunar/mansions.ts#Nguy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Nguy"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Nguy:burial:positive:12",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Nguy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Nguy"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Nguy:water_travel:negative:46",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Nguy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Nguy"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Nguy:construction:negative:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "Dựng nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Nguy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Nguy"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Nguy:beam_raising:negative:14",
+            "activityId": "beam_raising",
+            "scope": "beam_raising",
+            "polarity": "negative",
+            "sourcePhrase": "đòn dông",
+            "sourceRef": "shared/lunar/mansions.ts#Nguy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Nguy"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "bed_installation",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M013",
+      "input": {
+        "mansionId": "that",
+        "index": 12,
+        "name": "Thất",
+        "element": "Hỏa",
+        "animal": "Trư (Heo)",
+        "isGood": true,
+        "shouldDo": "Mọi việc đều tốt, nhất là thủy lợi, đi thuyền, xây nhà, cưới gả, chôn cất.",
+        "shouldAvoid": "Không kỵ việc gì.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Thất",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Thất:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Mọi việc đều tốt",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Thất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Thất:water_travel:positive:36",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "positive",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Thất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Thất:burial:positive:65",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Thất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Thất:construction:positive:47",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Thất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Thất:wedding:positive:56",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Thất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Thất:general_no_taboos:neutral:0",
+            "activityId": "",
+            "scope": "general_no_taboos",
+            "polarity": "neutral",
+            "sourcePhrase": "Không kỵ việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Thất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Thất"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M014",
+      "input": {
+        "mansionId": "bich",
+        "index": 13,
+        "name": "Bích",
+        "element": "Thủy",
+        "animal": "Du (Rái cá)",
+        "isGood": true,
+        "shouldDo": "Mọi việc đều tốt, nhất là khai trương, xuất hành, xây nhà, cưới gả, chôn cất.",
+        "shouldAvoid": "Không kỵ việc gì.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Bích",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Bích:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Mọi việc đều tốt",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:opening:positive:26",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "positive",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:travel:positive:39",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "positive",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:burial:positive:68",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:construction:positive:50",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:wedding:positive:59",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Bích"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Bích:general_no_taboos:neutral:0",
+            "activityId": "",
+            "scope": "general_no_taboos",
+            "polarity": "neutral",
+            "sourcePhrase": "Không kỵ việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Bích",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Bích"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "opening",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M015",
+      "input": {
+        "mansionId": "khue",
+        "index": 14,
+        "name": "Khuê",
+        "element": "Mộc",
+        "animal": "Lang (Chó sói)",
+        "isGood": false,
+        "shouldDo": "Nhập học, cắt áo, dựng phòng, cầu công danh.",
+        "shouldAvoid": "Chôn cất, trổ cửa, khai trương, đào giếng, kiện tụng, đóng giường.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Khuê",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Khuê:study:positive:0",
+            "activityId": "study",
+            "scope": "study",
+            "polarity": "positive",
+            "sourcePhrase": "Nhập học",
+            "sourceRef": "shared/lunar/mansions.ts#Khuê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Khuê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Khuê:bed_installation:negative:54",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Khuê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Khuê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Khuê:opening:negative:19",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "negative",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Khuê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Khuê"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Khuê:burial:negative:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Khuê",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Khuê"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "study",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "opening",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M016",
+      "input": {
+        "mansionId": "lau",
+        "index": 15,
+        "name": "Lâu",
+        "element": "Kim",
+        "animal": "Cẩu (Chó)",
+        "isGood": true,
+        "shouldDo": "Dựng cột, cưới gả, trổ cửa, cất lầu, cắt áo, làm thủy lợi.",
+        "shouldAvoid": "Đóng giường, lót giường, đi đường thủy.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Lâu",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Lâu:wedding:positive:10",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Lâu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Lâu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Lâu:water_travel:negative:25",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "đi đường thủy",
+            "sourceRef": "shared/lunar/mansions.ts#Lâu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Lâu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Lâu:bed_installation:negative:0",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "Đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Lâu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Lâu"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M017",
+      "input": {
+        "mansionId": "vi2",
+        "index": 16,
+        "name": "Vị",
+        "element": "Thổ",
+        "animal": "Trĩ (Chim trĩ)",
+        "isGood": true,
+        "shouldDo": "Cưới gả, xây cất, dọn cỏ, gieo trồng.",
+        "shouldAvoid": "Đi thuyền.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Vị",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Vị:planting:positive:26",
+            "activityId": "planting",
+            "scope": "planting",
+            "polarity": "positive",
+            "sourcePhrase": "gieo trồng",
+            "sourceRef": "shared/lunar/mansions.ts#Vị",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vị"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vị:construction:positive:9",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Vị",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vị"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vị:cleaning:positive:18",
+            "activityId": "cleaning",
+            "scope": "cleaning",
+            "polarity": "positive",
+            "sourcePhrase": "dọn cỏ",
+            "sourceRef": "shared/lunar/mansions.ts#Vị",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vị"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vị:wedding:positive:0",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "Cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Vị",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Vị"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Vị:water_travel:negative:0",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "Đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Vị",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Vị"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "cleaning",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M018",
+      "input": {
+        "mansionId": "mao",
+        "index": 17,
+        "name": "Mão",
+        "element": "Hỏa",
+        "animal": "Kê (Gà)",
+        "isGood": false,
+        "shouldDo": "Xây dựng, tạo tác.",
+        "shouldAvoid": "Đại kỵ chôn cất; kỵ cưới gả, khai trương, xuất hành, trổ cửa.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Mão",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Mão:construction:positive:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "Xây dựng",
+            "sourceRef": "shared/lunar/mansions.ts#Mão",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Mão"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Mão:opening:negative:29",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "negative",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Mão",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Mão"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Mão:travel:negative:42",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "negative",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Mão",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Mão"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Mão:burial:negative:7",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Mão",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Mão"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Mão:wedding:negative:20",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Mão",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Mão"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "construction",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M019",
+      "input": {
+        "mansionId": "tat",
+        "index": 18,
+        "name": "Tất",
+        "element": "Thủy",
+        "animal": "Ô (Quạ)",
+        "isGood": true,
+        "shouldDo": "Trổ cửa, đào kênh, chôn cất, cưới gả, khai trương, xuất hành, nhập học.",
+        "shouldAvoid": "Đi thuyền.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Tất",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Tất:opening:positive:38",
+            "activityId": "opening",
+            "scope": "business_opening",
+            "polarity": "positive",
+            "sourcePhrase": "khai trương",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tất:travel:positive:51",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "positive",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tất:study:positive:62",
+            "activityId": "study",
+            "scope": "study",
+            "polarity": "positive",
+            "sourcePhrase": "nhập học",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tất:burial:positive:19",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tất:wedding:positive:29",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tất"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tất:water_travel:negative:0",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "Đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Tất",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tất"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M020",
+      "input": {
+        "mansionId": "chuy",
+        "index": 19,
+        "name": "Chủy",
+        "element": "Hỏa",
+        "animal": "Hầu (Khỉ)",
+        "isGood": false,
+        "shouldDo": "Không hợp việc gì.",
+        "shouldAvoid": "Mọi việc, nhất là chôn cất và sửa mồ mả.",
+        "auditStatus": "no_activity_evidence",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Chủy",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Chủy:general_negative:negative:0",
+            "activityId": "",
+            "scope": "general_negative",
+            "polarity": "negative",
+            "sourcePhrase": "Không hợp việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Chủy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Chủy"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chủy:general_note:negative:0",
+            "activityId": "",
+            "scope": "general_note",
+            "polarity": "negative",
+            "sourcePhrase": "Mọi việc",
+            "sourceRef": "shared/lunar/mansions.ts#Chủy",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Chủy"
+          }
+        ]
+      },
+      "expected": [],
+      "forbidden": ["burial", "grave_repair"]
+    },
+    {
+      "id": "M021",
+      "input": {
+        "mansionId": "sam",
+        "index": 20,
+        "name": "Sâm",
+        "element": "Thủy",
+        "animal": "Viên (Vượn)",
+        "isGood": true,
+        "shouldDo": "Xây cất, trổ cửa, nhập học, làm thủy lợi, đi thuyền.",
+        "shouldAvoid": "Cưới gả, đóng giường, chôn cất, kết bạn.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Sâm",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:water_travel:positive:42",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "positive",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Sâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:study:positive:18",
+            "activityId": "study",
+            "scope": "study",
+            "polarity": "positive",
+            "sourcePhrase": "nhập học",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Sâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:construction:positive:0",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "Xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Sâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:bed_installation:negative:9",
+            "activityId": "bed_installation",
+            "scope": "bed_installation",
+            "polarity": "negative",
+            "sourcePhrase": "đóng giường",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Sâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:burial:negative:22",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Sâm"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Sâm:wedding:negative:0",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "Cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Sâm",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Sâm"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "study",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M022",
+      "input": {
+        "mansionId": "tinh",
+        "index": 21,
+        "name": "Tỉnh",
+        "element": "Mộc",
+        "animal": "Hãn (Dê trừu)",
+        "isGood": true,
+        "shouldDo": "Trổ cửa, đào giếng, đi thuyền, xây cất, nhậm chức, nhập học.",
+        "shouldAvoid": "Làm sinh phần, đóng thọ đường, chôn cất, sửa mộ.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Tỉnh:water_travel:positive:20",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "positive",
+            "sourcePhrase": "đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tỉnh"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tỉnh:study:positive:51",
+            "activityId": "study",
+            "scope": "study",
+            "polarity": "positive",
+            "sourcePhrase": "nhập học",
+            "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tỉnh"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tỉnh:construction:positive:31",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Tỉnh"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tỉnh:burial:negative:31",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tỉnh"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tỉnh:grave_repair:negative:41",
+            "activityId": "grave_repair",
+            "scope": "funeral_grave_repair",
+            "polarity": "negative",
+            "sourcePhrase": "sửa mộ",
+            "sourceRef": "shared/lunar/mansions.ts#Tỉnh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tỉnh"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "grave_repair",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M023",
+      "input": {
+        "mansionId": "quy",
+        "index": 22,
+        "name": "Quỷ",
+        "element": "Kim",
+        "animal": "Dương (Dê)",
+        "isGood": false,
+        "shouldDo": "Chôn cất, phát cỏ phá đất, cắt áo.",
+        "shouldAvoid": "Trổ cửa, tháo nước, đào ao giếng, xây nhà, cưới gả, động thổ.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Quỷ:demolition:positive:10",
+            "activityId": "demolition",
+            "scope": "construction_demolition",
+            "polarity": "positive",
+            "sourcePhrase": "phát cỏ phá đất",
+            "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Quỷ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Quỷ:burial:positive:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Quỷ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Quỷ:groundbreaking:negative:52",
+            "activityId": "groundbreaking",
+            "scope": "construction_groundbreaking",
+            "polarity": "negative",
+            "sourcePhrase": "động thổ",
+            "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Quỷ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Quỷ:construction:negative:34",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Quỷ"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Quỷ:wedding:negative:43",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Quỷ",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Quỷ"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "demolition",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "groundbreaking",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M024",
+      "input": {
+        "mansionId": "lieu",
+        "index": 23,
+        "name": "Liễu",
+        "element": "Thổ",
+        "animal": "Chương (Gấu ngựa)",
+        "isGood": false,
+        "shouldDo": "Không hợp việc gì.",
+        "shouldAvoid": "Mọi việc, nhất là thủy lợi, chôn cất, sửa cửa, xây đắp.",
+        "auditStatus": "no_activity_evidence",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Liễu",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Liễu:general_negative:negative:0",
+            "activityId": "",
+            "scope": "general_negative",
+            "polarity": "negative",
+            "sourcePhrase": "Không hợp việc gì",
+            "sourceRef": "shared/lunar/mansions.ts#Liễu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Liễu"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Liễu:general_note:negative:0",
+            "activityId": "",
+            "scope": "general_note",
+            "polarity": "negative",
+            "sourcePhrase": "Mọi việc",
+            "sourceRef": "shared/lunar/mansions.ts#Liễu",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Liễu"
+          }
+        ]
+      },
+      "expected": [],
+      "forbidden": ["burial", "construction"]
+    },
+    {
+      "id": "M025",
+      "input": {
+        "mansionId": "tinh2",
+        "index": 24,
+        "name": "Tinh",
+        "element": "Hỏa",
+        "animal": "Mã (Ngựa)",
+        "isGood": false,
+        "shouldDo": "Xây phòng mới.",
+        "shouldAvoid": "Chôn cất, cưới gả, mở đường nước.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Tinh",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Tinh:burial:negative:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Tinh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tinh"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Tinh:wedding:negative:10",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Tinh",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Tinh"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "burial",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M026",
+      "input": {
+        "mansionId": "truong",
+        "index": 25,
+        "name": "Trương",
+        "element": "Thủy",
+        "animal": "Lộc (Nai)",
+        "isGood": true,
+        "shouldDo": "Mọi việc đều tốt, nhất là xây nhà, trổ cửa, cưới gả, chôn cất, làm ruộng.",
+        "shouldAvoid": "Làm hoặc hạ thủy thuyền mới.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Trương",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Trương:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Mọi việc đều tốt",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Trương"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Trương:planting:positive:63",
+            "activityId": "planting",
+            "scope": "planting",
+            "polarity": "positive",
+            "sourcePhrase": "làm ruộng",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Trương"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Trương:burial:positive:53",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Trương"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Trương:construction:positive:26",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Trương"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Trương:wedding:positive:44",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Trương"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Trương:water_travel:negative:9",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "hạ thủy",
+            "sourceRef": "shared/lunar/mansions.ts#Trương",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Trương"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "construction",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "M027",
+      "input": {
+        "mansionId": "duc",
+        "index": 26,
+        "name": "Dực",
+        "element": "Hỏa",
+        "animal": "Xà (Rắn)",
+        "isGood": false,
+        "shouldDo": "Cắt áo.",
+        "shouldAvoid": "Chôn cất, xây nhà, gác đòn dông, cưới gả, trổ cửa, thủy lợi.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Dực",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Dực:beam_raising:negative:23",
+            "activityId": "beam_raising",
+            "scope": "beam_raising",
+            "polarity": "negative",
+            "sourcePhrase": "đòn dông",
+            "sourceRef": "shared/lunar/mansions.ts#Dực",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Dực"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Dực:burial:negative:0",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "negative",
+            "sourcePhrase": "Chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Dực",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Dực"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Dực:construction:negative:10",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "negative",
+            "sourcePhrase": "xây nhà",
+            "sourceRef": "shared/lunar/mansions.ts#Dực",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Dực"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Dực:wedding:negative:33",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "negative",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Dực",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Dực"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "beam_raising",
+          "polarity": "negative"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "M028",
+      "input": {
+        "mansionId": "chan",
+        "index": 27,
+        "name": "Chẩn",
+        "element": "Thủy",
+        "animal": "Dẫn (Giun)",
+        "isGood": true,
+        "shouldDo": "Mọi việc đều tốt, nhất là cưới gả, xây lầu gác, chôn cất, xuất hành.",
+        "shouldAvoid": "Đi thuyền.",
+        "auditStatus": "not_audited",
+        "reviewStatus": "not_audited",
+        "updatedAt": "2026-10-05",
+        "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+        "evidence": [
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:general_positive:positive:0",
+            "activityId": "",
+            "scope": "general_positive",
+            "polarity": "positive",
+            "sourcePhrase": "Mọi việc đều tốt",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 0,
+            "label": "Tú Chẩn"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:construction:positive:35",
+            "activityId": "construction",
+            "scope": "construction_general",
+            "polarity": "positive",
+            "sourcePhrase": "xây lầu gác",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Chẩn"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:travel:positive:58",
+            "activityId": "travel",
+            "scope": "travel_general",
+            "polarity": "positive",
+            "sourcePhrase": "xuất hành",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Chẩn"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:burial:positive:48",
+            "activityId": "burial",
+            "scope": "funeral_burial",
+            "polarity": "positive",
+            "sourcePhrase": "chôn cất",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Chẩn"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:wedding:positive:26",
+            "activityId": "wedding",
+            "scope": "relationship_wedding",
+            "polarity": "positive",
+            "sourcePhrase": "cưới",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": 15,
+            "label": "Tú Chẩn"
+          },
+          {
+            "source": "mansion",
+            "ruleId": "Chẩn:water_travel:negative:0",
+            "activityId": "water_travel",
+            "scope": "travel_water",
+            "polarity": "negative",
+            "sourcePhrase": "Đi thuyền",
+            "sourceRef": "shared/lunar/mansions.ts#Chẩn",
+            "confidence": "high",
+            "status": "informational",
+            "scoreDelta": 0,
+            "rawDelta": -25,
+            "label": "Tú Chẩn"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    },
+    {
+      "id": "S1",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Phát cỏ phá đất.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "demolition",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["groundbreaking"]
+    },
+    {
+      "id": "S2",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Khởi tạo mọi việc.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "",
+          "scope": "general_positive"
+        }
+      ],
+      "forbidden": ["groundbreaking"]
+    },
+    {
+      "id": "S3",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Sửa mồ mả.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "grave_repair",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["burial"]
+    },
+    {
+      "id": "S4",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Sửa mộ.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "grave_repair",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["burial"]
+    },
+    {
+      "id": "S5",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Đi đường thủy.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "water_travel",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "S6",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Xuất hành đường bộ.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "scope": "travel_road"
+        }
+      ],
+      "forbidden": ["water_travel"]
+    },
+    {
+      "id": "S7",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Mọi việc đều tốt, nhất là cưới gả.",
+        "shouldAvoid": ""
+      },
+      "expected": [
+        {
+          "activityId": "",
+          "scope": "general_positive"
+        },
+        {
+          "activityId": "wedding",
+          "polarity": "positive"
+        }
+      ],
+      "forbidden": ["cut_hair"]
+    },
+    {
+      "id": "S8",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "",
+        "shouldAvoid": "Không kỵ việc gì."
+      },
+      "expected": [
+        {
+          "activityId": "",
+          "scope": "general_no_taboos"
+        }
+      ],
+      "forbidden": ["travel"]
+    },
+    {
+      "id": "S9",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "",
+        "shouldAvoid": "Không hợp việc gì."
+      },
+      "expected": [
+        {
+          "activityId": "",
+          "scope": "general_negative"
+        }
+      ],
+      "forbidden": ["groundbreaking"]
+    },
+    {
+      "id": "S10",
+      "input": {
+        "name": "fixture",
+        "shouldDo": "Xuất hành.",
+        "shouldAvoid": "Đi thuyền."
+      },
+      "expected": [
+        {
+          "activityId": "travel",
+          "polarity": "positive"
+        },
+        {
+          "activityId": "water_travel",
+          "polarity": "negative"
+        }
+      ],
+      "forbidden": []
+    }
+  ]
+}

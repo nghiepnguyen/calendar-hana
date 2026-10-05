@@ -15,6 +15,9 @@ import { getNapAm, sexagenaryIndex, type NapAm } from './napAm'
 import { getOfficer, type Officer } from './officers'
 import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
+import { resolveDayRuleGods, resolvePresentGods } from './godMapping'
+import manifest from '../almanac-data/manifest.json'
+import { ENGINE_VERSION } from './evidence'
 import { getActivityRecommendations, type ActivityRecommendation } from './activityRecommendations'
 
 export interface Almanac {
@@ -40,7 +43,8 @@ const CACHE_LIMIT = 2000
 const cache = new Map<SolarDateString, Almanac>()
 
 export function getAlmanac(date: SolarDateString): Almanac {
-  const cached = cache.get(date)
+  const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}`
+  const cached = cache.get(cacheKey)
   if (cached) return cached
 
   const info = getDayInfo(date)
@@ -49,6 +53,17 @@ export function getAlmanac(date: SolarDateString): Almanac {
   const month = info.canChi.month
   const mansion = getMansion(jd)
   const officer = getOfficer(jd, day.chi)
+  const stars = getStars({
+    lunarMonth: lunar.month,
+    lunarDay: lunar.day,
+    can: day.can,
+    chi: day.chi,
+    canChi: sexagenaryIndex(day),
+    officer: officer.index,
+    mansion: mansion.index,
+  })
+  const gods = resolvePresentGods(stars)
+  const dayGods = resolveDayRuleGods({ can: day.can, chi: day.chi, lunarDay: lunar.day })
   const almanac: Almanac = {
     date,
     solarTerm: info.solarTerm,
@@ -61,19 +76,26 @@ export function getAlmanac(date: SolarDateString): Almanac {
     directions: getTravelDirections(day.can),
     dayClashes: getDayClashes(day),
     monthClashes: getMonthClashes(month),
-    stars: getStars({
-      lunarMonth: lunar.month,
-      lunarDay: lunar.day,
-      can: day.can,
-      chi: day.chi,
-      canChi: sexagenaryIndex(day),
-      officer: officer.index,
-      mansion: mansion.index,
-    }),
+    stars,
     activityRecommendations: getActivityRecommendations({
-      officerId: ['kien', 'tru', 'man', 'binh', 'dinh', 'chap', 'pha', 'nguy', 'thanh', 'thu', 'khai', 'be'][officer.index],
+      officerId: [
+        'kien',
+        'tru',
+        'man',
+        'binh',
+        'dinh',
+        'chap',
+        'pha',
+        'nguy',
+        'thanh',
+        'thu',
+        'khai',
+        'be',
+      ][officer.index],
       mansion,
-    }),
+      presentGoodGods: [...gods.presentGoodGods, ...dayGods.presentGoodGods],
+      presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
+    }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
   }
 
@@ -81,6 +103,6 @@ export function getAlmanac(date: SolarDateString): Almanac {
     const oldest = cache.keys().next().value
     if (oldest !== undefined) cache.delete(oldest)
   }
-  cache.set(date, almanac)
+  cache.set(cacheKey, almanac)
   return almanac
 }

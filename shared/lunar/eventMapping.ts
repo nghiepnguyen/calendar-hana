@@ -2,13 +2,36 @@ import data from '../almanac-data/event-mapping.json'
 
 export type EventSeverity = 'low' | 'medium' | 'high' | 'very_high'
 export type EventCriterion =
-  | 'calendar_validity' | 'hoang_dao' | 'good_hour' | 'event_fit' | 'truc'
-  | 'lunar_lodge' | 'good_stars' | 'bad_stars' | 'age_clash' | 'age_harmony'
-  | 'element_fit' | 'direction' | 'participant_alignment' | 'taboo_day'
+  | 'calendar_validity'
+  | 'hoang_dao'
+  | 'good_hour'
+  | 'event_fit'
+  | 'truc'
+  | 'lunar_lodge'
+  | 'good_stars'
+  | 'bad_stars'
+  | 'age_clash'
+  | 'age_harmony'
+  | 'element_fit'
+  | 'direction'
+  | 'participant_alignment'
+  | 'taboo_day'
 
+export interface EventActivity {
+  activityId: string
+  role: 'primary' | 'supporting' | 'conditional'
+  multiplier: number
+  condition?: string
+}
+export interface EventInput {
+  transportMode?: 'road' | 'water' | 'unknown'
+  vehicleDeparture?: boolean
+  moveIn?: boolean
+  hour?: number
+}
 export interface EventProfile {
   severity: EventSeverity
-  activities: string[]
+  activities: EventActivity[]
   mustHave: EventCriterion[]
   criteria: EventCriterion[]
 }
@@ -34,5 +57,18 @@ export function getEventProfile(eventType: string): EventProfile | undefined {
 }
 
 export function resolveEventActivities(eventType: string): string[] {
-  return getEventProfile(eventType)?.activities ?? []
+  return getEventProfile(eventType)?.activities.map((item) => item.activityId) ?? []
+}
+
+export function resolveEventActivityRoles(
+  eventType: string,
+  input: EventInput = {},
+): EventActivity[] {
+  return (getEventProfile(eventType)?.activities ?? []).filter(
+    (item) =>
+      item.role !== 'conditional' ||
+      (item.condition === 'vehicle_departure' && input.vehicleDeparture === true) ||
+      (item.condition === 'move_in' && input.moveIn === true) ||
+      (item.condition === 'water_transport' && input.transportMode === 'water'),
+  )
 }

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getAllHours, getAuspiciousHours, getBadDays, getDayGod } from './auspicious'
 import { CHI } from './canChi'
+import { getDayInfo } from './index'
 import { solarStringToJd } from './julian'
 
 describe('getAuspiciousHours', () => {
@@ -87,4 +88,22 @@ describe('getAllHours', () => {
       expect(good.map((h) => h.name)).toEqual(getAuspiciousHours(dayChi).map((h) => h.name))
     },
   )
+})
+
+describe('ngày hoàng đạo khớp lichviet.me (trang xem-ngay-tot-xau, 2026)', () => {
+  // Các ngày mà tính theo tháng tiết khí sẽ ra kết quả ngược lại; lichviet.me tính theo tháng âm.
+  // Lưu ý: chấm "Ngày Tốt/Xấu" trên lịch tháng của lichviet.me không phải hoàng/hắc đạo.
+  it.each([
+    ['2026-01-07', false, 'Huyền Vũ'],
+    ['2026-02-06', true, 'Minh Đường'],
+    ['2026-03-05', false, 'Thiên Hình'],
+    ['2026-03-17', false, 'Thiên Hình'],
+    ['2026-04-15', true, 'Kim Đường'],
+    ['2026-05-15', false, 'Huyền Vũ'],
+    ['2026-07-07', true, 'Tư Mệnh'],
+    ['2026-08-10', false, 'Bạch Hổ'],
+    ['2026-12-08', true, 'Tư Mệnh'],
+  ] as const)('%s', (date, isHoangDao, name) => {
+    expect(getDayInfo(date).dayGod).toEqual({ name, isHoangDao })
+  })
 })

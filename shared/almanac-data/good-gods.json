@@ -19,12 +19,18 @@
         "wedding",
         "engagement",
         "moving",
+        "travel",
+        "meeting",
         "medical",
-        "construction",
         "groundbreaking",
+        "construction",
         "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
         "burial"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_duc",
@@ -38,12 +44,18 @@
         "wedding",
         "engagement",
         "moving",
+        "travel",
+        "meeting",
         "medical",
-        "construction",
         "groundbreaking",
+        "construction",
         "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
         "burial"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_duc_hop",
@@ -57,12 +69,18 @@
         "wedding",
         "engagement",
         "moving",
+        "travel",
+        "meeting",
         "medical",
-        "construction",
         "groundbreaking",
+        "construction",
         "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
         "burial"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_duc_hop",
@@ -76,12 +94,18 @@
         "wedding",
         "engagement",
         "moving",
+        "travel",
+        "meeting",
         "medical",
-        "construction",
         "groundbreaking",
+        "construction",
         "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
         "burial"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_xa",
@@ -91,10 +115,22 @@
       "activityIds": [
         "worship",
         "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
-        "moving"
-      ]
+        "moving",
+        "travel",
+        "meeting",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_nguyen",
@@ -102,10 +138,28 @@
       "label": "Thiên Nguyện",
       "tier": "medium",
       "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
         "wedding",
         "engagement",
-        "moving"
-      ]
+        "moving",
+        "opening",
+        "business",
+        "contract",
+        "transaction",
+        "finance",
+        "travel",
+        "meeting",
+        "groundbreaking",
+        "construction",
+        "beam_raising",
+        "warehouse",
+        "planting",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "nguyet_an",
@@ -113,9 +167,24 @@
       "label": "Nguyệt Ân",
       "tier": "medium",
       "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
         "engagement",
-        "moving"
-      ]
+        "moving",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "planting",
+        "livestock"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tu_tuong",
@@ -123,9 +192,24 @@
       "label": "Tứ Tướng",
       "tier": "medium",
       "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
         "engagement",
-        "moving"
-      ]
+        "moving",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "planting",
+        "livestock"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thoi_duc",
@@ -133,9 +217,24 @@
       "label": "Thời Đức",
       "tier": "medium",
       "activityIds": [
+        "worship",
+        "pray_blessing",
+        "pray_children",
+        "wedding",
         "engagement",
-        "moving"
-      ]
+        "moving",
+        "finance",
+        "travel",
+        "meeting",
+        "medical",
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "beam_raising",
+        "planting",
+        "livestock"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "dan_nhat",
@@ -147,11 +246,15 @@
         "engagement",
         "moving",
         "opening",
+        "business",
         "contract",
         "transaction",
         "finance",
+        "meeting",
+        "planting",
         "livestock"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tam_hop",
@@ -164,21 +267,23 @@
         "contract",
         "transaction",
         "finance",
-        "construction",
+        "meeting",
         "groundbreaking",
+        "construction",
+        "renovation",
         "beam_raising",
+        "warehouse",
         "livestock"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_hy",
       "han": "天喜",
       "label": "Thiên Hỷ",
       "tier": "major",
-      "activityIds": [
-        "wedding",
-        "engagement"
-      ]
+      "activityIds": ["wedding", "engagement", "travel", "meeting"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "luc_hop",
@@ -188,28 +293,30 @@
       "activityIds": [
         "wedding",
         "contract",
-        "transaction"
-      ]
+        "transaction",
+        "finance",
+        "meeting",
+        "warehouse",
+        "livestock",
+        "burial"
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "ngu_hop",
       "han": "五合",
       "label": "Ngũ Hợp",
       "tier": "medium",
-      "activityIds": [
-        "wedding",
-        "contract",
-        "transaction"
-      ]
+      "activityIds": ["wedding", "contract", "transaction", "meeting"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "bat_tuong",
       "han": "不將",
       "label": "Bất Tương",
       "tier": "major",
-      "activityIds": [
-        "wedding"
-      ]
+      "activityIds": ["wedding"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "ngu_phu",
@@ -218,96 +325,82 @@
       "tier": "medium",
       "activityIds": [
         "opening",
+        "business",
         "contract",
         "transaction",
         "finance",
         "warehouse",
         "planting",
         "livestock"
-      ]
+      ],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thien_thuong",
       "han": "天倉",
       "label": "Thiên Thương",
       "tier": "medium",
-      "activityIds": [
-        "finance",
-        "livestock",
-        "warehouse"
-      ]
+      "activityIds": ["finance", "warehouse", "livestock"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "giai_than",
       "han": "解神",
       "label": "Giải Thần",
       "tier": "medium",
-      "activityIds": [
-        "medical",
-        "cleaning"
-      ]
+      "activityIds": ["medical", "cut_hair"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tru_than",
       "han": "除神",
       "label": "Trừ Thần",
       "tier": "medium",
-      "activityIds": [
-        "medical",
-        "cleaning"
-      ]
+      "activityIds": ["medical", "cleaning", "cut_hair"],
+      "sourceRef": "協紀辨方書 卷十一; 卷五 \"通書以申酉日為除神\"",
+      "rule": {
+        "dayChi": [8, 9]
+      }
     },
     {
       "id": "pho_ho",
       "han": "普護",
       "label": "Phổ Hộ",
       "tier": "medium",
-      "activityIds": [
-        "worship",
-        "pray_blessing"
-      ]
+      "activityIds": ["worship", "pray_blessing"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "phuc_sinh",
       "han": "福生",
       "label": "Phúc Sinh",
       "tier": "medium",
-      "activityIds": [
-        "worship",
-        "pray_blessing"
-      ]
+      "activityIds": ["worship", "pray_blessing"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "thanh_tam",
       "han": "聖心",
       "label": "Thánh Tâm",
       "tier": "medium",
-      "activityIds": [
-        "worship",
-        "pray_blessing"
-      ]
+      "activityIds": ["worship", "pray_blessing"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "ich_hau",
       "han": "益後",
       "label": "Ích Hậu",
       "tier": "medium",
-      "activityIds": [
-        "worship",
-        "pray_blessing",
-        "pray_children"
-      ]
+      "activityIds": ["worship", "pray_blessing", "pray_children"],
+      "sourceRef": "協紀辨方書 卷十一"
     },
     {
       "id": "tuc_the",
       "han": "續世",
       "label": "Tục Thế",
       "tier": "medium",
-      "activityIds": [
-        "worship",
-        "pray_blessing",
-        "pray_children"
-      ]
+      "activityIds": ["worship", "pray_blessing", "pray_children"],
+      "sourceRef": "協紀辨方書 卷十一"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "items": [
     {
       "id": "worship",
@@ -189,6 +189,26 @@
       "group": "construction",
       "personalSensitivity": 0.6,
       "enabled": true
+    },
+    {
+      "id": "water_travel",
+      "label": "Đi thuyền / Đường thủy",
+      "group": "movement",
+      "personalSensitivity": 0.5,
+      "enabled": true,
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §4.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "id": "grave_repair",
+      "label": "Sửa mộ / Sửa mồ mả",
+      "group": "funeral",
+      "personalSensitivity": 1,
+      "enabled": true,
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §4.2",
+      "reviewStatus": "product_spec",
+      "updatedAt": "2026-10-05"
     }
   ]
 }

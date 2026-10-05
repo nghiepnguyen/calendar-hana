@@ -1,0 +1,637 @@
+{
+  "schemaVersion": "1.1.0",
+  "items": [
+    {
+      "phrase": "xuất hành đường bộ",
+      "activityId": "travel",
+      "scope": "travel_road",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cúng",
+      "activityId": "worship",
+      "scope": "worship",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "tế",
+      "activityId": "worship",
+      "scope": "worship",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cầu phúc",
+      "activityId": "pray_blessing",
+      "scope": "pray_blessing",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cầu tự",
+      "activityId": "pray_children",
+      "scope": "pray_children",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cưới",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "gả",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "kết hôn",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dạm ngõ",
+      "activityId": "engagement",
+      "scope": "engagement",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "ăn hỏi",
+      "activityId": "engagement",
+      "scope": "engagement",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "nạp thái",
+      "activityId": "engagement",
+      "scope": "engagement",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dời nhà",
+      "activityId": "moving",
+      "scope": "home_moving",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "nhập trạch",
+      "activityId": "moving",
+      "scope": "home_moving",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "chuyển nhà",
+      "activityId": "moving",
+      "scope": "home_moving",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đóng giường",
+      "activityId": "bed_installation",
+      "scope": "bed_installation",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "lót giường",
+      "activityId": "bed_installation",
+      "scope": "bed_installation",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "an giường",
+      "activityId": "bed_installation",
+      "scope": "bed_installation",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "khai trương",
+      "activityId": "opening",
+      "scope": "business_opening",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mở hàng",
+      "activityId": "opening",
+      "scope": "business_opening",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "kinh doanh",
+      "activityId": "business",
+      "scope": "business",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mua bán",
+      "activityId": "business",
+      "scope": "business",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "khế ước",
+      "activityId": "contract",
+      "scope": "contract",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "hợp đồng",
+      "activityId": "contract",
+      "scope": "contract",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "giao dịch",
+      "activityId": "transaction",
+      "scope": "transaction",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cầu tài",
+      "activityId": "finance",
+      "scope": "finance",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "cho vay",
+      "activityId": "finance",
+      "scope": "finance",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "thu nợ",
+      "activityId": "finance",
+      "scope": "finance",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xuất hành",
+      "activityId": "travel",
+      "scope": "travel_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đi xa",
+      "activityId": "travel",
+      "scope": "travel_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "du lịch",
+      "activityId": "travel",
+      "scope": "travel_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "nhập học",
+      "activityId": "study",
+      "scope": "study",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "thi cử",
+      "activityId": "study",
+      "scope": "study",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "chữa bệnh",
+      "activityId": "medical",
+      "scope": "medical",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "uống thuốc",
+      "activityId": "medical",
+      "scope": "medical",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "bốc thuốc",
+      "activityId": "medical",
+      "scope": "medical",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dọn cỏ",
+      "activityId": "cleaning",
+      "scope": "cleaning",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dọn dẹp",
+      "activityId": "cleaning",
+      "scope": "cleaning",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "tảo xá",
+      "activityId": "cleaning",
+      "scope": "cleaning",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "động thổ",
+      "activityId": "groundbreaking",
+      "scope": "construction_groundbreaking",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "khởi công",
+      "activityId": "groundbreaking",
+      "scope": "construction_groundbreaking",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "phá đất",
+      "activityId": "groundbreaking",
+      "scope": "construction_groundbreaking",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xây cất",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xây dựng",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xây nhà",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dựng nhà",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "tạo tác",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xây đắp",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "xây lầu gác",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "sửa chữa",
+      "activityId": "renovation",
+      "scope": "renovation",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "sửa đắp",
+      "activityId": "renovation",
+      "scope": "renovation",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đòn dông",
+      "activityId": "beam_raising",
+      "scope": "beam_raising",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "thượng lương",
+      "activityId": "beam_raising",
+      "scope": "beam_raising",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "nhập kho",
+      "activityId": "warehouse",
+      "scope": "warehouse",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mở kho",
+      "activityId": "warehouse",
+      "scope": "warehouse",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "gieo trồng",
+      "activityId": "planting",
+      "scope": "planting",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "gieo cấy",
+      "activityId": "planting",
+      "scope": "planting",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "làm ruộng",
+      "activityId": "planting",
+      "scope": "planting",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "trồng cây",
+      "activityId": "planting",
+      "scope": "planting",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "gia súc",
+      "activityId": "livestock",
+      "scope": "livestock",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "nuôi tằm",
+      "activityId": "livestock",
+      "scope": "livestock",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "lấy giống",
+      "activityId": "livestock",
+      "scope": "livestock",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "chôn cất",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mai táng",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "an táng",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "phát cỏ phá đất",
+      "activityId": "demolition",
+      "scope": "construction_demolition",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "dọn cỏ phá đất",
+      "activityId": "demolition",
+      "scope": "construction_demolition",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "phá dỡ",
+      "activityId": "demolition",
+      "scope": "construction_demolition",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đi đường thủy",
+      "activityId": "water_travel",
+      "scope": "travel_water",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đường thủy",
+      "activityId": "water_travel",
+      "scope": "travel_water",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "đi thuyền",
+      "activityId": "water_travel",
+      "scope": "travel_water",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "hạ thủy",
+      "activityId": "water_travel",
+      "scope": "travel_water",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "sửa mồ mả",
+      "activityId": "grave_repair",
+      "scope": "funeral_grave_repair",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "sửa mộ",
+      "activityId": "grave_repair",
+      "scope": "funeral_grave_repair",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mọi việc đều tốt",
+      "activityId": "",
+      "scope": "general_positive",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "không hợp việc gì",
+      "activityId": "",
+      "scope": "general_negative",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "không hợp việc lớn nào",
+      "activityId": "",
+      "scope": "general_negative",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "mọi việc",
+      "activityId": "",
+      "scope": "general_note",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "không kỵ việc gì",
+      "activityId": "",
+      "scope": "general_no_taboos",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    },
+    {
+      "phrase": "khởi tạo mọi việc",
+      "activityId": "",
+      "scope": "general_positive",
+      "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
+      "reviewStatus": "not_audited",
+      "updatedAt": "2026-10-05"
+    }
+  ]
+}

@@ -2,8 +2,14 @@ import activitiesData from '../almanac-data/activities.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import goodGodsData from '../almanac-data/good-gods.json'
 import trucData from '../almanac-data/truc.json'
+import manifest from '../almanac-data/manifest.json'
+import overrides from '../almanac-data/overrides.json'
+import patterns from '../almanac-data/mansion-patterns.json'
+import { extractMansionEvidence, type MansionText } from './mansionEvidence'
+import type { Evidence } from './evidence'
 
-export type ActivityStatus = 'recommended' | 'neutral' | 'avoid' | 'watch' | 'strong_avoid' | 'consider'
+export type ActivityStatus =
+  'recommended' | 'neutral' | 'avoid' | 'watch' | 'strong_avoid' | 'consider' | 'no_evidence'
 export interface ActivityRecommendation {
   activityId: string
   label: string
@@ -11,190 +17,180 @@ export interface ActivityRecommendation {
   score: number
   status: ActivityStatus
   evidence: string[]
+  contributions: Evidence[]
+  warnings: string[]
   generalScore: number
   personalModifier: number
   positiveMagnitude: number
   negativeMagnitude: number
   hasVeto: boolean
+  hardWarning: boolean
   conflictLevel: 'low' | 'high'
   sourceRefs: string[]
 }
 export interface ActivityAvoidance extends ActivityRecommendation {
-  status: 'neutral' | 'watch' | 'avoid' | 'strong_avoid' | 'consider'
-  negativeMagnitude: number
-  positiveMagnitude: number
+  status: 'watch' | 'avoid' | 'strong_avoid' | 'consider'
 }
-
-type Activity = { id: string; label: string; group: string }
-type Truc = { id: string; label: string; activityRules: Rule[] }
-type Rule = { activityId: string; level: string; weight: number }
-type GoodGod = { id: string; label: string; tier: string; activityIds: string[] }
-type BadGod = { id: string; label: string; tier: string; activityIds: string[] }
-type MansionSource = { name: string; shouldDo: string; shouldAvoid: string }
-
-const MANSION_TERMS: Record<string, string[]> = {
-  worship: ['cúng', 'tế'],
-  pray_blessing: ['cầu phúc'],
-  pray_children: ['cầu tự'],
-  wedding: ['cưới', 'gả'],
-  engagement: ['dạm ngõ', 'ăn hỏi', 'nạp thái'],
-  moving: ['dời nhà', 'nhập trạch'],
-  bed_installation: ['đóng giường', 'lót giường', 'an giường'],
-  opening: ['khai trương'],
-  business: ['kinh doanh', 'mua bán'],
-  contract: ['khế ước', 'hợp đồng'],
-  transaction: ['giao dịch'],
-  finance: ['cầu tài', 'cho vay', 'thu nợ'],
-  travel: ['xuất hành', 'đi xa', 'du lịch', 'đi thuyền'],
-  study: ['nhập học', 'thi cử'],
-  medical: ['chữa bệnh', 'uống thuốc', 'bốc thuốc'],
-  cleaning: ['dọn cỏ', 'dọn dẹp', 'tảo xá'],
-  groundbreaking: ['động thổ', 'khởi công', 'khởi tạo', 'phá đất'],
-  construction: ['xây cất', 'xây dựng', 'xây nhà', 'dựng nhà', 'tạo tác'],
-  renovation: ['sửa chữa', 'sửa đắp'],
-  beam_raising: ['đòn dông', 'thượng lương'],
-  warehouse: ['nhập kho', 'mở kho'],
-  planting: ['gieo trồng', 'gieo cấy', 'làm ruộng', 'trồng cây', 'làm ruộng'],
-  livestock: ['gia súc', 'nuôi tằm', 'lấy giống'],
-  burial: ['chôn cất', 'mồ mả', 'mai táng'],
-  demolition: ['phá dỡ'],
-}
-
-function mansionActivityIds(text: string): Set<string> {
-  const normalized = text.toLowerCase()
-  return new Set(
-    Object.entries(MANSION_TERMS)
-      .filter(([, terms]) => terms.some((term) => normalized.includes(term)))
-      .map(([activityId]) => activityId),
-  )
-}
-
-function mansionEvidence(input: MansionSource | undefined, activityId: string): { good: boolean; bad: boolean } {
-  if (!input) return { good: false, bad: false }
-  return {
-    good: mansionActivityIds(input.shouldDo).has(activityId),
-    bad: mansionActivityIds(input.shouldAvoid).has(activityId),
-  }
-}
-
-function classify(score: number, positiveMagnitude: number, negativeMagnitude: number): ActivityStatus {
-  if (positiveMagnitude >= 30 && negativeMagnitude >= 30) return 'consider'
-  if (score <= 19) return 'strong_avoid'
-  if (score <= 29) return 'avoid'
-  if (score <= 44) return 'watch'
-  if (score >= 65) return 'recommended'
-  return 'neutral'
-}
-
-const activities = activitiesData.items as Activity[]
-const truc = trucData.items as Truc[]
-const goodGods = goodGodsData.items as GoodGod[]
-const badGods = badGodsData.items as BadGod[]
-const goodWeights: Record<string, number> = goodGodsData.weights
-const badWeights: Record<string, number> = badGodsData.weights
-
-export function getActivityAvoidances(input: {
+export interface ActivityInput {
   officerId: string
-  mansion?: MansionSource
+  mansion?: MansionText
   presentGoodGods?: string[]
   presentBadGods?: string[]
   personalModifier?: number
-}): ActivityAvoidance[] {
-  const officer = truc.find((item) => item.id === input.officerId)
-  const good = new Set(input.presentGoodGods ?? [])
-  const bad = new Set(input.presentBadGods ?? [])
+  mansionNature?: 'good' | 'bad'
+}
+export const ACTIVITY_LABELS = Object.fromEntries(
+  activitiesData.items.map((item) => [item.id, item.label]),
+)
+const clamp = (score: number) => Math.max(0, Math.min(100, score))
 
-  return activities
+export function getActivityRecommendations(input: ActivityInput): ActivityRecommendation[] {
+  const officer = trucData.items.find((item) => item.id === input.officerId)
+  const subsumed = new Set((officer as { subsumesGods?: string[] } | undefined)?.subsumesGods)
+  const mansion = input.mansion ? extractMansionEvidence(input.mansion) : []
+  const warnings = [
+    ...(input.presentGoodGods === undefined ? ['Chưa truyền danh sách cát thần theo ngày.'] : []),
+    ...(input.presentBadGods === undefined ? ['Chưa truyền danh sách hung thần theo ngày.'] : []),
+  ]
+  return activitiesData.items
+    .filter((item) => item.enabled)
     .map((activity) => {
-      const mansion = mansionEvidence(input.mansion, activity.id)
-      const mansionConflict = mansion.good && mansion.bad
-      const officerWeight = officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
-      const positiveMagnitude = Math.min(30,
-        Math.max(officerWeight, 0) + (mansion.good ? 15 : 0) +
-        goodGods.filter((god) => good.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (goodWeights[god.tier] ?? 0), 0)
+      const contributions: Evidence[] = []
+      const rule = officer?.activityRules.find((rule) => rule.activityId === activity.id)
+      const make = (
+        source: Evidence['source'],
+        ruleId: string,
+        label: string,
+        delta: number,
+        status: Evidence['status'] = 'applied',
+      ): Evidence => ({
+        source,
+        ruleId,
+        activityId: activity.id,
+        scope:
+          patterns.items.find(
+            (pattern) => pattern.activityId === activity.id && pattern.scope !== 'travel_road',
+          )?.scope ?? activity.id,
+        label,
+        sourcePhrase: label,
+        sourceRef: `shared/almanac-data/${source === 'truc' ? 'truc' : source === 'good_god' ? 'good-gods' : 'bad-gods'}.json#${ruleId}`,
+        confidence: 'high',
+        status,
+        rawDelta: delta,
+        scoreDelta: delta,
+        polarity: delta > 0 ? 'positive' : delta < 0 ? 'negative' : 'neutral',
+      })
+      contributions.push(
+        rule
+          ? make('truc', `${input.officerId}:${activity.id}`, `Trực ${officer!.label}`, rule.weight)
+          : make(
+              'truc',
+              `${input.officerId}:${activity.id}`,
+              officer ? `Trực ${officer.label}` : 'Trực chưa xác định',
+              0,
+              'no_evidence',
+            ),
       )
-      const negativeMagnitude = Math.min(30,
-        (mansion.bad ? 25 : 0) + Math.abs(Math.min(officerWeight, 0)) +
-        Math.abs(badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (badWeights[god.tier] ?? 0), 0))
+      for (const [source, dataset, present] of [
+        ['good_god', goodGodsData, input.presentGoodGods],
+        ['bad_god', badGodsData, input.presentBadGods],
+      ] as const) {
+        let used = 0
+        for (const god of dataset.items.filter(
+          (god) => new Set(present ?? []).has(god.id) && god.activityIds.includes(activity.id),
+        )) {
+          const weights: Record<string, number> = dataset.weights
+          const row = make(source, god.id, god.label, weights[god.tier] ?? 0)
+          // A god that always falls on this Trực restates the same day relation; when the Trực
+          // already scores this activity, keep the god visible (and its hard warning) but do not
+          // count it a second time.
+          if (rule && subsumed.has(god.id)) {
+            row.status = 'informational'
+            row.scoreDelta = 0
+            row.sourcePhrase = `${god.label} trùng với Trực ${officer!.label}, không tính điểm lần nữa`
+          } else {
+            const available = Math.max(0, Math.abs(dataset.capPerActivity) - used)
+            row.scoreDelta = Math.sign(row.rawDelta) * Math.min(Math.abs(row.rawDelta), available)
+            used += Math.abs(row.scoreDelta)
+          }
+          if (
+            source === 'bad_god' &&
+            overrides.items.some(
+              (item) =>
+                item.enabled &&
+                item.action === 'preserve_bad' &&
+                item.when.targetPresent === god.id &&
+                item.activityIds.includes(activity.id),
+            )
+          )
+            row.hardWarning = true
+          contributions.push(row)
+        }
+      }
+      // Unreviewed text candidates remain informational, even if the feature flag is accidentally enabled.
+      contributions.push(
+        ...mansion
+          .filter((row) => row.activityId === activity.id)
+          .map((row) => ({
+            ...row,
+            status:
+              row.status === 'conflict'
+                ? ('conflict' as const)
+                : manifest.policies.mansion28ScoringEnabled
+                  ? ('not_audited' as const)
+                  : ('informational' as const),
+            scoreDelta: 0,
+          })),
       )
-      const score = Math.max(0, Math.min(100, 50 - negativeMagnitude + positiveMagnitude))
-      const status: ActivityAvoidance['status'] = mansionConflict || positiveMagnitude >= 30 && negativeMagnitude >= 30
-        ? 'consider'
-        : score <= 19
+      const applied = contributions.filter((row) => row.status === 'applied')
+      const positiveMagnitude = applied.reduce((sum, row) => sum + Math.max(0, row.scoreDelta), 0)
+      const negativeMagnitude = applied.reduce(
+        (sum, row) => sum + Math.abs(Math.min(0, row.scoreDelta)),
+        0,
+      )
+      const generalScore = clamp(manifest.baseScore + positiveMagnitude - negativeMagnitude)
+      const personalModifier = input.personalModifier ?? 0
+      const score = clamp(generalScore + personalModifier)
+      const hardWarning = contributions.some((row) => row.hardWarning)
+      const status: ActivityStatus = !applied.length
+        ? 'no_evidence'
+        : hardWarning && manifest.policies.hardVetoFromClassicalJi
           ? 'strong_avoid'
-          : score <= 29
-            ? 'avoid'
-            : negativeMagnitude > 0
-              ? 'watch'
-              : 'neutral'
-      const conflictLevel: 'low' | 'high' =
-        mansionConflict || (positiveMagnitude >= 30 && negativeMagnitude >= 30) ? 'high' : 'low'
+          : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
+            ? 'consider'
+            : score <= 19
+              ? 'strong_avoid'
+              : score <= 29
+                ? 'avoid'
+                : negativeMagnitude > 0
+                  ? 'watch'
+                  : score >= 65
+                    ? 'recommended'
+                    : 'neutral'
       return {
         activityId: activity.id,
         label: activity.label,
         group: activity.group,
         score,
         status,
-        negativeMagnitude,
+        contributions,
+        warnings: [...warnings],
+        evidence: [...new Set(applied.map((row) => row.label))],
+        generalScore,
+        personalModifier,
         positiveMagnitude,
-        evidence: [
-          ...(mansion.bad ? [`Sao ${input.mansion?.name ?? ''}`] : officerWeight < 0 ? [`Trực ${officer?.label ?? ''}`] : []),
-          ...badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).map((god) => god.label),
-        ],
-        generalScore: score,
-        personalModifier: input.personalModifier ?? 0,
-        hasVeto: false,
-        conflictLevel,
-        sourceRefs: input.mansion ? [`mansion28:${input.mansion.name}`] : officerWeight !== 0 ? [`truc:${input.officerId}`] : [],
+        negativeMagnitude,
+        hardWarning,
+        hasVeto: hardWarning && manifest.policies.hardVetoFromClassicalJi,
+        conflictLevel: positiveMagnitude >= 30 && negativeMagnitude >= 30 ? 'high' : 'low',
+        sourceRefs: [...new Set(applied.map((row) => row.sourceRef))],
       }
     })
-    .filter((item) => item.status !== 'neutral')
 }
 
-export function getActivityRecommendations(input: {
-  officerId: string
-  mansion?: MansionSource
-  presentGoodGods?: string[]
-  presentBadGods?: string[]
-  personalModifier?: number
-  /** Kept for API clarity; v1 intentionally ignores mansion nature for scoring. */
-  mansionNature?: 'good' | 'bad'
-}): ActivityRecommendation[] {
-  const officer = truc.find((item) => item.id === input.officerId)
-  const good = new Set(input.presentGoodGods ?? [])
-  const bad = new Set(input.presentBadGods ?? [])
-
-  return activities.map((activity) => {
-    const mansion = mansionEvidence(input.mansion, activity.id)
-    const officerWeight = officer?.activityRules.find((rule) => rule.activityId === activity.id)?.weight ?? 0
-    const mansionConflict = mansion.good && mansion.bad
-    const mansionWeight = mansionConflict ? 0 : mansion.good ? 15 : mansion.bad ? -25 : 0
-    const generalScore = Math.max(0, Math.min(100, 50 + officerWeight + mansionWeight +
-      goodGods.filter((god) => good.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (goodWeights[god.tier] ?? 0), 0) +
-      badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).reduce((sum, god) => sum + (badWeights[god.tier] ?? 0), 0)))
-    const personalModifier = input.personalModifier ?? 0
-    const score = Math.max(0, Math.min(100, generalScore + personalModifier))
-    const positiveMagnitude = Math.min(30, Math.max(officerWeight, 0) + (mansion.good ? 15 : 0))
-    const negativeMagnitude = Math.min(30, Math.abs(Math.min(officerWeight, 0)) + (mansion.bad ? 25 : 0))
-    const evidence = [
-      ...(input.mansion && (mansion.good || mansion.bad) ? [`Sao ${input.mansion.name}`] : officer?.activityRules.some((rule) => rule.activityId === activity.id) ? [`Trực ${officer.label}`] : []),
-      ...goodGods.filter((god) => good.has(god.id) && god.activityIds.includes(activity.id)).map((god) => god.label),
-      ...badGods.filter((god) => bad.has(god.id) && god.activityIds.includes(activity.id)).map((god) => god.label),
-    ]
-    return {
-      activityId: activity.id,
-      label: activity.label,
-      group: activity.group,
-      score,
-      status: mansionConflict ? 'neutral' : classify(score, positiveMagnitude, negativeMagnitude),
-      evidence,
-      generalScore,
-      personalModifier,
-      positiveMagnitude,
-      negativeMagnitude,
-      hasVeto: false,
-      conflictLevel: mansionConflict || positiveMagnitude >= 30 && negativeMagnitude >= 30 ? 'high' : 'low',
-      sourceRefs: input.mansion ? [`mansion28:${input.mansion.name}`] : officerWeight !== 0 ? [`truc:${input.officerId}`] : [],
-    }
-  })
+/** Both public lists share one computation, including source caps and disabled-Tú policy. */
+export function getActivityAvoidances(input: ActivityInput): ActivityAvoidance[] {
+  return getActivityRecommendations(input).filter((row): row is ActivityAvoidance =>
+    ['watch', 'avoid', 'strong_avoid', 'consider'].includes(row.status),
+  )
 }

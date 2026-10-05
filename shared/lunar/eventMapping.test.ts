@@ -10,6 +10,14 @@ describe('event mapping', () => {
   })
 
   it('resolves event aliases to normalized activity ids', () => {
-    expect(resolveEventActivities('property_handover')).toEqual(['moving', 'transaction'])
+    expect(resolveEventActivities('property_handover')).toEqual(['transaction', 'moving'])
   })
+})
+
+it('declares one primary with supporting multipliers instead of flat aliases', () => {
+  expect(getEventProfile('open_business')?.activities).toEqual([
+    { activityId: 'opening', role: 'primary', multiplier: 1 },
+    { activityId: 'business', role: 'supporting', multiplier: 0.5 },
+    { activityId: 'finance', role: 'supporting', multiplier: 0.3 },
+  ])
 })
