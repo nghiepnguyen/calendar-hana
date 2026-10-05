@@ -4,7 +4,7 @@
 
 Đối chiếu `spec-chon-ngay-mapping-scoring-v1.0.0.md` và `checklist-trien-khai-v1.0.0.md` do người dùng cung cấp. Thay đổi tập trung vào lỗi dữ liệu, phép tính sử dụng dữ liệu đó, và màn hình Mục tiêu trong ngày. Không triển khai production hoặc bật scoring Tú.
 
-Dataset và engine được tăng lên **1.1.0**. Bản xuất `exports/daily-activity-mapping-review.*` trước đó là snapshot dữ liệu cũ để đối chiếu, không phải dữ liệu runtime mới.
+Dataset và engine được tăng lên **1.1.0**.
 
 ## Các lỗi đã sửa
 
