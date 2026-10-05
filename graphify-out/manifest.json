@@ -176,7 +176,7 @@
     "hash": "c4a01ae40befc86d40f5fdeca1e39940"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/personalFengShui/rules.test.ts": {
-    "mtime": 1791077378.090471,
+    "mtime": 1791207259.5926375,
     "hash": "cdfcf0ba2c0c9374bf3fae365a921bce"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/personalFengShui/day.test.ts": {
@@ -192,7 +192,7 @@
     "hash": "5cc3ad6c928b74f3aa8a1971b915c78f"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/personalFengShui/rules.ts": {
-    "mtime": 1791077378.0905807,
+    "mtime": 1791207259.5928347,
     "hash": "9fc42370df158949fe8150c36b45868d"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/personalFengShui/stars.test.ts": {
@@ -276,15 +276,19 @@
     "hash": "df5b400423e7615a1b12e3ecc696de36"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/activityRecommendations.ts": {
-    "mtime": 1791078696.5094538,
-    "hash": "38c1ee1548e8f9297a8338b1cb31e014"
+    "mtime": 1791208323.5772495,
+    "hash": "f48bc03af81cbb55a30ad121a5375002"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/mansions.test.ts": {
     "mtime": 1790296831.4870212,
     "hash": "94b88000795ac8117eaa4bceac060176"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/evidence.ts": {
+    "mtime": 1791206109.5774655,
+    "hash": "22b4ae23e74aad17a220eddc0a2cee2f"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/canChi.ts": {
-    "mtime": 1790176951.1379595,
+    "mtime": 1791207259.5918045,
     "hash": "5c8c3b26841c4deadfc859340b531c42"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/stars.data.ts": {
@@ -292,7 +296,7 @@
     "hash": "ad8f1fcc83f87f9b5770f94010b3fffb"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/almanac.test.ts": {
-    "mtime": 1790296831.4857259,
+    "mtime": 1791207259.5914729,
     "hash": "53f9dad647bc8f69ec33dcc9ce3e8e30"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/holidays.ts": {
@@ -304,8 +308,12 @@
     "hash": "3b1102ea2e203882d7068ac54037ec43"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/almanac.ts": {
-    "mtime": 1791077378.0886252,
-    "hash": "32829a4fc8a3e01c0dde800aa4b2e925"
+    "mtime": 1791208621.0645013,
+    "hash": "8f172eeda92ecd110edc7a99d5b68018"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/datasetValidation.test.ts": {
+    "mtime": 1791208621.0647666,
+    "hash": "be17894dcde9dc8e2874fc3c7e6f21fa"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/julian.test.ts": {
     "mtime": 1790176951.1388645,
@@ -316,8 +324,12 @@
     "hash": "515db5ee0aa3c364acf4889a8c0f0f8f"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventMapping.ts": {
-    "mtime": 1791079039.159271,
-    "hash": "02793cd08c3643c1950cbbc66bdedd85"
+    "mtime": 1791205744.2681093,
+    "hash": "55cff3dc18fc3c93d00f11e569f5e5b3"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/mansionEvidence.test.ts": {
+    "mtime": 1791206110.1260564,
+    "hash": "a34423c71b8e0dbe9075df1888c51717"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/canChi.test.ts": {
     "mtime": 1790176951.1377182,
@@ -336,23 +348,27 @@
     "hash": "f5aa3a6ee93d40209b62a12398a712b9"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/stars.ts": {
-    "mtime": 1790296831.4882495,
+    "mtime": 1791207259.5924313,
     "hash": "0d201a11308009e948e92f9f8e6c7338"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/holidays.test.ts": {
     "mtime": 1790176951.1384368,
     "hash": "6dc14cefd0f4121dccd858a2fcf4d542"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/mansionEvidence.ts": {
+    "mtime": 1791206110.1104448,
+    "hash": "795e4f58d9442ef502b0d672be974c66"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/solarTerms.test.ts": {
     "mtime": 1790296831.487803,
     "hash": "e1c86165e6dd1949c315da2c3f5408f3"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/solarTerms.ts": {
-    "mtime": 1790296831.4879282,
+    "mtime": 1791207259.5921154,
     "hash": "ae9ceb4f31c82f5f1154a9ee7af9199d"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/stars.test.ts": {
-    "mtime": 1790296831.4881573,
+    "mtime": 1791207259.5922582,
     "hash": "d1fe782641005c51659563cb445d835e"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/officers.ts": {
@@ -364,8 +380,16 @@
     "hash": "07f06660e5e206dc06ed16237aad5010"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/auspicious.ts": {
-    "mtime": 1790296831.48613,
+    "mtime": 1791207259.5916564,
     "hash": "38c0ec580c443fab6808fc4de3a0b10b"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventEvaluation.ts": {
+    "mtime": 1791208794.1710556,
+    "hash": "375ab0e365f884048fd8429d72be1383"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/godMapping.ts": {
+    "mtime": 1791208621.064368,
+    "hash": "4939f1d3ad6d60b0d5848ed3622c7dff"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/elements.test.ts": {
     "mtime": 1790296831.4867132,
@@ -379,13 +403,17 @@
     "mtime": 1791077378.0887637,
     "hash": "32d3230abf83ec2e49eeadabc1404614"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventEvaluation.test.ts": {
+    "mtime": 1791208848.4158573,
+    "hash": "d194d80a3dcb0cba3a0e3b9e1d4a4e28"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/index.ts": {
-    "mtime": 1790296831.4869308,
+    "mtime": 1791207259.591975,
     "hash": "9f17a9c6bedd21389773d80e0358bdb5"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/activityRecommendations.test.ts": {
-    "mtime": 1791082537.1247656,
-    "hash": "b096386249efd1bcd5d32625500363b7"
+    "mtime": 1791208691.0374691,
+    "hash": "67c9cee205dccf25de5af499464f36e7"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/lunar.test.ts": {
     "mtime": 1790176951.1391156,
@@ -404,16 +432,16 @@
     "hash": "06bd11a38fa77d603fb99b152ed9bf1c"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventRecommendations.ts": {
-    "mtime": 1791082681.9746802,
-    "hash": "94632dde459cfd0e7269a5cbc2ef6331"
+    "mtime": 1791205826.0452235,
+    "hash": "40c23b0ddbf2e89bf3fe2779843cf9e5"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/auspicious.test.ts": {
-    "mtime": 1790296831.4859602,
-    "hash": "d717cb318c8b2f640a395e17664fb1ac"
+    "mtime": 1791210952.601574,
+    "hash": "e578dc646ea5564edcf74981d3eb0225"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventMapping.test.ts": {
-    "mtime": 1791078924.778849,
-    "hash": "af3b35a1b2b8f4ac62dc7aef48a13d12"
+    "mtime": 1791205743.922976,
+    "hash": "4ba3ed6d56781ef3b389602bfe73d063"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/seo/daySeo.ts": {
     "mtime": 1790299134.187577,
@@ -1004,8 +1032,8 @@
     "hash": "cef14a4844d0b5183cc5ab3a40dfbd94"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/MonthView/MonthView.tsx": {
-    "mtime": 1791156673.045127,
-    "hash": "48d2903fa9c29e69b37000b9caf0414d"
+    "mtime": 1791211176.302302,
+    "hash": "20ccab32190db687dc52be21f6c8d1e2"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/MonthView/MonthView.test.tsx": {
     "mtime": 1790397031.6228065,
@@ -1032,24 +1060,32 @@
     "hash": "c946919d2ee5c6869c516b32d73d951a"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/PersonalFengShuiPanel.test.tsx": {
-    "mtime": 1791123406.6077316,
-    "hash": "90909764707707c1b264b32a5e7e5b63"
+    "mtime": 1791204278.7772396,
+    "hash": "8d3e3825185ce33fa73099bcd285f381"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/DayView.test.tsx": {
     "mtime": 1791077378.096415,
     "hash": "e4698649d573e0bbb9645c8106cce10f"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/PersonalFengShuiPanel.tsx": {
-    "mtime": 1791123374.7260349,
-    "hash": "f0c566a8c10642a2a09aa741ef2f5d6c"
+    "mtime": 1791204278.4943335,
+    "hash": "bd8cca17e48083421cb33014c83027fb"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/AlmanacPanel.test.tsx": {
     "mtime": 1790296831.488894,
     "hash": "18055e2d87c1057482c581c9dc878619"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/DailyActivitySection.test.tsx": {
+    "mtime": 1791210054.4001741,
+    "hash": "aac566b5b6d623267e3180aa9735f5a5"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/HourGrid.tsx": {
     "mtime": 1790397031.622211,
     "hash": "4686a640760ef6b523d8047638f69bac"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/DailyActivitySection.tsx": {
+    "mtime": 1791210041.0517213,
+    "hash": "a8f9cb83359d30ae4410f792f4775622"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/BaziSection.tsx": {
     "mtime": 1791104613.9197726,
@@ -1426,6 +1462,14 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/prd-annual-feng-shui.md": {
     "mtime": 1791077378.099722,
     "hash": "07d8d98af7948d6fc64e68586c203dd7"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/docs/verification/mapping-scoring-v1.1.0.md": {
+    "mtime": 1791208876.7491286,
+    "hash": "56caa7f842feb8a38aa7ee743e3c8ec5"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/exports/daily-activity-mapping-review.md": {
+    "mtime": 1791204636.1310816,
+    "hash": "9218a86406ea92595c06535e7997701c"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/public/terms.html": {
     "mtime": 1790782165.147613,

@@ -103,21 +103,32 @@
   background: var(--fill-hover);
 }
 
-.today .solarDay {
-  background: var(--accent);
-  color: var(--accent-contrast);
+/* Hôm nay: viền đỏ quanh cả ô (inset để không đẩy lệch lưới), số ngày cũng đỏ. */
+.today {
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 
-.goodStar {
+.today .solarDay {
+  color: var(--accent);
+}
+
+/* Chấm hoàng đạo (xanh) / hắc đạo (xám) ở góc trên phải số ngày. */
+.dayDot {
   position: absolute;
-  top: calc(7px * var(--ui-scale));
-  right: calc(-11px * var(--ui-scale));
-  display: grid;
-  place-items: center;
-  width: calc(14px * var(--ui-scale));
-  height: calc(14px * var(--ui-scale));
-  color: var(--gold);
+  top: calc(3px * var(--ui-scale));
+  right: calc(-5px * var(--ui-scale));
+  width: calc(7px * var(--ui-scale));
+  height: calc(7px * var(--ui-scale));
+  border-radius: 50%;
   pointer-events: none;
+}
+
+.dayDotGood {
+  background: #16a34a;
+}
+
+.dayDotBad {
+  background: #c2c2c2;
 }
 
 .legend {
@@ -131,9 +142,24 @@
   color: var(--text-muted);
 }
 
-.legend svg {
+.legendDot {
   flex-shrink: 0;
-  color: var(--gold);
+  width: calc(8px * var(--ui-scale));
+  height: calc(8px * var(--ui-scale));
+  border-radius: 50%;
+}
+
+.legendToday {
+  flex-shrink: 0;
+  width: calc(12px * var(--ui-scale));
+  height: calc(10px * var(--ui-scale));
+  border: 2px solid var(--accent);
+  border-radius: 2px;
+}
+
+.legend > span + .legendDot,
+.legend > span + .legendToday {
+  margin-left: calc(10px * var(--ui-scale));
 }
 
 .lunarDay {

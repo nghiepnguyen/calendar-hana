@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react'
-import { MoonStars, Plus, Star } from '@phosphor-icons/react'
+import { MoonStars, Plus } from '@phosphor-icons/react'
 import { formatAccessibleDate, formatLunarShort, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo, parseSolarDate } from '@shared/lunar'
 import { EventChip } from '../../components/EventChip/EventChip'
@@ -79,14 +79,16 @@ export function MonthView({
                     e.stopPropagation()
                     onOpenDay(day)
                   }}
-                  aria-label={`${formatAccessibleDate(day)}${holidays.length ? `, ${holidays.map((h) => h.name).join(', ')}` : ''}${items.length ? `, ${items.length} sự kiện` : ''}${settings.showAuspicious && info.dayGod.isHoangDao ? ', ngày hoàng đạo' : ''}`}
+                  aria-label={`${formatAccessibleDate(day)}${holidays.length ? `, ${holidays.map((h) => h.name).join(', ')}` : ''}${items.length ? `, ${items.length} sự kiện` : ''}${settings.showAuspicious ? (info.dayGod.isHoangDao ? ', ngày hoàng đạo' : ', ngày hắc đạo') : ''}`}
                   aria-current={day === today ? 'date' : undefined}
                 >
                   {info.solar.day}
-                  {settings.showAuspicious && info.dayGod.isHoangDao ? (
-                    <span className={styles.goodStar} title="Ngày hoàng đạo" aria-hidden="true">
-                      <Star size={iconSize(12)} weight="fill" />
-                    </span>
+                  {settings.showAuspicious ? (
+                    <span
+                      className={`${styles.dayDot} ${info.dayGod.isHoangDao ? styles.dayDotGood : styles.dayDotBad}`}
+                      title={info.dayGod.isHoangDao ? 'Ngày hoàng đạo' : 'Ngày hắc đạo'}
+                      aria-hidden="true"
+                    />
                   ) : null}
                 </button>
                 <span
@@ -144,8 +146,12 @@ export function MonthView({
       </div>
       {settings.showAuspicious ? (
         <div className={styles.legend}>
-          <Star size={iconSize(14)} weight="fill" aria-hidden="true" />
-          <span>Ngày hoàng đạo</span>
+          <span className={`${styles.legendDot} ${styles.dayDotGood}`} aria-hidden="true" />
+          <span>Hoàng đạo</span>
+          <span className={`${styles.legendDot} ${styles.dayDotBad}`} aria-hidden="true" />
+          <span>Hắc đạo</span>
+          <span className={styles.legendToday} aria-hidden="true" />
+          <span>Hôm nay</span>
         </div>
       ) : null}
     </div>
