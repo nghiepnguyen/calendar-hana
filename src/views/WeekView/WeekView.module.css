@@ -6,6 +6,14 @@
   min-height: 0;
 }
 
+.weekInfo {
+  text-align: center;
+  font-size: calc(12px * var(--ui-scale));
+  font-weight: var(--fw-600);
+  color: var(--text-muted);
+  padding-inline: calc(4px * var(--ui-scale));
+}
+
 .header {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));

@@ -11,6 +11,17 @@ afterEach(() => vi.useRealTimers())
 describe('WeekView', () => {
   const days = weekDays('2026-09-23', 1)
 
+  it.each([1, 0] as const)('hiện số tuần ISO khi tuần bắt đầu ở %s', (weekStartsOn) => {
+    const { rerender } = render(
+      <WeekView {...viewProps({ days: weekDays('2026-09-23', weekStartsOn) })} />,
+    )
+    expect(screen.getByText('Tuần 39 · Năm 2026')).toBeInTheDocument()
+    rerender(<WeekView {...viewProps({ days: weekDays('2027-01-01', weekStartsOn) })} />)
+    expect(screen.getByText('Tuần 53 · Năm 2026')).toBeInTheDocument()
+    rerender(<WeekView {...viewProps({ days: weekDays('2027-01-08', weekStartsOn) })} />)
+    expect(screen.getByText('Tuần 1 · Năm 2027')).toBeInTheDocument()
+  })
+
   it('hiện 7 ngày từ Thứ Hai, có ngày âm, đánh dấu hôm nay', () => {
     render(<WeekView {...viewProps({ days })} />)
     const heads = screen.getAllByRole('button', { name: /Mở xem ngày/ })

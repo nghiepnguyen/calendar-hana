@@ -112,7 +112,7 @@
   color: var(--accent);
 }
 
-/* Chấm hoàng đạo (xanh) / hắc đạo (xám) ở góc trên phải số ngày. */
+/* Chấm hoàng đạo (xanh) ở góc trên phải số ngày. */
 .dayDot {
   position: absolute;
   top: calc(3px * var(--ui-scale));
@@ -125,10 +125,6 @@
 
 .dayDotGood {
   background: #16a34a;
-}
-
-.dayDotBad {
-  background: #c2c2c2;
 }
 
 .legend {

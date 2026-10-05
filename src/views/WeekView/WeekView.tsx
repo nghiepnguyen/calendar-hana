@@ -1,3 +1,4 @@
+import { getISOWeek, getISOWeekYear, parseISO } from 'date-fns'
 import { formatAccessibleDate, formatLunarShort, WEEKDAY_SHORT } from '@shared/format'
 import { getDayInfo } from '@shared/lunar'
 import type { Occurrence } from '@shared/recurrence/recurrence'
@@ -16,6 +17,8 @@ export function WeekView({
   onOpenDay,
   onOpenEvent,
 }: CalendarViewProps) {
+  // Lấy ngày giữa tuần để số ISO ổn định cả khi lịch bắt đầu từ Chủ Nhật.
+  const weekDate = parseISO(days[3])
   const byDate = new Map<SolarDateString, Occurrence[]>()
   for (const occurrence of occurrences) {
     const list = byDate.get(occurrence.date)
@@ -25,6 +28,9 @@ export function WeekView({
 
   return (
     <div className={styles.view}>
+      <div className={styles.weekInfo} title="Số tuần theo ISO 8601">
+        Tuần {getISOWeek(weekDate)} · Năm {getISOWeekYear(weekDate)}
+      </div>
       <div className={`glass ${styles.header}`}>
         {days.map((date) => {
           const info = getDayInfo(date)

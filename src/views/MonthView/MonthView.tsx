@@ -83,10 +83,10 @@ export function MonthView({
                   aria-current={day === today ? 'date' : undefined}
                 >
                   {info.solar.day}
-                  {settings.showAuspicious ? (
+                  {settings.showAuspicious && info.dayGod.isHoangDao ? (
                     <span
-                      className={`${styles.dayDot} ${info.dayGod.isHoangDao ? styles.dayDotGood : styles.dayDotBad}`}
-                      title={info.dayGod.isHoangDao ? 'Ngày hoàng đạo' : 'Ngày hắc đạo'}
+                      className={`${styles.dayDot} ${styles.dayDotGood}`}
+                      title="Ngày hoàng đạo"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -148,8 +148,6 @@ export function MonthView({
         <div className={styles.legend}>
           <span className={`${styles.legendDot} ${styles.dayDotGood}`} aria-hidden="true" />
           <span>Hoàng đạo</span>
-          <span className={`${styles.legendDot} ${styles.dayDotBad}`} aria-hidden="true" />
-          <span>Hắc đạo</span>
           <span className={styles.legendToday} aria-hidden="true" />
           <span>Hôm nay</span>
         </div>
