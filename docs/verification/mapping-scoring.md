@@ -44,12 +44,12 @@ Dataset và engine được tăng lên **1.1.0**. Bản xuất `exports/daily-ac
 ## Những mục chưa thể đánh dấu hoàn tất
 
 - **Source audit/owner approval:** snapshot evidence ghi `not_audited` cho 26 Tú; Chủy/Liễu ghi `no_activity_evidence`. Đã kiểm tra mapping kỹ thuật, chưa xác nhận nguồn cổ điển theo từng rule. Không tự dùng con số “26 ready” trong spec làm bằng chứng đã được owner phê duyệt.
-- **AUD-03/AUD-04:** output và UI có toàn bộ audit trail; chưa bổ sung lưu lịch sử bền vững hoặc API endpoint. Ứng dụng hiện đánh giá tại client.
-- **VAL-03:** cảnh báo thiếu danh sách/mapping có trong kết quả và UI audit; chưa gửi telemetry.
+- **AUD-03/AUD-04:** output engine (`contributions`) có toàn bộ audit trail. Từ ngày 05/10/2026 UI không còn hiển thị phần này (đã bỏ mục "Xem toàn bộ lý do", xem mục UI bên dưới). Chưa bổ sung lưu lịch sử bền vững hoặc API endpoint. Ứng dụng hiện đánh giá tại client.
+- **VAL-03:** cảnh báo thiếu danh sách/mapping có trong `warnings` của kết quả engine, UI không hiển thị; chưa gửi telemetry.
 - **VER-03:** dữ liệu repository đã đổi schema; chưa bổ sung công cụ migration cho các bản dataset bên ngoài.
 - **Rollback/TEL/OPS:** chưa làm flag từ xa, shadow rollout, dashboard drift hoặc alerts. Policy tắt Tú nằm trong dataset và luôn được runtime kiểm tra.
-- **P2 personal evaluators:** tuổi, ngũ hành, hướng và participant alignment chưa được chấm trong luồng này. Criteria trả `unknown`, hiển thị trên UI; không giả mạo đã đánh giá.
-- **Mapping thần chưa có bộ tính ngày:** một số catalog thần không có tên tương ứng trong bảng sao ngày hiện tại. Chỉ bridge tên chính xác đã có; không tự tạo alias hoặc rule phát sinh theo ngày. Cần audit nguồn trước khi mở rộng.
+- **P2 personal evaluators:** tuổi, ngũ hành, hướng và participant alignment chưa được chấm trong luồng này. Criteria trả `unknown`, không giả mạo đã đánh giá; UI không còn liệt kê các tiêu chí chưa đánh giá.
+- **Mapping thần chưa có bộ tính ngày:** một số catalog thần không có tên tương ứng trong bảng sao ngày hiện tại. Chỉ bridge tên chính xác; không tự tạo alias. Thần định nghĩa theo chính ngày (Can, Chi, ngày âm) khai báo `rule` trong catalog và được tính bằng `resolveDayRuleGods` (hiện có Trừ Thần, Ngày Đinh, Nhân Thần, xem mục Cắt tóc). Cần audit nguồn trước khi mở rộng.
 - Không đánh dấu toàn bộ release P0 hoặc gate bật scoring Tú đã đạt chỉ từ đợt sửa dữ liệu này.
 
 ## Kiểm chứng
@@ -70,7 +70,9 @@ Dataset và engine được tăng lên **1.1.0**. Bản xuất `exports/daily-ac
 - `shared/lunar/eventEvaluation.ts`: must-have, multiplier, classification và audit.
 - `shared/lunar/godMapping.ts`: bridge tên sao/catalog, không suy diễn alias.
 - `shared/lunar/datasetValidation.test.ts`: gate dữ liệu trong CI unit suite hiện có.
-- `src/views/DayView/DailyActivitySection.tsx`: hiển thị engine result, input giờ/ngữ cảnh, yếu tố áp dụng và audit.
+- `src/views/DayView/DailyActivitySection.tsx`: một card gồm bộ chọn mục tiêu, input giờ/ngữ cảnh, kết luận và yếu tố thuận/bất lợi đã gộp theo quy tắc.
+- `shared/lunar/godMapping.ts`: bridge tên sao/catalog và `resolveDayRuleGods` cho thần định nghĩa theo ngày.
+- `shared/almanac-data/xiejibianfangshu-yiji.json`: bảng 宜忌 gốc của Hiệp Kỷ quyển 11.
 
 ## Bổ sung dataset 1.2.0 — 05/10/2026
 
@@ -138,8 +140,42 @@ Không dùng: bảng ngày âm "tốt để cắt tóc" trên các trang tiếng
 
 #### Policy sản phẩm: việc nhỏ không gặp ngày kỵ thì xem là bình thường
 
-`manifest.policies.lowSeverityNoTabooMeansNeutral = true`. Sự kiện mức `low` (hiện chỉ có Cắt tóc) mà hoạt động chính không gặp quy tắc nào, tức cũng không có ngày kỵ, được kết luận "Cân nhắc" (score 50, `neutralByPolicy: true`) thay vì "Chưa đủ dữ liệu". UI ghi rõ "Không gặp ngày kỵ nào… việc nhỏ nên có thể làm bình thường". Đây là quyết định sản phẩm, không phải nguồn cổ điển. Sự kiện mức medium trở lên vẫn trả `insufficient_evidence`.
+`manifest.policies.lowSeverityNoTabooMeansNeutral = true`. Sự kiện mức `low` (hiện chỉ có Cắt tóc) mà hoạt động chính không gặp quy tắc nào, tức cũng không có ngày kỵ, được kết luận "Cân nhắc" (score 50, `neutralByPolicy: true`) thay vì "Chưa đủ dữ liệu". UI ghi một dòng ngắn "Không gặp ngày kỵ nào.". Đây là quyết định sản phẩm, không phải nguồn cổ điển. Sự kiện mức medium trở lên vẫn trả `insufficient_evidence`.
 
 Năm 2026, Cắt tóc: 0 ngày "Chưa đủ dữ liệu", 347 ngày "Cân nhắc" (120 ngày trong đó do policy này), 18 ngày "Thuận lợi".
 
 Sửa kèm: câu cảnh báo cứng trước đây luôn ghi "Nguyệt Phá"; nay ghi đúng tên thần gây cảnh báo (ví dụ "Ngày Đinh (Bách Kỵ)").
+
+## UI — 05/10/2026
+
+### Mục tiêu trong ngày (`DailyActivitySection`)
+
+Ba box Mục tiêu trong ngày, Việc nên làm, Việc không nên làm được gộp thành một card:
+
+- Header: tiêu đề và bộ chọn mục tiêu trên cùng một hàng.
+- Tổng quan: hai nhóm chip "Nên làm" và "Không nên làm".
+- Khi chọn mục tiêu: dải kết luận (tên việc, kết luận, ngày phù hợp tiếp theo hoặc gần nhất), sau đó là hai nhóm "Thuận" và "Bất lợi".
+- Yếu tố được gộp theo quy tắc (`source` + rule): một quy tắc chạm nhiều hoạt động của sự kiện chỉ hiện một chip, kèm dòng phụ liệt kê các hoạt động. Yếu tố có hard warning có viền đỏ.
+- Đã ẩn: mô tả chung của kết luận, dòng "Đánh giá theo Trực + Thần sát…", "Chưa đánh giá đầy đủ…", danh sách điều kiện Đạt/Không đạt và mục "Xem toàn bộ lý do". Chỉ giữ một dòng lý do khi thiếu dữ liệu, khi không gặp ngày kỵ (policy việc nhỏ), hoặc khi dữ liệu xung đột.
+- Giữ: "Thông tin Tú (tham khảo)" dạng thu gọn ở đáy card.
+- Khoảng cách tiêu đề nhóm dùng `gap` của grid, vì `PersonalFengShuiPanel` đặt lại margin của `h4` với độ ưu tiên cao hơn.
+
+### Hoàng đạo / hắc đạo, đối chiếu lichviet.me
+
+Đối chiếu trang chi tiết `lichviet.me/xem-ngay-tot-xau?date=…` cho đủ 365 ngày năm 2026:
+
+| So sánh | Khớp |
+|---|---|
+| Ngày âm lịch | 365/365 |
+| Hoàng/hắc đạo của app (tháng âm) | 365/365 |
+| Nếu tính theo tháng tiết khí | 300/365 |
+
+App giữ cách tính theo tháng âm, giống lichviet.me và licham.vn. Chấm "Ngày Tốt / Ngày Xấu" trên lịch tháng của lichviet.me không phải hoàng/hắc đạo: chỉ trùng 169/353 ô với trang chi tiết của chính họ, nên không dùng để đối chiếu. `shared/lunar/auspicious.test.ts` khóa 9 ngày giáp ranh mà tháng âm và tháng tiết khí cho kết quả ngược nhau.
+
+### Lịch tháng (`MonthView`)
+
+- Mỗi ngày có chấm ở góc trên phải số ngày: xanh `#16a34a` là hoàng đạo, xám `#c2c2c2` là hắc đạo. Thay cho sao vàng cũ, vốn chỉ đánh dấu ngày hoàng đạo.
+- Hôm nay: viền đỏ 2px (`--accent`) vẽ vào trong ô, số ngày màu đỏ; bỏ nền tròn đỏ.
+- Chú thích ở đáy lưới: Hoàng đạo, Hắc đạo, Hôm nay.
+- Nhãn trợ năng của ô ngày đọc "ngày hoàng đạo" hoặc "ngày hắc đạo".
+- Lưu ý: `#c2c2c2` trên nền sáng chỉ đạt khoảng 1.8:1, dưới mức 3:1 của WCAG 1.4.11 cho thành phần đồ họa. Thông tin vẫn có qua nhãn trợ năng và chú thích. `#949494` đạt khoảng 3:1 nếu cần đổi.

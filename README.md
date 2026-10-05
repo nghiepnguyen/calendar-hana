@@ -4,7 +4,7 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
 
 - Xem theo Ngày, Tuần, Tháng. Mặc định mở xem Ngày của hôm nay. Xem Ngày và Tuần liệt kê sự kiện từng ngày như trang Danh sách.
 - Trên điện thoại, thanh tab dưới đáy có Ngày, Tháng, Sự kiện, Menu và nút tạo sự kiện. Xem Tuần chỉ có trên màn hình lớn.
-- Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ.
+- Mỗi ngày có ngày âm, Can Chi, tiết khí, ngày lễ, ngày và giờ hoàng đạo. Mùng 1 âm lịch tô đỏ. Lịch tháng có chấm xanh cho ngày hoàng đạo, chấm xám cho ngày hắc đạo, viền đỏ cho hôm nay.
 - Xem Ngày có khối Lịch vạn niên: niên mệnh (nạp âm), quan hệ Can Chi, Nhị thập bát tú, Thập nhị trực kèm việc nên làm / nên kiêng, hướng Hỷ Thần và Tài Thần trên la bàn, tuổi xung ngày và tháng, sao tốt và sao xấu theo Ngọc Hạp Thông Thư (bấm để xem giải thích), đủ 12 giờ trong ngày có đánh dấu giờ hiện tại. Bật/tắt cùng công tắc hoàng đạo trong Cài đặt. Số liệu tính ngay trên máy, đã đối chiếu với licham.vn, xemngay.com, lichviet.me và thoigian.com.vn.
 - Phong thủy cá nhân trong xem Ngày, cùng ngôn ngữ thiết kế với Lịch vạn niên:
   - Chưa có ngày sinh hợp lệ thì chỉ hiện lời mời nhập ngày sinh (và nút đăng nhập cho khách nếu có tài khoản Firebase), kèm vòng 12 con giáp.
@@ -13,6 +13,7 @@ Lịch cá nhân dương lịch và âm lịch Việt Nam, chạy trên web và 
   - Hạn theo năm: Sao chiếu mệnh theo Ngọc Hạp Ký (chỉ tên sao, không gắn cát/hung), Kim Lâu, Hoang Ốc, Tam Tai. Hạn tuổi tạm ẩn vì chưa có nguồn. Nam/Nữ mạng lấy theo giới tính đã lưu.
   - Tứ Trụ (cần ngày, giờ và nơi sinh; Việt Nam 1900–2100, giờ ước lượng, hai quy ước giờ Tý): lá số có Thập thần, tàng can, Nguyệt lệnh; Nhật Nguyên, điểm vượng suy (bản đơn giản theo trọng số vị trí) và thống kê ngũ hành 8 chữ.
   - Trên điện thoại, Hạn theo năm và Tứ Trụ thu gọn thành một dòng tóm tắt.
+  - Mục tiêu trong ngày: chọn việc (cắt tóc, ký hợp đồng, chuyển nhà, khai trương, cưới hỏi, xuất hành…) để xem kết luận Thuận lợi / Cân nhắc / Không thuận lợi / Chưa đủ dữ liệu, yếu tố thuận và bất lợi, và ngày phù hợp gần nhất. Quy tắc Trực và thần sát lấy từ nguyên văn Hiệp Kỷ Biện Phương Thư quyển 11; xem [docs/verification/mapping-scoring.md](docs/verification/mapping-scoring.md).
   - Mỗi lớp đi qua gate quy tắc có nguồn và version. Kết quả mang tính tham khảo theo quy ước đã công bố; chưa có Dụng thần.
 - Tạo sự kiện theo ngày dương hoặc ngày âm. Lặp hằng ngày, tuần, tháng, năm, kể cả lặp theo âm lịch (giỗ, rằm, mùng 1). Chọn danh mục Giỗ/Lễ thì tự lặp hằng năm.
 - Trang Danh sách sự kiện (`/events`): mọi sự kiện theo năm và tháng, cuộn vô hạn hai chiều, tìm kiếm, lọc theo danh mục, chọn nhiều để xoá.
