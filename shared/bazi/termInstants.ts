@@ -1,4 +1,4 @@
-import { SearchSunLongitude } from 'astronomy-engine'
+import { solarTermsForYear } from '../lunar/solarTerms'
 
 export const MONTH_OPENING_ANGLES = [
   315, 345, 15, 45, 75, 105, 135, 165, 195, 225, 255, 285,
@@ -28,12 +28,16 @@ export function monthOpeningTerms(year: number): readonly TermInstant[] {
   // 1899 is required only to resolve the active term for January 1900 births.
   if (!Number.isInteger(year) || year < 1899 || year > 2100)
     throw new RangeError('Unsupported year')
-  let start = new Date(Date.UTC(year, 0, 25))
+  const terms = [...solarTermsForYear(year), ...solarTermsForYear(year + 1)]
   return MONTH_OPENING_ANGLES.map((longitude, index) => {
-    const found = SearchSunLongitude(longitude, start, 40)
-    if (!found) throw new Error(`Cannot find solar term ${longitude}`)
-    start = new Date(found.date.getTime() + 1000)
-    return { name: MONTH_OPENING_NAMES[index], longitude, instantUtc: found.date.toISOString() }
+    // Preserve the Bazi cycle: Lập Xuân of year through Tiểu Hàn of year + 1.
+    const term = terms.find(
+      (t) =>
+        t.longitude === longitude &&
+        new Date(t.instantUtc).getUTCFullYear() === (index === 11 ? year + 1 : year),
+    )
+    if (!term) throw new Error(`Cannot find solar term ${longitude}`)
+    return { name: MONTH_OPENING_NAMES[index], longitude, instantUtc: term.instantUtc }
   })
 }
 

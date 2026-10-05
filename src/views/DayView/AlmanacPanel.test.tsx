@@ -8,6 +8,14 @@ import { hourIndexAt } from './hourIndex'
 afterEach(() => vi.useRealTimers())
 
 describe('AlmanacPanel', () => {
+  it('shows Vietnamese crossing time only on the transition day', () => {
+    const { unmount } = render(<AlmanacPanel date="2026-09-07" isToday={false} />)
+    expect(screen.getByText(/Bắt đầu lúc \d{2}:\d{2} · giờ Việt Nam/)).toBeInTheDocument()
+    unmount()
+    render(<AlmanacPanel date="2026-09-08" isToday={false} />)
+    expect(screen.queryByText(/Bắt đầu lúc/)).not.toBeInTheDocument()
+  })
+
   it('hiện đủ thông tin ngày mẫu 25/9/2026', () => {
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
     const panel = screen.getByRole('region', { name: 'Lịch vạn niên' })

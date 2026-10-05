@@ -1030,3 +1030,10 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.heroFacts .termTime {
+  margin-top: calc(4px * var(--ui-scale));
+  font-size: var(--day-label);
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}

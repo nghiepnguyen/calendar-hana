@@ -1,0 +1,105 @@
+{
+  "sources": [
+    "https://www.hko.gov.hk/en/gts/astron2024/files/2024SolarTerms24.pdf",
+    "https://www.hko.gov.hk/en/gts/astron2025/files/2025SolarTerms24.pdf"
+  ],
+  "note": "Published to minute precision in UTC+8. Compare absolute instants, not Hong Kong calendar dates. Tolerance 60 seconds includes rounding and model differences.",
+  "cases": [
+    {
+      "longitude": 300,
+      "reference": "2024-01-20T22:07:00+08:00"
+    },
+    {
+      "longitude": 330,
+      "reference": "2024-02-19T12:13:00+08:00"
+    },
+    {
+      "longitude": 0,
+      "reference": "2024-03-20T11:06:00+08:00"
+    },
+    {
+      "longitude": 30,
+      "reference": "2024-04-19T22:00:00+08:00"
+    },
+    {
+      "longitude": 60,
+      "reference": "2024-05-20T21:00:00+08:00"
+    },
+    {
+      "longitude": 90,
+      "reference": "2024-06-21T04:51:00+08:00"
+    },
+    {
+      "longitude": 120,
+      "reference": "2024-07-22T15:44:00+08:00"
+    },
+    {
+      "longitude": 150,
+      "reference": "2024-08-22T22:55:00+08:00"
+    },
+    {
+      "longitude": 180,
+      "reference": "2024-09-22T20:44:00+08:00"
+    },
+    {
+      "longitude": 210,
+      "reference": "2024-10-23T06:15:00+08:00"
+    },
+    {
+      "longitude": 240,
+      "reference": "2024-11-22T03:56:00+08:00"
+    },
+    {
+      "longitude": 270,
+      "reference": "2024-12-21T17:21:00+08:00"
+    },
+    {
+      "longitude": 300,
+      "reference": "2025-01-20T04:00:00+08:00"
+    },
+    {
+      "longitude": 330,
+      "reference": "2025-02-18T18:07:00+08:00"
+    },
+    {
+      "longitude": 0,
+      "reference": "2025-03-20T17:01:00+08:00"
+    },
+    {
+      "longitude": 30,
+      "reference": "2025-04-20T03:56:00+08:00"
+    },
+    {
+      "longitude": 60,
+      "reference": "2025-05-21T02:55:00+08:00"
+    },
+    {
+      "longitude": 90,
+      "reference": "2025-06-21T10:42:00+08:00"
+    },
+    {
+      "longitude": 120,
+      "reference": "2025-07-22T21:29:00+08:00"
+    },
+    {
+      "longitude": 150,
+      "reference": "2025-08-23T04:34:00+08:00"
+    },
+    {
+      "longitude": 180,
+      "reference": "2025-09-23T02:19:00+08:00"
+    },
+    {
+      "longitude": 210,
+      "reference": "2025-10-23T11:51:00+08:00"
+    },
+    {
+      "longitude": 240,
+      "reference": "2025-11-22T09:36:00+08:00"
+    },
+    {
+      "longitude": 270,
+      "reference": "2025-12-21T23:03:00+08:00"
+    }
+  ]
+}

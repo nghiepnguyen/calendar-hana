@@ -192,6 +192,18 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
                 <SunHorizon size={iconSize(16)} weight="light" aria-hidden="true" />
                 {a.solarTerm.name}
               </dd>
+              {a.solarTerm.startsToday && (
+                <dd className={styles.termTime}>
+                  Bắt đầu lúc{' '}
+                  {new Intl.DateTimeFormat('vi-VN', {
+                    timeZone: 'Asia/Ho_Chi_Minh',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hourCycle: 'h23',
+                  }).format(new Date(a.solarTerm.startsAtUtc))}{' '}
+                  · giờ Việt Nam
+                </dd>
+              )}
             </div>
           </dl>
         </div>

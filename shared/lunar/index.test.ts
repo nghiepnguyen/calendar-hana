@@ -24,3 +24,15 @@ describe('getDayInfo', () => {
     expect(() => getDayInfo('23/9/2026')).toThrow()
   })
 })
+
+it('changes lunar year at Tet rather than Lập xuân', () => {
+  expect(getDayInfo('2024-02-09').canChi.year.name).toBe('Quý Mão')
+  expect(getDayInfo('2024-02-10').canChi.year.name).toBe('Giáp Thìn')
+})
+it('keeps lunar month can chi the same for its leap month', () => {
+  const normal = getDayInfo('2023-02-20')
+  const leap = getDayInfo('2023-03-22')
+  expect(normal.lunar).toMatchObject({ month: 2, isLeap: false })
+  expect(leap.lunar).toMatchObject({ month: 2, isLeap: true })
+  expect(leap.canChi.month).toEqual(normal.canChi.month)
+})

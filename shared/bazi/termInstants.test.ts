@@ -18,3 +18,13 @@ describe('monthOpeningTerms', () => {
     }
   })
 })
+
+it('changes the Bazi year and month only at Lập Xuân', () => {
+  const crossing = monthOpeningTerms(2026)[0]
+  expect(termContextAt(new Date(Date.parse(crossing.instantUtc) - 1).toISOString())).toMatchObject({
+    pillarYear: 2025,
+    monthOffset: 11,
+  })
+  expect(termContextAt(crossing.instantUtc)).toMatchObject({ pillarYear: 2026, monthOffset: 0 })
+  expect(termContextAt('2100-12-31T16:59:59Z').pillarYear).toBe(2100)
+})

@@ -100,8 +100,8 @@
     "hash": "1eec2393a81d20076e7eb5fe491f59c3"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/bazi/termInstants.ts": {
-    "mtime": 1791077378.0877306,
-    "hash": "f607744cea05bc3300d39840ba02ba1f"
+    "mtime": 1791228901.2815557,
+    "hash": "6e64ebef5b0a37ffb2c69ce2a8107101"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/bazi/pillars.test.ts": {
     "mtime": 1791077378.08726,
@@ -132,8 +132,8 @@
     "hash": "954aeb05a705ada2116894e5c559eb17"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/bazi/termInstants.test.ts": {
-    "mtime": 1791077378.087627,
-    "hash": "f90379098f0f5311e3352f1ffc78e280"
+    "mtime": 1791228985.7675276,
+    "hash": "bca0cf0ca28699036c32f952dd9b91f3"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/bazi/interpretation/dayMaster.ts": {
     "mtime": 1791077378.086468,
@@ -320,8 +320,8 @@
     "hash": "9a88fdc1f3837873a3509fc07a2c7a2c"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/index.test.ts": {
-    "mtime": 1790176951.1386595,
-    "hash": "515db5ee0aa3c364acf4889a8c0f0f8f"
+    "mtime": 1791228985.7622821,
+    "hash": "01c3b86390fc2140174701085a513c0e"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/eventMapping.ts": {
     "mtime": 1791211769.6359801,
@@ -360,12 +360,12 @@
     "hash": "795e4f58d9442ef502b0d672be974c66"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/solarTerms.test.ts": {
-    "mtime": 1790296831.487803,
-    "hash": "e1c86165e6dd1949c315da2c3f5408f3"
+    "mtime": 1791229060.6528804,
+    "hash": "f8f8798a9b4f0d77c7f34f0b52698403"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/solarTerms.ts": {
-    "mtime": 1791207259.5921154,
-    "hash": "ae9ceb4f31c82f5f1154a9ee7af9199d"
+    "mtime": 1791228901.2631571,
+    "hash": "d2db8d7971dede3bbca6d231784d7fd0"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/stars.test.ts": {
     "mtime": 1791207259.5922582,
@@ -480,7 +480,7 @@
     "hash": "3daae9789b5c976807e352394fb87447"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/functions/lib/index.js": {
-    "mtime": 1790861585.56517,
+    "mtime": 1791229003.463879,
     "hash": "92c3915bc3bb4b2159f5b33e9cd1997e"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/functions/src/push.ts": {
@@ -542,6 +542,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/legal-pages.spec.ts": {
     "mtime": 1791077378.07863,
     "hash": "ae5d1262d596f9036a17901f5f0338ea"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/e2e/solar-terms.spec.ts": {
+    "mtime": 1791228985.7733994,
+    "hash": "c25880db8383c9c800ff0b2c09074a23"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/text-size.spec.ts": {
     "mtime": 1791077378.0788534,
@@ -1072,8 +1076,8 @@
     "hash": "bd8cca17e48083421cb33014c83027fb"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/AlmanacPanel.test.tsx": {
-    "mtime": 1790296831.488894,
-    "hash": "18055e2d87c1057482c581c9dc878619"
+    "mtime": 1791228871.269503,
+    "hash": "2599380223bbd46f6e6e1ed0a0c27c0a"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/DailyActivitySection.test.tsx": {
     "mtime": 1791211769.6367056,
@@ -1120,8 +1124,8 @@
     "hash": "f193093f255f00fa605b6a38dc2659b5"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/AlmanacPanel.tsx": {
-    "mtime": 1791077378.0956473,
-    "hash": "655f10a0b268bcef68e5dbf1a9102e0f"
+    "mtime": 1791228901.3073978,
+    "hash": "ac0eaba2000c88d637bd7c0d4269470f"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/views/DayView/Compass.tsx": {
     "mtime": 1790397031.621462,
@@ -1391,6 +1395,10 @@
     "mtime": 1791077378.1008577,
     "hash": "957acf448af1a39e91efd79a01f09b98"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/solar-terms-unified-acceptance.md": {
+    "mtime": 1791229099.5399404,
+    "hash": "5290645d86f6e3809ebcd8c1bffe1396"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/tasks-ui-consistency-personal-feng-shui-almanac.md": {
     "mtime": 1791076956.7114632,
     "hash": "f2e6c20a430a00859b4ab7d648f4a70c"
@@ -1518,6 +1526,18 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/public/pwa-192x192.png": {
     "mtime": 1790202806.8041637,
     "hash": "5962f9c25ccfc1affa614df1fb82b43a"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-mobile.png": {
+    "mtime": 1791229033.5006757,
+    "hash": "c1a7299c8efe3484d714826ded9d6c91"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-iphone.png": {
+    "mtime": 1791229034.1378503,
+    "hash": "e271ba52ae64ca6ed8c2218fc344099d"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-desktop.png": {
+    "mtime": 1791229033.085098,
+    "hash": "f871b319fde9ac63eb1ee02ee0492207"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/visual-default.spec.ts-snapshots/month-light-desktop-darwin.png": {
     "mtime": 1791124226.8008249,
