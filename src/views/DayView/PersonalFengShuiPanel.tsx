@@ -4,7 +4,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   ArrowsLeftRight,
-  CheckCircle,
+  WarningCircle,
   Clock,
   Compass,
   Diamond,
@@ -12,21 +12,14 @@ import {
   SealCheck,
   SealWarning,
   Sparkle,
-  Target,
   BookOpen,
   CalendarX,
-  WarningCircle,
   YinYang,
 } from '@phosphor-icons/react'
 import type { Settings } from '@shared/types'
 import type { Occurrence } from '@shared/recurrence/recurrence'
 import { CAN, CHI } from '@shared/lunar/canChi'
 import { canElement } from '@shared/lunar/elements'
-import { getAlmanac } from '@shared/lunar/almanac'
-import { getActivityAvoidances } from '@shared/lunar/activityRecommendations'
-import { EVENT_OPTIONS, resolveEventActivities } from '@shared/lunar/eventMapping'
-import { formatSolarShort } from '@shared/format'
-import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { assessPersonalDay, SUMMARY_LABELS, type Tone } from '@shared/personalFengShui/day'
 import { calculateBazi } from '@shared/bazi'
 import { tenGodOf } from '@shared/bazi/interpretation/tenGods'
@@ -54,6 +47,7 @@ import { Collapsible, InfoButton } from './personalUi'
 import { iconSize } from '../../styles/textSize'
 import almanac from './AlmanacPanel.module.css'
 import styles from './PersonalFengShuiPanel.module.css'
+import { DailyActivitySection } from './DailyActivitySection'
 
 function hourRange(hour: { chi: number; startHour: number; endHour: number }): string {
   return hour.chi === 0
@@ -225,7 +219,6 @@ const GROUP_LABEL = {
   consider: 'Có thể cân nhắc',
 } as const
 
-
 export function PersonalFengShuiPanel({
   date,
   settings,
@@ -241,45 +234,11 @@ export function PersonalFengShuiPanel({
   const { user } = useAuth()
   const { today, minutes } = useNow()
   const [explain, setExplain] = useState<ExplainItem | null>(null)
-  const [selectedEvent, setSelectedEvent] = useState('')
   const result = useMemo(
     () => assessPersonalDay({ viewDate: date, birthDate: settings.birthDate, today }, rules),
     [date, settings.birthDate, today, rules],
   )
   const ready = result.status === 'ready'
-  const activityRecommendations = useMemo(
-    () => {
-      const allowed = new Set(resolveEventActivities(selectedEvent))
-      return getAlmanac(date).activityRecommendations
-        .filter((item) => item.status === 'recommended' && (!selectedEvent || allowed.has(item.activityId)))
-        .slice(0, 6)
-    },
-    [date, selectedEvent],
-  )
-  const activityAvoidances = useMemo(
-    () => getActivityAvoidances({
-      officerId: ['kien', 'tru', 'man', 'binh', 'dinh', 'chap', 'pha', 'nguy', 'thanh', 'thu', 'khai', 'be'][getAlmanac(date).officer.index],
-      mansion: getAlmanac(date).mansion,
-    })
-      .filter((item) => item.status !== 'neutral' && (!selectedEvent || resolveEventActivities(selectedEvent).includes(item.activityId)))
-      .slice(0, 5),
-    [date, selectedEvent],
-  )
-  const eventLabel = EVENT_OPTIONS.find(([value]) => value === selectedEvent)?.[1]
-  const eventVerdict = useMemo(() => {
-    if (!selectedEvent) return null
-    const hasGood = activityRecommendations.length > 0
-    const hasHardAvoid = activityAvoidances.some((item) => item.status === 'avoid' || item.status === 'strong_avoid')
-    const hasWarning = activityAvoidances.some((item) => item.status === 'watch' || item.status === 'consider')
-    if (hasGood && (hasHardAvoid || hasWarning)) return { label: 'Cân nhắc', tone: 'caution' }
-    if (hasGood) return { label: 'Nên làm', tone: 'good' }
-    if (hasHardAvoid) return { label: 'Không nên làm', tone: 'bad' }
-    return { label: 'Cân nhắc', tone: 'caution' }
-  }, [activityAvoidances, activityRecommendations, selectedEvent])
-  const nextGoodEventDate = useMemo(
-    () => selectedEvent && eventVerdict?.label !== 'Nên làm' ? findNextGoodEventDate(date, selectedEvent) : null,
-    [date, eventVerdict?.label, selectedEvent],
-  )
   const nowChi = date === today ? hourChiOf(Math.floor(minutes / 60)) : null
   const nowHour = ready && nowChi !== null ? result.hours.find((h) => h.chi === nowChi) : undefined
   const tenGodReady = useMemo(
@@ -443,7 +402,11 @@ export function PersonalFengShuiPanel({
                     </ElementChip>
                   </div>
                 ) : null}
-                <div className={styles.transit} role="group" aria-label="Thập thần của ngày đang xem">
+                <div
+                  className={styles.transit}
+                  role="group"
+                  aria-label="Thập thần của ngày đang xem"
+                >
                   <span className="visually-hidden">Nhật Nguyên và Can ngày</span>
                   {transit.status === 'ready' ? (
                     <p className={`${styles.statement} ${styles.neutral}`}>
@@ -451,7 +414,8 @@ export function PersonalFengShuiPanel({
                     </p>
                   ) : transit.status === 'ambiguous' ? (
                     <span>
-                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật Nguyên khác nhau.
+                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật
+                      Nguyên khác nhau.
                     </span>
                   ) : (
                     <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link>
@@ -649,95 +613,7 @@ export function PersonalFengShuiPanel({
               ) : null}
             </Tile>
 
-            <section className={styles.goalCluster} aria-label="Mục tiêu và kết luận trong ngày">
-              <div className={styles.eventFilter}>
-                <div className={styles.eventFilterLabel}>
-                  <header className={almanac.tileHead}>
-                    <span className={almanac.tileIcon} aria-hidden="true">
-                      <Target size={iconSize(16)} weight="light" />
-                    </span>
-                    <h3 className={almanac.tileTitle}>
-                      <label htmlFor="personal-event-filter">Mục tiêu trong ngày</label>
-                    </h3>
-                  </header>
-                  <span className={styles.eventFilterHint}>Chọn việc bạn đang cân nhắc hôm nay.</span>
-                </div>
-                <select
-                  id="personal-event-filter"
-                  className={`input ${styles.eventSelect}`}
-                  value={selectedEvent}
-                  onChange={(event) => setSelectedEvent(event.target.value)}
-                >
-                  <option value="">Tổng quan</option>
-                  {EVENT_OPTIONS.map(([value, label]) => (
-                    <option key={value} value={value}>{label}</option>
-                  ))}
-                </select>
-              </div>
-
-              {eventVerdict ? (
-                <section className={`${styles.eventVerdict} ${styles[`eventVerdict_${eventVerdict.tone}`]}`} aria-label="Kết luận mục tiêu">
-                  <span className={styles.eventVerdictEvent}>
-                    Việc đang chọn: <strong>{eventLabel}</strong>
-                  </span>
-                  <strong className={styles.eventVerdictStatus}>{eventVerdict.label}</strong>
-                  {nextGoodEventDate ? (
-                    <span className={styles.eventNextDate} role="note">
-                      Ngày tốt gần nhất tiếp theo: <strong>{formatSolarShort(nextGoodEventDate)}</strong>
-                    </span>
-                  ) : eventVerdict.label !== 'Nên làm' ? (
-                    <span className={styles.eventNextDate} role="note">
-                      Chưa tìm thấy ngày tốt trong 30 ngày tới.
-                    </span>
-                  ) : null}
-                </section>
-              ) : null}
-            </section>
-
-            <div className={styles.recommendationRow}>
-              <Tile
-                index={5}
-                className={styles.recommendationGood}
-                icon={CheckCircle}
-                title="Việc nên làm trong ngày"
-                label="Việc nên làm trong ngày"
-                aside="Theo Trực + Tú"
-              >
-                <ul className={styles.afflictionList} aria-label="Danh sách việc nên làm trong ngày">
-                  {activityRecommendations.length ? activityRecommendations.map((item) => (
-                    <li key={item.activityId}>
-                      <CheckCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
-                      {item.label}
-                    </li>
-                  )) : <li className={styles.emptyRecommendation}>Chưa có việc nên làm nổi bật</li>}
-                </ul>
-              </Tile>
-
-              <Tile
-                index={6}
-                className={styles.recommendationAvoid}
-                icon={WarningCircle}
-                title="Việc không nên làm"
-                label="Việc không nên làm"
-                aside="Theo Trực + Tú"
-              >
-                <ul className={styles.afflictionList} aria-label="Danh sách việc không nên làm">
-                  {activityAvoidances.length ? activityAvoidances.map((item) => (
-                    <li
-                      className={
-                        item.status === 'avoid' || item.status === 'strong_avoid'
-                          ? styles.afflictionHit
-                          : styles.afflictionWatch
-                      }
-                      key={item.activityId}
-                    >
-                      <WarningCircle size={iconSize(16)} weight="fill" aria-hidden="true" />
-                      {item.label}
-                    </li>
-                  )) : <li className={styles.emptyRecommendation}>Không có việc kỵ nổi bật</li>}
-                </ul>
-              </Tile>
-            </div>
+            <DailyActivitySection date={date} />
           </>
         ) : null}
 

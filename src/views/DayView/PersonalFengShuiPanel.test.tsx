@@ -110,7 +110,9 @@ describe('personal panel integration', () => {
     const recommendations = within(panel).getByRole('region', {
       name: 'Việc nên làm trong ngày',
     })
-    expect(personalHours.compareDocumentPosition(recommendations) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(
+      personalHours.compareDocumentPosition(recommendations) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
     expect(
       within(panel).queryByText('Đang xem theo tuổi và nạp âm năm sinh'),
     ).not.toBeInTheDocument()
@@ -123,14 +125,21 @@ describe('personal panel integration', () => {
     expect(selector).toHaveValue('')
     await userEvent.selectOptions(selector, 'open_business')
     expect(selector).toHaveValue('open_business')
-    expect(within(panel).getByRole('region', { name: 'Việc nên làm trong ngày' })).toBeInTheDocument()
+    expect(
+      within(panel).queryByRole('region', { name: 'Việc nên làm trong ngày' }),
+    ).not.toBeInTheDocument()
+    expect(within(panel).queryByText(/Việc đang chọn:/)).not.toBeInTheDocument()
     expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
-      /Việc đang chọn:\s*Khai trương/,
+      'Khai trương hôm nay',
     )
     expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).toHaveTextContent(
-      /Nên làm|Không nên làm|Cân nhắc/,
+      /Thuận lợi|Không thuận lợi|Cân nhắc/,
     )
-    expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).not.toHaveTextContent('Có ít nhất một hoạt động')
+    expect(within(panel).getByRole('region', { name: 'Yếu tố thuận' })).toBeInTheDocument()
+    expect(within(panel).getByRole('region', { name: 'Yếu tố bất lợi' })).toBeInTheDocument()
+    expect(within(panel).getByRole('region', { name: 'Kết luận mục tiêu' })).not.toHaveTextContent(
+      'Có ít nhất một hoạt động',
+    )
   })
 })
 
