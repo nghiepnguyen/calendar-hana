@@ -1,17 +1,14 @@
-import { useMemo, useState, type CSSProperties } from 'react'
+import { Guide } from './InstallGuide'
+import { IOS_STEPS, ANDROID_STEPS } from './installGuideData'
+import { useMemo, useState } from 'react'
 import {
   AndroidLogo,
   AppleLogo,
   ArrowsOut,
   BellRinging,
   CaretDown,
-  CheckCircle,
-  Compass,
-  DotsThreeVertical,
   DownloadSimple,
-  Export,
   Monitor,
-  PlusSquare,
   SealCheck,
   WifiSlash,
   type Icon,
@@ -22,40 +19,6 @@ import { useInstallStore } from '../../store/installStore'
 import { iconSize } from '../../styles/textSize'
 import styles from './InstallSection.module.css'
 
-interface Step {
-  icon: Icon
-  text: string
-}
-
-const IOS_STEPS: Step[] = [
-  {
-    icon: Compass,
-    text: 'Mở trang này bằng Safari (iOS 16.4 trở lên cũng dùng được Chrome, Edge).',
-  },
-  {
-    icon: Export,
-    text: 'Bấm nút Chia sẻ (hình vuông có mũi tên hướng lên) ở thanh dưới hoặc cạnh thanh địa chỉ.',
-  },
-  { icon: PlusSquare, text: 'Kéo xuống, chọn “Thêm vào Màn hình chính” (Add to Home Screen).' },
-  {
-    icon: CheckCircle,
-    text: 'Bấm “Thêm”. Từ giờ mở Lịch Việt bằng biểu tượng trên Màn hình chính.',
-  },
-]
-
-const ANDROID_STEPS: Step[] = [
-  { icon: Compass, text: 'Mở trang này bằng Chrome.' },
-  { icon: DotsThreeVertical, text: 'Bấm nút menu ⋮ ở góc trên bên phải.' },
-  {
-    icon: DownloadSimple,
-    text: 'Chọn “Cài đặt ứng dụng” (Install app) hoặc “Thêm vào màn hình chính”.',
-  },
-  {
-    icon: CheckCircle,
-    text: 'Bấm “Cài đặt”. Lịch Việt sẽ có trên màn hình chính và trong danh sách ứng dụng.',
-  },
-]
-
 const PERKS: { icon: Icon; label: string }[] = [
   { icon: WifiSlash, label: 'Dùng khi mất mạng' },
   { icon: ArrowsOut, label: 'Toàn màn hình' },
@@ -65,28 +28,6 @@ const PERKS: { icon: Icon; label: string }[] = [
 const IOS_NOTE =
   'Trên iPhone/iPad, nhắc hẹn chỉ hiện được khi mở app từ Màn hình chính (cần iOS 16.4 trở lên).'
 const ANDROID_NOTE = 'Samsung Internet: bấm menu ≡ → Thêm trang vào → Màn hình chính.'
-
-/** Các bước đánh số nối bằng một đường dọc, mỗi bước có icon minh hoạ thao tác. */
-function Guide({ steps, note }: { steps: Step[]; note: string }) {
-  return (
-    <>
-      <ol className={styles.steps}>
-        {steps.map(({ icon: StepIcon, text }, index) => (
-          <li key={text} className={styles.step} style={{ '--i': index } as CSSProperties}>
-            <span className={styles.stepMarker} aria-hidden="true">
-              {index + 1}
-            </span>
-            <span className={styles.stepIcon} aria-hidden="true">
-              <StepIcon size={iconSize(18)} weight="duotone" />
-            </span>
-            <span className={styles.stepText}>{text}</span>
-          </li>
-        ))}
-      </ol>
-      <p className={styles.note}>{note}</p>
-    </>
-  )
-}
 
 /** Nút cài app (Chrome/Edge) và hướng dẫn thêm vào màn hình chính trên iOS, Android. */
 export function InstallSection() {

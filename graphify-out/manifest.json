@@ -543,6 +543,10 @@
     "mtime": 1791077378.07863,
     "hash": "ae5d1262d596f9036a17901f5f0338ea"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/e2e/offline-install-popup.spec.ts": {
+    "mtime": 1791243653.693658,
+    "hash": "c7a16f3608a17b93b831de1c17336dbf"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/solar-terms.spec.ts": {
     "mtime": 1791228985.7733994,
     "hash": "c25880db8383c9c800ff0b2c09074a23"
@@ -560,8 +564,8 @@
     "hash": "faa58b3c387792306eb0cde8e185a7e3"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/App.tsx": {
-    "mtime": 1790814784.9635837,
-    "hash": "8d397aa1db8fe13c2c6f266abd23b69e"
+    "mtime": 1791242648.0304263,
+    "hash": "a9c640a5f885affe107425064b3363c5"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/main.tsx": {
     "mtime": 1790482595.5998862,
@@ -764,8 +768,8 @@
     "hash": "645b10426a8cd088ad7aa7fb50f1922d"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/components/Toast/ToastRegion.tsx": {
-    "mtime": 1790260388.5812957,
-    "hash": "f972b494c925b4b499f2bf51a89b269c"
+    "mtime": 1791242648.0307817,
+    "hash": "972df85fa4a36fe73e635b7282950006"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/components/Toast/Toast.tsx": {
     "mtime": 1790397031.614697,
@@ -790,6 +794,14 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/src/components/LegalLinks/LegalLinks.tsx": {
     "mtime": 1790814784.9638617,
     "hash": "36eb668518e831792f8955ee7dab6473"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/components/InstallInvitation/InstallInvitation.test.tsx": {
+    "mtime": 1791243534.7350354,
+    "hash": "31f762fe51c9973d4445ba70dd10abd3"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/components/InstallInvitation/InstallInvitation.tsx": {
+    "mtime": 1791243637.7219443,
+    "hash": "698b1fa1a9c10ce1627f178a9781693e"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/components/EventDetail/locationLinks.ts": {
     "mtime": 1790290043.9605997,
@@ -898,6 +910,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/src/hooks/useOpenOccurrenceFromUrl.ts": {
     "mtime": 1790176951.1568224,
     "hash": "35aafa64770f5327c9acff188c6c2a21"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/hooks/useInstallInvitation.ts": {
+    "mtime": 1791243012.181574,
+    "hash": "a58880e96c89e6e4e02d25e1f836b08b"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/hooks/useSwipeNavigation.ts": {
     "mtime": 1790601171.93794,
@@ -1163,6 +1179,10 @@
     "mtime": 1790206530.0365586,
     "hash": "74a202c693343dafb27c55e1cae61236"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/InstallGuide.tsx": {
+    "mtime": 1791242665.9791136,
+    "hash": "b7db0d1f655ec6bd18f25e3da16d88d2"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/SettingsPage.tsx": {
     "mtime": 1791077378.0948539,
     "hash": "ac3323567c020010a33630f3328783fe"
@@ -1183,6 +1203,10 @@
     "mtime": 1790482625.334754,
     "hash": "74db80f6179a2882df42d0f6b08b0b50"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/installGuideData.ts": {
+    "mtime": 1791243600.2020364,
+    "hash": "d91cdc7ae8f779ad40d7751bd84a25b7"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/CategoryManager.tsx": {
     "mtime": 1790176951.1581597,
     "hash": "ede7d62b4a79fe53256512a727f08b5a"
@@ -1192,8 +1216,8 @@
     "hash": "61f1902acd4851512aa65d640ec1fce7"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/InstallSection.tsx": {
-    "mtime": 1790412060.5705903,
-    "hash": "309358737510a4e528e2dc4b806110f3"
+    "mtime": 1791242665.5839887,
+    "hash": "df32471bda3035c25fdf63d60f6cd53a"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/src/pages/Settings/AccountSection.test.tsx": {
     "mtime": 1791077378.0939627,
@@ -1355,6 +1379,10 @@
     "mtime": 1790202806.813998,
     "hash": "f2c22d9e4836538e1f89665e1d0e30fc"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/prd-offline-install-popup.md": {
+    "mtime": 1791242365.688636,
+    "hash": "fdb75463078a88e5169113f8016d41c9"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/prd-event-list.md": {
     "mtime": 1790202806.8138638,
     "hash": "4933a43c8560d872c4b771d91a99e7d3"
@@ -1362,6 +1390,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/plan-personal-feng-shui-expansion.md": {
     "mtime": 1791077378.0995696,
     "hash": "5f76ef56497e897b7ab58cefc9571549"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/tasks-offline-install-popup.md": {
+    "mtime": 1791243034.4236727,
+    "hash": "1a3f0d5b89bfbd20e40d9805f49b7d35"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/prd-birth-time-normalization.md": {
     "mtime": 1791077378.0999603,
@@ -1471,6 +1503,10 @@
     "mtime": 1791077378.099722,
     "hash": "07d8d98af7948d6fc64e68586c203dd7"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/validation-offline-install-popup.md": {
+    "mtime": 1791243040.040639,
+    "hash": "df43f499beb26e1af38e4a3da965047d"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/docs/verification/mapping-scoring.md": {
     "mtime": 1791211769.6214364,
     "hash": "5ccaf4f4d0e320ba26c757ef363a2c3d"
@@ -1527,17 +1563,17 @@
     "mtime": 1790202806.8041637,
     "hash": "5962f9c25ccfc1affa614df1fb82b43a"
   },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-mobile.png": {
-    "mtime": 1791229033.5006757,
-    "hash": "c1a7299c8efe3484d714826ded9d6c91"
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/offline-install-popup-two--2eaaf-dance-and-remembers-closing-mobile/install-invitation.png": {
+    "mtime": 1791243662.3779175,
+    "hash": "aab756eab1221517ac707000fdd20b2f"
   },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-iphone.png": {
-    "mtime": 1791229034.1378503,
-    "hash": "e271ba52ae64ca6ed8c2218fc344099d"
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/offline-install-popup-fits-57c6c-h-large-text-and-dark-theme-desktop/install-invitation-large-dark.png": {
+    "mtime": 1791243662.098695,
+    "hash": "472cc2b70ee0005089a703fca05c5e53"
   },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/solar-term-desktop.png": {
-    "mtime": 1791229033.085098,
-    "hash": "f871b319fde9ac63eb1ee02ee0492207"
+  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/offline-install-popup-two--2eaaf-dance-and-remembers-closing-desktop/install-invitation.png": {
+    "mtime": 1791243661.9044025,
+    "hash": "d62ab0ee1a09a22c30c352d78f9c642d"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/visual-default.spec.ts-snapshots/month-light-desktop-darwin.png": {
     "mtime": 1791124226.8008249,

@@ -1,16 +1,16 @@
 # Graph Report - calendar-hana  (2026-10-06)
 
 ## Corpus Check
-- 369 files · ~515,167 words
+- 378 files · ~473,285 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2645 nodes · 4970 edges · 155 communities (148 shown, 7 thin omitted)
+- 2728 nodes · 5081 edges · 164 communities (156 shown, 8 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 71 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a7e5cbf1`
+- Built from commit: `75a8402d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -164,10 +164,19 @@
 - [[_COMMUNITY_Community 146|Community 146]]
 - [[_COMMUNITY_Community 147|Community 147]]
 - [[_COMMUNITY_Community 148|Community 148]]
+- [[_COMMUNITY_Community 149|Community 149]]
 - [[_COMMUNITY_Community 150|Community 150]]
+- [[_COMMUNITY_Community 151|Community 151]]
+- [[_COMMUNITY_Community 152|Community 152]]
+- [[_COMMUNITY_Community 153|Community 153]]
+- [[_COMMUNITY_Community 154|Community 154]]
+- [[_COMMUNITY_Community 155|Community 155]]
+- [[_COMMUNITY_Community 156|Community 156]]
+- [[_COMMUNITY_Community 158|Community 158]]
+- [[_COMMUNITY_Community 159|Community 159]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `iconSize()` - 69 edges
+1. `iconSize()` - 72 edges
 2. `LocalRepository` - 33 edges
 3. `4. Dữ liệu 28 Tú và kết quả mapping hiện tại` - 29 edges
 4. `FirestoreRepository` - 27 edges
@@ -179,10 +188,10 @@
 10. `addDays()` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `ready()` --calls--> `assessPersonalDay()`  [INFERRED]
+  src/views/DayView/personalExplain.test.ts → shared/personalFengShui/day.ts
 - `parseGoogleCsv()` --calls--> `isValidEvent()`  [INFERRED]
   src/data/interop/googleCsv.ts → shared/validation.ts
-- `EventDetail()` --calls--> `formatLunarWithYear()`  [INFERRED]
-  src/components/EventDetail/EventDetail.tsx → shared/format.ts
 - `EventRow()` --calls--> `formatAccessibleDate()`  [INFERRED]
   src/components/EventList/EventRow.tsx → shared/format.ts
 - `viewTitle()` --calls--> `formatMonthTitleParts()`  [INFERRED]
@@ -190,11 +199,11 @@
 - `calendarHead()` --calls--> `formatMonthTitle()`  [INFERRED]
   src/hooks/usePageHead.ts → shared/format.ts
 
-## Communities (155 total, 7 thin omitted)
+## Communities (164 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.05
-Nodes (57): DayMasterInsight(), Pillar(), StrengthScore(), assertBranch(), assertStem(), dayMasterOf(), ELEMENT_ORDER, elementDistribution() (+49 more)
+Nodes (48): AuthProvider(), ErrorBoundary, ErrorBoundaryProps, ErrorBoundaryState, reload, dismissedRecently(), recent(), useInstallInvitation() (+40 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -202,123 +211,123 @@ Nodes (61): after, allDayReminderTime(), assertSupportedYear(), clampLunarToSola
 
 ### Community 2 - "Community 2"
 Cohesion: 0.05
-Nodes (50): EventDetail(), EventDetailProps, linkLabel(), LocationPart, locationText(), splitLocation(), labels, ReminderFieldProps (+42 more)
+Nodes (45): DeleteResult, EditableFields, RecurringScope, clampLunarToSolar(), compareOccurrences(), current, date, findNextOccurrence() (+37 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (39): AuthContextValue, AuthProvider(), loadAuthService(), deleteAccount(), fetchGoogleBirthday(), GoogleBirthday, googleProvider(), prefersRedirect() (+31 more)
+Cohesion: 0.09
+Nodes (33): CategoryChips(), CategoryChipsProps, DayGroup(), DayGroupData, DayGroupProps, FALLBACK_SETTINGS, Selected, EventRows() (+25 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.07
-Nodes (42): addDays(), dayOfWeek(), daysInSolarMonth(), diffDays(), isLeapSolarYear(), isValidSolarDate(), jdFromDate(), jdToDate() (+34 more)
+Cohesion: 0.08
+Nodes (35): DayMasterInsight(), Pillar(), StrengthScore(), assertBranch(), assertStem(), dayMasterOf(), ELEMENT_ORDER, elementDistribution() (+27 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.09
-Nodes (35): solarPath(), getHolidays(), Holiday, HolidayRule, LUNAR_HOLIDAYS, SOLAR_HOLIDAYS, holidayNames(), [reunification] (+27 more)
+Cohesion: 0.1
+Nodes (34): buildAnnualContext(), parse(), assessAnnualFengShui(), calculatePillars(), make(), result, ZiPolicy, resolveZiPolicy() (+26 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.11
-Nodes (29): assessAnnualAfflictions(), assessPersonalAnnualAfflictions(), evaluateSatChu(), hasPair(), isBranch(), LUC_HAI, LUC_PHA, LUC_XUNG (+21 more)
+Cohesion: 0.1
+Nodes (31): loadAuthService(), deleteAccount(), fetchGoogleBirthday(), GoogleBirthday, googleProvider(), prefersRedirect(), signIn(), signOut() (+23 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.08
-Nodes (26): createTrackpadAccumulator(), directionOf(), isEdgeStart(), isSwipeCommitted(), lockDirection(), rubberBand(), SwipeDirection, acc (+18 more)
+Cohesion: 0.07
+Nodes (31): pick(), AlmanacExplain(), AlmanacExplainProps, ExplainItem, branchDetail(), EventHourNote, eventHourNotes(), explainBranch() (+23 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.08
-Nodes (17): CalendarDatabase, createDefaultCategories(), hasLocalData(), repo, dismiss(), MigrationDialog, RepositoryProvider(), RepositoryProviderProps (+9 more)
+Cohesion: 0.11
+Nodes (37): utcToVietnam(), addMinutes(), alarmLines(), buildEvent(), compactDate(), compactDateTime(), Component, dateOf() (+29 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.1
-Nodes (30): detectFormat(), downloadFile(), downloadJson(), exportData(), ExportFile, exportFileName(), importData(), ImportFormat (+22 more)
+Cohesion: 0.07
+Nodes (32): activities, Activity, ACTIVITY_LABELS, ActivityAvoidance, ActivityInput, ActivityRecommendation, ActivityStatus, BadGod (+24 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.09
-Nodes (27): BirthTimeNormalization, candidate(), normalizeBirthTime(), NormalizedCandidate, NormalizeInput, result, calculateBazi(), base (+19 more)
+Cohesion: 0.08
+Nodes (25): createTrackpadAccumulator(), directionOf(), isEdgeStart(), isSwipeCommitted(), lockDirection(), rubberBand(), SwipeDirection, acc (+17 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.12
-Nodes (22): useRepository(), CategoryChips(), CategoryChipsProps, EventListPage(), FALLBACK_SETTINGS, Selected, SelectionBar(), SelectionBarProps (+14 more)
+Cohesion: 0.11
+Nodes (26): Almanac, cache, getAlmanac(), CanChi, CLASHES, getDayClashes(), getMonthClashes(), valid (+18 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.09
-Nodes (28): MONTH_OPENING_ANGLES, MONTH_OPENING_NAMES, monthOpeningTerms(), termContextAt(), TermInstant, reference, terms, getOfficer() (+20 more)
+Nodes (28): categoryIdByName(), clampEndTime(), InteropContext, isRealDate(), multiDayRecurrence(), ParsedEvents, stableId(), textFields() (+20 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.08
-Nodes (30): occ(), updateEventFromDraft(), applyOccurrenceOverride(), buildOverride(), deleteOccurrence(), deleteOccurrences(), DeleteResult, EditableFields (+22 more)
+Cohesion: 0.09
+Nodes (27): BirthTimeNormalization, candidate(), normalizeBirthTime(), NormalizedCandidate, NormalizeInput, result, calculateBazi(), base (+19 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.11
-Nodes (25): Classification, Contribution, CRITERION_LABELS, CriterionResult, evaluateEventDay(), EventEvaluation, contract, day (+17 more)
+Nodes (29): solarPath(), getHolidays(), holidayNames(), [reunification], assertSupportedYear(), getLeapMonth(), getLeapMonthOffset(), getLunarMonth11() (+21 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.13
-Nodes (22): Almanac, cache, getAlmanac(), DayHour, CLASHES, getDayClashes(), getMonthClashes(), valid (+14 more)
+Cohesion: 0.11
+Nodes (22): DayCard(), DayCardProps, DayView(), ShortcutMap, useKeyboardShortcuts(), useOpenOccurrenceFromUrl(), applyHead(), canonicalLink() (+14 more)
 
 ### Community 16 - "Community 16"
+Cohesion: 0.11
+Nodes (25): Classification, Contribution, CRITERION_LABELS, CriterionResult, evaluateEventDay(), EventEvaluation, contract, day (+17 more)
+
+### Community 17 - "Community 17"
+Cohesion: 0.1
+Nodes (26): AuspiciousHour, BadDay, DayGod, DayHour, getAllHours(), getAuspiciousHours(), getBadDays(), getDayGod() (+18 more)
+
+### Community 18 - "Community 18"
 Cohesion: 0.1
 Nodes (24): STARS, getStars(), matches(), starApplies(), StarContext, StarDefinition, StarMatch, StarRule (+16 more)
 
-### Community 17 - "Community 17"
-Cohesion: 0.09
-Nodes (14): ConfirmDialog(), ConfirmDialogProps, EventDialogsProps, Pending, OPTIONS, RecurringScopeDialog(), RecurringScopeDialogProps, Modal() (+6 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.12
-Nodes (16): TextSizeController(), ThemeController(), useSettings(), content, LegalPage(), LegalLinks(), ReminderService(), AppUpdateState (+8 more)
-
 ### Community 19 - "Community 19"
 Cohesion: 0.14
-Nodes (21): EventDialogs(), ShortcutMap, useKeyboardShortcuts(), useIsCompact(), useMediaQuery(), useNow(), useOpenOccurrenceFromUrl(), useCalendarHead() (+13 more)
+Nodes (24): addMonths(), canShift(), daysFrom(), isSupportedDate(), isViewMode(), monthGridDays(), shiftDate(), startOfWeek() (+16 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.13
-Nodes (6): FirestoreRepository, toFirestoreData(), lunar, reminders, valid, validateEvent()
+Nodes (25): detectFormat(), downloadFile(), downloadJson(), exportData(), ExportFile, exportFileName(), importData(), ImportFormat (+17 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.09
-Nodes (19): CATEGORY_COLORS, createDefaultSettings(), RepositoryContext, props(), first, Profile(), { rerender }, second (+11 more)
-
-### Community 22 - "Community 22"
 Cohesion: 0.07
 Nodes (28): 1. Giới thiệu / Tổng quan, 2. Mục tiêu (Goals), 3. User Stories, 4.10. Dữ liệu mẫu (để kiểm tra), 4.1. Vị trí và bật/tắt, 4.2. Tiết khí & Ngũ hành, 4.3. Nhị thập bát tú, 4.4. Thập nhị trực (+20 more)
 
-### Community 23 - "Community 23"
+### Community 22 - "Community 22"
 Cohesion: 0.07
 Nodes (29): 4. Dữ liệu 28 Tú và kết quả mapping hiện tại, Tú Đê, Tú Bích, Tú Cơ, Tú Cang, Tú Chẩn, Tú Chủy, Tú Dực (+21 more)
 
+### Community 23 - "Community 23"
+Cohesion: 0.11
+Nodes (24): MONTH_OPENING_ANGLES, MONTH_OPENING_NAMES, monthOpeningTerms(), termContextAt(), TermInstant, reference, terms, getSolarTerm() (+16 more)
+
 ### Community 24 - "Community 24"
-Cohesion: 0.12
-Nodes (23): AuspiciousHour, BadDay, DayGod, getAllHours(), getAuspiciousHours(), getBadDays(), getDayGod(), getHourGods() (+15 more)
+Cohesion: 0.13
+Nodes (20): EventDetailProps, linkLabel(), LocationPart, locationText(), splitLocation(), labels, ReminderFieldProps, ALL_DAY_PRESETS (+12 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.1
-Nodes (16): getLocalRepository(), DomainMove(), hasLocal, replace, SectionProps, Tab, TABS, THEMES (+8 more)
+Cohesion: 0.12
+Nodes (20): HiddenStemRank, hiddenStemsOf(), RANKS, TABLE, all, chi, assertStem(), NAMES (+12 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.09
-Nodes (21): ALMANAC_FIXTURES, AlmanacFixture, a, SKIP, start, BIRTH_METADATA_KEYS, withBirthDeletion(), BirthGender (+13 more)
+Cohesion: 0.16
+Nodes (16): ConfirmDialog(), ConfirmDialogProps, EventDialogsProps, Pending, useRepository(), EventListPage(), useCategoryMap(), useEventsInRange() (+8 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.14
-Nodes (17): CreateFab(), EventChip(), EventChipProps, eventLabel(), isLunarEvent(), { container }, { container, unmount }, disconnect (+9 more)
+Cohesion: 0.1
+Nodes (19): dismiss(), AnalyticsParams, enabled(), Gtag, identifyUser(), initAnalytics(), track(), Window (+11 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.12
-Nodes (21): UNAVAILABLE_REASON_CODES, CALCULATORS, PURPOSES, ROLES, SPECIAL_ROLES, SUPPORTED_PURPOSES, calculateKimLau(), AnnualAssessment (+13 more)
+Cohesion: 0.16
+Nodes (19): EventDetail(), describeRecurrence(), RecurringLike, occurrencePath(), formatAccessibleDate(), formatLunar(), formatLunarShort(), formatLunarWithYear() (+11 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.11
-Nodes (17): AnalyticsParams, enabled(), Gtag, identifyUser(), initAnalytics(), track(), Window, withPosthog() (+9 more)
+Nodes (10): AuthContext, AuthContextValue, AuthUser, TabBar(), google, signedIn, { fetchGoogleBirthday }, note (+2 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.15
-Nodes (20): categoryIdByName(), clampEndTime(), isRealDate(), multiDayRecurrence(), ParsedEvents, stableId(), textFields(), truncate() (+12 more)
+Cohesion: 0.1
+Nodes (12): OPTIONS, RecurringScopeDialog(), RecurringScopeDialogProps, useIsCompact(), useMediaQuery(), Modal(), ModalProps, { rerender } (+4 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.12
-Nodes (21): alarmLines(), compactDate(), compactDateTime(), Component, dateProp(), encoder, escapeText(), eventLines() (+13 more)
+Cohesion: 0.09
+Nodes (19): BaziSection(), baziSummary(), ELEMENT_CLASS, HIDDEN_RULES, INSIGHT_RULES, POSITION_LABEL, RANK_LABEL, STRENGTH_RULES (+11 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.08
@@ -329,52 +338,48 @@ Cohesion: 0.08
 Nodes (24): 1. Giới thiệu / Tổng quan, 2. Mục tiêu (Goals), 3. User Stories, 4.1 Hành vi chung, 4.2 Vùng nhận vuốt, 4.3 Nhận diện cử chỉ trên màn cảm ứng, 4.4 Hiệu ứng, 4.5 Trackpad trên máy tính (+16 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.18
-Nodes (20): addMonths(), canShift(), daysFrom(), isSupportedDate(), isViewMode(), monthGridDays(), shiftDate(), startOfWeek() (+12 more)
-
-### Community 35 - "Community 35"
 Cohesion: 0.08
 Nodes (23): App: `.env.local` ở thư mục gốc, Biến môi trường, Các trang chính sách cho Google OAuth, Cài đặt, Công nghệ, Cấu trúc thư mục, Chạy khi phát triển, Cloud Functions: `functions/.env` (+15 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.17
-Nodes (18): clamp(), DateRange, defaultRange(), extendAfter(), extendBefore(), isAtEnd(), isAtStart(), monthEnd() (+10 more)
+Cohesion: 0.09
+Nodes (19): next, select, unfavorable, verdict, annual, bazi, counts, extended (+11 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.09
 Nodes (22): 1. Giới thiệu / Tổng quan, 2. Mục tiêu, 3. User Stories, 4.1. Vị trí và bật/tắt, 4.2. Hồ sơ và dữ liệu đầu vào, 4.3. Quan hệ Địa Chi, 4.4. Quan hệ Thiên Can, 4.5. Ngũ hành nạp âm (+14 more)
 
 ### Community 38 - "Community 38"
+Cohesion: 0.15
+Nodes (20): addHour(), changeStartTime(), defaultReminders(), draftFromDefaults(), draftFromEvent(), draftRecurrence(), lunarOf(), RepeatEnd (+12 more)
+
+### Community 39 - "Community 39"
 Cohesion: 0.09
 Nodes (19): activityEntries, aliases, all, bad, baseline, context, ctx, day (+11 more)
 
-### Community 39 - "Community 39"
-Cohesion: 0.13
-Nodes (19): createEventFromDraft(), draftRecurrence(), draftSolarDate(), draftToInput(), EventDraft, REPEAT_OPTIONS, setCategory(), EventForm() (+11 more)
-
 ### Community 40 - "Community 40"
-Cohesion: 0.15
-Nodes (20): addHour(), changeStartTime(), defaultReminders(), draftFromDefaults(), draftFromEvent(), lunarOf(), RepeatEnd, RepeatOption (+12 more)
+Cohesion: 0.12
+Nodes (20): UNAVAILABLE_REASON_CODES, CALCULATORS, enumValue(), PURPOSES, ROLES, SPECIAL_ROLES, SUPPORTED_PURPOSES, AnnualAssessment (+12 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.12
-Nodes (16): AuthContext, AlmanacPanel(), DayCard(), DayCardProps, DayView(), almanac, card, events (+8 more)
+Cohesion: 0.11
+Nodes (12): TextSizeController(), getLocalRepository(), MigrationDialog, RepositoryProvider(), RepositoryProviderProps, { result, rerender }, main, scrollIntoView (+4 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.12
-Nodes (18): ApplicationStatus, createRuleRegistry(), isReviewDate(), RULE_SOURCES, RuleDefinition, RuleReadiness, RuleScope, RuleSource (+10 more)
+Cohesion: 0.16
+Nodes (13): EventChip(), EventChipProps, eventLabel(), isLunarEvent(), groupByDate(), SectionProps, SAMPLE, group (+5 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.16
-Nodes (14): pages, chooseTextSize(), NOW, openAdvancedDetails(), swipe(), test, TextSizeLabel, allDay (+6 more)
+Nodes (17): CreateFab(), AlmanacPanel(), AlmanacPanelProps, ELEMENT_CLASS, ElementChip(), ElementOrb(), RelationBanner(), RelationFlow() (+9 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.2
-Nodes (15): SettingsRow, SyncListener, UserProfile, baseEvent, seen, unsubscribe, CalendarRepository, CategoryInput (+7 more)
+Cohesion: 0.17
+Nodes (18): calendarHead(), getDayInfo(), info, leap, normal, dayPath(), DaySeo, daySummary() (+10 more)
 
 ### Community 45 - "Community 45"
-Cohesion: 0.14
-Nodes (18): pick(), branchDetail(), EventHourNote, eventHourNotes(), explainBranch(), explainNapAm(), explainStem(), hourChiOf() (+10 more)
+Cohesion: 0.16
+Nodes (14): pages, chooseTextSize(), NOW, openAdvancedDetails(), swipe(), test, TextSizeLabel, allDay (+6 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.1
@@ -382,7 +387,7 @@ Nodes (20): 1. Giới thiệu / Tổng quan, 2. Mục tiêu (Goals), 3. User Sto
 
 ### Community 47 - "Community 47"
 Cohesion: 0.11
-Nodes (17): activities, Activity, ACTIVITY_LABELS, ActivityAvoidance, ActivityInput, ActivityRecommendation, ActivityStatus, BadGod (+9 more)
+Nodes (19): occ(), deleteOccurrences(), { before, after }, counted, dates(), edited, gio, keys (+11 more)
 
 ### Community 48 - "Community 48"
 Cohesion: 0.15
@@ -409,120 +414,120 @@ Cohesion: 0.16
 Nodes (17): resendSender(), appUrl, db, emailFrom, onUserWritten, resendApiKey, scheduleReminders, sendDueReminders (+9 more)
 
 ### Community 54 - "Community 54"
+Cohesion: 0.14
+Nodes (16): EventDialogs(), BulkDeleteResult, createEventFromDraft(), deleteEventOccurrence(), deleteEventOccurrences(), OccurrenceSelection, draft, o (+8 more)
+
+### Community 55 - "Community 55"
 Cohesion: 0.13
 Nodes (13): DatePicker(), DatePickerProps, PanelPosition, input, onClose, onSelect, toLunar(), DAYS (+5 more)
 
-### Community 55 - "Community 55"
+### Community 56 - "Community 56"
 Cohesion: 0.11
 Nodes (16): backup, birthPlace, gio, local, parsed, reader, { repo }, { repo: cloud } (+8 more)
 
-### Community 56 - "Community 56"
-Cohesion: 0.15
-Nodes (15): link, renderDetail(), { container }, dayButtons, days, events, header, onCreate (+7 more)
-
 ### Community 57 - "Community 57"
-Cohesion: 0.11
-Nodes (18): Bổ sung dataset 1.2.0 — 05/10/2026, Các lỗi đã sửa, Cắt tóc (整容剃頭), Checklist có bằng chứng, File chính, Giới hạn còn lại, Hoàng đạo / hắc đạo, đối chiếu lichviet.me, Kết quả chính (+10 more)
+Cohesion: 0.21
+Nodes (13): SyncListener, UserProfile, baseEvent, seen, unsubscribe, CategoryInput, EventInput, newId() (+5 more)
 
 ### Community 58 - "Community 58"
-Cohesion: 0.18
-Nodes (13): authErrorMessage(), AuthUser, useAuth(), BirthInvite(), Sidebar(), SidebarProps, SyncStatus(), useOnline() (+5 more)
+Cohesion: 0.13
+Nodes (11): content, LegalPage(), LegalLinks(), DataSection(), Tab, TABS, THEMES, GROUPS (+3 more)
 
 ### Community 59 - "Community 59"
 Cohesion: 0.12
-Nodes (15): InteropContext, exportIcs(), allDay, categories, ctx, dates, exportAll(), google (+7 more)
+Nodes (11): { container }, { container, unmount }, disconnect, FakeResizeObserver, Probe(), useElementWidth(), Tab, TabBarProps (+3 more)
 
 ### Community 60 - "Community 60"
-Cohesion: 0.12
-Nodes (11): AlmanacExplain(), AlmanacExplainProps, ExplainItem, GROUP_LABEL, RELATION_VERB, TONE_BANNER, TONE_LABEL, TONE_TEXT (+3 more)
+Cohesion: 0.11
+Nodes (18): Bổ sung dataset 1.2.0 — 05/10/2026, Các lỗi đã sửa, Cắt tóc (整容剃頭), Checklist có bằng chứng, File chính, Giới hạn còn lại, Hoàng đạo / hắc đạo, đối chiếu lichviet.me, Kết quả chính (+10 more)
 
 ### Community 61 - "Community 61"
 Cohesion: 0.16
-Nodes (8): keyOf(), LocalScheduler, LocalSchedulerOptions, giỗ, later, meeting, { scheduler, shown }, START
+Nodes (15): draftSolarDate(), EventDraft, REPEAT_OPTIONS, setCategory(), EventForm(), EventFormMode, EventFormProps, date (+7 more)
 
 ### Community 62 - "Community 62"
-Cohesion: 0.18
-Nodes (10): occurrencePath(), reminderTag(), ReminderInstance, EmailContent, EmailSender, renderReminderEmail(), email, ReminderSender (+2 more)
+Cohesion: 0.14
+Nodes (10): migrateLocalToCloud(), MigrationError, MigrationResult, MigrationDialogProps, BIRTH_METADATA_KEYS, isValidBirthDate(), isValidBirthTime(), withBirthDeletion() (+2 more)
 
 ### Community 63 - "Community 63"
-Cohesion: 0.21
-Nodes (17): utcToVietnam(), wallTimeToUtc(), addMinutes(), buildEvent(), dateOf(), isCancelled(), isoOf(), keyOf() (+9 more)
+Cohesion: 0.16
+Nodes (11): CalendarRepository, RepositoryContext, useSettingsStatus(), first, Profile(), { rerender }, second, { repository, handlers } (+3 more)
 
 ### Community 64 - "Community 64"
-Cohesion: 0.15
-Nodes (13): AlmanacPanelProps, ELEMENT_CLASS, ElementChip(), ElementOrb(), RelationBanner(), RelationFlow(), ANGLES, Compass() (+5 more)
+Cohesion: 0.16
+Nodes (8): keyOf(), LocalScheduler, LocalSchedulerOptions, giỗ, later, meeting, { scheduler, shown }, START
 
 ### Community 65 - "Community 65"
-Cohesion: 0.12
-Nodes (17): 9. Phụ lục: toàn bộ JSON gốc, activities.json, bad-gods.json, code:json ({), code:json ({), code:json ({), code:json ({), code:json ({) (+9 more)
+Cohesion: 0.19
+Nodes (15): assessAnnualAfflictions(), assessPersonalAnnualAfflictions(), evaluateSatChu(), hasPair(), isBranch(), LUC_HAI, LUC_PHA, LUC_XUNG (+7 more)
 
 ### Community 66 - "Community 66"
-Cohesion: 0.13
-Nodes (9): ReminderChannel, DEAD_TOKEN_ERRORS, PushContent, sendPush(), messaging, NOW, { sender, calls }, { startTime: _s, endTime: _e, ...base } (+1 more)
+Cohesion: 0.21
+Nodes (11): NotificationState, PermissionState, readPermission(), reminderNotification(), showReminderNotification(), showTestNotification(), useNotificationStore, ReminderService() (+3 more)
 
 ### Community 67 - "Community 67"
-Cohesion: 0.23
-Nodes (14): calendarHead(), dayPath(), DaySeo, daySummary(), escapeHtml(), getDaySeo(), joinNames(), jsonLdScript() (+6 more)
+Cohesion: 0.18
+Nodes (13): authErrorMessage(), useAuth(), BirthInvite(), SyncStatus(), useOnline(), AccountSection(), DeleteAccountDialog(), repository (+5 more)
 
 ### Community 68 - "Community 68"
-Cohesion: 0.14
+Cohesion: 0.13
 Nodes (3): LocalRepository, toSettings(), watch()
 
 ### Community 69 - "Community 69"
-Cohesion: 0.14
-Nodes (11): BaziSection(), baziSummary(), ELEMENT_CLASS, HIDDEN_RULES, INSIGHT_RULES, POSITION_LABEL, RANK_LABEL, STRENGTH_RULES (+3 more)
+Cohesion: 0.12
+Nodes (17): 9. Phụ lục: toàn bộ JSON gốc, activities.json, bad-gods.json, code:json ({), code:json ({), code:json ({), code:json ({), code:json ({) (+9 more)
 
 ### Community 70 - "Community 70"
-Cohesion: 0.12
-Nodes (14): annual, bazi, counts, extended, insight, p, panel, personal (+6 more)
+Cohesion: 0.13
+Nodes (13): exportIcs(), allDay, categories, ctx, dates, exportAll(), google, ics (+5 more)
 
 ### Community 71 - "Community 71"
-Cohesion: 0.15
-Nodes (12): DayGroup(), DayGroupProps, CalendarViewProps, days, event, events, heads, list (+4 more)
+Cohesion: 0.12
+Nodes (15): 1. Giới thiệu, 2. Mục tiêu, 3. User stories, 4. Yêu cầu chức năng, 5. Ngoài phạm vi, 6. Thiết kế, 7. Lưu ý kỹ thuật, 8. Chỉ số thành công và nghiệm thu (+7 more)
 
 ### Community 72 - "Community 72"
-Cohesion: 0.31
-Nodes (13): formatAccessibleDate(), formatLunar(), formatLunarShort(), formatLunarWithYear(), formatMonthTitle(), formatMonthTitleParts(), formatRelativeDay(), formatReminderMessage() (+5 more)
+Cohesion: 0.21
+Nodes (9): CalendarDatabase, SettingsRow, CATEGORY_COLORS, createDefaultCategories(), hasLocalData(), repo, parsed, repository (+1 more)
 
 ### Community 73 - "Community 73"
 Cohesion: 0.13
-Nodes (12): afflictions, annual, dialog, full, group, notes, priority, { rerender } (+4 more)
+Nodes (14): Bổ sung dataset 1.2.0 — 05/10/2026, Các lỗi đã sửa, Cắt tóc (整容剃頭), Checklist có bằng chứng, File chính, Giới hạn còn lại, Kết quả chính, Kiểm chứng (+6 more)
 
 ### Community 74 - "Community 74"
-Cohesion: 0.13
-Nodes (14): Bổ sung dataset 1.2.0 — 05/10/2026, Các lỗi đã sửa, Cắt tóc (整容剃頭), Checklist có bằng chứng, File chính, Giới hạn còn lại, Kết quả chính, Kiểm chứng (+6 more)
+Cohesion: 0.35
+Nodes (12): addDays(), dayOfWeek(), daysInSolarMonth(), diffDays(), isLeapSolarYear(), isValidSolarDate(), jdFromDate(), jdToDate() (+4 more)
 
 ### Community 75 - "Community 75"
 Cohesion: 0.15
 Nodes (7): openCreateForm(), addEvent(), chip, fabIcon, pages, preview, switches
 
 ### Community 76 - "Community 76"
-Cohesion: 0.18
-Nodes (12): Tile(), AnnualView, FACTOR_NAMES, FeatureCell(), HanCell(), KINDS, PALACES, THAI_TUE_LABELS (+4 more)
+Cohesion: 0.14
+Nodes (11): afflictions, annual, dialog, full, group, notes, priority, { rerender } (+3 more)
 
 ### Community 77 - "Community 77"
-Cohesion: 0.16
-Nodes (11): DayGroupData, groupByMonthAndDay(), groupByYear(), MonthGroupData, events, [month], occurrences, RANGE (+3 more)
+Cohesion: 0.2
+Nodes (10): link, renderDetail(), events, [month], occurrences, RANGE, weekly, years (+2 more)
 
 ### Community 78 - "Community 78"
 Cohesion: 0.14
 Nodes (13): 1. Tài liệu đầu vào và kết luận sử dụng, 2. Các điểm đã làm rõ từ tài liệu, 3.1. File Can Chi, 3.2. File hạn năm, 3.3. File chuẩn hóa giờ sinh, 3. Audit các vấn đề cần xử lý, 4. Phạm vi và thứ tự phát hành, 5. Đề xuất mô hình và tích hợp (+5 more)
 
 ### Community 79 - "Community 79"
-Cohesion: 0.18
-Nodes (9): fireAt, fromDate, lastMovedKey, maxOffsetMinutes(), nextReminderBatch(), ReminderBatch, upcomingReminders(), Reminder (+1 more)
-
-### Community 80 - "Community 80"
 Cohesion: 0.15
 Nodes (10): reminderFireAt(), daily, e, fire, giỗ, gym, next, NOW (+2 more)
 
+### Community 80 - "Community 80"
+Cohesion: 0.18
+Nodes (9): fireAt, fromDate, lastMovedKey, maxOffsetMinutes(), nextReminderBatch(), ReminderBatch, upcomingReminders(), Reminder (+1 more)
+
 ### Community 81 - "Community 81"
-Cohesion: 0.21
-Nodes (11): getActivityAvoidances(), getActivityRecommendations(), avoidIds(), baseline, cutHair(), input, result, row (+3 more)
+Cohesion: 0.19
+Nodes (10): NguHanh, mansion(), rows, getMansion(), Mansion, MansionRow, MANSIONS, m (+2 more)
 
 ### Community 82 - "Community 82"
-Cohesion: 0.17
-Nodes (10): DailyActivitySection(), Factor, FactorCard(), FactorGroup(), OFFICERS, STATUS, next, select (+2 more)
+Cohesion: 0.19
+Nodes (11): AnnualFengShuiSection(), AnnualView, FACTOR_NAMES, FeatureCell(), HanCell(), KINDS, PALACES, THAI_TUE_LABELS (+3 more)
 
 ### Community 83 - "Community 83"
 Cohesion: 0.15
@@ -530,256 +535,292 @@ Nodes (12): 10. Nguồn, 1. Mục tiêu và phạm vi, 2. Schema đầu vào và
 
 ### Community 84 - "Community 84"
 Cohesion: 0.15
-Nodes (13): 5. Toàn bộ quy tắc 12 Trực, Trực Bế (`be`), Trực Bình (`binh`), Trực Chấp (`chap`), Trực Khai (`khai`), Trực Kiến (`kien`), Trực Mãn (`man`), Trực Nguy (`nguy`) (+5 more)
+Nodes (13): 10. Phụ lục: logic runtime nguyên văn, code:ts (import data from '../almanac-data/event-mapping.json'), code:ts (import type { SolarDateString } from '../types'), code:ts (// Nhị thập bát tú: 28 sao luân phiên trực mỗi ngày.), code:ts (// Thông tin lịch vạn niên đầy đủ của một ngày, dùng cho khố), code:tsx (import { useMemo, useState } from 'react'), code:ts (import activitiesData from '../almanac-data/activities.json'), shared/lunar/activityRecommendations.ts (+5 more)
 
 ### Community 85 - "Community 85"
 Cohesion: 0.15
-Nodes (13): 10. Phụ lục: logic runtime nguyên văn, code:ts (import data from '../almanac-data/event-mapping.json'), code:ts (import type { SolarDateString } from '../types'), code:ts (// Nhị thập bát tú: 28 sao luân phiên trực mỗi ngày.), code:ts (// Thông tin lịch vạn niên đầy đủ của một ngày, dùng cho khố), code:tsx (import { useMemo, useState } from 'react'), code:ts (import activitiesData from '../almanac-data/activities.json'), shared/lunar/activityRecommendations.ts (+5 more)
+Nodes (13): 5. Toàn bộ quy tắc 12 Trực, Trực Bế (`be`), Trực Bình (`binh`), Trực Chấp (`chap`), Trực Khai (`khai`), Trực Kiến (`kien`), Trực Mãn (`man`), Trực Nguy (`nguy`) (+5 more)
 
 ### Community 86 - "Community 86"
 Cohesion: 0.17
-Nodes (10): after, before, { branchRelation }, { elementRelation }, { elementRelation, stemRelation }, elements, matches, r (+2 more)
+Nodes (6): ReminderChannel, messaging, NOW, { sender, calls }, { startTime: _s, endTime: _e, ...base }, QueueDoc
 
 ### Community 87 - "Community 87"
-Cohesion: 0.21
-Nodes (9): mansion(), rows, getMansion(), Mansion, MansionRow, MANSIONS, m, names (+1 more)
+Cohesion: 0.17
+Nodes (10): after, before, { branchRelation }, { elementRelation }, { elementRelation, stemRelation }, elements, matches, r (+2 more)
 
 ### Community 88 - "Community 88"
-Cohesion: 0.21
-Nodes (6): migrateLocalToCloud(), MigrationError, MigrationResult, MigrationDialogProps, isValidBirthDate(), isValidBirthTime()
+Cohesion: 0.17
+Nodes (10): ApplicationStatus, isReviewDate(), RULE_SOURCES, RuleReadiness, RuleScope, RuleSource, SCOPES, STATUSES (+2 more)
 
 ### Community 89 - "Community 89"
-Cohesion: 0.17
-Nodes (11): Clarifying Questions (Guidelines), code:block1 (1. What is the primary goal of this feature?), Example Format, Final instructions, Formatting Requirements, Goal, Output, PRD Structure (+3 more)
+Cohesion: 0.23
+Nodes (7): ThemeController(), useSettings(), Toast(), ToastProps, InToastRegion(), RegionContext, ToastRegionProvider()
 
 ### Community 90 - "Community 90"
 Cohesion: 0.17
-Nodes (11): Cấu hình project, Code dùng chung (frontend + Cloud Functions), Dữ liệu, Firebase và nhắc hẹn, Giao diện, Instructions for Completing Tasks, Notes, Relevant Files (+3 more)
+Nodes (11): Clarifying Questions (Guidelines), code:block1 (1. What is the primary goal of this feature?), Example Format, Final instructions, Formatting Requirements, Goal, Output, PRD Structure (+3 more)
 
 ### Community 91 - "Community 91"
 Cohesion: 0.17
-Nodes (11): Analytics và hướng dẫn, code:ts (useSwipeNavigation({), E2E, Gợi ý lần đầu, Gắn vào trang lịch, Hook nhận vuốt, Instructions for Completing Tasks, Logic cử chỉ (+3 more)
+Nodes (11): Cấu hình project, Code dùng chung (frontend + Cloud Functions), Dữ liệu, Firebase và nhắc hẹn, Giao diện, Instructions for Completing Tasks, Notes, Relevant Files (+3 more)
 
 ### Community 92 - "Community 92"
-Cohesion: 0.25
-Nodes (10): ready(), assessPersonalDay(), branchRelation(), COMBINATIONS, elementRelation(), ELEMENTS, PERSONAL_RULE_IDS, stemRelation() (+2 more)
+Cohesion: 0.17
+Nodes (11): Analytics và hướng dẫn, code:ts (useSwipeNavigation({), E2E, Gợi ý lần đầu, Gắn vào trang lịch, Hook nhận vuốt, Instructions for Completing Tasks, Logic cử chỉ (+3 more)
 
 ### Community 93 - "Community 93"
+Cohesion: 0.22
+Nodes (6): calculateHoangOc(), PALACE_IDS, calculateTamTai(), CYCLES, HoangOcValue, TamTaiValue
+
+### Community 94 - "Community 94"
 Cohesion: 0.27
 Nodes (6): DaySeoModule, prerenderDays(), renderPage(), replaceOnce(), setMeta(), publicLegalPages()
 
-### Community 94 - "Community 94"
+### Community 95 - "Community 95"
 Cohesion: 0.18
 Nodes (4): base, observers, save, toolbar
 
-### Community 95 - "Community 95"
+### Community 96 - "Community 96"
+Cohesion: 0.18
+Nodes (9): { container }, dayButtons, days, events, header, onCreate, onOpenDay, resize (+1 more)
+
+### Community 97 - "Community 97"
 Cohesion: 0.18
 Nodes (10): Bố cục ở cỡ chữ lớn, Chuyển CSS và icon theo tỉ lệ, Dữ liệu cài đặt, Hạ tầng phóng to, Instructions for Completing Tasks, Kiểm thử end-to-end, Mục "Cỡ chữ" (tab Hiển thị), Notes (+2 more)
 
-### Community 96 - "Community 96"
+### Community 98 - "Community 98"
 Cohesion: 0.18
 Nodes (10): 1. Kết quả cần đạt, 2. Nguồn và quyết định kiểm chứng, 3. Input, validation và mốc thời gian, 4. Bảng Thiên can xung, 5. Quan hệ với MVP, 6. Các quy tắc hoãn, 7. Giao diện, nguồn và riêng tư, 8. Fixture và nghiệm thu (+2 more)
 
-### Community 97 - "Community 97"
-Cohesion: 0.2
-Nodes (9): beforeBirth, construction, definitions, input, missing, profile, removed, requiredIds (+1 more)
-
-### Community 98 - "Community 98"
-Cohesion: 0.24
-Nodes (7): BulkDeleteResult, deleteEventOccurrence(), deleteEventOccurrences(), OccurrenceSelection, draft, o, save
-
 ### Community 99 - "Community 99"
-Cohesion: 0.38
-Nodes (8): matchesQuery(), normalizeText(), queryWords(), searchEvents(), SearchResult, events, gio, results
+Cohesion: 0.22
+Nodes (8): reminderTag(), EmailSender, DEAD_TOKEN_ERRORS, PushContent, sendPush(), ReminderSender, createReminderSender(), SenderDeps
 
 ### Community 100 - "Community 100"
 Cohesion: 0.2
-Nodes (9): chip, dayClashes, dialog, hours, now, panel, { unmount }, user (+1 more)
+Nodes (9): beforeBirth, construction, definitions, input, missing, profile, removed, requiredIds (+1 more)
 
 ### Community 101 - "Community 101"
+Cohesion: 0.24
+Nodes (8): createDefaultSettings(), props(), settings(), p, { rerender }, settings, props(), viewProps()
+
+### Community 102 - "Community 102"
+Cohesion: 0.38
+Nodes (8): matchesQuery(), normalizeText(), queryWords(), searchEvents(), SearchResult, events, gio, results
+
+### Community 103 - "Community 103"
+Cohesion: 0.2
+Nodes (9): chip, dayClashes, dialog, hours, now, panel, { unmount }, user (+1 more)
+
+### Community 104 - "Community 104"
+Cohesion: 0.29
+Nodes (5): canonicalUrl(), isLegacyHost(), DomainMove(), hasLocal, replace
+
+### Community 105 - "Community 105"
 Cohesion: 0.2
 Nodes (9): Dữ liệu, Instructions for Completing Tasks, Kiểm thử end-to-end, Logic thuần (dùng chung, dễ test), Notes, Relevant Files, Tích hợp, Tasks (+1 more)
 
-### Community 102 - "Community 102"
+### Community 106 - "Community 106"
 Cohesion: 0.2
 Nodes (9): Instructions for Completing Tasks, Kế hoạch sửa SEO theo audit 02/10/2026, Kết quả, Nội dung, Notes, Prerender và head, Relevant Files, Route và hiệu năng (+1 more)
 
-### Community 103 - "Community 103"
+### Community 107 - "Community 107"
 Cohesion: 0.47
 Nodes (7): defaultStartTime(), minutesNowInVietnam(), minutesToTime(), shifted(), timeToMinutes(), todayInVietnam(), vietnamDateTimeToDate()
 
-### Community 104 - "Community 104"
-Cohesion: 0.22
-Nodes (8): buildAnnualContext(), parse(), context, definitions, result, assessAnnualFengShui(), enumValue(), FENG_SHUI_RULES
-
-### Community 105 - "Community 105"
+### Community 108 - "Community 108"
 Cohesion: 0.22
 Nodes (7): api, { assessPersonalStars }, expected, modules, result, rules, validCanChi
 
-### Community 106 - "Community 106"
-Cohesion: 0.22
-Nodes (8): bazi, elements, insight, pillars, rules, settings, toggle, year
-
-### Community 107 - "Community 107"
-Cohesion: 0.22
-Nodes (8): code:markdown (## Relevant Files), Goal, Interaction Model, Output, Output Format, Process, Rule: Generating a Task List from User Requirements, Target Audience
-
-### Community 108 - "Community 108"
-Cohesion: 0.22
-Nodes (8): Dữ liệu tham chiếu (soạn từ licham.vn), Giao diện, Instructions for Completing Tasks, Kiểm thử end-to-end, Logic thuần, Notes, Relevant Files, Tasks
-
 ### Community 109 - "Community 109"
 Cohesion: 0.22
-Nodes (8): Dữ liệu và thuật toán, Decision log, Giả định và yêu cầu phi chức năng, Giao diện, Kiểm thử, Tóm tắt yêu cầu, Thiết kế được chọn, Thiết kế: Phạm Thái Tuế, Tuế Phá, Tam Sát và Sát Chủ
+Nodes (8): days, event, events, heads, list, onOpenDay, onOpenEvent, { rerender }
 
 ### Community 110 - "Community 110"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): code:markdown (## Relevant Files), Goal, Interaction Model, Output, Output Format, Process, Rule: Generating a Task List from User Requirements, Target Audience
 
 ### Community 111 - "Community 111"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): Dữ liệu tham chiếu (soạn từ licham.vn), Giao diện, Instructions for Completing Tasks, Kiểm thử end-to-end, Logic thuần, Notes, Relevant Files, Tasks
 
 ### Community 112 - "Community 112"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): Dữ liệu và thuật toán, Decision log, Giả định và yêu cầu phi chức năng, Giao diện, Kiểm thử, Tóm tắt yêu cầu, Thiết kế được chọn, Thiết kế: Phạm Thái Tuế, Tuế Phá, Tam Sát và Sát Chủ
 
 ### Community 113 - "Community 113"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [ref=e2]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): code:block1 (Error: expect(received).toEqual(expected) // deep equality), code:yaml (- generic [ref=e2]:), code:ts (1   | import { test, expect } from '@playwright/test'), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 114 - "Community 114"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): code:block1 (Error: expect(received).toEqual(expected) // deep equality), code:yaml (- generic [ref=e1]:), code:ts (1   | import { test, expect } from '@playwright/test'), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 115 - "Community 115"
 Cohesion: 0.22
-Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [ref=e2]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
+Nodes (8): code:block1 (Error: expect(received).toEqual(expected) // deep equality), code:yaml (- generic [active] [ref=e1]:), code:ts (1   | import { test, expect } from '@playwright/test'), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 116 - "Community 116"
-Cohesion: 0.25
-Nodes (7): dark, deferUpdate, footer, links, menu, policies, toastClose
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 117 - "Community 117"
-Cohesion: 0.25
-Nodes (4): client, data, PushData, url
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 118 - "Community 118"
-Cohesion: 0.25
-Nodes (7): anon, batch, bob, category, data, db, event
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 119 - "Community 119"
-Cohesion: 0.29
-Nodes (6): calculateSaoHan(), HAN_MAP, SAO_MAP, SaoHanGender, SaoHanResult, AnnualFengShuiSection()
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [ref=e2]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 120 - "Community 120"
-Cohesion: 0.29
-Nodes (6): Evidence, FengShuiSources(), RULE_LABELS, SOURCE_LABELS, FengShuiGuideSection(), reviewedRules
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [active] [ref=e1]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 121 - "Community 121"
-Cohesion: 0.25
-Nodes (7): Hồ sơ, lưu trữ và giao diện, Instructions for Completing Tasks, Logic thuần và dữ liệu đề xuất, Notes, Relevant Files, Tài liệu và nguồn cần tạo, Tasks
+Cohesion: 0.22
+Nodes (8): code:block1 (Error: expect(page).toHaveScreenshot(expected) failed), code:yaml (- generic [ref=e2]:), code:ts (1  | import { expect, openCreateForm, test } from './fixture), Error details, Instructions, Page snapshot, Test info, Test source
 
 ### Community 122 - "Community 122"
-Cohesion: 0.25
-Nodes (7): Bằng chứng phát hành, Chưa hỗ trợ hoặc chưa phát hành, Checklist phát hành Phong thủy cá nhân, Hiệu năng, dung lượng và offline, Privacy, Quyết định phát hành, Trạng thái từng lớp
+Cohesion: 0.29
+Nodes (5): ALMANAC_FIXTURES, AlmanacFixture, a, SKIP, start
 
 ### Community 123 - "Community 123"
 Cohesion: 0.25
-Nodes (7): 1. Danh mục 27 hoạt động, 2. Mapping 11 sự kiện, 3. Toàn bộ từ khóa parser Tú, 6. Cát thần, 7. Hung thần, 8. Những điểm cần rà trước khi sửa, Toàn bộ mapping xem ngày — bản xuất để kiểm tra
+Nodes (7): dark, deferUpdate, footer, links, menu, policies, toastClose
 
 ### Community 124 - "Community 124"
-Cohesion: 0.33
-Nodes (5): menu, menuButton(), tabBar(), tabs, toast
+Cohesion: 0.25
+Nodes (4): client, data, PushData, url
 
 ### Community 125 - "Community 125"
-Cohesion: 0.29
-Nodes (4): { fetchGoogleBirthday }, note, repositories, select
+Cohesion: 0.25
+Nodes (7): anon, batch, bob, category, data, db, event
 
 ### Community 126 - "Community 126"
-Cohesion: 0.29
-Nodes (6): Cấu hình benchmark, Kết luận chọn, Lựa chọn tzdb, Đánh giá engine thời gian sinh P3, Quyết định chặn đã đóng, Việc chuyển sang task 7
+Cohesion: 0.25
+Nodes (6): DailyActivitySection(), Factor, FactorCard(), FactorGroup(), OFFICERS, STATUS
 
 ### Community 127 - "Community 127"
-Cohesion: 0.4
-Nodes (3): calculateHoangOc(), PALACE_IDS, HoangOcValue
+Cohesion: 0.29
+Nodes (6): Evidence, FengShuiSources(), RULE_LABELS, SOURCE_LABELS, FengShuiGuideSection(), reviewedRules
 
 ### Community 128 - "Community 128"
-Cohesion: 0.4
-Nodes (4): Evidence, EvidenceStatus, extractMansionEvidence(), MansionText
+Cohesion: 0.25
+Nodes (7): Hồ sơ, lưu trữ và giao diện, Instructions for Completing Tasks, Logic thuần và dữ liệu đề xuất, Notes, Relevant Files, Tài liệu và nguồn cần tạo, Tasks
 
 ### Community 129 - "Community 129"
-Cohesion: 0.33
-Nodes (5): csv, { events, skipped }, lines, original, years
+Cohesion: 0.25
+Nodes (7): Bằng chứng phát hành, Chưa hỗ trợ hoặc chưa phát hành, Checklist phát hành Phong thủy cá nhân, Hiệu năng, dung lượng và offline, Privacy, Quyết định phát hành, Trạng thái từng lớp
 
 ### Community 130 - "Community 130"
-Cohesion: 0.33
-Nodes (5): Cách kiểm chứng Thập thần, Kết quả kiểm tra (02/10/2026), Lớp chưa mở, Lớp đã mở, Nghiệm thu P4: giải nghĩa Bát Tự
+Cohesion: 0.25
+Nodes (7): 1. Danh mục 27 hoạt động, 2. Mapping 11 sự kiện, 3. Toàn bộ từ khóa parser Tú, 6. Cát thần, 7. Hung thần, 8. Những điểm cần rà trước khi sửa, Toàn bộ mapping xem ngày — bản xuất để kiểm tra
 
 ### Community 131 - "Community 131"
 Cohesion: 0.33
-Nodes (5): Benchmark, Giới hạn, Kiểm tra dự án, Phạm vi hoàn tất, Task 6 — nghiệm thu nền tảng thời gian sinh P3
+Nodes (5): calculateSaoHan(), HAN_MAP, SAO_MAP, SaoHanGender, SaoHanResult
 
 ### Community 132 - "Community 132"
-Cohesion: 0.5
-Nodes (3): calculateTamTai(), CYCLES, TamTaiValue
+Cohesion: 0.33
+Nodes (5): menu, menuButton(), tabBar(), tabs, toast
+
+### Community 133 - "Community 133"
+Cohesion: 0.29
+Nodes (6): isEvent(), isValidEvent(), lunar, reminders, valid, validateEvent()
+
+### Community 134 - "Community 134"
+Cohesion: 0.29
+Nodes (6): almanac, card, events, list, onOpenEvent, settings
 
 ### Community 135 - "Community 135"
-Cohesion: 0.6
-Nodes (3): HourGrid(), HourGridProps, hourIndexAt()
+Cohesion: 0.48
+Nodes (4): HourGrid(), HourGridProps, hourIndexAt(), useNow()
 
 ### Community 136 - "Community 136"
-Cohesion: 0.4
-Nodes (4): Instructions for Completing Tasks, Notes, Relevant Files, Tasks
+Cohesion: 0.29
+Nodes (6): Cấu hình benchmark, Kết luận chọn, Lựa chọn tzdb, Đánh giá engine thời gian sinh P3, Quyết định chặn đã đóng, Việc chuyển sang task 7
 
 ### Community 137 - "Community 137"
-Cohesion: 0.4
-Nodes (4): Bằng chứng, Phạm vi có thể phát hành, Phạm vi tiếp tục pending, Task 5 — nghiệm thu quan hệ cá nhân mở rộng P2
+Cohesion: 0.33
+Nodes (5): Instructions for Completing Tasks, Notes, Relevant Files, Tasks, Tasks: Popup mời cài Lịch Việt để dùng offline
 
 ### Community 138 - "Community 138"
-Cohesion: 0.4
-Nodes (4): Đối chiếu và giới hạn, Kết quả và quy ước, Kiểm tra, Nghiệm thu can chi và nguồn chung 24 tiết khí — 06/10/2026
+Cohesion: 0.33
+Nodes (5): Cách kiểm chứng Thập thần, Kết quả kiểm tra (02/10/2026), Lớp chưa mở, Lớp đã mở, Nghiệm thu P4: giải nghĩa Bát Tự
 
 ### Community 139 - "Community 139"
-Cohesion: 0.4
-Nodes (4): Notes, Relevant Files, Tasks, UI Consistency Personal Feng Shui and Almanac
+Cohesion: 0.33
+Nodes (5): Benchmark, Giới hạn, Kiểm tra dự án, Phạm vi hoàn tất, Task 6 — nghiệm thu nền tảng thời gian sinh P3
 
 ### Community 140 - "Community 140"
-Cohesion: 0.4
-Nodes (4): Bằng chứng tự động, Dung lượng và giới hạn nghiệm thu, Phạm vi triển khai, Task 4 — tích hợp Phong thủy cá nhân và hạn năm
+Cohesion: 0.33
+Nodes (5): Bằng chứng tự động, Giới hạn và quyết định, Đối chiếu PRD, Nghiệm thu popup mời cài app — 06/10/2026, Phạm vi triển khai
 
 ### Community 141 - "Community 141"
 Cohesion: 0.4
-Nodes (4): Biên và giới hạn, Kiểm tra dự án, Phạm vi hoàn tất, Task 7 — nghiệm thu hồ sơ sinh và Tứ Trụ P3
+Nodes (3): ReminderInstance, renderReminderEmail(), email
 
 ### Community 142 - "Community 142"
 Cohesion: 0.4
+Nodes (4): context, definitions, result, FENG_SHUI_RULES
+
+### Community 144 - "Community 144"
+Cohesion: 0.4
+Nodes (4): Instructions for Completing Tasks, Notes, Relevant Files, Tasks
+
+### Community 145 - "Community 145"
+Cohesion: 0.4
+Nodes (4): Bằng chứng, Phạm vi có thể phát hành, Phạm vi tiếp tục pending, Task 5 — nghiệm thu quan hệ cá nhân mở rộng P2
+
+### Community 146 - "Community 146"
+Cohesion: 0.4
+Nodes (4): Đối chiếu và giới hạn, Kết quả và quy ước, Kiểm tra, Nghiệm thu can chi và nguồn chung 24 tiết khí — 06/10/2026
+
+### Community 147 - "Community 147"
+Cohesion: 0.4
+Nodes (4): Notes, Relevant Files, Tasks, UI Consistency Personal Feng Shui and Almanac
+
+### Community 148 - "Community 148"
+Cohesion: 0.4
+Nodes (4): Bằng chứng tự động, Dung lượng và giới hạn nghiệm thu, Phạm vi triển khai, Task 4 — tích hợp Phong thủy cá nhân và hạn năm
+
+### Community 149 - "Community 149"
+Cohesion: 0.4
+Nodes (4): Biên và giới hạn, Kiểm tra dự án, Phạm vi hoàn tất, Task 7 — nghiệm thu hồ sơ sinh và Tứ Trụ P3
+
+### Community 150 - "Community 150"
+Cohesion: 0.4
 Nodes (4): Kiểm tra tài liệu, Quyết định an toàn phương pháp, Task 9 — nghiệm thu đặc tả luận giải Bát Tự P4, Đầu ra
 
-### Community 143 - "Community 143"
+### Community 152 - "Community 152"
 Cohesion: 0.5
 Nodes (3): panel, rect, time
 
-### Community 145 - "Community 145"
+### Community 154 - "Community 154"
 Cohesion: 0.5
 Nodes (3): Answer, Q: Why does iconSize connect so many communities?, Source Nodes
 
 ## Knowledge Gaps
-- **1206 isolated node(s):** `EventField`, `EventErrors`, `EventLike`, `CalendarType`, `RecurrenceFreq` (+1201 more)
+- **1251 isolated node(s):** `EventField`, `EventErrors`, `EventLike`, `CalendarType`, `RecurrenceFreq` (+1246 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `iconSize()` connect `Community 27` to `Community 64`, `Community 2`, `Community 69`, `Community 135`, `Community 39`, `Community 41`, `Community 11`, `Community 76`, `Community 45`, `Community 17`, `Community 18`, `Community 19`, `Community 82`, `Community 119`, `Community 25`, `Community 58`, `Community 60`, `Community 29`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
-- **Why does `getDayInfo()` connect `Community 24` to `Community 2`, `Community 67`, `Community 5`, `Community 6`, `Community 71`, `Community 41`, `Community 12`, `Community 14`, `Community 15`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
-- **Why does `addDays()` connect `Community 4` to `Community 34`, `Community 67`, `Community 6`, `Community 13`, `Community 14`, `Community 26`, `Community 63`, `Community 30`, `Community 31`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `iconSize()` connect `Community 43` to `Community 0`, `Community 3`, `Community 7`, `Community 135`, `Community 19`, `Community 24`, `Community 26`, `Community 27`, `Community 29`, `Community 30`, `Community 31`, `Community 42`, `Community 58`, `Community 59`, `Community 61`, `Community 63`, `Community 67`, `Community 82`, `Community 89`, `Community 104`, `Community 126`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `lunarToSolar()` connect `Community 14` to `Community 2`, `Community 133`, `Community 79`, `Community 48`, `Community 61`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+- **Why does `addDays()` connect `Community 74` to `Community 2`, `Community 5`, `Community 8`, `Community 44`, `Community 12`, `Community 16`, `Community 19`, `Community 54`, `Community 122`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **What connects `EventField`, `EventErrors`, `EventLike` to the rest of the system?**
-  _1206 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1251 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

@@ -1,3 +1,4 @@
+import { InstallInvitation } from './components/InstallInvitation/InstallInvitation'
 import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { DomainMove } from './components/DomainMove/DomainMove'
@@ -25,6 +26,7 @@ function App() {
       <UpdatePrompt />
       <DomainMove />
       <Welcome />
+      <InstallInvitation />
       <Routes>
         {/* Trang chủ hiện xem Ngày của hôm nay ngay tại "/", không chuyển sang /day/...: giữ
             canonical "/" cho trang chủ, mỗi /day/YYYY-MM-DD là một trang riêng. */}

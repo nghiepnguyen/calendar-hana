@@ -14,7 +14,7 @@ export function ToastRegionProvider({ children }: { children: ReactNode }) {
   return (
     <RegionContext.Provider value={region}>
       {children}
-      <div ref={setRegion} className={styles.region} />
+      <div data-toast-region ref={setRegion} className={styles.region} />
     </RegionContext.Provider>
   )
 }
