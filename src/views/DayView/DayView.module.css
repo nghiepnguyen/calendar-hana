@@ -18,3 +18,14 @@
   color: var(--text-muted);
   font-size: calc(14px * var(--ui-scale));
 }
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: calc(8px * var(--ui-scale));
+}
+.empty p {
+  margin: 0;
+}

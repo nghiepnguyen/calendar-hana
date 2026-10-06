@@ -1,5 +1,6 @@
-import { screen, within } from '@testing-library/react'
-import { render } from '../../test/render'
+import { screen, within, fireEvent } from '@testing-library/react'
+import { render as renderBase } from '../../test/render'
+import type { ReactElement } from 'react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { Occurrence } from '@shared/recurrence/recurrence'
@@ -187,7 +188,9 @@ describe('personal panel features', () => {
     render(<PersonalFengShuiPanel date="2026-09-23" settings={full} />)
     // 1/7/1990 08:30 TP.HCM: Nhật Nguyên Đinh; ngày 23/9/2026 là Canh Tý → Chính Tài.
     const stem = screen.getByRole('region', { name: 'Quan hệ Thiên can' })
-    expect(within(stem).queryByRole('group', { name: 'Thập thần của ngày đang xem' })).not.toBeInTheDocument()
+    expect(
+      within(stem).queryByRole('group', { name: 'Thập thần của ngày đang xem' }),
+    ).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Thập thần ngày' })).toHaveTextContent(
       'Thập thần: Chính Tài',
     )
@@ -200,23 +203,36 @@ describe('personal panel features', () => {
       birthTimePrecision: 'exact',
       birthTimeUncertaintyMinutes: 0,
       birthPlace: {
-        countryCode: 'VN', subdivisionCode: 'VN-SG', label: 'TP. Hồ Chí Minh',
-        latitude: 10.76, longitude: 106.66, coordinateSource: 'bundledGazetteer', coordinateAccuracyKm: 10,
+        countryCode: 'VN',
+        subdivisionCode: 'VN-SG',
+        label: 'TP. Hồ Chí Minh',
+        latitude: 10.76,
+        longitude: 106.66,
+        coordinateSource: 'bundledGazetteer',
+        coordinateAccuracyKm: 10,
       },
-      birthTimezoneId: 'Asia/Ho_Chi_Minh', birthTimezoneSource: 'bundledMapping',
-      birthConfirmedOffsetMinutes: null, birthZiPolicy: 'splitZi',
+      birthTimezoneId: 'Asia/Ho_Chi_Minh',
+      birthTimezoneSource: 'bundledMapping',
+      birthConfirmedOffsetMinutes: null,
+      birthZiPolicy: 'splitZi',
     })
     render(<PersonalFengShuiPanel date="2026-09-23" settings={full} />)
-    const grid = screen.getByRole('region', { name: 'Phong thủy cá nhân' }).querySelector('[class*="bento"]')!
-    expect(Array.from(grid.querySelectorAll('section[aria-label]')).slice(0, 4).map((node) => node.getAttribute('aria-label'))).toEqual([
-      'Thập thần ngày', 'Quan hệ Địa chi', 'Quan hệ Thiên can', 'Quan hệ Nạp âm',
-    ])
+    const grid = screen.getByRole('region', { name: 'Vì sao có kết luận này?' })
+    expect(
+      Array.from(grid.querySelectorAll('section[aria-label]'))
+        .slice(0, 4)
+        .map((node) => node.getAttribute('aria-label')),
+    ).toEqual(['Thập thần ngày', 'Quan hệ Địa chi', 'Quan hệ Thiên can', 'Quan hệ Nạp âm'])
   })
 
   it('shows the nap am name for Tân Hợi', () => {
     at('10:00')
-    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings({ birthDate: '1971-01-29' })} />)
-    expect(screen.getByRole('region', { name: 'Quan hệ Nạp âm' })).toHaveTextContent('Thoa Xuyến Kim')
+    render(
+      <PersonalFengShuiPanel date="2026-09-23" settings={settings({ birthDate: '1971-01-29' })} />,
+    )
+    expect(screen.getByRole('region', { name: 'Quan hệ Nạp âm' })).toHaveTextContent(
+      'Thoa Xuyến Kim',
+    )
   })
 
   it('asks for birth time and place before showing the viewed day Ten God', () => {
@@ -229,3 +245,17 @@ describe('personal panel features', () => {
     )
   })
 })
+
+// Existing content assertions exercise the explicit advanced navigation.
+function render(ui: ReactElement) {
+  const result = renderBase(ui)
+  const advanced = screen.queryByRole('button', { name: /Luận đoán nâng cao/ })
+  if (advanced) {
+    fireEvent.click(advanced)
+    for (const name of [/^Hạn theo năm/, /^Tứ trụ theo giờ sinh/]) {
+      const toggle = screen.queryByRole('button', { name })
+      if (toggle) fireEvent.click(toggle)
+    }
+  }
+  return result
+}

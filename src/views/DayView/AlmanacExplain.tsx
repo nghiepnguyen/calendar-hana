@@ -6,7 +6,7 @@ export interface ExplainItem {
   title: string
   isGood: boolean
   /** Ghi đè nhãn Tốt/Xấu, ví dụ "Bình hòa" cho kết quả trung tính. */
-  verdict?: { label: string; tone: 'good' | 'bad' | 'neutral' }
+  verdict?: { label: string; tone: 'good' | 'bad' | 'neutral' | 'attention' }
   meaning?: string
   /** Các dòng "vì sao ra kết quả này", hiện dạng danh sách ngắn. */
   reasons?: readonly string[]
@@ -30,7 +30,9 @@ export function AlmanacExplain({ item, onClose }: AlmanacExplainProps) {
               ? styles.pillGood
               : (item.verdict?.tone ?? 'bad') === 'neutral'
                 ? styles.pillNeutral
-                : styles.pillBad
+                : item.verdict?.tone === 'attention'
+                  ? styles.pillAttention
+                  : styles.pillBad
           }`}
         >
           {item.verdict?.label ?? (item.isGood ? 'Tốt' : 'Xấu')}

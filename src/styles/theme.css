@@ -679,3 +679,17 @@ input[type='radio'],
 input[type='checkbox']:not(.check):not(.switch) {
   accent-color: var(--accent);
 }
+
+/* Decision semantics inherit the active light/dark theme. */
+:root {
+  --semantic-positive: var(--almanac-good);
+  --semantic-positive-subtle: var(--almanac-good-bg);
+  --semantic-attention: var(--gold);
+  --semantic-attention-subtle: var(--almanac-warn-bg);
+  --semantic-negative: var(--almanac-bad);
+  --semantic-negative-subtle: var(--almanac-bad-bg);
+  --semantic-neutral: var(--text-muted);
+  --semantic-neutral-subtle: var(--fill);
+  --semantic-info: var(--focus);
+  --semantic-info-subtle: var(--fill);
+}

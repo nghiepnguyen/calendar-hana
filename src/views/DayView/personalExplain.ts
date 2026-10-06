@@ -7,7 +7,7 @@ type Ready = Extract<ReturnType<typeof assessPersonalDay>, { status: 'ready' }>
 const VERDICT: Record<Tone, ExplainItem['verdict']> = {
   favorable: { label: 'Thuận', tone: 'good' },
   neutral: { label: 'Bình hòa', tone: 'neutral' },
-  caution: { label: 'Lưu ý', tone: 'bad' },
+  caution: { label: 'Lưu ý', tone: 'attention' },
 }
 
 /** Chi mở đầu mỗi nhóm tam hợp, theo số dư khi chia 4: Thân Tý Thìn, Tỵ Dậu Sửu, Dần Ngọ Tuất, Hợi Mão Mùi. */
@@ -90,7 +90,9 @@ export function explainStem(r: Ready): ExplainItem {
     reasons: [
       'Sinh nhập (hành ngày sinh hành tuổi) và cùng hành là thuận; sinh xuất là bình hòa; khắc là lưu ý.',
       ...(r.stem.element.kind === 'overcomeBy'
-        ? ['Khắc xuất: Tuổi của bạn khắc được năng lượng ngày, chủ về chủ động kiểm soát công việc nhưng tốn chút sức lực.']
+        ? [
+            'Khắc xuất: Tuổi của bạn khắc được năng lượng ngày, chủ về chủ động kiểm soát công việc nhưng tốn chút sức lực.',
+          ]
         : []),
       ...(day === birth ? ['Cùng Thiên can được xem là bình hòa.'] : []),
     ],

@@ -102,7 +102,7 @@ const TONE_TILE: Record<Tone, string> = {
 const TONE_BANNER: Record<Tone, string> = {
   favorable: almanac.relationGood,
   neutral: styles.relationNeutral,
-  caution: almanac.relationBad,
+  caution: styles.relationAttention,
 }
 
 function TonePill({ tone, label = TONE_LABEL[tone] }: { tone: Tone; label?: string }) {
@@ -371,177 +371,16 @@ export function PersonalFengShuiPanel({
       <div className={`${almanac.bento} ${styles.coreGrid}`}>
         {ready ? (
           <>
-            {transit ? (
-              <Tile
-                index={0}
-                icon={YinYang}
-                title="Thập thần ngày"
-                label="Thập thần ngày"
-                className={`${styles.coreTile} ${styles.relationTile}`}
-                aside={
-                  transit.status === 'ready' ? (
-                    <InfoButton label="Thập thần ngày" onClick={explainTransit} />
-                  ) : undefined
-                }
-              >
-                {transit.status === 'ready' ? (
-                  <div className={styles.pair}>
-                    <ElementChip
-                      element={canElement(CAN.indexOf(transit.dayMaster as (typeof CAN)[number]))}
-                    >
-                      {transit.dayMaster}
-                    </ElementChip>
-                    <ArrowsLeftRight
-                      size={iconSize(16)}
-                      weight="bold"
-                      className={styles.pairLink}
-                      aria-hidden="true"
-                    />
-                    <ElementChip element={canElement(result.day.can)}>
-                      {transit.viewedStem}
-                    </ElementChip>
-                  </div>
-                ) : null}
-                <div
-                  className={styles.transit}
-                  role="group"
-                  aria-label="Thập thần của ngày đang xem"
-                >
-                  <span className="visually-hidden">Nhật Nguyên và Can ngày</span>
-                  {transit.status === 'ready' ? (
-                    <p className={`${styles.statement} ${styles.neutral}`}>
-                      Thập thần: <strong>{transit.tenGod}</strong>
-                    </p>
-                  ) : transit.status === 'ambiguous' ? (
-                    <span>
-                      Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật
-                      Nguyên khác nhau.
-                    </span>
-                  ) : (
-                    <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link>
-                  )}
-                </div>
-              </Tile>
-            ) : null}
-            <Tile
-              index={1}
-              icon={Compass}
-              title="Địa chi"
-              label="Quan hệ Địa chi"
-              className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.branch.tone]}`}
-              aside={
-                <TileAside
-                  tone={result.branch.tone}
-                  label="Địa chi"
-                  onExplain={() => setExplain(explainBranch(result))}
-                />
-              }
-            >
-              <div className={styles.pair}>
-                <span className={styles.pairItem}>
-                  <ZodiacIcon chi={result.profile.chi} small />
-                  {CHI[result.profile.chi]}
-                </span>
-                <ArrowsLeftRight
-                  size={iconSize(16)}
-                  weight="bold"
-                  className={styles.pairLink}
-                  aria-hidden="true"
-                />
-                <span className={styles.pairItem}>
-                  <ZodiacIcon chi={result.day.chi} small />
-                  {CHI[result.day.chi]}
-                </span>
-              </div>
-              <p className={`${styles.statement} ${TONE_TEXT[result.branch.tone]}`}>
-                {result.branch.text}
-              </p>
-            </Tile>
-
-            <Tile
-              index={2}
-              icon={YinYang}
-              title="Thiên can"
-              label="Quan hệ Thiên can"
-              className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.stem.tone]}`}
-              aside={
-                <TileAside
-                  tone={result.stem.tone}
-                  label="Thiên can"
-                  onExplain={explainStemWithTransit}
-                  toneLabel={result.stem.element.kind === 'overcomeBy' ? 'Tự chủ' : undefined}
-                />
-              }
-            >
-              <div className={styles.pair}>
-                <ElementChip element={canElement(result.profile.can)}>
-                  {CAN[result.profile.can]}
-                </ElementChip>
-                <ArrowsLeftRight
-                  size={iconSize(16)}
-                  weight="bold"
-                  className={styles.pairLink}
-                  aria-hidden="true"
-                />
-                <ElementChip element={canElement(result.day.can)}>
-                  {CAN[result.day.can]}
-                </ElementChip>
-              </div>
-              <p className={`${styles.statement} ${TONE_TEXT[result.stem.tone]}`}>
-                {result.stem.text}
-              </p>
-              {result.personalStars.status === 'ready' && result.personalStars.stemClash.hit ? (
-                <section className={styles.extra} aria-label="Quan hệ cá nhân mở rộng">
-                  <span className={styles.caution} aria-hidden="true">
-                    <WarningCircle size={iconSize(16)} weight="fill" />
-                  </span>
-                  <div>
-                    <h4>Thiên can xung</h4>
-                    <p>{result.personalStars.stemClash.reason}</p>
-                  </div>
-                </section>
-              ) : null}
-            </Tile>
-
-            <Tile
-              index={3}
-              icon={Diamond}
-              title="Nạp âm"
-              label="Quan hệ Nạp âm"
-              className={`${styles.coreTile} ${styles.relationTile} ${styles.napAmTile} ${TONE_TILE[result.napAm.tone]}`}
-              aside={
-                <TileAside
-                  tone={result.napAm.tone}
-                  label="Nạp âm"
-                  onExplain={() => setExplain(explainNapAm(result))}
-                />
-              }
-            >
-              <div className={styles.pair}>
-                <ElementChip element={result.dayNapAm.element}>{result.dayNapAm.name}</ElementChip>
-                <ArrowRight
-                  size={iconSize(16)}
-                  weight="bold"
-                  className={styles.pairLink}
-                  aria-hidden="true"
-                />
-                <ElementChip element={result.profileNapAm.element}>
-                  {result.profileNapAm.name}
-                </ElementChip>
-              </div>
-              <p className={`${styles.statement} ${TONE_TEXT[result.napAm.tone]}`}>
-                {result.napAm.text}
-              </p>
-            </Tile>
-
+            <DailyActivitySection key={date} date={date} />
             <Tile
               index={4}
               wide="full"
               icon={Clock}
-              title="Giờ cá nhân"
-              label="Giờ cá nhân trong ngày"
+              title="Giờ phù hợp với bạn"
+              label="Giờ phù hợp với bạn"
               aside={`${result.hours.filter((hour) => hour.group !== 'excluded').length} giờ hợp tuổi`}
             >
+              <p className={styles.muted}>Đây là giờ đã xét theo tuổi của bạn.</p>
               <div className={styles.hourGroups}>
                 {(['priority', 'consider'] as const).map((group) => {
                   const hours = result.hours.filter((hour) => hour.group === group)
@@ -613,27 +452,201 @@ export function PersonalFengShuiPanel({
               ) : null}
             </Tile>
 
-            <DailyActivitySection date={date} />
+            <section className={styles.reasoning} aria-label="Vì sao có kết luận này?">
+              <h3 className={styles.reasoningTitle}>Vì sao có kết luận này?</h3>
+              <div className={styles.reasoningGrid}>
+                {transit ? (
+                  <Tile
+                    index={0}
+                    icon={YinYang}
+                    title="Thập thần ngày"
+                    label="Thập thần ngày"
+                    className={`${styles.coreTile} ${styles.relationTile}`}
+                    aside={
+                      transit.status === 'ready' ? (
+                        <InfoButton label="Thập thần ngày" onClick={explainTransit} />
+                      ) : undefined
+                    }
+                  >
+                    {transit.status === 'ready' ? (
+                      <div className={styles.pair}>
+                        <ElementChip
+                          element={canElement(
+                            CAN.indexOf(transit.dayMaster as (typeof CAN)[number]),
+                          )}
+                        >
+                          {transit.dayMaster}
+                        </ElementChip>
+                        <ArrowsLeftRight
+                          size={iconSize(16)}
+                          weight="bold"
+                          className={styles.pairLink}
+                          aria-hidden="true"
+                        />
+                        <ElementChip element={canElement(result.day.can)}>
+                          {transit.viewedStem}
+                        </ElementChip>
+                      </div>
+                    ) : null}
+                    <div
+                      className={styles.transit}
+                      role="group"
+                      aria-label="Thập thần của ngày đang xem"
+                    >
+                      <span className="visually-hidden">Nhật Nguyên và Can ngày</span>
+                      {transit.status === 'ready' ? (
+                        <p className={`${styles.statement} ${styles.neutral}`}>
+                          Thập thần: <strong>{transit.tenGod}</strong>
+                        </p>
+                      ) : transit.status === 'ambiguous' ? (
+                        <span>
+                          Can ngày {transit.viewedStem}: chưa xác định vì các lá số ứng viên có Nhật
+                          Nguyên khác nhau.
+                        </span>
+                      ) : (
+                        <Link to="/settings#birth-info">Nhập giờ và nơi sinh</Link>
+                      )}
+                    </div>
+                  </Tile>
+                ) : null}
+                <Tile
+                  index={1}
+                  icon={Compass}
+                  title="Địa chi"
+                  label="Quan hệ Địa chi"
+                  className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.branch.tone]}`}
+                  aside={
+                    <TileAside
+                      tone={result.branch.tone}
+                      label="Địa chi"
+                      onExplain={() => setExplain(explainBranch(result))}
+                    />
+                  }
+                >
+                  <div className={styles.pair}>
+                    <span className={styles.pairItem}>
+                      <ZodiacIcon chi={result.profile.chi} small />
+                      {CHI[result.profile.chi]}
+                    </span>
+                    <ArrowsLeftRight
+                      size={iconSize(16)}
+                      weight="bold"
+                      className={styles.pairLink}
+                      aria-hidden="true"
+                    />
+                    <span className={styles.pairItem}>
+                      <ZodiacIcon chi={result.day.chi} small />
+                      {CHI[result.day.chi]}
+                    </span>
+                  </div>
+                  <p className={`${styles.statement} ${TONE_TEXT[result.branch.tone]}`}>
+                    {result.branch.text}
+                  </p>
+                </Tile>
+
+                <Tile
+                  index={2}
+                  icon={YinYang}
+                  title="Thiên can"
+                  label="Quan hệ Thiên can"
+                  className={`${styles.coreTile} ${styles.relationTile} ${TONE_TILE[result.stem.tone]}`}
+                  aside={
+                    <TileAside
+                      tone={result.stem.tone}
+                      label="Thiên can"
+                      onExplain={explainStemWithTransit}
+                      toneLabel={result.stem.element.kind === 'overcomeBy' ? 'Tự chủ' : undefined}
+                    />
+                  }
+                >
+                  <div className={styles.pair}>
+                    <ElementChip element={canElement(result.profile.can)}>
+                      {CAN[result.profile.can]}
+                    </ElementChip>
+                    <ArrowsLeftRight
+                      size={iconSize(16)}
+                      weight="bold"
+                      className={styles.pairLink}
+                      aria-hidden="true"
+                    />
+                    <ElementChip element={canElement(result.day.can)}>
+                      {CAN[result.day.can]}
+                    </ElementChip>
+                  </div>
+                  <p className={`${styles.statement} ${TONE_TEXT[result.stem.tone]}`}>
+                    {result.stem.text}
+                  </p>
+                  {result.personalStars.status === 'ready' && result.personalStars.stemClash.hit ? (
+                    <details className={styles.extra} aria-label="Quan hệ cá nhân mở rộng">
+                      <summary>Thiên can xung</summary>
+                      <span className={styles.caution} aria-hidden="true">
+                        <WarningCircle size={iconSize(16)} weight="fill" />
+                      </span>
+                      <div>
+                        <p>{result.personalStars.stemClash.reason}</p>
+                      </div>
+                    </details>
+                  ) : null}
+                </Tile>
+
+                <Tile
+                  index={3}
+                  icon={Diamond}
+                  title="Nạp âm"
+                  label="Quan hệ Nạp âm"
+                  className={`${styles.coreTile} ${styles.relationTile} ${styles.napAmTile} ${TONE_TILE[result.napAm.tone]}`}
+                  aside={
+                    <TileAside
+                      tone={result.napAm.tone}
+                      label="Nạp âm"
+                      onExplain={() => setExplain(explainNapAm(result))}
+                    />
+                  }
+                >
+                  <div className={styles.pair}>
+                    <ElementChip element={result.dayNapAm.element}>
+                      {result.dayNapAm.name}
+                    </ElementChip>
+                    <ArrowRight
+                      size={iconSize(16)}
+                      weight="bold"
+                      className={styles.pairLink}
+                      aria-hidden="true"
+                    />
+                    <ElementChip element={result.profileNapAm.element}>
+                      {result.profileNapAm.name}
+                    </ElementChip>
+                  </div>
+                  <p className={`${styles.statement} ${TONE_TEXT[result.napAm.tone]}`}>
+                    {result.napAm.text}
+                  </p>
+                </Tile>
+              </div>
+            </section>
           </>
         ) : null}
 
-        <Collapsible desktop heading summary="Chi tiết luận đoán nâng cao">
+        <Collapsible key={date} desktop heading lazy summary="Luận đoán nâng cao">
           <div className={styles.advancedGrid}>
-            <AnnualFengShuiSection
-              key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}
-              index={ready ? 7 : 0}
-              date={date}
-              birthDate={settings.birthDate}
-              savedGender={settings.birthGender ?? null}
-              rules={rules}
-              onExplain={setExplain}
-            />
-            <BaziSection
-              index={ready ? 8 : 1}
-              settings={settings}
-              rules={rules}
-              onExplain={setExplain}
-            />
+            <Collapsible desktop lazy summary="Hạn theo năm">
+              <AnnualFengShuiSection
+                key={`${user?.uid ?? 'local'}:${settings.birthDate ? 'saved' : 'missing'}:${settings.birthGender ?? ''}`}
+                index={ready ? 7 : 0}
+                date={date}
+                birthDate={settings.birthDate}
+                savedGender={settings.birthGender ?? null}
+                rules={rules}
+                onExplain={setExplain}
+              />
+            </Collapsible>
+            <Collapsible desktop lazy summary="Tứ trụ theo giờ sinh">
+              <BaziSection
+                index={ready ? 8 : 1}
+                settings={settings}
+                rules={rules}
+                onExplain={setExplain}
+              />
+            </Collapsible>
           </div>
         </Collapsible>
       </div>

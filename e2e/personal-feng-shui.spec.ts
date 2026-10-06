@@ -164,3 +164,62 @@ test('saved gender, event-hour note and advanced collapse', async ({ app }) => {
   await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeVisible()
   await expect(annual.getByRole('radio', { name: 'Nữ mạng' })).toBeChecked()
 })
+
+test('daily layout: responsive reading order and independent advanced disclosures', async ({
+  app,
+}) => {
+  await app.emulateMedia({ reducedMotion: 'reduce' })
+  await saveBirth(app)
+  const panel = app.getByRole('region', { name: 'Phong thủy cá nhân' })
+  for (const width of [360, 768, 1024, 1280, 1440]) {
+    await app.setViewportSize({ width, height: 900 })
+    await expect(panel.getByTestId('personal-day-summary')).toBeVisible()
+    expect(await app.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    const columns = await panel
+      .locator('[class*="reasoningGrid"]')
+      .evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length)
+    expect(columns).toBe(width >= 1280 ? 4 : width >= 768 ? 2 : 1)
+    const tops = await Promise.all(
+      [
+        'Tóm tắt ngày cá nhân',
+        'Mục tiêu và kết luận trong ngày',
+        'Giờ phù hợp với bạn',
+        'Vì sao có kết luận này?',
+      ].map(async (name) => (await panel.getByRole('region', { name }).boundingBox())!.y),
+    )
+    expect(tops).toEqual([...tops].sort((a, b) => a - b))
+    await expect(panel.getByRole('region', { name: 'Hạn theo năm' })).toHaveCount(0)
+  }
+  await app.goto('/day/2026-10-06')
+  const goals = panel.getByRole('region', { name: 'Mục tiêu và kết luận trong ngày' })
+  await expect(goals.getByRole('combobox')).toHaveCount(1)
+  await goals.getByRole('combobox').selectOption('work')
+  await goals.getByRole('button', { name: 'Giao dịch', exact: true }).click()
+  await expect(goals.getByRole('region', { name: 'Chi tiết hoạt động' })).toContainText('Giao dịch')
+  await expect(goals.getByRole('region', { name: 'Việc nên làm trong ngày' })).toHaveCount(0)
+  await goals.getByRole('button', { name: 'Về tổng quan' }).click()
+  await expect(goals.getByRole('combobox')).toHaveValue('work')
+  await goals.getByText(/^Hoạt động khác \(/).click()
+  for (const scheme of ['light', 'dark'] as const) {
+    await app.emulateMedia({ colorScheme: scheme })
+    const audit = await new AxeBuilder({ page: app })
+      .include('[aria-label="Mục tiêu và kết luận trong ngày"]')
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+      .analyze()
+    expect(audit.violations).toEqual([])
+  }
+  await app.emulateMedia({ colorScheme: 'light' })
+  await app.screenshot({ path: test.info().outputPath('daily-layout-desktop.png'), fullPage: true })
+  await panel.getByRole('button', { name: /Luận đoán nâng cao/ }).click()
+  await expect(panel.getByRole('region', { name: 'Hạn theo năm' })).toHaveCount(0)
+  await panel.getByRole('button', { name: /^Hạn theo năm/ }).click()
+  await expect(panel.getByRole('region', { name: 'Hạn theo năm' })).toBeVisible()
+  await expect(panel.getByRole('region', { name: 'Tứ Trụ theo giờ sinh' })).toHaveCount(0)
+  await app.getByRole('button', { name: 'Ngày sau', exact: true }).click()
+  await expect(panel.getByRole('button', { name: /Luận đoán nâng cao/ })).toHaveAttribute(
+    'aria-expanded',
+    'false',
+  )
+  await app.getByRole('button', { name: '+ Tạo sự kiện', exact: true }).click()
+  await expect(app.getByRole('dialog', { name: 'Tạo sự kiện' })).toBeVisible()
+})

@@ -1037,3 +1037,36 @@
   font-weight: 400;
   overflow-wrap: anywhere;
 }
+
+.scopeNote {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--day-meta);
+  line-height: 1.5;
+}
+.panel > .scopeNote {
+  text-align: center;
+}
+:global([aria-label='Lịch vạn niên']).panel {
+  margin-top: calc(20px * var(--ui-scale));
+  border-top: 2px solid var(--separator);
+}
+
+.pillAttention {
+  color: var(--semantic-attention);
+  background: var(--semantic-attention-subtle);
+}
+.panel h2 {
+  font-size: calc(24px * var(--ui-scale));
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text);
+  background: none;
+  padding: 0;
+}
+.panel h2 svg {
+  display: none;
+}
+.heroTitle {
+  font-size: calc(20px * var(--ui-scale));
+}

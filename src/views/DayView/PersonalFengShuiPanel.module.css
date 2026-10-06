@@ -843,8 +843,8 @@
 }
 
 .afflictionList .afflictionHit {
-  color: var(--almanac-bad);
-  background: var(--almanac-bad-bg);
+  color: var(--semantic-negative);
+  background: color-mix(in srgb, var(--semantic-negative) 8%, var(--bg));
 }
 
 .afflictionList .afflictionHit svg {
@@ -1328,5 +1328,67 @@
     display: flex;
     flex-direction: column;
     gap: var(--section-gap-lg);
+  }
+}
+
+/* Reading order is shared by visual layout and DOM order. */
+.coreGrid {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16px * var(--ui-scale));
+}
+.reasoning {
+  min-width: 0;
+}
+.reasoningTitle {
+  margin: 0 0 calc(12px * var(--ui-scale));
+  font-size: var(--day-body);
+  font-weight: var(--fw-600);
+  color: var(--text-muted);
+}
+.reasoningGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: calc(12px * var(--ui-scale));
+}
+.reasoningGrid .coreTile {
+  gap: calc(8px * var(--ui-scale));
+  border-top-width: 1px;
+  box-shadow: none;
+  padding: calc(12px * var(--ui-scale));
+}
+.reasoningGrid .statement {
+  font-size: var(--day-body);
+}
+.reasoningGrid .extra {
+  display: block;
+}
+.reasoningGrid .extra summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: var(--day-meta);
+}
+.relationAttention {
+  --tone: var(--semantic-attention);
+  --tone-bg: var(--semantic-attention-subtle);
+}
+.tile_caution {
+  --tile-accent: var(--semantic-attention);
+}
+.caution {
+  color: var(--semantic-attention);
+}
+.pill_caution {
+  color: var(--semantic-attention);
+  background: var(--semantic-attention-subtle);
+}
+@media (min-width: 768px) {
+  .reasoningGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .reasoningGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

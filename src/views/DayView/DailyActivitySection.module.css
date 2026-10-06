@@ -79,7 +79,7 @@
   --tone-border: var(--activity-positive-border);
 }
 .warning,
-.neutral {
+.attention {
   --tone-bg: var(--activity-neutral-bg);
   --tone-fg: var(--activity-neutral-fg);
   --tone-border: var(--activity-neutral-border);
@@ -222,6 +222,9 @@
   color: var(--text-muted);
   font-size: var(--day-meta);
 }
+.warning .chipMeta {
+  font-size: calc(12px * var(--ui-scale));
+}
 .empty {
   color: var(--text-muted);
   font-size: var(--day-meta);
@@ -284,5 +287,120 @@
   }
   .select {
     width: 100%;
+  }
+}
+
+.head {
+  flex-wrap: wrap;
+}
+.head h3 {
+  flex-basis: 30%;
+}
+.select {
+  width: min(100%, calc(210px * var(--ui-scale)));
+}
+.activityButton {
+  border: 0;
+  padding: calc(4px * var(--ui-scale)) 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  min-height: var(--tap-min);
+}
+.activityButton:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.chips li.strongAvoid {
+  color: var(--semantic-negative);
+  background: var(--semantic-negative-subtle);
+}
+.activityDetail {
+  display: grid;
+  gap: calc(8px * var(--ui-scale));
+  font-size: var(--day-body);
+}
+
+.neutral {
+  --tone-bg: var(--semantic-neutral-subtle);
+  --tone-fg: var(--semantic-neutral);
+  --tone-border: var(--glass-edge);
+}
+.chips li.hard {
+  color: var(--semantic-negative);
+  background: var(--semantic-negative-subtle);
+}
+.positiveText {
+  color: var(--semantic-positive);
+  font-weight: var(--fw-600);
+}
+.negativeText {
+  color: var(--semantic-negative);
+  font-weight: var(--fw-600);
+}
+.attentionText {
+  color: var(--semantic-attention);
+  font-weight: var(--fw-600);
+}
+.neutralText {
+  color: var(--semantic-neutral);
+}
+
+/* Activity is the action; its assessment is secondary metadata. */
+.more .otherActivities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(6px * var(--ui-scale)) calc(16px * var(--ui-scale));
+  padding: 0;
+  list-style: none;
+}
+.otherActivities li {
+  min-width: 0;
+}
+.otherActivityButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(2px * var(--ui-scale));
+  min-height: max(44px, var(--tap-min));
+  padding: calc(4px * var(--ui-scale)) calc(6px * var(--ui-scale));
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+.otherActivityName {
+  color: var(--text);
+  font-size: var(--day-body);
+  font-weight: var(--fw-500);
+  line-height: 1.5;
+}
+.otherActivityStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+  color: var(--text-muted);
+  font-size: var(--day-meta);
+  font-weight: var(--fw-400);
+  line-height: 1.5;
+}
+.otherActivityStatus svg {
+  flex-shrink: 0;
+}
+.otherActivityButton:hover {
+  background: var(--fill-hover);
+}
+.otherActivityButton:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .otherActivityButton {
+    transition: none;
   }
 }

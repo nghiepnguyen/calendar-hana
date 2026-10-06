@@ -1,5 +1,6 @@
-import { screen, within } from '@testing-library/react'
-import { render } from '../../test/render'
+import { screen, within, fireEvent } from '@testing-library/react'
+import { render as renderBase } from '../../test/render'
+import type { ReactElement } from 'react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'
@@ -105,13 +106,13 @@ describe('personal panel integration', () => {
         'Thập thần của ngày đang xem',
       ),
     ).not.toBeInTheDocument()
-    expect(within(panel).getByLabelText('Giờ cá nhân trong ngày')).toBeInTheDocument()
-    const personalHours = within(panel).getByLabelText('Giờ cá nhân trong ngày')
+    expect(within(panel).getByLabelText('Giờ phù hợp với bạn')).toBeInTheDocument()
+    const personalHours = within(panel).getByLabelText('Giờ phù hợp với bạn')
     const recommendations = within(panel).getByRole('region', {
       name: 'Việc nên làm trong ngày',
     })
     expect(
-      personalHours.compareDocumentPosition(recommendations) & Node.DOCUMENT_POSITION_FOLLOWING,
+      recommendations.compareDocumentPosition(personalHours) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy()
     expect(
       within(panel).queryByText('Đang xem theo tuổi và nạp âm năm sinh'),
@@ -121,10 +122,8 @@ describe('personal panel integration', () => {
   it('filters activity boxes by selected event', async () => {
     render(<DayView {...props()} />)
     const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
-    const selector = within(panel).getByRole('combobox', { name: 'Mục tiêu trong ngày' })
-    expect(selector).toHaveValue('')
-    await userEvent.selectOptions(selector, 'open_business')
-    expect(selector).toHaveValue('open_business')
+    expect(within(panel).getAllByRole('combobox')).toHaveLength(1)
+    await userEvent.click(within(panel).getByRole('button', { name: 'Khai trương' }))
     expect(
       within(panel).queryByRole('region', { name: 'Việc nên làm trong ngày' }),
     ).not.toBeInTheDocument()
@@ -148,6 +147,8 @@ it('refreshes year at Tet and birth profile independently of the hour or day sum
   const { rerender } = render(<DayView {...p} date="2026-02-16" />)
   expect(screen.getByText(/Năm âm lịch 2025, tuổi mụ 27/)).toBeInTheDocument()
   rerender(<DayView {...p} date="2026-02-17" />)
+  fireEvent.click(screen.getByRole('button', { name: /Luận đoán nâng cao/ }))
+  fireEvent.click(screen.getByRole('button', { name: /^Hạn theo năm/ }))
   expect(screen.getByText(/Năm âm lịch 2026, tuổi mụ 28/)).toBeInTheDocument()
   rerender(<DayView {...props('1990-07-01')} date="2026-02-17" />)
   expect(screen.getByText(/Năm âm lịch 2026, tuổi mụ 37/)).toBeInTheDocument()
@@ -157,7 +158,8 @@ it('shows reviewed stem clash separately and does not duplicate common stars', (
   const p = props('1993-07-01')
   render(<DayView {...p} date="2026-09-20" />)
   const panel = screen.getByRole('region', { name: 'Phong thủy cá nhân' })
-  const extended = within(panel).getByRole('region', { name: 'Quan hệ cá nhân mở rộng' })
+  const extended = within(panel).getByLabelText('Quan hệ cá nhân mở rộng')
+  fireEvent.click(within(extended).getByText('Thiên can xung'))
   expect(within(extended).getByText('Thiên can xung')).toBeInTheDocument()
   expect(within(extended).getByText(/Can ngày Đinh xung với Can tuổi Quý/)).toBeInTheDocument()
   expect(within(panel).getByTestId('personal-day-summary')).toHaveTextContent('Có yếu tố cần lưu ý')
@@ -245,3 +247,17 @@ it('shows only the birth invite without a profile and offers sign-in to guests',
   expect(screen.queryByRole('link', { name: 'Đăng nhập' })).not.toBeInTheDocument()
   expect(screen.getByRole('link', { name: 'Nhập ngày sinh' })).toBeInTheDocument()
 })
+
+// Existing content assertions exercise the explicit advanced navigation.
+function render(ui: ReactElement) {
+  const result = renderBase(ui)
+  const advanced = screen.queryByRole('button', { name: /Luận đoán nâng cao/ })
+  if (advanced) {
+    fireEvent.click(advanced)
+    for (const name of [/^Hạn theo năm/, /^Tứ trụ theo giờ sinh/]) {
+      const toggle = screen.queryByRole('button', { name })
+      if (toggle) fireEvent.click(toggle)
+    }
+  }
+  return result
+}

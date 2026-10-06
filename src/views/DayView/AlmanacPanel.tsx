@@ -170,6 +170,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
   return (
     // key theo ngày để hiệu ứng hiện dần chạy lại khi đổi ngày.
     <section key={date} className={`glass ${styles.panel}`} aria-label="Lịch vạn niên">
+      <p className={styles.scopeNote}>Thông tin chung của ngày, không xét theo tuổi cá nhân</p>
       <header className={styles.hero}>
         <div className={styles.heroMain}>
           <h2 className={styles.eyebrow}>
@@ -377,6 +378,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
         >
           <div className={styles.starColumns}>
             <StarChips
+              key={`${date}:good`}
               title="Sao tốt"
               good
               stars={a.stars.good}
@@ -385,6 +387,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
               }
             />
             <StarChips
+              key={`${date}:bad`}
               title="Sao xấu"
               good={false}
               stars={a.stars.bad}
@@ -399,9 +402,10 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
           index={5}
           wide="full"
           icon={Clock}
-          title="Giờ trong ngày"
+          title="Giờ hoàng đạo của ngày"
           aside={`${a.hours.filter((h) => h.isGood).length} giờ hoàng đạo`}
         >
+          <p className={styles.scopeNote}>Đây là giờ chung của ngày, chưa xét tuổi cá nhân.</p>
           <HourGrid hours={a.hours} isToday={isToday} />
         </Tile>
       </div>

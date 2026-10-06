@@ -26,7 +26,7 @@ describe('summarySentence', () => {
 describe('explainBranch', () => {
   it('explains the clash and keeps a Lưu ý verdict', () => {
     const item = explainBranch(ready('1990-07-01', '2026-09-23'))
-    expect(item.verdict).toEqual({ label: 'Lưu ý', tone: 'bad' })
+    expect(item.verdict).toEqual({ label: 'Lưu ý', tone: 'attention' })
     expect(item.meaning).toMatch(/lục xung/)
   })
 

@@ -23,13 +23,19 @@ export async function openCreateForm(page: Page) {
   return page.getByRole('dialog', { name: 'Tạo sự kiện' })
 }
 
-/** Mở mục "Chi tiết luận đoán nâng cao" (Hạn theo năm, Tứ Trụ) trong panel Phong thủy cá nhân. */
+/** Mở mục "Luận đoán nâng cao" (Hạn theo năm, Tứ Trụ) trong panel Phong thủy cá nhân. */
 export async function openAdvancedDetails(page: Page) {
   const toggle = page
     .getByRole('region', { name: 'Phong thủy cá nhân' })
-    .getByRole('button', { name: /Chi tiết luận đoán nâng cao/ })
+    .getByRole('button', { name: /Luận đoán nâng cao/ })
   if ((await toggle.getAttribute('aria-expanded')) !== 'true') await toggle.click()
   await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+  for (const name of [/^Hạn theo năm/, /^Tứ trụ theo giờ sinh/]) {
+    const child = page
+      .getByRole('region', { name: 'Phong thủy cá nhân' })
+      .getByRole('button', { name })
+    if ((await child.getAttribute('aria-expanded')) !== 'true') await child.click()
+  }
 }
 
 export type TextSizeLabel = 'Mặc định' | 'Lớn' | 'Rất lớn'

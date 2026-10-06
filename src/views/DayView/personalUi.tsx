@@ -27,10 +27,12 @@ export function Collapsible({
   children,
   desktop = false,
   heading = false,
+  lazy = false,
 }: {
   summary: ReactNode
   children: ReactNode
   desktop?: boolean
+  lazy?: boolean
   /** Bọc nút trong h3 để khối nội dung bên trong có tiêu đề nhóm trong cây heading. */
   heading?: boolean
 }) {
@@ -55,7 +57,7 @@ export function Collapsible({
     <div className={`${styles.collapse} ${desktop ? styles.desktopCollapse : ''}`} data-open={open}>
       {heading ? <h3 className={styles.collapseHeading}>{toggle}</h3> : toggle}
       <div id={id} className={styles.collapseBody}>
-        {children}
+        {lazy && !open ? null : children}
       </div>
     </div>
   )

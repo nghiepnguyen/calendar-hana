@@ -1,5 +1,6 @@
 import { screen, fireEvent } from '@testing-library/react'
-import { render } from '../../test/render'
+import { render as renderBase } from '../../test/render'
+import type { ReactElement } from 'react'
 import { expect, it } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'
 import { DayView } from './DayView'
@@ -66,3 +67,17 @@ it('rerenders rule version changes and exposes unavailable rules without old rat
   expect(screen.getAllByText('Chưa có dữ liệu').length).toBeGreaterThan(0)
   expect(screen.queryByText('Không thuộc chu kỳ Tam Tai')).not.toBeInTheDocument()
 })
+
+// Existing content assertions exercise the explicit advanced navigation.
+function render(ui: ReactElement) {
+  const result = renderBase(ui)
+  const advanced = screen.queryByRole('button', { name: /Luận đoán nâng cao/ })
+  if (advanced) {
+    fireEvent.click(advanced)
+    for (const name of [/^Hạn theo năm/, /^Tứ trụ theo giờ sinh/]) {
+      const toggle = screen.queryByRole('button', { name })
+      if (toggle) fireEvent.click(toggle)
+    }
+  }
+  return result
+}

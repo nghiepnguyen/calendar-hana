@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Sparkle, WarningCircle } from '@phosphor-icons/react'
 import type { Star } from '@shared/lunar'
 import { iconSize } from '../../styles/textSize'
@@ -13,6 +14,7 @@ interface StarChipsProps {
 
 /** Một nhóm sao (tốt hoặc xấu): mỗi sao là một chip bấm để xem giải thích. */
 export function StarChips({ title, good, stars, onOpen }: StarChipsProps) {
+  const [expanded, setExpanded] = useState(false)
   const GroupIcon = good ? Sparkle : WarningCircle
   return (
     <div className={`${styles.starGroup} ${good ? styles.starGroupGood : styles.starGroupBad}`}>
@@ -24,7 +26,7 @@ export function StarChips({ title, good, stars, onOpen }: StarChipsProps) {
         <p className={styles.none}>Không có</p>
       ) : (
         <ul className={styles.chips}>
-          {stars.map((s) => (
+          {(expanded ? stars : stars.slice(0, 5)).map((s) => (
             <li key={s.name}>
               <button
                 type="button"
@@ -36,6 +38,18 @@ export function StarChips({ title, good, stars, onOpen }: StarChipsProps) {
               </button>
             </li>
           ))}
+          {stars.length > 5 && (
+            <li>
+              <button
+                type="button"
+                className={styles.chip}
+                aria-expanded={expanded}
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? 'Thu gọn' : `+${stars.length - 5} sao khác`}
+              </button>
+            </li>
+          )}
         </ul>
       )}
     </div>

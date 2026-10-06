@@ -13,6 +13,7 @@ export function DayView({
   colorOf,
   getCategory,
   onOpenEvent,
+  onCreate,
 }: CalendarViewProps) {
   return (
     <div className={styles.view}>
@@ -24,7 +25,12 @@ export function DayView({
       />
       <section className={`glass ${styles.events}`} aria-label="Sự kiện trong ngày">
         {occurrences.length === 0 ? (
-          <p className={styles.empty}>Chưa có sự kiện nào trong ngày. Bấm nút + để tạo.</p>
+          <div className={styles.empty}>
+            <p>Chưa có sự kiện nào trong ngày.</p>
+            <button type="button" className="btn" onClick={() => onCreate(date)}>
+              + Tạo sự kiện
+            </button>
+          </div>
         ) : (
           <EventRows
             occurrences={occurrences}
