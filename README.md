@@ -217,6 +217,23 @@ Sau khi deploy, điền các URL trên vào Google Auth Platform > Branding (cù
 `user.birthday.read` trong Data Access và thực hiện quy trình xác minh Google yêu cầu.
 Việc có hai trang không tự bật People API hoặc tự hoàn tất xét duyệt OAuth.
 
+### Đổi OAuth Client ID
+
+Code và `.env*` không chứa Client ID: Firebase Auth lấy từ cấu hình trong console. Khi đổi client:
+
+1. Google Cloud Console > APIs & Services > Credentials, OAuth client mới loại *Web application*:
+   - Authorized JavaScript origins: `https://lich.thanhnghiep.top`, `https://calendar-hana.firebaseapp.com`,
+     `https://calendar-hana.web.app` (thêm `http://localhost` nếu thử local).
+   - Authorized redirect URIs: `https://lich.thanhnghiep.top/__/auth/handler` và
+     `https://calendar-hana.firebaseapp.com/__/auth/handler`, khớp với `VITE_FIREBASE_AUTH_DOMAIN`.
+2. Firebase Console > Authentication > Sign-in method > Google > Web SDK configuration: dán
+   Web client ID và Web client secret mới, lưu. Không commit client secret vào repo.
+3. Client mới phải cùng project Firebase để giữ Branding, Data Access (`user.birthday.read`) và
+   xác minh OAuth. Khác project thì phải làm lại các bước ở trên và bật lại People API.
+4. Thử đăng nhập và **Lấy ngày sinh từ Google** trên production. Lỗi `redirect_uri_mismatch`
+   nghĩa là thiếu URI ở bước 1.
+5. Chạy ổn rồi mới xóa client cũ trong Credentials.
+
 ## Thông tin ngày sinh
 
 Cài đặt > Tài khoản có ngày, tháng, năm sinh theo dương lịch và giới tính (tùy chọn, dùng cho Sao
