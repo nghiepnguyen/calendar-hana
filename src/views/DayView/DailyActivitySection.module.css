@@ -222,8 +222,28 @@
   color: var(--text-muted);
   font-size: var(--day-meta);
 }
-.warning .chipMeta {
+.avoidLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(12px * var(--ui-scale));
+  margin: calc(8px * var(--ui-scale)) 0 0;
+  color: var(--text-muted);
   font-size: calc(12px * var(--ui-scale));
+}
+.avoidLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4px * var(--ui-scale));
+}
+.avoidDot,
+.strongAvoidDot {
+  width: calc(6px * var(--ui-scale));
+  height: calc(6px * var(--ui-scale));
+  border-radius: 50%;
+  background: var(--activity-neutral-fg);
+}
+.strongAvoidDot {
+  background: var(--semantic-negative);
 }
 .empty {
   color: var(--text-muted);

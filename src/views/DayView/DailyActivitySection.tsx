@@ -428,6 +428,11 @@ export function DailyActivitySection({ date }: { date: string }) {
                           <button
                             type="button"
                             className={styles.activityButton}
+                            aria-label={
+                              positive
+                                ? item.label
+                                : `${item.label}: ${ACTIVITY_STATUS[item.status]}`
+                            }
                             onClick={() =>
                               setSelected(
                                 ACTIVITY_EVENTS[item.activityId] ?? `activity:${item.activityId}`,
@@ -436,9 +441,6 @@ export function DailyActivitySection({ date }: { date: string }) {
                           >
                             {item.label}
                           </button>
-                          {!positive && (
-                            <span className={styles.chipMeta}>{ACTIVITY_STATUS[item.status]}</span>
-                          )}
                         </li>
                       ))}
                     </ul>
@@ -456,6 +458,18 @@ export function DailyActivitySection({ date }: { date: string }) {
                     >
                       {showAll ? 'Thu gọn' : `Xem thêm ${allItems.length - 6} việc`}
                     </button>
+                  )}
+                  {!positive && items.length > 0 && (
+                    <p className={styles.avoidLegend}>
+                      <span>
+                        <i className={styles.avoidDot} aria-hidden="true" />
+                        Nên tránh
+                      </span>
+                      <span>
+                        <i className={styles.strongAvoidDot} aria-hidden="true" />
+                        Kỵ mạnh
+                      </span>
+                    </p>
                   )}
                 </section>
               )
