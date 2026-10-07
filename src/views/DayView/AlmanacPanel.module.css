@@ -32,6 +32,8 @@
 
 @media (prefers-color-scheme: dark) {
   :global(:root:not([data-theme='light'])) .panel {
+    /* Change the declaration too: WebKit caches inherited color in size containers. */
+    color: #f4f5f8;
     --el-thuy: #6fa8ff;
     --el-tho: #d6a56b;
     --hy: #ff7aa8;
@@ -39,6 +41,7 @@
 }
 
 :global(:root[data-theme='dark']) .panel {
+  color: #f4f5f8;
   --el-thuy: #6fa8ff;
   --el-tho: #d6a56b;
   --hy: #ff7aa8;

@@ -30,6 +30,9 @@
 .head svg {
   flex-shrink: 0;
 }
+.head label {
+  color: var(--text);
+}
 .head h3 {
   flex: 1;
   margin: 0;
@@ -180,6 +183,7 @@
   border-left: 1px solid var(--glass-edge);
 }
 .groupTitle {
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: calc(6px * var(--ui-scale));
@@ -257,6 +261,7 @@
   line-height: 1.5;
 }
 .more summary {
+  color: var(--text-muted);
   cursor: pointer;
   padding-block: calc(6px * var(--ui-scale));
 }
@@ -323,7 +328,7 @@
   border: 0;
   padding: calc(4px * var(--ui-scale)) 0;
   background: none;
-  color: inherit;
+  color: var(--text);
   font: inherit;
   cursor: pointer;
   text-align: left;
