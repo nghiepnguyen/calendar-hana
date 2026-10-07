@@ -1,0 +1,68 @@
+{
+  "version": "3.0.0",
+  "phase": "3A-candidate",
+  "reviewStatus": "awaiting-user-review",
+  "authoritativeRules": ["yue-ji", "four-separations", "four-extinctions"],
+  "pendingRules": [
+    "month-breaker",
+    "robbery-sha",
+    "disaster-sha",
+    "month-sha",
+    "month-virtue",
+    "heaven-virtue",
+    "thu-tu",
+    "sat-chu",
+    "tam-nuong"
+  ],
+  "excludedRules": ["overall-auspicious-score", "production-rule-engine", "phase-3B"],
+  "sources": [
+    {
+      "sourceId": "XJBF_QD",
+      "name": "欽定協紀辨方書",
+      "tier": "A",
+      "role": "canonical-primary",
+      "status": "locked"
+    },
+    {
+      "sourceId": "HKO_SOLAR_TERMS",
+      "name": "Hong Kong Observatory solar-term tables",
+      "tier": "A2",
+      "role": "astronomical-independent-reference",
+      "status": "locked"
+    },
+    {
+      "sourceId": "VN_TRADITION_EXTENSION",
+      "name": "Vietnamese traditional almanac extensions",
+      "tier": "VN",
+      "role": "extension-container",
+      "status": "source-by-rule-required"
+    }
+  ],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "dayBoundary": "00:00 civil UTC+7",
+  "generatedFromProduction": false,
+  "admissionMeaning": "source-verified candidate fixtures; user review is still required before implementation",
+  "fixtureFiles": ["yue-ji.json", "four-separations.json", "four-extinctions.json"],
+  "contextReferences": [
+    {
+      "sourceId": "HKO_SOLAR_TERMS",
+      "role": "astronomical transition context only; does not prove Shen Sha",
+      "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm"
+    },
+    {
+      "sourceId": "HKO_CALENDAR_CONTEXT",
+      "tier": "not-a-Shen-Sha-authority",
+      "role": "independent lunar fixture context only, not canonical rule evidence",
+      "urls": [
+        "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+        "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf"
+      ]
+    }
+  ],
+  "fixtureCounts": {
+    "yue-ji.json": 24,
+    "four-separations.json": 38,
+    "four-extinctions.json": 38
+  },
+  "totalFixtureRecords": 100
+}

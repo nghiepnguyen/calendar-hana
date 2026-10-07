@@ -1,0 +1,2918 @@
+{
+  "$schema": "./calendar-golden.schema.json",
+  "meta": {
+    "name": "Vietnamese Calendar Golden Dataset",
+    "version": "1.0.0",
+    "recordCount": 100,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "rangePolicy": "selected regression/boundary samples",
+    "coreAlgorithm": "Hồ Ngọc Đức-style Vietnamese lunisolar conversion; Meeus astronomical basis",
+    "importantNotes": [
+      "This v1 golden file intentionally includes only high-confidence deterministic fields.",
+      "Trực, 28 Tú, exact solar-term transition, Hỷ/Tài Thần, cát/hung thần and activity advice are excluded until a canonical convention/source and independently reviewed anchors are locked.",
+      "Can Chi month here is explicitly labeled monthCivilLunarConvention; do not use it as a Bát Tự solar-term month."
+    ]
+  },
+  "records": [
+    {
+      "date": "1900-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2415021,
+      "lunar": {
+        "year": 1899,
+        "month": 12,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Đinh Sửu",
+        "yearLunarConvention": "Kỷ Hợi"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2000-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2451545,
+      "lunar": {
+        "year": 1999,
+        "month": 11,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Ngọ",
+        "monthCivilLunarConvention": "Bính Tý",
+        "yearLunarConvention": "Kỷ Mão"
+      },
+      "napAmDay": "Thiên Thượng Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2000-02-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2451604,
+      "lunar": {
+        "year": 2000,
+        "month": 1,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Tỵ",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Canh Thìn"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2023-01-22",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2459967,
+      "lunar": {
+        "year": 2023,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thìn",
+        "monthCivilLunarConvention": "Giáp Dần",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460311,
+      "lunar": {
+        "year": 2023,
+        "month": 11,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tý",
+        "monthCivilLunarConvention": "Giáp Tý",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-02-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460342,
+      "lunar": {
+        "year": 2023,
+        "month": 12,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mùi",
+        "monthCivilLunarConvention": "Ất Sửu",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-02-10",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460351,
+      "lunar": {
+        "year": 2024,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Bính Dần",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-03-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460371,
+      "lunar": {
+        "year": 2024,
+        "month": 1,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tý",
+        "monthCivilLunarConvention": "Bính Dần",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-04-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460402,
+      "lunar": {
+        "year": 2024,
+        "month": 2,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mùi",
+        "monthCivilLunarConvention": "Đinh Mão",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-05-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460432,
+      "lunar": {
+        "year": 2024,
+        "month": 3,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Sửu",
+        "monthCivilLunarConvention": "Mậu Thìn",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-06-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460463,
+      "lunar": {
+        "year": 2024,
+        "month": 4,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thân",
+        "monthCivilLunarConvention": "Kỷ Tỵ",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-07-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460493,
+      "lunar": {
+        "year": 2024,
+        "month": 5,
+        "day": 26,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Dần",
+        "monthCivilLunarConvention": "Canh Ngọ",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-08-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460524,
+      "lunar": {
+        "year": 2024,
+        "month": 6,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Dậu",
+        "monthCivilLunarConvention": "Tân Mùi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-09-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460555,
+      "lunar": {
+        "year": 2024,
+        "month": 7,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Thìn",
+        "monthCivilLunarConvention": "Nhâm Thân",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-10-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460585,
+      "lunar": {
+        "year": 2024,
+        "month": 8,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tuất",
+        "monthCivilLunarConvention": "Quý Dậu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-11-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460616,
+      "lunar": {
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Tỵ",
+        "monthCivilLunarConvention": "Ất Hợi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-12-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460646,
+      "lunar": {
+        "year": 2024,
+        "month": 11,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Hợi",
+        "monthCivilLunarConvention": "Bính Tý",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460677,
+      "lunar": {
+        "year": 2024,
+        "month": 12,
+        "day": 2,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Ngọ",
+        "monthCivilLunarConvention": "Đinh Sửu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-01-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460705,
+      "lunar": {
+        "year": 2025,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tuất",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-02-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460708,
+      "lunar": {
+        "year": 2025,
+        "month": 1,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Sửu",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bích Thượng Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-03-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460736,
+      "lunar": {
+        "year": 2025,
+        "month": 2,
+        "day": 2,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Tỵ",
+        "monthCivilLunarConvention": "Kỷ Mão",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-04-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460767,
+      "lunar": {
+        "year": 2025,
+        "month": 3,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tý",
+        "monthCivilLunarConvention": "Canh Thìn",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bích Thượng Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-05-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460797,
+      "lunar": {
+        "year": 2025,
+        "month": 4,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Ngọ",
+        "monthCivilLunarConvention": "Tân Tỵ",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-06-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460828,
+      "lunar": {
+        "year": 2025,
+        "month": 5,
+        "day": 6,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Sửu",
+        "monthCivilLunarConvention": "Nhâm Ngọ",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bích Thượng Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-07-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460858,
+      "lunar": {
+        "year": 2025,
+        "month": 6,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mùi",
+        "monthCivilLunarConvention": "Quý Mùi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-08-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460889,
+      "lunar": {
+        "year": 2025,
+        "month": 6,
+        "day": 8,
+        "leap": true
+      },
+      "canChi": {
+        "day": "Nhâm Dần",
+        "monthCivilLunarConvention": "Quý Mùi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Kim Bạch Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-09-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460920,
+      "lunar": {
+        "year": 2025,
+        "month": 7,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Dậu",
+        "monthCivilLunarConvention": "Giáp Thân",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-10-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460950,
+      "lunar": {
+        "year": 2025,
+        "month": 8,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mão",
+        "monthCivilLunarConvention": "Ất Dậu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Kim Bạch Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-11-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460981,
+      "lunar": {
+        "year": 2025,
+        "month": 9,
+        "day": 12,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Bính Tuất",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461011,
+      "lunar": {
+        "year": 2025,
+        "month": 10,
+        "day": 12,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Đinh Hợi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461042,
+      "lunar": {
+        "year": 2025,
+        "month": 11,
+        "day": 13,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Hợi",
+        "monthCivilLunarConvention": "Mậu Tý",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461049,
+      "lunar": {
+        "year": 2025,
+        "month": 11,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Ngọ",
+        "monthCivilLunarConvention": "Mậu Tý",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Dương Liễu Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-15",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461056,
+      "lunar": {
+        "year": 2025,
+        "month": 11,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Sửu",
+        "monthCivilLunarConvention": "Mậu Tý",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-22",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461063,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thân",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461070,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mão",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Kim Bạch Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461073,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Ngọ",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461077,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tuất",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-12",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461084,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Tỵ",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-17",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461089,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Tuất",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Hải Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-19",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461091,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 3,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tý",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-26",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461098,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mùi",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461101,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 13,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461105,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Dần",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-12",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461112,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 24,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Dậu",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-19",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461119,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Thìn",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Trường Lưu Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461126,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Hợi",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461132,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Tỵ",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-02",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461133,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 15,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Ngọ",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461140,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Sửu",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tang Đố Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-16",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461147,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thân",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-23",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461154,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Mão",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461161,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461162,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 15,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Hợi",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461168,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Tỵ",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461175,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tý",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461182,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mùi",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461189,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 12,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Dần",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Kim Bạch Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461193,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 16,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Ngọ",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461196,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Dậu",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461203,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 26,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thìn",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-18",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461210,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Hợi",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Hải Thủy",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461217,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Ngọ",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461223,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-02",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461224,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Sửu",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461231,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thân",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461238,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 3,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mão",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-23",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461245,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tuất",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-30",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461252,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Tỵ",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461254,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Mùi",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461259,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 24,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Tý",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tang Đố Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461266,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mùi",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thiên Thượng Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461273,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Dần",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461280,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 15,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Dậu",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461285,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Dần",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461287,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thìn",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461294,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Hợi",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Ốc Thượng Thổ",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461301,
+      "lunar": {
+        "year": 2026,
+        "month": 8,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Ngọ",
+        "monthCivilLunarConvention": "Đinh Dậu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461308,
+      "lunar": {
+        "year": 2026,
+        "month": 8,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Sửu",
+        "monthCivilLunarConvention": "Đinh Dậu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bích Thượng Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461315,
+      "lunar": {
+        "year": 2026,
+        "month": 8,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Thân",
+        "monthCivilLunarConvention": "Đinh Dậu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461322,
+      "lunar": {
+        "year": 2026,
+        "month": 8,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mão",
+        "monthCivilLunarConvention": "Đinh Dậu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461328,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Dậu",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461329,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 6,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Tuất",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Hải Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-22",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461336,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 13,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Tỵ",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461343,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461346,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mão",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461350,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mùi",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Dương Liễu Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461357,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 4,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Dần",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461364,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Dậu",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461371,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461376,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Dậu",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-03",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461378,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Hợi",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-10",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461385,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 2,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Ngọ",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thiên Thượng Hỏa",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-17",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461392,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 9,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Sửu",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-24",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461399,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 16,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Thân",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-31",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461406,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mão",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-02-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461443,
+      "lunar": {
+        "year": 2027,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thìn",
+        "monthCivilLunarConvention": "Nhâm Dần",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-01-26",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461797,
+      "lunar": {
+        "year": 2028,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tuất",
+        "monthCivilLunarConvention": "Giáp Dần",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2030-02-02",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462535,
+      "lunar": {
+        "year": 2030,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Thìn",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Canh Tuất"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2099-12-31",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2488069,
+      "lunar": {
+        "year": 2099,
+        "month": 11,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Dần",
+        "monthCivilLunarConvention": "Bính Tý",
+        "yearLunarConvention": "Kỷ Mùi"
+      },
+      "napAmDay": "Kim Bạch Kim",
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2100-12-31",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2488434,
+      "lunar": {
+        "year": 2100,
+        "month": 12,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Mùi",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Canh Thân"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "validation": {
+        "coreStatus": "golden-computed",
+        "sourceDependentFieldsIncluded": false
+      }
+    }
+  ]
+}

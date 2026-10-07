@@ -1,0 +1,2705 @@
+{
+  "version": "3.0.0",
+  "phase": "3A-extraction-only",
+  "reviewStatus": "awaiting-user-review",
+  "registryAudit": {
+    "inputEligible": ["yue-ji", "four-separations", "four-extinctions"],
+    "finding": "Registry lacks rule-level exact quotation, basis, boundary and fixtures; eligibility re-established from primary passages. No input registry edited.",
+    "groupBAdmission": "6 partial extractions; no authoritative Golden due unresolved basis/boundary or mixed operands."
+  },
+  "rules": [
+    {
+      "id": "yue-ji",
+      "name": "Nguyệt Kỵ",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "verified",
+      "goldenEligible": true,
+      "basis": ["lunar_day"],
+      "rule": {
+        "kind": "lunar-day-membership",
+        "days": [5, 14, 23],
+        "monthIndependent": true,
+        "leapPolicy": "project V3: same rule in normal/leap months; source says every month but does not discuss intercalation separately"
+      },
+      "boundaryConvention": "Asia/Ho_Chi_Minh fixed civil UTC+7; match whole civil day; lunar date changes at 00:00",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "location": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "originalText": "俗以每月初五十四二十三日為月忌",
+          "interpretation": "Match lunar days 5,14,23 only. Do not infer a global prohibition; the paragraph explicitly discusses limited annotations and usable auspicious influences.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "HIGH",
+      "notes": "Verified primary-text transcription; independent candidate fixtures await user review.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "extracted-candidate",
+      "affectsFinalResolution": false,
+      "aliases": ["月忌", "月忌日", "Nguyệt Kỵ"],
+      "propertyTestSpecification": [
+        "For day 1..30 in every normal/leap month and year: match iff day is 5,14,23. Invalid lunar dates rejected by context validation, not interpreted as unmatched.",
+        "Hold lunar day constant while varying weekday, Gregorian day, lunar month/year/leap flag: raw match unchanged.",
+        "Across UTC+7 23:59:59→00:00:00 at lunar 4→5 and 5→6, use new civil lunar day exactly at midnight.",
+        "Keep raw match separate from activity effects; no all-activities avoid inference.",
+        "Canonical ID yue-ji deduplicates aliases; each admitted output carries sourceId/ruleVersion/evidence."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Change day set 5→6",
+          "caughtBy": "Independent normal/leap fixtures at days 5 and 6 must both fail."
+        },
+        {
+          "mutation": "Use Gregorian day instead of lunar day",
+          "caughtBy": "Positive 2024-03-03 (lunar23) and 2023-03-26 (leap lunar5) become false if Gregorian days3/26 are used."
+        },
+        {
+          "mutation": "Ignore leap months",
+          "caughtBy": "2023-03-26, 2023-04-04 and 2023-04-13 positive leap fixtures fail."
+        }
+      ]
+    },
+    {
+      "id": "four-separations",
+      "name": "Tứ Ly",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "verified",
+      "goldenEligible": true,
+      "basis": ["solar_term_transition", "civil_date"],
+      "rule": {
+        "kind": "civil-day-before-solar-transition",
+        "longitudes": [0, 90, 180, 270],
+        "dayOffset": -1,
+        "notInstantSubtraction24Hours": true
+      },
+      "boundaryConvention": "Asia/Ho_Chi_Minh fixed civil UTC+7; match whole civil day; lunar date changes at 00:00",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "location": "卷六 / 義例四 / 四離四絶 / 曹震圭曰",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "originalText": "四離者冬至前一日水離夏至前一日火離春分前一日陽體分而木亦離也秋分前一日隂體分而金亦離也",
+          "interpretation": "Day before winter/summer solstices and spring/autumn equinoxes. Modern apparent-longitude instants and UTC+7 civil-day assignment are project conventions, not claimed as ancient numerical method.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        },
+        {
+          "sourceId": "XJBF_QD",
+          "location": "卷六 / 義例四 / 四離四絶 / 李鼎祚曰",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "originalText": "此日忌出行征伐",
+          "interpretation": "travel avoid; military action has no matching approved activity ID and is not broadened into litigation or business."
+        }
+      ],
+      "confidence": "HIGH",
+      "notes": "Verified primary-text transcription; independent candidate fixtures await user review.",
+      "scope": ["travel"],
+      "effects": [
+        {
+          "activityId": "travel",
+          "effect": "avoid",
+          "sourceTextRef": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343#四離四絶",
+          "interpretationStatus": "direct lexical mapping: 出行/逺行 → travel"
+        }
+      ],
+      "reviewStatus": "awaiting-user-review",
+      "status": "extracted-candidate",
+      "affectsFinalResolution": false,
+      "aliases": ["四離", "Tứ Ly"],
+      "propertyTestSpecification": [
+        "1900–2100: use existing exact transition engine for context ONLY; independent rule definition and HKO fixtures remain the oracle.",
+        "For each of four relevant terms per year: D-2=false, D-1=true, D=false, all civil UTC+7.",
+        "At D-1 midnight=true, D-1 23:59:59=true, D midnight=false. At transition -1min/exact/+1min no instant toggle: normally all on D and unmatched; if -1min falls on D-1 it must match.",
+        "Non-relevant terms must not create raw matches. Match is invariant to lunar day, leap flag and day stem/branch for fixed civil date and transitions.",
+        "At most four distinct matched civil dates/year; do not reset or miscount at civil-year boundaries.",
+        "Same absolute instant represented by Z versus +07 must give same UTC+7 result; never derive D from a substring of source +08 timestamp.",
+        "Compare existing exact engine transition with independently published minute reference using existing 60-second reference policy; do not claim published minute as exact to milliseconds.",
+        "Deduplicate aliases into canonical rule ID; every record includes rule and context provenance."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Replace relevant longitude 0 with 315",
+          "caughtBy": "Frozen equinox/solstice vs four-start positive anchors distinguish the two rules."
+        },
+        {
+          "mutation": "Shift civil-day offset -1→0",
+          "caughtBy": "D-1 positive and D negative fixtures must fail."
+        },
+        {
+          "mutation": "Subtract rolling 24h instead of civil day",
+          "caughtBy": "D-1 midnight and D midnight fixtures fail; no moving instant window."
+        },
+        {
+          "mutation": "Use Hong Kong UTC+8 transition day",
+          "caughtBy": "Tứ Ly spring2014: HKO March21 00:57 → VN March20 23:57, so matched date is March19, not March20."
+        }
+      ]
+    },
+    {
+      "id": "four-extinctions",
+      "name": "Tứ Tuyệt",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "verified",
+      "goldenEligible": true,
+      "basis": ["solar_term_transition", "civil_date"],
+      "rule": {
+        "kind": "civil-day-before-solar-transition",
+        "longitudes": [315, 45, 135, 225],
+        "dayOffset": -1,
+        "notInstantSubtraction24Hours": true
+      },
+      "boundaryConvention": "Asia/Ho_Chi_Minh fixed civil UTC+7; match whole civil day; lunar date changes at 00:00",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "location": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "originalText": "四絶者四立前一辰也",
+          "interpretation": "Day before Spring/Summer/Autumn/Winter Commences. Four season starts at 315,45,135,225 degrees under the project astronomical convention.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        },
+        {
+          "sourceId": "XJBF_QD",
+          "location": "卷六 / 義例四 / 四離四絶 / 李鼎祚曰",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "originalText": "此日忌出軍逺行",
+          "interpretation": "travel avoid; military action has no matching approved activity ID and is not broadened into litigation or business."
+        },
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "location": "卷六 / 四絶 / 曹震圭曰",
+          "originalText": "立春木旺水絶立夏火旺木絶立秋金旺土絶立冬水旺金絶故先一日為絶也",
+          "interpretation": "Explicit four seasonal starts; numeric longitudes come from the project astronomical convention."
+        }
+      ],
+      "confidence": "HIGH",
+      "notes": "Verified primary-text transcription; independent candidate fixtures await user review.",
+      "scope": ["travel"],
+      "effects": [
+        {
+          "activityId": "travel",
+          "effect": "avoid",
+          "sourceTextRef": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343#四離四絶",
+          "interpretationStatus": "direct lexical mapping: 出行/逺行 → travel"
+        }
+      ],
+      "reviewStatus": "awaiting-user-review",
+      "status": "extracted-candidate",
+      "affectsFinalResolution": false,
+      "aliases": ["四絶", "四絕", "Tứ Tuyệt"],
+      "propertyTestSpecification": [
+        "1900–2100: use existing exact transition engine for context ONLY; independent rule definition and HKO fixtures remain the oracle.",
+        "For each of four relevant terms per year: D-2=false, D-1=true, D=false, all civil UTC+7.",
+        "At D-1 midnight=true, D-1 23:59:59=true, D midnight=false. At transition -1min/exact/+1min no instant toggle: normally all on D and unmatched; if -1min falls on D-1 it must match.",
+        "Non-relevant terms must not create raw matches. Match is invariant to lunar day, leap flag and day stem/branch for fixed civil date and transitions.",
+        "At most four distinct matched civil dates/year; do not reset or miscount at civil-year boundaries.",
+        "Same absolute instant represented by Z versus +07 must give same UTC+7 result; never derive D from a substring of source +08 timestamp.",
+        "Compare existing exact engine transition with independently published minute reference using existing 60-second reference policy; do not claim published minute as exact to milliseconds.",
+        "Deduplicate aliases into canonical rule ID; every record includes rule and context provenance."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Replace relevant longitude 315 with 0",
+          "caughtBy": "Frozen equinox/solstice vs four-start positive anchors distinguish the two rules."
+        },
+        {
+          "mutation": "Shift civil-day offset -1→0",
+          "caughtBy": "D-1 positive and D negative fixtures must fail."
+        },
+        {
+          "mutation": "Subtract rolling 24h instead of civil day",
+          "caughtBy": "D-1 midnight and D midnight fixtures fail; no moving instant window."
+        },
+        {
+          "mutation": "Use Hong Kong UTC+8 transition day",
+          "caughtBy": "Timezone metamorphic tests and a future independently sourced crossing in the UTC+7/UTC+8 date-divergence window are required; current four start anchors do not kill this mutation alone."
+        }
+      ]
+    },
+    {
+      "id": "month-breaker",
+      "name": "Nguyệt Phá",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "day_branch"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "day_branch",
+              "value": "申"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "day_branch",
+              "value": "酉"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "day_branch",
+              "value": "戌"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "day_branch",
+              "value": "亥"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "day_branch",
+              "value": "子"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "day_branch",
+              "value": "丑"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "day_branch",
+              "value": "寅"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "day_branch",
+              "value": "卯"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "day_branch",
+              "value": "辰"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "day_branch",
+              "value": "巳"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "day_branch",
+              "value": "午"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "day_branch",
+              "value": "未"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 12
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "卷四 / 義例二 / 月破 / 考原曰",
+          "originalText": "月破者月建所衝之日也",
+          "interpretation": "Opposite branch to month 建; six-branch opposition.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Symbolic table is source-extracted; date/month basis admission remains pending. No production table used.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "申"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "酉"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "戌"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "亥"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "子"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "丑"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "辰"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "巳"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "午"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "未"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷四 / 義例二 / 月破 / 考原曰"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "robbery-sha",
+      "name": "Kiếp Sát",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "day_branch"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "day_branch",
+              "value": "亥"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "day_branch",
+              "value": "申"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "day_branch",
+              "value": "巳"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "day_branch",
+              "value": "寅"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "day_branch",
+              "value": "亥"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "day_branch",
+              "value": "申"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "day_branch",
+              "value": "巳"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "day_branch",
+              "value": "寅"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "day_branch",
+              "value": "亥"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "day_branch",
+              "value": "申"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "day_branch",
+              "value": "巳"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "day_branch",
+              "value": "寅"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 4
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "location": "卷六 / 義例四 / 刼煞 / 李鼎祚曰",
+          "originalText": "正月起亥逆行四孟",
+          "interpretation": "First month target 亥, reverse 四孟 sequence; four-month period.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Symbolic table is source-extracted; date/month basis admission remains pending. No production table used.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "亥"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "申"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "巳"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "亥"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "申"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "巳"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "亥"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "申"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "巳"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 刼煞 / 李鼎祚曰"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "disaster-sha",
+      "name": "Tai Sát",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "day_branch"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "day_branch",
+              "value": "子"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "day_branch",
+              "value": "酉"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "day_branch",
+              "value": "午"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "day_branch",
+              "value": "卯"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "day_branch",
+              "value": "子"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "day_branch",
+              "value": "酉"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "day_branch",
+              "value": "午"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "day_branch",
+              "value": "卯"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "day_branch",
+              "value": "子"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "day_branch",
+              "value": "酉"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "day_branch",
+              "value": "午"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "day_branch",
+              "value": "卯"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 4
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "location": "卷六 / 義例四 / 月災煞、天獄 / 按",
+          "originalText": "天獄即是災煞應逆行四仲",
+          "interpretation": "Editorial correction: reverse 四仲, not forward 天火 legacy cycle. 月災煞 must not be counted twice as 天獄.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        },
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "location": "卷六 / 月災煞 paragraph and editorial correction",
+          "originalText": "今用災煞天獄應刪",
+          "interpretation": "Use disaster-sha canonical ID; do not duplicate 天獄. Do not conflate with 天火."
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Symbolic table is source-extracted; date/month basis admission remains pending. No production table used.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "子"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "酉"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "午"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "子"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "酉"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "午"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "子"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "酉"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "午"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "卯"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月災煞、天獄 / 按"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "month-sha",
+      "name": "Nguyệt Sát",
+      "polarity": "inauspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "day_branch"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "day_branch",
+              "value": "丑"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "day_branch",
+              "value": "戌"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "day_branch",
+              "value": "未"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "day_branch",
+              "value": "辰"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "day_branch",
+              "value": "丑"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "day_branch",
+              "value": "戌"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "day_branch",
+              "value": "未"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "day_branch",
+              "value": "辰"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "day_branch",
+              "value": "丑"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "day_branch",
+              "value": "戌"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "day_branch",
+              "value": "未"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "day_branch",
+              "value": "辰"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 4
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+          "location": "卷六 / 義例四 / 月煞 / 歴例曰",
+          "originalText": "月煞者正月起丑逆行四季",
+          "interpretation": "Reverse 四季, period four; 月虚 is an alias in the source, not a second raw match.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Symbolic table is source-extracted; date/month basis admission remains pending. No production table used.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "丑"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "戌"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "未"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "辰"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "丑"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "戌"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "未"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "辰"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "丑"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "戌"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "未"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "辰"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷六 / 義例四 / 月煞 / 歴例曰"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "month-virtue",
+      "name": "Nguyệt Đức",
+      "polarity": "auspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "day_stem"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "day_stem",
+              "value": "丙"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "day_stem",
+              "value": "甲"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "day_stem",
+              "value": "壬"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "day_stem",
+              "value": "庚"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "day_stem",
+              "value": "丙"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "day_stem",
+              "value": "甲"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "day_stem",
+              "value": "壬"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "day_stem",
+              "value": "庚"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "day_stem",
+              "value": "丙"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "day_stem",
+              "value": "甲"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "day_stem",
+              "value": "壬"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "day_stem",
+              "value": "庚"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 4
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "卷五 / 義例三 / 月徳 / 歴例曰",
+          "originalText": "正五九月在丙二六十月在甲三七十一月在壬四八十二月在庚",
+          "interpretation": "Source explicitly gives four triplets; preserve 日干 target, not day branch.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Symbolic table is source-extracted; date/month basis admission remains pending. No production table used.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "丙"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 2,
+            "targetOperand": "乙"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "壬"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "庚"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "丙"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 5,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "乙"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "壬"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "庚"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 8,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "丙"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "乙"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "壬"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 11,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "庚"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 月徳 / 歴例曰"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "heaven-virtue",
+      "name": "Thiên Đức",
+      "polarity": "auspicious",
+      "sourceId": "XJBF_QD",
+      "sourceTier": "A",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "partial",
+      "goldenEligible": false,
+      "basis": ["source_month_jian_branch", "mixed_stem_trigram"],
+      "rule": {
+        "kind": "candidate-symbolic-lookup",
+        "lookup": [
+          {
+            "sourceMonthOrdinal": 1,
+            "sourceMonthJianBranch": "寅",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "丁"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 2,
+            "sourceMonthJianBranch": "卯",
+            "target": {
+              "kind": "trigram",
+              "value": "坤"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 3,
+            "sourceMonthJianBranch": "辰",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "壬"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 4,
+            "sourceMonthJianBranch": "巳",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "辛"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 5,
+            "sourceMonthJianBranch": "午",
+            "target": {
+              "kind": "trigram",
+              "value": "乾"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 6,
+            "sourceMonthJianBranch": "未",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "甲"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 7,
+            "sourceMonthJianBranch": "申",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "癸"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 8,
+            "sourceMonthJianBranch": "酉",
+            "target": {
+              "kind": "trigram",
+              "value": "艮"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 9,
+            "sourceMonthJianBranch": "戌",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "丙"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 10,
+            "sourceMonthJianBranch": "亥",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "乙"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 11,
+            "sourceMonthJianBranch": "子",
+            "target": {
+              "kind": "trigram",
+              "value": "巽"
+            }
+          },
+          {
+            "sourceMonthOrdinal": 12,
+            "sourceMonthJianBranch": "丑",
+            "target": {
+              "kind": "mixed_stem_trigram",
+              "value": "庚"
+            }
+          }
+        ],
+        "calendarContextBinding": "PENDING; lookup is not a production evaluator",
+        "cycleMonths": 12,
+        "unresolvedMonths": [2, 5, 8, 11]
+      },
+      "boundaryConvention": "UNRESOLVED: source 月建 mapped to exact solar-month context versus numbered lunar month; leap handling and instantaneous cutoff require review.",
+      "sourceEvidence": [
+        {
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "卷五 / 義例三 / 天徳 / 堪輿經曰",
+          "originalText": "正月丁二月坤三月壬四月辛五月乾六月甲七月癸八月艮九月丙十月乙十一月巽十二月庚",
+          "interpretation": "Four 仲 targets are trigrams; text discusses incompatible branch reconstructions. Never silently map 坤/乾/艮/巽 to a day branch.",
+          "evidenceLevel": "primary-work-digital-transcription",
+          "facsimileCollation": "not-performed"
+        }
+      ],
+      "confidence": "MEDIUM",
+      "notes": "Primary wording and symbolic lookup extracted. Final calendar-context interpretation is not independently reviewed; no authoritative date fixture. Heaven virtue also requires explicit trigram-versus-day operand resolution.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "candidateFixtures": [
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "丁"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 1,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "壬"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 3,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "辛"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 4,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "甲"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 6,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "癸"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 7,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "丙"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 9,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "乙"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 10,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "庚"
+          },
+          "expected": {
+            "symbolicTargetMatches": true
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        },
+        {
+          "inputContext": {
+            "sourceMonthOrdinal": 12,
+            "targetOperand": "寅"
+          },
+          "expected": {
+            "symbolicTargetMatches": false
+          },
+          "authority": "NON_AUTHORITATIVE_SYMBOLIC_ONLY",
+          "sourceLocation": "卷五 / 義例三 / 天徳 / 堪輿經曰"
+        }
+      ],
+      "propertyTestSpecification": [
+        "After basis review: enumerate full 12 source-month contexts × 12 day branches or ×10 day stems; canonical enum outputs only.",
+        "For four-month tables assert m and m+4 have same symbolic target; month-breaker assert opposition is involutive.",
+        "Do not assert date-based PASS until month-context/transition/leap policy admitted.",
+        "Heaven-virtue months2,5,8,11 remain unresolved mixed trigram operands; do not replace them with chosen branches."
+      ],
+      "mutationTestDesign": [
+        {
+          "mutation": "Alter first symbolic month target to a different target",
+          "caughtBy": "Source-based month1 positive and negative symbolic anchors must fail; these are candidate anchors, not date-Golden evidence."
+        }
+      ]
+    },
+    {
+      "id": "thu-tu",
+      "name": "Thụ Tử",
+      "polarity": "inauspicious",
+      "sourceId": "VN_TRADITION_EXTENSION",
+      "sourceTier": "VN",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "unverified",
+      "goldenEligible": false,
+      "basis": [],
+      "rule": {},
+      "boundaryConvention": "UNRESOLVED",
+      "sourceEvidence": [],
+      "confidence": "LOW",
+      "notes": "Tier VN; current project conventions documented separately. No project-approved Vietnamese canonical edition or leap/boundary policy locked; no promotion despite previous legacy audit labels.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "sourceCandidates": [
+        {
+          "url": "https://zh.wikisource.org/wiki/選擇紀要/上編",
+          "location": "上編 / 嫁娶類 / 披麻・紅紗・受死",
+          "status": "Candidate only: a different primary work, not XJBF_QD and not a project-approved Vietnamese canonical source"
+        }
+      ],
+      "propertyTestSpecification": [
+        "No canonical evaluator or Golden until a Vietnamese canonical edition, exact location, basis and boundary/leap convention are approved."
+      ],
+      "mutationTestDesign": []
+    },
+    {
+      "id": "sat-chu",
+      "name": "Sát Chủ",
+      "polarity": "inauspicious",
+      "sourceId": "VN_TRADITION_EXTENSION",
+      "sourceTier": "VN",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "unverified",
+      "goldenEligible": false,
+      "basis": [],
+      "rule": {},
+      "boundaryConvention": "UNRESOLVED",
+      "sourceEvidence": [],
+      "confidence": "LOW",
+      "notes": "Tier VN; current project conventions documented separately. No project-approved Vietnamese canonical edition or leap/boundary policy locked; no promotion despite previous legacy audit labels.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "sourceCandidates": [],
+      "propertyTestSpecification": [
+        "No canonical evaluator or Golden until a Vietnamese canonical edition, exact location, basis and boundary/leap convention are approved."
+      ],
+      "mutationTestDesign": []
+    },
+    {
+      "id": "tam-nuong",
+      "name": "Tam Nương",
+      "polarity": "inauspicious",
+      "sourceId": "VN_TRADITION_EXTENSION",
+      "sourceTier": "VN",
+      "ruleVersion": "3.0.0",
+      "provenanceStatus": "unverified",
+      "goldenEligible": false,
+      "basis": [],
+      "rule": {},
+      "boundaryConvention": "UNRESOLVED",
+      "sourceEvidence": [],
+      "confidence": "LOW",
+      "notes": "Tier VN; current project conventions documented separately. No project-approved Vietnamese canonical edition or leap/boundary policy locked; no promotion despite previous legacy audit labels.",
+      "scope": [],
+      "effects": [],
+      "reviewStatus": "awaiting-user-review",
+      "status": "PENDING",
+      "affectsFinalResolution": false,
+      "sourceCandidates": [],
+      "propertyTestSpecification": [
+        "No canonical evaluator or Golden until a Vietnamese canonical edition, exact location, basis and boundary/leap convention are approved."
+      ],
+      "mutationTestDesign": []
+    }
+  ]
+}

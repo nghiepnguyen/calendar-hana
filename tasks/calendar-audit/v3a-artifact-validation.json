@@ -1,0 +1,31 @@
+{
+  "phase": "3A",
+  "artifactValidation": "PASS",
+  "fixtureRecordsChecked": 100,
+  "fixtureCounts": {
+    "yue-ji": {
+      "total": 24,
+      "positive": 8,
+      "negative": 16
+    },
+    "four-separations": {
+      "total": 38,
+      "positive": 12,
+      "negative": 26
+    },
+    "four-extinctions": {
+      "total": 38,
+      "positive": 12,
+      "negative": 26
+    }
+  },
+  "productionAndEarlierGoldenHashes": "UNCHANGED",
+  "v3InputsSha256": {
+    "/Users/nghiepnguyen/Downloads/calendar-source-lock-v3.md": "3f7f3a34ea3734eb543ebc8f33f0aeca755215cf6318baedeff43c0642436ced",
+    "/Users/nghiepnguyen/Downloads/calendar-validation-spec-v3.md": "5e3f7a8aac5e264ad2f24799108dea7a08eae0cd80c256b1c4c21c6f130dc183",
+    "/Users/nghiepnguyen/Downloads/calendar-rule-registry-v3.json": "4f1d05b5829aff2d99685e6f2245415bd94cf9af8df6c3eb22ab371098f53188"
+  },
+  "productionRuleTests": "NOT_RUN; extraction only",
+  "propertyMutationTests": "DESIGN_ONLY",
+  "reviewStatus": "awaiting-user-review"
+}

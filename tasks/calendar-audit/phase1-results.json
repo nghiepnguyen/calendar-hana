@@ -1,0 +1,133 @@
+{
+  "phase": 1,
+  "days": 73414,
+  "leapYears": [
+    1900,
+    1903,
+    1906,
+    1909,
+    1911,
+    1914,
+    1917,
+    1919,
+    1922,
+    1925,
+    1928,
+    1930,
+    1933,
+    1936,
+    1938,
+    1941,
+    1944,
+    1947,
+    1949,
+    1952,
+    1955,
+    1957,
+    1960,
+    1963,
+    1966,
+    1968,
+    1971,
+    1974,
+    1976,
+    1979,
+    1982,
+    1985,
+    1987,
+    1990,
+    1993,
+    1995,
+    1998,
+    2001,
+    2004,
+    2006,
+    2009,
+    2012,
+    2014,
+    2017,
+    2020,
+    2023,
+    2025,
+    2028,
+    2031,
+    2033,
+    2036,
+    2039,
+    2042,
+    2044,
+    2047,
+    2050,
+    2052,
+    2055,
+    2058,
+    2061,
+    2063,
+    2066,
+    2069,
+    2071,
+    2074,
+    2077,
+    2080,
+    2082,
+    2085,
+    2088,
+    2090,
+    2093,
+    2096,
+    2099
+  ],
+  "results": {
+    "Dataset": {
+      "checks": 1,
+      "failures": []
+    },
+    "JDN": {
+      "checks": 146928,
+      "failures": []
+    },
+    "Lunar": {
+      "checks": 220341,
+      "failures": []
+    },
+    "Lunar inverse": {
+      "checks": 73514,
+      "failures": []
+    },
+    "Can Chi day": {
+      "checks": 220343,
+      "failures": []
+    },
+    "Can Chi month": {
+      "checks": 73514,
+      "failures": []
+    },
+    "Can Chi year": {
+      "checks": 73514,
+      "failures": []
+    },
+    "Nap am": {
+      "checks": 146988,
+      "failures": []
+    },
+    "Hoang Dao hours": {
+      "checks": 220342,
+      "failures": []
+    },
+    "Leap months": {
+      "checks": 2171,
+      "failures": []
+    },
+    "Elements": {
+      "checks": 2,
+      "failures": []
+    },
+    "Civil boundary": {
+      "checks": 17,
+      "failures": []
+    }
+  },
+  "goldenSha256": "d368f30dc2c597daa6a4661a4db04c25c2f4178ab2e51b3dc7d20ef9610b5e37",
+  "status": "PASS",
+  "phase2": "Eligible only when this audit and boundary regression pass"
+}

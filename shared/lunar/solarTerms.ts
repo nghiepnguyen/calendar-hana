@@ -113,6 +113,19 @@ export function getSolarTermAt(instantUtc: string): SolarTermInstant {
   return active ?? solarTermsForYear(year - 1).at(-1)!
 }
 
+/** Active solar-month branch (0 = Tý), using the exact crossing instant.
+ * dateTime must include Z or an explicit offset; timezone is an explicit IANA zone.
+ * The month is global at a given instant; timezone determines the civil day for callers.
+ * At a month-opening crossing the new month is active, never at midnight in advance.
+ */
+export function getSolarMonth(dateTime: string, timezone: string): number {
+  if (typeof timezone !== 'string' || !timezone.trim())
+    throw new RangeError('Expected explicit timezone')
+  new Intl.DateTimeFormat('en', { timeZone: timezone })
+  const { index } = getSolarTermAt(dateTime)
+  return ((Math.floor((index - 21 + 24) / 2) % 12) + 2) % 12
+}
+
 export interface SolarTermInfo {
   index: number
   name: string

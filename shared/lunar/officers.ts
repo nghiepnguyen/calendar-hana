@@ -4,7 +4,11 @@
 // cách ghi của licham.vn (Thâu thay cho Thu). licham.vn không ghi tốt/xấu: Phá, Nguy, Thâu, Bế
 // được xếp là trực xấu theo cách phân loại phổ biến. Việc nên làm / nên kiêng được viết lại ngắn gọn.
 
-import { solarTermMonthChi } from './solarTerms'
+import { formatInTimeZone } from 'date-fns-tz'
+import { todayInVietnam } from '../time'
+import { dayCanChi } from './canChi'
+import { solarStringToJd } from './julian'
+import { getSolarMonth, solarTermMonthChi } from './solarTerms'
 
 export interface Officer {
   /** 0..11, 0 = Kiến. */
@@ -96,8 +100,27 @@ const OFFICERS: readonly OfficerRow[] = [
 /**
  * Trực của ngày jd. Ngày có Chi trùng Chi của tháng tiết khí là trực Kiến, rồi lần lượt theo thứ
  * tự trong bảng. Ngày bắt đầu tiết mới lặp lại trực của ngày trước đó.
+ * Legacy whole-day presentation: the entire crossing day uses the new month.
+ * Use getOfficerAtInstant for exact-instant calculations.
  */
 export function getOfficer(jd: number, dayChi: number): Officer {
   const index = (dayChi - solarTermMonthChi(jd) + 12) % 12
+  return { index, ...OFFICERS[index] }
+}
+
+/** Trực at a zoned instant, with day branch determined by civil midnight in timezone.
+ * Reuses the exact solar-term engine and the existing Officer table.
+ * Asia/Ho_Chi_Minh follows the project's fixed UTC+7 civil calendar across 1900–2100,
+ * rather than historical tzdb offsets. Other explicit zones use their timezone rules.
+ */
+export function getOfficerAtInstant(dateTime: string, timezone: string): Officer {
+  const monthChi = getSolarMonth(dateTime, timezone)
+  const instant = new Date(dateTime)
+  const date =
+    timezone === 'Asia/Ho_Chi_Minh'
+      ? todayInVietnam(instant)
+      : formatInTimeZone(instant, timezone, 'yyyy-MM-dd')
+  const dayChi = dayCanChi(solarStringToJd(date)).chi
+  const index = (dayChi - monthChi + 12) % 12
   return { index, ...OFFICERS[index] }
 }

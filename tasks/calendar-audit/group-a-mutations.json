@@ -1,0 +1,211 @@
+{
+  "status": "PASS",
+  "productionRestored": true,
+  "goldenUnchanged": true,
+  "testsUnchanged": true,
+  "total": 11,
+  "killed": 11,
+  "results": [
+    {
+      "name": "yue-day-5-to-6",
+      "killed": true,
+      "failedTests": 8,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2024-02-14T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2024-02-15T12:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-03-26T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "yue-gregorian-day",
+      "killed": true,
+      "failedTests": 7,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2024-03-03T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-03-26T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-04-04T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "yue-ignore-leap",
+      "killed": true,
+      "failedTests": 4,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-03-26T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-04-04T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 yue-ji yue-ji-2023-04-13T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "ly-longitude-0-to-315",
+      "killed": true,
+      "failedTests": 5,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T23:59:59+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "tuyet-longitude-315-to-0",
+      "killed": true,
+      "failedTests": 5,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T23:59:59+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "ly-offset-zero",
+      "killed": true,
+      "failedTests": 34,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-20T12:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "tuyet-offset-zero",
+      "killed": true,
+      "failedTests": 33,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-04T12:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "ly-rolling-24h",
+      "killed": true,
+      "failedTests": 20,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-20T12:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "tuyet-rolling-24h",
+      "killed": true,
+      "failedTests": 22,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-03T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-04T00:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-extinctions four-extinctions-2014-02-04T05:02:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "ly-utc8",
+      "killed": true,
+      "failedTests": 10,
+      "evidence": [
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T12:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-20T12:00:00+07:00",
+          "evidence": "AssertionError: expected true to be false // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        },
+        {
+          "name": "frozen Golden V3 four-separations four-separations-2014-03-19T00:00:00+07:00",
+          "evidence": "AssertionError: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:23:88\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node"
+        }
+      ]
+    },
+    {
+      "name": "tuyet-utc8",
+      "killed": true,
+      "failedTests": 1,
+      "evidence": [
+        {
+          "name": "all civil and exact term boundaries 1900–2100",
+          "evidence": "AssertionError: four-extinctions 1907-05-05T00:00:00+07:00 45: expected false to be true // Object.is equality\n    at /Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts:51:13\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3314:10)\n    at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3299:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3257:10)\n    at file:///U"
+        }
+      ]
+    }
+  ]
+}

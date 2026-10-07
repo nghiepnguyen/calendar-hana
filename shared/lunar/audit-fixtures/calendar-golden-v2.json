@@ -1,0 +1,4728 @@
+{
+  "$schema": "./calendar-golden-v2.schema.json",
+  "meta": {
+    "name": "Vietnamese Calendar Golden Dataset v2",
+    "version": "2.0.0",
+    "recordCount": 100,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "dayBoundary": "00:00 civil UTC+7",
+    "mansionAnchor": {
+      "date": "2026-09-30",
+      "mansion": "Bích"
+    },
+    "rules": {
+      "truc": "solar-term month branch; day branch equal month branch => Kiến",
+      "mansion28": "continuous 28-day cycle from reviewed anchor",
+      "solarTerm": "solar longitude at local noon; exact transition-minute testing must use dedicated transition fixtures",
+      "hoangDaoDay": "12 day-gods by lunar month",
+      "directions": "versioned lookup by day stem"
+    },
+    "reviewNotes": [
+      "Cát/hung thần and activity advice intentionally remain excluded.",
+      "Direction tables are included for regression but should be source-locked before treating them as authoritative.",
+      "Solar-term field is a day/noon regression value, not an exact transition timestamp."
+    ]
+  },
+  "records": [
+    {
+      "date": "1900-01-01",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2415021,
+      "lunar": {
+        "year": 1899,
+        "month": 12,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Đinh Sửu",
+        "yearLunarConvention": "Kỷ Hợi"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 280.3669,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Tâm",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2000-02-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2451604,
+      "lunar": {
+        "year": 2000,
+        "month": 1,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Tỵ",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Canh Thìn"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Vũ Thủy",
+        "solarLongitudeDegApprox": 339.9267,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Chủy",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2023-01-22",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2459967,
+      "lunar": {
+        "year": 2023,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thìn",
+        "monthCivilLunarConvention": "Giáp Dần",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Hàn",
+        "solarLongitudeDegApprox": 301.9033,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Hư",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-01-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460314,
+      "lunar": {
+        "year": 2023,
+        "month": 11,
+        "day": 23,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Mão",
+        "monthCivilLunarConvention": "Giáp Tý",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 283.3197,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Tỉnh",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-01-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460316,
+      "lunar": {
+        "year": 2023,
+        "month": 11,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Tỵ",
+        "monthCivilLunarConvention": "Giáp Tý",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Hàn",
+        "solarLongitudeDegApprox": 285.3582,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-02-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460345,
+      "lunar": {
+        "year": 2023,
+        "month": 12,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tuất",
+        "monthCivilLunarConvention": "Ất Sửu",
+        "yearLunarConvention": "Quý Mão"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Hàn",
+        "solarLongitudeDegApprox": 314.8654,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Tinh",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-02-10",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460351,
+      "lunar": {
+        "year": 2024,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Bính Dần",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 320.9455,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Đê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460375,
+      "lunar": {
+        "year": 2024,
+        "month": 1,
+        "day": 25,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Thìn",
+        "monthCivilLunarConvention": "Bính Dần",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 345.1211,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Dực",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-03-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460377,
+      "lunar": {
+        "year": 2024,
+        "month": 1,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Ngọ",
+        "monthCivilLunarConvention": "Bính Dần",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 347.1234,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Giác",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Bạch Hổ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-04-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460406,
+      "lunar": {
+        "year": 2024,
+        "month": 2,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Hợi",
+        "monthCivilLunarConvention": "Đinh Mão",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Thanh Minh",
+        "solarLongitudeDegApprox": 15.9128,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Cang",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-05-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460436,
+      "lunar": {
+        "year": 2024,
+        "month": 3,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Tỵ",
+        "monthCivilLunarConvention": "Mậu Thìn",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Đại Lâm Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 45.2058,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Phòng",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460438,
+      "lunar": {
+        "year": 2024,
+        "month": 3,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mùi",
+        "monthCivilLunarConvention": "Mậu Thìn",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 47.1424,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Vĩ",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-06-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460468,
+      "lunar": {
+        "year": 2024,
+        "month": 5,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Sửu",
+        "monthCivilLunarConvention": "Canh Ngọ",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Bích Thượng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Mang Chủng",
+        "solarLongitudeDegApprox": 75.9996,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Đẩu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-07-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460498,
+      "lunar": {
+        "year": 2024,
+        "month": 6,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mùi",
+        "monthCivilLunarConvention": "Tân Mùi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Lộ Bàng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Hạ Chí",
+        "solarLongitudeDegApprox": 104.6366,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Nữ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-07-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460500,
+      "lunar": {
+        "year": 2024,
+        "month": 6,
+        "day": 3,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Dậu",
+        "monthCivilLunarConvention": "Tân Mùi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Thử",
+        "solarLongitudeDegApprox": 106.5435,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mùi",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Nguy",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-08-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460531,
+      "lunar": {
+        "year": 2024,
+        "month": 7,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Nhâm Thân",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Thu",
+        "solarLongitudeDegApprox": 136.1587,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Thành",
+      "mansion28": "Khuê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-09-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460561,
+      "lunar": {
+        "year": 2024,
+        "month": 8,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Quý Dậu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 165.0805,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Vị",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-09-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460563,
+      "lunar": {
+        "year": 2024,
+        "month": 8,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Quý Dậu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 167.0226,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Tất",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Hình",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460592,
+      "lunar": {
+        "year": 2024,
+        "month": 9,
+        "day": 6,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Tỵ",
+        "monthCivilLunarConvention": "Giáp Tuất",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Hàn Lộ",
+        "solarLongitudeDegApprox": 195.4194,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Chủy",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-11-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460621,
+      "lunar": {
+        "year": 2024,
+        "month": 10,
+        "day": 6,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Ất Hợi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Sương Giáng",
+        "solarLongitudeDegApprox": 224.2834,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Sâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-11-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460623,
+      "lunar": {
+        "year": 2024,
+        "month": 10,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Ất Hợi",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Đông",
+        "solarLongitudeDegApprox": 226.2905,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Quỷ",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Bạch Hổ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2024-12-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460652,
+      "lunar": {
+        "year": 2024,
+        "month": 11,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Tỵ",
+        "monthCivilLunarConvention": "Bính Tý",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Tuyết",
+        "solarLongitudeDegApprox": 255.5875,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-01-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460680,
+      "lunar": {
+        "year": 2024,
+        "month": 12,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Dậu",
+        "monthCivilLunarConvention": "Đinh Sửu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 284.0915,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-01-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460682,
+      "lunar": {
+        "year": 2024,
+        "month": 12,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Hợi",
+        "monthCivilLunarConvention": "Đinh Sửu",
+        "yearLunarConvention": "Giáp Thìn"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Hàn",
+        "solarLongitudeDegApprox": 286.13,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Trương",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-01-29",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460705,
+      "lunar": {
+        "year": 2025,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tuất",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bình Địa Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Hàn",
+        "solarLongitudeDegApprox": 309.5435,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Sâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-02-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460711,
+      "lunar": {
+        "year": 2025,
+        "month": 1,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Mậu Dần",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 315.6334,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Dực",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460740,
+      "lunar": {
+        "year": 2025,
+        "month": 2,
+        "day": 6,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Dậu",
+        "monthCivilLunarConvention": "Kỷ Mão",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Kiếm Phong Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Vũ Thủy",
+        "solarLongitudeDegApprox": 344.8781,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Chẩn",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-03-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460742,
+      "lunar": {
+        "year": 2025,
+        "month": 2,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Hợi",
+        "monthCivilLunarConvention": "Kỷ Mão",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 346.8808,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Thành",
+      "mansion28": "Cang",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-04-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460771,
+      "lunar": {
+        "year": 2025,
+        "month": 3,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thìn",
+        "monthCivilLunarConvention": "Canh Thìn",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Phú Đăng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Thanh Minh",
+        "solarLongitudeDegApprox": 15.6743,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Đê",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-05-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460801,
+      "lunar": {
+        "year": 2025,
+        "month": 4,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Tuất",
+        "monthCivilLunarConvention": "Tân Tỵ",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Sơn Đầu Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Cốc Vũ",
+        "solarLongitudeDegApprox": 44.9714,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Tâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460803,
+      "lunar": {
+        "year": 2025,
+        "month": 4,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Tân Tỵ",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 46.9082,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Cơ",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Bạch Hổ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-06-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460833,
+      "lunar": {
+        "year": 2025,
+        "month": 5,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Ngọ",
+        "monthCivilLunarConvention": "Nhâm Ngọ",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Mang Chủng",
+        "solarLongitudeDegApprox": 75.7683,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Ngưu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Hình",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-07-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460863,
+      "lunar": {
+        "year": 2025,
+        "month": 6,
+        "day": 12,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tý",
+        "monthCivilLunarConvention": "Quý Mùi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Giản Hạ Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Hạ Chí",
+        "solarLongitudeDegApprox": 104.4063,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Hư",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-07-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460865,
+      "lunar": {
+        "year": 2025,
+        "month": 6,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Dần",
+        "monthCivilLunarConvention": "Quý Mùi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Thử",
+        "solarLongitudeDegApprox": 106.3131,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mùi",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Thất",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-08-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460896,
+      "lunar": {
+        "year": 2025,
+        "month": 6,
+        "day": 15,
+        "leap": true
+      },
+      "canChi": {
+        "day": "Kỷ Dậu",
+        "monthCivilLunarConvention": "Quý Mùi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Thu",
+        "solarLongitudeDegApprox": 135.927,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Lâu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-09-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460926,
+      "lunar": {
+        "year": 2025,
+        "month": 7,
+        "day": 16,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mão",
+        "monthCivilLunarConvention": "Giáp Thân",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Xử Thử",
+        "solarLongitudeDegApprox": 164.8458,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Mão",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Chu Tước",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-09-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460928,
+      "lunar": {
+        "year": 2025,
+        "month": 7,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Tỵ",
+        "monthCivilLunarConvention": "Giáp Thân",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 166.7876,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Thành",
+      "mansion28": "Chủy",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460957,
+      "lunar": {
+        "year": 2025,
+        "month": 8,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tuất",
+        "monthCivilLunarConvention": "Ất Dậu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Hàn Lộ",
+        "solarLongitudeDegApprox": 195.1803,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Sâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-11-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460986,
+      "lunar": {
+        "year": 2025,
+        "month": 9,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mão",
+        "monthCivilLunarConvention": "Bính Tuất",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Sương Giáng",
+        "solarLongitudeDegApprox": 224.0403,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Tỉnh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-11-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2460988,
+      "lunar": {
+        "year": 2025,
+        "month": 9,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Tỵ",
+        "monthCivilLunarConvention": "Bính Tuất",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Đông",
+        "solarLongitudeDegApprox": 226.0471,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2025-12-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461017,
+      "lunar": {
+        "year": 2025,
+        "month": 10,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tuất",
+        "monthCivilLunarConvention": "Đinh Hợi",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Tuyết",
+        "solarLongitudeDegApprox": 255.3411,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Tinh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461045,
+      "lunar": {
+        "year": 2025,
+        "month": 11,
+        "day": 16,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Dần",
+        "monthCivilLunarConvention": "Mậu Tý",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 283.8441,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Tinh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-01-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461047,
+      "lunar": {
+        "year": 2025,
+        "month": 11,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thìn",
+        "monthCivilLunarConvention": "Mậu Tý",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Hàn",
+        "solarLongitudeDegApprox": 285.8826,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Dực",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461076,
+      "lunar": {
+        "year": 2025,
+        "month": 12,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Dậu",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Ất Tỵ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 315.3873,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Chẩn",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-02-17",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461089,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Tuất",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Hải Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 328.5421,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Thành",
+      "mansion28": "Thất",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461105,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 17,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Dần",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Vũ Thủy",
+        "solarLongitudeDegApprox": 344.6351,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Giác",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Hình",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-03-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461107,
+      "lunar": {
+        "year": 2026,
+        "month": 1,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thìn",
+        "monthCivilLunarConvention": "Canh Dần",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 346.638,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Đê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-04-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461136,
+      "lunar": {
+        "year": 2026,
+        "month": 2,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Dậu",
+        "monthCivilLunarConvention": "Tân Mão",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Trạch Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Thanh Minh",
+        "solarLongitudeDegApprox": 15.4358,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Phòng",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461166,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mão",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thành Đầu Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Cốc Vũ",
+        "solarLongitudeDegApprox": 44.737,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Vĩ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461168,
+      "lunar": {
+        "year": 2026,
+        "month": 3,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Tỵ",
+        "monthCivilLunarConvention": "Nhâm Thìn",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 46.6741,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Đẩu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-06-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461198,
+      "lunar": {
+        "year": 2026,
+        "month": 4,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Hợi",
+        "monthCivilLunarConvention": "Quý Tỵ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Mang Chủng",
+        "solarLongitudeDegApprox": 75.537,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Nữ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461228,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Tỵ",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Bạch Lạp Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Hạ Chí",
+        "solarLongitudeDegApprox": 104.1759,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Nguy",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Sửu",
+        "Thìn",
+        "Ngọ",
+        "Mùi",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461230,
+      "lunar": {
+        "year": 2026,
+        "month": 5,
+        "day": 24,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mùi",
+        "monthCivilLunarConvention": "Giáp Ngọ",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Dương Liễu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Thử",
+        "solarLongitudeDegApprox": 106.0828,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mùi",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Bích",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Chu Tước",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461261,
+      "lunar": {
+        "year": 2026,
+        "month": 6,
+        "day": 26,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Dần",
+        "monthCivilLunarConvention": "Ất Mùi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Thu",
+        "solarLongitudeDegApprox": 135.6954,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Vị",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461291,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 26,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thân",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Xử Thử",
+        "solarLongitudeDegApprox": 164.6111,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Tất",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461293,
+      "lunar": {
+        "year": 2026,
+        "month": 7,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tuất",
+        "monthCivilLunarConvention": "Bính Thân",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Ốc Thượng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 166.5526,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Sâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461322,
+      "lunar": {
+        "year": 2026,
+        "month": 8,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mão",
+        "monthCivilLunarConvention": "Đinh Dậu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Thu Phân",
+        "solarLongitudeDegApprox": 194.9413,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Tỉnh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461328,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Dậu",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Hàn Lộ",
+        "solarLongitudeDegApprox": 200.8732,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Chẩn",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461351,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thân",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Sương Giáng",
+        "solarLongitudeDegApprox": 223.7971,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Quỷ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-11-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461353,
+      "lunar": {
+        "year": 2026,
+        "month": 9,
+        "day": 30,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tuất",
+        "monthCivilLunarConvention": "Mậu Tuất",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Ốc Thượng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Đông",
+        "solarLongitudeDegApprox": 225.8037,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Tinh",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Hình",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2026-12-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461382,
+      "lunar": {
+        "year": 2026,
+        "month": 10,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mão",
+        "monthCivilLunarConvention": "Kỷ Hợi",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Tuyết",
+        "solarLongitudeDegApprox": 255.0947,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Trương",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-01-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461410,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 27,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mùi",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Dương Liễu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 283.5966,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Trương",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Chu Tước",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-01-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461412,
+      "lunar": {
+        "year": 2026,
+        "month": 11,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Dậu",
+        "monthCivilLunarConvention": "Canh Tý",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Hàn",
+        "solarLongitudeDegApprox": 285.6351,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Thành",
+      "mansion28": "Chẩn",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-02-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461441,
+      "lunar": {
+        "year": 2026,
+        "month": 12,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Dần",
+        "monthCivilLunarConvention": "Tân Sửu",
+        "yearLunarConvention": "Bính Ngọ"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 315.1411,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Giác",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-02-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461443,
+      "lunar": {
+        "year": 2027,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thìn",
+        "monthCivilLunarConvention": "Nhâm Dần",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Xuân",
+        "solarLongitudeDegApprox": 317.169,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Đê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461470,
+      "lunar": {
+        "year": 2027,
+        "month": 1,
+        "day": 28,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Quý Mùi",
+        "monthCivilLunarConvention": "Nhâm Dần",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Dương Liễu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Vũ Thủy",
+        "solarLongitudeDegApprox": 344.3921,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dần",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Cang",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-03-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461472,
+      "lunar": {
+        "year": 2027,
+        "month": 1,
+        "day": 30,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Dậu",
+        "monthCivilLunarConvention": "Nhâm Dần",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 346.3953,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Phòng",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-04-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461501,
+      "lunar": {
+        "year": 2027,
+        "month": 2,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Dần",
+        "monthCivilLunarConvention": "Quý Mão",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Đại Khê Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Thanh Minh",
+        "solarLongitudeDegApprox": 15.1972,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Tâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-05-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461531,
+      "lunar": {
+        "year": 2027,
+        "month": 3,
+        "day": 29,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Giáp Thân",
+        "monthCivilLunarConvention": "Giáp Thìn",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tuyền Trung Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Cốc Vũ",
+        "solarLongitudeDegApprox": 44.5026,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Cơ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461533,
+      "lunar": {
+        "year": 2027,
+        "month": 4,
+        "day": 2,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tuất",
+        "monthCivilLunarConvention": "Ất Tỵ",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Ốc Thượng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 46.4399,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Ngưu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-06-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461563,
+      "lunar": {
+        "year": 2027,
+        "month": 5,
+        "day": 2,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Thìn",
+        "monthCivilLunarConvention": "Bính Ngọ",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Sa Trung Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Mang Chủng",
+        "solarLongitudeDegApprox": 75.3056,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Hư",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-07-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461593,
+      "lunar": {
+        "year": 2027,
+        "month": 6,
+        "day": 3,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Tuất",
+        "monthCivilLunarConvention": "Đinh Mùi",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Ốc Thượng Thổ",
+      "solarTermAtLocalNoon": {
+        "name": "Hạ Chí",
+        "solarLongitudeDegApprox": 103.9456,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Thất",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-07-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461595,
+      "lunar": {
+        "year": 2027,
+        "month": 6,
+        "day": 5,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tý",
+        "monthCivilLunarConvention": "Đinh Mùi",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Thử",
+        "solarLongitudeDegApprox": 105.8524,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mùi",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Khuê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-08-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461626,
+      "lunar": {
+        "year": 2027,
+        "month": 7,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mùi",
+        "monthCivilLunarConvention": "Mậu Thân",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Thiên Thượng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Thu",
+        "solarLongitudeDegApprox": 135.4638,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Mão",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-09-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461656,
+      "lunar": {
+        "year": 2027,
+        "month": 8,
+        "day": 7,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Sửu",
+        "monthCivilLunarConvention": "Kỷ Dậu",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Xử Thử",
+        "solarLongitudeDegApprox": 164.3765,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Chủy",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Chu Tước",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-09-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461658,
+      "lunar": {
+        "year": 2027,
+        "month": 8,
+        "day": 9,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mão",
+        "monthCivilLunarConvention": "Kỷ Dậu",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 166.3177,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Tỉnh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461687,
+      "lunar": {
+        "year": 2027,
+        "month": 9,
+        "day": 9,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thân",
+        "monthCivilLunarConvention": "Canh Tuất",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Thu Phân",
+        "solarLongitudeDegApprox": 194.7023,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Quỷ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-11-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461716,
+      "lunar": {
+        "year": 2027,
+        "month": 10,
+        "day": 9,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Sửu",
+        "monthCivilLunarConvention": "Tân Hợi",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Sương Giáng",
+        "solarLongitudeDegApprox": 223.554,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Bình",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-11-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461718,
+      "lunar": {
+        "year": 2027,
+        "month": 10,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mão",
+        "monthCivilLunarConvention": "Tân Hợi",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Đông",
+        "solarLongitudeDegApprox": 225.5603,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Trương",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2027-12-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461747,
+      "lunar": {
+        "year": 2027,
+        "month": 11,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thân",
+        "monthCivilLunarConvention": "Nhâm Tý",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Tuyết",
+        "solarLongitudeDegApprox": 254.8483,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Dực",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-01-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461775,
+      "lunar": {
+        "year": 2027,
+        "month": 12,
+        "day": 8,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Mậu Tý",
+        "monthCivilLunarConvention": "Quý Sửu",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 283.3492,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Dực",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Nam",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-01-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461777,
+      "lunar": {
+        "year": 2027,
+        "month": 12,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Dần",
+        "monthCivilLunarConvention": "Quý Sửu",
+        "yearLunarConvention": "Đinh Mùi"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Hàn",
+        "solarLongitudeDegApprox": 285.3877,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Trừ",
+      "mansion28": "Giác",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-01-26",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461797,
+      "lunar": {
+        "year": 2028,
+        "month": 1,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Tuất",
+        "monthCivilLunarConvention": "Giáp Dần",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Thoa Xuyến Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Hàn",
+        "solarLongitudeDegApprox": 305.7545,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Sâm",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-02-04",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461806,
+      "lunar": {
+        "year": 2028,
+        "month": 1,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Mùi",
+        "monthCivilLunarConvention": "Giáp Dần",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Thiên Thượng Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Hàn",
+        "solarLongitudeDegApprox": 314.8949,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Sửu",
+      "trucAtLocalNoon": "Phá",
+      "mansion28": "Cang",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-03-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461836,
+      "lunar": {
+        "year": 2028,
+        "month": 2,
+        "day": 10,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Kỷ Sửu",
+        "monthCivilLunarConvention": "Ất Mão",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Tích Lịch Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 345.1511,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Phòng",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Chu Tước",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Chính Bắc",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-03-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461838,
+      "lunar": {
+        "year": 2028,
+        "month": 2,
+        "day": 12,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Tân Mão",
+        "monthCivilLunarConvention": "Ất Mão",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Kinh Trập",
+        "solarLongitudeDegApprox": 347.1535,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mão",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Vĩ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-04-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461867,
+      "lunar": {
+        "year": 2028,
+        "month": 3,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Thân",
+        "monthCivilLunarConvention": "Bính Thìn",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Thạch Lựu Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Thanh Minh",
+        "solarLongitudeDegApprox": 15.9435,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thìn",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Cơ",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-05-05",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461897,
+      "lunar": {
+        "year": 2028,
+        "month": 4,
+        "day": 11,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Canh Dần",
+        "monthCivilLunarConvention": "Đinh Tỵ",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Tùng Bách Mộc",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 45.2371,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Ngưu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Tây Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-05-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461899,
+      "lunar": {
+        "year": 2028,
+        "month": 4,
+        "day": 13,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Thìn",
+        "monthCivilLunarConvention": "Đinh Tỵ",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Trường Lưu Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Hạ",
+        "solarLongitudeDegApprox": 47.1737,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tỵ",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Hư",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Tư Mệnh",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-06-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461929,
+      "lunar": {
+        "year": 2028,
+        "month": 5,
+        "day": 14,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Nhâm Tuất",
+        "monthCivilLunarConvention": "Mậu Ngọ",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Đại Hải Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Mang Chủng",
+        "solarLongitudeDegApprox": 76.0314,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Thất",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Bạch Hổ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-07-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461959,
+      "lunar": {
+        "year": 2028,
+        "month": 5,
+        "day": 14,
+        "leap": true
+      },
+      "canChi": {
+        "day": "Nhâm Thìn",
+        "monthCivilLunarConvention": "Mậu Ngọ",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Trường Lưu Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Hạ Chí",
+        "solarLongitudeDegApprox": 104.6686,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Ngọ",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Khuê",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Thanh Long",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Thìn",
+        "Tỵ",
+        "Thân",
+        "Dậu",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Tây",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-07-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461961,
+      "lunar": {
+        "year": 2028,
+        "month": 5,
+        "day": 16,
+        "leap": true
+      },
+      "canChi": {
+        "day": "Giáp Ngọ",
+        "monthCivilLunarConvention": "Mậu Ngọ",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Tiểu Thử",
+        "solarLongitudeDegApprox": 106.5755,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Mùi",
+      "trucAtLocalNoon": "Bế",
+      "mansion28": "Vị",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Hình",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Mão",
+        "Ngọ",
+        "Thân",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Đông Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-08-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2461992,
+      "lunar": {
+        "year": 2028,
+        "month": 6,
+        "day": 18,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Sửu",
+        "monthCivilLunarConvention": "Kỷ Mùi",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Hải Trung Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Thu",
+        "solarLongitudeDegApprox": 136.1906,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Thân",
+      "trucAtLocalNoon": "Chấp",
+      "mansion28": "Chủy",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-09-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462022,
+      "lunar": {
+        "year": 2028,
+        "month": 7,
+        "day": 19,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mùi",
+        "monthCivilLunarConvention": "Canh Thân",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 165.1121,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Tỉnh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Ngọc Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-09-09",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462024,
+      "lunar": {
+        "year": 2028,
+        "month": 7,
+        "day": 21,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Dậu",
+        "monthCivilLunarConvention": "Canh Thân",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Bạch Lộ",
+        "solarLongitudeDegApprox": 167.0541,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Dậu",
+      "trucAtLocalNoon": "Kiến",
+      "mansion28": "Liễu",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Huyền Vũ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-10-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462053,
+      "lunar": {
+        "year": 2028,
+        "month": 8,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Dần",
+        "monthCivilLunarConvention": "Tân Dậu",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Hàn Lộ",
+        "solarLongitudeDegApprox": 195.4503,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Định",
+      "mansion28": "Tinh",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Quỹ",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-11-06",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462082,
+      "lunar": {
+        "year": 2028,
+        "month": 9,
+        "day": 20,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Ất Mùi",
+        "monthCivilLunarConvention": "Nhâm Tuất",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Sa Trung Kim",
+      "solarTermAtLocalNoon": {
+        "name": "Sương Giáng",
+        "solarLongitudeDegApprox": 224.3137,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tuất",
+      "trucAtLocalNoon": "Thâu",
+      "mansion28": "Trương",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Câu Trần",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Tây Bắc",
+        "taiThan": "Đông Nam",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-11-08",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462084,
+      "lunar": {
+        "year": 2028,
+        "month": 9,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Dậu",
+        "monthCivilLunarConvention": "Nhâm Tuất",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Sơn Hạ Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Lập Đông",
+        "solarLongitudeDegApprox": 226.3208,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Hợi",
+      "trucAtLocalNoon": "Khai",
+      "mansion28": "Chẩn",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Minh Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Dần",
+        "Mão",
+        "Ngọ",
+        "Mùi",
+        "Dậu"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2028-12-07",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2462113,
+      "lunar": {
+        "year": 2028,
+        "month": 10,
+        "day": 22,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Bính Dần",
+        "monthCivilLunarConvention": "Quý Hợi",
+        "yearLunarConvention": "Mậu Thân"
+      },
+      "napAmDay": "Lư Trung Hỏa",
+      "solarTermAtLocalNoon": {
+        "name": "Đại Tuyết",
+        "solarLongitudeDegApprox": 255.6173,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Mãn",
+      "mansion28": "Giác",
+      "hoangDaoDay": {
+        "type": "hac_dao",
+        "god": "Thiên Lao",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Tý",
+        "Sửu",
+        "Thìn",
+        "Tỵ",
+        "Mùi",
+        "Tuất"
+      ],
+      "directions": {
+        "hyThan": "Tây Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    },
+    {
+      "date": "2100-12-31",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "julianDayNumber": 2488434,
+      "lunar": {
+        "year": 2100,
+        "month": 12,
+        "day": 1,
+        "leap": false
+      },
+      "canChi": {
+        "day": "Đinh Mùi",
+        "monthCivilLunarConvention": "Kỷ Sửu",
+        "yearLunarConvention": "Canh Thân"
+      },
+      "napAmDay": "Thiên Hà Thủy",
+      "solarTermAtLocalNoon": {
+        "name": "Đông Chí",
+        "solarLongitudeDegApprox": 279.5565,
+        "precision": "day/noon-regression; not exact transition minute"
+      },
+      "solarMonthBranchAtLocalNoon": "Tý",
+      "trucAtLocalNoon": "Nguy",
+      "mansion28": "Cang",
+      "hoangDaoDay": {
+        "type": "hoang_dao",
+        "god": "Kim Đường",
+        "monthBasis": "lunar-month"
+      },
+      "hoangDaoHours": [
+        "Dần",
+        "Mão",
+        "Tỵ",
+        "Thân",
+        "Tuất",
+        "Hợi"
+      ],
+      "directions": {
+        "hyThan": "Chính Nam",
+        "taiThan": "Chính Đông",
+        "status": "canonical-table-needs-project-source-lock"
+      },
+      "validation": {
+        "coreStatus": "golden-v2",
+        "sourceDependentFieldsIncluded": false
+      }
+    }
+  ]
+}

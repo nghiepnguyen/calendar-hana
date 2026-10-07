@@ -1,0 +1,1621 @@
+{
+  "ruleId": "four-extinctions",
+  "records": [
+    {
+      "id": "four-extinctions-2014-02-02T12:00:00+07:00",
+      "input": {
+        "instant": "2014-02-02T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-2", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-03T12:00:00+07:00",
+      "input": {
+        "instant": "2014-02-03T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-1", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-04T12:00:00+07:00",
+      "input": {
+        "instant": "2014-02-04T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D0", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-03T00:00:00+07:00",
+      "input": {
+        "instant": "2014-02-03T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-03T23:59:59+07:00",
+      "input": {
+        "instant": "2014-02-03T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-04T00:00:00+07:00",
+      "input": {
+        "instant": "2014-02-04T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-04T05:02:00+07:00",
+      "input": {
+        "instant": "2014-02-04T05:02:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition-60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-04T05:03:00+07:00",
+      "input": {
+        "instant": "2014-02-04T05:03:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition0s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-02-04T05:04:00+07:00",
+      "input": {
+        "instant": "2014-02-04T05:04:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Xuân",
+          "longitudeDeg": 315,
+          "instant": "2014-02-03T22:03:00Z",
+          "publishedInstant": "2014-02-04T06:03:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-02-04"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Xuân",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-03T12:00:00+07:00",
+      "input": {
+        "instant": "2014-05-03T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-2", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-04T12:00:00+07:00",
+      "input": {
+        "instant": "2014-05-04T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-1", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-05T12:00:00+07:00",
+      "input": {
+        "instant": "2014-05-05T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D0", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-04T00:00:00+07:00",
+      "input": {
+        "instant": "2014-05-04T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-04T23:59:59+07:00",
+      "input": {
+        "instant": "2014-05-04T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-05T00:00:00+07:00",
+      "input": {
+        "instant": "2014-05-05T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-05T20:58:00+07:00",
+      "input": {
+        "instant": "2014-05-05T20:58:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition-60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-05T20:59:00+07:00",
+      "input": {
+        "instant": "2014-05-05T20:59:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition0s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-05-05T21:00:00+07:00",
+      "input": {
+        "instant": "2014-05-05T21:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Hạ",
+          "longitudeDeg": 45,
+          "instant": "2014-05-05T13:59:00Z",
+          "publishedInstant": "2014-05-05T21:59:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-05-05"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Hạ",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-05T12:00:00+07:00",
+      "input": {
+        "instant": "2014-08-05T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-2", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-06T12:00:00+07:00",
+      "input": {
+        "instant": "2014-08-06T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-1", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-07T12:00:00+07:00",
+      "input": {
+        "instant": "2014-08-07T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D0", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-06T00:00:00+07:00",
+      "input": {
+        "instant": "2014-08-06T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-06T23:59:59+07:00",
+      "input": {
+        "instant": "2014-08-06T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-07T00:00:00+07:00",
+      "input": {
+        "instant": "2014-08-07T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-07T21:01:00+07:00",
+      "input": {
+        "instant": "2014-08-07T21:01:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition-60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-07T21:02:00+07:00",
+      "input": {
+        "instant": "2014-08-07T21:02:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition0s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-08-07T21:03:00+07:00",
+      "input": {
+        "instant": "2014-08-07T21:03:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Thu",
+          "longitudeDeg": 135,
+          "instant": "2014-08-07T14:02:00Z",
+          "publishedInstant": "2014-08-07T22:02:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-08-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Thu",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-05T12:00:00+07:00",
+      "input": {
+        "instant": "2014-11-05T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-2", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-06T12:00:00+07:00",
+      "input": {
+        "instant": "2014-11-06T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D-1", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-07T12:00:00+07:00",
+      "input": {
+        "instant": "2014-11-07T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["D0", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-06T00:00:00+07:00",
+      "input": {
+        "instant": "2014-11-06T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-06T23:59:59+07:00",
+      "input": {
+        "instant": "2014-11-06T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-07T00:00:00+07:00",
+      "input": {
+        "instant": "2014-11-07T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["civil-midnight", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-07T19:06:00+07:00",
+      "input": {
+        "instant": "2014-11-07T19:06:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition-60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-07T19:07:00+07:00",
+      "input": {
+        "instant": "2014-11-07T19:07:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition0s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-11-07T19:08:00+07:00",
+      "input": {
+        "instant": "2014-11-07T19:08:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "transition": {
+          "term": "Lập Đông",
+          "longitudeDeg": 225,
+          "instant": "2014-11-07T12:07:00Z",
+          "publishedInstant": "2014-11-07T20:07:00+08:00",
+          "precision": "published to minute; not a sub-second exact timestamp",
+          "civilDateUtc7": "2014-11-07"
+        },
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        },
+        "boundaryConvention": "civil day D-1, not rolling 24-hour interval before instant"
+      },
+      "tags": ["published-transition60s", "boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "2014 table row: Lập Đông",
+          "independentOfProduction": true
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2014-12-31T00:00:00+07:00",
+      "input": {
+        "instant": "2014-12-31T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "full 2014 ordered table; December relevant transition not at year boundary"
+        },
+        "solarDate": "2014-12-31",
+        "qualifyingTransitionWindow": "2014-12-30 to 2015-01-02: none; seasonal gaps exceed this window"
+      },
+      "tags": ["civil-year-boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "full 2014 ordered table; December relevant transition not at year boundary"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "four-extinctions-2015-01-01T00:00:00+07:00",
+      "input": {
+        "instant": "2015-01-01T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "full 2014 ordered table; December relevant transition not at year boundary"
+        },
+        "solarDate": "2015-01-01",
+        "qualifyingTransitionWindow": "2014-12-30 to 2015-01-02: none; seasonal gaps exceed this window"
+      },
+      "tags": ["civil-year-boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 四離四絶 / 玉門經曰、曹震圭曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "sourceId": "HKO_SOLAR_TERMS",
+          "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "location": "full 2014 ordered table; December relevant transition not at year boundary"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    }
+  ]
+}

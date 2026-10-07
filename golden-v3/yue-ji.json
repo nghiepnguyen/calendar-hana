@@ -1,0 +1,1221 @@
+{
+  "ruleId": "yue-ji",
+  "records": [
+    {
+      "id": "yue-ji-2024-02-14T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-14T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2024-02-14",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 5,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-23T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-23T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2024-02-23",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 14,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-03-03T12:00:00+07:00",
+      "input": {
+        "instant": "2024-03-03T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2024-03-03",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 23,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-13T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-13T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-13",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 4,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-15T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-15T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-15",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 6,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-22T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-22T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-22",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 13,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-24T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-24T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-24",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 15,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-03-02T12:00:00+07:00",
+      "input": {
+        "instant": "2024-03-02T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-03-02",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 22,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-03-04T12:00:00+07:00",
+      "input": {
+        "instant": "2024-03-04T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-03-04",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 24,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["normal-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February/March rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2024-02-10",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-03-26T12:00:00+07:00",
+      "input": {
+        "instant": "2023-03-26T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2023-03-26",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 5,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-04T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-04T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2023-04-04",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 14,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-13T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-13T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2023-04-13",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 23,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-03-25T12:00:00+07:00",
+      "input": {
+        "instant": "2023-03-25T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-03-25",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 4,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-03-27T12:00:00+07:00",
+      "input": {
+        "instant": "2023-03-27T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-03-27",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 6,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-03T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-03T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-04-03",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 13,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-05T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-05T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-04-05",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 15,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-12T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-12T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-04-12",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 22,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2023-04-14T12:00:00+07:00",
+      "input": {
+        "instant": "2023-04-14T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2023-04-14",
+        "lunarDate": {
+          "year": 2023,
+          "month": 2,
+          "day": 24,
+          "leap": true
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "tags": ["leap-month", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2023e.pdf",
+          "location": "Gregorian-lunar conversion table, March/April rows",
+          "calendarTimezone": "UTC+8",
+          "transferPolicy": "Use only these month starts verified away from the UTC+7/UTC+8 midnight window; not a general HKO→VN equivalence.",
+          "monthStart": "2023-03-22",
+          "review": "independent-calendar-anchor; midnight safety supported by HKO new-moon references",
+          "monthStartNewMoon": "2023-03-22T01:23:00+08:00",
+          "monthStartNewMoonUtc7": "2023-03-22T00:23:00+07:00",
+          "newMoonSource": "https://www.weather.gov.hk/en/gts/astron2023/files/HKO_almanac_2023.pdf",
+          "newMoonLocation": "2023 March / Phases of the Moon / New Moon / 閏二月初一"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-09T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-09T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-09",
+        "lunarDate": {
+          "year": 2023,
+          "month": 12,
+          "day": 30,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February 9/10 cells"
+        }
+      },
+      "tags": ["lunar-year-boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February 9/10 cells"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-10T12:00:00+07:00",
+      "input": {
+        "instant": "2024-02-10T12:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-10",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 1,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February 9/10 cells",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["lunar-year-boundary", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February 9/10 cells",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-13T23:59:59+07:00",
+      "input": {
+        "instant": "2024-02-13T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-13",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 4,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["civil-midnight", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-14T00:00:00+07:00",
+      "input": {
+        "instant": "2024-02-14T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2024-02-14",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 5,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["civil-midnight", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-14T23:59:59+07:00",
+      "input": {
+        "instant": "2024-02-14T23:59:59+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": true
+      },
+      "context": {
+        "solarDate": "2024-02-14",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 5,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["civil-midnight", "positive"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    },
+    {
+      "id": "yue-ji-2024-02-15T00:00:00+07:00",
+      "input": {
+        "instant": "2024-02-15T00:00:00+07:00",
+        "timezone": "Asia/Ho_Chi_Minh"
+      },
+      "expected": {
+        "matched": false
+      },
+      "context": {
+        "solarDate": "2024-02-15",
+        "lunarDate": {
+          "year": 2024,
+          "month": 1,
+          "day": 6,
+          "leap": false
+        },
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "tags": ["civil-midnight", "negative"],
+      "provenance": {
+        "sourceId": "XJBF_QD",
+        "ruleVersion": "3.0.0",
+        "sourceTier": "A",
+        "reviewStatus": "source-extraction-verified; awaiting-user-fixture-review",
+        "ruleLocation": "卷六 / 義例四 / 月忌日 / 齊東野語曰",
+        "ruleUrl": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷06&oldid=787343",
+        "contextEvidence": {
+          "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2024e.pdf",
+          "location": "February cells + project UTC+7 midnight convention",
+          "monthStartNewMoon": "2024-02-10T06:59:00+08:00",
+          "monthStartNewMoonUtc7": "2024-02-10T05:59:00+07:00",
+          "newMoonSource": "https://www.hko.gov.hk/en/gts/astron2024/files/HKO_almanac_2024.pdf",
+          "newMoonLocation": "2024 February / Phases of the Moon / New Moon"
+        }
+      },
+      "expectedOrigin": "primary source rule applied to independent calendar/transition context; no production output"
+    }
+  ]
+}

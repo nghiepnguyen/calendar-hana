@@ -364,16 +364,20 @@
     "hash": "f8f8798a9b4f0d77c7f34f0b52698403"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/solarTerms.ts": {
-    "mtime": 1791228901.2631571,
-    "hash": "d2db8d7971dede3bbca6d231784d7fd0"
+    "mtime": 1791381055.7064645,
+    "hash": "766d98df8b3c3083aa206aa246777ea6"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/officers.instant.test.ts": {
+    "mtime": 1791381076.3287563,
+    "hash": "2c05721be82c9c7fbe0066d61f1797bb"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/stars.test.ts": {
     "mtime": 1791207259.5922582,
     "hash": "d1fe782641005c51659563cb445d835e"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/officers.ts": {
-    "mtime": 1790296831.487622,
-    "hash": "eebef8374a678425b30a2834792b353c"
+    "mtime": 1791381088.1052604,
+    "hash": "71d3fd6e1bb32776f8bb625a2beab259"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/almanac.fixtures.ts": {
     "mtime": 1790296831.4856143,
@@ -391,6 +395,10 @@
     "mtime": 1791211769.636277,
     "hash": "4939f1d3ad6d60b0d5848ed3622c7dff"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.test.ts": {
+    "mtime": 1791382167.9486997,
+    "hash": "ca311a1fa5e73017a296f757215afde5"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/elements.test.ts": {
     "mtime": 1790296831.4867132,
     "hash": "590925fec868fdba826af2c14a156c07"
@@ -398,6 +406,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/directions.ts": {
     "mtime": 1790296831.486625,
     "hash": "42880e4c69a73384a2f6a5ce9122f98f"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/calendarExtendedAudit.test.ts": {
+    "mtime": 1791381056.0509114,
+    "hash": "24e4c493ed61092cf9e51e5672451e61"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/elements.ts": {
     "mtime": 1791077378.0887637,
@@ -407,9 +419,17 @@
     "mtime": 1791211769.6355991,
     "hash": "d194d80a3dcb0cba3a0e3b9e1d4a4e28"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/calendarAudit.test.ts": {
+    "mtime": 1791380226.1832523,
+    "hash": "0f8380604d3f08461ab34ea45c6380a3"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/groupA.ts": {
+    "mtime": 1791382221.0209842,
+    "hash": "723e01c28f7c3871b6aef434732d745d"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/index.ts": {
-    "mtime": 1791207259.591975,
-    "hash": "9f17a9c6bedd21389773d80e0358bdb5"
+    "mtime": 1791382167.72599,
+    "hash": "e301a6762a2f306d601f41e90100649f"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/shared/lunar/activityRecommendations.test.ts": {
     "mtime": 1791211769.6348674,
@@ -478,6 +498,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/scripts/publicLegalPages.ts": {
     "mtime": 1790782852.3714006,
     "hash": "3daae9789b5c976807e352394fb87447"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/scripts/mutate-group-a.mjs": {
+    "mtime": 1791382198.2620864,
+    "hash": "685d821093730a09290f358188d18662"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/functions/lib/index.js": {
     "mtime": 1791229003.463879,
@@ -1355,6 +1379,18 @@
     "mtime": 1790782245.0569143,
     "hash": "b54cb32f81119e1c757323ae5ea87f7a"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-rule-extraction-v3.md": {
+    "mtime": 1791381798.4126983,
+    "hash": "2e7d3b1c51dbf460b21440e30fa8777b"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-v3-pending-rules.md": {
+    "mtime": 1791381798.4138465,
+    "hash": "a76033066c5ee82d80d424f8f4a76939"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/CALENDAR-AUDIT-V2.1.md": {
+    "mtime": 1791380897.9382331,
+    "hash": "0046e77881261e817f7f2867e3f92856"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/THIRD_PARTY_NOTICES.md": {
     "mtime": 1791077378.0783474,
     "hash": "34562bd587e8bcabe49eb9ff4ae07a8e"
@@ -1366,6 +1402,14 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/README.md": {
     "mtime": 1791247189.4664,
     "hash": "f322c9dfe9752e7b5c33d41062604113"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/CALENDAR-AUDIT-V2.1-FINAL.md": {
+    "mtime": 1791381144.8837895,
+    "hash": "19c198f55ec09efe312f3105481790e6"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-v3-fixture-review.md": {
+    "mtime": 1791381848.6271174,
+    "hash": "991c2818fbbafabf49a217ebdcba46d6"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/AGENTS.md": {
     "mtime": 1791025638.363877,
@@ -1511,6 +1555,14 @@
     "mtime": 1791243676.1840827,
     "hash": "44d9e07df23822f938a62847c2fabd35"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/phase1-before-correction.md": {
+    "mtime": 1791380468.4843047,
+    "hash": "7aad021ee9cc5681142598968ba50aad"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/REPORT.md": {
+    "mtime": 1791380468.5641572,
+    "hash": "7e99ecfa3fbe891151fb26f87e8dd103"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/docs/verification/mapping-scoring.md": {
     "mtime": 1791211769.6214364,
     "hash": "5ccaf4f4d0e320ba26c757ef363a2c3d"
@@ -1566,26 +1618,6 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/public/pwa-192x192.png": {
     "mtime": 1790202806.8041637,
     "hash": "5962f9c25ccfc1affa614df1fb82b43a"
-  },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/personal-feng-shui-daily-l-bd900-endent-advanced-disclosures-iphone/daily-layout-desktop.png": {
-    "mtime": 1791335427.230361,
-    "hash": "29676b33587a91991bb3c3a0986e58b2"
-  },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/personal-feng-shui-daily-l-bd900-endent-advanced-disclosures-mobile/daily-layout-desktop.png": {
-    "mtime": 1791335422.7048564,
-    "hash": "345e6db70cafcc0ea13ec40a9fde8f59"
-  },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/personal-feng-shui-daily-l-bd900-endent-advanced-disclosures-firefox/daily-layout-desktop.png": {
-    "mtime": 1791335425.6799543,
-    "hash": "7bc3e470c954cb77493ee0c04b749437"
-  },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/personal-feng-shui-daily-l-bd900-endent-advanced-disclosures-webkit/daily-layout-desktop.png": {
-    "mtime": 1791335426.3868558,
-    "hash": "25922356ad33f6e58bc23363ce257d6a"
-  },
-  "/Users/nghiepnguyen/My Files/calendar-hana/test-results/personal-feng-shui-daily-l-bd900-endent-advanced-disclosures-desktop/daily-layout-desktop.png": {
-    "mtime": 1791335421.5999732,
-    "hash": "ebfd69cff1a493cc06a04e351a5efb8b"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/e2e/visual-default.spec.ts-snapshots/month-light-desktop-darwin.png": {
     "mtime": 1791124226.8008249,
