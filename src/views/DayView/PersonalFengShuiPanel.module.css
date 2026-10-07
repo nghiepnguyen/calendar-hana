@@ -951,6 +951,10 @@
   text-align: center;
 }
 
+.inviteBody > h2 {
+  align-self: auto;
+}
+
 .inviteTitle {
   font-family: var(--font-display);
   font-size: calc(clamp(24px, 5.6cqi, 32px) * var(--ui-scale));
