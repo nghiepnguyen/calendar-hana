@@ -1,0 +1,1254 @@
+{
+  "version": "3.1.1",
+  "researchOnly": true,
+  "authoritativeGolden": false,
+  "rules": [
+    {
+      "id": "month-breaker",
+      "positive": [
+        {
+          "date": "2014-02-06",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 6; HKO term rows; 卷四 月破; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-06T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "戊申",
+          "monthJian": "寅",
+          "rule": "month-breaker",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "申",
+            "independentRuleTarget": "申",
+            "ruleEvidence": "月破者月建所衝之日也 / 月破在申",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-18",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 18; HKO term rows; 卷四 月破; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-18T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚申",
+          "monthJian": "寅",
+          "rule": "month-breaker",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "申",
+            "independentRuleTarget": "申",
+            "ruleEvidence": "月破者月建所衝之日也 / 月破在申",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷四 月破; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "month-breaker",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "酉",
+            "independentRuleTarget": "申",
+            "ruleEvidence": "月破者月建所衝之日也 / 月破在申",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷四 月破; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "month-breaker",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "戌",
+            "independentRuleTarget": "申",
+            "ruleEvidence": "月破者月建所衝之日也 / 月破在申",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NOT_APPLICABLE",
+      "goldenReadyCandidate": false
+    },
+    {
+      "id": "robbery-sha",
+      "positive": [
+        {
+          "date": "2014-02-09",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 9; HKO term rows; 卷六 monthly 刼煞; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-09T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "辛亥",
+          "monthJian": "寅",
+          "rule": "robbery-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "亥",
+            "independentRuleTarget": "亥",
+            "ruleEvidence": "正月起亥逆行四孟 / 劫煞在亥",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-21",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 21; HKO term rows; 卷六 monthly 刼煞; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-21T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "癸亥",
+          "monthJian": "寅",
+          "rule": "robbery-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "亥",
+            "independentRuleTarget": "亥",
+            "ruleEvidence": "正月起亥逆行四孟 / 劫煞在亥",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷六 monthly 刼煞; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "robbery-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "酉",
+            "independentRuleTarget": "亥",
+            "ruleEvidence": "正月起亥逆行四孟 / 劫煞在亥",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷六 monthly 刼煞; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "robbery-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "戌",
+            "independentRuleTarget": "亥",
+            "ruleEvidence": "正月起亥逆行四孟 / 劫煞在亥",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NOT_APPLICABLE",
+      "goldenReadyCandidate": false
+    },
+    {
+      "id": "disaster-sha",
+      "positive": [
+        {
+          "date": "2014-02-10",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 10; HKO term rows; 卷六 monthly 天獄 editorial correction; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-10T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "壬子",
+          "monthJian": "寅",
+          "rule": "disaster-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "子",
+            "independentRuleTarget": "子",
+            "ruleEvidence": "天獄即是災煞應逆行四仲 / 災煞在子",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-22",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 22; HKO term rows; 卷六 monthly 天獄 editorial correction; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-22T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "甲子",
+          "monthJian": "寅",
+          "rule": "disaster-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "子",
+            "independentRuleTarget": "子",
+            "ruleEvidence": "天獄即是災煞應逆行四仲 / 災煞在子",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷六 monthly 天獄 editorial correction; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "disaster-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "酉",
+            "independentRuleTarget": "子",
+            "ruleEvidence": "天獄即是災煞應逆行四仲 / 災煞在子",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷六 monthly 天獄 editorial correction; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "disaster-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "戌",
+            "independentRuleTarget": "子",
+            "ruleEvidence": "天獄即是災煞應逆行四仲 / 災煞在子",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NOT_APPLICABLE",
+      "goldenReadyCandidate": false
+    },
+    {
+      "id": "month-sha",
+      "positive": [
+        {
+          "date": "2014-02-11",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 11; HKO term rows; 卷六 月煞/月虚; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-11T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "癸丑",
+          "monthJian": "寅",
+          "rule": "month-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "丑",
+            "independentRuleTarget": "丑",
+            "ruleEvidence": "正月起丑逆行四季 / 月煞在丑",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-23",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 23; HKO term rows; 卷六 月煞/月虚; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-23T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "乙丑",
+          "monthJian": "寅",
+          "rule": "month-sha",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "丑",
+            "independentRuleTarget": "丑",
+            "ruleEvidence": "正月起丑逆行四季 / 月煞在丑",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷六 月煞/月虚; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "month-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "酉",
+            "independentRuleTarget": "丑",
+            "ruleEvidence": "正月起丑逆行四季 / 月煞在丑",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷六 月煞/月虚; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "month-sha",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_BRANCH",
+            "observedOperand": "戌",
+            "independentRuleTarget": "丑",
+            "ruleEvidence": "正月起丑逆行四季 / 月煞在丑",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NOT_APPLICABLE",
+      "goldenReadyCandidate": false
+    },
+    {
+      "id": "month-virtue",
+      "positive": [
+        {
+          "date": "2014-02-14",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 14; HKO term rows; 卷五 月德 三合陽干; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-14T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "丙辰",
+          "monthJian": "寅",
+          "rule": "month-virtue",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "丙",
+            "independentRuleTarget": "丙",
+            "ruleEvidence": "寅午戌月 in 丙 group / 月徳在丙",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-24",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 24; HKO term rows; 卷五 月德 三合陽干; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-24T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "丙寅",
+          "monthJian": "寅",
+          "rule": "month-virtue",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "丙",
+            "independentRuleTarget": "丙",
+            "ruleEvidence": "寅午戌月 in 丙 group / 月徳在丙",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷五 月德 三合陽干; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "month-virtue",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "己",
+            "independentRuleTarget": "丙",
+            "ruleEvidence": "寅午戌月 in 丙 group / 月徳在丙",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷五 月德 三合陽干; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "month-virtue",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "庚",
+            "independentRuleTarget": "丙",
+            "ruleEvidence": "寅午戌月 in 丙 group / 月徳在丙",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NOT_APPLICABLE",
+      "goldenReadyCandidate": false
+    },
+    {
+      "id": "heaven-virtue",
+      "positive": [
+        {
+          "date": "2014-02-05",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 5; HKO term rows; 卷五 天德; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-05T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "丁未",
+          "monthJian": "寅",
+          "rule": "heaven-virtue",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "丁",
+            "independentRuleTarget": "丁",
+            "ruleEvidence": "正月丁 / 天徳在丁; only resolved stem row, no four-trigram claim",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-15",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 15; HKO term rows; 卷五 天德; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-15T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "丁巳",
+          "monthJian": "寅",
+          "rule": "heaven-virtue",
+          "expected": true,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "丁",
+            "independentRuleTarget": "丁",
+            "ruleEvidence": "正月丁 / 天徳在丁; only resolved stem row, no four-trigram claim",
+            "comparison": "equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "negative": [
+        {
+          "date": "2014-02-07",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 7; HKO term rows; 卷五 天德; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-07T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "己酉",
+          "monthJian": "寅",
+          "rule": "heaven-virtue",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "己",
+            "independentRuleTarget": "丁",
+            "ruleEvidence": "正月丁 / 天徳在丁; only resolved stem row, no four-trigram claim",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        },
+        {
+          "date": "2014-02-08",
+          "source": [
+            "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+            "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+            "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20"
+          ],
+          "sourceLocation": "HKO February PDF p.1 cell 8; HKO term rows; 卷五 天德; 卷二十 正月 monthly row",
+          "calendarContext": {
+            "instant": "2014-02-08T12:00:00+07:00",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "sourceLocalCivilTime": "Hong Kong UTC+8; same instant = 13:00 source date, safely away from midnight",
+            "sourceCalendar": "Gregorian + HKO civil-day Ganzhi",
+            "sourceLunarDateUsedAsMonthOperand": false,
+            "monthContextEvidence": "Between Spring commences 2014-02-04 06:03+08 (05:03+07) and Insects waken 2014-03-06 00:02+08 (2014-03-05 23:02+07). Locked Jie/Jian sequence gives 寅. No astronomical algorithm run.",
+            "transitionPrecision": "minute; anchors far from both transitions"
+          },
+          "dayGanzhi": "庚戌",
+          "monthJian": "寅",
+          "rule": "heaven-virtue",
+          "expected": false,
+          "evidenceType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE",
+          "annotationCompleteness": "NOT_APPLICABLE_TO_DERIVATION; HKO has no Shen Sha annotation list; not an absent-label negative",
+          "confidence": "HIGH dated operands and first-month symbolic comparison; RESEARCH_CANDIDATE awaiting reviewer admission",
+          "derivation": {
+            "operand": "DAY_STEM",
+            "observedOperand": "庚",
+            "independentRuleTarget": "丁",
+            "ruleEvidence": "正月丁 / 天徳在丁; only resolved stem row, no four-trigram claim",
+            "comparison": "not equal",
+            "productionUsed": false,
+            "currentLookupTableUsed": false
+          },
+          "accessDate": "2026-10-08",
+          "scope": "resolved 寅 month only; no cutoff or twelve-month/mixed-operand coverage"
+        }
+      ],
+      "counts": {
+        "positive": 2,
+        "negative": 2
+      },
+      "status": "INDEPENDENT_DERIVED_ANCHORS_FOUND_REVIEW_PENDING",
+      "directAlmanacCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "mixedOperandCoverage": "NONE",
+      "goldenReadyCandidate": false
+    }
+  ],
+  "sourceLog": [
+    {
+      "id": "MIAO_SCAN",
+      "title": "大清時憲書箋釋一卷 / 大清時憲曆箋釋",
+      "author": "繆之晉",
+      "editionYear": null,
+      "dating": "Scan preface PDF p.5: 雍正元年 (1723); this is preface date, not independently established printing date. Digital file identifies Shanghai copy.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Shanghai_%E5%A4%A7%E6%B8%85%E6%99%82%E6%86%B2%E6%9B%B8%E7%AE%8B%E9%87%8B%E4%B8%80%E5%8D%B7.pdf",
+      "sourceLocation": "PDF pp.36–37, 51–56 (1-based); 寫真頁 counting, printed folio not established",
+      "accessDate": "2026-10-08",
+      "evidenceType": "FACSIMILE",
+      "status": "RELEVANT_PAGES_VISUALLY_COLLATED",
+      "limitations": "Different historical work, predates XJBF publication; not a canonical XJBF instruction. Entire scan not collated."
+    },
+    {
+      "id": "MIAO_OCR",
+      "title": "大清時憲曆箋釋",
+      "editionYear": null,
+      "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+      "sourceLocation": "例言 L48–49; 二月建卯 L557–562; 四月建巳 L617–621",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "READ_WITH_OCR_ERRORS",
+      "limitations": "Scan restores omitted clauses, e.g. full 四月 cutoff on PDF pp.55–56; OCR alone cannot be used as exact quotation."
+    },
+    {
+      "id": "XJBF_04",
+      "title": "欽定協紀辨方書 (四庫全書本) 卷04",
+      "editionYear": null,
+      "dating": "Work published Qing Qianlong 6 / 1741; digital transcription edition not facsimile-collated",
+      "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+      "sourceLocation": "建除十二神; 月破",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "TRANSCRIPTION_READ",
+      "limitations": "Prior locked basis/rule extraction preserved; no complete canonical scan collation."
+    },
+    {
+      "id": "XJBF_05",
+      "title": "欽定協紀辨方書 (四庫全書本) 卷05",
+      "editionYear": null,
+      "dating": "Work published Qing Qianlong 6 / 1741; digital transcription edition not facsimile-collated",
+      "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+      "sourceLocation": "天道天德; 蠡海集 / 又一說 / editorial 按; 天德合",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "TRANSCRIPTION_READ",
+      "limitations": "Prior locked basis/rule extraction preserved; no complete canonical scan collation."
+    },
+    {
+      "id": "XJBF_06",
+      "title": "欽定協紀辨方書 (四庫全書本) 卷06",
+      "editionYear": null,
+      "dating": "Work published Qing Qianlong 6 / 1741; digital transcription edition not facsimile-collated",
+      "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+      "sourceLocation": "monthly 刼煞/災煞/月煞; prior pinned oldid=787343",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "TRANSCRIPTION_READ",
+      "limitations": "Prior locked basis/rule extraction preserved; no complete canonical scan collation."
+    },
+    {
+      "id": "XJBF_20",
+      "title": "欽定協紀辨方書 (四庫全書本) 卷20",
+      "editionYear": null,
+      "dating": "Work published Qing Qianlong 6 / 1741; digital transcription edition not facsimile-collated",
+      "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+      "sourceLocation": "月表一 正月: heading and six rule positions",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "TRANSCRIPTION_READ",
+      "limitations": "Prior locked basis/rule extraction preserved; no complete canonical scan collation."
+    },
+    {
+      "id": "HKO_CAL_201402",
+      "title": "Hong Kong Observatory Almanac 2014 — February",
+      "editionYear": 2014,
+      "url": "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+      "sourceLocation": "PDF p.1, date cells for 5–24 February",
+      "accessDate": "2026-10-08",
+      "evidenceType": "INDEPENDENT_CALENDAR_REFERENCE",
+      "status": "VISUALLY_VERIFIED",
+      "limitations": "Astronomical calendar, no Shen Sha annotation list. Supplies dated Ganzhi only; month Jian inferred independently from term interval + locked basis."
+    },
+    {
+      "id": "HKO_TERMS_2014",
+      "title": "Date and Time information of the 24 Solar Terms in 2014",
+      "editionYear": 2014,
+      "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+      "sourceLocation": "Spring commences / Insects waken rows; timezone statement",
+      "accessDate": "2026-10-08",
+      "evidenceType": "INDEPENDENT_ASTRONOMICAL_REFERENCE",
+      "status": "READ",
+      "limitations": "Minute precision; no exact subminute instant or Shen Sha policy."
+    },
+    {
+      "id": "SHIXIAN_1870",
+      "title": "大清同治九年歲次庚午時憲書",
+      "editionYear": 1870,
+      "url": "https://www.shidianguji.com/zh/book/HY1764/chapter/1ko001jzxfn77",
+      "sourceLocation": "available chapter transcription L8–17",
+      "accessDate": "2026-10-08",
+      "evidenceType": "HISTORICAL_ALMANAC",
+      "status": "READ_PARTIAL_TRANSCRIPTION",
+      "limitations": "Year/term dates and god headings, incomplete daily annotation pages. annotationCompleteness UNKNOWN; no accepted direct positive/negative anchors."
+    },
+    {
+      "id": "WU_2021",
+      "title": "吳羽：唐宋曆日祭祀吉日鋪注的變化與適用範圍——以「神在」日為中心的探討",
+      "editionYear": 2021,
+      "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+      "sourceLocation": "printed p.408 / PDF p.12 table introduction; adjacent discussion",
+      "accessDate": "2026-10-08",
+      "evidenceType": "SCHOLARLY",
+      "status": "RELEVANT_PASSAGES_READ",
+      "limitations": "Historical annotation-system context, not dated six-rule match oracle."
+    },
+    {
+      "id": "CHEN_2014",
+      "title": "陳峻誌：從敦煌具註曆日到寺廟安太歲：太歲以下諸神體系的起源與演變趨勢",
+      "editionYear": 2014,
+      "url": "https://chinese.nchu.edu.tw/files/users/189/36-3.pdf",
+      "sourceLocation": "PDF pp.19–27 comparison tables/discussion",
+      "accessDate": "2026-10-08",
+      "evidenceType": "SCHOLARLY",
+      "status": "RELEVANT_PASSAGES_READ",
+      "limitations": "Presence by historical system, not exhaustive daily Group B annotations; no six-rule dated matches admitted."
+    },
+    {
+      "id": "LIHAI",
+      "title": "王逵 蠡海集 / 曆數類",
+      "editionYear": null,
+      "url": "https://www.shidianguji.com/book/SK1903/chapter/1jpic4a1375sa",
+      "sourceLocation": "天德之法 / 又一說",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "TRANSCRIPTION_READ",
+      "limitations": "Branch interpretations; some textual disagreement with XJBF quotation (e.g. 未月用申/甲). Facsimile needed; not dated almanac."
+    },
+    {
+      "id": "NDL",
+      "title": "欽定協紀辨方書36卷 — National Diet Library",
+      "editionYear": 1741,
+      "url": "https://ndlsearch.ndl.go.jp/en/books/R100000002-I000007567664",
+      "sourceLocation": "catalogue; https://dl.ndl.go.jp/pid/2609626",
+      "accessDate": "2026-10-08",
+      "evidenceType": "DISCOVERY_ONLY",
+      "status": "CATALOGUE_READ_VIEWER_CONTENT_FETCH_FAILED",
+      "limitations": "Viewer yielded one line; no page images collated."
+    },
+    {
+      "id": "HSING_FA_TANG",
+      "title": "信發堂 廖淵用通書 catalogue lead",
+      "editionYear": null,
+      "url": "https://www.hsing-fa-tang.com.tw/book_detail.php?id=230426095739",
+      "sourceLocation": null,
+      "accessDate": "2026-10-08",
+      "evidenceType": "DISCOVERY_ONLY",
+      "status": "FETCH_FAILED",
+      "limitations": "No interior dated page read; search snippet not accepted evidence."
+    },
+    {
+      "id": "YINWAN",
+      "title": "從尹灣漢墓簡牘看中國社會的擇日傳統",
+      "editionYear": null,
+      "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/3142tUjuBFN.pdf",
+      "sourceLocation": null,
+      "accessDate": "2026-10-08",
+      "evidenceType": "DISCOVERY_ONLY",
+      "status": "FETCH_FAILED",
+      "limitations": "Search hit mentioned S.276 (933), but article fetch failed; no content inferred."
+    },
+    {
+      "id": "XJBF_FOREWORD",
+      "title": "欽定協紀辨方書 全覽1 / 奏議 / 計開",
+      "editionYear": null,
+      "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/全覽1",
+      "sourceLocation": "L149–150 canonical correction list",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "RELEVANT_PASSAGE_READ_TARGETED_FIND_LIMITED",
+      "limitations": "Full-page find returned no matches even where separately read chapter contains matching words; not an exhaustive absence proof. No facsimile collation."
+    },
+    {
+      "id": "XJBF_FULL2",
+      "title": "欽定協紀辨方書 全覽2",
+      "editionYear": null,
+      "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/全覽2",
+      "sourceLocation": "targeted cutoff keyword finds",
+      "accessDate": "2026-10-08",
+      "evidenceType": "PRIMARY",
+      "status": "OPENED_TARGETED_FIND_LIMITED",
+      "limitations": "No match results cannot prove textual absence."
+    },
+    {
+      "id": "XJBF_FULL3",
+      "title": "欽定協紀辨方書 全覽3 attempted URL",
+      "editionYear": null,
+      "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/全覽3",
+      "sourceLocation": null,
+      "accessDate": "2026-10-08",
+      "evidenceType": "DISCOVERY_ONLY",
+      "status": "FETCH_FAILED",
+      "limitations": "No content inferred."
+    }
+  ],
+  "methodology": {
+    "expectedOrigin": "Visual HKO dated Ganzhi + independent canonical passage, manually compared; no production, current project lookup or new evaluator",
+    "positiveType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE (not direct almanac label)",
+    "negativeType": "DERIVED_FROM_INDEPENDENT_RULE_EVIDENCE (not annotation absence)",
+    "countMeaning": "Two distinct dates per sign per rule; shared sources/dates are disclosed, not 24 independent publications. Only one month covered.",
+    "cutoff": "EXACT_JIE_INSTANT preferred from historical scan; canonical inclusive equality remains UNRESOLVED",
+    "heavenVirtue": "Only first-month stem anchors, four mixed rows unresolved"
+  },
+  "safety": {
+    "protectedFileCount": 378,
+    "protectedBeforeSnapshotSha256": "54f2ed0e22f1dee73f9b0f585847dc9ae11d33f5f2fcbca2d6ad06c7aa444976",
+    "protectedFilesUnchanged": true,
+    "preExistingStatus": [
+      " M graphify-out/.rebuild.lock",
+      "?? calendar-group-b-basis-research.md",
+      "?? calendar-group-b-basis.json",
+      "?? calendar-group-b-conflicts.md",
+      "?? calendar-group-b-golden-readiness.md",
+      "?? graphify-out/cache/ast/0f54a1bf75d10b155bd03ebab43c76d211cdb26c5770ec1a29a1fdf57e24d72a.json",
+      "?? graphify-out/cache/ast/1427d77a26b9db4e370023f8154628cfa30e5d576e322f655c4bd96c5a398dee.json",
+      "?? graphify-out/cache/ast/25b65d070d82ad9191ad5fb0e4a72d120586833fc6f220d98fb046b56aca5d52.json",
+      "?? graphify-out/cache/ast/5ec0e4373cafa2c1cb8eab1411d564a288a72772b11914bed1e4132175e0bf82.json",
+      "?? graphify-out/cache/ast/76310ec55cc7a92bcce6bdba9451a63dc26300f931a0744d4b071941ceb86b59.json",
+      "?? graphify-out/cache/ast/82731f7aa32d0d937dd9f83abbb18a87bf08c1ba69c8b8260f8319c308b2a233.json",
+      "?? graphify-out/cache/ast/86268fd8510c2be044587ec517e12d9a55f7d229f0c4db26c5a23e56bc5e22a7.json",
+      "?? graphify-out/cache/ast/92c0defe235492c2aadfe43e4bfc147abd0ccf55797d5482894bcd0c5ac1aff7.json",
+      "?? graphify-out/cache/ast/970299492c21337dfce70abbdddaa01d47d5ec0c886b2671d55b4e1a5df7880e.json",
+      "?? graphify-out/cache/ast/a69ac9197700b71b2d0b8be0e71ae145642bfd018c2bf5f94529e66cd9a74f0c.json",
+      "?? graphify-out/cache/ast/a70e55da63ae8f8f75b2d69f684f8e26b62528220ff25dbce4c88f6d2e7a79d9.json",
+      "?? graphify-out/cache/ast/a8d5f10f4e79e2e2943e8f3ca0b639a98e87c2a4d88a2defdb9823beba30b70e.json",
+      "?? graphify-out/cache/ast/aa10a0e3a03efd06dba4def0d85cb6ef64aa1f371619e8b85e444f53bd256ee1.json",
+      "?? graphify-out/cache/ast/b2399b46e427c263048081a66e19eb28d974f1570c23140289226bb915d3bdde.json",
+      "?? graphify-out/cache/ast/b43813ab303c3f30697acb890d2ac6f7c6d70da5657c4c79c103afd0aa53514a.json",
+      "?? graphify-out/cache/ast/b73e49a410d31cb1fcd4515b83061f6768691a372b936a3cebfa15c8d456998e.json",
+      "?? graphify-out/cache/ast/ca580badc9c586e9cf84a2f21d42647fffd8a9bb4f1c7a46413ad8f60c49a502.json",
+      "?? graphify-out/cache/ast/dc1f54d4e8e6520a50950cbedbe8cfc31d25d523b72f7aefe95613f242ed1561.json",
+      "?? graphify-out/cache/ast/f05d988d6ca4a9fad083caf99b54e639b4cd3142628d8d15cc864d61311c502a.json",
+      "?? graphify-out/cache/ast/fd18682f754245c713b0d38131b89b5c6e12dd092f1edd90dc008ef48335fcad.json"
+    ],
+    "testsRerun": false
+  },
+  "sourceFilesSha256": {
+    "/tmp/group-b-miao.pdf": "63e2a26a3b793a0190c02898da08b1de0592082ac608154bdbb9aa3e261a4a82",
+    "/tmp/group-b-hko-feb2014.pdf": "29c396015ed75ef629a916e612eb00be2bc2aea724295897ca3144e0cd081cfd"
+  }
+}

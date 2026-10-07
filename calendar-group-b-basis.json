@@ -1,0 +1,4274 @@
+{
+  "version": "3.1.0",
+  "phase": "3B-source-calendar-basis-resolution",
+  "researchOnly": true,
+  "authoritativeGoldenCreated": false,
+  "productionModified": false,
+  "asOf": "2026-10-08",
+  "rules": [
+    {
+      "id": "month-breaker",
+      "name": "Nguyệt Phá",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "DAY_BRANCH",
+      "aliases": [
+        "月破"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "月破 / 考原曰",
+          "originalText": "月破者月建所衝之日也",
+          "interpretation": "Day branch opposite month Jian; source calls it a day, not a month direction only.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall",
+      "notes": "月建所衝之日: match the opposite branch of month Jian. Direct Jian-Chu link is established, but no automatic reuse of legacy getOfficer whole-day labels.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "wedding",
+          "effect": "avoid",
+          "sourceWords": "嫁娶",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "construction",
+          "effect": "avoid",
+          "sourceWords": "營建宮室",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "finance",
+          "effect": "avoid",
+          "sourceWords": "納財",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "medical-treatment",
+          "effect": "recommend",
+          "sourceWords": "求醫療病: 破日宜; qualifications in 月破 paragraph",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict.",
+          "condition": "UNRESOLVED per-activity exception/co-occurrence policy; not executable"
+        },
+        {
+          "activityId": "study",
+          "effect": "allow",
+          "sourceWords": "入學: among exceptions",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict.",
+          "condition": "UNRESOLVED per-activity exception/co-occurrence policy; not executable"
+        }
+      ]
+    },
+    {
+      "id": "robbery-sha",
+      "name": "Kiếp Sát",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "DAY_BRANCH",
+      "aliases": [
+        "刼煞",
+        "劫煞",
+        "月劫煞"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "location": "刼煞 / 神樞經曰、李鼎祚曰",
+          "originalText": "正月起亥逆行四孟",
+          "interpretation": "Retain existing symbolic extraction; 日 operand and rule-specific monthly placement bind it to Month Jian.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall",
+      "notes": "正月 and 四孟 are bound to the Jie/Jian arrangement by the rule’s explicit month-table placement. Four Meng describes target branches; it is not a four-month duration or lunar-leap instruction.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "wedding",
+          "effect": "avoid",
+          "sourceWords": "成親",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "engagement",
+          "effect": "avoid",
+          "sourceWords": "納禮",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        }
+      ]
+    },
+    {
+      "id": "disaster-sha",
+      "name": "Tai Sát",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "DAY_BRANCH",
+      "aliases": [
+        "月災煞",
+        "災煞",
+        "天獄"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "location": "月災煞 / 按",
+          "originalText": "天獄即是災煞應逆行四仲",
+          "interpretation": "Explicit identity of monthly Tianyu and monthly disaster-sha; use a single canonical identity.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "B4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "location": "天獄天火 / final 按",
+          "originalText": "今用災煞天獄應刪",
+          "interpretation": "Compiler deletes duplicate Tianyu. Also discusses reversing Tianhuo, without proving all its activity meanings identical.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED",
+        "TIANHUO_AND_PHIMA_ALIAS_SCOPE_NOT_ADMITTED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall",
+      "notes": "The admitted reverse 四仲 candidate is the canonical compiler’s correction of an older forward Tianyu statement, not a production reconstruction. Tianhuo is not automatically admitted as an alias merely because its cycle is also corrected.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "litigation",
+          "effect": "avoid",
+          "sourceWords": "興詞訟: 天獄 passage; scope follows explicit monthly identity",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        }
+      ]
+    },
+    {
+      "id": "month-sha",
+      "name": "Nguyệt Sát",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "DAY_BRANCH",
+      "aliases": [
+        "月煞",
+        "月殺",
+        "月虚",
+        "月虛"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "location": "月煞、月虚 / 歴例曰 and 按",
+          "originalText": "月煞者正月起丑逆行四季",
+          "interpretation": "Existing reverse four-season targets retained; day branch operand.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "B6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "location": "月虚 / 按",
+          "originalText": "在嵗為嵗煞在月為月煞無二義也",
+          "interpretation": "Monthly alias relation also explained using month Jian’s three-harmony flourishing qi.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall",
+      "notes": "Month Sha and Month Xu share both sequence and explicit 三合/Jian rationale; source says no second meaning. Alias deduplication is supported within the monthly context, not across annual rule variants.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "travel",
+          "effect": "avoid",
+          "sourceWords": "出行",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "wedding",
+          "effect": "avoid",
+          "sourceWords": "結婚",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "warehouse",
+          "effect": "avoid",
+          "sourceWords": "開倉庫",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "finance",
+          "effect": "avoid",
+          "sourceWords": "出財物",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "planting",
+          "effect": "avoid",
+          "sourceWords": "營種植",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷06",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        }
+      ]
+    },
+    {
+      "id": "month-virtue",
+      "name": "Nguyệt Đức",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "DAY_STEM",
+      "aliases": [
+        "月徳",
+        "月德"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "月徳 / 曹震圭曰、按",
+          "originalText": "以三合五行陽干為徳",
+          "interpretation": "Day stem, not branch. The source also has a separate direction aspect; do not collapse direction into day matching.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "B8",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "location": "天德月德天德合月德合 / 按",
+          "originalText": "天德月德乃月建三合旺氣",
+          "interpretation": "Direct Month Jian support, separate from general twelve-branch grouping.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall",
+      "notes": "Own explanation explicitly ties 丙 to 寅午戌 and the other stems to month three-harmony groups. Month-table placement supplies Jie binding independently of the twelve-branch general statement.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "wedding",
+          "effect": "recommend",
+          "sourceWords": "嫁娶",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "pray",
+          "effect": "recommend",
+          "sourceWords": "祈福",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "medical-treatment",
+          "effect": "recommend",
+          "sourceWords": "求醫療病",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "construction",
+          "effect": "recommend",
+          "sourceWords": "營建宮室",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "burial",
+          "effect": "recommend",
+          "sourceWords": "安葬",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        }
+      ]
+    },
+    {
+      "id": "heaven-virtue",
+      "name": "Thiên Đức",
+      "status": "PARTIAL",
+      "sourceMonthMeaning": "MONTH_JIAN_BRANCH",
+      "sourceMonthMeaningAlternatives": [
+        "SOLAR_TERM_MONTH",
+        "SOLAR_MONTH_BRANCH"
+      ],
+      "runtimeBasis": "PROPOSED: Jie-based month Jian branch; exact-instant/civil-day policy PENDING",
+      "boundary": "JIE confirmed; instantaneous versus transition-day application UNRESOLVED",
+      "leapPolicy": "SOLAR_CONTEXT_UNAFFECTED",
+      "leapPolicyEvidence": {
+        "type": "INFERENCE_FROM_RESOLVED_BASIS",
+        "explicitIntercalationPassageFound": false,
+        "reason": "For the Jie/Jian interpretation established by this rule’s monthly placement, lunar month number and leap flag are not operands. This is irrelevance, not SAME_AS_PREVIOUS/NEXT/OWN month copying. Any lunar-month alternative would have UNRESOLVED leap policy."
+      },
+      "dayOperand": "OTHER: MIXED DAY_STEM / TRIGRAM / DIRECTION; four day rows UNRESOLVED",
+      "aliases": [
+        "天徳",
+        "天德"
+      ],
+      "aliasScope": "monthly rule only; no annual variants admitted",
+      "sourceEvidence": [
+        {
+          "evidenceId": "B9",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "天徳 / 考原曰",
+          "originalText": "不用支而用干者支地也干天也",
+          "interpretation": "No unconditional branch substitution; four trigrams substitute for earthly symbols in the text’s theoretical account.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "B10",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "天徳 / 按、蠡海集 and 又一說",
+          "originalText": "以天干者八以卦位者四",
+          "interpretation": "Distinguishes eight stem entries and four trigram positions; records rival branch reconstructions, then criticizes mixing branch life-cycle logic into heavenly stems.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "B11",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷05",
+          "location": "天德合 / 按",
+          "originalText": "以四維無十干則不得有其日",
+          "interpretation": "Direct reason not to invent a day stem/branch for the four corner positions. Direction use is discussed separately.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F1",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神 / 歴書曰",
+          "originalText": "每月交節則疊兩值日其法從月建上起建",
+          "interpretation": "Jie-based Jian-Chu relation. Repeated daily annotations do not settle an exact-instant cutoff for all six rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F2",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷04",
+          "location": "建除十二神所合叢辰 / opening 按",
+          "originalText": "凡月神之以十二辰起例者…今一以建除統之",
+          "interpretation": "Explicit scope: monthly rules arising from twelve branches; not a license to apply this paragraph alone to stem/trigram rules.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F3",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷12",
+          "location": "日躔過宮 / final sentence",
+          "originalText": "月建視節氣斗杓也月將視中氣太陽也",
+          "interpretation": "Distinguishes Month Jian (Jie) from Month General (Zhongqi). Read alongside explicit month-table headings.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F4",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷20",
+          "location": "月表一 / 正月 heading and six-rule rows",
+          "originalText": "立春正月節",
+          "interpretation": "All six named rules appear under Spring Commences with month Jian 寅; this is rule-specific corroboration, not a new symbolic table.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F5",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷21",
+          "location": "月表二 / 二月 heading and six-rule rows",
+          "originalText": "驚蟄二月節",
+          "interpretation": "All six appear under Insects Waken with month Jian 卯; 春分二月中 is separately used for month General.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F6",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷22",
+          "location": "月表三 / 三月 heading and six-rule rows",
+          "originalText": "清明三月節",
+          "interpretation": "All six appear under Clear and Bright with month Jian 辰; 穀雨三月中 is separate.",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        },
+        {
+          "evidenceId": "F7",
+          "sourceId": "XJBF_QD",
+          "url": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷23",
+          "location": "月表四 / 四月 heading and six-rule rows",
+          "originalText": "立夏四月節",
+          "interpretation": "All six appear under Summer Commences with month Jian 巳 (transcription sometimes 己; do not silently use a stem).",
+          "evidenceType": "SOURCE_SAYS",
+          "medium": "primary-work-digital-transcription",
+          "facsimileCollation": "NOT_PERFORMED",
+          "accessedDate": "2026-10-08"
+        }
+      ],
+      "independentEvidence": [
+        {
+          "evidenceId": "S1",
+          "sourceId": "SHIXIAN_COMMENTARY_MIAO",
+          "url": "https://www.shidianguji.com/zh/book/NA06367/chapter/1m3q9g2tzjd4i",
+          "location": "prefatory examples, 四月初一辰時正二刻立夏",
+          "evidenceType": "EXTERNAL_HISTORICAL_COMMENTARY",
+          "interpretation": "Explicitly retains the previous seasonal month before the recorded crossing time, even on the same lunar/civil date. Supports exact-time candidate, but is a separate work and not a canonical authorization for every XJBF rule.",
+          "limitation": "Transcription/OCR not fully collated; provenance and scope need review; not independent dated match fixtures."
+        },
+        {
+          "evidenceId": "S2",
+          "sourceId": "WU_YU_2021",
+          "url": "https://www1.ihp.sinica.edu.tw/storage/publish2L/92-2-4%E5%90%B3%E7%BE%BD.pdf",
+          "location": "printed p.408, PDF p.12, table-one introduction",
+          "evidenceType": "SCHOLARLY_CONTEXT",
+          "interpretation": "Defines the months in that article’s monthly god arrangement as months beginning at twelve Jie. Corroboration only: its displayed table is not a dated six-rule validation dataset.",
+          "limitation": "Does not resolve six-rule exact cutoffs or modern UTC+7 examples."
+        }
+      ],
+      "independentAnchors": [],
+      "independentAnchorCounts": {
+        "positive": 0,
+        "negative": 0
+      },
+      "independentAnchorStatus": "INDEPENDENT_DATE_FIXTURE_MISSING",
+      "unresolved": [
+        "EXACT_CUTOFF_VS_CIVIL_DAY_UNRESOLVED",
+        "INDEPENDENT_DATE_FIXTURE_MISSING",
+        "SOURCE_TRANSCRIPTION_NOT_FACSIMILE_COLLATED",
+        "FOUR_TRIGRAM_DAY_OPERANDS_UNRESOLVED",
+        "RECONSTRUCTION_VARIANTS_NOT_ADMITTED"
+      ],
+      "confidence": "HIGH month-Jian/Jie binding; MEDIUM overall; LOW unresolved four-trigram day conversion",
+      "notes": "Own explanation says 正五九月建寅午戌 and keeps four corner trigrams. Eight stem rows and four direction/trigram rows are not a homogeneous day-branch table.",
+      "goldenReady": false,
+      "productionAdmission": false,
+      "boundaryCandidates": [
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-02-04T05:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-02-04T05:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-02-04T05:04:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-02-03T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-02-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Xuân",
+          "longitude": 315,
+          "publishedReference": "2014-02-04T06:03:00+08:00",
+          "referenceUtc7": "2014-02-04T05:03:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-02-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-03-05T23:01:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-03-05T23:02:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-03-05T23:03:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-03-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-03-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Kinh Trập",
+          "longitude": 345,
+          "publishedReference": "2014-03-06T00:02:00+08:00",
+          "referenceUtc7": "2014-03-05T23:02:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-03-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-04-05T03:46:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-04-05T03:47:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-04-05T03:48:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-04-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-04-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Thanh Minh",
+          "longitude": 15,
+          "publishedReference": "2014-04-05T04:47:00+08:00",
+          "referenceUtc7": "2014-04-05T03:47:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-04-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-minus-1-minute",
+          "instant": "2014-05-05T20:58:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-at-published-minute",
+          "instant": "2014-05-05T20:59:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "reference-plus-1-minute",
+          "instant": "2014-05-05T21:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D-1",
+          "instant": "2014-05-04T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+0",
+          "instant": "2014-05-05T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        },
+        {
+          "term": "Lập Hạ",
+          "longitude": 45,
+          "publishedReference": "2014-05-05T21:59:00+08:00",
+          "referenceUtc7": "2014-05-05T20:59:00+07:00",
+          "sample": "civil-D+1",
+          "instant": "2014-05-06T12:00:00+07:00",
+          "timezone": "Asia/Ho_Chi_Minh",
+          "precision": "published minute; exact astronomical t not established",
+          "exactTransitionInstant": null,
+          "status": "PENDING",
+          "expected": null,
+          "dayStem": null,
+          "dayBranch": null,
+          "source": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+          "blockedBy": [
+            "EXACT_CUTOFF_NOT_ADMITTED",
+            "INDEPENDENT_DAY_CONTEXT_MISSING"
+          ],
+          "expectedOrigin": "none; no production API called"
+        }
+      ],
+      "candidateActivityEffects": [
+        {
+          "activityId": "wedding",
+          "effect": "recommend",
+          "sourceWords": "嫁娶",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "pray",
+          "effect": "recommend",
+          "sourceWords": "祈福",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "medical-treatment",
+          "effect": "recommend",
+          "sourceWords": "求醫療病",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "construction",
+          "effect": "recommend",
+          "sourceWords": "營建宮室",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        },
+        {
+          "activityId": "burial",
+          "effect": "recommend",
+          "sourceWords": "安葬",
+          "sourceTextRef": "https://zh.wikisource.org/zh-hant/欽定協紀辨方書_(四庫全書本)/卷10",
+          "status": "RESEARCH_ONLY_NOT_ADMITTED",
+          "qualification": "Raw lexical candidate only; co-occurrence exceptions/conditions must remain separate. No severity or blanket-day verdict."
+        }
+      ]
+    }
+  ],
+  "safetyCheck": {
+    "productionUnchanged": true,
+    "goldenV1Unchanged": true,
+    "goldenV21Unchanged": true,
+    "goldenV3GroupAUnchanged": true,
+    "noProductionDerivedExpected": true,
+    "noMajorityWebAuthority": true,
+    "noGuessedLeapPolicy": true,
+    "noTrigramToBranchGuess": true,
+    "noAutomaticLunarMonthAssumption": true,
+    "noScoring": true,
+    "noGroupCWork": true,
+    "protectedFileCount": 378,
+    "verificationMethod": "SHA-256 before/after of shared/, src/, functions/src/, golden-v3/*.json and supplied Downloads V1/V2.1; all unchanged",
+    "protectedSnapshotSha256": "9012f1a412b19711bae10b632d6e96b5d35184f06bc8182b9dd49aa135f1dbc6"
+  },
+  "researchLimits": [
+    "No accepted independent dated rule annotations (0 positive/0 negative per rule).",
+    "NDL/CText facsimile viewer fetch failures; scan location found but no completed collation.",
+    "HKO minute precision does not supply exact t; all boundary expectations null.",
+    "Historical Miao commentary is a different work; do not treat it as canonical XJBF text."
+  ]
+}

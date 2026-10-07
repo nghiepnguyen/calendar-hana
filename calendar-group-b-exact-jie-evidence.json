@@ -1,0 +1,743 @@
+{
+  "phase": "3B.2-candidate",
+  "authoritative": false,
+  "reviewStatus": "awaiting-independent-review",
+  "definitionCompatibility": "COMPATIBLE: apparent geocentric tropical solar longitude, true ecliptic/equinox of date; no mean/geometric/heliocentric substitution",
+  "method": {
+    "binding": "pyswisseph 2.10.3.2",
+    "libraryVersion": "2.10.03",
+    "ephemeris": "Swiss compressed JPL DE441 (actual file header, not older DE431 documentation)",
+    "dataURL": "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/sepl_18.se1",
+    "dataSha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "binarySha256": "b98e1b76a9f2fb0b5a77bb4bc466daac7adde125af5bbd865d8529f7782fd5e2",
+    "actualFileMetadata": [
+      "/tmp/sepl_18.se1",
+      2378496.5,
+      2597651.3591467496,
+      441
+    ],
+    "flags": "FLG_SWIEPH only; apparent geocentric, nutation enabled, equinox of date; assert SWIEPH returned and no MOSEPH",
+    "timescale": "solve longitude on TT; utc_to_jd/jdet_to_utc provide leap-second aware UTC conversion, no UTC=TT approximation",
+    "solver": "signed wrapped longitude residual; bisect [UTC first-of-month translated to TT, +12 TT days] to <=0.0001 s width",
+    "precision": "numerical bracket <=0.1 ms; ISO microseconds are serialization precision, not a claim of physical microsecond accuracy",
+    "sourceConstants": "library version and ephemeris bytes pinned by SHA256; solar body constant SUN, Gregorian flag GREG_CAL, longitude sequence285+30*(month-1) modulo360",
+    "timezone": "fixed UTC+7 Asia/Ho_Chi_Minh; corroboration UTC+8 converted as absolute instant",
+    "productionUsed": false,
+    "documentation": [
+      "https://www.astro.com/swisseph/swephprg.htm",
+      "https://github.com/aloistr/swisseph/blob/master/readme.md",
+      "https://github.com/cosinekitty/astronomy/blob/master/source/js/README.md#SearchSunLongitude"
+    ]
+  },
+  "dayOperandOracle": {
+    "method": "independent Gregorian date arithmetic from HKO 2014-02-05 丁未 index43 modulo60; compare four widely separated visually read HKO calendar cells",
+    "epoch": {
+      "date": "2014-02-05",
+      "cycleIndexZeroBased": 43
+    },
+    "dayBoundary": "00:00-civil Asia/Ho_Chi_Minh per original validation spec §2",
+    "calendarChecks": [
+      {
+        "url": "https://www.hko.gov.hk/en/gts/astron2014/files/2014cal02.pdf",
+        "location": "2014cal02.pdf cell 5",
+        "date": "2014-02-05",
+        "dayGanzhi": "丁未"
+      },
+      {
+        "url": "https://www.hko.gov.hk/en/gts/astron2023/files/2023cal04.pdf",
+        "location": "2023cal04.pdf cell 5",
+        "date": "2023-04-05",
+        "dayGanzhi": "癸巳"
+      },
+      {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal03.pdf",
+        "location": "2024cal03.pdf cell 5",
+        "date": "2024-03-05",
+        "dayGanzhi": "戊辰"
+      },
+      {
+        "url": "https://www.hko.gov.hk/en/gts/astron2025/files/2025cal07.pdf",
+        "location": "2025cal07.pdf cell 7",
+        "date": "2025-07-07",
+        "dayGanzhi": "丁丑"
+      }
+    ],
+    "algorithm": "n=(43+(civilDate-2014-02-05).days)%60; stem=甲乙丙丁戊己庚辛壬癸[n%10], branch=子丑寅卯辰巳午未申酉戌亥[n%12]",
+    "scope": "derived operands, independently cross-checked; not a claim that every fixture cell has been visually collated",
+    "productionUsed": false
+  },
+  "transitions": [
+    {
+      "id": "jie-2014-02",
+      "year": 2014,
+      "civilMonth": 2,
+      "name": "Lập Xuân",
+      "longitudeDegrees": 315,
+      "oldMonthJian": "丑",
+      "newMonthJian": "寅",
+      "instantUTC": "2014-02-03T22:03:16.684536Z",
+      "instantVietnam": "2014-02-04T05:03:16.684536+07:00",
+      "jdTT": 2456692.4197207005,
+      "rootBracketTT": [
+        2456692.4197207,
+        2456692.419720701
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -3.341824594826903e-10,
+        6.105551619839389e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+        "location": "Lập Xuân row",
+        "timestamp": "2014-02-04T06:03:00+08:00",
+        "timestampVietnam": "2014-02-04T05:03:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 16.684536,
+        "pdfSha256": null
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2014-03",
+      "year": 2014,
+      "civilMonth": 3,
+      "name": "Kinh Trập",
+      "longitudeDegrees": 345,
+      "oldMonthJian": "寅",
+      "newMonthJian": "卯",
+      "instantUTC": "2014-03-05T16:02:15.805446Z",
+      "instantVietnam": "2014-03-05T23:02:15.805446+07:00",
+      "jdTT": 2456722.1690160814,
+      "rootBracketTT": [
+        2456722.169016081,
+        2456722.169016082
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -7.246399036375806e-10,
+        2.0838797354372218e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+        "location": "Kinh Trập row",
+        "timestamp": "2014-03-06T00:02:00+08:00",
+        "timestampVietnam": "2014-03-05T23:02:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 15.805446,
+        "pdfSha256": null
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2014-04",
+      "year": 2014,
+      "civilMonth": 4,
+      "name": "Thanh Minh",
+      "longitudeDegrees": 15,
+      "oldMonthJian": "卯",
+      "newMonthJian": "辰",
+      "instantUTC": "2014-04-04T20:46:39.787483Z",
+      "instantVietnam": "2014-04-05T03:46:39.787483+07:00",
+      "jdTT": 2456752.3665158735,
+      "rootBracketTT": [
+        2456752.366515873,
+        2456752.366515874
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -2.141007371392334e-10,
+        7.034657301119296e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+        "location": "Thanh Minh row",
+        "timestamp": "2014-04-05T04:47:00+08:00",
+        "timestampVietnam": "2014-04-05T03:47:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -20.212517,
+        "pdfSha256": null
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2014-05",
+      "year": 2014,
+      "civilMonth": 5,
+      "name": "Lập Hạ",
+      "longitudeDegrees": 45,
+      "oldMonthJian": "辰",
+      "newMonthJian": "巳",
+      "instantUTC": "2014-05-05T13:59:26.221400Z",
+      "instantVietnam": "2014-05-05T20:59:26.221400+07:00",
+      "jdTT": 2456783.0837199697,
+      "rootBracketTT": [
+        2456783.0837199693,
+        2456783.0837199697
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -6.934897101018578e-12,
+        4.4423131839721464e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2014/Solar_Term_2014.htm",
+        "location": "Lập Hạ row",
+        "timestamp": "2014-05-05T21:59:00+08:00",
+        "timestampVietnam": "2014-05-05T20:59:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 26.2214,
+        "pdfSha256": null
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2023-03",
+      "year": 2023,
+      "civilMonth": 3,
+      "name": "Kinh Trập",
+      "longitudeDegrees": 345,
+      "oldMonthJian": "寅",
+      "newMonthJian": "卯",
+      "instantUTC": "2023-03-05T20:36:14.214332Z",
+      "instantVietnam": "2023-03-06T03:36:14.214332+07:00",
+      "jdTT": 2460009.359298592,
+      "rootBracketTT": [
+        2460009.3592985915,
+        2460009.3592985924
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -5.969695848762058e-10,
+        3.3577407521079294e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2023/files/2023cal03.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2023-03-06T04:36:00+08:00",
+        "timestampVietnam": "2023-03-06T03:36:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 14.214332,
+        "pdfSha256": "e3b4d023034ec77c60c9e03f76098fb8361f1288a4d97dcb365b4205b7a26380"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2023-04",
+      "year": 2023,
+      "civilMonth": 4,
+      "name": "Thanh Minh",
+      "longitudeDegrees": 15,
+      "oldMonthJian": "卯",
+      "newMonthJian": "辰",
+      "instantUTC": "2023-04-05T01:13:03.657937Z",
+      "instantVietnam": "2023-04-05T08:13:03.657937+07:00",
+      "jdTT": 2460039.5515375226,
+      "rootBracketTT": [
+        2460039.551537522,
+        2460039.551537523
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -3.6291680771682877e-10,
+        5.543654424400302e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2023/files/2023cal04.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2023-04-05T09:13:00+08:00",
+        "timestampVietnam": "2023-04-05T08:13:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 3.657937,
+        "pdfSha256": "e8dc17e112d81244a0c0a35e47c2a9455f020c3525deb9dab4942c9593045a9f"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2023-05",
+      "year": 2023,
+      "civilMonth": 5,
+      "name": "Lập Hạ",
+      "longitudeDegrees": 45,
+      "oldMonthJian": "辰",
+      "newMonthJian": "巳",
+      "instantUTC": "2023-05-05T18:18:45.556920Z",
+      "instantVietnam": "2023-05-06T01:18:45.556920+07:00",
+      "jdTT": 2460070.26382802,
+      "rootBracketTT": [
+        2460070.2638280196,
+        2460070.2638280205
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -5.655920176650397e-10,
+        3.36342509399401e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2023/files/2023cal05.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2023-05-06T02:19:00+08:00",
+        "timestampVietnam": "2023-05-06T01:19:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -14.44308,
+        "pdfSha256": "80e59e4140e8bd83071e4e1da42d7faa0fb34e7507f11cb5078e49c08cf6d0c7"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-01",
+      "year": 2024,
+      "civilMonth": 1,
+      "name": "Tiểu Hàn",
+      "longitudeDegrees": 285,
+      "oldMonthJian": "子",
+      "newMonthJian": "丑",
+      "instantUTC": "2024-01-05T20:49:22.512852Z",
+      "instantVietnam": "2024-01-06T03:49:22.512852+07:00",
+      "jdTT": 2460315.3684224174,
+      "rootBracketTT": [
+        2460315.368422417,
+        2460315.368422418
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -6.488676262961235e-10,
+        3.005879989359528e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal01.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-01-06T04:49:00+08:00",
+        "timestampVietnam": "2024-01-06T03:49:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 22.512852,
+        "pdfSha256": "0152ac1b3129a44958dad2c35606f813d3c318902c3dfc47defcc4f52faa1dba"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-02",
+      "year": 2024,
+      "civilMonth": 2,
+      "name": "Lập Xuân",
+      "longitudeDegrees": 315,
+      "oldMonthJian": "丑",
+      "newMonthJian": "寅",
+      "instantUTC": "2024-02-04T08:27:07.611503Z",
+      "instantVietnam": "2024-02-04T15:27:07.611503+07:00",
+      "jdTT": 2460344.8529721703,
+      "rootBracketTT": [
+        2460344.8529721703,
+        2460344.852972171
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -3.037143869732972e-10,
+        1.6865442376001738e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal02.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-02-04T16:27:00+08:00",
+        "timestampVietnam": "2024-02-04T15:27:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 7.611503,
+        "pdfSha256": "831318978bdf3373a56dc7c40516bc0b12297b52117ff9d701dd563e4d582373"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-03",
+      "year": 2024,
+      "civilMonth": 3,
+      "name": "Kinh Trập",
+      "longitudeDegrees": 345,
+      "oldMonthJian": "寅",
+      "newMonthJian": "卯",
+      "instantUTC": "2024-03-05T02:22:46.184919Z",
+      "instantVietnam": "2024-03-05T09:22:46.184919+07:00",
+      "jdTT": 2460374.5999463997,
+      "rootBracketTT": [
+        2460374.599946399,
+        2460374.5999464
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -2.5494273359072395e-10,
+        6.780851435905788e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal03.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-03-05T10:23:00+08:00",
+        "timestampVietnam": "2024-03-05T09:23:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -13.815081,
+        "pdfSha256": "3d89bd3b0781faa711fa7f51c89ec68709e30740f691f224abc777a9455c6bce"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-04",
+      "year": 2024,
+      "civilMonth": 4,
+      "name": "Thanh Minh",
+      "longitudeDegrees": 15,
+      "oldMonthJian": "卯",
+      "newMonthJian": "辰",
+      "instantUTC": "2024-04-04T07:02:17.672062Z",
+      "instantVietnam": "2024-04-04T14:02:17.672062+07:00",
+      "jdTT": 2460404.794060834,
+      "rootBracketTT": [
+        2460404.7940608338,
+        2460404.7940608347
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -7.134417501220014e-10,
+        2.042668256763136e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal04.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-04-04T15:02:00+08:00",
+        "timestampVietnam": "2024-04-04T14:02:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 17.672062,
+        "pdfSha256": "e5cbdc07b46f99d31f0d89cdca37e616a6d1c7d652c8607a5af2599db48123aa"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-05",
+      "year": 2024,
+      "civilMonth": 5,
+      "name": "Lập Hạ",
+      "longitudeDegrees": 45,
+      "oldMonthJian": "辰",
+      "newMonthJian": "巳",
+      "instantUTC": "2024-05-05T00:10:05.052803Z",
+      "instantVietnam": "2024-05-05T07:10:05.052803+07:00",
+      "jdTT": 2460435.507803667,
+      "rootBracketTT": [
+        2460435.5078036664,
+        2460435.5078036673
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -3.888374067173572e-10,
+        5.136655545356916e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal05.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-05-05T08:10:00+08:00",
+        "timestampVietnam": "2024-05-05T07:10:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 5.052803,
+        "pdfSha256": "b8e5f87a8701b99ab7070715537c246310445c30dd6b47a115b58bb47c89c8ca"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-06",
+      "year": 2024,
+      "civilMonth": 6,
+      "name": "Mang Chủng",
+      "longitudeDegrees": 75,
+      "oldMonthJian": "巳",
+      "newMonthJian": "午",
+      "instantUTC": "2024-06-05T04:09:53.688941Z",
+      "instantVietnam": "2024-06-05T11:09:53.688941+07:00",
+      "jdTT": 2460466.6743388074,
+      "rootBracketTT": [
+        2460466.674338807,
+        2460466.6743388074
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -2.8478552849264815e-10,
+        1.6109424905152991e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal06.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-06-05T12:10:00+08:00",
+        "timestampVietnam": "2024-06-05T11:10:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -6.311059,
+        "pdfSha256": "9b04100fc9f76f533719003d0a79cb23af085dcc1987cd024e8f5d08e7a8c777"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-07",
+      "year": 2024,
+      "civilMonth": 7,
+      "name": "Tiểu Thử",
+      "longitudeDegrees": 105,
+      "oldMonthJian": "午",
+      "newMonthJian": "未",
+      "instantUTC": "2024-07-06T14:20:03.398193Z",
+      "instantVietnam": "2024-07-06T21:20:03.398193+07:00",
+      "jdTT": 2460498.098062294,
+      "rootBracketTT": [
+        2460498.0980622936,
+        2460498.0980622945
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -4.320099833421409e-11,
+        8.451479516224936e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal07.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-07-06T22:20:00+08:00",
+        "timestampVietnam": "2024-07-06T21:20:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 3.398193,
+        "pdfSha256": "48795762e7071c40e16ead00c8bf79871f7d06f99bf8b41bde8cec830945e642"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-08",
+      "year": 2024,
+      "civilMonth": 8,
+      "name": "Lập Thu",
+      "longitudeDegrees": 135,
+      "oldMonthJian": "未",
+      "newMonthJian": "申",
+      "instantUTC": "2024-08-07T00:09:16.449044Z",
+      "instantVietnam": "2024-08-07T07:09:16.449044+07:00",
+      "jdTT": 2460529.5072411234,
+      "rootBracketTT": [
+        2460529.507241123,
+        2460529.5072411234
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -1.6143530956469476e-10,
+        2.8478552849264815e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal08.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-08-07T08:09:00+08:00",
+        "timestampVietnam": "2024-08-07T07:09:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 16.449044,
+        "pdfSha256": "ad4be18f27ebdd819da740d921d3b376a35732d30054c7b8e5fff0715ad8f2db"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-09",
+      "year": 2024,
+      "civilMonth": 9,
+      "name": "Bạch Lộ",
+      "longitudeDegrees": 165,
+      "oldMonthJian": "申",
+      "newMonthJian": "酉",
+      "instantUTC": "2024-09-07T03:11:20.866192Z",
+      "instantVietnam": "2024-09-07T10:11:20.866192+07:00",
+      "jdTT": 2460560.6336811366,
+      "rootBracketTT": [
+        2460560.633681136,
+        2460560.633681137
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -1.9210233404010069e-10,
+        7.119069778127596e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal09.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-09-07T11:11:00+08:00",
+        "timestampVietnam": "2024-09-07T10:11:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 20.866192,
+        "pdfSha256": "92b4ef048780468ceb7fae97d5e7a63aebaccc6df33deab8a5616c0dc58d81c1"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-10",
+      "year": 2024,
+      "civilMonth": 10,
+      "name": "Hàn Lộ",
+      "longitudeDegrees": 195,
+      "oldMonthJian": "酉",
+      "newMonthJian": "戌",
+      "instantUTC": "2024-10-07T18:59:57.335789Z",
+      "instantVietnam": "2024-10-08T01:59:57.335789+07:00",
+      "jdTT": 2460591.292436572,
+      "rootBracketTT": [
+        2460591.292436572,
+        2460591.2924365723
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -4.0452619032294024e-10,
+        5.5081272876122966e-11
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal10.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-10-08T03:00:00+08:00",
+        "timestampVietnam": "2024-10-08T02:00:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -2.664211,
+        "pdfSha256": "2d9be7fb9f38ce1bb6b64b8e6529418584e16c04f7e356d2cecc8599d99335c6"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-11",
+      "year": 2024,
+      "civilMonth": 11,
+      "name": "Lập Đông",
+      "longitudeDegrees": 225,
+      "oldMonthJian": "戌",
+      "newMonthJian": "亥",
+      "instantUTC": "2024-11-06T22:20:04.521878Z",
+      "instantVietnam": "2024-11-07T05:20:04.521878+07:00",
+      "jdTT": 2460621.431408633,
+      "rootBracketTT": [
+        2460621.4314086325,
+        2460621.4314086335
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -5.874483122170204e-10,
+        3.4722802411124576e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal11.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-11-07T06:20:00+08:00",
+        "timestampVietnam": "2024-11-07T05:20:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 4.521878,
+        "pdfSha256": "05a9cbe0c5e6644ddbf26dcf7c3d9146e07049b3af3a020b9f919c89f42325f0"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2024-12",
+      "year": 2024,
+      "civilMonth": 12,
+      "name": "Đại Tuyết",
+      "longitudeDegrees": 255,
+      "oldMonthJian": "亥",
+      "newMonthJian": "子",
+      "instantUTC": "2024-12-06T15:17:02.605598Z",
+      "instantVietnam": "2024-12-06T22:17:02.605598+07:00",
+      "jdTT": 2460651.137636454,
+      "rootBracketTT": [
+        2460651.1376364534,
+        2460651.137636454
+      ],
+      "rootBracketWidthSeconds": 4.023313522338867e-05,
+      "residualDegrees": [
+        -1.645048541831784e-10,
+        3.084039690293139e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2024/files/2024cal12.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2024-12-06T23:17:00+08:00",
+        "timestampVietnam": "2024-12-06T22:17:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": 2.605598,
+        "pdfSha256": "9ca42c82a9c374cccfe66f7279e367b7a71519122d0fb94a59825463d9ff55a7"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2025-01",
+      "year": 2025,
+      "civilMonth": 1,
+      "name": "Tiểu Hàn",
+      "longitudeDegrees": 285,
+      "oldMonthJian": "子",
+      "newMonthJian": "丑",
+      "instantUTC": "2025-01-05T02:32:46.338815Z",
+      "instantVietnam": "2025-01-05T09:32:46.338815+07:00",
+      "jdTT": 2460680.6068926253,
+      "rootBracketTT": [
+        2460680.606892625,
+        2460680.606892626
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -7.524363354605157e-10,
+        1.9701928977156058e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2025/files/2025cal01.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2025-01-05T10:33:00+08:00",
+        "timestampVietnam": "2025-01-05T09:33:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -13.661185,
+        "pdfSha256": "f10c9fb6895c3079f86db52cde8df8a8d7efae218a4c3bb73d7e174d32372288"
+      },
+      "productionUsed": false
+    },
+    {
+      "id": "jie-2025-07",
+      "year": 2025,
+      "civilMonth": 7,
+      "name": "Tiểu Thử",
+      "longitudeDegrees": 105,
+      "oldMonthJian": "午",
+      "newMonthJian": "未",
+      "instantUTC": "2025-07-06T20:04:59.099337Z",
+      "instantVietnam": "2025-07-07T03:04:59.099337+07:00",
+      "jdTT": 2460863.337595872,
+      "rootBracketTT": [
+        2460863.3375958716,
+        2460863.3375958726
+      ],
+      "rootBracketWidthSeconds": 8.046627044677734e-05,
+      "residualDegrees": [
+        -1.8056312001135666e-10,
+        7.073026608850341e-10
+      ],
+      "returnedEphemerisFlag": 2,
+      "reference": {
+        "url": "https://www.hko.gov.hk/en/gts/astron2025/files/2025cal07.pdf",
+        "location": "Solar Terms, corresponding Jie row, p.1",
+        "timestamp": "2025-07-07T04:05:00+08:00",
+        "timestampVietnam": "2025-07-07T03:05:00+07:00",
+        "precision": "published minute; rounding not used as exact T",
+        "differenceSecondsExactMinusPublished": -0.900663,
+        "pdfSha256": "7a5285c7ee7ab3158e7bdcd0a6d72e234e197cb21e0566a42ee240db3d2ffdd1"
+      },
+      "productionUsed": false
+    }
+  ]
+}

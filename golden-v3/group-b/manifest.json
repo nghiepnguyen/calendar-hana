@@ -1,0 +1,171 @@
+{
+  "phase": "3B.2-candidate",
+  "authoritative": false,
+  "reviewStatus": "awaiting-independent-review",
+  "recommendation": "READY_FOR_INDEPENDENT_GOLDEN_REVIEW",
+  "cutoffDecision": "GROUP_B_MONTH_JIAN_CUTOFF_V3_1",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "dayBoundary": "00:00-civil",
+  "includedRules": [
+    "month-breaker",
+    "robbery-sha",
+    "disaster-sha",
+    "month-sha",
+    "month-virtue"
+  ],
+  "excludedRules": {
+    "heaven-virtue": {
+      "status": "PARTIAL / UNRESOLVED",
+      "excludedFromGolden": true,
+      "reason": "canonical four trigram/direction DAY semantics unresolved"
+    }
+  },
+  "presentationPolicy": "PENDING",
+  "implemented": false,
+  "exactTransitions": 21,
+  "fixtureCounts": {
+    "month-breaker": {
+      "total": 121,
+      "interiorPositive": 26,
+      "interiorNegative": 26,
+      "monthJianCoverage": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "exactBoundary": 63,
+      "effectiveKillerTransitions": 3,
+      "leapRegression": 1
+    },
+    "robbery-sha": {
+      "total": 121,
+      "interiorPositive": 26,
+      "interiorNegative": 26,
+      "monthJianCoverage": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "exactBoundary": 63,
+      "effectiveKillerTransitions": 6,
+      "leapRegression": 1
+    },
+    "disaster-sha": {
+      "total": 121,
+      "interiorPositive": 26,
+      "interiorNegative": 26,
+      "monthJianCoverage": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "exactBoundary": 63,
+      "effectiveKillerTransitions": 2,
+      "leapRegression": 1
+    },
+    "month-sha": {
+      "total": 122,
+      "interiorPositive": 26,
+      "interiorNegative": 26,
+      "monthJianCoverage": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "exactBoundary": 63,
+      "effectiveKillerTransitions": 2,
+      "leapRegression": 1
+    },
+    "month-virtue": {
+      "total": 121,
+      "interiorPositive": 26,
+      "interiorNegative": 26,
+      "monthJianCoverage": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "exactBoundary": 63,
+      "effectiveKillerTransitions": 3,
+      "leapRegression": 1
+    }
+  },
+  "candidateFileSha256": {
+    "month-breaker.json": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+    "robbery-sha.json": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+    "disaster-sha.json": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+    "month-sha.json": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+    "month-virtue.json": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9"
+  },
+  "evidenceSha256": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1",
+  "protectedArtifactVerification": {
+    "count": 398,
+    "unchanged": true,
+    "baselineMapSha256": "a19f32f270bcb68105006b7482b70a08dd36fbbbdc26e8c6a605cd4132a2cdba",
+    "aggregateContentSha256": "ab64f215bf1e331a909cca3aa3761cb919f431eca6acdc9e5d2cb60430df3824"
+  },
+  "mutationsDesignOnly": true,
+  "runtimeMutationExecution": "NOT_RUN; prohibited in this phase",
+  "productionUsedAsOracle": false,
+  "selfAudit": {
+    "status": "PASS",
+    "fixtureRecordsVerified": 606,
+    "exactTransitionsVerified": 21,
+    "requiredArtifactsVerified": 12,
+    "protectedHashesVerified": 398,
+    "dayOperandCrossCheck": "second HKO epoch 2024-03-05 戊辰, independent of construction epoch2014",
+    "sourcePointersVerified": true,
+    "boundaryOffsetsAndEqualityVerified": true,
+    "equivalentZPlus7Plus8Verified": true,
+    "effectiveCutoffKillersAllFiveRules": true,
+    "mutationCounterexampleCategoriesVerified": 10,
+    "runtimeMutationTestsExecuted": false,
+    "productionTestsExecuted": false,
+    "gitDiffCheck": "PASS"
+  }
+}
