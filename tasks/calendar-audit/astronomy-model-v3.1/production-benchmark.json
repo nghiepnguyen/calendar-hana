@@ -1,0 +1,16 @@
+{
+  "importColdMs": 3.4459169999999997,
+  "firstSolveMs": 0.7050420000000006,
+  "annual24SolveMedianMs": 0.2033750000000225,
+  "annual24SolveP95Ms": 0.3085000000000093,
+  "browserMinifiedBytes": 116424,
+  "browserGzipBytes": 46803,
+  "memoryAfterImportAndSolve": {
+    "rss": 59621376,
+    "heapTotal": 24969216,
+    "heapUsed": 17204768,
+    "external": 5666779,
+    "arrayBuffers": 3950356
+  },
+  "note": "Single Node process; not mobile benchmark; total memory not incremental engine memory"
+}

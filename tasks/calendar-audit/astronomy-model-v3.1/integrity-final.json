@@ -1,0 +1,70 @@
+{
+  "phase": "3B.4.1",
+  "recommendation": "INSUFFICIENT_EVIDENCE",
+  "baselineProtectedFiles": 170,
+  "baselineChanged": [],
+  "groupBFrozenVerified": 11,
+  "groupBFrozenChanged": [],
+  "groupAFrozenVerified": 7,
+  "groupAFrozenChanged": [],
+  "productionSourceUnchanged": true,
+  "phase21Unchanged": true,
+  "groupABehaviorUnchanged": true,
+  "groupBBehaviorUnchanged": true,
+  "packagesAndLockUnchanged": true,
+  "temporaryDependenciesInstalled": false,
+  "thienDucUntouched": true,
+  "groupCUntouched": true,
+  "toleranceAdded": false,
+  "productionTransitionTableAdded": false,
+  "authoritativeGoldenGenerated": false,
+  "failingTestsDisabled": false,
+  "migrationExecuted": false,
+  "migrationPlanCreated": false,
+  "migrationPlanReason": "No adoption option recommended; conditional output requirement",
+  "focusedRegression": {
+    "passed": 160,
+    "failed": 0,
+    "skipped": 0
+  },
+  "groupBRegression": {
+    "passed": 586,
+    "failed": 50,
+    "skipped": 0,
+    "status": "UNCHANGED_KNOWN_RED_BASELINE"
+  },
+  "lint": "PASS_ZERO_WARNINGS",
+  "typecheck": "PASS",
+  "auditScriptSyntax": "PASS",
+  "jsonCountAndRootReproductionChecks": "PASS",
+  "graphify": "PASS_AST_ONLY_ZERO_API_COST",
+  "specReadHashes": {
+    "/Users/nghiepnguyen/Downloads/calendar-validation-spec-v3.md": "5e3f7a8aac5e264ad2f24799108dea7a08eae0cd80c256b1c4c21c6f130dc183",
+    "/Users/nghiepnguyen/Downloads/calendar-validation-patch-v2.1.md": "052642839be0e2b5fef048503a616c0af1dd41e9a653eb8db2876e620d652455",
+    "/Users/nghiepnguyen/Downloads/calendar-validation.spec.md": "da98a0b791212d7f76704345c3da2cbeee4240574ae96627807b0179f71a41a1",
+    "/Users/nghiepnguyen/Downloads/calendar-source-lock-v3.md": "3f7f3a34ea3734eb543ebc8f33f0aeca755215cf6318baedeff43c0642436ced"
+  },
+  "protectedSourceHashes": {
+    "shared/lunar/solarTerms.ts": "f8c16b12df128238deb5c7010062293ec83d92be433997ed02e74e3dee69c8f6",
+    "shared/lunar/officers.ts": "467e217d5b29a7bc1505f99ab454be2467ee4ed04d3dc18def638125d9c9f6e0",
+    "shared/lunar/groupB.ts": "462912566b12f223f510dbafceaaaa7bcab701d182533ef59727c14ced36d276"
+  },
+  "frozenHashes": {
+    "golden-v3/group-b/manifest.json": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+    "golden-v3/group-b/month-breaker.json": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+    "golden-v3/group-b/robbery-sha.json": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+    "golden-v3/group-b/disaster-sha.json": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+    "golden-v3/group-b/month-sha.json": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+    "golden-v3/group-b/month-virtue.json": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+    "calendar-group-b-exact-jie-evidence.json": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1",
+    "calendar-group-b-reviewer-decisions-v3.1.md": "66e37dea7ecd5b69fe5faff2775f8e372f33de452688e6b637e9350d14e61a40",
+    "calendar-group-b-independent-review.md": "addb2460145c6d62b739cfb8941543bb380eb5f0b3a2cfcd4254eb21811b9452",
+    "calendar-group-b-independent-review.json": "0a6a9544ab01b2728bd066c9d2e8c24e5df90aa106a067f3b035f5a7d996de42",
+    "calendar-group-b-freeze-readiness.md": "df2f37a42232133fdc6df90a2b32a8d1d7974406c28030c593b1a88e712bdc36"
+  },
+  "mainArtifacts": {
+    "calendar-astronomy-model-decision-v3.1.md": "d7c701019d19a192bfee984785d8729d5b8539bf2fd381d3432d9807e394acec",
+    "calendar-astronomy-model-comparison-v3.1.json": "154432e7a635dd35ed8a58b74ba0e00d627152a5e6240794c958fb49170b7324",
+    "calendar-astronomy-dependency-map-v3.1.md": "badc7cb068f8d6659b2bbae02b4b26c4a4c3c2fb70605e468cb9b3dfba88ad17"
+  }
+}

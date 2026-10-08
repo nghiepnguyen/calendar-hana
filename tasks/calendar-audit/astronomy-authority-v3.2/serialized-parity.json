@@ -1,0 +1,60 @@
+{
+  "crossBrowserExactAgreement": true,
+  "canonicalBrowserEvents": 288,
+  "nativeComparison": [
+    {
+      "browser": "chromium",
+      "count": 288,
+      "nativeSerializationMismatches": [
+        {
+          "year": 2003,
+          "longitude": 90,
+          "nativeEpochMs": 1056222627515,
+          "wasmEpochMs": 1056222627514
+        },
+        {
+          "year": 2003,
+          "longitude": 135,
+          "nativeEpochMs": 1060295058428,
+          "wasmEpochMs": 1060295058427
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "count": 288,
+      "nativeSerializationMismatches": [
+        {
+          "year": 2003,
+          "longitude": 90,
+          "nativeEpochMs": 1056222627515,
+          "wasmEpochMs": 1056222627514
+        },
+        {
+          "year": 2003,
+          "longitude": 135,
+          "nativeEpochMs": 1060295058428,
+          "wasmEpochMs": 1060295058427
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "count": 288,
+      "nativeSerializationMismatches": [
+        {
+          "year": 2003,
+          "longitude": 90,
+          "nativeEpochMs": 1056222627515,
+          "wasmEpochMs": 1056222627514
+        },
+        {
+          "year": 2003,
+          "longitude": 135,
+          "nativeEpochMs": 1060295058428,
+          "wasmEpochMs": 1060295058427
+        }
+      ]
+    }
+  ]
+}

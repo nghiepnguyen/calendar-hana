@@ -1,0 +1,2 @@
+import {build} from 'vite';import fs from 'node:fs';
+const root='/tmp/authority-342-vite';fs.mkdirSync(root,{recursive:true});fs.writeFileSync(root+'/index.html','<script type="module" src="/main.js"></script>');fs.writeFileSync(root+'/main.js',`import {createSwissEph} from '/tmp/authority-342-wasm/package/dist/index.js';window.createSwissEph=createSwissEph;`);await build({configFile:false,root,build:{outDir:root+'/dist',emptyOutDir:true},logLevel:'warn'});console.log('isolated Vite build passed');

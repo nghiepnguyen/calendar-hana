@@ -1,0 +1,4 @@
+[plugin rolldown:vite-resolve] Module "node:fs/promises" has been externalized for browser compatibility, imported by "/private/tmp/authority-342-wasm/package/dist/ephemeris/sources.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:path" has been externalized for browser compatibility, imported by "/private/tmp/authority-342-wasm/package/dist/ephemeris/sources.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "node:module" has been externalized for browser compatibility, imported by "/private/tmp/authority-342-wasm/package/wasm/swisseph.mjs". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+isolated Vite build passed

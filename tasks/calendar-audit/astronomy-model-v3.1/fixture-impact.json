@@ -1,0 +1,1027 @@
+{
+  "fixedInputSemanticChanges": [
+    {
+      "id": "robbery-sha-066",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2023-03-06"
+      },
+      "productionContext": {
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-03-06",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": false,
+      "productionMatched": true
+    },
+    {
+      "id": "robbery-sha-069",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u8fb0",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3",
+        "civilDate": "2023-04-05"
+      },
+      "productionContext": {
+        "instant": "2023-04-05T08:13:03.657937+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-04-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": true,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-087",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u5df3",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-05-05"
+      },
+      "productionContext": {
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-05-05",
+        "monthJian": "\u8fb0",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": true
+    },
+    {
+      "id": "robbery-sha-090",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5348",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50",
+        "civilDate": "2024-06-05"
+      },
+      "productionContext": {
+        "instant": "2024-06-05T11:09:53.688941+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-06-05",
+        "monthJian": "\u5df3",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-093",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u672a",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a",
+        "civilDate": "2024-07-06"
+      },
+      "productionContext": {
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-07-06",
+        "monthJian": "\u5348",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-096",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u7533",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f",
+        "civilDate": "2024-08-07"
+      },
+      "productionContext": {
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-08-07",
+        "monthJian": "\u672a",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-099",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u9149",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c",
+        "civilDate": "2024-09-07"
+      },
+      "productionContext": {
+        "instant": "2024-09-07T10:11:20.866192+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-09-07",
+        "monthJian": "\u7533",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-102",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u620c",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-10-08"
+      },
+      "productionContext": {
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-10-08",
+        "monthJian": "\u9149",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "robbery-sha-121",
+      "fixtureClass": "rounded-minute-discriminator",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u5bc5",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2014-03-05"
+      },
+      "productionContext": {
+        "instant": "2014-03-05T23:02:07.902723+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2014-03-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": true,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-066",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2023-03-06"
+      },
+      "productionContext": {
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-03-06",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-069",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u8fb0",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3",
+        "civilDate": "2023-04-05"
+      },
+      "productionContext": {
+        "instant": "2023-04-05T08:13:03.657937+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-04-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-087",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5df3",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-05-05"
+      },
+      "productionContext": {
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-05-05",
+        "monthJian": "\u8fb0",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-090",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u5348",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50",
+        "civilDate": "2024-06-05"
+      },
+      "productionContext": {
+        "instant": "2024-06-05T11:09:53.688941+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-06-05",
+        "monthJian": "\u5df3",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50"
+      },
+      "frozenExpected": true,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-093",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u672a",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a",
+        "civilDate": "2024-07-06"
+      },
+      "productionContext": {
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-07-06",
+        "monthJian": "\u5348",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-096",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u7533",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f",
+        "civilDate": "2024-08-07"
+      },
+      "productionContext": {
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-08-07",
+        "monthJian": "\u672a",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-099",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u9149",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c",
+        "civilDate": "2024-09-07"
+      },
+      "productionContext": {
+        "instant": "2024-09-07T10:11:20.866192+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-09-07",
+        "monthJian": "\u7533",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-breaker-102",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u620c",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-10-08"
+      },
+      "productionContext": {
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-10-08",
+        "monthJian": "\u9149",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-066",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2023-03-06"
+      },
+      "productionContext": {
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-03-06",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-069",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u8fb0",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3",
+        "civilDate": "2023-04-05"
+      },
+      "productionContext": {
+        "instant": "2023-04-05T08:13:03.657937+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-04-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-087",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5df3",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-05-05"
+      },
+      "productionContext": {
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-05-05",
+        "monthJian": "\u8fb0",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-090",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u5348",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50",
+        "civilDate": "2024-06-05"
+      },
+      "productionContext": {
+        "instant": "2024-06-05T11:09:53.688941+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-06-05",
+        "monthJian": "\u5df3",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50"
+      },
+      "frozenExpected": true,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-093",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u672a",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a",
+        "civilDate": "2024-07-06"
+      },
+      "productionContext": {
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-07-06",
+        "monthJian": "\u5348",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-096",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u7533",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f",
+        "civilDate": "2024-08-07"
+      },
+      "productionContext": {
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-08-07",
+        "monthJian": "\u672a",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-099",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u9149",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c",
+        "civilDate": "2024-09-07"
+      },
+      "productionContext": {
+        "instant": "2024-09-07T10:11:20.866192+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-09-07",
+        "monthJian": "\u7533",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "disaster-sha-102",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u620c",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-10-08"
+      },
+      "productionContext": {
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-10-08",
+        "monthJian": "\u9149",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-066",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2023-03-06"
+      },
+      "productionContext": {
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-03-06",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-069",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u8fb0",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3",
+        "civilDate": "2023-04-05"
+      },
+      "productionContext": {
+        "instant": "2023-04-05T08:13:03.657937+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-04-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-087",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5df3",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-05-05"
+      },
+      "productionContext": {
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-05-05",
+        "monthJian": "\u8fb0",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-090",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5348",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50",
+        "civilDate": "2024-06-05"
+      },
+      "productionContext": {
+        "instant": "2024-06-05T11:09:53.688941+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-06-05",
+        "monthJian": "\u5df3",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-093",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u672a",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a",
+        "civilDate": "2024-07-06"
+      },
+      "productionContext": {
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-07-06",
+        "monthJian": "\u5348",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-096",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u7533",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f",
+        "civilDate": "2024-08-07"
+      },
+      "productionContext": {
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-08-07",
+        "monthJian": "\u672a",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-099",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u9149",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c",
+        "civilDate": "2024-09-07"
+      },
+      "productionContext": {
+        "instant": "2024-09-07T10:11:20.866192+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-09-07",
+        "monthJian": "\u7533",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-sha-102",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u620c",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-10-08"
+      },
+      "productionContext": {
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-10-08",
+        "monthJian": "\u9149",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-066",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5",
+        "civilDate": "2023-03-06"
+      },
+      "productionContext": {
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-03-06",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u7678",
+        "dayBranch": "\u4ea5"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-069",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u8fb0",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3",
+        "civilDate": "2023-04-05"
+      },
+      "productionContext": {
+        "instant": "2023-04-05T08:13:03.657937+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2023-04-05",
+        "monthJian": "\u536f",
+        "dayStem": "\u7678",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-087",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u5df3",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-05-05"
+      },
+      "productionContext": {
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-05-05",
+        "monthJian": "\u8fb0",
+        "dayStem": "\u5df1",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-090",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u5348",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50",
+        "civilDate": "2024-06-05"
+      },
+      "productionContext": {
+        "instant": "2024-06-05T11:09:53.688941+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-06-05",
+        "monthJian": "\u5df3",
+        "dayStem": "\u5e9a",
+        "dayBranch": "\u5b50"
+      },
+      "frozenExpected": false,
+      "productionMatched": true
+    },
+    {
+      "id": "month-virtue-093",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u672a",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a",
+        "civilDate": "2024-07-06"
+      },
+      "productionContext": {
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-07-06",
+        "monthJian": "\u5348",
+        "dayStem": "\u8f9b",
+        "dayBranch": "\u672a"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-096",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u7533",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f",
+        "civilDate": "2024-08-07"
+      },
+      "productionContext": {
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-08-07",
+        "monthJian": "\u672a",
+        "dayStem": "\u7678",
+        "dayBranch": "\u536f"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-099",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u9149",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c",
+        "civilDate": "2024-09-07"
+      },
+      "productionContext": {
+        "instant": "2024-09-07T10:11:20.866192+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-09-07",
+        "monthJian": "\u7533",
+        "dayStem": "\u7532",
+        "dayBranch": "\u620c"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-102",
+      "fixtureClass": "exact-boundary",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": false,
+      "frozenContext": {
+        "monthJian": "\u620c",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3",
+        "civilDate": "2024-10-08"
+      },
+      "productionContext": {
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2024-10-08",
+        "monthJian": "\u9149",
+        "dayStem": "\u4e59",
+        "dayBranch": "\u5df3"
+      },
+      "frozenExpected": false,
+      "productionMatched": false
+    },
+    {
+      "id": "month-virtue-121",
+      "fixtureClass": "rounded-minute-discriminator",
+      "contextFields": [
+        "monthJian"
+      ],
+      "booleanChanged": true,
+      "frozenContext": {
+        "monthJian": "\u4e11",
+        "dayStem": "\u4e19",
+        "dayBranch": "\u5348",
+        "civilDate": "2014-02-04"
+      },
+      "productionContext": {
+        "instant": "2014-02-04T05:03:08.342268+07:00",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "civilDate": "2014-02-04",
+        "monthJian": "\u5bc5",
+        "dayStem": "\u4e19",
+        "dayBranch": "\u5348"
+      },
+      "frozenExpected": false,
+      "productionMatched": true
+    }
+  ],
+  "booleanChangedIds": [
+    "robbery-sha-066",
+    "robbery-sha-069",
+    "robbery-sha-087",
+    "robbery-sha-121",
+    "month-breaker-090",
+    "disaster-sha-090",
+    "month-virtue-090",
+    "month-virtue-121"
+  ],
+  "countsByClass": {
+    "exact-boundary": 40,
+    "rounded-minute-discriminator": 2
+  },
+  "note": "Diagnostics only. No replacement expected or authoritative Golden created."
+}
