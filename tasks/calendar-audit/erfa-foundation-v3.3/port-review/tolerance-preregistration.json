@@ -1,0 +1,28 @@
+{
+  "phase": "3B.4.3",
+  "registeredAt": "2026-10-08T14:29:05Z",
+  "registeredBeforeComparison": true,
+  "comparison": "TypeScript port (shared/astronomy/erfa) vs unmodified upstream ERFA 2.0.1 C, clang -O2 -ffp-contract=off, Apple libm",
+  "rationale": [
+    "TS and C evaluate identical coefficient values in identical operation order; the only intended source of difference is sin/cos/atan2 (fdlibm ports vs Apple libm), each <= 1 ulp.",
+    "EPV00 position: sum over <= 501 terms of |a| * 1ulp(cos) gives a bound near sum|a| * 2^-52 ~ 2.3e-16 au per component; a 400x margin for accumulation-order-independent libm effects gives 1e-13 au.",
+    "EPV00 velocity: sum |a*c| ~ 6.3 au/yr -> ~4e-18 au/d per ulp; 1e-15 au/d allows ~250 ulp-equivalents.",
+    "Nutation dpsi/deps: 77 terms, amplitudes <= 1.7e7 * 0.1 uas -> <= 8.4e-5 rad; 1e-16 rad is ~10^4 ulp of the result and far below any physical significance (2e-11 arcsec).",
+    "F-W angles and mean obliquity are pure polynomials (no libm): expected bit-identical; tolerance 0.",
+    "Final apparent longitude: 1e-11 degree (~175 ulp at 300 degrees; equals ~0.86 microseconds of solar motion).",
+    "Canonical integer-ms roots: exact equality expected. A 1 ms difference is acceptable ONLY when the upstream residual at the disputed millisecond is within the 1e-11 degree longitude tolerance of zero; any other root difference is a discrepancy.",
+    "These limits are machine-precision port-equivalence limits, NOT the 0.5 s JPL reference-accuracy gate."
+  ],
+  "tolerances": {
+    "heliocentricPositionAu": 1e-13,
+    "barycentricPositionAu": 1e-13,
+    "heliocentricVelocityAuPerDay": 1e-15,
+    "barycentricVelocityAuPerDay": 1e-15,
+    "nutationRad": 1e-16,
+    "fukushimaWilliamsRad": 0,
+    "meanObliquityRad": 0,
+    "apparentLongitudeDeg": 1e-11,
+    "canonicalRootMs": "0, or 1 only when |upstream residual at disputed ms| <= 1e-11 deg"
+  },
+  "verdictRule": "Any quantity exceeding its tolerance at any epoch => BLOCK_PORT_FIDELITY"
+}

@@ -1,0 +1,523 @@
+{
+  "phase": "3B.4.3",
+  "classification": "PROJECTION_ONLY — production behaviour unchanged",
+  "method": "Production consumers evaluated twice in Vitest: (a) unmodified; (b) vi.mock replacing only astronomy-engine SearchSunLongitude with ERFA canonical TT roots serialized via clock-v1. Probes: T-1, T, midpoint, upper-1 and upper of every moved interval; Vietnamese civil dates of old/new crossings ±1 day.",
+  "consumersCovered": [
+    "getSolarTermAt",
+    "getSolarMonth",
+    "getOfficerAtInstant (exact-instant 12 Officer)",
+    "getOfficer via solarTermMonthChi (daily 12 Officer)",
+    "evaluateGroupAAtInstant",
+    "evaluateGroupBAtInstant",
+    "Bazi termContextAt + calculatePillars (month/year)",
+    "getSolarTerm (daily label + startsAtUtc display)",
+    "getAlmanac (daily aggregation)",
+    "getDaySeo (prerender/SEO model)"
+  ],
+  "outOfScope": [
+    "lunar conversion core (own sunLongitude, not Astronomy Engine)",
+    "Bazi true solar time (HourAngle, unchanged)"
+  ],
+  "summary": {
+    "crossings": 4824,
+    "labelCounts": {
+      "ALMANAC_DAILY_CHANGE": 2,
+      "BAZI_CHANGE": 2412,
+      "CIVIL_DATE_CHANGE": 2,
+      "DAILY_SOLAR_TERM_LABEL_CHANGE": 2,
+      "DISPLAY_MINUTE_CHANGE": 2380,
+      "DISPLAY_ONLY": 2378,
+      "DISPLAY_TIMESTAMP_CHANGE": 4824,
+      "EXACT_INTERVAL_CHANGE": 4824,
+      "GROUP_A_CHANGE": 1,
+      "GROUP_B_CHANGE": 1560,
+      "MONTH_JIAN_CHANGE": 2412,
+      "OFFICER_CHANGE": 2412,
+      "ROOT_TIME_ONLY": 2444
+    },
+    "unchangedCrossings": 0,
+    "civilDelta": {
+      "maxAbsSeconds": 175.32,
+      "medianAbsSeconds": 13.46,
+      "p95AbsSeconds": 110.644,
+      "above30s": 1230
+    },
+    "rootDelta": {
+      "maxAbsSeconds": 55.958761642456054,
+      "medianAbsSeconds": 9.818233032226562,
+      "p95AbsSeconds": 29.257736328125,
+      "above30s": 211
+    },
+    "byClockRegime": {
+      "PRE1972_MODELED_UT1": {
+        "count": 1728,
+        "maxAbsCivilDeltaSeconds": 51.327,
+        "maxAbsRootDeltaSeconds": 51.327319580078125,
+        "maxAbsClockContributionSeconds": 0.0009995117187493463
+      },
+      "UTC_LEAP_HISTORY": {
+        "count": 1332,
+        "maxAbsCivilDeltaSeconds": 55.708,
+        "maxAbsRootDeltaSeconds": 55.958761642456054,
+        "maxAbsClockContributionSeconds": 6.779171264648438
+      },
+      "PROJECTED_PINNED_TAI_UTC": {
+        "count": 1764,
+        "maxAbsCivilDeltaSeconds": 175.32,
+        "maxAbsRootDeltaSeconds": 52.70563305664062,
+        "maxAbsClockContributionSeconds": 135.75800537109376
+      }
+    },
+    "exactIntervalTotalSeconds": 130789.96999999994,
+    "jieCrossingsWithExactChange": 2412,
+    "probeCounts": { "instants": 24118, "days": 14474 },
+    "prerenderWindowNote": "scripts/prerenderDays.ts renders current year ±1 (2025–2027 at time of audit)",
+    "prerenderWindowAffected": []
+  },
+  "byDecade": {
+    "1900": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 48.007,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1910": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 36.47,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1920": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 38.908,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1930": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 40.009,
+      "civilDateChanges": 1,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1940": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 34.398,
+      "civilDateChanges": 1,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1950": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 46.273,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1960": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 51.327,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1970": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 43.806,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1980": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 40.34,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "1990": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 44.111,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2000": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 55.708,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2010": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 41.507,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2020": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 40.662,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2030": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 40.779,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2040": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 46.138,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2050": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 79.759,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2060": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 85.698,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2070": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 107.077,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2080": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 137.806,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2090": {
+      "count": 240,
+      "maxAbsCivilDeltaSeconds": 175.32,
+      "civilDateChanges": 0,
+      "monthJianChanges": 120,
+      "officerChanges": 120
+    },
+    "2100": {
+      "count": 24,
+      "maxAbsCivilDeltaSeconds": 150.287,
+      "civilDateChanges": 0,
+      "monthJianChanges": 12,
+      "officerChanges": 12
+    }
+  },
+  "civilDateChanges": [
+    {
+      "year": 1938,
+      "longitude": 180,
+      "term": "Thu phân",
+      "jie": false,
+      "productionInstantUtc": "1938-09-23T17:00:01.461Z",
+      "erfaInstantUtc": "1938-09-23T16:59:27.120Z",
+      "erfaClockRegime": "PRE1972_MODELED_UT1",
+      "civilDeltaSeconds": -34.341,
+      "rootDeltaSeconds": -34.34188793945312,
+      "clockContributionSeconds": 0.0008879394531220441,
+      "productionVnDate": "1938-09-24",
+      "erfaVnDate": "1938-09-23",
+      "labels": [
+        "ALMANAC_DAILY_CHANGE",
+        "CIVIL_DATE_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "DISPLAY_MINUTE_CHANGE",
+        "DISPLAY_TIMESTAMP_CHANGE",
+        "EXACT_INTERVAL_CHANGE",
+        "GROUP_A_CHANGE"
+      ],
+      "exactConsumers": ["GROUP_A_CHANGE", "getSolarTermAt"],
+      "dailyConsumers": ["ALMANAC_DAILY_CHANGE", "DAILY_SOLAR_TERM_LABEL_CHANGE", "GROUP_A_CHANGE"],
+      "evidence": {
+        "instant:groupA": {
+          "iso": "1938-09-23T16:59:27.119Z",
+          "production": [false, true, false],
+          "erfa": [false, false, false]
+        },
+        "instant:solarTermAt": { "iso": "1938-09-23T16:59:27.120Z", "production": 11, "erfa": 12 },
+        "day:groupA": {
+          "date": "1938-09-23",
+          "production": [false, true, false],
+          "erfa": [false, false, false]
+        },
+        "day:almanac": {
+          "date": "1938-09-23",
+          "production": "a1f21f4df49c0732",
+          "erfa": "026bd9a9aae7295c"
+        },
+        "day:solarTerm": {
+          "date": "1938-09-23",
+          "production": {
+            "index": 11,
+            "name": "Bạch lộ",
+            "startsToday": false,
+            "startsAtUtc": "1938-09-08T07:48:16.068Z"
+          },
+          "erfa": {
+            "index": 12,
+            "name": "Thu phân",
+            "startsToday": true,
+            "startsAtUtc": "1938-09-23T16:59:27.120Z"
+          }
+        }
+      },
+      "unknown": []
+    },
+    {
+      "year": 1946,
+      "longitude": 255,
+      "term": "Đại tuyết",
+      "jie": true,
+      "productionInstantUtc": "1946-12-07T16:59:57.701Z",
+      "erfaInstantUtc": "1946-12-07T17:00:10.986Z",
+      "erfaClockRegime": "PRE1972_MODELED_UT1",
+      "civilDeltaSeconds": 13.285,
+      "rootDeltaSeconds": 13.2846044921875,
+      "clockContributionSeconds": 0.0003955078125006395,
+      "productionVnDate": "1946-12-07",
+      "erfaVnDate": "1946-12-08",
+      "labels": [
+        "ALMANAC_DAILY_CHANGE",
+        "BAZI_CHANGE",
+        "CIVIL_DATE_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "DISPLAY_MINUTE_CHANGE",
+        "DISPLAY_TIMESTAMP_CHANGE",
+        "EXACT_INTERVAL_CHANGE",
+        "MONTH_JIAN_CHANGE",
+        "OFFICER_CHANGE"
+      ],
+      "exactConsumers": ["BAZI_CHANGE", "MONTH_JIAN_CHANGE", "OFFICER_CHANGE", "getSolarTermAt"],
+      "dailyConsumers": [
+        "ALMANAC_DAILY_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "MONTH_JIAN_CHANGE",
+        "OFFICER_CHANGE"
+      ],
+      "evidence": {
+        "instant:solarTermAt": { "iso": "1946-12-07T16:59:57.701Z", "production": 17, "erfa": 16 },
+        "instant:solarMonth": { "iso": "1946-12-07T16:59:57.701Z", "production": 0, "erfa": 11 },
+        "instant:officerAtInstant": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": 3,
+          "erfa": 4
+        },
+        "instant:baziTerm": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": { "term": "Đại Tuyết", "monthOffset": 10, "pillarYear": 1946 },
+          "erfa": { "term": "Lập Đông", "monthOffset": 9, "pillarYear": 1946 }
+        },
+        "instant:baziPillars": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": { "year": "Bính Tuất", "month": "Canh Tý" },
+          "erfa": { "year": "Bính Tuất", "month": "Kỷ Hợi" }
+        },
+        "day:monthChi": { "date": "1946-12-07", "production": 0, "erfa": 11 },
+        "day:officer": { "date": "1946-12-07", "production": 3, "erfa": 4 },
+        "day:almanac": {
+          "date": "1946-12-07",
+          "production": "19a55d32866b9c52",
+          "erfa": "edd5b134a46b2f54"
+        },
+        "day:almanacOfficerAndStars": {
+          "date": "1946-12-07",
+          "production": {
+            "officer": 3,
+            "stars": "881275ed0cb9e9b8",
+            "recommendations": "71d6792a267f7ec5"
+          },
+          "erfa": {
+            "officer": 4,
+            "stars": "881275ed0cb9e9b8",
+            "recommendations": "767712f9f4860c8a"
+          }
+        },
+        "day:solarTerm": {
+          "date": "1946-12-07",
+          "production": {
+            "index": 17,
+            "name": "Đại tuyết",
+            "startsToday": true,
+            "startsAtUtc": "1946-12-07T16:59:57.701Z"
+          },
+          "erfa": {
+            "index": 16,
+            "name": "Tiểu tuyết",
+            "startsToday": false,
+            "startsAtUtc": "1946-11-22T21:46:16.067Z"
+          }
+        }
+      },
+      "unknown": []
+    }
+  ],
+  "dayLevelChanges": [
+    {
+      "year": 1938,
+      "longitude": 180,
+      "term": "Thu phân",
+      "jie": false,
+      "productionInstantUtc": "1938-09-23T17:00:01.461Z",
+      "erfaInstantUtc": "1938-09-23T16:59:27.120Z",
+      "erfaClockRegime": "PRE1972_MODELED_UT1",
+      "civilDeltaSeconds": -34.341,
+      "rootDeltaSeconds": -34.34188793945312,
+      "clockContributionSeconds": 0.0008879394531220441,
+      "productionVnDate": "1938-09-24",
+      "erfaVnDate": "1938-09-23",
+      "labels": [
+        "ALMANAC_DAILY_CHANGE",
+        "CIVIL_DATE_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "DISPLAY_MINUTE_CHANGE",
+        "DISPLAY_TIMESTAMP_CHANGE",
+        "EXACT_INTERVAL_CHANGE",
+        "GROUP_A_CHANGE"
+      ],
+      "exactConsumers": ["GROUP_A_CHANGE", "getSolarTermAt"],
+      "dailyConsumers": ["ALMANAC_DAILY_CHANGE", "DAILY_SOLAR_TERM_LABEL_CHANGE", "GROUP_A_CHANGE"],
+      "evidence": {
+        "instant:groupA": {
+          "iso": "1938-09-23T16:59:27.119Z",
+          "production": [false, true, false],
+          "erfa": [false, false, false]
+        },
+        "instant:solarTermAt": { "iso": "1938-09-23T16:59:27.120Z", "production": 11, "erfa": 12 },
+        "day:groupA": {
+          "date": "1938-09-23",
+          "production": [false, true, false],
+          "erfa": [false, false, false]
+        },
+        "day:almanac": {
+          "date": "1938-09-23",
+          "production": "a1f21f4df49c0732",
+          "erfa": "026bd9a9aae7295c"
+        },
+        "day:solarTerm": {
+          "date": "1938-09-23",
+          "production": {
+            "index": 11,
+            "name": "Bạch lộ",
+            "startsToday": false,
+            "startsAtUtc": "1938-09-08T07:48:16.068Z"
+          },
+          "erfa": {
+            "index": 12,
+            "name": "Thu phân",
+            "startsToday": true,
+            "startsAtUtc": "1938-09-23T16:59:27.120Z"
+          }
+        }
+      },
+      "unknown": []
+    },
+    {
+      "year": 1946,
+      "longitude": 255,
+      "term": "Đại tuyết",
+      "jie": true,
+      "productionInstantUtc": "1946-12-07T16:59:57.701Z",
+      "erfaInstantUtc": "1946-12-07T17:00:10.986Z",
+      "erfaClockRegime": "PRE1972_MODELED_UT1",
+      "civilDeltaSeconds": 13.285,
+      "rootDeltaSeconds": 13.2846044921875,
+      "clockContributionSeconds": 0.0003955078125006395,
+      "productionVnDate": "1946-12-07",
+      "erfaVnDate": "1946-12-08",
+      "labels": [
+        "ALMANAC_DAILY_CHANGE",
+        "BAZI_CHANGE",
+        "CIVIL_DATE_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "DISPLAY_MINUTE_CHANGE",
+        "DISPLAY_TIMESTAMP_CHANGE",
+        "EXACT_INTERVAL_CHANGE",
+        "MONTH_JIAN_CHANGE",
+        "OFFICER_CHANGE"
+      ],
+      "exactConsumers": ["BAZI_CHANGE", "MONTH_JIAN_CHANGE", "OFFICER_CHANGE", "getSolarTermAt"],
+      "dailyConsumers": [
+        "ALMANAC_DAILY_CHANGE",
+        "DAILY_SOLAR_TERM_LABEL_CHANGE",
+        "MONTH_JIAN_CHANGE",
+        "OFFICER_CHANGE"
+      ],
+      "evidence": {
+        "instant:solarTermAt": { "iso": "1946-12-07T16:59:57.701Z", "production": 17, "erfa": 16 },
+        "instant:solarMonth": { "iso": "1946-12-07T16:59:57.701Z", "production": 0, "erfa": 11 },
+        "instant:officerAtInstant": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": 3,
+          "erfa": 4
+        },
+        "instant:baziTerm": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": { "term": "Đại Tuyết", "monthOffset": 10, "pillarYear": 1946 },
+          "erfa": { "term": "Lập Đông", "monthOffset": 9, "pillarYear": 1946 }
+        },
+        "instant:baziPillars": {
+          "iso": "1946-12-07T16:59:57.701Z",
+          "production": { "year": "Bính Tuất", "month": "Canh Tý" },
+          "erfa": { "year": "Bính Tuất", "month": "Kỷ Hợi" }
+        },
+        "day:monthChi": { "date": "1946-12-07", "production": 0, "erfa": 11 },
+        "day:officer": { "date": "1946-12-07", "production": 3, "erfa": 4 },
+        "day:almanac": {
+          "date": "1946-12-07",
+          "production": "19a55d32866b9c52",
+          "erfa": "edd5b134a46b2f54"
+        },
+        "day:almanacOfficerAndStars": {
+          "date": "1946-12-07",
+          "production": {
+            "officer": 3,
+            "stars": "881275ed0cb9e9b8",
+            "recommendations": "71d6792a267f7ec5"
+          },
+          "erfa": {
+            "officer": 4,
+            "stars": "881275ed0cb9e9b8",
+            "recommendations": "767712f9f4860c8a"
+          }
+        },
+        "day:solarTerm": {
+          "date": "1946-12-07",
+          "production": {
+            "index": 17,
+            "name": "Đại tuyết",
+            "startsToday": true,
+            "startsAtUtc": "1946-12-07T16:59:57.701Z"
+          },
+          "erfa": {
+            "index": 16,
+            "name": "Tiểu tuyết",
+            "startsToday": false,
+            "startsAtUtc": "1946-11-22T21:46:16.067Z"
+          }
+        }
+      },
+      "unknown": []
+    }
+  ],
+  "rows": "tasks/calendar-audit/erfa-foundation-v3.3/impact/migration-impact-rows-v3.3.tsv"
+}

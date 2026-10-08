@@ -1,0 +1,479 @@
+{
+  "phase": "3B.4.3",
+  "method": "in-place source mutation, serial full-suite execution, hash-verified restoration",
+  "testFiles": [
+    "shared/astronomy/erfa/erfa.test.ts",
+    "shared/astronomy/erfa/solarTermRoots.test.ts",
+    "shared/astronomy/erfa/clockV1.test.ts"
+  ],
+  "testHashes": {
+    "shared/astronomy/erfa/erfa.test.ts": "b25966a1dcc22b6e7dc5db7c6e9335f2e681c45b5f56166104ae8b818a41bb86",
+    "shared/astronomy/erfa/solarTermRoots.test.ts": "22312c871a3c671e23c4a1f152a4c9507b8f5e1d44e9c9fa7e79ed4e8fa0501c",
+    "shared/astronomy/erfa/clockV1.test.ts": "fc28c8d6adef4a03df0839a3ea2aca69ef7e1a80c491702c3b453d9297e1e888"
+  },
+  "sourceHashes": {
+    "shared/astronomy/erfa/solarTermRoots.ts": "1a243031f881cada303843c4e41f674b19133c72a5564d299d8214ae542eb5e7",
+    "shared/astronomy/erfa/apparentSun.ts": "03d02e28cd979213adc37520434607fa250c8e895177a0595b5ec4e8242a1a5c",
+    "shared/astronomy/erfa/erfa.ts": "feb6625a9fd5e065e317fa1d1f292dcc56f97179a0d72ca9e8882b94a13638cd",
+    "shared/astronomy/erfa/index.ts": "f77b766d278edafab7192c9653e61746bbf3588d6f1212c7991927dba7f0b2ee",
+    "shared/astronomy/erfa/clockV1.ts": "a66182997b678241123f12663320275a374af2827296c49caae34347f9874756"
+  },
+  "baseline": {
+    "executed": 23,
+    "passed": 23,
+    "failed": 0
+  },
+  "summary": {
+    "KILLED": 14,
+    "SURVIVED": 0,
+    "INVALID_RUN": 0
+  },
+  "mutants": [
+    {
+      "id": "M1",
+      "name": "floor instead of ceil (last ms before the crossing)",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "return { ttMs: hi, iterations }",
+          "to": "return { ttMs: fhi === 0 ? hi : lo, iterations }",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "069cac930e487c2ebb11a67ddb53189d19e987c27a6fd65d9348a56735526f5e"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "AssertionError: 1900 tieu-han: expected -9.771781606104923e-9 to be greater than or equal to 0 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:74:56 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing wraps 0°/360° correctly at Xuân phân",
+          "evidence": "AssertionError: expected 359.9999999947277 to be less than 1 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:100:68 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M2",
+      "name": "round to nearest ms instead of ceil",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "return { ttMs: hi, iterations }",
+          "to": "return { ttMs: -flo < fhi ? lo : hi, iterations }",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "5a9b9713164623b9651fd45e17b513c3f4af3348a292e794997544508e804877"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "AssertionError: 1900 xuan-phan: expected -5.059462182543939e-9 to be greater than or equal to 0 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:74:56 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing wraps 0°/360° correctly at Xuân phân",
+          "evidence": "AssertionError: expected 359.9999999947277 to be less than 1 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:100:68 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M3",
+      "name": "t > T instead of t >= T (TT classifier)",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": ".filter((boundary) => boundary.ttMs <= ttMs)",
+          "to": ".filter((boundary) => boundary.ttMs < ttMs)",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "261179f461b1f995997aa7f92ec0f6af14805669da3b59564315824a31dc99b1"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 1,
+      "failures": [
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "AssertionError: expected 'dong-chi' to be 'tieu-han' // Object.is equality |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:77:44 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M3b",
+      "name": "t > T instead of t >= T (civil classifier)",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/index.ts",
+          "from": "ttToCivil(b.ttMs).epochMs <= epochMs",
+          "to": "ttToCivil(b.ttMs).epochMs < epochMs",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/index.ts": "3deef23284b847876b01c11d14834a020baf066839bd22aaa689c4c86f35414c"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 1,
+      "failures": [
+        {
+          "test": "civil serialization of all boundaries civil T - 1 ms is OLD, civil T and T + 1 ms are NEW",
+          "evidence": "AssertionError: expected 'tieu-han' to be 'dai-han' // Object.is equality |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/clockV1.test.ts:103:46 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M4",
+      "name": "add +1 ms to T",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "return { ttMs: hi, iterations }",
+          "to": "return { ttMs: hi + 1, iterations }",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "ba6bd3ec362f9b98f23c97ca8e134f7b1a866f95a34b3da3a9b6d4362b84d071"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "AssertionError: 1900 tieu-han: expected 2.0331185623945203e-9 to be less than 0 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:73:60 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing wraps 0°/360° correctly at Xuân phân",
+          "evidence": "AssertionError: expected 6.226132635492338e-9 to be greater than 359 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:99:72 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M5",
+      "name": "subtract 1 ms from T",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "return { ttMs: hi, iterations }",
+          "to": "return { ttMs: hi - 1, iterations }",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "21b221a0bec81896563f1e653a629dec978e4b6a008f3ea72777b0c882d6a592"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "AssertionError: 1900 tieu-han: expected -9.771781606104923e-9 to be greater than or equal to 0 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:74:56 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing wraps 0°/360° correctly at Xuân phân",
+          "evidence": "AssertionError: expected 359.9999999947277 to be less than 1 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:100:68 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M6",
+      "name": "wrong longitude wrap (no 0°/360° wrap)",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "  if (r >= 180) r -= 360\n  else if (r < -180) r += 360\n",
+          "to": "",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "c72409a0cec19f8d72537b87c00bdf4847d61a165f245b91032b0c915d3358d4"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 7,
+      "failures": [
+        {
+          "test": "civil serialization of all boundaries serializes every 1900–2100 boundary; none falls in a leap second",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (352.068293992955, 11.894397434647306) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        },
+        {
+          "test": "civil serialization of all boundaries civil T - 1 ms is OLD, civil T and T + 1 ms are NEW",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (352.068293992955, 11.894397434647306) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        },
+        {
+          "test": "ERFA solar-term boundaries: identity and targets produces 4,824 supported crossings plus padding, strictly increasing",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (352.3087674470517, 12.13048311202078) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (352.3087674470517, 12.13048311202078) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (352.3087674470517, 12.13048311202078) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing wraps 0°/360° correctly at Xuân phân",
+          "evidence": "SolarTermRootError: UNBRACKETED: target 0° not bracketed (351.9939928522553, 11.84251619757889) |     at solveBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:142:11) |     at solveErfaSolarTermBoundary (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:192:20) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:217:47"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M7",
+      "name": "adjacent 15° target",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/solarTermRoots.ts",
+          "from": "return termIndex * 15",
+          "to": "return ((termIndex + 1) % 24) * 15",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/solarTermRoots.ts": "a804403bc537537b3ec6a2cf5e4bc4c48036762df3637c7bdc0aeda5279fbb83"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 8,
+      "failures": [
+        {
+          "test": "civil serialization of all boundaries serializes every 1900–2100 boundary; none falls in a leap second",
+          "evidence": "SolarTermRootError: NO_CONVERGENCE: non-monotone sequence in 1900 |     at erfaSolarTermsForYear (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:223:13) |     at load (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/clockV1.test.ts:84:70) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/clockV1.test.ts:89:5"
+        },
+        {
+          "test": "civil serialization of all boundaries civil T - 1 ms is OLD, civil T and T + 1 ms are NEW",
+          "evidence": "SolarTermRootError: NO_CONVERGENCE: non-monotone sequence in 1900 |     at erfaSolarTermsForYear (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:223:13) |     at load (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/clockV1.test.ts:84:70) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/clockV1.test.ts:99:5"
+        },
+        {
+          "test": "ERFA solar-term boundaries: identity and targets uses the production term order and exact 15° targets",
+          "evidence": "AssertionError: expected 15 to be +0 // Object.is equality |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:43:70 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        },
+        {
+          "test": "ERFA solar-term boundaries: identity and targets produces 4,824 supported crossings plus padding, strictly increasing",
+          "evidence": "SolarTermRootError: NO_CONVERGENCE: non-monotone sequence in 1899 |     at erfaSolarTermsForYear (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:223:13) |     at allBoundaries (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:32:62) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:47:17"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing T - 1 ms is OLD, T and T + 1 ms are NEW, for every crossing",
+          "evidence": "SolarTermRootError: NO_CONVERGENCE: non-monotone sequence in 1899 |     at erfaSolarTermsForYear (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:223:13) |     at allBoundaries (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:32:62) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:67:17"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "SolarTermRootError: NO_CONVERGENCE: non-monotone sequence in 1899 |     at erfaSolarTermsForYear (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.ts:223:13) |     at allBoundaries (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:32:62) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:88:21"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M8",
+      "name": "mean (geometric) instead of apparent longitude: no light-time, aberration or nutation",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "const retarded = epv00(days - sunEarthDistance / ERFA_DC)",
+          "to": "const retarded = epv00(days)",
+          "all": false
+        },
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "const apparent = ab(natural, v, sunEarthDistance, bm1)",
+          "to": "const apparent = natural",
+          "all": false
+        },
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "rz(-(psib + dpsi), rx(phib, rz(gamb, apparent)))",
+          "to": "rz(-psib, rx(phib, rz(gamb, apparent)))",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/apparentSun.ts": "081e1104b068d9c6127ca15a5c2171914f26ef72d01a2cb2fb306527f94fd24d"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 18: expected 0.0007018165086378758 to be less than or equal to 1e-11 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "AssertionError: expected 965.1864812011719 to be less than or equal to 0.5 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:94:17 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M9",
+      "name": "remove nutation",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "rz(-(psib + dpsi), rx(phib, rz(gamb, apparent)))",
+          "to": "rz(-(psib + 0), rx(phib, rz(gamb, apparent)))",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/apparentSun.ts": "5cc4a82e08fd45b3d6f67dc908ac3c2ac2418e94139a36967c5a6f86f88af49c"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 18: expected 0.005070188123056596 to be less than or equal to 1e-11 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "AssertionError: expected 467.445505859375 to be less than or equal to 0.5 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:94:17 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M10",
+      "name": "remove aberration",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "const apparent = ab(natural, v, sunEarthDistance, bm1)",
+          "to": "const apparent = natural",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/apparentSun.ts": "dc83da6bb7068e0bd75935cb8196a7e7bead28aadaab6262999c9265aa6961f3"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 18: expected 0.005771557874027167 to be less than or equal to 1e-11 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "AssertionError: expected 507.7372192382812 to be less than or equal to 0.5 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:94:17 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M11",
+      "name": "remove bias-precession frame transform",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/apparentSun.ts",
+          "from": "rz(-(psib + dpsi), rx(phib, rz(gamb, apparent)))",
+          "to": "rz(-dpsi, rx(phib, apparent))",
+          "all": false
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/apparentSun.ts": "2eb92e9d8badae85c22159ff47169ca5b6674b74ec54f00c9da7cda3ca94f270"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 18: expected 1.4091543110495195 to be less than or equal to 1e-11 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "AssertionError: expected 128560.08434423828 to be less than or equal to 0.5 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:94:17 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M12",
+      "name": "truncate EPV00 to the first 50 terms of every table",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/erfa.ts",
+          "from": "j < coeffs.length; j += 3",
+          "to": "j < Math.min(coeffs.length, 150); j += 3",
+          "all": true
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/erfa.ts": "e600bfcbe561813f0bdb9cb314248d23f0ae4ef2e399106c858b10e51128a583"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 3,
+      "failures": [
+        {
+          "test": "official ERFA 2.0.1 t_erfa_c.c vectors eraEpv00",
+          "evidence": "AssertionError: expected 9.561122698009683e-7 to be less than or equal to 1e-14 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:78:60 |     at Array.forEach (<anonymous>) |     at expectClose (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:78:12)"
+        },
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 0: expected 0.0000037596840566367362 to be less than or equal to 1e-13 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        },
+        {
+          "test": "canonical root semantics: T = first integer TT ms at/after the crossing agrees with the independent JPL DE440s reference within the 0.5 s accuracy gate",
+          "evidence": "AssertionError: expected 44.89484155273438 to be less than or equal to 0.5 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/solarTermRoots.test.ts:94:17 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35 |     at file:///Users/nghiepnguyen/My%20Files/calendar-hana/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26"
+        }
+      ],
+      "suiteErrors": []
+    },
+    {
+      "id": "M12b",
+      "name": "truncate EPV00 by dropping only the last (smallest) term of every table",
+      "edits": [
+        {
+          "file": "shared/astronomy/erfa/erfa.ts",
+          "from": "j < coeffs.length; j += 3",
+          "to": "j < coeffs.length - 3; j += 3",
+          "all": true
+        }
+      ],
+      "mutatedHashes": {
+        "shared/astronomy/erfa/erfa.ts": "0719f8d690e5177b8d10326ff013a81160344edfbe55bec9bf5ebd60de0121c1"
+      },
+      "status": "KILLED",
+      "executed": 23,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "official ERFA 2.0.1 t_erfa_c.c vectors eraEpv00",
+          "evidence": "AssertionError: expected 1.9582457877476145e-10 to be less than or equal to 1e-14 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:78:60 |     at Array.forEach (<anonymous>) |     at expectClose (/Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:78:12)"
+        },
+        {
+          "test": "independent upstream ERFA C parity (pre-registered tolerances) matches 156 compiled-upstream epochs, 1899–2101",
+          "evidence": "AssertionError: ttMs -3184181810567 field 0: expected 2.1510726533335855e-9 to be less than or equal to 1e-13 |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:179:68 |     at Array.forEach (<anonymous>) |     at /Users/nghiepnguyen/My Files/calendar-hana/shared/astronomy/erfa/erfa.test.ts:178:10"
+        }
+      ],
+      "suiteErrors": []
+    }
+  ]
+}

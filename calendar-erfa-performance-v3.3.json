@@ -1,0 +1,206 @@
+{
+  "phase": "3B.4.3",
+  "host": {
+    "platform": "darwin 25.6.0 arm64",
+    "cpu": "Apple M4",
+    "cores": 10,
+    "memoryBytes": 17179869184,
+    "node": "v23.7.0",
+    "playwright": "1.63.0"
+  },
+  "method": "harness.ts runParity(): one root (cold module), first year (cold cache), 24 uncached solves, cached year lookup, then all 4,872 boundaries 1899–2101 serialized via clock-v1. Browser timers are coarsened (Firefox/WebKit 1 ms; Chromium 0.1 ms).",
+  "cacheState": "oneRoot and firstYear are first calls in a fresh realm; warmYear24Uncached bypasses the year cache; all4872 fills the bounded 32-year cache (evictions occur).",
+  "node": {
+    "runs": [
+      {
+        "moduleInitMs": 2.4693330000000007,
+        "oneRootMs": 4.266582999999999,
+        "firstYear24Ms": 27.598833000000003,
+        "warmYear24UncachedMs": 26.724291000000008,
+        "cachedYearLookupMs": 0.05462500000000148,
+        "all4872Ms": 4971.425083,
+        "heapUsedBytesAfter": 8120448,
+        "heapDeltaBytes": 3663736
+      },
+      {
+        "moduleInitMs": 2.5321669999999994,
+        "oneRootMs": 4.198957999999999,
+        "firstYear24Ms": 27.264459000000002,
+        "warmYear24UncachedMs": 26.255125,
+        "cachedYearLookupMs": 0.043082999999995764,
+        "all4872Ms": 4879.717791,
+        "heapUsedBytesAfter": 9967024,
+        "heapDeltaBytes": 5510312
+      },
+      {
+        "moduleInitMs": 2.493875,
+        "oneRootMs": 4.141084000000001,
+        "firstYear24Ms": 27.124415999999997,
+        "warmYear24UncachedMs": 26.102124999999994,
+        "cachedYearLookupMs": 0.038584000000000174,
+        "all4872Ms": 4870.917082999999,
+        "heapUsedBytesAfter": 8081040,
+        "heapDeltaBytes": 3624328
+      }
+    ],
+    "medians": {
+      "oneRootMs": 4.198957999999999,
+      "firstYearMs": 27.264459000000002,
+      "warmYearMs": 26.255125,
+      "allMs": 4879.717791
+    }
+  },
+  "browsers": [
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "desktop",
+      "cpuThrottle": 1,
+      "pageLoadToReadyMs": 42,
+      "mainThread": {
+        "oneRootMs": 10.299999982118607,
+        "firstYear24Ms": 26.700000017881393,
+        "warmYear24UncachedMs": 24.19999998807907,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 4759.0999999940395
+      },
+      "worker": {
+        "oneRootMs": 3.5999999940395355,
+        "firstYear24Ms": 25.5,
+        "warmYear24UncachedMs": 23.900000005960464,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 4718.5
+      },
+      "heapUsedBytes": 10000000
+    },
+    {
+      "runtime": "firefox 155.0",
+      "context": "desktop",
+      "cpuThrottle": 1,
+      "pageLoadToReadyMs": 129,
+      "mainThread": {
+        "oneRootMs": 4,
+        "firstYear24Ms": 34,
+        "warmYear24UncachedMs": 38,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 6309
+      },
+      "worker": {
+        "oneRootMs": 3,
+        "firstYear24Ms": 35,
+        "warmYear24UncachedMs": 32,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 6640
+      },
+      "heapUsedBytes": null
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "desktop",
+      "cpuThrottle": 1,
+      "pageLoadToReadyMs": 48,
+      "mainThread": {
+        "oneRootMs": 8,
+        "firstYear24Ms": 25,
+        "warmYear24UncachedMs": 21,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 3942
+      },
+      "worker": {
+        "oneRootMs": 3,
+        "firstYear24Ms": 26,
+        "warmYear24UncachedMs": 24,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 4714
+      },
+      "heapUsedBytes": null
+    },
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "mobile Pixel 7 emulation, 4x CPU throttle",
+      "cpuThrottle": 4,
+      "pageLoadToReadyMs": 59,
+      "mainThread": {
+        "oneRootMs": 14.399999976158142,
+        "firstYear24Ms": 103.90000000596046,
+        "warmYear24UncachedMs": 100.80000001192093,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 19635.40000000596
+      },
+      "worker": {
+        "oneRootMs": 3.5,
+        "firstYear24Ms": 26.299999982118607,
+        "warmYear24UncachedMs": 24.80000001192093,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 4901.799999982119
+      },
+      "heapUsedBytes": 10000000
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "mobile iPhone 14 emulation",
+      "cpuThrottle": 1,
+      "pageLoadToReadyMs": 57,
+      "mainThread": {
+        "oneRootMs": 16,
+        "firstYear24Ms": 25,
+        "warmYear24UncachedMs": 14,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 2759
+      },
+      "worker": {
+        "oneRootMs": 3,
+        "firstYear24Ms": 26,
+        "warmYear24UncachedMs": 25,
+        "cachedYearLookupMs": 0,
+        "all4872Ms": 4789
+      },
+      "heapUsedBytes": null
+    }
+  ],
+  "bundle": {
+    "bundler": "rolldown rolldown v1.2.9",
+    "entry": "shared/astronomy/erfa/index.ts",
+    "unminifiedBytes": 138537,
+    "minifiedBytes": 108407,
+    "gzipBytes": 47293,
+    "brotliBytes": 39089,
+    "minifiedSha256": "c096c839eab61c3a5d9d4817fd1eae7d05537f9d50772f08f8a15a60c1d39c88",
+    "deterministicRebuild": true,
+    "externalImports": [],
+    "dynamicCodeOrNetwork": {
+      "eval": false,
+      "newFunction": false,
+      "fetch": false,
+      "xmlHttpRequest": false,
+      "importScripts": false,
+      "dynamicImport": false
+    },
+    "domGlobals": {
+      "window": false,
+      "document": false,
+      "localStorage": false
+    }
+  },
+  "perRootCost": "about 9–12 apparent-Sun evaluations per root (Illinois on the integer grid); each evaluation runs EPV00 twice (light time) = ~7,800 deterministic sin/cos",
+  "fidelityReduction": "none — no coefficient truncation, no lookup table, no stored timestamps",
+  "summaryAcrossDesktopAndMobileBrowsers": {
+    "all4872Ms": {
+      "median": 4759.0999999940395,
+      "p95": 19635.40000000596,
+      "max": 19635.40000000596,
+      "n": 5
+    },
+    "firstYear24Ms": {
+      "median": 26.700000017881393,
+      "p95": 103.90000000596046,
+      "max": 103.90000000596046,
+      "n": 5
+    },
+    "oneRootMs": {
+      "median": 10.299999982118607,
+      "p95": 16,
+      "max": 16,
+      "n": 5
+    }
+  }
+}

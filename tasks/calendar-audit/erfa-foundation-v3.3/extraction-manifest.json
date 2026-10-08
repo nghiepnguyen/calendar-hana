@@ -1,0 +1,95 @@
+{
+  "generator": "tasks/calendar-audit/erfa-foundation-v3.3/extract-erfa.mjs",
+  "archive": {
+    "url": "https://github.com/liberfa/erfa/releases/download/v2.0.1/erfa-2.0.1.tar.gz",
+    "sha256": "d5469fbd0b212b3c7270c1da15c9bd82f37da9218fc89627f98283d27b416cbf",
+    "bytes": 345097
+  },
+  "sourceHashes": {
+    "src/epv00.c": "4568b28026cd83800b4a4f66d44f8f3451d7306f1c3fcf7e4cd6bfeb206dde57",
+    "src/nut00b.c": "a5246d525e987eb587bbe786b2846160e01be85b5d12af573870b89235695f49",
+    "src/pfw06.c": "085f49861026fab98633d8479795090b3278a0d246a938ebdf10fde326ef1987",
+    "src/obl06.c": "550260874d5e5fa3be77296b85b92c54c726fee6fbb1bb44748d04c17ffb37c2",
+    "src/fw2m.c": "480d1ae7780566980b8f80f4c6daa2be330a80e99861d892dc5a9f7b11da47c0",
+    "src/ab.c": "ff4bac5fc8a2ccb5d1f63404c96734fd125069382c7f7a29add598721a122527",
+    "src/pn.c": "8409fdde5be6ce50155084b3046a0d45203eabe4a19797725db657d301067df6",
+    "src/pm.c": "4f6b56c7580a2da06c78d11e172f794ce930a329b6f6552bfcdfc20e5e4cb936",
+    "src/pdp.c": "7c156c25e55eccbe06506e15accc7d28c45175a20295cbfd95908c9ed3a705c8",
+    "src/sxp.c": "0974159f3eea9f9c7f11e3fddaab2132a888b552b2a6d00b9673a37e019edbf0",
+    "src/rx.c": "b740bba3cce0502620662f6e667369734f6adf56064919394ae1ae3ae3e70c64",
+    "src/rz.c": "d4ef2eb4a9744617b510c2370ba5ff5f3c0acaafb07a0eb6138c6f2128005bcc",
+    "src/rxp.c": "bc75680b7d5f907e31d4ee30cd19b85911857384507fbb15306c68fd868d271d",
+    "src/ir.c": "55e3325cd77770315f20dfdee5e7028f56b7bfb97be966db922abcc8885091f1",
+    "src/erfam.h": "0da6313033aacf9c64533a7e74be49ecda97b4aaa87e134f98287e4ff279886f",
+    "src/erfa.h": "9549553b95ca2fbbcdcabcc69d82fb3cdd376c28b03c2793200138ff55727088",
+    "src/t_erfa_c.c": "8a92d0099c48df31ca566bea881c19497dc295dba58dba7136cc2f8443c31f15"
+  },
+  "licenseSha256": "b1858f9a263f22c438a455a32945da51a31a0ae25a21055da13bb7ed57cc3b51",
+  "epv00": {
+    "termCounts": {
+      "e0x": 501,
+      "e0y": 501,
+      "e0z": 137,
+      "e1x": 79,
+      "e1y": 80,
+      "e1z": 12,
+      "e2x": 5,
+      "e2y": 5,
+      "e2z": 3,
+      "s0x": 212,
+      "s0y": 213,
+      "s0z": 69,
+      "s1x": 50,
+      "s1y": 50,
+      "s1z": 14,
+      "s2x": 9,
+      "s2y": 9,
+      "s2z": 2
+    },
+    "totalTerms": 1951,
+    "scalarCoefficients": 5853,
+    "rotationConstants": {
+      "am12": "0.000000211284",
+      "am13": "-0.000000091603",
+      "am21": "-0.000000230286",
+      "am22": "0.917482137087",
+      "am23": "-0.397776982902",
+      "am32": "0.397776982902",
+      "am33": "0.917482137087"
+    }
+  },
+  "nut00b": {
+    "rows": 77,
+    "scalarCoefficients": 847,
+    "fixedOffsetsMas": {
+      "DPPLAN": "-0.135",
+      "DEPLAN": "0.388"
+    }
+  },
+  "constants": {
+    "ERFA_DAS2R": "4.848136811095359935899141e-6",
+    "ERFA_D2PI": "6.283185307179586476925287",
+    "ERFA_DPI": "3.141592653589793238462643",
+    "ERFA_TURNAS": "1296000.0",
+    "ERFA_DJY": "365.25",
+    "ERFA_DJC": "36525.0",
+    "ERFA_DJ00": "2451545.0",
+    "ERFA_DAYSEC": "86400.0",
+    "ERFA_DAU": "149597870.7e3",
+    "ERFA_CMPS": "299792458.0",
+    "ERFA_SRS": "1.97412574336e-8",
+    "ERFA_DR2D": "57.29577951308232087679815"
+  },
+  "transformations": [
+    "C comments stripped; numeric tokens copied verbatim in upstream order",
+    "prettier (repository config) normalises literal spelling, e.g. e+00 -> e00; values re-verified with Object.is",
+    "C struct rows of nut00b emitted as 11-element numeric arrays (5 integer multipliers + 6 doubles)",
+    "erfam.h constants emitted as the shortest round-trip decimal of the same double (upstream text kept in a trailing comment)"
+  ],
+  "outputHashes": {
+    "shared/astronomy/erfa/epv00.data.ts": "975a48f1e52a8d0988ebc2de53461faf524250c41baed0ffa05b68e8fc05f789",
+    "shared/astronomy/erfa/nut00b.data.ts": "fddd0b15a93428692e453f489c3ff8940cac9683e06f5f63bde88938c8f19529",
+    "shared/astronomy/erfa/constants.data.ts": "ed5edc14a116f79d1e4ad960d0102786b6cd971e8be5ceec62003f121359bf73",
+    "shared/astronomy/erfa/LICENSE-ERFA.txt": "b1858f9a263f22c438a455a32945da51a31a0ae25a21055da13bb7ed57cc3b51"
+  }
+}

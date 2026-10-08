@@ -1,0 +1,653 @@
+{
+  "phase": "3B.4.3",
+  "classification": "INDEPENDENT_PORT_REVIEW",
+  "upstream": "ERFA 2.0.1 C (unmodified), archive sha256 d5469fbd0b212b3c7270c1da15c9bd82f37da9218fc89627f98283d27b416cbf",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "platform": "darwin-arm64",
+  "tolerancePreregistrationSha256": "25c9ffa4bff28c340f2d350f7b2adeecc3ea0db00269de5e1273c8cb61c88f93",
+  "tolerances": {
+    "heliocentricPositionAu": 1e-13,
+    "barycentricPositionAu": 1e-13,
+    "heliocentricVelocityAuPerDay": 1e-15,
+    "barycentricVelocityAuPerDay": 1e-15,
+    "nutationRad": 1e-16,
+    "fukushimaWilliamsRad": 0,
+    "meanObliquityRad": 0,
+    "apparentLongitudeDeg": 1e-11,
+    "canonicalRootMs": "0, or 1 only when |upstream residual at disputed ms| <= 1e-11 deg"
+  },
+  "epochCounts": {
+    "grid": 609,
+    "j2000": 1,
+    "padding-1899-start": 1,
+    "padding-2101-end": 1,
+    "crossing-T-1": 4872,
+    "crossing-T": 4872
+  },
+  "officialVectors": {
+    "total": 32,
+    "passed": 32,
+    "vectors": [
+      {
+        "name": "eraEpv00 pvh0[0]",
+        "got": -0.7757238809297661,
+        "expected": -0.7757238809297706,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvh0[1]",
+        "got": 0.5598052241363407,
+        "expected": 0.559805224136334,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvh0[2]",
+        "got": 0.24269984664817157,
+        "expected": 0.2426998466481687,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvh1[0]",
+        "got": -0.010918918241473213,
+        "expected": -0.010918918241473138,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvh1[1]",
+        "got": -0.012471872684408374,
+        "expected": -0.01247187268440845,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvh1[2]",
+        "got": -0.0054075694180650054,
+        "expected": -0.005407569418065039,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb0[0]",
+        "got": -0.7714104440491069,
+        "expected": -0.7714104440491112,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb0[1]",
+        "got": 0.5598412061824241,
+        "expected": 0.5598412061824172,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb0[2]",
+        "got": 0.24259962777224825,
+        "expected": 0.24259962777224525,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb1[0]",
+        "got": -0.010918742681168306,
+        "expected": -0.010918742681168233,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb1[1]",
+        "got": -0.012465254617328538,
+        "expected": -0.012465254617328616,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 pvb1[2]",
+        "got": -0.005404773180966197,
+        "expected": -0.0054047731809662315,
+        "tolerance": 1e-15,
+        "pass": true
+      },
+      {
+        "name": "eraEpv00 status",
+        "got": 0,
+        "expected": 0,
+        "tolerance": 0,
+        "pass": true
+      },
+      {
+        "name": "eraNut00b dpsi",
+        "got": -0.000009632552291148318,
+        "expected": -0.000009632552291148363,
+        "tolerance": 1e-13,
+        "pass": true
+      },
+      {
+        "name": "eraNut00b deps",
+        "got": 0.00004063197106621162,
+        "expected": 0.00004063197106621159,
+        "tolerance": 1e-13,
+        "pass": true
+      },
+      {
+        "name": "eraPfw06 gamb",
+        "got": -0.000002243387670997992,
+        "expected": -0.0000022433876709979958,
+        "tolerance": 1e-16,
+        "pass": true
+      },
+      {
+        "name": "eraPfw06 phib",
+        "got": 0.4091014602391313,
+        "expected": 0.4091014602391313,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPfw06 psib",
+        "got": -0.0009501954178013015,
+        "expected": -0.0009501954178013031,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraPfw06 epsa",
+        "got": 0.40910143165873675,
+        "expected": 0.40910143165873675,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraObl06",
+        "got": 0.4090749229387258,
+        "expected": 0.4090749229387258,
+        "tolerance": 1e-14,
+        "pass": true
+      },
+      {
+        "name": "eraAb 0",
+        "got": -0.7631631094219556,
+        "expected": -0.7631631094219556,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraAb 1",
+        "got": -0.6087553082505591,
+        "expected": -0.6087553082505591,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraAb 2",
+        "got": -0.21679262693684712,
+        "expected": -0.21679262693684712,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPn r",
+        "got": 2.7892651361962706,
+        "expected": 2.7892651361962706,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPn u0",
+        "got": 0.10755521090731121,
+        "expected": 0.10755521090731121,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPn u1",
+        "got": 0.43022084362924484,
+        "expected": 0.43022084362924484,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPn u2",
+        "got": -0.8962934242275934,
+        "expected": -0.8962934242275934,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraPm",
+        "got": 2.7892651361962706,
+        "expected": 2.7892651361962706,
+        "tolerance": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "eraApcs v0",
+        "got": 0.000020787049932826855,
+        "expected": 0.000020787049932826855,
+        "tolerance": 1e-16,
+        "pass": true
+      },
+      {
+        "name": "eraApcs v1",
+        "got": -0.00008955360106989405,
+        "expected": -0.00008955360106989405,
+        "tolerance": 1e-16,
+        "pass": true
+      },
+      {
+        "name": "eraApcs v2",
+        "got": -0.00003863338994289409,
+        "expected": -0.00003863338994289409,
+        "tolerance": 1e-16,
+        "pass": true
+      },
+      {
+        "name": "eraApcs bm1",
+        "got": 0.9999999950277562,
+        "expected": 0.9999999950277562,
+        "tolerance": 1e-12,
+        "pass": true
+      }
+    ]
+  },
+  "strict": {
+    "label": "clang -O2 -ffp-contract=off (pre-registered comparison)",
+    "epochCount": 10356,
+    "rootCount": 4872,
+    "maxAbs": {
+      "heliocentricPositionAu": 2.220446049250313e-16,
+      "heliocentricVelocityAuPerDay": 5.204170427930421e-18,
+      "barycentricPositionAu": 2.220446049250313e-16,
+      "barycentricVelocityAuPerDay": 5.204170427930421e-18,
+      "nutationRad": 2.710505431213761e-20,
+      "fukushimaWilliamsRad": 0,
+      "meanObliquityRad": 0,
+      "apparentLongitudeDeg": 5.684341886080802e-14
+    },
+    "worst": {
+      "heliocentricVelocityAuPerDay": {
+        "epochIndex": 6652,
+        "kind": "crossing-T-1",
+        "ttMs": 784203673773,
+        "ts": -0.012379386622425256,
+        "upstream": -0.012379386622425251
+      },
+      "barycentricVelocityAuPerDay": {
+        "epochIndex": 6652,
+        "kind": "crossing-T-1",
+        "ttMs": 784203673773,
+        "ts": -0.012372511767846915,
+        "upstream": -0.01237251176784691
+      },
+      "apparentLongitudeDeg": {
+        "epochIndex": 15,
+        "kind": "grid",
+        "ttMs": -3024459053348,
+        "ts": 339.1816756132292,
+        "upstream": 339.1816756132291
+      },
+      "nutationRad": {
+        "epochIndex": 2802,
+        "kind": "crossing-T-1",
+        "ttMs": -1746940387964,
+        "ts": -0.0000717177678904364,
+        "upstream": -0.00007171776789043637
+      },
+      "heliocentricPositionAu": {
+        "epochIndex": 4120,
+        "kind": "crossing-T-1",
+        "ttMs": -880655946031,
+        "ts": 0.6351331783707163,
+        "upstream": 0.635133178370716
+      },
+      "barycentricPositionAu": {
+        "epochIndex": 1239,
+        "kind": "crossing-T",
+        "ttMs": -2775349840854,
+        "ts": 0.7735962190023967,
+        "upstream": 0.7735962190023965
+      }
+    },
+    "toleranceViolations": [],
+    "rootExactMatches": 4872,
+    "rootDifferences": [],
+    "rootDifferencesExplainedByLongitudeTolerance": 0,
+    "rootDifferencesUnexplained": 0,
+    "pass": true
+  },
+  "contractedInformational": {
+    "label": "clang -O2 default fp-contract (informational only)",
+    "epochCount": 10356,
+    "rootCount": 4872,
+    "maxAbs": {
+      "heliocentricPositionAu": 1.1553952239395926e-13,
+      "heliocentricVelocityAuPerDay": 1.9699682423518494e-15,
+      "barycentricPositionAu": 1.1553952239395926e-13,
+      "barycentricVelocityAuPerDay": 1.9699411372975373e-15,
+      "nutationRad": 1.662217455691839e-17,
+      "fukushimaWilliamsRad": 1.1102230246251565e-16,
+      "meanObliquityRad": 1.1102230246251565e-16,
+      "apparentLongitudeDeg": 6.650680006714538e-12
+    },
+    "worst": {
+      "heliocentricPositionAu": {
+        "epochIndex": 970,
+        "kind": "crossing-T-1",
+        "ttMs": -2951522287137,
+        "ts": 0.02333112357938905,
+        "upstream": 0.02333112357927351
+      },
+      "heliocentricVelocityAuPerDay": {
+        "epochIndex": 10295,
+        "kind": "crossing-T",
+        "ttMs": 3178605815933,
+        "ts": 0.00014666684739446002,
+        "upstream": 0.00014666684739642998
+      },
+      "barycentricPositionAu": {
+        "epochIndex": 970,
+        "kind": "crossing-T-1",
+        "ttMs": -2951522287137,
+        "ts": 0.02016141271823057,
+        "upstream": 0.02016141271811503
+      },
+      "barycentricVelocityAuPerDay": {
+        "epochIndex": 10295,
+        "kind": "crossing-T",
+        "ttMs": 3178605815933,
+        "ts": 0.00014270441574840934,
+        "upstream": 0.00014270441575037928
+      },
+      "nutationRad": {
+        "epochIndex": 10162,
+        "kind": "crossing-T-1",
+        "ttMs": 3091704027900,
+        "ts": -0.00003992984943325171,
+        "upstream": -0.00003992984943326833
+      },
+      "fukushimaWilliamsRad": {
+        "epochIndex": 1520,
+        "kind": "crossing-T-1",
+        "ttMs": -2589825520505,
+        "ts": 0.40927904624992717,
+        "upstream": 0.40927904624992706
+      },
+      "apparentLongitudeDeg": {
+        "epochIndex": 21,
+        "kind": "grid",
+        "ttMs": -2964121271512,
+        "ts": 306.7075317177758,
+        "upstream": 306.70753171776914
+      },
+      "meanObliquityRad": {
+        "epochIndex": 1447,
+        "kind": "crossing-T",
+        "ttMs": -2638662831818,
+        "ts": 0.4092824579078813,
+        "upstream": 0.4092824579078814
+      }
+    },
+    "toleranceViolations": [
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 0,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 1,
+        "diff": 1.1223660889569942e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 1,
+        "diff": 1.1223660889569942e-15
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 2,
+        "diff": 1.9333493139761515e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 2,
+        "diff": 1.9333493139761515e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 2,
+        "diff": 6.938893903907228e-18
+      },
+      {
+        "field": "heliocentricPositionAu",
+        "epochIndex": 3,
+        "diff": 1.0222378499236129e-13
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 3,
+        "diff": 1.9038590148845458e-15
+      },
+      {
+        "field": "barycentricPositionAu",
+        "epochIndex": 3,
+        "diff": 1.0222378499236129e-13
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 3,
+        "diff": 1.9038590148845458e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 3,
+        "diff": 1.3552527156068805e-20
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 4,
+        "diff": 1.7156415177410622e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 4,
+        "diff": 1.7156415177410622e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 4,
+        "diff": 6.776263578034403e-21
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 6,
+        "diff": 1.8813076096968473e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 6,
+        "diff": 1.8813076096968473e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 6,
+        "diff": 6.938893903907228e-18
+      },
+      {
+        "field": "heliocentricPositionAu",
+        "epochIndex": 8,
+        "diff": 1.1282641487753153e-13
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 8,
+        "diff": 1.7713695094068171e-15
+      },
+      {
+        "field": "barycentricPositionAu",
+        "epochIndex": 8,
+        "diff": 1.1285417045314716e-13
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 8,
+        "diff": 1.7718031902758113e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 8,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 9,
+        "diff": 1.519617764955683e-15
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 9,
+        "diff": 1.1206313654810174e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 9,
+        "diff": 1.519617764955683e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 9,
+        "diff": 1.1206313654810174e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 9,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 10,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 11,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 12,
+        "diff": 1.7598769663784708e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 12,
+        "diff": 1.7590096046404824e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 12,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 13,
+        "diff": 1.77115266897232e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 13,
+        "diff": 1.7694179454963432e-15
+      },
+      {
+        "field": "heliocentricPositionAu",
+        "epochIndex": 14,
+        "diff": 1.0125233984581428e-13
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 14,
+        "diff": 1.893450674028685e-15
+      },
+      {
+        "field": "barycentricPositionAu",
+        "epochIndex": 14,
+        "diff": 1.0125233984581428e-13
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 14,
+        "diff": 1.893450674028685e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 14,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 16,
+        "diff": 1.635844237846129e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 16,
+        "diff": 1.635844237846129e-15
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 16,
+        "diff": 6.776263578034403e-21
+      },
+      {
+        "field": "fukushimaWilliamsRad",
+        "epochIndex": 16,
+        "diff": 3.469446951953614e-18
+      },
+      {
+        "field": "heliocentricPositionAu",
+        "epochIndex": 17,
+        "diff": 1.1210476991152518e-13
+      },
+      {
+        "field": "barycentricPositionAu",
+        "epochIndex": 17,
+        "diff": 1.1210476991152518e-13
+      },
+      {
+        "field": "heliocentricPositionAu",
+        "epochIndex": 19,
+        "diff": 1.038613639536834e-13
+      },
+      {
+        "field": "barycentricPositionAu",
+        "epochIndex": 19,
+        "diff": 1.038613639536834e-13
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 21,
+        "diff": 1.1848161340921592e-15
+      },
+      {
+        "field": "heliocentricVelocityAuPerDay",
+        "epochIndex": 21,
+        "diff": 1.4311468676808659e-15
+      },
+      {
+        "field": "barycentricVelocityAuPerDay",
+        "epochIndex": 21,
+        "diff": 1.1848161340921592e-15
+      }
+    ],
+    "rootExactMatches": 4872,
+    "rootDifferences": [],
+    "rootDifferencesExplainedByLongitudeTolerance": 0,
+    "rootDifferencesUnexplained": 0,
+    "pass": false
+  },
+  "verdict": "PORT_FIDELITY_PASS"
+}

@@ -1,0 +1,154 @@
+{
+  "phase": "3B.4.3",
+  "startingHead": "87dd1ba20a4165c75a33d37020388d3018304805",
+  "endingHead": "87dd1ba20a4165c75a33d37020388d3018304805",
+  "productionMigrationOccurred": false,
+  "protectedHashes": {
+    "filesCompared": 1252,
+    "changed": [
+      {
+        "path": "graphify-out/.rebuild.lock",
+        "class": "OTHER_TRACKED",
+        "authorized": true
+      },
+      {
+        "path": "graphify-out/GRAPH_REPORT.md",
+        "class": "OTHER_TRACKED",
+        "authorized": true
+      },
+      {
+        "path": "graphify-out/graph.html",
+        "class": "OTHER_TRACKED",
+        "authorized": true
+      },
+      {
+        "path": "graphify-out/graph.json",
+        "class": "OTHER_TRACKED",
+        "authorized": true
+      },
+      {
+        "path": "graphify-out/manifest.json",
+        "class": "OTHER_TRACKED",
+        "authorized": true
+      }
+    ],
+    "unauthorizedChanges": [],
+    "verdict": "PASS",
+    "note": "graphify-out/* changes are the AGENTS.md-mandated `graphify update .` knowledge-graph refresh (tooling metadata, no runtime effect)."
+  },
+  "newFiles": {
+    "count": 172,
+    "unexpected": []
+  },
+  "gates": {
+    "provenance": "PROVENANCE_PASS",
+    "portFidelity": "PORT_FIDELITY_PASS",
+    "officialVectors": "32/32",
+    "referenceAccuracy": "REFERENCE_ACCURACY_PASS",
+    "referenceMaxAbsSeconds": 0.3763271484375,
+    "mutation": {
+      "KILLED": 14,
+      "SURVIVED": 0,
+      "INVALID_RUN": 0
+    },
+    "runtimeParity": "PASS",
+    "deviceGate": "UNVERIFIED_DEVICE_GATE (physical Safari/iOS, Android)",
+    "license": "PASS",
+    "spec": "SPEC_CHANGE_PROPOSED"
+  },
+  "regression": {
+    "unit": {
+      "baseline": {
+        "total": 1999,
+        "failed": 50
+      },
+      "current": {
+        "total": 2022,
+        "failed": 50
+      },
+      "newFailures": [],
+      "statusChanged": [],
+      "testsAdded": 23,
+      "preExistingExpectedFailures": {
+        "count": 50,
+        "classification": "PRE_EXISTING_EXPECTED_FAILURE (Group B astronomy-model conflict)",
+        "tests": [
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-066 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-069 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-087 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-090 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-093 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-096 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-099 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-breaker-102 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-066 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-069 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-087 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-090 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-093 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-096 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-099 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-102 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden robbery-sha-121 rounded-minute-discriminator",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-066 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-069 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-087 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-090 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-093 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-096 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-099 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden disaster-sha-102 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-066 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-069 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-087 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-090 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-093 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-096 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-099 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-sha-102 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-066 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-069 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-087 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-090 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-093 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-096 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-099 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-102 exact-boundary",
+          "shared/lunar/groupB.test.ts > Frozen Group B Golden month-virtue-121 rounded-minute-discriminator",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2023-03",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2023-04",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-05",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-06",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-07",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-08",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-09",
+          "shared/lunar/groupB.test.ts > Group B properties P2: independently reviewed exact jie-2024-10"
+        ]
+      }
+    },
+    "checks": {
+      "typecheck": {
+        "current": "PASS (tsc -b + functions typecheck, exit 0)",
+        "baseline": "PASS"
+      },
+      "lint": {
+        "current": "PASS (oxlint exit 0, 0 warnings after literal normalisation)",
+        "baseline": "PASS (0 warnings)"
+      },
+      "build": {
+        "current": "PASS (tsc -b && vite build, PWA injectManifest, 34 precache entries)",
+        "baseline": "not re-run (production code unchanged)"
+      },
+      "formatCheck": {
+        "current": "FAIL — pre-existing: same file set as baseline (610 files), no new file flagged after moving impact rows to TSV",
+        "baseline": "FAIL (610 files)",
+        "classification": "PRE_EXISTING_EXPECTED_FAILURE"
+      },
+      "foundationTests": "23/23 PASS",
+      "firebaseEmulatorIntegration": "NOT_RUN (production code unchanged; requires emulator)",
+      "playwrightE2E": "NOT_RUN (app unchanged; engine not wired)"
+    },
+    "newRegressions": 0
+  },
+  "finalVerdict": "APPROVE_FOUNDATION_WITH_DEVICE_GATE"
+}

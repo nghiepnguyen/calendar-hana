@@ -1,0 +1,1153 @@
+{
+  "phase": "3B.4.3",
+  "classification": "REFERENCE_ACCURACY_EVIDENCE (audit only; not a domain tolerance)",
+  "engine": {
+    "id": "hana-erfa-solar-term",
+    "version": "1.0.0-candidate.3b43",
+    "status": "CANDIDATE_NOT_WIRED_TO_PRODUCTION",
+    "upstream": "ERFA 2.0.1 (liberfa/erfa v2.0.1), derived from IAU SOFA",
+    "ephemeris": "eraEpv00: VSOP2000-derived EPV00, 1,951 harmonic terms (Earth helio + SSB)",
+    "lightTime": "one retardation of the barycentric Sun by |Earth_helio| / c",
+    "aberration": "eraAb relativistic annual aberration, Earth barycentric velocity (eraApcs)",
+    "precession": "IAU 2006 bias-precession, Fukushima–Williams angles (eraPfw06/eraObl06)",
+    "nutation": "IAU 2000B (eraNut00b): 77 luni-solar terms + fixed planetary offsets",
+    "frame": "apparent geocentric, TRUE ECLIPTIC AND EQUINOX OF DATE",
+    "observable": "apparent geocentric ecliptic longitude of the Sun",
+    "timeScale": "TT (used as TDB, |TDB − TT| < 2 ms)",
+    "targets": "24 terms at exact multiples of 15°, index = longitude / 15 (0 = Xuân phân)",
+    "boundary": "T = first integer TT ms since J2000.0 TT with wrap(longitude − target) >= 0",
+    "domain": "previous term: t < T; new term: t >= T; zero tolerance",
+    "solver": "integer-grid Illinois false position + forced bisection, checked bracket ±10 d",
+    "math": "deterministic fdlibm sin/cos/atan2 ports; IEEE-754 sqrt",
+    "supportedYears": "1900–2100 public; 1899 and 2101 internal padding"
+  },
+  "reference": {
+    "identity": "JPL DE440s / Skyfield 1.55 / jplephem 2.24 / numpy 2.4.4; apparent geocentric Sun, true ecliptic and equinox of date (skyfield.framelib.ecliptic_frame); TT",
+    "kernel": {
+      "source": "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de440s.bsp",
+      "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+      "bytes": 32726016
+    },
+    "seed": "TT Jan 1 + 5 d + mean motion from 285 deg; bracket +-12 d; no model roots consulted",
+    "solver": "Newton x10 (central difference h=1e-3 d) clipped to bracket; +-1 ms sign confirmation; linear sub-ms refinement; independent 45-step bisection cross-check",
+    "maxFinalResidualDeg": 7.44648787076585e-12,
+    "maxNewtonVsBisectionMs": 0.0009765625
+  },
+  "comparedQuantity": "ERFA canonical integer TT ms (ceil) minus JPL continuous TT root; includes the <= 1 ms ceil step",
+  "gate": {
+    "maxAbsSecondsAllowed": 0.5,
+    "scope": "1900–2100, all 24 terms"
+  },
+  "supported1900to2100": {
+    "count": 4824,
+    "maxAbsSeconds": 0.3763271484375,
+    "medianAbsSeconds": 0.07351446533203125,
+    "p95AbsSeconds": 0.19651553955078113,
+    "p99AbsSeconds": 0.25525146362304624,
+    "meanSignedSeconds": -0.041792410670524756,
+    "minSignedSeconds": -0.3763271484375,
+    "maxSignedSeconds": 0.3426768035888672,
+    "countAbove": {
+      "0.1s": 1749,
+      "0.25s": 55,
+      "0.5s": 0,
+      "1s": 0,
+      "30s": 0
+    }
+  },
+  "jieOnly": {
+    "count": 2412,
+    "maxAbsSeconds": 0.35353515625,
+    "medianAbsSeconds": 0.07326025390625,
+    "p95AbsSeconds": 0.1962354858398437,
+    "p99AbsSeconds": 0.2531565734863279,
+    "meanSignedSeconds": -0.04183633641836859,
+    "minSignedSeconds": -0.35353515625,
+    "maxSignedSeconds": 0.3426768035888672,
+    "countAbove": {
+      "0.1s": 871,
+      "0.25s": 26,
+      "0.5s": 0,
+      "1s": 0,
+      "30s": 0
+    }
+  },
+  "zhongqiOnly": {
+    "count": 2412,
+    "maxAbsSeconds": 0.3763271484375,
+    "medianAbsSeconds": 0.07415885162353517,
+    "p95AbsSeconds": 0.19667278118133544,
+    "p99AbsSeconds": 0.2583788500976561,
+    "meanSignedSeconds": -0.041748484922681094,
+    "minSignedSeconds": -0.3763271484375,
+    "maxSignedSeconds": 0.33003680419921877,
+    "countAbove": {
+      "0.1s": 878,
+      "0.25s": 29,
+      "0.5s": 0,
+      "1s": 0,
+      "30s": 0
+    }
+  },
+  "padding1899and2101": {
+    "count": 48,
+    "maxAbsSeconds": 0.20157421875,
+    "medianAbsSeconds": 0.081519287109375,
+    "p95AbsSeconds": 0.16821945800781246,
+    "p99AbsSeconds": 0.19199636230468753,
+    "meanSignedSeconds": -0.048463307698567715,
+    "minSignedSeconds": -0.18119580078125,
+    "maxSignedSeconds": 0.20157421875,
+    "countAbove": {
+      "0.1s": 20,
+      "0.25s": 0,
+      "0.5s": 0,
+      "1s": 0,
+      "30s": 0
+    }
+  },
+  "productionAstronomyEngineVsSameReference": {
+    "identity": "astronomy-engine 2.1.19 SearchSunLongitude (current production)",
+    "count": 4824,
+    "maxAbsSeconds": 56.28886735534668,
+    "medianAbsSeconds": 9.792487060546875,
+    "p95AbsSeconds": 29.225557336425762,
+    "p99AbsSeconds": 38.60415235595701,
+    "meanSignedSeconds": 4.26207298028824,
+    "minSignedSeconds": -46.31980908203125,
+    "maxSignedSeconds": 56.28886735534668,
+    "countAbove": {
+      "0.1s": 4794,
+      "0.25s": 4743,
+      "0.5s": 4665,
+      "1s": 4531,
+      "30s": 210
+    }
+  },
+  "byDecade": {
+    "1900": {
+      "count": 240,
+      "maxAbsSeconds": 0.32764306640625,
+      "medianAbsSeconds": 0.08159814453125,
+      "p95AbsSeconds": 0.21656562499999987,
+      "p99AbsSeconds": 0.2940126855468748,
+      "meanSignedSeconds": -0.0885506978352866,
+      "minSignedSeconds": -0.32764306640625,
+      "maxSignedSeconds": 0.08748583984375,
+      "countAbove": {
+        "0.1s": 106,
+        "0.25s": 9,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1910": {
+      "count": 240,
+      "maxAbsSeconds": 0.21138671875,
+      "medianAbsSeconds": 0.066261962890625,
+      "p95AbsSeconds": 0.1813557373046875,
+      "p99AbsSeconds": 0.20686088378906248,
+      "meanSignedSeconds": -0.058757902018229155,
+      "minSignedSeconds": -0.21138671875,
+      "maxSignedSeconds": 0.12399560546875,
+      "countAbove": {
+        "0.1s": 75,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1920": {
+      "count": 240,
+      "maxAbsSeconds": 0.22532275390625,
+      "medianAbsSeconds": 0.067311279296875,
+      "p95AbsSeconds": 0.1887077636718749,
+      "p99AbsSeconds": 0.21802166992187497,
+      "meanSignedSeconds": -0.05527714640299478,
+      "minSignedSeconds": -0.22532275390625,
+      "maxSignedSeconds": 0.13329736328125,
+      "countAbove": {
+        "0.1s": 77,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1930": {
+      "count": 240,
+      "maxAbsSeconds": 0.2424521484375,
+      "medianAbsSeconds": 0.071730224609375,
+      "p95AbsSeconds": 0.1841942504882811,
+      "p99AbsSeconds": 0.21496248291015624,
+      "meanSignedSeconds": -0.07452064819335934,
+      "minSignedSeconds": -0.2424521484375,
+      "maxSignedSeconds": 0.07117578125,
+      "countAbove": {
+        "0.1s": 77,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1940": {
+      "count": 240,
+      "maxAbsSeconds": 0.3763271484375,
+      "medianAbsSeconds": 0.1067457275390625,
+      "p95AbsSeconds": 0.19315494384765616,
+      "p99AbsSeconds": 0.3460272753906247,
+      "meanSignedSeconds": -0.0941091349283854,
+      "minSignedSeconds": -0.3763271484375,
+      "maxSignedSeconds": 0.184116943359375,
+      "countAbove": {
+        "0.1s": 132,
+        "0.25s": 9,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1950": {
+      "count": 240,
+      "maxAbsSeconds": 0.235042236328125,
+      "medianAbsSeconds": 0.0870986328125,
+      "p95AbsSeconds": 0.18376259765624992,
+      "p99AbsSeconds": 0.2186222583007811,
+      "meanSignedSeconds": -0.08230207316080734,
+      "minSignedSeconds": -0.235042236328125,
+      "maxSignedSeconds": 0.070211181640625,
+      "countAbove": {
+        "0.1s": 102,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1960": {
+      "count": 240,
+      "maxAbsSeconds": 0.28615771484375,
+      "medianAbsSeconds": 0.1228271484375,
+      "p95AbsSeconds": 0.22532402343749983,
+      "p99AbsSeconds": 0.26954283691406217,
+      "meanSignedSeconds": -0.1172899322509766,
+      "minSignedSeconds": -0.28615771484375,
+      "maxSignedSeconds": 0.0366385498046875,
+      "countAbove": {
+        "0.1s": 146,
+        "0.25s": 5,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1970": {
+      "count": 240,
+      "maxAbsSeconds": 0.307867919921875,
+      "medianAbsSeconds": 0.1171217041015625,
+      "p95AbsSeconds": 0.2597730651855469,
+      "p99AbsSeconds": 0.28312076049804685,
+      "meanSignedSeconds": -0.11639498952229825,
+      "minSignedSeconds": -0.307867919921875,
+      "maxSignedSeconds": 0.043498291015625,
+      "countAbove": {
+        "0.1s": 138,
+        "0.25s": 16,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1980": {
+      "count": 240,
+      "maxAbsSeconds": 0.3068660888671875,
+      "medianAbsSeconds": 0.12561947631835937,
+      "p95AbsSeconds": 0.22967808532714842,
+      "p99AbsSeconds": 0.2635279119873046,
+      "meanSignedSeconds": -0.10632594858805337,
+      "minSignedSeconds": -0.3068660888671875,
+      "maxSignedSeconds": 0.192472412109375,
+      "countAbove": {
+        "0.1s": 147,
+        "0.25s": 5,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "1990": {
+      "count": 240,
+      "maxAbsSeconds": 0.229367600440979,
+      "medianAbsSeconds": 0.06215469360351562,
+      "p95AbsSeconds": 0.16917413425445552,
+      "p99AbsSeconds": 0.18630774200439446,
+      "meanSignedSeconds": -0.027492584095398554,
+      "minSignedSeconds": -0.188097412109375,
+      "maxSignedSeconds": 0.229367600440979,
+      "countAbove": {
+        "0.1s": 69,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2000": {
+      "count": 240,
+      "maxAbsSeconds": 0.3426768035888672,
+      "medianAbsSeconds": 0.052170295715332035,
+      "p95AbsSeconds": 0.21093196353912347,
+      "p99AbsSeconds": 0.31131326705932566,
+      "meanSignedSeconds": 0.04268383129835131,
+      "minSignedSeconds": -0.1645286865234375,
+      "maxSignedSeconds": 0.3426768035888672,
+      "countAbove": {
+        "0.1s": 53,
+        "0.25s": 5,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2010": {
+      "count": 240,
+      "maxAbsSeconds": 0.2202091064453125,
+      "medianAbsSeconds": 0.0397884521484375,
+      "p95AbsSeconds": 0.11915713806152342,
+      "p99AbsSeconds": 0.18962391235351522,
+      "meanSignedSeconds": -0.003918505859374999,
+      "minSignedSeconds": -0.20118218994140624,
+      "maxSignedSeconds": 0.2202091064453125,
+      "countAbove": {
+        "0.1s": 25,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2020": {
+      "count": 240,
+      "maxAbsSeconds": 0.29847265625,
+      "medianAbsSeconds": 0.07798284912109374,
+      "p95AbsSeconds": 0.22560173950195306,
+      "p99AbsSeconds": 0.26301257202148426,
+      "meanSignedSeconds": -0.06779691263834636,
+      "minSignedSeconds": -0.29847265625,
+      "maxSignedSeconds": 0.2542657470703125,
+      "countAbove": {
+        "0.1s": 91,
+        "0.25s": 5,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2030": {
+      "count": 240,
+      "maxAbsSeconds": 0.239331298828125,
+      "medianAbsSeconds": 0.052663146972656255,
+      "p95AbsSeconds": 0.16253224487304682,
+      "p99AbsSeconds": 0.21308175537109347,
+      "meanSignedSeconds": -0.016471910095214842,
+      "minSignedSeconds": -0.239331298828125,
+      "maxSignedSeconds": 0.202274658203125,
+      "countAbove": {
+        "0.1s": 48,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2040": {
+      "count": 240,
+      "maxAbsSeconds": 0.228335205078125,
+      "medianAbsSeconds": 0.054572631835937496,
+      "p95AbsSeconds": 0.1619928710937499,
+      "p99AbsSeconds": 0.2023305981445312,
+      "meanSignedSeconds": -0.008442592366536465,
+      "minSignedSeconds": -0.20030029296875,
+      "maxSignedSeconds": 0.228335205078125,
+      "countAbove": {
+        "0.1s": 64,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2050": {
+      "count": 240,
+      "maxAbsSeconds": 0.19082421875,
+      "medianAbsSeconds": 0.050765380859375,
+      "p95AbsSeconds": 0.1637681640625,
+      "p99AbsSeconds": 0.1793099755859375,
+      "meanSignedSeconds": -0.023535867309570316,
+      "minSignedSeconds": -0.19082421875,
+      "maxSignedSeconds": 0.1890068359375,
+      "countAbove": {
+        "0.1s": 63,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2060": {
+      "count": 240,
+      "maxAbsSeconds": 0.211462646484375,
+      "medianAbsSeconds": 0.08561474609375,
+      "p95AbsSeconds": 0.1779768188476562,
+      "p99AbsSeconds": 0.20242396728515608,
+      "meanSignedSeconds": -0.0519463745117187,
+      "minSignedSeconds": -0.211462646484375,
+      "maxSignedSeconds": 0.209507080078125,
+      "countAbove": {
+        "0.1s": 102,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2070": {
+      "count": 240,
+      "maxAbsSeconds": 0.1764951171875,
+      "medianAbsSeconds": 0.0582216796875,
+      "p95AbsSeconds": 0.14144125976562497,
+      "p99AbsSeconds": 0.15780271484374989,
+      "meanSignedSeconds": 0.009954193115234374,
+      "minSignedSeconds": -0.1764951171875,
+      "maxSignedSeconds": 0.15359228515625,
+      "countAbove": {
+        "0.1s": 57,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2080": {
+      "count": 240,
+      "maxAbsSeconds": 0.226,
+      "medianAbsSeconds": 0.068020263671875,
+      "p95AbsSeconds": 0.1854045898437499,
+      "p99AbsSeconds": 0.2124715673828125,
+      "meanSignedSeconds": 0.019637420654296876,
+      "minSignedSeconds": -0.226,
+      "maxSignedSeconds": 0.21269189453125,
+      "countAbove": {
+        "0.1s": 78,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2090": {
+      "count": 240,
+      "maxAbsSeconds": 0.25311083984375,
+      "medianAbsSeconds": 0.0820009765625,
+      "p95AbsSeconds": 0.1986002197265624,
+      "p99AbsSeconds": 0.2344050830078125,
+      "meanSignedSeconds": 0.07761391398111978,
+      "minSignedSeconds": -0.1176044921875,
+      "maxSignedSeconds": 0.25311083984375,
+      "countAbove": {
+        "0.1s": 88,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "2100": {
+      "count": 24,
+      "maxAbsSeconds": 0.23794287109375,
+      "medianAbsSeconds": 0.0976884765625,
+      "p95AbsSeconds": 0.23020456542968748,
+      "p99AbsSeconds": 0.236740986328125,
+      "meanSignedSeconds": 0.0321640625,
+      "minSignedSeconds": -0.12322265625,
+      "maxSignedSeconds": 0.23794287109375,
+      "countAbove": {
+        "0.1s": 11,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    }
+  },
+  "bySolarTerm": {
+    "00 xuan-phan": {
+      "count": 201,
+      "maxAbsSeconds": 0.3644833984375,
+      "medianAbsSeconds": 0.08341259765625,
+      "p95AbsSeconds": 0.2093865966796875,
+      "p99AbsSeconds": 0.26693798828125,
+      "meanSignedSeconds": -0.04523867258385048,
+      "minSignedSeconds": -0.3644833984375,
+      "maxSignedSeconds": 0.2831882019042969,
+      "countAbove": {
+        "0.1s": 88,
+        "0.25s": 5,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "01 thanh-minh": {
+      "count": 201,
+      "maxAbsSeconds": 0.3342841796875,
+      "medianAbsSeconds": 0.0821748046875,
+      "p95AbsSeconds": 0.21841357421875,
+      "p99AbsSeconds": 0.27126025390625,
+      "meanSignedSeconds": -0.05435322195024632,
+      "minSignedSeconds": -0.3342841796875,
+      "maxSignedSeconds": 0.24203570556640625,
+      "countAbove": {
+        "0.1s": 83,
+        "0.25s": 6,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "02 coc-vu": {
+      "count": 201,
+      "maxAbsSeconds": 0.3763271484375,
+      "medianAbsSeconds": 0.092252685546875,
+      "p95AbsSeconds": 0.2212935028076172,
+      "p99AbsSeconds": 0.28690625,
+      "meanSignedSeconds": -0.06955185221202341,
+      "minSignedSeconds": -0.3763271484375,
+      "maxSignedSeconds": 0.2212935028076172,
+      "countAbove": {
+        "0.1s": 92,
+        "0.25s": 7,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "03 lap-ha": {
+      "count": 201,
+      "maxAbsSeconds": 0.35353515625,
+      "medianAbsSeconds": 0.105949462890625,
+      "p95AbsSeconds": 0.2196326904296875,
+      "p99AbsSeconds": 0.283349609375,
+      "meanSignedSeconds": -0.08428427970468699,
+      "minSignedSeconds": -0.35353515625,
+      "maxSignedSeconds": 0.20432666015625,
+      "countAbove": {
+        "0.1s": 104,
+        "0.25s": 8,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "04 tieu-man": {
+      "count": 201,
+      "maxAbsSeconds": 0.315762939453125,
+      "medianAbsSeconds": 0.105243896484375,
+      "p95AbsSeconds": 0.2296129150390625,
+      "p99AbsSeconds": 0.2842216796875,
+      "meanSignedSeconds": -0.0910074080946433,
+      "minSignedSeconds": -0.315762939453125,
+      "maxSignedSeconds": 0.2337197265625,
+      "countAbove": {
+        "0.1s": 104,
+        "0.25s": 7,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "05 mang-chung": {
+      "count": 201,
+      "maxAbsSeconds": 0.29847265625,
+      "medianAbsSeconds": 0.10763720703125,
+      "p95AbsSeconds": 0.2021380615234375,
+      "p99AbsSeconds": 0.28615771484375,
+      "meanSignedSeconds": -0.09151532032715146,
+      "minSignedSeconds": -0.29847265625,
+      "maxSignedSeconds": 0.19655029296875,
+      "countAbove": {
+        "0.1s": 108,
+        "0.25s": 6,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "06 ha-chi": {
+      "count": 201,
+      "maxAbsSeconds": 0.2697447509765625,
+      "medianAbsSeconds": 0.104111572265625,
+      "p95AbsSeconds": 0.21328662109375,
+      "p99AbsSeconds": 0.2526558837890625,
+      "meanSignedSeconds": -0.09091908787020403,
+      "minSignedSeconds": -0.2697447509765625,
+      "maxSignedSeconds": 0.18151025390625,
+      "countAbove": {
+        "0.1s": 106,
+        "0.25s": 3,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "07 tieu-thu": {
+      "count": 201,
+      "maxAbsSeconds": 0.2467098388671875,
+      "medianAbsSeconds": 0.095318359375,
+      "p95AbsSeconds": 0.192254638671875,
+      "p99AbsSeconds": 0.239972900390625,
+      "meanSignedSeconds": -0.08655934187666105,
+      "minSignedSeconds": -0.2467098388671875,
+      "maxSignedSeconds": 0.14946728515625,
+      "countAbove": {
+        "0.1s": 91,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "08 dai-thu": {
+      "count": 201,
+      "maxAbsSeconds": 0.2385523681640625,
+      "medianAbsSeconds": 0.0812197265625,
+      "p95AbsSeconds": 0.1853948974609375,
+      "p99AbsSeconds": 0.20242822265625,
+      "meanSignedSeconds": -0.07664328665282595,
+      "minSignedSeconds": -0.2385523681640625,
+      "maxSignedSeconds": 0.14859375,
+      "countAbove": {
+        "0.1s": 80,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "09 lap-thu": {
+      "count": 201,
+      "maxAbsSeconds": 0.23920654296875,
+      "medianAbsSeconds": 0.068833984375,
+      "p95AbsSeconds": 0.17010302734375,
+      "p99AbsSeconds": 0.200614990234375,
+      "meanSignedSeconds": -0.05984447386252941,
+      "minSignedSeconds": -0.212018798828125,
+      "maxSignedSeconds": 0.23920654296875,
+      "countAbove": {
+        "0.1s": 69,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "10 xu-thu": {
+      "count": 201,
+      "maxAbsSeconds": 0.2214810791015625,
+      "medianAbsSeconds": 0.05980841064453125,
+      "p95AbsSeconds": 0.16790890502929687,
+      "p99AbsSeconds": 0.21456982421875,
+      "meanSignedSeconds": -0.040785994762211904,
+      "minSignedSeconds": -0.2214810791015625,
+      "maxSignedSeconds": 0.2202091064453125,
+      "countAbove": {
+        "0.1s": 52,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "11 bach-lo": {
+      "count": 201,
+      "maxAbsSeconds": 0.24185931396484375,
+      "medianAbsSeconds": 0.054418212890625,
+      "p95AbsSeconds": 0.165633544921875,
+      "p99AbsSeconds": 0.178824951171875,
+      "meanSignedSeconds": -0.02793940800339426,
+      "minSignedSeconds": -0.24185931396484375,
+      "maxSignedSeconds": 0.2106929931640625,
+      "countAbove": {
+        "0.1s": 46,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "12 thu-phan": {
+      "count": 201,
+      "maxAbsSeconds": 0.24534800720214844,
+      "medianAbsSeconds": 0.057478271484375,
+      "p95AbsSeconds": 0.1536318359375,
+      "p99AbsSeconds": 0.175123291015625,
+      "meanSignedSeconds": -0.018450470796271944,
+      "minSignedSeconds": -0.188097412109375,
+      "maxSignedSeconds": 0.24534800720214844,
+      "countAbove": {
+        "0.1s": 46,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "13 han-lo": {
+      "count": 201,
+      "maxAbsSeconds": 0.239457763671875,
+      "medianAbsSeconds": 0.05634423828125,
+      "p95AbsSeconds": 0.1574603271484375,
+      "p99AbsSeconds": 0.17904052734375,
+      "meanSignedSeconds": -0.011925776804264493,
+      "minSignedSeconds": -0.239457763671875,
+      "maxSignedSeconds": 0.17904052734375,
+      "countAbove": {
+        "0.1s": 47,
+        "0.25s": 0,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "14 suong-giang": {
+      "count": 201,
+      "maxAbsSeconds": 0.27612548828125,
+      "medianAbsSeconds": 0.06024560546875,
+      "p95AbsSeconds": 0.17203741455078125,
+      "p99AbsSeconds": 0.2088544921875,
+      "meanSignedSeconds": -0.003033302995102921,
+      "minSignedSeconds": -0.27612548828125,
+      "maxSignedSeconds": 0.2088544921875,
+      "countAbove": {
+        "0.1s": 51,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "15 lap-dong": {
+      "count": 201,
+      "maxAbsSeconds": 0.2542657470703125,
+      "medianAbsSeconds": 0.061695556640625,
+      "p95AbsSeconds": 0.1890068359375,
+      "p99AbsSeconds": 0.228335205078125,
+      "meanSignedSeconds": 0.00265752553702587,
+      "minSignedSeconds": -0.2219697265625,
+      "maxSignedSeconds": 0.2542657470703125,
+      "countAbove": {
+        "0.1s": 51,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "16 tieu-tuyet": {
+      "count": 201,
+      "maxAbsSeconds": 0.287365234375,
+      "medianAbsSeconds": 0.05925830078125,
+      "p95AbsSeconds": 0.1822001953125,
+      "p99AbsSeconds": 0.235042236328125,
+      "meanSignedSeconds": -0.0020283083607308397,
+      "minSignedSeconds": -0.287365234375,
+      "maxSignedSeconds": 0.244328125,
+      "countAbove": {
+        "0.1s": 53,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "17 dai-tuyet": {
+      "count": 201,
+      "maxAbsSeconds": 0.31759765625,
+      "medianAbsSeconds": 0.0594173583984375,
+      "p95AbsSeconds": 0.1864697265625,
+      "p99AbsSeconds": 0.23794287109375,
+      "meanSignedSeconds": -0.009392812830891769,
+      "minSignedSeconds": -0.31759765625,
+      "maxSignedSeconds": 0.2456666259765625,
+      "countAbove": {
+        "0.1s": 57,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "18 dong-chi": {
+      "count": 201,
+      "maxAbsSeconds": 0.32764306640625,
+      "medianAbsSeconds": 0.0561337890625,
+      "p95AbsSeconds": 0.19075,
+      "p99AbsSeconds": 0.2325576171875,
+      "meanSignedSeconds": -0.01456951549871643,
+      "minSignedSeconds": -0.32764306640625,
+      "maxSignedSeconds": 0.23271728515625,
+      "countAbove": {
+        "0.1s": 61,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "19 tieu-han": {
+      "count": 201,
+      "maxAbsSeconds": 0.2982626953125,
+      "medianAbsSeconds": 0.06215234375,
+      "p95AbsSeconds": 0.1952646484375,
+      "p99AbsSeconds": 0.23431317138671875,
+      "meanSignedSeconds": -0.017400254327859452,
+      "minSignedSeconds": -0.2982626953125,
+      "maxSignedSeconds": 0.2489326934814453,
+      "countAbove": {
+        "0.1s": 65,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "20 dai-han": {
+      "count": 201,
+      "maxAbsSeconds": 0.2897655029296875,
+      "medianAbsSeconds": 0.068130126953125,
+      "p95AbsSeconds": 0.187515380859375,
+      "p99AbsSeconds": 0.22001025390625,
+      "meanSignedSeconds": -0.016740253401039844,
+      "minSignedSeconds": -0.263869140625,
+      "maxSignedSeconds": 0.2897655029296875,
+      "countAbove": {
+        "0.1s": 65,
+        "0.25s": 2,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "21 lap-xuan": {
+      "count": 201,
+      "maxAbsSeconds": 0.3426768035888672,
+      "medianAbsSeconds": 0.071025634765625,
+      "p95AbsSeconds": 0.19082421875,
+      "p99AbsSeconds": 0.2349782028198242,
+      "meanSignedSeconds": -0.021667367904340425,
+      "minSignedSeconds": -0.241076416015625,
+      "maxSignedSeconds": 0.3426768035888672,
+      "countAbove": {
+        "0.1s": 74,
+        "0.25s": 1,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "22 vu-thuy": {
+      "count": 201,
+      "maxAbsSeconds": 0.33003680419921877,
+      "medianAbsSeconds": 0.082572265625,
+      "p95AbsSeconds": 0.2109736328125,
+      "p99AbsSeconds": 0.2489248046875,
+      "meanSignedSeconds": -0.032013665844551946,
+      "minSignedSeconds": -0.26195068359375,
+      "maxSignedSeconds": 0.33003680419921877,
+      "countAbove": {
+        "0.1s": 80,
+        "0.25s": 2,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    },
+    "23 kinh-trap": {
+      "count": 201,
+      "maxAbsSeconds": 0.32508970642089846,
+      "medianAbsSeconds": 0.07754150390625,
+      "p95AbsSeconds": 0.20339306640625,
+      "p99AbsSeconds": 0.2301417236328125,
+      "meanSignedSeconds": -0.03981130496542248,
+      "minSignedSeconds": -0.3213779296875,
+      "maxSignedSeconds": 0.32508970642089846,
+      "countAbove": {
+        "0.1s": 76,
+        "0.25s": 2,
+        "0.5s": 0,
+        "1s": 0,
+        "30s": 0
+      }
+    }
+  },
+  "worst20": [
+    {
+      "year": 1941,
+      "termIndex": 2,
+      "id": "coc-vu",
+      "jie": false,
+      "erfaTtMs": -1852416550629,
+      "jplTtMs": -1852416550252.6729,
+      "deltaSeconds": -0.3763271484375,
+      "erfaCivilIso": "1941-04-20T11:50:24.448Z",
+      "jplCivilIso": "1941-04-20T11:50:24.825Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1941,
+      "termIndex": 0,
+      "id": "xuan-phan",
+      "jie": false,
+      "erfaTtMs": -1855049955621,
+      "jplTtMs": -1855049955256.5166,
+      "deltaSeconds": -0.3644833984375,
+      "erfaCivilIso": "1941-03-21T00:20:19.504Z",
+      "jplCivilIso": "1941-03-21T00:20:19.869Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1941,
+      "termIndex": 3,
+      "id": "lap-ha",
+      "jie": true,
+      "erfaTtMs": -1851083384613,
+      "jplTtMs": -1851083384259.4648,
+      "deltaSeconds": -0.35353515625,
+      "erfaCivilIso": "1941-05-05T22:09:50.440Z",
+      "jplCivilIso": "1941-05-05T22:09:50.794Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 2003,
+      "termIndex": 21,
+      "id": "lap-xuan",
+      "jie": true,
+      "erfaTtMs": 97610784457,
+      "jplTtMs": 97610784114.3232,
+      "deltaSeconds": 0.3426768035888672,
+      "erfaCivilIso": "2003-02-04T06:05:20.273Z",
+      "jplCivilIso": "2003-02-04T06:05:19.931Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1941,
+      "termIndex": 1,
+      "id": "thanh-minh",
+      "jie": true,
+      "erfaTtMs": -1853739279277,
+      "jplTtMs": -1853739278942.7158,
+      "deltaSeconds": -0.3342841796875,
+      "erfaCivilIso": "1941-04-05T04:24:55.824Z",
+      "jplCivilIso": "1941-04-05T04:24:56.159Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 2003,
+      "termIndex": 22,
+      "id": "vu-thuy",
+      "jie": false,
+      "erfaTtMs": 98892077268,
+      "jplTtMs": 98892076937.9632,
+      "deltaSeconds": 0.33003680419921877,
+      "erfaCivilIso": "2003-02-19T02:00:13.084Z",
+      "jplCivilIso": "2003-02-19T02:00:12.754Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1907,
+      "termIndex": 18,
+      "id": "dong-chi",
+      "jie": false,
+      "erfaTtMs": -2904120500673,
+      "jplTtMs": -2904120500345.357,
+      "deltaSeconds": -0.32764306640625,
+      "erfaCivilIso": "1907-12-22T23:51:31.720Z",
+      "jplCivilIso": "1907-12-22T23:51:32.048Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 2003,
+      "termIndex": 23,
+      "id": "kinh-trap",
+      "jie": true,
+      "erfaTtMs": 100181157512,
+      "jplTtMs": 100181157186.9103,
+      "deltaSeconds": 0.32508970642089846,
+      "erfaCivilIso": "2003-03-06T00:04:53.328Z",
+      "jplCivilIso": "2003-03-06T00:04:53.003Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1941,
+      "termIndex": 23,
+      "id": "kinh-trap",
+      "jie": true,
+      "erfaTtMs": -1856350171051,
+      "jplTtMs": -1856350170729.622,
+      "deltaSeconds": -0.3213779296875,
+      "erfaCivilIso": "1941-03-05T23:10:04.098Z",
+      "jplCivilIso": "1941-03-05T23:10:04.420Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1907,
+      "termIndex": 17,
+      "id": "dai-tuyet",
+      "jie": true,
+      "erfaTtMs": -2905394426489,
+      "jplTtMs": -2905394426171.4023,
+      "deltaSeconds": -0.31759765625,
+      "erfaCivilIso": "1907-12-08T05:59:25.957Z",
+      "jplCivilIso": "1907-12-08T05:59:26.275Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1941,
+      "termIndex": 4,
+      "id": "tieu-man",
+      "jie": false,
+      "erfaTtMs": -1849739807635,
+      "jplTtMs": -1849739807319.237,
+      "deltaSeconds": -0.315762939453125,
+      "erfaCivilIso": "1941-05-21T11:22:47.394Z",
+      "jplCivilIso": "1941-05-21T11:22:47.710Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1976,
+      "termIndex": 4,
+      "id": "tieu-man",
+      "jie": false,
+      "erfaTtMs": -745249088592,
+      "jplTtMs": -745249088284.1321,
+      "deltaSeconds": -0.307867919921875,
+      "erfaCivilIso": "1976-05-20T22:21:04.224Z",
+      "jplCivilIso": "1976-05-20T22:21:04.532Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1988,
+      "termIndex": 3,
+      "id": "lap-ha",
+      "jie": true,
+      "erfaTtMs": -367909041033,
+      "jplTtMs": -367909040726.1339,
+      "deltaSeconds": -0.3068660888671875,
+      "erfaCivilIso": "1988-05-05T07:01:42.783Z",
+      "jplCivilIso": "1988-05-05T07:01:43.090Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1988,
+      "termIndex": 2,
+      "id": "coc-vu",
+      "jie": false,
+      "erfaTtMs": -369242057790,
+      "jplTtMs": -369242057488.0547,
+      "deltaSeconds": -0.3019453125,
+      "erfaCivilIso": "1988-04-19T20:44:46.026Z",
+      "jplCivilIso": "1988-04-19T20:44:46.328Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 2020,
+      "termIndex": 5,
+      "id": "mang-chung",
+      "jie": true,
+      "erfaTtMs": 644605174778,
+      "jplTtMs": 644605175076.4727,
+      "deltaSeconds": -0.29847265625,
+      "erfaCivilIso": "2020-06-05T04:58:25.594Z",
+      "jplCivilIso": "2020-06-05T04:58:25.893Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1908,
+      "termIndex": 19,
+      "id": "tieu-han",
+      "jie": true,
+      "erfaTtMs": -2902849125583,
+      "jplTtMs": -2902849125284.7373,
+      "deltaSeconds": -0.2982626953125,
+      "erfaCivilIso": "1908-01-06T17:01:06.756Z",
+      "jplCivilIso": "1908-01-06T17:01:07.055Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1976,
+      "termIndex": 5,
+      "id": "mang-chung",
+      "jie": true,
+      "erfaTtMs": -743898479984,
+      "jplTtMs": -743898479686.4957,
+      "deltaSeconds": -0.2975042724609375,
+      "erfaCivilIso": "1976-06-05T13:31:12.832Z",
+      "jplCivilIso": "1976-06-05T13:31:13.130Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 2003,
+      "termIndex": 20,
+      "id": "dai-han",
+      "jie": false,
+      "erfaTtMs": 96335618963,
+      "jplTtMs": 96335618673.2345,
+      "deltaSeconds": 0.2897655029296875,
+      "erfaCivilIso": "2003-01-20T11:52:34.779Z",
+      "jplCivilIso": "2003-01-20T11:52:34.490Z",
+      "clockRegime": "UTC_LEAP_HISTORY"
+    },
+    {
+      "year": 1907,
+      "termIndex": 16,
+      "id": "tieu-tuyet",
+      "jie": false,
+      "erfaTtMs": -2906672869495,
+      "jplTtMs": -2906672869207.635,
+      "deltaSeconds": -0.287365234375,
+      "erfaCivilIso": "1907-11-23T10:52:03.004Z",
+      "jplCivilIso": "1907-11-23T10:52:03.292Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    },
+    {
+      "year": 1906,
+      "termIndex": 2,
+      "id": "coc-vu",
+      "jie": false,
+      "erfaTtMs": -2956908044679,
+      "jplTtMs": -2956908044392.0938,
+      "deltaSeconds": -0.28690625,
+      "erfaCivilIso": "1906-04-21T00:39:09.887Z",
+      "jplCivilIso": "1906-04-21T00:39:10.174Z",
+      "clockRegime": "PRE1972_MODELED_UT1"
+    }
+  ],
+  "civilDateDisagreementsCommonClock": {
+    "UTC": {
+      "count": 0,
+      "cases": []
+    },
+    "UTC+7": {
+      "count": 0,
+      "cases": []
+    },
+    "UTC+8": {
+      "count": 0,
+      "cases": []
+    }
+  },
+  "verdict": "REFERENCE_ACCURACY_PASS"
+}

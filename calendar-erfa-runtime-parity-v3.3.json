@@ -1,0 +1,109 @@
+{
+  "phase": "3B.4.3",
+  "model": "hana-erfa-solar-term@1.0.0-candidate.3b43",
+  "comparedFields": [
+    "year",
+    "termIndex",
+    "id (name)",
+    "targetLongitudeDeg",
+    "canonical TT integer ms",
+    "clock-v1 civil epoch ms",
+    "ISO string (3 fractional digits)",
+    "clock regime",
+    "clock policy id"
+  ],
+  "rawFloatingPointCompared": false,
+  "rows": 4872,
+  "coverage": "1899–2101 (4,824 supported crossings 1900–2100 + 48 padding)",
+  "nodeDigestSha256": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+  "runtimes": [
+    {
+      "runtime": "node v23.7.0",
+      "context": "module",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true
+    },
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "desktop / main thread",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true,
+      "mismatches": []
+    },
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "desktop / module worker",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "exactEqualToNode": true
+    },
+    {
+      "runtime": "firefox 155.0",
+      "context": "desktop / main thread",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true,
+      "mismatches": []
+    },
+    {
+      "runtime": "firefox 155.0",
+      "context": "desktop / module worker",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "exactEqualToNode": true
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "desktop / main thread",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true,
+      "mismatches": []
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "desktop / module worker",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "exactEqualToNode": true
+    },
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "mobile Pixel 7 emulation, 4x CPU throttle / main thread",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true,
+      "mismatches": []
+    },
+    {
+      "runtime": "chromium 153.0.8010.12",
+      "context": "mobile Pixel 7 emulation, 4x CPU throttle / module worker",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "exactEqualToNode": true
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "mobile iPhone 14 emulation / main thread",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "count": 4872,
+      "exactEqualToNode": true,
+      "mismatches": []
+    },
+    {
+      "runtime": "webkit 26.6",
+      "context": "mobile iPhone 14 emulation / module worker",
+      "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+      "exactEqualToNode": true
+    }
+  ],
+  "allExactlyEqual": true,
+  "host": {
+    "platform": "darwin 25.6.0 arm64",
+    "cpu": "Apple M4",
+    "cores": 10,
+    "memoryBytes": 17179869184,
+    "node": "v23.7.0",
+    "playwright": "1.63.0"
+  },
+  "physicalDevices": "UNVERIFIED_DEVICE_GATE: no physical Safari/iOS or Android device was available; WebKit and mobile results are desktop engines with device emulation.",
+  "candidateDataset": "tasks/calendar-audit/erfa-foundation-v3.3/fixtures/erfa-solar-term-candidate-v3.3.tsv"
+}

@@ -1,0 +1,311 @@
+{
+  "csp": "default-src 'none'; script-src 'self'; worker-src 'self'; connect-src 'self'; style-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  "bundle": {
+    "bundler": "rolldown rolldown v1.2.9",
+    "entry": "shared/astronomy/erfa/index.ts",
+    "unminifiedBytes": 138537,
+    "minifiedBytes": 108407,
+    "gzipBytes": 47293,
+    "brotliBytes": 39089,
+    "minifiedSha256": "c096c839eab61c3a5d9d4817fd1eae7d05537f9d50772f08f8a15a60c1d39c88",
+    "deterministicRebuild": true,
+    "externalImports": [],
+    "dynamicCodeOrNetwork": {
+      "eval": false,
+      "newFunction": false,
+      "fetch": false,
+      "xmlHttpRequest": false,
+      "importScripts": false,
+      "dynamicImport": false
+    },
+    "domGlobals": {
+      "window": false,
+      "document": false,
+      "localStorage": false
+    }
+  },
+  "runs": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "contextOptions": "desktop",
+      "loadToReadyMs": 42,
+      "cspViolations": [],
+      "consoleErrors": [],
+      "serviceWorkerRegistered": true,
+      "serviceWorkerControlling": true,
+      "offline": {
+        "reload": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "newPageGoto": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "computeWhileOfflineOnLoadedPage": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "networkRequestsWhileOffline": 0
+      },
+      "mainEqual": true,
+      "workerEqual": true
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "contextOptions": "desktop",
+      "loadToReadyMs": 129,
+      "cspViolations": [],
+      "consoleErrors": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked the loading of a resource (img-src) at http://localhost:63058/favicon.ico because it violates the following directive: “img-src 'none'”\" {file: \"resource:///modules/FaviconLoader.sys.mjs\" line: 229}]",
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked the loading of a resource (img-src) at http://localhost:63058/favicon.ico because it violates the following directive: “img-src 'none'”\" {file: \"resource:///modules/FaviconLoader.sys.mjs\" line: 229}]",
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked the loading of a resource (img-src) at http://localhost:63058/favicon.ico because it violates the following directive: “img-src 'none'”\" {file: \"resource:///modules/FaviconLoader.sys.mjs\" line: 229}]"
+      ],
+      "serviceWorkerRegistered": true,
+      "serviceWorkerControlling": true,
+      "offline": {
+        "reload": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "newPageGoto": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "computeWhileOfflineOnLoadedPage": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "networkRequestsWhileOffline": 3
+      },
+      "mainEqual": true,
+      "workerEqual": true
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "contextOptions": "desktop",
+      "loadToReadyMs": 48,
+      "cspViolations": [],
+      "consoleErrors": [
+        "Failed to load resource: WebKit encountered an internal error"
+      ],
+      "serviceWorkerRegistered": true,
+      "serviceWorkerControlling": true,
+      "offline": {
+        "reload": {
+          "ok": false,
+          "error": "Error: page.reload: WebKit encountered an internal error"
+        },
+        "newPageGoto": {
+          "ok": false,
+          "error": "Error: page.goto: WebKit encountered an internal error"
+        },
+        "computeWhileOfflineOnLoadedPage": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "networkRequestsWhileOffline": 1
+      },
+      "mainEqual": true,
+      "workerEqual": true
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "contextOptions": "mobile Pixel 7 emulation, 4x CPU throttle",
+      "cpuThrottle": 4,
+      "loadToReadyMs": 59,
+      "cspViolations": [],
+      "consoleErrors": [],
+      "serviceWorkerRegistered": true,
+      "serviceWorkerControlling": true,
+      "offline": {
+        "reload": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "newPageGoto": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "computeWhileOfflineOnLoadedPage": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "networkRequestsWhileOffline": 0
+      },
+      "mainEqual": true,
+      "workerEqual": true
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "contextOptions": "mobile iPhone 14 emulation",
+      "loadToReadyMs": 57,
+      "cspViolations": [],
+      "consoleErrors": [
+        "Failed to load resource: WebKit encountered an internal error"
+      ],
+      "serviceWorkerRegistered": true,
+      "serviceWorkerControlling": true,
+      "offline": {
+        "reload": {
+          "ok": false,
+          "error": "Error: page.reload: WebKit encountered an internal error"
+        },
+        "newPageGoto": {
+          "ok": false,
+          "error": "Error: page.goto: WebKit encountered an internal error"
+        },
+        "computeWhileOfflineOnLoadedPage": {
+          "ok": true,
+          "digestEqualToNode": true
+        },
+        "networkRequestsWhileOffline": 1
+      },
+      "mainEqual": true,
+      "workerEqual": true
+    }
+  ],
+  "offlineControls": [
+    {
+      "browser": "chromium",
+      "reloadWithoutServiceWorker": "FAILED_AS_EXPECTED",
+      "error": "Error: page.reload: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "browser": "firefox",
+      "reloadWithoutServiceWorker": "FAILED_AS_EXPECTED",
+      "error": "Error: page.reload: NS_ERROR_OFFLINE"
+    },
+    {
+      "browser": "webkit",
+      "reloadWithoutServiceWorker": "FAILED_AS_EXPECTED",
+      "error": "Error: page.reload: WebKit encountered an internal error"
+    }
+  ],
+  "offlineInvestigation": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "mode": "setOffline",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "newPageGoto": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "serverRequestsAfterOffline": []
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "mode": "serverShutdown",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "newPageGoto": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "serverRequestsAfterOffline": []
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "mode": "setOffline",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "newPageGoto": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "serverRequestsAfterOffline": [
+        "/sw.js",
+        "/sw.js"
+      ]
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "mode": "serverShutdown",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "newPageGoto": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "serverRequestsAfterOffline": []
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "mode": "setOffline",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": false,
+        "error": "Error: page.reload: WebKit encountered an internal error"
+      },
+      "newPageGoto": {
+        "ok": false,
+        "error": "Error: page.goto: WebKit encountered an internal error"
+      },
+      "serverRequestsAfterOffline": []
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "mode": "serverShutdown",
+      "serviceWorkerRegistered": true,
+      "controlledBeforeOffline": true,
+      "reload": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "newPageGoto": {
+        "ok": true,
+        "count": 4872,
+        "digest": "80a24dae71e8abe8ebfa46a6bd237166b0cc972202dac2a5283a8855722fe5cc",
+        "controlled": true
+      },
+      "serverRequestsAfterOffline": []
+    }
+  ]
+}

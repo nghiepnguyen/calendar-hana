@@ -1,0 +1,9 @@
+{
+  "typecheck": { "current": "PASS (tsc -b + functions typecheck, exit 0)", "baseline": "PASS" },
+  "lint": { "current": "PASS (oxlint exit 0, 0 warnings after literal normalisation)", "baseline": "PASS (0 warnings)" },
+  "build": { "current": "PASS (tsc -b && vite build, PWA injectManifest, 34 precache entries)", "baseline": "not re-run (production code unchanged)" },
+  "formatCheck": { "current": "FAIL — pre-existing: same file set as baseline (610 files), no new file flagged after moving impact rows to TSV", "baseline": "FAIL (610 files)", "classification": "PRE_EXISTING_EXPECTED_FAILURE" },
+  "foundationTests": "23/23 PASS",
+  "firebaseEmulatorIntegration": "NOT_RUN (production code unchanged; requires emulator)",
+  "playwrightE2E": "NOT_RUN (app unchanged; engine not wired)"
+}
