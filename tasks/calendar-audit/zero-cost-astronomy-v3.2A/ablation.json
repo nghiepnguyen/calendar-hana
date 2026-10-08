@@ -1,0 +1,94 @@
+{
+  "classification": "NON_AUTHORITATIVE_ASTRONOMY_EVALUATION",
+  "note": "Controlled omissions diagnose correction contribution; they are not recommended models or isolated proof of orbital error.",
+  "rows": [
+    {
+      "year": 1938,
+      "longitude": 180,
+      "tt": 2429165.208232062,
+      "referenceResidualDegrees": 1.1516476661199704e-10,
+      "baselineTT": 2429165.208231435,
+      "deltaSeconds": -0.05415380001068115,
+      "omitLightTimeDeltaFromBaselineSeconds": -0.237978994846344,
+      "omitAberrationDeltaFromBaselineSeconds": -500.37197917699814,
+      "omitNutationDeltaFromBaselineSeconds": 325.4109889268875
+    },
+    {
+      "year": 1946,
+      "longitude": 255,
+      "tt": 2432162.208783364,
+      "referenceResidualDegrees": 1.5413093024108093e-10,
+      "baselineTT": 2432162.20878169,
+      "deltaSeconds": -0.14463812112808228,
+      "omitLightTimeDeltaFromBaselineSeconds": 0.12399852275848389,
+      "omitAberrationDeltaFromBaselineSeconds": -491.61399006843567,
+      "omitNutationDeltaFromBaselineSeconds": -406.14098757505417
+    },
+    {
+      "year": 2003,
+      "longitude": 330,
+      "tt": 2452689.584223819,
+      "referenceResidualDegrees": -5.3887561080046e-11,
+      "baselineTT": 2452689.584227639,
+      "deltaSeconds": 0.3300324082374573,
+      "omitLightTimeDeltaFromBaselineSeconds": -0.20498782396316528,
+      "omitAberrationDeltaFromBaselineSeconds": -493.0209830403328,
+      "omitNutationDeltaFromBaselineSeconds": -334.95799005031586
+    },
+    {
+      "year": 2014,
+      "longitude": 345,
+      "tt": 2456722.169016169,
+      "referenceResidualDegrees": 1.602984411874786e-11,
+      "baselineTT": 2456722.1690152893,
+      "deltaSeconds": -0.0760003924369812,
+      "omitLightTimeDeltaFromBaselineSeconds": -0.12601017951965332,
+      "omitAberrationDeltaFromBaselineSeconds": -494.8379918932915,
+      "omitNutationDeltaFromBaselineSeconds": 232.66001343727112
+    },
+    {
+      "year": 2024,
+      "longitude": 315,
+      "tt": 2460344.8529719505,
+      "referenceResidualDegrees": -2.086153472191654e-11,
+      "baselineTT": 2460344.8529715044,
+      "deltaSeconds": -0.03854334354400635,
+      "omitLightTimeDeltaFromBaselineSeconds": 0.03202557563781738,
+      "omitAberrationDeltaFromBaselineSeconds": -491.8859660625458,
+      "omitNutationDeltaFromBaselineSeconds": -104.19899225234985
+    },
+    {
+      "year": 2084,
+      "longitude": 0,
+      "tt": 2482304.16801252,
+      "referenceResidualDegrees": 1.681712546997005e-10,
+      "baselineTT": 2482304.1680117245,
+      "deltaSeconds": -0.06871819496154785,
+      "omitLightTimeDeltaFromBaselineSeconds": 0.102996826171875,
+      "omitAberrationDeltaFromBaselineSeconds": -496.89499139785767,
+      "omitNutationDeltaFromBaselineSeconds": 376.4029875397682
+    },
+    {
+      "year": 2086,
+      "longitude": 45,
+      "tt": 2483080.50102654,
+      "referenceResidualDegrees": -6.573941391252447e-11,
+      "baselineTT": 2483080.501027361,
+      "deltaSeconds": 0.07093101739883423,
+      "omitLightTimeDeltaFromBaselineSeconds": 0.03299117088317871,
+      "omitAberrationDeltaFromBaselineSeconds": -503.1269833445549,
+      "omitNutationDeltaFromBaselineSeconds": 389.2210230231285
+    },
+    {
+      "year": 2098,
+      "longitude": 315,
+      "tt": 2487372.8139136243,
+      "referenceResidualDegrees": 9.254108590539545e-11,
+      "baselineTT": 2487372.8139137616,
+      "deltaSeconds": 0.011868774890899658,
+      "omitLightTimeDeltaFromBaselineSeconds": -0.23500174283981323,
+      "omitAberrationDeltaFromBaselineSeconds": -491.5700152516365,
+      "omitNutationDeltaFromBaselineSeconds": -149.39198791980743
+    }
+  ]
+}

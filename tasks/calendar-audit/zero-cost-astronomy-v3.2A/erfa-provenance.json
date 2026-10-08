@@ -1,0 +1,35 @@
+{
+  "upstream": "https://github.com/liberfa/erfa/tree/v2.0.1",
+  "archiveSha256": "d5469fbd0b212b3c7270c1da15c9bd82f37da9218fc89627f98283d27b416cbf",
+  "sourceHashes": {
+    "epv00.c": "4568b28026cd83800b4a4f66d44f8f3451d7306f1c3fcf7e4cd6bfeb206dde57",
+    "nut00b.c": "a5246d525e987eb587bbe786b2846160e01be85b5d12af573870b89235695f49",
+    "pfw06.c": "085f49861026fab98633d8479795090b3278a0d246a938ebdf10fde326ef1987",
+    "obl06.c": "550260874d5e5fa3be77296b85b92c54c726fee6fbb1bb44748d04c17ffb37c2",
+    "fw2m.c": "480d1ae7780566980b8f80f4c6daa2be330a80e99861d892dc5a9f7b11da47c0",
+    "ab.c": "ff4bac5fc8a2ccb5d1f63404c96734fd125069382c7f7a29add598721a122527"
+  },
+  "coefficientTerms": {
+    "e0x": 501,
+    "e0y": 501,
+    "e0z": 137,
+    "e1x": 79,
+    "e1y": 80,
+    "e1z": 12,
+    "e2x": 5,
+    "e2y": 5,
+    "e2z": 3,
+    "s0x": 212,
+    "s0y": 213,
+    "s0z": 69,
+    "s1x": 50,
+    "s1y": 50,
+    "s1z": 14,
+    "s2x": 9,
+    "s2y": 9,
+    "s2z": 2
+  },
+  "nutationTerms": 77,
+  "license": "BSD-3-Clause/ERFA permissive redistribution/modification with notices",
+  "classification": "NON_AUTHORITATIVE_ASTRONOMY_EVALUATION"
+}

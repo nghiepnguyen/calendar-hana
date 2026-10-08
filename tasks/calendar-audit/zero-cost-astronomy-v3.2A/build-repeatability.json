@@ -1,0 +1,15 @@
+{
+  "sameEnvironmentRebuildByteIdentical": true,
+  "viteVersion": "8.3.0",
+  "before": {
+    "AE": "de04e17e347edb7cf508559c791767fb38e00206edf9f334e8b82ad611d6640c",
+    "FULL_VSOP87": "d6bd21ac77f0e6381e7fa867d8836bf76c7d2db7f5d371b16b4afadd725257d9",
+    "OPEN_HIGH_PRECISION": "35a42c0ec6fa4defb9c53d375bf7d3393f9a32a0b1d270c1140d43f728f164f3"
+  },
+  "after": {
+    "AE": "de04e17e347edb7cf508559c791767fb38e00206edf9f334e8b82ad611d6640c",
+    "FULL_VSOP87": "d6bd21ac77f0e6381e7fa867d8836bf76c7d2db7f5d371b16b4afadd725257d9",
+    "OPEN_HIGH_PRECISION": "35a42c0ec6fa4defb9c53d375bf7d3393f9a32a0b1d270c1140d43f728f164f3"
+  },
+  "note": "Same installed Node/Vite/lock and audit sources; not cross-toolchain proof."
+}

@@ -1,0 +1,159 @@
+{
+  "classification": "NON_AUTHORITATIVE_ASTRONOMY_EVALUATION",
+  "environment": "Desktop macOS local uncompressed files; single run; coarse timers and memory are not per-engine allocations",
+  "platforms": [
+    {
+      "name": "chromium",
+      "candidates": {
+        "AE": {
+          "initMs": 10.900000005960464,
+          "oneRootMs": 0.699999988079071,
+          "annual24Ms": 4.100000023841858,
+          "all4824Ms": 40,
+          "warmAnnual24Ms": 0.19999998807907104,
+          "heapUsedBytes": 10000000,
+          "digest": "c19350b519ce802d0399f8b05d09d38d0b56e23e9b91d7b31a4819e194aebb96",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0.00004023313522338867,
+          "offlineReload": true
+        },
+        "FULL_VSOP87": {
+          "initMs": 3.7999999821186066,
+          "oneRootMs": 2.800000011920929,
+          "annual24Ms": 24.30000001192093,
+          "all4824Ms": 4625.399999976158,
+          "warmAnnual24Ms": 22.5,
+          "heapUsedBytes": 10000000,
+          "digest": "a8d751e9ff5561ef268fa159e2aa52b97ffe9d40cca601c60c2f19a3f29a74fc",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": true
+        },
+        "OPEN_HIGH_PRECISION": {
+          "initMs": 2.699999988079071,
+          "oneRootMs": 4,
+          "annual24Ms": 35.10000002384186,
+          "all4824Ms": 6357.699999988079,
+          "warmAnnual24Ms": 31.400000005960464,
+          "heapUsedBytes": 10000000,
+          "digest": "b0bf1a143466dcc5bb92ffdff18e98d977e76b884bbb758044510e3e74254640",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": true
+        }
+      },
+      "version": "153.0.8010.12",
+      "missingAsset": "Error: ASSET_MISSING",
+      "corruptAsset": "Error: ASSET_CORRUPT"
+    },
+    {
+      "name": "firefox",
+      "candidates": {
+        "AE": {
+          "initMs": 6,
+          "oneRootMs": 0,
+          "annual24Ms": 2,
+          "all4824Ms": 55,
+          "warmAnnual24Ms": 0,
+          "heapUsedBytes": null,
+          "digest": "c19350b519ce802d0399f8b05d09d38d0b56e23e9b91d7b31a4819e194aebb96",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": true
+        },
+        "FULL_VSOP87": {
+          "initMs": 7,
+          "oneRootMs": 2,
+          "annual24Ms": 24,
+          "all4824Ms": 4613,
+          "warmAnnual24Ms": 23,
+          "heapUsedBytes": null,
+          "digest": "a8d751e9ff5561ef268fa159e2aa52b97ffe9d40cca601c60c2f19a3f29a74fc",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": true
+        },
+        "OPEN_HIGH_PRECISION": {
+          "initMs": 4,
+          "oneRootMs": 4,
+          "annual24Ms": 54,
+          "all4824Ms": 10443,
+          "warmAnnual24Ms": 54,
+          "heapUsedBytes": null,
+          "digest": "b0bf1a143466dcc5bb92ffdff18e98d977e76b884bbb758044510e3e74254640",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": true
+        }
+      },
+      "version": "155.0",
+      "missingAsset": "Error: ASSET_MISSING",
+      "corruptAsset": "Error: ASSET_CORRUPT"
+    },
+    {
+      "name": "webkit",
+      "candidates": {
+        "AE": {
+          "initMs": 8,
+          "oneRootMs": 0,
+          "annual24Ms": 3,
+          "all4824Ms": 43,
+          "warmAnnual24Ms": 1,
+          "heapUsedBytes": null,
+          "digest": "c19350b519ce802d0399f8b05d09d38d0b56e23e9b91d7b31a4819e194aebb96",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0.00004023313522338867,
+          "offlineReload": false,
+          "offlineError": "Error: page.reload: WebKit encountered an internal error\nCall log:\n\u001b[2m  - waiting for navigation until \"domcontentloaded\"\u001b[22m\n"
+        },
+        "FULL_VSOP87": {
+          "initMs": 6,
+          "oneRootMs": 7,
+          "annual24Ms": 129,
+          "all4824Ms": 25168,
+          "warmAnnual24Ms": 122,
+          "heapUsedBytes": null,
+          "digest": "a8d751e9ff5561ef268fa159e2aa52b97ffe9d40cca601c60c2f19a3f29a74fc",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": false,
+          "offlineError": "Error: page.reload: WebKit encountered an internal error\nCall log:\n\u001b[2m  - waiting for navigation until \"domcontentloaded\"\u001b[22m\n"
+        },
+        "OPEN_HIGH_PRECISION": {
+          "initMs": 4,
+          "oneRootMs": 3,
+          "annual24Ms": 35,
+          "all4824Ms": 5680,
+          "warmAnnual24Ms": 29,
+          "heapUsedBytes": null,
+          "digest": "b0bf1a143466dcc5bb92ffdff18e98d977e76b884bbb758044510e3e74254640",
+          "count": 4824,
+          "exactNodeSerializationMismatchCount": 0,
+          "serializationMismatches": [],
+          "maxTTNodeDifferenceSeconds": 0,
+          "offlineReload": false,
+          "offlineError": "Error: page.reload: WebKit encountered an internal error\nCall log:\n\u001b[2m  - waiting for navigation until \"domcontentloaded\"\u001b[22m\n"
+        }
+      },
+      "version": "26.6",
+      "missingAsset": "Error: ASSET_MISSING",
+      "corruptAsset": "Error: ASSET_CORRUPT"
+    }
+  ]
+}

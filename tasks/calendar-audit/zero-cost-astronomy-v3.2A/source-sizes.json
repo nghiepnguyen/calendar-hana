@@ -1,0 +1,30 @@
+{
+  "erfaCoefficients": {
+    "file": "tasks/calendar-audit/zero-cost-astronomy-v3.2A/erfa-coefficients.mjs",
+    "rawBytes": 100297,
+    "gzipBytes": 41255,
+    "brotliBytes": 33960,
+    "sha256": "7535bb38b0557d93568a62963f5beb6bedcd35d803035e42c5714e6205fd1542"
+  },
+  "erfaAlgorithm": {
+    "file": "tasks/calendar-audit/zero-cost-astronomy-v3.2A/erfa-solar.mjs",
+    "rawBytes": 4031,
+    "gzipBytes": 1733,
+    "brotliBytes": 1533,
+    "sha256": "2457d1a0752bcc540cc553ed6efe5bd893275d66ebad0da6bd77a96f0f982a91"
+  },
+  "fullVsopCoefficients": {
+    "file": "/tmp/zero342a-astronomia/package/data/vsop87Dearth.js",
+    "rawBytes": 119911,
+    "gzipBytes": 38970,
+    "brotliBytes": 29892,
+    "sha256": "a077bbb80bc2f4dba5682dec2357b642a4643ac075451d1e86a39b1ea9a7496a"
+  },
+  "aeEsmCodeAndCoefficients": {
+    "file": "node_modules/astronomy-engine/esm/astronomy.js",
+    "rawBytes": 412025,
+    "gzipBytes": 108269,
+    "brotliBytes": 85147,
+    "sha256": "068f1445ed0c636c94818fe6d20d7d125120e605e0bab9fc4675c3d531be5ad7"
+  }
+}

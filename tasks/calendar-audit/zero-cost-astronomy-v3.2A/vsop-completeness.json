@@ -1,0 +1,35 @@
+{
+  "variant": "VSOP87D",
+  "earthTermCounts": {
+    "L": {
+      "0": 559,
+      "1": 341,
+      "2": 142,
+      "3": 22,
+      "4": 11,
+      "5": 5
+    },
+    "B": {
+      "0": 184,
+      "1": 99,
+      "2": 49,
+      "3": 11,
+      "4": 5
+    },
+    "R": {
+      "0": 526,
+      "1": 292,
+      "2": 139,
+      "3": 27,
+      "4": 10,
+      "5": 3
+    }
+  },
+  "originalCoefficientCount": 2425,
+  "complete": true,
+  "truncated": false,
+  "allTripletsMatchOriginal": true,
+  "cdsSha256": "8b160c859136d467f2be7fc29efa8a9652e95516dfbde00e4c739d7ddc90ca91",
+  "astronomiaDataSha256": "a077bbb80bc2f4dba5682dec2357b642a4643ac075451d1e86a39b1ea9a7496a",
+  "source": "https://cdsarc.cds.unistra.fr/ftp/VI/81/VSOP87D.ear"
+}

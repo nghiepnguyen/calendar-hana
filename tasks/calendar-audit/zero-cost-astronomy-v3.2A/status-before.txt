@@ -1,0 +1,78 @@
+ M golden-v3/group-b/manifest.json
+ M graphify-out/.rebuild.lock
+ M graphify-out/GRAPH_REPORT.md
+ M graphify-out/graph.html
+ M graphify-out/graph.json
+ M graphify-out/manifest.json
+ M shared/lunar/index.ts
+?? calendar-astronomy-authority-decision-v3.2.md
+?? calendar-astronomy-authority-evidence-v3.2.json
+?? calendar-astronomy-authority-migration-gate-v3.2.md
+?? calendar-astronomy-dependency-map-v3.1.md
+?? calendar-astronomy-model-comparison-v3.1.json
+?? calendar-astronomy-model-decision-v3.1.md
+?? calendar-group-b-golden-freeze-v3.1.md
+?? calendar-group-b-implementation-report-v3.1.md
+?? calendar-group-b-legacy-diff-v3.1.json
+?? calendar-group-b-mutation-results-v3.1.json
+?? calendar-group-b-regression-report-v3.1.md
+?? calendar-group-b-test-results-v3.1.json
+?? graphify-out/cache/ast/0dcfba43c20f7bf9c9676f750bf17ce25f3828df2e3f7d0c846eb11f9ed84f0a.json
+?? graphify-out/cache/ast/17fff49167db6a61b146b99f050b9d75834a8e3e58cf62e1eed52942fc2bb4ac.json
+?? graphify-out/cache/ast/19a96cf608f20c8ae6f459440a18793c1e48d3e19d1567d4da1c7d9b7d038f7e.json
+?? graphify-out/cache/ast/21b0ef682b1ec9e464490a4ecf3e1b326b550b9de08f36189555fba6cc720711.json
+?? graphify-out/cache/ast/2700678097e87fa39fd6036c3cdf50fc1c2b041629c55196248357703573528c.json
+?? graphify-out/cache/ast/2a91da07d295d732255749c21fca32a8f97b0bb07f11d1738966e2a62a2b508e.json
+?? graphify-out/cache/ast/3005b8759eeca26d4ccad75ab51676c534e5174efda6fdc2402c081a3f9156d8.json
+?? graphify-out/cache/ast/320546262bbb4f5d1b4aa31c00cd22a3e86f075a305e83fdb46bb1f90a4fdbbc.json
+?? graphify-out/cache/ast/340bb6ad6829d1229938755049435d1412502bb123885bc83ceb3fd58144e4e0.json
+?? graphify-out/cache/ast/44ffa6cb7fc40aabca10a216f52bf919515882b55983070a2964ab9f958775a0.json
+?? graphify-out/cache/ast/495cda2ebf36214b1b5f20bd0b6f0272e73201eb62df4d9ef9200ac0701d2b82.json
+?? graphify-out/cache/ast/5174dbd4a7002775a8019293ec0ce95e059e866856eddde47fb9ff16aafd1c98.json
+?? graphify-out/cache/ast/5429d1a8d557976cf8192ee7fc2a09c031511c0e109e77dc780ff07e725d723e.json
+?? graphify-out/cache/ast/55992c77b50ac6f869454e4057c143d873256bc1c6438c8b3a228f7b4346fd5b.json
+?? graphify-out/cache/ast/5d0a31c632cad3b2eadb2047a0089ea4139a9ec8162ba449ad43a92ff868bb76.json
+?? graphify-out/cache/ast/5d414f516b89136acdc28ae887f6b5e585b9bc14deee11247d520dceccd66574.json
+?? graphify-out/cache/ast/71403763264012e1988eb03bf54da4295924710ffa4f64bf7e5e60e5b81607b6.json
+?? graphify-out/cache/ast/7de6d6b1ffae34b89e757dbb5754b37e35b58fca2e9c83e836bd46b309da95c2.json
+?? graphify-out/cache/ast/893240b71722ea5ca29f1be940796feddc546ae9a2e57c2aacc97f6ac504bdbb.json
+?? graphify-out/cache/ast/89faeb516e55c65cdc95056813161798d42b8d8b06bc3d866995d4fc454fe807.json
+?? graphify-out/cache/ast/91c056e284c0d470917325e50ba4a053420e825b947173fd3d262bec10003ec6.json
+?? graphify-out/cache/ast/93c6f111e88a6fb271dd220f837817315d8e96fbf70f299d07bb608a60fafbfa.json
+?? graphify-out/cache/ast/93d0a1cb404498407516adf443d726814c8c60f7ae47436db3679b325e2254d1.json
+?? graphify-out/cache/ast/954a6ad3bc4f834c3c599914a94b0fa38bca386fecd509ed18b913afe0eeb7f5.json
+?? graphify-out/cache/ast/95d4c57cc29c88285d2d97ecb235ecc46267f3fd6f654d2e549f0b55545bda2d.json
+?? graphify-out/cache/ast/963ad5a0652489dd2f6fc312db5e573613c0bf2944dd0f6eda96ecdd02b2fb86.json
+?? graphify-out/cache/ast/9a1da8116580838adca587460c3b6c5efba9205ddfedcf4eadde1f6cb51f939c.json
+?? graphify-out/cache/ast/9a8bac7067b2c1b27895a4948577c4b33a69e67201e118f656a2ec3445fcad34.json
+?? graphify-out/cache/ast/9c8949c05db0e5bb1fd9857962d6c3e4f62ab0957a384fd366c8fc8c5e1f4eea.json
+?? graphify-out/cache/ast/9da649af136070b974e91e7bf0d1b342cccd488cd92e3021080f135cfb9b5019.json
+?? graphify-out/cache/ast/a0c1bdd28fc0ce799ad95cb442533b6b1d5c3740c446e4bf0efd82c8e2f82ede.json
+?? graphify-out/cache/ast/a89ba33a3f83a2a91fd64daef195278190ae099319ae9df9077f9ff4be7e1c9c.json
+?? graphify-out/cache/ast/aac2b62dc44f89ad59b4bc93206394f9a11fc1c3f51ac2e861f4733d5e5e53ff.json
+?? graphify-out/cache/ast/b3c2cd4a2cfbeeab08b6f19671acd9ced2e42fc39c484266bb4e9ef8c4745a49.json
+?? graphify-out/cache/ast/bbd05a65751ad12cb5ef00bbec5d2b14fd3e931fff811cd1bc93b3cf04fd2697.json
+?? graphify-out/cache/ast/bcde72d1520cde9f9a8fb91d563695739bcc1053e2a9b73b4796c2ba9db8641f.json
+?? graphify-out/cache/ast/bd2cd94889e8ae33fdd3d497b69f5c4f31a0505651b35430ae9c0506c80e4f5e.json
+?? graphify-out/cache/ast/c9bce9eed824c40606600f8a2da9e3cdb5b068d54d2a976247f875d8c910c242.json
+?? graphify-out/cache/ast/d71e8e66c4c96e6f998d72b354ff97e8b27eb7041630d16762c352261edffc18.json
+?? graphify-out/cache/ast/db9e3d2d581eb190216119e9c191326e224b8a33df546141c0d90d3fa3b67e1b.json
+?? graphify-out/cache/ast/dcf62be97a969c65e668f009b397bd6f6b6f872eef022a979001f571cd21f166.json
+?? graphify-out/cache/ast/dd644709504e662a88a6a4e13d6f685273203900b159e18cc9b82bce12e43b83.json
+?? graphify-out/cache/ast/e9fdcd32ab0da05c6fbcdf0b3cc1ddd067fbffb24ce6022a7ddaab23e8dbe6e2.json
+?? graphify-out/cache/ast/eacf8382906178b14c7ed5445d5574addba312321c25b5fd2b44878280110c2e.json
+?? graphify-out/cache/ast/f1c1b985ce2fc56aa7d4e6d77a3b5b6d1bb568c13d680e681d68698c24831254.json
+?? graphify-out/cache/ast/f3bb30d63a85a843e27f6758382506c0ee7a5fe547004ae52760b208e9208c08.json
+?? graphify-out/cache/ast/f600f4232a5da1c706ffecf70f482819aefffb28f2718a90b077f75e917c9c9e.json
+?? graphify-out/cache/ast/f993093ef7520d91dbc9cdcc70147b447c523878d77fa34c36cf7a54280b99ba.json
+?? graphify-out/cache/ast/fcd92f1abf624534663d5fd16391d5ed129c2715d9f822224eed20a54cb1c6b8.json
+?? graphify-out/cache/ast/fd4a6e5b12962bc3121d8e210c455312869b7927a90dd8c2f3ba690887a8fbaf.json
+?? graphify-out/cache/ast/ffe5d128af32b3785122d48c6b8b4760d6b8e78dac04c51e7d8a5f56f875dc5e.json
+?? integrity-final-v3.2.json
+?? scripts/mutate-group-b.mjs
+?? shared/lunar/groupB.test.ts
+?? shared/lunar/groupB.ts
+?? tasks/calendar-audit/astronomy-authority-v3.2/
+?? tasks/calendar-audit/astronomy-model-v3.1/
+?? tasks/calendar-audit/group-b-freeze-hashes.json
+?? tasks/calendar-audit/zero-cost-astronomy-v3.2A/

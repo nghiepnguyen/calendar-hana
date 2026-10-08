@@ -20,3 +20,9 @@ ui-debug.log*
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Audit local artifacts
+__pycache__/
+*.pyc
+*.tar
+*.zip
