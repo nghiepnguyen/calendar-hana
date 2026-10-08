@@ -1,0 +1,17 @@
+{
+  "phase": "3B.4.4B",
+  "verifier": "ERFA 2.0.1 port (shared/astronomy/erfa), CI only; not bundled as runtime authority",
+  "authority": "astronomy-authority-v4 runtime table (golden-v4)",
+  "gate": "|T_ERFA - T_JPL| <= 500 ms for every supported crossing",
+  "crossings": 4824,
+  "maxAbsMs": 377,
+  "medianAbsMs": 74,
+  "p95AbsMs": 197,
+  "over250Ms": 55,
+  "over500Ms": 0,
+  "integerMsEqual": 16,
+  "erfaLater": 1505,
+  "erfaEarlier": 3303,
+  "vnCivilDateDisagreements": 0,
+  "verdict": "PASS"
+}

@@ -1,5 +1,6 @@
 // Điểm vào của thư viện âm lịch: gom mọi thông tin của một ngày.
 
+import { memoizeSolarTermDerived } from '../astronomy/solarTerms/cache'
 import type { LunarDate, SolarDateString } from '../types'
 import {
   getAuspiciousHours,
@@ -49,13 +50,15 @@ export interface DayInfo {
 }
 
 const CACHE_LIMIT = 2000
-const cache = new Map<SolarDateString, DayInfo>()
 
-/** Toàn bộ thông tin âm lịch của một ngày dương 'YYYY-MM-DD'. Kết quả được cache. */
+/** Toàn bộ thông tin âm lịch của một ngày dương 'YYYY-MM-DD'. Kết quả được cache
+ * theo phiên bản authority tiết khí + clock (solarTerm phụ thuộc vào chúng).
+ */
 export function getDayInfo(date: SolarDateString): DayInfo {
-  const cached = cache.get(date)
-  if (cached) return cached
+  return memoizeSolarTermDerived('day-info', date, CACHE_LIMIT, () => computeDayInfo(date))
+}
 
+function computeDayInfo(date: SolarDateString): DayInfo {
   const solar = parseSolarDate(date)
   const jd = solarStringToJd(date)
   const lunar = solarToLunar(solar.day, solar.month, solar.year)
@@ -73,11 +76,5 @@ export function getDayInfo(date: SolarDateString): DayInfo {
     solarTerm: getSolarTerm(jd),
     holidays: getHolidays(solar, lunar),
   }
-
-  if (cache.size >= CACHE_LIMIT) {
-    const oldest = cache.keys().next().value
-    if (oldest !== undefined) cache.delete(oldest)
-  }
-  cache.set(date, info)
   return info
 }

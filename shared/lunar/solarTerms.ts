@@ -1,6 +1,14 @@
 // 24 tiết khí, mỗi tiết khí ứng với 15° kinh độ Mặt Trời.
+// Boundaries come from the canonical JPL authority table (shared/astronomy/solarTerms).
 
-import { SearchSunLongitude } from 'astronomy-engine'
+import {
+  getCanonicalSolarTermAt,
+  getCanonicalSolarTermsForYear,
+  memoizeSolarTermDerived,
+  monthJianBranchForTermIndex,
+  SOLAR_TERM_AUTHORITY,
+  type CanonicalSolarTermBoundary,
+} from '../astronomy/solarTerms'
 import { TIME_ZONE_OFFSET } from './lunar'
 
 /** Tên tiết khí theo thứ tự kinh độ Mặt Trời 0°, 15°, 30°... (0° = Xuân phân). */
@@ -59,58 +67,52 @@ const TERM_IDS = [
   'kinh-trap',
 ] as const
 
-export const SOLAR_TERM_METHOD = 'astronomy-engine-search-sun-longitude-v1'
+/** Boundary source identity reported by solar-term consumers (authority + clock). */
+export const SOLAR_TERM_METHOD = `jpl-de440s-table:${SOLAR_TERM_AUTHORITY.authorityVersion}:${SOLAR_TERM_AUTHORITY.clockVersion}`
 
 export interface SolarTermInstant {
   readonly id: (typeof TERM_IDS)[number]
   readonly index: number
   readonly name: (typeof SOLAR_TERMS)[number]
   readonly longitude: number
+  /** clock-v1 civil instant of the canonical boundary, 3 fractional digits. */
   readonly instantUtc: string
+  /** Canonical T, integer TT ms since J2000.0 TT. */
+  readonly ttMs: number
 }
 
-const yearCache = new Map<number, readonly SolarTermInstant[]>()
-const YEAR_CACHE_LIMIT = 16
+function toInstant(boundary: CanonicalSolarTermBoundary): SolarTermInstant {
+  return Object.freeze({
+    id: TERM_IDS[boundary.termIndex]!,
+    index: boundary.termIndex,
+    name: SOLAR_TERMS[boundary.termIndex]!,
+    longitude: boundary.targetLongitudeDeg,
+    instantUtc: boundary.civilIso,
+    ttMs: boundary.ttMs,
+  })
+}
 
 /** All 24 crossings in a Gregorian UTC year, ordered from Tiểu hàn to Đông chí.
  * Adjacent years support calendar / Bazi boundaries; public calendar supports 1900–2100.
+ * Source: the frozen JPL authority table only (no runtime astronomy, no fallback).
  */
 export function solarTermsForYear(year: number): readonly SolarTermInstant[] {
   if (!Number.isInteger(year) || year < 1899 || year > 2101)
     throw new RangeError('Unsupported solar term year')
-  const cached = yearCache.get(year)
-  if (cached) return cached
-  let start = new Date(Date.UTC(year, 0, 1))
-  const terms = Array.from({ length: 24 }, (_, offset) => {
-    const index = (19 + offset) % 24
-    const longitude = index * 15
-    const found = SearchSunLongitude(longitude, start, 20)
-    if (!found) throw new Error(`Cannot find solar term ${longitude} in ${year}`)
-    start = new Date(found.date.getTime() + 1000)
-    return Object.freeze({
-      id: TERM_IDS[index],
-      index,
-      name: SOLAR_TERMS[index],
-      longitude,
-      instantUtc: found.date.toISOString(),
-    })
-  })
-  if (yearCache.size >= YEAR_CACHE_LIMIT) yearCache.delete(yearCache.keys().next().value!)
-  const result = Object.freeze(terms)
-  yearCache.set(year, result)
-  return result
+  return memoizeSolarTermDerived('solar-terms-for-year', String(year), 256, () =>
+    Object.freeze(getCanonicalSolarTermsForYear(year).map(toInstant)),
+  )
 }
 
-/** Active term at an absolute instant. A crossing belongs to the new term. */
+/** Active term at an absolute instant. A crossing belongs to the new term:
+ * t < T is the old term, t >= T the new one, exact to the millisecond.
+ */
 export function getSolarTermAt(instantUtc: string): SolarTermInstant {
   if (!/(Z|[+-]\d{2}:\d{2})$/.test(instantUtc)) throw new RangeError('Expected zoned instant')
   const instant = Date.parse(instantUtc)
   if (!Number.isFinite(instant)) throw new RangeError('Invalid instant')
-  const year = new Date(instant).getUTCFullYear()
-  const active = solarTermsForYear(year)
-    .filter((t) => Date.parse(t.instantUtc) <= instant)
-    .at(-1)
-  return active ?? solarTermsForYear(year - 1).at(-1)!
+  const active = getCanonicalSolarTermAt(instant)
+  return solarTermsForYear(active.year)[(active.termIndex - 19 + 24) % 24]!
 }
 
 /** Active solar-month branch (0 = Tý), using the exact crossing instant.
@@ -122,8 +124,7 @@ export function getSolarMonth(dateTime: string, timezone: string): number {
   if (typeof timezone !== 'string' || !timezone.trim())
     throw new RangeError('Expected explicit timezone')
   new Intl.DateTimeFormat('en', { timeZone: timezone })
-  const { index } = getSolarTermAt(dateTime)
-  return ((Math.floor((index - 21 + 24) / 2) % 12) + 2) % 12
+  return monthJianBranchForTermIndex(getSolarTermAt(dateTime).index)
 }
 
 export interface SolarTermInfo {
@@ -158,6 +159,5 @@ export function getSolarTerm(jd: number): SolarTermInfo {
  * Bazi uses the exact crossing instant instead.
  */
 export function solarTermMonthChi(jd: number): number {
-  const { index } = getSolarTerm(jd)
-  return ((Math.floor((index - 21 + 24) / 2) % 12) + 2) % 12
+  return monthJianBranchForTermIndex(getSolarTerm(jd).index)
 }

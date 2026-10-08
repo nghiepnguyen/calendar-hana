@@ -1,0 +1,653 @@
+{
+ "source": "git f845444 tree (committed bytes)",
+ "files": {
+  "calendar-group-b-basis-research.md": {
+   "sha256": "16ff5a6e1801f301d617f10e171556fa96fdc684f2fb96bd05e32c4dc052a60b",
+   "bytes": 18907
+  },
+  "calendar-group-b-basis.json": {
+   "sha256": "cf0aff4c12fb1fd25db4867037126dbf30ea6a6bf282f90b04248124798e873a",
+   "bytes": 186243
+  },
+  "calendar-group-b-conflicts.md": {
+   "sha256": "65da3d810d135f0eb931958914144712ebd0972c87db5871748e8b8688e24744",
+   "bytes": 7089
+  },
+  "calendar-group-b-cutoff-resolution.md": {
+   "sha256": "7cba3da8abd603ca599fb0a74839fbaa73e46200396d8b99596e7ff534a7eeb5",
+   "bytes": 11616
+  },
+  "calendar-group-b-dated-anchors.json": {
+   "sha256": "c746eea57ed8db6b50218fe0043a7faef50ebb7a3f288d88252335e3c2986f90",
+   "bytes": 68478
+  },
+  "calendar-group-b-evidence-gaps.md": {
+   "sha256": "6a8ae64b438dc6d1c1f4358412ea33b4b9ced279b2f9ba90f262fd9f50f2a049",
+   "bytes": 2081
+  },
+  "calendar-group-b-exact-jie-evidence.json": {
+   "sha256": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1",
+   "bytes": 27209
+  },
+  "calendar-group-b-exact-jie-review.md": {
+   "sha256": "7b07c74d3b49a358eddb3732b86a64ac8178907c1ccdfab41f0d3190a04fafcd",
+   "bytes": 8381
+  },
+  "calendar-group-b-freeze-readiness.md": {
+   "sha256": "df2f37a42232133fdc6df90a2b32a8d1d7974406c28030c593b1a88e712bdc36",
+   "bytes": 2528
+  },
+  "calendar-group-b-golden-diff-v3.4A.md": {
+   "sha256": "214a2ff286ed1bd45ccfd569b627ba5f956cf642c407e6e2ae5819211edd086e",
+   "bytes": 5710
+  },
+  "calendar-group-b-golden-freeze-v3.1.md": {
+   "sha256": "61f6dca06e970a410b8cc6711ca96b7be2062c6045f7c2581edf1c912abcdc6c",
+   "bytes": 2753
+  },
+  "calendar-group-b-golden-readiness-v3.1.1.md": {
+   "sha256": "2af224b510c86d9785757efe79c6e2cf81d74f460bd9d812b31d1e234a19a8aa",
+   "bytes": 6710
+  },
+  "calendar-group-b-golden-readiness.md": {
+   "sha256": "e6fbe2a5db2ebc88bdadaf058d933cf7969296b8009086d6f81acafc9207fb7a",
+   "bytes": 5517
+  },
+  "calendar-group-b-golden-review.md": {
+   "sha256": "1a9c0c899a168c212e3c7dd68cf82454ed280c124d8a901cab59b73905e545b0",
+   "bytes": 7474
+  },
+  "calendar-group-b-golden-vNext-design-v3.4A.md": {
+   "sha256": "dbe8fdd7e6bf6345cdc2f6154dba68c366ccc5828d57c7615d6e0741de9a8ef0",
+   "bytes": 4147
+  },
+  "calendar-group-b-golden-vNext-review-v3.4A.md": {
+   "sha256": "0c46a246fcf384f9726d41e4148d5417b7547c86074ca274803528a32393a111",
+   "bytes": 4693
+  },
+  "calendar-group-b-implementation-report-v3.1.md": {
+   "sha256": "844d4273cca6c0ad738d9cec9295191708fd490d1b658369438811b89c8800e2",
+   "bytes": 13265
+  },
+  "calendar-group-b-independent-review.json": {
+   "sha256": "0a6a9544ab01b2728bd066c9d2e8c24e5df90aa106a067f3b035f5a7d996de42",
+   "bytes": 612238
+  },
+  "calendar-group-b-independent-review.md": {
+   "sha256": "addb2460145c6d62b739cfb8941543bb380eb5f0b3a2cfcd4254eb21811b9452",
+   "bytes": 24856
+  },
+  "calendar-group-b-legacy-diff-v3.1.json": {
+   "sha256": "e8823d180550819a362f190bc9a56cb2ea3e5fdd355fe521c0c6ab1a913bebe8",
+   "bytes": 7216
+  },
+  "calendar-group-b-mutation-results-v3.1.json": {
+   "sha256": "1e2c6d0d11a445a61acb3166c795e36b2749a1f3b084c0996992057c0efd3f7b",
+   "bytes": 2626203
+  },
+  "calendar-group-b-mutation-test-design.md": {
+   "sha256": "d1cc7118a016ed55a1f53ab8e8dfabd274a6a7a1d1382b4cbe60c1d47ef81668",
+   "bytes": 8252
+  },
+  "calendar-group-b-property-test-design.md": {
+   "sha256": "0cc01352f07a061fa2f9cf393aa89d716c8d6c581b0c591e75f13457a08b36b6",
+   "bytes": 3538
+  },
+  "calendar-group-b-regression-report-v3.1.md": {
+   "sha256": "9d606bede86b38fe8931856e462d772f3a19929273ed686c454ab9913705052d",
+   "bytes": 4789
+  },
+  "calendar-group-b-reviewer-decisions-v3.1.md": {
+   "sha256": "66e37dea7ecd5b69fe5faff2775f8e372f33de452688e6b637e9350d14e61a40",
+   "bytes": 1650
+  },
+  "calendar-group-b-test-results-v3.1.json": {
+   "sha256": "72781aa3eaf2d12c5b20c65d7a214357cd7a4fbdbc0b04c1a8aef8f9adbe2ef2",
+   "bytes": 879747
+  },
+  "calendar-rule-extraction-v3.json": {
+   "sha256": "c1e7ecd85c3346b33e07e21990b3facff71071a112c94c025cebbf90dc31ac56",
+   "bytes": 93218
+  },
+  "golden-v3/four-extinctions.json": {
+   "sha256": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937",
+   "bytes": 67319
+  },
+  "golden-v3/four-separations.json": {
+   "sha256": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d",
+   "bytes": 66677
+  },
+  "golden-v3/group-b/disaster-sha.json": {
+   "sha256": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+   "bytes": 411772
+  },
+  "golden-v3/group-b/manifest.json": {
+   "sha256": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+   "bytes": 5631
+  },
+  "golden-v3/group-b/month-breaker.json": {
+   "sha256": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+   "bytes": 346910
+  },
+  "golden-v3/group-b/month-sha.json": {
+   "sha256": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+   "bytes": 356676
+  },
+  "golden-v3/group-b/month-virtue.json": {
+   "sha256": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+   "bytes": 355390
+  },
+  "golden-v3/group-b/robbery-sha.json": {
+   "sha256": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+   "bytes": 351377
+  },
+  "golden-v3/manifest.json": {
+   "sha256": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454",
+   "bytes": 2082
+  },
+  "golden-v3/yue-ji.json": {
+   "sha256": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e",
+   "bytes": 58469
+  },
+  "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": {
+   "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+   "bytes": 532619
+  },
+  "golden-v4/group-b/disaster-sha.json": {
+   "sha256": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+   "bytes": 152333
+  },
+  "golden-v4/group-b/month-breaker.json": {
+   "sha256": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+   "bytes": 152554
+  },
+  "golden-v4/group-b/month-sha.json": {
+   "sha256": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+   "bytes": 152915
+  },
+  "golden-v4/group-b/month-virtue.json": {
+   "sha256": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+   "bytes": 152092
+  },
+  "golden-v4/group-b/robbery-sha.json": {
+   "sha256": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+   "bytes": 152064
+  },
+  "golden-v4/manifest.json": {
+   "sha256": "35bdfa7ceb17f2051e32c36fc13c249ac0e220d4f376c0c3ba737c25664c20d6",
+   "bytes": 4057
+  },
+  "shared/astronomy/erfa/LICENSE-ERFA.txt": {
+   "sha256": "b1858f9a263f22c438a455a32945da51a31a0ae25a21055da13bb7ed57cc3b51",
+   "bytes": 2651
+  },
+  "shared/astronomy/erfa/apparentSun.ts": {
+   "sha256": "03d02e28cd979213adc37520434607fa250c8e895177a0595b5ec4e8242a1a5c",
+   "bytes": 3655
+  },
+  "shared/astronomy/erfa/clockV1.test.ts": {
+   "sha256": "fc28c8d6adef4a03df0839a3ea2aca69ef7e1a80c491702c3b453d9297e1e888",
+   "bytes": 4404
+  },
+  "shared/astronomy/erfa/clockV1.ts": {
+   "sha256": "a66182997b678241123f12663320275a374af2827296c49caae34347f9874756",
+   "bytes": 6171
+  },
+  "shared/astronomy/erfa/constants.data.ts": {
+   "sha256": "ed5edc14a116f79d1e4ad960d0102786b6cd971e8be5ceec62003f121359bf73",
+   "bytes": 1594
+  },
+  "shared/astronomy/erfa/detMath.ts": {
+   "sha256": "f8991c20c999cdcc31530ea7783b858d05bbdf6bd4fe69f4a5b1e85daf025369",
+   "bytes": 7533
+  },
+  "shared/astronomy/erfa/epv00.data.ts": {
+   "sha256": "975a48f1e52a8d0988ebc2de53461faf524250c41baed0ffa05b68e8fc05f789",
+   "bytes": 115253
+  },
+  "shared/astronomy/erfa/erfa.test.ts": {
+   "sha256": "b25966a1dcc22b6e7dc5db7c6e9335f2e681c45b5f56166104ae8b818a41bb86",
+   "bytes": 7546
+  },
+  "shared/astronomy/erfa/erfa.ts": {
+   "sha256": "feb6625a9fd5e065e317fa1d1f292dcc56f97179a0d72ca9e8882b94a13638cd",
+   "bytes": 9866
+  },
+  "shared/astronomy/erfa/index.ts": {
+   "sha256": "f77b766d278edafab7192c9653e61746bbf3588d6f1212c7991927dba7f0b2ee",
+   "bytes": 2414
+  },
+  "shared/astronomy/erfa/model.ts": {
+   "sha256": "1c8c54278ba73595abeedba68a005fa1d99728d6f8d85edaee7dd07b681b09d1",
+   "bytes": 1501
+  },
+  "shared/astronomy/erfa/nut00b.data.ts": {
+   "sha256": "fddd0b15a93428692e453f489c3ff8940cac9683e06f5f63bde88938c8f19529",
+   "bytes": 5696
+  },
+  "shared/astronomy/erfa/solarTermRoots.test.ts": {
+   "sha256": "22312c871a3c671e23c4a1f152a4c9507b8f5e1d44e9c9fa7e79ed4e8fa0501c",
+   "bytes": 5277
+  },
+  "shared/astronomy/erfa/solarTermRoots.ts": {
+   "sha256": "1a243031f881cada303843c4e41f674b19133c72a5564d299d8214ae542eb5e7",
+   "bytes": 8060
+  },
+  "shared/bazi/birthTime.test.ts": {
+   "sha256": "4b2611c78c860e0ee039c910c1adb3a361ecce45c13b17daac83f12dfbf65874",
+   "bytes": 1353
+  },
+  "shared/bazi/birthTime.ts": {
+   "sha256": "6eef410232f86b1ae15a917d3e9e23f917efe3f2f56c0a81ca7284f2097c7670",
+   "bytes": 3187
+  },
+  "shared/bazi/index.test.ts": {
+   "sha256": "abe974a547aa20df2a274c9e5009714ec360276b31a2cb2afc6bf4f4c6b16cac",
+   "bytes": 1682
+  },
+  "shared/bazi/index.ts": {
+   "sha256": "2d905837745d9ad8da14cc11dc22398cd44f88e50f9138997ac3b5c4d7d9711b",
+   "bytes": 2890
+  },
+  "shared/bazi/interpretation/dayMaster.test.ts": {
+   "sha256": "456672da0752b4eb07ed4244ebc303abe2f66139434c7f80ec30f64c9972c3ec",
+   "bytes": 3343
+  },
+  "shared/bazi/interpretation/dayMaster.ts": {
+   "sha256": "2b60c7ee52742754daa7b1b3b271ba2390cc658b20cbc3222b12b16346b02784",
+   "bytes": 2571
+  },
+  "shared/bazi/interpretation/hiddenStems.test.ts": {
+   "sha256": "04523e6742284b5ba7acbfc522a6f835fab9c44a3b6ec1837eddf1367aa54ac5",
+   "bytes": 1516
+  },
+  "shared/bazi/interpretation/hiddenStems.ts": {
+   "sha256": "42a52b2d59ff7c3ad2e869e738f688b55f195ab11deff26ab1e259428ded2e6a",
+   "bytes": 1341
+  },
+  "shared/bazi/interpretation/strength.test.ts": {
+   "sha256": "3f361f07a713ce11a624bedc9bd24614994c2fa26fd7d8ee982c09ed5f9a10f9",
+   "bytes": 3417
+  },
+  "shared/bazi/interpretation/strength.ts": {
+   "sha256": "991c54a1158a90be1624a1aee4bd36a9b2ea51eac26aa8109e94b25ec24c9280",
+   "bytes": 2483
+  },
+  "shared/bazi/interpretation/tenGods.test.ts": {
+   "sha256": "e85a0a253fadebf2c91da737d3548b2696462812b6afd509c8eaffcb754f59f3",
+   "bytes": 2814
+  },
+  "shared/bazi/interpretation/tenGods.ts": {
+   "sha256": "66ba66241c8cef386a65dd75d08694611c156a3fd861386b0173f396146d22f3",
+   "bytes": 1808
+  },
+  "shared/bazi/interpretation/transit.test.ts": {
+   "sha256": "dc933982aa8399e8559dcbaedeaf6c64246b559f839ec56b2499f10f88758e07",
+   "bytes": 1205
+  },
+  "shared/bazi/interpretation/transit.ts": {
+   "sha256": "f8559aa6207452a980c88d9d5eee59c8cc0e5da967c4c6864c76fa940e5730ba",
+   "bytes": 1260
+  },
+  "shared/bazi/pillars.test.ts": {
+   "sha256": "8704235b31547c885a3d03629077bb192ab496bd92ec92346b5c9ba0e7cba430",
+   "bytes": 1274
+  },
+  "shared/bazi/pillars.ts": {
+   "sha256": "d1820031ed98d0d2b8b33551682e11625f172c5c76e0e0f2bc1cea909f2d2b03",
+   "bytes": 1075
+  },
+  "shared/bazi/solarTime.test.ts": {
+   "sha256": "7c00083b9ff07ccc92d7568503e6b1de98c27ddd11e9420168edadba752e44c0",
+   "bytes": 914
+  },
+  "shared/bazi/solarTime.ts": {
+   "sha256": "a78a78568aa08a7a8f1921a139bfad38c1de9f24934eb7ab04082b2b32c13c61",
+   "bytes": 1569
+  },
+  "shared/bazi/termInstants.test.ts": {
+   "sha256": "e408e277a80a2ec9c1d8e8c3157da1f35cdede78cac12ff00c2564c70059d2c1",
+   "bytes": 1297
+  },
+  "shared/bazi/termInstants.ts": {
+   "sha256": "68233af9bfbbd104a06d5f951127bbc182a9d66b3a3a1d90a58de410dd210208",
+   "bytes": 2066
+  },
+  "shared/bazi/types.ts": {
+   "sha256": "c6b7ca2d4436e1a782f1d9af20f84e977a0c03a8f92c26e981c1781d7d19e8ab",
+   "bytes": 1193
+  },
+  "shared/bazi/validation.ts": {
+   "sha256": "6651cf63450938fbd8ad5b6e001c6aebfbf9f7987fcfcf9cc252a4eaa54437b8",
+   "bytes": 2789
+  },
+  "shared/bazi/ziPolicy.test.ts": {
+   "sha256": "8609dc7785550332c2e4b18d207c0e44117d64f96a2d2c8302cb176eb61f059a",
+   "bytes": 940
+  },
+  "shared/bazi/ziPolicy.ts": {
+   "sha256": "3ce41016e296a828b390526ce01c2aac82db799ddac3ca9669471f69d7c7c439",
+   "bytes": 736
+  },
+  "shared/lunar/activityRecommendations.test.ts": {
+   "sha256": "155f240a7fb74e658c222c134129142b2340e2f0b3ddf47013a811753d26af29",
+   "bytes": 9223
+  },
+  "shared/lunar/activityRecommendations.ts": {
+   "sha256": "7fcc41e31fccacb2cfa637c3bee1331b1f2050747e4082d42e26235997e4b652",
+   "bytes": 7891
+  },
+  "shared/lunar/almanac.fixtures.ts": {
+   "sha256": "30ecaa299a5d2bcba309e16366644ec49bab361225870edfe8f0dc8779bedbca",
+   "bytes": 9535
+  },
+  "shared/lunar/almanac.test.ts": {
+   "sha256": "ae745876346c3ef08bcd6094e056755d3093d97f62a82b0ffbc32d7272a14de5",
+   "bytes": 2809
+  },
+  "shared/lunar/almanac.ts": {
+   "sha256": "a537722c07befbe98fc112e7db20e43637466b0e2593461db95cfe6855b8cf7c",
+   "bytes": 3608
+  },
+  "shared/lunar/audit-fixtures/calendar-golden-v2.1.json": {
+   "sha256": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300",
+   "bytes": 137569
+  },
+  "shared/lunar/audit-fixtures/calendar-golden-v2.json": {
+   "sha256": "219002684bbe48e1f0439f9406fd6f71f9342875fadcc5823e9965b1a57666b2",
+   "bytes": 125037
+  },
+  "shared/lunar/audit-fixtures/calendar-golden.json": {
+   "sha256": "d368f30dc2c597daa6a4661a4db04c25c2f4178ab2e51b3dc7d20ef9610b5e37",
+   "bytes": 67217
+  },
+  "shared/lunar/auspicious.test.ts": {
+   "sha256": "4f685f8349c7b93f27e88df43ac94a0020e8489bf315d62ef1a60a39d51f9a08",
+   "bytes": 4341
+  },
+  "shared/lunar/auspicious.ts": {
+   "sha256": "294a9fd7cdfa962909696242000666b4a7b22d98ed745d3c0e608a23b349aec0",
+   "bytes": 4370
+  },
+  "shared/lunar/calendarAudit.test.ts": {
+   "sha256": "b728afbfdfc8b909abe34e64a71261a64c5ffbd169f6717e2f9664f549d89247",
+   "bytes": 8881
+  },
+  "shared/lunar/calendarExtendedAudit.test.ts": {
+   "sha256": "43d4d864f568dd8585cfa305efc9ed0b65812282d1a1e0e2d8fa4ab655465eed",
+   "bytes": 12158
+  },
+  "shared/lunar/canChi.test.ts": {
+   "sha256": "1e44784f943282b193313f457edcbe1b3405ead6f9052e29861041decf1e8865",
+   "bytes": 1726
+  },
+  "shared/lunar/canChi.ts": {
+   "sha256": "2f7ca2783f25585c6a8f66a9c1ccd81eafef05195b5ddbbb06923eb30e1b751c",
+   "bytes": 1922
+  },
+  "shared/lunar/clashes.data.ts": {
+   "sha256": "d703f6c0ba47ea01d5aaf6603a8eed263bec38fcaaa195c75c6796f9ec2406cf",
+   "bytes": 4870
+  },
+  "shared/lunar/clashes.test.ts": {
+   "sha256": "96c52e5317b31e24de4d2e89a5bb6f7f529a241938da817794e53a6f67f2a58d",
+   "bytes": 896
+  },
+  "shared/lunar/clashes.ts": {
+   "sha256": "ab94a592b6e01ca80a2f1c593995f2d45231b8ac9a14e49618f26fe4b8d039fe",
+   "bytes": 679
+  },
+  "shared/lunar/datasetValidation.test.ts": {
+   "sha256": "e22bd396c2f60aafc827acb15e15a1f1286a883a423065163abccb9bab4b9fa7",
+   "bytes": 7741
+  },
+  "shared/lunar/directions.test.ts": {
+   "sha256": "e4fcbf4dcfa9d348976f48c7e26cf06d3aea34528d01f7ddece58b7c6b72e521",
+   "bytes": 625
+  },
+  "shared/lunar/directions.ts": {
+   "sha256": "d18e3b99c9041166db940f06e5ea3954033d8887aa56567ea34d79ea41215d57",
+   "bytes": 1049
+  },
+  "shared/lunar/elements.test.ts": {
+   "sha256": "d3bdddaa49b3614c3360f1a766a06c8cc1be4cefd924e586f93e1adf76ca6693",
+   "bytes": 1746
+  },
+  "shared/lunar/elements.ts": {
+   "sha256": "fc2c67ef995e186f8a4727968a037ea3a8340b8b977fe0d6c99e46a909767b81",
+   "bytes": 4312
+  },
+  "shared/lunar/eventEvaluation.test.ts": {
+   "sha256": "7ff8ec56e631883077fb42a96e4d5fe26b8aeb49c2c749488631891bec3ebb9c",
+   "bytes": 4932
+  },
+  "shared/lunar/eventEvaluation.ts": {
+   "sha256": "8d6faf8c2d4d05e9d7b5b9db535b74738cb1c045aa64943c89360a3c3e0031e9",
+   "bytes": 8943
+  },
+  "shared/lunar/eventMapping.test.ts": {
+   "sha256": "f07e6761c90918b38a93a117ab4d050d823848c8b39834168707625e91b9d467",
+   "bytes": 911
+  },
+  "shared/lunar/eventMapping.ts": {
+   "sha256": "2a2e1aa418788a0c7ce8080178185a7c6e4b4630d6d48af6c71a820ca30601e4",
+   "bytes": 2084
+  },
+  "shared/lunar/eventRecommendations.ts": {
+   "sha256": "e1c05886eb7ceb86b8565db924039308ec816381ebad5663f015d687530ed918",
+   "bytes": 751
+  },
+  "shared/lunar/evidence.ts": {
+   "sha256": "1e14ed4ee71f482c5d36e367d42d51a4473e325058e7157fa36f76fc611426e3",
+   "bytes": 542
+  },
+  "shared/lunar/godMapping.ts": {
+   "sha256": "b8c745167bde5bbae85834f8429a7de29e673d145d42f46fdd0cefaee5d3611b",
+   "bytes": 2083
+  },
+  "shared/lunar/groupA.test.ts": {
+   "sha256": "8943c42dbe7595e0045b145aac407edafdb65f72d5e7735978191b52d40781f2",
+   "bytes": 3984
+  },
+  "shared/lunar/groupA.ts": {
+   "sha256": "f23645d707f728b94917d3585db0ae440c18453446b380ea038e8000644743d8",
+   "bytes": 7472
+  },
+  "shared/lunar/groupB.test.ts": {
+   "sha256": "7970f81dc2ce7b3b157a63fee4e994975018e600639fb3a31b2fd2bad07a8128",
+   "bytes": 15318
+  },
+  "shared/lunar/groupB.ts": {
+   "sha256": "462912566b12f223f510dbafceaaaa7bcab701d182533ef59727c14ced36d276",
+   "bytes": 5047
+  },
+  "shared/lunar/holidays.test.ts": {
+   "sha256": "734bf5c417ffc0490b43af1c1e009dd112fe575400555ddd0c047735dc859dc0",
+   "bytes": 2165
+  },
+  "shared/lunar/holidays.ts": {
+   "sha256": "9924188c31b829c852c7f1b86027c7f06d72885f77cc3c142f63418af0c91643",
+   "bytes": 3463
+  },
+  "shared/lunar/index.test.ts": {
+   "sha256": "dfeef549efb057268425a409e96e3b06e8e0ae456a879138d04b12080d78d79c",
+   "bytes": 1638
+  },
+  "shared/lunar/index.ts": {
+   "sha256": "027d77c12902a3ea0877893dcf332c74fb43bb722e33bd5443e4d123c576d87e",
+   "bytes": 2520
+  },
+  "shared/lunar/julian.test.ts": {
+   "sha256": "3046b66376b3f7859aa6f7e739be544067a41519ea2ac7b224417f8afa02bb56",
+   "bytes": 1411
+  },
+  "shared/lunar/julian.ts": {
+   "sha256": "047c6052b5f788324c448637afc1b6f05c1eaf40b78dd2fa27fcb5339748f664",
+   "bytes": 3446
+  },
+  "shared/lunar/lunar.test.ts": {
+   "sha256": "05383d2053d074bff1dbf077054d782aded5251106e13251c4ad92143dc2d229",
+   "bytes": 5656
+  },
+  "shared/lunar/lunar.ts": {
+   "sha256": "ed6296171e015ee865061197f848dbf9855a1a7e7f095df4d9aa72bb99a04e9a",
+   "bytes": 8670
+  },
+  "shared/lunar/mansionEvidence.test.ts": {
+   "sha256": "0e28da846193dfc461762d11509cf3614a4a8e8001564c3daa0cd6f27b4ee876",
+   "bytes": 5947
+  },
+  "shared/lunar/mansionEvidence.ts": {
+   "sha256": "7dff713a2c5603042a415aa842adc337434f1eb3234852dee4831f24a6eeaaaf",
+   "bytes": 2730
+  },
+  "shared/lunar/mansions.test.ts": {
+   "sha256": "806734d3624f8eea17637b3481a6d7d7b06ed17cff76ada89e4a94c021c80517",
+   "bytes": 1129
+  },
+  "shared/lunar/mansions.ts": {
+   "sha256": "ed1679e0ad9482d32d892e290e71b86e008a0edf5c4626c107203f46d686a9fa",
+   "bytes": 7953
+  },
+  "shared/lunar/napAm.test.ts": {
+   "sha256": "35281fee80d1fca4c1203d7832a2c89509104d55f376fc25667bc70225e4852c",
+   "bytes": 1036
+  },
+  "shared/lunar/napAm.ts": {
+   "sha256": "1faad911ed7394ac987b3862631431a7cd1f2a8c2328583dbc5c62d65b10a066",
+   "bytes": 1736
+  },
+  "shared/lunar/officers.instant.test.ts": {
+   "sha256": "2b0d9c918539259e42a8a01b0639095d4dfb7d437b0140d4dd9dbb87c64ac30f",
+   "bytes": 2612
+  },
+  "shared/lunar/officers.test.ts": {
+   "sha256": "273a6c48e777ba32bedbc84afd0c9a851e9f779b769fdef105c0866d624ab12c",
+   "bytes": 1104
+  },
+  "shared/lunar/officers.ts": {
+   "sha256": "467e217d5b29a7bc1505f99ab454be2467ee4ed04d3dc18def638125d9c9f6e0",
+   "bytes": 4819
+  },
+  "shared/lunar/solarTerms.test.ts": {
+   "sha256": "9f69c2be12f8d8d52c52d4d21f46e5604ccc62c4e1387fbd84d32a871905080b",
+   "bytes": 5374
+  },
+  "shared/lunar/solarTerms.ts": {
+   "sha256": "f8c16b12df128238deb5c7010062293ec83d92be433997ed02e74e3dee69c8f6",
+   "bytes": 5292
+  },
+  "shared/lunar/stars.data.ts": {
+   "sha256": "50136ef3285e4f1f79e80e02c2a655435266964725eaa3dec38c77352a4cb5bd",
+   "bytes": 48721
+  },
+  "shared/lunar/stars.test.ts": {
+   "sha256": "50a34a74fdb85cc5725098edeff843474d205d097b7d05e0c8ace1f8af0ec26f",
+   "bytes": 2141
+  },
+  "shared/lunar/stars.ts": {
+   "sha256": "c2903b752053eb559c0a4f6d801e4f2336aa3c879262d12fca7be642a7c00b6c",
+   "bytes": 2503
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/analyze.mjs": {
+   "sha256": "828e28eea02230750b6c2a44c4b88a664df587fbdc780a4816fa708b2d0ba056",
+   "bytes": 15098
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/erfa-vs-authority-rows.tsv": {
+   "sha256": "c5c7369a413d0e75808cfbdadd502c80d54031b6f07049dd22691eb79f3247d1",
+   "bytes": 563814
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/golden-diff.json": {
+   "sha256": "49ee89920009f7d156ddbd73e9159a5433d1748861a83dd6445b2b44181a8ecd",
+   "bytes": 98821
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/impact.json": {
+   "sha256": "daf2f21f37d6015f46f8c923e4d96d18416add32e4011a72bbbcd378278025d0",
+   "bytes": 1099
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/freeze.mjs": {
+   "sha256": "76173401d0378a3e50090e343323462fa79c9ba6179e5f6749a22ab0982e16b1",
+   "bytes": 4911
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/generator/clock_v1.py": {
+   "sha256": "05ef2f18312e455c593b7a1100b2ac935ee6e0e2280e211c8a73963839cce116",
+   "bytes": 4142
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/generator/groupb_generator.py": {
+   "sha256": "ab56ddeccf39e0f396360b63220dc54de3bbf8d715505f870a544ee794ada4e9",
+   "bytes": 12235
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/generator/jpl_authority.py": {
+   "sha256": "1049dc2b03a0e74052c8ce9e730004f3a040cc7ad0b153e417ccfcb508b00575",
+   "bytes": 6617
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/git-state-before.json": {
+   "sha256": "8741b9c1eeb8729f83960d12c2ea9f29c34e7bea6df5acb86ff3c1e994d0fae5",
+   "bytes": 469
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/hashes-after.json": {
+   "sha256": "58e1961facb3ee264bffe5e0430b54f9a11a6e887a2a313b6299e5ad6dd7df72",
+   "bytes": 270226
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/hashes-before.json": {
+   "sha256": "33b677c128638a2bbfdb2dc4a2cb3c369ee6c88c243ef80e6d9d88a1d4706b9f",
+   "bytes": 270226
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/mutation/mutate-golden.mjs": {
+   "sha256": "aaee101e0484837938dffd1aca96de456950237d95dc9e918226e2051fb23a1f",
+   "bytes": 8993
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/mutation/mutation-results.json": {
+   "sha256": "11e62e4f6bd563f93261f29f66bd89b5bf5fae655ecffcb3ae455de8b961fa10",
+   "bytes": 15808
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/mutation/production-jie-oracle.mjs": {
+   "sha256": "94bbd4a999e345d4c43cc712cacbc47612d781fae6c5ddb86d804d38b3a84d51",
+   "bytes": 725
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/reproduce.sh": {
+   "sha256": "a945f3985e193e73faeb4af64f97dfc5d1fb2735e16440cca58f5324f4c90e91",
+   "bytes": 2460
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/review/review_authority.py": {
+   "sha256": "98f1b3e7105a9e955a41aa3ef75c3869059fe7bdbb58fc7515d47c84e0c9ccd9",
+   "bytes": 6713
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/review/review_groupb.mjs": {
+   "sha256": "4fd1e39a5a59c8af6a111620f87fb48cc1b79f499f6642c30aceaea3e903a2cc",
+   "bytes": 14801
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/reviews/review-authority-round1.json": {
+   "sha256": "11e42e78fb2d34b528284931124ce5b1f14ecfaf49e2286f658bf4ecd6b732da",
+   "bytes": 1112
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/reviews/review-authority.json": {
+   "sha256": "1f95de7d364fe9d45a8b00bc330b35d9026ee23d6728a625e4c03b2ea455ecde",
+   "bytes": 85248
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/reviews/review-groupb.json": {
+   "sha256": "0d7a83d72407f316ee88fb6693543102eb354ef8b5da9903894dc8a0979388d9",
+   "bytes": 3166
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/tests/golden-v4.audit.ts": {
+   "sha256": "085646510c025ce4c478a1b126062851f900096aff98f6b2c153e4c3848e816b",
+   "bytes": 5249
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/tests/vitest.golden.config.ts": {
+   "sha256": "7de03cfa22a7aeee630c6e51666276e8d631378b827c1af98054acdb90b4bb1a",
+   "bytes": 507
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/unit-regression-diff.json": {
+   "sha256": "33596444bd5bef13dac3e8be6dacdde2dbbb1341c432bb89350b0d29fde8db14",
+   "bytes": 4781
+  },
+  "tasks/calendar-audit/astronomy-authority-v3.4A/write-integrity.mjs": {
+   "sha256": "33cb92f7acd29e4b617f677cb2cc5db0b085aab09af04d6a8f77d82dcc04253e",
+   "bytes": 5542
+  },
+  "tasks/calendar-audit/group-b-freeze-hashes.json": {
+   "sha256": "a2f5a9917efd35697d649bd9c1b7bdaebed06b33ad6327cd24f5187f2e1ad8ff",
+   "bytes": 1217
+  }
+ }
+}

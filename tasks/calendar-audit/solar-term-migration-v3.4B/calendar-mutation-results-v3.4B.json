@@ -1,0 +1,1226 @@
+{
+  "phase": "3B.4.4B",
+  "testFiles": [
+    "shared/astronomy/solarTerms/authority.test.ts",
+    "shared/astronomy/solarTerms/clock.test.ts",
+    "shared/lunar/groupB.test.ts",
+    "shared/lunar/authorityMigration.test.ts",
+    "shared/bazi/authorityMigration.test.ts"
+  ],
+  "baseline": {
+    "exitCode": 0,
+    "total": 1287,
+    "passed": 1287,
+    "failed": 0,
+    "loadFailures": [],
+    "failingFiles": [],
+    "examples": []
+  },
+  "mutants": [
+    {
+      "id": "P1",
+      "series": "P",
+      "behavior": "corrupt one authority timestamp (+1 ms on a 2024 row), hash left as is",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1270,
+      "passed": 13,
+      "failed": 1257,
+      "loadFailures": [
+        "shared/astronomy/solarTerms/authority.test.ts: HASH_MISMATCH: encoded authority table"
+      ],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "unrelated Bazi outputs are unchanged by the migration",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: encoded authority table"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: encoded authority table"
+        },
+        {
+          "test": "unrelated Bazi outputs are unchanged by the migration TST, day pillar, hour pillar and Zi reproduce pre-migration production exactly",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: encoded authority table"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: encoded authority table"
+        }
+      ]
+    },
+    {
+      "id": "P1b",
+      "series": "P",
+      "behavior": "corrupt one authority timestamp (+1 ms) and re-pin the hash",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1196,
+      "failed": 91,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "authority runtime data integrity"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '2024-01-05T20:49:22.541Z' to be '2024-01-05T20:49:22.540Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 2024-01-05T20:49:22.540Z: expected [ 255, '2023-12-07T09:32:57.089Z', 10 ] to deeply equal [ 285, '2024-01-05T20:49:22.540Z', 11 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 2024-01-06: expected [ Array(3) ] to deeply equal [ Array(3) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 2024-01-05T20:49:22.540Z: expected +0 to be 1 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "series": "P",
+      "behavior": "shift every Jie boundary +1 ms",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1155,
+      "failed": 132,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        "authority runtime data integrity"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-02-04T00:06:56.027Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 255, '1899-12-07T07:04:33.159Z', 10 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-06: expected [ Array(3) ] to deeply equal [ Array(3) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.578Z: expected +0 to be 1 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "series": "P",
+      "behavior": "shift every Jie boundary -1 ms",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1177,
+      "failed": 110,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "authority runtime data integrity"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-02-04T00:06:56.025Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 285, '1900-01-05T18:03:57.577Z', 11 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-06: expected [ Array(3) ] to deeply equal [ Array(3) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P4a",
+      "series": "P",
+      "behavior": "floor(root) instead of the frozen ceil T in runtime-data generation (regenerated + re-pinned)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1176,
+      "failed": 111,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "authority runtime data integrity",
+        "clock-v1 production civil serialization"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-02-04T00:06:56.025Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 285, '1900-01-05T18:03:57.577Z', 11 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-01: expected [ 18, false, \u2026(1) ] to deeply equal [ 18, false, \u2026(1) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P4b",
+      "series": "P",
+      "behavior": "round(root) instead of the frozen ceil T in runtime-data generation (regenerated + re-pinned)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1221,
+      "failed": 66,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "authority runtime data integrity",
+        "clock-v1 production civil serialization"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-05-05T18:10:28.304Z' to be '1899-05-05T18:10:28.305Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 285, '1900-01-05T18:03:57.577Z', 11 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-01: expected [ 18, false, \u2026(1) ] to deeply equal [ 18, false, \u2026(1) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "series": "P",
+      "behavior": "strict t > T (crossing instant still belongs to the old term)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1156,
+      "failed": 131,
+      "loadFailures": [],
+      "failingFiles": [
+        "solar-term consumers use the canonical authority",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        "full-range properties 1899\u20132101 (all 24 terms)"
+      ],
+      "examples": [
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.578Z: expected +0 to be 1 // Object.is equality"
+        },
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected 16 to be 17 // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-054 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-057 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "series": "P",
+      "behavior": "nearest-minute rounding of every boundary",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1030,
+      "failed": 257,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        "authority runtime data integrity",
+        "clock-v1 production civil serialization"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-02-04T00:07:00.000Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 255, '1899-12-07T07:05:00.000Z', 10 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-01: expected [ 18, false, \u2026(1) ] to deeply equal [ 18, false, \u2026(1) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily Officer for every civil day 1900\u20132100 (crossing day uses the new month)",
+          "evidence": "AssertionError: 2060-08-06: expected 4 to be 3 // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P7",
+      "series": "P",
+      "behavior": "swap adjacent Jie (L\u1eadp xu\u00e2n 21 <-> Kinh tr\u1eadp 23 term indices)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1278,
+      "failed": 9,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "unrelated Bazi outputs are unchanged by the migration",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "authority runtime data integrity",
+        "full-range properties 1899\u20132101 (all 24 terms)"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-03-05T18:38:10.816Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-02-04T05:51:30.354Z: expected [ 345, '1900-02-04T05:51:30.354Z', 1 ] to deeply equal [ 315, '1900-02-04T05:51:30.354Z', +0 ]"
+        },
+        {
+          "test": "unrelated Bazi outputs are unchanged by the migration TST, day pillar, hour pillar and Zi reproduce pre-migration production exactly",
+          "evidence": "AssertionError: expected [ 'M\u1eadu Th\u00e2n', '\u1ea4t M\u00e3o' ] to deeply equal [ 'K\u1ef7 D\u1eadu', 'B\u00ednh D\u1ea7n' ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-02-04: expected [ 21, false, \u2026(1) ] to deeply equal [ Array(3) ]"
+        }
+      ]
+    },
+    {
+      "id": "P8",
+      "series": "P",
+      "behavior": "pre-migration Astronomy Engine SearchSunLongitude roots restored as the source",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1047,
+      "failed": 240,
+      "loadFailures": [],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "AssertionError: expected '1899-02-04T00:06:43.133Z' to be '1899-02-04T00:06:56.026Z' // Object.is equality"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected [ 255, '1899-12-07T07:04:30.448Z', 10 ] to deeply equal [ 255, '1899-12-07T07:04:33.158Z', 10 ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "AssertionError: expected 'astronomy-engine-search-sun-longitude\u2026' to be 'jpl-de440s-table:astronomy-authority-\u2026' // Object.is equality"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-01: expected [ 18, false, \u2026(1) ] to deeply equal [ 18, false, \u2026(1) ]"
+        }
+      ]
+    },
+    {
+      "id": "P9",
+      "series": "P",
+      "behavior": "ERFA runtime roots used as the boundary (integrity checks still pass)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1097,
+      "failed": 190,
+      "loadFailures": [],
+      "failingFiles": [
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "authority runtime data integrity",
+        "fail closed on missing, corrupt or wrong-version data",
+        "clock-v1 production civil serialization"
+      ],
+      "examples": [
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "Error: Test timed out in 5000ms."
+        },
+        {
+          "test": "solar-term consumers use the canonical authority daily term label for every civil day 1900\u20132100 (whole day uses the term before next midnight)",
+          "evidence": "AssertionError: 1900-01-01: expected [ 18, false, \u2026(1) ] to deeply equal [ 18, false, \u2026(1) ]"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-001 interior-positive",
+          "evidence": "Error: Test timed out in 5000ms."
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "series": "P",
+      "behavior": "stale cache namespace: authority version from the previous authority",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1285,
+      "failed": 2,
+      "loadFailures": [],
+      "failingFiles": [
+        "cache versioning"
+      ],
+      "examples": [
+        {
+          "test": "cache versioning namespace carries authority and clock versions",
+          "evidence": "AssertionError: expected 'solar-terms/astronomy-authority-v3/cl\u2026' to be 'solar-terms/astronomy-authority-v4/cl\u2026' // Object.is equality"
+        },
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected { poisoned: true } not to be { poisoned: true } // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P10b",
+      "series": "P",
+      "behavior": "cache key without any namespace (pre-migration keying)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1286,
+      "failed": 1,
+      "loadFailures": [],
+      "failingFiles": [
+        "cache versioning"
+      ],
+      "examples": [
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected { poisoned: true } not to be { poisoned: true } // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "series": "P",
+      "behavior": "stale clock version in the cache namespace",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1285,
+      "failed": 2,
+      "loadFailures": [],
+      "failingFiles": [
+        "cache versioning"
+      ],
+      "examples": [
+        {
+          "test": "cache versioning namespace carries authority and clock versions",
+          "evidence": "AssertionError: expected 'solar-terms/astronomy-authority-v4/cl\u2026' to be 'solar-terms/astronomy-authority-v4/cl\u2026' // Object.is equality"
+        },
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected { poisoned: true } not to be { poisoned: true } // Object.is equality"
+        }
+      ]
+    },
+    {
+      "id": "P11b",
+      "series": "P",
+      "behavior": "authority data declares a stale clock version",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1270,
+      "passed": 13,
+      "failed": 1257,
+      "loadFailures": [
+        "shared/astronomy/solarTerms/authority.test.ts: VERSION_MISMATCH: clockVersion clock-v0 != clock-v1"
+      ],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "unrelated Bazi outputs are unchanged by the migration",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: clockVersion clock-v0 != clock-v1"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: clockVersion clock-v0 != clock-v1"
+        },
+        {
+          "test": "unrelated Bazi outputs are unchanged by the migration TST, day pillar, hour pillar and Zi reproduce pre-migration production exactly",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: clockVersion clock-v0 != clock-v1"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: clockVersion clock-v0 != clock-v1"
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "series": "P",
+      "behavior": "corrupt pinned authority dataset hash",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1270,
+      "passed": 13,
+      "failed": 1257,
+      "loadFailures": [
+        "shared/astronomy/solarTerms/authority.test.ts: HASH_MISMATCH: declared encoded hash"
+      ],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "unrelated Bazi outputs are unchanged by the migration",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: declared encoded hash"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: declared encoded hash"
+        },
+        {
+          "test": "unrelated Bazi outputs are unchanged by the migration TST, day pillar, hour pillar and Zi reproduce pre-migration production exactly",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: declared encoded hash"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "SolarTermAuthorityError: HASH_MISMATCH: declared encoded hash"
+        }
+      ]
+    },
+    {
+      "id": "P12b",
+      "series": "P",
+      "behavior": "corrupt source Golden hash in the runtime data",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1270,
+      "passed": 13,
+      "failed": 1257,
+      "loadFailures": [
+        "shared/astronomy/solarTerms/authority.test.ts: VERSION_MISMATCH: sourceSha256 0db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60 != 1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+      ],
+      "failingFiles": [
+        "Bazi month / year context at every canonical Jie 1900\u20132100",
+        "unrelated Bazi outputs are unchanged by the migration",
+        "solar-term consumers use the canonical authority",
+        "Group A against versioned authority-v4 evidence",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 termInstants equal the authority table",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: sourceSha256 0db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60 != 1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+        },
+        {
+          "test": "Bazi month / year context at every canonical Jie 1900\u20132100 T \u2212 1 ms OLD, T NEW, T + 1 ms NEW for month offset, active term and L\u1eadp xu\u00e2n year",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: sourceSha256 0db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60 != 1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+        },
+        {
+          "test": "unrelated Bazi outputs are unchanged by the migration TST, day pillar, hour pillar and Zi reproduce pre-migration production exactly",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: sourceSha256 0db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60 != 1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority reports the authority and clock identity",
+          "evidence": "SolarTermAuthorityError: VERSION_MISMATCH: sourceSha256 0db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60 != 1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+        }
+      ]
+    },
+    {
+      "id": "M1",
+      "series": "M",
+      "behavior": "lunar month instead of Month Jian",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 785,
+      "failed": 502,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-022 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-023 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-024 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-027 interior-negative",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "series": "M",
+      "behavior": "switch at civil midnight of the Jie day",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 969,
+      "failed": 318,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-053 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-056 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-059 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-062 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "series": "M",
+      "behavior": "strict > at the crossing (Group B path)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1158,
+      "failed": 129,
+      "loadFailures": [],
+      "failingFiles": [
+        "solar-term consumers use the canonical authority",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.578Z: expected +0 to be 1 // Object.is equality"
+        },
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected 16 to be 17 // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-054 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-057 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "series": "M",
+      "behavior": "shift Jian table one row (wrong table row)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 67,
+      "failed": 1220,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u9149' to be '\u7533' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M5a",
+      "series": "M",
+      "behavior": "robbery-sha reverse",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1041,
+      "failed": 246,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u5bc5' to be '\u4ea5' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M5b",
+      "series": "M",
+      "behavior": "robbery-sha rotate-1",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1041,
+      "failed": 246,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u7533' to be '\u4ea5' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M5c",
+      "series": "M",
+      "behavior": "robbery-sha rotate-2",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1041,
+      "failed": 246,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u5df3' to be '\u4ea5' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M5d",
+      "series": "M",
+      "behavior": "robbery-sha rotate-3",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1041,
+      "failed": 246,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u5bc5' to be '\u4ea5' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) robbery-sha-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "series": "M",
+      "behavior": "rejected forward Tai Sat sequence",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1165,
+      "failed": 122,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u536f' to be '\u9149' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) disaster-sha-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) disaster-sha-v4-004 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) disaster-sha-v4-006 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "series": "M",
+      "behavior": "alias duplication (month-sha raw identity twice)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 673,
+      "failed": 614,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-004 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M8",
+      "series": "M",
+      "behavior": "Month Virtue uses day branch",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1127,
+      "failed": 160,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        ""
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-virtue-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-virtue-v4-002 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-virtue-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-virtue-v4-004 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M9",
+      "series": "M",
+      "behavior": "timezone/day operand: Hong Kong (UTC+8) civil date reused for Vietnam",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1242,
+      "failed": 45,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-056 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-057 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-058 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-119 timezone-civil-date",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M9b",
+      "series": "M",
+      "behavior": "timezone/day operand: UTC civil date",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1028,
+      "failed": 259,
+      "loadFailures": [],
+      "failingFiles": [
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-053 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-054 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-055 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-059 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "series": "M",
+      "behavior": "minute rounding of the instant before the Month Jian lookup",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1046,
+      "failed": 241,
+      "loadFailures": [],
+      "failingFiles": [
+        "solar-term consumers use the canonical authority",
+        "cache versioning",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        },
+        {
+          "test": "cache versioning stale-authority / stale-clock entries are never served and are purged",
+          "evidence": "AssertionError: expected 16 to be 17 // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-054 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-055 exact-boundary",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "series": "M",
+      "behavior": "wrong Month Jian (off by one branch)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 45,
+      "failed": 1242,
+      "loadFailures": [],
+      "failingFiles": [
+        "solar-term consumers use the canonical authority",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties",
+        "full-range properties 1899\u20132101 (all 24 terms)"
+      ],
+      "examples": [
+        {
+          "test": "solar-term consumers use the canonical authority daily Officer for every civil day 1900\u20132100 (crossing day uses the new month)",
+          "evidence": "AssertionError: 1900-01-01: expected 9 to be 10 // Object.is equality"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority exact-instant Month Jian and Officer at every Jie: T \u2212 1 ms OLD, T NEW, T + 1 ms NEW",
+          "evidence": "AssertionError: 1900-01-05T18:03:57.577Z: expected 1 to be +0 // Object.is equality"
+        },
+        {
+          "test": "solar-term consumers use the canonical authority 1946 \u0110\u1ea1i tuy\u1ebft: reviewed daily Officer change, derived not hard-coded",
+          "evidence": "AssertionError: expected 3 to be 4 // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-breaker-v4-001 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    },
+    {
+      "id": "M12",
+      "series": "M",
+      "behavior": "wrong table cell (month-sha \u8fb0 row -> \u620c)",
+      "status": "KILLED",
+      "exitCode": 1,
+      "total": 1287,
+      "passed": 1252,
+      "failed": 35,
+      "loadFailures": [],
+      "failingFiles": [
+        "",
+        "Current Group B Golden (golden-v4, astronomy-authority-v4)",
+        "Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION",
+        "Group B properties"
+      ],
+      "examples": [
+        {
+          "test": "source lock: all sixty Group B table cells equal the frozen v3 rule extraction",
+          "evidence": "AssertionError: expected '\u620c' to be '\u672a' // Object.is equality"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-sha-v4-003 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-sha-v4-015 interior-positive",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "test": "Current Group B Golden (golden-v4, astronomy-authority-v4) month-sha-v4-029 interior-negative",
+          "evidence": "AssertionError: expected { \u2026(3) } to deeply equal { \u2026(3) }"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "executed": 33,
+    "KILLED": 33,
+    "KILLED_BY_LOAD_FAILURE": 0,
+    "SURVIVED": 0
+  },
+  "finalBaseline": {
+    "passed": 1287,
+    "failed": 0,
+    "total": 1287
+  },
+  "frozenArtifactsUnchanged": true,
+  "frozenHashes": {
+    "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+    "golden-v4/group-b/month-breaker.json": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+    "golden-v4/group-b/robbery-sha.json": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+    "golden-v4/group-b/disaster-sha.json": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+    "golden-v4/group-b/month-sha.json": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+    "golden-v4/group-b/month-virtue.json": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+    "golden-v4/manifest.json": "35bdfa7ceb17f2051e32c36fc13c249ac0e220d4f376c0c3ba737c25664c20d6",
+    "golden-v3/group-b/manifest.json": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+    "golden-v3/group-b/month-breaker.json": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+    "golden-v3/group-b/robbery-sha.json": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+    "golden-v3/group-b/disaster-sha.json": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+    "golden-v3/group-b/month-sha.json": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+    "golden-v3/group-b/month-virtue.json": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+    "calendar-group-b-exact-jie-evidence.json": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1",
+    "calendar-group-b-reviewer-decisions-v3.1.md": "66e37dea7ecd5b69fe5faff2775f8e372f33de452688e6b637e9350d14e61a40",
+    "calendar-group-b-independent-review.md": "addb2460145c6d62b739cfb8941543bb380eb5f0b3a2cfcd4254eb21811b9452",
+    "calendar-group-b-independent-review.json": "0a6a9544ab01b2728bd066c9d2e8c24e5df90aa106a067f3b035f5a7d996de42",
+    "calendar-group-b-freeze-readiness.md": "df2f37a42232133fdc6df90a2b32a8d1d7974406c28030c593b1a88e712bdc36",
+    "golden-v3/manifest.json": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454",
+    "golden-v3/yue-ji.json": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e",
+    "golden-v3/four-separations.json": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d",
+    "golden-v3/four-extinctions.json": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937"
+  },
+  "gSeriesRerun": {
+    "file": "calendar-golden-tooling-mutation-rerun-v3.4B.json",
+    "summary": {
+      "KILLED": 14,
+      "KILLED_BY_GENERATOR_ABORT": 1,
+      "SURVIVED": 1
+    },
+    "G10b": "SURVIVED as an EQUIVALENT mutant: after migration the production Jie instants equal the authority, so the mutated generator emits byte-identical Group B files (verified). In 3B.4.4A production differed (Astronomy Engine) and G10b was KILLED. The static guard G10 still KILLS the forbidden-oracle practice."
+  },
+  "gatesRequiringExecution": "every mutant executed against unmodified tests; none claimed by inspection"
+}

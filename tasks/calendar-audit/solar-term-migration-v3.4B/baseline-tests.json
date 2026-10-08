@@ -1,0 +1,210 @@
+{
+ "head": "f845444",
+ "command": "npx vitest run",
+ "numTotalTests": 2027,
+ "numPassedTests": 1977,
+ "numFailedTests": 50,
+ "failures": [
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-066 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-069 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-087 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-090 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-093 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-096 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-099 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-breaker-102 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-066 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-069 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-087 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-090 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-093 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-096 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-099 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-102 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden robbery-sha-121 rounded-minute-discriminator"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-066 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-069 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-087 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-090 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-093 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-096 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-099 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden disaster-sha-102 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-066 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-069 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-087 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-090 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-093 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-096 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-099 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-sha-102 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-066 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-069 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-087 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-090 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-093 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-096 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-099 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-102 exact-boundary"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Frozen Group B Golden month-virtue-121 rounded-minute-discriminator"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2023-03"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2023-04"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-05"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-06"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-07"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-08"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-09"
+  },
+  {
+   "file": "shared/lunar/groupB.test.ts",
+   "test": "Group B properties P2: independently reviewed exact jie-2024-10"
+  }
+ ],
+ "classification": "50 known Group B failures: golden-v3 exact-boundary/timezone records vs Astronomy Engine roots (42 Frozen Golden + 8 P2 evidence)"
+}

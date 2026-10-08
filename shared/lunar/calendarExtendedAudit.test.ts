@@ -342,28 +342,31 @@ test('Phase 2.1 — Golden V2.1, Extended invariants and minute boundaries (Core
         canonicalGod(godNames[index]),
       )
     }
-  writeFileSync(
-    'tasks/calendar-audit/phase2.1-results.json',
-    JSON.stringify(
-      {
-        phase: '2.1',
-        authority: 'calendar-validation-patch-v2.1.md + calendar-golden-v2.1.json',
-        goldenSha256: createHash('sha256')
-          .update(readFileSync('shared/lunar/audit-fixtures/calendar-golden-v2.1.json'))
-          .digest('hex'),
-        gate: 'Phase 1 PASS',
-        normalization:
-          'NFC/case; Chính prefix omitted for compass aliases only. Câu Trận normalized to Câu Trần per Patch 2.1; raw values retained in observations.',
-        longitudePolicy:
-          'Approximate Golden longitude has no specified tolerance; numeric residuals recorded as diagnostics, not an invented strict gate.',
-        results,
-        observations,
-        boundaries,
-      },
-      null,
-      2,
-    ) + '\n',
-  )
+  // Phase 2.1 evidence is frozen history: regenerate only on request, never as a test side effect.
+  const output = process.env['PHASE21_AUDIT_OUTPUT']
+  if (output)
+    writeFileSync(
+      output,
+      JSON.stringify(
+        {
+          phase: '2.1',
+          authority: 'calendar-validation-patch-v2.1.md + calendar-golden-v2.1.json',
+          goldenSha256: createHash('sha256')
+            .update(readFileSync('shared/lunar/audit-fixtures/calendar-golden-v2.1.json'))
+            .digest('hex'),
+          gate: 'Phase 1 PASS',
+          normalization:
+            'NFC/case; Chính prefix omitted for compass aliases only. Câu Trận normalized to Câu Trần per Patch 2.1; raw values retained in observations.',
+          longitudePolicy:
+            'Approximate Golden longitude has no specified tolerance; numeric residuals recorded as diagnostics, not an invented strict gate.',
+          results,
+          observations,
+          boundaries,
+        },
+        null,
+        2,
+      ) + '\n',
+    )
   expect(
     Object.entries(results)
       .filter(([, r]) => r.failures.length)

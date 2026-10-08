@@ -26,7 +26,13 @@ describe('calculateBazi', () => {
     const result = calculateBazi(base)
     expect(result.status).toBe('ready')
     if (result.status !== 'ready') return
-    expect(result.versions).toEqual({ rules: '1.1.0', astronomy: '2.1.19', tzdb: '2026d' })
+    expect(result.versions).toEqual({
+      rules: '1.1.0',
+      astronomy: '2.1.19',
+      solarTermAuthority: 'astronomy-authority-v4',
+      clock: 'clock-v1',
+      tzdb: '2026d',
+    })
     expect(result.candidates).toHaveLength(1)
     expect(result.candidates[0].pillars.year.name).toBe('Giáp Thìn')
     expect(result.candidates[0].pillars.month.name).toBe('Bính Dần')

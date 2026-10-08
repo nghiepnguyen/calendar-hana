@@ -46,9 +46,41 @@ interface Fixture {
     expectedCanonicalMatchCount: number
   }
 }
-const fixtures: Fixture[] = ids.flatMap(
-  (id) => JSON.parse(readFileSync(resolve(`golden-v3/group-b/${id}.json`), 'utf8')).fixtures,
+const loadGolden = (version: 'golden-v3' | 'golden-v4'): Fixture[] =>
+  ids.flatMap(
+    (id) => JSON.parse(readFileSync(resolve(`${version}/group-b/${id}.json`), 'utf8')).fixtures,
+  )
+// Current production authority Golden (astronomy-authority-v4, clock-v1).
+const fixtures = loadGolden('golden-v4')
+// Immutable Golden of the previous authority (Swiss DE441): historical regression only.
+const historical = loadGolden('golden-v3')
+interface HistoricalDifference {
+  id: string
+  v3: { monthJian: string; expected: boolean; target: string }
+  v4: { monthJian: string; expected: boolean; target: string }
+  classification: string
+}
+const historicalDiff: {
+  inputs: Record<string, { path: string; sha256: string }>
+  fixturesChecked: number
+  counts: { expectedFixtureDifferences: number; unexpected: number; setEqualsAuditDiff: boolean }
+  expectedDifferences: HistoricalDifference[]
+  expectedEvidenceDifferences: {
+    transitionId: string
+    sample: string
+    v3MonthJian: string
+    v4MonthJian: string
+  }[]
+  unexpected: unknown[]
+} = JSON.parse(
+  readFileSync(
+    resolve(
+      'tasks/calendar-audit/solar-term-migration-v3.4B/calendar-golden-v3-historical-diff-v3.4B.json',
+    ),
+    'utf8',
+  ),
 )
+const expectedDifference = new Map(historicalDiff.expectedDifferences.map((d) => [d.id, d]))
 const evidence: {
   transitions: {
     id: string
@@ -65,17 +97,51 @@ const frozen: Record<string, string> = JSON.parse(
 const audit: Record<string, unknown> = {}
 const fixtureResults: Record<string, unknown>[] = []
 
+const sha256 = (path: string) =>
+  createHash('sha256')
+    .update(readFileSync(resolve(path)))
+    .digest('hex')
+
 test('freeze integrity: all eleven protected artifact hashes', () => {
-  for (const [path, expected] of Object.entries(frozen)) {
-    const actual = createHash('sha256')
-      .update(readFileSync(resolve(path)))
-      .digest('hex')
-    expect(actual, path).toBe(expected)
-  }
-  expect(fixtures).toHaveLength(606)
+  for (const [path, expected] of Object.entries(frozen)) expect(sha256(path), path).toBe(expected)
+  expect(historical).toHaveLength(606)
 })
 
-describe('Frozen Group B Golden', () => {
+test('freeze integrity: golden-v4 manifest pins and 611 reviewed fixtures', () => {
+  const manifest = JSON.parse(readFileSync(resolve('golden-v4/manifest.json'), 'utf8'))
+  expect(manifest.status).toBe('REVIEWED_FROZEN')
+  for (const [path, file] of Object.entries(manifest.files as Record<string, { sha256: string }>))
+    expect(sha256(path), path).toBe(file.sha256)
+  expect(fixtures).toHaveLength(611)
+  expect(new Set(fixtures.map((f) => f.id)).size).toBe(611)
+})
+
+test('source lock: all sixty Group B table cells equal the frozen v3 rule extraction', () => {
+  const extraction = JSON.parse(readFileSync(resolve('calendar-rule-extraction-v3.json'), 'utf8'))
+  let cells = 0
+  for (const id of ids) {
+    const rule = extraction.rules.find((r: { id: string }) => r.id === id)
+    const lookup = rule.rule.lookup as {
+      sourceMonthJianBranch: string
+      target: { value: string }
+    }[]
+    expect(lookup.map((x) => x.sourceMonthJianBranch).join('')).toBe('寅卯辰巳午未申酉戌亥子丑')
+    lookup.forEach((x, row) => {
+      expect(tables[id][row]).toBe(x.target.value)
+      expect(
+        evaluateGroupBContext(
+          { monthJian: x.sourceMonthJianBranch, dayStem: '甲', dayBranch: '子' },
+          [id],
+        )[0]!.targetOperand,
+      ).toBe(x.target.value)
+      cells++
+    })
+  }
+  expect(cells).toBe(60)
+  expect(normalizeGroupBRuleId('heaven-virtue')).toBeUndefined()
+})
+
+describe('Current Group B Golden (golden-v4, astronomy-authority-v4)', () => {
   for (const f of fixtures) {
     test(`${f.id} ${f.fixtureClass}`, () => {
       const actual = evaluateGroupBAtInstant(f.instant, f.timezone, f.identityContract?.inputLabels)
@@ -127,6 +193,58 @@ describe('Frozen Group B Golden', () => {
   }
 })
 
+describe('Historical Group B Golden (golden-v3): HISTORICAL_AUTHORITY_REGRESSION', () => {
+  test('expected-difference manifest: frozen inputs, exact set, nothing unexplained', () => {
+    for (const { path, sha256: expected } of Object.values(historicalDiff.inputs))
+      expect(sha256(path), path).toBe(expected)
+    expect(historicalDiff.fixturesChecked).toBe(606)
+    expect(historicalDiff.unexpected).toEqual([])
+    expect(historicalDiff.counts.setEqualsAuditDiff).toBe(true)
+    expect(historicalDiff.expectedDifferences).toHaveLength(77)
+    for (const d of historicalDiff.expectedDifferences)
+      expect(d.classification).toBe('EXPECTED_AUTHORITY_MIGRATION_CHANGE')
+  })
+  const observed = (f: Fixture) => {
+    const actual = evaluateGroupBAtInstant(f.instant, f.timezone, f.identityContract?.inputLabels)
+    const rule = actual.rules.find((r) => r.id === f.derivation.ruleId)!
+    return {
+      monthJian: actual.context.monthJian,
+      civilDate: actual.context.civilDate,
+      dayStem: actual.context.dayStem,
+      dayBranch: actual.context.dayBranch,
+      target: rule.targetOperand,
+      expected: rule.matched,
+    }
+  }
+  for (const f of historical) {
+    const difference = expectedDifference.get(f.id)
+    test(`${f.id} ${f.fixtureClass} ${difference ? 'EXPECTED_AUTHORITY_MIGRATION_CHANGE' : 'UNCHANGED'}`, () => {
+      const base = {
+        civilDate: f.context.civilDate,
+        dayStem: f.context.dayStem,
+        dayBranch: f.context.dayBranch,
+      }
+      // Unchanged records must reproduce v3 exactly; reviewed changes must match the
+      // independently recomputed v4 values. Anything else is UNEXPECTED_REGRESSION.
+      const expected = difference
+        ? {
+            ...base,
+            monthJian: difference.v4.monthJian,
+            target: difference.v4.target,
+            expected: difference.v4.expected,
+          }
+        : {
+            ...base,
+            monthJian: f.context.monthJian,
+            target: f.derivation.expectedTarget,
+            expected: f.expected,
+          }
+      expect(observed(f)).toEqual(expected)
+      if (difference) expect(difference.v3.monthJian).toBe(f.context.monthJian)
+    })
+  }
+})
+
 describe('Group B properties', () => {
   test('P1: only Jie changes Jian; inclusive equality at the production crossing', () => {
     let checks = 0
@@ -150,8 +268,17 @@ describe('Group B properties', () => {
       reference: 'production roots; semantic invariant, not independent astronomy accuracy',
     }
   })
+  // v3.1 evidence instants are Swiss DE441 roots; under the JPL authority the
+  // ±60 s samples are unchanged and the `at` sample is NEW unless the v4 root
+  // is later (reviewed EXPECTED_AUTHORITY_MIGRATION_CHANGE, manifest-pinned).
+  const evidenceDifferences = historicalDiff.expectedEvidenceDifferences
+  test('P2 manifest: 13 reviewed evidence differences, all at the old exact instant', () => {
+    expect(evidenceDifferences).toHaveLength(13)
+    for (const d of evidenceDifferences) expect(d.sample).toBe('at')
+  })
   for (const t of evidence.transitions) {
     test(`P2: independently reviewed exact ${t.id}`, () => {
+      const changed = evidenceDifferences.find((d) => d.transitionId === t.id)
       const before = evaluateGroupBAtInstant(
         new Date(Date.parse(t.instantUTC) - 60_000).toISOString(),
         timezone,
@@ -162,7 +289,12 @@ describe('Group B properties', () => {
         timezone,
       )
       const actual = [before.context.monthJian, at.context.monthJian, after.context.monthJian]
-      expect(actual).toEqual([t.oldMonthJian, t.newMonthJian, t.newMonthJian])
+      expect(actual).toEqual([
+        t.oldMonthJian,
+        changed ? changed.v4MonthJian : t.newMonthJian,
+        t.newMonthJian,
+      ])
+      if (changed) expect(changed.v4MonthJian).toBe(t.oldMonthJian)
     })
   }
   test('P3–P7: twelve source rows, all sixty valid day operands; stem/branch distinction', () => {

@@ -37,6 +37,10 @@ export interface Pillars {
 
 export const BAZI_VERSIONS = Object.freeze({
   rules: '1.1.0',
+  /** Astronomy Engine: HourAngle / true solar time only. */
   astronomy: '2.1.19',
+  /** Jie / Lập xuân boundaries: frozen JPL authority table and its civil clock. */
+  solarTermAuthority: 'astronomy-authority-v4',
+  clock: 'clock-v1',
   tzdb: '2026d',
 })

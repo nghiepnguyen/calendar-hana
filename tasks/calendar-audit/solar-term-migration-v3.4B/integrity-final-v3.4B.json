@@ -1,0 +1,164 @@
+{
+  "phase": "3B.4.4B",
+  "finalVerdict": "APPROVE_MIGRATION_RELEASE_BLOCKED_DEVICE_GATE",
+  "startingHead": "f8454443e3793be8e4890178832bf86d3e5613ba",
+  "endingHead": "the migration commit containing this file (child of f845444); hash reported in the completion summary",
+  "originMain": "87dd1ba20a4165c75a33d37020388d3018304805",
+  "originMainUnchanged": true,
+  "mainPushed": false,
+  "workingTreeAfterCommit": "clean except untracked graphify-out/cache (transient, intentionally not committed)",
+  "productionFilesChanged": [
+    "THIRD_PARTY_NOTICES.md",
+    "scripts/generate-solar-term-authority.d.mts",
+    "scripts/generate-solar-term-authority.mjs",
+    "shared/astronomy/erfa/clockV1.ts",
+    "shared/astronomy/solarTerms/authority.data.ts",
+    "shared/astronomy/solarTerms/authority.ts",
+    "shared/astronomy/solarTerms/cache.ts",
+    "shared/astronomy/solarTerms/clock.ts",
+    "shared/astronomy/solarTerms/index.ts",
+    "shared/astronomy/solarTerms/sha256.ts",
+    "shared/astronomy/solarTerms/types.ts",
+    "shared/bazi/types.ts",
+    "shared/lunar/almanac.ts",
+    "shared/lunar/index.ts",
+    "shared/lunar/solarTerms.ts",
+    "shared/personalFengShui/rules.ts"
+  ],
+  "testFilesChangedOrAdded": [
+    "shared/astronomy/erfa/authorityVerification.test.ts",
+    "shared/astronomy/solarTerms/authority.test.ts",
+    "shared/astronomy/solarTerms/clock.test.ts",
+    "shared/bazi/authorityMigration.test.ts",
+    "shared/bazi/index.test.ts",
+    "shared/lunar/authorityMigration.test.ts",
+    "shared/lunar/calendarExtendedAudit.test.ts",
+    "shared/lunar/groupB.test.ts",
+    "tasks/calendar-audit/solar-term-migration-v3.4B/tools/impact.snapshot.test.ts"
+  ],
+  "goldenFilesChanged": [],
+  "frozenGoldenHashes": {
+    "golden-v3/four-extinctions.json": {
+      "before": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937",
+      "after": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937",
+      "unchanged": true
+    },
+    "golden-v3/four-separations.json": {
+      "before": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d",
+      "after": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d",
+      "unchanged": true
+    },
+    "golden-v3/group-b/disaster-sha.json": {
+      "before": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+      "after": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+      "unchanged": true
+    },
+    "golden-v3/group-b/manifest.json": {
+      "before": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+      "after": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+      "unchanged": true
+    },
+    "golden-v3/group-b/month-breaker.json": {
+      "before": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+      "after": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+      "unchanged": true
+    },
+    "golden-v3/group-b/month-sha.json": {
+      "before": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+      "after": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+      "unchanged": true
+    },
+    "golden-v3/group-b/month-virtue.json": {
+      "before": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+      "after": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+      "unchanged": true
+    },
+    "golden-v3/group-b/robbery-sha.json": {
+      "before": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+      "after": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+      "unchanged": true
+    },
+    "golden-v3/manifest.json": {
+      "before": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454",
+      "after": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454",
+      "unchanged": true
+    },
+    "golden-v3/yue-ji.json": {
+      "before": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e",
+      "after": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e",
+      "unchanged": true
+    },
+    "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": {
+      "before": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+      "after": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+      "unchanged": true
+    },
+    "golden-v4/group-b/disaster-sha.json": {
+      "before": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+      "after": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+      "unchanged": true
+    },
+    "golden-v4/group-b/month-breaker.json": {
+      "before": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+      "after": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+      "unchanged": true
+    },
+    "golden-v4/group-b/month-sha.json": {
+      "before": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+      "after": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+      "unchanged": true
+    },
+    "golden-v4/group-b/month-virtue.json": {
+      "before": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+      "after": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+      "unchanged": true
+    },
+    "golden-v4/group-b/robbery-sha.json": {
+      "before": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+      "after": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+      "unchanged": true
+    },
+    "golden-v4/manifest.json": {
+      "before": "35bdfa7ceb17f2051e32c36fc13c249ac0e220d4f376c0c3ba737c25664c20d6",
+      "after": "35bdfa7ceb17f2051e32c36fc13c249ac0e220d4f376c0c3ba737c25664c20d6",
+      "unchanged": true
+    }
+  },
+  "otherFrozenEvidenceUnchanged": {
+    "tasks/calendar-audit/phase2.1-results.json": true,
+    "tasks/calendar-audit/group-b-freeze-hashes.json": true,
+    "calendar-group-b-exact-jie-evidence.json": true,
+    "calendar-rule-extraction-v3.json": true
+  },
+  "authorityRuntimeData": {
+    "path": "shared/astronomy/solarTerms/authority.data.ts",
+    "fileSha256": "551860e6f602a688361909ab83abbf84bfe1904a947ecea53fc67d4f842cdf93",
+    "encodedSha256": "9fbc1506a6dbd150013d3a3a1605e0bd713eba5181665807cf9e961f3c4f889e",
+    "sourceSha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+    "authorityVersion": "astronomy-authority-v4"
+  },
+  "clockVersion": "clock-v1",
+  "currentGolden": "golden-v4",
+  "frozenGoldenV3Changed": false,
+  "frozenGoldenV4Changed": false,
+  "testsDisabled": false,
+  "assertionsWeakened": false,
+  "assertionNotes": "golden-v3 records now assert either exact v3 values or the 77 (+13 P2) reviewed, manifest-pinned v4 values; calendarExtendedAudit evidence writer made opt-in (no assertion change); BAZI_VERSIONS expectation extended with two fields",
+  "hardcodedExceptionDates": false,
+  "productionMigrationExecuted": true,
+  "runtimeErfaBoundaryAuthority": false,
+  "runtimeErfaImported": false,
+  "runtimeAstronomyEngineSolarBoundaryAuthority": false,
+  "runtimeAstronomyEngineUsage": "HourAngle / true solar time only (shared/bazi/solarTime.ts); SearchSunLongitude has no call site (library code remains in the non-tree-shaken package)",
+  "unitTests": {
+    "total": 2679,
+    "failed": 0
+  },
+  "unexplainedFailures": 0,
+  "mutation": {
+    "productionPMSeries": "33/33 KILLED",
+    "gSeriesRerun": "15 KILLED (incl. 1 by generator abort), 1 equivalent (G10b)"
+  },
+  "deviceGate": "UNVERIFIED_DEVICE_GATE",
+  "rollback": "PASS (revert tree == f845444 tree 762130e3; baseline reproduced)"
+}

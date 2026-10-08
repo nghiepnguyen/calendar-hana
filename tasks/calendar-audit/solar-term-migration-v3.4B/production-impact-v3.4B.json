@@ -1,0 +1,209 @@
+{
+  "phase": "3B.4.4B",
+  "comparison": "pre-migration production (f845444, Astronomy Engine roots) vs migrated production (JPL authority table, clock-v1)",
+  "daysCompared": 73414,
+  "baziInstantsCompared": 27120,
+  "exactOfficerSamples": 14472,
+  "termMoveSeconds": {
+    "all": {
+      "count": 4824,
+      "median": 13.494,
+      "p95": 110.562,
+      "max": 175.309,
+      "over30s": 1230
+    },
+    "jie": {
+      "count": 2412,
+      "median": 13.594,
+      "p95": 111.813,
+      "max": 175.309,
+      "over30s": 610
+    },
+    "lapXuan": {
+      "count": 201,
+      "median": 12.509,
+      "p95": 106.149,
+      "max": 175.309,
+      "over30s": 49
+    }
+  },
+  "vnCivilDateMoves": [
+    {
+      "term": "1938:180",
+      "jie": false,
+      "old": "1938-09-23T17:00:01.461Z",
+      "new": "1938-09-23T16:59:27.175Z",
+      "oldVnDate": "1938-09-24",
+      "newVnDate": "1938-09-23"
+    },
+    {
+      "term": "1946:255",
+      "jie": true,
+      "old": "1946-12-07T16:59:57.701Z",
+      "new": "1946-12-07T17:00:11.131Z",
+      "oldVnDate": "1946-12-07",
+      "newVnDate": "1946-12-08"
+    }
+  ],
+  "days": {
+    "solarTermStartsAtValue": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 73410,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1900-01-01",
+        "1900-01-02",
+        "1900-01-03",
+        "1900-01-04",
+        "1900-01-05",
+        "1900-01-06",
+        "1900-01-07",
+        "1900-01-08",
+        "1900-01-09",
+        "1900-01-10",
+        "1900-01-11",
+        "1900-01-12"
+      ],
+      "unexpected": []
+    },
+    "tuLy": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 2,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        {
+          "date": "1938-09-22",
+          "old": false,
+          "new": true
+        },
+        {
+          "date": "1938-09-23",
+          "old": true,
+          "new": false
+        }
+      ],
+      "unexpected": []
+    },
+    "solarTermLabel": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 4,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1938-09-23",
+        "1938-09-24",
+        "1946-12-07",
+        "1946-12-08"
+      ],
+      "unexpected": []
+    },
+    "dailyOfficer": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 1,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        {
+          "date": "1946-12-07",
+          "old": 3,
+          "new": 4
+        }
+      ],
+      "unexpected": []
+    }
+  },
+  "bazi": {
+    "termInstantValue": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 27120,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1958-09-10T17:21:54.895Z",
+        "2035-08-12T12:02:13.298Z",
+        "1944-10-15T13:13:03.112Z",
+        "2051-12-05T11:14:44.432Z",
+        "2084-01-12T19:00:27.342Z",
+        "1926-02-21T12:03:19.113Z",
+        "2005-03-07T09:03:59.101Z",
+        "1929-12-22T18:47:15.976Z",
+        "2093-06-25T00:27:16.459Z",
+        "2097-06-16T03:31:31.351Z",
+        "2059-10-25T07:01:49.698Z",
+        "2068-09-25T22:51:05.789Z"
+      ],
+      "unexpected": []
+    },
+    "monthPillar": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 7250,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1900-01-05T18:03:57.578Z",
+        "1900-01-05T18:03:57.579Z",
+        "1900-02-04T05:51:30.354Z",
+        "1900-02-04T05:51:30.355Z",
+        "1900-03-06T00:21:50.843Z",
+        "1900-03-06T00:21:50.844Z",
+        "1900-04-05T05:52:31.042Z",
+        "1900-04-05T05:52:31.043Z",
+        "1900-04-05T05:52:31.044Z",
+        "1900-04-05T05:52:39.967Z",
+        "1900-05-05T23:54:59.924Z",
+        "1900-05-05T23:54:59.925Z"
+      ],
+      "unexpected": []
+    },
+    "termContext": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 7250,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1900-01-05T18:03:57.578Z",
+        "1900-01-05T18:03:57.579Z",
+        "1900-02-04T05:51:30.354Z",
+        "1900-02-04T05:51:30.355Z",
+        "1900-03-06T00:21:50.843Z",
+        "1900-03-06T00:21:50.844Z",
+        "1900-04-05T05:52:31.042Z",
+        "1900-04-05T05:52:31.043Z",
+        "1900-04-05T05:52:31.044Z",
+        "1900-04-05T05:52:39.967Z",
+        "1900-05-05T23:54:59.924Z",
+        "1900-05-05T23:54:59.925Z"
+      ],
+      "unexpected": []
+    },
+    "yearPillar": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 599,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "1900-02-04T05:51:30.354Z",
+        "1900-02-04T05:51:30.355Z",
+        "1901-02-04T11:39:51.176Z",
+        "1901-02-04T11:39:51.177Z",
+        "1902-02-04T17:38:08.086Z",
+        "1902-02-04T17:38:08.087Z",
+        "1903-02-04T23:31:15.831Z",
+        "1903-02-04T23:31:15.832Z",
+        "1904-02-05T05:23:51.431Z",
+        "1904-02-05T05:23:51.432Z",
+        "1904-02-05T05:23:51.433Z",
+        "1904-02-05T05:24:06.710Z"
+      ],
+      "unexpected": []
+    }
+  },
+  "officerAtJie": {
+    "exactInstantOfficer": {
+      "EXPECTED_AUTHORITY_MIGRATION_CHANGE": 7094,
+      "UNEXPECTED_REGRESSION": 0,
+      "examples": [
+        "410500814+0",
+        "410500814+1",
+        "410506571-1",
+        "2958336190+0",
+        "2958336190+1",
+        "2958344002-1",
+        "-2208578162422+0",
+        "-2208578162422+1",
+        "-2206030109646+0",
+        "-2206030109646+1",
+        "-2203457889157+0",
+        "-2203457889157+1"
+      ],
+      "unexpected": []
+    }
+  },
+  "unexpectedTotal": 0
+}

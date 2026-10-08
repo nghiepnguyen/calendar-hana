@@ -1,0 +1,2117 @@
+{
+  "phase": "3B.4.4B",
+  "kind": "HISTORICAL_AUTHORITY_REGRESSION expected-difference manifest",
+  "historicalGolden": "golden-v3 (Swiss Ephemeris DE441 authority, immutable)",
+  "currentAuthority": "astronomy-authority-v4 / clock-v1 (golden-v4)",
+  "method": "Recomputed from frozen data only: v4 Month Jian = branch of the last JPL Jie whose clock-v1 civil ms <= floor(instant ms); target from calendar-rule-extraction-v3 lookup; day operands from the v3 fixture (instants unchanged, so civil dates unchanged). Expected iff the v3 instant lies 0 < d <= 1000 ms before the v4 Jie that opens the v3 month and the 3B.4.4A audit diff records the same v4 values.",
+  "inputs": {
+    "authority": {
+      "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+      "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+    },
+    "extraction": {
+      "path": "calendar-rule-extraction-v3.json",
+      "sha256": "c1e7ecd85c3346b33e07e21990b3facff71071a112c94c025cebbf90dc31ac56"
+    },
+    "evidence": {
+      "path": "calendar-group-b-exact-jie-evidence.json",
+      "sha256": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1"
+    },
+    "auditDiff": {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/golden-diff.json",
+      "sha256": "49ee89920009f7d156ddbd73e9159a5433d1748861a83dd6445b2b44181a8ecd"
+    },
+    "golden-v3/month-breaker": {
+      "path": "golden-v3/group-b/month-breaker.json",
+      "sha256": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb"
+    },
+    "golden-v3/robbery-sha": {
+      "path": "golden-v3/group-b/robbery-sha.json",
+      "sha256": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245"
+    },
+    "golden-v3/disaster-sha": {
+      "path": "golden-v3/group-b/disaster-sha.json",
+      "sha256": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c"
+    },
+    "golden-v3/month-sha": {
+      "path": "golden-v3/group-b/month-sha.json",
+      "sha256": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321"
+    },
+    "golden-v3/month-virtue": {
+      "path": "golden-v3/group-b/month-virtue.json",
+      "sha256": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9"
+    }
+  },
+  "fixturesChecked": 606,
+  "counts": {
+    "expectedFixtureDifferences": 77,
+    "byClass": {
+      "exact-boundary": 65,
+      "timezone-equivalent": 12
+    },
+    "expectedEvidenceDifferences": 13,
+    "unexpected": 0,
+    "auditDiffInvalidCases": 77,
+    "setEqualsAuditDiff": true
+  },
+  "expectedDifferences": [
+    {
+      "id": "month-breaker-057",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-060",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-063",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.221400+07:00",
+      "civilDate": "2014-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "亥"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2014-05-05T13:59:26.251Z",
+        "ttMs": 452570433435
+      },
+      "msBeforeV4Boundary": 30,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-066",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.214332+07:00",
+      "civilDate": "2023-03-06",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2023-03-05T20:36:14.224Z",
+        "ttMs": 731320643408
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-075",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.512852+07:00",
+      "civilDate": "2024-01-06",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2024-01-05T20:49:22.540Z",
+        "ttMs": 757759831724
+      },
+      "msBeforeV4Boundary": 28,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-084",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-087",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.052803+07:00",
+      "civilDate": "2024-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "亥"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2024-05-05T00:10:05.059Z",
+        "ttMs": 768139874243
+      },
+      "msBeforeV4Boundary": 7,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-093",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.398193+07:00",
+      "civilDate": "2024-07-06",
+      "v3": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4": {
+        "monthJian": "午",
+        "expected": false,
+        "target": "子"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 105,
+        "civilIso": "2024-07-06T14:20:03.408Z",
+        "ttMs": 773547672592
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-096",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.449044+07:00",
+      "civilDate": "2024-08-07",
+      "v3": {
+        "monthJian": "申",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 135,
+        "civilIso": "2024-08-07T00:09:16.455Z",
+        "ttMs": 776261425639
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-102",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.335789+07:00",
+      "civilDate": "2024-10-08",
+      "v3": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4": {
+        "monthJian": "酉",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 195,
+        "civilIso": "2024-10-07T18:59:57.339Z",
+        "ttMs": 781599666523
+      },
+      "msBeforeV4Boundary": 4,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-105",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.521878+07:00",
+      "civilDate": "2024-11-07",
+      "v3": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 225,
+        "civilIso": "2024-11-06T22:20:04.552Z",
+        "ttMs": 784203673736
+      },
+      "msBeforeV4Boundary": 31,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-108",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.605598+07:00",
+      "civilDate": "2024-12-06",
+      "v3": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 255,
+        "civilIso": "2024-12-06T15:17:02.637Z",
+        "ttMs": 786770291821
+      },
+      "msBeforeV4Boundary": 32,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-111",
+      "ruleId": "month-breaker",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.338815+07:00",
+      "civilDate": "2025-01-05",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2025-01-05T02:32:46.355Z",
+        "ttMs": 789316435539
+      },
+      "msBeforeV4Boundary": 17,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-116",
+      "ruleId": "month-breaker",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T07:02:17.672062Z",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-117",
+      "ruleId": "month-breaker",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-breaker-118",
+      "ruleId": "month-breaker",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T15:02:17.672062+08:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-057",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-060",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-063",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.221400+07:00",
+      "civilDate": "2014-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2014-05-05T13:59:26.251Z",
+        "ttMs": 452570433435
+      },
+      "msBeforeV4Boundary": 30,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-066",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.214332+07:00",
+      "civilDate": "2023-03-06",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2023-03-05T20:36:14.224Z",
+        "ttMs": 731320643408
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-075",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.512852+07:00",
+      "civilDate": "2024-01-06",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": true,
+        "target": "巳"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2024-01-05T20:49:22.540Z",
+        "ttMs": 757759831724
+      },
+      "msBeforeV4Boundary": 28,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-084",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-087",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.052803+07:00",
+      "civilDate": "2024-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "巳"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2024-05-05T00:10:05.059Z",
+        "ttMs": 768139874243
+      },
+      "msBeforeV4Boundary": 7,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-093",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.398193+07:00",
+      "civilDate": "2024-07-06",
+      "v3": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "午",
+        "expected": false,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 105,
+        "civilIso": "2024-07-06T14:20:03.408Z",
+        "ttMs": 773547672592
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-096",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.449044+07:00",
+      "civilDate": "2024-08-07",
+      "v3": {
+        "monthJian": "申",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 135,
+        "civilIso": "2024-08-07T00:09:16.455Z",
+        "ttMs": 776261425639
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-102",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.335789+07:00",
+      "civilDate": "2024-10-08",
+      "v3": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "亥"
+      },
+      "v4": {
+        "monthJian": "酉",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 195,
+        "civilIso": "2024-10-07T18:59:57.339Z",
+        "ttMs": 781599666523
+      },
+      "msBeforeV4Boundary": 4,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-105",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.521878+07:00",
+      "civilDate": "2024-11-07",
+      "v3": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "戌",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 225,
+        "civilIso": "2024-11-06T22:20:04.552Z",
+        "ttMs": 784203673736
+      },
+      "msBeforeV4Boundary": 31,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-108",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.605598+07:00",
+      "civilDate": "2024-12-06",
+      "v3": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "申"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 255,
+        "civilIso": "2024-12-06T15:17:02.637Z",
+        "ttMs": 786770291821
+      },
+      "msBeforeV4Boundary": 32,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-111",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.338815+07:00",
+      "civilDate": "2025-01-05",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "寅"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "巳"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2025-01-05T02:32:46.355Z",
+        "ttMs": 789316435539
+      },
+      "msBeforeV4Boundary": 17,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-116",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-03-05T16:02:15.805446Z",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-117",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "robbery-sha-118",
+      "ruleId": "robbery-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-03-06T00:02:15.805446+08:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "申"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": true,
+        "target": "亥"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-057",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "子"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-060",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-063",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.221400+07:00",
+      "civilDate": "2014-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2014-05-05T13:59:26.251Z",
+        "ttMs": 452570433435
+      },
+      "msBeforeV4Boundary": 30,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-066",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.214332+07:00",
+      "civilDate": "2023-03-06",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "子"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2023-03-05T20:36:14.224Z",
+        "ttMs": 731320643408
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-075",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.512852+07:00",
+      "civilDate": "2024-01-06",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2024-01-05T20:49:22.540Z",
+        "ttMs": 757759831724
+      },
+      "msBeforeV4Boundary": 28,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-084",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-087",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.052803+07:00",
+      "civilDate": "2024-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2024-05-05T00:10:05.059Z",
+        "ttMs": 768139874243
+      },
+      "msBeforeV4Boundary": 7,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-093",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.398193+07:00",
+      "civilDate": "2024-07-06",
+      "v3": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "午",
+        "expected": false,
+        "target": "子"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 105,
+        "civilIso": "2024-07-06T14:20:03.408Z",
+        "ttMs": 773547672592
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-096",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.449044+07:00",
+      "civilDate": "2024-08-07",
+      "v3": {
+        "monthJian": "申",
+        "expected": false,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 135,
+        "civilIso": "2024-08-07T00:09:16.455Z",
+        "ttMs": 776261425639
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-102",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.335789+07:00",
+      "civilDate": "2024-10-08",
+      "v3": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "子"
+      },
+      "v4": {
+        "monthJian": "酉",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 195,
+        "civilIso": "2024-10-07T18:59:57.339Z",
+        "ttMs": 781599666523
+      },
+      "msBeforeV4Boundary": 4,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-105",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.521878+07:00",
+      "civilDate": "2024-11-07",
+      "v3": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "子"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 225,
+        "civilIso": "2024-11-06T22:20:04.552Z",
+        "ttMs": 784203673736
+      },
+      "msBeforeV4Boundary": 31,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-108",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.605598+07:00",
+      "civilDate": "2024-12-06",
+      "v3": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 255,
+        "civilIso": "2024-12-06T15:17:02.637Z",
+        "ttMs": 786770291821
+      },
+      "msBeforeV4Boundary": 32,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-111",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.338815+07:00",
+      "civilDate": "2025-01-05",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "卯"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "午"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2025-01-05T02:32:46.355Z",
+        "ttMs": 789316435539
+      },
+      "msBeforeV4Boundary": 17,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-116",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-04-04T20:46:39.787483Z",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-117",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "disaster-sha-118",
+      "ruleId": "disaster-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2014-04-05T04:46:39.787483+08:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": true,
+        "target": "午"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "酉"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-057",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-060",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-063",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.221400+07:00",
+      "civilDate": "2014-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2014-05-05T13:59:26.251Z",
+        "ttMs": 452570433435
+      },
+      "msBeforeV4Boundary": 30,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-066",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.214332+07:00",
+      "civilDate": "2023-03-06",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2023-03-05T20:36:14.224Z",
+        "ttMs": 731320643408
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-075",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.512852+07:00",
+      "civilDate": "2024-01-06",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "未"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2024-01-05T20:49:22.540Z",
+        "ttMs": 757759831724
+      },
+      "msBeforeV4Boundary": 28,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-084",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-087",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.052803+07:00",
+      "civilDate": "2024-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2024-05-05T00:10:05.059Z",
+        "ttMs": 768139874243
+      },
+      "msBeforeV4Boundary": 7,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-093",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.398193+07:00",
+      "civilDate": "2024-07-06",
+      "v3": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "午",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 105,
+        "civilIso": "2024-07-06T14:20:03.408Z",
+        "ttMs": 773547672592
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-096",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.449044+07:00",
+      "civilDate": "2024-08-07",
+      "v3": {
+        "monthJian": "申",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 135,
+        "civilIso": "2024-08-07T00:09:16.455Z",
+        "ttMs": 776261425639
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-102",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.335789+07:00",
+      "civilDate": "2024-10-08",
+      "v3": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4": {
+        "monthJian": "酉",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 195,
+        "civilIso": "2024-10-07T18:59:57.339Z",
+        "ttMs": 781599666523
+      },
+      "msBeforeV4Boundary": 4,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-105",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.521878+07:00",
+      "civilDate": "2024-11-07",
+      "v3": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "丑"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 225,
+        "civilIso": "2024-11-06T22:20:04.552Z",
+        "ttMs": 784203673736
+      },
+      "msBeforeV4Boundary": 31,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-108",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.605598+07:00",
+      "civilDate": "2024-12-06",
+      "v3": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 255,
+        "civilIso": "2024-12-06T15:17:02.637Z",
+        "ttMs": 786770291821
+      },
+      "msBeforeV4Boundary": 32,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-111",
+      "ruleId": "month-sha",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.338815+07:00",
+      "civilDate": "2025-01-05",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "辰"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "未"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2025-01-05T02:32:46.355Z",
+        "ttMs": 789316435539
+      },
+      "msBeforeV4Boundary": 17,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-116",
+      "ruleId": "month-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T07:02:17.672062Z",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-117",
+      "ruleId": "month-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-sha-118",
+      "ruleId": "month-sha",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T15:02:17.672062+08:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "未"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": true,
+        "target": "戌"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-057",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.805446+07:00",
+      "civilDate": "2014-03-05",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "丙"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2014-03-05T16:02:15.813Z",
+        "ttMs": 447307402997
+      },
+      "msBeforeV4Boundary": 8,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-060",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.787483+07:00",
+      "civilDate": "2014-04-05",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2014-04-04T20:46:39.793Z",
+        "ttMs": 449916466977
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-063",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.221400+07:00",
+      "civilDate": "2014-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "庚"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2014-05-05T13:59:26.251Z",
+        "ttMs": 452570433435
+      },
+      "msBeforeV4Boundary": 30,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-066",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.214332+07:00",
+      "civilDate": "2023-03-06",
+      "v3": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4": {
+        "monthJian": "寅",
+        "expected": false,
+        "target": "丙"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 345,
+        "civilIso": "2023-03-05T20:36:14.224Z",
+        "ttMs": 731320643408
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-075",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.512852+07:00",
+      "civilDate": "2024-01-06",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "庚"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2024-01-05T20:49:22.540Z",
+        "ttMs": 757759831724
+      },
+      "msBeforeV4Boundary": 28,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-084",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.672062+07:00",
+      "civilDate": "2024-04-04",
+      "v3": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4": {
+        "monthJian": "卯",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 15,
+        "civilIso": "2024-04-04T07:02:17.697Z",
+        "ttMs": 765486206881
+      },
+      "msBeforeV4Boundary": 25,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-087",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.052803+07:00",
+      "civilDate": "2024-05-05",
+      "v3": {
+        "monthJian": "巳",
+        "expected": false,
+        "target": "庚"
+      },
+      "v4": {
+        "monthJian": "辰",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 45,
+        "civilIso": "2024-05-05T00:10:05.059Z",
+        "ttMs": 768139874243
+      },
+      "msBeforeV4Boundary": 7,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-093",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.398193+07:00",
+      "civilDate": "2024-07-06",
+      "v3": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4": {
+        "monthJian": "午",
+        "expected": false,
+        "target": "丙"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 105,
+        "civilIso": "2024-07-06T14:20:03.408Z",
+        "ttMs": 773547672592
+      },
+      "msBeforeV4Boundary": 10,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-096",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.449044+07:00",
+      "civilDate": "2024-08-07",
+      "v3": {
+        "monthJian": "申",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4": {
+        "monthJian": "未",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 135,
+        "civilIso": "2024-08-07T00:09:16.455Z",
+        "ttMs": 776261425639
+      },
+      "msBeforeV4Boundary": 6,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-102",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.335789+07:00",
+      "civilDate": "2024-10-08",
+      "v3": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "丙"
+      },
+      "v4": {
+        "monthJian": "酉",
+        "expected": false,
+        "target": "庚"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 195,
+        "civilIso": "2024-10-07T18:59:57.339Z",
+        "ttMs": 781599666523
+      },
+      "msBeforeV4Boundary": 4,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-105",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.521878+07:00",
+      "civilDate": "2024-11-07",
+      "v3": {
+        "monthJian": "亥",
+        "expected": false,
+        "target": "甲"
+      },
+      "v4": {
+        "monthJian": "戌",
+        "expected": false,
+        "target": "丙"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 225,
+        "civilIso": "2024-11-06T22:20:04.552Z",
+        "ttMs": 784203673736
+      },
+      "msBeforeV4Boundary": 31,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-108",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.605598+07:00",
+      "civilDate": "2024-12-06",
+      "v3": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4": {
+        "monthJian": "亥",
+        "expected": true,
+        "target": "甲"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 255,
+        "civilIso": "2024-12-06T15:17:02.637Z",
+        "ttMs": 786770291821
+      },
+      "msBeforeV4Boundary": 32,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "id": "month-virtue-111",
+      "ruleId": "month-virtue",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.338815+07:00",
+      "civilDate": "2025-01-05",
+      "v3": {
+        "monthJian": "丑",
+        "expected": false,
+        "target": "庚"
+      },
+      "v4": {
+        "monthJian": "子",
+        "expected": false,
+        "target": "壬"
+      },
+      "v4Boundary": {
+        "jieLongitudeDeg": 285,
+        "civilIso": "2025-01-05T02:32:46.355Z",
+        "ttMs": 789316435539
+      },
+      "msBeforeV4Boundary": 17,
+      "auditDiffAgrees": true,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    }
+  ],
+  "expectedEvidenceDifferences": [
+    {
+      "transitionId": "jie-2014-03",
+      "sample": "at",
+      "instantUTC": "2014-03-05T16:02:15.805446Z",
+      "v3MonthJian": "卯",
+      "v4MonthJian": "寅",
+      "v4BoundaryCivilIso": "2014-03-05T16:02:15.813Z",
+      "msV4AfterV3": 8,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2014-04",
+      "sample": "at",
+      "instantUTC": "2014-04-04T20:46:39.787483Z",
+      "v3MonthJian": "辰",
+      "v4MonthJian": "卯",
+      "v4BoundaryCivilIso": "2014-04-04T20:46:39.793Z",
+      "msV4AfterV3": 6,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2014-05",
+      "sample": "at",
+      "instantUTC": "2014-05-05T13:59:26.221400Z",
+      "v3MonthJian": "巳",
+      "v4MonthJian": "辰",
+      "v4BoundaryCivilIso": "2014-05-05T13:59:26.251Z",
+      "msV4AfterV3": 30,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2023-03",
+      "sample": "at",
+      "instantUTC": "2023-03-05T20:36:14.214332Z",
+      "v3MonthJian": "卯",
+      "v4MonthJian": "寅",
+      "v4BoundaryCivilIso": "2023-03-05T20:36:14.224Z",
+      "msV4AfterV3": 10,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-01",
+      "sample": "at",
+      "instantUTC": "2024-01-05T20:49:22.512852Z",
+      "v3MonthJian": "丑",
+      "v4MonthJian": "子",
+      "v4BoundaryCivilIso": "2024-01-05T20:49:22.540Z",
+      "msV4AfterV3": 28,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-04",
+      "sample": "at",
+      "instantUTC": "2024-04-04T07:02:17.672062Z",
+      "v3MonthJian": "辰",
+      "v4MonthJian": "卯",
+      "v4BoundaryCivilIso": "2024-04-04T07:02:17.697Z",
+      "msV4AfterV3": 25,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-05",
+      "sample": "at",
+      "instantUTC": "2024-05-05T00:10:05.052803Z",
+      "v3MonthJian": "巳",
+      "v4MonthJian": "辰",
+      "v4BoundaryCivilIso": "2024-05-05T00:10:05.059Z",
+      "msV4AfterV3": 7,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-07",
+      "sample": "at",
+      "instantUTC": "2024-07-06T14:20:03.398193Z",
+      "v3MonthJian": "未",
+      "v4MonthJian": "午",
+      "v4BoundaryCivilIso": "2024-07-06T14:20:03.408Z",
+      "msV4AfterV3": 10,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-08",
+      "sample": "at",
+      "instantUTC": "2024-08-07T00:09:16.449044Z",
+      "v3MonthJian": "申",
+      "v4MonthJian": "未",
+      "v4BoundaryCivilIso": "2024-08-07T00:09:16.455Z",
+      "msV4AfterV3": 6,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-10",
+      "sample": "at",
+      "instantUTC": "2024-10-07T18:59:57.335789Z",
+      "v3MonthJian": "戌",
+      "v4MonthJian": "酉",
+      "v4BoundaryCivilIso": "2024-10-07T18:59:57.339Z",
+      "msV4AfterV3": 4,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-11",
+      "sample": "at",
+      "instantUTC": "2024-11-06T22:20:04.521878Z",
+      "v3MonthJian": "亥",
+      "v4MonthJian": "戌",
+      "v4BoundaryCivilIso": "2024-11-06T22:20:04.552Z",
+      "msV4AfterV3": 31,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2024-12",
+      "sample": "at",
+      "instantUTC": "2024-12-06T15:17:02.605598Z",
+      "v3MonthJian": "子",
+      "v4MonthJian": "亥",
+      "v4BoundaryCivilIso": "2024-12-06T15:17:02.637Z",
+      "msV4AfterV3": 32,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    },
+    {
+      "transitionId": "jie-2025-01",
+      "sample": "at",
+      "instantUTC": "2025-01-05T02:32:46.338815Z",
+      "v3MonthJian": "丑",
+      "v4MonthJian": "子",
+      "v4BoundaryCivilIso": "2025-01-05T02:32:46.355Z",
+      "msV4AfterV3": 17,
+      "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE"
+    }
+  ],
+  "unexpected": []
+}

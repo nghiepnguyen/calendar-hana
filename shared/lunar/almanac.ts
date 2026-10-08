@@ -3,6 +3,7 @@
 // Tách riêng khỏi getDayInfo vì getDayInfo chạy cho mọi ô của xem Tháng, còn phần này chỉ cần
 // cho ngày đang xem.
 
+import { memoizeSolarTermDerived } from '../astronomy/solarTerms/cache'
 import type { SolarDateString } from '../types'
 import { getAllHours, type DayHour } from './auspicious'
 import type { CanChi } from './canChi'
@@ -40,13 +41,14 @@ export interface Almanac {
 }
 
 const CACHE_LIMIT = 2000
-const cache = new Map<SolarDateString, Almanac>()
 
+/** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
   const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}`
-  const cached = cache.get(cacheKey)
-  if (cached) return cached
+  return memoizeSolarTermDerived('almanac', cacheKey, CACHE_LIMIT, () => computeAlmanac(date))
+}
 
+function computeAlmanac(date: SolarDateString): Almanac {
   const info = getDayInfo(date)
   const { jd, lunar } = info
   const day = info.canChi.day
@@ -98,11 +100,5 @@ export function getAlmanac(date: SolarDateString): Almanac {
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
   }
-
-  if (cache.size >= CACHE_LIMIT) {
-    const oldest = cache.keys().next().value
-    if (oldest !== undefined) cache.delete(oldest)
-  }
-  cache.set(cacheKey, almanac)
   return almanac
 }

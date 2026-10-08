@@ -1,0 +1,66 @@
+{
+  "phase": "3B.4.4B",
+  "decision": "D1 option B: frozen JPL canonical boundary table as versioned runtime authority data",
+  "authorityVersion": "astronomy-authority-v4",
+  "datasetId": "solar-terms-jpl-de440s-clock-v1",
+  "clockVersion": "clock-v1",
+  "goldenVersion": "golden-v4",
+  "source": {
+    "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+    "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+    "manifestPinned": true
+  },
+  "generator": {
+    "path": "scripts/generate-solar-term-authority.mjs",
+    "version": "solar-term-authority-runtime-generator 1.0.0",
+    "sha256": "4b3ec7505b9c30a20321442408a2839ae3063c3e367ae2f78a4247414c3ef603",
+    "deterministic": true,
+    "checkCommand": "node scripts/generate-solar-term-authority.mjs --check"
+  },
+  "runtimeData": {
+    "path": "shared/astronomy/solarTerms/authority.data.ts",
+    "fileSha256": "551860e6f602a688361909ab83abbf84bfe1904a947ecea53fc67d4f842cdf93",
+    "encodedSha256": "9fbc1506a6dbd150013d3a3a1605e0bd713eba5181665807cf9e961f3c4f889e",
+    "bytes": 35077,
+    "gzipBytes": 21193,
+    "encoding": "first T (base 36) then strictly positive base-36 deltas, comma-separated; integer TT ms since J2000.0 TT",
+    "rows": 4872,
+    "years": "1899-2101 (public 1900-2100; 1899/2101 internal padding)",
+    "termsPerYear": 24,
+    "termOrder": "19,20,...,23,0,...,18",
+    "targetLongitude": "termIndex*15"
+  },
+  "civilSerialization": "computed at load by clock-v1 (shared/astronomy/solarTerms/clock.ts); reproduces the frozen civilEpochMs/civilIso/clockRegime of all 4,872 rows exactly",
+  "integrity": {
+    "atLoad": [
+      "pinned authority/dataset/clock/generator/source-hash identity",
+      "synchronous SHA-256 of encoded table vs pin",
+      "row count, encoding charset, safe integers",
+      "gap 14-16 days between consecutive crossings",
+      "strictly increasing TT and civil ms",
+      "civil UTC year equals row year"
+    ],
+    "atTest": [
+      "source file sha256 equals golden-v4 manifest",
+      "runtime file byte-equal to generator output",
+      "encoded sha256 (node crypto) equals pin",
+      "every row equals frozen TT/civil/ISO/regime"
+    ],
+    "failureMode": "SolarTermAuthorityError (VERSION_MISMATCH / HASH_MISMATCH / MALFORMED / OUT_OF_RANGE); no fallback to Astronomy Engine or ERFA; no network"
+  },
+  "performanceNodeDesktop": {
+    "moduleImportMs": 61.1,
+    "firstLoadAndVerifyMs": 27.5,
+    "lookupMicroseconds": 0.12,
+    "note": "Node 23 / Apple Silicon; physical-device numbers pending (device gate)"
+  },
+  "bundle": {
+    "mainChunkBytesBefore": 1093803,
+    "mainChunkBytesAfter": 1133146,
+    "mainChunkGzipBefore": 315105,
+    "mainChunkGzipAfter": 339814,
+    "gzipDelta": 24709,
+    "erfaInBundle": false,
+    "astronomyEngineInBundle": "yes (HourAngle/TST); library is a single non-tree-shaken module so SearchSunLongitude code is present but has no call site"
+  }
+}
