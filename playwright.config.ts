@@ -17,7 +17,9 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
-    { name: 'iphone', use: { ...devices['iPhone 15'] } },
+    // WebKit Linux trên CI vẽ phần mềm ở deviceScaleFactor 3 (kèm backdrop-filter): mỗi thao tác
+    // mất 2–3s, nên test nhiều bước vượt 30s dù không treo.
+    { name: 'iphone', use: { ...devices['iPhone 15'] }, timeout: 90_000 },
   ],
   webServer: {
     command: 'npm run build && npx vite preview --port 4173 --strictPort',
