@@ -1,0 +1,122 @@
+{
+  "specId": "calendar-astronomy-authority-spec-v3.4A",
+  "status": "APPROVED_FOR_AUTHORITY_GENERATION",
+  "supersedesProposal": "calendar-astronomy-spec-change-v3.3.md (SPEC_CHANGE_PROPOSED)",
+  "layers": {
+    "A_reference": {
+      "role": "independent reference authority; Golden construction; validation",
+      "kernel": "JPL DE440s",
+      "kernelSha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+      "software": {
+        "skyfield": "1.55",
+        "jplephem": "2.24"
+      },
+      "runtime": false
+    },
+    "B_engine": {
+      "id": "hana-erfa-solar-term",
+      "version": "1.0.0-candidate.3b43",
+      "basis": "ERFA 2.0.1 EPV00 + IAU 2006 + IAU 2000B",
+      "status": "APPROVE_FOUNDATION_WITH_DEVICE_GATE",
+      "goldenOracle": false
+    },
+    "C_boundary": {
+      "rule": "T = first integer TT millisecond since J2000.0 TT at or after the Layer-A crossing (ceil), decided by residual sign at integer ms",
+      "tolerance": 0
+    },
+    "D_clock": {
+      "id": "clock-v1"
+    }
+  },
+  "observable": {
+    "body": "Sun",
+    "quantity": "apparent geocentric tropical ecliptic longitude",
+    "frame": "true ecliptic and equinox of date",
+    "solarTerms": 24,
+    "spacingDeg": 15,
+    "termIndex": "longitude/15, 0 = Xuan phan",
+    "jie": "odd indices; Month Jian [Jie_n, Jie_n+1), Lap xuan (315) opens Dan"
+  },
+  "timeScale": "TT",
+  "productionAccuracyGate": {
+    "rule": "|productionRootTT - referenceRootTT| <= 0.5 s",
+    "scope": "all 24 terms, 1900-2100",
+    "paddingReportedSeparately": [1899, 2101],
+    "isDomainTolerance": false,
+    "isIdentityRequirement": false,
+    "currentEngine": {
+      "maxAbsSeconds": 0.3763,
+      "medianAbsSeconds": 0.0735,
+      "p95AbsSeconds": 0.1965,
+      "p99AbsSeconds": 0.2553,
+      "above05s": 0,
+      "paddingMaxAbsSeconds": 0.2016,
+      "canonicalMsEqual": "16/4824",
+      "verdict": "PASS"
+    },
+    "historicalBazi30s": "documented for Bazi/TST compatibility; not this engine acceptance target"
+  },
+  "domainSemantics": {
+    "previous": "t < T",
+    "next": "t >= T",
+    "mandatory": ["T-1ms OLD", "T NEW", "T+1ms NEW"],
+    "epsilonForbidden": true
+  },
+  "versioning": {
+    "authorityVersion": "astronomy-authority-v4",
+    "referenceDataset": "solar-terms-jpl-de440s-clock-v1",
+    "engineVersion": "hana-erfa-solar-term@1.0.0-candidate.3b43",
+    "clockVersion": "clock-v1",
+    "cacheKeyMustInclude": ["engineVersion or authority dataset", "clockVersion"]
+  },
+  "clockPolicy": {
+    "id": "clock-v1",
+    "status": "APPROVED_FOR_THIS_AUTHORITY_GENERATION",
+    "regimes": [
+      {
+        "id": "PRE1972_MODELED_UT1",
+        "until": "1972-01-01T00:00:00Z",
+        "rule": "ceil(TT - DeltaT Espenak-Meeus 2006, y = 2000 + (ut - 14)/365.24217, 6 fixed iterations, pinned operation order)",
+        "label": "modeled historical civil time, not exact UTC"
+      },
+      {
+        "id": "UTC_LEAP_HISTORY",
+        "from": "1972-01-01",
+        "until": "2027-06-28",
+        "rule": "TT - 32.184 s - (TAI-UTC)",
+        "leapFile": {
+          "name": "IERS Leap_Second.dat Bulletin C 72",
+          "sha256": "6cb6f5d4b819f2e568e25db4b0b26d89dedf031fdffb18bc94d40f4e94e268d7"
+        }
+      },
+      {
+        "id": "PROJECTED_PINNED_TAI_UTC",
+        "from": "2027-06-28",
+        "rule": "TAI-UTC = 37 s",
+        "label": "deterministic project convention, not a prediction of physical UTC"
+      }
+    ],
+    "leapSecondInstant": "fail explicitly (LEAP_SECOND_UNREPRESENTABLE)",
+    "serialization": {
+      "epoch": "integer ms, first civil ms at or after T",
+      "iso": "UTC, exactly 3 fractional digits"
+    },
+    "futureChange": "requires clock-v2; clock-v1 output never changes",
+    "implementationsAgree": "Python generator, Node reviewer, TS clockV1 bit-identical"
+  },
+  "golden": {
+    "new": "golden-v4 (REVIEWED_FROZEN)",
+    "old": "golden-v3 immutable historical (Swiss Ephemeris DE441 authority)",
+    "sources": ["Layer A", "frozen Group B source rule tables"],
+    "forbiddenSources": [
+      "hana-erfa",
+      "Astronomy Engine production",
+      "getSolarMonth",
+      "getSolarTermAt",
+      "evaluateGroupBAtInstant",
+      "production Group B runtime",
+      "old Golden timestamps"
+    ]
+  },
+  "openGate": "runtime realization of canonical T in production: see calendar-runtime-boundary-architecture-v3.4A.md"
+}

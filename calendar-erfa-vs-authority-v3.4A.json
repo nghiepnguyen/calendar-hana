@@ -1,0 +1,79 @@
+{
+  "phase": "3B.4.4A",
+  "classification": "VALIDATION ONLY — ERFA did not influence any Golden value",
+  "authority": {
+    "dataset": "solar-terms-jpl-de440s-clock-v1",
+    "status": "REVIEWED_FROZEN",
+    "sha256ManifestRef": "golden-v4/manifest.json"
+  },
+  "erfaModel": "hana-erfa-solar-term@1.0.0-candidate.3b43",
+  "accuracyGate": {
+    "rule": "|ERFA TT root - JPL TT root| <= 0.5 s",
+    "maxAbsSeconds": 0.376326904296875,
+    "medianAbsSeconds": 0.0735145263671875,
+    "p95AbsSeconds": 0.19651519775390613,
+    "p99AbsSeconds": 0.25525151977539,
+    "above05s": 0,
+    "verdict": "PASS",
+    "padding": {
+      "maxAbsSeconds": 0.20157421875
+    }
+  },
+  "canonicalIntegerMs": {
+    "note": "Exact identity is NOT required by the accuracy gate; reported to inform the 3B.4.4B runtime-boundary decision.",
+    "equal": 16,
+    "differ": 4808,
+    "erfaLater": 1505,
+    "erfaEarlier": 3303,
+    "maxAbsDeltaMs": 377,
+    "medianAbsDeltaMs": 74,
+    "jieDiffer": 2406
+  },
+  "civilDateMismatches": {
+    "UTC": 0,
+    "UTC+7": 0,
+    "UTC+8": 0
+  },
+  "monthJianWithinRootDelta": {
+    "note": "For a Jie with ERFA T != JPL T, every instant in [min, max) gets a different Month Jian (and Officer / Group B month context). The interval is narrow (<= max |delta|).",
+    "jieCrossingsWithDifferingInterval": 2406,
+    "totalDifferingMilliseconds": 203518
+  },
+  "clockImplementationsAgree": {
+    "tsClockV1OnAuthorityT": "4824/4824"
+  },
+  "architectureA_ERFARuntimeVsGoldenV4": {
+    "fixtures": 611,
+    "wouldFail": 115,
+    "byClass": {
+      "exact-boundary": 115
+    },
+    "failingSamples": [
+      "jie-2014-015:before",
+      "jie-2014-045:before",
+      "jie-2014-315:before",
+      "jie-2014-345:before",
+      "jie-2023-015:before",
+      "jie-2023-045:before",
+      "jie-2023-345:before",
+      "jie-2024-015:before",
+      "jie-2024-045:before",
+      "jie-2024-075:before",
+      "jie-2024-105:before",
+      "jie-2024-135:before",
+      "jie-2024-165:before",
+      "jie-2024-195:before",
+      "jie-2024-225:after",
+      "jie-2024-225:at",
+      "jie-2024-255:after",
+      "jie-2024-255:at",
+      "jie-2024-285:before",
+      "jie-2024-315:before",
+      "jie-2024-345:before",
+      "jie-2025-105:before",
+      "jie-2025-285:before"
+    ],
+    "controlAuditEvaluatorWithAuthorityTables": "611/611 pass"
+  },
+  "rows": "tasks/calendar-audit/astronomy-authority-v3.4A/analysis/erfa-vs-authority-rows.tsv"
+}

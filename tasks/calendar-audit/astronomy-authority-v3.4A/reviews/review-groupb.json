@@ -1,0 +1,143 @@
+{
+ "phase": "3B.4.4A",
+ "review": "independent Group B vNext review",
+ "method": "Node reviewer; own clock-v1, reviewer canonical T, own day arithmetic, classical-definition rule cells; no production import",
+ "candidateFileSha256": {
+  "month-breaker": "01df4e0a119b30666e2dc148b270bef7ab1c7d8b861d629957161f51335cfe70",
+  "robbery-sha": "e0a65f3f65ad11b24f1b29295dc0b070044a7c455dbadf99e23112fdbd0c9f18",
+  "disaster-sha": "9e1bdbfcc86b841fc596143e57114a5cdffd9411ca202122f99a5c765b7e3eee",
+  "month-sha": "ff190e3229840221164ba6b0c97d474c783c1216f6dcaa92a7f68c2545112768",
+  "month-virtue": "90514ca9a4bb48aeb3e93946650015a3e8642266167ba0f5b9bbfec3192f10ad"
+ },
+ "authoritySha256": "5df1d0acb63dc0ddb9aa5070317beab4e73fc1da6149971f4c6f1f127eadd389",
+ "sourceTable": {
+  "cellsDerived": 60,
+  "oldGoldenPairsCorroborated": 606
+ },
+ "fixturesChecked": 611,
+ "coverage": {
+  "month-breaker": {
+   "classes": {
+    "interior-positive": 26,
+    "interior-negative": 26,
+    "exact-boundary": 63,
+    "timezone-equivalent": 3,
+    "timezone-civil-date": 1,
+    "lunar-leap-regression": 1,
+    "rounded-minute-discriminator": 2
+   },
+   "posJian": 12,
+   "negJian": 12,
+   "jieTypes": 12,
+   "years": [
+    "1900",
+    "2014",
+    "2015",
+    "2023",
+    "2024",
+    "2025",
+    "2100"
+   ],
+   "killsTruncation": true
+  },
+  "robbery-sha": {
+   "classes": {
+    "interior-positive": 26,
+    "interior-negative": 26,
+    "exact-boundary": 63,
+    "timezone-equivalent": 3,
+    "timezone-civil-date": 1,
+    "lunar-leap-regression": 1,
+    "rounded-minute-discriminator": 2
+   },
+   "posJian": 12,
+   "negJian": 12,
+   "jieTypes": 12,
+   "years": [
+    "1900",
+    "2014",
+    "2015",
+    "2023",
+    "2024",
+    "2025",
+    "2100"
+   ],
+   "killsTruncation": true
+  },
+  "disaster-sha": {
+   "classes": {
+    "interior-positive": 26,
+    "interior-negative": 26,
+    "exact-boundary": 63,
+    "timezone-equivalent": 3,
+    "timezone-civil-date": 1,
+    "lunar-leap-regression": 1,
+    "rounded-minute-discriminator": 2
+   },
+   "posJian": 12,
+   "negJian": 12,
+   "jieTypes": 12,
+   "years": [
+    "1900",
+    "2014",
+    "2015",
+    "2023",
+    "2024",
+    "2025",
+    "2100"
+   ],
+   "killsTruncation": true
+  },
+  "month-sha": {
+   "classes": {
+    "interior-positive": 26,
+    "interior-negative": 26,
+    "exact-boundary": 63,
+    "timezone-equivalent": 3,
+    "timezone-civil-date": 1,
+    "lunar-leap-regression": 1,
+    "rounded-minute-discriminator": 2,
+    "alias-identity": 1
+   },
+   "posJian": 12,
+   "negJian": 12,
+   "jieTypes": 12,
+   "years": [
+    "1900",
+    "2014",
+    "2015",
+    "2023",
+    "2024",
+    "2025",
+    "2100"
+   ],
+   "killsTruncation": true
+  },
+  "month-virtue": {
+   "classes": {
+    "interior-positive": 26,
+    "interior-negative": 26,
+    "exact-boundary": 63,
+    "timezone-equivalent": 3,
+    "timezone-civil-date": 1,
+    "lunar-leap-regression": 1,
+    "rounded-minute-discriminator": 2
+   },
+   "posJian": 12,
+   "negJian": 12,
+   "jieTypes": 12,
+   "years": [
+    "1900",
+    "2014",
+    "2015",
+    "2023",
+    "2024",
+    "2025",
+    "2100"
+   ],
+   "killsTruncation": true
+  }
+ },
+ "findings": [],
+ "verdict": "PASS"
+}

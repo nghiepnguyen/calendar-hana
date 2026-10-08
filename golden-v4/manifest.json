@@ -1,0 +1,92 @@
+{
+  "goldenVersion": "golden-v4",
+  "status": "REVIEWED_FROZEN",
+  "authorityVersion": "astronomy-authority-v4",
+  "clockPolicy": "clock-v1",
+  "supersedes": "nothing — golden-v3 remains the immutable historical Golden of the previous authority",
+  "policy": "Frozen. Any modification requires a new Golden version (golden-v5); never regenerate in place.",
+  "files": {
+    "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": {
+      "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+      "reviewedCandidateSha256": "5df1d0acb63dc0ddb9aa5070317beab4e73fc1da6149971f4c6f1f127eadd389",
+      "bytes": 532619
+    },
+    "golden-v4/group-b/month-breaker.json": {
+      "sha256": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+      "reviewedCandidateSha256": "01df4e0a119b30666e2dc148b270bef7ab1c7d8b861d629957161f51335cfe70",
+      "bytes": 152554
+    },
+    "golden-v4/group-b/robbery-sha.json": {
+      "sha256": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+      "reviewedCandidateSha256": "e0a65f3f65ad11b24f1b29295dc0b070044a7c455dbadf99e23112fdbd0c9f18",
+      "bytes": 152064
+    },
+    "golden-v4/group-b/disaster-sha.json": {
+      "sha256": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+      "reviewedCandidateSha256": "9e1bdbfcc86b841fc596143e57114a5cdffd9411ca202122f99a5c765b7e3eee",
+      "bytes": 152333
+    },
+    "golden-v4/group-b/month-sha.json": {
+      "sha256": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+      "reviewedCandidateSha256": "ff190e3229840221164ba6b0c97d474c783c1216f6dcaa92a7f68c2545112768",
+      "bytes": 152915
+    },
+    "golden-v4/group-b/month-virtue.json": {
+      "sha256": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+      "reviewedCandidateSha256": "90514ca9a4bb48aeb3e93946650015a3e8642266167ba0f5b9bbfec3192f10ad",
+      "bytes": 152092
+    }
+  },
+  "reviews": [
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/reviews/review-authority.json",
+      "sha256": "1f95de7d364fe9d45a8b00bc330b35d9026ee23d6728a625e4c03b2ea455ecde"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/reviews/review-groupb.json",
+      "sha256": "0d7a83d72407f316ee88fb6693543102eb354ef8b5da9903894dc8a0979388d9"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "JPL DE440s kernel",
+      "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+    },
+    {
+      "path": "tasks/calendar-audit/erfa-foundation-v3.3/clock/iers-Leap_Second.dat",
+      "sha256": "6cb6f5d4b819f2e568e25db4b0b26d89dedf031fdffb18bc94d40f4e94e268d7",
+      "name": "IERS Leap_Second.dat (Bulletin C 72)"
+    },
+    {
+      "path": "calendar-rule-extraction-v3.json",
+      "sha256": "c1e7ecd85c3346b33e07e21990b3facff71071a112c94c025cebbf90dc31ac56",
+      "name": "Group B source rule extraction (frozen v3)"
+    }
+  ],
+  "tooling": [
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/generator/jpl_authority.py",
+      "sha256": "1049dc2b03a0e74052c8ce9e730004f3a040cc7ad0b153e417ccfcb508b00575"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/generator/clock_v1.py",
+      "sha256": "05ef2f18312e455c593b7a1100b2ac935ee6e0e2280e211c8a73963839cce116"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/generator/groupb_generator.py",
+      "sha256": "ab56ddeccf39e0f396360b63220dc54de3bbf8d715505f870a544ee794ada4e9"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/review/review_authority.py",
+      "sha256": "98f1b3e7105a9e955a41aa3ef75c3869059fe7bdbb58fc7515d47c84e0c9ccd9"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/review/review_groupb.mjs",
+      "sha256": "4fd1e39a5a59c8af6a111620f87fb48cc1b79f499f6642c30aceaea3e903a2cc"
+    },
+    {
+      "path": "tasks/calendar-audit/astronomy-authority-v3.4A/freeze.mjs",
+      "sha256": "76173401d0378a3e50090e343323462fa79c9ba6179e5f6749a22ab0982e16b1"
+    }
+  ]
+}

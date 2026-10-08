@@ -1,0 +1,43 @@
+{
+ "phase": "3B.4.4A",
+ "review": "independent JPL authority review",
+ "candidateSha256": "f1719297433b9612b9bbb94b295d6cb5e93da116e1df4f0d310959e87cd7e4dc",
+ "method": "RA/Dec of date + true obliquity spherical conversion; Meeus mean-longitude seed +-6 d; pure integer-ms sign bisection",
+ "rows": 4872,
+ "exactCanonicalMatches": 4872,
+ "mismatches": 0,
+ "minSignMarginDeg": 4.547473508864641e-13,
+ "nearIntegerRootsBelow1e10Deg": 90,
+ "maxRootVsReviewTMs": 1,
+ "structureChecks": {
+  "cardinality": true,
+  "order": "checked",
+  "strictlyIncreasing": true,
+  "gapDaysMin": 14.713728530092592,
+  "gapDaysMax": 15.736353587962963
+ },
+ "findings": [
+  {
+   "classification": "GOLDEN_GENERATOR_ERROR",
+   "message": "canonical T is not ceil(root)",
+   "row": [
+    2081,
+    0,
+    "2562921397002.0000",
+    2562921397003
+   ]
+  },
+  {
+   "classification": "GOLDEN_GENERATOR_ERROR",
+   "message": "canonical T is not ceil(root)",
+   "row": [
+    2091,
+    20,
+    "2873348693788.0000",
+    2873348693789
+   ]
+  }
+ ],
+ "verdict": "FAIL",
+ "note": "Round 1 (superseded). reviewTtMs omitted; identical to round 2."
+}

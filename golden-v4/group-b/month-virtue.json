@@ -1,0 +1,4950 @@
+{
+  "goldenVersion": "group-b-golden-v4",
+  "reviewStatus": "REVIEWED_FROZEN",
+  "ruleId": "month-virtue",
+  "authorityVersion": "astronomy-authority-v4",
+  "authorityDataset": "solar-terms-jpl-de440s-clock-v1",
+  "authorityDatasetSha256": "5df1d0acb63dc0ddb9aa5070317beab4e73fc1da6149971f4c6f1f127eadd389",
+  "referenceEngine": "JPL DE440s via Skyfield 1.55 / jplephem 2.24 / numpy 2.4.4",
+  "referenceKernelSha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+  "observable": "apparent geocentric tropical ecliptic longitude of the Sun",
+  "frame": "true ecliptic and equinox of date (skyfield.framelib.ecliptic_frame)",
+  "timeScale": "TT",
+  "numericalBoundaryPolicy": "T = first integer TT millisecond since J2000.0 TT at or after the crossing (ceil), sign-confirmed at T-1 ms and T",
+  "clockPolicy": "clock-v1",
+  "serializationPolicy": "civil epoch ms = first civil ms at/after T under clock-v1; ISO-8601 UTC with exactly 3 fractional digits",
+  "monthJianConvention": "[Jie_n, Jie_n+1), exact canonical T",
+  "dayBoundary": "00:00 civil Asia/Ho_Chi_Minh (UTC+7)",
+  "excludedRules": {
+    "heaven-virtue": "EXCLUDED (unresolved DAY semantics)"
+  },
+  "generatorVersion": "groupb-vnext-generator 1.0.0",
+  "productionUsed": false,
+  "fixtures": [
+    {
+      "id": "month-virtue-v4-001",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-02-12T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1707714000000,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2024-02-12"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 315,
+          "ttMs": 760307296777,
+          "civilEpochMs": 1707035227593,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-002",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-03-11T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1710133200000,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2024-03-11"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 345,
+          "ttMs": 762877435321,
+          "civilEpochMs": 1709605366137,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-003",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-04-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712552400000,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "壬",
+        "dayBranch": "寅",
+        "civilDate": "2024-04-08"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 38,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-004",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-05-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1714971600000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "庚",
+        "dayBranch": "午",
+        "civilDate": "2024-05-06"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 45,
+          "ttMs": 768139874243,
+          "civilEpochMs": 1714867805059,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 6,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-005",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-06-11T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1718082000000,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2024-06-11"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 75,
+          "ttMs": 770832662856,
+          "civilEpochMs": 1717560593672,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-006",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-07-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1720501200000,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2024-07-09"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 105,
+          "ttMs": 773547672592,
+          "civilEpochMs": 1720275603408,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-007",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-08-16T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1723784400000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "壬",
+        "dayBranch": "子",
+        "civilDate": "2024-08-16"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 135,
+          "ttMs": 776261425639,
+          "civilEpochMs": 1722989356455,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 48,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-008",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-09-13T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1726203600000,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "庚",
+        "dayBranch": "辰",
+        "civilDate": "2024-09-13"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 165,
+          "ttMs": 778950750021,
+          "civilEpochMs": 1725678680837,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 16,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-009",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-10-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1728450000000,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2024-10-09"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 195,
+          "ttMs": 781599666523,
+          "civilEpochMs": 1728327597339,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-010",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-11-16T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1731733200000,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "甲",
+        "dayBranch": "申",
+        "civilDate": "2024-11-16"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 225,
+          "ttMs": 784203673736,
+          "civilEpochMs": 1730931604552,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 20,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-011",
+      "fixtureClass": "interior-positive",
+      "instant": "2024-12-14T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1734152400000,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "壬",
+        "dayBranch": "子",
+        "civilDate": "2024-12-14"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 255,
+          "ttMs": 786770291821,
+          "civilEpochMs": 1733498222637,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 48,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-012",
+      "fixtureClass": "interior-positive",
+      "instant": "2025-01-11T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1736571600000,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "庚",
+        "dayBranch": "辰",
+        "civilDate": "2025-01-11"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 285,
+          "ttMs": 789316435539,
+          "civilEpochMs": 1736044366355,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 16,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-013",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-02-14T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1392354000000,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "丙",
+        "dayBranch": "辰",
+        "civilDate": "2014-02-14"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 315,
+          "ttMs": 444737063860,
+          "civilEpochMs": 1391464996676,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 52,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-014",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-03-14T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1394773200000,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "甲",
+        "dayBranch": "申",
+        "civilDate": "2014-03-14"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 345,
+          "ttMs": 447307402997,
+          "civilEpochMs": 1394035335813,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 20,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-015",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-04-11T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1397192400000,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "壬",
+        "dayBranch": "子",
+        "civilDate": "2014-04-11"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 48,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-016",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-05-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1399611600000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "庚",
+        "dayBranch": "辰",
+        "civilDate": "2014-05-09"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 45,
+          "ttMs": 452570433435,
+          "civilEpochMs": 1399298366251,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 16,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-017",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-06-14T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1402722000000,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "丙",
+        "dayBranch": "辰",
+        "civilDate": "2014-06-14"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 75,
+          "ttMs": 455263450474,
+          "civilEpochMs": 1401991383290,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 52,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-018",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-07-12T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1405141200000,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "甲",
+        "dayBranch": "申",
+        "civilDate": "2014-07-12"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 105,
+          "ttMs": 457978554092,
+          "civilEpochMs": 1404706486908,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 20,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-019",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-08-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1407560400000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "壬",
+        "dayBranch": "子",
+        "civilDate": "2014-08-09"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 135,
+          "ttMs": 460692216317,
+          "civilEpochMs": 1407420149133,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 48,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-020",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-09-16T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1410843600000,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "庚",
+        "dayBranch": "寅",
+        "civilDate": "2014-09-16"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 165,
+          "ttMs": 463381353232,
+          "civilEpochMs": 1410109286048,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 26,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-021",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-10-12T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1413090000000,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "丙",
+        "dayBranch": "辰",
+        "civilDate": "2014-10-12"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 195,
+          "ttMs": 466030117560,
+          "civilEpochMs": 1412758050376,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 52,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-022",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-11-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1415509200000,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "甲",
+        "dayBranch": "申",
+        "civilDate": "2014-11-09"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 225,
+          "ttMs": 468634068146,
+          "civilEpochMs": 1415362000962,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 20,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-023",
+      "fixtureClass": "interior-positive",
+      "instant": "2014-12-17T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1418792400000,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "壬",
+        "dayBranch": "戌",
+        "civilDate": "2014-12-17"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 255,
+          "ttMs": 471200713925,
+          "civilEpochMs": 1417928646741,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 58,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-024",
+      "fixtureClass": "interior-positive",
+      "instant": "2015-01-14T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1421211600000,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "庚",
+        "dayBranch": "寅",
+        "civilDate": "2015-01-14"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2015,
+          "longitudeDeg": 285,
+          "ttMs": 473746900878,
+          "civilEpochMs": 1420474833694,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 26,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-025",
+      "fixtureClass": "interior-positive",
+      "instant": "1900-05-07T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": -2198084400000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "庚",
+        "dayBranch": "辰",
+        "civilDate": "1900-05-07"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 1900,
+          "longitudeDeg": 45,
+          "ttMs": -3144917090709,
+          "civilEpochMs": -2198189088366,
+          "clockRegime": "PRE1972_MODELED_UT1"
+        },
+        "dayCycleIndex": 16,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-026",
+      "fixtureClass": "interior-positive",
+      "instant": "2100-08-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 4121384400000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "壬",
+        "dayBranch": "午",
+        "civilDate": "2100-08-08"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "壬",
+        "comparison": "equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2100,
+          "longitudeDeg": 135,
+          "ttMs": 3174584232504,
+          "civilEpochMs": 4121312163320,
+          "clockRegime": "PROJECTED_PINNED_TAI_UTC"
+        },
+        "dayCycleIndex": 18,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-027",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-02-05T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1707109200000,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "己",
+        "dayBranch": "亥",
+        "civilDate": "2024-02-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 315,
+          "ttMs": 760307296777,
+          "civilEpochMs": 1707035227593,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 35,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-028",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-03-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1709701200000,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-03-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 345,
+          "ttMs": 762877435321,
+          "civilEpochMs": 1709605366137,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-029",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-04-05T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712293200000,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "己",
+        "dayBranch": "亥",
+        "civilDate": "2024-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 35,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-030",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-05-07T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1715058000000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "辛",
+        "dayBranch": "未",
+        "civilDate": "2024-05-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 45,
+          "ttMs": 768139874243,
+          "civilEpochMs": 1714867805059,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 7,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-031",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-06-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1717650000000,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "辛",
+        "dayBranch": "丑",
+        "civilDate": "2024-06-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 75,
+          "ttMs": 770832662856,
+          "civilEpochMs": 1717560593672,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 37,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-032",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-07-07T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1720328400000,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "壬",
+        "dayBranch": "申",
+        "civilDate": "2024-07-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 105,
+          "ttMs": 773547672592,
+          "civilEpochMs": 1720275603408,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 8,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-033",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-08-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1723093200000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "甲",
+        "dayBranch": "辰",
+        "civilDate": "2024-08-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 135,
+          "ttMs": 776261425639,
+          "civilEpochMs": 1722989356455,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 40,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-034",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-09-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1725771600000,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2024-09-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 165,
+          "ttMs": 778950750021,
+          "civilEpochMs": 1725678680837,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-035",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-10-10T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1728536400000,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "丁",
+        "dayBranch": "未",
+        "civilDate": "2024-10-10"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 195,
+          "ttMs": 781599666523,
+          "civilEpochMs": 1728327597339,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 43,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-036",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-11-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1731042000000,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "丙",
+        "dayBranch": "子",
+        "civilDate": "2024-11-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 225,
+          "ttMs": 784203673736,
+          "civilEpochMs": 1730931604552,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 12,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-037",
+      "fixtureClass": "interior-negative",
+      "instant": "2024-12-07T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1733547600000,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "乙",
+        "dayBranch": "巳",
+        "civilDate": "2024-12-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 255,
+          "ttMs": 786770291821,
+          "civilEpochMs": 1733498222637,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 41,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-038",
+      "fixtureClass": "interior-negative",
+      "instant": "2025-01-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1736139600000,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2025-01-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 285,
+          "ttMs": 789316435539,
+          "civilEpochMs": 1736044366355,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-039",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-02-05T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1391576400000,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "丁",
+        "dayBranch": "未",
+        "civilDate": "2014-02-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 315,
+          "ttMs": 444737063860,
+          "civilEpochMs": 1391464996676,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 43,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-040",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-03-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1394082000000,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "丙",
+        "dayBranch": "子",
+        "civilDate": "2014-03-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 345,
+          "ttMs": 447307402997,
+          "civilEpochMs": 1394035335813,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 12,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-041",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-04-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1396760400000,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "丁",
+        "dayBranch": "未",
+        "civilDate": "2014-04-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 43,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-042",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-05-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1399352400000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "丁",
+        "dayBranch": "丑",
+        "civilDate": "2014-05-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 45,
+          "ttMs": 452570433435,
+          "civilEpochMs": 1399298366251,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 13,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-043",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-06-07T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1402117200000,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "己",
+        "dayBranch": "酉",
+        "civilDate": "2014-06-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 75,
+          "ttMs": 455263450474,
+          "civilEpochMs": 1401991383290,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 45,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-044",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-07-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1404795600000,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "庚",
+        "dayBranch": "辰",
+        "civilDate": "2014-07-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 105,
+          "ttMs": 457978554092,
+          "civilEpochMs": 1404706486908,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 16,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-045",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-08-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1407474000000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "辛",
+        "dayBranch": "亥",
+        "civilDate": "2014-08-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 135,
+          "ttMs": 460692216317,
+          "civilEpochMs": 1407420149133,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 47,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-046",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-09-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1410238800000,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "癸",
+        "dayBranch": "未",
+        "civilDate": "2014-09-09"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 165,
+          "ttMs": 463381353232,
+          "civilEpochMs": 1410109286048,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 19,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-047",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-10-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1412830800000,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "癸",
+        "dayBranch": "丑",
+        "civilDate": "2014-10-09"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 195,
+          "ttMs": 466030117560,
+          "civilEpochMs": 1412758050376,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 49,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-048",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-11-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1415422800000,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "癸",
+        "dayBranch": "未",
+        "civilDate": "2014-11-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 225,
+          "ttMs": 468634068146,
+          "civilEpochMs": 1415362000962,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 19,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-049",
+      "fixtureClass": "interior-negative",
+      "instant": "2014-12-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1418014800000,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "癸",
+        "dayBranch": "丑",
+        "civilDate": "2014-12-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 255,
+          "ttMs": 471200713925,
+          "civilEpochMs": 1417928646741,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 49,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-050",
+      "fixtureClass": "interior-negative",
+      "instant": "2015-01-06T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1420520400000,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "壬",
+        "dayBranch": "午",
+        "civilDate": "2015-01-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "壬",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2015,
+          "longitudeDeg": 285,
+          "ttMs": 473746900878,
+          "civilEpochMs": 1420474833694,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 18,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-051",
+      "fixtureClass": "interior-negative",
+      "instant": "1900-05-08T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": -2197998000000,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "辛",
+        "dayBranch": "巳",
+        "civilDate": "1900-05-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 1900,
+          "longitudeDeg": 45,
+          "ttMs": -3144917090709,
+          "civilEpochMs": -2198189088366,
+          "clockRegime": "PRE1972_MODELED_UT1"
+        },
+        "dayCycleIndex": 17,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-052",
+      "fixtureClass": "interior-negative",
+      "instant": "2100-08-09T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 4121470800000,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "癸",
+        "dayBranch": "未",
+        "civilDate": "2100-08-09"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2100,
+          "longitudeDeg": 135,
+          "ttMs": 3174584232504,
+          "civilEpochMs": 4121312163320,
+          "clockRegime": "PROJECTED_PINNED_TAI_UTC"
+        },
+        "dayCycleIndex": 19,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      }
+    },
+    {
+      "id": "month-virtue-v4-053",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-02-04T05:03:16.675+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1391464996675,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-02-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 285,
+          "ttMs": 442189518952,
+          "civilEpochMs": 1388917451768,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-315",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 444737063860,
+        "rootTtMs": "444737063859.253",
+        "canonicalCivilEpochMs": 1391464996676,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-054",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-02-04T05:03:16.676+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1391464996676,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-02-04"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 315,
+          "ttMs": 444737063860,
+          "civilEpochMs": 1391464996676,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-315",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 444737063860,
+        "rootTtMs": "444737063859.253",
+        "canonicalCivilEpochMs": 1391464996676,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-055",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-02-04T05:03:16.677+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1391464996677,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-02-04"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "丙",
+        "comparison": "equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 315,
+          "ttMs": 444737063860,
+          "civilEpochMs": 1391464996676,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-315",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 444737063860,
+        "rootTtMs": "444737063859.253",
+        "canonicalCivilEpochMs": 1391464996676,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-056",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.812+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1394035335812,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2014-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 315,
+          "ttMs": 444737063860,
+          "civilEpochMs": 1391464996676,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-345",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 447307402997,
+        "rootTtMs": "447307402996.993",
+        "canonicalCivilEpochMs": 1394035335813,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-057",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.813+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1394035335813,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2014-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 345,
+          "ttMs": 447307402997,
+          "civilEpochMs": 1394035335813,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-345",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 447307402997,
+        "rootTtMs": "447307402996.993",
+        "canonicalCivilEpochMs": 1394035335813,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-058",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-03-05T23:02:15.814+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1394035335814,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2014-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 345,
+          "ttMs": 447307402997,
+          "civilEpochMs": 1394035335813,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-345",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 447307402997,
+        "rootTtMs": "447307402996.993",
+        "canonicalCivilEpochMs": 1394035335813,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-059",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.792+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1396644399792,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 345,
+          "ttMs": 447307402997,
+          "civilEpochMs": 1394035335813,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-015",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 449916466977,
+        "rootTtMs": "449916466976.398",
+        "canonicalCivilEpochMs": 1396644399793,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-060",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.793+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1396644399793,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-015",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 449916466977,
+        "rootTtMs": "449916466976.398",
+        "canonicalCivilEpochMs": 1396644399793,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-061",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-04-05T03:46:39.794+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1396644399794,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-015",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 449916466977,
+        "rootTtMs": "449916466976.398",
+        "canonicalCivilEpochMs": 1396644399793,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-062",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.250+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1399298366250,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "丙",
+        "dayBranch": "子",
+        "civilDate": "2014-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 12,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-045",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 452570433435,
+        "rootTtMs": "452570433434.749",
+        "canonicalCivilEpochMs": 1399298366251,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-063",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.251+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1399298366251,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "丙",
+        "dayBranch": "子",
+        "civilDate": "2014-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 45,
+          "ttMs": 452570433435,
+          "civilEpochMs": 1399298366251,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 12,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-045",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 452570433435,
+        "rootTtMs": "452570433434.749",
+        "canonicalCivilEpochMs": 1399298366251,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-064",
+      "fixtureClass": "exact-boundary",
+      "instant": "2014-05-05T20:59:26.252+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1399298366252,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "丙",
+        "dayBranch": "子",
+        "civilDate": "2014-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 45,
+          "ttMs": 452570433435,
+          "civilEpochMs": 1399298366251,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 12,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2014-045",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 452570433435,
+        "rootTtMs": "452570433434.749",
+        "canonicalCivilEpochMs": 1399298366251,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-065",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.223+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1678048574223,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "癸",
+        "dayBranch": "亥",
+        "civilDate": "2023-03-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 315,
+          "ttMs": 728750622325,
+          "civilEpochMs": 1675478553141,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 59,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-345",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 731320643408,
+        "rootTtMs": "731320643407.250",
+        "canonicalCivilEpochMs": 1678048574224,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-066",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.224+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1678048574224,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "癸",
+        "dayBranch": "亥",
+        "civilDate": "2023-03-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 345,
+          "ttMs": 731320643408,
+          "civilEpochMs": 1678048574224,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 59,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-345",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 731320643408,
+        "rootTtMs": "731320643407.250",
+        "canonicalCivilEpochMs": 1678048574224,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-067",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-03-06T03:36:14.225+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1678048574225,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "癸",
+        "dayBranch": "亥",
+        "civilDate": "2023-03-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 345,
+          "ttMs": 731320643408,
+          "civilEpochMs": 1678048574224,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 59,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-345",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 731320643408,
+        "rootTtMs": "731320643407.250",
+        "canonicalCivilEpochMs": 1678048574224,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-068",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-04-05T08:13:03.656+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1680657183656,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "癸",
+        "dayBranch": "巳",
+        "civilDate": "2023-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 345,
+          "ttMs": 731320643408,
+          "civilEpochMs": 1678048574224,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 29,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-015",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 733929252841,
+        "rootTtMs": "733929252840.470",
+        "canonicalCivilEpochMs": 1680657183657,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-069",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-04-05T08:13:03.657+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1680657183657,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "癸",
+        "dayBranch": "巳",
+        "civilDate": "2023-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 15,
+          "ttMs": 733929252841,
+          "civilEpochMs": 1680657183657,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 29,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-015",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 733929252841,
+        "rootTtMs": "733929252840.470",
+        "canonicalCivilEpochMs": 1680657183657,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-070",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-04-05T08:13:03.658+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1680657183658,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "癸",
+        "dayBranch": "巳",
+        "civilDate": "2023-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 15,
+          "ttMs": 733929252841,
+          "civilEpochMs": 1680657183657,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 29,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-015",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 733929252841,
+        "rootTtMs": "733929252840.470",
+        "canonicalCivilEpochMs": 1680657183657,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-071",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-05-06T01:18:45.548+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1683310725548,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "甲",
+        "dayBranch": "子",
+        "civilDate": "2023-05-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 15,
+          "ttMs": 733929252841,
+          "civilEpochMs": 1680657183657,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 0,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-045",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 736582794733,
+        "rootTtMs": "736582794732.244",
+        "canonicalCivilEpochMs": 1683310725549,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-072",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-05-06T01:18:45.549+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1683310725549,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "甲",
+        "dayBranch": "子",
+        "civilDate": "2023-05-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 45,
+          "ttMs": 736582794733,
+          "civilEpochMs": 1683310725549,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 0,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-045",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 736582794733,
+        "rootTtMs": "736582794732.244",
+        "canonicalCivilEpochMs": 1683310725549,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-073",
+      "fixtureClass": "exact-boundary",
+      "instant": "2023-05-06T01:18:45.550+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1683310725550,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "甲",
+        "dayBranch": "子",
+        "civilDate": "2023-05-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 45,
+          "ttMs": 736582794733,
+          "civilEpochMs": 1683310725549,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 0,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2023-045",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 736582794733,
+        "rootTtMs": "736582794732.244",
+        "canonicalCivilEpochMs": 1683310725549,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-074",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.539+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1704487762539,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-01-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 255,
+          "ttMs": 755213646273,
+          "civilEpochMs": 1701941577089,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-285",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 757759831724,
+        "rootTtMs": "757759831723.324",
+        "canonicalCivilEpochMs": 1704487762540,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-075",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.540+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1704487762540,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-01-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 285,
+          "ttMs": 757759831724,
+          "civilEpochMs": 1704487762540,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-285",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 757759831724,
+        "rootTtMs": "757759831723.324",
+        "canonicalCivilEpochMs": 1704487762540,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-076",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-01-06T03:49:22.541+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1704487762541,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-01-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 285,
+          "ttMs": 757759831724,
+          "civilEpochMs": 1704487762540,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-285",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 757759831724,
+        "rootTtMs": "757759831723.324",
+        "canonicalCivilEpochMs": 1704487762540,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-077",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-02-04T15:27:07.592+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1707035227592,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-02-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 285,
+          "ttMs": 757759831724,
+          "civilEpochMs": 1704487762540,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-315",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 760307296777,
+        "rootTtMs": "760307296776.529",
+        "canonicalCivilEpochMs": 1707035227593,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-078",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-02-04T15:27:07.593+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1707035227593,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-02-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 315,
+          "ttMs": 760307296777,
+          "civilEpochMs": 1707035227593,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-315",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 760307296777,
+        "rootTtMs": "760307296776.529",
+        "canonicalCivilEpochMs": 1707035227593,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-079",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-02-04T15:27:07.594+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1707035227594,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-02-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 315,
+          "ttMs": 760307296777,
+          "civilEpochMs": 1707035227593,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-315",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 760307296777,
+        "rootTtMs": "760307296776.529",
+        "canonicalCivilEpochMs": 1707035227593,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-080",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-03-05T09:22:46.136+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1709605366136,
+      "context": {
+        "monthJian": "寅",
+        "dayStem": "戊",
+        "dayBranch": "辰",
+        "civilDate": "2024-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "寅",
+        "sourceRow": 1,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/0"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 315,
+          "ttMs": 760307296777,
+          "civilEpochMs": 1707035227593,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 4,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-345",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 762877435321,
+        "rootTtMs": "762877435320.481",
+        "canonicalCivilEpochMs": 1709605366137,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-081",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-03-05T09:22:46.137+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1709605366137,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "戊",
+        "dayBranch": "辰",
+        "civilDate": "2024-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 345,
+          "ttMs": 762877435321,
+          "civilEpochMs": 1709605366137,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 4,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-345",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 762877435321,
+        "rootTtMs": "762877435320.481",
+        "canonicalCivilEpochMs": 1709605366137,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-082",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-03-05T09:22:46.138+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1709605366138,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "戊",
+        "dayBranch": "辰",
+        "civilDate": "2024-03-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 345,
+          "ttMs": 762877435321,
+          "civilEpochMs": 1709605366137,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 4,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-345",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 762877435321,
+        "rootTtMs": "762877435320.481",
+        "canonicalCivilEpochMs": 1709605366137,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-083",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.696+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137696,
+      "context": {
+        "monthJian": "卯",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "卯",
+        "sourceRow": 2,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/1"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 345,
+          "ttMs": 762877435321,
+          "civilEpochMs": 1709605366137,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-015",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 765486206881,
+        "rootTtMs": "765486206880.874",
+        "canonicalCivilEpochMs": 1712214137697,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-084",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.697+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137697,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-015",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 765486206881,
+        "rootTtMs": "765486206880.874",
+        "canonicalCivilEpochMs": 1712214137697,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-085",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-04-04T14:02:17.698+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137698,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-015",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 765486206881,
+        "rootTtMs": "765486206880.874",
+        "canonicalCivilEpochMs": 1712214137697,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-086",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.058+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1714867805058,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-045",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 768139874243,
+        "rootTtMs": "768139874242.853",
+        "canonicalCivilEpochMs": 1714867805059,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-087",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.059+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1714867805059,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 45,
+          "ttMs": 768139874243,
+          "civilEpochMs": 1714867805059,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-045",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 768139874243,
+        "rootTtMs": "768139874242.853",
+        "canonicalCivilEpochMs": 1714867805059,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-088",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-05-05T07:10:05.060+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1714867805060,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "己",
+        "dayBranch": "巳",
+        "civilDate": "2024-05-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "己",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 45,
+          "ttMs": 768139874243,
+          "civilEpochMs": 1714867805059,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 5,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-045",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 768139874243,
+        "rootTtMs": "768139874242.853",
+        "canonicalCivilEpochMs": 1714867805059,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-089",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-06-05T11:09:53.671+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1717560593671,
+      "context": {
+        "monthJian": "巳",
+        "dayStem": "庚",
+        "dayBranch": "子",
+        "civilDate": "2024-06-05"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "巳",
+        "sourceRow": 4,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/3"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 45,
+          "ttMs": 768139874243,
+          "civilEpochMs": 1714867805059,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 36,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-075",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 770832662856,
+        "rootTtMs": "770832662855.624",
+        "canonicalCivilEpochMs": 1717560593672,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-090",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-06-05T11:09:53.672+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1717560593672,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "庚",
+        "dayBranch": "子",
+        "civilDate": "2024-06-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 75,
+          "ttMs": 770832662856,
+          "civilEpochMs": 1717560593672,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 36,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-075",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 770832662856,
+        "rootTtMs": "770832662855.624",
+        "canonicalCivilEpochMs": 1717560593672,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-091",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-06-05T11:09:53.673+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1717560593673,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "庚",
+        "dayBranch": "子",
+        "civilDate": "2024-06-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 75,
+          "ttMs": 770832662856,
+          "civilEpochMs": 1717560593672,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 36,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-075",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 770832662856,
+        "rootTtMs": "770832662855.624",
+        "canonicalCivilEpochMs": 1717560593672,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-092",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.407+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1720275603407,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "辛",
+        "dayBranch": "未",
+        "civilDate": "2024-07-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 75,
+          "ttMs": 770832662856,
+          "civilEpochMs": 1717560593672,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 7,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-105",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 773547672592,
+        "rootTtMs": "773547672591.158",
+        "canonicalCivilEpochMs": 1720275603408,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-093",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.408+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1720275603408,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "辛",
+        "dayBranch": "未",
+        "civilDate": "2024-07-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 105,
+          "ttMs": 773547672592,
+          "civilEpochMs": 1720275603408,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 7,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-105",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 773547672592,
+        "rootTtMs": "773547672591.158",
+        "canonicalCivilEpochMs": 1720275603408,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-094",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-07-06T21:20:03.409+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1720275603409,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "辛",
+        "dayBranch": "未",
+        "civilDate": "2024-07-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "辛",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 105,
+          "ttMs": 773547672592,
+          "civilEpochMs": 1720275603408,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 7,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-105",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 773547672592,
+        "rootTtMs": "773547672591.158",
+        "canonicalCivilEpochMs": 1720275603408,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-095",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.454+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1722989356454,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "癸",
+        "dayBranch": "卯",
+        "civilDate": "2024-08-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 105,
+          "ttMs": 773547672592,
+          "civilEpochMs": 1720275603408,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 39,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-135",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 776261425639,
+        "rootTtMs": "776261425638.258",
+        "canonicalCivilEpochMs": 1722989356455,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-096",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.455+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1722989356455,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "癸",
+        "dayBranch": "卯",
+        "civilDate": "2024-08-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 135,
+          "ttMs": 776261425639,
+          "civilEpochMs": 1722989356455,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 39,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-135",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 776261425639,
+        "rootTtMs": "776261425638.258",
+        "canonicalCivilEpochMs": 1722989356455,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-097",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-08-07T07:09:16.456+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1722989356456,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "癸",
+        "dayBranch": "卯",
+        "civilDate": "2024-08-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "癸",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 135,
+          "ttMs": 776261425639,
+          "civilEpochMs": 1722989356455,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 39,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-135",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 776261425639,
+        "rootTtMs": "776261425638.258",
+        "canonicalCivilEpochMs": 1722989356455,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-098",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-09-07T10:11:20.836+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1725678680836,
+      "context": {
+        "monthJian": "申",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2024-09-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "申",
+        "sourceRow": 7,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/6"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 135,
+          "ttMs": 776261425639,
+          "civilEpochMs": 1722989356455,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-165",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 778950750021,
+        "rootTtMs": "778950750020.176",
+        "canonicalCivilEpochMs": 1725678680837,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-099",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-09-07T10:11:20.837+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1725678680837,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2024-09-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 165,
+          "ttMs": 778950750021,
+          "civilEpochMs": 1725678680837,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-165",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 778950750021,
+        "rootTtMs": "778950750020.176",
+        "canonicalCivilEpochMs": 1725678680837,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-100",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-09-07T10:11:20.838+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1725678680838,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2024-09-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 165,
+          "ttMs": 778950750021,
+          "civilEpochMs": 1725678680837,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-165",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 778950750021,
+        "rootTtMs": "778950750020.176",
+        "canonicalCivilEpochMs": 1725678680837,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-101",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.338+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1728327597338,
+      "context": {
+        "monthJian": "酉",
+        "dayStem": "乙",
+        "dayBranch": "巳",
+        "civilDate": "2024-10-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "酉",
+        "sourceRow": 8,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/7"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 165,
+          "ttMs": 778950750021,
+          "civilEpochMs": 1725678680837,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 41,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-195",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 781599666523,
+        "rootTtMs": "781599666522.971",
+        "canonicalCivilEpochMs": 1728327597339,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-102",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.339+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1728327597339,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "乙",
+        "dayBranch": "巳",
+        "civilDate": "2024-10-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 195,
+          "ttMs": 781599666523,
+          "civilEpochMs": 1728327597339,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 41,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-195",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 781599666523,
+        "rootTtMs": "781599666522.971",
+        "canonicalCivilEpochMs": 1728327597339,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-103",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-10-08T01:59:57.340+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1728327597340,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "乙",
+        "dayBranch": "巳",
+        "civilDate": "2024-10-08"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 195,
+          "ttMs": 781599666523,
+          "civilEpochMs": 1728327597339,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 41,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-195",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 781599666523,
+        "rootTtMs": "781599666522.971",
+        "canonicalCivilEpochMs": 1728327597339,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-104",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.551+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1730931604551,
+      "context": {
+        "monthJian": "戌",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2024-11-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "戌",
+        "sourceRow": 9,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/8"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 195,
+          "ttMs": 781599666523,
+          "civilEpochMs": 1728327597339,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-225",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 784203673736,
+        "rootTtMs": "784203673735.940",
+        "canonicalCivilEpochMs": 1730931604552,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-105",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.552+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1730931604552,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2024-11-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 225,
+          "ttMs": 784203673736,
+          "civilEpochMs": 1730931604552,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-225",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 784203673736,
+        "rootTtMs": "784203673735.940",
+        "canonicalCivilEpochMs": 1730931604552,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-106",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-11-07T05:20:04.553+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1730931604553,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "乙",
+        "dayBranch": "亥",
+        "civilDate": "2024-11-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "乙",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 225,
+          "ttMs": 784203673736,
+          "civilEpochMs": 1730931604552,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 11,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-225",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 784203673736,
+        "rootTtMs": "784203673735.940",
+        "canonicalCivilEpochMs": 1730931604552,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-107",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.636+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1733498222636,
+      "context": {
+        "monthJian": "亥",
+        "dayStem": "甲",
+        "dayBranch": "辰",
+        "civilDate": "2024-12-06"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "甲",
+        "comparison": "equal",
+        "sourceMonthJian": "亥",
+        "sourceRow": 10,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/9"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 225,
+          "ttMs": 784203673736,
+          "civilEpochMs": 1730931604552,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 40,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-255",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 786770291821,
+        "rootTtMs": "786770291820.835",
+        "canonicalCivilEpochMs": 1733498222637,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-108",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.637+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1733498222637,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "甲",
+        "dayBranch": "辰",
+        "civilDate": "2024-12-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 255,
+          "ttMs": 786770291821,
+          "civilEpochMs": 1733498222637,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 40,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-255",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 786770291821,
+        "rootTtMs": "786770291820.835",
+        "canonicalCivilEpochMs": 1733498222637,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-109",
+      "fixtureClass": "exact-boundary",
+      "instant": "2024-12-06T22:17:02.638+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1733498222638,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "甲",
+        "dayBranch": "辰",
+        "civilDate": "2024-12-06"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 255,
+          "ttMs": 786770291821,
+          "civilEpochMs": 1733498222637,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 40,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2024-255",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 786770291821,
+        "rootTtMs": "786770291820.835",
+        "canonicalCivilEpochMs": 1733498222637,
+        "effectiveCutoffKiller": true
+      }
+    },
+    {
+      "id": "month-virtue-v4-110",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.354+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1736044366354,
+      "context": {
+        "monthJian": "子",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2025-01-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "子",
+        "sourceRow": 11,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/10"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 255,
+          "ttMs": 786770291821,
+          "civilEpochMs": 1733498222637,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-285",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 789316435539,
+        "rootTtMs": "789316435538.278",
+        "canonicalCivilEpochMs": 1736044366355,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-111",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.355+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1736044366355,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2025-01-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 285,
+          "ttMs": 789316435539,
+          "civilEpochMs": 1736044366355,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-285",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 789316435539,
+        "rootTtMs": "789316435538.278",
+        "canonicalCivilEpochMs": 1736044366355,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-112",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-01-05T09:32:46.356+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1736044366356,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "甲",
+        "dayBranch": "戌",
+        "civilDate": "2025-01-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "甲",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 285,
+          "ttMs": 789316435539,
+          "civilEpochMs": 1736044366355,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 10,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-285",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 789316435539,
+        "rootTtMs": "789316435538.278",
+        "canonicalCivilEpochMs": 1736044366355,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-113",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-07-07T03:04:59.097+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1751832299097,
+      "context": {
+        "monthJian": "午",
+        "dayStem": "丁",
+        "dayBranch": "丑",
+        "civilDate": "2025-07-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "丙",
+        "comparison": "not-equal",
+        "sourceMonthJian": "午",
+        "sourceRow": 5,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/4"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 75,
+          "ttMs": 802389460357,
+          "civilEpochMs": 1749117391173,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 13,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-105",
+        "sample": "before",
+        "offsetMs": -1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 805104368282,
+        "rootTtMs": "805104368281.080",
+        "canonicalCivilEpochMs": 1751832299098,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-114",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-07-07T03:04:59.098+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1751832299098,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "丁",
+        "dayBranch": "丑",
+        "civilDate": "2025-07-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 105,
+          "ttMs": 805104368282,
+          "civilEpochMs": 1751832299098,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 13,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-105",
+        "sample": "at",
+        "offsetMs": 0,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 805104368282,
+        "rootTtMs": "805104368281.080",
+        "canonicalCivilEpochMs": 1751832299098,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-115",
+      "fixtureClass": "exact-boundary",
+      "instant": "2025-07-07T03:04:59.099+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1751832299099,
+      "context": {
+        "monthJian": "未",
+        "dayStem": "丁",
+        "dayBranch": "丑",
+        "civilDate": "2025-07-07"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丁",
+        "expectedTarget": "甲",
+        "comparison": "not-equal",
+        "sourceMonthJian": "未",
+        "sourceRow": 6,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/5"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2025,
+          "longitudeDeg": 105,
+          "ttMs": 805104368282,
+          "civilEpochMs": 1751832299098,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 13,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "boundary": {
+        "transitionId": "jie-2025-105",
+        "sample": "after",
+        "offsetMs": 1,
+        "projectConvention": "[T,next T)",
+        "canonicalTtMs": 805104368282,
+        "rootTtMs": "805104368281.080",
+        "canonicalCivilEpochMs": 1751832299098,
+        "effectiveCutoffKiller": false
+      }
+    },
+    {
+      "id": "month-virtue-v4-116",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T15:02:17.697+08:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137697,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "equivalenceGroup": "month-virtue-v4-084"
+    },
+    {
+      "id": "month-virtue-v4-117",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T07:02:17.697Z",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137697,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "equivalenceGroup": "month-virtue-v4-084"
+    },
+    {
+      "id": "month-virtue-v4-118",
+      "fixtureClass": "timezone-equivalent",
+      "instant": "2024-04-04T16:02:17.697+09:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1712214137697,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2024-04-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 15,
+          "ttMs": 765486206881,
+          "civilEpochMs": 1712214137697,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "equivalenceGroup": "month-virtue-v4-084"
+    },
+    {
+      "id": "month-virtue-v4-119",
+      "fixtureClass": "timezone-civil-date",
+      "instant": "2024-01-07T23:30:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1704645000000,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "庚",
+        "dayBranch": "午",
+        "civilDate": "2024-01-07"
+      },
+      "expected": true,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "庚",
+        "expectedTarget": "庚",
+        "comparison": "equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2024,
+          "longitudeDeg": 285,
+          "ttMs": 757759831724,
+          "civilEpochMs": 1704487762540,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 6,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "sourceClockRepresentation": "2024-01-08T00:30:00.000+08:00",
+      "wrongCivilDate": "2024-01-08"
+    },
+    {
+      "id": "month-virtue-v4-120",
+      "fixtureClass": "lunar-leap-regression",
+      "instant": "2023-04-10T12:00:00.000+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1681102800000,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "戊",
+        "dayBranch": "戌",
+        "civilDate": "2023-04-10"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "戊",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2023,
+          "longitudeDeg": 15,
+          "ttMs": 733929252841,
+          "civilEpochMs": 1680657183657,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 34,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "lunarMetadata": {
+        "lunarMonth": 2,
+        "isLeapMonth": true,
+        "notRuleOperand": true,
+        "source": "https://www.hko.gov.hk/en/gts/astron2023/files/2023cal04.pdf"
+      }
+    },
+    {
+      "id": "month-virtue-v4-121",
+      "fixtureClass": "rounded-minute-discriminator",
+      "instant": "2014-02-04T05:03:08.338+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1391464988338,
+      "context": {
+        "monthJian": "丑",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-02-04"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "庚",
+        "comparison": "not-equal",
+        "sourceMonthJian": "丑",
+        "sourceRow": 12,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/11"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 285,
+          "ttMs": 442189518952,
+          "civilEpochMs": 1388917451768,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "roundedMinuteMutation": {
+        "kind": "nearest-minute and truncated-minute",
+        "publishedMinute": "2014-02-04T05:03:00.000+07:00",
+        "canonicalBoundary": "2014-02-04T05:03:16.676+07:00",
+        "wrongMonthJian": "寅",
+        "transitionId": "jie-2014-315"
+      }
+    },
+    {
+      "id": "month-virtue-v4-122",
+      "fixtureClass": "rounded-minute-discriminator",
+      "instant": "2014-04-05T03:46:49.896+07:00",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "civilEpochMs": 1396644409896,
+      "context": {
+        "monthJian": "辰",
+        "dayStem": "丙",
+        "dayBranch": "午",
+        "civilDate": "2014-04-05"
+      },
+      "expected": false,
+      "derivation": {
+        "ruleId": "month-virtue",
+        "operandType": "DAY_STEM",
+        "observedOperand": "丙",
+        "expectedTarget": "壬",
+        "comparison": "not-equal",
+        "sourceMonthJian": "辰",
+        "sourceRow": 3,
+        "sourceExtraction": "calendar-rule-extraction-v3.json#/rules/7/rule/lookup/2"
+      },
+      "provenance": {
+        "activeJie": {
+          "year": 2014,
+          "longitudeDeg": 15,
+          "ttMs": 449916466977,
+          "civilEpochMs": 1396644399793,
+          "clockRegime": "UTC_LEAP_HISTORY"
+        },
+        "dayCycleIndex": 42,
+        "dayOperandOracle": "HKO 2014-02-05 = 丁未 (index 43)"
+      },
+      "roundedMinuteMutation": {
+        "kind": "nearest-minute (rounds up)",
+        "publishedMinute": "2014-04-05T03:47:00.000+07:00",
+        "canonicalBoundary": "2014-04-05T03:46:39.793+07:00",
+        "wrongMonthJian": "卯",
+        "transitionId": "jie-2014-015"
+      }
+    }
+  ]
+}

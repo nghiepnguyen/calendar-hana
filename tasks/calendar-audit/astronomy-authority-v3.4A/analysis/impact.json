@@ -1,0 +1,44 @@
+{
+  "phase": "3B.4.4A",
+  "classification": "PROJECTION ONLY",
+  "groupA": {
+    "tuLyChanges": [
+      {
+        "year": 1938,
+        "longitude": 180,
+        "production": "1938-09-23T17:00:01.461Z",
+        "authority": "1938-09-23T16:59:27.175Z",
+        "productionDay": "1938-09-23",
+        "authorityDay": "1938-09-22"
+      }
+    ],
+    "tuTuyetChanges": [],
+    "nguyetKy": "lunar days 5/14/23 only; no solar-term input => NO_CHANGE"
+  },
+  "bazi": {
+    "jieCrossings": 2412,
+    "civilDeltaSeconds": {
+      "median": 13.586500000000001,
+      "p95": 111.69859999999997,
+      "max": 175.309,
+      "above30s": 610
+    },
+    "lapXuan": {
+      "count": 201,
+      "maxAbsSeconds": 175.309,
+      "above30s": 49
+    },
+    "vnCivilDateChanges": [
+      {
+        "year": 1946,
+        "longitude": 255,
+        "production": "1946-12-07T16:59:57.701Z",
+        "authority": "1946-12-07T17:00:11.131Z",
+        "productionVnDate": "1946-12-07",
+        "authorityVnDate": "1946-12-08"
+      }
+    ],
+    "vnDisplayedMinuteChanges": 885,
+    "totalMovedSeconds": 65385.46600000005
+  }
+}

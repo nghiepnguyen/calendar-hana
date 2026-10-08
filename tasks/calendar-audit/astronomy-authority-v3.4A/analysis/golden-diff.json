@@ -1,0 +1,3822 @@
+{
+  "phase": "3B.4.4A",
+  "oldGolden": {
+    "version": "golden-v3 group-b",
+    "fixtures": 606,
+    "authority": "Swiss compressed JPL DE441 (actual file header, not older DE431 documentation) / pyswisseph 2.10.3.2",
+    "boundarySamples": "T_old - 60 s, T_old, T_old + 60 s"
+  },
+  "newGolden": {
+    "version": "golden-v4 group-b",
+    "fixtures": 611,
+    "authority": "JPL DE440s via Skyfield 1.55 / jplephem 2.24 / numpy 2.4.4",
+    "boundarySamples": "T_new - 1 ms, T_new, T_new + 1 ms"
+  },
+  "transitions": [
+    {
+      "id": "jie-2014-02",
+      "newId": "jie-2014-315",
+      "name": "Lập Xuân",
+      "oldInstantUTC": "2014-02-03T22:03:16.684536Z",
+      "newInstantUTC": "2014-02-03T22:03:16.676Z",
+      "civilDeltaMs": -8.535888671875,
+      "rootDeltaMs": -9.2681884765625,
+      "clockContributionMs": -0.0146484375,
+      "newCanonicalTtMs": 444737063860
+    },
+    {
+      "id": "jie-2014-03",
+      "newId": "jie-2014-345",
+      "name": "Kinh Trập",
+      "oldInstantUTC": "2014-03-05T16:02:15.805446Z",
+      "newInstantUTC": "2014-03-05T16:02:15.813Z",
+      "civilDeltaMs": 7.553955078125,
+      "rootDeltaMs": 7.562255859375,
+      "clockContributionMs": -0.015380859375,
+      "newCanonicalTtMs": 447307402997
+    },
+    {
+      "id": "jie-2014-04",
+      "newId": "jie-2014-015",
+      "name": "Thanh Minh",
+      "oldInstantUTC": "2014-04-04T20:46:39.787483Z",
+      "newInstantUTC": "2014-04-04T20:46:39.793Z",
+      "civilDeltaMs": 5.51708984375,
+      "rootDeltaMs": 4.93060302734375,
+      "clockContributionMs": -0.0155029296875,
+      "newCanonicalTtMs": 449916466977
+    },
+    {
+      "id": "jie-2014-05",
+      "newId": "jie-2014-045",
+      "name": "Lập Hạ",
+      "oldInstantUTC": "2014-05-05T13:59:26.221400Z",
+      "newInstantUTC": "2014-05-05T13:59:26.251Z",
+      "civilDeltaMs": 29.60009765625,
+      "rootDeltaMs": 29.3646240234375,
+      "clockContributionMs": -0.0155029296875,
+      "newCanonicalTtMs": 452570433435
+    },
+    {
+      "id": "jie-2023-03",
+      "newId": "jie-2023-345",
+      "name": "Kinh Trập",
+      "oldInstantUTC": "2023-03-05T20:36:14.214332Z",
+      "newInstantUTC": "2023-03-05T20:36:14.224Z",
+      "civilDeltaMs": 9.66796875,
+      "rootDeltaMs": 8.904052734375,
+      "clockContributionMs": 0.013916015625,
+      "newCanonicalTtMs": 731320643408
+    },
+    {
+      "id": "jie-2023-04",
+      "newId": "jie-2023-015",
+      "name": "Thanh Minh",
+      "oldInstantUTC": "2023-04-05T01:13:03.657937Z",
+      "newInstantUTC": "2023-04-05T01:13:03.657Z",
+      "civilDeltaMs": -0.93701171875,
+      "rootDeltaMs": -1.48095703125,
+      "clockContributionMs": 0.013916015625,
+      "newCanonicalTtMs": 733929252841
+    },
+    {
+      "id": "jie-2023-05",
+      "newId": "jie-2023-045",
+      "name": "Lập Hạ",
+      "oldInstantUTC": "2023-05-05T18:18:45.556920Z",
+      "newInstantUTC": "2023-05-05T18:18:45.549Z",
+      "civilDeltaMs": -7.919921875,
+      "rootDeltaMs": -8.690673828125,
+      "clockContributionMs": 0.0147705078125,
+      "newCanonicalTtMs": 736582794733
+    },
+    {
+      "id": "jie-2024-01",
+      "newId": "jie-2024-285",
+      "name": "Tiểu Hàn",
+      "oldInstantUTC": "2024-01-05T20:49:22.512852Z",
+      "newInstantUTC": "2024-01-05T20:49:22.540Z",
+      "civilDeltaMs": 27.14794921875,
+      "rootDeltaMs": 26.45751953125,
+      "clockContributionMs": 0.014404296875,
+      "newCanonicalTtMs": 757759831724
+    },
+    {
+      "id": "jie-2024-02",
+      "newId": "jie-2024-315",
+      "name": "Lập Xuân",
+      "oldInstantUTC": "2024-02-04T08:27:07.611503Z",
+      "newInstantUTC": "2024-02-04T08:27:07.593Z",
+      "civilDeltaMs": -18.5029296875,
+      "rootDeltaMs": -18.9881591796875,
+      "clockContributionMs": 0.0142822265625,
+      "newCanonicalTtMs": 760307296777
+    },
+    {
+      "id": "jie-2024-03",
+      "newId": "jie-2024-345",
+      "name": "Kinh Trập",
+      "oldInstantUTC": "2024-03-05T02:22:46.184919Z",
+      "newInstantUTC": "2024-03-05T02:22:46.137Z",
+      "civilDeltaMs": -47.9189453125,
+      "rootDeltaMs": -48.4517822265625,
+      "clockContributionMs": 0.0137939453125,
+      "newCanonicalTtMs": 762877435321
+    },
+    {
+      "id": "jie-2024-04",
+      "newId": "jie-2024-015",
+      "name": "Thanh Minh",
+      "oldInstantUTC": "2024-04-04T07:02:17.672062Z",
+      "newInstantUTC": "2024-04-04T07:02:17.697Z",
+      "civilDeltaMs": 24.93798828125,
+      "rootDeltaMs": 24.797607421875,
+      "clockContributionMs": 0.014404296875,
+      "newCanonicalTtMs": 765486206881
+    },
+    {
+      "id": "jie-2024-05",
+      "newId": "jie-2024-045",
+      "name": "Lập Hạ",
+      "oldInstantUTC": "2024-05-05T00:10:05.052803Z",
+      "newInstantUTC": "2024-05-05T00:10:05.059Z",
+      "civilDeltaMs": 6.197021484375,
+      "rootDeltaMs": 6.035400390625,
+      "clockContributionMs": 0.0146484375,
+      "newCanonicalTtMs": 768139874243
+    },
+    {
+      "id": "jie-2024-06",
+      "newId": "jie-2024-075",
+      "name": "Mang Chủng",
+      "oldInstantUTC": "2024-06-05T04:09:53.688941Z",
+      "newInstantUTC": "2024-06-05T04:09:53.672Z",
+      "civilDeltaMs": -16.94091796875,
+      "rootDeltaMs": -17.3311767578125,
+      "clockContributionMs": 0.0142822265625,
+      "newCanonicalTtMs": 770832662856
+    },
+    {
+      "id": "jie-2024-07",
+      "newId": "jie-2024-105",
+      "name": "Tiểu Thử",
+      "oldInstantUTC": "2024-07-06T14:20:03.398193Z",
+      "newInstantUTC": "2024-07-06T14:20:03.408Z",
+      "civilDeltaMs": 9.806884765625,
+      "rootDeltaMs": 8.9503173828125,
+      "clockContributionMs": 0.0145263671875,
+      "newCanonicalTtMs": 773547672592
+    },
+    {
+      "id": "jie-2024-08",
+      "newId": "jie-2024-135",
+      "name": "Lập Thu",
+      "oldInstantUTC": "2024-08-07T00:09:16.449044Z",
+      "newInstantUTC": "2024-08-07T00:09:16.455Z",
+      "civilDeltaMs": 5.9560546875,
+      "rootDeltaMs": 5.2000732421875,
+      "clockContributionMs": 0.0140380859375,
+      "newCanonicalTtMs": 776261425639
+    },
+    {
+      "id": "jie-2024-09",
+      "newId": "jie-2024-165",
+      "name": "Bạch Lộ",
+      "oldInstantUTC": "2024-09-07T03:11:20.866192Z",
+      "newInstantUTC": "2024-09-07T03:11:20.837Z",
+      "civilDeltaMs": -29.19189453125,
+      "rootDeltaMs": -30.030517578125,
+      "clockContributionMs": 0.0146484375,
+      "newCanonicalTtMs": 778950750021
+    },
+    {
+      "id": "jie-2024-10",
+      "newId": "jie-2024-195",
+      "name": "Hàn Lộ",
+      "oldInstantUTC": "2024-10-07T18:59:57.335789Z",
+      "newInstantUTC": "2024-10-07T18:59:57.339Z",
+      "civilDeltaMs": 3.2109375,
+      "rootDeltaMs": 3.1680908203125,
+      "clockContributionMs": 0.0137939453125,
+      "newCanonicalTtMs": 781599666523
+    },
+    {
+      "id": "jie-2024-11",
+      "newId": "jie-2024-225",
+      "name": "Lập Đông",
+      "oldInstantUTC": "2024-11-06T22:20:04.521878Z",
+      "newInstantUTC": "2024-11-06T22:20:04.552Z",
+      "civilDeltaMs": 30.1220703125,
+      "rootDeltaMs": 30.0477294921875,
+      "clockContributionMs": 0.0142822265625,
+      "newCanonicalTtMs": 784203673736
+    },
+    {
+      "id": "jie-2024-12",
+      "newId": "jie-2024-255",
+      "name": "Đại Tuyết",
+      "oldInstantUTC": "2024-12-06T15:17:02.605598Z",
+      "newInstantUTC": "2024-12-06T15:17:02.637Z",
+      "civilDeltaMs": 31.402099609375,
+      "rootDeltaMs": 31.2227783203125,
+      "clockContributionMs": 0.0142822265625,
+      "newCanonicalTtMs": 786770291821
+    },
+    {
+      "id": "jie-2025-01",
+      "newId": "jie-2025-285",
+      "name": "Tiểu Hàn",
+      "oldInstantUTC": "2025-01-05T02:32:46.338815Z",
+      "newInstantUTC": "2025-01-05T02:32:46.355Z",
+      "civilDeltaMs": 16.18505859375,
+      "rootDeltaMs": 15.448974609375,
+      "clockContributionMs": 0.0140380859375,
+      "newCanonicalTtMs": 789316435539
+    },
+    {
+      "id": "jie-2025-07",
+      "newId": "jie-2025-105",
+      "name": "Tiểu Thử",
+      "oldInstantUTC": "2025-07-06T20:04:59.099337Z",
+      "newInstantUTC": "2025-07-06T20:04:59.098Z",
+      "civilDeltaMs": -1.3369140625,
+      "rootDeltaMs": -2.270751953125,
+      "clockContributionMs": 0.0137939453125,
+      "newCanonicalTtMs": 805104368282
+    }
+  ],
+  "transitionStats": {
+    "maxAbsCivilDeltaMs": 47.9189453125,
+    "maxAbsRootDeltaMs": 48.4517822265625,
+    "maxAbsClockContributionMs": 0.0155029296875
+  },
+  "oldFixturesUnderNewAuthority": {
+    "stillValid": 529,
+    "invalid": 77,
+    "invalidByClass": {
+      "exact-boundary": 65,
+      "timezone-equivalent": 12
+    },
+    "invalidCases": [
+      {
+        "id": "month-breaker-057",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-060",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-063",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-05-05T20:59:26.221400+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-066",
+        "fixtureClass": "exact-boundary",
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-075",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-01-06T03:49:22.512852+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-084",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-087",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-093",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "oldMonthJian": "未",
+        "newAuthorityMonthJian": "午",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-096",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "oldMonthJian": "申",
+        "newAuthorityMonthJian": "未",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-102",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "oldMonthJian": "戌",
+        "newAuthorityMonthJian": "酉",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-105",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-11-07T05:20:04.521878+07:00",
+        "oldMonthJian": "亥",
+        "newAuthorityMonthJian": "戌",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-108",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-12-06T22:17:02.605598+07:00",
+        "oldMonthJian": "子",
+        "newAuthorityMonthJian": "亥",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-111",
+        "fixtureClass": "exact-boundary",
+        "instant": "2025-01-05T09:32:46.338815+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-116",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T07:02:17.672062Z",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-117",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-breaker-118",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T15:02:17.672062+08:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-057",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-060",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-063",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-05-05T20:59:26.221400+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-066",
+        "fixtureClass": "exact-boundary",
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-075",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-01-06T03:49:22.512852+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-084",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-087",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-093",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "oldMonthJian": "未",
+        "newAuthorityMonthJian": "午",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-096",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "oldMonthJian": "申",
+        "newAuthorityMonthJian": "未",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-102",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "oldMonthJian": "戌",
+        "newAuthorityMonthJian": "酉",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-105",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-11-07T05:20:04.521878+07:00",
+        "oldMonthJian": "亥",
+        "newAuthorityMonthJian": "戌",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-108",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-12-06T22:17:02.605598+07:00",
+        "oldMonthJian": "子",
+        "newAuthorityMonthJian": "亥",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-111",
+        "fixtureClass": "exact-boundary",
+        "instant": "2025-01-05T09:32:46.338815+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "robbery-sha-116",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-03-05T16:02:15.805446Z",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-117",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "robbery-sha-118",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-03-06T00:02:15.805446+08:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "disaster-sha-057",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-060",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-063",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-05-05T20:59:26.221400+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-066",
+        "fixtureClass": "exact-boundary",
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-075",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-01-06T03:49:22.512852+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-084",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-087",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-093",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "oldMonthJian": "未",
+        "newAuthorityMonthJian": "午",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-096",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "oldMonthJian": "申",
+        "newAuthorityMonthJian": "未",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-102",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "oldMonthJian": "戌",
+        "newAuthorityMonthJian": "酉",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-105",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-11-07T05:20:04.521878+07:00",
+        "oldMonthJian": "亥",
+        "newAuthorityMonthJian": "戌",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-108",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-12-06T22:17:02.605598+07:00",
+        "oldMonthJian": "子",
+        "newAuthorityMonthJian": "亥",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-111",
+        "fixtureClass": "exact-boundary",
+        "instant": "2025-01-05T09:32:46.338815+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-116",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-04-04T20:46:39.787483Z",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-117",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "disaster-sha-118",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2014-04-05T04:46:39.787483+08:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": true,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-057",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-060",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-063",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-05-05T20:59:26.221400+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-066",
+        "fixtureClass": "exact-boundary",
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-075",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-01-06T03:49:22.512852+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-084",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "month-sha-087",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-093",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "oldMonthJian": "未",
+        "newAuthorityMonthJian": "午",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-096",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "oldMonthJian": "申",
+        "newAuthorityMonthJian": "未",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-102",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "oldMonthJian": "戌",
+        "newAuthorityMonthJian": "酉",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-105",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-11-07T05:20:04.521878+07:00",
+        "oldMonthJian": "亥",
+        "newAuthorityMonthJian": "戌",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-108",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-12-06T22:17:02.605598+07:00",
+        "oldMonthJian": "子",
+        "newAuthorityMonthJian": "亥",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-111",
+        "fixtureClass": "exact-boundary",
+        "instant": "2025-01-05T09:32:46.338815+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-sha-116",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T07:02:17.672062Z",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "month-sha-117",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "month-sha-118",
+        "fixtureClass": "timezone-equivalent",
+        "instant": "2024-04-04T15:02:17.672062+08:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "month-virtue-057",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-03-05T23:02:15.805446+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-060",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-04-05T03:46:39.787483+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-063",
+        "fixtureClass": "exact-boundary",
+        "instant": "2014-05-05T20:59:26.221400+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-066",
+        "fixtureClass": "exact-boundary",
+        "instant": "2023-03-06T03:36:14.214332+07:00",
+        "oldMonthJian": "卯",
+        "newAuthorityMonthJian": "寅",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-075",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-01-06T03:49:22.512852+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-084",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-04-04T14:02:17.672062+07:00",
+        "oldMonthJian": "辰",
+        "newAuthorityMonthJian": "卯",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-087",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-05-05T07:10:05.052803+07:00",
+        "oldMonthJian": "巳",
+        "newAuthorityMonthJian": "辰",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-093",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-07-06T21:20:03.398193+07:00",
+        "oldMonthJian": "未",
+        "newAuthorityMonthJian": "午",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-096",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-08-07T07:09:16.449044+07:00",
+        "oldMonthJian": "申",
+        "newAuthorityMonthJian": "未",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-102",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-10-08T01:59:57.335789+07:00",
+        "oldMonthJian": "戌",
+        "newAuthorityMonthJian": "酉",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-105",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-11-07T05:20:04.521878+07:00",
+        "oldMonthJian": "亥",
+        "newAuthorityMonthJian": "戌",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      },
+      {
+        "id": "month-virtue-108",
+        "fixtureClass": "exact-boundary",
+        "instant": "2024-12-06T22:17:02.605598+07:00",
+        "oldMonthJian": "子",
+        "newAuthorityMonthJian": "亥",
+        "oldExpected": false,
+        "newAuthorityExpected": true
+      },
+      {
+        "id": "month-virtue-111",
+        "fixtureClass": "exact-boundary",
+        "instant": "2025-01-05T09:32:46.338815+07:00",
+        "oldMonthJian": "丑",
+        "newAuthorityMonthJian": "子",
+        "oldExpected": false,
+        "newAuthorityExpected": false
+      }
+    ]
+  },
+  "boundaryPairs": {
+    "count": 315,
+    "labelCounts": {
+      "AUTHORITY_ROOT_CHANGE": 315,
+      "CANONICAL_MS_REANCHOR": 315
+    },
+    "pairs": [
+      {
+        "old": "month-breaker-053",
+        "new": "month-breaker-v4-053",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-054",
+        "new": "month-breaker-v4-054",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-055",
+        "new": "month-breaker-v4-055",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-056",
+        "new": "month-breaker-v4-056",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-057",
+        "new": "month-breaker-v4-057",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-058",
+        "new": "month-breaker-v4-058",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-059",
+        "new": "month-breaker-v4-059",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-060",
+        "new": "month-breaker-v4-060",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-061",
+        "new": "month-breaker-v4-061",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-062",
+        "new": "month-breaker-v4-062",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-063",
+        "new": "month-breaker-v4-063",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-064",
+        "new": "month-breaker-v4-064",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-065",
+        "new": "month-breaker-v4-065",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-066",
+        "new": "month-breaker-v4-066",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-067",
+        "new": "month-breaker-v4-067",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-068",
+        "new": "month-breaker-v4-068",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-069",
+        "new": "month-breaker-v4-069",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-070",
+        "new": "month-breaker-v4-070",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-071",
+        "new": "month-breaker-v4-071",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-072",
+        "new": "month-breaker-v4-072",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-073",
+        "new": "month-breaker-v4-073",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-074",
+        "new": "month-breaker-v4-074",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-075",
+        "new": "month-breaker-v4-075",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-076",
+        "new": "month-breaker-v4-076",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-077",
+        "new": "month-breaker-v4-077",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-078",
+        "new": "month-breaker-v4-078",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-079",
+        "new": "month-breaker-v4-079",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-080",
+        "new": "month-breaker-v4-080",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-081",
+        "new": "month-breaker-v4-081",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-082",
+        "new": "month-breaker-v4-082",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-083",
+        "new": "month-breaker-v4-083",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-084",
+        "new": "month-breaker-v4-084",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-085",
+        "new": "month-breaker-v4-085",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-086",
+        "new": "month-breaker-v4-086",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-087",
+        "new": "month-breaker-v4-087",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-088",
+        "new": "month-breaker-v4-088",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-089",
+        "new": "month-breaker-v4-089",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-090",
+        "new": "month-breaker-v4-090",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-091",
+        "new": "month-breaker-v4-091",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-092",
+        "new": "month-breaker-v4-092",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-093",
+        "new": "month-breaker-v4-093",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-094",
+        "new": "month-breaker-v4-094",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-095",
+        "new": "month-breaker-v4-095",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-096",
+        "new": "month-breaker-v4-096",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-097",
+        "new": "month-breaker-v4-097",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-098",
+        "new": "month-breaker-v4-098",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-099",
+        "new": "month-breaker-v4-099",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-100",
+        "new": "month-breaker-v4-100",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-101",
+        "new": "month-breaker-v4-101",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-102",
+        "new": "month-breaker-v4-102",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-103",
+        "new": "month-breaker-v4-103",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-104",
+        "new": "month-breaker-v4-104",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-105",
+        "new": "month-breaker-v4-105",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-106",
+        "new": "month-breaker-v4-106",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-107",
+        "new": "month-breaker-v4-107",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-108",
+        "new": "month-breaker-v4-108",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-109",
+        "new": "month-breaker-v4-109",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-110",
+        "new": "month-breaker-v4-110",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-111",
+        "new": "month-breaker-v4-111",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-112",
+        "new": "month-breaker-v4-112",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-113",
+        "new": "month-breaker-v4-113",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-114",
+        "new": "month-breaker-v4-114",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-breaker-115",
+        "new": "month-breaker-v4-115",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-053",
+        "new": "robbery-sha-v4-053",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-054",
+        "new": "robbery-sha-v4-054",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-055",
+        "new": "robbery-sha-v4-055",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-056",
+        "new": "robbery-sha-v4-056",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-057",
+        "new": "robbery-sha-v4-057",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-058",
+        "new": "robbery-sha-v4-058",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-059",
+        "new": "robbery-sha-v4-059",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-060",
+        "new": "robbery-sha-v4-060",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-061",
+        "new": "robbery-sha-v4-061",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-062",
+        "new": "robbery-sha-v4-062",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-063",
+        "new": "robbery-sha-v4-063",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-064",
+        "new": "robbery-sha-v4-064",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-065",
+        "new": "robbery-sha-v4-065",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-066",
+        "new": "robbery-sha-v4-066",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-067",
+        "new": "robbery-sha-v4-067",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-068",
+        "new": "robbery-sha-v4-068",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-069",
+        "new": "robbery-sha-v4-069",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-070",
+        "new": "robbery-sha-v4-070",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-071",
+        "new": "robbery-sha-v4-071",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-072",
+        "new": "robbery-sha-v4-072",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-073",
+        "new": "robbery-sha-v4-073",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-074",
+        "new": "robbery-sha-v4-074",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-075",
+        "new": "robbery-sha-v4-075",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-076",
+        "new": "robbery-sha-v4-076",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-077",
+        "new": "robbery-sha-v4-077",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-078",
+        "new": "robbery-sha-v4-078",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-079",
+        "new": "robbery-sha-v4-079",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-080",
+        "new": "robbery-sha-v4-080",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-081",
+        "new": "robbery-sha-v4-081",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-082",
+        "new": "robbery-sha-v4-082",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-083",
+        "new": "robbery-sha-v4-083",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-084",
+        "new": "robbery-sha-v4-084",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-085",
+        "new": "robbery-sha-v4-085",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-086",
+        "new": "robbery-sha-v4-086",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-087",
+        "new": "robbery-sha-v4-087",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-088",
+        "new": "robbery-sha-v4-088",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-089",
+        "new": "robbery-sha-v4-089",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-090",
+        "new": "robbery-sha-v4-090",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-091",
+        "new": "robbery-sha-v4-091",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-092",
+        "new": "robbery-sha-v4-092",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-093",
+        "new": "robbery-sha-v4-093",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-094",
+        "new": "robbery-sha-v4-094",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-095",
+        "new": "robbery-sha-v4-095",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-096",
+        "new": "robbery-sha-v4-096",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-097",
+        "new": "robbery-sha-v4-097",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-098",
+        "new": "robbery-sha-v4-098",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-099",
+        "new": "robbery-sha-v4-099",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-100",
+        "new": "robbery-sha-v4-100",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-101",
+        "new": "robbery-sha-v4-101",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-102",
+        "new": "robbery-sha-v4-102",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-103",
+        "new": "robbery-sha-v4-103",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-104",
+        "new": "robbery-sha-v4-104",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-105",
+        "new": "robbery-sha-v4-105",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-106",
+        "new": "robbery-sha-v4-106",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-107",
+        "new": "robbery-sha-v4-107",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-108",
+        "new": "robbery-sha-v4-108",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-109",
+        "new": "robbery-sha-v4-109",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-110",
+        "new": "robbery-sha-v4-110",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-111",
+        "new": "robbery-sha-v4-111",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-112",
+        "new": "robbery-sha-v4-112",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-113",
+        "new": "robbery-sha-v4-113",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-114",
+        "new": "robbery-sha-v4-114",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "robbery-sha-115",
+        "new": "robbery-sha-v4-115",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-053",
+        "new": "disaster-sha-v4-053",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-054",
+        "new": "disaster-sha-v4-054",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-055",
+        "new": "disaster-sha-v4-055",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-056",
+        "new": "disaster-sha-v4-056",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-057",
+        "new": "disaster-sha-v4-057",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-058",
+        "new": "disaster-sha-v4-058",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-059",
+        "new": "disaster-sha-v4-059",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-060",
+        "new": "disaster-sha-v4-060",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-061",
+        "new": "disaster-sha-v4-061",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-062",
+        "new": "disaster-sha-v4-062",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-063",
+        "new": "disaster-sha-v4-063",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-064",
+        "new": "disaster-sha-v4-064",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-065",
+        "new": "disaster-sha-v4-065",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-066",
+        "new": "disaster-sha-v4-066",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-067",
+        "new": "disaster-sha-v4-067",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-068",
+        "new": "disaster-sha-v4-068",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-069",
+        "new": "disaster-sha-v4-069",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-070",
+        "new": "disaster-sha-v4-070",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-071",
+        "new": "disaster-sha-v4-071",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-072",
+        "new": "disaster-sha-v4-072",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-073",
+        "new": "disaster-sha-v4-073",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-074",
+        "new": "disaster-sha-v4-074",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-075",
+        "new": "disaster-sha-v4-075",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-076",
+        "new": "disaster-sha-v4-076",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-077",
+        "new": "disaster-sha-v4-077",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-078",
+        "new": "disaster-sha-v4-078",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-079",
+        "new": "disaster-sha-v4-079",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-080",
+        "new": "disaster-sha-v4-080",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-081",
+        "new": "disaster-sha-v4-081",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-082",
+        "new": "disaster-sha-v4-082",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-083",
+        "new": "disaster-sha-v4-083",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-084",
+        "new": "disaster-sha-v4-084",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-085",
+        "new": "disaster-sha-v4-085",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-086",
+        "new": "disaster-sha-v4-086",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-087",
+        "new": "disaster-sha-v4-087",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-088",
+        "new": "disaster-sha-v4-088",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-089",
+        "new": "disaster-sha-v4-089",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-090",
+        "new": "disaster-sha-v4-090",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-091",
+        "new": "disaster-sha-v4-091",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-092",
+        "new": "disaster-sha-v4-092",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-093",
+        "new": "disaster-sha-v4-093",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-094",
+        "new": "disaster-sha-v4-094",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-095",
+        "new": "disaster-sha-v4-095",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-096",
+        "new": "disaster-sha-v4-096",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-097",
+        "new": "disaster-sha-v4-097",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-098",
+        "new": "disaster-sha-v4-098",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-099",
+        "new": "disaster-sha-v4-099",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-100",
+        "new": "disaster-sha-v4-100",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-101",
+        "new": "disaster-sha-v4-101",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-102",
+        "new": "disaster-sha-v4-102",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-103",
+        "new": "disaster-sha-v4-103",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-104",
+        "new": "disaster-sha-v4-104",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-105",
+        "new": "disaster-sha-v4-105",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-106",
+        "new": "disaster-sha-v4-106",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-107",
+        "new": "disaster-sha-v4-107",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-108",
+        "new": "disaster-sha-v4-108",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-109",
+        "new": "disaster-sha-v4-109",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-110",
+        "new": "disaster-sha-v4-110",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-111",
+        "new": "disaster-sha-v4-111",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-112",
+        "new": "disaster-sha-v4-112",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-113",
+        "new": "disaster-sha-v4-113",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-114",
+        "new": "disaster-sha-v4-114",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "disaster-sha-115",
+        "new": "disaster-sha-v4-115",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-053",
+        "new": "month-sha-v4-053",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-054",
+        "new": "month-sha-v4-054",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-055",
+        "new": "month-sha-v4-055",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-056",
+        "new": "month-sha-v4-056",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-057",
+        "new": "month-sha-v4-057",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-058",
+        "new": "month-sha-v4-058",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-059",
+        "new": "month-sha-v4-059",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-060",
+        "new": "month-sha-v4-060",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-061",
+        "new": "month-sha-v4-061",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-062",
+        "new": "month-sha-v4-062",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-063",
+        "new": "month-sha-v4-063",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-064",
+        "new": "month-sha-v4-064",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-065",
+        "new": "month-sha-v4-065",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-066",
+        "new": "month-sha-v4-066",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-067",
+        "new": "month-sha-v4-067",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-068",
+        "new": "month-sha-v4-068",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-069",
+        "new": "month-sha-v4-069",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-070",
+        "new": "month-sha-v4-070",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-071",
+        "new": "month-sha-v4-071",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-072",
+        "new": "month-sha-v4-072",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-073",
+        "new": "month-sha-v4-073",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-074",
+        "new": "month-sha-v4-074",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-075",
+        "new": "month-sha-v4-075",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-076",
+        "new": "month-sha-v4-076",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-077",
+        "new": "month-sha-v4-077",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-078",
+        "new": "month-sha-v4-078",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-079",
+        "new": "month-sha-v4-079",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-080",
+        "new": "month-sha-v4-080",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-081",
+        "new": "month-sha-v4-081",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-082",
+        "new": "month-sha-v4-082",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-083",
+        "new": "month-sha-v4-083",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-084",
+        "new": "month-sha-v4-084",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-085",
+        "new": "month-sha-v4-085",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-086",
+        "new": "month-sha-v4-086",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-087",
+        "new": "month-sha-v4-087",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-088",
+        "new": "month-sha-v4-088",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-089",
+        "new": "month-sha-v4-089",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-090",
+        "new": "month-sha-v4-090",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-091",
+        "new": "month-sha-v4-091",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-092",
+        "new": "month-sha-v4-092",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-093",
+        "new": "month-sha-v4-093",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-094",
+        "new": "month-sha-v4-094",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-095",
+        "new": "month-sha-v4-095",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-096",
+        "new": "month-sha-v4-096",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-097",
+        "new": "month-sha-v4-097",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-098",
+        "new": "month-sha-v4-098",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-099",
+        "new": "month-sha-v4-099",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-100",
+        "new": "month-sha-v4-100",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-101",
+        "new": "month-sha-v4-101",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-102",
+        "new": "month-sha-v4-102",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-103",
+        "new": "month-sha-v4-103",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-104",
+        "new": "month-sha-v4-104",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-105",
+        "new": "month-sha-v4-105",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-106",
+        "new": "month-sha-v4-106",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-107",
+        "new": "month-sha-v4-107",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-108",
+        "new": "month-sha-v4-108",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-109",
+        "new": "month-sha-v4-109",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-110",
+        "new": "month-sha-v4-110",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-111",
+        "new": "month-sha-v4-111",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-112",
+        "new": "month-sha-v4-112",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-113",
+        "new": "month-sha-v4-113",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-114",
+        "new": "month-sha-v4-114",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-sha-115",
+        "new": "month-sha-v4-115",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-053",
+        "new": "month-virtue-v4-053",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-054",
+        "new": "month-virtue-v4-054",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-055",
+        "new": "month-virtue-v4-055",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-056",
+        "new": "month-virtue-v4-056",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-057",
+        "new": "month-virtue-v4-057",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-058",
+        "new": "month-virtue-v4-058",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-059",
+        "new": "month-virtue-v4-059",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-060",
+        "new": "month-virtue-v4-060",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-061",
+        "new": "month-virtue-v4-061",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-062",
+        "new": "month-virtue-v4-062",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-063",
+        "new": "month-virtue-v4-063",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-064",
+        "new": "month-virtue-v4-064",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-065",
+        "new": "month-virtue-v4-065",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-066",
+        "new": "month-virtue-v4-066",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-067",
+        "new": "month-virtue-v4-067",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-068",
+        "new": "month-virtue-v4-068",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-069",
+        "new": "month-virtue-v4-069",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-070",
+        "new": "month-virtue-v4-070",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-071",
+        "new": "month-virtue-v4-071",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-072",
+        "new": "month-virtue-v4-072",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-073",
+        "new": "month-virtue-v4-073",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-074",
+        "new": "month-virtue-v4-074",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-075",
+        "new": "month-virtue-v4-075",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-076",
+        "new": "month-virtue-v4-076",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-077",
+        "new": "month-virtue-v4-077",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-078",
+        "new": "month-virtue-v4-078",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-079",
+        "new": "month-virtue-v4-079",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-080",
+        "new": "month-virtue-v4-080",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-081",
+        "new": "month-virtue-v4-081",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-082",
+        "new": "month-virtue-v4-082",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-083",
+        "new": "month-virtue-v4-083",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-084",
+        "new": "month-virtue-v4-084",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-085",
+        "new": "month-virtue-v4-085",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-086",
+        "new": "month-virtue-v4-086",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-087",
+        "new": "month-virtue-v4-087",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-088",
+        "new": "month-virtue-v4-088",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-089",
+        "new": "month-virtue-v4-089",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-090",
+        "new": "month-virtue-v4-090",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-091",
+        "new": "month-virtue-v4-091",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-092",
+        "new": "month-virtue-v4-092",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-093",
+        "new": "month-virtue-v4-093",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-094",
+        "new": "month-virtue-v4-094",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-095",
+        "new": "month-virtue-v4-095",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-096",
+        "new": "month-virtue-v4-096",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-097",
+        "new": "month-virtue-v4-097",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-098",
+        "new": "month-virtue-v4-098",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-099",
+        "new": "month-virtue-v4-099",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-100",
+        "new": "month-virtue-v4-100",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-101",
+        "new": "month-virtue-v4-101",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-102",
+        "new": "month-virtue-v4-102",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-103",
+        "new": "month-virtue-v4-103",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-104",
+        "new": "month-virtue-v4-104",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-105",
+        "new": "month-virtue-v4-105",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-106",
+        "new": "month-virtue-v4-106",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-107",
+        "new": "month-virtue-v4-107",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-108",
+        "new": "month-virtue-v4-108",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-109",
+        "new": "month-virtue-v4-109",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-110",
+        "new": "month-virtue-v4-110",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-111",
+        "new": "month-virtue-v4-111",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-112",
+        "new": "month-virtue-v4-112",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-113",
+        "new": "month-virtue-v4-113",
+        "sample": "before",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-114",
+        "new": "month-virtue-v4-114",
+        "sample": "at",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      },
+      {
+        "old": "month-virtue-115",
+        "new": "month-virtue-v4-115",
+        "sample": "after",
+        "labels": [
+          "AUTHORITY_ROOT_CHANGE",
+          "CANONICAL_MS_REANCHOR"
+        ]
+      }
+    ]
+  },
+  "classCounts": {
+    "old": {
+      "interior-positive": 130,
+      "interior-negative": 130,
+      "exact-boundary": 315,
+      "timezone-equivalent": 15,
+      "timezone-civil-date": 5,
+      "lunar-leap-regression": 5,
+      "rounded-minute-discriminator": 5,
+      "alias-identity": 1
+    },
+    "new": {
+      "interior-positive": 130,
+      "interior-negative": 130,
+      "exact-boundary": 315,
+      "timezone-equivalent": 15,
+      "timezone-civil-date": 5,
+      "lunar-leap-regression": 5,
+      "rounded-minute-discriminator": 10,
+      "alias-identity": 1
+    }
+  }
+}

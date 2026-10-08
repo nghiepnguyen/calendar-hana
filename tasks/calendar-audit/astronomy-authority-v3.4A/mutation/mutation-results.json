@@ -1,0 +1,427 @@
+{
+  "phase": "3B.4.4A",
+  "method": "mutated generator copy -> full generation -> unmodified independent reviewers",
+  "baseline": {
+    "stage": "review",
+    "authorityReview": "PASS",
+    "groupBReview": "PASS",
+    "authorityFindings": [],
+    "groupBFindings": [],
+    "groupBFindingCount": 0,
+    "authorityFindingCount": 0
+  },
+  "summary": {
+    "KILLED": 15,
+    "KILLED_BY_GENERATOR_ABORT": 1,
+    "SURVIVED": 0
+  },
+  "mutants": [
+    {
+      "id": "G1",
+      "name": "floor instead of ceil",
+      "edits": [
+        {
+          "file": "jpl_authority.py",
+          "from": "row = [int(y), int(k), f'{r:.3f}', int(t),",
+          "to": "row = [int(y), int(k), f'{r:.3f}', int(math.floor(r)),"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T"
+      ],
+      "groupBFindingCount": 4871,
+      "authorityFindingCount": 9732,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G2",
+      "name": "round instead of ceil",
+      "edits": [
+        {
+          "file": "jpl_authority.py",
+          "from": "row = [int(y), int(k), f'{r:.3f}', int(t),",
+          "to": "row = [int(y), int(k), f'{r:.3f}', int(round(r)),"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T"
+      ],
+      "groupBFindingCount": 2470,
+      "authorityFindingCount": 4930,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G3",
+      "name": "strict '>' instead of '>=' (t > T is new)",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "if j['civilMs'] <= civil_ms:",
+          "to": "if j['civilMs'] < civil_ms:"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation"
+      ],
+      "groupBFindingCount": 240,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G4",
+      "name": "shift T +1 ms",
+      "edits": [
+        {
+          "file": "jpl_authority.py",
+          "from": "row = [int(y), int(k), f'{r:.3f}', int(t),",
+          "to": "row = [int(y), int(k), f'{r:.3f}', int(t) + 1,"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T"
+      ],
+      "groupBFindingCount": 4873,
+      "authorityFindingCount": 9737,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G5",
+      "name": "shift T -1 ms",
+      "edits": [
+        {
+          "file": "jpl_authority.py",
+          "from": "row = [int(y), int(k), f'{r:.3f}', int(t),",
+          "to": "row = [int(y), int(k), f'{r:.3f}', int(t) - 1,"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)",
+        "GOLDEN_GENERATOR_ERROR: canonical T is not ceil(root)"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T"
+      ],
+      "groupBFindingCount": 4873,
+      "authorityFindingCount": 9736,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G6",
+      "name": "adjacent Jie target (+30 degrees)",
+      "edits": [
+        {
+          "file": "jpl_authority.py",
+          "from": "target = term * 15.0",
+          "to": "target = ((term + 2) % 24) * 15.0"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: boundaries not strictly increasing",
+        "GOLDEN_GENERATOR_ERROR: interval inconsistency -350.53053810185185..380.0150790277778 d",
+        "REFERENCE_ROOT_ERROR: canonical T differs from independent review"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "REFERENCE_ROOT_ERROR: authority T differs from reviewer T",
+        "SERIALIZATION_ERROR: clock-v1 civil serialization differs"
+      ],
+      "groupBFindingCount": 10690,
+      "authorityFindingCount": 4874,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G7",
+      "name": "nearest-minute rounding of the boundary",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "if j['civilMs'] <= civil_ms:",
+          "to": "if round(j['civilMs'] / 60000) * 60000 <= civil_ms:"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation"
+      ],
+      "groupBFindingCount": 300,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G8",
+      "name": "wrong Month Jian after crossing (off by one)",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "branch = BRANCHES[((lon - 315) // 30 + 2) % 12]",
+          "to": "branch = BRANCHES[((lon - 315) // 30 + 3) % 12]"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation",
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation",
+        "GOLDEN_GENERATOR_ERROR: fixture expectation differs from independent derivation"
+      ],
+      "groupBFindingCount": 626,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G9",
+      "name": "one wrong Group B table cell (month-sha 辰 -> 戌)",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "    tables[rule_id] = rows\n",
+          "to": "    tables[rule_id] = rows\ntables['month-sha']['辰']['target'] = '戌'\n"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "SOURCE_TABLE_ERROR: fixture expectation differs from independent derivation",
+        "SOURCE_TABLE_ERROR: fixture expectation differs from independent derivation",
+        "SOURCE_TABLE_ERROR: fixture expectation differs from independent derivation"
+      ],
+      "groupBFindingCount": 18,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G10",
+      "name": "production evaluator used as Golden oracle (Jie instants from the production engine)",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "jie.sort(key=lambda j: j['civilMs'])\n",
+          "to": "import subprocess\n_prod = json.loads(subprocess.check_output(['node', 'tasks/calendar-audit/astronomy-authority-v3.4A/mutation/production-jie-oracle.mjs']))  # shared/lunar/solarTerms\nfor j in jie:\n    j['civilMs'] = _prod[f\"{j['year']}:{j['longitude']}\"]\njie.sort(key=lambda j: j['civilMs'])\n"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: generator references forbidden oracle /shared\\/lunar/",
+        "GOLDEN_GENERATOR_ERROR: generator references forbidden oracle /solarTerms/",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs"
+      ],
+      "groupBFindingCount": 1128,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G11",
+      "name": "old Golden T reused instead of new T",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "jie.sort(key=lambda j: j['civilMs'])\n",
+          "to": "jie.sort(key=lambda j: j['civilMs'])\n_old = json.loads(Path('calendar-group-b-exact-jie-evidence.json').read_text())\nfor _t in _old['transitions']:\n    _j = next(j for j in jie if j['year'] == _t['year'] and j['longitude'] == _t['longitudeDegrees'])\n    _j['civilMs'] = int(datetime.fromisoformat(_t['instantUTC'].replace('Z', '+00:00')).timestamp() * 1000)\n"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: generator references forbidden oracle /exact-jie-evidence/",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs"
+      ],
+      "groupBFindingCount": 967,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G10b",
+      "name": "G10 evading the static guard (no forbidden path text): dynamic detection only",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "jie.sort(key=lambda j: j['civilMs'])\n",
+          "to": "import subprocess\n_prod = json.loads(subprocess.check_output(['node', 'tasks/calendar-audit/astronomy-authority-v3.4A/mutation/production-jie-oracle.mjs']))\nfor j in jie:\n    j['civilMs'] = _prod[f\"{j['year']}:{j['longitude']}\"]\njie.sort(key=lambda j: j['civilMs'])\n"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs"
+      ],
+      "groupBFindingCount": 1126,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G11b",
+      "name": "G11 evading the static guard: dynamic detection only",
+      "edits": [
+        {
+          "file": "groupb_generator.py",
+          "from": "jie.sort(key=lambda j: j['civilMs'])\n",
+          "to": "jie.sort(key=lambda j: j['civilMs'])\n_old = json.loads(Path('calendar-group-b-exact-' + 'jie-evidence.json').read_text())\nfor _t in _old['transitions']:\n    _j = next(j for j in jie if j['year'] == _t['year'] and j['longitude'] == _t['longitudeDegrees'])\n    _j['civilMs'] = int(datetime.fromisoformat(_t['instantUTC'].replace('Z', '+00:00')).timestamp() * 1000)\n"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs",
+        "GOLDEN_GENERATOR_ERROR: provenance active Jie differs"
+      ],
+      "groupBFindingCount": 966,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G12",
+      "name": "clock policy version mismatch (label)",
+      "edits": [
+        {
+          "file": "clock_v1.py",
+          "from": "POLICY_ID = 'clock-v1'",
+          "to": "POLICY_ID = 'clock-v2'"
+        }
+      ],
+      "stage": "generator-groupb",
+      "status": "KILLED_BY_GENERATOR_ABORT",
+      "evidence": "Traceback (most recent call last):\n  File \"/private/tmp/claude-501/-Users-nghiepnguyen-My-Files-calendar-hana/7f61a67e-bdcd-485b-af62-a6254bb66e10/scratchpad/v34a/repro/mutants/G12/generator/groupb_generator.py\", line 35, in <module>\n    assert authority['clockPolicy'] == 'clock-v1'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "pipelineStage": "generator-groupb"
+    },
+    {
+      "id": "G12c",
+      "name": "clock policy label mismatch with the generator self-check removed: reviewer detection only",
+      "edits": [
+        {
+          "file": "clock_v1.py",
+          "from": "POLICY_ID = 'clock-v1'",
+          "to": "POLICY_ID = 'clock-v2'"
+        },
+        {
+          "file": "groupb_generator.py",
+          "from": "assert authority['clockPolicy'] == 'clock-v1'\n",
+          "to": ""
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "FAIL",
+      "groupBReview": "FAIL",
+      "authorityFindings": [
+        "GOLDEN_GENERATOR_ERROR: time scale / clock policy metadata"
+      ],
+      "groupBFindings": [
+        "REFERENCE_ROOT_ERROR: astronomy review did not pass",
+        "SERIALIZATION_ERROR: clock policy clock-v2 is not clock-v1",
+        "SERIALIZATION_ERROR: month-breaker: clock policy clock-v2"
+      ],
+      "groupBFindingCount": 7,
+      "authorityFindingCount": 1,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    },
+    {
+      "id": "G12b",
+      "name": "clock policy behaviour mismatch (TAI-UTC 36 s after 2017, still labelled clock-v1)",
+      "edits": [
+        {
+          "file": "clock_v1.py",
+          "from": "rows.append((start, TT_MINUS_TAI_MS + int(offset) * 1000))",
+          "to": "rows.append((start, TT_MINUS_TAI_MS + min(int(offset), 36) * 1000))"
+        },
+        {
+          "file": "clock_v1.py",
+          "from": "rows[-1][1] != TT_MINUS_TAI_MS + 37000",
+          "to": "False"
+        }
+      ],
+      "stage": "review",
+      "authorityReview": "PASS",
+      "groupBReview": "FAIL",
+      "authorityFindings": [],
+      "groupBFindings": [
+        "SERIALIZATION_ERROR: clock-v1 civil serialization differs",
+        "SERIALIZATION_ERROR: clock-v1 civil serialization differs",
+        "SERIALIZATION_ERROR: clock-v1 civil serialization differs"
+      ],
+      "groupBFindingCount": 2795,
+      "authorityFindingCount": 0,
+      "pipelineStage": "review",
+      "status": "KILLED"
+    }
+  ]
+}

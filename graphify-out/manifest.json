@@ -75,6 +75,50 @@
     "mtime": 1791467058.065038,
     "hash": "eb3e4734118a86aca5f5c41a115f0b65"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/freeze.mjs": {
+    "mtime": 1791473371.9557512,
+    "hash": "30019cc84829aaf0f791b50dc5035f5d"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/analysis/analyze.mjs": {
+    "mtime": 1791473889.1171217,
+    "hash": "99eef745400512e11009af339d2c9ce6"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/mutation/production-jie-oracle.mjs": {
+    "mtime": 1791473083.377464,
+    "hash": "669b43e2da41bf9cec0b7cf38d125c25"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/mutation/mutate-golden.mjs": {
+    "mtime": 1791473336.598328,
+    "hash": "1bf4eb02445aa87d21dcf0ce475936ec"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/tests/vitest.golden.config.ts": {
+    "mtime": 1791473519.283486,
+    "hash": "e9df67ed3102b6f40158edb7a68de058"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/tests/golden-v4.audit.ts": {
+    "mtime": 1791473519.2856045,
+    "hash": "701b4baf5c633768bd07df3ce10a8907"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/generator/clock_v1.py": {
+    "mtime": 1791473046.6257946,
+    "hash": "56f5c39244dedc58bdb4ed9b59ed754c"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/generator/jpl_authority.py": {
+    "mtime": 1791473336.5971496,
+    "hash": "b5826268883c89944099aefc6a61872f"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/generator/groupb_generator.py": {
+    "mtime": 1791473336.5975854,
+    "hash": "6f1304a6c13c085de6f7bf945116e115"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/review/review_groupb.mjs": {
+    "mtime": 1791473384.1823986,
+    "hash": "f92b3dc162797cc7bb26faeaa3929d2b"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-authority-v3.4A/review/review_authority.py": {
+    "mtime": 1791473336.5977685,
+    "hash": "474166c24aed37e3b8a07bccf95c79df"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/astronomy-model-v3.1/reference-sample.py": {
     "mtime": 1791463867.8381653,
     "hash": "e9785fe0f054f0965b1ea80ae503a606"
@@ -116,8 +160,8 @@
     "hash": "0feab0d580e148ab47e022ed4a846027"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/erfa-foundation-v3.3/write-integrity.mjs": {
-    "mtime": 1791471459.1899195,
-    "hash": "5688718d7ef4c9c9b39a0c5cacc14d97"
+    "mtime": 1791471821.5028548,
+    "hash": "10453a8cbb502bf15e66365933261b1a"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/tasks/calendar-audit/erfa-foundation-v3.3/mutation/mutate-erfa.mjs": {
     "mtime": 1791470259.0546231,
@@ -1623,9 +1667,21 @@
     "mtime": 1791414838.995763,
     "hash": "76f6f417967b0664fc2416ef9dd22974"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-astronomy-authority-spec-v3.4A.md": {
+    "mtime": 1791473701.8274376,
+    "hash": "fd149fb04827ace6b75160e25424db72"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/index.html": {
     "mtime": 1790782245.0569143,
     "hash": "b54cb32f81119e1c757323ae5ea87f7a"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-bazi-authority-impact-v3.4A.md": {
+    "mtime": 1791473889.1172562,
+    "hash": "d3e974a9c6f061d0fa184b612e0658da"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-golden-vNext-design-v3.4A.md": {
+    "mtime": 1791473801.2914596,
+    "hash": "d2b08818cba5ecc7920bc338bf5718da"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-erfa-foundation-report-v3.3.md": {
     "mtime": 1791471430.5670874,
@@ -1634,6 +1690,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-heaven-virtue-resolution.md": {
     "mtime": 1791413728.5213194,
     "hash": "145898425bce6af37689ee21f0e2e654"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-jpl-authority-review-v3.4A.md": {
+    "mtime": 1791473783.3294306,
+    "hash": "ccf536129227d8070a12184f7cc3d3fd"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-erfa-port-review-v3.3.md": {
     "mtime": 1791471166.4418557,
@@ -1703,6 +1763,10 @@
     "mtime": 1791381848.6271174,
     "hash": "991c2818fbbafabf49a217ebdcba46d6"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-a-authority-impact-v3.4A.md": {
+    "mtime": 1791473862.786677,
+    "hash": "4fb59302e935fcd0e1b25dd9bbbaecfe"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-astronomy-authority-migration-gate-v3.2.md": {
     "mtime": 1791465824.6925476,
     "hash": "2a0bb71724eeb1f0145cb65533ddf005"
@@ -1718,6 +1782,10 @@
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-property-test-design.md": {
     "mtime": 1791414838.9959154,
     "hash": "57d4c4d27806b37959ad9ffd4726e8c1"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-phase-3B.4.4B-migration-gate.md": {
+    "mtime": 1791473942.622577,
+    "hash": "56cf65aad1fdb2e1ec596d50eebc58da"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-conflicts.md": {
     "mtime": 1791413150.028854,
@@ -1747,13 +1815,29 @@
     "mtime": 1791414267.1460958,
     "hash": "464dde2f6b925708962b026408ebbcbe"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-jpl-authority-generation-v3.4A.md": {
+    "mtime": 1791473759.5154455,
+    "hash": "d64bdb0151ddb18c054cfbe20d14be98"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-golden-diff-v3.4A.md": {
+    "mtime": 1791473849.883519,
+    "hash": "1f274da17d7da6040893f0ed24c9e11b"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-cutoff-resolution.md": {
     "mtime": 1791413728.5216193,
     "hash": "414ee1c4bc2b980961ecf00ecf03ea37"
   },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-golden-vNext-review-v3.4A.md": {
+    "mtime": 1791473822.6261702,
+    "hash": "1270f22837befc60cae7f4d6aaddf30e"
+  },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-golden-freeze-v3.1.md": {
     "mtime": 1791462944.2082753,
     "hash": "26194d5b961d3b4e2d7b1b1ab41f50d8"
+  },
+  "/Users/nghiepnguyen/My Files/calendar-hana/calendar-runtime-boundary-architecture-v3.4A.md": {
+    "mtime": 1791473924.1625774,
+    "hash": "eca34bb536c6cd905847c13aea52c8a2"
   },
   "/Users/nghiepnguyen/My Files/calendar-hana/calendar-group-b-implementation-report-v3.1.md": {
     "mtime": 1791462944.2087023,

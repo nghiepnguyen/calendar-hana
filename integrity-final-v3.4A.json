@@ -1,0 +1,168 @@
+{
+  "phase": "3B.4.4A",
+  "startingHead": "22e3704d96081a5242099d27aed479305effe85c",
+  "endingHead": "22e3704d96081a5242099d27aed479305effe85c",
+  "originMain": "87dd1ba20a4165c75a33d37020388d3018304805",
+  "workingTree": "71 entries (this phase's new files and graphify metadata; uncommitted at record time)",
+  "protectedHashes": {
+    "filesCompared": 1424,
+    "changed": [
+      "graphify-out/.rebuild.lock",
+      "graphify-out/GRAPH_REPORT.md",
+      "graphify-out/graph.html",
+      "graphify-out/graph.json",
+      "graphify-out/manifest.json"
+    ],
+    "unauthorized": [],
+    "verdict": "PASS",
+    "unexpectedWorkingTreeEntries": []
+  },
+  "oldGolden": {
+    "files": 14,
+    "changed": [],
+    "hashes": {
+      "calendar-group-b-exact-jie-evidence.json": {
+        "before": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1",
+        "after": "7c6c55aa031b461926cc5ed4c8a3b936abbeaa39e52ec07cbf84322a6cbcb4f1"
+      },
+      "golden-v3/four-extinctions.json": {
+        "before": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937",
+        "after": "fa8fdca0e9cd4e67fe3bd2af9d98b4a08a064af8c6d2a914324e0c9ff9dc4937"
+      },
+      "golden-v3/four-separations.json": {
+        "before": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d",
+        "after": "2b3d85bd527a6ff2bc920c6e9f747a3c76a0ccdbb837382c7adb82edc8f8216d"
+      },
+      "golden-v3/group-b/disaster-sha.json": {
+        "before": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c",
+        "after": "88594c460a02e0b395af2c06f067bb293ccce8ab01c7dce454fd13ce9b600a6c"
+      },
+      "golden-v3/group-b/manifest.json": {
+        "before": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a",
+        "after": "829f26c2816c321f414a7bdfaa972efe56e464d45856d1e15029b6b0a95f1a8a"
+      },
+      "golden-v3/group-b/month-breaker.json": {
+        "before": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb",
+        "after": "d5c0700af3970c78445699aba3b5fc5c9c68c5c4e1a95c3c1694641872a4a3bb"
+      },
+      "golden-v3/group-b/month-sha.json": {
+        "before": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321",
+        "after": "56ab46f16d697860de45bcccc0cfae4cb5e001281db3dc132e950c0ce6a87321"
+      },
+      "golden-v3/group-b/month-virtue.json": {
+        "before": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9",
+        "after": "8092c3e8a8ded1bd545d39ffae67e10c607d0033bbe4ea07336cab09518b2cd9"
+      },
+      "golden-v3/group-b/robbery-sha.json": {
+        "before": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245",
+        "after": "73b7c79154758b9f0529c80f5d6214f6140ae5355fa36b746e34a4a181bbf245"
+      },
+      "golden-v3/manifest.json": {
+        "before": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454",
+        "after": "40f37fc35d60fa023929f8e425bb990b359e3e150eb4cfd6acbfdde228f75454"
+      },
+      "golden-v3/yue-ji.json": {
+        "before": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e",
+        "after": "6efff560fbc8aef6c84afbf68f2b22f2c24d40bdd843af5896c8326e0181538e"
+      },
+      "tasks/calendar-audit/group-a-frozen-hashes.json": {
+        "before": "781e407efdda2b81a77e8a2cd5792ee95da96a186ea7ac4fbbcaa5da673a00d5",
+        "after": "781e407efdda2b81a77e8a2cd5792ee95da96a186ea7ac4fbbcaa5da673a00d5"
+      },
+      "tasks/calendar-audit/group-a-mutations.json": {
+        "before": "b86c30195b51640f0ae8340ce456b3c694506f90c2164e5a4d3d571d7d81bc4a",
+        "after": "b86c30195b51640f0ae8340ce456b3c694506f90c2164e5a4d3d571d7d81bc4a"
+      },
+      "tasks/calendar-audit/group-b-freeze-hashes.json": {
+        "before": "a2f5a9917efd35697d649bd9c1b7bdaebed06b33ad6327cd24f5187f2e1ad8ff",
+        "after": "a2f5a9917efd35697d649bd9c1b7bdaebed06b33ad6327cd24f5187f2e1ad8ff"
+      }
+    }
+  },
+  "productionSources": {
+    "files": 268,
+    "changed": []
+  },
+  "newGolden": {
+    "version": "golden-v4",
+    "status": "REVIEWED_FROZEN",
+    "files": {
+      "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": {
+        "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+        "reviewedCandidateSha256": "5df1d0acb63dc0ddb9aa5070317beab4e73fc1da6149971f4c6f1f127eadd389",
+        "bytes": 532619
+      },
+      "golden-v4/group-b/month-breaker.json": {
+        "sha256": "ae15733284db354514a9844e63644139da0adeeb373177206c1746d4705eca97",
+        "reviewedCandidateSha256": "01df4e0a119b30666e2dc148b270bef7ab1c7d8b861d629957161f51335cfe70",
+        "bytes": 152554
+      },
+      "golden-v4/group-b/robbery-sha.json": {
+        "sha256": "1429e5aaf8f7e0c33fec29aca3eb7055e1e1ecb6e8dafb2ae11328342c9e87a6",
+        "reviewedCandidateSha256": "e0a65f3f65ad11b24f1b29295dc0b070044a7c455dbadf99e23112fdbd0c9f18",
+        "bytes": 152064
+      },
+      "golden-v4/group-b/disaster-sha.json": {
+        "sha256": "015417c1098291638a9a632d96eac0d16abf769d3f0c882d1c007782ccf06ae3",
+        "reviewedCandidateSha256": "9e1bdbfcc86b841fc596143e57114a5cdffd9411ca202122f99a5c765b7e3eee",
+        "bytes": 152333
+      },
+      "golden-v4/group-b/month-sha.json": {
+        "sha256": "dd1edbd279a8aa64a51e1bf6e8d97fb6d7665a7b48493ce470eab3ffcba2e755",
+        "reviewedCandidateSha256": "ff190e3229840221164ba6b0c97d474c783c1216f6dcaa92a7f68c2545112768",
+        "bytes": 152915
+      },
+      "golden-v4/group-b/month-virtue.json": {
+        "sha256": "f9e9438ea4dd49de7b9502f74c9fc623893dfe82988fe1531b61f783c10948ac",
+        "reviewedCandidateSha256": "90514ca9a4bb48aeb3e93946650015a3e8642266167ba0f5b9bbfec3192f10ad",
+        "bytes": 152092
+      }
+    },
+    "verifiedNow": true
+  },
+  "tests": {
+    "newAuthorityTooling": {
+      "goldenV4Validation": "10/10 PASS",
+      "authorityReview": "PASS",
+      "groupBReview": "PASS",
+      "reproduction": "byte-identical (reproduce.sh step 3)"
+    },
+    "mutation": {
+      "KILLED": 15,
+      "KILLED_BY_GENERATOR_ABORT": 1,
+      "SURVIVED": 0
+    },
+    "unitSuite": {
+      "total": 2022,
+      "failed": 50,
+      "newFailures": 0,
+      "statusChanged": 0,
+      "baselineFailures": 50,
+      "classification": "PRE_EXISTING_EXPECTED_FAILURE (50 Group B, identical to the 3B.4.3 baseline)"
+    },
+    "typecheck": "PASS",
+    "lint": "PASS (0 warnings)",
+    "build": "PASS",
+    "formatCheck": "FAIL pre-existing: 16 non-generated files unchanged from baseline; graphify cache JSON 591 -> 695 from the AGENTS.md-mandated graph update committed in 3B.4.3 (generated output); golden-v4 and all new JSON reports pass prettier",
+    "integrationEmulator": "NOT_RUN (production unchanged)",
+    "e2e": "NOT_RUN (production unchanged)"
+  },
+  "erfaVsAuthority": {
+    "maxAbsSeconds": 0.376326904296875,
+    "medianAbsSeconds": 0.0735145263671875,
+    "p95AbsSeconds": 0.19651519775390613,
+    "integerMsEqual": 16,
+    "integerMsDiffer": 4808,
+    "civilDateMismatches": {
+      "UTC": 0,
+      "UTC+7": 0,
+      "UTC+8": 0
+    }
+  },
+  "deviceGate": "UNVERIFIED_DEVICE_GATE",
+  "productionMigrationExecuted": false,
+  "erfaWiredToProduction": false,
+  "oldGoldenChanged": false,
+  "testsDisabled": false,
+  "finalVerdict": "APPROVE_AUTHORITY_AND_GOLDEN_FREEZE"
+}
