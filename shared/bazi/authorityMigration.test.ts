@@ -85,10 +85,14 @@ describe('unrelated Bazi outputs are unchanged by the migration', () => {
     for (const r of snapshot.records) {
       const solar = calculateTrueSolarTime(r.instantUtc, r.longitude, r.offsetMinutes, r.latitude)
       expect(solar.engineVersion).toBe('astronomy-engine@2.1.19')
-      expect([solar.tstDateTime, solar.equationOfTimeSeconds]).toEqual([
-        r.tstDateTime,
-        r.equationOfTimeSeconds,
-      ])
+      expect(solar.tstDateTime, r.instantUtc).toBe(r.tstDateTime)
+      // 1e-9 s absorbs only cross-runtime IEEE-754 / libm (Math.sin etc.) last-bit
+      // differences in the raw float (observed 1.5e-11 s on CI). It is NOT an
+      // astronomy accuracy tolerance; tstDateTime above stays exact.
+      expect(
+        Math.abs(solar.equationOfTimeSeconds - r.equationOfTimeSeconds),
+        r.instantUtc,
+      ).toBeLessThanOrEqual(1e-9)
       const { pillars, zi } = calculatePillars(r.instantUtc, solar.tstDateTime, r.policy)
       expect([pillars.day.name, pillars.hour.name, zi]).toEqual([r.day, r.hour, r.zi])
       // These instants lie outside every old/new boundary window (classified in
