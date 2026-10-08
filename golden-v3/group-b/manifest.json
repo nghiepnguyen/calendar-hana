@@ -1,8 +1,8 @@
 {
-  "phase": "3B.2-candidate",
-  "authoritative": false,
-  "reviewStatus": "awaiting-independent-review",
-  "recommendation": "READY_FOR_INDEPENDENT_GOLDEN_REVIEW",
+  "phase": "3B.4-freeze",
+  "authoritative": true,
+  "reviewStatus": "independent-review-passed",
+  "recommendation": "APPROVE_GOLDEN_FREEZE",
   "cutoffDecision": "GROUP_B_MONTH_JIAN_CUTOFF_V3_1",
   "timezone": "Asia/Ho_Chi_Minh",
   "dayBoundary": "00:00-civil",
@@ -167,5 +167,24 @@
     "runtimeMutationTestsExecuted": false,
     "productionTestsExecuted": false,
     "gitDiffCheck": "PASS"
-  }
+  },
+  "freezeStatus": "FROZEN",
+  "freezeVersion": "3.1.0",
+  "freezeDate": "2026-10-08T12:14:08.841106+00:00",
+  "reviewPhase": "3B.3",
+  "reviewVerdict": "PASS",
+  "authoritativeForGroupBRawRules": true,
+  "preImplementationCommit": "b24879b77797a29fdee10bc178acfa07cfeadab0",
+  "reviewArtifactSha256": {
+    "calendar-group-b-independent-review.md": "addb2460145c6d62b739cfb8941543bb380eb5f0b3a2cfcd4254eb21811b9452",
+    "calendar-group-b-independent-review.json": "0a6a9544ab01b2728bd066c9d2e8c24e5df90aa106a067f3b035f5a7d996de42",
+    "calendar-group-b-freeze-readiness.md": "df2f37a42232133fdc6df90a2b32a8d1d7974406c28030c593b1a88e712bdc36"
+  },
+  "calculationConvention": "Exact Jie half-open [T,next T); t>=T NEW; UTC+7 00:00 civil day; PROJECT COMPUTATIONAL CONVENTION",
+  "authorityScope": "Five Group B raw rules only; no universal historical truth, UI whole-day policy, activity resolution, heaven-virtue or Group C",
+  "knownLimitations": [
+    "Source digital transcription; facsimile collation not performed",
+    "Swiss DE441 numerical roots are model-specific; physical microsecond accuracy is not claimed",
+    "Production Astronomy Engine model compatibility must be validated without tolerance widening"
+  ]
 }

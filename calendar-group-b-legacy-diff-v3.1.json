@@ -1,0 +1,270 @@
+{
+  "rules": [
+    {
+      "id": "month-breaker",
+      "days": 73414,
+      "differences": 2985,
+      "monthBasisDifferences": 2985,
+      "lookupDifferences": 0,
+      "examples": [
+        {
+          "date": "1900-02-03",
+          "lunarMonth": 1,
+          "monthJian": "丑",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-02-04",
+          "lunarMonth": 1,
+          "monthJian": "丑",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-01",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-05-01",
+          "lunarMonth": 4,
+          "monthJian": "辰",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-05-02",
+          "lunarMonth": 4,
+          "monthJian": "辰",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        }
+      ],
+      "legacyName": "Nguyệt Phá"
+    },
+    {
+      "id": "robbery-sha",
+      "days": 73414,
+      "differences": 2958,
+      "monthBasisDifferences": 2958,
+      "lookupDifferences": 0,
+      "examples": [
+        {
+          "date": "1900-01-05",
+          "lunarMonth": 12,
+          "monthJian": "子",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-03",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-02",
+          "lunarMonth": 3,
+          "monthJian": "卯",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-05",
+          "lunarMonth": 3,
+          "monthJian": "卯",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-05-05",
+          "lunarMonth": 4,
+          "monthJian": "辰",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        }
+      ],
+      "legacyName": "Kiếp Sát"
+    },
+    {
+      "id": "disaster-sha",
+      "days": 73414,
+      "differences": 2981,
+      "monthBasisDifferences": 2981,
+      "lookupDifferences": 0,
+      "examples": [
+        {
+          "date": "1900-03-01",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-04",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-03",
+          "lunarMonth": 3,
+          "monthJian": "卯",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-05-30",
+          "lunarMonth": 5,
+          "monthJian": "巳",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-06-29",
+          "lunarMonth": 6,
+          "monthJian": "午",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        }
+      ],
+      "legacyName": "Phi Ma Sát (Tai Sát)"
+    },
+    {
+      "id": "month-sha",
+      "days": 73414,
+      "differences": 2968,
+      "monthBasisDifferences": 2968,
+      "lookupDifferences": 0,
+      "examples": [
+        {
+          "date": "1900-01-31",
+          "lunarMonth": 1,
+          "monthJian": "丑",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-02",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-05",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-04",
+          "lunarMonth": 3,
+          "monthJian": "卯",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-05-28",
+          "lunarMonth": 5,
+          "monthJian": "巳",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        }
+      ],
+      "legacyName": "Nguyệt Hư (Nguyệt Sát)"
+    },
+    {
+      "id": "month-virtue",
+      "days": 73414,
+      "differences": 3587,
+      "monthBasisDifferences": 3587,
+      "lookupDifferences": 0,
+      "examples": [
+        {
+          "date": "1900-02-02",
+          "lunarMonth": 1,
+          "monthJian": "丑",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-02",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": true,
+          "canonical": false,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-03-04",
+          "lunarMonth": 2,
+          "monthJian": "寅",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-01",
+          "lunarMonth": 3,
+          "monthJian": "卯",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        },
+        {
+          "date": "1900-04-29",
+          "lunarMonth": 4,
+          "monthJian": "辰",
+          "legacy": false,
+          "canonical": true,
+          "classification": "MONTH_BASIS_DIFFERENCE"
+        }
+      ],
+      "legacyName": "Nguyệt Đức"
+    }
+  ],
+  "note": "Tai Sát legacy display is Phi Ma Sát; comparison does not admit its activity prose or equate traditions. Legacy tables and call sites unchanged.",
+  "phase": "3B.4",
+  "range": {
+    "passed": true,
+    "days": 73414,
+    "fieldChecks": 1321453,
+    "assertionCalls": 587313,
+    "from": "1900-01-01",
+    "through": "2100-12-31",
+    "time": "UTC+7 civil noon",
+    "note": "table/day arithmetic invariants; independent exact-Jie accuracy tested separately"
+  },
+  "totalDifferences": 15479,
+  "diagnosticOnly": true,
+  "legacyProductionUnchanged": true,
+  "canonicalPromoted": false
+}
