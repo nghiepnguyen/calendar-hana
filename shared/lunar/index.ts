@@ -18,6 +18,8 @@ import { getSolarTerm, solarTermMonthChi, type SolarTermInfo } from './solarTerm
 
 export * from './auspicious'
 export * from './canChi'
+export * from './catHungAuthority'
+export * from './catHungStars'
 export * from './clashes'
 export * from './directions'
 export * from './elements'

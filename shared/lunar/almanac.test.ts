@@ -6,7 +6,12 @@ import { addDays } from './julian'
 
 // Ba sao licham.vn tính sai, không có trong fixture (xem stars.data.ts).
 const SKIP = new Set(['Thiên Xá', 'Âm Thác', 'Dương Thác'])
+// Phase 4D source-lock: legacy licham.vn fixtures must not override the six migrated identities.
+// Their authority/migration behavior is covered independently by catHungAuthority/Migration/Regression tests.
+const CAT_HUNG_MIGRATED = new Set(['Thiên Đức', 'Thiên Đức Hợp', 'Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
 const names = (stars: { name: string }[]) => stars.map((s) => s.name).filter((n) => !SKIP.has(n))
+const legacyFixtureNames = (stars: readonly string[]) => stars.filter((n) => !CAT_HUNG_MIGRATED.has(n))
+const productionLegacyNames = (stars: { name: string }[]) => names(stars).filter((n) => !CAT_HUNG_MIGRATED.has(n))
 
 describe('getAlmanac', () => {
   it('ngày mẫu 25/9/2026', () => {
@@ -23,7 +28,7 @@ describe('getAlmanac', () => {
     expect(a.monthCanChi.name).toBe('Đinh Dậu')
     expect(a.monthClashes).toEqual(['Ất Mão', 'Quý Mão', 'Quý Tỵ', 'Quý Hợi'])
     expect(names(a.stars.good)).toEqual(['Thiên Đức', 'Giải Thần', 'Thanh Long Hoàng Đạo'])
-    expect(names(a.stars.bad)).toEqual(['Kiếp Sát', 'Hoàng Sa'])
+    expect(names(a.stars.bad)).toEqual(['Hoàng Sa', 'Kiếp Sát'])
     expect(a.hours).toHaveLength(12)
     expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual([
       'Tý',
@@ -44,8 +49,8 @@ describe('getAlmanac', () => {
     // trong directions.test.ts. Không dùng lại direction values của fixture legacy
     // (licham.vn / website-majority) để override authority mới.
     expect(a.dayClashes).toEqual(f.dayClashes)
-    expect(names(a.stars.good).sort()).toEqual([...f.good].sort())
-    expect(names(a.stars.bad).sort()).toEqual([...f.bad].sort())
+    expect(productionLegacyNames(a.stars.good).sort()).toEqual(legacyFixtureNames(f.good).sort())
+    expect(productionLegacyNames(a.stars.bad).sort()).toEqual(legacyFixtureNames(f.bad).sort())
   })
 
   it('cache: gọi lại cùng ngày trả về cùng object', () => {
