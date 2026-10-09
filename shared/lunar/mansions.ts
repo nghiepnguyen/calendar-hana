@@ -8,15 +8,18 @@
 // `luminary` giữ canonical 七曜: Nhật/Nguyệt/Hỏa/Thủy/Mộc/Kim/Thổ.
 // `element` là compatibility field cho UI/consumer cũ: Nhật -> Hỏa, Nguyệt -> Thủy.
 // `isGood` và shouldDo/shouldAvoid vẫn là dữ liệu almanac hiện đại, chưa source-lock;
-// không được dùng chúng như canonical scoring cho tới khi audit riêng hoàn tất.
+// Giữ compatibility; production content dùng mansion.content (Ngọc Hạp 1880). Không dùng để scoring.
 
 import type { NguHanh } from './elements'
+import { getMansionContent, type MansionContent } from './mansionContentAuthority'
 
 export type MansionLuminary = 'Nhật' | 'Nguyệt' | 'Hỏa' | 'Thủy' | 'Mộc' | 'Kim' | 'Thổ'
 
 export interface Mansion {
   /** 0..27, 0 = Giác. */
   index: number
+  /** Edition-specific 宜忌 authority, separate from legacy summary and canonical identity. */
+  content: MansionContent
   /** Ví dụ "Ngưu". */
   name: string
   /** Canonical 七曜 association. */
@@ -33,7 +36,7 @@ export interface Mansion {
   shouldAvoid: string
 }
 
-type MansionRow = Omit<Mansion, 'index'>
+type MansionRow = Omit<Mansion, 'index' | 'content'>
 
 const MANSIONS: readonly MansionRow[] = [
   { name: 'Giác', luminary: 'Mộc', element: 'Mộc', animal: 'Giao (Giao long)', isGood: true, shouldDo: 'Khởi tạo mọi việc, cưới gả, cầu công danh, thi cử.', shouldAvoid: 'Chôn cất, sửa mồ mả.' },
@@ -69,5 +72,5 @@ const MANSIONS: readonly MansionRow[] = [
 /** Sao Nhị thập bát tú trực ngày jd. Absolute phase is source-locked in the provenance audit. */
 export function getMansion(jd: number): Mansion {
   const index = (((jd + 11) % 28) + 28) % 28
-  return { index, ...MANSIONS[index] }
+  return { index, ...MANSIONS[index], content: getMansionContent(index) }
 }

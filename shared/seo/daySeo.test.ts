@@ -29,6 +29,16 @@ describe('getDaySeo', () => {
 })
 
 describe('renderDayArticle', () => {
+  it('attributes mansion content to the selected edition and never claims unmentioned activities are allowed', () => {
+    const html = renderDayArticle('2026-09-28')
+    const mansion = html.split('<h2>Nhị thập bát tú:')[1].split('<h2>Thập nhị trực:')[0]
+    expect(mansion).toContain('sao Nguy')
+    expect(mansion).toContain('theo Ngọc Hạp bản 1880')
+    expect(mansion).toContain('page/n56.jpg')
+    expect(mansion).toContain('Chưa có việc được nêu rõ')
+    expect(mansion).not.toContain('Không kỵ')
+    expect(mansion).not.toContain('Hung Tú')
+  })
   it('có đủ các mục lịch vạn niên và link sang ngày trước, ngày sau', () => {
     const html = renderDayArticle('2026-09-25')
     expect(html).toContain('<h1>Lịch âm ngày 25/9/2026</h1>')

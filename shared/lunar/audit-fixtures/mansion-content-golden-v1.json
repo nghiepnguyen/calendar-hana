@@ -1,0 +1,2282 @@
+{
+  "authorityId": "mansion-content-yuxia-1880-v1",
+  "version": "1.0.0",
+  "source": {
+    "work": "繪圖增廣玉匣記",
+    "edition": "光緒六年仲夏校鐫，掃葉山房藏板 (1880)",
+    "section": "二十八宿值日吉凶歌",
+    "url": "https://archive.org/details/20241205_20241205_0310",
+    "titlePdfPage": 3,
+    "pdfPages": [
+      46,
+      73
+    ],
+    "pdfSha1": "c8f9ccbb73f7bb0e05c6c1880d61ac9f62dae6b1",
+    "transcription": "Visual reading of page images; short operative excerpts, not OCR or complete verses."
+  },
+  "items": [
+    {
+      "index": 0,
+      "name": "Giác",
+      "han": "角",
+      "pdfPage": 46,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "角-1",
+          "quote": "角星造作主榮昌",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 0
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "角-2",
+          "quote": "嫁娶婚姻生貴子",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 0
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "角-3",
+          "quote": "惟有埋葬不可用",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 0
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "角-4",
+          "quote": "起工修築墳墓地",
+          "translation": "Sửa xây mộ (trong đoạn kiêng chôn cất)",
+          "polarity": "negative",
+          "activityId": "grave_repair",
+          "scope": "funeral_grave_repair",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 0
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 1,
+      "name": "Cang",
+      "han": "亢",
+      "pdfPage": 47,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "亢-1",
+          "quote": "亢星造作長房當",
+          "translation": "Xây dựng (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 1
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "亢-2",
+          "quote": "埋葬定是虎狼傷",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 1
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "亢-3",
+          "quote": "嫁娶婚姻用此日",
+          "translation": "Cưới hỏi (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 1
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 2,
+      "name": "Đê",
+      "han": "氐",
+      "pdfPage": 48,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "氐-1",
+          "quote": "氐星造作主災凶",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 2
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "氐-2",
+          "quote": "埋葬不可用此日",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 2
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "氐-3",
+          "quote": "若是婚姻離別散",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 2
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "氐-4",
+          "quote": "行船必定遭沉沒",
+          "translation": "Đi thuyền",
+          "polarity": "negative",
+          "activityId": "water_travel",
+          "scope": "travel_water",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 2
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 3,
+      "name": "Phòng",
+      "han": "房",
+      "pdfPage": 49,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "房-1",
+          "quote": "房星造作田園進",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 3
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "房-2",
+          "quote": "埋葬若然逢此日",
+          "translation": "Chôn cất (đoạn nêu thuận lợi)",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 3
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "房-3",
+          "quote": "嫁娶嫦娥歸月殿",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 3
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 4,
+      "name": "Tâm",
+      "han": "心",
+      "pdfPage": 50,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "心-1",
+          "quote": "心星造作大為凶",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 4
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "心-2",
+          "quote": "埋葬若還逢此日",
+          "translation": "Chôn cất (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 4
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "心-3",
+          "quote": "婚姻若是逢此日",
+          "translation": "Cưới hỏi (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 4
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 5,
+      "name": "Vĩ",
+      "han": "尾",
+      "pdfPage": 51,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "尾-1",
+          "quote": "尾星造作得天恩",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 5
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "尾-2",
+          "quote": "和合婚姻貴子孫",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 5
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "尾-3",
+          "quote": "埋葬若能依此日",
+          "translation": "Chôn cất (đoạn nêu thuận lợi)",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 5
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "尾-4",
+          "quote": "開門放水招田宅",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 5
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "尾-5",
+          "quote": "開門放水招田宅",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 5
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 6,
+      "name": "Cơ",
+      "han": "箕",
+      "pdfPage": 52,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "箕-1",
+          "quote": "箕星造作主高強",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 6
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "箕-2",
+          "quote": "埋葬修墳大吉利",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 6
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "箕-3",
+          "quote": "埋葬修墳大吉利",
+          "translation": "Sửa mộ",
+          "polarity": "positive",
+          "activityId": "grave_repair",
+          "scope": "funeral_grave_repair",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 6
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "箕-4",
+          "quote": "開門放水招財谷",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 6
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "箕-5",
+          "quote": "開門放水招財谷",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 6
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 7,
+      "name": "Đẩu",
+      "han": "斗",
+      "pdfPage": 53,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "斗-1",
+          "quote": "斗星造作主招財",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 7
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "斗-2",
+          "quote": "墳墓修築富貴家",
+          "translation": "Sửa xây mộ",
+          "polarity": "positive",
+          "activityId": "grave_repair",
+          "scope": "funeral_grave_repair",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 7
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "斗-3",
+          "quote": "開門放水招牛馬",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 7
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "斗-4",
+          "quote": "開門放水招牛馬",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 7
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 8,
+      "name": "Ngưu",
+      "han": "牛",
+      "pdfPage": 54,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "牛-1",
+          "quote": "牛星造作主災危",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 8
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "牛-2",
+          "quote": "嫁娶婚姻皆自損",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 8
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "牛-3",
+          "quote": "若是開門并放水",
+          "translation": "Mở cửa (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 8
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "牛-4",
+          "quote": "若是開門并放水",
+          "translation": "Dẫn nước (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 8
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 9,
+      "name": "Nữ",
+      "han": "女",
+      "pdfPage": 55,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "女-1",
+          "quote": "女星造作損婆娘",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 9
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "女-2",
+          "quote": "埋葬生災逢鬼怪",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 9
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "女-3",
+          "quote": "開門放水逢此日",
+          "translation": "Mở cửa (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 9
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "女-4",
+          "quote": "開門放水逢此日",
+          "translation": "Dẫn nước (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 9
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 10,
+      "name": "Hư",
+      "han": "虛",
+      "pdfPage": 56,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "虛-1",
+          "quote": "虛星造作主災殃",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 10
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "虛-2",
+          "quote": "開門放水招災禍",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 10
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "虛-3",
+          "quote": "開門放水招災禍",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 10
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 11,
+      "name": "Nguy",
+      "han": "危",
+      "pdfPage": 57,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "危-1",
+          "quote": "危星不可造高堂",
+          "translation": "Dựng nhà cao",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "construction_high_hall",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 11
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "危-2",
+          "quote": "埋葬若還逢此日",
+          "translation": "Chôn cất (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 11
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "危-3",
+          "quote": "開門放水遭刑杖",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 11
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "危-4",
+          "quote": "開門放水遭刑杖",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 11
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 12,
+      "name": "Thất",
+      "han": "室",
+      "pdfPage": 58,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "室-1",
+          "quote": "室星修造進田牛",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 12
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "室-2",
+          "quote": "開門放水招財帛",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 12
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "室-3",
+          "quote": "開門放水招財帛",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 12
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "室-4",
+          "quote": "和合婚姻生貴兒",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 12
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "室-5",
+          "quote": "埋葬若能依此日",
+          "translation": "Chôn cất (đoạn nêu thuận lợi)",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 12
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 13,
+      "name": "Bích",
+      "han": "壁",
+      "pdfPage": 59,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "壁-1",
+          "quote": "壁星造作進莊田",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 13
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "壁-2",
+          "quote": "婚姻自有人口進",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 13
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "壁-3",
+          "quote": "開門放水出英賢",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 13
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "壁-4",
+          "quote": "開門放水出英賢",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 13
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "壁-5",
+          "quote": "埋葬招財官品進",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 13
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 14,
+      "name": "Khuê",
+      "han": "奎",
+      "pdfPage": 60,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "奎-1",
+          "quote": "奎星造作得禎祥",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 14
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "奎-2",
+          "quote": "若是埋葬陰卒死",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 14
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "奎-3",
+          "quote": "開門放水招災禍",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 14
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "奎-4",
+          "quote": "開門放水招災禍",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 14
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 15,
+      "name": "Lâu",
+      "han": "婁",
+      "pdfPage": 61,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "婁-1",
+          "quote": "婁星竪柱起門庭",
+          "translation": "Dựng cột",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "construction_columns",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 15
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "婁-2",
+          "quote": "婚姻進益生貴子",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 15
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "婁-3",
+          "quote": "放水開門皆吉利",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 15
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "婁-4",
+          "quote": "放水開門皆吉利",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 15
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 16,
+      "name": "Vị",
+      "han": "胃",
+      "pdfPage": 62,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "胃-1",
+          "quote": "胃星造作事如何",
+          "translation": "Xây dựng (câu tiếp nêu phú quý)",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 16
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "胃-2",
+          "quote": "埋葬進臨官祿位",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 16
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "胃-3",
+          "quote": "婚姻遇此家富貴",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 16
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 17,
+      "name": "Mão",
+      "han": "昴",
+      "pdfPage": 63,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "昴-1",
+          "quote": "昴星造作進田牛",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 17
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "昴-2",
+          "quote": "埋葬官災不得休",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 17
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "昴-3",
+          "quote": "開門放水招災禍",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 17
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "昴-4",
+          "quote": "開門放水招災禍",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 17
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "昴-5",
+          "quote": "婚姻不可逢此日",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 17
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 18,
+      "name": "Tất",
+      "han": "畢",
+      "pdfPage": 64,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "畢-1",
+          "quote": "畢星造作主光前",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 18
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "畢-2",
+          "quote": "埋葬此日添官職",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 18
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "畢-3",
+          "quote": "開門放水多吉慶",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 18
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "畢-4",
+          "quote": "開門放水多吉慶",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 18
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "畢-5",
+          "quote": "婚姻若能逢此日",
+          "translation": "Cưới hỏi (đoạn nêu thuận lợi)",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 18
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 19,
+      "name": "Chủy",
+      "han": "觜",
+      "pdfPage": 65,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "觜-1",
+          "quote": "觜星造作有徒刑",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 19
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "觜-2",
+          "quote": "埋葬卒死多因此",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 19
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 20,
+      "name": "Sâm",
+      "han": "參",
+      "pdfPage": 66,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "參-1",
+          "quote": "參星造作旺人家",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 20
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "參-2",
+          "quote": "埋葬招疾喪黃沙",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 20
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "參-3",
+          "quote": "開門放水加官職",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 20
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "參-4",
+          "quote": "開門放水加官職",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 20
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "參-5",
+          "quote": "婚姻許定遭刑克",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 20
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 21,
+      "name": "Tỉnh",
+      "han": "井",
+      "pdfPage": 67,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "井-1",
+          "quote": "井星造作旺蠶田",
+          "translation": "Xây dựng",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 21
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "井-2",
+          "quote": "埋葬須防驚卒死",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 21
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "井-3",
+          "quote": "開門放水招財帛",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 21
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "井-4",
+          "quote": "開門放水招財帛",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 21
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 22,
+      "name": "Quỷ",
+      "han": "鬼",
+      "pdfPage": 68,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "鬼-1",
+          "quote": "鬼星起造卒人亡",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "鬼-2",
+          "quote": "埋葬此日官祿至",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "鬼-3",
+          "quote": "開門放水須傷死",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "鬼-4",
+          "quote": "開門放水須傷死",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "鬼-5",
+          "quote": "嫁娶夫妻不久長",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "鬼-6",
+          "quote": "修土築牆傷產女",
+          "translation": "Đắp đất xây tường",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "construction_wall",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 22
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 23,
+      "name": "Liễu",
+      "han": "柳",
+      "pdfPage": 69,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "柳-1",
+          "quote": "柳星造作主遭官",
+          "translation": "Xây dựng",
+          "polarity": "negative",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 23
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "柳-2",
+          "quote": "埋葬瘟疫多疾病",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 23
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "柳-3",
+          "quote": "開門放水招聾瞎",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 23
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "柳-4",
+          "quote": "開門放水招聾瞎",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 23
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 24,
+      "name": "Tinh",
+      "han": "星",
+      "pdfPage": 70,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "星-1",
+          "quote": "星宿日好造新房",
+          "translation": "Dựng phòng mới",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "construction_new_room",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 24
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "星-2",
+          "quote": "不可葬埋并放水",
+          "translation": "Chôn cất",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 24
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "星-3",
+          "quote": "不可葬埋并放水",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 24
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "星-4",
+          "quote": "自要歸休別嫁郎",
+          "translation": "Cưới hỏi (đoạn nêu chia lìa)",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 24
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 25,
+      "name": "Trương",
+      "han": "張",
+      "pdfPage": 71,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "張-1",
+          "quote": "張星日好造龍軒",
+          "translation": "Dựng công trình (龍軒)",
+          "polarity": "positive",
+          "activityId": "construction",
+          "scope": "construction_general",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 25
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "張-2",
+          "quote": "埋葬不久陞官職",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 25
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "張-3",
+          "quote": "開門放水招財帛",
+          "translation": "Mở cửa",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 25
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "張-4",
+          "quote": "開門放水招財帛",
+          "translation": "Dẫn nước",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 25
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "張-5",
+          "quote": "婚姻和合福綿綿",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 25
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 26,
+      "name": "Dực",
+      "han": "翼",
+      "pdfPage": 72,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "翼-1",
+          "quote": "翼星不利架高堂",
+          "translation": "Dựng nhà cao",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "construction_high_hall",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 26
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "翼-2",
+          "quote": "埋葬若還逢此日",
+          "translation": "Chôn cất (đoạn nêu bất lợi)",
+          "polarity": "negative",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 26
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "翼-3",
+          "quote": "婚姻此日不宜利",
+          "translation": "Cưới hỏi",
+          "polarity": "negative",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 26
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "翼-4",
+          "quote": "開門放水家須破",
+          "translation": "Mở cửa",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "door_opening",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 26
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "翼-5",
+          "quote": "開門放水家須破",
+          "translation": "Dẫn nước",
+          "polarity": "negative",
+          "activityId": "",
+          "scope": "waterworks",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 26
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    },
+    {
+      "index": 27,
+      "name": "Chẩn",
+      "han": "軫",
+      "pdfPage": 73,
+      "classification": "SOURCE_DEPENDENT",
+      "reviewStatus": "SOURCE_LOCKED",
+      "clauses": [
+        {
+          "id": "軫-1",
+          "quote": "軫星臨水造龍宮",
+          "translation": "Công trình bên nước (龍宮)",
+          "polarity": "positive",
+          "activityId": "",
+          "scope": "construction_waterside",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 27
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "軫-2",
+          "quote": "埋葬文星來照助",
+          "translation": "Chôn cất",
+          "polarity": "positive",
+          "activityId": "burial",
+          "scope": "funeral_burial",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 27
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        },
+        {
+          "id": "軫-3",
+          "quote": "婚姻龍子出龍宮",
+          "translation": "Cưới hỏi",
+          "polarity": "positive",
+          "activityId": "wedding",
+          "scope": "relationship_wedding",
+          "conditions": [
+            {
+              "operand": "MANSION_INDEX",
+              "equals": 27
+            }
+          ],
+          "exceptions": [],
+          "confidence": "PRIMARY",
+          "scoreDelta": 0
+        }
+      ],
+      "coverage": "Explicit operative activities only; unmentioned activities are UNKNOWN, not permitted or prohibited."
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { presentMansionContent } from '../lunar/mansionContentAuthority'
 // Thông tin SEO của trang xem Ngày (/day/YYYY-MM-DD): title, description, JSON-LD và nội dung
 // HTML tĩnh. Dùng chung cho app (cập nhật <head> khi đổi ngày) và bước prerender lúc build.
 // Không dùng DOM để chạy được trong Node.
@@ -130,6 +131,7 @@ function list(items: readonly string[]): string {
 export function renderDayArticle(date: SolarDateString): string {
   const info = getDayInfo(date)
   const a = getAlmanac(date)
+  const mansionContent = presentMansionContent(a.mansion.content)
   const solar = formatSolarShort(date)
   const lunar = formatLunarShort(info.lunar)
   const prev = addDays(date, -1)
@@ -166,11 +168,12 @@ export function renderDayArticle(date: SolarDateString): string {
     '<h2>Giờ hắc đạo</h2>',
     list(badHours.map((h) => `${h.label}, ${h.god}`)),
     `<h2>Nhị thập bát tú: sao ${escapeHtml(a.mansion.name)}</h2>`,
-    `<p>${escapeHtml(`${a.mansion.animal}, ${a.mansion.isGood ? 'Cát Tú' : 'Hung Tú'}, hành ${a.mansion.element}.`)}</p>`,
+    `<p>${escapeHtml(`${a.mansion.animal}, theo Ngọc Hạp bản 1880, hành ${a.mansion.element}. Nội dung tham khảo theo nguồn, chưa tính điểm chọn ngày.`)}</p>`,
     '<dl>',
-    row('Nên làm', a.mansion.shouldDo),
-    row('Nên kiêng', a.mansion.shouldAvoid),
+    row('Nên làm', mansionContent.shouldDo),
+    row('Nên kiêng', mansionContent.shouldAvoid),
     '</dl>',
+    `<p><a href="${escapeHtml(mansionContent.source.url)}">Ngọc Hạp 1880 · trang ${a.mansion.content.pdfPage}</a>. Việc không được nêu trong nguồn chưa có kết luận nên/kỵ.</p>`,
     `<h2>Thập nhị trực: trực ${escapeHtml(a.officer.name)}</h2>`,
     `<p>${a.officer.isGood ? 'Trực tốt.' : 'Trực xấu.'}</p>`,
     '<dl>',

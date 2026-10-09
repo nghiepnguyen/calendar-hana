@@ -1,9 +1,16 @@
 import patterns from '../almanac-data/mansion-patterns.json'
 import type { Evidence } from './evidence'
-export type MansionText = { name: string; shouldDo: string; shouldAvoid: string }
+import { getMansionContentEvidence, type MansionContent } from './mansionContentAuthority'
+export type MansionText = {
+  name: string
+  shouldDo: string
+  shouldAvoid: string
+  content?: MansionContent
+}
 
 /** Longest phrases reserve their span; a boat or grave repair cannot also match its parent activity. */
 export function extractMansionEvidence(input: MansionText): Evidence[] {
+  if (input.content) return getMansionContentEvidence(input.content)
   const rows: Evidence[] = []
   for (const [text, polarity] of [
     [input.shouldDo, 'positive'],
@@ -38,7 +45,7 @@ export function extractMansionEvidence(input: MansionText): Evidence[] {
           polarity: resolvedPolarity,
           sourcePhrase: original.slice(start, end),
           sourceRef: `shared/lunar/mansions.ts#${input.name}`,
-          confidence: 'high',
+          confidence: 'low',
           status: 'informational',
           scoreDelta: 0,
           rawDelta: general ? 0 : polarity === 'positive' ? 15 : -25,

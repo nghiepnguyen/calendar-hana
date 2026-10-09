@@ -22,6 +22,7 @@ import {
 import type { NguHanh } from '@shared/lunar'
 import type { CanChiRelation } from '@shared/lunar/elements'
 import { getAlmanac } from '@shared/lunar/almanac'
+import { presentMansionContent } from '@shared/lunar/mansionContentAuthority'
 import type { SolarDateString } from '@shared/types'
 import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
 import { Compass } from './Compass'
@@ -165,6 +166,7 @@ export function Tile({
 /** Khối "Lịch vạn niên" ở xem Ngày: tiết khí, 28 tú, trực, hướng xuất hành, tuổi xung, sao, giờ. */
 export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
   const a = useMemo(() => getAlmanac(date), [date])
+  const mansionContent = presentMansionContent(a.mansion.content)
   const [explain, setExplain] = useState<ExplainItem | null>(null)
 
   return (
@@ -217,22 +219,24 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
             type="button"
             className={styles.tileButton}
             aria-haspopup="dialog"
-            aria-label={`Sao ${a.mansion.name}, ${a.mansion.isGood ? 'Cát Tú' : 'Hung Tú'}, xem giải thích`}
+            aria-label={`Sao ${a.mansion.name}, theo Ngọc Hạp bản 1880, xem giải thích`}
             onClick={() =>
               setExplain({
                 title: `Sao ${a.mansion.name}`,
                 isGood: a.mansion.isGood,
-                shouldDo: a.mansion.shouldDo,
-                shouldAvoid: a.mansion.shouldAvoid,
+                verdict: { label: mansionContent.sourceLabel, tone: 'neutral' },
+                ...mansionContent,
               })
             }
           >
             <span className={styles.bigValue}>{a.mansion.name}</span>
             <span className={styles.metaRow}>
-              <Pill good={a.mansion.isGood}>{a.mansion.isGood ? 'Cát Tú' : 'Hung Tú'}</Pill>
+              <span className={`${styles.pill} ${styles.pillNeutral}`}>Theo Ngọc Hạp</span>
               <ElementChip element={a.mansion.element} />
             </span>
-            <span className={styles.subtle}>{a.mansion.animal}</span>
+            <span className={styles.subtle}>
+              <span>{a.mansion.animal}</span> · {mansionContent.sourceLabel}
+            </span>
             <span className={`${styles.doLine} ${styles.clamp}`}>
               <CheckCircle
                 size={iconSize(15)}
@@ -242,7 +246,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
               />
               <span>
                 <span className={styles.srOnly}>Nên làm: </span>
-                {a.mansion.shouldDo}
+                {mansionContent.shouldDo}
               </span>
             </span>
             <span className={`${styles.doLine} ${styles.clamp}`}>
@@ -254,7 +258,7 @@ export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
               />
               <span>
                 <span className={styles.srOnly}>Nên kiêng: </span>
-                {a.mansion.shouldAvoid}
+                {mansionContent.shouldAvoid}
               </span>
             </span>
             <span className={styles.openIcon} aria-hidden="true">

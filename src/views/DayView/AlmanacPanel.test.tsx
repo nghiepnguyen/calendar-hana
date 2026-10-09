@@ -19,7 +19,7 @@ describe('AlmanacPanel', () => {
   it('hiện đủ thông tin ngày mẫu 25/9/2026', () => {
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
     const panel = screen.getByRole('region', { name: 'Lịch vạn niên' })
-    for (const text of ['Thu phân', 'Kim Bạch Kim', 'Hung Tú', 'Ngưu (Trâu)']) {
+    for (const text of ['Thu phân', 'Kim Bạch Kim', 'Theo Ngọc Hạp', 'Ngưu (Trâu)']) {
       expect(within(panel).getByText(text)).toBeInTheDocument()
     }
     // directions-authority-v1: ngày Nhâm có cả Hỷ Thần và Tài Thần cùng hướng Nam.
@@ -36,7 +36,9 @@ describe('AlmanacPanel', () => {
         .map((li) => li.textContent),
     ).toEqual(['Canh Thân', 'Bính Thân', 'Bính Dần'])
     expect(within(panel).getByText(/Can sinh Chi \(Thủy sinh Mộc\)/)).toBeInTheDocument()
-    expect(within(panel).getByRole('button', { name: /^Sao Ngưu, Hung Tú/ })).toBeInTheDocument()
+    expect(
+      within(panel).getByRole('button', { name: /^Sao Ngưu, theo Ngọc Hạp/ }),
+    ).toBeInTheDocument()
     expect(within(panel).getByRole('button', { name: /^Trực Chấp, tốt/ })).toBeInTheDocument()
     expect(within(panel).getByRole('button', { name: 'Thiên Đức' })).toBeInTheDocument()
     expect(within(panel).getByRole('button', { name: 'Hoàng Sa' })).toBeInTheDocument()
