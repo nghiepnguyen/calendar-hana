@@ -3,6 +3,7 @@ import { getAlmanac } from './almanac'
 import { dayCanChi } from './canChi'
 import { solarStringToJd } from './julian'
 import { solarToLunar } from './lunar'
+import { sexagenaryIndex } from './napAm'
 import { getStars } from './stars'
 import { getThuTuForDate } from './thuTuAuthority'
 
@@ -16,7 +17,7 @@ function legacyThuTu(date: `${number}-${number}-${number}`) {
     lunarDay: lunar.day,
     can: dayCC.can,
     chi: dayCC.chi,
-    canChi: dayCC.index,
+    canChi: sexagenaryIndex(dayCC),
     officer: 0,
     mansion: 0,
   }).bad.some((star) => star.name === 'Thụ Tử')
