@@ -12,6 +12,10 @@ function expected(monthJianBranch: number, dayBranch: number) {
   return { name: god.name, isHoangDao: god.isHoangDao }
 }
 
+function canonicalGod(result: { name: string; isHoangDao: boolean }) {
+  return { name: result.name, isHoangDao: result.isHoangDao }
+}
+
 describe('day-gods-authority-v1', () => {
   it('locks authority metadata and canonical 12-god order', () => {
     expect(golden.authorityId).toBe('day-gods-authority-v1')
@@ -56,9 +60,20 @@ describe('day-gods-authority-v1', () => {
       const beforeGod = getDayGodAtInstant(before, TZ)
       const exactGod = getDayGodAtInstant(exact, TZ)
       const afterGod = getDayGodAtInstant(after, TZ)
-      expect(beforeGod, `${term.name} T-1ms`).toEqual(expected(oldMonth, beforeGod.dayBranch))
-      expect(exactGod, `${term.name} T`).toEqual(expected(newMonth, exactGod.dayBranch))
-      expect(afterGod, `${term.name} T+1ms`).toEqual(expected(newMonth, afterGod.dayBranch))
+
+      // Compare the canonical authority payload separately from diagnostic operands returned by the API.
+      expect(canonicalGod(beforeGod), `${term.name} T-1ms`).toEqual(
+        expected(oldMonth, beforeGod.dayBranch),
+      )
+      expect(canonicalGod(exactGod), `${term.name} T`).toEqual(
+        expected(newMonth, exactGod.dayBranch),
+      )
+      expect(canonicalGod(afterGod), `${term.name} T+1ms`).toEqual(
+        expected(newMonth, afterGod.dayBranch),
+      )
+      expect(beforeGod.monthJianBranch, `${term.name} T-1ms month operand`).toBe(oldMonth)
+      expect(exactGod.monthJianBranch, `${term.name} T month operand`).toBe(newMonth)
+      expect(afterGod.monthJianBranch, `${term.name} T+1ms month operand`).toBe(newMonth)
       expect(afterGod.dayBranch, `${term.name} day operand stable across 1ms`).toBe(exactGod.dayBranch)
     }
   })
