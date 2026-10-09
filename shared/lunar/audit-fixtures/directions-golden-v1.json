@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "authorityId": "directions-authority-v1",
+  "operand": "DAY_STEM",
+  "stemOrder": ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"],
+  "sourcePolicy": {
+    "hyThan": {
+      "authority": "欽定協紀辨方書 卷七〈喜神〉",
+      "corroboration": "玉匣記〈喜神方位歌〉"
+    },
+    "taiThan": {
+      "authority": "玉匣記〈財神方位歌〉",
+      "convention": "玉匣記 daily 財神方位歌"
+    },
+    "phucThan": {
+      "authority": "玉匣記〈福神方位歌〉"
+    }
+  },
+  "cases": [
+    { "dayCan": 0, "stem": "Giáp", "hyThan": "Đông Bắc", "taiThan": "Đông Bắc", "phucThan": "Đông Nam" },
+    { "dayCan": 1, "stem": "Ất", "hyThan": "Tây Bắc", "taiThan": "Đông Bắc", "phucThan": "Đông Nam" },
+    { "dayCan": 2, "stem": "Bính", "hyThan": "Tây Nam", "taiThan": "Tây Nam", "phucThan": "Đông" },
+    { "dayCan": 3, "stem": "Đinh", "hyThan": "Nam", "taiThan": "Tây Nam", "phucThan": "Đông" },
+    { "dayCan": 4, "stem": "Mậu", "hyThan": "Đông Nam", "taiThan": "Bắc", "phucThan": "Bắc" },
+    { "dayCan": 5, "stem": "Kỷ", "hyThan": "Đông Bắc", "taiThan": "Bắc", "phucThan": "Nam" },
+    { "dayCan": 6, "stem": "Canh", "hyThan": "Tây Bắc", "taiThan": "Đông", "phucThan": "Tây Nam" },
+    { "dayCan": 7, "stem": "Tân", "hyThan": "Tây Nam", "taiThan": "Đông", "phucThan": "Tây Nam" },
+    { "dayCan": 8, "stem": "Nhâm", "hyThan": "Nam", "taiThan": "Nam", "phucThan": "Tây Bắc" },
+    { "dayCan": 9, "stem": "Quý", "hyThan": "Đông Nam", "taiThan": "Nam", "phucThan": "Tây" }
+  ]
+}

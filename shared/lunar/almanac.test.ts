@@ -17,7 +17,8 @@ describe('getAlmanac', () => {
     expect(a.relation.text).toBe('Can sinh Chi (Thủy sinh Mộc), là ngày cát (bảo nhật).')
     expect(a.mansion).toMatchObject({ name: 'Ngưu', element: 'Kim', isGood: false })
     expect(a.officer.name).toBe('Chấp')
-    expect(a.directions).toEqual({ hyThan: 'Nam', taiThan: 'Tây' })
+    // directions-authority-v1: Nhâm = Hỷ Nam, Tài Nam, Phúc Tây Bắc.
+    expect(a.directions).toEqual({ hyThan: 'Nam', taiThan: 'Nam', phucThan: 'Tây Bắc' })
     expect(a.dayClashes).toEqual(['Canh Thân', 'Bính Thân', 'Bính Dần'])
     expect(a.monthCanChi.name).toBe('Đinh Dậu')
     expect(a.monthClashes).toEqual(['Ất Mão', 'Quý Mão', 'Quý Tỵ', 'Quý Hợi'])
@@ -34,12 +35,14 @@ describe('getAlmanac', () => {
     ])
   })
 
-  it.each(ALMANAC_FIXTURES)('khớp licham.vn ngày $date', (f) => {
+  it.each(ALMANAC_FIXTURES)('khớp legacy almanac fixture ngày $date', (f) => {
     const a = getAlmanac(f.date as SolarDateString)
     expect(a.dayCanChi.name).toBe(f.dayCanChi)
     expect(a.mansion.name).toBe(f.mansion)
     expect(a.officer.name).toBe(f.officer)
-    expect(a.directions).toEqual({ hyThan: f.hyThan, taiThan: f.taiThan })
+    // Hướng xuất hành đã migrate sang directions-authority-v1 và được khóa độc lập
+    // trong directions.test.ts. Không dùng lại direction values của fixture legacy
+    // (licham.vn / website-majority) để override authority mới.
     expect(a.dayClashes).toEqual(f.dayClashes)
     expect(names(a.stars.good).sort()).toEqual([...f.good].sort())
     expect(names(a.stars.bad).sort()).toEqual([...f.bad].sort())

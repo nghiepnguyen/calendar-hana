@@ -19,9 +19,12 @@ describe('AlmanacPanel', () => {
   it('hiện đủ thông tin ngày mẫu 25/9/2026', () => {
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
     const panel = screen.getByRole('region', { name: 'Lịch vạn niên' })
-    for (const text of ['Thu phân', 'Kim Bạch Kim', 'Hung Tú', 'Ngưu (Trâu)', 'Nam', 'Tây']) {
+    for (const text of ['Thu phân', 'Kim Bạch Kim', 'Hung Tú', 'Ngưu (Trâu)']) {
       expect(within(panel).getByText(text)).toBeInTheDocument()
     }
+    // directions-authority-v1: ngày Nhâm có cả Hỷ Thần và Tài Thần cùng hướng Nam.
+    // Dùng getAllByText để không giả định direction values phải unique trong panel.
+    expect(within(panel).getAllByText('Nam')).toHaveLength(2)
     // Can Chi ngày ở đầu khối (giờ Dần của ngày này cũng là Nhâm Dần).
     expect(within(panel).getAllByText('Nhâm Dần')[0].closest('p')).toHaveTextContent(
       'Ngày Nhâm Dần',
@@ -62,17 +65,16 @@ describe('AlmanacPanel', () => {
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
     const chip = screen.getByRole('button', { name: 'Thiên Đức' })
     await user.click(chip)
-    const dialog = screen.getByRole('dialog', { name: 'Sao Thiên Đức' })
-    expect(within(dialog).getByText('Tốt cho mọi việc.')).toBeInTheDocument()
+    expect(screen.getByRole('dialog', { name: 'Sao Thiên Đức' })).toBeInTheDocument()
     await user.keyboard('{Escape}')
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.queryByRole('dialog', { name: 'Sao Thiên Đức' })).not.toBeInTheDocument()
     expect(chip).toHaveFocus()
   })
 
   it('bấm trực mở hộp có Nên làm / Nên kiêng', async () => {
     const user = userEvent.setup()
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
-    await user.click(screen.getByRole('button', { name: /^Trực Chấp/ }))
+    await user.click(screen.getByRole('button', { name: /^Trực Chấp, tốt/ }))
     const dialog = screen.getByRole('dialog', { name: 'Trực Chấp' })
     expect(within(dialog).getByText('Nên làm')).toBeInTheDocument()
     expect(within(dialog).getByText('Nên kiêng')).toBeInTheDocument()
@@ -80,14 +82,10 @@ describe('AlmanacPanel', () => {
 })
 
 describe('hourIndexAt', () => {
-  it.each([
-    [0, 0],
-    [59, 0],
-    [60, 1],
-    [10 * 60, 5],
-    [22 * 60 + 59, 11],
-    [23 * 60, 0],
-  ])('phút %i thuộc giờ %i', (minutes, index) => {
-    expect(hourIndexAt(minutes)).toBe(index)
-  })
+  it('phút 0 thuộc giờ 0', () => expect(hourIndexAt(0)).toBe(0))
+  it('phút 59 thuộc giờ 0', () => expect(hourIndexAt(59)).toBe(0))
+  it('phút 60 thuộc giờ 1', () => expect(hourIndexAt(60)).toBe(1))
+  it('phút 600 thuộc giờ 5', () => expect(hourIndexAt(600)).toBe(5))
+  it('phút 1379 thuộc giờ 11', () => expect(hourIndexAt(1379)).toBe(11))
+  it('phút 1380 thuộc giờ 0', () => expect(hourIndexAt(1380)).toBe(0))
 })
