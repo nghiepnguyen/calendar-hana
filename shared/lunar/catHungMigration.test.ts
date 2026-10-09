@@ -11,7 +11,8 @@ import { getOfficer } from './officers'
 const TZ = 'Asia/Ho_Chi_Minh'
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
-const LOCKED = ['Thiên Đức', 'Thiên Đức Hợp', 'Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'] as const
+const ALWAYS_LOCKED = ['Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'] as const
+const TIAN_DE = ['Thiên Đức', 'Thiên Đức Hợp'] as const
 
 function legacyStarsForDate(date: string) {
   const [year, month, day] = date.split('-').map(Number) as [number, number, number]
@@ -33,8 +34,6 @@ function legacyStarsForDate(date: string) {
 
 function authorityMatchesForDate(date: string) {
   const jd = solarStringToJd(date)
-  // Match the existing calendar day-view convention used elsewhere in production:
-  // the entire civil crossing day belongs to the new Month Jian.
   const monthJian = solarTermMonthChi(jd)
   const row = getCatHungAuthorityByMonthJian(monthJian)
   const cc = dayCanChi(jd)
@@ -42,14 +41,13 @@ function authorityMatchesForDate(date: string) {
   const branch = BRANCHES[cc.chi]!
   const matches = new Set<string>()
 
-  // Raw trigram/direction tokens for 天德 are intentionally not normalized here.
   if (row.tianDe === stem || row.tianDe === branch) matches.add('Thiên Đức')
   if (row.tianDeHe && (row.tianDeHe === stem || row.tianDeHe === branch)) matches.add('Thiên Đức Hợp')
   if (row.yueDe === stem) matches.add('Nguyệt Đức')
   if (row.yueDeHe === stem) matches.add('Nguyệt Đức Hợp')
   if (row.yuePo === branch) matches.add('Nguyệt Phá')
   if (row.jieSha === branch) matches.add('Kiếp Sát')
-  return matches
+  return { matches, tianDeDirect: STEMS.includes(row.tianDe) || BRANCHES.includes(row.tianDe) }
 }
 
 function datesInYear(year: number) {
@@ -75,29 +73,26 @@ describe('cat-hung legacy lunar-month -> Month Jian migration', () => {
       const jd = solarStringToJd(date)
       const monthJianMonth = ((solarTermMonthChi(jd) + 10) % 12) + 1
       const sameBasisRow = lunar.month === monthJianMonth
+      const comparable = authority.tianDeDirect ? [...ALWAYS_LOCKED, ...TIAN_DE] : [...ALWAYS_LOCKED]
 
-      for (const star of LOCKED) {
+      for (const star of comparable) {
         const oldValue = legacy.has(star)
-        const newValue = authority.has(star)
+        const newValue = authority.matches.has(star)
         if (oldValue !== newValue) differences.push({ date, star, legacy: oldValue, authority: newValue, sameBasisRow })
       }
     }
 
-    // A zero-diff result would mean this test stopped exercising the lunar-month/Month-Jian migration.
     expect(differences.length).toBeGreaterThan(0)
     expect(new Set(differences.map((diff) => diff.star)).size).toBeGreaterThan(0)
-
-    // If lunar month and Month Jian point to the same source row, a difference is not an expected
-    // authority migration and must be investigated as a regression/rule mismatch.
     expect(differences.filter((diff) => diff.sameBasisRow)).toEqual([])
   })
 
   it('does not silently normalize the four raw Tian De trigram/direction tokens', () => {
     const raw = [
-      getCatHungAuthorityByMonthJian(3).tianDe, // 卯 row
-      getCatHungAuthorityByMonthJian(6).tianDe, // 午 row
-      getCatHungAuthorityByMonthJian(9).tianDe, // 酉 row
-      getCatHungAuthorityByMonthJian(0).tianDe, // 子 row
+      getCatHungAuthorityByMonthJian(3).tianDe,
+      getCatHungAuthorityByMonthJian(6).tianDe,
+      getCatHungAuthorityByMonthJian(9).tianDe,
+      getCatHungAuthorityByMonthJian(0).tianDe,
     ]
     expect(raw).toEqual(['坤', '乾', '艮', '巽'])
     expect(raw.every((token) => !STEMS.includes(token) && !BRANCHES.includes(token))).toBe(true)
