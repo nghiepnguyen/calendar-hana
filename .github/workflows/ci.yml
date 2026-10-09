@@ -96,7 +96,7 @@ jobs:
     name: Playwright tests (${{ matrix.shard }}/2)
     needs: prepare
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -118,16 +118,16 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+          key: ${{ runner.os }}-playwright-chromium-webkit-${{ hashFiles('package-lock.json') }}
+      - name: Install Playwright Chromium and WebKit
+        run: npx playwright install --with-deps chromium webkit
       - name: End-to-end tests
-        run: npx playwright test --project=desktop --project=mobile --shard=${{ matrix.shard }}/2
+        run: npx playwright test --project=desktop --project=iphone --shard=${{ matrix.shard }}/2
         env:
           CI: true
       - name: Public pages on Vite dev
         if: matrix.shard == 1
-        run: npx playwright test --config playwright.dev.config.ts --project=desktop --project=mobile
+        run: npx playwright test --config playwright.dev.config.ts --project=desktop --project=iphone
         env:
           CI: true
       - uses: actions/upload-artifact@v4
