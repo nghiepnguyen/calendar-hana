@@ -136,6 +136,8 @@ jobs:
       - run: npm test
       - name: Annual directional authority mutation gate
         run: python3 scripts/audit-annual-directions-mutations.py
+      - name: Mansion content authority mutation gate
+        run: python3 scripts/audit-mansion-content-mutations.py
       - run: npm run test:emulator
 
   e2e-tests:

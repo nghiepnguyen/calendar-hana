@@ -10,6 +10,7 @@ export interface ExplainItem {
   meaning?: string
   /** Các dòng "vì sao ra kết quả này", hiện dạng danh sách ngắn. */
   reasons?: readonly string[]
+  source?: { label: string; url: string }
   shouldDo?: string
   shouldAvoid?: string
 }
@@ -37,6 +38,11 @@ export function AlmanacExplain({ item, onClose }: AlmanacExplainProps) {
         >
           {item.verdict?.label ?? (item.isGood ? 'Tốt' : 'Xấu')}
         </span>
+        {item.source ? (
+          <a href={item.source.url} target="_blank" rel="noopener noreferrer">
+            {item.source.label}
+          </a>
+        ) : null}
         {item.meaning ? <p>{item.meaning}</p> : null}
         {item.reasons?.length ? (
           <ul className={styles.explainReasons}>

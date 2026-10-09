@@ -1,4 +1,4 @@
-export const ENGINE_VERSION = '1.1.0'
+export const ENGINE_VERSION = '1.2.0'
 export type EvidenceStatus =
   'applied' | 'informational' | 'conflict' | 'no_evidence' | 'not_audited'
 export interface Evidence {
@@ -9,6 +9,10 @@ export interface Evidence {
   polarity: 'positive' | 'negative' | 'neutral'
   sourcePhrase: string
   sourceRef: string
+  /** Original source excerpt and explicit operands, when a content authority supplies them. */
+  sourceQuote?: string
+  conditions?: readonly { operand: string; equals: number }[]
+  exceptions?: readonly string[]
   confidence: 'high' | 'medium' | 'low'
   status: EvidenceStatus
   scoreDelta: number

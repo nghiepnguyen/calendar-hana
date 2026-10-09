@@ -23,7 +23,8 @@
     "mansion-patterns.json",
     "audited-mansion-evidence.json",
     "golden-tests-mansion-mapping.json",
-    "xiejibianfangshu-yiji.json"
+    "xiejibianfangshu-yiji.json",
+    "mansion-content-yuxia-1880-v1.json"
   ],
   "policies": {
     "aiMayChangeScore": false,
@@ -54,11 +55,21 @@
       "title": "欽定協紀辨方書 — 二十八宿配日",
       "role": "primary source for sequence/origin caution",
       "scope": ["28_mansions"]
+    },
+    {
+      "id": "mansion-content-yuxia-1880-v1",
+      "title": "繪圖增廣玉匣記 · 掃葉山房 · 光緒六年 (1880)",
+      "role": "edition-specific primary source for mansion operative content only; not scoring authority",
+      "scope": ["28_mansion_content"],
+      "file": "mansion-content-yuxia-1880-v1.json",
+      "url": "https://archive.org/details/20241205_20241205_0310",
+      "version": "1.0.0"
     }
   ],
   "notes": [
     "Weights are product policy, not values stated by classical sources.",
     "28-mansion activity scoring is intentionally disabled in v1 until one consistent tradition is audited per activity.",
-    "lowSeverityNoTabooMeansNeutral is product policy: a low-severity event whose primary activity meets no rule (so no taboo either) is neutral instead of insufficient evidence."
+    "lowSeverityNoTabooMeansNeutral is product policy: a low-severity event whose primary activity meets no rule (so no taboo either) is neutral instead of insufficient evidence.",
+    "Phase 7 locks explicit 宜忌 excerpts to the 1880 Ngọc Hạp edition. Identity/phase and legacy compatibility fields remain separate; missing activities are UNKNOWN. Scoring remains disabled."
   ]
 }

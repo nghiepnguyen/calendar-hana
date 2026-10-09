@@ -6,7 +6,8 @@ import { solarStringToJd } from './julian'
 const mansion = (name: string) => {
   for (let i = 0; i < 28; i++) {
     const row = getMansion(solarStringToJd('2026-10-05') + i)
-    if (row.name === name) return row
+    if (row.name === name)
+      return { name: row.name, shouldDo: row.shouldDo, shouldAvoid: row.shouldAvoid }
   }
   throw new Error(name)
 }
