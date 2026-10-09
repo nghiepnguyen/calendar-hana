@@ -16,6 +16,7 @@ import { getNapAm, sexagenaryIndex, type NapAm } from './napAm'
 import { getOfficer, type Officer } from './officers'
 import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
+import { getSourceLockedCatHungStarsForDate, SOURCE_LOCKED_CAT_HUNG_STAR_NAMES } from './catHungStars'
 import { resolveDayRuleGods, resolvePresentGods } from './godMapping'
 import manifest from '../almanac-data/manifest.json'
 import { ENGINE_VERSION } from './evidence'
@@ -41,6 +42,7 @@ export interface Almanac {
 }
 
 const CACHE_LIMIT = 2000
+const SOURCE_LOCKED_STAR_NAMES = new Set<string>(SOURCE_LOCKED_CAT_HUNG_STAR_NAMES)
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
@@ -55,7 +57,11 @@ function computeAlmanac(date: SolarDateString): Almanac {
   const month = info.canChi.month
   const mansion = getMansion(jd)
   const officer = getOfficer(jd, day.chi)
-  const stars = getStars({
+
+  // Legacy table remains authoritative only for stars not yet source-locked in Phase 4D.
+  // The six locked stars are removed from its lunar-month result and overlaid from the
+  // Month-Jian authority path. This prevents duplicate/conflicting identities during migration.
+  const legacyStars = getStars({
     lunarMonth: lunar.month,
     lunarDay: lunar.day,
     can: day.can,
@@ -64,6 +70,18 @@ function computeAlmanac(date: SolarDateString): Almanac {
     officer: officer.index,
     mansion: mansion.index,
   })
+  const lockedStars = getSourceLockedCatHungStarsForDate(date)
+  const stars = {
+    good: [
+      ...legacyStars.good.filter((star) => !SOURCE_LOCKED_STAR_NAMES.has(star.name)),
+      ...lockedStars.good,
+    ],
+    bad: [
+      ...legacyStars.bad.filter((star) => !SOURCE_LOCKED_STAR_NAMES.has(star.name)),
+      ...lockedStars.bad,
+    ],
+  }
+
   const gods = resolvePresentGods(stars)
   const dayGods = resolveDayRuleGods({ can: day.can, chi: day.chi, lunarDay: lunar.day })
   const almanac: Almanac = {
