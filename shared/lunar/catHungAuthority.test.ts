@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import golden from './audit-fixtures/cat-hung-golden-v1.json'
+import {
+  CAT_HUNG_AUTHORITY_ID,
+  CAT_HUNG_JIE,
+  CAT_HUNG_MONTH_BASIS,
+  CAT_HUNG_MONTH_JIAN_BRANCHES,
+  getCatHungAuthorityAtInstant,
+  getCatHungAuthorityByMonthJian,
+} from './catHungAuthority'
 import { getSolarMonth, solarTermsForYear } from './solarTerms'
 
 const TZ = 'Asia/Ho_Chi_Minh'
@@ -30,6 +38,11 @@ describe('cat-hung-authority-v1 independent Golden', () => {
     expect(golden.rows).toHaveLength(12)
     expect(golden.lockedStars).toHaveLength(6)
     expect(golden.lockedStars.every((star) => star.status === 'SOURCE_LOCKED')).toBe(true)
+
+    expect(CAT_HUNG_AUTHORITY_ID).toBe(golden.authorityId)
+    expect(CAT_HUNG_MONTH_BASIS).toBe(golden.monthBasis.type)
+    expect(CAT_HUNG_MONTH_JIAN_BRANCHES).toEqual(golden.encoding.monthJianBranches)
+    expect(CAT_HUNG_JIE).toEqual(golden.encoding.jie)
   })
 
   it('keeps authority Golden independent from legacy production assumptions', () => {
@@ -39,8 +52,6 @@ describe('cat-hung-authority-v1 independent Golden', () => {
     expect(golden.gates.rawTokenNormalizationMustBeExplicit).toBe(true)
     expect(golden.gates.globalScoreAllowed).toBe(false)
 
-    // These four canonical 天德 tokens are deliberately not coerced into a day stem/branch.
-    // Any future normalization must be explicit and independently sourced.
     expect(golden.rows[1]?.tianDe).toBe('坤')
     expect(golden.rows[4]?.tianDe).toBe('乾')
     expect(golden.rows[7]?.tianDe).toBe('艮')
@@ -51,19 +62,19 @@ describe('cat-hung-authority-v1 independent Golden', () => {
     expect(golden.rows[10]?.tianDeHe).toBeNull()
   })
 
-  it('has one unique authority row for every Month Jian branch', () => {
-    const branches = golden.rows.map((row) => row.monthJian)
-    expect(new Set(branches).size).toBe(12)
-    expect(branches).toEqual(MONTH_JIAN_BRANCHES)
-
+  it('matches all 12 source rows without reading stars.data.ts', () => {
     for (let monthJianBranch = 0; monthJianBranch < 12; monthJianBranch++) {
-      const row = expectedRow(monthJianBranch)
-      expect(row.monthJian).toBe(MONTH_JIAN_BRANCHES[monthJianBranch])
-      expect(row.jie).toBe(JIE[monthJianBranch])
+      expect(getCatHungAuthorityByMonthJian(monthJianBranch)).toEqual(expectedRow(monthJianBranch))
     }
   })
 
-  it('switches Golden Month Jian exactly at every 2026 Jie boundary: T-1ms old, T and T+1ms new', () => {
+  it('rejects invalid Month Jian branch operands', () => {
+    for (const value of [-1, 12, 1.5, Number.NaN]) {
+      expect(() => getCatHungAuthorityByMonthJian(value)).toThrow(RangeError)
+    }
+  })
+
+  it('switches production authority exactly at every 2026 Jie: T-1ms old, T and T+1ms new', () => {
     const jie = solarTermsForYear(2026).filter((term) => {
       const before = new Date(Date.parse(term.instantUtc) - 1).toISOString()
       return getSolarMonth(before, TZ) !== getSolarMonth(term.instantUtc, TZ)
@@ -78,17 +89,21 @@ describe('cat-hung-authority-v1 independent Golden', () => {
 
       const oldMonth = getSolarMonth(before, TZ)
       const newMonth = getSolarMonth(exact, TZ)
-
       expect(newMonth, `${term.name} changes Month Jian`).not.toBe(oldMonth)
       expect(getSolarMonth(after, TZ), `${term.name} T+1ms`).toBe(newMonth)
 
-      const beforeRow = expectedRow(oldMonth)
-      const exactRow = expectedRow(newMonth)
-      const afterRow = expectedRow(getSolarMonth(after, TZ))
+      const beforeAuthority = getCatHungAuthorityAtInstant(before, TZ)
+      const exactAuthority = getCatHungAuthorityAtInstant(exact, TZ)
+      const afterAuthority = getCatHungAuthorityAtInstant(after, TZ)
 
-      expect(beforeRow.monthJian, `${term.name} T-1ms`).toBe(MONTH_JIAN_BRANCHES[oldMonth])
-      expect(exactRow.monthJian, `${term.name} T`).toBe(MONTH_JIAN_BRANCHES[newMonth])
-      expect(afterRow, `${term.name} T+1ms`).toEqual(exactRow)
+      expect(beforeAuthority.monthJianBranch, `${term.name} T-1ms`).toBe(oldMonth)
+      expect(exactAuthority.monthJianBranch, `${term.name} T`).toBe(newMonth)
+      expect(afterAuthority.monthJianBranch, `${term.name} T+1ms`).toBe(newMonth)
+      expect(beforeAuthority.row, `${term.name} T-1ms row`).toEqual(expectedRow(oldMonth))
+      expect(exactAuthority.row, `${term.name} T row`).toEqual(expectedRow(newMonth))
+      expect(afterAuthority.row, `${term.name} T+1ms row`).toEqual(expectedRow(newMonth))
+      expect(exactAuthority.authorityId).toBe(golden.authorityId)
+      expect(exactAuthority.monthBasis).toBe('MONTH_JIAN')
     }
   })
 })
