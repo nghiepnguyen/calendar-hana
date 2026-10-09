@@ -50,7 +50,7 @@ jobs:
               });
               const requiredJobs = [
                 'Typecheck and lint', 'Unit and emulator tests',
-                ...['desktop', 'iphone'].flatMap(project =>
+                ...['desktop'].flatMap(project =>
                   [1, 2].map(shard => `Playwright tests (${project}, ${shard}/2)`)),
               ];
               for (const run of data.workflow_runs) {
@@ -149,7 +149,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [desktop, iphone]
+        project: [desktop]
         shard: [1, 2]
     steps:
       - uses: actions/checkout@v4

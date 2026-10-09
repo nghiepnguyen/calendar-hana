@@ -1,0 +1,55 @@
+name: Daily Mobile Safari
+
+on:
+  schedule:
+    - cron: '0 17 * * *' # 00:00 giờ Việt Nam
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Mobile Safari (iPhone 15, ${{ matrix.shard }}/2)
+    runs-on: ubuntu-latest
+    container:
+      # Giữ phiên bản khớp @playwright/test trong package-lock.json.
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            functions/package-lock.json
+      - name: Install dependencies in container
+        run: |
+          npm install --global npm@11
+          npm ci --include=dev
+          npm ci --prefix functions --include=dev
+      - name: End-to-end tests
+        run: npx playwright test --project=iphone --shard=${{ matrix.shard }}/2
+        env:
+          CI: true
+      - name: Public pages on Vite dev
+        run: npx playwright test --config playwright.dev.config.ts --project=iphone --shard=${{ matrix.shard }}/2
+        env:
+          CI: true
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-iphone-${{ matrix.shard }}
+          path: test-results/
+          retention-days: 7
