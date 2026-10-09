@@ -1,5 +1,6 @@
+import type { SolarDateString } from '../types'
 import { dayCanChi } from './canChi'
-import { solarStringToJd, type SolarDateString } from './julian'
+import { solarStringToJd } from './julian'
 import { getSolarMonth, SOLAR_TERM_METHOD, solarTermMonthChi } from './solarTerms'
 
 export const THU_TU_AUTHORITY_ID = 'thu-tu-authority-v1' as const
@@ -37,10 +38,20 @@ export function isThuTuByMonthJian(monthJianBranch: number, dayBranch: number): 
   return dayBranch === getThuTuDayBranchByMonthJian(monthJianBranch)
 }
 
-/** Exact-instant authority path. T-1ms uses old Jian; T/T+1ms use new Jian. */
+/** Exact-instant Month Jian path. The day operand is the local civil date in the requested timezone. */
 export function getThuTuAtInstant(dateTime: string, timezone: string) {
   const monthJianBranch = getSolarMonth(dateTime, timezone)
-  const jd = Date.parse(dateTime) / 86_400_000 + 2_440_587.5
+  const instant = new Date(dateTime)
+  if (Number.isNaN(instant.getTime())) throw new RangeError(`Invalid dateTime: ${dateTime}`)
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(instant)
+  const part = (type: 'year' | 'month' | 'day') => parts.find((x) => x.type === type)?.value
+  const localDate = `${part('year')}-${part('month')}-${part('day')}` as SolarDateString
+  const jd = solarStringToJd(localDate)
   const dayBranch = dayCanChi(jd).chi
   return {
     authorityId: THU_TU_AUTHORITY_ID,
