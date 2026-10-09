@@ -1,11 +1,15 @@
 // Ngày hoàng đạo / hắc đạo, giờ hoàng đạo và các ngày kỵ cơ bản.
 //
-// Nguồn tham chiếu: phép "Thập nhị Hoàng đạo" (12 vị thần trực ngày/giờ) như trong các cuốn
-// lịch vạn niên phổ biến ở Việt Nam. Ngày hoàng đạo tính theo tháng âm lịch (không theo tháng
-// tiết khí), vì phần lớn lịch treo tường Việt Nam tính như vậy. Tháng nhuận dùng quy tắc của
-// tháng thường cùng số. Nếu đổi nguồn (PRD mục 9, câu hỏi 1), chỉ cần sửa file này.
+// Day-level 黃道黒道 authority: 欽定協紀辨方書 卷七〈黃道黒道〉.
+// Its month operand is 月建 / Month Jian, not lunar month. Exact-instant callers use the
+// canonical JPL/Jie authority through getSolarMonth. Legacy lunar-month API remains temporarily
+// for migration evidence only and must not be used by new production code.
 
-import { CHI, hourCanChi, type CanChi } from './canChi'
+import { formatInTimeZone } from 'date-fns-tz'
+import { todayInVietnam } from '../time'
+import { CHI, dayCanChi, hourCanChi, type CanChi } from './canChi'
+import { solarStringToJd } from './julian'
+import { getSolarMonth } from './solarTerms'
 
 /** 12 vị thần theo thứ tự luân phiên, bắt đầu từ Thanh Long. */
 export const TWELVE_GODS = [
@@ -14,7 +18,7 @@ export const TWELVE_GODS = [
   { name: 'Thiên Hình', good: false },
   { name: 'Chu Tước', good: false },
   { name: 'Kim Quỹ', good: true },
-  { name: 'Kim Đường', good: true },
+  { name: 'Thiên Đức', good: true },
   { name: 'Bạch Hổ', good: false },
   { name: 'Ngọc Đường', good: true },
   { name: 'Thiên Lao', good: false },
@@ -29,13 +33,41 @@ export interface DayGod {
   isHoangDao: boolean
 }
 
+/** Canonical day god from Month Jian branch (0=Tý ... 11=Hợi) and day branch. */
+export function getDayGodByMonthJian(monthJianBranch: number, dayChi: number): DayGod {
+  if (!Number.isInteger(monthJianBranch) || monthJianBranch < 0 || monthJianBranch > 11)
+    throw new RangeError('Expected Month Jian branch 0..11')
+  if (!Number.isInteger(dayChi) || dayChi < 0 || dayChi > 11)
+    throw new RangeError('Expected day branch 0..11')
+  // 寅申→子, 卯酉→寅, 辰戌→辰, 巳亥→午, 午子→申, 未丑→戌.
+  const startChi = ((monthJianBranch + 10) % 6) * 2
+  const god = TWELVE_GODS[(dayChi - startChi + 12) % 12]!
+  return { name: god.name, isHoangDao: god.good }
+}
+
+/** Exact-instant authority path. Month Jian changes at the canonical Jie millisecond. */
+export function getDayGodAtInstant(
+  dateTime: string,
+  timezone: string,
+): DayGod & { monthJianBranch: number; dayBranch: number } {
+  const monthJianBranch = getSolarMonth(dateTime, timezone)
+  const instant = new Date(dateTime)
+  if (!Number.isFinite(instant.getTime())) throw new RangeError('Invalid instant')
+  const date =
+    timezone === 'Asia/Ho_Chi_Minh'
+      ? todayInVietnam(instant)
+      : formatInTimeZone(instant, timezone, 'yyyy-MM-dd')
+  const dayBranch = dayCanChi(solarStringToJd(date)).chi
+  return { ...getDayGodByMonthJian(monthJianBranch, dayBranch), monthJianBranch, dayBranch }
+}
+
 /**
- * Vị thần trực ngày, dựa vào tháng âm và Chi của ngày.
- * Thanh Long khởi ở: tháng 1, 7 → Tý; 2, 8 → Dần; 3, 9 → Thìn; 4, 10 → Ngọ; 5, 11 → Thân; 6, 12 → Tuất.
+ * @deprecated Historical Vietnamese lunar-month convention retained only for migration/audit tests.
+ * New production code must use getDayGodByMonthJian or getDayGodAtInstant.
  */
 export function getDayGod(lunarMonth: number, dayChi: number): DayGod {
   const startChi = ((lunarMonth - 1) % 6) * 2
-  const god = TWELVE_GODS[(dayChi - startChi + 12) % 12]
+  const god = TWELVE_GODS[(dayChi - startChi + 12) % 12]!
   return { name: god.name, isHoangDao: god.good }
 }
 
@@ -72,7 +104,7 @@ export function getAuspiciousHours(dayChi: number): AuspiciousHour[] {
 function getHourGods(dayChi: number): (AuspiciousHour & { isGood: boolean })[] {
   const startChi = (8 + (dayChi % 6) * 2) % 12
   return CHI.map((name, chi) => {
-    const god = TWELVE_GODS[(chi - startChi + 12) % 12]
+    const god = TWELVE_GODS[(chi - startChi + 12) % 12]!
     const { startHour, endHour } = hourRange(chi)
     return {
       chi,
