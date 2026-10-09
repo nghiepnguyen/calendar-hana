@@ -16,11 +16,11 @@ const MONTH_JIAN_BRANCHES = ['寅', '卯', '辰', '巳', '午', '未', '申', '�
 const JIE = ['立春', '驚蟄', '清明', '立夏', '芒種', '小暑', '立秋', '白露', '寒露', '立冬', '大雪', '小寒'] as const
 
 function expectedRow(monthJianBranch: number) {
-  const month = MONTH_JIAN_BRANCHES.indexOf(
-    golden.encoding.monthJianBranches[monthJianBranch] as (typeof MONTH_JIAN_BRANCHES)[number],
-  )
-  if (month < 0) throw new Error(`Missing Golden Month Jian branch ${monthJianBranch}`)
-  const row = golden.rows[month]
+  if (!Number.isInteger(monthJianBranch) || monthJianBranch < 0 || monthJianBranch > 11)
+    throw new RangeError(`Invalid Golden Month Jian branch ${monthJianBranch}`)
+  // Project branch encoding is 子=0..亥=11, while the Golden rows are 寅..丑.
+  // Therefore 子(0)->row 10, 丑(1)->row 11, 寅(2)->row 0 ... 亥(11)->row 9.
+  const row = golden.rows[(monthJianBranch + 10) % 12]
   if (!row) throw new Error(`Missing Golden row for Month Jian branch ${monthJianBranch}`)
   return row
 }
