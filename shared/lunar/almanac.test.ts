@@ -6,12 +6,12 @@ import { addDays } from './julian'
 
 // Ba sao licham.vn tính sai, không có trong fixture (xem stars.data.ts).
 const SKIP = new Set(['Thiên Xá', 'Âm Thác', 'Dương Thác'])
-// Phase 4D source-lock: legacy licham.vn fixtures must not override the six migrated identities.
-// Their authority/migration behavior is covered independently by catHungAuthority/Migration/Regression tests.
-const CAT_HUNG_MIGRATED = new Set(['Thiên Đức', 'Thiên Đức Hợp', 'Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
+// Source-locked identities have dedicated independent authority/migration/regression gates.
+// Legacy licham.vn fixtures must not override them.
+const AUTHORITY_MIGRATED = new Set(['Thiên Đức', 'Thiên Đức Hợp', 'Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát', 'Thụ Tử'])
 const names = (stars: { name: string }[]) => stars.map((s) => s.name).filter((n) => !SKIP.has(n))
-const legacyFixtureNames = (stars: readonly string[]) => stars.filter((n) => !CAT_HUNG_MIGRATED.has(n))
-const productionLegacyNames = (stars: { name: string }[]) => names(stars).filter((n) => !CAT_HUNG_MIGRATED.has(n))
+const legacyFixtureNames = (stars: readonly string[]) => stars.filter((n) => !AUTHORITY_MIGRATED.has(n))
+const productionLegacyNames = (stars: { name: string }[]) => names(stars).filter((n) => !AUTHORITY_MIGRATED.has(n))
 
 describe('getAlmanac', () => {
   it('ngày mẫu 25/9/2026', () => {
@@ -22,7 +22,6 @@ describe('getAlmanac', () => {
     expect(a.relation.text).toBe('Can sinh Chi (Thủy sinh Mộc), là ngày cát (bảo nhật).')
     expect(a.mansion).toMatchObject({ name: 'Ngưu', element: 'Kim', isGood: false })
     expect(a.officer.name).toBe('Chấp')
-    // directions-authority-v1: Nhâm = Hỷ Nam, Tài Nam, Phúc Tây Bắc.
     expect(a.directions).toEqual({ hyThan: 'Nam', taiThan: 'Nam', phucThan: 'Tây Bắc' })
     expect(a.dayClashes).toEqual(['Canh Thân', 'Bính Thân', 'Bính Dần'])
     expect(a.monthCanChi.name).toBe('Đinh Dậu')
@@ -30,14 +29,7 @@ describe('getAlmanac', () => {
     expect(names(a.stars.good)).toEqual(['Thiên Đức', 'Giải Thần', 'Thanh Long Hoàng Đạo'])
     expect(names(a.stars.bad)).toEqual(['Hoàng Sa', 'Kiếp Sát'])
     expect(a.hours).toHaveLength(12)
-    expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual([
-      'Tý',
-      'Sửu',
-      'Thìn',
-      'Tỵ',
-      'Mùi',
-      'Tuất',
-    ])
+    expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual(['Tý', 'Sửu', 'Thìn', 'Tỵ', 'Mùi', 'Tuất'])
   })
 
   it.each(ALMANAC_FIXTURES)('khớp legacy almanac fixture ngày $date', (f) => {
@@ -45,9 +37,6 @@ describe('getAlmanac', () => {
     expect(a.dayCanChi.name).toBe(f.dayCanChi)
     expect(a.mansion.name).toBe(f.mansion)
     expect(a.officer.name).toBe(f.officer)
-    // Hướng xuất hành đã migrate sang directions-authority-v1 và được khóa độc lập
-    // trong directions.test.ts. Không dùng lại direction values của fixture legacy
-    // (licham.vn / website-majority) để override authority mới.
     expect(a.dayClashes).toEqual(f.dayClashes)
     expect(productionLegacyNames(a.stars.good).sort()).toEqual(legacyFixtureNames(f.good).sort())
     expect(productionLegacyNames(a.stars.bad).sort()).toEqual(legacyFixtureNames(f.bad).sort())
