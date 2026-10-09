@@ -26,7 +26,7 @@ describe('getAuspiciousHours', () => {
   })
 })
 
-describe('getDayGod', () => {
+describe('getDayGod legacy lunar-month API', () => {
   it('tháng Giêng: ngày Tý là Thanh Long (hoàng đạo), ngày Dần là Thiên Hình (hắc đạo)', () => {
     expect(getDayGod(1, 0)).toEqual({ name: 'Thanh Long', isHoangDao: true })
     expect(getDayGod(1, 2)).toEqual({ name: 'Thiên Hình', isHoangDao: false })
@@ -67,7 +67,7 @@ describe('getAllHours', () => {
       'Thiên Hình',
       'Chu Tước',
       'Kim Quỹ',
-      'Kim Đường',
+      'Thiên Đức',
       'Bạch Hổ',
       'Ngọc Đường',
       'Thiên Lao',
@@ -90,19 +90,19 @@ describe('getAllHours', () => {
   )
 })
 
-describe('ngày hoàng đạo khớp lichviet.me (trang xem-ngay-tot-xau, 2026)', () => {
-  // Các ngày mà tính theo tháng tiết khí sẽ ra kết quả ngược lại; lichviet.me tính theo tháng âm.
-  // Lưu ý: chấm "Ngày Tốt/Xấu" trên lịch tháng của lichviet.me không phải hoàng/hắc đạo.
+describe('day-god production migration: source-locked Month Jian replaces lichviet.me lunar-month convention', () => {
+  // These dates intentionally discriminate the two conventions. The old website-derived expectations
+  // used lunar month; production now follows day-gods-authority-v1 (MONTH_JIAN_BRANCH × DAY_BRANCH).
   it.each([
-    ['2026-01-07', false, 'Huyền Vũ'],
-    ['2026-02-06', true, 'Minh Đường'],
-    ['2026-03-05', false, 'Thiên Hình'],
-    ['2026-03-17', false, 'Thiên Hình'],
-    ['2026-04-15', true, 'Kim Đường'],
-    ['2026-05-15', false, 'Huyền Vũ'],
-    ['2026-07-07', true, 'Tư Mệnh'],
-    ['2026-08-10', false, 'Bạch Hổ'],
-    ['2026-12-08', true, 'Tư Mệnh'],
+    ['2026-01-07', true, 'Ngọc Đường'],
+    ['2026-02-06', false, 'Câu Trận'],
+    ['2026-03-05', true, 'Thanh Long'],
+    ['2026-03-17', true, 'Thanh Long'],
+    ['2026-04-15', false, 'Chu Tước'],
+    ['2026-05-15', true, 'Ngọc Đường'],
+    ['2026-07-07', false, 'Thiên Lao'],
+    ['2026-08-10', true, 'Kim Quỹ'],
+    ['2026-12-08', false, 'Thiên Lao'],
   ] as const)('%s', (date, isHoangDao, name) => {
     expect(getDayInfo(date).dayGod).toEqual({ name, isHoangDao })
   })
