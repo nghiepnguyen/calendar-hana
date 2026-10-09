@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "authorityId": "day-gods-authority-v1",
+  "source": "欽定協紀辨方書 卷七 黃道黒道",
+  "monthOperand": "MONTH_JIAN_BRANCH",
+  "dayOperand": "DAY_BRANCH",
+  "branchOrder": ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"],
+  "gods": [
+    {"name":"Thanh Long","isHoangDao":true},
+    {"name":"Minh Đường","isHoangDao":true},
+    {"name":"Thiên Hình","isHoangDao":false},
+    {"name":"Chu Tước","isHoangDao":false},
+    {"name":"Kim Quỹ","isHoangDao":true},
+    {"name":"Thiên Đức","isHoangDao":true},
+    {"name":"Bạch Hổ","isHoangDao":false},
+    {"name":"Ngọc Đường","isHoangDao":true},
+    {"name":"Thiên Lao","isHoangDao":false},
+    {"name":"Huyền Vũ","isHoangDao":false},
+    {"name":"Tư Mệnh","isHoangDao":true},
+    {"name":"Câu Trận","isHoangDao":false}
+  ],
+  "monthJianRows": [
+    {"monthJianBranch":0,"monthJian":"Tý","qingLongStartBranch":8},
+    {"monthJianBranch":1,"monthJian":"Sửu","qingLongStartBranch":10},
+    {"monthJianBranch":2,"monthJian":"Dần","qingLongStartBranch":0},
+    {"monthJianBranch":3,"monthJian":"Mão","qingLongStartBranch":2},
+    {"monthJianBranch":4,"monthJian":"Thìn","qingLongStartBranch":4},
+    {"monthJianBranch":5,"monthJian":"Tỵ","qingLongStartBranch":6},
+    {"monthJianBranch":6,"monthJian":"Ngọ","qingLongStartBranch":8},
+    {"monthJianBranch":7,"monthJian":"Mùi","qingLongStartBranch":10},
+    {"monthJianBranch":8,"monthJian":"Thân","qingLongStartBranch":0},
+    {"monthJianBranch":9,"monthJian":"Dậu","qingLongStartBranch":2},
+    {"monthJianBranch":10,"monthJian":"Tuất","qingLongStartBranch":4},
+    {"monthJianBranch":11,"monthJian":"Hợi","qingLongStartBranch":6}
+  ]
+}
