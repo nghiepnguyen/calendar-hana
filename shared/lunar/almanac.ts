@@ -88,7 +88,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
   }
 
   const authorityBadStars: Star[] = thuTu.applies
-    ? [{ name: THU_TU_NAME, good: false, meaning: THU_TU_MEANING }]
+    ? [{ name: THU_TU_NAME, isGood: false, meaning: THU_TU_MEANING }]
     : []
   const stars = {
     good: [...legacyStars.good.filter((star) => !replaceNames.has(star.name)), ...lockedStars.good],
