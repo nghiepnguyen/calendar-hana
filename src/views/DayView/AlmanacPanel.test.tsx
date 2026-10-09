@@ -65,9 +65,9 @@ describe('AlmanacPanel', () => {
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
     const chip = screen.getByRole('button', { name: 'Thiên Đức' })
     await user.click(chip)
-    expect(screen.getByRole('dialog', { name: 'Thiên Đức' })).toBeInTheDocument()
+    expect(screen.getByRole('dialog', { name: 'Sao Thiên Đức' })).toBeInTheDocument()
     await user.keyboard('{Escape}')
-    expect(screen.queryByRole('dialog', { name: 'Thiên Đức' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('dialog', { name: 'Sao Thiên Đức' })).not.toBeInTheDocument()
     expect(chip).toHaveFocus()
   })
 
