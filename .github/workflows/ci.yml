@@ -156,14 +156,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Restore dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            functions/node_modules
-            ~/.npm
-          key: ${{ runner.os }}-node-22-${{ hashFiles('package-lock.json', 'functions/package-lock.json') }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            functions/package-lock.json
+      - name: Install dependencies in container
+        run: |
+          npm install --global npm@11
+          npm ci --include=dev
+          npm ci --prefix functions --include=dev
       - name: End-to-end tests
         run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shard }}/2
         env:
