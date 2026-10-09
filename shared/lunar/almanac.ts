@@ -16,7 +16,9 @@ import { getNapAm, sexagenaryIndex, type NapAm } from './napAm'
 import { getOfficer, type Officer } from './officers'
 import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
-import { getSourceLockedCatHungStarsForDate, SOURCE_LOCKED_CAT_HUNG_STAR_NAMES } from './catHungStars'
+import { getSourceLockedCatHungStarsForDate } from './catHungStars'
+import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
+import { solarTermMonthChi } from './solarTerms'
 import { resolveDayRuleGods, resolvePresentGods } from './godMapping'
 import manifest from '../almanac-data/manifest.json'
 import { ENGINE_VERSION } from './evidence'
@@ -42,7 +44,7 @@ export interface Almanac {
 }
 
 const CACHE_LIMIT = 2000
-const SOURCE_LOCKED_STAR_NAMES = new Set<string>(SOURCE_LOCKED_CAT_HUNG_STAR_NAMES)
+const ALWAYS_SOURCE_LOCKED = new Set<string>(['Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
@@ -58,9 +60,6 @@ function computeAlmanac(date: SolarDateString): Almanac {
   const mansion = getMansion(jd)
   const officer = getOfficer(jd, day.chi)
 
-  // Legacy table remains authoritative only for stars not yet source-locked in Phase 4D.
-  // The six locked stars are removed from its lunar-month result and overlaid from the
-  // Month-Jian authority path. This prevents duplicate/conflicting identities during migration.
   const legacyStars = getStars({
     lunarMonth: lunar.month,
     lunarDay: lunar.day,
@@ -71,15 +70,21 @@ function computeAlmanac(date: SolarDateString): Almanac {
     mansion: mansion.index,
   })
   const lockedStars = getSourceLockedCatHungStarsForDate(date)
+
+  // Four Tian De source rows use raw trigram/direction tokens (坤/乾/艮/巽). Until an
+  // independent normalization authority is admitted, do not delete the corresponding legacy
+  // Tian De/Tian De He identities on those rows. All directly expressed stem/branch rows migrate.
+  const authorityRow = getCatHungAuthorityByMonthJian(solarTermMonthChi(jd))
+  const tianDeDirect = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/.test(authorityRow.tianDe)
+  const replaceNames = new Set<string>(ALWAYS_SOURCE_LOCKED)
+  if (tianDeDirect) {
+    replaceNames.add('Thiên Đức')
+    replaceNames.add('Thiên Đức Hợp')
+  }
+
   const stars = {
-    good: [
-      ...legacyStars.good.filter((star) => !SOURCE_LOCKED_STAR_NAMES.has(star.name)),
-      ...lockedStars.good,
-    ],
-    bad: [
-      ...legacyStars.bad.filter((star) => !SOURCE_LOCKED_STAR_NAMES.has(star.name)),
-      ...lockedStars.bad,
-    ],
+    good: [...legacyStars.good.filter((star) => !replaceNames.has(star.name)), ...lockedStars.good],
+    bad: [...legacyStars.bad.filter((star) => !replaceNames.has(star.name)), ...lockedStars.bad],
   }
 
   const gods = resolvePresentGods(stars)
