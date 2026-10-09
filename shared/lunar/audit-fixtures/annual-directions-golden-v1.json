@@ -1,0 +1,102 @@
+{
+  "authorityId": "annual-directions-authority-v1",
+  "operand": "SOLAR_YEAR_BRANCH",
+  "yearBoundary": "LI_CHUN",
+  "boundaryPrecision": "PROJECT_CONVENTION_EXACT_INSTANT",
+  "scope": "CALENDAR_DIRECTION_ONLY",
+  "recommendationPolicy": "INFORMATIONAL_ONLY",
+  "sourceWork": "欽定協紀辨方書 (四庫全書本)",
+  "ruleSections": {
+    "taiSui": "卷三 太歲",
+    "suiPo": "卷三 歲破",
+    "sanSha": "卷三 劫煞 災煞 歲煞"
+  },
+  "boundarySection": "卷三十四 造葬權法",
+  "productionIndependence": true,
+  "rows": [
+    {
+      "yearBranch": "子",
+      "taiSui": "子",
+      "suiPo": "午",
+      "sanSha": ["巳", "午", "未"],
+      "sanShaDirection": "南"
+    },
+    {
+      "yearBranch": "丑",
+      "taiSui": "丑",
+      "suiPo": "未",
+      "sanSha": ["寅", "卯", "辰"],
+      "sanShaDirection": "東"
+    },
+    {
+      "yearBranch": "寅",
+      "taiSui": "寅",
+      "suiPo": "申",
+      "sanSha": ["亥", "子", "丑"],
+      "sanShaDirection": "北"
+    },
+    {
+      "yearBranch": "卯",
+      "taiSui": "卯",
+      "suiPo": "酉",
+      "sanSha": ["申", "酉", "戌"],
+      "sanShaDirection": "西"
+    },
+    {
+      "yearBranch": "辰",
+      "taiSui": "辰",
+      "suiPo": "戌",
+      "sanSha": ["巳", "午", "未"],
+      "sanShaDirection": "南"
+    },
+    {
+      "yearBranch": "巳",
+      "taiSui": "巳",
+      "suiPo": "亥",
+      "sanSha": ["寅", "卯", "辰"],
+      "sanShaDirection": "東"
+    },
+    {
+      "yearBranch": "午",
+      "taiSui": "午",
+      "suiPo": "子",
+      "sanSha": ["亥", "子", "丑"],
+      "sanShaDirection": "北"
+    },
+    {
+      "yearBranch": "未",
+      "taiSui": "未",
+      "suiPo": "丑",
+      "sanSha": ["申", "酉", "戌"],
+      "sanShaDirection": "西"
+    },
+    {
+      "yearBranch": "申",
+      "taiSui": "申",
+      "suiPo": "寅",
+      "sanSha": ["巳", "午", "未"],
+      "sanShaDirection": "南"
+    },
+    {
+      "yearBranch": "酉",
+      "taiSui": "酉",
+      "suiPo": "卯",
+      "sanSha": ["寅", "卯", "辰"],
+      "sanShaDirection": "東"
+    },
+    {
+      "yearBranch": "戌",
+      "taiSui": "戌",
+      "suiPo": "辰",
+      "sanSha": ["亥", "子", "丑"],
+      "sanShaDirection": "北"
+    },
+    {
+      "yearBranch": "亥",
+      "taiSui": "亥",
+      "suiPo": "巳",
+      "sanSha": ["申", "酉", "戌"],
+      "sanShaDirection": "西"
+    }
+  ]
+}
