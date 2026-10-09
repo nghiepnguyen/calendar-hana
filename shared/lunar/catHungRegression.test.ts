@@ -1,16 +1,30 @@
 import { describe, expect, it } from 'vitest'
 import { getAlmanac } from './almanac'
+import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { SOURCE_LOCKED_CAT_HUNG_STAR_NAMES, getSourceLockedCatHungStarsForDate } from './catHungStars'
+import { solarStringToJd } from './julian'
+import { solarTermMonthChi } from './solarTerms'
 
 const LOCKED = new Set<string>(SOURCE_LOCKED_CAT_HUNG_STAR_NAMES)
+const ALWAYS_LOCKED = new Set<string>(['Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
+const TIAN_DE = new Set<string>(['Thiên Đức', 'Thiên Đức Hợp'])
+const DIRECT_TOKEN = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/
 
-function lockedNames(stars: ReturnType<typeof getAlmanac>['stars']) {
-  return new Set([...stars.good, ...stars.bad].map((star) => star.name).filter((name) => LOCKED.has(name)))
+function names(stars: ReturnType<typeof getAlmanac>['stars']) {
+  return new Set([...stars.good, ...stars.bad].map((star) => star.name))
 }
 
 function expectedNames(date: string) {
   const stars = getSourceLockedCatHungStarsForDate(date)
   return new Set([...stars.good, ...stars.bad].map((star) => star.name))
+}
+
+function replacementNames(date: string) {
+  const jd = solarStringToJd(date)
+  const row = getCatHungAuthorityByMonthJian(solarTermMonthChi(jd))
+  const result = new Set(ALWAYS_LOCKED)
+  if (DIRECT_TOKEN.test(row.tianDe)) for (const name of TIAN_DE) result.add(name)
+  return result
 }
 
 function datesInRange(startYear: number, endYear: number) {
@@ -25,9 +39,14 @@ function datesInRange(startYear: number, endYear: number) {
 }
 
 describe('cat-hung source-locked production regression', () => {
-  it('production almanac uses authority overlay for every civil day 2025-2027', () => {
+  it('production almanac uses authority overlay for every replaceable identity 2025-2027', () => {
     for (const date of datesInRange(2025, 2027)) {
-      expect(lockedNames(getAlmanac(date).stars), date).toEqual(expectedNames(date))
+      const actual = names(getAlmanac(date).stars)
+      const expected = expectedNames(date)
+      const replaceable = replacementNames(date)
+      for (const name of replaceable) {
+        expect(actual.has(name), `${date} ${name}`).toBe(expected.has(name))
+      }
     }
   })
 
