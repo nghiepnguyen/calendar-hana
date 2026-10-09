@@ -1,7 +1,7 @@
 import { dayCanChi } from './canChi'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { solarStringToJd } from './julian'
-import { getSolarMonth } from './solarTerms'
+import { solarTermMonthChi } from './solarTerms'
 import type { Star } from './stars'
 
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -53,12 +53,14 @@ export function getSourceLockedCatHungStars(monthJianBranch: number, dayCan: num
   return { good, bad }
 }
 
-/** Civil-day production adapter. Noon follows the project's whole-day presentation convention;
- * exact-instant consumers must use getCatHungAuthorityAtInstant instead.
+/**
+ * Civil-day production adapter. The project deliberately presents the whole civil day
+ * containing a Jie crossing as the new Month Jian. Exact-instant consumers use
+ * getCatHungAuthorityAtInstant instead.
  */
-export function getSourceLockedCatHungStarsForDate(date: string, timezone = 'Asia/Ho_Chi_Minh') {
+export function getSourceLockedCatHungStarsForDate(date: string) {
   const jd = solarStringToJd(date)
   const day = dayCanChi(jd)
-  const monthJianBranch = getSolarMonth(`${date}T12:00:00+07:00`, timezone)
+  const monthJianBranch = solarTermMonthChi(jd)
   return getSourceLockedCatHungStars(monthJianBranch, day.can, day.chi)
 }
