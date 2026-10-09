@@ -19,6 +19,7 @@ import { getStars, type Star } from './stars'
 import { getSourceLockedCatHungStarsForDate } from './catHungStars'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { solarTermMonthChi } from './solarTerms'
+import { getThuTuForDate } from './thuTuAuthority'
 import { resolveDayRuleGods, resolvePresentGods } from './godMapping'
 import manifest from '../almanac-data/manifest.json'
 import { ENGINE_VERSION } from './evidence'
@@ -45,6 +46,8 @@ export interface Almanac {
 
 const CACHE_LIMIT = 2000
 const ALWAYS_SOURCE_LOCKED = new Set<string>(['Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
+const THU_TU_NAME = 'Thụ Tử'
+const THU_TU_MEANING = 'Trăm sự đều kỵ'
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
@@ -70,6 +73,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
     mansion: mansion.index,
   })
   const lockedStars = getSourceLockedCatHungStarsForDate(date)
+  const thuTu = getThuTuForDate(date)
 
   // Four Tian De source rows use raw trigram/direction tokens (坤/乾/艮/巽). Until an
   // independent normalization authority is admitted, do not delete the corresponding legacy
@@ -77,14 +81,22 @@ function computeAlmanac(date: SolarDateString): Almanac {
   const authorityRow = getCatHungAuthorityByMonthJian(solarTermMonthChi(jd))
   const tianDeDirect = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/.test(authorityRow.tianDe)
   const replaceNames = new Set<string>(ALWAYS_SOURCE_LOCKED)
+  replaceNames.add(THU_TU_NAME)
   if (tianDeDirect) {
     replaceNames.add('Thiên Đức')
     replaceNames.add('Thiên Đức Hợp')
   }
 
+  const authorityBadStars: Star[] = thuTu.applies
+    ? [{ name: THU_TU_NAME, isGood: false, meaning: THU_TU_MEANING }]
+    : []
   const stars = {
     good: [...legacyStars.good.filter((star) => !replaceNames.has(star.name)), ...lockedStars.good],
-    bad: [...legacyStars.bad.filter((star) => !replaceNames.has(star.name)), ...lockedStars.bad],
+    bad: [
+      ...legacyStars.bad.filter((star) => !replaceNames.has(star.name)),
+      ...lockedStars.bad,
+      ...authorityBadStars,
+    ],
   }
 
   const gods = resolvePresentGods(stars)

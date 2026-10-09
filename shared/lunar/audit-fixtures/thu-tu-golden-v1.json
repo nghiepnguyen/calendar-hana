@@ -1,0 +1,48 @@
+{
+  "authorityId": "thu-tu-authority-v1",
+  "status": "SOURCE_LOCKED",
+  "star": {
+    "id": "thu-tu",
+    "name": "Thụ Tử",
+    "han": "受死",
+    "kind": "HUNG"
+  },
+  "source": {
+    "primaryWitness": "六壬大全",
+    "section": "受死",
+    "confidence": "PRIMARY",
+    "sequenceText": "正月戌、二月辰、三月亥、四月巳、五月子、六月午、七月丑、八月未、九月寅、十月申、十一月卯、十二月酉",
+    "independentMonthBasisEvidence": "koyomi8.com: 選日法は節月と日の十二支による"
+  },
+  "operands": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+  "monthBasis": "MONTH_JIAN",
+  "boundary": "EXACT_JIE_INSTANT",
+  "clockAuthority": "astronomy-authority-v4 / clock-v1",
+  "exactInstantSemantics": "T-1ms old Month Jian; T and T+1ms new Month Jian",
+  "civilDayConvention": "solarTermMonthChi(jd): whole civil crossing day presents new Month Jian",
+  "leapMonthSemantics": "NONE",
+  "globalScoreAllowed": false,
+  "monthJianSequence": ["寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "子", "丑"],
+  "jieSequence": ["立春", "驚蟄", "清明", "立夏", "芒種", "小暑", "立秋", "白露", "寒露", "立冬", "大雪", "小寒"],
+  "rows": [
+    { "month": 1, "monthJian": "寅", "jie": "立春", "dayBranch": "戌" },
+    { "month": 2, "monthJian": "卯", "jie": "驚蟄", "dayBranch": "辰" },
+    { "month": 3, "monthJian": "辰", "jie": "清明", "dayBranch": "亥" },
+    { "month": 4, "monthJian": "巳", "jie": "立夏", "dayBranch": "巳" },
+    { "month": 5, "monthJian": "午", "jie": "芒種", "dayBranch": "子" },
+    { "month": 6, "monthJian": "未", "jie": "小暑", "dayBranch": "午" },
+    { "month": 7, "monthJian": "申", "jie": "立秋", "dayBranch": "丑" },
+    { "month": 8, "monthJian": "酉", "jie": "白露", "dayBranch": "未" },
+    { "month": 9, "monthJian": "戌", "jie": "寒露", "dayBranch": "寅" },
+    { "month": 10, "monthJian": "亥", "jie": "立冬", "dayBranch": "申" },
+    { "month": 11, "monthJian": "子", "jie": "大雪", "dayBranch": "卯" },
+    { "month": 12, "monthJian": "丑", "jie": "小寒", "dayBranch": "酉" }
+  ],
+  "gates": {
+    "productionIndependence": true,
+    "noLunarMonthFallback": true,
+    "exactJieBoundaryRequired": true,
+    "satChuInferenceForbidden": true,
+    "globalScoreAllowed": false
+  }
+}

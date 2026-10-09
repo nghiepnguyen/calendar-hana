@@ -33,6 +33,7 @@ export * from './solarTerms'
 export * from './stars'
 export * from './groupA'
 export * from './groupB'
+export * from './thuTuAuthority'
 // almanac.ts không export ở đây để tránh vòng import (nó dùng getDayInfo); import thẳng
 // từ '@shared/lunar/almanac'.
 
