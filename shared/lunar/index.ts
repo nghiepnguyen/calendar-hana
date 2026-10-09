@@ -5,7 +5,7 @@ import type { LunarDate, SolarDateString } from '../types'
 import {
   getAuspiciousHours,
   getBadDays,
-  getDayGod,
+  getDayGodByMonthJian,
   type AuspiciousHour,
   type BadDay,
   type DayGod,
@@ -14,7 +14,7 @@ import { dayCanChi, monthCanChi, yearCanChi, type CanChi } from './canChi'
 import { getHolidays, type Holiday } from './holidays'
 import { dayOfWeek, parseSolarDate, solarStringToJd, type SolarDate } from './julian'
 import { solarToLunar } from './lunar'
-import { getSolarTerm, type SolarTermInfo } from './solarTerms'
+import { getSolarTerm, solarTermMonthChi, type SolarTermInfo } from './solarTerms'
 
 export * from './auspicious'
 export * from './canChi'
@@ -52,7 +52,7 @@ export interface DayInfo {
 const CACHE_LIMIT = 2000
 
 /** Toàn bộ thông tin âm lịch của một ngày dương 'YYYY-MM-DD'. Kết quả được cache
- * theo phiên bản authority tiết khí + clock (solarTerm phụ thuộc vào chúng).
+ * theo phiên bản authority tiết khí + clock (solarTerm và Month Jian phụ thuộc vào chúng).
  */
 export function getDayInfo(date: SolarDateString): DayInfo {
   return memoizeSolarTermDerived('day-info', date, CACHE_LIMIT, () => computeDayInfo(date))
@@ -63,6 +63,10 @@ function computeDayInfo(date: SolarDateString): DayInfo {
   const jd = solarStringToJd(date)
   const lunar = solarToLunar(solar.day, solar.month, solar.year)
   const dayCC = dayCanChi(jd)
+  // Day-view semantics follow the existing whole-day solar-term presentation: on a Jie
+  // crossing civil day the new Month Jian applies to the whole displayed day. Exact-instant
+  // consumers must use getDayGodAtInstant().
+  const monthJianBranch = solarTermMonthChi(jd)
   const info: DayInfo = {
     date,
     solar,
@@ -70,7 +74,7 @@ function computeDayInfo(date: SolarDateString): DayInfo {
     jd,
     lunar,
     canChi: { day: dayCC, month: monthCanChi(lunar), year: yearCanChi(lunar.year) },
-    dayGod: getDayGod(lunar.month, dayCC.chi),
+    dayGod: getDayGodByMonthJian(monthJianBranch, dayCC.chi),
     auspiciousHours: getAuspiciousHours(dayCC.chi),
     badDays: getBadDays(lunar.day),
     solarTerm: getSolarTerm(jd),
