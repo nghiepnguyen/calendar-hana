@@ -54,6 +54,17 @@ describe('Trực and locked gods enter evidence diagnostics without score change
       const a = getAlmanac(date)
       for (const row of a.activityRecommendations.flatMap((r) => r.contributions)) {
         if (row.source === 'mansion') continue
+        // Added 卷十 penalties have their own deciding source, not a 卷十一 mapping.
+        if (row.ruleId.startsWith('xieji10:')) {
+          expect(row.classical).toMatchObject({
+            version: 'xieji-vol10-scoring-v1',
+            verdict: 'avoid',
+          })
+          expect(row.classical!.quote.length).toBeGreaterThan(0)
+          expect(row.scoreDelta).toBeLessThanOrEqual(0)
+          expect(row.activityMapping).toBeUndefined()
+          continue
+        }
         const audited =
           (row.source === 'truc' && row.status !== 'no_evidence') ||
           ((row.source === 'good_god' || row.source === 'bad_god') &&

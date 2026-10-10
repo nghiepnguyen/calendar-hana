@@ -8,6 +8,14 @@ import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 import { isThoVuongDungSu, thoVuongDungSuPeriods } from './thoVuongDungSu'
 
+// Keep this historical migration/Golden independent of later 卷十 activation.
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, xiejiVol10Scoring: false } } }
+})
+
 const GOD = 'tho_vuong_dung_su'
 const row = (date: string, activityId: string) =>
   getAlmanac(date as never)

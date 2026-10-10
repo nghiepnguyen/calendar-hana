@@ -2186,3 +2186,14 @@ Proof tăng cường: không mất contribution key; unrelated rows (gồm 百�
 **Flag vẫn false.** Next step là owner review các transition và quyết bật; activation cần commit riêng, ghim OFF trong các migration lịch sử, gate trên build đã bật, rồi merge/deploy khi được phép. Không coi số event đổi điểm bằng cũ là kết luận giống cũ.
 
 Gate readiness: typecheck/lint, 155 files / 2903 tests; mutation tuần tự 7/7 + 9/9; build; E2E desktop 104/16 skip, mobile Pixel 7 119/1 skip, Safari desktop WebKit 88/32 skip (tổng 311 pass / 49 skip). Chưa chạy iPhone/Firefox/emulator. Toàn bộ build/E2E dùng flag OFF; migration test mock ON.
+
+
+## 37. 卷十 activation candidate — chưa merge/deploy
+
+Nhánh `codex/enable-xieji-vol10-scoring`, stacked trên PR #31 (còn OPEN). Local manifest bật `xiejiVol10Scoring: true`; production vẫn OFF. Không đổi product rule/weight/Golden khác; mansion scoring vẫn false.
+
+Migration proof ghim cả ON/OFF; 5 test migration/Golden lịch sử ghim OFF. Diagnostics phân biệt dòng phạt `xieji10:` với mapping 卷十一. Integration ON kiểm 21 transition witnesses + 月破 2025-03-17 / 月厭 2025-12-09; mới E2E chọn Cưới hỏi qua UI cho hai ngày này và 2025-01-21 (mục Cưới hỏi không có ô giờ).
+
+Gate: typecheck/lint; 156 files / 2927 tests pass; mutation tuần tự 7/7 + 9/9. Build/device E2E ON ghi tại `docs/audits/xieji-vol10-activation.md`. Next: review release candidate, merge readiness #31 trước, retarget activation vào main; merge/deploy khi owner cho phép. Chưa production smoke.
+
+Gate ON hoàn tất: build/E2E hiện có 311 pass / 49 skip; 9 smoke mới pass sau khi sửa thao tác test (không sửa product). Tổng 320 pass / 49 skip. Counters ON/OFF trùng PR #31.

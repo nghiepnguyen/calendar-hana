@@ -7,6 +7,14 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 
+// Keep this historical migration/Golden independent of later 卷十 activation.
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, xiejiVol10Scoring: false } } }
+})
+
 // Owner 2026-10-10: a hard warning takes the stricter of `consider` and the score status.
 const strict = (score: number) =>
   score <= 19 ? 'strong_avoid' : score <= 29 ? 'avoid' : 'consider'
