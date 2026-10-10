@@ -42,7 +42,7 @@
 | `hardWarningKeepsWorseScoreStatus` | true | Hard warning lấy trạng thái nghiêm hơn (≤19 strong_avoid, ≤29 avoid, còn lại ≥ consider) |
 | `unknownRuleMeansNoEvidence` | true | UNKNOWN không suy thành tốt/xấu |
 | `hardVetoFromClassicalJi` | false | 忌 cổ điển không tự thành veto |
-| `legacyGodsMonthJian` | true (Release A, chờ merge) | 14 thần legacy (Thiên Xá, Nguyệt Ân, Dân Nhật, Tam Hợp, Thiên Hỷ, Lục Hợp, Ngũ Phú, Giải Thần, Phúc Sinh, Thánh Tâm, Ích Hậu, Tục Thế, Nguyệt Hình, Thiên Lại) đọc theo Month Jian thay vì tháng âm |
+| `legacyGodsMonthJian` | true (Release A, PR #45, chờ merge) | 14 thần legacy (Thiên Xá, Nguyệt Ân, Dân Nhật, Tam Hợp, Thiên Hỷ, Lục Hợp, Ngũ Phú, Giải Thần, Phúc Sinh, Thánh Tâm, Ích Hậu, Tục Thế, Nguyệt Hình, Thiên Lại) đọc theo Month Jian thay vì tháng âm |
 | `aiMayChangeScore` | false | |
 
 Rollback 卷十: flag về false trên nhánh riêng → PR → CI deploy → smoke. Không sửa Golden. Chi tiết history §38–39.
@@ -104,7 +104,7 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 |---|---|---|---|---|
 | P1 | **百忌日 không dính event:** 寅/酉/申/未 | DEPLOYED (PR #40) | Còn: chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine; owner quyết) | — |
 | P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | DEPLOYED (PR #42); owner chọn (a), `travel` = Xuất hành | — | — |
-| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) định nghĩa 35 thần; P3b (PR #44) `xiejiGodPresence.ts`. **Release A (PR A, chờ merge):** 14 thần legacy theo Month Jian, flag `legacyGodsMonthJian`; 741 kết luận event đổi, 0 thay đổi ở ngày tháng âm = Month Jian (`docs/audits/dormant-legacy-gods.md`) | 21 thần vắng mặt: bật cùng P4 (đo: bật cả 21 không có cân bằng → recommended 3.008 → 1.988) | Owner đã chốt 往亡/不將/五富 |
+| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) định nghĩa 35 thần; P3b (PR #44) `xiejiGodPresence.ts`. **Release A (PR #45, chờ merge):** 14 thần legacy theo Month Jian, flag `legacyGodsMonthJian`; 741 kết luận event đổi, 0 thay đổi ở ngày tháng âm = Month Jian (`docs/audits/dormant-legacy-gods.md`) | 21 thần vắng mặt: bật cùng P4 (đo: bật cả 21 không có cân bằng → recommended 3.008 → 1.988) | Owner đã chốt 往亡/不將/五富 |
 | P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở | Spec + Golden sau P3 | P3 (cần presence cát thần). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵 |
 | P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | P3 (時德 nằm trong 21 thần vắng mặt) |
 
