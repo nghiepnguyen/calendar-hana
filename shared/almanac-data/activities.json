@@ -59,7 +59,7 @@
     },
     {
       "id": "business",
-      "label": "Kinh doanh",
+      "label": "Mở hàng",
       "group": "business",
       "personalSensitivity": 0.6,
       "enabled": true
@@ -157,7 +157,14 @@
     },
     {
       "id": "warehouse",
-      "label": "Kho tàng / Mở kho",
+      "label": "Sửa kho",
+      "group": "construction",
+      "personalSensitivity": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "warehouse_opening",
+      "label": "Mở kho xuất hàng",
       "group": "business",
       "personalSensitivity": 0.5,
       "enabled": true

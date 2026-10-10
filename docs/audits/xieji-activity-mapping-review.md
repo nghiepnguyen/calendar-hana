@@ -1,6 +1,6 @@
 # 協紀 卷十一 用事 → activity — interpretation review
 
-Status: **26/28 REVIEWED, 2 PENDING OWNER** — metadata only, no score change
+Status: **29/29 REVIEWED** — owner decisions 2026-10-10 applied (see end)
 Date: 2026-10-10. Branch `audit/xieji-vol10-remeasure`. Reviewer: agent (single reviewer, as for the mansion mapping v2).
 Data: `shared/almanac-data/xieji-activity-mapping-review.json`; test `shared/lunar/xiejiActivityMappingReview.test.ts`.
 
@@ -58,3 +58,17 @@ Data: `shared/almanac-data/xieji-activity-mapping-review.json`; test `shared/lun
 1. **warehouse**: (a) keep 修倉庫 and relabel "Sửa kho"; (b) transcribe 開倉庫出貨財 and map "Mở kho" to it (scoring change, new parity + migration proof); (c) split into two activities.
 2. **business**: (a) keep as an alias of 開市; (b) drop the 卷十一 mapping (always `no_evidence` from Trực/thần); (c) relabel.
 3. Whether a second reviewer is needed before the flag: this review, like the mansion mapping v2, is single-reviewer.
+
+## Owner decisions applied (2026-10-10, branch `feature/warehouse-split`)
+
+1. **warehouse → split (option c).** `warehouse` keeps 修倉庫 and is relabelled **Sửa kho** (rules, scores unchanged). New activity `warehouse_opening` **Mở kho xuất hàng** ↔ **開倉庫出貨財**, transcribed from the same raw text:
+   - 宜 月恩四相時德滿日五富
+   - 忌 月建月破大耗平日收日閉日劫煞災煞月煞月虛月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虛九空甲日
+   - Trực (parity test, weights by the catalog convention good +15 / bad −15 / Phá −25): Mãn +15; Kiến, Bình, Thu, Bế −15; Phá −25.
+   - Gods (parity test): good 月恩, 四相, 時德, 五富; bad 月破, 劫煞, 災煞, 月煞, 月刑, 月害, 月厭, 大時, 天吏, 四廢, 四窮.
+   - **Not encoded:** 甲日 (day-stem taboo), as with 修倉庫's 土王用事後; names without a catalog god (大耗 counts through Phá; 小耗, 天賊, 四耗, 五虛, 九空, 月虛) are missing witnesses.
+   - 1095 days 2025–2027: recommended 83, watch 383, neutral 81, avoid 163, strong_avoid 21, no_evidence 364. No event uses it.
+   - 卷十 (flag on): 171 changed/added rows; event figures unchanged (1,662).
+2. **business → relabel (option c)** to **Mở hàng**, following 開市 and separating it from Ký kết / Giao dịch (立券交易). It shares the heading with `opening` ("Khai trương"); rules differ only in product weights.
+
+Frozen decision baseline (`xiejiConditionalMigration.test.ts`) still reproduces 1095/1095 with `warehouse_opening` excluded like the other added activities: every existing activity and every event keeps its score and status.

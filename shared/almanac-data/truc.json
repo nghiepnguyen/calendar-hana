@@ -122,6 +122,14 @@
           "updatedAt": "2026-10-05"
         },
         {
+          "activityId": "warehouse_opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
+        },
+        {
           "activityId": "planting",
           "level": "bad",
           "weight": -15,
@@ -280,6 +288,14 @@
           "sourceRef": "協紀辨方書 卷十一 修倉庫",
           "reviewStatus": "classical_text",
           "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse_opening",
+          "level": "good",
+          "weight": 15,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
         }
       ]
     },
@@ -448,6 +464,14 @@
           "sourceRef": "協紀辨方書 卷十一 修倉庫",
           "reviewStatus": "classical_text",
           "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse_opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
         },
         {
           "activityId": "planting",
@@ -655,6 +679,14 @@
           "sourceRef": "協紀辨方書 卷十一 修倉庫",
           "reviewStatus": "classical_text",
           "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse_opening",
+          "level": "strong_bad",
+          "weight": -25,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
         },
         {
           "activityId": "planting",
@@ -961,6 +993,14 @@
           "sourceRef": "協紀辨方書 卷十一 安葬",
           "reviewStatus": "classical_text",
           "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse_opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
         }
       ]
     },
@@ -1217,6 +1257,14 @@
           "sourceRef": "協紀辨方書 卷十一 豎柱上梁",
           "reviewStatus": "classical_text",
           "updatedAt": "2026-10-05"
+        },
+        {
+          "activityId": "warehouse_opening",
+          "level": "bad",
+          "weight": -15,
+          "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財",
+          "reviewStatus": "classical_text",
+          "updatedAt": "2026-10-10"
         }
       ]
     }
