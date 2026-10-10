@@ -134,3 +134,19 @@ User request: re-read the tables first read at reduced resolution and record the
 
 Coverage: about 25 of 69 page images were viewed; Phần III (selection of days, pp. 106–135) was read in full, Phần I–II only by contents page and sample pages. No OCR was used.
 
+## Search for a Hán-script original (2026-10-10)
+
+User request (handoff §23 #5): find the Hán-văn source of the verse.
+
+Searched (web, Chinese and Vietnamese):
+
+- Reconstructed Chinese wording 「一巳二子三羊位 四兔五猴六犬歸 七豬八牛…」 and table form 「殺主 正巳 二子 三未 … 七亥 八丑」: no hit.
+- 「殺主日」 with 擇日 / 通書: no hit; Japanese and Chinese 神殺 tables found do not list 殺主.
+- Wikisource full-text search for 「殺主」: 879 hits, all in the sense “servant kills master” (legal codes, histories) or unrelated divination verses (e.g. 乙巳占, 古今圖書集成 藝術典); none is a month → day-branch table. No 殺主日 page exists.
+- ctext.org blocks automated search; not checked.
+
+Vietnamese witnesses found:
+
+- huyenbi.net (the page cited in the owner's spec) gives the Hán-Việt verse “Nhất Tị, Nhì Tý, Tam Dương vị / Tứ Mão, ngũ hầu, lục Khuyển quy / Thất trư, bát ngưu, cửu mã phi / Thập kê, thập nhất hổ, thập nhị long” and a **Nôm verse “Giêng rắn, hai chuột, ba dê nằm / Bốn mèo, sáu chó, khỉ tháng năm / Bẩy heo, chín ngựa, tám Sửu / Một (11) cọp, mười gà, Chạp rồng”**, both 7 Hợi / 8 Sửu, with no Chinese characters and no named book. So not every Nôm verse gives the rejected 7 Sửu / 8 Hợi; the rejected variant is specifically the “Bảy trâu đực… / Tám dê leo núi lợn xông quàng” verse recorded in the owner's spec.
+
+Conclusion: no Hán-script original was found. The rule is attested only in Vietnamese sources (Hán-Việt and Nôm mnemonics, a modern printed compilation citing “sách Thọ-Mai”). Treat it as a Vietnamese folk-almanac rule; Sát Chủ stays `SOURCE_DEPENDENT`. Next places to look, offline or with access: Vietnamese Hán-Nôm almanacs (e.g. 玉匣記 Vietnamese recensions, 協紀 commentaries printed in Vietnam), the Hán-Nôm Institute catalogue, and the cited 「壽梅」(Thọ-Mai) / 「劉氏」(Lưu-Thị) books — the Chinese characters of those titles are a guess and unverified.
