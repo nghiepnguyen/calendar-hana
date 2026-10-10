@@ -51,6 +51,7 @@ describe('協紀 卷十 scoring migration (flag xiejiVol10Scoring)', () => {
           expect(row.classical, `${date} ${after.activityId} ${key(row)}`).toBeDefined()
           expect(VOL10_SCORED_ENTRIES.has(row.classical!.entry)).toBe(true)
           expect(ACTED.has(row.classical!.verdict)).toBe(true)
+          bump(`rows of activity ${after.activityId}`)
           bump(
             `${prev ? 'changed' : 'added'} ${row.classical!.entry}${row.classical!.via ? `→${row.classical!.via}` : ''} ${row.classical!.verdict}`,
           )

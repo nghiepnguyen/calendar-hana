@@ -1,0 +1,101 @@
+{
+  "version": "xieji-activity-mapping-v1",
+  "reviewedAt": "2026-10-10",
+  "reviewer": "agent (single reviewer)",
+  "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, Wikisource action=raw, SHA-1 prefix ce4ed7f23ff9",
+  "note": "Interpretation review of activityEntries in xiejibianfangshu-yiji.json. A reviewed entry is never a scoring permission; pending entries keep their current mapping until the owner decides.",
+  "activities": {
+    "worship": { "status": "reviewed", "term": "祭祀", "note": "Cùng thuật ngữ." },
+    "pray_blessing": { "status": "reviewed", "term": "祈福", "note": "Cùng thuật ngữ." },
+    "pray_children": { "status": "reviewed", "term": "求嗣", "note": "Cùng thuật ngữ." },
+    "wedding": {
+      "status": "reviewed",
+      "term": "嫁娶",
+      "note": "結婚姻 (kết hôn) và 嫁娶 (cưới gả) đều là cưới hỏi."
+    },
+    "engagement": {
+      "status": "reviewed",
+      "term": "納采問名",
+      "note": "Nạp thái, vấn danh: lễ hỏi."
+    },
+    "moving": {
+      "status": "reviewed",
+      "term": "般移",
+      "note": "Chú dưới heading: 「移徙同」 (dời chỗ ở)."
+    },
+    "bed_installation": { "status": "reviewed", "term": "安牀", "note": "Cùng thuật ngữ." },
+    "opening": { "status": "reviewed", "term": "開市", "note": "Mở chợ / mở hàng = khai trương." },
+    "contract": {
+      "status": "reviewed",
+      "term": "立券交易",
+      "note": "立券 = lập khế ước; 御用/通書 liệt kê 立券 và 交易 riêng, phần thân gộp 「立劵交易」."
+    },
+    "transaction": {
+      "status": "reviewed",
+      "term": "立券交易",
+      "note": "交易 = giao dịch, cùng heading gộp với 立券."
+    },
+    "finance": {
+      "status": "reviewed",
+      "term": "納財",
+      "note": "Nạp tài (thu tiền của vào). Nhãn “Cầu tài” rộng hơn nhưng cùng hướng."
+    },
+    "travel": {
+      "status": "reviewed",
+      "term": "行幸遣使",
+      "note": "Chú dưới heading: 「出行同」 — xuất hành dùng chung 宜忌 với 行幸遣使."
+    },
+    "meeting": {
+      "status": "reviewed",
+      "term": "宴會",
+      "note": "Chú dưới heading: 「會親友同」 (gặp gỡ thân hữu)."
+    },
+    "study": { "status": "reviewed", "term": "入學", "note": "Cùng thuật ngữ." },
+    "medical": {
+      "status": "reviewed",
+      "term": "求醫療病",
+      "note": "Dân dụng ghi 療病; 療目/針刺 không có ngày nên, theo 療病 (dòng kết)."
+    },
+    "cleaning": { "status": "reviewed", "term": "掃舍宇", "note": "Quét dọn nhà cửa." },
+    "cut_hair": { "status": "reviewed", "term": "整容剃頭", "note": "Dân dụng ghi 剃頭." },
+    "groundbreaking": {
+      "status": "reviewed",
+      "term": "興造動土",
+      "note": "Chú 「修造同」; 動土 = động thổ. 破土 là heading riêng (đào đất việc táng), không gộp."
+    },
+    "construction": {
+      "status": "reviewed",
+      "term": "營建宮室",
+      "note": "營建宮室 (dựng nhà) + 興造動土 (khởi công)."
+    },
+    "renovation": {
+      "status": "reviewed",
+      "term": "修宮室",
+      "note": "Sửa nhà ở. 修造 thuộc 興造動土 (「修造同」), không thuộc heading này."
+    },
+    "beam_raising": { "status": "reviewed", "term": "豎柱上梁", "note": "Dựng cột, gác đòn dông." },
+    "planting": { "status": "reviewed", "term": "栽種", "note": "Cùng thuật ngữ." },
+    "livestock": {
+      "status": "reviewed",
+      "term": "牧養",
+      "note": "牧養 (chăn nuôi) + 納畜 (nhập gia súc)."
+    },
+    "burial": { "status": "reviewed", "term": "安葬", "note": "Cùng thuật ngữ." },
+    "demolition": { "status": "reviewed", "term": "破屋壞垣", "note": "Phá nhà, đổ tường." },
+    "water_travel": {
+      "status": "reviewed",
+      "term": "乘船渡水",
+      "note": "Dòng kết: 「遠迴乘船渡水無宜日除所忌之外無日不宜也」 — không có ngày nên, ngoài ngày kỵ thì ngày nào cũng được."
+    },
+    "warehouse": {
+      "status": "pending",
+      "term": "修倉庫",
+      "note": "修倉庫 = sửa kho. Nhãn “Mở kho” ứng với heading riêng 開倉庫出貨財 (chưa chép). Cần owner: tách activity, đổi nhãn, hoặc thêm heading."
+    },
+    "business": {
+      "status": "pending",
+      "term": "開市",
+      "note": "開市 = mở hàng, hẹp hơn “Kinh doanh”; trùng heading với opening. Cần owner: giữ, đổi nhãn, hoặc bỏ mapping."
+    }
+  }
+}

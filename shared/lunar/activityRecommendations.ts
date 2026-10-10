@@ -5,6 +5,7 @@ import trucData from '../almanac-data/truc.json'
 import manifest from '../almanac-data/manifest.json'
 import overrides from '../almanac-data/overrides.json'
 import xieji from '../almanac-data/xiejibianfangshu-yiji.json'
+import xiejiReview from '../almanac-data/xieji-activity-mapping-review.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
@@ -52,22 +53,31 @@ export interface ActivityInput {
 export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'
 const TRUC_ORDER = trucData.calculation.order as readonly string[]
 const XIEJI_HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
+const XIEJI_REVIEW = xiejiReview.activities as Record<
+  string,
+  { status: 'reviewed' | 'pending'; term: string; note: string } | undefined
+>
 
 /** Diagnostics metadata for a Trực/god rule: which 用事 heading, which authority, which operands.
- * The heading → activity mapping is a product interpretation not yet reviewed; no score effect. */
+ * The heading → activity mapping is a product interpretation (xieji-activity-mapping-review.json);
+ * a reviewed mapping is never a scoring permission; no score effect. */
 function xiejiEvidence(
   activityId: string,
   ruleKey: string,
   conditions: readonly { operand: string; equals: number }[],
 ): Pick<Evidence, 'activityMapping' | 'conditions' | 'exceptions'> {
   const headings = XIEJI_HEADINGS[activityId] ?? []
+  const review = XIEJI_REVIEW[activityId]
+  const reviewed = review?.status === 'reviewed'
   return {
     activityMapping: {
       version: 'xieji-activity-mapping-v1',
       activityId,
       status: 'exact_catalog_pair',
-      reviewStatus: 'interpretation_pending',
-      reason: `協紀 卷十一 用事 ${headings.join('、')} → ${activityId}; cách hiểu chưa thẩm định.`,
+      reviewStatus: reviewed ? 'interpretation_reviewed' : 'interpretation_pending',
+      reason: `協紀 卷十一 用事 ${headings.join('、')} → ${activityId}; ${reviewed ? 'cách hiểu đã thẩm định' : 'cách hiểu chưa thẩm định'}.`,
+      ...(reviewed ? { reviewTerm: review.term } : {}),
+      ...(review ? { reviewNote: review.note } : {}),
       authorityId: XIEJI_AUTHORITY_ID,
       clauseId: `${headings.join('+')}:${ruleKey}`,
     },
