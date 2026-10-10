@@ -109,7 +109,7 @@
       ],
       "expect": {
         "verdicts": {
-          "shou_ri": "not_avoided",
+          "shou_ri": "not_listed",
           "jie_sha": "not_avoided"
         },
         "rows": [
@@ -128,7 +128,8 @@
         ],
         "added": []
       },
-      "derivation": "not_avoided drops the negative, keeps the positive"
+      "derivation": "not_avoided drops the negative, keeps the positive",
+      "correction": "GOLDEN_BUG 2026-10-10: first hand derivation said shou_ri not_avoided; 納財 is in 收日 止不忌, not its 忌, so not_listed (same reading as jie-yin-demolition and shou-zi-de-finance). Expected rows unchanged."
     },
     {
       "id": "jie-yin-demolition",
