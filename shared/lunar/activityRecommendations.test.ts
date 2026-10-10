@@ -218,7 +218,7 @@ describe('haircut day rules (Hiệp Kỷ vol. 10–11)', () => {
   it('resolves day-defined gods from stem, branch and lunar day', () => {
     expect(resolveDayRuleGods({ can: 3, chi: 8, lunarDay: 12 })).toEqual({
       presentGoodGods: ['tru_than'],
-      presentBadGods: ['dinh_nhat', 'nhan_than_toc'],
+      presentBadGods: ['dinh_nhat', 'bach_ky_than', 'nhan_than_toc'],
     })
     expect(resolveDayRuleGods({ can: 0, chi: 0, lunarDay: 1 })).toEqual({
       presentGoodGods: [],

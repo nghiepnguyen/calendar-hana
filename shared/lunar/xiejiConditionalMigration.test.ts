@@ -81,9 +81,16 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     vi.resetModules()
     vi.doMock('./tianDeLegacyPolicy', legacyTianDe)
     vi.doMock('../almanac-data/manifest.json', lowNeutral)
-    // And both sides predate the 百忌日 甲日/乙日 rules (golden-baiji-giap-at.json) and 土王用事
-    // (golden-tu-vuong-dung-su.json).
-    const BAIJI = ['giap_nhat', 'at_nhat']
+    // And both sides predate the 百忌日 rules (golden-baiji-giap-at.json, golden-baiji-dayzhi.json)
+    // and 土王用事 (golden-tu-vuong-dung-su.json).
+    const BAIJI = [
+      'giap_nhat',
+      'at_nhat',
+      'bach_ky_dan',
+      'bach_ky_dau',
+      'bach_ky_than',
+      'bach_ky_mui',
+    ]
     const LATER = [...BAIJI, 'tho_vuong_dung_su']
     const noLaterGods = () => ({
       default: { ...badGodsData, items: badGodsData.items.filter((g) => !LATER.includes(g.id)) },

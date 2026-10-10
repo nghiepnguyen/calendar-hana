@@ -18,6 +18,10 @@ const LOCKED_OR_DAY_RULE = new Set([
   'dinh_nhat',
   'giap_nhat',
   'at_nhat',
+  'bach_ky_dan',
+  'bach_ky_dau',
+  'bach_ky_than',
+  'bach_ky_mui',
   'nhan_than_toc',
   'tho_vuong_dung_su',
 ])
