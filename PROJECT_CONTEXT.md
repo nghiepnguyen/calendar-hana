@@ -2,9 +2,17 @@
 
 > Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#21: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相 + đọc scan 月表, 卷十 scoring sau flag tắt, Thiên Đức legacy tháng quẻ bỏ theo 月表 (PR #21, đổi điểm), rồi PR #22–#29: trung tính khi không gặp ngày kỵ (≤ high), đo lại 卷十 + review mapping 用事 29/29, tách kho (Sửa kho / Mở kho xuất hàng), nhãn Mở hàng, cảnh báo cứng không làm nhẹ trạng thái, 百忌日 甲日/乙日, 土王用事 (tất cả đổi điểm, đã deploy). GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
 > Đây là tài liệu trạng thái và quyết định của project; chỉ dẫn trong tài liệu không thay thế yêu cầu mới của người dùng.
-> Chat mới đọc phần 21, 23, 24 và 35 trước (35 là trạng thái mới nhất; 33, 34 là nền trực tiếp), rồi dùng các phần authority bên dưới khi cần.
+> Chat mới đọc header Release mới nhất và **phần 39 (handoff tổng hợp sau PR #31/#32)** trước; phần 2 là roadmap hiện tại, phần 24 là tooling. Phần 21/23/33–38 lưu lịch sử; các câu flag OFF/chưa merge ở đó là snapshot trước release, không phải trạng thái production hiện tại.
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
+
+## Release mới nhất — 卷十 ON, 10/10/2026
+
+**PR #31/#32 đã MERGED; production `xiejiVol10Scoring = true`.** Main release `4e92cb68de23a62910482668fece4d10ba836cd5`. Deploy Hosting thủ công hoàn tất, production `Last-Modified` **09:18:51 UTC (16:18:51 VN)**. Bundle `index-Camk5ToH.js`, SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`, byte-for-byte trùng build local; có `xiejiVol10Scoring:!0`.
+
+Production smoke **9/9 pass** (desktop Chromium, mobile Pixel 7, desktop Safari/WebKit; browser context tạm): Cưới hỏi 2025-01-21 **Thuận lợi**; 2025-03-17 (卯月 月破) và 2025-12-09 (子月 月厭) **Không thuận lợi**. Không nhập profile vào tài khoản thật; ngày sinh chỉ lưu local trong context tạm. Không đổi mansion scoring.
+
+Các mục 36/37 là snapshot readiness trước release; trạng thái mới nhất tại đây và phần 38. **Next ưu tiên: nhãn Khai trương/Mở hàng cùng 開市**, rồi 百忌日 còn lại, audit 21 thần vắng mặt/14 bảng tháng âm. Không còn việc chờ bật 卷十.
 
 ## 1. Project overview
 
@@ -76,25 +84,25 @@ production.
 21. Mapping 用事 → activity (卷十一) review 29/29; tách Sửa kho / Mở kho xuất hàng; nhãn Mở hàng ✅ MERGED & DEPLOYED (PR #24, #25).
 22. Cảnh báo cứng không làm nhẹ trạng thái ✅ MERGED & DEPLOYED (PR #28).
 23. 百忌日 甲日/乙日; 土王用事 (18 ngày trước Tứ Lập) ✅ MERGED & DEPLOYED (PR #26, #27, #29). Chi tiết phần 35.
+24. 卷十 scoring activation + migration readiness ✅ MERGED & DEPLOYED (PR #31/#32); flag ON, production smoke 9/9. Chi tiết phần 39.
 
 ### Next — đề xuất, chưa có scope triển khai mới được duyệt
 
-Thứ tự ưu tiên (chi tiết phần 23):
+Thứ tự ưu tiên (handoff mới nhất ở phần 39; phần 23 là nền lịch sử):
 
-1. **Bật `xiejiVol10Scoring`** — đo lại migration sau #25–#29, owner quyết bật.
-2. Gộp/ẩn một trong “Khai trương” / “Mở hàng” (cùng 開市).
-3. 百忌日 còn lại cho activity đã có (巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病).
-4. 21/44 thần không bao giờ có mặt và 14 thần legacy tháng âm → audit bằng 月表.
-5. Quy tắc chung 卷十 (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần.
-6. Các điểm SOURCE_DEPENDENT của 土王用事; Sát Chủ cần nguồn offline.
+1. Gộp/ẩn một trong “Khai trương” / “Mở hàng” (cùng 開市).
+2. 百忌日 còn lại cho activity đã có (巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病).
+3. 21/44 thần không bao giờ có mặt và 14 thần legacy tháng âm → audit bằng 月表.
+4. Quy tắc chung 卷十 (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần.
+5. Các điểm SOURCE_DEPENDENT của 土王用事; Sát Chủ cần nguồn offline.
 
 ### Engine
 
 24. Activity taxonomy — **32 activity IDs** đã deploy (thêm door_opening, waterworks, warehouse_opening); 5 scope xây dựng hẹp giữ unmapped (owner).
 25. Nên/kỵ rule mapping — mansion v2 review 115/115; 卷十一 用事 → activity 29/29 (single reviewer, agent).
 26. Catalog chấm điểm — 24 cát thần (day-rule 除神) / 23 hung thần (day-rule 丁日, 甲日, 乙日, 人神, 土王用事); audit 10/10: 21/44 thần chấm điểm chưa bao giờ có mặt.
-27. Conflict-resolution — diagnostics + 卷十 resolution đã deploy; 卷十 vào điểm còn sau flag.
-28. Policy sản phẩm đã chốt — trung tính ≤ high; cảnh báo cứng lấy trạng thái nghiêm hơn; 不註 → trung tính (khi bật flag).
+27. Conflict-resolution — diagnostics + 卷十 resolution/scoring đã deploy; `xiejiVol10Scoring: true` (PR #32).
+28. Policy sản phẩm đang chạy — trung tính ≤ high; cảnh báo cứng lấy trạng thái nghiêm hơn; 不註 → trung tính; 卷十 flag ON.
 29. Explainability/evidence — mansion activity UI + bất lợi/thuận theo dòng đã deploy.
 30. Daily evaluation — event evaluation đã deploy (11 sự kiện); mansion scoring vẫn tắt.
 
@@ -108,7 +116,7 @@ Thứ tự ưu tiên (chi tiết phần 23):
 
 34. UI integration
 35. Full Golden/regression
-36. E2E/visual/device (desktop chạy local; mobile/Safari chưa chạy từ khi Actions bị khoá)
+36. E2E/visual/device — desktop/mobile Pixel 7/desktop Safari đã chạy local trên build ON và smoke production; iPhone/Firefox/emulator chưa chạy cho release này.
 37. Production release (deploy hosting thủ công, xem phần 24)
 
 ------------------------------------------------------------------------
@@ -2177,7 +2185,7 @@ Khu “Mục tiêu và kết luận trong ngày” chỉ hiện khi có ngày si
 
 
 
-## 36. 卷十 release readiness sau PR #29 — local, chưa bật flag
+## 36. 卷十 release readiness sau PR #29 — snapshot trước activation
 
 Base `43d6303` (PR #30), 10/10/2026. Đo lại 1095 ngày × 32 activity × 11 event, chỉ khác flag mocked: **1662 event đổi điểm, 652 đổi kết luận**. not_recommended → recommended **231** (trước 244); → caution **157** (trước 172); recommended → not_recommended 7. 3968 activity đổi điểm; changed rows no_annotation 1622, not_avoided 1482, avoid 181; added 1205.
 
@@ -2188,7 +2196,7 @@ Proof tăng cường: không mất contribution key; unrelated rows (gồm 百�
 Gate readiness: typecheck/lint, 155 files / 2903 tests; mutation tuần tự 7/7 + 9/9; build; E2E desktop 104/16 skip, mobile Pixel 7 119/1 skip, Safari desktop WebKit 88/32 skip (tổng 311 pass / 49 skip). Chưa chạy iPhone/Firefox/emulator. Toàn bộ build/E2E dùng flag OFF; migration test mock ON.
 
 
-## 37. 卷十 activation candidate — chưa merge/deploy
+## 37. 卷十 activation candidate — snapshot trước merge/deploy
 
 Nhánh `codex/enable-xieji-vol10-scoring`, stacked trên PR #31 (còn OPEN). Local manifest bật `xiejiVol10Scoring: true`; production vẫn OFF. Không đổi product rule/weight/Golden khác; mansion scoring vẫn false.
 
@@ -2197,3 +2205,160 @@ Migration proof ghim cả ON/OFF; 5 test migration/Golden lịch sử ghim OFF. 
 Gate: typecheck/lint; 156 files / 2927 tests pass; mutation tuần tự 7/7 + 9/9. Build/device E2E ON ghi tại `docs/audits/xieji-vol10-activation.md`. Next: review release candidate, merge readiness #31 trước, retarget activation vào main; merge/deploy khi owner cho phép. Chưa production smoke.
 
 Gate ON hoàn tất: build/E2E hiện có 311 pass / 49 skip; 9 smoke mới pass sau khi sửa thao tác test (không sửa product). Tổng 320 pass / 49 skip. Counters ON/OFF trùng PR #31.
+
+
+## 38. 卷十 ON — MERGED & DEPLOYED, 10/10/2026
+
+Owner cho phép chuỗi merge #31 → retarget #32/main → merge #32 → deploy/smoke.
+
+- #31 merge `90fcf02d9f7d6ce2122c18d78af6772cf2e61b6e`.
+- #32 retarget main, merge `4e92cb68de23a62910482668fece4d10ba836cd5`.
+- Checkout main fast-forward; product tree trùng `3aa1451` đã gate ON. Build lại main thành công; chỉ deploy Hosting project `calendar-hana`, không deploy Functions/Firestore.
+- Production flag ON; bundle và thời điểm ở header Release mới nhất. Cả HTML production lẫn JS bundle được verify với local; bundle trùng byte-for-byte.
+- Smoke domain `https://lich.thanhnghiep.top`, 3 ngày × 3 browser = 9 pass; dùng chính `e2e/xieji-vol10-activation.spec.ts` qua config tạm không webServer. Config tạm đã xoá. Screenshots ở `/tmp/xieji-vol10-production-smoke` là scratch, không durable dependency.
+- Local gates ON được kế thừa từ product tree giống hệt: 2927 tests; typecheck/lint; mutation 7/7 + 9/9; E2E 320 pass/49 skip. Không gọi CI green; không chạy iPhone/Firefox/emulator.
+- Rollback: flip flag false, rebuild/redeploy; không sửa independent Golden. Phạm vi authority còn pending giữ nguyên.
+
+Docs release evidence: `docs/audits/xieji-vol10-activation.md`. Roadmap tiếp: Khai trương/Mở hàng trùng heading; 百忌日 khớp activity còn lại; dormant/legacy gods audit; quy tắc chung 卷十; nguồn offline Sát Chủ.
+
+
+------------------------------------------------------------------------
+
+## 39. Handoff tổng hợp — PR #31/#32, 卷十 scoring ON (10/10/2026)
+
+**Đây là trạng thái mới nhất của work trong chat này.** Các phần 36/37 lưu snapshot trước release. Không tiếp tục task “bật flag” hoặc coi production vẫn OFF.
+
+### A. Trạng thái, branch và release
+
+| Hạng mục | Trạng thái / bằng chứng |
+|---|---|
+| Readiness PR #31 | MERGED, merge `90fcf02d9f7d6ce2122c18d78af6772cf2e61b6e`; head `53c80e89d49fff0bcda1d576bf42edbb5afb0de2` |
+| Activation PR #32 | Retarget từ nhánh #31 sang `main`, MERGED; merge `4e92cb68de23a62910482668fece4d10ba836cd5`, head `3aa1451adaa3ae744c0eff6d74ed5a6fa2b80756` |
+| Production | Hosting project `calendar-hana`, domain `https://lich.thanhnghiep.top`; **`xiejiVol10Scoring: true`** |
+| Release time | Deploy hoàn tất; production HTML `Last-Modified` **2026-10-10 09:18:51 UTC = 16:18:51 VN** |
+| Bundle | `/assets/index-Camk5ToH.js`; SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`; remote bytes trùng local build; có `xiejiVol10Scoring:!0` |
+| Handoff PR #33 | Docs-only, `codex/vol10-release-handoff`; đã mở sau deploy. Còn OPEN tại lần kiểm chứng trong chat; chưa được yêu cầu merge. Handoff này được cập nhật tiếp trên cùng nhánh. |
+
+Main được fast-forward rồi build lại trước deploy; product tree của merge `4e92cb6` trùng activation head `3aa1451` đã kiểm chứng. Chỉ chạy `firebase deploy --only hosting --project calendar-hana`; không deploy Functions/Firestore. Không gọi gate local là CI green. GitHub Actions billing bị khoá theo trạng thái đã ghi trước đó; release không phụ thuộc Actions.
+
+### B. Decisions đã chốt và phạm vi
+
+1. Owner cho phép rõ chuỗi **merge #31 → retarget #32/main → merge #32 → deploy → smoke production**; đã hoàn tất.
+2. Bật scorer 卷十 đã có, giới hạn sáu chain: 月建, 月破, 平日, 收日, 閉日, 刼煞 và verdict sau deferral. Không bổ sung rule/weight/authority mới trong activation.
+3. Giữ bảng verdict → điểm đã chốt trước đó; **不註/不忌 bỏ mọi dòng đang áp → activity trung tính**, không tự biến thiếu căn cứ thành ngày tốt.
+4. Giữ **hard warning không làm nhẹ trạng thái xấu**; contribution 百忌日 甲日/乙日 và 土王用事 không đổi bởi scorer.
+5. Giữ **mansion scoring OFF** (`mansion28ScoringEnabled: false`, informational/scoreDelta=0); không reopen astronomy/calendar authority; không gộp calendar/personal layer.
+6. Giữ mọi independent Golden. Samples migration là **observed integration witnesses**, không phải Golden độc lập hay thẩm định chuyên gia thứ hai.
+7. Chưa duyệt scope mới cho gộp Khai trương/Mở hàng, 百忌日 còn lại, dormant/legacy gods hoặc general balancing. Chỉ đề xuất next steps; không tự ship các mục này.
+
+### C. Thuật toán và contract runtime
+
+Pipeline runtime giữ nguyên kiến trúc:
+
+```text
+computeAlmanac → classicalDay + activity contributions
+→ getActivityRecommendations
+→ applyVol10Scoring (manifest flag ON)
+→ cap/status hoạt động
+→ evaluateEventDay (criteria + score/classification + diagnostics)
+→ daily UI/evidence
+```
+
+`applyVol10Scoring(rows, items, {activityId, scope, badGodCap})` chỉ tác động contribution thuộc scored 凶 chain và các source của deciding entry sau 從X論:
+
+| Verdict | Hành vi |
+|---|---|
+| `avoid` | Giữ delta âm; đổi delta dương thành âm cùng độ lớn. Nếu chain chưa có dòng âm, thêm một dòng `xieji10:<entry>:<activity>` −25. Không tạo hard warning mới. |
+| `not_avoided` | Delta âm → 0, status `informational`; giữ dòng dương. |
+| `no_annotation` | Delta khác 0 → 0, status `informational`. |
+| `not_listed` / `undetermined` | Giữ nguyên. Migration 2025–2027 không có event item `undetermined`; không suy phép chấm điểm từ UNKNOWN. |
+
+Các chain dùng chung dòng lấy verdict nghiêm hơn. Added penalty có source `truc` nếu chain có Trực; nếu chỉ god thì `bad_god` nằm trong cap hung thần. Trực không dùng god cap. Dòng touched có `classical {version, entry, verdict, via?, quote}`; phiên bản scoring **`xieji-vol10-scoring-v1`**, khác resolver diagnostics **`xieji-vol10-v2`**. `rawDelta` giữ product weight; explanation mang nguồn 卷十.
+
+Nếu 不註/不忌 làm mọi applied row được bỏ tính, activity là `neutral`, score nền 50; event criterion `event_fit` pass với lý do 不註宜忌. Policy hiện hành giữ `noTabooMeansNeutralUpToSeverity: "high"`; `very_high` vẫn cần căn cứ. Hard-warning activity lấy trạng thái nghiêm hơn: score ≤19 `strong_avoid`, ≤29 `avoid`, còn lại ít nhất `consider`. Production event evaluation cũng đọc hard-warning contribution trực tiếp.
+
+`evaluateEventDay` dùng `isVol10ChainRow` cho `productDelta`, gồm cả added `xieji10:` rows. Các entries 月厭/月刑/月煞/災煞 không được thêm row độc lập chỉ vì có presence; chúng tác động qua deciding verdict/deferral của scored chain. Astronomy/Jie/day operand và authority data không đổi.
+
+### D. Data/schema và proof
+
+- Product mutation duy nhất của PR #32: `shared/almanac-data/manifest.json`, `policies.xiejiVol10Scoring: false → true`. `datasetVersion` vẫn **1.2.1**, schemaVersion **1.1.0**. Không đổi catalog, trọng số, activity ID hoặc independent fixtures.
+- Catalog hiện tại: 32 activities, 11 event profiles; 用事 mapping 29/29 reviewed (single agent reviewer).
+- Golden scorer: `shared/almanac-data/golden-xieji-vol10-scoring.json`, 39 ca, giữ nguyên; correction `GOLDEN_BUG` lịch sử vẫn được ghi trong audit.
+- Report TSV: mỗi dòng `count<TAB>metric`; xuất qua `REPORT_FILE`. Samples JSON: map từ `"<event> <before> → <after>"` sang `{date, event, before:{score,classification}, after:{score,classification}, items:[...]}`; giữ witness đầu tiên theo thứ tự ngày cho 21 transition theo loại event. Không phải exhaustive danh sách mọi event đổi.
+- `xiejiVol10ScoringMigration.test.ts` load **ON và OFF bằng mock manifest tường minh**, không dựa vào production default. Hai phía dùng cùng catalog/policy mới; so sánh 1095 ngày 2025–2027, 32 activity, 11 event tại hour 9.
+- Assertion: không mất original contribution key; mọi row đổi/thêm có acted verdict của scored chain; unrelated row giữ nguyên toàn bộ; hardWarning bit giữ nguyên; applied hard warning giữ mức trạng thái; 0 undetermined event items. Historical baseline 1.2.1 là proof riêng, không thay bằng output mới.
+- Năm test migration/Golden lịch sử ghim 卷十 OFF cả hai phía: 修倉庫, Thiên Đức 月表, hard-warning status, 甲日/乙日, 土王用事. Chúng kiểm migration ban đầu; test runtime khác dùng manifest ON. Không sửa Golden để chạy theo điểm mới.
+- Diagnostics test phân biệt added `xieji10:` penalty (nguồn quote/verdict/version 卷十, không có mapping 卷十一) với original audited Trực/god rows; vẫn kiểm các original operand/mapping.
+
+### E. Số đo cuối và các transition cần nhớ
+
+Counters ON/OFF sau activation khớp báo cáo readiness PR #31 (chỉ khác newline cuối khi ghi file). Tổng không đổi sau chuyển production default vì OFF đã được mock tường minh.
+
+| Metric | Sau #25–#29 |
+|---|---:|
+| Dates / activity / event | 1095 / 32 / 11 |
+| Activity scores đổi | 3968 |
+| Event scores đổi | 1662 / 12045 |
+| Event classifications đổi | 652 |
+| Changed `no_annotation` rows | 1622 |
+| Changed `not_avoided` rows | 1482 |
+| Changed `avoid` rows | 181 |
+| Added penalty rows | 1205 |
+| Tagged unchanged rows | 8043 |
+
+Event classification: `not_recommended → recommended` 231; `not_recommended → caution` 157; `caution → recommended` 112; `caution → not_recommended` 77; `insufficient_evidence → not_recommended` 49; `recommended → caution` 19; `recommended → not_recommended` 7. Không event nào chuyển vào `insufficient_evidence`.
+
+Rows đổi/thêm: warehouse 137, warehouse_opening 171, business 182. So với lần đo sau #21/#23, event score changed vẫn 1662 nhưng **classification không còn giống**: 244→231 ca not_recommended→recommended, 172→157 ca →caution. Không dùng tổng đổi điểm bằng nhau để suy conclusion không đổi.
+
+Ca tiêu biểu (hour 9): 2025-01-21 wedding 65/not_recommended → 87.5/recommended; 2025-02-11 groundbreaking 27.5/not_recommended → 72.5/recommended; 2025-02-13 buy_property null/insufficient_evidence → 12.5/not_recommended; 2025-03-11 move_house 65/recommended → 32.5/not_recommended; 2025-11-14 open_business 68/recommended → 23/not_recommended.
+
+### F. File đã tạo và file sửa trong chat
+
+**Mới, tracked/durable:**
+
+- `docs/audits/xieji-vol10-post-pr29.tsv` — toàn bộ counters readiness.
+- `docs/audits/xieji-vol10-post-pr29-samples.json` — 21 observed transition witnesses.
+- `docs/audits/xieji-vol10-activation.md` — scope activation, isolation, gates, release và rollback evidence.
+- `shared/lunar/xiejiVol10Activation.test.ts` — real-manifest ON assertions, 21 samples, 月破/月厭 smoke contexts, mansion scoring OFF.
+- `e2e/xieji-vol10-activation.spec.ts` — rendered production-path smoke cho 3 ngày; dùng fixture browser tạm.
+
+**Sửa:** `PROJECT_CONTEXT.md`, `docs/audits/xieji-vol10-scoring-migration.md`, `shared/almanac-data/manifest.json`, `shared/lunar/xiejiVol10ScoringMigration.test.ts`, `shared/lunar/xiejiDiagnostics.test.ts`, `shared/lunar/xiejiConditionalMigration.test.ts`, `shared/lunar/tianDeYuebiao.test.ts`, `shared/lunar/hardWarningStatus.test.ts`, `shared/lunar/baijiGiapAt.test.ts`, `shared/lunar/thoVuongDungSu.test.ts`.
+
+Config `.tmp-vol10-production.config.ts` và probe `xiejiSmokeProbe.test.ts` chỉ dùng scratch, **đã xoá**. Screenshots/logs/report dưới `/tmp` hoặc `test-results/` không phải dependency bền vững. `.gitignore` và generated `graphify-out/` changes của user được giữ nguyên, không stage/commit. Graph đã chạy AST-only update sau code edits; không rebuild semantic docs hoặc commit generated churn.
+
+### G. Validation và smoke production
+
+- Readiness OFF: 155 files / 2903 tests; E2E 311 pass/49 skip.
+- Activation ON: **156 files / 2927 tests**, typecheck/lint/build pass. Sau format cuối, nearest tests diagnostics+activation 27/27 pass.
+- Mutation chạy **tuần tự**, trước build/E2E: annual 7/7 + mansion 9/9 killed; source được restore. Readiness có một E2E run trùng mutation/build, đã bỏ kết quả và chạy lại clean.
+- Local ON E2E existing: desktop 104 pass/16 skip; mobile Pixel 7 119/1; desktop Safari WebKit 88/32. Chín smoke mới rerun pass sau khi sửa **test navigation**: Cưới hỏi không có ô “Giờ dự kiến”, và có ngày nằm trong details thu gọn. Không sửa product để chữa smoke. Tổng **320 pass/49 skip**.
+- Production: **9/9 pass**, ba ngày × ba browser, dùng chính smoke spec qua baseURL production, không local webServer. Profile sinh giả lưu trong browser context local tạm, không đăng nhập hay ghi record vào tài khoản user.
+- UI: 2025-01-21 Cưới hỏi **Thuận lợi**; 2025-03-17 (Month Jian 卯, 月破) **Không thuận lợi**; 2025-12-09 (Month Jian 子, 月厭/deferral) **Không thuận lợi**. UI smoke theo default event context (không nhập hour); integration/migration dùng hour 9 theo proof contract.
+- Chưa chạy iPhone/Firefox/emulator cho release này. Safari đã chạy là **desktop WebKit**, không phải chứng nhận iPhone thật. Không claim coverage cho các device/gate chưa chạy.
+
+### H. Vấn đề chưa giải quyết
+
+1. **Khai trương (`opening`) và Mở hàng (`business`)** cùng 開市, khác trọng số Trực; chưa quyết gộp/ẩn, chưa đổi ID/label mới.
+2. **百忌日 còn lại** cho activity đã có: 巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病; các heading khác chưa có activity không được tự map. Cần owner scope/điểm, Golden trước code. Giữ chú 巳日 không 宜 出師遣使 và 酉日 không 宜 慶賜賞賀 trong audit interpretation.
+3. **21/44 thần không có presence** và **14 thần legacy tháng âm**: số inventory audit cũ, không hiểu là toàn catalog hiện tại 47 thần đã source-lock. Cần audit riêng bằng 月表; không đổi blanket sang Month Jian.
+4. **General 卷十 balancing** (“凡吉足勝凶…”, “凡吉凶相抵…”) và phần 宜 theo thần chưa mã hoá. Activation chỉ six-chain subset.
+5. **Warehouse:** 修倉庫 điều kiện co-presence chưa mã hoá; 卷十 鋪註條例 ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 chưa mã hoá. 百忌日 vẫn áp theo 專忌 đã chọn. Không suy việc bật scorer đã giải quyết các ngoại lệ này.
+6. **土王用事 SOURCE_DEPENDENT:** đếm ngày/thời khắc, biên 「後」, 時憲書/定氣, 德 có 止忌 như 土府 không; 補垣/開渠穿井 chưa có mapping activity; waterworks chưa được chứng minh tương đương.
+7. **Sát Chủ:** vẫn SOURCE_DEPENDENT, cần nguồn offline tiền hiện đại; month basis/lunar leap semantics chưa chứng nhận. Không suy từ Thụ Tử hay chuyển Month Jian.
+8. **Interpretation review:** mansion 115/115 và 用事 29/29 là single reviewer (agent), chưa có chuyên gia thứ hai; other editions/scopes không được chứng nhận. Five narrow construction scopes giữ unmapped theo owner. Mansion scoring tiếp tục OFF.
+9. **Coverage/docs:** iPhone/Firefox/emulator chưa chạy; 月表 tháng 6/7/9/10/12 có scan mới đọc một phần; audit headers cũ ở các Phase trước vẫn có thể là snapshot trước release. Dùng header latest/section39 để xác định production.
+10. **Handoff PR #33** chưa merge; không coi docs commit là production release mới hoặc tự deploy lại vì docs.
+
+### I. Next steps và rollback
+
+1. Hoàn tất/review **PR #33 handoff**, merge khi owner yêu cầu; docs-only, không cần redeploy.
+2. Đề xuất scope nhỏ nhất cho duplicate 開市: xác định khác biệt `opening`/`business`, consumer/event references và chọn gộp/ẩn; cần owner quyết định vì thay đổi UX/taxonomy.
+3. Sau đó xử lý sáu 百忌日 đã có activity: source/interpretation → independent Golden đóng băng → dayChi/preserve_bad → migration diff → gate → PR; không nhập thêm unmapped activity chỉ để đủ bảng.
+4. Audit dormant/legacy gods theo từng authority, sau đó general balancing/宜; tách provenance/presence thay đổi khỏi release chấm điểm khác để có diff review rõ.
+5. Tiếp tục nguồn offline Sát Chủ và unresolved 土王用事 theo scope riêng. Không reopen astronomy, không bật mansion scoring chỉ vì 卷十 đã ON.
+
+Rollback nếu cần: change `xiejiVol10Scoring` về false trên nhánh riêng, rebuild và deploy Hosting; kiểm bundle OFF và smoke so readiness path. Không sửa independent Golden. Hai activation assertions về default ON và UI smoke expectations phải được review theo rollback contract; ON/OFF migration vẫn hữu ích. Không deploy binary cũ mơ hồ hoặc rollback toàn authority không liên quan.
+
+Starter prompt cho chat mới:
+
+> Đọc PROJECT_CONTEXT.md header latest, phần 2/24/39. PR #31 readiness và #32 activation đã merge/deploy; main release 4e92cb6, production 卷十 flag ON, bundle index-Camk5ToH.js trùng local. Local ON 2927 tests + E2E320/49skip; production smoke9/9 desktop/mobile/Safari. PR #33 docs handoff còn chờ merge. Giữ mansion scoring OFF, Golden độc lập, core astronomy/Jie và calendar/personal separation. Next scope: Khai trương/Mở hàng trùng 開市, sáu 百忌日 đã có activity, hoặc audit dormant/legacy gods; chưa scope mới nào được duyệt.

@@ -1,8 +1,8 @@
 # 卷十 scoring activation — release candidate
 
-Status: **PREPARED LOCALLY, NOT MERGED OR DEPLOYED**. Production remains OFF until the activation release is merged, built and deployed.
+Status: **MERGED & DEPLOYED — PRODUCTION ON**, 2026-10-10.
 
-Base: readiness PR #31 (`53c80e8`) on top of `43d6303`; branch `codex/enable-xieji-vol10-scoring`. PR #31 is still open, so this release PR is stacked on its branch. No merge or deployment is part of preparation.
+Base: readiness PR #31 (`53c80e8`) on top of `43d6303`; branch `codex/enable-xieji-vol10-scoring`. The activation PR #32 was prepared stacked on #31, then retargeted to main after #31 merged; both are now merged.
 
 ## Product change
 
@@ -37,3 +37,14 @@ Rollback is a separate change restoring `xiejiVol10Scoring` to false, followed b
 ## Remaining scope limitations
 
 The general 吉凶 balancing rules, unencoded 開倉庫出貨財 exception, warehouse co-presence condition, dormant/legacy god audits, 土王用事 source-dependent conventions and second expert interpretation review remain unresolved. Activating this reviewed six-chain subset does not certify them. No astronomy authority is reopened.
+
+
+## Production release evidence
+
+Owner authorized the merge/retarget/deploy/smoke sequence. PR #31 merged as `90fcf02d9f7d6ce2122c18d78af6772cf2e61b6e`; PR #32 retargeted to main and merged as `4e92cb68de23a62910482668fece4d10ba836cd5`. Main product tree matches the validated activation head `3aa1451` exactly. Build on merged main passed.
+
+`firebase deploy --only hosting --project calendar-hana` completed successfully. Domain `https://lich.thanhnghiep.top` references `/assets/index-Camk5ToH.js`; remote bytes equal the local build, SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`. The deployed bundle contains `xiejiVol10Scoring:!0`. Production HTML Last-Modified: 2026-10-10 09:18:51 UTC / **16:18:51 Vietnam time**.
+
+Production Playwright smoke passed **9/9**: all three dates on desktop Chromium, mobile Pixel 7 Chromium and desktop Safari/WebKit. Wedding 2025-01-21 renders **Thuận lợi**; 2025-03-17 and 2025-12-09 render **Không thuận lợi**. The browser birth profile was temporary local context data, not an authenticated user record. The production-only Playwright config was removed. Scratch screenshots/logs under `/tmp` are not required for future builds.
+
+No Functions/Firestore deployment, no mansion scoring activation, no new authority migration. Existing local ON checks are reused because the deployed product tree matches the checked head; CI success is not claimed.
