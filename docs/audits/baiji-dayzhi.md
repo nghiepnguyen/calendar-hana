@@ -1,6 +1,6 @@
 # 卷十 百忌日: 寅日 祭祀, 酉日 宴會, 申日 安牀, 未日 求醫療病
 
-Status: **IMPLEMENTED — changes activity scores, no event changes** (owner decision 2026-10-10, P1). Branch `feature/baiji-dayzhi-activities`. Same mechanism as [baiji-giap-at.md](baiji-giap-at.md) (PR #26), keyed on the day branch instead of the stem.
+Status: **IMPLEMENTED — changes activity scores, no event changes** (owner decision 2026-10-10, P1). Branch `feature/baiji-dayzhi-activities`, PR #40. Same mechanism as [baiji-giap-at.md](baiji-giap-at.md) (PR #26), keyed on the day branch instead of the stem.
 
 ## Source
 
