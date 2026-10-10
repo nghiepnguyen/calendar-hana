@@ -45,7 +45,7 @@ Events: event-mapping.json (11 profile, primary/supporting/conditional).
 | `construction` | Xây dựng | construction | `construction_general` | groundbreaking |
 | `renovation` | Sửa chữa | construction | `renovation` | — |
 | `beam_raising` | Thượng lương | construction | `beam_raising` | — |
-| `warehouse` | Sửa kho | business | `warehouse` | — |
+| `warehouse` | Sửa kho | construction | `warehouse` | — |
 | `warehouse_opening` | Mở kho xuất hàng | business | `warehouse_opening` | — |
 | `planting` | Trồng trọt | agriculture | `planting` | — |
 | `livestock` | Chăn nuôi / Nạp súc | agriculture | `livestock` | — |
@@ -87,5 +87,5 @@ Kết quả local 10/10/2026: `npm test` **137 files / 2.761 tests passed**; `np
 
 ## Cập nhật 10/10/2026 (owner)
 
-- `warehouse` tách đôi: **Sửa kho** (修倉庫, giữ ID, quy tắc không đổi) và **Mở kho xuất hàng** (`warehouse_opening`, 開倉庫出貨財 chép mới từ 卷十一). Cụm từ legacy "mở kho" trong `mansion-patterns.json` chuyển sang `warehouse_opening`; "nhập kho" giữ ở `warehouse`.
+- `warehouse` tách đôi: **Sửa kho** (修倉庫, giữ ID, quy tắc không đổi; chuyển nhóm `construction` vì 修倉庫 đứng sau 豎柱上梁 trong 卷十一 và cùng bộ kỵ đất 土府/土符/地囊/土王用事後) và **Mở kho xuất hàng** (`warehouse_opening`, 開倉庫出貨財 chép mới từ 卷十一). Cụm từ legacy "mở kho" trong `mansion-patterns.json` chuyển sang `warehouse_opening`; "nhập kho" giữ ở `warehouse`.
 - `business` đổi nhãn **Mở hàng** theo đúng 開市, tách khỏi Ký kết / Giao dịch (立券交易). Quy tắc và sự kiện không đổi.
