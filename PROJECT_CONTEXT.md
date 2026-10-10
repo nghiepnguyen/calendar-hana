@@ -1345,7 +1345,8 @@ Activity evidence product slice    MERGED & DEPLOYED (PR #5)
 Activity interpretation review     MERGED & DEPLOYED (PR #6)
 Sát Chủ months 7/8 alignment      MERGED & DEPLOYED (PR #8)
 Docs: 觜/參 note (PR #9), handoff tracked (PR #10)
-Scan page 觜/參 + 角 quote fix      branch audit/mansion-scan-page-fix (PR chờ merge)
+Scan page 觜/參 + 角 quote fix      MERGED (PR #11) & DEPLOYED (manual hosting)
+Trực/thần context audit (docs)     MERGED (PR #12)
 ```
 
 Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ thống nhất bảng tháng 7/8 giữa hai layer theo biến thể đã chọn); Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
@@ -1353,10 +1354,14 @@ Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ th�
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
 ```text
-8899a875daf26a72ecbaecb1b541598d1bee68ee
+9f9e0fc2e83b6aeb1921ccf0dcc7564e1351a84c
 ```
 
-Latest release: **Sát Chủ months 7/8 alignment**, [PR #8](https://github.com/nghiepnguyen/calendar-hana/pull/8), MERGED & DEPLOYED 2026-10-10 10:37:13 Việt Nam; chi tiết phần 30 (mục “Cập nhật sau release”).
+Latest release: **Scan page 觜/參 + 角 quote fix**, [PR #11](https://github.com/nghiepnguyen/calendar-hana/pull/11) merge `97cebfc`; **deploy thủ công** `firebase deploy --only hosting` từ máy user, hosting `last-modified` 2026-10-10 04:29:51 UTC (11:29:51 VN). Smoke: `/day/2026-10-06` Chủy “trang 66”/`n65.jpg`, `/day/2026-10-07` Sâm “trang 65”/`n64.jpg`. PR #12 (docs + test) merge `9f9e0fc`.
+
+**GitHub Actions không chạy được từ 10/10/2026 04:19 UTC** (“recent account payments have failed or your spending limit needs to be increased”). Main run 38023761172 của PR #11 và CI PR #12 không khởi động. User chọn bỏ qua Actions: gate chạy local (typecheck, lint, 142 files / 2800 tests, mutation 9/9 + 7/7, build, Playwright desktop 104/16 skipped; chưa chạy `test:emulator`), deploy hosting thủ công. Không gọi là CI green.
+
+Release trước: **Sát Chủ months 7/8 alignment**, [PR #8](https://github.com/nghiepnguyen/calendar-hana/pull/8), MERGED & DEPLOYED 2026-10-10 10:37:13 Việt Nam; chi tiết phần 30 (mục “Cập nhật sau release”).
 
 Release trước: **Activity interpretation review**, [PR #6](https://github.com/nghiepnguyen/calendar-hana/pull/6), MERGED & DEPLOYED 2026-10-10 09:46:35 Việt Nam.
 
@@ -1577,7 +1582,7 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 5. Sát Chủ: web không có Hán văn; nếu tiếp tục cần nguồn offline (thư viện Hán Nôm, bản 玉匣記/通書 in ở Việt Nam, sách “Thọ-Mai”/“Lưu-Thị”).
 6. Resolution policy riêng; không majority vote, không tự mở scoring. Scoring mới cần authority/policy audit riêng; chưa gọi Phase 8.
 7. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập.
-8. Quy trình: local validation → branch `audit/**` hoặc `feature/**` (CI chạy trên push) → PR gates → **user cho phép merge** → main CI → deploy → production smoke đúng ngày bị ảnh hưởng → cập nhật handoff qua PR.
+8. Quy trình: local validation → branch `audit/**` hoặc `feature/**` → PR → **user cho phép merge** → deploy → production smoke đúng ngày bị ảnh hưởng → cập nhật handoff qua PR. **Khi Actions bị khoá billing:** chạy đủ gate local (typecheck, lint, `npm test`, mutation runners, build, `npx playwright test --project=desktop`), ghi rõ là local; deploy chỉ khi user đồng ý bằng `npx firebase deploy --only hosting --project calendar-hana` (CLI đăng nhập tài khoản user, build dùng `.env.local`, `VITE_USE_FIREBASE_EMULATOR=false`). Chỉ deploy functions/firestore khi thay đổi đụng tới chúng.
 
 User request mới nhất: tổng kết thread vào handoff này. Không có implementation task đang tồn đọng.
 
