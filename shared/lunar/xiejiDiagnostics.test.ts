@@ -16,6 +16,8 @@ const LOCKED_OR_DAY_RULE = new Set([
   'kiep_sat',
   'tru_than',
   'dinh_nhat',
+  'giap_nhat',
+  'at_nhat',
   'nhan_than_toc',
 ])
 const days = (year: number) =>

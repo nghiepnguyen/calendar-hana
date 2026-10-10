@@ -222,6 +222,10 @@ describe('haircut day rules (Hiệp Kỷ vol. 10–11)', () => {
     })
     expect(resolveDayRuleGods({ can: 0, chi: 0, lunarDay: 1 })).toEqual({
       presentGoodGods: [],
+      presentBadGods: ['giap_nhat'],
+    })
+    expect(resolveDayRuleGods({ can: 2, chi: 0, lunarDay: 1 })).toEqual({
+      presentGoodGods: [],
       presentBadGods: [],
     })
   })

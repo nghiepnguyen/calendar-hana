@@ -1,0 +1,392 @@
+{
+  "version": "golden-baiji-giap-at-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "source": {
+    "primary": "欽定協紀辨方書 (四庫全書本) 卷十 百忌日, Wikisource action=raw SHA-1 prefix 355dc6c8fe2d: 「甲日忌開倉庫出貨財乙日忌栽種丁日忌剃頭…以上所忌」",
+    "secondary": "卷十一 (ce4ed7f23ff9): 開倉庫出貨財 忌 …九空甲日; 栽種 忌 …九焦土符地囊乙日土王用事後",
+    "override": "卷十 鋪註條例: 「凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌」"
+  },
+  "derivation": "Day stem computed independently of the engine from 2000-01-07 = 甲子 (date arithmetic mod 10). Policy written before code, same as dinh_nhat (丁日忌剃頭): a day-stem bad god of tier medium with a preserve_bad override, so the activity carries a hard warning and its status is consider (never recommended). Other activities are untouched.",
+  "cases": [
+    {
+      "date": "2025-03-06",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2025-03-06",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-03-06",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-08-03",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "avoid"
+    },
+    {
+      "date": "2025-08-03",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-08-03",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-01-10",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-01-10",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-01-10",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-06-09",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-06-09",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-06-09",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-11-06",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-11-06",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-11-06",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-04-05",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2027-04-05",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-04-05",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-09-02",
+      "dayStem": "甲",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2027-09-02",
+      "dayStem": "甲",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-09-02",
+      "dayStem": "甲",
+      "activityId": "warehouse",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-03-07",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2025-03-07",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-08-04",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2025-08-04",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-01-01",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-01-01",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-06-10",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-06-10",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-11-07",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2026-11-07",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-04-06",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "consider"
+    },
+    {
+      "date": "2027-04-06",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-09-03",
+      "dayStem": "乙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": true,
+      "hardWarning": true,
+      "status": "avoid"
+    },
+    {
+      "date": "2027-09-03",
+      "dayStem": "乙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-03-08",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-03-08",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-08-05",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2025-08-05",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-01-02",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-01-02",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-06-01",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-06-01",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-11-08",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2026-11-08",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-04-07",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-04-07",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-09-04",
+      "dayStem": "丙",
+      "activityId": "warehouse_opening",
+      "rule": "giap_nhat",
+      "present": false
+    },
+    {
+      "date": "2027-09-04",
+      "dayStem": "丙",
+      "activityId": "planting",
+      "rule": "at_nhat",
+      "present": false
+    }
+  ],
+  "corrections": [
+    {
+      "kind": "POLICY_CHANGE",
+      "date": "2026-10-10",
+      "cases": ["2025-08-03 warehouse_opening", "2027-09-03 planting"],
+      "note": "PR #28 (hardWarningKeepsWorseScoreStatus, owner 2026-10-10): a hard warning takes the stricter of consider and the score status. Both cases score 25 (<= 29), so consider → avoid. Not a GOLDEN_BUG: the frozen expectation followed the policy in force when frozen."
+    }
+  ]
+}

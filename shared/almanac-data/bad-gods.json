@@ -431,6 +431,28 @@
       }
     },
     {
+      "id": "giap_nhat",
+      "han": "甲日",
+      "label": "Ngày Giáp (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["warehouse_opening"],
+      "sourceRef": "協紀辨方書 卷十一 開倉庫出貨財; 卷十 百忌日 \"甲日忌開倉庫出貨財\"",
+      "rule": {
+        "dayCan": [0]
+      }
+    },
+    {
+      "id": "at_nhat",
+      "han": "乙日",
+      "label": "Ngày Ất (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["planting"],
+      "sourceRef": "協紀辨方書 卷十一 栽種; 卷十 百忌日 \"乙日忌栽種\"",
+      "rule": {
+        "dayCan": [1]
+      }
+    },
+    {
       "id": "nhan_than_toc",
       "han": "每月十二日十五日",
       "label": "Nhân Thần (ngày 12, 15 âm)",
