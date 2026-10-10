@@ -6,6 +6,14 @@
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
 
+## Release mới nhất — 卷十 ON, 10/10/2026
+
+**PR #31/#32 đã MERGED; production `xiejiVol10Scoring = true`.** Main release `4e92cb68de23a62910482668fece4d10ba836cd5`. Deploy Hosting thủ công hoàn tất, production `Last-Modified` **09:18:51 UTC (16:18:51 VN)**. Bundle `index-Camk5ToH.js`, SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`, byte-for-byte trùng build local; có `xiejiVol10Scoring:!0`.
+
+Production smoke **9/9 pass** (desktop Chromium, mobile Pixel 7, desktop Safari/WebKit; browser context tạm): Cưới hỏi 2025-01-21 **Thuận lợi**; 2025-03-17 (卯月 月破) và 2025-12-09 (子月 月厭) **Không thuận lợi**. Không nhập profile vào tài khoản thật; ngày sinh chỉ lưu local trong context tạm. Không đổi mansion scoring.
+
+Các mục 36/37 là snapshot readiness trước release; trạng thái mới nhất tại đây và phần 38. **Next ưu tiên: nhãn Khai trương/Mở hàng cùng 開市**, rồi 百忌日 còn lại, audit 21 thần vắng mặt/14 bảng tháng âm. Không còn việc chờ bật 卷十.
+
 ## 1. Project overview
 
 **Project:** `calendar-hana`\
@@ -81,7 +89,7 @@ production.
 
 Thứ tự ưu tiên (chi tiết phần 23):
 
-1. **Bật `xiejiVol10Scoring`** — đo lại migration sau #25–#29, owner quyết bật.
+1. **Bật `xiejiVol10Scoring` — DONE, PR #31/#32 MERGED & DEPLOYED**; đo lại và release evidence ở phần 36–38.
 2. Gộp/ẩn một trong “Khai trương” / “Mở hàng” (cùng 開市).
 3. 百忌日 còn lại cho activity đã có (巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病).
 4. 21/44 thần không bao giờ có mặt và 14 thần legacy tháng âm → audit bằng 月表.
@@ -2197,3 +2205,18 @@ Migration proof ghim cả ON/OFF; 5 test migration/Golden lịch sử ghim OFF. 
 Gate: typecheck/lint; 156 files / 2927 tests pass; mutation tuần tự 7/7 + 9/9. Build/device E2E ON ghi tại `docs/audits/xieji-vol10-activation.md`. Next: review release candidate, merge readiness #31 trước, retarget activation vào main; merge/deploy khi owner cho phép. Chưa production smoke.
 
 Gate ON hoàn tất: build/E2E hiện có 311 pass / 49 skip; 9 smoke mới pass sau khi sửa thao tác test (không sửa product). Tổng 320 pass / 49 skip. Counters ON/OFF trùng PR #31.
+
+
+## 38. 卷十 ON — MERGED & DEPLOYED, 10/10/2026
+
+Owner cho phép chuỗi merge #31 → retarget #32/main → merge #32 → deploy/smoke.
+
+- #31 merge `90fcf02d9f7d6ce2122c18d78af6772cf2e61b6e`.
+- #32 retarget main, merge `4e92cb68de23a62910482668fece4d10ba836cd5`.
+- Checkout main fast-forward; product tree trùng `3aa1451` đã gate ON. Build lại main thành công; chỉ deploy Hosting project `calendar-hana`, không deploy Functions/Firestore.
+- Production flag ON; bundle và thời điểm ở header Release mới nhất. Cả HTML production lẫn JS bundle được verify với local; bundle trùng byte-for-byte.
+- Smoke domain `https://lich.thanhnghiep.top`, 3 ngày × 3 browser = 9 pass; dùng chính `e2e/xieji-vol10-activation.spec.ts` qua config tạm không webServer. Config tạm đã xoá. Screenshots ở `/tmp/xieji-vol10-production-smoke` là scratch, không durable dependency.
+- Local gates ON được kế thừa từ product tree giống hệt: 2927 tests; typecheck/lint; mutation 7/7 + 9/9; E2E 320 pass/49 skip. Không gọi CI green; không chạy iPhone/Firefox/emulator.
+- Rollback: flip flag false, rebuild/redeploy; không sửa independent Golden. Phạm vi authority còn pending giữ nguyên.
+
+Docs release evidence: `docs/audits/xieji-vol10-activation.md`. Roadmap tiếp: Khai trương/Mở hàng trùng heading; 百忌日 khớp activity còn lại; dormant/legacy gods audit; quy tắc chung 卷十; nguồn offline Sát Chủ.
