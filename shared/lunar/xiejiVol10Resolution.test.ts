@@ -69,15 +69,21 @@ describe('協紀 卷十 resolution, hand-derived cases', () => {
     expect(verdict(withDe, 'yue_po', 'worship')).toBe('not_listed')
     expect(verdict(day('子', '甲午', 'pha', ['nguyet_pha']), 'yue_po', 'cleaning')).toBe('avoid')
   })
-  it('月建: 德 limits taboo to earthwork; unknown 天赦/月恩/四相 cannot be assumed absent', () => {
+  it('月建: 德 limits taboo to earthwork; unknown 天德 on a trigram month cannot be assumed absent', () => {
     expect(verdict(day('寅', '丙寅', 'kien', ['nguyet_duc']), 'yue_jian', 'wedding')).toBe(
       'not_avoided',
     )
     expect(verdict(day('寅', '丙寅', 'kien', ['nguyet_duc']), 'yue_jian', 'construction')).toBe(
       'avoid',
     )
-    expect(verdict(day('寅', '甲寅', 'kien'), 'yue_jian', 'wedding')).toBe('undetermined')
-    expect(verdict(day('子', '甲子', 'kien'), 'yue_jian', 'wedding')).toBe('undetermined')
+    // 寅 month 甲寅: no 德/合, not 天赦 (戊寅), not 月恩 (丙) or 四相 (丙丁) → as usual.
+    expect(verdict(day('寅', '甲寅', 'kien'), 'yue_jian', 'wedding')).toBe('avoid')
+    // 卯 month 天德 is 坤 (unknown); 乙卯 carries no other listed virtue.
+    expect(verdict(day('卯', '乙卯', 'kien', [], ['thien_duc']), 'yue_jian', 'wedding')).toBe(
+      'undetermined',
+    )
+    // 子 month 甲子 is 天赦 (冬甲子): 月建 從月厭, 厭建會 with 天赦 → as usual.
+    expect(verdict(day('子', '甲子', 'kien'), 'yue_jian', 'worship')).toBe('not_listed')
   })
   it('月建: 陽錯 day ignores 德; 陰陽小會 day is all taboo', () => {
     expect(verdict(day('未', '己未', 'kien', ['nguyet_duc']), 'yue_jian', 'wedding')).toBe('avoid')

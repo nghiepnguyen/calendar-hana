@@ -23,4 +23,6 @@ export interface Evidence {
   rawDelta: number
   hardWarning?: boolean
   label: string
+  /** 協紀 卷十 verdict that adjusted this row (only with `xiejiVol10Scoring` on). */
+  classical?: { version: string; entry: string; verdict: string; via?: string; quote: string }
 }

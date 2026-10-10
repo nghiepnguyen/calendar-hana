@@ -11,6 +11,7 @@ import {
 import { ENGINE_VERSION, type Evidence } from './evidence'
 import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
 import { resolveVol10, type Vol10Resolution } from './xiejiVol10Resolution'
+import { isVol10ChainRow } from './xiejiVol10Scoring'
 import trucData from '../almanac-data/truc.json'
 
 export { ENGINE_VERSION } from './evidence'
@@ -44,7 +45,7 @@ export interface EventEvaluation {
   conflictAnalysis: ConflictAnalysis
   /** 協紀 卷十 conclusion per present source-locked 凶 and event activity; never affects score. */
   classicalResolution: {
-    version: 'xieji-vol10-v1'
+    version: 'xieji-vol10-v2'
     items: (Vol10Resolution & { productDelta: number; diverges: boolean })[]
   }
 }
@@ -86,7 +87,7 @@ export function evaluateEventDay(
     contributions: [],
     warnings: [],
     conflictAnalysis: analyzeEvidenceConflicts([], {}),
-    classicalResolution: { version: 'xieji-vol10-v1', items: [] },
+    classicalResolution: { version: 'xieji-vol10-v2', items: [] },
   }
   const profile = getEventProfile(eventId)
   if (!profile) return { ...base, warnings: ['Chưa có mapping cho sự kiện này.'] }
@@ -150,9 +151,15 @@ export function evaluateEventDay(
         ? outcome('pass', 'Việc nhỏ, không gặp ngày kỵ nào trong nguồn: xem là bình thường.')
         : primary.status === 'no_evidence'
           ? outcome('unknown', 'Chưa có quy tắc được tính điểm cho hoạt động chính.')
-          : primary.hardWarning || primary.negativeMagnitude > 0
-            ? outcome('fail', 'Hoạt động chính có yếu tố bất lợi hoặc cảnh báo nghiêm trọng.')
-            : outcome('pass', 'Hoạt động chính có quy tắc phù hợp.')
+          : primary.status === 'neutral' &&
+              !primary.contributions.some((row) => row.status === 'applied')
+            ? outcome(
+                'pass',
+                'Theo 協紀 卷十, hoạt động chính không bị ghi kỵ (不註宜忌 / 不忌): xem là trung tính.',
+              )
+            : primary.hardWarning || primary.negativeMagnitude > 0
+              ? outcome('fail', 'Hoạt động chính có yếu tố bất lợi hoặc cảnh báo nghiêm trọng.')
+              : outcome('pass', 'Hoạt động chính có quy tắc phù hợp.')
     if (id === 'good_hour') {
       if (input.hour === undefined)
         return outcome('unknown', 'Chọn giờ dự kiến để đánh giá giờ phù hợp.')
@@ -241,7 +248,7 @@ export function evaluateEventDay(
     // Mansion, Trực and source-locked/day-rule gods; legacy rows stay unresolved (no authority).
     conflictAnalysis: analyzeEvidenceConflicts(unique, day.selectionContext),
     classicalResolution: {
-      version: 'xieji-vol10-v1',
+      version: 'xieji-vol10-v2',
       items: resolveVol10(
         {
           monthJianBranch: day.selectionContext.MONTH_JIAN_BRANCH,
@@ -253,31 +260,14 @@ export function evaluateEventDay(
         },
         [...new Set(roles.map((role) => role.activityId))],
       ).map((item) => {
-        // Product rules standing for the same 凶: its Trực, and for 月破 also the subsumed god.
-        const sources: Record<string, { truc?: string; god?: string }> = {
-          yue_jian: { truc: 'kien' },
-          yue_po: { truc: 'pha', god: 'nguyet_pha' },
-          ping_ri: { truc: 'binh' },
-          shou_ri: { truc: 'thu' },
-          bi_ri: { truc: 'be' },
-          jie_sha: { god: 'kiep_sat' },
-        }
-        // After 從X論 the deciding rule's product sources count too (e.g. 收日 → 刼煞).
-        const srcs = [sources[item.entry], item.via ? sources[item.via] : undefined].filter(
-          (x): x is { truc?: string; god?: string } => Boolean(x),
-        )
+        // Product rules standing for the same 凶 (and, after 從X論, the deciding one's).
         const productDelta = unique
           .filter(
             (row) =>
               row.activityId === item.activityId &&
               row.status === 'applied' &&
-              srcs.some(
-                (src) =>
-                  (src.god !== undefined && row.ruleId === src.god) ||
-                  (src.truc !== undefined &&
-                    row.source === 'truc' &&
-                    row.ruleId === `${src.truc}:${item.activityId}`),
-              ),
+              (isVol10ChainRow(row, item) ||
+                row.ruleId.startsWith(`xieji10:${item.via ?? item.entry}:`)),
           )
           .reduce((sum, row) => sum + row.appliedDelta, 0)
         const diverges =

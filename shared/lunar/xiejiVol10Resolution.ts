@@ -1,9 +1,12 @@
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
+import { isMonthlyShaPresent, type MonthlyShaId } from './xiejiMonthlySha'
+import { getVol10VirtuesPresent, VOL10_VIRTUES } from './xiejiVirtues'
 
-/** 協紀辨方書 卷十 宜忌 for six source-locked 凶 entries. Diagnostics only: the result is shown
- * next to the product score and never changes it. Unknown presence or a deferral to an entry that
- * is not transcribed yields `undetermined`, never a guess. */
+/** 協紀辨方書 卷十 宜忌 for source-locked 凶 entries: six present in production and 月厭/月刑/
+ * 月煞/災煞 located by `xiejiMonthlySha`. Diagnostics only: the result is shown next to the product
+ * score and never changes it. Unknown presence or a deferral to an entry that is not transcribed
+ * yields `undetermined`, never a guess. */
 
 export type Vol10Effect =
   'as_usual' | 'only_avoid' | 'still_avoid' | 'not_avoid' | 'cancel_both' | 'avoid_all' | 'defer'
@@ -59,6 +62,7 @@ const NORM: Record<string, string> = {
   徳: '德',
   隂: '陰',
   夘: '卯',
+  葢: '蓋',
 }
 const ALIASES = vol10.headingAliases as Record<string, string[]>
 const VOCAB = [
@@ -91,7 +95,12 @@ export function splitHeadings(text: string): string[] {
 }
 
 const ACTIVITY_HEADINGS = vol11.activityEntries as Record<string, string[]>
-const ENTRIES = vol10.entries as Entry[]
+const ENTRIES = (vol10.entries as Entry[]).map((e) => {
+  // 忌同X: the entry shares another entry's 忌 and 止不忌 lists.
+  const same = (e as { avoidSameAs?: string }).avoidSameAs
+  const src = same ? (vol10.entries as Entry[]).find((x) => x.id === same)! : undefined
+  return src ? { ...e, avoid: src.avoid, notAvoid: src.notAvoid } : e
+})
 const ENTRY_BY_HAN = new Map(ENTRIES.map((e) => [normalize(e.han), e]))
 const GOD_HAN: Record<string, string> = {
   thien_duc: '天德',
@@ -100,18 +109,26 @@ const GOD_HAN: Record<string, string> = {
   nguyet_duc_hop: '月德合',
 }
 
+const VIRTUE_HAN: string[] = VOL10_VIRTUES.map((v) => v.han)
+
 function present(entry: Entry, day: Vol10Day): boolean {
-  const p = entry.presence as { officer?: string; god?: string }
+  const p = entry.presence as { officer?: string; god?: string; table?: MonthlyShaId }
+  if (p.table) return isMonthlyShaPresent(p.table, day.monthJianBranch, day.dayBranch)
   return p.officer ? p.officer === day.officerId : day.presentGods.has(p.god!)
 }
 
 /** true / false / null (cannot decide). */
 function withVirtues(names: string[], day: Vol10Day): boolean | null {
-  const known = new Set([...day.presentGods].map((id) => GOD_HAN[id]).filter(Boolean))
+  const extra = getVol10VirtuesPresent(day.monthJianBranch, day.dayStem, day.dayBranch)
+  const known = new Set<string>([
+    ...[...day.presentGods].map((id) => GOD_HAN[id]).filter(Boolean),
+    ...extra,
+  ])
   const unknown = new Set([...day.unknownGods].map((id) => GOD_HAN[id]).filter(Boolean))
   if (names.some((n) => known.has(n))) return true
-  // Only the four 德/合 gods are source-locked; any other virtue's presence is unknown.
-  if (names.some((n) => !Object.values(GOD_HAN).includes(n) || unknown.has(n))) return null
+  // The four 德/合 gods and 天赦/天願/月恩/四相 are source-locked; any other virtue is unknown.
+  const locked = [...Object.values(GOD_HAN), ...VIRTUE_HAN]
+  if (names.some((n) => !locked.includes(n) || unknown.has(n))) return null
   return false
 }
 

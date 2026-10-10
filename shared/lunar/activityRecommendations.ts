@@ -8,6 +8,8 @@ import xieji from '../almanac-data/xiejibianfangshu-yiji.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
+import { resolveVol10 } from './xiejiVol10Resolution'
+import { applyVol10Scoring } from './xiejiVol10Scoring'
 
 export type ActivityStatus =
   'recommended' | 'neutral' | 'avoid' | 'watch' | 'strong_avoid' | 'consider' | 'no_evidence'
@@ -41,6 +43,10 @@ export interface ActivityInput {
   mansionNature?: 'good' | 'bad'
   /** Explicit presence operands of source-locked or day-rule gods (diagnostics only). */
   godPresence?: Readonly<Record<string, readonly { operand: string; equals: number }[]>>
+  /** Day operands for 協紀 卷十 (Month Jian branch, day stem/branch); needed for its scoring. */
+  classicalDay?: { monthJianBranch: number; dayStem: number; dayBranch: number }
+  /** Overrides `manifest.policies.xiejiVol10Scoring` (tests and migration proof). */
+  xiejiVol10Scoring?: boolean
 }
 
 export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'
@@ -83,6 +89,19 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     ...(input.presentGoodGods === undefined ? ['Chưa truyền danh sách cát thần theo ngày.'] : []),
     ...(input.presentBadGods === undefined ? ['Chưa truyền danh sách hung thần theo ngày.'] : []),
   ]
+  const vol10Enabled =
+    (input.xiejiVol10Scoring ?? manifest.policies.xiejiVol10Scoring) && input.classicalDay
+  const vol10Items = vol10Enabled
+    ? resolveVol10(
+        {
+          ...input.classicalDay!,
+          officerId: input.officerId,
+          presentGods: new Set(Object.keys(input.godPresence ?? {})),
+          unknownGods: new Set(),
+        },
+        activitiesData.items.filter((item) => item.enabled).map((item) => item.id),
+      )
+    : []
   return activitiesData.items
     .filter((item) => item.enabled)
     .map((activity) => {
@@ -189,6 +208,16 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             scoreDelta: 0,
           })),
       )
+      if (vol10Enabled)
+        contributions.splice(
+          0,
+          contributions.length,
+          ...applyVol10Scoring(contributions, vol10Items, {
+            activityId: activity.id,
+            scope: getActivityScope(activity.id) ?? activity.id,
+            badGodCap: badGodsData.capPerActivity,
+          }),
+        )
       const applied = contributions.filter((row) => row.status === 'applied')
       const positiveMagnitude = applied.reduce((sum, row) => sum + Math.max(0, row.scoreDelta), 0)
       const negativeMagnitude = applied.reduce(
@@ -199,21 +228,31 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
       const personalModifier = input.personalModifier ?? 0
       const score = clamp(generalScore + personalModifier)
       const hardWarning = contributions.some((row) => row.hardWarning)
-      const status: ActivityStatus = !applied.length
-        ? 'no_evidence'
-        : hardWarning && manifest.policies.hardVetoFromClassicalJi
-          ? 'strong_avoid'
-          : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
-            ? 'consider'
-            : score <= 19
-              ? 'strong_avoid'
-              : score <= 29
-                ? 'avoid'
-                : negativeMagnitude > 0
-                  ? 'watch'
-                  : score >= 65
-                    ? 'recommended'
-                    : 'neutral'
+      // Owner decision 2026-10-10: when 卷十 lifts every applied rule (不註宜忌 / 不忌), the
+      // activity is neutral, not "no evidence" — the source has spoken about it.
+      const classicalNeutral =
+        !applied.length &&
+        contributions.some(
+          (row) =>
+            row.classical?.verdict === 'no_annotation' || row.classical?.verdict === 'not_avoided',
+        )
+      const status: ActivityStatus = classicalNeutral
+        ? 'neutral'
+        : !applied.length
+          ? 'no_evidence'
+          : hardWarning && manifest.policies.hardVetoFromClassicalJi
+            ? 'strong_avoid'
+            : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
+              ? 'consider'
+              : score <= 19
+                ? 'strong_avoid'
+                : score <= 29
+                  ? 'avoid'
+                  : negativeMagnitude > 0
+                    ? 'watch'
+                    : score >= 65
+                      ? 'recommended'
+                      : 'neutral'
       return {
         activityId: activity.id,
         label: activity.label,
