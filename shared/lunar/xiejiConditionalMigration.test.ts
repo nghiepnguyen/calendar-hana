@@ -10,7 +10,7 @@ import eventMappingData from '../almanac-data/event-mapping.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
-import { legacyOpenBusinessMapping } from './legacyEventMapping'
+import { preDedupEventMapping } from './legacyEventMapping'
 
 // Keep this historical migration/Golden independent of later 卷十 activation.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
@@ -96,10 +96,8 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     })
     vi.doMock('../almanac-data/bad-gods.json', noLaterGods)
     vi.doMock('../almanac-data/overrides.json', noBaijiOverrides)
-    // Both sides predate dropping the duplicate 開市 business row from open_business.
-    vi.doMock('../almanac-data/event-mapping.json', () =>
-      legacyOpenBusinessMapping(eventMappingData),
-    )
+    // Both sides predate dropping duplicate-heading supporting activities from events.
+    vi.doMock('../almanac-data/event-mapping.json', () => preDedupEventMapping(eventMappingData))
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))
     const pre = {

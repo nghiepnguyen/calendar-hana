@@ -81,18 +81,13 @@
           "activityId": "contract",
           "role": "primary",
           "multiplier": 1
-        },
-        {
-          "activityId": "transaction",
-          "role": "supporting",
-          "multiplier": 0.5
         }
       ],
       "mustHave": ["calendar_validity", "event_fit"],
       "criteria": ["hoang_dao", "good_hour", "truc", "age_clash", "age_harmony", "taboo_day"],
       "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
       "reviewStatus": "product_spec",
-      "updatedAt": "2026-10-05"
+      "updatedAt": "2026-10-10"
     },
     "buy_property": {
       "severity": "very_high",
@@ -204,11 +199,6 @@
           "activityId": "groundbreaking",
           "role": "primary",
           "multiplier": 1
-        },
-        {
-          "activityId": "construction",
-          "role": "supporting",
-          "multiplier": 0.5
         }
       ],
       "mustHave": ["calendar_validity", "event_fit"],
@@ -223,7 +213,7 @@
       ],
       "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
       "reviewStatus": "product_spec",
-      "updatedAt": "2026-10-05"
+      "updatedAt": "2026-10-10"
     },
     "wedding": {
       "severity": "very_high",

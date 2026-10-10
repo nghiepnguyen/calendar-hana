@@ -7,14 +7,14 @@ import type { SolarDateString } from '../types'
 
 // Release witnesses are observed OFF/ON migration outputs, not independent Golden.
 // This test uses the real production manifest and proves it reaches the reviewed ON path.
-// The witnesses predate dropping business from open_business (kaishiDoubleCountMigration),
-// so that mapping is pinned here.
+// The witnesses predate dropping duplicate-heading supporting activities from events
+// (kaishiDoubleCountMigration, sameHeadingDuplicateMigration), so that mapping is pinned here.
 vi.mock('../almanac-data/event-mapping.json', async (importOriginal) => {
-  const { legacyOpenBusinessMapping } = await import('./legacyEventMapping')
+  const { preDedupEventMapping } = await import('./legacyEventMapping')
   const { default: original } = await importOriginal<{
     default: typeof import('../almanac-data/event-mapping.json')
   }>()
-  return legacyOpenBusinessMapping(original)
+  return preDedupEventMapping(original)
 })
 describe('卷十 production activation', () => {
   it('enables only 卷十 while mansion scoring stays informational', () => {
