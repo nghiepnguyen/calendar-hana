@@ -2,6 +2,8 @@
 
 Status: **IN PROGRESS — Thụ Tử source-locked; Sát Chủ remains source-dependent**
 
+> **Update 2026-10-10:** the calendar Sát Chủ months 7/8 were aligned to the Hán-văn verse (7 Hợi, 8 Sửu) after a printed witness was found; see `docs/audits/sat-chu-ngoc-hap-chanh-tong-witness.md`. The month table below is the pre-update record. Sát Chủ stays `SOURCE_DEPENDENT`; leap-month semantics stay unresolved.
+
 ## Scope
 
 Audit two current legacy hung-star identities independently:
