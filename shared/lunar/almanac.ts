@@ -23,6 +23,8 @@ import { solarTermMonthChi } from './solarTerms'
 import { getThuTuForDate } from './thuTuAuthority'
 import { resolveDayRuleGodPresence, resolveDayRuleGods, resolvePresentGods } from './godMapping'
 import { isThoVuongDungSu } from './thoVuongDungSu'
+import { getXiejiGodPresence, LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
+import { STARS } from './stars.data'
 import manifest from '../almanac-data/manifest.json'
 import goodGodsData from '../almanac-data/good-gods.json'
 import badGodsData from '../almanac-data/bad-gods.json'
@@ -101,14 +103,35 @@ function computeAlmanac(date: SolarDateString): Almanac {
     replaceNames.add('Thiên Đức Hợp')
   }
 
+  // 14 legacy gods: the day-table rows equal the 協紀 rule, but 協紀 reads them on Month Jian, not the
+  // lunar month (docs/audits/dormant-legacy-gods.md). Replace their lunar-month stars.
+  const monthJianStars: Star[] = []
+  const monthJianPresence: Record<string, { operand: string; equals: number }[]> = {}
+  if (manifest.policies.legacyGodsMonthJian) {
+    const present = getXiejiGodPresence(solarTermMonthChi(jd), day.can, day.chi)
+    for (const god of [...goodGodsData.items, ...badGodsData.items]) {
+      if (!LEGACY_LUNAR_GOD_IDS.includes(god.id)) continue
+      replaceNames.add(god.label)
+      if (!present[god.id]) continue
+      const legacy = STARS.find((star) => star.name === god.label)!
+      monthJianStars.push({ name: legacy.name, isGood: legacy.isGood, meaning: legacy.meaning })
+      monthJianPresence[god.id] = present[god.id]!
+    }
+  }
+
   const authorityBadStars: Star[] = thuTu.applies
     ? [{ name: THU_TU_NAME, isGood: false, meaning: THU_TU_MEANING }]
     : []
   const stars = {
-    good: [...legacyStars.good.filter((star) => !replaceNames.has(star.name)), ...lockedStars.good],
+    good: [
+      ...legacyStars.good.filter((star) => !replaceNames.has(star.name)),
+      ...lockedStars.good,
+      ...monthJianStars.filter((star) => star.isGood),
+    ],
     bad: [
       ...legacyStars.bad.filter((star) => !replaceNames.has(star.name)),
       ...lockedStars.bad,
+      ...monthJianStars.filter((star) => !star.isGood),
       ...authorityBadStars,
     ],
   }
@@ -129,6 +152,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
   )
   const godPresence: Record<string, { operand: string; equals: number }[]> = {
     ...resolveDayRuleGodPresence(ruleDay),
+    ...monthJianPresence,
   }
   for (const { name, conditions } of getSourceLockedCatHungPresence(
     monthJianBranch,

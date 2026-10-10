@@ -1,17 +1,35 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import type { SolarDateString } from '../types'
 import { getAlmanac } from './almanac'
 import { ALMANAC_FIXTURES } from './almanac.fixtures'
 import { addDays } from './julian'
 
+// Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+})
+
 // Ba sao licham.vn tính sai, không có trong fixture (xem stars.data.ts).
 const SKIP = new Set(['Thiên Xá', 'Âm Thác', 'Dương Thác'])
 // Source-locked identities have dedicated independent authority/migration/regression gates.
 // Legacy licham.vn fixtures must not override them.
-const AUTHORITY_MIGRATED = new Set(['Thiên Đức', 'Thiên Đức Hợp', 'Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát', 'Thụ Tử'])
+const AUTHORITY_MIGRATED = new Set([
+  'Thiên Đức',
+  'Thiên Đức Hợp',
+  'Nguyệt Đức',
+  'Nguyệt Đức Hợp',
+  'Nguyệt Phá',
+  'Kiếp Sát',
+  'Thụ Tử',
+])
 const names = (stars: { name: string }[]) => stars.map((s) => s.name).filter((n) => !SKIP.has(n))
-const legacyFixtureNames = (stars: readonly string[]) => stars.filter((n) => !AUTHORITY_MIGRATED.has(n))
-const productionLegacyNames = (stars: { name: string }[]) => names(stars).filter((n) => !AUTHORITY_MIGRATED.has(n))
+const legacyFixtureNames = (stars: readonly string[]) =>
+  stars.filter((n) => !AUTHORITY_MIGRATED.has(n))
+const productionLegacyNames = (stars: { name: string }[]) =>
+  names(stars).filter((n) => !AUTHORITY_MIGRATED.has(n))
 
 describe('getAlmanac', () => {
   it('ngày mẫu 25/9/2026', () => {
@@ -30,7 +48,14 @@ describe('getAlmanac', () => {
     expect(names(a.stars.good)).toEqual(['Giải Thần', 'Thanh Long Hoàng Đạo'])
     expect(names(a.stars.bad)).toEqual(['Hoàng Sa', 'Kiếp Sát'])
     expect(a.hours).toHaveLength(12)
-    expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual(['Tý', 'Sửu', 'Thìn', 'Tỵ', 'Mùi', 'Tuất'])
+    expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual([
+      'Tý',
+      'Sửu',
+      'Thìn',
+      'Tỵ',
+      'Mùi',
+      'Tuất',
+    ])
   })
 
   it.each(ALMANAC_FIXTURES)('khớp legacy almanac fixture ngày $date', (f) => {

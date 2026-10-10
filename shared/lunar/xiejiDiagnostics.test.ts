@@ -4,6 +4,7 @@ import { XIEJI_AUTHORITY_ID } from './activityRecommendations'
 import { getSourceLockedCatHungPresence, getSourceLockedCatHungStars } from './catHungStars'
 import { evaluateEventDay } from './eventEvaluation'
 import type { SolarDateString } from '../types'
+import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
 
 // Mappings the interpretation review left for the owner (xieji-activity-mapping-review.json).
 const PENDING = new Set<string>()
@@ -26,6 +27,8 @@ const LOCKED_OR_DAY_RULE = new Set([
   'bach_ky_hoi',
   'nhan_than_toc',
   'tho_vuong_dung_su',
+  // 14 legacy gods read on Month Jian (policy legacyGodsMonthJian).
+  ...LEGACY_LUNAR_GOD_IDS,
 ])
 const days = (year: number) =>
   Array.from({ length: 365 }, (_, i) => {
@@ -112,7 +115,7 @@ describe('Trực and locked gods enter evidence diagnostics without score change
           expect(c.witnesses.some((w) => w.polarity === 'negative')).toBe(true)
           within++
         }
-      // Legacy lunar-month gods never enter as asserted witnesses.
+      // Only audited presences enter as asserted witnesses (the 14 legacy gods now on Month Jian).
       for (const c of result.conflictAnalysis.conflicts)
         for (const w of c.witnesses)
           expect(w.ruleId.includes(':') || LOCKED_OR_DAY_RULE.has(w.ruleId)).toBe(true)

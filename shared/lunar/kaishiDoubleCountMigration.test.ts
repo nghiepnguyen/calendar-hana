@@ -4,6 +4,14 @@ import mapping from '../almanac-data/event-mapping.json'
 import { EVENT_OPTIONS } from './eventMapping'
 import { legacyOpenBusinessMapping } from './legacyEventMapping'
 
+// Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+})
+
 // opening (Khai trương) and business (Mở hàng) both map the 協紀 開市 heading, so listing
 // business as a supporting activity of open_business counted the same Trực/god evidence
 // twice. Removing it is an EXPECTED_AUTHORITY_MIGRATION_CHANGE limited to open_business:

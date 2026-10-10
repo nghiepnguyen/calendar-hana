@@ -6,6 +6,14 @@ import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 import { legacySameHeadingMapping } from './legacyEventMapping'
 
+// Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+})
+
 // Same defect as kaishiDoubleCountMigration: contract/transaction both map 立券交易, and
 // construction maps 興造動土 (+ 營建宮室) like groundbreaking. Each pair shares every Trực weight
 // and god, so the ×0.5 supporting activity only repeated the primary's evidence. Dropping it is
