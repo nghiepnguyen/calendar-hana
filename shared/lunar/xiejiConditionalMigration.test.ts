@@ -90,6 +90,8 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
       'bach_ky_dau',
       'bach_ky_than',
       'bach_ky_mui',
+      'bach_ky_ty',
+      'bach_ky_hoi',
     ]
     const LATER = [...BAIJI, 'tho_vuong_dung_su']
     const noLaterGods = () => ({

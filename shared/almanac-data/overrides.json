@@ -106,6 +106,26 @@
       "activityIds": ["medical"],
       "sourcePolicy": "協紀辨方書 卷十 百忌日 \"未日忌求醫療病\" (專忌): a Mùi day is not marked favourable for seeking medical treatment",
       "enabled": true
+    },
+    {
+      "id": "ty_day_blocks_travel",
+      "when": {
+        "targetPresent": "bach_ky_ty"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["travel"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"巳日忌出行\" (專忌): a Tỵ day is not marked favourable for travel (Xuất hành)",
+      "enabled": true
+    },
+    {
+      "id": "hoi_day_blocks_wedding",
+      "when": {
+        "targetPresent": "bach_ky_hoi"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["wedding"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"亥日忌嫁娶\" (專忌): a Hợi day is not marked favourable for weddings",
+      "enabled": true
     }
   ]
 }

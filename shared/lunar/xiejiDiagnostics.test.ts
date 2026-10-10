@@ -22,6 +22,8 @@ const LOCKED_OR_DAY_RULE = new Set([
   'bach_ky_dau',
   'bach_ky_than',
   'bach_ky_mui',
+  'bach_ky_ty',
+  'bach_ky_hoi',
   'nhan_than_toc',
   'tho_vuong_dung_su',
 ])
