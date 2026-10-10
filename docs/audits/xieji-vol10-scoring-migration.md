@@ -42,12 +42,22 @@ Events (1095 days × 11 events, hour 9): 1,639 scores change. Classification mov
 
 Spot check: 2025-01-21 (庚寅, Month Jian 丑, 除日, 天德/月德 庚, 刼煞): wedding 65 → 87.5, not_recommended → recommended — 卷十 刼煞 “辰戌丑未月值除日…與天德月德…併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌”.
 
+## Re-measure 2026-10-10 (after PR #21 and PR #23)
+
+Branch `audit/xieji-vol10-remeasure`, on top of PR #21 (legacy trigram Thiên Đức removed) and PR #23 (no taboo reads as neutral up to high severity). `REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts`, same 1095 days, flag mocked on. The figures above are the PR #18 measurement and stay as history.
+
+- **Rows: identical** to the table above (changed no_annotation 1,538; not_avoided 1,395; avoid 181; added −25 1,205). 7,628 rows tagged unchanged.
+- Rows by activity (changed + added; the report now prints them): 191 livestock, 191 finance, 190 travel, 182 each opening/moving/meeting/business/bed_installation, … 137 warehouse, 49 contract, 49 transaction.
+- Activity status moves: watch → recommended 1,045; watch → neutral 877; no_evidence → avoid **842** (was 834); avoid → neutral 191; watch → strong_avoid 133; recommended → watch 123; watch → avoid 100; neutral → watch 95; avoid → watch 74; recommended → avoid 41; neutral → avoid 33; strong_avoid → watch 10.
+- Events (1095 × 11, hour 9): **1,662** scores change (was 1,639). Classification: not_recommended → recommended 244; not_recommended → caution 172; caution → recommended 112; caution → not_recommended 77; insufficient_evidence → not_recommended **49** (was 126); recommended → caution 19; recommended → not_recommended 7. insufficient_evidence → caution (was 59) is gone: PR #23 already reads those days as neutral.
+- Activity ↔ 用事 mapping reviewed: `docs/audits/xieji-activity-mapping-review.md`. 26/28 reviewed; **warehouse (137 rows) and business (182 rows) pending** — owner decision before the flag goes on.
+
 ## Observations for the owner before turning it on
 
 - ~~不註 → no_evidence~~ — owner chose **neutral** (2026-10-10); implemented above.
 - The added −25 (`no_evidence → avoid` 834) comes mostly from 諸事皆忌 days the product never penalised (月煞 on 閉日/平日, 月建 小會/陰位, 月破 卯酉, 月厭 子午 without 天赦).
-- Legacy Thiên Đức/Thiên Đức Hợp stars stay in scoring on 坤/乾/艮/巽 months, although the 月表 shows no 天德 day there — owner: separate ticket/PR ([issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)), full 月表 audit, kept out of this migration proof.
-- Activity ↔ 用事 mapping remains `interpretation_pending` (e.g. travel ↔ 行幸遣使).
+- ~~Legacy Thiên Đức/Thiên Đức Hợp on 坤/乾/艮/巽 months~~ — removed per 月表 in PR #21 ([issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)).
+- Activity ↔ 用事 mapping: reviewed 2026-10-10 except warehouse and business (see re-measure above).
 
 ## Release
 

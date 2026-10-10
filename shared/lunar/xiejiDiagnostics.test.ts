@@ -5,6 +5,8 @@ import { getSourceLockedCatHungPresence, getSourceLockedCatHungStars } from './c
 import { evaluateEventDay } from './eventEvaluation'
 import type { SolarDateString } from '../types'
 
+// Mappings the interpretation review left for the owner (xieji-activity-mapping-review.json).
+const PENDING = new Set(['warehouse', 'business'])
 const LOCKED_OR_DAY_RULE = new Set([
   'thien_duc',
   'thien_duc_hop',
@@ -60,7 +62,9 @@ describe('Trực and locked gods enter evidence diagnostics without score change
         expect(row.activityMapping).toMatchObject({
           version: 'xieji-activity-mapping-v1',
           authorityId: XIEJI_AUTHORITY_ID,
-          reviewStatus: 'interpretation_pending',
+          reviewStatus: PENDING.has(row.activityId)
+            ? 'interpretation_pending'
+            : 'interpretation_reviewed',
           activityId: row.activityId,
         })
         expect(row.exceptions).toEqual([])
@@ -82,7 +86,8 @@ describe('Trực and locked gods enter evidence diagnostics without score change
       const result = evaluateEventDay(date, 'wedding', { hour: 9 })
       for (const c of result.conflictAnalysis.conflicts)
         if (c.authorityIds.includes(XIEJI_AUTHORITY_ID)) {
-          expect(c.reviewPending).toBe(true)
+          // Wedding 嫁娶 is a reviewed mapping; mansion rows never share this authority.
+          expect(c.reviewPending).toBe(false)
           expect(c.witnesses.some((w) => w.polarity === 'positive')).toBe(true)
           expect(c.witnesses.some((w) => w.polarity === 'negative')).toBe(true)
           within++
