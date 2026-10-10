@@ -1346,6 +1346,8 @@ Activity interpretation review     MERGED & DEPLOYED (PR #6)
 Sát Chủ months 7/8 alignment      MERGED & DEPLOYED (PR #8)
 Docs: 觜/參 note (PR #9), handoff tracked (PR #10)
 Scan page 觜/參 + 角 quote fix      MERGED (PR #11) & DEPLOYED (manual hosting)
+修倉庫 conditional fix (data 1.2.1)  MERGED (PR #14) & DEPLOYED (manual hosting)
+Trực/thần diagnostics + 卷十 diag   MERGED (PR #15, #16) & DEPLOYED (manual hosting)
 Trực/thần context audit (docs)     MERGED (PR #12)
 ```
 
@@ -1354,7 +1356,7 @@ Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ th�
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
 ```text
-9f9e0fc2e83b6aeb1921ccf0dcc7564e1351a84c
+7dbf24b9d5270fc60044e4cd674e01810ee70aff
 ```
 
 Latest release: **Scan page 觜/參 + 角 quote fix**, [PR #11](https://github.com/nghiepnguyen/calendar-hana/pull/11) merge `97cebfc`; **deploy thủ công** `firebase deploy --only hosting` từ máy user, hosting `last-modified` 2026-10-10 04:29:51 UTC (11:29:51 VN). Smoke: `/day/2026-10-06` Chủy “trang 66”/`n65.jpg`, `/day/2026-10-07` Sâm “trang 65”/`n64.jpg`. PR #12 (docs + test) merge `9f9e0fc`.
@@ -1566,6 +1568,7 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 7. **Taxonomy/mapping:** door_opening/waterworks đã thêm (PR #6). **Owner quyết định 10/10/2026: không tạo ID** cho 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses) — giữ unmapped/reviewed; đóng thuyền/hạ thủy không có clause trong subset 1880 nên không có căn cứ định nghĩa; lexical “hạ thủy” → water_travel không được chứng nhận.
 8. **Interpretation review là single-reviewer (agent):** Golden diễn giải v2 chưa có thẩm định chuyên gia thứ hai; `interpretation_reviewed` không phải quyền chấm điểm.
 9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. 協紀 卷十一 có 開渠穿井 / 修飾垣墻 (ứng viên), chưa chứng minh tương đương 放水.
+19. **Kế hoạch đưa 卷十 vào điểm — chưa làm** (`docs/plans/xieji-vol10-scoring.md`): cần owner chọn bảng verdict → điểm, trọng số cho ngày kỵ mọi việc, flag `manifest.policies.xiejiVol10Scoring` (mặc định false); proof: golden độc lập 30–50 ca + migration proof (flag off = baseline 1095/1095; flag on = mọi thay đổi giải thích bằng đúng một item 卷十, không từ `undetermined`).
 18. **卷十 resolution (diagnostics, nhánh `audit/xieji-vol10-resolution`, `docs/audits/xieji-vol10-resolution.md`):** chép 6 hung thần đã khoá (月建, 月破, 平日, 收日, 閉日, 刼煞) với điều kiện tháng/德/can-chi; `evaluateEventDay().classicalResolution` cho verdict từng hoạt động + `diverges`. 2025–2027: 1.707/10.920 mục lệch điểm sản phẩm (vd. 刼煞 tháng 寅申 chỉ kỵ quân sự/chữa bệnh). Không đổi điểm. Undetermined 4.540 (cần 月厭/月刑/月煞, 天赦/月恩/四相…). Bật vào điểm cần quyết định riêng.
 17. **Bước (a) — Trực/thần vào diagnostics (nhánh `audit/xieji-diagnostics`):** Trực + 9 thần audited có `activityMapping` (`xieji-activity-mapping-v1`, authority `xiejibianfangshu-vol11`, pending), `conditions` tường minh, `exceptions: []`; `Almanac.selectionContext`; `evaluateEventDay` phân tích mọi contribution. Không đổi điểm. Legacy gods ngoài diagnostics. Tiếp: mã hoá 卷十.
 16. **協紀 修倉庫 conditional clause — fixed (nhánh `audit/xieji-conditional-warehouse`, dataset 1.2.1):** “又收日母倉六合五富天倉與月德四相時德開日併者” chỉ tốt khi cùng có mặt; parser cũ tính vô điều kiện → bỏ Thu→warehouse và warehouse của Lục Hợp/Ngũ Phú/Thiên Thương. 220/1095 ngày đổi điểm warehouse; event verdict không đổi; pre-fix catalog vẫn tái tạo baseline 1095/1095 (`xiejiConditionalMigration.test.ts`). Tổ hợp co-presence chưa mã hoá. 卷十 宜忌 là nguồn cổ điển cho resolution policy (bác bỏ “gặp hung thần là kỵ”, xét theo lực), chưa mã hoá.
