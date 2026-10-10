@@ -41,7 +41,7 @@ Today scores come from 卷十一 per-activity lists with product weights and cap
 
 ## Work that reduces `undetermined` (can be done before or after)
 
-1. Presence audit for 月厭, 月刑, 月煞, 災煞 (never fire today; 30% of undetermined items defer to them) — source-lock each 協紀 definition (Month Jian + day operand), independent golden, then transcribe their 卷十 entries.
+1. Presence audit for 月厭, 月刑, 月煞, 災煞 (never fire today; many undetermined items defer to them — count before starting) — source-lock each 協紀 definition (Month Jian + day operand), independent golden, then transcribe their 卷十 entries.
 2. Presence audit for 天赦, 天願, 月恩, 四相, 時德, 六合 (virtue conditions).
 3. Normalize 天德 trigram tokens (坤/乾/艮/巽) with an independent authority.
 4. Encode 卷十 general rules (“凡吉足勝凶從宜不從忌…”, “凡吉凶相抵不註宜亦不註忌…”) and per-god 宜 sections.
