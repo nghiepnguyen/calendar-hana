@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #42 (+ P3a trên nhánh `audit/dormant-gods`).
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #43 (+ P3b trên nhánh `audit/xieji-god-presence`).
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
@@ -103,7 +103,7 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 |---|---|---|---|---|
 | P1 | **百忌日 không dính event:** 寅/酉/申/未 | DEPLOYED (PR #40) | Còn: chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine; owner quyết) | — |
 | P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | DEPLOYED (PR #42); owner chọn (a), `travel` = Xuất hành | — | — |
-| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | **P3a xong (audit, `docs/audits/dormant-legacy-gods.md`):** cả 35 thần có định nghĩa chữ trong 協紀 (`xieji-god-definitions.json`); 14 bảng legacy + 5 tên gần giống (Phổ Hộ (Hội Hộ), Phi Ma Sát (Tai Sát), Nguyệt Hư (Nguyệt Sát), Nguyệt Yếm Đại Hoạ, Vãng Vong (Thổ Kỵ)) **trùng 12/12 tháng** với 協紀 — chỉ sai cơ sở tháng (âm vs Month Jian), ~20–30% ngày lệch | **P3b:** evaluator presence theo Month Jian từ definitions, chỉ diagnostics → sau đó release chấm điểm riêng (Golden + migration, owner duyệt) | Owner đã chốt (10/10/2026): 往亡 là tên chuẩn, 氣往亡 ghi là tên liên quan (quy tắc khác); 不將 bỏ 六月戊午 (逐陣); 五富 mặc định 順行, 逆行 lưu tham khảo |
+| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | **P3a xong (audit, `docs/audits/dormant-legacy-gods.md`):** cả 35 thần có định nghĩa chữ trong 協紀 (`xieji-god-definitions.json`); 14 bảng legacy + 5 tên gần giống (Phổ Hộ (Hội Hộ), Phi Ma Sát (Tai Sát), Nguyệt Hư (Nguyệt Sát), Nguyệt Yếm Đại Hoạ, Vãng Vong (Thổ Kỵ)) **trùng 12/12 tháng** với 協紀 — chỉ sai cơ sở tháng (âm vs Month Jian), ~20–30% ngày lệch | **P3b (PR #44):** `xiejiGodPresence.ts` presence theo Month Jian, chỉ test/diagnostics (app chưa import); 2025–2027: mọi ngày lệch với production đều do tháng âm ≠ Month Jian; 21 thần sẽ thêm 2.019 lượt thần-ngày. **Tiếp:** release chấm điểm (Golden + migration, owner duyệt) | Owner đã chốt (10/10/2026): 往亡 là tên chuẩn, 氣往亡 ghi là tên liên quan (quy tắc khác); 不將 bỏ 六月戊午 (逐陣); 五富 mặc định 順行, 逆行 lưu tham khảo |
 | P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở | Spec + Golden sau P3 | P3 (cần presence cát thần). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵 |
 | P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | P3 (時德 nằm trong 21 thần vắng mặt) |
 
@@ -125,7 +125,7 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 ### Phụ thuộc
 
 ```text
-P3b presence (diagnostics) ─► P3 chấm điểm ─► P4 cân bằng chung 卷十 ─► P5 warehouse
+P3 chấm điểm (presence theo Month Jian) ─► P4 cân bằng chung 卷十 ─► P5 warehouse
 P4 phải giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵)
 P1, P2, S1, S2, R2: độc lập (P1, P2 đã code)
 ```
@@ -173,4 +173,4 @@ REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `6d7329b`+ (PR #6–#42), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Việc tiếp theo theo bảng ưu tiên §5 (P3b: presence theo Month Jian cho 35 thần, diagnostics). Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main `6d7329b`+ (PR #6–#42), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Việc tiếp theo theo bảng ưu tiên §5 (P3 chấm điểm: đưa `getXiejiGodPresence` vào presence — đổi điểm, cần Golden + migration + owner duyệt). Lịch sử ở `docs/project-context/history.md`.
