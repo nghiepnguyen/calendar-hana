@@ -55,7 +55,7 @@ Exact match. The book does not use the labels Âm/Dương; it distinguishes the 
 
 ### 3. Other same-name variants (pp. 128–133, images 66–68)
 
-Printed alongside, each a separate identity, none to be merged into Sát Chủ by name (read at reduced resolution; re-check on crops before any use):
+Printed alongside, each a separate identity, none to be merged into Sát Chủ by name (rechecked on full-resolution crops, see “Re-read verification”):
 
 - **Giờ Sát-Chủ** (hour): months 1/7 Dần, 2/8 Tỵ, 3/9 Thân, 4/10 Thìn, 5/11 Dậu, 6/12 Mão.
 - **Bốn mùa Sát-chủ**: months 1/5/9 Tý, 2/8/10 Mão, 3/7/11 Ngọ, 4/6/12 Dậu.
@@ -74,7 +74,7 @@ The branches equal the source-locked 受死 sequence (戌 辰 亥 巳 子 午 �
 ### 5. Not supplied by this book
 
 - No convention for leap months, and no statement whether “tháng” is lunar month or solar-term month, for any of the tables above. Sát Chủ leap-month semantics stay **UNRESOLVED**.
-- No 28 Tú verses; only a list of mansions good for weddings (p. 114: Giác, Trương, Đẩu, Phòng, Lâu, Vĩ, Vị, Cơ, Tất, Bích, Chẩn, Khuê, Tinh). Independent of the 1880 Ngọc Hạp content authority; not used to change it. Listing Tinh as good is consistent with treating 星-4 as a consequence line rather than a wedding taboo.
+- No 28 Tú verses; only a list of good wedding days (p. 114, right column): Trực Định, Trực Thành, Đại-hồng-sa, Thiên-Nguyệt-đức hợp, Âm-dương hợp, Nhân-dân hợp, then Giốc (Giác), Chấp, Trương, Bế, Đẩu, Phòng, Lâu, Vĩ, Vị, Cơ, Tất, Bích, Chẩn, Khuê, **Tỉnh** (井). Chấp and Bế are probably Trực names mixed into the list. The list is independent of the 1880 Ngọc Hạp content authority and is not used to change it. It says nothing about Tinh (星).
 - No content for door opening / waterworks or narrow construction activities.
 - 12 Trực appears only as a birth-month fate table (personal), not as day-officer activity rules.
 - Pages 110–127 list many wedding/house-building stars (Thiên Đức, Nguyệt Đức, Bất Tương, Thiên/Địa Hỏa, Tam Tai, Kim Lâu, Hoang Ốc, …). Usable later as secondary witnesses when auditing star context; each needs its own provenance check.
@@ -115,4 +115,22 @@ Impact:
 Still unresolved: primary (pre-modern) text of the verse; leap-month rule; the sub-sources “Thọ-Mai”, “Lưu-Thị”.
 
 Validation (local): `npm test` 141 files / 2798 tests; typecheck, lint, build; mutation gates (mansion 9/9, annual directions 7/7 KILLED); Playwright desktop 104 passed / 16 skipped.
+
+## Re-read verification (2026-10-10)
+
+User request: re-read the tables first read at reduced resolution and record the result. Each table was re-read on a crop of the original page image (about 3200–3500 px per two-page spread, no downscaling of the text area beyond 1500 px per crop). Where a verse and a gloss are both printed, they were compared row by row.
+
+| Table | Page (image) | Verse vs gloss | Result |
+|---|---|---|---|
+| Ngày Sát-Chủ (Thọ-Mai) | 128–129 (66) | 12/12 agree | Confirmed, unchanged (already used in code) |
+| Tháng Sát-Chủ (Lưu-Thị) | 128–129 (66) | verse fully determines 12 rows; gloss agrees | Confirmed = `SAT_CHU_DUONG` |
+| Giờ Sát-Chủ | 129 (66) | 6 pairs of months agree | Confirmed: 1/7 Dần, 2/8 Tỵ, 3/9 Thân, 4/10 Thìn, 5/11 Dậu, 6/12 Mão |
+| Bốn mùa Sát-chủ | 130 (67) | 4 groups agree | Confirmed: 1/5/9 Tý, 2/8/10 Mão, 3/7/11 Ngọ, 4/6/12 Dậu |
+| Ngày Sát-chủ trong bốn mùa | 130 (67) | gloss only | Confirmed: Xuân Ngọ, Hạ Tý, Thu Mùi, Đông Mão |
+| Ngày Thọ-tử (can-chi) | 131 (67) | gloss only | Confirmed: Bính-Tuất, Nhâm-Thìn, Tân-Hợi, Đinh-Tỵ, Mậu-Tý, Bính-Ngọ, Ất-Sửu, Quý-Mùi, Giáp-Dần, Mậu-Thân, Tân-Mão, Tân-Dậu |
+| Ngày Sát-Sư | 132–133 (68) | 12/12 agree | Confirmed: Tỵ, Tý, Mùi, Mão, Hợi, Tuất, Ngọ, Thân, Sửu, Dậu, Dần, Thìn |
+| Tháng Sát-sư | 133 (68) | verse and gloss agree | Confirmed: 1/11 Tý, 2 Sửu, 4 Mão, 3/6/7 Mùi, 9 Ngọ, 5/8/10/12 Dậu. Verse ends “Sát-sư Lưu-thị rõ ràng chẳng sai”, so it is also attributed to Lưu-Thị |
+| Wedding good-day list | 114 (59) | — | **Corrected:** the last entry is Tỉnh (井), not Tinh (星). The earlier note that the list supported reading 星-4 as a consequence line is withdrawn; 星-4 rests only on its own verse |
+
+Coverage: about 25 of 69 page images were viewed; Phần III (selection of days, pp. 106–135) was read in full, Phần I–II only by contents page and sample pages. No OCR was used.
 
