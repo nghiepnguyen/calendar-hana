@@ -1,0 +1,235 @@
+{
+  "version": "golden-baiji-ty-hoi-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "source": {
+    "primary": "欽定協紀辨方書 (四庫全書本) 卷十 百忌日, Wikisource action=raw SHA-1 prefix 355dc6c8fe2d: 「…巳日忌出行…亥日忌嫁娶以上所忌」",
+    "secondary": "卷十一 (ce4ed7f23ff9): 行幸遣使 (出行同) 忌 …四廢五墓往亡巳日; 嫁娶 忌 …五墓往亡八專亥日",
+    "interpretation": "Owner 2026-10-10: `travel` is the user-facing Xuất hành (出行), so 巳日 applies to it. 鋪註條例 「凡巳日忌出行不註宜出師遣使」 only withholds 宜 from 出師遣使 (no catalog activity); not encoded."
+  },
+  "derivation": "Day branch computed independently of the engine from 2000-01-07 = 甲子 (date arithmetic mod 12). Policy written before code, same as PR #26 and #40: a day-branch bad god of tier medium (−10) listed only for its 卷十一 heading, with a preserve_bad override (hard warning, activity never recommended, status = stricter of consider and the score status). Event expectations follow the event policy already in force: wedding is very_high with mustHave event_fit, which fails whenever the primary activity has a hard warning or a negative contribution, so every 亥 day is not_recommended for the wedding event; start_journey (medium, no event_fit) is never recommended on a 巳 day (hard warning → caution, or not_recommended if another mustHave fails), recorded as not_recommended_or_caution.",
+  "cases": [
+    {
+      "date": "2025-02-11",
+      "dayBranch": "亥",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2025-02-11",
+      "dayBranch": "亥",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "wedding",
+      "eventClassification": "not_recommended"
+    },
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2025-02-17",
+      "dayBranch": "巳",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "start_journey",
+      "eventClassification": "not_recommended_or_caution"
+    },
+    {
+      "date": "2025-02-17",
+      "dayBranch": "巳",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2025-07-05",
+      "dayBranch": "亥",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2025-07-05",
+      "dayBranch": "亥",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "wedding",
+      "eventClassification": "not_recommended"
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2025-07-11",
+      "dayBranch": "巳",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "start_journey",
+      "eventClassification": "not_recommended_or_caution"
+    },
+    {
+      "date": "2025-07-11",
+      "dayBranch": "巳",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2026-01-19",
+      "dayBranch": "巳",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "start_journey",
+      "eventClassification": "not_recommended_or_caution"
+    },
+    {
+      "date": "2026-01-19",
+      "dayBranch": "巳",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2026-01-25",
+      "dayBranch": "亥",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2026-01-25",
+      "dayBranch": "亥",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "wedding",
+      "eventClassification": "not_recommended"
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2026-08-23",
+      "dayBranch": "巳",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "start_journey",
+      "eventClassification": "not_recommended_or_caution"
+    },
+    {
+      "date": "2026-08-23",
+      "dayBranch": "巳",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2026-08-29",
+      "dayBranch": "亥",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2026-08-29",
+      "dayBranch": "亥",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "wedding",
+      "eventClassification": "not_recommended"
+    },
+    {
+      "date": "2027-11-10",
+      "dayBranch": "巳",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "start_journey",
+      "eventClassification": "not_recommended_or_caution"
+    },
+    {
+      "date": "2027-11-10",
+      "dayBranch": "巳",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": false
+    },
+    {
+      "date": "2027-11-16",
+      "dayBranch": "亥",
+      "activityId": "travel",
+      "rule": "bach_ky_ty",
+      "present": false
+    },
+    {
+      "date": "2027-11-16",
+      "dayBranch": "亥",
+      "activityId": "wedding",
+      "rule": "bach_ky_hoi",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true,
+      "event": "wedding",
+      "eventClassification": "not_recommended"
+    }
+  ]
+}
