@@ -1,8 +1,8 @@
 # PROJECT_CONTEXT.md
 
-> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#16: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics. GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
+> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#18: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相 + đọc scan 月表, 卷十 scoring sau flag tắt. GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
 > Đây là tài liệu trạng thái và quyết định của project; chỉ dẫn trong tài liệu không thay thế yêu cầu mới của người dùng.
-> Chat mới đọc phần 21, 23, 24, 31 và 32 trước (32 là trạng thái mới nhất), rồi dùng các phần authority bên dưới khi cần.
+> Chat mới đọc phần 21, 23, 24, 32 và 33 trước (33 là trạng thái mới nhất), rồi dùng các phần authority bên dưới khi cần.
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
 
@@ -1349,6 +1349,8 @@ Scan page 觜/參 + 角 quote fix      MERGED (PR #11) & DEPLOYED (manual hostin
 修倉庫 conditional fix (data 1.2.1)  MERGED (PR #14) & DEPLOYED (manual hosting)
 Trực/thần diagnostics + 卷十 diag   MERGED (PR #15, #16) & DEPLOYED (manual hosting)
 Trực/thần context audit (docs)     MERGED (PR #12)
+卷十 scoring plan (docs)            MERGED (PR #17)
+卷十 presence + 月表 + scoring flag MERGED (PR #18) & DEPLOYED (manual hosting), flag OFF
 ```
 
 Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ thống nhất bảng tháng 7/8 giữa hai layer theo biến thể đã chọn); Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
@@ -1356,10 +1358,12 @@ Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ th�
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
 ```text
-7dbf24b9d5270fc60044e4cd674e01810ee70aff
+ee3fd3fbd1d940ae4689b7aa306bd095a4efb8bc
 ```
 
-Latest release: **Trực/thần diagnostics + 卷十 diagnostics**, [PR #15](https://github.com/nghiepnguyen/calendar-hana/pull/15) merge `71e7558` và [PR #16](https://github.com/nghiepnguyen/calendar-hana/pull/16) merge `7dbf24b`; deploy hosting thủ công, bundle production trùng bản build local (`index-ChWrCHbv.js`). Không đổi điểm. Trước đó [PR #14](https://github.com/nghiepnguyen/calendar-hana/pull/14) (修倉庫, dataset 1.2.1) merge `51f7100`, deploy thủ công, bundle production có `datasetVersion: 1.2.1`.
+Latest release: **卷十 presence + 月表 + scoring behind flag**, [PR #18](https://github.com/nghiepnguyen/calendar-hana/pull/18) merge `ee3fd3f`; deploy hosting thủ công 2026-10-10 06:32:20 UTC (13:32:20 VN), bundle production `index-C57w-Wrc.js` trùng SHA-1 bản build local (`8a510222c166…`), bundle có `xiejiVol10Scoring:!1`. **Không đổi điểm/UI** (flag tắt). Chi tiết phần 33.
+
+Release trước: **Trực/thần diagnostics + 卷十 diagnostics**, [PR #15](https://github.com/nghiepnguyen/calendar-hana/pull/15) merge `71e7558` và [PR #16](https://github.com/nghiepnguyen/calendar-hana/pull/16) merge `7dbf24b`; deploy hosting thủ công, bundle production trùng bản build local (`index-ChWrCHbv.js`). Không đổi điểm. Trước đó [PR #14](https://github.com/nghiepnguyen/calendar-hana/pull/14) (修倉庫, dataset 1.2.1) merge `51f7100`, deploy thủ công, bundle production có `datasetVersion: 1.2.1`.
 
 Release trước: **Scan page 觜/參 + 角 quote fix**, [PR #11](https://github.com/nghiepnguyen/calendar-hana/pull/11) merge `97cebfc`; **deploy thủ công** `firebase deploy --only hosting` từ máy user, hosting `last-modified` 2026-10-10 04:29:51 UTC (11:29:51 VN). Smoke: `/day/2026-10-06` Chủy “trang 66”/`n65.jpg`, `/day/2026-10-07` Sâm “trang 65”/`n64.jpg`. PR #12 (docs + test) merge `9f9e0fc`.
 
@@ -1586,18 +1590,18 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 
 ### Next steps đề xuất cho chat mới (chưa tự implement)
 
-1. Đọc phần 21, 23, 24, 31, 32; `git pull` main; kiểm tra PR #17 (kế hoạch 卷十 scoring) đã merge chưa.
-2. **卷十 vào điểm** — ĐÃ CODE sau flag tắt (mục 22); còn owner quyết bật. Lịch sử theo `docs/plans/xieji-vol10-scoring.md`: flag `manifest.policies.xiejiVol10Scoring` mặc định false; golden độc lập 30–50 ca đóng băng trước khi code; migration proof (flag off = baseline 1095/1095; flag on = mọi thay đổi giải thích bằng đúng một item 卷十, không từ `undetermined`).
-3. **Giảm `undetermined`** — XONG (mục 20): 0 trên mọi mục đã mã hoá, 2025–2027. Tiếp theo: golden + migration proof cho bảng điểm (mục 21).
-4. **21/44 thần không bao giờ có mặt**: quyết định alias tường minh (vd. “Phi Ma Sát (Tai Sát)” có phải 災煞 không), không theo tên gần giống.
-5. **14 thần legacy tính theo tháng âm**: audit từng bảng sang Month Jian theo 協紀, không đổi hàng loạt.
+1. Đọc phần 21, 23, 24, 32, 33; `git pull` main (HEAD `ee3fd3f` sau PR #18).
+2. **Bật `xiejiVol10Scoring`** — owner 10/10/2026: **CHƯA bật**. Khi owner quyết: đổi một dòng manifest → gate local → PR → deploy → smoke 2025-01-21 (cưới hỏi 65 → 87,5), một ngày 月破 tháng 卯, một ngày 月厭 tháng 子. Rollback cùng một dòng. Số liệu tác động: `docs/audits/xieji-vol10-scoring-migration.md`.
+3. **[Issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19) — Thiên Đức/Thiên Đức Hợp legacy tháng 坤/乾/艮/巽**: audit toàn bộ 月表 卷二十–三十一 (scan archive.org `06067692/94/95/97.cn`… cho các tháng còn lại), golden + migration proof riêng; đổi điểm; tách khỏi migration 卷十 (owner).
+4. **21/44 thần không bao giờ có mặt** trong lớp chấm điểm (gồm 月厭/月刑/月煞/災煞/天願/四相 — đã có presence chẩn đoán trong `xiejiMonthlySha.ts`/`xiejiVirtues.ts`): quyết định có dùng presence này cho chấm điểm không (đổi điểm, PR riêng); alias tường minh, không theo tên gần giống.
+5. **14 thần legacy tính theo tháng âm**: audit từng bảng sang Month Jian theo 協紀; 月表 scan là nhân chứng tốt (mỗi ngày một trang, 吉神/凶神).
 6. Mã hoá quy tắc chung của 卷十 (“凡吉足勝凶從宜不從忌…”, “凡吉凶相抵…”) và phần 宜 theo từng thần.
-7. Mapping 用事 → activity (`xieji-activity-mapping-v1`) đang `interpretation_pending`; review khi cần.
-8. Sát Chủ: web không có Hán văn; muốn đi tiếp cần nguồn offline (thư viện Hán Nôm, bản 玉匣記/通書 in ở Việt Nam, sách “Thọ-Mai”/“Lưu-Thị”).
-9. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập, không majority vote.
-10. Quy trình: local validation → branch `audit/**` hoặc `feature/**` → PR → **user cho phép merge** → deploy → production smoke đúng ngày bị ảnh hưởng → cập nhật handoff qua PR. **Actions bị khoá billing:** chạy đủ gate local (typecheck, lint, `npm test`, `python3 scripts/audit-mansion-content-mutations.py`, `python3 scripts/audit-annual-directions-mutations.py`, `npm run build`, `npx playwright test --project=desktop`), ghi rõ là local; deploy chỉ khi user đồng ý: `npx firebase deploy --only hosting --project calendar-hana`; kiểm bundle production trùng bản build local hoặc smoke HTML trang ngày.
+7. Mapping 用事 → activity (`xieji-activity-mapping-v1`) vẫn `interpretation_pending` (vd. travel ↔ 行幸遣使); review trước khi bật flag là nên.
+8. Sát Chủ: web không có Hán văn; cần nguồn offline.
+9. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập, không majority vote; golden đóng băng trước code.
+10. Quy trình: local validation → branch `audit/**` hoặc `feature/**` → PR → **user cho phép merge** → deploy → smoke → cập nhật handoff qua PR. **Actions bị khoá billing:** chạy đủ gate local (typecheck, lint, `npm test`, `python3 scripts/audit-mansion-content-mutations.py`, `python3 scripts/audit-annual-directions-mutations.py`, `npm run build`, `npx playwright test --project=desktop`), ghi rõ là local; deploy chỉ khi user đồng ý: `npx firebase deploy --only hosting --project calendar-hana`; kiểm bundle production trùng bản build local.
 
-User request mới nhất: cập nhật handoff sau PR #14–#17. Không có implementation task đang tồn đọng; PR #17 (docs) chờ merge.
+User request mới nhất: cập nhật handoff sau PR #18 (merged + deployed). Không có implementation task đang tồn đọng; PR handoff này chờ merge.
 
 ------------------------------------------------------------------------
 
@@ -1645,7 +1649,7 @@ Môi trường sandbox có thể cần escalation cho `.git`, network hoặc bro
 
 Starter prompt gợi ý:
 
-> Đọc PROJECT_CONTEXT.md (phần 21, 23, 24, 31, 32). Main đã có PR #6–#16: mapping 28 Tú review 115/115, door_opening/waterworks, Sát Chủ 7/8, trang scan 觜/參 + quote 角, 修倉庫 (dataset 1.2.1), Trực/thần + 卷十 diagnostics (không đổi điểm). Actions bị khoá billing → gate local, deploy hosting thủ công khi tôi đồng ý. Việc tiếp theo: theo `docs/plans/xieji-vol10-scoring.md`, hỏi tôi chốt bảng verdict → điểm trước khi code; hoặc audit presence 月厭/月刑/月煞/災煞. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy.
+> Đọc PROJECT_CONTEXT.md (phần 21, 23, 24, 32, 33). Main đã có PR #6–#18: mapping 28 Tú review 115/115, Sát Chủ 7/8, trang scan 觜/參 + quote 角, 修倉庫 (dataset 1.2.1), Trực/thần + 卷十 diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相, scan 月表 (天德 tháng tứ trọng vắng mặt), 卷十 scoring sau flag `xiejiVol10Scoring` = false (undetermined = 0, golden 39 ca, migration proof). Actions bị khoá billing → gate local, deploy hosting thủ công khi tôi đồng ý. Việc tiếp theo: issue #19 (Thiên Đức legacy, audit toàn bộ 月表) hoặc chờ tôi quyết bật flag. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy.
 
 
 ## 25. Activity taxonomy — snapshot implementation 10/10/2026 (đã deploy, xem phần 29)
@@ -1928,7 +1932,7 @@ Sách không nêu tháng nhuận hay tháng âm/tiết; không có bài thơ 28 
 | #14 | 協紀 修倉庫 “又…與…併者” là điều kiện: bỏ Thu/Lục Hợp/Ngũ Phú/Thiên Thương → warehouse; dataset 1.2.1; 220/1095 ngày đổi điểm warehouse; event verdict không đổi | MERGED `51f7100`, deploy thủ công |
 | #15 | Trực + 9 thần audited vào diagnostics (`xieji-activity-mapping-v1`, điều kiện tường minh, `Almanac.selectionContext`) | MERGED `71e7558`, deploy thủ công |
 | #16 | 卷十 resolution cho 6 hung thần đã khoá, chỉ diagnostics (`classicalResolution`) | MERGED `7dbf24b`, deploy thủ công |
-| #17 | Kế hoạch đưa 卷十 vào điểm + handoff này | OPEN (docs) |
+| #17 | Kế hoạch đưa 卷十 vào điểm + handoff | MERGED `767efc8` |
 
 ### Decisions
 
@@ -1956,3 +1960,34 @@ Sách không nêu tháng nhuận hay tháng âm/tiết; không có bài thơ 28 
 - Local cuối: 145 files / 2813 tests; mutation 9/9 + 7/7; Playwright desktop 104 passed / 16 skipped.
 - 卷十 diagnostics 2025–2027 × 11 event: 10.920 items — 2.691 avoid, 738 not_avoided, 637 no_annotation, 2.314 not_listed, 4.540 undetermined; **1.707 lệch điểm sản phẩm**.
 - Frozen decision baseline: tái tạo 1095/1095 với catalog trước 1.2.1 (`xiejiConditionalMigration.test.ts`).
+
+------------------------------------------------------------------------
+
+## 33. PR #18 — 卷十 presence, 月表 scan, scoring sau flag (10/10/2026)
+
+[PR #18](https://github.com/nghiepnguyen/calendar-hana/pull/18) merge `ee3fd3f`, deploy hosting thủ công (bundle `index-C57w-Wrc.js`, SHA-1 trùng local). Không đổi điểm/UI: chẩn đoán + code chấm điểm sau flag tắt. Issue tách ra: [#19](https://github.com/nghiepnguyen/calendar-hana/issues/19).
+
+### Nội dung
+
+1. **月厭/月刑/月煞/災煞** (`shared/lunar/xiejiMonthlySha.ts`): Month Jian từ 卷四 (月厭 正月起戌逆行), 卷三/卷六 (月刑 = 歲刑), 卷六 (月煞 正月起丑逆行四季; 災煞 正月起子逆行四仲, theo 曹震圭); khớp Group B v3.1 (144 ô) và mọi câu 值X日 của 卷十. Chép 4 mục 卷十 (月厭: chỉ can-chi rơi đúng ngày 月厭, phần khác ở `notEncoded`).
+2. **天赦/天願/月恩/四相** (`shared/lunar/xiejiVirtues.ts`, 卷五): **天願 theo 按 起例** (正月乙亥 二月甲戌 三月乙酉 四月丙申 五月丁未 六月戊午 七月己巳 八月庚辰 九月辛卯 十月壬寅 十一月癸丑 十二月甲子) — 協紀 bác bảng 歴例; bản nháp đầu dùng 歴例, đã sửa sau khi đọc 月表. 天德合 vắng mặt tháng tứ trọng (“四仲之月…無合”).
+3. **Scan 月表** (四庫全書, ĐH Chiết Giang, archive.org `06067692.cn` 卷二十一 n73–n132, `06067694.cn` 卷二十四 n6–n65, `06067695.cn` 卷二十七 n70–n129, `06067697.cn` 卷三十 n6–n65; mỗi ngày 1 trang, 甲子→癸亥; cắt/ghép bằng ffmpeg vì máy không có PIL): 240 trang ngày tháng 2/5/8/11 không trang nào ghi 天德; tháng 7 có 天德 ở 癸亥 → 天德 quẻ vắng mặt, `Almanac.unknownGodIds` = [] (chỉ chẩn đoán đọc). Witness 天願/天赦 lưu trong test.
+4. Chẩn đoán `classicalResolution` version `xieji-vol10-v2`: **undetermined 4.540 → 0** (2025–2027 × 11 event; 6 mục cũ 5.422 avoid / 798 not_avoided / 833 no_annotation / 3.867 not_listed; lệch sản phẩm 2.575; 4 mục mới 7.320 items, lệch 3.385).
+5. **卷十 scoring** (`shared/lunar/xiejiVol10Scoring.ts`, `applyVol10Scoring`; `getActivityRecommendations` input `classicalDay`, override `xiejiVol10Scoring`): bảng owner (avoid giữ/đổi dương thành âm, thêm −25 nếu chuỗi chưa có trừ; not_avoided bỏ trừ; no_annotation bỏ cả hai; not_listed/undetermined giữ); 6 hung thần + deferral; cap theo nguồn; xung đột lấy verdict nghiêm hơn; dòng bị đổi mang `Evidence.classical`. **不註 bỏ hết mọi dòng → activity `neutral`, `event_fit` pass** (owner).
+6. Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` 39 ca đóng băng trước code (`a045f3a`); 1 đính chính `GOLDEN_BUG` do agent suy tay (`2e830e9`, jie-yin-finance: 納財 thuộc 止不忌 của 收日 → not_listed).
+7. Migration proof `xiejiVol10ScoringMigration.test.ts` (mock manifest bật flag, 1095 ngày): mọi dòng đổi/thêm giải thích bằng đúng một kết luận 卷十; bật flag: 1.639/12.045 event đổi điểm; not_recommended→recommended 244, not_recommended→caution 172, insufficient→not_recommended 126, caution→recommended 112…; ví dụ 2025-01-21 cưới hỏi 65 → 87,5 (刼煞 + 天德/月德 tháng 丑 ngày 除).
+
+### Decisions (owner, 10/10/2026)
+
+1. Bảng verdict → điểm (plan “Owner decisions”); golden + proof làm sau khi undetermined giảm (đã về 0).
+2. 不註/不忌 bỏ hết mọi dòng → **trung tính**.
+3. Thiên Đức legacy tháng quẻ → **issue #19**, PR riêng, audit toàn bộ 月表, không làm nhiễu migration 卷十.
+4. **Chưa bật flag** `xiejiVol10Scoring`.
+
+### Số liệu gate (local)
+
+149 files / 2.886 tests; mutation 9/9 + 7/7; build; Playwright desktop 104 passed / 16 skipped. Chưa chạy `test:emulator`.
+
+### File mới
+
+`shared/lunar/xiejiMonthlySha.ts` (+test), `shared/lunar/xiejiVirtues.ts` (+test), `shared/lunar/xiejiVol10Scoring.ts` (+test), `shared/lunar/xiejiVol10ScoringMigration.test.ts`, `shared/almanac-data/golden-xieji-vol10-scoring.json`, `docs/audits/xieji-monthly-sha-presence.md`, `docs/audits/xieji-vol10-scoring-migration.md`.
