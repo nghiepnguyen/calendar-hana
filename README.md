@@ -281,5 +281,12 @@ src/
   sw.ts        Service worker: cache offline, Web Push, bấm thông báo
 functions/     Cloud Functions (bundle bằng esbuild, gói luôn shared/)
 e2e/           Test Playwright
+docs/          Tài liệu audit, quyết định kỹ thuật, thiết kế (xem docs/README.md)
+tasks/         PRD, danh sách task, bằng chứng audit gốc
+golden-v3/, golden-v4/  Dữ liệu chuẩn đã đóng băng cho test lịch
 firestore.rules
 ```
+
+## Giấy phép
+
+[MIT](LICENSE). Thành phần bên thứ ba: xem [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

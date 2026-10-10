@@ -14,6 +14,12 @@ import { solarToLunar } from './lunar'
 import { starApplies } from './stars'
 import { STARS } from './stars.data'
 
+// Frozen artifacts cite pre-reorganisation root paths; docs/legacy-paths.json maps them.
+const legacyPaths: Record<string, string> = JSON.parse(
+  readFileSync(resolve('docs/legacy-paths.json'), 'utf8'),
+).moves
+const artifact = (path: string) => resolve(legacyPaths[path] ?? path)
+
 const timezone = 'Asia/Ho_Chi_Minh'
 const branches = '子丑寅卯辰巳午未申酉戌亥'
 const stems = '甲乙丙丁戊己庚辛壬癸'
@@ -90,7 +96,7 @@ const evidence: {
     newMonthJian: string
     instantUTC: string
   }[]
-} = JSON.parse(readFileSync(resolve('calendar-group-b-exact-jie-evidence.json'), 'utf8'))
+} = JSON.parse(readFileSync(artifact('calendar-group-b-exact-jie-evidence.json'), 'utf8'))
 const frozen: Record<string, string> = JSON.parse(
   readFileSync(resolve('tasks/calendar-audit/group-b-freeze-hashes.json'), 'utf8'),
 )
@@ -99,7 +105,7 @@ const fixtureResults: Record<string, unknown>[] = []
 
 const sha256 = (path: string) =>
   createHash('sha256')
-    .update(readFileSync(resolve(path)))
+    .update(readFileSync(artifact(path)))
     .digest('hex')
 
 test('freeze integrity: all eleven protected artifact hashes', () => {
@@ -117,7 +123,7 @@ test('freeze integrity: golden-v4 manifest pins and 611 reviewed fixtures', () =
 })
 
 test('source lock: all sixty Group B table cells equal the frozen v3 rule extraction', () => {
-  const extraction = JSON.parse(readFileSync(resolve('calendar-rule-extraction-v3.json'), 'utf8'))
+  const extraction = JSON.parse(readFileSync(artifact('calendar-rule-extraction-v3.json'), 'utf8'))
   let cells = 0
   for (const id of ids) {
     const rule = extraction.rules.find((r: { id: string }) => r.id === id)

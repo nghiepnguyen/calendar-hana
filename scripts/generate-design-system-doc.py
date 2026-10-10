@@ -4,7 +4,7 @@ from docx.enum.text import WD_BREAK
 
 ROOT = Path('/Users/nghiepnguyen/My Files/calendar-hana')
 REFERENCE = Path('/Users/nghiepnguyen/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-system-design/assets/reference.docx')
-OUTPUT = ROOT / 'calendar-hana-design-system.docx'
+OUTPUT = ROOT / 'docs/design/calendar-hana-design-system.docx'
 
 doc = Document(REFERENCE)
 
