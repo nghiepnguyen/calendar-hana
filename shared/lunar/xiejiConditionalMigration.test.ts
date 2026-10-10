@@ -6,9 +6,11 @@ import goodGodsData from '../almanac-data/good-gods.json'
 import manifest from '../almanac-data/manifest.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import overridesData from '../almanac-data/overrides.json'
+import eventMappingData from '../almanac-data/event-mapping.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
+import { legacyOpenBusinessMapping } from './legacyEventMapping'
 
 // Keep this historical migration/Golden independent of later 卷十 activation.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
@@ -94,6 +96,10 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     })
     vi.doMock('../almanac-data/bad-gods.json', noLaterGods)
     vi.doMock('../almanac-data/overrides.json', noBaijiOverrides)
+    // Both sides predate dropping the duplicate 開市 business row from open_business.
+    vi.doMock('../almanac-data/event-mapping.json', () =>
+      legacyOpenBusinessMapping(eventMappingData),
+    )
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))
     const pre = {
@@ -111,6 +117,7 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     vi.doUnmock('../almanac-data/manifest.json')
     vi.doUnmock('../almanac-data/bad-gods.json')
     vi.doUnmock('../almanac-data/overrides.json')
+    vi.doUnmock('../almanac-data/event-mapping.json')
 
     expect(baseline.days).toHaveLength(1095)
     let changed = 0

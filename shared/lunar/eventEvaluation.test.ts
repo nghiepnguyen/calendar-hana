@@ -64,10 +64,11 @@ describe('event classification guardrails', () => {
     expect(
       result.contributions.every((row) => !!row.ruleId && !!row.sourceRef && !!row.scope),
     ).toBe(true)
+    expect(result.contributions.some((row) => row.activityId === 'business')).toBe(false)
     expect(
       result.contributions
-        .filter((row) => row.activityId === 'business')
-        .every((row) => row.multiplier === 0.5),
+        .filter((row) => row.activityId === 'finance')
+        .every((row) => row.multiplier === 0.3),
     ).toBe(true)
     expect(
       result.contributions

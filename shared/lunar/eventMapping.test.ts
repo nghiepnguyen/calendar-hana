@@ -14,10 +14,11 @@ describe('event mapping', () => {
   })
 })
 
+// business (Mở hàng) shares the 開市 heading with opening; listing both counted the same
+// Trực/god evidence twice (see kaishiDoubleCountMigration.test.ts).
 it('declares one primary with supporting multipliers instead of flat aliases', () => {
   expect(getEventProfile('open_business')?.activities).toEqual([
     { activityId: 'opening', role: 'primary', multiplier: 1 },
-    { activityId: 'business', role: 'supporting', multiplier: 0.5 },
     { activityId: 'finance', role: 'supporting', multiplier: 0.3 },
   ])
 })

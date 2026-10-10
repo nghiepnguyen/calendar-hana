@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import manifest from '../almanac-data/manifest.json'
 import witnesses from '../../docs/audits/xieji-vol10-post-pr29-samples.json'
 import { getAlmanac } from './almanac'
@@ -7,6 +7,15 @@ import type { SolarDateString } from '../types'
 
 // Release witnesses are observed OFF/ON migration outputs, not independent Golden.
 // This test uses the real production manifest and proves it reaches the reviewed ON path.
+// The witnesses predate dropping business from open_business (kaishiDoubleCountMigration),
+// so that mapping is pinned here.
+vi.mock('../almanac-data/event-mapping.json', async (importOriginal) => {
+  const { legacyOpenBusinessMapping } = await import('./legacyEventMapping')
+  const { default: original } = await importOriginal<{
+    default: typeof import('../almanac-data/event-mapping.json')
+  }>()
+  return legacyOpenBusinessMapping(original)
+})
 describe('卷十 production activation', () => {
   it('enables only 卷十 while mansion scoring stays informational', () => {
     expect(manifest.policies.xiejiVol10Scoring).toBe(true)
