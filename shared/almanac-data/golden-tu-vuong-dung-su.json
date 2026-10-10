@@ -1,0 +1,338 @@
+{
+  "version": "golden-tu-vuong-dung-su-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "source": {
+    "definition": "協紀 卷一 本原 (66c18401b9f4): 「土於四立之前各旺一十八日」",
+    "taboos": "卷十 土王用事 (355dc6c8fe2d) and 卷十一 土王用事後 (ce4ed7f23ff9)",
+    "liDates": "Hong Kong Observatory 公曆與農曆日期對照表 T2025c/T2026c/T2027c.txt (HKT, UTC+8), SHA-1 d88bbdc4c183 / bae773653a0b / e4fb75dfe89e — independent of the engine"
+  },
+  "policy": "Owner 2026-10-10: period = [立 civil date − 18, 立 − 1], 立 day excluded; bad god major (−15), no hard warning; activities construction, groundbreaking, renovation, warehouse, demolition, planting only.",
+  "affected": [
+    "construction",
+    "groundbreaking",
+    "renovation",
+    "warehouse",
+    "demolition",
+    "planting"
+  ],
+  "unaffected": ["beam_raising", "warehouse_opening", "burial", "wedding"],
+  "expectedRawDelta": -15,
+  "expectedHardWarning": false,
+  "periods": [
+    {
+      "term": "立春",
+      "liDate": "2025-02-03",
+      "onset": "2025-01-16",
+      "eve": "2025-02-02"
+    },
+    {
+      "term": "立夏",
+      "liDate": "2025-05-05",
+      "onset": "2025-04-17",
+      "eve": "2025-05-04"
+    },
+    {
+      "term": "立秋",
+      "liDate": "2025-08-07",
+      "onset": "2025-07-20",
+      "eve": "2025-08-06"
+    },
+    {
+      "term": "立冬",
+      "liDate": "2025-11-07",
+      "onset": "2025-10-20",
+      "eve": "2025-11-06"
+    },
+    {
+      "term": "立春",
+      "liDate": "2026-02-04",
+      "onset": "2026-01-17",
+      "eve": "2026-02-03"
+    },
+    {
+      "term": "立夏",
+      "liDate": "2026-05-05",
+      "onset": "2026-04-17",
+      "eve": "2026-05-04"
+    },
+    {
+      "term": "立秋",
+      "liDate": "2026-08-07",
+      "onset": "2026-07-20",
+      "eve": "2026-08-06"
+    },
+    {
+      "term": "立冬",
+      "liDate": "2026-11-07",
+      "onset": "2026-10-20",
+      "eve": "2026-11-06"
+    },
+    {
+      "term": "立春",
+      "liDate": "2027-02-04",
+      "onset": "2027-01-17",
+      "eve": "2027-02-03"
+    },
+    {
+      "term": "立夏",
+      "liDate": "2027-05-06",
+      "onset": "2027-04-18",
+      "eve": "2027-05-05"
+    },
+    {
+      "term": "立秋",
+      "liDate": "2027-08-08",
+      "onset": "2027-07-21",
+      "eve": "2027-08-07"
+    },
+    {
+      "term": "立冬",
+      "liDate": "2027-11-07",
+      "onset": "2027-10-20",
+      "eve": "2027-11-06"
+    }
+  ],
+  "cases": [
+    {
+      "date": "2025-01-15",
+      "inPeriod": false,
+      "why": "立春 2025-02-03: day before onset"
+    },
+    {
+      "date": "2025-01-16",
+      "inPeriod": true,
+      "why": "立春 2025-02-03: onset (立 − 18)"
+    },
+    {
+      "date": "2025-02-02",
+      "inPeriod": true,
+      "why": "立春 2025-02-03: eve of 立"
+    },
+    {
+      "date": "2025-02-03",
+      "inPeriod": false,
+      "why": "立春 2025-02-03: 立 day excluded"
+    },
+    {
+      "date": "2025-04-16",
+      "inPeriod": false,
+      "why": "立夏 2025-05-05: day before onset"
+    },
+    {
+      "date": "2025-04-17",
+      "inPeriod": true,
+      "why": "立夏 2025-05-05: onset (立 − 18)"
+    },
+    {
+      "date": "2025-05-04",
+      "inPeriod": true,
+      "why": "立夏 2025-05-05: eve of 立"
+    },
+    {
+      "date": "2025-05-05",
+      "inPeriod": false,
+      "why": "立夏 2025-05-05: 立 day excluded"
+    },
+    {
+      "date": "2025-07-19",
+      "inPeriod": false,
+      "why": "立秋 2025-08-07: day before onset"
+    },
+    {
+      "date": "2025-07-20",
+      "inPeriod": true,
+      "why": "立秋 2025-08-07: onset (立 − 18)"
+    },
+    {
+      "date": "2025-08-06",
+      "inPeriod": true,
+      "why": "立秋 2025-08-07: eve of 立"
+    },
+    {
+      "date": "2025-08-07",
+      "inPeriod": false,
+      "why": "立秋 2025-08-07: 立 day excluded"
+    },
+    {
+      "date": "2025-10-19",
+      "inPeriod": false,
+      "why": "立冬 2025-11-07: day before onset"
+    },
+    {
+      "date": "2025-10-20",
+      "inPeriod": true,
+      "why": "立冬 2025-11-07: onset (立 − 18)"
+    },
+    {
+      "date": "2025-11-06",
+      "inPeriod": true,
+      "why": "立冬 2025-11-07: eve of 立"
+    },
+    {
+      "date": "2025-11-07",
+      "inPeriod": false,
+      "why": "立冬 2025-11-07: 立 day excluded"
+    },
+    {
+      "date": "2026-01-16",
+      "inPeriod": false,
+      "why": "立春 2026-02-04: day before onset"
+    },
+    {
+      "date": "2026-01-17",
+      "inPeriod": true,
+      "why": "立春 2026-02-04: onset (立 − 18)"
+    },
+    {
+      "date": "2026-02-03",
+      "inPeriod": true,
+      "why": "立春 2026-02-04: eve of 立"
+    },
+    {
+      "date": "2026-02-04",
+      "inPeriod": false,
+      "why": "立春 2026-02-04: 立 day excluded"
+    },
+    {
+      "date": "2026-04-16",
+      "inPeriod": false,
+      "why": "立夏 2026-05-05: day before onset"
+    },
+    {
+      "date": "2026-04-17",
+      "inPeriod": true,
+      "why": "立夏 2026-05-05: onset (立 − 18)"
+    },
+    {
+      "date": "2026-05-04",
+      "inPeriod": true,
+      "why": "立夏 2026-05-05: eve of 立"
+    },
+    {
+      "date": "2026-05-05",
+      "inPeriod": false,
+      "why": "立夏 2026-05-05: 立 day excluded"
+    },
+    {
+      "date": "2026-07-19",
+      "inPeriod": false,
+      "why": "立秋 2026-08-07: day before onset"
+    },
+    {
+      "date": "2026-07-20",
+      "inPeriod": true,
+      "why": "立秋 2026-08-07: onset (立 − 18)"
+    },
+    {
+      "date": "2026-08-06",
+      "inPeriod": true,
+      "why": "立秋 2026-08-07: eve of 立"
+    },
+    {
+      "date": "2026-08-07",
+      "inPeriod": false,
+      "why": "立秋 2026-08-07: 立 day excluded"
+    },
+    {
+      "date": "2026-10-19",
+      "inPeriod": false,
+      "why": "立冬 2026-11-07: day before onset"
+    },
+    {
+      "date": "2026-10-20",
+      "inPeriod": true,
+      "why": "立冬 2026-11-07: onset (立 − 18)"
+    },
+    {
+      "date": "2026-11-06",
+      "inPeriod": true,
+      "why": "立冬 2026-11-07: eve of 立"
+    },
+    {
+      "date": "2026-11-07",
+      "inPeriod": false,
+      "why": "立冬 2026-11-07: 立 day excluded"
+    },
+    {
+      "date": "2027-01-16",
+      "inPeriod": false,
+      "why": "立春 2027-02-04: day before onset"
+    },
+    {
+      "date": "2027-01-17",
+      "inPeriod": true,
+      "why": "立春 2027-02-04: onset (立 − 18)"
+    },
+    {
+      "date": "2027-02-03",
+      "inPeriod": true,
+      "why": "立春 2027-02-04: eve of 立"
+    },
+    {
+      "date": "2027-02-04",
+      "inPeriod": false,
+      "why": "立春 2027-02-04: 立 day excluded"
+    },
+    {
+      "date": "2027-04-17",
+      "inPeriod": false,
+      "why": "立夏 2027-05-06: day before onset"
+    },
+    {
+      "date": "2027-04-18",
+      "inPeriod": true,
+      "why": "立夏 2027-05-06: onset (立 − 18)"
+    },
+    {
+      "date": "2027-05-05",
+      "inPeriod": true,
+      "why": "立夏 2027-05-06: eve of 立"
+    },
+    {
+      "date": "2027-05-06",
+      "inPeriod": false,
+      "why": "立夏 2027-05-06: 立 day excluded"
+    },
+    {
+      "date": "2027-07-20",
+      "inPeriod": false,
+      "why": "立秋 2027-08-08: day before onset"
+    },
+    {
+      "date": "2027-07-21",
+      "inPeriod": true,
+      "why": "立秋 2027-08-08: onset (立 − 18)"
+    },
+    {
+      "date": "2027-08-07",
+      "inPeriod": true,
+      "why": "立秋 2027-08-08: eve of 立"
+    },
+    {
+      "date": "2027-08-08",
+      "inPeriod": false,
+      "why": "立秋 2027-08-08: 立 day excluded"
+    },
+    {
+      "date": "2027-10-19",
+      "inPeriod": false,
+      "why": "立冬 2027-11-07: day before onset"
+    },
+    {
+      "date": "2027-10-20",
+      "inPeriod": true,
+      "why": "立冬 2027-11-07: onset (立 − 18)"
+    },
+    {
+      "date": "2027-11-06",
+      "inPeriod": true,
+      "why": "立冬 2027-11-07: eve of 立"
+    },
+    {
+      "date": "2027-11-07",
+      "inPeriod": false,
+      "why": "立冬 2027-11-07: 立 day excluded"
+    }
+  ]
+}
