@@ -49,8 +49,8 @@ Trang scan đã đọc (archive.org `page/nN.jpg`): 婁 n60, 參 n64, 鬼 n67, �
 
 ## Phát hiện ngoài phạm vi (chưa sửa)
 
-- **Lệch trang scan 觜/參:** sách đóng 參 (n64) trước 觜 (n65). Dataset ghi 觜 pdfPage 65, 參 pdfPage 66, nên link “Bản scan nguồn” của hai Tú này trỏ sang trang của Tú kia. Quote của cả hai khớp nội dung thật. Sửa cần đổi pdfPage trong dataset **và** Golden Phase 7 (lỗi Golden), cần quyết định riêng.
-- 角: bản scan có vẻ ghi 惟有葬埋不可用 (dataset: 埋葬); độ phân giải thấp, cần đối chiếu lại trước khi kết luận.
+- **Lệch trang scan 觜/參:** đã xác nhận và sửa dataset + Golden Phase 7 (xem `docs/audits/mansion-scan-page-check.md`).
+- 角: đã xác nhận bản scan ghi 惟有葬埋不可用 và đã sửa quote (xem `docs/audits/mansion-scan-page-check.md`).
 
 ## Golden và migration
 
