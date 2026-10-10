@@ -20,9 +20,8 @@ describe('mansion evidence explainability', () => {
     fireEvent.click(summary)
     expect(summary.closest('details')).toHaveAttribute('open')
     expect(screen.getByText('和合婚姻貴子孫')).toBeInTheDocument()
-    expect(screen.getAllByText('Cách hiểu hoạt động chưa được thẩm định.').length).toBeGreaterThan(
-      0,
-    )
+    expect(screen.getAllByText(/đã rà soát cách hiểu; vẫn chỉ tham khảo\./)).toHaveLength(3)
+    expect(screen.queryByText(/chưa được thẩm định/)).not.toBeInTheDocument()
     expect(screen.getAllByText('Điều kiện Tú của ngày: khớp.').length).toBeGreaterThan(0)
     expect(screen.getByText('Việc khác trong nguồn chưa có mục tương ứng')).toBeInTheDocument()
     expect(screen.getAllByText('Chưa có mục hoạt động tương ứng.')).toHaveLength(2)
@@ -33,6 +32,14 @@ describe('mansion evidence explainability', () => {
     expect(
       screen.getByText('Chỉ tham khảo; không tính vào điểm hoặc kết luận chọn ngày.'),
     ).toBeInTheDocument()
+  })
+  it('keeps an ambiguous clause visibly pending with its review note', () => {
+    const pending = getMansionContentEvidence(getMansionContent(20)).find(
+      (r) => r.activityMapping?.clauseId === '參-5',
+    )!
+    render(<MansionEvidenceDetails evidence={[pending]} mansionIndex={20} />)
+    fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
+    expect(screen.getByText(/chưa được thẩm định\. 婚姻許定/)).toBeInTheDocument()
   })
   it('shows opposite source excerpts without choosing a winner and preserves exceptions', () => {
     const base = rows.find((r) => r.activityId === 'wedding')!

@@ -46,7 +46,7 @@ export function getMansionContentEvidence(content: MansionContent): Evidence[] {
       ruleId: `${content.authorityId}:${clause.id}`,
       activityId: clause.activityId,
       activityMapping: {
-        ...resolveMansionActivityMapping(clause.activityId, clause.scope),
+        ...resolveMansionActivityMapping(clause),
         authorityId: content.authorityId,
         clauseId: clause.id,
       },
