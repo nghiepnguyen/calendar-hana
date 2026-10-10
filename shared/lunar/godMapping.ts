@@ -32,19 +32,23 @@ interface DayRule {
   dayCan?: number[]
   dayChi?: number[]
   lunarDay?: number[]
+  /** 土王用事: the 18 civil days before each 四立 (thoVuongDungSu.ts). */
+  thoVuongDungSu?: boolean
 }
+type RuleDay = { can: number; chi: number; lunarDay: number; thoVuongDungSu?: boolean }
 
 /**
  * Catalog entries defined by the day itself rather than by the Ngọc Hạp star table (Trừ Thần =
  * 申酉 days, Đinh days, Nhân Thần lunar days 12/15). Rules live in the catalog JSON with sources.
  */
-export function resolveDayRuleGods(day: { can: number; chi: number; lunarDay: number }) {
+export function resolveDayRuleGods(day: RuleDay) {
   const matches = (rule: DayRule | undefined) =>
     Boolean(
       rule &&
       (rule.dayCan?.includes(day.can) ||
         rule.dayChi?.includes(day.chi) ||
-        rule.lunarDay?.includes(day.lunarDay)),
+        rule.lunarDay?.includes(day.lunarDay) ||
+        (rule.thoVuongDungSu && day.thoVuongDungSu)),
     )
   const pick = (items: readonly { id: string; rule?: DayRule }[]) =>
     items.filter((god) => matches(god.rule)).map((god) => god.id)
@@ -52,7 +56,7 @@ export function resolveDayRuleGods(day: { can: number; chi: number; lunarDay: nu
 }
 
 /** Explicit operands for day-rule gods, for evidence diagnostics only (no score effect). */
-export function resolveDayRuleGodPresence(day: { can: number; chi: number; lunarDay: number }) {
+export function resolveDayRuleGodPresence(day: RuleDay) {
   const out: Record<string, { operand: string; equals: number }[]> = {}
   for (const god of [...goodGods.items, ...badGods.items] as { id: string; rule?: DayRule }[]) {
     const rule = god.rule
@@ -62,6 +66,8 @@ export function resolveDayRuleGodPresence(day: { can: number; chi: number; lunar
       out[god.id] = [{ operand: 'DAY_BRANCH', equals: day.chi }]
     else if (rule.lunarDay?.includes(day.lunarDay))
       out[god.id] = [{ operand: 'LUNAR_DAY', equals: day.lunarDay }]
+    else if (rule.thoVuongDungSu && day.thoVuongDungSu)
+      out[god.id] = [{ operand: 'THO_VUONG_DUNG_SU', equals: 1 }]
   }
   return out
 }

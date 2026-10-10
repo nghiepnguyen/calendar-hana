@@ -1,6 +1,6 @@
 # 土王用事 (Thổ vương dụng sự) — definition lock
 
-Status: **AUDIT ONLY — no code, no score change.** Owner decisions below are needed before implementation.
+Status: **IMPLEMENTED — changes scores** (owner decisions 2026-10-10, see end). Branch `feature/tu-vuong-dung-su` on top of the audit.
 Date: 2026-10-10. Branch `audit/tu-vuong-dung-su`.
 
 Source: 欽定協紀辨方書 (四庫全書本), Wikisource `action=raw`, all 36 volumes searched (土王, 土旺, 王用事, 十八日, 用事, 立春前). Volumes 1–9 are titled `卷01`…`卷09`. SHA-1 prefixes: 卷一 `66c18401b9f4`, 卷五 `1d4000974e32`, 卷六 `a9ab67896fc9`, 卷十 `355dc6c8fe2d`, 卷十一 `ce4ed7f23ff9`, 卷二十二 `3517ed0b55bb`, 卷三十五 `cfc090a9feca`. Quotes below re-checked against the downloaded text.
@@ -72,3 +72,22 @@ Not in the catalog: 繕城郭, 築隄防, 修置産室, 開渠穿井 (candidate 
 - Golden frozen before code: periods for 2025–2027 with 立 dates taken from an **independent** published table (not the engine), plus boundary days (onset, eve of 立, the 立 day) for 2–3 activities.
 - Day-rule god `tho_vuong_dung_su` with a period rule (new `rule` shape), parity test extended (`han` 「土王用事後」 matches the 卷十一 lists).
 - Migration proof over 1095 days: only the 6 activities on period days change; events report.
+
+## Owner decisions (2026-10-10) and implementation
+
+1. Day count: 18 civil days back from the 立 civil date (Asia/Ho_Chi_Minh). 2. 立 day excluded. 3. Bad god **major (−15), no hard warning**. 4. Activities: construction, groundbreaking, renovation, warehouse, demolition, planting.
+
+- `shared/lunar/thoVuongDungSu.ts`: `thoVuongDungSuPeriods(year)` from the exact-Jie engine (立春 21, 立夏 3, 立秋 9, 立冬 15), `isThoVuongDungSu(date)`.
+- Day rule `{ thoVuongDungSu: true }` in `godMapping.ts`; operand `THO_VUONG_DUNG_SU` in `Almanac.selectionContext` (diagnostics).
+- `bad-gods.json` `tho_vuong_dung_su` (han 土王用事後): the vol. 11 parity test derives exactly the six activities from the 卷十一 lists.
+
+### Golden (`golden-tu-vuong-dung-su.json`, commit `02302bb`, frozen before code)
+
+四立 dates from the Hong Kong Observatory tables (HKT), independent of the engine; 12 periods 2025–2027, 48 boundary cases (day before onset, onset, eve, 立 day) × 6 affected + 4 unaffected activities. All pass; the engine's VN civil dates of the 12 立 equal the HKO dates.
+
+### Migration proof (`thoVuongDungSu.test.ts`, 1095 days)
+
+- 216 period days (18 × 4 × 3). Off-period days: every activity and event identical.
+- Only the six activities gain the row; everything else identical. Status moves, e.g. construction recommended → watch 60, watch → avoid 50; planting recommended → watch 45; demolition no_evidence → watch 152.
+- Events: groundbreaking recommended → not_recommended 63, insufficient_evidence → not_recommended 40 (a negative row on the primary activity fails `event_fit`, existing rule) — matches 協紀 forbidding 動土 in the period.
+- The 1.2.1 frozen baseline pins the catalog without this god on both sides (1095/1095).

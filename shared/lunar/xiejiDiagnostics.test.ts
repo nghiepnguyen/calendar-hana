@@ -19,6 +19,7 @@ const LOCKED_OR_DAY_RULE = new Set([
   'giap_nhat',
   'at_nhat',
   'nhan_than_toc',
+  'tho_vuong_dung_su',
 ])
 const days = (year: number) =>
   Array.from({ length: 365 }, (_, i) => {

@@ -22,6 +22,7 @@ import { KEEP_LEGACY_TRIGRAM_TIAN_DE } from './tianDeLegacyPolicy'
 import { solarTermMonthChi } from './solarTerms'
 import { getThuTuForDate } from './thuTuAuthority'
 import { resolveDayRuleGodPresence, resolveDayRuleGods, resolvePresentGods } from './godMapping'
+import { isThoVuongDungSu } from './thoVuongDungSu'
 import manifest from '../almanac-data/manifest.json'
 import goodGodsData from '../almanac-data/good-gods.json'
 import badGodsData from '../almanac-data/bad-gods.json'
@@ -53,7 +54,12 @@ export interface Almanac {
 }
 
 const CACHE_LIMIT = 2000
-const ALWAYS_SOURCE_LOCKED = new Set<string>(['Nguyệt Đức', 'Nguyệt Đức Hợp', 'Nguyệt Phá', 'Kiếp Sát'])
+const ALWAYS_SOURCE_LOCKED = new Set<string>([
+  'Nguyệt Đức',
+  'Nguyệt Đức Hợp',
+  'Nguyệt Phá',
+  'Kiếp Sát',
+])
 const THU_TU_NAME = 'Thụ Tử'
 const THU_TU_MEANING = 'Trăm sự đều kỵ'
 
@@ -108,7 +114,13 @@ function computeAlmanac(date: SolarDateString): Almanac {
   }
 
   const gods = resolvePresentGods(stars)
-  const dayGods = resolveDayRuleGods({ can: day.can, chi: day.chi, lunarDay: lunar.day })
+  const ruleDay = {
+    can: day.can,
+    chi: day.chi,
+    lunarDay: lunar.day,
+    thoVuongDungSu: isThoVuongDungSu(date),
+  }
+  const dayGods = resolveDayRuleGods(ruleDay)
   // Presence operands only for gods whose presence is source-locked or a cited day rule; legacy
   // lunar-month stars get none and stay out of conflict diagnostics.
   const monthJianBranch = solarTermMonthChi(jd)
@@ -116,7 +128,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
     [...goodGodsData.items, ...badGodsData.items].map((g) => [g.label, g.id]),
   )
   const godPresence: Record<string, { operand: string; equals: number }[]> = {
-    ...resolveDayRuleGodPresence({ can: day.can, chi: day.chi, lunarDay: lunar.day }),
+    ...resolveDayRuleGodPresence(ruleDay),
   }
   for (const { name, conditions } of getSourceLockedCatHungPresence(
     monthJianBranch,
@@ -172,6 +184,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
       DAY_STEM: day.can,
       DAY_BRANCH: day.chi,
       LUNAR_DAY: lunar.day,
+      THO_VUONG_DUNG_SU: ruleDay.thoVuongDungSu ? 1 : 0,
     },
   }
   return almanac
