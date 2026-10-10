@@ -1,4 +1,4 @@
-# 協紀 月厭 / 月刑 / 月煞 / 災煞 and 天赦 / 天願 / 月恩 / 四相 — presence lock for 卷十 (diagnostics only)
+# 協紀 月厭 / 月刑 / 月煞 / 災煞, 天赦 / 天願 / 月恩 / 四相 and 月表 天德 — presence lock for 卷十 (diagnostics only)
 
 Status: **IMPLEMENTED AS DIAGNOSTICS — no score, status or verdict change**
 Date: 2026-10-10. Branch `audit/xieji-monthly-sha-presence` (after PR #16/#17).
@@ -69,37 +69,42 @@ Remaining `undetermined` (all entries, 3,740): 天赦/天願/月恩/四相 prese
 
 ## Part 2 — virtue presence: 天赦, 天願, 月恩, 四相 (`shared/lunar/xiejiVirtues.ts`)
 
-卷五 義例三 (raw `卷05` SHA-1 prefix `1d4000974e32`), by Month Jian; seasons 春 = 寅卯辰 … 冬 = 亥子丑.
+卷五 義例三 (raw `卷05` SHA-1 prefix `1d4000974e32`; checked against the 四庫全書 scan, archive.org `06067683.cn` n40–n51), by Month Jian; seasons 春 = 寅卯辰 … 冬 = 亥子丑.
 
-| 吉神 | Rule (歴例曰) | Operand |
-|---|---|---|
-| 天赦 | 春戊寅 夏甲午 秋戊申 冬甲子 | day pillar |
-| 天願 | 正月甲午 二月甲戌 三月乙酉 四月丙子 五月丁丑 六月戊午 七月甲寅 八月丙辰 九月辛卯 十月戊辰 十一月甲子 十二月癸未 | day pillar |
-| 月恩 | 正月丙 二丁 三庚 四己 五戊 六辛 七壬 八癸 九庚 十乙 十一甲 十二辛 | day stem |
-| 四相 | 春丙丁 夏戊己 秋壬癸 冬甲乙 | day stem |
-
-Readings: 月恩 四月 “巳” and 四相 夏 “戊巳” read as the stem 己 (歴神原始: 巳火生巳土).
-
-Consistency check (`xiejiVirtues.test.ts`): the 卷十 notes sit exactly where the virtues meet those days — 〔天願不得與月建併〕: 天願 falls on 建 only in 子 month (曹震圭: 十一月以其自建者); 〔天赦天願不得與月破併〕: 天願 falls on 破 in 申 and 丑 months; 月建's virtue list includes 天赦, which falls on 建 in 寅午申子 months.
-
-**天德合 on 四仲 months**: 卷五 says “四仲之月天徳居四維故無合也”, so 天德合 is now treated as **absent** (not unknown) in 子午卯酉 months (`almanac.ts` `unknownGodIds` = `['thien_duc']`; only the 卷十 diagnostics read it).
-
-**天德 on 坤/乾/艮/巽 months stays unknown** (`SOURCE_DEPENDENT` inside 協紀): 卷五 records 考原's 墓 reading (二月未, 五月戌, 八月丑, 十一月辰) and 蠡海集's report that others use 巳亥寅申, calls the 考原 reading “聊存以傳一解”, and the 月表 volumes are images without a text layer. No normalization is adopted; an owner decision or a primary 月表 reading is needed.
-
-### Effect after part 2 (2025–2027, 11 events, hour 9)
-
-| | Original (PR #16) | After part 1 | After part 2 |
+| 吉神 | Rule adopted by 協紀 | Source | Operand |
 |---|---|---|---|
-| Six original entries: undetermined | 4,540 | 2,520 | **900** |
-| Four new entries: undetermined | — | 1,220 | **360** |
-| Six original entries: diverge | 1,707 | 2,313 | 2,532 |
-| Four new entries: diverge | — | 3,417 | 3,297 |
+| 天赦 | 春戊寅 夏甲午 秋戊申 冬甲子 | 歴例曰 (考原 agrees) | day pillar |
+| 天願 | 正月乙亥 二月甲戌 三月乙酉 四月丙申 五月丁未 六月戊午 七月己巳 八月庚辰 九月辛卯 十月壬寅 十一月癸丑 十二月甲子 | **按 … 起例曰** | day pillar |
+| 月恩 | 正月丙 二丁 三庚 四己 五戊 六辛 七壬 八癸 九庚 十乙 十一甲 十二辛 | 歴例曰 (按 agrees) | day stem |
+| 四相 | 春丙丁 夏戊己 秋壬癸 冬甲乙 | 歴例曰 (按 agrees) | day stem |
 
-Six original entries now: 4,893 avoid / 798 not_avoided / 833 no_annotation / 3,496 not_listed / 900 undetermined. All 1,260 remaining undetermined items need 天德 on a trigram month (閉日 500, 月刑 360, 收日→月刑 160, 月建 100, 平日→月刑 80, 月建→月刑 60).
+**天願 correction**: 卷五 first quotes the 歴例 list (正月甲午 二月甲戌 …) and 曹震圭's explanation, then rejects both in its 按: “考諸神煞起例乃知傳寫謬誤二十四字中誤十三字焉” and adopts the 起例 list (branch = 太陽/月將, stem = 令星). A first draft of this branch used the 歴例 list; it was corrected after the 月表 scan showed 五月丁未 (not 丁丑). Readings: 月恩 四月 and 四相 夏 “巳” read as the stem 己.
+
+Consistency (`xiejiVirtues.test.ts`): with the 起例 list, the 卷十 notes 〔天願不得與月建併〕〔天赦天願不得與月破併〕〔天赦天願不得與滿日併〕 hold for every month (天願 never falls on 建/破/滿; 天赦 never on 破/滿), and the 卷十 clauses that name 天願 land on that 凶's day: 月煞 卯 (戌) = 甲戌, 月煞 酉 (辰) = 庚辰, 月刑 巳 (申) = 丙申. The 歴例 list fails both checks.
+
+## Part 3 — the 月表 scan: 天德 on 坤/乾/艮/巽 months
+
+卷五 records two ways to put the trigram 天德 on days (考原 墓 reading 二月未/五月戌/八月丑/十一月辰; others 巳亥寅申) and calls the 考原 one “聊存以傳一解”. The book's own day tables decide it. Scan: 四庫全書 子部 (浙江大學圖書館 copy on archive.org) — 卷二十一 二月 `06067692.cn` n73–n132, 卷二十四 五月 `06067694.cn` n6–n65, 卷二十七 八月 `06067695.cn` n70–n129, 卷三十 十一月 `06067697.cn` n6–n65; one page per day, 甲子 → 癸亥. Every page's 吉神 list was read (cropped and tiled with ffmpeg).
+
+- **None of the 240 day pages of the four 仲 months lists 天德** (and none lists 天德合). The month headers still say 天德在坤/乾/艮/巽 (a direction). By contrast 七月 癸亥 lists 天德 (申 month 天德 = 癸), so 天德 is printed whenever it is a stem or branch.
+- Same pages confirm the locked definitions: 月德/月德合 on their stems, 天赦 (戊寅/甲午/戊申/甲子), 天願 (甲戌/丁未/庚辰/癸丑), 月恩, 四相; 月建/月破/月刑/月煞/月厭/災煞/刼煞 on the expected branches (e.g. 二月 癸酉: 月破 大耗 災煞 月厭; 甲戌: 月德 天願 六合 / 月煞 月虛).
+
+So 天德 is treated as **absent** on days of 子午卯酉 months: `almanac.ts` `unknownGodIds` is now always `[]` (only the 卷十 diagnostics read it). Production presence was already absent there (trigram tokens never match a day).
+
+### Effect after parts 2–3 (2025–2027, 11 events, hour 9)
+
+| | Original (PR #16) | After part 1 | After parts 2–3 |
+|---|---|---|---|
+| Six original entries: undetermined | 4,540 | 2,520 | **0** |
+| Four new entries: undetermined | — | 1,220 | **0** |
+| Six original entries: diverge | 1,707 | 2,313 | 2,575 |
+| Four new entries: diverge | — | 3,417 | 3,385 |
+
+Six original entries now: 5,422 avoid / 798 not_avoided / 833 no_annotation / 3,867 not_listed. Four new entries: 4,583 / 420 / 728 / 1,589.
 
 ## Limits / next
 
 - Diagnostics only; frozen decision baseline still 1095/1095; not shown in UI.
-- Remaining lever: 天德 trigram tokens (owner decision or primary 月表 scan). 時德/六合 are not named in any encoded clause.
+- No `undetermined` remains for the encoded entries in 2025–2027. 時德/六合 are not named in any encoded clause.
 - Next: golden + migration proof for the scoring table decided 2026-10-10 (`docs/plans/xieji-vol10-scoring.md`).
 - Encoding these presences in the scoring layer (making the legacy 月厭/月刑/月煞/災煞 rules fire) is a separate decision: it would change scores.

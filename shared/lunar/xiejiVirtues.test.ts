@@ -13,12 +13,12 @@ const daysWith = (month: string, han: string) =>
   PILLARS.filter((p) => getVol10VirtuesPresent(B(month), S(p[0]!), B(p[1]!)).has(han as never))
 
 describe('卷五 virtue positions', () => {
-  it('天赦 and 天願 match the 歴例 sentences read by hand', () => {
+  it('天赦 (歴例) and 天願 (按 起例, not the rejected 歴例 list) match the text read by hand', () => {
     expect([...JIAN].map((m) => daysWith(m, '天赦').join()).join(' ')).toBe(
       '戊寅 戊寅 戊寅 甲午 甲午 甲午 戊申 戊申 戊申 甲子 甲子 甲子',
     )
     expect([...JIAN].map((m) => daysWith(m, '天願').join()).join(' ')).toBe(
-      '甲午 甲戌 乙酉 丙子 丁丑 戊午 甲寅 丙辰 辛卯 戊辰 甲子 癸未',
+      '乙亥 甲戌 乙酉 丙申 丁未 戊午 己巳 庚辰 辛卯 壬寅 癸丑 甲子',
     )
   })
   it('月恩 and 四相 are day-stem rules', () => {
@@ -29,23 +29,33 @@ describe('卷五 virtue positions', () => {
       '丙丁 丙丁 丙丁 戊己 戊己 戊己 壬癸 壬癸 壬癸 甲乙 甲乙 甲乙',
     )
   })
-  it('the 卷十 notes 不得與X併 sit exactly where 天願/天赦 meet that day', () => {
-    const officer = (month: string, pillar: string) =>
-      OFFICERS[(B(pillar[1]!) - B(month) + 12) % 12]
-    // 〔天願不得與月建併〕: 天願 falls on 建 only in 子 month (曹震圭: 十一月以其自建者).
-    expect([...JIAN].filter((m) => officer(m, daysWith(m, '天願')[0]!) === '建')).toEqual(['子'])
-    // 〔天赦天願不得與月破併〕: 天願 falls on 破 in 申 and 丑 months.
-    expect([...JIAN].filter((m) => officer(m, daysWith(m, '天願')[0]!) === '破')).toEqual([
-      '申',
-      '丑',
-    ])
+  it('agrees with the 月表 scan (四庫全書 卷二十一/二十四/二十七/三十, read page by page)', () => {
+    // Witness readings from the day pages of the four 仲 months; independent of 卷五.
+    const witness: Record<string, { 天願: string; 天赦: string }> = {
+      卯: { 天願: '甲戌', 天赦: '戊寅' },
+      午: { 天願: '丁未', 天赦: '甲午' },
+      酉: { 天願: '庚辰', 天赦: '戊申' },
+      子: { 天願: '癸丑', 天赦: '甲子' },
+    }
+    for (const [month, w] of Object.entries(witness)) {
+      expect(daysWith(month, '天願'), month).toEqual([w.天願])
+      expect(daysWith(month, '天赦'), month).toEqual([w.天赦])
+    }
+  })
+  it('the 卷十 notes 不得與X併 name days that 天願/天赦 never meet; clauses naming 天願 do', () => {
+    const officer = (month: string, han: string) =>
+      OFFICERS[(B(daysWith(month, han)[0]![1]!) - B(month) + 12) % 12]
+    // 〔天願不得與月建併〕〔天赦天願不得與月破併〕〔天赦天願不得與滿日併〕
+    for (const m of JIAN) {
+      expect(['建', '破', '滿']).not.toContain(officer(m, '天願'))
+      expect(['破', '滿']).not.toContain(officer(m, '天赦'))
+    }
     // 月建 lists 天赦 among its virtues: 天赦 falls on 建 in 寅午申子 months.
-    expect([...JIAN].filter((m) => officer(m, daysWith(m, '天赦')[0]!) === '建')).toEqual([
-      '寅',
-      '午',
-      '申',
-      '子',
-    ])
+    expect([...JIAN].filter((m) => officer(m, '天赦') === '建')).toEqual(['寅', '午', '申', '子'])
+    // 月煞 卯酉 “與月德天願併” and 月刑 巳 “與月德天德合天願併”: 天願 sits on that 凶's day.
+    expect(daysWith('卯', '天願')).toEqual(['甲戌']) // 月煞 卯 = 戌
+    expect(daysWith('酉', '天願')).toEqual(['庚辰']) // 月煞 酉 = 辰
+    expect(daysWith('巳', '天願')).toEqual(['丙申']) // 月刑 巳 = 申
   })
 })
 
@@ -78,10 +88,15 @@ describe('卷十 with 天赦/天願/月恩/四相 known', () => {
   it('閉日 in 未 month on 戊午 (天願) annotates nothing', () => {
     expect(verdict(day('未', '戊午', 'be'), 'bi_ri', 'wedding')).toBe('no_annotation')
   })
-  it('月破 in 申 month on 甲寅 (天願) stays all taboo: 天願 does not count with 月破', () => {
+  it('月煞 in 酉 month on 庚辰 (天願) keeps only military and medical taboo', () => {
+    // 酉 month: 天德 艮 (no day), 月德 庚 — 庚辰 also carries 月德; both satisfy “與月德天願併”.
+    expect(verdict(day('酉', '庚辰', 'nguy'), 'yue_sha', 'wedding')).toBe('not_avoided')
+    expect(verdict(day('酉', '庚辰', 'nguy'), 'yue_sha', 'medical')).toBe('avoid')
+  })
+  it('月破 in 申 month on 甲寅 without 德 is all taboo', () => {
     expect(verdict(day('申', '甲寅', 'pha', ['nguyet_pha']), 'yue_po', 'worship')).toBe('avoid')
   })
-  it('月破 in 子 month (天德 巽, unknown) on 甲午: 天德合 is absent (四仲之月…無合), so all taboo', () => {
+  it('月破 in 子 month (天德 巽) on 甲午: 天德合 absent (四仲之月…無合), so all taboo', () => {
     const d = day('子', '甲午', 'pha', ['nguyet_pha'], ['thien_duc'])
     expect(verdict(d, 'yue_po', 'worship')).toBe('avoid')
   })

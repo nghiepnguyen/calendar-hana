@@ -69,8 +69,8 @@ Operational readings of the above (agent; owner to confirm in review):
 ## Work that reduces `undetermined` (can be done before or after)
 
 1. ~~Presence audit for 月厭, 月刑, 月煞, 災煞~~ — done for diagnostics (`docs/audits/xieji-monthly-sha-presence.md`): undetermined of the six original entries 4,540 → 2,520; the four new entries add 7,320 items (1,220 undetermined). Scoring presence for them is still off.
-2. ~~Presence audit for 天赦, 天願, 月恩, 四相~~ — done (same audit, part 2); 天德合 absent on 四仲 months per 卷五. Six original entries: undetermined 900; all remaining need 天德 on trigram months. 時德/六合 are not named in encoded clauses.
-3. Normalize 天德 trigram tokens (坤/乾/艮/巽) — `SOURCE_DEPENDENT` inside 協紀 (考原 墓 reading vs 巳亥寅申); needs owner decision or a primary 月表 reading. Not required before the golden.
+2. ~~Presence audit for 天赦, 天願, 月恩, 四相~~ — done (same audit, part 2; 天願 per 卷五 按 起例).
+3. ~~天德 trigram tokens~~ — resolved by the 月表 scan (no 天德 day in 子午卯酉 months; same audit, part 3). **Undetermined is now 0** for the encoded entries in 2025–2027, so the golden and migration proof can be built.
 4. Encode 卷十 general rules (“凡吉足勝凶從宜不從忌…”, “凡吉凶相抵不註宜亦不註忌…”) and per-god 宜 sections.
 
 ## Not in scope

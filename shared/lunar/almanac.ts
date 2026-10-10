@@ -160,9 +160,9 @@ function computeAlmanac(date: SolarDateString): Almanac {
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
     auditedGodIds: Object.keys(godPresence),
-    // Trigram 天德 tokens (坤/乾/艮/巽) are not normalized: presence of 天德 is undecidable.
-    // 天德合 is absent in those months (卷五 天德合: 四仲之月天徳居四維故無合也).
-    unknownGodIds: tianDeDirect ? [] : ['thien_duc'],
+    // Trigram 天德 tokens (坤/乾/艮/巽) fall on no day: the 協紀 月表 lists no 天德 day in those
+    // months, and 天德合 is absent there (卷五: 四仲之月天徳居四維故無合也).
+    unknownGodIds: [],
     selectionContext: {
       MANSION_INDEX: mansion.index,
       OFFICER_INDEX: officer.index,

@@ -1,8 +1,8 @@
 /**
  * Presence of four 吉神 named in 卷十 virtue conditions, from 欽定協紀辨方書 (四庫全書本) 卷五 義例三,
  * by Month Jian (seasons 春 = 寅卯辰 … 冬 = 亥子丑). Used only by the 卷十 diagnostics; no star,
- * activity effect or score. 天德 on 坤/乾/艮/巽 months stays unknown: 卷五 itself records two
- * readings (墓 辰戌丑未 per 考原, or 巳亥寅申) and calls the 考原 one “聊存以傳一解”.
+ * activity effect or score. 天德 on 坤/乾/艮/巽 months falls on no day: the 月表 (卷二十一/二十四/
+ * 二十七/三十, 四庫全書 scan) lists 天德 on none of the 60 days of those months.
  */
 
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
@@ -36,22 +36,24 @@ export const VOL10_VIRTUES: readonly VirtueDefinition[] = [
     han: '天願',
     operand: 'DAY_PILLAR',
     targets: [
-      '甲午',
+      '乙亥',
       '甲戌',
       '乙酉',
-      '丙子',
-      '丁丑',
+      '丙申',
+      '丁未',
       '戊午',
-      '甲寅',
-      '丙辰',
+      '己巳',
+      '庚辰',
       '辛卯',
-      '戊辰',
+      '壬寅',
+      '癸丑',
       '甲子',
-      '癸未',
     ],
-    sourceLocation: '卷五 / 義例三 / 天願 / 歴例曰',
+    sourceLocation: '卷五 / 義例三 / 天願 / 按 (起例曰)',
     quote:
-      '正月甲午二月甲戌三月乙酉四月丙子五月丁丑六月戊午七月甲寅八月丙辰九月辛卯十月戊辰十一月甲子十二月癸未',
+      '起例曰正月乙亥二月甲戌三月乙酉四月丙申五月丁未六月戊午七月己巳八月庚辰九月辛卯十月壬寅十一月癸丑十二月甲子',
+    reading:
+      '協紀 rejects the 歴例 list (正月甲午…, “傳寫謬誤二十四字中誤十三字”) and adopts 起例; the 月表 agrees (五月丁未, 八月庚辰, 十一月癸丑).',
   },
   {
     han: '月恩',
