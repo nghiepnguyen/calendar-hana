@@ -2175,3 +2175,14 @@ Khu “Mục tiêu và kết luận trong ngày” chỉ hiện khi có ngày si
 5. Smoke chưa kiểm nhãn “Kỵ mạnh” trên từng mục (bấm mở chi tiết Ăn hỏi bị timeout); chỉ xác nhận các mục nằm trong “Không nên làm”.
 6. Mobile/Safari, `test:emulator` chưa chạy cho các PR này.
 
+
+
+## 36. 卷十 release readiness sau PR #29 — local, chưa bật flag
+
+Base `43d6303` (PR #30), 10/10/2026. Đo lại 1095 ngày × 32 activity × 11 event, chỉ khác flag mocked: **1662 event đổi điểm, 652 đổi kết luận**. not_recommended → recommended **231** (trước 244); → caution **157** (trước 172); recommended → not_recommended 7. 3968 activity đổi điểm; changed rows no_annotation 1622, not_avoided 1482, avoid 181; added 1205.
+
+Proof tăng cường: không mất contribution key; unrelated rows (gồm 百忌日/土王用事) giữ nguyên; hard warning giữ bit và mức trạng thái; 0 undetermined. Mapping 29/29. Report bền vững: `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-post-pr29.tsv`, `xieji-vol10-post-pr29-samples.json` (observed outputs, không phải Golden độc lập).
+
+**Flag vẫn false.** Next step là owner review các transition và quyết bật; activation cần commit riêng, ghim OFF trong các migration lịch sử, gate trên build đã bật, rồi merge/deploy khi được phép. Không coi số event đổi điểm bằng cũ là kết luận giống cũ.
+
+Gate readiness: typecheck/lint, 155 files / 2903 tests; mutation tuần tự 7/7 + 9/9; build; E2E desktop 104/16 skip, mobile Pixel 7 119/1 skip, Safari desktop WebKit 88/32 skip (tổng 311 pass / 49 skip). Chưa chạy iPhone/Firefox/emulator. Toàn bộ build/E2E dùng flag OFF; migration test mock ON.

@@ -1,0 +1,141 @@
+14	activity avoid → consider
+199	activity avoid → neutral
+177	activity avoid → watch
+9	activity consider → strong_avoid
+33	activity neutral → avoid
+95	activity neutral → watch
+817	activity no_evidence → avoid
+38	activity recommended → avoid
+121	activity recommended → watch
+141	activity score changed beam_raising
+152	activity score changed bed_installation
+151	activity score changed burial
+152	activity score changed business
+128	activity score changed cleaning
+121	activity score changed construction
+49	activity score changed contract
+150	activity score changed cut_hair
+170	activity score changed demolition
+141	activity score changed engagement
+183	activity score changed finance
+121	activity score changed groundbreaking
+183	activity score changed livestock
+114	activity score changed medical
+152	activity score changed meeting
+152	activity score changed moving
+152	activity score changed opening
+129	activity score changed planting
+151	activity score changed pray_blessing
+151	activity score changed pray_children
+121	activity score changed renovation
+128	activity score changed study
+49	activity score changed transaction
+160	activity score changed travel
+129	activity score changed warehouse
+141	activity score changed warehouse_opening
+128	activity score changed water_travel
+141	activity score changed wedding
+128	activity score changed worship
+11	activity strong_avoid → avoid
+1	activity strong_avoid → consider
+13	activity strong_avoid → watch
+102	activity watch → avoid
+866	activity watch → neutral
+1015	activity watch → recommended
+158	activity watch → strong_avoid
+402	added bi_ri→yue_sha avoid
+168	added ping_ri→yue_sha avoid
+22	added ping_ri→yue_xing avoid
+60	added shou_ri→yue_xing avoid
+234	added yue_jian avoid
+21	added yue_jian→yue_xing avoid
+138	added yue_jian→yue_yan avoid
+160	added yue_po avoid
+260	changed bi_ri no_annotation
+713	changed jie_sha no_annotation
+306	changed jie_sha not_avoided
+189	changed ping_ri no_annotation
+240	changed ping_ri not_avoided
+294	changed ping_ri→yue_xing no_annotation
+100	changed ping_ri→yue_xing not_avoided
+80	changed shou_ri not_avoided
+22	changed shou_ri→jie_sha avoid
+576	changed shou_ri→jie_sha not_avoided
+38	changed shou_ri→yue_xing avoid
+136	changed shou_ri→yue_xing no_annotation
+18	changed yue_jian avoid
+180	changed yue_jian not_avoided
+11	changed yue_jian→yue_xing avoid
+30	changed yue_jian→yue_xing no_annotation
+12	changed yue_jian→yue_yan avoid
+80	changed yue_po avoid
+33	event by type buy_property insufficient_evidence → not_recommended
+1	event by type buy_property recommended → caution
+33	event by type buy_vehicle caution → not_recommended
+1	event by type buy_vehicle recommended → caution
+28	event by type cut_hair caution → recommended
+21	event by type groundbreaking not_recommended → caution
+51	event by type groundbreaking not_recommended → recommended
+11	event by type move_house caution → not_recommended
+37	event by type move_house not_recommended → caution
+61	event by type move_house not_recommended → recommended
+6	event by type move_house recommended → not_recommended
+16	event by type open_business insufficient_evidence → not_recommended
+58	event by type open_business not_recommended → caution
+40	event by type open_business not_recommended → recommended
+1	event by type open_business recommended → not_recommended
+4	event by type property_handover caution → recommended
+33	event by type sign_contract caution → not_recommended
+80	event by type start_journey caution → recommended
+17	event by type start_journey recommended → caution
+41	event by type wedding not_recommended → caution
+79	event by type wedding not_recommended → recommended
+77	event caution → not_recommended
+112	event caution → recommended
+49	event insufficient_evidence → not_recommended
+157	event not_recommended → caution
+231	event not_recommended → recommended
+19	event recommended → caution
+7	event recommended → not_recommended
+171	event score changed buy_property
+183	event score changed buy_vehicle
+150	event score changed cut_hair
+121	event score changed groundbreaking
+253	event score changed move_house
+211	event score changed open_business
+174	event score changed property_handover
+49	event score changed receive_vehicle
+49	event score changed sign_contract
+160	event score changed start_journey
+141	event score changed wedding
+1662	event score changed
+171	rows of activity beam_raising
+182	rows of activity bed_installation
+181	rows of activity burial
+182	rows of activity business
+128	rows of activity cleaning
+151	rows of activity construction
+49	rows of activity contract
+150	rows of activity cut_hair
+170	rows of activity demolition
+171	rows of activity engagement
+191	rows of activity finance
+151	rows of activity groundbreaking
+191	rows of activity livestock
+124	rows of activity medical
+182	rows of activity meeting
+182	rows of activity moving
+182	rows of activity opening
+137	rows of activity planting
+181	rows of activity pray_blessing
+181	rows of activity pray_children
+151	rows of activity renovation
+128	rows of activity study
+49	rows of activity transaction
+190	rows of activity travel
+137	rows of activity warehouse
+171	rows of activity warehouse_opening
+128	rows of activity water_travel
+171	rows of activity wedding
+128	rows of activity worship
+8043	rows_tagged_unchanged

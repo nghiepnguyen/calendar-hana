@@ -52,12 +52,58 @@ Branch `audit/xieji-vol10-remeasure`, on top of PR #21 (legacy trigram Thiên Đ
 - Events (1095 × 11, hour 9): **1,662** scores change (was 1,639). Classification: not_recommended → recommended 244; not_recommended → caution 172; caution → recommended 112; caution → not_recommended 77; insufficient_evidence → not_recommended **49** (was 126); recommended → caution 19; recommended → not_recommended 7. insufficient_evidence → caution (was 59) is gone: PR #23 already reads those days as neutral.
 - Activity ↔ 用事 mapping reviewed: `docs/audits/xieji-activity-mapping-review.md`. 26/28 reviewed; **warehouse (137 rows) and business (182 rows) pending** — owner decision before the flag goes on.
 
+## Re-measure after PR #25–#29 (2026-10-10)
+
+Base: `43d6303` (PR #30 handoff; production code through PR #29). Flag remains **false**. This is release-readiness evidence, not approval to enable or deploy.
+
+Command (run this test alone: other migration tests also write `REPORT_FILE`):
+
+```sh
+REPORT_FILE=/tmp/xieji-vol10-post-pr29.tsv npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
+```
+
+Full counters: [xieji-vol10-post-pr29.tsv](xieji-vol10-post-pr29.tsv). One first chronological witness per event-type transition, with all deciding items: [xieji-vol10-post-pr29-samples.json](xieji-vol10-post-pr29-samples.json). These are observed migration outputs, not independent Golden fixtures.
+
+Coverage: 1,095 dates (2025–2027), 32 activities, 11 event types at hour 9. Both sides use the current catalog/policies; only the mocked flag differs. Assertions prove that original contribution keys survive, every changed/added row has an acted verdict from a scored chain, unrelated rows remain equal, existing hard-warning bits survive, applied hard warnings retain the stricter score status, and event diagnostics contain no `undetermined` items. The historical 1.2.1 baseline remains a separate proof.
+
+| Metric | After #21/#23 | After #25–#29 |
+|---|---:|---:|
+| Changed rows: no_annotation | 1,538 | 1,622 |
+| Changed rows: not_avoided | 1,395 | 1,482 |
+| Changed rows: avoid | 181 | 181 |
+| Added penalty rows | 1,205 | 1,205 |
+| Tagged unchanged rows | 7,628 | 8,043 |
+| Event scores changed | 1,662 | 1,662 |
+| not_recommended → recommended | 244 | 231 |
+| not_recommended → caution | 172 | 157 |
+| caution → recommended | 112 | 112 |
+| caution → not_recommended | 77 | 77 |
+| insufficient_evidence → not_recommended | 49 | 49 |
+| recommended → caution | 19 | 19 |
+| recommended → not_recommended | 7 | 7 |
+
+3,968 activity scores and 652 event classifications change. No event moves into `insufficient_evidence`. Changed/added rows: warehouse 137, warehouse_opening 171, business 182. All newer 百忌日 and 土王用事 contributions remain unchanged. This does not certify their unresolved source conventions.
+
+Representative review cases:
+
+- 2025-01-21 wedding: 65 / not_recommended → 87.5 / recommended (刼煞 止忌 with 天德/月德).
+- 2025-02-11 groundbreaking: 27.5 / not_recommended → 72.5 / recommended; the 土王用事 contribution-preservation check applies across all dates.
+- 2025-02-13 buy_property: null / insufficient_evidence → 12.5 / not_recommended.
+- 2025-03-11 move_house: 65 / recommended → 32.5 / not_recommended.
+- 2025-11-14 open_business: 68 / recommended → 23 / not_recommended.
+
+Readiness validation so far: typecheck, lint, 155 files / 2,903 tests passed; serial annual-direction mutation 7/7 and mansion-content mutation 9/9 killed. Graph updated AST-only. The mocked-ON migration passes, while the full suite/build use the current OFF manifest. Build and E2E passed: desktop 104/16 skipped, mobile (Pixel 7 Chromium) 119/1 skipped, desktop Safari/WebKit 88/32 skipped; total 311 passed / 49 skipped. iPhone/Firefox were not run. The first E2E attempt was discarded because mutation overlapped its build; the recorded run rebuilt after both serial mutation runners finished. No emulator run: no Auth/Firestore/backend change in this PR.
+
+Before enabling, review these changes together with the 39-case independent Golden. Keep warehouse conditional co-presence, the unencoded 開倉庫出貨財 exception in 卷十 鋪註條例, general 吉凶 balancing rules, dormant/legacy gods, and mansion scoring outside this release. Their absence is an existing scope limitation, not resolved by this proof.
+
+Activation proposal: change only `shared/almanac-data/manifest.json` policy `xiejiVol10Scoring` from false to true in a separate release commit after owner decision. Pin historical OFF comparisons explicitly before rerunning all gates; do not change independent Golden to fit new production outputs. Then run local typecheck/lint/full tests, serial mutation gates, build and device E2E against the enabled build. Smoke wedding 2025-01-21, a 卯月 月破 day and a 子月 月厭 day. Rollback: restore the flag to false, rebuild and redeploy. No activation or deployment is included in this readiness change.
+
 ## Observations for the owner before turning it on
 
 - ~~不註 → no_evidence~~ — owner chose **neutral** (2026-10-10); implemented above.
 - The added −25 (`no_evidence → avoid` 834) comes mostly from 諸事皆忌 days the product never penalised (月煞 on 閉日/平日, 月建 小會/陰位, 月破 卯酉, 月厭 子午 without 天赦).
 - ~~Legacy Thiên Đức/Thiên Đức Hợp on 坤/乾/艮/巽 months~~ — removed per 月表 in PR #21 ([issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)).
-- Activity ↔ 用事 mapping: reviewed 2026-10-10 except warehouse and business (see re-measure above).
+- Activity ↔ 用事 mapping: **29/29 reviewed** after PR #24/#25. The pending warehouse/business note in the earlier re-measure is historical.
 
 ## Release
 
