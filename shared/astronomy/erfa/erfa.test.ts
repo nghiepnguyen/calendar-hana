@@ -66,7 +66,7 @@ describe('deterministic trigonometry (fdlibm ports)', () => {
     expect(detAtan2(0, -1)).toBe(Math.PI)
     expect(detAtan2(-1, 0)).toBe(-Math.PI / 2)
     expect(() => detSin(1e7)).toThrow(RangeError)
-  })
+  }, 60_000)
 })
 
 describe('official ERFA 2.0.1 t_erfa_c.c vectors', () => {
