@@ -92,7 +92,7 @@ Chi tiết contract: history §39-C.
 
 ## 5. Vấn đề mở
 
-1. **開市 trùng — đếm đôi đã sửa (owner chọn (a), 10/10/2026):** `open_business` bỏ `business` ×0.5, còn `opening` ×1 + `finance` ×0.3. 1095 ngày: 727 đổi điểm, 40 đổi kết luận, tất cả recommended → caution (vd. 2025-04-06 Ngũ Phú +10 từng tính ×1.8: 68 → 63). Proof `shared/lunar/kaishiDoubleCountMigration.test.ts`; test lịch sử ghim mapping cũ qua `legacyEventMapping.ts`. **Còn mở:** `finance` ×0.3 vẫn nhận cùng thần nên vẫn chồng một phần; hai nhãn “Khai trương”/“Mở hàng” vẫn cùng hiện trên UI (hướng (b) chưa quyết).
+1. **Activity phụ trùng heading — đã sửa (10/10/2026):** event không còn tính lại activity phụ cùng mục 用事 với activity chính: `open_business` bỏ `business` (開市; 40 ngày recommended → caution), `sign_contract` bỏ `transaction` (立券交易; 80), `groundbreaking` bỏ `construction` (興造動土, không có bằng chứng 營建宮室 riêng; 6). Proof `kaishiDoubleCountMigration.test.ts`, `sameHeadingDuplicateMigration.test.ts`; test lịch sử ghim mapping cũ qua `legacyEventMapping.ts`. **Giữ có chủ đích:** activity phụ khác heading (vd. `finance` 納財 trong `open_business`, `engagement` 納采問名 trong `wedding`) vẫn nhận các thần chung vì 卷十一 ghi thần đó cho cả hai việc. Muốn mỗi thần chỉ tính một lần mỗi event là đổi policy cộng điểm cho cả 11 event → phase riêng (spec, Golden, migration), chưa làm.
 2. **百忌日 còn lại** có activity: 巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病. Giữ chú 巳日 không 宜 出師遣使, 酉日 không 宜 慶賜賞賀. Heading chưa có activity không tự map.
 3. **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence (inventory cũ, `godPresenceCoverage.test.ts`); 14 thần legacy tính theo tháng âm trong khi 協紀 dùng Month Jian (`CONVENTION_DIFFERENCE`). Generic `byMonth` mang giả định tháng âm — không đổi blanket sang Month Jian. Legacy Hoàng/Hắc trùng không được ghi đè Phase 4C.
 4. **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 4 thần 月厭/月刑/月煞/災煞 chỉ tác động qua deferral, không có dòng riêng.
@@ -104,11 +104,10 @@ Chi tiết contract: history §39-C.
 
 ## 6. Next steps (chưa scope nào được duyệt)
 
-1. **開市 còn lại:** quyết `finance` chồng bằng chứng trong `open_business` (đo trước như bước (a)); quyết có ẩn nhãn “Mở hàng” (hướng (b)) không.
-2. **Sáu 百忌日:** nguồn/diễn giải → Golden độc lập đóng băng → rule `dayChi` + preserve_bad (mẫu PR #26) → migration diff → PR. Owner duyệt trọng số.
-3. **Audit thần vắng mặt/legacy** bằng 月表 — docs/diagnostics trước, chấm điểm tách release riêng.
-4. Cân bằng chung 卷十 và phần 宜.
-5. Nguồn offline Sát Chủ; các điểm mở 土王用事.
+1. **Sáu 百忌日:** nguồn/diễn giải → Golden độc lập đóng băng → rule `dayChi` + preserve_bad (mẫu PR #26) → migration diff → PR. Owner duyệt trọng số.
+2. **Audit thần vắng mặt/legacy** bằng 月表 — docs/diagnostics trước, chấm điểm tách release riêng.
+3. Cân bằng chung 卷十 và phần 宜.
+4. Nguồn offline Sát Chủ; các điểm mở 土王用事.
 
 ## 7. Quy tắc cho agent
 
@@ -153,4 +152,4 @@ REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
 
 ## 9. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `77861fe`+ (PR #6–#36), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. 開市 đếm đôi đã sửa (bỏ `business` khỏi `open_business`). Next: `finance` chồng trong `open_business` / ẩn nhãn Mở hàng, sáu 百忌日, hoặc audit thần vắng mặt/legacy. Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main `77861fe`+ (PR #6–#36), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Next: sáu 百忌日, hoặc audit thần vắng mặt/legacy. Lịch sử ở `docs/project-context/history.md`.
