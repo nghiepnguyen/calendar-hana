@@ -71,10 +71,12 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     vi.resetModules()
     vi.doMock('./tianDeLegacyPolicy', legacyTianDe)
     vi.doMock('../almanac-data/manifest.json', lowNeutral)
-    // And both sides predate the 百忌日 甲日/乙日 rules (golden-baiji-giap-at.json).
+    // And both sides predate the 百忌日 甲日/乙日 rules (golden-baiji-giap-at.json) and 土王用事
+    // (golden-tu-vuong-dung-su.json).
     const BAIJI = ['giap_nhat', 'at_nhat']
-    const noBaijiGods = () => ({
-      default: { ...badGodsData, items: badGodsData.items.filter((g) => !BAIJI.includes(g.id)) },
+    const LATER = [...BAIJI, 'tho_vuong_dung_su']
+    const noLaterGods = () => ({
+      default: { ...badGodsData, items: badGodsData.items.filter((g) => !LATER.includes(g.id)) },
     })
     const noBaijiOverrides = () => ({
       default: {
@@ -82,7 +84,7 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
         items: overridesData.items.filter((o) => !BAIJI.includes(o.when.targetPresent ?? '')),
       },
     })
-    vi.doMock('../almanac-data/bad-gods.json', noBaijiGods)
+    vi.doMock('../almanac-data/bad-gods.json', noLaterGods)
     vi.doMock('../almanac-data/overrides.json', noBaijiOverrides)
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))

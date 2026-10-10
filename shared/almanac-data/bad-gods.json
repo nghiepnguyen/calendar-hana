@@ -462,6 +462,24 @@
       "rule": {
         "lunarDay": [12, 15]
       }
+    },
+    {
+      "id": "tho_vuong_dung_su",
+      "han": "土王用事後",
+      "label": "Thổ Vương Dụng Sự",
+      "tier": "major",
+      "activityIds": [
+        "groundbreaking",
+        "construction",
+        "renovation",
+        "warehouse",
+        "planting",
+        "demolition"
+      ],
+      "sourceRef": "協紀辨方書 卷一 「土於四立之前各旺一十八日」; 卷十 土王用事; 卷十一 土王用事後",
+      "rule": {
+        "thoVuongDungSu": true
+      }
     }
   ]
 }
