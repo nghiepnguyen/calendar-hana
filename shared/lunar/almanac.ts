@@ -18,6 +18,7 @@ import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
 import { getSourceLockedCatHungPresence, getSourceLockedCatHungStarsForDate } from './catHungStars'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
+import { KEEP_LEGACY_TRIGRAM_TIAN_DE } from './tianDeLegacyPolicy'
 import { solarTermMonthChi } from './solarTerms'
 import { getThuTuForDate } from './thuTuAuthority'
 import { resolveDayRuleGodPresence, resolveDayRuleGods, resolvePresentGods } from './godMapping'
@@ -82,14 +83,14 @@ function computeAlmanac(date: SolarDateString): Almanac {
   const lockedStars = getSourceLockedCatHungStarsForDate(date)
   const thuTu = getThuTuForDate(date)
 
-  // Four Tian De source rows use raw trigram/direction tokens (坤/乾/艮/巽). Until an
-  // independent normalization authority is admitted, do not delete the corresponding legacy
-  // Tian De/Tian De He identities on those rows. All directly expressed stem/branch rows migrate.
-  const authorityRow = getCatHungAuthorityByMonthJian(solarTermMonthChi(jd))
-  const tianDeDirect = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/.test(authorityRow.tianDe)
+  // Tian De/Tian De He always come from the authority. On the four trigram rows (坤/乾/艮/巽)
+  // they fall on no day: the 協紀 月表 lists 天德 on no day page of those months (issue #19).
   const replaceNames = new Set<string>(ALWAYS_SOURCE_LOCKED)
   replaceNames.add(THU_TU_NAME)
-  if (tianDeDirect) {
+  const tianDeDirect = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/.test(
+    getCatHungAuthorityByMonthJian(solarTermMonthChi(jd)).tianDe,
+  )
+  if (tianDeDirect || !KEEP_LEGACY_TRIGRAM_TIAN_DE) {
     replaceNames.add('Thiên Đức')
     replaceNames.add('Thiên Đức Hợp')
   }
