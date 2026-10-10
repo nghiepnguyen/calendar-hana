@@ -497,6 +497,28 @@
       }
     },
     {
+      "id": "bach_ky_ty",
+      "han": "巳日",
+      "label": "Ngày Tỵ (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["travel"],
+      "sourceRef": "協紀辨方書 卷十一 行幸遣使; 卷十 百忌日 \"巳日忌出行\"",
+      "rule": {
+        "dayChi": [5]
+      }
+    },
+    {
+      "id": "bach_ky_hoi",
+      "han": "亥日",
+      "label": "Ngày Hợi (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["wedding"],
+      "sourceRef": "協紀辨方書 卷十一 嫁娶; 卷十 百忌日 \"亥日忌嫁娶\"",
+      "rule": {
+        "dayChi": [11]
+      }
+    },
+    {
       "id": "nhan_than_toc",
       "han": "每月十二日十五日",
       "label": "Nhân Thần (ngày 12, 15 âm)",
