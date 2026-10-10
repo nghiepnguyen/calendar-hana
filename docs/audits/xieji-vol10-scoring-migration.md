@@ -11,6 +11,7 @@ Date: 2026-10-10. Branch `audit/xieji-monthly-sha-presence` (PR #18). Policy: `d
   - `no_annotation`: any non-zero → 0, `informational`.
   - `not_listed` / `undetermined`: unchanged. Rows disagreeing between chains take the stricter verdict.
   - Each touched row carries `classical {version, entry, verdict, via, quote}` and a “Theo 協紀 卷十 …” phrase; `rawDelta` keeps the product weight.
+- **Owner decision 2026-10-10 — 不註 reads as neutral**: when 卷十 (not_avoided / no_annotation) lifts every applied row of an activity, its status is `neutral` (base score) instead of `no_evidence`, and the event criterion `event_fit` passes with a 不註宜忌 reason instead of `unknown`. Thresholds otherwise unchanged.
 - `getActivityRecommendations` applies it after building contributions, before status, when the flag (or the `xiejiVol10Scoring` input override) is on and `classicalDay` is given; `computeAlmanac` now passes `classicalDay`. Status/classification thresholds unchanged.
 - `eventEvaluation` reuses `isVol10ChainRow` for `productDelta` (same rows as before, plus added `xieji10:` rows).
 
@@ -35,19 +36,19 @@ Rows (activity level, 1095 days × all activities):
 | changed, avoid (positive → negative: 月破 80, 收日→月刑 38, 收日→刼煞 22, 月建 18, 月建→月厭 12, 月建→月刑 11) | 181 |
 | added −25 (閉日→月煞 402, 月建 234, 平日→月煞 168, 月破 160, 月建→月厭 138, 收日→月刑 60, 平日→月刑 22, 月建→月刑 21) | 1,205 |
 
-Activity status moves (largest): watch → recommended 1,045; no_evidence → avoid 834; watch → no_evidence 613; watch → neutral 264; avoid → no_evidence 191; recommended → watch 133; watch → strong_avoid 133.
+Activity status moves (largest, after the neutral decision): watch → recommended 1,045; watch → neutral 877; no_evidence → avoid 834; avoid → neutral 191; recommended → watch 133; watch → strong_avoid 133. No activity moves to `no_evidence`.
 
-Events (1095 days × 11 events, hour 9): 1,639 scores change. Classification moves: not_recommended → recommended 244; not_recommended → insufficient_evidence 156; insufficient_evidence → not_recommended 126; caution → recommended 112; insufficient_evidence → caution 59; recommended → caution 19; caution → insufficient_evidence 18; not_recommended → caution 16; recommended → not_recommended 7.
+Events (1095 days × 11 events, hour 9): 1,639 scores change. Classification moves (after the neutral decision): not_recommended → recommended 244; not_recommended → caution 172; insufficient_evidence → not_recommended 126; caution → recommended 112; insufficient_evidence → caution 59; recommended → caution 19; recommended → not_recommended 7. No event moves to `insufficient_evidence`.
 
 Spot check: 2025-01-21 (庚寅, Month Jian 丑, 除日, 天德/月德 庚, 刼煞): wedding 65 → 87.5, not_recommended → recommended — 卷十 刼煞 “辰戌丑未月值除日…與天德月德…併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌”.
 
 ## Observations for the owner before turning it on
 
-- When every applied row of an activity is dropped by `not_avoided`/`no_annotation`, the activity becomes `no_evidence` (613 + 191 moves) and some events become `insufficient_evidence` (156 + 18). This follows the unchanged thresholds; whether 不註宜忌 should read as “neutral” rather than “no evidence” is a separate decision.
+- ~~不註 → no_evidence~~ — owner chose **neutral** (2026-10-10); implemented above.
 - The added −25 (`no_evidence → avoid` 834) comes mostly from 諸事皆忌 days the product never penalised (月煞 on 閉日/平日, 月建 小會/陰位, 月破 卯酉, 月厭 子午 without 天赦).
-- Legacy Thiên Đức/Thiên Đức Hợp stars stay in scoring on 坤/乾/艮/巽 months (almanac keeps the lunar-table rows there), although the 月表 shows no 天德 day in those months — follow-up, not changed here.
+- Legacy Thiên Đức/Thiên Đức Hợp stars stay in scoring on 坤/乾/艮/巽 months, although the 月表 shows no 天德 day there — owner: separate ticket/PR ([issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)), full 月表 audit, kept out of this migration proof.
 - Activity ↔ 用事 mapping remains `interpretation_pending` (e.g. travel ↔ 行幸遣使).
 
 ## Release
 
-Flag stays `false`. Turning it on is a one-line manifest change plus deploy; rollback is the same line. Smoke dates for a release: 2025-01-21 (wedding), a 卯月 月破 day, a 子月 月厭 day.
+Flag stays `false` (owner, 2026-10-10: not yet). Turning it on is a one-line manifest change plus deploy; rollback is the same line. Smoke dates for a release: 2025-01-21 (wedding), a 卯月 月破 day, a 子月 月厭 day.

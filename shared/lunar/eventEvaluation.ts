@@ -151,9 +151,15 @@ export function evaluateEventDay(
         ? outcome('pass', 'Việc nhỏ, không gặp ngày kỵ nào trong nguồn: xem là bình thường.')
         : primary.status === 'no_evidence'
           ? outcome('unknown', 'Chưa có quy tắc được tính điểm cho hoạt động chính.')
-          : primary.hardWarning || primary.negativeMagnitude > 0
-            ? outcome('fail', 'Hoạt động chính có yếu tố bất lợi hoặc cảnh báo nghiêm trọng.')
-            : outcome('pass', 'Hoạt động chính có quy tắc phù hợp.')
+          : primary.status === 'neutral' &&
+              !primary.contributions.some((row) => row.status === 'applied')
+            ? outcome(
+                'pass',
+                'Theo 協紀 卷十, hoạt động chính không bị ghi kỵ (不註宜忌 / 不忌): xem là trung tính.',
+              )
+            : primary.hardWarning || primary.negativeMagnitude > 0
+              ? outcome('fail', 'Hoạt động chính có yếu tố bất lợi hoặc cảnh báo nghiêm trọng.')
+              : outcome('pass', 'Hoạt động chính có quy tắc phù hợp.')
     if (id === 'good_hour') {
       if (input.hour === undefined)
         return outcome('unknown', 'Chọn giờ dự kiến để đánh giá giờ phù hợp.')

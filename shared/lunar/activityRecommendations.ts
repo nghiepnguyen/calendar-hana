@@ -228,21 +228,31 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
       const personalModifier = input.personalModifier ?? 0
       const score = clamp(generalScore + personalModifier)
       const hardWarning = contributions.some((row) => row.hardWarning)
-      const status: ActivityStatus = !applied.length
-        ? 'no_evidence'
-        : hardWarning && manifest.policies.hardVetoFromClassicalJi
-          ? 'strong_avoid'
-          : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
-            ? 'consider'
-            : score <= 19
-              ? 'strong_avoid'
-              : score <= 29
-                ? 'avoid'
-                : negativeMagnitude > 0
-                  ? 'watch'
-                  : score >= 65
-                    ? 'recommended'
-                    : 'neutral'
+      // Owner decision 2026-10-10: when 卷十 lifts every applied rule (不註宜忌 / 不忌), the
+      // activity is neutral, not "no evidence" — the source has spoken about it.
+      const classicalNeutral =
+        !applied.length &&
+        contributions.some(
+          (row) =>
+            row.classical?.verdict === 'no_annotation' || row.classical?.verdict === 'not_avoided',
+        )
+      const status: ActivityStatus = classicalNeutral
+        ? 'neutral'
+        : !applied.length
+          ? 'no_evidence'
+          : hardWarning && manifest.policies.hardVetoFromClassicalJi
+            ? 'strong_avoid'
+            : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
+              ? 'consider'
+              : score <= 19
+                ? 'strong_avoid'
+                : score <= 29
+                  ? 'avoid'
+                  : negativeMagnitude > 0
+                    ? 'watch'
+                    : score >= 65
+                      ? 'recommended'
+                      : 'neutral'
       return {
         activityId: activity.id,
         label: activity.label,

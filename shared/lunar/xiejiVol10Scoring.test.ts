@@ -3,6 +3,7 @@ import golden from '../almanac-data/golden-xieji-vol10-scoring.json'
 import type { Evidence } from './evidence'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring, VOL10_SCORED_ENTRIES } from './xiejiVol10Scoring'
+import { getActivityRecommendations } from './activityRecommendations'
 
 const B = (c: string) => '子丑寅卯辰巳午未申酉戌亥'.indexOf(c)
 const S = (c: string) => '甲乙丙丁戊己庚辛壬癸'.indexOf(c)
@@ -118,5 +119,28 @@ describe('policy mechanics not reachable by real days', () => {
       badGodCap: -30,
     })
     expect(out).toEqual([])
+  })
+})
+
+describe('owner decision 2026-10-10: 不註宜忌 / 不忌 lifting every rule reads as neutral', () => {
+  // 辰 month 乙巳 (除日): 刼煞 without 德 → 凡所忌者則不註宜所宜者亦不註忌. Trực Trừ has no wedding
+  // rule, Kiếp Sát −15 is the only applied row.
+  const input = {
+    officerId: 'tru',
+    presentGoodGods: [],
+    presentBadGods: ['kiep_sat'],
+    godPresence: { kiep_sat: [{ operand: 'DAY_BRANCH', equals: B('巳') }] },
+    classicalDay: { monthJianBranch: B('辰'), dayStem: S('乙'), dayBranch: B('巳') },
+  }
+  const wedding = (on: boolean) =>
+    getActivityRecommendations({ ...input, xiejiVol10Scoring: on }).find(
+      (r) => r.activityId === 'wedding',
+    )!
+  it('flag on: neutral at the base score, not no_evidence', () => {
+    expect(wedding(true)).toMatchObject({ status: 'neutral', score: 50, negativeMagnitude: 0 })
+  })
+  it('flag off: unchanged product result', () => {
+    expect(wedding(false).status).not.toBe('neutral')
+    expect(wedding(false).negativeMagnitude).toBe(15)
   })
 })

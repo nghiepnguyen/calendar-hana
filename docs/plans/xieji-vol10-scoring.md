@@ -41,7 +41,9 @@ Recorded before any code; golden and migration proof are deferred until `undeter
 2. **New penalty**: `avoid` (including 諸事皆忌) where no row of that 凶 chain is negative for the activity → add **−25**, no `hardWarning`.
 3. **Scope**: the six scored 凶 (月建, 月破, 平日, 收日, 閉日, 刼煞) **with** their 從月煞/月刑/月厭/災煞/刼煞/月破 deferrals resolved. The four new entries (月厭/月刑/月煞/災煞) get **no rows of their own** (no product rule fires for them).
 4. **Caps**: follow the source's existing cap — Trực rows uncapped; god rows (Kiếp Sát, Nguyệt Phá) inside bad_god `capPerActivity`.
-5. **Release**: `manifest.policies.xiejiVol10Scoring`, default `false`.
+5. **Release**: `manifest.policies.xiejiVol10Scoring`, default `false`; owner 2026-10-10: keep off for now.
+6. **不註 reads as neutral** (owner, 2026-10-10): an activity whose every rule 卷十 lifts is `neutral`, not `no_evidence`.
+7. **Thiên Đức legacy on 坤/乾/艮/巽 months**: separate audit of the whole 月表 ([issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)), not in this change.
 
 Operational readings of the above (agent; owner to confirm in review):
 
