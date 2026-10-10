@@ -2058,6 +2058,8 @@ export const STARS: readonly StarDefinition[] = [
     name: 'Sát Chủ',
     isGood: false,
     meaning: 'Xấu cho mọi công việc.',
+    // Folk table, Hán-văn verse "thất Trư, bát Ngưu": month 7 Hợi, month 8 Sửu.
+    // Same as SAT_CHU_AM; see audit-fixtures/sat-chu-golden-v1.json for witnesses and the Nôm variant.
     rule: {
       byMonth: [
         { chi: [5] },
@@ -2066,8 +2068,8 @@ export const STARS: readonly StarDefinition[] = [
         { chi: [3] },
         { chi: [8] },
         { chi: [10] },
-        { chi: [1] },
         { chi: [11] },
+        { chi: [1] },
         { chi: [6] },
         { chi: [9] },
         { chi: [2] },

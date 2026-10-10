@@ -1,6 +1,6 @@
 # Sát Chủ / Thọ Tử — printed witness: Ngọc Hạp Chánh Tông
 
-Status: **AUDIT NOTE — docs only; no code, dataset or Golden change**
+Status: **DECIDED 2026-10-10 — calendar Sát Chủ months 7/8 aligned to the Hán-văn verse; see “Decision”**
 Date: 2026-10-10. Base: main `a69e8df`.
 Related: `docs/audits/thu-tu-sat-chu-provenance.md` (Phase 5), `tasks/design-annual-directions-sat-chu.md`.
 
@@ -87,3 +87,32 @@ The branches equal the source-locked 受死 sequence (戌 辰 亥 巳 子 午 �
 4. Never infer Sát Chủ from Thụ Tử, and never move it to Month Jian on this evidence, because the book is silent on the month basis.
 
 Until a decision is made, legacy behavior of both tables stays unchanged.
+
+## Decision (2026-10-10, branch `audit/sat-chu-month-7-8`)
+
+User request: open a dedicated audit branch to resolve the 7/8 inconsistency between the calendar and personal layers.
+
+Further evidence found:
+
+- The project owner's spec `Spec Ngày Thụ Tử & Sát Chủ.md` already chose the Hán-văn verse (“Nhất Tị, Nhì Tý, Tam Dương vị, Tứ Mão, ngũ hầu, lục Khuyển quy, Thất trư, bát ngưu, …”), marked months 7/8 as corrected from Sửu/Hợi, and recorded the Nôm verse (“Bảy trâu đực chọi cùng trâu cái / Tám dê leo núi lợn xông quàng”) as the variant that gives 7 Sửu / 8 Hợi. `SAT_CHU_AM` (commit `38b5352`) implemented that spec; the calendar star table was never updated.
+- The printed witness above gives the same Hán-Việt verse and a month-by-month gloss, both 7 Hợi / 8 Sửu.
+
+Classification: the calendar table followed the Nôm variant while the project had selected the Hán-văn variant. This is an inconsistency between two layers that implement the same selected rule (`ENGINE_BUG` for the calendar layer). It is not a claim that the Nôm variant is wrong as folk tradition; that variant stays recorded as rejected for this product.
+
+Change:
+
+- `shared/lunar/stars.data.ts` Sát Chủ `byMonth`: month 7 Sửu → **Hợi**, month 8 Hợi → **Sửu**. No other row changes.
+- Independent golden `shared/lunar/audit-fixtures/sat-chu-golden-v1.json`: verse, witnesses, rejected Nôm variant, operands `LUNAR_MONTH + DAY_BRANCH`, leap semantics unresolved, `globalScoreAllowed: false`. Hand-transcribed from the verse, not copied from production.
+- `shared/lunar/satChuAuthority.test.ts`: both layers must equal the golden; every 2025–2027 display difference must be a Sửu/Hợi day in lunar month 7 or 8 (`EXPECTED_AUTHORITY_MIGRATION_CHANGE`).
+- `shared/personalFengShui/rules.test.ts`: the “keep the existing table” assertion now reads the golden.
+
+Impact:
+
+- Display only. Sát Chủ has no entry in `bad-gods.json`, so it is not mapped to scoring; activity scores, statuses and event verdicts (frozen baselines) are unchanged.
+- 29 days in 2025–2027 change: 14 gain Sát Chủ in the calendar star list and 15 lose it, for example 2026-08-17, 2026-09-12, 2026-09-24, 2026-10-06 gain it and 2026-08-19, 2026-09-22, 2026-10-04 lose it.
+- Unchanged: month basis (lunar month), leap behaviour (base month), Thụ Tử authority, Sát Chủ Dương, seasonal/hour variants, separation from Thụ Tử.
+
+Still unresolved: primary (pre-modern) text of the verse; leap-month rule; the sub-sources “Thọ-Mai”, “Lưu-Thị”.
+
+Validation (local): `npm test` 141 files / 2798 tests; typecheck, lint, build; mutation gates (mansion 9/9, annual directions 7/7 KILLED); Playwright desktop 104 passed / 16 skipped.
+

@@ -6,6 +6,7 @@ import { getNapAm } from '../lunar/napAm'
 import { SOLAR_TERMS } from '../lunar/solarTerms'
 import { STARS } from '../lunar/stars.data'
 import { starApplies } from '../lunar/stars'
+import satChuGolden from '../lunar/audit-fixtures/sat-chu-golden-v1.json'
 
 type RulesModule = typeof import('./rules')
 
@@ -235,8 +236,8 @@ describe('reviewed reference fixtures (tasks/feng-shui-rule-audit.md)', () => {
     }
   })
 
-  it('preserves the existing Sát Chủ table instead of replacing it with the attachment', () => {
-    const expected = [5, 0, 7, 3, 8, 10, 1, 11, 6, 9, 2, 4]
+  it('keeps the audited Sát Chủ table instead of replacing it with the attachment', () => {
+    const expected = satChuGolden.rows.map((row) => row.chi)
     const star = STARS.find((item) => item.name === 'Sát Chủ')
     expect(star?.rule.byMonth?.map((row) => row?.chi?.[0])).toEqual(expected)
     expect(expected.filter((chi, monthIndex) => chi !== monthIndex)).toHaveLength(10)

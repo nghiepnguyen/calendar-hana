@@ -1,0 +1,130 @@
+{
+  "authorityId": "sat-chu-ngay-folk-v1",
+  "status": "SOURCE_DEPENDENT",
+  "tradition": "VIETNAMESE_FOLK_ALMANAC / SAT_CHU_NGAY (labelled Sát Chủ Âm in the product)",
+  "star": {
+    "name": "Sát Chủ",
+    "kind": "HUNG"
+  },
+  "selectedVariant": "HAN_VAN_VERSE",
+  "verse": "Nhứt Tỵ, nhị Tý, tam Dương vị / Tứ Thố, ngũ Hầu, lục Khuyển qui / Thất Trư, bát Ngưu, cửu Mã-thị / Thập Kê, Thập-nhứt Hổ, Thập-nhị Long",
+  "witnesses": [
+    {
+      "id": "ngoc-hap-chanh-tong",
+      "title": "Ngọc Hạp Chánh Tông — Lập thành dễ hiểu",
+      "compiler": "Viên-Tài Hà-Tấn-Phát",
+      "level": "printed secondary compilation",
+      "heading": "Ngày Sát-Chủ (kỵ cất nhà, cưới gả) — theo sách Thọ-Mai",
+      "pages": "128–129",
+      "fileSha1": "95c29e2fd7c4b418555287a4dd1d2fbbfc3ebaae",
+      "agreement": "verse and month-by-month gloss both give month 7 Hợi, month 8 Sửu"
+    },
+    {
+      "id": "user-spec-thu-tu-sat-chu",
+      "title": "Spec Ngày Thụ Tử & Sát Chủ (project owner)",
+      "level": "project decision",
+      "agreement": "chooses the Hán-văn verse; marks months 7/8 as corrected from Sửu/Hợi"
+    }
+  ],
+  "rejectedVariants": [
+    {
+      "id": "NOM_VERSE",
+      "rows": {
+        "7": "Sửu",
+        "8": "Hợi"
+      },
+      "note": "Nôm verse 'Bảy trâu đực chọi cùng trâu cái / Tám dê leo núi lợn xông quàng' and several modern web tables; the former calendar star table followed it. Recorded as a variant, not erased."
+    }
+  ],
+  "operands": ["LUNAR_MONTH", "DAY_BRANCH"],
+  "monthBasis": "LUNAR_MONTH",
+  "leapMonthSemantics": "UNRESOLVED — product uses the base month; no witness states a rule",
+  "globalScoreAllowed": false,
+  "inferenceFromThuTuForbidden": true,
+  "rows": [
+    {
+      "month": 1,
+      "dayBranch": "Tỵ",
+      "dayBranchHan": "巳",
+      "chi": 5,
+      "verseWord": "Tỵ"
+    },
+    {
+      "month": 2,
+      "dayBranch": "Tý",
+      "dayBranchHan": "子",
+      "chi": 0,
+      "verseWord": "Tý"
+    },
+    {
+      "month": 3,
+      "dayBranch": "Mùi",
+      "dayBranchHan": "未",
+      "chi": 7,
+      "verseWord": "Dương (Dê)"
+    },
+    {
+      "month": 4,
+      "dayBranch": "Mão",
+      "dayBranchHan": "卯",
+      "chi": 3,
+      "verseWord": "Thố (Mão)"
+    },
+    {
+      "month": 5,
+      "dayBranch": "Thân",
+      "dayBranchHan": "申",
+      "chi": 8,
+      "verseWord": "Hầu (Khỉ)"
+    },
+    {
+      "month": 6,
+      "dayBranch": "Tuất",
+      "dayBranchHan": "戌",
+      "chi": 10,
+      "verseWord": "Khuyển (Chó)"
+    },
+    {
+      "month": 7,
+      "dayBranch": "Hợi",
+      "dayBranchHan": "亥",
+      "chi": 11,
+      "verseWord": "Trư (Heo)"
+    },
+    {
+      "month": 8,
+      "dayBranch": "Sửu",
+      "dayBranchHan": "丑",
+      "chi": 1,
+      "verseWord": "Ngưu (Trâu)"
+    },
+    {
+      "month": 9,
+      "dayBranch": "Ngọ",
+      "dayBranchHan": "午",
+      "chi": 6,
+      "verseWord": "Mã (Ngựa)"
+    },
+    {
+      "month": 10,
+      "dayBranch": "Dậu",
+      "dayBranchHan": "酉",
+      "chi": 9,
+      "verseWord": "Kê (Gà)"
+    },
+    {
+      "month": 11,
+      "dayBranch": "Dần",
+      "dayBranchHan": "寅",
+      "chi": 2,
+      "verseWord": "Hổ (Cọp)"
+    },
+    {
+      "month": 12,
+      "dayBranch": "Thìn",
+      "dayBranchHan": "辰",
+      "chi": 4,
+      "verseWord": "Long (Rồng)"
+    }
+  ]
+}
