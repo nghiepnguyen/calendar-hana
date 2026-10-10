@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #44 (+ Release A trên nhánh `feature/legacy-gods-month-jian`).
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #45 (Release A: 14 thần legacy theo Month Jian, đã deploy).
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
@@ -26,9 +26,9 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Main | `6d7329b` (PR #42) |
-| Bundle | `/assets/index-DV2UH0G3.js`, SHA-256 `2c5e588a40f5789b8942c7e85ad3c0d75a802ac9aebb331507266b5db645dea2` (trùng build local) |
-| Deploy gần nhất | CI, 2026-10-10 14:01:08 UTC (21:01 VN); smoke production 6/6 (desktop Chrome, Pixel 7, Safari desktop): Cưới hỏi 2027-03-09 (Hợi) “Thuận lợi” → “Không thuận lợi”, Xuất hành 2026-11-03 (Tỵ) “Thuận lợi” → “Cân nhắc” |
+| Main | `524e8de` (PR #45) |
+| Bundle | `/assets/index-D6Jh5JwV.js`, SHA-256 `00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33` (trùng build local) |
+| Deploy gần nhất | CI run 38067362397, 2026-10-10 16:23:43 UTC (23:23 VN). Smoke production 6/6 (desktop Chrome, Pixel 7, Safari desktop), ô “Sao tốt & sao xấu” (đã mở “xem thêm”): 2025-01-29 Tam Hợp + Thiên Hỷ **biến mất** (trước deploy có), 2025-03-31 Tam Hợp + Thiên Hỷ **xuất hiện** (trước deploy không) |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
@@ -42,10 +42,10 @@
 | `hardWarningKeepsWorseScoreStatus` | true | Hard warning lấy trạng thái nghiêm hơn (≤19 strong_avoid, ≤29 avoid, còn lại ≥ consider) |
 | `unknownRuleMeansNoEvidence` | true | UNKNOWN không suy thành tốt/xấu |
 | `hardVetoFromClassicalJi` | false | 忌 cổ điển không tự thành veto |
-| `legacyGodsMonthJian` | true (Release A, PR #45, chờ merge) | 14 thần legacy (Thiên Xá, Nguyệt Ân, Dân Nhật, Tam Hợp, Thiên Hỷ, Lục Hợp, Ngũ Phú, Giải Thần, Phúc Sinh, Thánh Tâm, Ích Hậu, Tục Thế, Nguyệt Hình, Thiên Lại) đọc theo Month Jian thay vì tháng âm |
+| `legacyGodsMonthJian` | **true** (PR #45) | 14 thần legacy (Thiên Xá, Nguyệt Ân, Dân Nhật, Tam Hợp, Thiên Hỷ, Lục Hợp, Ngũ Phú, Giải Thần, Phúc Sinh, Thánh Tâm, Ích Hậu, Tục Thế, Nguyệt Hình, Thiên Lại) đọc theo Month Jian thay vì tháng âm; sao hiển thị và điểm cùng đổi |
 | `aiMayChangeScore` | false | |
 
-Rollback 卷十: flag về false trên nhánh riêng → PR → CI deploy → smoke. Không sửa Golden. Chi tiết history §38–39.
+Rollback (flag về false trên nhánh riêng → PR → CI deploy → smoke; không sửa Golden): `xiejiVol10Scoring` (history §38–39), `legacyGodsMonthJian` (`docs/audits/dormant-legacy-gods.md`).
 
 ## 3. Trạng thái theo phase
 
@@ -69,13 +69,22 @@ Rollback 卷十: flag về false trên nhánh riêng → PR → CI deploy → sm
 | 百忌日 巳日 出行 / 亥日 嫁娶 | DEPLOYED (PR #42) | `docs/audits/baiji-ty-hoi.md`; `travel` = Xuất hành (owner); mọi ngày Tỵ: Xuất hành ≤ Cân nhắc; mọi ngày Hợi: Cưới hỏi Không thuận lợi |
 | 土王用事 | DEPLOYED (PR #29), còn SOURCE_DEPENDENT | `docs/audits/tu-vuong-dung-su.md` |
 | Event bỏ activity phụ trùng heading | DEPLOYED (PR #37, #38) | `open_business` bỏ `business` (開市), `sign_contract` bỏ `transaction` (立券交易), `groundbreaking` bỏ `construction` (興造動土); 1095 ngày: recommended → caution 40 / 80 / 6, event khác không đổi. Proof `kaishiDoubleCountMigration.test.ts`, `sameHeadingDuplicateMigration.test.ts`; test lịch sử ghim mapping cũ qua `legacyEventMapping.ts` |
+| P3a — định nghĩa 協紀 cho 35 thần | DONE (PR #43, audit) | `shared/almanac-data/xieji-god-definitions.json` (quy tắc + trích dẫn nguyên văn + offset, SHA-1 từng quyển), `xiejiGodDefinitions.test.ts`; owner chốt 往亡 (氣往亡 = tên liên quan, quy tắc khác), 不將 bỏ 六月戊午, 五富 順行 (逆行 lưu `alternative`) |
+| P3b — presence evaluator | DONE (PR #44) | `shared/lunar/xiejiGodPresence.ts` (`xieji-god-presence-v1`), runtime đọc `xieji-god-tables.json` (bảng không trích dẫn, test buộc khớp definitions); `docs/audits/xieji-god-presence-2025-2027.tsv` |
+| Release A — 14 thần legacy theo Month Jian | **DEPLOYED (PR #45)** | Flag `legacyGodsMonthJian`; Golden `golden-legacy-gods-month-jian.json` (52 ca, đóng băng `70ed321`); migration `legacyGodsMonthJian.test.ts` + `docs/audits/legacy-gods-month-jian-migration.tsv`; `docs/audits/dormant-legacy-gods.md` |
 | 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` (39 ca) |
 | Personal (feng-shui, Bazi, daily) | Code có sẵn, chưa có phase audit riêng | Personal annual afflictions giữ convention cũ, chưa chứng nhận |
 
 ## 4. Runtime pipeline
 
 ```text
-computeAlmanac → classicalDay + activity contributions
+computeAlmanac
+  sao ngày: bảng legacy stars.data.ts (tháng âm)
+    − thay bằng source-locked: Nguyệt Đức/Đức Hợp/Phá, Kiếp Sát, Thiên Đức/Hợp (Month Jian, Phase 4D)
+    − thay bằng Month Jian: 14 thần legacy (getXiejiGodPresence, flag legacyGodsMonthJian), giữ vị trí bảng
+    + Thụ Tử (authority), + day-rule gods (Trừ Thần, 百忌日, Nhân Thần, 土王用事)
+  → present gods + godPresence (operand cho thần đã khoá)
+→ classicalDay + activity contributions
 → getActivityRecommendations
 → applyVol10Scoring (flag ON)
 → cap/status hoạt động
@@ -94,6 +103,8 @@ Bảng verdict 卷十 → điểm (`xieji-vol10-scoring-v1`):
 
 Chi tiết contract: history §39-C.
 
+Lưu ý UI: ô “Sao tốt & sao xấu” (`StarChips`) chỉ hiện 5 sao đầu mỗi nhóm trước “xem thêm” → thứ tự sao là hành vi sản phẩm. Phần sao từ bảng ngày giữ thứ tự `STARS`; sao source-locked nối sau. Test Release A buộc thứ tự giữ nguyên ở ngày tháng âm = Month Jian.
+
 ## 5. Vấn đề mở và việc tiếp theo
 
 Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp theo và phụ thuộc. **Chưa scope nào được duyệt**; đổi điểm luôn cần owner quyết, Golden độc lập đóng băng trước code, migration diff giải thích từng thay đổi.
@@ -104,9 +115,9 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 |---|---|---|---|---|
 | P1 | **百忌日 không dính event:** 寅/酉/申/未 | DEPLOYED (PR #40) | Còn: chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine; owner quyết) | — |
 | P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | DEPLOYED (PR #42); owner chọn (a), `travel` = Xuất hành | — | — |
-| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) định nghĩa 35 thần; P3b (PR #44) `xiejiGodPresence.ts`. **Release A (PR #45, chờ merge):** 14 thần legacy theo Month Jian, flag `legacyGodsMonthJian`; 741 kết luận event đổi, 0 thay đổi ở ngày tháng âm = Month Jian (`docs/audits/dormant-legacy-gods.md`) | 21 thần vắng mặt: bật cùng P4 (đo: bật cả 21 không có cân bằng → recommended 3.008 → 1.988) | Owner đã chốt 往亡/不將/五富 |
-| P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở | Spec + Golden sau P3 | P3 (cần presence cát thần). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵 |
-| P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | P3 (時德 nằm trong 21 thần vắng mặt) |
+| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) + P3b (PR #44) xong. **Release A DEPLOYED (PR #45):** 14 thần legacy theo Month Jian — 741 kết luận event đổi (caution → recommended 170, not_recommended → recommended 129, recommended → caution 115, …), 1.835 điểm event, 3.724 điểm activity; 0 thay đổi ở ngày tháng âm = Month Jian. Bảng legacy vốn đúng 12/12 tháng, chỉ sai cơ sở tháng. 5 tên gần giống (Phổ Hộ (Hội Hộ) = 普護, Phi Ma Sát (Tai Sát) = 災煞, Nguyệt Hư (Nguyệt Sát) = 月煞, Nguyệt Yếm Đại Hoạ = 月厭, Vãng Vong (Thổ Kỵ) = 往亡) đã chứng minh bằng bảng | **Còn:** bật 21 thần vắng mặt — làm cùng P4. Đo (so với trước Release A): +7 cát → 1.042 kết luận đổi, recommended 3.008 → 3.472; +đủ 21 → 2.892, recommended 3.008 → 1.988, not_recommended 3.962 → 5.920 (14 hung thần trừ điểm khi chưa có cân bằng 卷十) | Owner đã chốt 往亡/不將/五富 |
+| P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở — **việc tiếp theo** | Đọc + spec quy tắc cân bằng 卷十 (吉凶 tương đối theo 等第表), Golden độc lập, rồi bật 21 thần vắng mặt cùng release; đo trước như các release trước | Presence 35 thần đã sẵn (`getXiejiGodPresence`). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵; event `very_high` fail `event_fit` khi activity chính có bất kỳ dòng âm (chính sách hiện hành, xem có cần đổi trong P4) |
+| P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | Presence 時德/四相 đã có (P3b), chờ P4 |
 
 ### Chờ nguồn
 
@@ -127,9 +138,9 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 
 ```text
 P4 cân bằng chung 卷十 + bật 21 thần vắng mặt ─► P5 warehouse
-(Release A — 14 thần legacy theo Month Jian — độc lập, đã code)
+(P3a/P3b/Release A đã xong và deploy)
 P4 phải giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵)
-P1, P2, S1, S2, R2: độc lập (P1, P2 đã code)
+P1, P2, S1, S2, R2: độc lập (P1, P2 đã deploy)
 ```
 
 ## 6. Quy tắc cho agent
@@ -158,11 +169,13 @@ python3 scripts/audit-annual-directions-mutations.py
 python3 scripts/audit-mansion-content-mutations.py
 npx playwright test --project=desktop
 npx playwright test e2e/mansion-content.spec.ts --project=desktop --project=mobile
-# 卷十 migration report
+# Báo cáo migration / chẩn đoán (ghi TSV qua REPORT_FILE)
 REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
+REPORT_FILE=docs/audits/legacy-gods-month-jian-migration.tsv npx vitest run shared/lunar/legacyGodsMonthJian.test.ts
+REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/lunar/xiejiGodPresence.test.ts
 ```
 
-**Smoke production sau release đổi điểm:** spec Playwright (vd. `e2e/xieji-vol10-activation.spec.ts`, hoặc spec nháp chọn “Nhóm mục tiêu” + event) qua config tạm `{...base, webServer: undefined, baseURL: production}`; chạy **trước** deploy (giá trị cũ) và **sau** deploy; kiểm bundle production trùng SHA-256 build local; xoá file tạm. Profile ngày sinh chỉ lưu trong browser context tạm.
+**Smoke production sau release đổi điểm:** spec Playwright (vd. `e2e/xieji-vol10-activation.spec.ts`, hoặc spec nháp chọn “Nhóm mục tiêu” + event) qua config tạm `{...base, webServer: undefined, baseURL: production}`; chạy **trước** deploy (giá trị cũ) và **sau** deploy; kiểm bundle production trùng SHA-256 build local; xoá file tạm. Profile ngày sinh chỉ lưu trong browser context tạm. Phần “Mục tiêu và kết luận” chỉ hiện khi đã nhập ngày sinh; ô sao cần bấm “xem thêm” (nút `aria-expanded` ngay sau `h4` “Sao tốt (n)” / “Sao xấu (n)”), không bấm lan mọi `aria-expanded` (treo test).
 
 **Workspace:**
 
@@ -171,8 +184,10 @@ REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
 - Tài liệu cũ ở root đã chuyển vào `docs/` (PR #34); map cũ → mới `docs/legacy-paths.json`, index `docs/README.md`. Artifact đóng băng vẫn trích path root (khoá SHA-256).
 - **Không** chạy `npx prettier --write` theo glob rộng; chỉ format file đã sửa.
 - Không đưa credentials/secret hoặc email cá nhân vào repo (repo public).
+- Test lịch sử ghim trạng thái cũ bằng mock manifest/catalog: `xiejiVol10Scoring: false`, `legacyGodsMonthJian: false`, mapping event cũ qua `legacyEventMapping.ts`. Release đổi điểm mới phải ghim lại các test lịch sử theo cách này, không sửa Golden.
+- Nguồn 協紀 dạng text: Wikisource raw `https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷NN&action=raw` (NN = 03…11); SHA-1 prefix ghi trong `xieji-god-definitions.json` và các audit doc.
 - Nguồn tham khảo ngoài repo: scan 玉匣記 1880 `archive.org/download/20241205_20241205_0310/page/nN.jpg` (N = pdfPage − 1); 月表 四庫全書 archive.org `06067692/94/95/97.cn`; *Ngọc Hạp Chánh Tông* `~/Downloads/Ngoc hap chanh tong.pdf`; spec user ở `~/Downloads/`. Cách trích ảnh: history §24.
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `6d7329b`+ (PR #6–#42), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Việc tiếp theo theo bảng ưu tiên §5 (P4: cân bằng chung 卷十, rồi bật 21 thần vắng mặt). Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main `524e8de`+ (PR #6–#45), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian (`legacyGodsMonthJian`), activity phụ trùng heading đã bỏ. 35 thần có định nghĩa 協紀 (`xieji-god-definitions.json`) + presence (`getXiejiGodPresence`); 21 thần vắng mặt chưa bật. Việc tiếp theo: P4 — cân bằng chung 卷十, bật 21 thần cùng release. Lịch sử ở `docs/project-context/history.md`.
