@@ -57,11 +57,6 @@ describe('Trực and locked gods enter evidence diagnostics without score change
           expect(row.activityMapping, `${date} ${row.ruleId}`).toBeUndefined()
           continue
         }
-        // Legacy Thiên Đức on the four trigram-token months is not source-locked.
-        if (!row.activityMapping) {
-          expect(['thien_duc', 'thien_duc_hop'], `${date} ${row.ruleId}`).toContain(row.ruleId)
-          continue
-        }
         expect(row.activityMapping).toMatchObject({
           version: 'xieji-activity-mapping-v1',
           authorityId: XIEJI_AUTHORITY_ID,

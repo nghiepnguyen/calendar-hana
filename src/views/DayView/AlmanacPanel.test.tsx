@@ -40,7 +40,9 @@ describe('AlmanacPanel', () => {
       within(panel).getByRole('button', { name: /^Sao Ngưu, theo Ngọc Hạp/ }),
     ).toBeInTheDocument()
     expect(within(panel).getByRole('button', { name: /^Trực Chấp, tốt/ })).toBeInTheDocument()
-    expect(within(panel).getByRole('button', { name: 'Thiên Đức' })).toBeInTheDocument()
+    // 酉 month 天德 = 艮 falls on no day (協紀 月表, issue #19).
+    expect(within(panel).queryByRole('button', { name: 'Thiên Đức' })).not.toBeInTheDocument()
+    expect(within(panel).getByRole('button', { name: 'Giải Thần' })).toBeInTheDocument()
     expect(within(panel).getByRole('button', { name: 'Hoàng Sa' })).toBeInTheDocument()
 
     const hours = within(panel).getAllByRole('listitem', { name: /^Giờ / })
@@ -65,11 +67,11 @@ describe('AlmanacPanel', () => {
   it('bấm chip sao mở giải thích, Esc đóng và trả focus về chip', async () => {
     const user = userEvent.setup()
     render(<AlmanacPanel date="2026-09-25" isToday={false} />)
-    const chip = screen.getByRole('button', { name: 'Thiên Đức' })
+    const chip = screen.getByRole('button', { name: 'Giải Thần' })
     await user.click(chip)
-    expect(screen.getByRole('dialog', { name: 'Sao Thiên Đức' })).toBeInTheDocument()
+    expect(screen.getByRole('dialog', { name: 'Sao Giải Thần' })).toBeInTheDocument()
     await user.keyboard('{Escape}')
-    expect(screen.queryByRole('dialog', { name: 'Sao Thiên Đức' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('dialog', { name: 'Sao Giải Thần' })).not.toBeInTheDocument()
     expect(chip).toHaveFocus()
   })
 

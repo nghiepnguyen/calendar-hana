@@ -308,9 +308,9 @@ test('US-A1..A8: xem Ngày có khối Lịch vạn niên, bấm sao xem giải t
 await expect(taiThan.getByText('Nam', { exact: true })).toBeVisible()
   await expect(panel.getByRole('listitem', { name: /^Giờ / })).toHaveCount(12)
 
-  await panel.getByRole('button', { name: 'Thiên Đức' }).click()
-  const dialog = app.getByRole('dialog', { name: 'Sao Thiên Đức' })
-  await expect(dialog.getByText('Tốt cho mọi việc.')).toBeVisible()
+  await panel.getByRole('button', { name: 'Giải Thần' }).click()
+  const dialog = app.getByRole('dialog', { name: 'Sao Giải Thần' })
+  await expect(dialog.getByText(/^Tốt cho việc cúng bái/)).toBeVisible()
   await dialog.getByRole('button', { name: 'Đóng' }).click()
   await expect(dialog).toBeHidden()
 

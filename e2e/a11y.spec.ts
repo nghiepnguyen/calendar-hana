@@ -70,7 +70,7 @@ for (const scheme of ['light', 'dark'] as const) {
       await app.goto('/day/2026-09-25')
       await app
         .getByRole('region', { name: 'Lịch vạn niên' })
-        .getByRole('button', { name: 'Thiên Đức' })
+        .getByRole('button', { name: 'Giải Thần' })
         .click()
       await expect(app.getByRole('dialog')).toBeVisible()
       await app.waitForFunction(() =>

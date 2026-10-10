@@ -26,7 +26,8 @@ describe('getAlmanac', () => {
     expect(a.dayClashes).toEqual(['Canh Thân', 'Bính Thân', 'Bính Dần'])
     expect(a.monthCanChi.name).toBe('Đinh Dậu')
     expect(a.monthClashes).toEqual(['Ất Mão', 'Quý Mão', 'Quý Tỵ', 'Quý Hợi'])
-    expect(names(a.stars.good)).toEqual(['Thiên Đức', 'Giải Thần', 'Thanh Long Hoàng Đạo'])
+    // 酉 month 天德 = 艮: the 協紀 月表 八月 壬寅 page lists no 天德 (issue #19).
+    expect(names(a.stars.good)).toEqual(['Giải Thần', 'Thanh Long Hoàng Đạo'])
     expect(names(a.stars.bad)).toEqual(['Hoàng Sa', 'Kiếp Sát'])
     expect(a.hours).toHaveLength(12)
     expect(a.hours.filter((h) => h.isGood).map((h) => h.name)).toEqual(['Tý', 'Sửu', 'Thìn', 'Tỵ', 'Mùi', 'Tuất'])

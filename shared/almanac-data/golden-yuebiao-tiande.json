@@ -1,0 +1,116 @@
+{
+  "version": "xieji-yuebiao-tiande-witness-v1",
+  "status": "FROZEN 2026-10-10 before the code change; read by eye from the scan, never regenerate from production",
+  "source": "欽定協紀辨方書 月表 卷二十–三十一, 四庫全書 子部 (浙江大學圖書館), archive.org; one page per day 甲子→癸亥, 吉神 column",
+  "reading": "天德/天德合 are printed on every day whose stem is the month's 天德/天德合 stem in the eight stem months; in the four 仲 months (天德在坤/乾/艮/巽) no day page lists 天德 or 天德合.",
+  "months": [
+    {
+      "monthJian": "寅",
+      "month": "正月",
+      "item": "06067692.cn",
+      "pages": "n6-n65",
+      "tianDeStem": "丁",
+      "tianDeHeStem": "壬",
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "卯",
+      "month": "二月",
+      "item": "06067692.cn",
+      "pages": "n73-n132",
+      "tianDeStem": null,
+      "tianDeHeStem": null,
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "辰",
+      "month": "三月",
+      "item": "06067693.cn",
+      "pages": "n6-n65",
+      "tianDeStem": "壬",
+      "tianDeHeStem": "丁",
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "巳",
+      "month": "四月",
+      "item": "06067693.cn",
+      "pages": "n73-n132",
+      "tianDeStem": "辛",
+      "tianDeHeStem": "丙",
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "午",
+      "month": "五月",
+      "item": "06067694.cn",
+      "pages": "n6-n65",
+      "tianDeStem": null,
+      "tianDeHeStem": null,
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "未",
+      "month": "六月",
+      "item": "06067694.cn",
+      "pages": "n73-n132",
+      "tianDeStem": "甲",
+      "tianDeHeStem": "己",
+      "read": "甲子…乙亥, 戊子…己亥 and 壬子…癸亥 pages (36)"
+    },
+    {
+      "monthJian": "申",
+      "month": "七月",
+      "item": "06067695.cn",
+      "pages": "n6-n65",
+      "tianDeStem": "癸",
+      "tianDeHeStem": "戊",
+      "read": "甲子…乙亥 pages (12)"
+    },
+    {
+      "monthJian": "酉",
+      "month": "八月",
+      "item": "06067695.cn",
+      "pages": "n70-n129",
+      "tianDeStem": null,
+      "tianDeHeStem": null,
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "戌",
+      "month": "九月",
+      "item": "06067696.cn",
+      "pages": "n6-n65",
+      "tianDeStem": "丙",
+      "tianDeHeStem": "辛",
+      "read": "甲子…乙亥 pages (12)"
+    },
+    {
+      "monthJian": "亥",
+      "month": "十月",
+      "item": "06067696.cn",
+      "pages": "n73-n132",
+      "tianDeStem": "乙",
+      "tianDeHeStem": "庚",
+      "read": "甲子…乙亥 pages (12)"
+    },
+    {
+      "monthJian": "子",
+      "month": "十一月",
+      "item": "06067697.cn",
+      "pages": "n6-n65",
+      "tianDeStem": null,
+      "tianDeHeStem": null,
+      "read": "all 60 day pages"
+    },
+    {
+      "monthJian": "丑",
+      "month": "十二月",
+      "item": "06067697.cn",
+      "pages": "n73-n132",
+      "tianDeStem": "庚",
+      "tianDeHeStem": "乙",
+      "read": "甲子…乙亥 pages (12)"
+    }
+  ]
+}

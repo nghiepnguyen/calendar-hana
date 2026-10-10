@@ -51,7 +51,10 @@ function payload(
 describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => {
   it('reproduces the frozen decision baseline with the pre-fix catalog and changes only warehouse', async () => {
     const { truc, good } = preFixCatalog()
+    // Isolate this migration from issue #19: both sides keep the legacy trigram Thiên Đức.
+    const legacyTianDe = () => ({ KEEP_LEGACY_TRIGRAM_TIAN_DE: true })
     vi.resetModules()
+    vi.doMock('./tianDeLegacyPolicy', legacyTianDe)
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))
     const pre = {
@@ -60,13 +63,19 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     }
     vi.doUnmock('../almanac-data/truc.json')
     vi.doUnmock('../almanac-data/good-gods.json')
+    vi.resetModules()
+    const post = {
+      almanac: (await import('./almanac')).getAlmanac,
+      evaluate: (await import('./eventEvaluation')).evaluateEventDay,
+    }
+    vi.doUnmock('./tianDeLegacyPolicy')
 
     expect(baseline.days).toHaveLength(1095)
     let changed = 0
     for (const { date, sha256 } of baseline.days) {
       const before = payload(pre.almanac, pre.evaluate, date)
       expect(createHash('sha256').update(JSON.stringify(before)).digest('hex'), date).toBe(sha256)
-      const after = payload(getAlmanac, evaluateEventDay, date)
+      const after = payload(post.almanac, post.evaluate, date)
       expect(after.events, date).toEqual(before.events)
       const diff = after.activities.filter(
         (row, i) => JSON.stringify(row) !== JSON.stringify(before.activities[i]),
