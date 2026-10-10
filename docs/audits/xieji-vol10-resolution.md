@@ -40,7 +40,7 @@ For each present entry and event activity (activity → 用事 headings from 卷
 - 刼煞 in 寅申 months: 卷十 keeps only military/medical taboo; the product subtracts for wedding, construction, opening, travel… (351 not_avoided, 403 no_annotation in 辰戌丑未 months without 德).
 - 收日 in 寅申 months (從刼煞): same pattern (207).
 - 閉日 / 平日 with 德 or 相日: 卷十 annotates nothing or only military/medical; the product subtracts (126 + 252).
-- 月建 / 月破 all-taboo pillars (陰陽小會, 陰位, 陰陽交破, 陽破陰衝): 卷十 avoids everything; the product has no rule (299).
+- 月建 / 月破 `avoid` where the product has no penalty (270 + 29): the sampled cases are all-taboo pillars (陰陽小會, 陰位, 陰陽交破, 陽破陰衝) that the product does not encode; not every case was inspected individually.
 - 吉凶相抵: e.g. Thu +15 and Kiếp Sát −15 net 0 for 納財 where 卷十 concludes avoid.
 
 ## Limits
@@ -52,4 +52,4 @@ For each present entry and event activity (activity → 用事 headings from 卷
 
 ## Tests
 
-`xiejiVol10Resolution.test.ts`: transcription integrity (every list splits completely; quotes and lists appear in source lines), 18 hand-derived verdicts from the quoted sentences, event integration (items exist, divergences reported).
+`xiejiVol10Resolution.test.ts`: transcription integrity (every list splits completely; quotes and lists appear in source lines), 22 hand-derived verdicts (plus one deferral check) from the quoted sentences, event integration (items exist, divergences reported).
