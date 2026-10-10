@@ -69,6 +69,6 @@ Data: `shared/almanac-data/xieji-activity-mapping-review.json`; test `shared/lun
    - **Not encoded:** 甲日 (day-stem taboo), as with 修倉庫's 土王用事後; names without a catalog god (大耗 counts through Phá; 小耗, 天賊, 四耗, 五虛, 九空, 月虛) are missing witnesses.
    - 1095 days 2025–2027: recommended 83, watch 383, neutral 81, avoid 163, strong_avoid 21, no_evidence 364. No event uses it.
    - 卷十 (flag on): 171 changed/added rows; event figures unchanged (1,662).
-2. **business → relabel (option c)** to **Khai trương / Mở hàng**, following 開市 and separating it from Ký kết / Giao dịch (立券交易). It shares the heading with `opening` ("Khai trương"); rules differ only in product weights.
+2. **business → relabel (option c)** to **Mở hàng**, following 開市 and separating it from Ký kết / Giao dịch (立券交易). It shares the heading with `opening` ("Khai trương"); rules differ only in product weights.
 
 Frozen decision baseline (`xiejiConditionalMigration.test.ts`) still reproduces 1095/1095 with `warehouse_opening` excluded like the other added activities: every existing activity and every event keeps its score and status.

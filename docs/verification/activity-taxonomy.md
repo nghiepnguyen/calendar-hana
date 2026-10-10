@@ -31,7 +31,7 @@ Events: event-mapping.json (11 profile, primary/supporting/conditional).
 | `moving` | Nhập trạch / Chuyển nhà | home | `home_moving` | buy_property, property_handover, move_house |
 | `bed_installation` | An giường | home | `bed_installation` | — |
 | `opening` | Khai trương | business | `business_opening` | open_business |
-| `business` | Khai trương / Mở hàng | business | `business` | open_business |
+| `business` | Mở hàng | business | `business` | open_business |
 | `contract` | Ký kết / Lập khế ước | business | `contract` | sign_contract |
 | `transaction` | Giao dịch | business | `transaction` | receive_vehicle, buy_vehicle, sign_contract, buy_property, property_handover |
 | `finance` | Nạp tài / Cầu tài | business | `finance` | buy_vehicle, buy_property, open_business |
@@ -88,4 +88,4 @@ Kết quả local 10/10/2026: `npm test` **137 files / 2.761 tests passed**; `np
 ## Cập nhật 10/10/2026 (owner)
 
 - `warehouse` tách đôi: **Sửa kho** (修倉庫, giữ ID, quy tắc không đổi) và **Mở kho xuất hàng** (`warehouse_opening`, 開倉庫出貨財 chép mới từ 卷十一). Cụm từ legacy "mở kho" trong `mansion-patterns.json` chuyển sang `warehouse_opening`; "nhập kho" giữ ở `warehouse`.
-- `business` đổi nhãn **Khai trương / Mở hàng** theo đúng 開市, tách khỏi Ký kết / Giao dịch (立券交易). Quy tắc và sự kiện không đổi.
+- `business` đổi nhãn **Mở hàng** theo đúng 開市, tách khỏi Ký kết / Giao dịch (立券交易). Quy tắc và sự kiện không đổi.
