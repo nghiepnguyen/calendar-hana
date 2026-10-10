@@ -2,7 +2,8 @@
 
 > Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#21: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相 + đọc scan 月表, 卷十 scoring sau flag tắt, Thiên Đức legacy tháng quẻ bỏ theo 月表 (PR #21, đổi điểm), rồi PR #22–#29: trung tính khi không gặp ngày kỵ (≤ high), đo lại 卷十 + review mapping 用事 29/29, tách kho (Sửa kho / Mở kho xuất hàng), nhãn Mở hàng, cảnh báo cứng không làm nhẹ trạng thái, 百忌日 甲日/乙日, 土王用事 (tất cả đổi điểm, đã deploy). GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
 > Đây là tài liệu trạng thái và quyết định của project; chỉ dẫn trong tài liệu không thay thế yêu cầu mới của người dùng.
-> Chat mới đọc header Release mới nhất và **phần 39 (handoff tổng hợp sau PR #31/#32)** trước; phần 2 là roadmap hiện tại, phần 24 là tooling. Phần 21/23/33–38 lưu lịch sử; các câu flag OFF/chưa merge ở đó là snapshot trước release, không phải trạng thái production hiện tại.
+> **Cập nhật sau PR #33–#35 (10/10/2026, phần 40):** repo public (MIT), GitHub Actions chạy lại; **merge vào `main` = CI tự deploy production** (firestore + hosting + functions). Các câu “Actions bị khoá billing / deploy hosting thủ công” bên dưới là lịch sử.
+> Chat mới đọc header Release mới nhất, **phần 40** và **phần 39 (handoff tổng hợp sau PR #31/#32)** trước; phần 2 là roadmap hiện tại, phần 24 là tooling. Phần 21/23/33–38 lưu lịch sử; các câu flag OFF/chưa merge ở đó là snapshot trước release, không phải trạng thái production hiện tại.
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
 
@@ -11,6 +12,8 @@
 **PR #31/#32 đã MERGED; production `xiejiVol10Scoring = true`.** Main release `4e92cb68de23a62910482668fece4d10ba836cd5`. Deploy Hosting thủ công hoàn tất, production `Last-Modified` **09:18:51 UTC (16:18:51 VN)**. Bundle `index-Camk5ToH.js`, SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`, byte-for-byte trùng build local; có `xiejiVol10Scoring:!0`.
 
 Production smoke **9/9 pass** (desktop Chromium, mobile Pixel 7, desktop Safari/WebKit; browser context tạm): Cưới hỏi 2025-01-21 **Thuận lợi**; 2025-03-17 (卯月 月破) và 2025-12-09 (子月 月厭) **Không thuận lợi**. Không nhập profile vào tài khoản thật; ngày sinh chỉ lưu local trong context tạm. Không đổi mansion scoring.
+
+**Sau release:** PR #33 (handoff docs), #34 (public release prep), #35 (timeout test CI) đã merge; CI deploy từ main `77861fe` lúc 10:47:09 UTC, bundle vẫn `index-Camk5ToH.js` cùng SHA-256 → product không đổi. Chi tiết phần 40.
 
 Các mục 36/37 là snapshot readiness trước release; trạng thái mới nhất tại đây và phần 38. **Next ưu tiên: nhãn Khai trương/Mở hàng cùng 開市**, rồi 百忌日 còn lại, audit 21 thần vắng mặt/14 bảng tháng âm. Không còn việc chờ bật 卷十.
 
@@ -117,7 +120,7 @@ Thứ tự ưu tiên (handoff mới nhất ở phần 39; phần 23 là nền l�
 34. UI integration
 35. Full Golden/regression
 36. E2E/visual/device — desktop/mobile Pixel 7/desktop Safari đã chạy local trên build ON và smoke production; iPhone/Firefox/emulator chưa chạy cho release này.
-37. Production release (deploy hosting thủ công, xem phần 24)
+37. Production release (merge main → CI deploy tự động; xem phần 24, 40)
 
 ------------------------------------------------------------------------
 
@@ -1652,8 +1655,9 @@ Original input context: `/Users/nghiepnguyen/Downloads/PROJECT_CONTEXT (2).md` (
 Handoff hiện tại: `PROJECT_CONTEXT.md` ở repo root, **tracked trong git từ 10/10/2026** theo yêu cầu user (PR riêng, docs only). Cập nhật handoff sau mỗi release qua nhánh/PR như code.
 
 - Local `.gitignore` edits và untracked `.ignore` đã tồn tại trước Phase 7; được giữ nguyên, không đưa vào bất kỳ PR nào (#4–#10).
-- `graphify-out/` có generated modifications/cache; `graph.html` có thể bị xoá do >5000-node visualization limit. Không phải app regression; không commit generated churn hoặc reset user state.
-- `graft/` indexing corpus được ignore; không đưa vào product change.
+- `graphify-out/` và `graft/` là cache graph local, **không còn tracked từ PR #34** (gitignored); `graph.html` có thể bị xoá do >5000-node visualization limit. Không commit generated churn hoặc reset user state.
+- Tài liệu audit/decision/design gốc ở root đã chuyển vào `docs/` (PR #34); bảng đường dẫn cũ → mới ở `docs/legacy-paths.json`, index `docs/README.md`. Artifact đóng băng vẫn trích đường dẫn root (khoá SHA-256 không đổi).
+- **CI/deploy (từ PR #35):** Actions hoạt động lại; push `main` chạy typecheck/lint, unit+emulator, Playwright desktop 2 shard, rồi `firebase deploy --only firestore,hosting,functions` — rộng hơn deploy tay hosting-only trước đây. Merge vào main = deploy production → **luôn hỏi owner trước khi merge**. Không cần deploy tay nữa trừ khi CI hỏng.
 - Graph có 5908 nodes, 8424 edges, 790 communities tại update gần nhất (sau PR #8).
 - Theo AGENTS.md: đọc `graphify-out/GRAPH_REPORT.md` trước source/search; wiki index nếu tồn tại thì dùng wiki; cross-module questions ưu tiên graphify query/path/explain; sau code edits `graphify update .` AST-only.
 - Graft: ask --source để locate/understand; callers để impact; grep cho exhaustive symbol usage. Không thay graph navigation bằng quét toàn bộ repo không cần thiết.
@@ -2237,7 +2241,7 @@ Docs release evidence: `docs/audits/xieji-vol10-activation.md`. Roadmap tiếp: 
 | Production | Hosting project `calendar-hana`, domain `https://lich.thanhnghiep.top`; **`xiejiVol10Scoring: true`** |
 | Release time | Deploy hoàn tất; production HTML `Last-Modified` **2026-10-10 09:18:51 UTC = 16:18:51 VN** |
 | Bundle | `/assets/index-Camk5ToH.js`; SHA-256 `5430ed0db4c83ad83ef9ee54948582766f59e8a3397b7d6ff8ccf7eb5e9fb190`; remote bytes trùng local build; có `xiejiVol10Scoring:!0` |
-| Handoff PR #33 | Docs-only, `codex/vol10-release-handoff`; đã mở sau deploy. Còn OPEN tại lần kiểm chứng trong chat; chưa được yêu cầu merge. Handoff này được cập nhật tiếp trên cùng nhánh. |
+| Handoff PR #33 | Docs-only, `codex/vol10-release-handoff`; **MERGED** `6bac1d4` (xem phần 40). |
 
 Main được fast-forward rồi build lại trước deploy; product tree của merge `4e92cb6` trùng activation head `3aa1451` đã kiểm chứng. Chỉ chạy `firebase deploy --only hosting --project calendar-hana`; không deploy Functions/Firestore. Không gọi gate local là CI green. GitHub Actions billing bị khoá theo trạng thái đã ghi trước đó; release không phụ thuộc Actions.
 
@@ -2347,11 +2351,11 @@ Config `.tmp-vol10-production.config.ts` và probe `xiejiSmokeProbe.test.ts` ch�
 7. **Sát Chủ:** vẫn SOURCE_DEPENDENT, cần nguồn offline tiền hiện đại; month basis/lunar leap semantics chưa chứng nhận. Không suy từ Thụ Tử hay chuyển Month Jian.
 8. **Interpretation review:** mansion 115/115 và 用事 29/29 là single reviewer (agent), chưa có chuyên gia thứ hai; other editions/scopes không được chứng nhận. Five narrow construction scopes giữ unmapped theo owner. Mansion scoring tiếp tục OFF.
 9. **Coverage/docs:** iPhone/Firefox/emulator chưa chạy; 月表 tháng 6/7/9/10/12 có scan mới đọc một phần; audit headers cũ ở các Phase trước vẫn có thể là snapshot trước release. Dùng header latest/section39 để xác định production.
-10. **Handoff PR #33** chưa merge; không coi docs commit là production release mới hoặc tự deploy lại vì docs.
+10. ~~Handoff PR #33 chưa merge~~ — đã merge (phần 40). Docs commit không phải product release; CI vẫn redeploy khi merge main nhưng bundle không đổi.
 
 ### I. Next steps và rollback
 
-1. Hoàn tất/review **PR #33 handoff**, merge khi owner yêu cầu; docs-only, không cần redeploy.
+1. ~~Hoàn tất PR #33 handoff~~ — xong (phần 40).
 2. Đề xuất scope nhỏ nhất cho duplicate 開市: xác định khác biệt `opening`/`business`, consumer/event references và chọn gộp/ẩn; cần owner quyết định vì thay đổi UX/taxonomy.
 3. Sau đó xử lý sáu 百忌日 đã có activity: source/interpretation → independent Golden đóng băng → dayChi/preserve_bad → migration diff → gate → PR; không nhập thêm unmapped activity chỉ để đủ bảng.
 4. Audit dormant/legacy gods theo từng authority, sau đó general balancing/宜; tách provenance/presence thay đổi khỏi release chấm điểm khác để có diff review rõ.
@@ -2362,3 +2366,32 @@ Rollback nếu cần: change `xiejiVol10Scoring` về false trên nhánh riêng,
 Starter prompt cho chat mới:
 
 > Đọc PROJECT_CONTEXT.md header latest, phần 2/24/39. PR #31 readiness và #32 activation đã merge/deploy; main release 4e92cb6, production 卷十 flag ON, bundle index-Camk5ToH.js trùng local. Local ON 2927 tests + E2E320/49skip; production smoke9/9 desktop/mobile/Safari. PR #33 docs handoff còn chờ merge. Giữ mansion scoring OFF, Golden độc lập, core astronomy/Jie và calendar/personal separation. Next scope: Khai trương/Mở hàng trùng 開市, sáu 百忌日 đã có activity, hoặc audit dormant/legacy gods; chưa scope mới nào được duyệt.
+
+
+------------------------------------------------------------------------
+
+## 40. Sau PR #33–#35 — repo public, CI hoạt động lại (10/10/2026)
+
+**Trạng thái mới nhất.** Product không đổi so với phần 39; chỉ docs, repo hygiene và CI.
+
+| PR | Nội dung | Merge |
+|---|---|---|
+| #33 | Handoff 卷十 release (docs) | `6bac1d4` |
+| #34 | Chuẩn bị public: MIT `LICENSE`; 74 tài liệu root → `docs/` (astronomy, group-b, rules, integrity, audits, design, templates) + `docs/README.md`, `docs/legacy-paths.json`; `groupB.test.ts` và `scripts/mutate-group-b.mjs` resolve qua map; bỏ `example.spec.ts`; ngừng track `graphify-out/`, `graft/`. Audit pre-public: không có secret trong HEAD/302 commit; Firestore rules scope theo user; deploy secret chỉ từ push/dispatch `main`. | `f7bda2f` |
+| #35 | Timeout 60s cho `erfa.test.ts` (1-ulp libm) và `thuTuRegression.test.ts` (chậm trên runner CI) | `77861fe` |
+
+### CI và deploy
+
+- Repo public → GitHub Actions chạy lại. Run main của #34 fail sau 4s (không chạy job nào); run PR #35 và run main `38045575170` (merge #35) **xanh toàn bộ**: Prepare dependencies, Typecheck and lint, Unit and emulator tests, Playwright desktop 1/2 + 2/2, **Deploy to Firebase**.
+- Production HTML `Last-Modified` **10:47:09 UTC (17:47:09 VN)**; bundle vẫn `/assets/index-Camk5ToH.js`, SHA-256 `5430ed0d…b190` trùng release phần 39 → product, flag `xiejiVol10Scoring: true` và mansion scoring OFF giữ nguyên.
+- Deploy CI gồm **firestore, hosting, functions** (`--force`). Merge main = deploy production; luôn hỏi owner trước khi merge.
+- Từ nay quy trình: branch → gate local → PR → CI xanh → **owner cho phép merge** → CI deploy → smoke production. Có thể gọi “CI green” khi Actions xác nhận. Mobile Safari/iPhone/Firefox vẫn không thuộc gate bắt buộc.
+
+### Next (không đổi thứ tự phần 39-I, chưa scope nào được duyệt)
+
+1. 開市 trùng: `opening` (Khai trương) và `business` (Mở hàng) chỉ khác Trực 成 (+20/+15), 開 (+25/+20), 閉 (−25/−15); bad-gods liệt kê cả hai giống nhau. Event `open_business` dùng `opening` ×1 **và** `business` ×0.5 → cùng bằng chứng 開市 bị tính hai lần. Lựa chọn đề xuất: (a) bỏ `business` khỏi `open_business` (nhỏ nhất); (b) ẩn `business`, giữ ID; (c) gộp hẳn, chọn một bộ trọng số. Owner quyết; migration diff trước merge.
+2. Sáu 百忌日 đã có activity; 3. audit thần vắng mặt/legacy tháng âm; 4. cân bằng chung 卷十 và 宜; 5. Sát Chủ / 土王用事 cần nguồn.
+
+Starter prompt cho chat mới:
+
+> Đọc PROJECT_CONTEXT.md header, phần 2/24/39/40. Main `77861fe` (PR #6–#35), repo public, CI xanh và tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, bundle `index-Camk5ToH.js`, mansion scoring OFF. Next scope: 開市 trùng (`opening`/`business` đếm đôi trong `open_business`), sáu 百忌日, hoặc audit dormant/legacy gods; chưa scope nào được duyệt.
