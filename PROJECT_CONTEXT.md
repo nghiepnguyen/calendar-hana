@@ -1345,6 +1345,7 @@ Activity evidence product slice    MERGED & DEPLOYED (PR #5)
 Activity interpretation review     MERGED & DEPLOYED (PR #6)
 Sát Chủ months 7/8 alignment      MERGED & DEPLOYED (PR #8)
 Docs: 觜/參 note (PR #9), handoff tracked (PR #10)
+Scan page 觜/參 + 角 quote fix      branch audit/mansion-scan-page-fix (PR chờ merge)
 ```
 
 Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ thống nhất bảng tháng 7/8 giữa hai layer theo biến thể đã chọn); Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
@@ -1352,7 +1353,7 @@ Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ th�
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
 ```text
-4ba37939c31b4f8d43dbd1ea4ea637f8767cc4fa
+8899a875daf26a72ecbaecb1b541598d1bee68ee
 ```
 
 Latest release: **Sát Chủ months 7/8 alignment**, [PR #8](https://github.com/nghiepnguyen/calendar-hana/pull/8), MERGED & DEPLOYED 2026-10-10 10:37:13 Việt Nam; chi tiết phần 30 (mục “Cập nhật sau release”).
@@ -1561,15 +1562,15 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 8. **Interpretation review là single-reviewer (agent):** Golden diễn giải v2 chưa có thẩm định chuyên gia thứ hai; `interpretation_reviewed` không phải quyền chấm điểm.
 9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. Thêm rule cần provenance riêng.
 10. **Scoring/conflict resolver:** diagnostics đã deploy, chưa có audited resolution policy; mansion scoring vẫn tắt (`mansion28ScoringEnabled: false`).
-11. **Lệch trang scan 觜/參 (OPEN):** dataset 觜 pdfPage 65 → `n64`, 參 66 → `n65`, có vẻ hoán đổi; quote đúng. Nếu xác nhận: `GOLDEN_BUG` + sửa dataset; ảnh hưởng nhãn “Bản scan · trang N” và SEO “Ngọc Hạp 1880 · trang N”. Xem `docs/audits/mansion-scan-page-check.md`.
-12. **Tú 角:** scan có thể ghi 葬埋 thay vì 埋葬 trong 惟有…不可用; chưa đối chiếu crop độ phân giải cao.
+11. **Lệch trang scan 觜/參 — RESOLVED (nhánh `audit/mansion-scan-page-fix`):** xác nhận trên ảnh gốc: n63 畢, n64 參, n65 觜, n66 井. Đã sửa 觜 pdfPage 66 / 參 65 trong dataset + Golden Phase 7 (`GOLDEN_BUG`), version 1.0.1.
+12. **Tú 角 — RESOLVED cùng nhánh:** scan ghi 惟有葬埋不可用; đã sửa quote 角-3 (dataset, Golden Phase 7, Golden diễn giải v2 `reviewTerm` 葬埋).
 13. **Documentation release headers:** audit docs Phase 6/7 và verification docs còn header/checklist trước release; cần docs-only reconciliation nếu muốn.
 14. **UI production chưa kiểm tra bằng browser** cho PR #6 (disclosure, nhãn activity mới); smoke chỉ dựa trên HTML trang ngày.
 
 ### Next steps đề xuất cho chat mới (chưa tự implement)
 
 1. Đọc phần 21, 23, 24, 31; `git pull` main; kiểm tra PR #10 đã merge chưa.
-2. Kiểm tra 觜/參 trên `page/n63…n66.jpg` độ phân giải gốc (cùng lúc 角 葬埋/埋葬); nếu xác nhận, sửa dataset + Golden Phase 7 trong một change có evidence, cập nhật test nhãn trang.
+2. ~~Kiểm tra 觜/參 và 角~~ — đã làm (nhánh `audit/mansion-scan-page-fix`); merge PR khi user cho phép.
 3. Quyết định có ID riêng cho xây dựng hẹp không (mỗi loại chỉ 1–2 clause).
 4. Audit context/conditions của Trực/cát/hung thần trước khi đưa vào diagnostics; Ngọc Hạp Chánh Tông tr. 110–127 là nhân chứng phụ (mỗi sao cần provenance riêng).
 5. Sát Chủ: tìm văn bản Hán gốc hoặc “Thọ-Mai”/“Lưu-Thị”; quyết định leap-month rule nếu có nguồn.
@@ -1779,7 +1780,7 @@ Chuỗi yêu cầu user: “đọc PROJECT_CONTEXT.md làm phase tiếp theo” 
 | #7 | Sửa comment test (2026-10-11 là Tú Tinh) | MERGED (user tự mở/merge) | `3b020b9` | — |
 | #8 | Sát Chủ tháng 7/8 + nhân chứng in + re-read | MERGED & DEPLOYED | `74d6c64` | 10:37:13 VN, main run 38020554586 (full tests) |
 | #9 | Note kiểm tra trang scan 觜/參 (docs) | MERGED | `4ba3793` | — |
-| #10 | Đưa PROJECT_CONTEXT.md vào git (docs) | OPEN khi viết; merge sau khi CI xanh | — | — |
+| #10 | Đưa PROJECT_CONTEXT.md vào git (docs) + tổng kết thread | MERGED | `8899a87` | — |
 
 Production smoke (HTML `lich.thanhnghiep.top/day/<date>`): 2026-10-11 Tinh “Nên kiêng: Chôn cất; Dẫn nước.” (không còn Cưới hỏi); 2026-10-12 Trương, 2026-10-05 Tất có “Mở cửa; Dẫn nước”; 2026-09-12 có “Sát Chủ” trong Sao xấu; 2026-09-22 không còn.
 

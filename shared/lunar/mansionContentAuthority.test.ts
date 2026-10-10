@@ -95,6 +95,15 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
     expect(getMansionContent(19).clauses.some((c) => c.activityId === 'burial')).toBe(true)
     expect(getMansionContent(23).clauses.some((c) => c.activityId === 'burial')).toBe(true)
   })
+  it('keeps scan corrections verified on full-resolution pages (2026-10-10)', () => {
+    // GOLDEN_BUG fix: the 1880 print binds 參 (n64) before 觜 (n65); 角 reads 惟有葬埋不可用.
+    const page = (index: number) => getMansionContentEvidence(getMansionContent(index))[0].sourceRef
+    expect(page(18)).toMatch(/page\/n63\.jpg$/)
+    expect(page(19)).toMatch(/page\/n65\.jpg$/)
+    expect(page(20)).toMatch(/page\/n64\.jpg$/)
+    expect(page(21)).toMatch(/page\/n66\.jpg$/)
+    expect(getMansionContent(0).clauses.find((c) => c.id === '角-3')!.quote).toBe('惟有葬埋不可用')
+  })
   it('rejects invalid indices and a clause with a missing/wrong operand', () => {
     for (const index of [-1, 28, NaN, 1.5]) expect(() => getMansionContent(index)).toThrow()
     const row = getMansionContent(0)
