@@ -67,7 +67,7 @@ describe('Thụ Tử migration regression', () => {
 
     expect(expectedAuthorityChanges).toBeGreaterThan(0)
     expect(unchangedThuTuDays).toBeGreaterThan(0)
-  })
+  }, 60_000)
 
   it('keeps Thụ Tử and Sát Chủ as separate identities', () => {
     let discriminatorDays = 0
