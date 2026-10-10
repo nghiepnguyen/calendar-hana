@@ -157,6 +157,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
       presentGoodGods: [...gods.presentGoodGods, ...dayGods.presentGoodGods],
       presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
       godPresence,
+      classicalDay: { monthJianBranch, dayStem: day.can, dayBranch: day.chi },
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
     auditedGodIds: Object.keys(godPresence),

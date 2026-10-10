@@ -1,6 +1,6 @@
 # Plan: apply 協紀 卷十 resolution to scores (not started)
 
-Status: **PLAN — owner decisions recorded 2026-10-10; implementation waits for lower `undetermined`**
+Status: **IMPLEMENTED behind `xiejiVol10Scoring` = false (2026-10-10)** — golden + migration proof in `docs/audits/xieji-vol10-scoring-migration.md`; turning the flag on is a separate owner decision.
 Written: 2026-10-10, after PR #16 (卷十 diagnostics for six locked 凶) was merged and deployed.
 Related: `docs/audits/xieji-vol10-resolution.md`, `docs/audits/truc-than-context-audit.md`, handoff §23.
 

@@ -11,6 +11,7 @@ import {
 import { ENGINE_VERSION, type Evidence } from './evidence'
 import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
 import { resolveVol10, type Vol10Resolution } from './xiejiVol10Resolution'
+import { isVol10ChainRow } from './xiejiVol10Scoring'
 import trucData from '../almanac-data/truc.json'
 
 export { ENGINE_VERSION } from './evidence'
@@ -253,36 +254,14 @@ export function evaluateEventDay(
         },
         [...new Set(roles.map((role) => role.activityId))],
       ).map((item) => {
-        // Product rules standing for the same 凶: its Trực, and for 月破 also the subsumed god.
-        const sources: Record<string, { truc?: string; god?: string }> = {
-          yue_jian: { truc: 'kien' },
-          yue_po: { truc: 'pha', god: 'nguyet_pha' },
-          ping_ri: { truc: 'binh' },
-          shou_ri: { truc: 'thu' },
-          bi_ri: { truc: 'be' },
-          jie_sha: { god: 'kiep_sat' },
-          // Legacy gods that never fire today (no exact star name); kept so the delta stays honest.
-          yue_yan: { god: 'nguyet_yem' },
-          yue_xing: { god: 'nguyet_hinh' },
-          yue_sha: { god: 'nguyet_sat' },
-          zai_sha: { god: 'tai_sat' },
-        }
-        // After 從X論 the deciding rule's product sources count too (e.g. 收日 → 刼煞).
-        const srcs = [sources[item.entry], item.via ? sources[item.via] : undefined].filter(
-          (x): x is { truc?: string; god?: string } => Boolean(x),
-        )
+        // Product rules standing for the same 凶 (and, after 從X論, the deciding one's).
         const productDelta = unique
           .filter(
             (row) =>
               row.activityId === item.activityId &&
               row.status === 'applied' &&
-              srcs.some(
-                (src) =>
-                  (src.god !== undefined && row.ruleId === src.god) ||
-                  (src.truc !== undefined &&
-                    row.source === 'truc' &&
-                    row.ruleId === `${src.truc}:${item.activityId}`),
-              ),
+              (isVol10ChainRow(row, item) ||
+                row.ruleId.startsWith(`xieji10:${item.via ?? item.entry}:`)),
           )
           .reduce((sum, row) => sum + row.appliedDelta, 0)
         const diverges =
