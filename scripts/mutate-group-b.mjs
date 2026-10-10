@@ -17,10 +17,15 @@ const originalHashes = Object.fromEntries(
 )
 const testHash = hash(readFileSync(testPath))
 const frozen = JSON.parse(readFileSync('tasks/calendar-audit/group-b-freeze-hashes.json', 'utf8'))
+// Frozen artifacts cite pre-reorganisation root paths; docs/legacy-paths.json maps them.
+const legacyPaths = JSON.parse(readFileSync('docs/legacy-paths.json', 'utf8')).moves
+const artifact = (p) => legacyPaths[p] ?? p
+const resultsPath = artifact('calendar-group-b-mutation-results-v3.1.json')
 const temporary = mkdtempSync(join(tmpdir(), 'hana-group-b-mutations-'))
 function verify() {
   for (const [p, expected] of Object.entries(frozen))
-    if (hash(readFileSync(p)) !== expected) throw new Error(`Frozen artifact changed: ${p}`)
+    if (hash(readFileSync(artifact(p))) !== expected)
+      throw new Error(`Frozen artifact changed: ${p}`)
   if (hash(readFileSync(testPath)) !== testHash) throw new Error('Tests changed during mutations')
 }
 function restore() {
@@ -245,10 +250,7 @@ try {
     console.log(
       `${name}: ${newFailures.length} new assertion failures; named witness ${detected ? 'DETECTED' : 'MISSING'}; source restored.`,
     )
-    writeFileSync(
-      'calendar-group-b-mutation-results-v3.1.json',
-      JSON.stringify(results, null, 2) + '\n',
-    )
+    writeFileSync(resultsPath, JSON.stringify(results, null, 2) + '\n')
   }
   results.qualifiedKilled = new Set(
     results.records.filter((r) => r.qualifiedKilled).map((r) => r.id),
@@ -261,10 +263,7 @@ try {
       : 'FAIL'
 } finally {
   restore()
-  writeFileSync(
-    'calendar-group-b-mutation-results-v3.1.json',
-    JSON.stringify(results, null, 2) + '\n',
-  )
+  writeFileSync(resultsPath, JSON.stringify(results, null, 2) + '\n')
   rmSync(temporary, { recursive: true, force: true })
 }
 if (results.qualifiedKilled !== 10) process.exitCode = 1

@@ -26,3 +26,9 @@ __pycache__/
 *.pyc
 *.tar
 *.zip
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# graphify knowledge graph — local, regenerable (run `graphify update .`).
+graphify-out/
