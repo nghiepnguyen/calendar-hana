@@ -4,6 +4,8 @@ import baseline from './audit-fixtures/mansion-decision-baseline-v1.json'
 import trucData from '../almanac-data/truc.json'
 import goodGodsData from '../almanac-data/good-gods.json'
 import manifest from '../almanac-data/manifest.json'
+import badGodsData from '../almanac-data/bad-gods.json'
+import overridesData from '../almanac-data/overrides.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
@@ -69,6 +71,19 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     vi.resetModules()
     vi.doMock('./tianDeLegacyPolicy', legacyTianDe)
     vi.doMock('../almanac-data/manifest.json', lowNeutral)
+    // And both sides predate the 百忌日 甲日/乙日 rules (golden-baiji-giap-at.json).
+    const BAIJI = ['giap_nhat', 'at_nhat']
+    const noBaijiGods = () => ({
+      default: { ...badGodsData, items: badGodsData.items.filter((g) => !BAIJI.includes(g.id)) },
+    })
+    const noBaijiOverrides = () => ({
+      default: {
+        ...overridesData,
+        items: overridesData.items.filter((o) => !BAIJI.includes(o.when.targetPresent ?? '')),
+      },
+    })
+    vi.doMock('../almanac-data/bad-gods.json', noBaijiGods)
+    vi.doMock('../almanac-data/overrides.json', noBaijiOverrides)
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))
     const pre = {
@@ -84,6 +99,8 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     }
     vi.doUnmock('./tianDeLegacyPolicy')
     vi.doUnmock('../almanac-data/manifest.json')
+    vi.doUnmock('../almanac-data/bad-gods.json')
+    vi.doUnmock('../almanac-data/overrides.json')
 
     expect(baseline.days).toHaveLength(1095)
     let changed = 0

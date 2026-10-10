@@ -46,6 +46,26 @@
       "activityIds": ["cut_hair"],
       "sourcePolicy": "協紀辨方書 卷十 \"凡丁日忌剃頭亦不註宜整容\": a Đinh day is not marked favourable for haircuts",
       "enabled": true
+    },
+    {
+      "id": "giap_day_blocks_warehouse_opening",
+      "when": {
+        "targetPresent": "giap_nhat"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["warehouse_opening"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"甲日忌開倉庫出貨財\"; 鋪註條例 \"…亦不註忌開倉庫出貨財如遇專忌之日則仍註忌\": a Giáp day is not marked favourable for opening storehouses",
+      "enabled": true
+    },
+    {
+      "id": "at_day_blocks_planting",
+      "when": {
+        "targetPresent": "at_nhat"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["planting"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"乙日忌栽種\": an Ất day is not marked favourable for planting",
+      "enabled": true
     }
   ]
 }
