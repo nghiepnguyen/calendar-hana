@@ -427,11 +427,11 @@
     },
     {
       "phrase": "mở kho",
-      "activityId": "warehouse",
-      "scope": "warehouse",
+      "activityId": "warehouse_opening",
+      "scope": "warehouse_opening",
       "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §5–7",
       "reviewStatus": "not_audited",
-      "updatedAt": "2026-10-05"
+      "updatedAt": "2026-10-10"
     },
     {
       "phrase": "gieo trồng",

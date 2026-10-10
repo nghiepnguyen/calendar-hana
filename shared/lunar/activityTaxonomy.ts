@@ -26,6 +26,7 @@ export const ACTIVITY_SCOPES = {
   renovation: ['renovation'],
   beam_raising: ['beam_raising'],
   warehouse: ['warehouse'],
+  warehouse_opening: ['warehouse_opening'],
   planting: ['planting'],
   livestock: ['livestock'],
   burial: ['funeral_burial'],

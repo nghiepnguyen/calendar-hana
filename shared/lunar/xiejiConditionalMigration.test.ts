@@ -12,7 +12,7 @@ import { EVENT_OPTIONS } from './eventMapping'
 // repairing storehouses only when combined with 月德/四相/時德/開日. The pre-fix catalog listed them
 // unconditionally (ENGINE_BUG in the parity parser). Rebuild that catalog to prove the frozen
 // baseline still reproduces exactly, then classify every production difference.
-const ADDED_ACTIVITIES = ['door_opening', 'waterworks']
+const ADDED_ACTIVITIES = ['door_opening', 'waterworks', 'warehouse_opening']
 const REMOVED_GODS = ['luc_hop', 'ngu_phu', 'thien_thuong']
 
 function preFixCatalog() {

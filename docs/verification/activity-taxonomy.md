@@ -31,7 +31,7 @@ Events: event-mapping.json (11 profile, primary/supporting/conditional).
 | `moving` | Nhập trạch / Chuyển nhà | home | `home_moving` | buy_property, property_handover, move_house |
 | `bed_installation` | An giường | home | `bed_installation` | — |
 | `opening` | Khai trương | business | `business_opening` | open_business |
-| `business` | Kinh doanh | business | `business` | open_business |
+| `business` | Khai trương / Mở hàng | business | `business` | open_business |
 | `contract` | Ký kết / Lập khế ước | business | `contract` | sign_contract |
 | `transaction` | Giao dịch | business | `transaction` | receive_vehicle, buy_vehicle, sign_contract, buy_property, property_handover |
 | `finance` | Nạp tài / Cầu tài | business | `finance` | buy_vehicle, buy_property, open_business |
@@ -45,7 +45,8 @@ Events: event-mapping.json (11 profile, primary/supporting/conditional).
 | `construction` | Xây dựng | construction | `construction_general` | groundbreaking |
 | `renovation` | Sửa chữa | construction | `renovation` | — |
 | `beam_raising` | Thượng lương | construction | `beam_raising` | — |
-| `warehouse` | Kho tàng / Mở kho | business | `warehouse` | — |
+| `warehouse` | Sửa kho | business | `warehouse` | — |
+| `warehouse_opening` | Mở kho xuất hàng | business | `warehouse_opening` | — |
 | `planting` | Trồng trọt | agriculture | `planting` | — |
 | `livestock` | Chăn nuôi / Nạp súc | agriculture | `livestock` | — |
 | `burial` | An táng | funeral | `funeral_burial` | — |
@@ -59,7 +60,7 @@ Các scope source-locked có ID rỗng: `construction_columns`, `construction_hi
 
 Không đổi 開門 thành opening/business, 放水 thành water_travel, hoặc việc xây dựng hẹp thành construction chung.
 Boat building/launching cần định nghĩa riêng trước khi map; phrase legacy “hạ thủy” đang map water_travel nhưng không chứng nhận equivalence nguồn cổ điển.
-Các nhãn ghép (Nạp tài/Cầu tài, Nhập học/Học tập, Kho tàng/Mở kho…) vẫn là nhãn sản phẩm hiện tại, không phải bằng chứng rằng mọi động tác tương đương.
+Các nhãn ghép (Nạp tài/Cầu tài, Nhập học/Học tập…) vẫn là nhãn sản phẩm hiện tại, không phải bằng chứng rằng mọi động tác tương đương.
 
 ## Consumers và semantic boundary
 
@@ -83,3 +84,8 @@ activityTaxonomy.test.ts khóa coverage, parity baseline của 29 default scopes
 Scope parity là bằng chứng compatibility với production trước migration, không phải Golden độc lập về authority.
 
 Kết quả local 10/10/2026: `npm test` **137 files / 2.761 tests passed**; `npm run typecheck`, `npm run lint`, Prettier và `git diff --check` passed. Suite có ba thông báo jsdom scrollTo chưa implement; không có test failure. `graphify update .` hoàn tất (5.767 nodes, 8.254 edges); HTML visualization bị bỏ qua theo giới hạn 5.000 nodes. Chưa commit/push/PR/deploy; release production vẫn là d1209ec.
+
+## Cập nhật 10/10/2026 (owner)
+
+- `warehouse` tách đôi: **Sửa kho** (修倉庫, giữ ID, quy tắc không đổi) và **Mở kho xuất hàng** (`warehouse_opening`, 開倉庫出貨財 chép mới từ 卷十一). Cụm từ legacy "mở kho" trong `mansion-patterns.json` chuyển sang `warehouse_opening`; "nhập kho" giữ ở `warehouse`.
+- `business` đổi nhãn **Khai trương / Mở hàng** theo đúng 開市, tách khỏi Ký kết / Giao dịch (立券交易). Quy tắc và sự kiện không đổi.

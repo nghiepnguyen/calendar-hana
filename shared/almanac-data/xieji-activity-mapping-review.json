@@ -5,9 +5,21 @@
   "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, Wikisource action=raw, SHA-1 prefix ce4ed7f23ff9",
   "note": "Interpretation review of activityEntries in xiejibianfangshu-yiji.json. A reviewed entry is never a scoring permission; pending entries keep their current mapping until the owner decides.",
   "activities": {
-    "worship": { "status": "reviewed", "term": "祭祀", "note": "Cùng thuật ngữ." },
-    "pray_blessing": { "status": "reviewed", "term": "祈福", "note": "Cùng thuật ngữ." },
-    "pray_children": { "status": "reviewed", "term": "求嗣", "note": "Cùng thuật ngữ." },
+    "worship": {
+      "status": "reviewed",
+      "term": "祭祀",
+      "note": "Cùng thuật ngữ."
+    },
+    "pray_blessing": {
+      "status": "reviewed",
+      "term": "祈福",
+      "note": "Cùng thuật ngữ."
+    },
+    "pray_children": {
+      "status": "reviewed",
+      "term": "求嗣",
+      "note": "Cùng thuật ngữ."
+    },
     "wedding": {
       "status": "reviewed",
       "term": "嫁娶",
@@ -23,8 +35,16 @@
       "term": "般移",
       "note": "Chú dưới heading: 「移徙同」 (dời chỗ ở)."
     },
-    "bed_installation": { "status": "reviewed", "term": "安牀", "note": "Cùng thuật ngữ." },
-    "opening": { "status": "reviewed", "term": "開市", "note": "Mở chợ / mở hàng = khai trương." },
+    "bed_installation": {
+      "status": "reviewed",
+      "term": "安牀",
+      "note": "Cùng thuật ngữ."
+    },
+    "opening": {
+      "status": "reviewed",
+      "term": "開市",
+      "note": "Mở chợ / mở hàng = khai trương."
+    },
     "contract": {
       "status": "reviewed",
       "term": "立券交易",
@@ -50,14 +70,26 @@
       "term": "宴會",
       "note": "Chú dưới heading: 「會親友同」 (gặp gỡ thân hữu)."
     },
-    "study": { "status": "reviewed", "term": "入學", "note": "Cùng thuật ngữ." },
+    "study": {
+      "status": "reviewed",
+      "term": "入學",
+      "note": "Cùng thuật ngữ."
+    },
     "medical": {
       "status": "reviewed",
       "term": "求醫療病",
       "note": "Dân dụng ghi 療病; 療目/針刺 không có ngày nên, theo 療病 (dòng kết)."
     },
-    "cleaning": { "status": "reviewed", "term": "掃舍宇", "note": "Quét dọn nhà cửa." },
-    "cut_hair": { "status": "reviewed", "term": "整容剃頭", "note": "Dân dụng ghi 剃頭." },
+    "cleaning": {
+      "status": "reviewed",
+      "term": "掃舍宇",
+      "note": "Quét dọn nhà cửa."
+    },
+    "cut_hair": {
+      "status": "reviewed",
+      "term": "整容剃頭",
+      "note": "Dân dụng ghi 剃頭."
+    },
     "groundbreaking": {
       "status": "reviewed",
       "term": "興造動土",
@@ -73,29 +105,50 @@
       "term": "修宮室",
       "note": "Sửa nhà ở. 修造 thuộc 興造動土 (「修造同」), không thuộc heading này."
     },
-    "beam_raising": { "status": "reviewed", "term": "豎柱上梁", "note": "Dựng cột, gác đòn dông." },
-    "planting": { "status": "reviewed", "term": "栽種", "note": "Cùng thuật ngữ." },
+    "beam_raising": {
+      "status": "reviewed",
+      "term": "豎柱上梁",
+      "note": "Dựng cột, gác đòn dông."
+    },
+    "planting": {
+      "status": "reviewed",
+      "term": "栽種",
+      "note": "Cùng thuật ngữ."
+    },
     "livestock": {
       "status": "reviewed",
       "term": "牧養",
       "note": "牧養 (chăn nuôi) + 納畜 (nhập gia súc)."
     },
-    "burial": { "status": "reviewed", "term": "安葬", "note": "Cùng thuật ngữ." },
-    "demolition": { "status": "reviewed", "term": "破屋壞垣", "note": "Phá nhà, đổ tường." },
+    "burial": {
+      "status": "reviewed",
+      "term": "安葬",
+      "note": "Cùng thuật ngữ."
+    },
+    "demolition": {
+      "status": "reviewed",
+      "term": "破屋壞垣",
+      "note": "Phá nhà, đổ tường."
+    },
     "water_travel": {
       "status": "reviewed",
       "term": "乘船渡水",
       "note": "Dòng kết: 「遠迴乘船渡水無宜日除所忌之外無日不宜也」 — không có ngày nên, ngoài ngày kỵ thì ngày nào cũng được."
     },
     "warehouse": {
-      "status": "pending",
+      "status": "reviewed",
       "term": "修倉庫",
-      "note": "修倉庫 = sửa kho. Nhãn “Mở kho” ứng với heading riêng 開倉庫出貨財 (chưa chép). Cần owner: tách activity, đổi nhãn, hoặc thêm heading."
+      "note": "Sửa kho. Owner 10/10/2026: tách “Mở kho” sang warehouse_opening (開倉庫出貨財); nhãn đổi thành “Sửa kho”."
+    },
+    "warehouse_opening": {
+      "status": "reviewed",
+      "term": "開倉庫出貨財",
+      "note": "Mở kho xuất hàng (owner 10/10/2026). 忌 cuối danh sách có 甲日 — điều kiện can ngày, chưa mã hoá."
     },
     "business": {
-      "status": "pending",
+      "status": "reviewed",
       "term": "開市",
-      "note": "開市 = mở hàng, hẹp hơn “Kinh doanh”; trùng heading với opening. Cần owner: giữ, đổi nhãn, hoặc bỏ mapping."
+      "note": "Owner 10/10/2026: nhãn “Khai trương / Mở hàng” theo đúng 開市, tách khỏi Ký kết / Giao dịch (立券交易). Cùng heading với opening."
     }
   }
 }

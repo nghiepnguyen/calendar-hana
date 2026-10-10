@@ -6,7 +6,7 @@ import { evaluateEventDay } from './eventEvaluation'
 import type { SolarDateString } from '../types'
 
 // Mappings the interpretation review left for the owner (xieji-activity-mapping-review.json).
-const PENDING = new Set(['warehouse', 'business'])
+const PENDING = new Set<string>()
 const LOCKED_OR_DAY_RULE = new Set([
   'thien_duc',
   'thien_duc_hop',

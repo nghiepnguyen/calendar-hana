@@ -21,12 +21,19 @@ describe('協紀 卷十一 用事 → activity interpretation review', () => {
     }
   })
 
-  it('leaves only warehouse and business pending for the owner', () => {
+  it('leaves nothing pending after the owner decisions of 10/10/2026', () => {
     expect(
       Object.entries(activities)
         .filter(([, item]) => item.status === 'pending')
         .map(([id]) => id)
         .sort(),
-    ).toEqual(['business', 'warehouse'])
+    ).toEqual([])
+  })
+})
+
+describe('owner split of warehouse (10/10/2026)', () => {
+  it('maps repairing and opening storehouses to separate headings', () => {
+    expect(entries.warehouse).toEqual(['修倉庫'])
+    expect(entries.warehouse_opening).toEqual(['開倉庫出貨財'])
   })
 })
