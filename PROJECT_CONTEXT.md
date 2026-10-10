@@ -1,8 +1,8 @@
 # PROJECT_CONTEXT.md
 
-> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#21: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相 + đọc scan 月表, 卷十 scoring sau flag tắt, Thiên Đức legacy tháng quẻ bỏ theo 月表 (PR #21, đổi điểm). GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
+> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau PR #6–#21: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông, sửa trang scan 觜/參, sửa 修倉庫, Trực/thần + 卷十 vào diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相 + đọc scan 月表, 卷十 scoring sau flag tắt, Thiên Đức legacy tháng quẻ bỏ theo 月表 (PR #21, đổi điểm), rồi PR #22–#29: trung tính khi không gặp ngày kỵ (≤ high), đo lại 卷十 + review mapping 用事 29/29, tách kho (Sửa kho / Mở kho xuất hàng), nhãn Mở hàng, cảnh báo cứng không làm nhẹ trạng thái, 百忌日 甲日/乙日, 土王用事 (tất cả đổi điểm, đã deploy). GitHub Actions bị khoá billing: gate local + deploy hosting thủ công.
 > Đây là tài liệu trạng thái và quyết định của project; chỉ dẫn trong tài liệu không thay thế yêu cầu mới của người dùng.
-> Chat mới đọc phần 21, 23, 24, 33 và 34 trước (34 là trạng thái mới nhất), rồi dùng các phần authority bên dưới khi cần.
+> Chat mới đọc phần 21, 23, 24 và 35 trước (35 là trạng thái mới nhất; 33, 34 là nền trực tiếp), rồi dùng các phần authority bên dưới khi cần.
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
 
@@ -1353,6 +1353,13 @@ Trực/thần context audit (docs)     MERGED (PR #12)
 卷十 presence + 月表 + scoring flag MERGED (PR #18) & DEPLOYED (manual hosting), flag OFF
 Handoff PR #18 (docs)               MERGED (PR #20)
 Thiên Đức trigram vs 月表 (#19)     MERGED (PR #21) & DEPLOYED (manual hosting) — ĐỔI ĐIỂM
+Handoff PR #21 (docs)               MERGED (PR #22)
+No-taboo neutral ≤ high             MERGED (PR #23) & DEPLOYED — ĐỔI KẾT LUẬN SỰ KIỆN
+卷十 re-measure + mapping review     MERGED (PR #24) & DEPLOYED (metadata)
+Kho tách đôi + nhãn Mở hàng         MERGED (PR #25) & DEPLOYED — hoạt động mới
+Hard warning giữ trạng thái xấu     MERGED (PR #28) & DEPLOYED — ĐỔI TRẠNG THÁI
+百忌日 甲日/乙日                     MERGED (PR #26) & DEPLOYED — ĐỔI ĐIỂM
+土王用事 audit + code                MERGED (PR #27, #29) & DEPLOYED — ĐỔI ĐIỂM
 ```
 
 Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ thống nhất bảng tháng 7/8 giữa hai layer theo biến thể đã chọn); Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
@@ -1360,10 +1367,12 @@ Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ th�
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
 ```text
-e64d507ed98e3f26d24474f6350333ff8ff675c4
+75156514a0eeaa34ef5178870866ee14d9e20195
 ```
 
-Latest release: **Thiên Đức legacy tháng 坤/乾/艮/巽 bỏ theo 協紀 月表**, [PR #21](https://github.com/nghiepnguyen/calendar-hana/pull/21) merge `e64d507` (đóng [issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)); deploy hosting thủ công 2026-10-10 07:04:09 UTC (14:04:09 VN), bundle `index-BQ9rTDUx.js` trùng SHA-1 local (`76963ef8…`); smoke `/day/2026-09-25`: “Sao tốt” = Giải Thần, Thanh Long Hoàng Đạo (không còn Thiên Đức sao; “Thiên Đức” còn lại là tên giờ hoàng đạo Tỵ). **Đổi điểm production.** Chi tiết phần 34.
+Latest release: **PR #23–#29 gộp một lần deploy**: hosting thủ công 2026-10-10 08:39:12 UTC (15:39:12 VN), bundle `index-DgL50c2x.js` trùng SHA-1 local (`1e8bef69…`), có `hardWarningKeepsWorseScoreStatus`, `tho_vuong_dung_su`, `giap_nhat`, `warehouse_opening`. (#23 đã deploy riêng trước đó lúc 07:40:06 UTC, bundle `index-DWF490CP.js`.) Smoke browser thật (Chromium) trên production: `/day/2026-01-25` Động thổ “Không thuận lợi”, bất lợi “Thổ Vương Dụng Sự”, ngày phù hợp gần nhất 4/2/2026 (= Lập xuân, biên loại trừ đúng); `/day/2026-01-10` Mở kho xuất hàng “Cân nhắc” với “Ngày Giáp (Bách Kỵ)”; `/day/2025-07-07` (月破) Cưới hỏi/Ăn hỏi/Chuyển nhà/Khai trương/Động thổ/Xây dựng nằm trong “Không nên làm”. **Đổi điểm/trạng thái production.** Chi tiết phần 35.
+
+Release trước: **Thiên Đức legacy tháng 坤/乾/艮/巽 bỏ theo 協紀 月表**, [PR #21](https://github.com/nghiepnguyen/calendar-hana/pull/21) merge `e64d507` (đóng [issue #19](https://github.com/nghiepnguyen/calendar-hana/issues/19)); deploy hosting thủ công 2026-10-10 07:04:09 UTC (14:04:09 VN), bundle `index-BQ9rTDUx.js` trùng SHA-1 local (`76963ef8…`); smoke `/day/2026-09-25`: “Sao tốt” = Giải Thần, Thanh Long Hoàng Đạo (không còn Thiên Đức sao; “Thiên Đức” còn lại là tên giờ hoàng đạo Tỵ). **Đổi điểm production.** Chi tiết phần 34.
 
 Release trước: **卷十 presence + 月表 + scoring behind flag**, [PR #18](https://github.com/nghiepnguyen/calendar-hana/pull/18) merge `ee3fd3f`; deploy hosting thủ công 2026-10-10 06:32:20 UTC (13:32:20 VN), bundle production `index-C57w-Wrc.js` trùng SHA-1 bản build local (`8a510222c166…`), bundle có `xiejiVol10Scoring:!1`. **Không đổi điểm/UI** (flag tắt). Chi tiết phần 33.
 
@@ -1576,6 +1585,7 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 5. **Phase 6 product/personal:** calendar annual directions chưa đưa vào calendar UI; personal annual afflictions/lunar conventions được bảo toàn chứ chưa được Phase 6 chứng nhận. Không gộp hai layer.
 6. **Phase 7 coverage:** other editions, old tailoring/study/business/bed/travel/boat claims chưa được selected poems hỗ trợ; vẫn UNKNOWN đối với authority này.
 7. **Taxonomy/mapping:** door_opening/waterworks đã thêm (PR #6). **Owner quyết định 10/10/2026: không tạo ID** cho 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses) — giữ unmapped/reviewed; đóng thuyền/hạ thủy không có clause trong subset 1880 nên không có căn cứ định nghĩa; lexical “hạ thủy” → water_travel không được chứng nhận.
+8a. **Mapping 用事 → activity (卷十一) — REVIEWED 29/29 (PR #24, #25):** travel ↔ 行幸遣使 theo chú 「出行同」, moving ↔ 般移 「移徙同」, meeting ↔ 宴會 「會親友同」, groundbreaking ↔ 興造動土 「修造同」; warehouse/business đã chốt (phần 35). Single-reviewer (agent).
 8. **Interpretation review là single-reviewer (agent):** Golden diễn giải v2 chưa có thẩm định chuyên gia thứ hai; `interpretation_reviewed` không phải quyền chấm điểm.
 9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. 協紀 卷十一 có 開渠穿井 / 修飾垣墻 (ứng viên), chưa chứng minh tương đương 放水.
 20. **月厭/月刑/月煞/災煞 presence + 卷十 entries (diagnostics, nhánh `audit/xieji-monthly-sha-presence`, `docs/audits/xieji-monthly-sha-presence.md`):** định nghĩa theo Month Jian từ 卷四 (月厭 正月起戌逆行), 卷三/卷六 (月刑 = 歲刑), 卷六 (月煞 正月起丑逆行四季, 災煞 正月起子逆行四仲); khớp Group B v3.1 (月煞/災煞, 144 ô) và mọi câu 值X日 của 卷十. `shared/lunar/xiejiMonthlySha.ts` chỉ dùng cho `resolveVol10` (version `xieji-vol10-v2`), không đổi godPresence/điểm; legacy gods vẫn không bao giờ có mặt. Undetermined của 6 mục cũ 4.540 → 2.520; 4 mục mới 7.320 items (1.220 undetermined); divergence 6 mục cũ 1.707 → 2.313, 4 mục mới 3.417 (sản phẩm không có rule 月厭/月刑/月煞/災煞 chạy được). **Phần 2:** 天赦/天願/月恩/四相 khoá theo 卷五 歴例 (`shared/lunar/xiejiVirtues.ts`), 天德合 vắng mặt ở tháng tứ trọng (“四仲之月…無合”, `unknownGodIds` chỉ còn `thien_duc`). **Phần 3 (scan 月表 四庫全書, archive.org `06067692/94/95/97.cn`):** 240 trang ngày của tháng 2/5/8/11 không trang nào ghi 天德 (tháng 7 vẫn ghi 天德 ở 癸亥) → 天德 tháng tứ trọng vắng mặt, `unknownGodIds` = []. Scan cũng lộ lỗi: 天願 phải theo 卷五 **按 起例** (正月乙亥…五月丁未…十一月癸丑), không theo 歴例 (đã sửa; 月表 xác nhận). **Undetermined = 0** (2025–2027).
@@ -1594,18 +1604,18 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 
 ### Next steps đề xuất cho chat mới (chưa tự implement)
 
-1. Đọc phần 21, 23, 24, 33, 34; `git pull` main (HEAD `e64d507` sau PR #21; PR handoff này sau đó).
-2. **Hiển thị “không đủ căn cứ”** khi hoạt động chính mất quy tắc duy nhất (31 lượt sự kiện sau PR #21): owner giữ hiện trạng; muốn đổi thì **PR riêng** (vd. đọc như trung tính giống quyết định 不註 của 卷十).
-3. **Bật `xiejiVol10Scoring`** — owner: **CHƯA bật**. Migration 卷十 đã chạy trên almanac mới (sau PR #21) và vẫn xanh. Khi bật: đổi một dòng manifest → gate local → PR → deploy → smoke 2025-01-21 (cưới hỏi), một ngày 月破 tháng 卯, một ngày 月厭 tháng 子. Nên chạy lại báo cáo `REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts` vì số liệu trong `docs/audits/xieji-vol10-scoring-migration.md` đo trước PR #21.
-4. Review mapping 用事 → activity (`xieji-activity-mapping-v1`, `interpretation_pending`; vd. travel ↔ 行幸遣使) trước khi bật flag.
-5. **21/44 thần không bao giờ có mặt** trong lớp chấm điểm (月厭/月刑/月煞/災煞/天願/四相… đã có presence chẩn đoán `xiejiMonthlySha.ts`/`xiejiVirtues.ts`): dùng cho chấm điểm là đổi điểm → PR riêng, golden 月表 + migration proof.
-6. **14 thần legacy tính theo tháng âm**: audit từng bảng sang Month Jian; 月表 là nhân chứng (scan đã tải được, cách đọc ở phần 34). Đọc nốt tháng 6/7/9/10/12 (mới đọc 36/12/12/12/12 trang) nếu cần nhân chứng đủ.
-7. Mã hoá quy tắc chung 卷十 (“凡吉足勝凶從宜不從忌…”, “凡吉凶相抵…”) và phần 宜 theo thần.
+1. Đọc phần 21, 23, 24, 35; `git pull` main (HEAD `7515651` sau PR #29; PR handoff này sau đó).
+2. **Bật `xiejiVol10Scoring`** — owner: **CHƯA bật**. Mapping đã review 29/29; số đo lại (PR #24, sau #21/#23): rows như PR #18, event 1.662 đổi điểm. Các PR #25–#29 thêm hoạt động/thần/policy sau lần đo đó → **chạy lại** `REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts` trước khi bật. Khi bật: một dòng manifest → gate local → PR → deploy → smoke 2025-01-21 (cưới hỏi), một ngày 月破 tháng 卯, một ngày 月厭 tháng 子.
+3. **Nhãn trùng nghĩa:** “Khai trương” (opening) và “Mở hàng” (business) cùng heading 開市, chỉ khác trọng số Trực → cân nhắc gộp/ẩn một mục (PR riêng, owner quyết).
+4. **土王用事 còn SOURCE_DEPENDENT** (phần 35): đếm từ ngày hay thời khắc 立; biên 「後」; 時憲書 dùng đếm ngày hay 定氣; 德 có làm 止忌 như 土府 không. 「補垣」 và 開渠穿井 chưa có activity (waterworks chưa map).
+5. **百忌日 còn lại** (卷十: 庚日 經絡, 辛日 醖釀, 壬日 開渠, 卯日 穿井, 巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病, 丑日 冠帶, 午日 苫蓋): nhiều mục khớp activity hiện có (出行 → travel, 祭祀 → worship, 嫁娶 → wedding, 宴會 → meeting, 安牀 → bed_installation, 求醫療病 → medical). Cùng cơ chế `dayCan`/`dayChi` + preserve_bad; đổi điểm → owner quyết, golden trước code. Lưu ý 卷十 鋪註條例 “凡巳日忌出行不註宜出師遣使”, “凡酉日忌宴會亦不註宜慶賜賞賀”.
+6. 21/44 thần không bao giờ có mặt; 14 thần legacy theo tháng âm → audit bằng 月表 (như trước).
+7. Mã hoá quy tắc chung 卷十 (“凡吉足勝凶…”, “凡吉凶相抵…”) và phần 宜 theo thần.
 8. Sát Chủ: cần nguồn offline.
 9. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập (đóng băng trước code), không majority vote.
-10. Quy trình: local validation → branch `audit/**` / `feature/**` → PR → **user cho phép merge** → deploy → smoke → handoff qua PR. **Actions bị khoá billing:** gate local đủ (typecheck, lint, `npm test`, 2 mutation runner, `npm run build`, `npx playwright test --project=desktop`), ghi rõ là local; deploy chỉ khi user đồng ý: `npx firebase deploy --only hosting --project calendar-hana`; kiểm bundle production trùng SHA-1 bản build local + smoke HTML trang ngày.
+10. Quy trình: local validation → branch → PR → **user cho phép merge** → deploy → smoke → handoff qua PR. Actions bị khoá billing: gate local đủ, ghi rõ là local; deploy chỉ khi user đồng ý: `npx firebase deploy --only hosting --project calendar-hana`; kiểm bundle production trùng SHA-1 local + smoke browser (cách làm ở phần 35).
 
-User request mới nhất: cập nhật handoff sau PR #21 (merged + deployed). Không có implementation task đang tồn đọng; PR handoff này chờ merge.
+User request mới nhất: tổng kết handoff sau PR #23–#29 (merged + deployed). Không có implementation task đang tồn đọng; PR handoff này chờ merge.
 
 ------------------------------------------------------------------------
 
@@ -1621,7 +1631,8 @@ Handoff hiện tại: `PROJECT_CONTEXT.md` ở repo root, **tracked trong git t�
 - Graph có 5908 nodes, 8424 edges, 790 communities tại update gần nhất (sau PR #8).
 - Theo AGENTS.md: đọc `graphify-out/GRAPH_REPORT.md` trước source/search; wiki index nếu tồn tại thì dùng wiki; cross-module questions ưu tiên graphify query/path/explain; sau code edits `graphify update .` AST-only.
 - Graft: ask --source để locate/understand; callers để impact; grep cho exhaustive symbol usage. Không thay graph navigation bằng quét toàn bộ repo không cần thiết.
-- Không spawn subagents trong các thread gần đây; không tự delegate nếu user/applicable instructions chưa yêu cầu.
+- Thread PR #22–#29 dùng **một** subagent nghiên cứu (đọc 36 quyển 協紀 tìm định nghĩa 土王用事); kết quả được kiểm lại trên file nguồn trước khi dùng (agent đọc sai 「乙日土王用事後」 — đã sửa). Raw wikitext 36 quyển nằm ở scratchpad của session, không durable.
+- **Rebase khi working tree có `.gitignore`/`graphify-out` của user:** dùng `git rebase --autostash main` (không stash/reset tay).
 - **Không chạy `npx prettier --write` theo glob rộng** (vd. `shared/lunar/*.ts`): nhiều file legacy (vd. `mansions.ts`) chưa format, sẽ sinh diff lớn ngoài phạm vi. Chỉ format file đã sửa.
 - Branch prefix: CI chạy trên push cho `main`, `feature/**`, `audit/**`; `fix/**`/`docs/**` chỉ có CI khi mở PR.
 - Temporary primary scan `/tmp/calendar-hana-yuxia-1880.pdf` và rendered images là research cache, không phải durable dependency. Trang lẻ bản 1880 tải trực tiếp: `https://archive.org/download/20241205_20241205_0310/page/nN.jpg` (N = pdfPage − 1).
@@ -1653,7 +1664,7 @@ Môi trường sandbox có thể cần escalation cho `.git`, network hoặc bro
 
 Starter prompt gợi ý:
 
-> Đọc PROJECT_CONTEXT.md (phần 21, 23, 24, 33, 34). Main đã có PR #6–#21: mapping 28 Tú review 115/115, Sát Chủ 7/8, trang scan 觜/參 + quote 角, 修倉庫 (dataset 1.2.1), Trực/thần + 卷十 diagnostics, presence 月厭/月刑/月煞/災煞 + 天赦/天願/月恩/四相, scan 月表 (天德 tháng tứ trọng vắng mặt), 卷十 scoring sau flag `xiejiVol10Scoring` = false (undetermined = 0, golden 39 ca, migration proof). Actions bị khoá billing → gate local, deploy hosting thủ công khi tôi đồng ý. Thiên Đức legacy tháng quẻ đã bỏ theo 月表 (PR #21, đổi điểm, đã deploy). Việc tiếp theo: chờ tôi quyết bật flag / đổi hiển thị “không đủ căn cứ” (PR riêng), hoặc audit 21 thần không có mặt / 14 bảng tháng âm bằng 月表. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy.
+> Đọc PROJECT_CONTEXT.md (phần 21, 23, 24, 35). Main = `7515651` (PR #6–#29, đã deploy). Đã có: trung tính khi không gặp ngày kỵ cho sự kiện ≤ high; mapping 用事 29/29; Sửa kho / Mở kho xuất hàng (開倉庫出貨財), nhãn Mở hàng; cảnh báo cứng không làm nhẹ “Nên tránh/Kỵ mạnh”; 百忌日 甲日/乙日; 土王用事 (18 ngày trước Tứ Lập, −15). `xiejiVol10Scoring` vẫn false. Actions bị khoá billing → gate local, deploy hosting thủ công khi tôi đồng ý. Việc tiếp theo: chờ tôi quyết bật flag 卷十 (đo lại trước), gộp Khai trương/Mở hàng, 百忌日 còn lại, hoặc audit 21 thần vắng mặt / 14 bảng tháng âm. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy.
 
 
 ## 25. Activity taxonomy — snapshot implementation 10/10/2026 (đã deploy, xem phần 29)
@@ -2056,7 +2067,93 @@ Sách không nêu tháng nhuận hay tháng âm/tiết; không có bài thơ 28 
 
 ### Vấn đề chưa giải quyết (sau PR #21)
 
-1. 31 lượt sự kiện hiện “không đủ căn cứ” thay vì recommended (owner giữ; PR riêng nếu đổi).
-2. Số liệu migration 卷十 trong `docs/audits/xieji-vol10-scoring-migration.md` đo trước PR #21 → chạy lại trước khi bật flag.
+1. ~~31 lượt sự kiện hiện “không đủ căn cứ”~~ — RESOLVED bởi PR #23 (trung tính cho sự kiện ≤ high; xem phần 35).
+2. ~~Số liệu migration 卷十 đo trước PR #21~~ — đo lại ở PR #24 (phần 35); cần đo lại lần nữa sau #25–#29 trước khi bật flag.
 3. Nhân chứng 月表 tháng 6/7/9/10/12 chỉ đọc một phần (36/12/12/12/12 trang).
 4. Hai spec e2e đã đổi chip Thiên Đức → Giải Thần chỉ chạy project desktop; mobile/Safari chưa chạy.
+
+------------------------------------------------------------------------
+
+## 35. PR #22–#29 — trung tính, mapping 用事, tách kho, hard warning, 百忌日, 土王用事 (10/10/2026)
+
+| PR | Nội dung | Merge | Đổi production |
+|---|---|---|---|
+| #22 | Handoff sau PR #21 (docs) | `440dd10` | — |
+| #23 | Không gặp ngày kỵ → trung tính cho sự kiện ≤ high | `b293e21` | kết luận sự kiện |
+| #24 | Đo lại 卷十 sau #21/#23; review mapping 用事 → activity | `b72500c` | metadata chẩn đoán |
+| #25 | Tách warehouse; warehouse_opening mới; business “Mở hàng”; Sửa kho → nhóm construction | `175cb65` | hoạt động/nhãn mới |
+| #28 | Cảnh báo cứng lấy trạng thái nghiêm hơn | `50d2597` | trạng thái hoạt động |
+| #26 | 百忌日: 甲日 kỵ mở kho xuất hàng, 乙日 kỵ trồng trọt | `9dbd268` | điểm |
+| #27 | Audit định nghĩa 土王用事 (docs) | `14c341b` | — |
+| #29 | 土王用事: 18 ngày trước Tứ Lập kỵ việc đất | `7515651` | điểm + kết luận Động thổ |
+
+Thứ tự merge thực tế: #28 → #26 (rebase) → #27 → #29 (rebase). Deploy một lần sau #29 (phần 21).
+
+### Decisions (owner, 10/10/2026)
+
+1. **Trung tính (PR #23):** hoạt động chính `no_evidence` (không quy tắc nào, nên cũng không ngày kỵ) → sự kiện severity low/medium/high là **trung tính** (“Cân nhắc”, score 50, ghi “Không gặp ngày kỵ nào.”); `very_high` (cưới hỏi, động thổ, khai trương, mua nhà/đất) vẫn `insufficient_evidence`. Agent thêm (được giữ): ngày trung tính theo policy **không bao giờ** `recommended` (hoạt động phụ chỉ dịch điểm).
+2. **Kho:** tách 2 hoạt động — `warehouse` giữ ID, nhãn **Sửa kho** (修倉庫), chuyển nhóm `construction` (Tu tạo); `warehouse_opening` **Mở kho xuất hàng** (開倉庫出貨財), nhóm business. Không đổi ID thành `warehouse_repair` (vỡ frozen baseline/fixtures); không map 修棧櫃 (không có trong 卷十一) hay 開倉 riêng.
+3. **business:** nhãn **Mở hàng** (開市), tách khỏi Ký kết/Giao dịch (立券交易).
+4. **Hard warning (PR #28):** trạng thái = nghiêm hơn giữa `consider` và trạng thái theo điểm (≤19 strong_avoid, ≤29 avoid). Trường hợp không hard warning mà cộng/trừ đều ≥30 vẫn `consider`.
+5. **百忌日:** 甲日 → Mở kho xuất hàng, 乙日 → Trồng trọt; medium (−10) + hard warning, như 丁日 kỵ cắt tóc.
+6. **土王用事:** đếm lùi 18 ngày lịch từ ngày Tứ Lập (giờ VN), **loại trừ ngày Lập**; major (−15), **không** hard warning; đúng 6 hoạt động: Xây dựng, Động thổ, Sửa chữa, Sửa kho, Phá dỡ, Trồng trọt.
+7. `xiejiVol10Scoring` vẫn **tắt**.
+
+### Thuật toán
+
+- `evaluateEventDay` (`eventEvaluation.ts`): `neutralByPolicy = severity ≤ manifest.policies.noTabooMeansNeutralUpToSeverity && primary.status === 'no_evidence'` (thứ tự `low < medium < high < very_high`); classification `recommended` chỉ khi `score >= 65 && !neutralByPolicy`.
+- `getActivityRecommendations` status: `hardWarning && (score > 29 || !hardWarningKeepsWorseScoreStatus)` → `consider`; ngược lại rơi xuống ngưỡng điểm. Đánh giá sự kiện đọc hard warning trực tiếp, không đọc status hoạt động → sự kiện không đổi.
+- `xiejiEvidence`: `reviewStatus`/`reviewTerm`/`reviewNote` từ `xieji-activity-mapping-review.json` (chẩn đoán; `conflictAnalysis.reviewPending` false cho mapping đã review).
+- `thoVuongDungSu.ts`: `thoVuongDungSuPeriods(year)` lấy 立春/立夏/立秋/立冬 (term index 21/3/9/15) từ `solarTermsForYear`, đổi sang ngày lịch UTC+7, kỳ = [立 − 18, 立 − 1]; `isThoVuongDungSu(date)`. Bốn kỳ luôn nằm trong cùng năm dương lịch.
+- `godMapping.ts`: `DayRule.thoVuongDungSu`; `resolveDayRuleGods`/`resolveDayRuleGodPresence` nhận `RuleDay {can, chi, lunarDay, thoVuongDungSu?}`; operand `THO_VUONG_DUNG_SU`. `almanac.ts` tính `ruleDay` một lần, thêm `selectionContext.THO_VUONG_DUNG_SU` (0/1).
+- 甲日/乙日 dùng sẵn `rule.dayCan` + override `preserve_bad` (không helper mới, không đặt trong `applyVol10Scoring` vì nguồn là 卷十一/百忌日, không phải verdict 卷十 và flag đang tắt).
+
+### Data / schema
+
+- `manifest.policies`: `lowSeverityNoTabooMeansNeutral` → **`noTabooMeansNeutralUpToSeverity: "high"`**; mới **`hardWarningKeepsWorseScoreStatus: true`**; notes tương ứng.
+- `activities.json`: `warehouse` label “Sửa kho”, group `construction`; mới `warehouse_opening` “Mở kho xuất hàng” (group business, sensitivity 0.5); `business` label “Mở hàng”. `activityTaxonomy.ts`: scope `warehouse_opening`.
+- `xiejibianfangshu-yiji.json`: entry 開倉庫出貨財 (宜 月恩四相時德滿日五富; 忌 月建月破大耗平日收日閉日劫煞災煞月煞月虛月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虛九空甲日), `activityEntries.warehouse_opening`.
+- `truc.json`: warehouse_opening — Mãn +15; Kiến/Bình/Thu/Bế −15; Phá −25 (parity test + quy ước trọng số). `good-gods.json`: 月恩, 四相, 時德, 五富 thêm warehouse_opening; `bad-gods.json`: 11 hung thần thêm warehouse_opening.
+- `bad-gods.json` mới: `giap_nhat` {han 甲日, medium, dayCan [0], [warehouse_opening]}, `at_nhat` {han 乙日, medium, dayCan [1], [planting]}, `tho_vuong_dung_su` {han 土王用事後, major, rule {thoVuongDungSu: true}, 6 activity}. `overrides.json`: `giap_day_blocks_warehouse_opening`, `at_day_blocks_planting` (preserve_bad).
+- `mansion-patterns.json` (legacy): “mở kho” → `warehouse_opening`; “nhập kho” giữ `warehouse`.
+- `xieji-activity-mapping-review.json` (mới): `{version, reviewedAt, reviewer, source, note, activities{id: {status reviewed|pending, term, note}}}` — 29/29 reviewed.
+- Golden mới (đóng băng trước code, có trường `corrections[{kind: POLICY_CHANGE|DATA_CHANGE, cases, note}]` khi policy/data sau đổi tiền đề):
+  - `golden-hard-warning-status.json` (`f8ba8a4`): 21 ca; 1 DATA_CHANGE (2025-01-26 groundbreaking/construction điểm 50 → 35 do 土王, status vẫn consider).
+  - `golden-baiji-giap-at.json` (`f29a4d0`, can ngày tính từ 2000-01-07 = 甲子): 49 ca; 1 POLICY_CHANGE (2 ca điểm 25 consider → avoid do #28).
+  - `golden-tu-vuong-dung-su.json` (`02302bb`): 12 kỳ, 48 ca biên; ngày Tứ Lập từ bảng HKO (T2025c/T2026c/T2027c, HKT; SHA-1 d88bbdc4c183 / bae773653a0b / e4fb75dfe89e).
+
+### Nguồn đã khoá (Wikisource raw, SHA-1 prefix)
+
+卷一 `66c18401b9f4` (「土於四立之前各旺一十八日」), 卷十 `355dc6c8fe2d` (百忌日 「甲日忌開倉庫出貨財乙日忌栽種丁日忌剃頭…」; 鋪註條例 「…如遇專忌之日則仍註忌」; 土王用事 忌 list 「義同土府」), 卷十一 `ce4ed7f23ff9` (heading hợp nhất + chú 「X同」; 開倉庫出貨財; 土王用事後 dưới 15 heading), 卷五 `1d4000974e32`, 卷六 `a9ab67896fc9`, 卷二十二 `3517ed0b55bb`, 卷三十五 `cfc090a9feca`. Volumes 1–9 tên trang `卷01`…`卷09`.
+
+### Số liệu (1095 ngày 2025–2027)
+
+- #23: 1.674 event `insufficient_evidence → caution` (high 1.462: mua xe 337, ký hợp đồng 337, bàn giao nhà 337, chuyển nhà 261, nhận xe 190; medium 212 xuất hành).
+- #24 (卷十 flag on): rows y như PR #18; event 1.662 đổi điểm (trước 1.639); insufficient → not_recommended 49 (trước 126); rows theo activity, ví dụ warehouse 137, business 182, warehouse_opening 171 (sau #25).
+- #25: warehouse_opening — recommended 83, watch 383, neutral 81, avoid 163, strong_avoid 21, no_evidence 364; hoạt động cũ + sự kiện không đổi.
+- #28: consider → avoid 360, consider → strong_avoid 79 (月破 trên 6 hoạt động; 丁日 trên cắt tóc); điểm + 11 sự kiện không đổi.
+- #26: 110 ngày Giáp (warehouse_opening), 109 ngày Ất (planting); không sự kiện nào đổi.
+- #29: 216 ngày trong kỳ; chỉ 6 hoạt động đổi; event Động thổ recommended → not_recommended 63, insufficient → not_recommended 40.
+- Gate local cuối: 155 files / 2.903 tests; mutation 7/7 + 9/9; build; Playwright desktop 104 passed / 16 skipped. Chưa chạy `test:emulator`, mobile/Safari.
+
+### Frozen baseline 1.2.1 (`xiejiConditionalMigration.test.ts`)
+
+Hai phía đều ghim trạng thái trước các thay đổi sau: Thiên Đức legacy (`KEEP_LEGACY_TRIGRAM_TIAN_DE`), manifest (`noTabooMeansNeutralUpToSeverity: 'low'`, `hardWarningKeepsWorseScoreStatus: false`), bad-gods không có `giap_nhat`/`at_nhat`/`tho_vuong_dung_su`, overrides không có 2 override 百忌日; `ADDED_ACTIVITIES` gồm door_opening, waterworks, warehouse_opening. Vẫn 1095/1095. **Mỗi thay đổi đổi điểm/trạng thái sau này phải ghim thêm ở đây.**
+
+### Smoke production bằng browser
+
+Khu “Mục tiêu và kết luận trong ngày” chỉ hiện khi có ngày sinh: smoke Playwright tạm (config riêng `testDir: '.'`) với `addInitScript` đặt `hana:welcome-seen`/`hana:swipe-hint-seen`, lưu ngày sinh giả ở `/settings#birth-info` (chỉ trong browser context tạm), rồi mở `/day/<date>`; xoá file tạm sau khi chạy.
+
+### File mới
+
+`shared/lunar/neutralNoTabooMigration.test.ts`, `shared/lunar/xiejiActivityMappingReview.test.ts`, `shared/almanac-data/xieji-activity-mapping-review.json`, `docs/audits/xieji-activity-mapping-review.md`, `shared/lunar/hardWarningStatus.test.ts`, `shared/almanac-data/golden-hard-warning-status.json`, `shared/lunar/baijiGiapAt.test.ts`, `shared/almanac-data/golden-baiji-giap-at.json`, `docs/audits/baiji-giap-at.md`, `shared/lunar/thoVuongDungSu.ts` (+test), `shared/almanac-data/golden-tu-vuong-dung-su.json`, `docs/audits/tu-vuong-dung-su.md`. Sửa doc: `docs/verification/mapping-scoring.md`, `docs/verification/activity-taxonomy.md`, `docs/audits/xieji-vol10-scoring-migration.md` (mục Re-measure).
+
+### Vấn đề chưa giải quyết (sau PR #29)
+
+1. `xiejiVol10Scoring` tắt; số đo #24 trước #25–#29 → đo lại trước khi bật.
+2. “Khai trương” và “Mở hàng” gần trùng (cùng 開市).
+3. 土王用事: các điểm SOURCE_DEPENDENT (phần Next steps mục 4); chứng phụ đếm ngày (承政院日記) tính bằng ephemeris gần đúng, độ tin cậy trung bình.
+4. 卷十 鋪註條例 dòng 492 (德/月恩/四相/時德 không chú kỵ 開倉庫出貨財 trừ ngày 德猶忌) chưa mã hoá; 百忌日 được xem là 專忌 nên áp vô điều kiện.
+5. Smoke chưa kiểm nhãn “Kỵ mạnh” trên từng mục (bấm mở chi tiết Ăn hỏi bị timeout); chỉ xác nhận các mục nằm trong “Không nên làm”.
+6. Mobile/Safari, `test:emulator` chưa chạy cho các PR này.
+
