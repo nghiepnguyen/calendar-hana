@@ -73,7 +73,17 @@ Of the 44 scoring gods, 21 never fire (no exact name in the day star table, no d
 
 "Ngày có mặt" counts 2025–2027 days under the 協紀 rule with the production Month Jian. Legacy columns: days where both bases agree / only the lunar-month table fires / only the Month Jian rule fires.
 
+## P3b — presence evaluator (diagnostics only)
+
+`shared/lunar/xiejiGodPresence.ts` (`xieji-god-presence-v1`): `getXiejiGodPresence(monthJianBranch, dayStem, dayBranch)` returns the catalog ids present under the 協紀 rule with explicit operands (`MONTH_JIAN_BRANCH`, `DAY_STEM`, `DAY_BRANCH`; no month operand for 五合/五離/八專). It reads `xieji-god-definitions.json` and ignores `alternative` (五富 逆行). Nothing in the app imports it yet: production presence, scores and the bundle are unchanged.
+
+`shared/lunar/xiejiGodPresence.test.ts` compares it with production presence (exact-name day-table bridge + day rules) on 1095 days (2025–2027) and asserts:
+
+- the 21 never-present gods have **0** production days;
+- for the 14 legacy gods, **every disagreeing day has a lunar month number different from the Month Jian month number** (寅 = 1). The month basis is the only cause of difference.
+
+Per-god counts: [`xieji-god-presence-2025-2027.tsv`](xieji-god-presence-2025-2027.tsv) (regenerate with `REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/lunar/xiejiGodPresence.test.ts`). Legacy totals: 1,015 agreeing days, 303 production-only, 287 協紀-only. The 21 dormant gods would add 2,019 god-days.
+
 ## Next (not implemented, owner decision)
 
-- **P3b (diagnostics):** one presence evaluator driven by `xieji-god-definitions.json` on Month Jian, exposed in diagnostics next to production presence; no score change.
-- **Scoring migration (separate release):** switch the 14 legacy gods to Month Jian presence and let the 21 dormant gods fire. This changes many activity and event scores (roughly a quarter of legacy days move, and 21 gods start scoring); it needs its own Golden and migration proof, and is the prerequisite for P4 (卷十 balancing).
+- **Scoring migration (separate release):** feed `getXiejiGodPresence` into `godPresence`/present gods. That switches the 14 legacy gods to Month Jian and lets the 21 dormant gods fire, and it will change many activity and event scores. It needs its own Golden (frozen before code), a migration proof, and owner review of weights (the catalog tiers already exist). It is the prerequisite for P4 (卷十 balancing).
