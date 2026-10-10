@@ -62,6 +62,11 @@ const ALWAYS_SOURCE_LOCKED = new Set<string>([
   'Nguyệt Phá',
   'Kiếp Sát',
 ])
+// Month Jian stars keep the day-table position of the legacy row they replace (the UI shows the first
+// five stars before “xem thêm”).
+const STAR_RANK = new Map(STARS.map((star, i) => [star.name, i]))
+const inTableOrder = (stars: Star[]) =>
+  [...stars].sort((a, b) => STAR_RANK.get(a.name)! - STAR_RANK.get(b.name)!)
 const THU_TU_NAME = 'Thụ Tử'
 const THU_TU_MEANING = 'Trăm sự đều kỵ'
 
@@ -124,14 +129,18 @@ function computeAlmanac(date: SolarDateString): Almanac {
     : []
   const stars = {
     good: [
-      ...legacyStars.good.filter((star) => !replaceNames.has(star.name)),
+      ...inTableOrder([
+        ...legacyStars.good.filter((star) => !replaceNames.has(star.name)),
+        ...monthJianStars.filter((star) => star.isGood),
+      ]),
       ...lockedStars.good,
-      ...monthJianStars.filter((star) => star.isGood),
     ],
     bad: [
-      ...legacyStars.bad.filter((star) => !replaceNames.has(star.name)),
+      ...inTableOrder([
+        ...legacyStars.bad.filter((star) => !replaceNames.has(star.name)),
+        ...monthJianStars.filter((star) => !star.isGood),
+      ]),
       ...lockedStars.bad,
-      ...monthJianStars.filter((star) => !star.isGood),
       ...authorityBadStars,
     ],
   }

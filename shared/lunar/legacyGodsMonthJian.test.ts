@@ -66,7 +66,8 @@ describe('14 legacy gods on Month Jian (golden frozen before code)', () => {
       const names = (a: typeof after) => [...a.stars.good, ...a.stars.bad].map((s) => s.name).sort()
       const other = (list: string[]) => list.filter((n) => !LABELS.has(n))
       expect(other(names(after)), date).toEqual(other(names(before)))
-      if (sameBasis) expect(names(after), date).toEqual(names(before))
+      // Same basis: same stars in the same order (the UI shows the first five per list).
+      if (sameBasis) expect(after.stars, date).toEqual(before.stars)
       for (const [i, act] of after.activityRecommendations.entries()) {
         const prev = before.activityRecommendations[i]!
         // Rows other than the 14 gods and 卷十 rows are identical apart from the god-cap share.
