@@ -2,13 +2,16 @@ import { resolveActivityScope } from './activityTaxonomy'
 
 export interface RuleActivityMapping {
   version: 'mansion-activity-mapping-v2'
-  status: 'exact_catalog_pair' | 'unmapped'
+  /** Catalog activity the clause is interpreted as; '' while the scope is a catalog gap. */
+  activityId: string
+  /** `not_operative`: the excerpt is source-accurate but states a consequence, not an activity. */
+  status: 'exact_catalog_pair' | 'unmapped' | 'not_operative'
   /** Interpretation review of the source term; independent of SOURCE_LOCKED and never a scoring permission. */
   reviewStatus: 'interpretation_reviewed' | 'interpretation_pending'
   reason: string
   /** Reviewed source term found in the quote; absent while pending. */
   reviewTerm?: string
-  /** Why a clause stays pending although its scope has reviewed terms. */
+  /** Clause-specific reading from the full verse on the scan. */
   reviewNote?: string
 }
 
@@ -22,12 +25,17 @@ export interface MansionClauseRef {
 /** Explicit product interpretations for the current 1880 mansion content subset.
  * `terms` are reviewed operative source terms for the scope; a clause is reviewed only
  * when one of them occurs in its quote. This table never extracts rules from keywords.
+ * `catalogAdded` scopes were source-locked with an empty ID before their catalog activity
+ * existed; the mapping assigns the ID without rewriting the source lock.
  * Empty IDs are deliberate catalog gaps, not neutral activities or permissions.
  */
-const mappings = {
+const mappings: Record<
+  string,
+  { activityId: string; terms: readonly string[]; reason: string; catalogAdded?: true }
+> = {
   construction_general: {
     activityId: 'construction',
-    terms: ['造作', '修造', '起造'],
+    terms: ['造作', '修造', '起造', '造龍軒'],
     reason:
       'Giữ diễn giải xây dựng chung hiện tại; không mở rộng sang động thổ hoặc việc xây dựng hẹp.',
   },
@@ -52,14 +60,16 @@ const mappings = {
     reason: 'Đi thuyền riêng với xuất hành chung, đóng thuyền, hạ thủy và thủy công.',
   },
   door_opening: {
-    activityId: '',
+    activityId: 'door_opening',
     terms: ['開門'],
-    reason: 'Mở/làm cổng cửa chưa có exact activity ID; không đổi thành khai trương.',
+    catalogAdded: true,
+    reason: 'Trổ cửa/làm cổng của công trình; không phải khai trương (開市).',
   },
   waterworks: {
-    activityId: '',
+    activityId: 'waterworks',
     terms: ['放水'],
-    reason: 'Tháo/dẫn nước chưa có exact activity ID; không đổi thành đi thuyền.',
+    catalogAdded: true,
+    reason: 'Dẫn/tháo nước, khơi mương; không phải đi thuyền.',
   },
   construction_columns: {
     activityId: '',
@@ -87,41 +97,61 @@ const mappings = {
     reason:
       'Xây bên nước chưa có exact activity ID; không đổi thành xây dựng chung hoặc đường thủy.',
   },
-} as const
+}
 
-/** Clauses kept pending: compound acts, consequence lines or terms outside the reviewed list. */
-const pendingClauses: Record<string, string> = {
+/** Readings settled against the full verse on the scan (2026-10-10). */
+const clauseNotes: Record<string, string> = {
   '張-1':
-    '造龍軒 chỉ có chữ 造 với công trình 龍軒 chưa xác định; chưa rõ là xây dựng chung hay phạm vi hẹp như cao đường.',
-  '參-5': '婚姻許定 có thể chỉ việc hứa hôn/định thân; chưa phân định giữa cưới hỏi và nạp thái.',
-  '星-4': 'Câu nêu hậu quả chia lìa (別嫁郎), không trực tiếp nêu việc cưới hỏi trong ngày.',
+    '張星日好造龍軒，年年便見進庄田: 龍軒 là mỹ từ cho nhà/sảnh, câu khen việc xây dựng nói chung.',
+  '參-5':
+    '婚姻許定遭刑剋，男女朝開暮落花: nói về hôn nhân; không suy ra riêng cho nạp thái/ăn hỏi.',
   '婁-1':
-    '竪柱起門庭 gộp dựng cột với dựng cổng/sân; chỉ phần dựng cột được giữ, chưa tách 起門庭.',
-  '鬼-6':
-    '修土築牆 gộp đắp đất với xây tường; chưa tách phần đắp đất khỏi xây tường hoặc động thổ.',
+    '婁星竪柱起門庭: dựng cột dựng nhà là một động tác; mở cửa đã có clause riêng (放水開門).',
+  '鬼-6': '修土築牆: đắp đất làm tường (tường đất), không phải động thổ.',
+}
+
+/** Excerpts that are source-accurate but are not operative activity clauses. */
+const nonOperativeClauses: Record<string, string> = {
+  '星-4':
+    '自要歸休別嫁郎 là hậu quả của 不可葬埋并放水 → 凶星臨位女人亡, không nêu việc cưới hỏi trong ngày.',
 }
 
 export function resolveMansionActivityMapping(clause: MansionClauseRef): RuleActivityMapping {
-  const { activityId, scope } = clause
+  const { scope } = clause
   if (!Object.hasOwn(mappings, scope)) throw new Error('Undeclared mansion activity mapping')
-  const mapping = mappings[scope as keyof typeof mappings]
+  const mapping = mappings[scope]
+  const sourceLockedGap = mapping.catalogAdded && clause.activityId === ''
   if (
-    mapping.activityId !== activityId ||
-    (activityId !== '' && resolveActivityScope(activityId, scope).status !== 'exact')
+    (mapping.activityId !== clause.activityId && !sourceLockedGap) ||
+    (mapping.activityId !== '' &&
+      resolveActivityScope(mapping.activityId, scope).status !== 'exact')
   )
     throw new Error('Incompatible mansion activity mapping')
-  const base = {
-    version: 'mansion-activity-mapping-v2',
-    status: activityId === '' ? 'unmapped' : 'exact_catalog_pair',
-    reason: mapping.reason,
-  } as const
-  const term = (mapping.terms as readonly string[]).find((t) => clause.quote.includes(t))
-  if (Object.hasOwn(pendingClauses, clause.id) || !term)
+  const base = { version: 'mansion-activity-mapping-v2', reason: mapping.reason } as const
+  if (Object.hasOwn(nonOperativeClauses, clause.id))
     return {
       ...base,
-      reviewStatus: 'interpretation_pending',
-      reviewNote:
-        pendingClauses[clause.id] ?? 'Trích đoạn không chứa thuật ngữ đã rà soát cho phạm vi này.',
+      activityId: '',
+      status: 'not_operative',
+      reviewStatus: 'interpretation_reviewed',
+      reviewNote: nonOperativeClauses[clause.id],
     }
-  return { ...base, reviewStatus: 'interpretation_reviewed', reviewTerm: term }
+  const status = mapping.activityId === '' ? 'unmapped' : 'exact_catalog_pair'
+  const term = mapping.terms.find((t) => clause.quote.includes(t))
+  if (!term)
+    return {
+      ...base,
+      activityId: mapping.activityId,
+      status,
+      reviewStatus: 'interpretation_pending',
+      reviewNote: 'Trích đoạn không chứa thuật ngữ đã rà soát cho phạm vi này.',
+    }
+  return {
+    ...base,
+    activityId: mapping.activityId,
+    status,
+    reviewStatus: 'interpretation_reviewed',
+    reviewTerm: term,
+    ...(clauseNotes[clause.id] ? { reviewNote: clauseNotes[clause.id] } : {}),
+  }
 }

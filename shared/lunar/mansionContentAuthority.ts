@@ -34,36 +34,37 @@ export function getMansionContentEvidence(content: MansionContent): Evidence[] {
     content.reviewStatus !== 'SOURCE_LOCKED'
   )
     throw new Error('Unreviewed mansion content authority')
-  return content.clauses.map((clause) => {
+  return content.clauses.flatMap((clause): Evidence[] => {
     if (
       clause.conditions.length !== 1 ||
       clause.conditions[0].operand !== 'MANSION_INDEX' ||
       clause.conditions[0].equals !== content.index
     )
       throw new Error('Mansion content operand mismatch')
-    return {
-      source: 'mansion',
-      ruleId: `${content.authorityId}:${clause.id}`,
-      activityId: clause.activityId,
-      activityMapping: {
-        ...resolveMansionActivityMapping(clause),
-        authorityId: content.authorityId,
-        clauseId: clause.id,
+    const mapping = resolveMansionActivityMapping(clause)
+    // A consequence line stays in the source lock but is never activity evidence.
+    if (mapping.status === 'not_operative') return []
+    return [
+      {
+        source: 'mansion',
+        ruleId: `${content.authorityId}:${clause.id}`,
+        activityId: mapping.activityId,
+        activityMapping: { ...mapping, authorityId: content.authorityId, clauseId: clause.id },
+        scope: clause.scope,
+        polarity: clause.polarity as Evidence['polarity'],
+        sourcePhrase: clause.translation,
+        sourceQuote: clause.quote,
+        sourceRef: `https://archive.org/download/20241205_20241205_0310/page/n${content.pdfPage - 1}.jpg`,
+        conditions: clause.conditions,
+        exceptions: clause.exceptions,
+        // Primary page verified; translating an operative phrase to the product taxonomy is an interpretation.
+        confidence: 'medium',
+        status: 'informational',
+        scoreDelta: 0,
+        rawDelta: 0,
+        label: `Tú ${content.name} · Ngọc Hạp 1880`,
       },
-      scope: clause.scope,
-      polarity: clause.polarity as Evidence['polarity'],
-      sourcePhrase: clause.translation,
-      sourceQuote: clause.quote,
-      sourceRef: `https://archive.org/download/20241205_20241205_0310/page/n${content.pdfPage - 1}.jpg`,
-      conditions: clause.conditions,
-      exceptions: clause.exceptions,
-      // Primary page verified; translating an operative phrase to the product taxonomy is an interpretation.
-      confidence: 'medium',
-      status: 'informational',
-      scoreDelta: 0,
-      rawDelta: 0,
-      label: `Tú ${content.name} · Ngọc Hạp 1880`,
-    }
+    ]
   })
 }
 

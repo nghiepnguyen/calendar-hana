@@ -26,6 +26,7 @@ const row = (
   exceptions: [],
   activityMapping: {
     version: 'mansion-activity-mapping-v2',
+    activityId: 'wedding',
     status: 'exact_catalog_pair',
     reviewStatus,
     reason: 'test',

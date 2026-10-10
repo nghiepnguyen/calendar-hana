@@ -5,26 +5,27 @@ import { getMansionContent, getMansionContentEvidence } from '@shared/lunar/mans
 import { MansionEvidenceDetails } from './MansionEvidenceDetails'
 import { DailyActivitySection } from './DailyActivitySection'
 
-const rows = getMansionContentEvidence(getMansionContent(5))
+const rows = getMansionContentEvidence(getMansionContent(22))
 describe('mansion evidence explainability', () => {
   it('starts collapsed and preserves source, quote, mapping review and applicability', () => {
     render(
       <MansionEvidenceDetails
         evidence={rows.filter((r) => r.activityId === 'wedding')}
         unmapped={rows.filter((r) => !r.activityId)}
-        mansionIndex={5}
+        mansionIndex={22}
       />,
     )
     const summary = screen.getByText('Thông tin Tú (tham khảo)')
     expect(summary.closest('details')).not.toHaveAttribute('open')
     fireEvent.click(summary)
     expect(summary.closest('details')).toHaveAttribute('open')
-    expect(screen.getByText('和合婚姻貴子孫')).toBeInTheDocument()
-    expect(screen.getAllByText(/đã rà soát cách hiểu; vẫn chỉ tham khảo\./)).toHaveLength(3)
+    expect(screen.getByText('嫁娶夫妻不久長')).toBeInTheDocument()
+    expect(screen.getAllByText(/đã rà soát cách hiểu; vẫn chỉ tham khảo\./)).toHaveLength(2)
     expect(screen.queryByText(/chưa được thẩm định/)).not.toBeInTheDocument()
     expect(screen.getAllByText('Điều kiện Tú của ngày: khớp.').length).toBeGreaterThan(0)
     expect(screen.getByText('Việc khác trong nguồn chưa có mục tương ứng')).toBeInTheDocument()
-    expect(screen.getAllByText('Chưa có mục hoạt động tương ứng.')).toHaveLength(2)
+    expect(screen.getAllByText('Chưa có mục hoạt động tương ứng.')).toHaveLength(1)
+    expect(screen.getByText(/修土築牆: đắp đất làm tường/)).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: 'Bản scan nguồn' })[0]).toHaveAttribute(
       'href',
       rows.find((r) => r.activityId === 'wedding')!.sourceRef,
@@ -33,13 +34,14 @@ describe('mansion evidence explainability', () => {
       screen.getByText('Chỉ tham khảo; không tính vào điểm hoặc kết luận chọn ngày.'),
     ).toBeInTheDocument()
   })
-  it('keeps an ambiguous clause visibly pending with its review note', () => {
-    const pending = getMansionContentEvidence(getMansionContent(20)).find(
+  it('shows the full-verse reading for a settled clause without inferring a narrower activity', () => {
+    const settled = getMansionContentEvidence(getMansionContent(20)).find(
       (r) => r.activityMapping?.clauseId === '參-5',
     )!
-    render(<MansionEvidenceDetails evidence={[pending]} mansionIndex={20} />)
+    render(<MansionEvidenceDetails evidence={[settled]} mansionIndex={20} />)
     fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
-    expect(screen.getByText(/chưa được thẩm định\. 婚姻許定/)).toBeInTheDocument()
+    expect(screen.getByText(/không suy ra riêng cho nạp thái/)).toBeInTheDocument()
+    expect(screen.queryByText(/chưa được thẩm định/)).not.toBeInTheDocument()
   })
   it('shows opposite source excerpts without choosing a winner and preserves exceptions', () => {
     const base = rows.find((r) => r.activityId === 'wedding')!
@@ -47,16 +49,16 @@ describe('mansion evidence explainability', () => {
       ...base,
       ruleId: 'synthetic-opposition',
       sourceQuote: 'Opposing excerpt',
-      polarity: 'negative' as const,
+      polarity: 'positive' as const,
     }
-    render(<MansionEvidenceDetails evidence={[base, opposing]} mansionIndex={5} />)
+    render(<MansionEvidenceDetails evidence={[base, opposing]} mansionIndex={22} />)
     fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
     expect(screen.getByText('Cùng bản nguồn có nội dung trái chiều.')).toBeInTheDocument()
     expect(screen.getByText('Opposing excerpt')).toBeInTheDocument()
   })
   it('does not turn missing evidence or an unresolved exception into permission', () => {
     const base = rows.find((r) => r.activityId === 'wedding')!
-    const { rerender } = render(<MansionEvidenceDetails evidence={[]} mansionIndex={5} />)
+    const { rerender } = render(<MansionEvidenceDetails evidence={[]} mansionIndex={22} />)
     fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
     expect(
       screen.getByText(
@@ -66,7 +68,7 @@ describe('mansion evidence explainability', () => {
     rerender(
       <MansionEvidenceDetails
         evidence={[{ ...base, exceptions: ['Điều kiện ngoại lệ riêng'] }]}
-        mansionIndex={5}
+        mansionIndex={22}
       />,
     )
     expect(screen.getByText('Điều kiện ngoại lệ riêng')).toBeInTheDocument()
@@ -74,7 +76,8 @@ describe('mansion evidence explainability', () => {
     expect(screen.queryByText(/Các nguồn đã thống nhất/)).not.toBeInTheDocument()
   })
   it('integrates with the event selector and retains the existing verdict', () => {
-    render(<DailyActivitySection date="2026-10-10" />)
+    // Trương (index 25) has an operative wedding clause; Tinh's only one is a consequence line.
+    render(<DailyActivitySection date="2026-10-11" />)
     fireEvent.change(screen.getByRole('combobox', { name: 'Nhóm mục tiêu' }), {
       target: { value: 'relationship' },
     })

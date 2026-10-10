@@ -1,65 +1,74 @@
 # Activity interpretation review — mansion mapping v2, 10/10/2026
 
 Baseline: main `a69e8df` (PR #5 deployed). Nhánh `audit/activity-interpretation-review`.
-Phạm vi: review diễn giải thuật ngữ nguồn cho 115 operative clauses của `mansion-content-yuxia-1880-v1`. Không thêm activity ID, không đổi dataset/manifest, không mở scoring.
+Phạm vi: review diễn giải thuật ngữ nguồn cho 115 operative clauses của `mansion-content-yuxia-1880-v1`; thêm hai activity `door_opening`, `waterworks` theo yêu cầu user; xử lý 5 clause còn mơ hồ bằng ngữ cảnh đủ bài thơ trên bản scan. Dataset nguồn, manifest và Golden Phase 7 không đổi; không mở scoring.
 
-## Quyết định
+## Contract v2
 
-Mapping contract lên `mansion-activity-mapping-v2`. Mỗi scope khai báo danh sách thuật ngữ nguồn đã rà soát; clause chỉ `interpretation_reviewed` khi quote chứa đúng một thuật ngữ của chính scope đó (`reviewTerm`). Thuật ngữ không lan sang scope khác. Clause mơ hồ giữ `interpretation_pending` kèm `reviewNote`.
+Mỗi scope khai báo thuật ngữ nguồn đã rà soát; clause chỉ `interpretation_reviewed` khi quote chứa thuật ngữ của chính scope đó (`reviewTerm`). Thuật ngữ không lan sang scope khác. Mapping trả `activityId` đã diễn giải; evidence dùng ID này thay vì sửa source lock. Scope `catalogAdded` chấp nhận clause source-locked với ID rỗng (trước khi catalog có ID). Status: `exact_catalog_pair`, `unmapped` (gap) hoặc `not_operative` (trích đúng nguồn nhưng là câu hậu quả; không thành evidence).
 
-| Scope | Thuật ngữ đã rà soát | Cách hiểu |
+| Scope | Thuật ngữ | Activity | Cách hiểu |
+|---|---|---|---|
+| construction_general | 造作, 修造, 起造, 造龍軒 | construction | Xây dựng chung; không gồm động thổ hay xây dựng hẹp |
+| relationship_wedding | 嫁娶, 婚姻 | wedding | Hôn nhân/cưới hỏi; không suy ra nạp thái |
+| funeral_burial | 埋葬, 葬埋 | burial | An táng |
+| funeral_grave_repair | 修築墳墓, 墳墓修築, 修墳 | grave_repair | Xây/sửa mộ |
+| travel_water | 行船 | water_travel | Đi thuyền; không gồm đóng thuyền/hạ thủy |
+| door_opening | 開門 | **door_opening** (mới) | Trổ cửa/làm cổng công trình; **không phải** khai trương (開市) |
+| waterworks | 放水 | **waterworks** (mới) | Dẫn/tháo nước, khơi mương; **không phải** đi thuyền |
+| construction_columns | 竪柱 | gap | Dựng cột |
+| construction_high_hall | 造高堂, 架高堂 | gap | Dựng cao đường |
+| construction_new_room | 造新房 | gap | Xây phòng/nhà mới |
+| construction_wall | 築牆 | gap | Xây tường (tường đất) |
+| construction_waterside | 臨水造 | gap | Xây bên nước |
+
+Kết quả: **115/115 reviewed** — 108 exact_catalog_pair, 6 unmapped (gap xây dựng hẹp), 1 not_operative. Evidence: 114 rows (19 door_opening, 20 waterworks).
+
+## Activity mới
+
+`activities.json` thêm (cuối catalog, nhóm construction, personalSensitivity 0.9):
+
+- `door_opening` — “Trổ cửa / Làm cổng”, scope `door_opening`.
+- `waterworks` — “Dẫn nước / Khơi mương”, scope `waterworks`.
+
+Không gắn vào event profile nào (không `open_business`, không `start_journey`). Trực/cát/hung thần không có rule cho hai ID này nên recommendation là `no_evidence`; evidence 28 Tú hiển thị tham khảo, scoreDelta = 0. Không suy permission từ việc thiếu evidence.
+
+## Năm clause đã xử lý (đọc đủ bài trên scan)
+
+| Clause | Câu thơ liên quan | Quyết định |
 |---|---|---|
-| construction_general | 造作, 修造, 起造 | Việc xây dựng chung; không gồm động thổ hay xây dựng hẹp |
-| relationship_wedding | 嫁娶, 婚姻 | Hôn nhân/cưới hỏi; không gồm nạp thái |
-| funeral_burial | 埋葬, 葬埋 | An táng |
-| funeral_grave_repair | 修築墳墓, 墳墓修築, 修墳 | Xây/sửa mộ |
-| travel_water | 行船 | Đi thuyền; không gồm đóng thuyền/hạ thủy |
-| door_opening (gap) | 開門 | Mở/làm cổng cửa công trình; **không phải** khai trương (開市) |
-| waterworks (gap) | 放水 | Tháo/dẫn nước, khơi mương; **không phải** đi thuyền |
-| construction_columns (gap) | 竪柱 | Dựng cột |
-| construction_high_hall (gap) | 造高堂, 架高堂 | Dựng nhà cao/cao đường |
-| construction_new_room (gap) | 造新房 | Xây phòng/nhà mới |
-| construction_wall (gap) | 築牆 | Xây tường |
-| construction_waterside (gap) | 臨水造 | Xây bên nước (龍宮 là hình ảnh, không chốt loại công trình) |
+| 張-1 | 張星日好造龍軒，年年便見進庄田 | 龍軒 là mỹ từ cho nhà/sảnh → construction, reviewed |
+| 參-5 | 婚姻許定遭刑剋，男女朝開暮落花 | Nói về hôn nhân → wedding, reviewed; không suy ra nạp thái |
+| 婁-1 | 婁星竪柱起門庭 … 放水開門皆吉利 | Dựng cột dựng nhà là một động tác; cửa đã có clause riêng → construction_columns, reviewed |
+| 鬼-6 | 修土築牆傷產女 | Đắp đất làm tường → construction_wall, reviewed; không phải động thổ |
+| 星-4 | 不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎 | Câu hậu quả của 葬埋/放水, không nêu cưới hỏi → **not_operative**, bỏ khỏi evidence |
 
-Kết quả: **110 reviewed / 5 pending**. Reviewed gồm 67 exact_catalog_pair và 43 catalog gap (thuật ngữ đã rõ nhưng vẫn chưa có ID; reviewed không biến gap thành mapping).
+Hệ quả 星-4: ngày Tú Tinh không còn hiển thị “Cưới hỏi — bất lợi”; với cưới hỏi, Tú Tinh nay là không có evidence (UNKNOWN), không phải cho phép.
 
-Pending có lý do riêng:
+Trang scan đã đọc (archive.org `page/nN.jpg`): 婁 n60, 參 n64, 鬼 n67, 星 n69, 張 n70. Đọc bằng mắt, không OCR.
 
-- `張-1` 造龍軒 — chỉ có 造; 龍軒 chưa rõ là xây dựng chung hay phạm vi hẹp như cao đường.
-- `參-5` 婚姻許定 — có thể là hứa hôn/định thân; chưa phân định cưới hỏi với nạp thái.
-- `星-4` 自要歸休別嫁郎 — câu hậu quả chia lìa, không trực tiếp nêu việc cưới hỏi trong ngày.
-- `婁-1` 竪柱起門庭 — gộp dựng cột với dựng cổng/sân; chưa tách 起門庭.
-- `鬼-6` 修土築牆 — gộp đắp đất với xây tường; chưa tách phần đắp đất.
+## Phát hiện ngoài phạm vi (chưa sửa)
 
-Không đổi activityId/scope/polarity/conditions/exceptions của clause nào; các clause pending trên là ứng viên cho quyết định sau, không tự sửa.
+- **Lệch trang scan 觜/參:** sách đóng 參 (n64) trước 觜 (n65). Dataset ghi 觜 pdfPage 65, 參 pdfPage 66, nên link “Bản scan nguồn” của hai Tú này trỏ sang trang của Tú kia. Quote của cả hai khớp nội dung thật. Sửa cần đổi pdfPage trong dataset **và** Golden Phase 7 (lỗi Golden), cần quyết định riêng.
+- 角: bản scan có vẻ ghi 惟有葬埋不可用 (dataset: 埋葬); độ phân giải thấp, cần đối chiếu lại trước khi kết luận.
 
-## Activity hẹp — kết luận semantics
+## Golden và migration
 
-- 開門/放水 xuất hiện 19–20 lần mỗi loại, gần như luôn đi đôi. Semantics đã rõ (công trình cổng cửa / thủy lợi trong nhà đất), nhưng thêm ID là quyết định sản phẩm (catalog UI, event profile). Đề xuất nếu thêm: `door_opening` và `waterworks` riêng, nhóm construction, không gắn event `open_business` hay `start_journey`.
-- Xây dựng hẹp (cột, cao đường, phòng mới, tường, bên nước) mỗi loại 1–2 clause; giữ gap, chưa đủ để thêm ID riêng.
-- Đóng thuyền/hạ thủy: **không có clause nào** trong subset 1880; không có căn cứ nguồn để định nghĩa. Phrase legacy “hạ thủy” → water_travel trong lexical patterns giữ nguyên, không được chứng nhận.
+- `shared/lunar/audit-fixtures/mansion-activity-interpretation-golden-v2.json`: quyết định viết tay từng clause (activityId, scope, status, reviewTerm) + glossary + câu thơ đầy đủ của 5 Tú đã đọc lại. Thay v1 (chưa phát hành). Không sinh từ production.
+- Golden Phase 7 giữ nguyên. Test evidence khai báo tường minh migration `EXPECTED_AUTHORITY_MIGRATION_CHANGE`: hai scope gán ID mới, 星-4 không còn là evidence.
+- Decision baseline 1095 ngày × 11 event không recapture: hash vẫn so trên 29 activity cũ; hai activity mới được assert riêng là `no_evidence`. Event verdict không đổi.
 
-## Golden và giới hạn
-
-`shared/lunar/audit-fixtures/mansion-activity-interpretation-golden-v1.json`: quyết định viết tay theo từng clause (id, quote, activityId, scope, reviewStatus, reviewTerm) kèm glossary; không sinh từ production code. Test so toàn bộ 115 clause production với Golden này.
-
-Giới hạn: đây là review một người (agent) từ trích đoạn đã source-lock, không phải thẩm định chuyên gia thứ hai; không đọc lại bản scan trong bước này. Reviewed nghĩa là cách hiểu thuật ngữ đã rõ, **không** phải quyền chấm điểm hay giải quyết xung đột.
-
-## Ảnh hưởng runtime
-
-- `analyzeEvidenceConflicts`: `reviewPending` chỉ false khi mọi witness đã reviewed; logic không đổi.
-- UI “Thông tin Tú (tham khảo)”: reviewed hiển thị thuật ngữ nguồn đã rà soát; pending giữ “chưa được thẩm định” kèm lý do.
-- Mansion vẫn informational, scoreDelta = rawDelta = 0; datasets, decision baseline, astronomy, personal và scoring policy không đổi.
+Giới hạn: review một người (agent), không phải thẩm định chuyên gia thứ hai. Reviewed nghĩa là đã rõ cách hiểu thuật ngữ, không phải quyền chấm điểm hay giải quyết xung đột.
 
 ## Validation local
 
-- `npm test`: 140 files / 2791 tests passed; `npm run typecheck`, `npm run lint`, Prettier (file thay đổi), `git diff --check` passed.
-- `python3 scripts/audit-mansion-content-mutations.py`: 9/9 KILLED.
+- `npm test`: 140 files / 2795 tests passed; `npm run typecheck`, `npm run lint`, `npm run build` passed.
+- Mutation: mansion content 9/9 KILLED; annual directions KILLED toàn bộ.
+- E2E `mansion-content.spec.ts` desktop/mobile 4/4; full desktop Playwright 104 passed / 16 skipped.
 
 ## Tiếp theo
 
-1. User quyết định có thêm `door_opening`/`waterworks` vào catalog hay không.
-2. Quyết định 5 clause pending (đọc lại bản scan để có ngữ cảnh câu kế tiếp).
-3. Audit context/conditions của Trực/cát/hung thần trước khi đưa vào diagnostics.
+1. Quyết định sửa lệch trang 觜/參 (dataset + Golden Phase 7).
+2. Có cần ID riêng cho xây dựng hẹp (cột, cao đường, tường…) hay không; hiện mỗi loại chỉ 1–2 clause.
+3. Audit context/conditions của Trực/cát/hung thần (có thể bổ sung rule cho door_opening/waterworks từ nguồn khác, cần provenance riêng).
 4. Resolution policy riêng; không majority vote, không tự mở scoring.

@@ -55,6 +55,7 @@ export function MansionEvidenceDetails({
           <p>
             Thuật ngữ nguồn <span lang="zh-Hant">{row.activityMapping.reviewTerm}</span> đã rà soát
             cách hiểu; vẫn chỉ tham khảo.
+            {row.activityMapping.reviewNote && ` ${row.activityMapping.reviewNote}`}
           </p>
         )}
         {conditionsMatch && <p>Điều kiện Tú của ngày: khớp.</p>}

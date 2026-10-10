@@ -8,6 +8,18 @@ import {
 } from './mansionContentAuthority'
 import { getMansion } from './mansions'
 
+// Interpretation layer changes since the Phase 7 freeze (EXPECTED_AUTHORITY_MIGRATION_CHANGE):
+// the source lock and its golden stay untouched; only evidence derived from them changes.
+const CATALOG_ADDED: Record<string, string> = {
+  door_opening: 'door_opening',
+  waterworks: 'waterworks',
+}
+const NON_OPERATIVE = ['星-4']
+const expectedEvidence = (clauses: (typeof golden.items)[number]['clauses']) =>
+  clauses
+    .filter((c) => !NON_OPERATIVE.includes(c.id))
+    .map((c) => ({ ...c, activityId: c.activityId || (CATALOG_ADDED[c.scope] ?? '') }))
+
 describe('1880 Ngọc Hạp content authority, independent visual golden', () => {
   it.each(golden.items)('$name: clauses, scope, operands and provenance', (expected) => {
     const actual = getMansionContent(expected.index)
@@ -18,8 +30,9 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
       source: golden.source,
     })
     const evidence = getMansionContentEvidence(actual)
-    expect(evidence).toHaveLength(expected.clauses.length)
-    expected.clauses.forEach((c, i) =>
+    const clauses = expectedEvidence(expected.clauses)
+    expect(evidence).toHaveLength(clauses.length)
+    clauses.forEach((c, i) =>
       expect(evidence[i]).toMatchObject({
         activityId: c.activityId,
         scope: c.scope,
@@ -31,6 +44,7 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
         status: 'informational',
         scoreDelta: 0,
         rawDelta: 0,
+        activityMapping: { authorityId: golden.authorityId, clauseId: c.id },
       }),
     )
     expect(evidence.every((r) => r.sourceRef.includes(`page/n${expected.pdfPage - 1}.jpg`))).toBe(
@@ -60,6 +74,17 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
         .every((r) => r.scope === 'funeral_grave_repair'),
     ).toBe(true)
     expect(all.some((r) => r.activityId === 'groundbreaking')).toBe(false)
+    expect(all.filter((r) => r.activityId === 'door_opening')).toHaveLength(19)
+    expect(all.filter((r) => r.activityId === 'waterworks')).toHaveLength(20)
+    expect(all.some((r) => r.activityId === 'opening')).toBe(false)
+  })
+  it('keeps a consequence line in the source lock but out of activity evidence', () => {
+    const row = getMansionContent(24)
+    expect(row.clauses.some((c) => c.id === '星-4')).toBe(true)
+    const evidence = getMansionContentEvidence(row)
+    expect(evidence.some((r) => r.ruleId.endsWith(':星-4'))).toBe(false)
+    expect(evidence.some((r) => r.activityId === 'wedding')).toBe(false)
+    expect(presentMansionContent(row).shouldAvoid).not.toContain('Cưới hỏi')
   })
   it('does not infer that a good legacy label permits every activity', () => {
     const row = getMansionContent(3)
