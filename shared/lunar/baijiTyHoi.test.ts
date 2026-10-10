@@ -8,6 +8,14 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 
+// Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+})
+
 const TARGET: Record<string, string> = { bach_ky_ty: 'travel', bach_ky_hoi: 'wedding' }
 const EVENTS = new Set(['start_journey', 'wedding'])
 const NEW_GODS = Object.keys(TARGET)

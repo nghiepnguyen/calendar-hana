@@ -13,7 +13,12 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const { default: current } = await importOriginal<{
     default: typeof import('../almanac-data/manifest.json')
   }>()
-  return { default: { ...current, policies: { ...current.policies, xiejiVol10Scoring: false } } }
+  return {
+    default: {
+      ...current,
+      policies: { ...current.policies, xiejiVol10Scoring: false, legacyGodsMonthJian: false },
+    },
+  }
 })
 
 const NEW_GODS = ['giap_nhat', 'at_nhat']

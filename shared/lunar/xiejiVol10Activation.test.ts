@@ -5,6 +5,14 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import type { SolarDateString } from '../types'
 
+// Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+})
+
 // Release witnesses are observed OFF/ON migration outputs, not independent Golden.
 // This test uses the real production manifest and proves it reaches the reviewed ON path.
 // The witnesses predate dropping duplicate-heading supporting activities from events

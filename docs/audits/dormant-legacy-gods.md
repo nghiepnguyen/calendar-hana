@@ -84,6 +84,20 @@ Of the 44 scoring gods, 21 never fire (no exact name in the day star table, no d
 
 Per-god counts: [`xieji-god-presence-2025-2027.tsv`](xieji-god-presence-2025-2027.tsv) (regenerate with `REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/lunar/xiejiGodPresence.test.ts`). Legacy totals: 1,015 agreeing days, 303 production-only, 287 協紀-only. The 21 dormant gods would add 2,019 god-days.
 
+## Release A — 14 legacy gods on Month Jian (owner 2026-10-10, option (i))
+
+Policy `legacyGodsMonthJian: true` (`manifest.json`). In `almanac.ts` the lunar-month day-table stars of the 14 legacy gods are replaced by stars from `getXiejiGodPresence` on Month Jian (same name and meaning). Their presence enters `godPresence` with explicit operands, like other source-locked gods. The 21 dormant gods stay diagnostics-only. Runtime reads `xieji-god-tables.json` (tables without quotes; the test asserts equality with the definitions), so the bundle grows by about 2 KB gzip.
+
+- **Golden** `golden-legacy-gods-month-jian.json`, frozen in `70ed321` before code: 52 cases (26 present, 26 absent) for 13 gods, on days where lunar month ≠ Month Jian. Month Jian comes from the Jie calendar dates, keeping only days at least 2 days from any Jie window; the pillar comes from date arithmetic. 天赦 has a single disagreeing day, which sits next to a Jie.
+- **Migration** `legacyGodsMonthJian.test.ts` (1095 days × 32 activities × 11 events, hour 9; report [`legacy-gods-month-jian-migration.tsv`](legacy-gods-month-jian-migration.tsv)):
+  - Only the 14 gods' stars and rows move. Other stars are identical.
+  - Rows of other sources are identical apart from the god-cap share.
+  - On days where the lunar month equals Month Jian, **no score or conclusion changes**. The only difference there is that diagnostics are now attached to the 14 gods' rows.
+  - 卷十 rows may be rebuilt (a locked 月刑 now joins its 凶 chain), but the total score is unchanged.
+  - Totals: activity scores 3,724 changed; event scores 1,835; **event conclusions 741**: caution → recommended 170; not_recommended → recommended 129; recommended → caution 115; insufficient_evidence → recommended 79; recommended → insufficient_evidence 52; caution → not_recommended 40; not_recommended → caution 40; recommended → not_recommended 40; not_recommended → insufficient_evidence 28; insufficient_evidence → not_recommended 25; caution → insufficient_evidence 14; insufficient_evidence → caution 9.
+- Historical tests (frozen fixtures, earlier migrations and goldens, 卷十 release witnesses) pin `legacyGodsMonthJian: false`. `xiejiDiagnostics.test.ts` counts the 14 as audited presences.
+- Rollback: set the flag to false and redeploy.
+
 ## Next (not implemented, owner decision)
 
-- **Scoring migration (separate release):** feed `getXiejiGodPresence` into `godPresence`/present gods. That switches the 14 legacy gods to Month Jian and lets the 21 dormant gods fire, and it will change many activity and event scores. It needs its own Golden (frozen before code), a migration proof, and owner review of weights (the catalog tiers already exist). It is the prerequisite for P4 (卷十 balancing).
+- **Dormant gods (with P4):** let the 21 dormant gods fire. Measured 2026-10-10 against the pre-Release-A baseline: Release A + the 7 good dormant gods → 1,042 event conclusions change (recommended 3,008 → 3,472); Release A + all 21 → 2,892 (recommended 3,008 → 1,988, not recommended 3,962 → 5,920), because the 14 bad ones penalize without the 卷十 balancing rules (P4). Do it together with P4, with its own Golden (frozen before code), migration proof and owner review.

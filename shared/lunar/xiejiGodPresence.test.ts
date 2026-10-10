@@ -1,6 +1,7 @@
 import { writeFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import definitions from '../almanac-data/xieji-god-definitions.json'
+import tables from '../almanac-data/xieji-god-tables.json'
 import baseline from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getDayInfo } from './index'
@@ -32,7 +33,17 @@ const NEVER_PRESENT = new Set([
   'quy_ky',
 ])
 
-describe('協紀 presence for dormant and legacy gods (diagnostics only)', () => {
+describe('協紀 presence for dormant and legacy gods', () => {
+  it('runtime tables equal the audited definitions', () => {
+    expect(tables.items).toEqual(
+      definitions.items.map((d) => ({
+        id: d.id,
+        monthBound: d.operand.month !== 'NONE',
+        table: d.table,
+      })),
+    )
+  })
+
   it('applies each table on Month Jian with explicit operands', () => {
     // 寅月 (Jian 2): 天喜 on 戌 (成日), 天願 on 乙亥, 時德 (spring) on 午, 五離 on 申/酉 any month.
     expect(getXiejiGodPresence(2, 4, 10).thien_hy).toEqual([

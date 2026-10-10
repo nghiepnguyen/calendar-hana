@@ -1,0 +1,39 @@
+21	activity avoid → consider
+4	activity avoid → neutral
+9	activity avoid → no_evidence
+1	activity avoid → recommended
+83	activity avoid → strong_avoid
+143	activity avoid → watch
+16	activity consider → avoid
+4	activity consider → strong_avoid
+257	activity neutral → no_evidence
+30	activity neutral → recommended
+32	activity neutral → watch
+206	activity no_evidence → neutral
+259	activity no_evidence → recommended
+115	activity no_evidence → watch
+46	activity recommended → neutral
+154	activity recommended → no_evidence
+121	activity recommended → watch
+3724	activity score changed
+125	activity strong_avoid → avoid
+11	activity strong_avoid → watch
+392	activity watch → avoid
+65	activity watch → neutral
+197	activity watch → no_evidence
+366	activity watch → recommended
+69	activity watch → strong_avoid
+14	event caution → insufficient_evidence
+40	event caution → not_recommended
+170	event caution → recommended
+741	event classification changed
+9	event insufficient_evidence → caution
+25	event insufficient_evidence → not_recommended
+79	event insufficient_evidence → recommended
+40	event not_recommended → caution
+28	event not_recommended → insufficient_evidence
+129	event not_recommended → recommended
+115	event recommended → caution
+52	event recommended → insufficient_evidence
+40	event recommended → not_recommended
+1835	event score changed

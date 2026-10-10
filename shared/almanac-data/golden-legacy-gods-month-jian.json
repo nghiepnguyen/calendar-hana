@@ -1,0 +1,477 @@
+{
+  "version": "golden-legacy-gods-month-jian-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "source": "xieji-god-definitions.json (協紀 rules, P3a, owner decisions 2026-10-10); docs/audits/dormant-legacy-gods.md",
+  "derivation": "Days picked where the lunar month number differs from the Month Jian month and the legacy lunar-month table disagrees with the 協紀 rule. Day pillar by date arithmetic from 2000-01-07 = 甲子; Month Jian from the Jie calendar dates, keeping only days at least 2 days away from any Jie window (小寒 1/5–6, 立春 2/3–4, 驚蟄 3/5–6, 清明 4/4–5, 立夏 5/5–6, 芒種 6/5–6, 小暑 7/6–7, 立秋 8/7–8, 白露 9/7–8, 寒露 10/8–9, 立冬 11/7–8, 大雪 12/6–7), so Month Jian is unambiguous without the engine. Expected presence = the 協紀 table applied on Month Jian: the god is shown and scored iff present.",
+  "cases": [
+    {
+      "date": "2025-05-01",
+      "pillar": "庚午",
+      "monthJian": "辰",
+      "lunarMonth": 4,
+      "god": "dan_nhat",
+      "label": "Dân Nhật",
+      "present": true
+    },
+    {
+      "date": "2025-08-11",
+      "pillar": "壬子",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "dan_nhat",
+      "label": "Dân Nhật",
+      "present": true
+    },
+    {
+      "date": "2025-08-20",
+      "pillar": "辛酉",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "dan_nhat",
+      "label": "Dân Nhật",
+      "present": false
+    },
+    {
+      "date": "2025-11-15",
+      "pillar": "戊子",
+      "monthJian": "亥",
+      "lunarMonth": 9,
+      "god": "dan_nhat",
+      "label": "Dân Nhật",
+      "present": false
+    },
+    {
+      "date": "2025-03-30",
+      "pillar": "戊戌",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "giai_than",
+      "label": "Giải Thần",
+      "present": false
+    },
+    {
+      "date": "2025-05-29",
+      "pillar": "戊戌",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "giai_than",
+      "label": "Giải Thần",
+      "present": true
+    },
+    {
+      "date": "2025-05-31",
+      "pillar": "庚子",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "giai_than",
+      "label": "Giải Thần",
+      "present": false
+    },
+    {
+      "date": "2025-08-13",
+      "pillar": "甲寅",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "giai_than",
+      "label": "Giải Thần",
+      "present": true
+    },
+    {
+      "date": "2025-01-30",
+      "pillar": "己亥",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "ich_hau",
+      "label": "Ích Hậu",
+      "present": true
+    },
+    {
+      "date": "2025-01-31",
+      "pillar": "庚子",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "ich_hau",
+      "label": "Ích Hậu",
+      "present": false
+    },
+    {
+      "date": "2025-03-02",
+      "pillar": "庚午",
+      "monthJian": "寅",
+      "lunarMonth": 2,
+      "god": "ich_hau",
+      "label": "Ích Hậu",
+      "present": false
+    },
+    {
+      "date": "2025-06-26",
+      "pillar": "丙寅",
+      "monthJian": "午",
+      "lunarMonth": 6,
+      "god": "ich_hau",
+      "label": "Ích Hậu",
+      "present": true
+    },
+    {
+      "date": "2025-01-30",
+      "pillar": "己亥",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "luc_hop",
+      "label": "Lục Hợp",
+      "present": false
+    },
+    {
+      "date": "2025-01-31",
+      "pillar": "庚子",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "luc_hop",
+      "label": "Lục Hợp",
+      "present": true
+    },
+    {
+      "date": "2025-03-29",
+      "pillar": "丁酉",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "luc_hop",
+      "label": "Lục Hợp",
+      "present": false
+    },
+    {
+      "date": "2025-03-30",
+      "pillar": "戊戌",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "luc_hop",
+      "label": "Lục Hợp",
+      "present": true
+    },
+    {
+      "date": "2025-01-30",
+      "pillar": "己亥",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "ngu_phu",
+      "label": "Ngũ Phú",
+      "present": false
+    },
+    {
+      "date": "2025-04-30",
+      "pillar": "己巳",
+      "monthJian": "辰",
+      "lunarMonth": 4,
+      "god": "ngu_phu",
+      "label": "Ngũ Phú",
+      "present": true
+    },
+    {
+      "date": "2025-05-27",
+      "pillar": "丙申",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "ngu_phu",
+      "label": "Ngũ Phú",
+      "present": true
+    },
+    {
+      "date": "2025-05-30",
+      "pillar": "己亥",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "ngu_phu",
+      "label": "Ngũ Phú",
+      "present": false
+    },
+    {
+      "date": "2025-01-02",
+      "pillar": "辛未",
+      "monthJian": "子",
+      "lunarMonth": 12,
+      "god": "nguyet_an",
+      "label": "Nguyệt Ân",
+      "present": false
+    },
+    {
+      "date": "2025-03-29",
+      "pillar": "丁酉",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "nguyet_an",
+      "label": "Nguyệt Ân",
+      "present": true
+    },
+    {
+      "date": "2025-04-01",
+      "pillar": "庚子",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "nguyet_an",
+      "label": "Nguyệt Ân",
+      "present": false
+    },
+    {
+      "date": "2025-05-01",
+      "pillar": "庚午",
+      "monthJian": "辰",
+      "lunarMonth": 4,
+      "god": "nguyet_an",
+      "label": "Nguyệt Ân",
+      "present": true
+    },
+    {
+      "date": "2025-01-29",
+      "pillar": "戊戌",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "nguyet_hinh",
+      "label": "Nguyệt Hình",
+      "present": true
+    },
+    {
+      "date": "2025-03-01",
+      "pillar": "己巳",
+      "monthJian": "寅",
+      "lunarMonth": 2,
+      "god": "nguyet_hinh",
+      "label": "Nguyệt Hình",
+      "present": true
+    },
+    {
+      "date": "2025-06-25",
+      "pillar": "乙丑",
+      "monthJian": "午",
+      "lunarMonth": 6,
+      "god": "nguyet_hinh",
+      "label": "Nguyệt Hình",
+      "present": false
+    },
+    {
+      "date": "2025-08-12",
+      "pillar": "癸丑",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "nguyet_hinh",
+      "label": "Nguyệt Hình",
+      "present": false
+    },
+    {
+      "date": "2025-03-30",
+      "pillar": "戊戌",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "phuc_sinh",
+      "label": "Phúc Sinh",
+      "present": false
+    },
+    {
+      "date": "2025-04-29",
+      "pillar": "戊辰",
+      "monthJian": "辰",
+      "lunarMonth": 4,
+      "god": "phuc_sinh",
+      "label": "Phúc Sinh",
+      "present": false
+    },
+    {
+      "date": "2025-08-11",
+      "pillar": "壬子",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "phuc_sinh",
+      "label": "Phúc Sinh",
+      "present": true
+    },
+    {
+      "date": "2025-12-11",
+      "pillar": "甲寅",
+      "monthJian": "子",
+      "lunarMonth": 10,
+      "god": "phuc_sinh",
+      "label": "Phúc Sinh",
+      "present": true
+    },
+    {
+      "date": "2025-01-29",
+      "pillar": "戊戌",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "tam_hop",
+      "label": "Tam Hợp",
+      "present": false
+    },
+    {
+      "date": "2025-03-02",
+      "pillar": "庚午",
+      "monthJian": "寅",
+      "lunarMonth": 2,
+      "god": "tam_hop",
+      "label": "Tam Hợp",
+      "present": true
+    },
+    {
+      "date": "2025-03-31",
+      "pillar": "己亥",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "tam_hop",
+      "label": "Tam Hợp",
+      "present": true
+    },
+    {
+      "date": "2025-04-01",
+      "pillar": "庚子",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "tam_hop",
+      "label": "Tam Hợp",
+      "present": false
+    },
+    {
+      "date": "2025-01-29",
+      "pillar": "戊戌",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "thanh_tam",
+      "label": "Thánh Tâm",
+      "present": true
+    },
+    {
+      "date": "2025-01-30",
+      "pillar": "己亥",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "thanh_tam",
+      "label": "Thánh Tâm",
+      "present": false
+    },
+    {
+      "date": "2025-03-01",
+      "pillar": "己巳",
+      "monthJian": "寅",
+      "lunarMonth": 2,
+      "god": "thanh_tam",
+      "label": "Thánh Tâm",
+      "present": false
+    },
+    {
+      "date": "2025-06-25",
+      "pillar": "乙丑",
+      "monthJian": "午",
+      "lunarMonth": 6,
+      "god": "thanh_tam",
+      "label": "Thánh Tâm",
+      "present": true
+    },
+    {
+      "date": "2025-01-29",
+      "pillar": "戊戌",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "thien_hy",
+      "label": "Thiên Hỷ",
+      "present": false
+    },
+    {
+      "date": "2025-03-31",
+      "pillar": "己亥",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "thien_hy",
+      "label": "Thiên Hỷ",
+      "present": true
+    },
+    {
+      "date": "2025-04-01",
+      "pillar": "庚子",
+      "monthJian": "卯",
+      "lunarMonth": 3,
+      "god": "thien_hy",
+      "label": "Thiên Hỷ",
+      "present": false
+    },
+    {
+      "date": "2025-06-01",
+      "pillar": "辛丑",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "thien_hy",
+      "label": "Thiên Hỷ",
+      "present": true
+    },
+    {
+      "date": "2025-01-31",
+      "pillar": "庚子",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "thien_lai",
+      "label": "Thiên Lại",
+      "present": true
+    },
+    {
+      "date": "2025-03-02",
+      "pillar": "庚午",
+      "monthJian": "寅",
+      "lunarMonth": 2,
+      "god": "thien_lai",
+      "label": "Thiên Lại",
+      "present": false
+    },
+    {
+      "date": "2025-04-28",
+      "pillar": "丁卯",
+      "monthJian": "辰",
+      "lunarMonth": 4,
+      "god": "thien_lai",
+      "label": "Thiên Lại",
+      "present": true
+    },
+    {
+      "date": "2025-05-28",
+      "pillar": "丁酉",
+      "monthJian": "巳",
+      "lunarMonth": 5,
+      "god": "thien_lai",
+      "label": "Thiên Lại",
+      "present": false
+    },
+    {
+      "date": "2025-01-01",
+      "pillar": "庚午",
+      "monthJian": "子",
+      "lunarMonth": 12,
+      "god": "tuc_the",
+      "label": "Tục Thế",
+      "present": true
+    },
+    {
+      "date": "2025-01-31",
+      "pillar": "庚子",
+      "monthJian": "丑",
+      "lunarMonth": 1,
+      "god": "tuc_the",
+      "label": "Tục Thế",
+      "present": true
+    },
+    {
+      "date": "2025-07-03",
+      "pillar": "癸酉",
+      "monthJian": "午",
+      "lunarMonth": 6,
+      "god": "tuc_the",
+      "label": "Tục Thế",
+      "present": false
+    },
+    {
+      "date": "2025-08-20",
+      "pillar": "辛酉",
+      "monthJian": "申",
+      "lunarMonth": 6,
+      "god": "tuc_the",
+      "label": "Tục Thế",
+      "present": false
+    }
+  ]
+}
