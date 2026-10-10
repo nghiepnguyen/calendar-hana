@@ -137,10 +137,12 @@ describe('Hiệp Kỷ Biện Phương Thư vol. 11 parity', () => {
   const activityEntries = xieji.activityEntries as Record<string, string[]>
   const aliases = xieji.trucAliases as Record<string, string[]>
   // Lists are unseparated names; 天德/月德 also occur inside 天德合/月德合. A trailing
-  // "與…併者" clause is conditional (only when combined) and is not a standalone 宜.
+  // "又…與…併者" clause is conditional (only when combined) and none of its names is a standalone
+  // 宜: 修倉庫 "又收日母倉六合五富天倉與月德四相時德開日併者" (卷十: 母倉 "與月恩四相開日併宜修倉庫").
   const lists = (name: string, key: '宜' | '忌', activityId: string) =>
     activityEntries[activityId].some((entry) =>
       entries[entry][key]
+        .replace(/又[^併]*併者/, '')
         .replace(/與[^併]*併者/, '')
         .replaceAll(`${name}合`, '')
         .includes(name),

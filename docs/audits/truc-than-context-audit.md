@@ -81,3 +81,28 @@ Findings:
 5. Separately decide whether 開渠穿井 supports `waterworks` rules.
 
 Scores, verdicts, datasets and the frozen decision baseline are unchanged by this audit.
+
+## Follow-up 2026-10-10: raw-source check of 卷十一 notes and one conditional clause (branch `audit/xieji-conditional-warehouse`)
+
+Source read as raw wikitext (not a summary): Wikisource 欽定協紀辨方書 (四庫全書本) 卷11 (`action=raw`, SHA-1 prefix `ce4ed7f23ff9`) and 卷10 (`355dc6c8fe2d`).
+
+### Notes in 卷十一
+
+The whole volume has 8 `{{SK notes}}`. Seven are “X同” cross-references (e.g. 宴會 “會親友同”, 行幸遣使 “出行同”, 般移 “移徙同”, 興造動土 “修造同”). The eighth, under 祈福, is general: **“又忌禄空上朔等日見鋪註條例餘倣此”** — every heading is further subject to the 鋪註條例 taboos (祿空, 上朔, …) of 卷十. Those are additional 忌 witnesses (coverage), not exceptions to the listed rules. 祭祀's 忌 line “天狗寅日” is already in the dataset.
+
+### Conditional clause — `ENGINE_BUG`, fixed
+
+修倉庫 宜: “天德月德天德合月德合天赦天願三合滿日**又收日母倉六合五富天倉與月德四相時德開日併者**”. The second part means 收日, 母倉, 六合, 五富, 天倉 are good for repairing storehouses **only when combined with** 月德, 四相, 時德 or 開日 (卷十 confirms for 母倉: “與月恩四相開日併宜修倉庫”). The parity parser removed only “與…併者”, so 收日 (Trực Thu), 六合, 五富 and 天倉 were listed as unconditional 宜.
+
+Fix (dataset 1.2.0 → **1.2.1**):
+
+- Parser strips the whole “又…併者” clause; the parity test now requires the catalog to omit them.
+- `truc.json`: removed Thu → warehouse (good, +15).
+- `good-gods.json`: removed `warehouse` from Lục Hợp, Ngũ Phú, Thiên Thương.
+- The conditional combination itself (e.g. Thu + Nguyệt Đức) is **not encoded**; those days now have no positive evidence from these sources rather than an unconditional one. Encoding combinations needs a co-presence rule shape (pending).
+
+Migration proof (`xiejiConditionalMigration.test.ts`): a module rebuilt with the pre-fix catalog reproduces the frozen decision baseline hash on **all 1095 days**; production differs only in the `warehouse` activity on **220 days**, each where a removed rule had applied; every event verdict is unchanged (no event uses warehouse). Classified `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+
+### Where the resolution policy lives
+
+卷十 宜忌 opens: **“舊厯宜忌多與神煞名義不合，且凡吉神所宜之事一遇凶煞則無論輕重而概忌之，尤為未當。今即其情之愛惡與其力之大小分合考訂”** — the authority itself rejects “any 煞 cancels any 吉神” and resolves by each god's nature and strength. Per-god notes (按) give strengths and combinations, e.g. 天赦/天願 “其氣純其力大乃日之最吉者能解諸凶”, 天恩 “與驛馬天馬建日併宜頒詔…”. This is the classical source for a future resolution policy (§23 #6); it is not encoded. The product's current caps/weights remain product policy.
