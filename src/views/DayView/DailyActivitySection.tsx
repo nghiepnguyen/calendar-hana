@@ -21,6 +21,8 @@ import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { formatSolarShort } from '@shared/format'
 import { iconSize } from '../../styles/textSize'
 import styles from './DailyActivitySection.module.css'
+import { MansionEvidenceDetails } from './MansionEvidenceDetails'
+import { getMansionContentEvidence } from '@shared/lunar/mansionContentAuthority'
 
 const STATUS = {
   recommended: { label: 'Thuận lợi', icon: CheckCircle, tone: 'favorable' },
@@ -148,7 +150,8 @@ export function DailyActivitySection({ date }: { date: string }) {
     [time, vehicleDeparture, moveIn, transportMode],
   )
   const data = useMemo(() => {
-    const rows = getAlmanac(date).activityRecommendations
+    const almanac = getAlmanac(date)
+    const rows = almanac.activityRecommendations
     const evaluation =
       selected && !selected.startsWith('activity:') ? evaluateEventDay(date, selected, input) : null
     const groups = CATEGORIES.find(([id]) => id === category)?.[2] as readonly string[] | undefined
@@ -181,6 +184,10 @@ export function DailyActivitySection({ date }: { date: string }) {
       evaluation,
       favorable: factors.filter((factor) => factor.delta > 0),
       unfavorable: factors.filter((factor) => factor.delta < 0),
+      mansionIndex: almanac.mansion.index,
+      unmappedMansion: getMansionContentEvidence(almanac.mansion.content).filter(
+        (row) => !row.activityId,
+      ),
       informational: evaluation?.contributions.filter((row) => row.source === 'mansion') ?? [],
       next:
         evaluation &&
@@ -266,6 +273,12 @@ export function DailyActivitySection({ date }: { date: string }) {
             ) : (
               <p className={styles.empty}>Chưa có bằng chứng cho hoạt động này.</p>
             )}
+            <MansionEvidenceDetails
+              key={`${date}:${selected}`}
+              evidence={data.activity.contributions.filter((row) => row.source === 'mansion')}
+              unmapped={data.unmappedMansion}
+              mansionIndex={data.mansionIndex}
+            />
             <button type="button" className="btn" onClick={() => setSelected('')}>
               Về tổng quan
             </button>
@@ -384,20 +397,12 @@ export function DailyActivitySection({ date }: { date: string }) {
                   : 'Chưa có yếu tố được tính điểm.'}
               </p>
             )}
-            {data.informational.length > 0 && (
-              <details className={styles.more}>
-                <summary>Thông tin Tú (tham khảo)</summary>
-                <ul>
-                  {data.informational.map((row) => (
-                    <li key={`${row.ruleId}:${row.scope}`}>
-                      <strong>{row.label}</strong>: {row.sourcePhrase} —{' '}
-                      {ACTIVITY_LABELS[row.activityId]?.toLowerCase()} (
-                      {row.polarity === 'positive' ? 'thuận' : 'bất lợi'})
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            )}
+            <MansionEvidenceDetails
+              key={`${date}:${selected}`}
+              evidence={data.informational}
+              unmapped={data.unmappedMansion}
+              mansionIndex={data.mansionIndex}
+            />
           </>
         ) : (
           <div className={styles.columns}>

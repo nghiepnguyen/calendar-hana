@@ -9,6 +9,7 @@ import {
   type EventInput,
 } from './eventMapping'
 import { ENGINE_VERSION, type Evidence } from './evidence'
+import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
 
 export { ENGINE_VERSION } from './evidence'
 export type Classification =
@@ -37,6 +38,8 @@ export interface EventEvaluation {
   criteria: CriterionResult[]
   contributions: Contribution[]
   warnings: string[]
+  /** Source/context conflict diagnostics; do not alter scoring or classification. */
+  conflictAnalysis: ConflictAnalysis
 }
 export const CRITERION_LABELS: Record<EventCriterion, string> = {
   calendar_validity: 'Ngày hợp lệ',
@@ -75,6 +78,7 @@ export function evaluateEventDay(
     criteria: [],
     contributions: [],
     warnings: [],
+    conflictAnalysis: analyzeEvidenceConflicts([], {}),
   }
   const profile = getEventProfile(eventId)
   if (!profile) return { ...base, warnings: ['Chưa có mapping cho sự kiện này.'] }
@@ -226,5 +230,9 @@ export function evaluateEventDay(
     criteria,
     contributions: unique,
     warnings,
+    conflictAnalysis: analyzeEvidenceConflicts(
+      unique.filter((row) => row.source === 'mansion'),
+      { MANSION_INDEX: day.mansion.index },
+    ),
   }
 }

@@ -429,3 +429,33 @@
     transition: none;
   }
 }
+
+.evidenceBody {
+  display: grid;
+  gap: var(--section-gap-lg);
+  min-width: 0;
+}
+.sourceEvidence {
+  margin-block: var(--section-gap-lg);
+  overflow-wrap: anywhere;
+}
+.sourceEvidence strong {
+  color: var(--text);
+}
+.sourceEvidence blockquote {
+  margin: var(--section-gap) 0;
+  padding-left: var(--section-gap);
+  border-left: 2px solid var(--glass-edge);
+  color: var(--text);
+}
+.sourceEvidence a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  color: var(--text);
+  text-decoration: underline;
+}
+.sourceEvidence a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}

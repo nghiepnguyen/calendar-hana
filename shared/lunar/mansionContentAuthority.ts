@@ -1,5 +1,6 @@
 import data from '../almanac-data/mansion-content-yuxia-1880-v1.json'
 import type { Evidence } from './evidence'
+import { resolveMansionActivityMapping } from './ruleActivityMapping'
 
 export const MANSION_CONTENT_AUTHORITY_ID = 'mansion-content-yuxia-1880-v1'
 type MansionClause = Omit<(typeof data.items)[number]['clauses'][number], 'exceptions'> & {
@@ -44,6 +45,11 @@ export function getMansionContentEvidence(content: MansionContent): Evidence[] {
       source: 'mansion',
       ruleId: `${content.authorityId}:${clause.id}`,
       activityId: clause.activityId,
+      activityMapping: {
+        ...resolveMansionActivityMapping(clause.activityId, clause.scope),
+        authorityId: content.authorityId,
+        clauseId: clause.id,
+      },
       scope: clause.scope,
       polarity: clause.polarity as Evidence['polarity'],
       sourcePhrase: clause.translation,
