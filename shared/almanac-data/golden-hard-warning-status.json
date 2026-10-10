@@ -97,7 +97,7 @@
       "date": "2025-01-26",
       "activityId": "groundbreaking",
       "hardWarnings": ["nguyet_pha"],
-      "score": 50,
+      "score": 35,
       "statusBefore": "consider",
       "expectedStatus": "consider"
     },
@@ -105,7 +105,7 @@
       "date": "2025-01-26",
       "activityId": "construction",
       "hardWarnings": ["nguyet_pha"],
-      "score": 50,
+      "score": 35,
       "statusBefore": "consider",
       "expectedStatus": "consider"
     },
@@ -172,6 +172,14 @@
       "score": 10,
       "statusBefore": "consider",
       "expectedStatus": "strong_avoid"
+    }
+  ],
+  "corrections": [
+    {
+      "kind": "DATA_CHANGE",
+      "date": "2026-10-10",
+      "cases": ["2025-01-26 groundbreaking", "2025-01-26 construction"],
+      "note": "PR #29 (土王用事, owner 2026-10-10): 2025-01-26 lies in the period before 立春 2025-02-03 (onset 2025-01-16), so groundbreaking and construction gain −15 (50 → 35). Only the score precondition moves; expectedStatus stays consider (35 > 29). Not a GOLDEN_BUG."
     }
   ]
 }
