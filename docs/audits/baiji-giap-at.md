@@ -17,7 +17,7 @@ Same shape as `dinh_nhat` (丁日忌剃頭, already in production):
 | `giap_nhat` Ngày Giáp (Bách Kỵ) | `dayCan: [0]` | `warehouse_opening` | medium (−10, bad-god cap) | `giap_day_blocks_warehouse_opening` (preserve_bad → hard warning) |
 | `at_nhat` Ngày Ất (Bách Kỵ) | `dayCan: [1]` | `planting` | medium | `at_day_blocks_planting` |
 
-The vol. 11 parity test derives the activity list from `han` (甲日 / 乙日): each appears only in its one heading. With a hard warning the activity status is `consider` and never `recommended`.
+The vol. 11 parity test derives the activity list from `han` (甲日 / 乙日): each appears only in its one heading. With a hard warning the activity status is never `recommended`: `consider`, or `avoid`/`strong_avoid` when the score is ≤ 29 / ≤ 19 (PR #28).
 
 ## Golden (`shared/almanac-data/golden-baiji-giap-at.json`)
 
@@ -30,9 +30,9 @@ Frozen in commit `f29a4d0` before any code. 49 cases on 21 dates (7 甲, 7 乙, 
 - planting: watch → consider 41, no_evidence → consider 35, recommended → consider 25, neutral → consider 4, avoid → consider 2, strong_avoid → consider 2.
 - The 1.2.1 frozen baseline (`xiejiConditionalMigration.test.ts`) pins the catalog without these two rules on both sides and still reproduces 1095/1095.
 
-## Known issue (pre-existing, not fixed here)
+## Hard-warning status (resolved by PR #28)
 
-Status puts any hard warning at `consider` **before** the score thresholds, so a day that scores as `avoid`/`strong_avoid` is shown as `consider` once a hard warning applies. Here that softens 19 day-activities (avoid/strong_avoid → consider). The same order already applies to Nguyệt Phá and Ngày Đinh: on 2025–2027 about 370 activity-days with a hard warning score ≤ 29 (e.g. wedding on 月破) are shown as "Cân nhắc". Fix proposal: status = the stricter of `consider` and the score status. Separate PR, owner decision.
+The first version of this PR exposed that a hard warning softened `avoid`/`strong_avoid` to `consider`. PR #28 (merged first) takes the stricter status. After rebasing, 2 of the 14 golden presence cases (score 25: 2025-08-03 warehouse_opening, 2027-09-03 planting) expect `avoid`; recorded in the golden as `POLICY_CHANGE`, not `GOLDEN_BUG`.
 
 ## Not encoded
 

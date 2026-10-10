@@ -39,7 +39,7 @@
       "rule": "giap_nhat",
       "present": true,
       "hardWarning": true,
-      "status": "consider"
+      "status": "avoid"
     },
     {
       "date": "2025-08-03",
@@ -273,7 +273,7 @@
       "rule": "at_nhat",
       "present": true,
       "hardWarning": true,
-      "status": "consider"
+      "status": "avoid"
     },
     {
       "date": "2027-09-03",
@@ -379,6 +379,14 @@
       "activityId": "planting",
       "rule": "at_nhat",
       "present": false
+    }
+  ],
+  "corrections": [
+    {
+      "kind": "POLICY_CHANGE",
+      "date": "2026-10-10",
+      "cases": ["2025-08-03 warehouse_opening", "2027-09-03 planting"],
+      "note": "PR #28 (hardWarningKeepsWorseScoreStatus, owner 2026-10-10): a hard warning takes the stricter of consider and the score status. Both cases score 25 (<= 29), so consider → avoid. Not a GOLDEN_BUG: the frozen expectation followed the policy in force when frozen."
     }
   ]
 }
