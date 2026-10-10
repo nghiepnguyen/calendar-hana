@@ -10,6 +10,14 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 
+// Keep this historical migration/Golden independent of later 卷十 activation.
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const { default: current } = await importOriginal<{
+    default: typeof import('../almanac-data/manifest.json')
+  }>()
+  return { default: { ...current, policies: { ...current.policies, xiejiVol10Scoring: false } } }
+})
+
 // 修倉庫 宜 "…又收日母倉六合五富天倉與月德四相時德開日併者": 收日/六合/五富/天倉 are good for
 // repairing storehouses only when combined with 月德/四相/時德/開日. The pre-fix catalog listed them
 // unconditionally (ENGINE_BUG in the parity parser). Rebuild that catalog to prove the frozen

@@ -2,21 +2,19 @@ import { writeFileSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import baseline from './audit-fixtures/mansion-decision-baseline-v1.json'
 import manifest from '../almanac-data/manifest.json'
-import { getAlmanac } from './almanac'
 import type { Evidence } from './evidence'
-import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 import { VOL10_SCORED_ENTRIES } from './xiejiVol10Scoring'
 
-// Flag off is the production path (the frozen-baseline proof in xiejiConditionalMigration.test.ts
+// Flag off is the pre-activation path (the frozen-baseline proof in xiejiConditionalMigration.test.ts
 // still reproduces 1095/1095). Here the flag is turned on and every difference must be explained
 // by exactly one 卷十 verdict of a scored 凶 chain: EXPECTED_AUTHORITY_MIGRATION_CHANGE.
 const key = (r: Evidence) => `${r.source}|${r.ruleId}`
 const ACTED = new Set(['avoid', 'not_avoided', 'no_annotation'])
 
 describe('協紀 卷十 scoring migration (flag xiejiVol10Scoring)', () => {
-  it('defaults to off', () => {
-    expect(manifest.policies.xiejiVol10Scoring).toBe(false)
+  it('production scoring is enabled', () => {
+    expect(manifest.policies.xiejiVol10Scoring).toBe(true)
   })
 
   it('with the flag on, every changed row is explained by one 卷十 verdict', async () => {
@@ -28,6 +26,14 @@ describe('協紀 卷十 scoring migration (flag xiejiVol10Scoring)', () => {
       almanac: (await import('./almanac')).getAlmanac,
       evaluate: (await import('./eventEvaluation')).evaluateEventDay,
     }
+    vi.resetModules()
+    vi.doMock('../almanac-data/manifest.json', () => ({
+      default: { ...manifest, policies: { ...manifest.policies, xiejiVol10Scoring: false } },
+    }))
+    const off = {
+      almanac: (await import('./almanac')).getAlmanac,
+      evaluate: (await import('./eventEvaluation')).evaluateEventDay,
+    }
     vi.doUnmock('../almanac-data/manifest.json')
 
     const count: Record<string, number> = {}
@@ -36,7 +42,7 @@ describe('協紀 卷十 scoring migration (flag xiejiVol10Scoring)', () => {
     expect(baseline.days).toHaveLength(1095)
     expect(EVENT_OPTIONS).toHaveLength(11)
     for (const { date } of baseline.days) {
-      const offRows = getAlmanac(date as never).activityRecommendations
+      const offRows = off.almanac(date as never).activityRecommendations
       const onRows = on.almanac(date as never).activityRecommendations
       expect(onRows).toHaveLength(32)
       expect(onRows.map((r) => r.activityId)).toEqual(offRows.map((r) => r.activityId))
@@ -78,7 +84,7 @@ describe('協紀 卷十 scoring migration (flag xiejiVol10Scoring)', () => {
           )
       }
       for (const [id] of EVENT_OPTIONS) {
-        const a = evaluateEventDay(date as never, id, { hour: 9 })
+        const a = off.evaluate(date as never, id, { hour: 9 })
         const b = on.evaluate(date as never, id, { hour: 9 })
         expect(b.classicalResolution.items.some((x) => x.verdict === 'undetermined')).toBe(false)
         if (a.classification !== b.classification) {
