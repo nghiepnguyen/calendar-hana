@@ -1,0 +1,1007 @@
+{
+  "cut_hair caution → recommended": {
+    "date": "2025-01-09",
+    "event": "cut_hair",
+    "before": {
+      "score": 55,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 70,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "cut_hair",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "move_house not_recommended → caution": {
+    "date": "2025-01-09",
+    "event": "move_house",
+    "before": {
+      "score": 42.5,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 57.5,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "moving",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "cleaning",
+        "verdict": "not_listed",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "open_business not_recommended → caution": {
+    "date": "2025-01-09",
+    "event": "open_business",
+    "before": {
+      "score": 23,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "opening",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "business",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "finance",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "groundbreaking not_recommended → caution": {
+    "date": "2025-01-09",
+    "event": "groundbreaking",
+    "before": {
+      "score": 27.5,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "groundbreaking",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "construction",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "wedding not_recommended → caution": {
+    "date": "2025-01-09",
+    "event": "wedding",
+    "before": {
+      "score": 27.5,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "wedding",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "engagement",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "start_journey caution → recommended": {
+    "date": "2025-01-09",
+    "event": "start_journey",
+    "before": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 65,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "travel",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "move_house not_recommended → recommended": {
+    "date": "2025-01-21",
+    "event": "move_house",
+    "before": {
+      "score": 67.5,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 82.5,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "moving",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "cleaning",
+        "verdict": "not_listed",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "wedding not_recommended → recommended": {
+    "date": "2025-01-21",
+    "event": "wedding",
+    "before": {
+      "score": 65,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 87.5,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "wedding",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "engagement",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "open_business not_recommended → recommended": {
+    "date": "2025-02-11",
+    "event": "open_business",
+    "before": {
+      "score": 26,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 75.5,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "shou_ri",
+        "han": "收日",
+        "activityId": "opening",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "從刼煞論 → 止忌…餘皆不忌",
+        "quote": "寅申巳亥月值刼煞從刼煞論 / 寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "via": "jie_sha",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "shou_ri",
+        "han": "收日",
+        "activityId": "business",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "從刼煞論 → 止忌…餘皆不忌",
+        "quote": "寅申巳亥月值刼煞從刼煞論 / 寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "via": "jie_sha",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "shou_ri",
+        "han": "收日",
+        "activityId": "finance",
+        "verdict": "not_listed",
+        "effect": "only_avoid",
+        "reason": "從刼煞論 → 止忌…餘皆不忌",
+        "quote": "寅申巳亥月值刼煞從刼煞論 / 寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "via": "jie_sha",
+        "productDelta": 4.5,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "opening",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "business",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "finance",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "groundbreaking not_recommended → recommended": {
+    "date": "2025-02-11",
+    "event": "groundbreaking",
+    "before": {
+      "score": 27.5,
+      "classification": "not_recommended"
+    },
+    "after": {
+      "score": 72.5,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "shou_ri",
+        "han": "收日",
+        "activityId": "groundbreaking",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "從刼煞論 → 止忌…餘皆不忌",
+        "quote": "寅申巳亥月值刼煞從刼煞論 / 寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "via": "jie_sha",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "shou_ri",
+        "han": "收日",
+        "activityId": "construction",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "從刼煞論 → 止忌…餘皆不忌",
+        "quote": "寅申巳亥月值刼煞從刼煞論 / 寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "via": "jie_sha",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "groundbreaking",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "jie_sha",
+        "han": "刼煞",
+        "activityId": "construction",
+        "verdict": "not_avoided",
+        "effect": "only_avoid",
+        "reason": "止忌…餘皆不忌",
+        "quote": "寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "buy_vehicle caution → not_recommended": {
+    "date": "2025-02-13",
+    "event": "buy_vehicle",
+    "before": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 12.5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -12.5,
+        "diverges": false
+      }
+    ]
+  },
+  "sign_contract caution → not_recommended": {
+    "date": "2025-02-13",
+    "event": "sign_contract",
+    "before": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 12.5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "contract",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "contract",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -12.5,
+        "diverges": false
+      }
+    ]
+  },
+  "buy_property insufficient_evidence → not_recommended": {
+    "date": "2025-02-13",
+    "event": "buy_property",
+    "before": {
+      "score": null,
+      "classification": "insufficient_evidence"
+    },
+    "after": {
+      "score": 12.5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "從月煞論 → 諸事皆忌",
+        "quote": "寅申巳亥月值月煞從月煞論 / 寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "via": "yue_sha",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "transaction",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_sha",
+        "han": "月煞",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "諸事皆忌",
+        "quote": "寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌",
+        "productDelta": -12.5,
+        "diverges": false
+      }
+    ]
+  },
+  "property_handover caution → recommended": {
+    "date": "2025-03-10",
+    "event": "property_handover",
+    "before": {
+      "score": 57.5,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 67.5,
+      "classification": "recommended"
+    },
+    "items": [
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "transaction",
+        "verdict": "not_listed",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "子午夘酉月值王日辰戌丑未月值官日天吏與天德月德天德合月德合天赦天願併凡所忌者則不註宜所宜者亦不註忌不與德合赦願併如常例",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "bi_ri",
+        "han": "閉日",
+        "activityId": "moving",
+        "verdict": "no_annotation",
+        "effect": "cancel_both",
+        "reason": "凡所忌者則不註宜所宜者亦不註忌",
+        "quote": "子午夘酉月值王日辰戌丑未月值官日天吏與天德月德天德合月德合天赦天願併凡所忌者則不註宜所宜者亦不註忌不與德合赦願併如常例",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "move_house recommended → not_recommended": {
+    "date": "2025-03-11",
+    "event": "move_house",
+    "before": {
+      "score": 65,
+      "classification": "recommended"
+    },
+    "after": {
+      "score": 32.5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "moving",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "cleaning",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -7.5,
+        "diverges": false
+      }
+    ]
+  },
+  "open_business insufficient_evidence → not_recommended": {
+    "date": "2025-03-11",
+    "event": "open_business",
+    "before": {
+      "score": null,
+      "classification": "insufficient_evidence"
+    },
+    "after": {
+      "score": 5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "opening",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "business",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -7.5,
+        "diverges": false
+      }
+    ]
+  },
+  "start_journey recommended → caution": {
+    "date": "2025-03-11",
+    "event": "start_journey",
+    "before": {
+      "score": 80,
+      "classification": "recommended"
+    },
+    "after": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "travel",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "卯月己卯: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -15,
+        "diverges": false
+      }
+    ]
+  },
+  "move_house caution → not_recommended": {
+    "date": "2025-04-29",
+    "event": "move_house",
+    "before": {
+      "score": 50,
+      "classification": "caution"
+    },
+    "after": {
+      "score": 17.5,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "moving",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "辰月戊辰: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "cleaning",
+        "verdict": "avoid",
+        "effect": "avoid_all",
+        "reason": "辰月戊辰: 諸事皆忌",
+        "quote": "與天德月德天德合月德合天赦月恩四相併〔天願不得與月建併〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌",
+        "productDelta": -7.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "moving",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": 0,
+        "diverges": true
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "cleaning",
+        "verdict": "not_listed",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": 0,
+        "diverges": false
+      }
+    ]
+  },
+  "buy_vehicle recommended → caution": {
+    "date": "2025-11-14",
+    "event": "buy_vehicle",
+    "before": {
+      "score": 65,
+      "classification": "recommended"
+    },
+    "after": {
+      "score": 52.5,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "transaction",
+        "verdict": "not_listed",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "transaction",
+        "verdict": "not_listed",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": -12.5,
+        "diverges": false
+      }
+    ]
+  },
+  "buy_property recommended → caution": {
+    "date": "2025-11-14",
+    "event": "buy_property",
+    "before": {
+      "score": 65,
+      "classification": "recommended"
+    },
+    "after": {
+      "score": 52.5,
+      "classification": "caution"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "transaction",
+        "verdict": "not_listed",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "transaction",
+        "verdict": "not_listed",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": 0,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": -12.5,
+        "diverges": false
+      }
+    ]
+  },
+  "open_business recommended → not_recommended": {
+    "date": "2025-11-14",
+    "event": "open_business",
+    "before": {
+      "score": 68,
+      "classification": "recommended"
+    },
+    "after": {
+      "score": 23,
+      "classification": "not_recommended"
+    },
+    "items": [
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "opening",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "business",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_jian",
+        "han": "月建",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "從月刑論 → 如常例",
+        "quote": "辰午酉亥月值月刑從刑厭論 / 寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "via": "yue_xing",
+        "productDelta": -7.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "opening",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": -25,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "business",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": -12.5,
+        "diverges": false
+      },
+      {
+        "entry": "yue_xing",
+        "han": "月刑",
+        "activityId": "finance",
+        "verdict": "avoid",
+        "effect": "as_usual",
+        "reason": "如常例",
+        "quote": "寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例",
+        "productDelta": -7.5,
+        "diverges": false
+      }
+    ]
+  }
+}
