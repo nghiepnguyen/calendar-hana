@@ -1,6 +1,6 @@
 # 卷十 百忌日: 巳日 出行, 亥日 嫁娶
 
-Status: **IMPLEMENTED — changes activity scores and two events** (owner decision 2026-10-10, P2: option (a), `travel` = user-facing Xuất hành). Branch `feature/baiji-ty-hoi`. Same mechanism as [baiji-giap-at.md](baiji-giap-at.md) (PR #26) and [baiji-dayzhi.md](baiji-dayzhi.md) (PR #40).
+Status: **IMPLEMENTED — changes activity scores and two events** (owner decision 2026-10-10, P2: option (a), `travel` = user-facing Xuất hành). Branch `feature/baiji-ty-hoi`, PR #42. Same mechanism as [baiji-giap-at.md](baiji-giap-at.md) (PR #26) and [baiji-dayzhi.md](baiji-dayzhi.md) (PR #40).
 
 ## Source
 
