@@ -46,7 +46,7 @@ For each present entry and event activity (activity → 用事 headings from 卷
 ## Limits
 
 - Diagnostics only; scores, caps and verdicts unchanged (frozen-baseline proof still 1095/1095). Applying 卷十 to scores needs a separate decision and migration proof.
-- 4,540 undetermined: deferrals to 月厭/月刑/月煞 (never fire) and clauses needing 天赦/月恩/四相/時德/六合 presence.
+- 4,540 undetermined: deferrals to 月厭/月刑/月煞 (never fire) and clauses needing 天赦/月恩/四相/時德/六合 presence. Update: 月厭/月刑/月煞/災煞 added for diagnostics (`docs/audits/xieji-monthly-sha-presence.md`, version `xieji-vol10-v2`); then 天赦/天願/月恩/四相 locked and 天德合 absent on 四仲 months — the six entries now have 900 undetermined, all from 天德 trigram months. Step 3 above is superseded accordingly.
 - 卷十 general rules (lines “凡吉足勝凶從宜不從忌…”, “凡吉凶相抵不註宜亦不註忌…”) and the per-god 宜 sections are not encoded.
 - Activity ↔ heading mapping remains `interpretation_pending`.
 

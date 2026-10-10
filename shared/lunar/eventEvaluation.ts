@@ -44,7 +44,7 @@ export interface EventEvaluation {
   conflictAnalysis: ConflictAnalysis
   /** 協紀 卷十 conclusion per present source-locked 凶 and event activity; never affects score. */
   classicalResolution: {
-    version: 'xieji-vol10-v1'
+    version: 'xieji-vol10-v2'
     items: (Vol10Resolution & { productDelta: number; diverges: boolean })[]
   }
 }
@@ -86,7 +86,7 @@ export function evaluateEventDay(
     contributions: [],
     warnings: [],
     conflictAnalysis: analyzeEvidenceConflicts([], {}),
-    classicalResolution: { version: 'xieji-vol10-v1', items: [] },
+    classicalResolution: { version: 'xieji-vol10-v2', items: [] },
   }
   const profile = getEventProfile(eventId)
   if (!profile) return { ...base, warnings: ['Chưa có mapping cho sự kiện này.'] }
@@ -241,7 +241,7 @@ export function evaluateEventDay(
     // Mansion, Trực and source-locked/day-rule gods; legacy rows stay unresolved (no authority).
     conflictAnalysis: analyzeEvidenceConflicts(unique, day.selectionContext),
     classicalResolution: {
-      version: 'xieji-vol10-v1',
+      version: 'xieji-vol10-v2',
       items: resolveVol10(
         {
           monthJianBranch: day.selectionContext.MONTH_JIAN_BRANCH,
@@ -261,6 +261,11 @@ export function evaluateEventDay(
           shou_ri: { truc: 'thu' },
           bi_ri: { truc: 'be' },
           jie_sha: { god: 'kiep_sat' },
+          // Legacy gods that never fire today (no exact star name); kept so the delta stays honest.
+          yue_yan: { god: 'nguyet_yem' },
+          yue_xing: { god: 'nguyet_hinh' },
+          yue_sha: { god: 'nguyet_sat' },
+          zai_sha: { god: 'tai_sat' },
         }
         // After 從X論 the deciding rule's product sources count too (e.g. 收日 → 刼煞).
         const srcs = [sources[item.entry], item.via ? sources[item.via] : undefined].filter(
