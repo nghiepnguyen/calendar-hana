@@ -68,30 +68,48 @@ production.
 14. Activity interpretation review + door_opening/waterworks ✅ MERGED & DEPLOYED (PR #6); phần 30–31.
 15. Sát Chủ tháng 7/8 thống nhất calendar ↔ personal ✅ MERGED & DEPLOYED (PR #8); phần 31. Sát Chủ vẫn SOURCE_DEPENDENT.
 
+16. Trang scan 觜/參 + quote 角 ✅ MERGED & DEPLOYED (PR #11); 修倉庫 điều kiện 「又…併者」, dataset 1.2.1 ✅ (PR #14).
+17. Trực + 9 thần audited + 卷十 resolution vào diagnostics ✅ MERGED & DEPLOYED (PR #15, #16; không đổi điểm).
+18. 卷十 presence (月厭/月刑/月煞/災煞, 天赦/天願/月恩/四相), scan 月表, `undetermined` = 0, 卷十 scoring code + golden 39 ca + migration proof ✅ MERGED & DEPLOYED **sau flag `xiejiVol10Scoring` = false** (PR #18).
+19. Thiên Đức/Hợp legacy tháng quẻ bỏ theo 月表 ✅ MERGED & DEPLOYED (PR #21, đổi điểm).
+20. Không gặp ngày kỵ → trung tính cho sự kiện ≤ high ✅ MERGED & DEPLOYED (PR #23).
+21. Mapping 用事 → activity (卷十一) review 29/29; tách Sửa kho / Mở kho xuất hàng; nhãn Mở hàng ✅ MERGED & DEPLOYED (PR #24, #25).
+22. Cảnh báo cứng không làm nhẹ trạng thái ✅ MERGED & DEPLOYED (PR #28).
+23. 百忌日 甲日/乙日; 土王用事 (18 ngày trước Tứ Lập) ✅ MERGED & DEPLOYED (PR #26, #27, #29). Chi tiết phần 35.
+
 ### Next — đề xuất, chưa có scope triển khai mới được duyệt
 
-Đưa 卷十 vào điểm theo `docs/plans/xieji-vol10-scoring.md` (cần owner chốt bảng verdict → điểm); hoặc trước đó audit cách tính ngày có mặt của 月厭/月刑/月煞/災煞 và các cát thần 天赦/天願/月恩/四相/時德/六合 để giảm `undetermined`. Danh sách đầy đủ ở phần 23.
+Thứ tự ưu tiên (chi tiết phần 23):
+
+1. **Bật `xiejiVol10Scoring`** — đo lại migration sau #25–#29, owner quyết bật.
+2. Gộp/ẩn một trong “Khai trương” / “Mở hàng” (cùng 開市).
+3. 百忌日 còn lại cho activity đã có (巳日 出行, 寅日 祭祀, 亥日 嫁娶, 酉日 宴會, 申日 安牀, 未日 求醫療病).
+4. 21/44 thần không bao giờ có mặt và 14 thần legacy tháng âm → audit bằng 月表.
+5. Quy tắc chung 卷十 (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần.
+6. Các điểm SOURCE_DEPENDENT của 土王用事; Sát Chủ cần nguồn offline.
 
 ### Engine
 
-13. Activity taxonomy — 29 IDs/scopes hiện tại đã deploy; narrow catalog gaps còn pending
-14. Nên/kỵ rule mapping — mansion contract đã deploy; interpretation review còn pending
-15. Conflict-resolution engine — diagnostics đã deploy; resolution policy còn pending
-16. Explainability/evidence — mansion activity UI đã deploy
-17. Daily evaluation
+24. Activity taxonomy — **32 activity IDs** đã deploy (thêm door_opening, waterworks, warehouse_opening); 5 scope xây dựng hẹp giữ unmapped (owner).
+25. Nên/kỵ rule mapping — mansion v2 review 115/115; 卷十一 用事 → activity 29/29 (single reviewer, agent).
+26. Catalog chấm điểm — 24 cát thần (day-rule 除神) / 23 hung thần (day-rule 丁日, 甲日, 乙日, 人神, 土王用事); audit 10/10: 21/44 thần chấm điểm chưa bao giờ có mặt.
+27. Conflict-resolution — diagnostics + 卷十 resolution đã deploy; 卷十 vào điểm còn sau flag.
+28. Policy sản phẩm đã chốt — trung tính ≤ high; cảnh báo cứng lấy trạng thái nghiêm hơn; 不註 → trung tính (khi bật flag).
+29. Explainability/evidence — mansion activity UI + bất lợi/thuận theo dòng đã deploy.
+30. Daily evaluation — event evaluation đã deploy (11 sự kiện); mansion scoring vẫn tắt.
 
 ### Personal
 
-18. Personal feng-shui rules
-19. Bazi / Dụng-Hỷ-Kỵ-Cừu
-20. Personal daily evaluation
+31. Personal feng-shui rules
+32. Bazi / Dụng-Hỷ-Kỵ-Cừu
+33. Personal daily evaluation
 
 ### Product
 
-21. UI integration
-22. Full Golden/regression
-23. E2E/visual/device
-24. Production release
+34. UI integration
+35. Full Golden/regression
+36. E2E/visual/device (desktop chạy local; mobile/Safari chưa chạy từ khi Actions bị khoá)
+37. Production release (deploy hosting thủ công, xem phần 24)
 
 ------------------------------------------------------------------------
 
