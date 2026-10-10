@@ -1,0 +1,177 @@
+{
+  "version": "golden-hard-warning-status-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "policy": "Owner 2026-10-10: an activity with a hard warning takes the stricter of consider and its score status (score <= 19 strong_avoid, <= 29 avoid). A hard warning never softens a bad score.",
+  "derivation": "One real day (2025-2027) per (score band, hard-warning rule, activity). Scores are unchanged by this fix; expectedStatus is derived by hand from the policy, not from the engine.",
+  "cases": [
+    {
+      "date": "2025-01-01",
+      "activityId": "wedding",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-01",
+      "activityId": "engagement",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-01",
+      "activityId": "moving",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-01",
+      "activityId": "opening",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-01",
+      "activityId": "groundbreaking",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-01",
+      "activityId": "construction",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-08",
+      "activityId": "cut_hair",
+      "hardWarnings": ["dinh_nhat"],
+      "score": 25,
+      "statusBefore": "consider",
+      "expectedStatus": "avoid"
+    },
+    {
+      "date": "2025-01-18",
+      "activityId": "cut_hair",
+      "hardWarnings": ["dinh_nhat"],
+      "score": 40,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-01-26",
+      "activityId": "wedding",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 50,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-01-26",
+      "activityId": "engagement",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 50,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-01-26",
+      "activityId": "moving",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 50,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-01-26",
+      "activityId": "groundbreaking",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 50,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-01-26",
+      "activityId": "construction",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 50,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-05-18",
+      "activityId": "cut_hair",
+      "hardWarnings": ["dinh_nhat"],
+      "score": 15,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-05-30",
+      "activityId": "opening",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 35,
+      "statusBefore": "consider",
+      "expectedStatus": "consider"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "wedding",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "engagement",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "moving",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "opening",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "groundbreaking",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    },
+    {
+      "date": "2025-07-07",
+      "activityId": "construction",
+      "hardWarnings": ["nguyet_pha"],
+      "score": 10,
+      "statusBefore": "consider",
+      "expectedStatus": "strong_avoid"
+    }
+  ]
+}

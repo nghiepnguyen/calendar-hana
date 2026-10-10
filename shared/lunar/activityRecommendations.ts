@@ -252,17 +252,20 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
           ? 'no_evidence'
           : hardWarning && manifest.policies.hardVetoFromClassicalJi
             ? 'strong_avoid'
-            : hardWarning || (positiveMagnitude >= 30 && negativeMagnitude >= 30)
+            : // Owner 2026-10-10: a hard warning never softens a bad score; take the stricter.
+              hardWarning && (score > 29 || !manifest.policies.hardWarningKeepsWorseScoreStatus)
               ? 'consider'
-              : score <= 19
-                ? 'strong_avoid'
-                : score <= 29
-                  ? 'avoid'
-                  : negativeMagnitude > 0
-                    ? 'watch'
-                    : score >= 65
-                      ? 'recommended'
-                      : 'neutral'
+              : !hardWarning && positiveMagnitude >= 30 && negativeMagnitude >= 30
+                ? 'consider'
+                : score <= 19
+                  ? 'strong_avoid'
+                  : score <= 29
+                    ? 'avoid'
+                    : negativeMagnitude > 0
+                      ? 'watch'
+                      : score >= 65
+                        ? 'recommended'
+                        : 'neutral'
       return {
         activityId: activity.id,
         label: activity.label,

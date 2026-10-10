@@ -187,3 +187,11 @@ App giữ cách tính theo tháng âm, giống lichviet.me và licham.vn. Chấm
 - Chú thích ở đáy lưới: Hoàng đạo, Hắc đạo, Hôm nay.
 - Nhãn trợ năng của ô ngày đọc "ngày hoàng đạo" hoặc "ngày hắc đạo".
 - Lưu ý: `#c2c2c2` trên nền sáng chỉ đạt khoảng 1.8:1, dưới mức 3:1 của WCAG 1.4.11 cho thành phần đồ họa. Thông tin vẫn có qua nhãn trợ năng và chú thích. `#949494` đạt khoảng 3:1 nếu cần đổi.
+
+## Cảnh báo cứng không làm nhẹ trạng thái — 10/10/2026
+
+Owner quyết định: hoạt động có cảnh báo cứng (`hardWarning`, ví dụ Nguyệt Phá, Ngày Đinh) lấy trạng thái **nghiêm hơn** giữa "Cân nhắc" (`consider`) và trạng thái theo điểm. Trước đây cảnh báo cứng luôn cho `consider` trước khi xét ngưỡng điểm, nên ngày điểm ≤19 ("Kỵ mạnh") hoặc ≤29 ("Nên tránh") lại hiện "Cân nhắc". Policy `manifest.policies.hardWarningKeepsWorseScoreStatus = true`.
+
+- Golden `shared/almanac-data/golden-hard-warning-status.json`, đóng băng trước code: 21 ca thật (mỗi tổ hợp dải điểm × thần cảnh báo × hoạt động), trạng thái kỳ vọng suy tay từ policy.
+- Migration proof `shared/lunar/hardWarningStatus.test.ts` (1095 ngày 2025–2027, policy cũ mock lại): điểm và mọi dòng đóng góp giữ nguyên; 11 sự kiện giữ nguyên kết luận và điểm (đánh giá sự kiện đọc cảnh báo cứng trực tiếp, không đọc trạng thái hoạt động). Chỉ đổi `consider` → `avoid` 360 lượt, `consider` → `strong_avoid` 79 lượt (Nguyệt Phá: cưới hỏi, ăn hỏi, chuyển nhà, khai trương, động thổ, xây dựng; Ngày Đinh: cắt tóc).
+- Trường hợp không có cảnh báo cứng nhưng cộng và trừ đều ≥30 vẫn là `consider` như cũ.

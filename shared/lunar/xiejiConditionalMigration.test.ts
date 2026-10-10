@@ -54,11 +54,16 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     const { truc, good } = preFixCatalog()
     // Isolate this migration from issue #19: both sides keep the legacy trigram Thiên Đức.
     const legacyTianDe = () => ({ KEEP_LEGACY_TRIGRAM_TIAN_DE: true })
-    // Likewise both sides keep the pre-10/10/2026 neutral policy (low severity only).
+    // Likewise both sides keep the pre-10/10/2026 neutral policy (low severity only) and the
+    // old hard-warning status (always consider).
     const lowNeutral = () => ({
       default: {
         ...manifest,
-        policies: { ...manifest.policies, noTabooMeansNeutralUpToSeverity: 'low' },
+        policies: {
+          ...manifest.policies,
+          noTabooMeansNeutralUpToSeverity: 'low',
+          hardWarningKeepsWorseScoreStatus: false,
+        },
       },
     })
     vi.resetModules()
