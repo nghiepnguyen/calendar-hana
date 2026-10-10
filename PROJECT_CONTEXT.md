@@ -113,8 +113,8 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 
 | # | Vấn đề | Trạng thái | Việc tiếp theo | Phụ thuộc |
 |---|---|---|---|---|
-| P1 | **百忌日 không dính event:** 寅/酉/申/未 | DEPLOYED (PR #40) | Còn: chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine; owner quyết) | — |
-| P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | DEPLOYED (PR #42); owner chọn (a), `travel` = Xuất hành | — | — |
+| P1 | **百忌日 không dính event:** 寅日 祭祀 (`worship`), 酉日 宴會 (`meeting`), 申日 安牀 (`bed_installation`), 未日 求醫療病 (`medical`) | **DEPLOYED phạm vi chính (PR #40).** Kiểm lại 10/10/2026 trên cấu hình production (sau Release A, 1095 ngày): thần có mặt đúng và chỉ ở ngày chi tương ứng, kèm hard warning; activity không bao giờ “Nên làm” | **Còn:** (1) 鋪註條例 「凡天狗寅日忌祭祀不註宜求福祈嗣」 → ngày Dần không ghi tốt cho `pray_blessing`/`pray_children` — cần engine (override hiện chỉ áp lên activity của thần), owner quyết; (2) 天狗 (kỵ khác của 祭祀) không có trong catalog; (3) 「酉日…不註宜慶賜賞賀」: không có activity → không làm | — |
+| P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | **DEPLOYED phạm vi chính (PR #42)**; owner chọn (a), `travel` = Xuất hành. Kiểm lại 10/10/2026 trên cấu hình production: 91/91 ngày Hợi Cưới hỏi “Không thuận lợi” (có/không giờ), 91/91 ngày Tỵ Xuất hành “Cân nhắc” | **Còn:** (1) **lỗ hổng test** — từ Release A, `baijiTyHoi.test.ts` ghim `legacyGodsMonthJian: false` cả file nên Golden P2 không còn chạy trên cấu hình production; cần tách: migration giữ ghim, Golden chạy cấu hình hiện hành (chỉ sửa test); (2) 「凡巳日忌出行不註宜出師遣使」: không có activity → không làm; (3) cách hiểu `travel` = 出行 là quyết định owner, mapping vẫn single reviewer (R1) | — |
 | P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) + P3b (PR #44) xong. **Release A DEPLOYED (PR #45):** 14 thần legacy theo Month Jian — 741 kết luận event đổi (caution → recommended 170, not_recommended → recommended 129, recommended → caution 115, …), 1.835 điểm event, 3.724 điểm activity; 0 thay đổi ở ngày tháng âm = Month Jian. Bảng legacy vốn đúng 12/12 tháng, chỉ sai cơ sở tháng. 5 tên gần giống (Phổ Hộ (Hội Hộ) = 普護, Phi Ma Sát (Tai Sát) = 災煞, Nguyệt Hư (Nguyệt Sát) = 月煞, Nguyệt Yếm Đại Hoạ = 月厭, Vãng Vong (Thổ Kỵ) = 往亡) đã chứng minh bằng bảng | **Còn:** bật 21 thần vắng mặt — làm cùng P4. Đo (so với trước Release A): +7 cát → 1.042 kết luận đổi, recommended 3.008 → 3.472; +đủ 21 → 2.892, recommended 3.008 → 1.988, not_recommended 3.962 → 5.920 (14 hung thần trừ điểm khi chưa có cân bằng 卷十) | Owner đã chốt 往亡/不將/五富 |
 | P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở — **việc tiếp theo** | Đọc + spec quy tắc cân bằng 卷十 (吉凶 tương đối theo 等第表), Golden độc lập, rồi bật 21 thần vắng mặt cùng release; đo trước như các release trước | Presence 35 thần đã sẵn (`getXiejiGodPresence`). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵; event `very_high` fail `event_fit` khi activity chính có bất kỳ dòng âm (chính sách hiện hành, xem có cần đổi trong P4) |
 | P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | Presence 時德/四相 đã có (P3b), chờ P4 |
@@ -132,7 +132,9 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 |---|---|---|
 | R1 | **Review mapping single reviewer (agent):** mansion 115/115, 用事 29/29; chưa có chuyên gia thứ hai. 5 scope xây dựng hẹp giữ unmapped (owner); door_opening/waterworks không có rule Trực/thần → `no_evidence` | Cách hiểu 巳日 ↔ `travel` đã được owner chốt (P2) |
 | R2 | **Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích):** vd. `finance` 納財 trong `open_business`, `engagement` 納采問名 trong `wedding` — 卷十一 ghi thần cho cả hai việc | Mỗi thần chỉ tính một lần/event = đổi policy cả 11 event → phase riêng nếu muốn |
-| R3 | **Coverage:** iPhone thật, Firefox, emulator chưa chạy cho release 卷十; Phase 6 hướng năm chưa vào calendar UI; 月表 tháng 6/7/9/10/12 chưa đọc (không còn chặn P3 — định nghĩa đều có chữ) | Đối chiếu 月表 là kiểm chứng thêm, không bắt buộc |
+| R3 | **Coverage:** iPhone thật, Firefox, emulator chưa chạy cho release 卷十 và các release PR #37–#45 (smoke chỉ desktop Chrome, Pixel 7, Safari desktop); Phase 6 hướng năm chưa vào calendar UI; 月表 tháng 6/7/9/10/12 chưa đọc (không còn chặn P3 — định nghĩa đều có chữ) | Đối chiếu 月表 là kiểm chứng thêm, không bắt buộc |
+| R4 | **百忌日 còn 6 ngày không có activity:** 庚日 經絡, 辛日 醖釀, 壬日 開渠, 卯日 穿井, 丑日 冠帶, 午日 苫蓋 | Không tự map (nguyên tắc); chỉ làm nếu thêm activity tương ứng |
+| R5 | **Golden cũ chạy ở cấu hình cũ:** Golden PR #26 (甲/乙), #28 (hard warning) ghim `xiejiVol10Scoring: false` từ trước; từ Release A thêm `legacyGodsMonthJian: false` cho chúng và cho P2. Bất biến của các rule này trên cấu hình production hiện chỉ được kiểm tay (P2) hoặc qua migration test hiện hành (P1) | Thêm test bất biến trên cấu hình production cho mọi 百忌日/hard warning (chỉ test) |
 
 ### Phụ thuộc
 
@@ -140,7 +142,7 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 P4 cân bằng chung 卷十 + bật 21 thần vắng mặt ─► P5 warehouse
 (P3a/P3b/Release A đã xong và deploy)
 P4 phải giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵)
-P1, P2, S1, S2, R2: độc lập (P1, P2 đã deploy)
+P1, P2 (phần còn lại), S1, S2, R2, R4, R5: độc lập
 ```
 
 ## 6. Quy tắc cho agent
