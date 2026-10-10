@@ -4,7 +4,12 @@ import { analyzeEvidenceConflicts } from './evidenceConflicts'
 import { getMansionContent, getMansionContentEvidence } from './mansionContentAuthority'
 import { evaluateEventDay } from './eventEvaluation'
 
-const row = (id: string, polarity: Evidence['polarity'], authorityId = 'edition-a'): Evidence => ({
+const row = (
+  id: string,
+  polarity: Evidence['polarity'],
+  authorityId = 'edition-a',
+  reviewStatus: 'interpretation_pending' | 'interpretation_reviewed' = 'interpretation_pending',
+): Evidence => ({
   source: 'mansion',
   ruleId: id,
   activityId: 'wedding',
@@ -20,9 +25,10 @@ const row = (id: string, polarity: Evidence['polarity'], authorityId = 'edition-
   conditions: [{ operand: 'MANSION_INDEX', equals: 0 }],
   exceptions: [],
   activityMapping: {
-    version: 'mansion-activity-mapping-v1',
+    version: 'mansion-activity-mapping-v2',
+    activityId: 'wedding',
     status: 'exact_catalog_pair',
-    reviewStatus: 'interpretation_pending',
+    reviewStatus,
     reason: 'test',
     authorityId,
     clauseId: id,
@@ -45,6 +51,18 @@ describe('evidence conflict diagnostics without majority vote or scoring', () =>
     })
     expect(result.conflicts[0].witnesses.map((x) => x.ruleId)).toEqual(['p1', 'p2', 'n'])
     expect(input).toEqual(before)
+  })
+  it('clears reviewPending only when every witness interpretation is reviewed', () => {
+    const reviewed = (id: string, polarity: Evidence['polarity']) =>
+      row(id, polarity, 'edition-a', 'interpretation_reviewed')
+    expect(
+      analyzeEvidenceConflicts([reviewed('p', 'positive'), reviewed('n', 'negative')], context)
+        .conflicts[0].reviewPending,
+    ).toBe(false)
+    expect(
+      analyzeEvidenceConflicts([reviewed('p', 'positive'), row('n', 'negative')], context)
+        .conflicts[0].reviewPending,
+    ).toBe(true)
   })
   it('distinguishes disagreements across editions from an internal contradiction', () => {
     const result = analyzeEvidenceConflicts(

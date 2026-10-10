@@ -46,7 +46,17 @@ export function MansionEvidenceDetails({
         {row.sourceQuote && <blockquote lang="zh-Hant">{row.sourceQuote}</blockquote>}
         <p>Phạm vi: {ACTIVITY_LABELS[row.activityId] ?? row.sourcePhrase}.</p>
         {row.activityMapping?.reviewStatus === 'interpretation_pending' && (
-          <p>Cách hiểu hoạt động chưa được thẩm định.</p>
+          <p>
+            Cách hiểu hoạt động chưa được thẩm định.
+            {row.activityMapping.reviewNote && ` ${row.activityMapping.reviewNote}`}
+          </p>
+        )}
+        {row.activityMapping?.reviewStatus === 'interpretation_reviewed' && (
+          <p>
+            Thuật ngữ nguồn <span lang="zh-Hant">{row.activityMapping.reviewTerm}</span> đã rà soát
+            cách hiểu; vẫn chỉ tham khảo.
+            {row.activityMapping.reviewNote && ` ${row.activityMapping.reviewNote}`}
+          </p>
         )}
         {conditionsMatch && <p>Điều kiện Tú của ngày: khớp.</p>}
         {issue && <p>{REASONS[issue.reason] ?? 'Cần đối chiếu thêm trước khi diễn giải.'}</p>}

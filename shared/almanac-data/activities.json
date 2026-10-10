@@ -209,6 +209,20 @@
       "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §4.2",
       "reviewStatus": "product_spec",
       "updatedAt": "2026-10-05"
+    },
+    {
+      "id": "door_opening",
+      "label": "Trổ cửa / Làm cổng",
+      "group": "construction",
+      "personalSensitivity": 0.9,
+      "enabled": true
+    },
+    {
+      "id": "waterworks",
+      "label": "Dẫn nước / Khơi mương",
+      "group": "construction",
+      "personalSensitivity": 0.9,
+      "enabled": true
     }
   ]
 }

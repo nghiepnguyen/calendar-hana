@@ -1,0 +1,1063 @@
+{
+  "authorityId": "mansion-content-yuxia-1880-v1",
+  "mappingVersion": "mansion-activity-mapping-v2",
+  "review": "Single-reviewer interpretation freeze, 2026-10-10. Authored per clause from source quotes; the five clauses first left pending were settled by reading the full verse on the archive.org page images (婁 n60, 參 n64, 鬼 n67, 星 n69, 張 n70). Not generated from production; not a second human expert review; not a scoring authority.",
+  "glossary": {
+    "造作/修造/起造": "construction works in general",
+    "造龍軒": "building a fine hall (龍軒 is a laudatory epithet), praised as construction in general",
+    "嫁娶/婚姻": "marriage",
+    "埋葬/葬埋": "burial",
+    "修築墳墓/墳墓修築/修墳": "building or repairing a tomb",
+    "行船": "travelling by boat",
+    "開門": "opening/making a gate or door of a building, not opening a business",
+    "放水": "releasing/drawing water (drainage, channels), not boat travel",
+    "竪柱": "raising columns",
+    "造高堂/架高堂": "erecting a high hall",
+    "造新房": "building a new room/house",
+    "築牆": "building a (rammed-earth) wall",
+    "臨水造": "building beside water"
+  },
+  "verses": {
+    "婁": "婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧",
+    "參": "參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花",
+    "鬼": "鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女淚汪汪",
+    "星": "星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷",
+    "張": "張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蠶大利倉庫滿，百般利意自安然"
+  },
+  "items": [
+    {
+      "id": "角-1",
+      "quote": "角星造作主榮昌",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "角-2",
+      "quote": "嫁娶婚姻生貴子",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "嫁娶"
+    },
+    {
+      "id": "角-3",
+      "quote": "惟有埋葬不可用",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "角-4",
+      "quote": "起工修築墳墓地",
+      "activityId": "grave_repair",
+      "scope": "funeral_grave_repair",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "修築墳墓"
+    },
+    {
+      "id": "亢-1",
+      "quote": "亢星造作長房當",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "亢-2",
+      "quote": "埋葬定是虎狼傷",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "亢-3",
+      "quote": "嫁娶婚姻用此日",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "嫁娶"
+    },
+    {
+      "id": "氐-1",
+      "quote": "氐星造作主災凶",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "氐-2",
+      "quote": "埋葬不可用此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "氐-3",
+      "quote": "若是婚姻離別散",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "氐-4",
+      "quote": "行船必定遭沉沒",
+      "activityId": "water_travel",
+      "scope": "travel_water",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "行船"
+    },
+    {
+      "id": "房-1",
+      "quote": "房星造作田園進",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "房-2",
+      "quote": "埋葬若然逢此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "房-3",
+      "quote": "嫁娶嫦娥歸月殿",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "嫁娶"
+    },
+    {
+      "id": "心-1",
+      "quote": "心星造作大為凶",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "心-2",
+      "quote": "埋葬若還逢此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "心-3",
+      "quote": "婚姻若是逢此日",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "尾-1",
+      "quote": "尾星造作得天恩",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "尾-2",
+      "quote": "和合婚姻貴子孫",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "尾-3",
+      "quote": "埋葬若能依此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "尾-4",
+      "quote": "開門放水招田宅",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "尾-5",
+      "quote": "開門放水招田宅",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "箕-1",
+      "quote": "箕星造作主高強",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "箕-2",
+      "quote": "埋葬修墳大吉利",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "箕-3",
+      "quote": "埋葬修墳大吉利",
+      "activityId": "grave_repair",
+      "scope": "funeral_grave_repair",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "修墳"
+    },
+    {
+      "id": "箕-4",
+      "quote": "開門放水招財谷",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "箕-5",
+      "quote": "開門放水招財谷",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "斗-1",
+      "quote": "斗星造作主招財",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "斗-2",
+      "quote": "墳墓修築富貴家",
+      "activityId": "grave_repair",
+      "scope": "funeral_grave_repair",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "墳墓修築"
+    },
+    {
+      "id": "斗-3",
+      "quote": "開門放水招牛馬",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "斗-4",
+      "quote": "開門放水招牛馬",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "牛-1",
+      "quote": "牛星造作主災危",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "牛-2",
+      "quote": "嫁娶婚姻皆自損",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "嫁娶"
+    },
+    {
+      "id": "牛-3",
+      "quote": "若是開門并放水",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "牛-4",
+      "quote": "若是開門并放水",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "女-1",
+      "quote": "女星造作損婆娘",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "女-2",
+      "quote": "埋葬生災逢鬼怪",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "女-3",
+      "quote": "開門放水逢此日",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "女-4",
+      "quote": "開門放水逢此日",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "虛-1",
+      "quote": "虛星造作主災殃",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "虛-2",
+      "quote": "開門放水招災禍",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "虛-3",
+      "quote": "開門放水招災禍",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "危-1",
+      "quote": "危星不可造高堂",
+      "activityId": "",
+      "scope": "construction_high_hall",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造高堂"
+    },
+    {
+      "id": "危-2",
+      "quote": "埋葬若還逢此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "危-3",
+      "quote": "開門放水遭刑杖",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "危-4",
+      "quote": "開門放水遭刑杖",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "室-1",
+      "quote": "室星修造進田牛",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "修造"
+    },
+    {
+      "id": "室-2",
+      "quote": "開門放水招財帛",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "室-3",
+      "quote": "開門放水招財帛",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "室-4",
+      "quote": "和合婚姻生貴兒",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "室-5",
+      "quote": "埋葬若能依此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "壁-1",
+      "quote": "壁星造作進莊田",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "壁-2",
+      "quote": "婚姻自有人口進",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "壁-3",
+      "quote": "開門放水出英賢",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "壁-4",
+      "quote": "開門放水出英賢",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "壁-5",
+      "quote": "埋葬招財官品進",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "奎-1",
+      "quote": "奎星造作得禎祥",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "奎-2",
+      "quote": "若是埋葬陰卒死",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "奎-3",
+      "quote": "開門放水招災禍",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "奎-4",
+      "quote": "開門放水招災禍",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "婁-1",
+      "quote": "婁星竪柱起門庭",
+      "activityId": "",
+      "scope": "construction_columns",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "竪柱"
+    },
+    {
+      "id": "婁-2",
+      "quote": "婚姻進益生貴子",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "婁-3",
+      "quote": "放水開門皆吉利",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "婁-4",
+      "quote": "放水開門皆吉利",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "胃-1",
+      "quote": "胃星造作事如何",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "胃-2",
+      "quote": "埋葬進臨官祿位",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "胃-3",
+      "quote": "婚姻遇此家富貴",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "昴-1",
+      "quote": "昴星造作進田牛",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "昴-2",
+      "quote": "埋葬官災不得休",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "昴-3",
+      "quote": "開門放水招災禍",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "昴-4",
+      "quote": "開門放水招災禍",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "昴-5",
+      "quote": "婚姻不可逢此日",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "畢-1",
+      "quote": "畢星造作主光前",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "畢-2",
+      "quote": "埋葬此日添官職",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "畢-3",
+      "quote": "開門放水多吉慶",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "畢-4",
+      "quote": "開門放水多吉慶",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "畢-5",
+      "quote": "婚姻若能逢此日",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "觜-1",
+      "quote": "觜星造作有徒刑",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "觜-2",
+      "quote": "埋葬卒死多因此",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "參-1",
+      "quote": "參星造作旺人家",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "參-2",
+      "quote": "埋葬招疾喪黃沙",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "參-3",
+      "quote": "開門放水加官職",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "參-4",
+      "quote": "開門放水加官職",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "參-5",
+      "quote": "婚姻許定遭刑克",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "井-1",
+      "quote": "井星造作旺蠶田",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "井-2",
+      "quote": "埋葬須防驚卒死",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "井-3",
+      "quote": "開門放水招財帛",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "井-4",
+      "quote": "開門放水招財帛",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "鬼-1",
+      "quote": "鬼星起造卒人亡",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "起造"
+    },
+    {
+      "id": "鬼-2",
+      "quote": "埋葬此日官祿至",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "鬼-3",
+      "quote": "開門放水須傷死",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "鬼-4",
+      "quote": "開門放水須傷死",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "鬼-5",
+      "quote": "嫁娶夫妻不久長",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "嫁娶"
+    },
+    {
+      "id": "鬼-6",
+      "quote": "修土築牆傷產女",
+      "activityId": "",
+      "scope": "construction_wall",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "築牆"
+    },
+    {
+      "id": "柳-1",
+      "quote": "柳星造作主遭官",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造作"
+    },
+    {
+      "id": "柳-2",
+      "quote": "埋葬瘟疫多疾病",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "柳-3",
+      "quote": "開門放水招聾瞎",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "柳-4",
+      "quote": "開門放水招聾瞎",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "星-1",
+      "quote": "星宿日好造新房",
+      "activityId": "",
+      "scope": "construction_new_room",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造新房"
+    },
+    {
+      "id": "星-2",
+      "quote": "不可葬埋并放水",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "葬埋"
+    },
+    {
+      "id": "星-3",
+      "quote": "不可葬埋并放水",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "星-4",
+      "quote": "自要歸休別嫁郎",
+      "activityId": "",
+      "scope": "relationship_wedding",
+      "status": "not_operative",
+      "reviewStatus": "interpretation_reviewed"
+    },
+    {
+      "id": "張-1",
+      "quote": "張星日好造龍軒",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "造龍軒"
+    },
+    {
+      "id": "張-2",
+      "quote": "埋葬不久陞官職",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "張-3",
+      "quote": "開門放水招財帛",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "張-4",
+      "quote": "開門放水招財帛",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "張-5",
+      "quote": "婚姻和合福綿綿",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "翼-1",
+      "quote": "翼星不利架高堂",
+      "activityId": "",
+      "scope": "construction_high_hall",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "架高堂"
+    },
+    {
+      "id": "翼-2",
+      "quote": "埋葬若還逢此日",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "翼-3",
+      "quote": "婚姻此日不宜利",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    },
+    {
+      "id": "翼-4",
+      "quote": "開門放水家須破",
+      "activityId": "door_opening",
+      "scope": "door_opening",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "開門"
+    },
+    {
+      "id": "翼-5",
+      "quote": "開門放水家須破",
+      "activityId": "waterworks",
+      "scope": "waterworks",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "放水"
+    },
+    {
+      "id": "軫-1",
+      "quote": "軫星臨水造龍宮",
+      "activityId": "",
+      "scope": "construction_waterside",
+      "status": "unmapped",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "臨水造"
+    },
+    {
+      "id": "軫-2",
+      "quote": "埋葬文星來照助",
+      "activityId": "burial",
+      "scope": "funeral_burial",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "埋葬"
+    },
+    {
+      "id": "軫-3",
+      "quote": "婚姻龍子出龍宮",
+      "activityId": "wedding",
+      "scope": "relationship_wedding",
+      "status": "exact_catalog_pair",
+      "reviewStatus": "interpretation_reviewed",
+      "reviewTerm": "婚姻"
+    }
+  ]
+}

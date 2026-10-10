@@ -32,6 +32,8 @@ export const ACTIVITY_SCOPES = {
   demolition: ['construction_demolition'],
   water_travel: ['travel_water'],
   grave_repair: ['funeral_grave_repair'],
+  door_opening: ['door_opening'],
+  waterworks: ['waterworks'],
 } as const satisfies Record<string, readonly string[]>
 
 export type ActivityId = keyof typeof ACTIVITY_SCOPES
