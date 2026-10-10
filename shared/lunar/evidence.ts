@@ -1,3 +1,5 @@
+import type { RuleActivityMapping } from './ruleActivityMapping'
+
 export const ENGINE_VERSION = '1.2.0'
 export type EvidenceStatus =
   'applied' | 'informational' | 'conflict' | 'no_evidence' | 'not_audited'
@@ -11,6 +13,8 @@ export interface Evidence {
   sourceRef: string
   /** Original source excerpt and explicit operands, when a content authority supplies them. */
   sourceQuote?: string
+  /** Product interpretation review, independent from source confidence and scoring. */
+  activityMapping?: RuleActivityMapping & { authorityId: string; clauseId: string }
   conditions?: readonly { operand: string; equals: number }[]
   exceptions?: readonly string[]
   confidence: 'high' | 'medium' | 'low'

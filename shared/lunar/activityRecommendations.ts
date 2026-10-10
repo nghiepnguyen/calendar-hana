@@ -4,7 +4,7 @@ import goodGodsData from '../almanac-data/good-gods.json'
 import trucData from '../almanac-data/truc.json'
 import manifest from '../almanac-data/manifest.json'
 import overrides from '../almanac-data/overrides.json'
-import patterns from '../almanac-data/mansion-patterns.json'
+import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
 
@@ -67,10 +67,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         source,
         ruleId,
         activityId: activity.id,
-        scope:
-          patterns.items.find(
-            (pattern) => pattern.activityId === activity.id && pattern.scope !== 'travel_road',
-          )?.scope ?? activity.id,
+        scope: getActivityScope(activity.id) ?? activity.id,
         label,
         sourcePhrase: label,
         sourceRef: `shared/almanac-data/${source === 'truc' ? 'truc' : source === 'good_god' ? 'good-gods' : 'bad-gods'}.json#${ruleId}`,
