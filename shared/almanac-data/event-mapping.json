@@ -177,11 +177,6 @@
           "multiplier": 1
         },
         {
-          "activityId": "business",
-          "role": "supporting",
-          "multiplier": 0.5
-        },
-        {
           "activityId": "finance",
           "role": "supporting",
           "multiplier": 0.3
@@ -200,7 +195,7 @@
       ],
       "sourceRef": "spec-chon-ngay-mapping-scoring-v1.0.0 §6.2",
       "reviewStatus": "product_spec",
-      "updatedAt": "2026-10-05"
+      "updatedAt": "2026-10-10"
     },
     "groundbreaking": {
       "severity": "very_high",
