@@ -10,6 +10,8 @@ import {
 } from './eventMapping'
 import { ENGINE_VERSION, type Evidence } from './evidence'
 import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
+import { resolveVol10, type Vol10Resolution } from './xiejiVol10Resolution'
+import trucData from '../almanac-data/truc.json'
 
 export { ENGINE_VERSION } from './evidence'
 export type Classification =
@@ -40,6 +42,11 @@ export interface EventEvaluation {
   warnings: string[]
   /** Source/context conflict diagnostics; do not alter scoring or classification. */
   conflictAnalysis: ConflictAnalysis
+  /** 協紀 卷十 conclusion per present source-locked 凶 and event activity; never affects score. */
+  classicalResolution: {
+    version: 'xieji-vol10-v1'
+    items: (Vol10Resolution & { productDelta: number; diverges: boolean })[]
+  }
 }
 export const CRITERION_LABELS: Record<EventCriterion, string> = {
   calendar_validity: 'Ngày hợp lệ',
@@ -79,6 +86,7 @@ export function evaluateEventDay(
     contributions: [],
     warnings: [],
     conflictAnalysis: analyzeEvidenceConflicts([], {}),
+    classicalResolution: { version: 'xieji-vol10-v1', items: [] },
   }
   const profile = getEventProfile(eventId)
   if (!profile) return { ...base, warnings: ['Chưa có mapping cho sự kiện này.'] }
@@ -232,5 +240,52 @@ export function evaluateEventDay(
     warnings,
     // Mansion, Trực and source-locked/day-rule gods; legacy rows stay unresolved (no authority).
     conflictAnalysis: analyzeEvidenceConflicts(unique, day.selectionContext),
+    classicalResolution: {
+      version: 'xieji-vol10-v1',
+      items: resolveVol10(
+        {
+          monthJianBranch: day.selectionContext.MONTH_JIAN_BRANCH,
+          dayStem: day.selectionContext.DAY_STEM,
+          dayBranch: day.selectionContext.DAY_BRANCH,
+          officerId: trucData.calculation.order[day.officer.index],
+          presentGods: new Set(day.auditedGodIds),
+          unknownGods: new Set(day.unknownGodIds),
+        },
+        [...new Set(roles.map((role) => role.activityId))],
+      ).map((item) => {
+        // Product rules standing for the same 凶: its Trực, and for 月破 also the subsumed god.
+        const sources: Record<string, { truc?: string; god?: string }> = {
+          yue_jian: { truc: 'kien' },
+          yue_po: { truc: 'pha', god: 'nguyet_pha' },
+          ping_ri: { truc: 'binh' },
+          shou_ri: { truc: 'thu' },
+          bi_ri: { truc: 'be' },
+          jie_sha: { god: 'kiep_sat' },
+        }
+        // After 從X論 the deciding rule's product sources count too (e.g. 收日 → 刼煞).
+        const srcs = [sources[item.entry], item.via ? sources[item.via] : undefined].filter(
+          (x): x is { truc?: string; god?: string } => Boolean(x),
+        )
+        const productDelta = unique
+          .filter(
+            (row) =>
+              row.activityId === item.activityId &&
+              row.status === 'applied' &&
+              srcs.some(
+                (src) =>
+                  (src.god !== undefined && row.ruleId === src.god) ||
+                  (src.truc !== undefined &&
+                    row.source === 'truc' &&
+                    row.ruleId === `${src.truc}:${item.activityId}`),
+              ),
+          )
+          .reduce((sum, row) => sum + row.appliedDelta, 0)
+        const diverges =
+          (productDelta < 0 &&
+            (item.verdict === 'not_avoided' || item.verdict === 'no_annotation')) ||
+          (productDelta >= 0 && item.verdict === 'avoid')
+        return { ...item, productDelta, diverges }
+      }),
+    },
   }
 }

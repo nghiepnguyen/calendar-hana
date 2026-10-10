@@ -46,6 +46,9 @@ export interface Almanac {
   hours: DayHour[]
   /** Numeric operands for evidence diagnostics (no scoring use). */
   selectionContext: Record<string, number>
+  /** Gods present by a source-locked or cited day rule; and gods whose presence is undecidable today. */
+  auditedGodIds: string[]
+  unknownGodIds: string[]
 }
 
 const CACHE_LIMIT = 2000
@@ -156,6 +159,9 @@ function computeAlmanac(date: SolarDateString): Almanac {
       godPresence,
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
+    auditedGodIds: Object.keys(godPresence),
+    // Trigram 天德 tokens (坤/乾/艮/巽) are not normalized: presence of 天德/天德合 is undecidable.
+    unknownGodIds: tianDeDirect ? [] : ['thien_duc', 'thien_duc_hop'],
     selectionContext: {
       MANSION_INDEX: mansion.index,
       OFFICER_INDEX: officer.index,
