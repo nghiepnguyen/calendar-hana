@@ -1,8 +1,8 @@
 # PROJECT_CONTEXT.md
 
-> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau release Activity interpretation review (PR #6) ngày 2026-10-10.
+> Handoff cập nhật 2026-10-10 (giờ Việt Nam), sau thread PR #6–#10: activity interpretation review, Sát Chủ tháng 7/8, nhân chứng in Ngọc Hạp Chánh Tông.
 > Đây là tài liệu trạng thái và quyết định của project; chỉ dẫn trong tài liệu không thay thế yêu cầu mới của người dùng.
-> Chat mới đọc phần 21–24, 29 và 30 trước, rồi dùng các phần authority bên dưới khi cần.
+> Chat mới đọc phần 21, 23, 24 và 31 trước (31 là tổng kết thread mới nhất), rồi dùng các phần authority bên dưới khi cần.
 > Các phần Phase 4C/4D/5 được kế thừa từ context trước; Phase 6/7 và release evidence được kiểm chứng trong thread này.
 
 
@@ -65,11 +65,12 @@ production.
 11. Phase 6 — Thái Tuế / Tuế Phá / Tam Sát ✅ CLOSED & DEPLOYED
 12. Phase 7 — 28 Tú 宜/忌 content lock ✅ CLOSED & DEPLOYED (trong bản Ngọc Hạp 1880 đã chọn)
 13. Activity taxonomy / explicit mansion mapping / conflict diagnostics / explainability ✅ MERGED & DEPLOYED; giới hạn product slice ở phần 29.
-14. Activity interpretation review + door_opening/waterworks ✅ MERGED & DEPLOYED (PR #6); phần 30.
+14. Activity interpretation review + door_opening/waterworks ✅ MERGED & DEPLOYED (PR #6); phần 30–31.
+15. Sát Chủ tháng 7/8 thống nhất calendar ↔ personal ✅ MERGED & DEPLOYED (PR #8); phần 31. Sát Chủ vẫn SOURCE_DEPENDENT.
 
 ### Next — đề xuất, chưa có scope triển khai mới được duyệt
 
-Review narrow activity semantics và mapping interpretation; bổ sung context Trực/thần và audit conflict-resolution policy khi có scope được duyệt. Taxonomy, mapping contract, conflict diagnostics và explainability đã deploy; chưa chứng nhận full conflict resolution hoặc scoring authority mới. Chưa tự đặt phase number mới.
+Kiểm tra lệch trang scan 觜/參 (note đã có); audit context Trực/cát/hung thần (có thể dùng Ngọc Hạp Chánh Tông làm nhân chứng phụ); resolution policy. Mapping 28 Tú đã review 115/115; scoring vẫn tắt. Chưa tự đặt phase number mới. Danh sách đầy đủ ở phần 23.
 
 ### Engine
 
@@ -1343,9 +1344,10 @@ Phase 7 28 Tú content, edition 1880 CLOSED & DEPLOYED
 Activity evidence product slice    MERGED & DEPLOYED (PR #5)
 Activity interpretation review     MERGED & DEPLOYED (PR #6)
 Sát Chủ months 7/8 alignment      MERGED & DEPLOYED (PR #8)
+Docs: 觜/參 note (PR #9), handoff tracked (PR #10)
 ```
 
-Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ; Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
+Closure có phạm vi: Phase 5 không chứng nhận Sát Chủ (PR #8 chỉ thống nhất bảng tháng 7/8 giữa hai layer theo biến thể đã chọn); Phase 4D không chứng nhận mọi generic star; Phase 7 không chứng nhận mọi edition và không bật scoring.
 
 Repo checkout hiện tại: `main`, HEAD và `origin/main` khi cập nhật handoff:
 
@@ -1549,29 +1551,33 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 
 ### Những gì chưa được chứng nhận
 
-1. **Sát Chủ:** primary provenance, competing variants, leap-month semantics chưa giải quyết. Legacy Sát Chủ Âm lunar-month behavior giữ nguyên, migration blocked.
+1. **Sát Chủ:** bảng tháng 7/8 đã thống nhất calendar ↔ personal theo bài Hán văn (PR #8), nhưng văn bản gốc tiền hiện đại chưa tìm thấy; nhân chứng in duy nhất là sách biên soạn hiện đại; sub-sources “Thọ-Mai”, “Lưu-Thị” chưa định vị; **leap-month semantics UNRESOLVED** (product dùng tháng chính); month basis giữ lunar. Vẫn `SOURCE_DEPENDENT`. Không suy từ Thụ Tử, không chuyển Month Jian.
 2. **Thiên Đức/Hợp directional tokens:** 坤/乾/艮/巽 chưa có normalization provenance hoàn chỉnh; partial legacy giữ nguyên ở các rows này.
 3. **Generic stars:** `byMonth` blanket lunar assumption, modern-derived table, meanings/provenance chưa toàn bộ source-lock. Không tự đổi tất cả sang Month Jian.
 4. **Duplicate Hoàng/Hắc concepts:** không để legacy duplicate ghi đè Phase 4C authority.
-5. **Phase 6 product/personal:** calendar annual directions chưa đưa vào calendar UI; personal annual afflictions/lunar conventions được bảo toàn chứ chưa được Phase 6 chứng nhận. Không gộp Hai layer.
-6. **Phase 7 coverage:** other editions, old tailoring/study/business/bed/travel/boat claims chưa được selected poems hỗ trợ; vẫn UNKNOWN đối với authority này. Không kết luận tất cả tradition đều sai.
-7. **Taxonomy/mapping:** door opening, waterworks, narrow construction, boat building vs launching cần activity IDs/schema/scope riêng nếu được triển khai.
-8. **Scoring/conflict resolver:** mansion conflict diagnostics đã deploy, nhưng chưa có production-wide audited resolution policy; đã tồn tại product weights, caps, event profiles, local conflict behavior, nhưng không coi đó là classical global scoring authority. Không bật mansion scoring sau content closure một cách tự động.
-9. **Documentation release headers:** audit docs Phase 6/7 còn status/checklists trước deploy (phần 21); cần docs-only reconciliation nếu muốn repo docs phản ánh release.
+5. **Phase 6 product/personal:** calendar annual directions chưa đưa vào calendar UI; personal annual afflictions/lunar conventions được bảo toàn chứ chưa được Phase 6 chứng nhận. Không gộp hai layer.
+6. **Phase 7 coverage:** other editions, old tailoring/study/business/bed/travel/boat claims chưa được selected poems hỗ trợ; vẫn UNKNOWN đối với authority này.
+7. **Taxonomy/mapping:** door_opening/waterworks đã thêm (PR #6). Còn gap: 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses) chưa có ID; đóng thuyền/hạ thủy không có clause trong subset 1880 nên không có căn cứ định nghĩa; lexical “hạ thủy” → water_travel không được chứng nhận.
+8. **Interpretation review là single-reviewer (agent):** Golden diễn giải v2 chưa có thẩm định chuyên gia thứ hai; `interpretation_reviewed` không phải quyền chấm điểm.
+9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. Thêm rule cần provenance riêng.
+10. **Scoring/conflict resolver:** diagnostics đã deploy, chưa có audited resolution policy; mansion scoring vẫn tắt (`mansion28ScoringEnabled: false`).
+11. **Lệch trang scan 觜/參 (OPEN):** dataset 觜 pdfPage 65 → `n64`, 參 66 → `n65`, có vẻ hoán đổi; quote đúng. Nếu xác nhận: `GOLDEN_BUG` + sửa dataset; ảnh hưởng nhãn “Bản scan · trang N” và SEO “Ngọc Hạp 1880 · trang N”. Xem `docs/audits/mansion-scan-page-check.md`.
+12. **Tú 角:** scan có thể ghi 葬埋 thay vì 埋葬 trong 惟有…不可用; chưa đối chiếu crop độ phân giải cao.
+13. **Documentation release headers:** audit docs Phase 6/7 và verification docs còn header/checklist trước release; cần docs-only reconciliation nếu muốn.
+14. **UI production chưa kiểm tra bằng browser** cho PR #6 (disclosure, nhãn activity mới); smoke chỉ dựa trên HTML trang ngày.
 
 ### Next steps đề xuất cho chat mới (chưa tự implement)
 
-1. Đọc handoff và phần 29; kiểm tra latest main/release, tránh redo Phase 6/7 hoặc activity slice đã deploy.
-2. Dùng inventory/acceptance trong bốn verification docs trong `docs/verification/` (danh sách chính xác ở phần 29) làm baseline; các header trước merge là historical snapshots.
-3. Review narrow activity semantics: door opening, waterworks, narrow construction, boat building vs launching; chỉ thêm ID/scope khi source và acceptance rõ.
-4. Tách lexical normalization, source evidence, taxonomy interpretation và scoring policy. Freeze independent Golden trước semantic migration; decision baseline không phải scoring authority. Empty ID/UNKNOWN không tự thành permission.
-5. Audit context/conditions/exceptions cho Trực/cát/hung thần trước khi migrate các nguồn đó vào diagnostics.
-6. Audit resolution policy theo cùng activity/scope/context và source; không majority vote hoặc tự chọn winner giữa các phái.
-7. Triển khai scope mới khi user yêu cầu, từ latest main trên nhánh phù hợp. Scoring mới cần scope/authority/policy audit riêng; chưa gọi đây là Phase 8.
-8. Giữ zero mansion scoring, core astronomy, exact boundaries và personal separation.
-9. Local validation → GitHub branch/PR gates → authorized merge → main CI → actual deploy; ghi production smoke đúng release được kiểm tra.
+1. Đọc phần 21, 23, 24, 31; `git pull` main; kiểm tra PR #10 đã merge chưa.
+2. Kiểm tra 觜/參 trên `page/n63…n66.jpg` độ phân giải gốc (cùng lúc 角 葬埋/埋葬); nếu xác nhận, sửa dataset + Golden Phase 7 trong một change có evidence, cập nhật test nhãn trang.
+3. Quyết định có ID riêng cho xây dựng hẹp không (mỗi loại chỉ 1–2 clause).
+4. Audit context/conditions của Trực/cát/hung thần trước khi đưa vào diagnostics; Ngọc Hạp Chánh Tông tr. 110–127 là nhân chứng phụ (mỗi sao cần provenance riêng).
+5. Sát Chủ: tìm văn bản Hán gốc hoặc “Thọ-Mai”/“Lưu-Thị”; quyết định leap-month rule nếu có nguồn.
+6. Resolution policy riêng; không majority vote, không tự mở scoring. Scoring mới cần authority/policy audit riêng; chưa gọi Phase 8.
+7. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập.
+8. Quy trình: local validation → branch `audit/**` hoặc `feature/**` (CI chạy trên push) → PR gates → **user cho phép merge** → main CI → deploy → production smoke đúng ngày bị ảnh hưởng → cập nhật handoff qua PR.
 
-User request mới nhất là cập nhật handoff sau deploy PR #5. Không có implementation task hoặc approval cho next phase đang tồn đọng.
+User request mới nhất: tổng kết thread vào handoff này. Không có implementation task đang tồn đọng.
 
 ------------------------------------------------------------------------
 
@@ -1584,11 +1590,15 @@ Handoff hiện tại: `PROJECT_CONTEXT.md` ở repo root, **tracked trong git t�
 - Local `.gitignore` edits và untracked `.ignore` đã tồn tại trước Phase 7; được giữ nguyên, không đưa vào bất kỳ PR nào (#4–#10).
 - `graphify-out/` có generated modifications/cache; `graph.html` có thể bị xoá do >5000-node visualization limit. Không phải app regression; không commit generated churn hoặc reset user state.
 - `graft/` indexing corpus được ignore; không đưa vào product change.
-- Graph có 5822 nodes, 8340 edges, 765 communities tại update gần nhất; built commit header a69e8df7.
+- Graph có 5908 nodes, 8424 edges, 790 communities tại update gần nhất (sau PR #8).
 - Theo AGENTS.md: đọc `graphify-out/GRAPH_REPORT.md` trước source/search; wiki index nếu tồn tại thì dùng wiki; cross-module questions ưu tiên graphify query/path/explain; sau code edits `graphify update .` AST-only.
 - Graft: ask --source để locate/understand; callers để impact; grep cho exhaustive symbol usage. Không thay graph navigation bằng quét toàn bộ repo không cần thiết.
-- Không spawn subagents trong thread này; không tự delegate nếu user/applicable instructions chưa yêu cầu.
-- Temporary primary scan `/tmp/calendar-hana-yuxia-1880.pdf` và rendered images là research cache, không phải durable dependency. Có thể mất khi đổi session; re-download primary archive và verify hash nếu cần đọc lại.
+- Không spawn subagents trong các thread gần đây; không tự delegate nếu user/applicable instructions chưa yêu cầu.
+- **Không chạy `npx prettier --write` theo glob rộng** (vd. `shared/lunar/*.ts`): nhiều file legacy (vd. `mansions.ts`) chưa format, sẽ sinh diff lớn ngoài phạm vi. Chỉ format file đã sửa.
+- Branch prefix: CI chạy trên push cho `main`, `feature/**`, `audit/**`; `fix/**`/`docs/**` chỉ có CI khi mở PR.
+- Temporary primary scan `/tmp/calendar-hana-yuxia-1880.pdf` và rendered images là research cache, không phải durable dependency. Trang lẻ bản 1880 tải trực tiếp: `https://archive.org/download/20241205_20241205_0310/page/nN.jpg` (N = pdfPage − 1).
+- Nhân chứng in *Ngọc Hạp Chánh Tông*: file user `~/Downloads/Ngoc hap chanh tong.pdf` (SHA-1 `95c29e2fd7c4b418555287a4dd1d2fbbfc3ebaae`, 69 ảnh JPEG, không text layer). Trích ảnh bằng Python (tìm stream `/Subtype /Image` + `DCTDecode`; máy không có PIL/poppler/mutool); cắt bằng `sips -c H W --cropOffset Y X` (offset `0 0` bị bỏ qua → dùng `1 1`).
+- User specs ở `~/Downloads/` (không trong repo): `Spec Ngày Thụ Tử & Sát Chủ.md` (chọn bản Hán văn Sát Chủ, ghi dị bản Nôm), `Spec tính phạm Thái Tuế, Tuế Phá, Tam Sát, Sát Chủ.md` (bảng SAT_CHU_AM/DUONG).
 
 Commands:
 
@@ -1615,7 +1625,7 @@ Môi trường sandbox có thể cần escalation cho `.git`, network hoặc bro
 
 Starter prompt gợi ý:
 
-> Đọc PROJECT_CONTEXT.md. Phase 6/7 đã CLOSED & DEPLOYED; activity taxonomy/mapping contract/conflict diagnostics/explainability đã deploy trên main a69e8df (PR #5). Lên plan review narrow mapping interpretation và context/resolution policy còn pending từ production hiện tại. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy hoặc tự thay personal conventions. Inventory và acceptance trước khi code.
+> Đọc PROJECT_CONTEXT.md (phần 21, 23, 24, 31). Main đã có PR #6–#10: mapping 28 Tú review 115/115, door_opening/waterworks, Sát Chủ tháng 7/8 thống nhất. Việc tiếp theo: kiểm tra lệch trang scan 觜/參 theo `docs/audits/mansion-scan-page-check.md`, rồi audit context Trực/cát/hung thần. Giữ 28 Tú informational/scoreDelta=0, không reopen astronomy, không đổi personal conventions khi chưa có quyết định. Inventory và acceptance trước khi code.
 
 
 ## 25. Activity taxonomy — snapshot implementation 10/10/2026 (đã deploy, xem phần 29)
@@ -1751,10 +1761,137 @@ Yêu cầu user: “làm phase tiếp theo”, sau đó “thêm door_opening v�
 - Note kiểm tra sau 觜/參: [PR #9](https://github.com/nghiepnguyen/calendar-hana/pull/9) MERGED (`4ba3793`), docs only: `docs/audits/mansion-scan-page-check.md` — trạng thái OPEN, chờ kiểm tra ảnh độ phân giải gốc.
 - `PROJECT_CONTEXT.md` đưa vào git qua nhánh `docs/project-context`.
 
-### Việc mở / branch local (tại thời điểm release PR #6)
+### Việc mở tại thời điểm release PR #6 — đã xử lý
 
-- `fix/explainability-test-date` (local, chưa push): commit `2811055` chỉ sửa comment test (2026-10-11 là Tú Tinh, không phải Trương).
-- `audit/sat-chu-printed-witness` (local, chưa push): commit `1b42703` `docs/audits/sat-chu-ngoc-hap-chanh-tong-witness.md` — nhân chứng in *Ngọc Hạp Chánh Tông* (Hà Tấn Phát; PDF user cung cấp, SHA-1 95c29e2f…). Phát hiện: **calendar `stars.data.ts` Sát Chủ (7 Sửu / 8 Hợi) mâu thuẫn personal `SAT_CHU_AM` (7 Hợi / 8 Sửu)**; sách khớp personal; “Tháng Sát-Chủ (Lưu-Thị)” khớp `SAT_CHU_DUONG`; Thọ Tử can-chi hẹp hơn (CONVENTION_DIFFERENCE). Chưa đổi code; cần quyết định riêng.
-- Lệch trang scan 觜/參: dataset ghi 觜 p65 / 參 p66 nhưng sách đóng 參 n64 trước 觜 n65 → link scan hai Tú hoán đổi; sửa cần dataset + Golden Phase 7 (GOLDEN_BUG), chờ user.
-- Tú 角: scan có thể là 葬埋 thay vì 埋葬; cần đối chiếu crop độ phân giải cao.
-- Còn pending: ID riêng cho xây dựng hẹp; audit context Trực/cát/hung thần; resolution policy; scoring vẫn tắt.
+Tất cả đã đóng hoặc chuyển sang phần 23/31: comment test (PR #7), nhân chứng Sát Chủ + sửa tháng 7/8 (PR #8), note 觜/參 (PR #9), handoff vào git (PR #10).
+
+------------------------------------------------------------------------
+
+## 31. Tổng kết thread 10/10/2026 — PR #6 đến #10
+
+Chuỗi yêu cầu user: “đọc PROJECT_CONTEXT.md làm phase tiếp theo” → “thêm door_opening và waterworks, xử lý 5 câu còn chờ” → “cho phép merge” (PR #6) → đọc PDF *Ngọc Hạp Chánh Tông* → ghi audit docs-only → mở nhánh audit xử lý Sát Chủ 7/8, push nhánh sửa comment, tạo note 觜/參 → đọc lại PDF ở độ phân giải gốc → “cho phép merge” (PR #8), mở + merge PR #9 → đưa PROJECT_CONTEXT.md vào git (PR #10) → tổng kết handoff.
+
+### Release và PR
+
+| PR | Nội dung | Trạng thái | Merge commit | Deploy |
+|---|---|---|---|---|
+| #6 | Mansion interpretation review v2 + door_opening/waterworks + 5 clauses | MERGED & DEPLOYED | `48fa260` | 09:46:35 VN, main run 38018038166 (exact-tree reuse) |
+| #7 | Sửa comment test (2026-10-11 là Tú Tinh) | MERGED (user tự mở/merge) | `3b020b9` | — |
+| #8 | Sát Chủ tháng 7/8 + nhân chứng in + re-read | MERGED & DEPLOYED | `74d6c64` | 10:37:13 VN, main run 38020554586 (full tests) |
+| #9 | Note kiểm tra trang scan 觜/參 (docs) | MERGED | `4ba3793` | — |
+| #10 | Đưa PROJECT_CONTEXT.md vào git (docs) | OPEN khi viết; merge sau khi CI xanh | — | — |
+
+Production smoke (HTML `lich.thanhnghiep.top/day/<date>`): 2026-10-11 Tinh “Nên kiêng: Chôn cất; Dẫn nước.” (không còn Cưới hỏi); 2026-10-12 Trương, 2026-10-05 Tất có “Mở cửa; Dẫn nước”; 2026-09-12 có “Sát Chủ” trong Sao xấu; 2026-09-22 không còn.
+
+### Decisions
+
+1. **Scope phase tiếp theo** = review diễn giải mapping 28 Tú (next step #3–4 cũ); không thêm scoring, không đổi dataset nguồn.
+2. **Reviewed theo thuật ngữ, không theo scope:** clause chỉ `interpretation_reviewed` khi quote chứa thuật ngữ nguồn đã rà soát của chính scope; thuật ngữ không lan sang scope khác.
+3. **開門 = trổ cửa/làm cổng công trình**, không phải khai trương (開市). **放水 = dẫn/tháo nước, khơi mương**, không phải đi thuyền. Thêm ID `door_opening`, `waterworks` (nhóm construction, personalSensitivity 0.9), không gắn event profile.
+4. **Không sửa source lock/Golden Phase 7** để gán ID mới: lớp mapping gán `activityId` cho clause có ID rỗng ở scope `catalogAdded`; migration khai báo tường minh (`EXPECTED_AUTHORITY_MIGRATION_CHANGE`) trong test.
+5. **5 clause chờ** đọc đủ bài trên scan 1880: 張-1 造龍軒 → construction (龍軒 là mỹ từ); 參-5 婚姻許定 → wedding, không suy nạp thái; 婁-1 竪柱起門庭 → construction_columns (cửa đã có clause riêng); 鬼-6 修土築牆 → construction_wall (tường đất, không phải động thổ); 星-4 自要歸休別嫁郎 → **not_operative** (hậu quả của 不可葬埋并放水), bỏ khỏi evidence.
+6. **Decision baseline không recapture:** hash 1095 ngày × 11 event chỉ tính 29 activity cũ; activity mới assert riêng `no_evidence`.
+7. **Ngọc Hạp Chánh Tông** (Hà Tấn Phát) xếp loại nhân chứng in thứ cấp hiện đại; dùng làm witness, không làm authority chính.
+8. **Sát Chủ 7/8:** calendar `stars.data.ts` theo dị bản Nôm (7 Sửu / 8 Hợi) trong khi project đã chọn bản Hán văn (spec owner, `SAT_CHU_AM` commit `38b5352`). Phân loại `ENGINE_BUG` ở calendar layer (hai layer cùng rule đã chọn nhưng lệch); dị bản Nôm ghi là rejected variant, không bị xoá. Sửa calendar thành 7 Hợi / 8 Sửu.
+9. **Thọ Tử can-chi trong sách** (một ngày can-chi/tháng) = `CONVENTION_DIFFERENCE`, không đổi Phase 5.
+10. **Lệch trang 觜/參:** chỉ ghi note để kiểm tra sau (user chọn), không sửa dataset/Golden.
+11. **PROJECT_CONTEXT.md** chuyển sang tracked trong git (user yêu cầu); cập nhật qua PR.
+
+### Thuật toán
+
+`resolveMansionActivityMapping(clause: {id, quote, activityId, scope})` (`shared/lunar/ruleActivityMapping.ts`):
+
+1. Scope phải có trong bảng `mappings`, nếu không → throw `Undeclared mansion activity mapping`.
+2. `activityId` của clause phải bằng `mapping.activityId`, trừ trường hợp scope `catalogAdded` và clause có ID rỗng; ID khác rỗng phải `resolveActivityScope(...) === 'exact'`; sai → throw `Incompatible mansion activity mapping`.
+3. Clause id trong `nonOperativeClauses` → `{activityId: '', status: 'not_operative', reviewStatus: 'interpretation_reviewed', reviewNote}`.
+4. Tìm thuật ngữ đầu tiên trong `mapping.terms` có trong quote. Không có → `interpretation_pending` + note chung. Có → `interpretation_reviewed` + `reviewTerm` (+ `reviewNote` từ `clauseNotes` nếu có).
+5. `status` = `exact_catalog_pair` nếu mapping có ID, ngược lại `unmapped`.
+
+`getMansionContentEvidence` dùng `flatMap`: clause `not_operative` không sinh evidence; evidence lấy `activityId` từ mapping (không từ source lock). `analyzeEvidenceConflicts`: `reviewPending` chỉ false khi mọi witness `interpretation_reviewed` (logic không đổi).
+
+Sát Chủ (ngày): `chi_ngày === SAT_CHU[lunarMonth − 1]`, bảng `[Tỵ, Tý, Mùi, Mão, Thân, Tuất, Hợi, Sửu, Ngọ, Dậu, Dần, Thìn]` = `[5,0,7,3,8,10,11,1,6,9,2,4]`; tháng nhuận dùng tháng chính (legacy, chưa có nguồn).
+
+### Data / schema
+
+`RuleActivityMapping` (v2):
+
+```ts
+{
+  version: 'mansion-activity-mapping-v2'
+  activityId: string                      // ID diễn giải; '' nếu gap/not_operative
+  status: 'exact_catalog_pair' | 'unmapped' | 'not_operative'
+  reviewStatus: 'interpretation_reviewed' | 'interpretation_pending'
+  reason: string                          // ranh giới diễn giải của scope
+  reviewTerm?: string                     // thuật ngữ nguồn tìm thấy trong quote
+  reviewNote?: string                     // cách đọc theo đủ bài thơ
+}
+```
+
+Bảng thuật ngữ đã rà soát:
+
+| Scope | Terms | activityId |
+|---|---|---|
+| construction_general | 造作, 修造, 起造, 造龍軒 | construction |
+| relationship_wedding | 嫁娶, 婚姻 | wedding |
+| funeral_burial | 埋葬, 葬埋 | burial |
+| funeral_grave_repair | 修築墳墓, 墳墓修築, 修墳 | grave_repair |
+| travel_water | 行船 | water_travel |
+| door_opening | 開門 | door_opening (catalogAdded) |
+| waterworks | 放水 | waterworks (catalogAdded) |
+| construction_columns | 竪柱 | '' |
+| construction_high_hall | 造高堂, 架高堂 | '' |
+| construction_new_room | 造新房 | '' |
+| construction_wall | 築牆 | '' |
+| construction_waterside | 臨水造 | '' |
+
+Kết quả: 115 clauses = 108 exact_catalog_pair / 6 unmapped / 1 not_operative; 115 reviewed; evidence 114 rows (19 door_opening, 20 waterworks). Catalog `activities.json` 31 IDs; `ACTIVITY_SCOPES` thêm `door_opening: ['door_opening']`, `waterworks: ['waterworks']`.
+
+Golden diễn giải v2: `{authorityId, mappingVersion, review, glossary, verses{婁,參,鬼,星,張}, items[{id, quote, activityId, scope, status, reviewStatus, reviewTerm?}]}`.
+
+Golden Sát Chủ v1: `{authorityId: 'sat-chu-ngay-folk-v1', status: 'SOURCE_DEPENDENT', selectedVariant: 'HAN_VAN_VERSE', verse, witnesses[], rejectedVariants[{id:'NOM_VERSE', rows:{7:'Sửu',8:'Hợi'}}], operands: ['LUNAR_MONTH','DAY_BRANCH'], monthBasis, leapMonthSemantics: 'UNRESOLVED…', globalScoreAllowed: false, inferenceFromThuTuForbidden: true, rows[{month, dayBranch, dayBranchHan, chi, verseWord}]}`.
+
+### File đã tạo
+
+- `shared/lunar/audit-fixtures/mansion-activity-interpretation-golden-v2.json` (v1 tạo rồi xoá trước release).
+- `shared/lunar/audit-fixtures/sat-chu-golden-v1.json`.
+- `shared/lunar/satChuAuthority.test.ts`.
+- `docs/verification/activity-interpretation-review.md`.
+- `docs/audits/sat-chu-ngoc-hap-chanh-tong-witness.md` (nhân chứng in, decision, re-read verification).
+- `docs/audits/mansion-scan-page-check.md` (note 觜/參, 角).
+- `PROJECT_CONTEXT.md` đưa vào git.
+
+### File đã sửa
+
+- `shared/lunar/ruleActivityMapping.ts` (contract v2), `shared/lunar/mansionContentAuthority.ts` (flatMap, activityId từ mapping).
+- `shared/almanac-data/activities.json` (+2 ID), `shared/lunar/activityTaxonomy.ts` (+2 scope).
+- `src/views/DayView/MansionEvidenceDetails.tsx` (hiện `reviewTerm`/`reviewNote`).
+- `shared/lunar/stars.data.ts` (Sát Chủ tháng 7/8 + comment).
+- Tests: `ruleActivityMapping.test.ts`, `mansionContentAuthority.test.ts`, `mansionContentRegression.test.ts`, `evidenceConflicts.test.ts`, `MansionEvidenceDetails.test.tsx`, `shared/personalFengShui/rules.test.ts`.
+- `docs/audits/thu-tu-sat-chu-provenance.md` (ghi chú update đầu file).
+
+### Nhân chứng in *Ngọc Hạp Chánh Tông* — dữ liệu đã xác nhận (crop độ phân giải gốc)
+
+| Bảng (trang) | Giá trị |
+|---|---|
+| Ngày Sát-Chủ, Thọ-Mai (128–129) | Tỵ, Tý, Mùi, Mão, Thân, Tuất, **Hợi**, **Sửu**, Ngọ, Dậu, Dần, Thìn (thơ = giải nghĩa) |
+| Tháng Sát-Chủ, Lưu-Thị (128) | 1 Tý; 2/3/7/9 Sửu; 4 Tuất; 11 Mùi; 5/6/8/10/12 Thìn (= `SAT_CHU_DUONG`) |
+| Giờ Sát-Chủ (129) | 1/7 Dần, 2/8 Tỵ, 3/9 Thân, 4/10 Thìn, 5/11 Dậu, 6/12 Mão |
+| Bốn mùa Sát-chủ (130) | 1/5/9 Tý, 2/8/10 Mão, 3/7/11 Ngọ, 4/6/12 Dậu |
+| Sát-chủ trong bốn mùa (130) | Xuân Ngọ, Hạ Tý, Thu Mùi, Đông Mão |
+| Ngày Thọ-tử (131) | Bính-Tuất, Nhâm-Thìn, Tân-Hợi, Đinh-Tỵ, Mậu-Tý, Bính-Ngọ, Ất-Sửu, Quý-Mùi, Giáp-Dần, Mậu-Thân, Tân-Mão, Tân-Dậu |
+| Ngày Sát-Sư (132–133) | Tỵ, Tý, Mùi, Mão, Hợi, Tuất, Ngọ, Thân, Sửu, Dậu, Dần, Thìn |
+| Tháng Sát-sư, Lưu-Thị (133) | 1/11 Tý, 2 Sửu, 4 Mão, 3/6/7 Mùi, 9 Ngọ, 5/8/10/12 Dậu |
+| Ngày tốt cưới (114) | … Giốc, Chấp, Trương, Bế, Đẩu, Phòng, Lâu, Vĩ, Vị, Cơ, Tất, Bích, Chẩn, Khuê, **Tỉnh (井)** — không phải Tinh (星) |
+
+Sách không nêu tháng nhuận hay tháng âm/tiết; không có bài thơ 28 Tú, không có nội dung mở cửa/dẫn nước. Đã đọc toàn bộ Phần III (tr. 106–135); Phần I–II chỉ mục lục + trang mẫu.
+
+### Validation cuối (local + CI)
+
+- Local sau PR #8: `npm test` 141 files / 2798 tests; typecheck, lint, build; mutation mansion 9/9, annual directions 7/7 KILLED; Playwright desktop 104 passed / 16 skipped.
+- CI PR #6, #8, #9: tất cả required jobs SUCCESS; main deploy SUCCESS cho #6 và #8.
+
+### Bài học / lưu ý cho agent sau
+
+- Ngày Tú: xác định bằng `getAlmanac(date).mansion` hoặc HTML production, không suy theo phép trừ ngày (đã đoán sai 2026-10-10 là Tinh; thực tế Liễu).
+- Test UI dựa vào ngày cụ thể có thể pass vì lý do khác; ghi rõ lý do trong comment.
+- Đọc ảnh scan thu nhỏ dễ nhầm chữ gần giống (Tinh/Tỉnh); dữ liệu đưa vào code hoặc dùng làm lập luận phải đọc trên crop độ phân giải gốc.
