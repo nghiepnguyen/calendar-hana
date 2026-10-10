@@ -285,7 +285,6 @@
           "甲午",
           "甲申",
           "甲戌",
-          "戊午",
           "戊申",
           "戊戌",
           "癸未",
@@ -416,7 +415,11 @@
           "offset": 10027,
           "text": "按隂陽不將者乃堪輿家之吉日凡事可用非僅施之嫁娶也惟六月戊午為逐陣不可用"
         }
-      ]
+      ],
+      "excluded": {
+        "6": ["戊午"]
+      },
+      "ownerDecision": "2026-10-10: exclude 六月戊午 (按 「惟六月戊午為逐陣不可用」; 卷十 also lists 六月丙午戊午 as 逐陣)."
     },
     {
       "id": "thien_thuong",
@@ -1060,7 +1063,21 @@
           "offset": 3322,
           "text": "大雪後{{SK notes|二十日}}小雪後{{SK notes|三十日}}"
         }
-      ]
+      ],
+      "relatedNames": [
+        {
+          "han": "氣往亡",
+          "relation": "separate rule, not the same days: counted from each 節 (立春後7日 … 小寒後30日, 皆自交節日數之); 卷十 lists 往亡 and 氣往亡 side by side. Not in the catalog.",
+          "quotes": [
+            {
+              "volume": "卷06",
+              "offset": 11825,
+              "text": "歴例曰氣往亡者立春後七日"
+            }
+          ]
+        }
+      ],
+      "ownerDecision": "2026-10-10: keep 往亡 (branch rule) as the canonical catalog god; document 氣往亡 as a related name."
     },
     {
       "id": "bat_chuyen",
@@ -1459,7 +1476,38 @@
           "offset": 5368,
           "text": "或曰當逆行四孟其說謂三合父母之長生也寅午戌火以木"
         }
-      ]
+      ],
+      "alternative": {
+        "name": "逆行四孟 (三合父母之長生)",
+        "status": "kept for reference, not used",
+        "table": {
+          "1": ["亥"],
+          "2": ["申"],
+          "3": ["巳"],
+          "4": ["寅"],
+          "5": ["亥"],
+          "6": ["申"],
+          "7": ["巳"],
+          "8": ["寅"],
+          "9": ["亥"],
+          "10": ["申"],
+          "11": ["巳"],
+          "12": ["寅"]
+        },
+        "quotes": [
+          {
+            "volume": "卷06",
+            "offset": 5368,
+            "text": "或曰當逆行四孟其說謂三合父母之長生也"
+          },
+          {
+            "volume": "卷06",
+            "offset": 5496,
+            "text": "其說亦通故附存之"
+          }
+        ]
+      },
+      "ownerDecision": "2026-10-10: default 順行四孟 (歴例 and 按); the 逆行四孟 reading 按 「附存之」 is kept as `alternative` only."
     },
     {
       "id": "giai_than",

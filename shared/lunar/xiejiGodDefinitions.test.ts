@@ -173,4 +173,21 @@ describe('協紀 day rules for dormant and legacy catalog gods', () => {
       })
     }
   })
+
+  it('records the owner decisions (2026-10-10)', () => {
+    const item = (id: string) => defs.items.find((d) => d.id === id)! as Record<string, any>
+    // 不將: 按 「惟六月戊午為逐陣不可用」.
+    expect(table('bat_tuong')['6']).not.toContain('戊午')
+    expect(item('bat_tuong').excluded).toEqual({ '6': ['戊午'] })
+    // 五富: default 順行四孟 from 亥; 逆行四孟 kept only as a documented alternative.
+    for (let month = 1; month <= 12; month++) {
+      expect(table('ngu_phu')[month]).toEqual([['亥', '寅', '巳', '申'][(month - 1) % 4]])
+      expect(item('ngu_phu').alternative.table[month]).toEqual([
+        ['亥', '申', '巳', '寅'][(month - 1) % 4],
+      ])
+    }
+    // 往亡 stays canonical; 氣往亡 is a related, different (節-counted) rule.
+    expect(item('vang_vong').han).toBe('往亡')
+    expect(item('vang_vong').relatedNames.map((r: { han: string }) => r.han)).toEqual(['氣往亡'])
+  })
 })
