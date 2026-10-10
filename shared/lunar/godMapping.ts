@@ -50,3 +50,18 @@ export function resolveDayRuleGods(day: { can: number; chi: number; lunarDay: nu
     items.filter((god) => matches(god.rule)).map((god) => god.id)
   return { presentGoodGods: pick(goodGods.items), presentBadGods: pick(badGods.items) }
 }
+
+/** Explicit operands for day-rule gods, for evidence diagnostics only (no score effect). */
+export function resolveDayRuleGodPresence(day: { can: number; chi: number; lunarDay: number }) {
+  const out: Record<string, { operand: string; equals: number }[]> = {}
+  for (const god of [...goodGods.items, ...badGods.items] as { id: string; rule?: DayRule }[]) {
+    const rule = god.rule
+    if (!rule) continue
+    if (rule.dayCan?.includes(day.can)) out[god.id] = [{ operand: 'DAY_STEM', equals: day.can }]
+    else if (rule.dayChi?.includes(day.chi))
+      out[god.id] = [{ operand: 'DAY_BRANCH', equals: day.chi }]
+    else if (rule.lunarDay?.includes(day.lunarDay))
+      out[god.id] = [{ operand: 'LUNAR_DAY', equals: day.lunarDay }]
+  }
+  return out
+}

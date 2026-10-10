@@ -230,9 +230,7 @@ export function evaluateEventDay(
     criteria,
     contributions: unique,
     warnings,
-    conflictAnalysis: analyzeEvidenceConflicts(
-      unique.filter((row) => row.source === 'mansion'),
-      { MANSION_INDEX: day.mansion.index },
-    ),
+    // Mansion, Trực and source-locked/day-rule gods; legacy rows stay unresolved (no authority).
+    conflictAnalysis: analyzeEvidenceConflicts(unique, day.selectionContext),
   }
 }

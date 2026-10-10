@@ -106,3 +106,17 @@ Migration proof (`xiejiConditionalMigration.test.ts`): a module rebuilt with the
 ### Where the resolution policy lives
 
 卷十 宜忌 opens: **“舊厯宜忌多與神煞名義不合，且凡吉神所宜之事一遇凶煞則無論輕重而概忌之，尤為未當。今即其情之愛惡與其力之大小分合考訂”** — the authority itself rejects “any 煞 cancels any 吉神” and resolves by each god's nature and strength. Per-god notes (按) give strengths and combinations, e.g. 天赦/天願 “其氣純其力大乃日之最吉者能解諸凶”, 天恩 “與驛馬天馬建日併宜頒詔…”. This is the classical source for a future resolution policy (§23 #6); it is not encoded. The product's current caps/weights remain product policy.
+
+## Step (a) implemented 2026-10-10 — Trực and audited gods in diagnostics (branch `audit/xieji-diagnostics`)
+
+No score, status, verdict or dataset change; the frozen-baseline proof (`xiejiConditionalMigration.test.ts`) still passes on all 1095 days.
+
+- Trực rules and the 9 audited gods (6 Cát/Hung authority, 3 catalog day rules) now carry diagnostics metadata:
+  - `activityMapping` version `xieji-activity-mapping-v1`, `authorityId: xiejibianfangshu-vol11`, `clauseId` = 用事 heading(s) + rule, `reviewStatus: interpretation_pending` (the heading → activity mapping, e.g. 營建宮室+興造動土 → construction, 開市 → business/opening, is a product interpretation not yet reviewed);
+  - explicit `conditions`: Trực `OFFICER_INDEX`; Cát/Hung gods `MONTH_JIAN_BRANCH` + `DAY_STEM` or `DAY_BRANCH` (the authority cell that matched, `getSourceLockedCatHungPresence`); day-rule gods `DAY_STEM` / `DAY_BRANCH` / `LUNAR_DAY` (`resolveDayRuleGodPresence`);
+  - `exceptions: []` (卷十一 has no per-heading exception; 鋪註條例 taboos are missing witnesses).
+- 14 legacy lunar-month gods and legacy Thiên Đức/Hợp on the four trigram-token months get **no** metadata, so diagnostics keeps them out (`missing_authority_context`).
+- `Almanac.selectionContext` exposes `MANSION_INDEX`, `OFFICER_INDEX`, `MONTH_JIAN_BRANCH`, `DAY_STEM`, `DAY_BRANCH`, `LUNAR_DAY`. `evaluateEventDay().conflictAnalysis` now analyses all contributions with that context (previously mansion only). Opposing Trực/god witnesses appear as `within_authority` conflicts, `reviewPending: true`, no winner. The UI “Thông tin Tú” panel is unchanged (mansion rows only).
+- Tests: `xiejiDiagnostics.test.ts` (presence restates the authority for all 12×10×12 combinations; metadata only on audited sources and always applicable on 2026 days; wedding conflicts exist for 2026 with both polarities and no legacy witness).
+
+Next: encode 卷十 宜忌 strength/combination rules as a resolution policy (requires a policy decision on whether it affects scores).

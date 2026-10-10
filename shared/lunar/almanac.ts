@@ -16,12 +16,14 @@ import { getNapAm, sexagenaryIndex, type NapAm } from './napAm'
 import { getOfficer, type Officer } from './officers'
 import type { SolarTermInfo } from './solarTerms'
 import { getStars, type Star } from './stars'
-import { getSourceLockedCatHungStarsForDate } from './catHungStars'
+import { getSourceLockedCatHungPresence, getSourceLockedCatHungStarsForDate } from './catHungStars'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { solarTermMonthChi } from './solarTerms'
 import { getThuTuForDate } from './thuTuAuthority'
-import { resolveDayRuleGods, resolvePresentGods } from './godMapping'
+import { resolveDayRuleGodPresence, resolveDayRuleGods, resolvePresentGods } from './godMapping'
 import manifest from '../almanac-data/manifest.json'
+import goodGodsData from '../almanac-data/good-gods.json'
+import badGodsData from '../almanac-data/bad-gods.json'
 import { ENGINE_VERSION } from './evidence'
 import { getActivityRecommendations, type ActivityRecommendation } from './activityRecommendations'
 
@@ -42,6 +44,8 @@ export interface Almanac {
   activityRecommendations: ActivityRecommendation[]
   /** Đủ 12 giờ, Tý..Hợi. */
   hours: DayHour[]
+  /** Numeric operands for evidence diagnostics (no scoring use). */
+  selectionContext: Record<string, number>
 }
 
 const CACHE_LIMIT = 2000
@@ -101,6 +105,23 @@ function computeAlmanac(date: SolarDateString): Almanac {
 
   const gods = resolvePresentGods(stars)
   const dayGods = resolveDayRuleGods({ can: day.can, chi: day.chi, lunarDay: lunar.day })
+  // Presence operands only for gods whose presence is source-locked or a cited day rule; legacy
+  // lunar-month stars get none and stay out of conflict diagnostics.
+  const monthJianBranch = solarTermMonthChi(jd)
+  const godIdByLabel = new Map(
+    [...goodGodsData.items, ...badGodsData.items].map((g) => [g.label, g.id]),
+  )
+  const godPresence: Record<string, { operand: string; equals: number }[]> = {
+    ...resolveDayRuleGodPresence({ can: day.can, chi: day.chi, lunarDay: lunar.day }),
+  }
+  for (const { name, conditions } of getSourceLockedCatHungPresence(
+    monthJianBranch,
+    day.can,
+    day.chi,
+  )) {
+    const id = godIdByLabel.get(name)
+    if (id) godPresence[id] = conditions
+  }
   const almanac: Almanac = {
     date,
     solarTerm: info.solarTerm,
@@ -132,8 +153,17 @@ function computeAlmanac(date: SolarDateString): Almanac {
       mansion,
       presentGoodGods: [...gods.presentGoodGods, ...dayGods.presentGoodGods],
       presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
+      godPresence,
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
+    selectionContext: {
+      MANSION_INDEX: mansion.index,
+      OFFICER_INDEX: officer.index,
+      MONTH_JIAN_BRANCH: monthJianBranch,
+      DAY_STEM: day.can,
+      DAY_BRANCH: day.chi,
+      LUNAR_DAY: lunar.day,
+    },
   }
   return almanac
 }

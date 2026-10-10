@@ -53,6 +53,38 @@ export function getSourceLockedCatHungStars(monthJianBranch: number, dayCan: num
   return { good, bad }
 }
 
+export type PresenceCondition = { operand: string; equals: number }
+
+/**
+ * Explicit operands behind each source-locked presence, for evidence diagnostics only.
+ * Each entry restates which authority cell matched; it adds no star and no score.
+ */
+export function getSourceLockedCatHungPresence(
+  monthJianBranch: number,
+  dayCan: number,
+  dayChi: number,
+): { name: SourceLockedCatHungStarName; conditions: PresenceCondition[] }[] {
+  const row = getCatHungAuthorityByMonthJian(monthJianBranch)
+  const stem = STEMS[dayCan]
+  const branch = BRANCHES[dayChi]
+  if (!stem || !branch) throw new RangeError('Expected day Can 0..9 and Chi 0..11')
+  const month = { operand: 'MONTH_JIAN_BRANCH', equals: monthJianBranch }
+  const byStem = [month, { operand: 'DAY_STEM', equals: dayCan }]
+  const byBranch = [month, { operand: 'DAY_BRANCH', equals: dayChi }]
+  const out: { name: SourceLockedCatHungStarName; conditions: PresenceCondition[] }[] = []
+  const token = (name: SourceLockedCatHungStarName, value: string | null) => {
+    if (value === stem) out.push({ name, conditions: byStem })
+    else if (value === branch) out.push({ name, conditions: byBranch })
+  }
+  token('Thiên Đức', row.tianDe)
+  token('Thiên Đức Hợp', row.tianDeHe)
+  if (row.yueDe === stem) out.push({ name: 'Nguyệt Đức', conditions: byStem })
+  if (row.yueDeHe === stem) out.push({ name: 'Nguyệt Đức Hợp', conditions: byStem })
+  if (row.yuePo === branch) out.push({ name: 'Nguyệt Phá', conditions: byBranch })
+  if (row.jieSha === branch) out.push({ name: 'Kiếp Sát', conditions: byBranch })
+  return out
+}
+
 /**
  * Civil-day production adapter. The project deliberately presents the whole civil day
  * containing a Jie crossing as the new Month Jian. Exact-instant consumers use
