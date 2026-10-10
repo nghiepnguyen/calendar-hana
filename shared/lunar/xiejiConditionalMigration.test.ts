@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 import baseline from './audit-fixtures/mansion-decision-baseline-v1.json'
 import trucData from '../almanac-data/truc.json'
 import goodGodsData from '../almanac-data/good-gods.json'
+import manifest from '../almanac-data/manifest.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
@@ -53,8 +54,16 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
     const { truc, good } = preFixCatalog()
     // Isolate this migration from issue #19: both sides keep the legacy trigram Thiên Đức.
     const legacyTianDe = () => ({ KEEP_LEGACY_TRIGRAM_TIAN_DE: true })
+    // Likewise both sides keep the pre-10/10/2026 neutral policy (low severity only).
+    const lowNeutral = () => ({
+      default: {
+        ...manifest,
+        policies: { ...manifest.policies, noTabooMeansNeutralUpToSeverity: 'low' },
+      },
+    })
     vi.resetModules()
     vi.doMock('./tianDeLegacyPolicy', legacyTianDe)
+    vi.doMock('../almanac-data/manifest.json', lowNeutral)
     vi.doMock('../almanac-data/truc.json', () => ({ default: truc }))
     vi.doMock('../almanac-data/good-gods.json', () => ({ default: good }))
     const pre = {
@@ -69,6 +78,7 @@ describe('協紀 修倉庫 conditional clause migration (dataset 1.2.1)', () => 
       evaluate: (await import('./eventEvaluation')).evaluateEventDay,
     }
     vi.doUnmock('./tianDeLegacyPolicy')
+    vi.doUnmock('../almanac-data/manifest.json')
 
     expect(baseline.days).toHaveLength(1095)
     let changed = 0

@@ -34,7 +34,7 @@
     "hardVetoFromClassicalJi": false,
     "requireScopeForScoring": true,
     "conflictResolutionRequired": true,
-    "lowSeverityNoTabooMeansNeutral": true,
+    "noTabooMeansNeutralUpToSeverity": "high",
     "xiejiVol10Scoring": false
   },
   "sources": [
@@ -70,7 +70,7 @@
   "notes": [
     "Weights are product policy, not values stated by classical sources.",
     "28-mansion activity scoring is intentionally disabled in v1 until one consistent tradition is audited per activity.",
-    "lowSeverityNoTabooMeansNeutral is product policy: a low-severity event whose primary activity meets no rule (so no taboo either) is neutral instead of insufficient evidence.",
+    "noTabooMeansNeutralUpToSeverity is product policy: an event up to that severity (low, medium, high) whose primary activity meets no rule (so no taboo either) is neutral instead of insufficient evidence; very_high events still need evidence.",
     "Phase 7 locks explicit 宜忌 excerpts to the 1880 Ngọc Hạp edition. Identity/phase and legacy compatibility fields remain separate; missing activities are UNKNOWN. Scoring remains disabled."
   ]
 }

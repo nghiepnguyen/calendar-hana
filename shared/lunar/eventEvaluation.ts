@@ -7,6 +7,7 @@ import {
   resolveEventActivityRoles,
   type EventCriterion,
   type EventInput,
+  type EventSeverity,
 } from './eventMapping'
 import { ENGINE_VERSION, type Evidence } from './evidence'
 import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
@@ -15,6 +16,7 @@ import { isVol10ChainRow } from './xiejiVol10Scoring'
 import trucData from '../almanac-data/truc.json'
 
 export { ENGINE_VERSION } from './evidence'
+const SEVERITY_ORDER: readonly EventSeverity[] = ['low', 'medium', 'high', 'very_high']
 export type Classification =
   'recommended' | 'caution' | 'not_recommended' | 'insufficient_evidence' | 'conflict'
 export type CriterionResult = {
@@ -113,10 +115,11 @@ export function evaluateEventDay(
   const roles = resolveEventActivityRoles(eventId, input)
   const primaryId = roles.find((role) => role.role === 'primary')!.activityId
   const primary = day.activityRecommendations.find((row) => row.activityId === primaryId)!
-  // No applied rule at all means no taboo either; minor events need no positive sign to proceed.
+  // No applied rule at all means no taboo either; only the gravest events need a positive sign.
+  // Such a day is neutral: supporting activities may move the score but never make it recommended.
   const neutralByPolicy =
-    manifest.policies.lowSeverityNoTabooMeansNeutral &&
-    profile.severity === 'low' &&
+    SEVERITY_ORDER.indexOf(profile.severity) <=
+      SEVERITY_ORDER.indexOf(manifest.policies.noTabooMeansNeutralUpToSeverity as EventSeverity) &&
     primary.status === 'no_evidence'
   const contributions: Contribution[] = roles.flatMap((role) => {
     const activity = day.activityRecommendations.find((row) => row.activityId === role.activityId)
@@ -148,7 +151,7 @@ export function evaluateEventDay(
     if (id === 'calendar_validity') return outcome('pass', 'Ngày nằm trong phạm vi hỗ trợ.')
     if (id === 'event_fit')
       return neutralByPolicy
-        ? outcome('pass', 'Việc nhỏ, không gặp ngày kỵ nào trong nguồn: xem là bình thường.')
+        ? outcome('pass', 'Không gặp ngày kỵ nào trong nguồn: xem là bình thường.')
         : primary.status === 'no_evidence'
           ? outcome('unknown', 'Chưa có quy tắc được tính điểm cho hoạt động chính.')
           : primary.status === 'neutral' &&
@@ -233,7 +236,7 @@ export function evaluateEventDay(
           : primary.negativeMagnitude > 0 ||
               unique.some((row) => row.status === 'applied' && row.scoreDelta < 0)
             ? 'caution'
-            : score >= 65
+            : score >= 65 && !neutralByPolicy
               ? 'recommended'
               : 'caution'
   return {

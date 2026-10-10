@@ -6,14 +6,15 @@ import { DailyActivitySection } from './DailyActivitySection'
 
 describe('daily activity modes', () => {
   it('merges empty factors and restores overview when selection clears', async () => {
-    render(<DailyActivitySection date="2026-09-18" />)
+    // 09/09/2026: no rule applies to weddings, and a very_high event still needs evidence.
+    render(<DailyActivitySection date="2026-09-09" />)
     expect(screen.queryByRole('region', { name: 'Kết luận mục tiêu' })).not.toBeInTheDocument()
     expect(
       screen.getByRole('region', { name: 'Việc không nên làm trong ngày' }),
     ).toBeInTheDocument()
     expect(screen.getAllByRole('combobox')).toHaveLength(1)
     await userEvent.click(screen.getByText(/^Hoạt động khác/))
-    await userEvent.click(screen.getByRole('button', { name: 'Ký kết / Lập khế ước' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Cưới hỏi' }))
     const verdict = screen.getByRole('region', { name: 'Kết luận mục tiêu' })
     expect(verdict).toHaveTextContent('Chưa đủ dữ liệu')
     expect(screen.getByRole('note', { name: 'Yếu tố trong ngày' })).toHaveTextContent(
@@ -25,18 +26,21 @@ describe('daily activity modes', () => {
     expect(screen.queryByRole('region', { name: 'Kết luận mục tiêu' })).not.toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Việc nên làm trong ngày' })).toBeInTheDocument()
   })
-  it('treats a low-severity event without taboos as neutral instead of insufficient', async () => {
-    // 18/09/2026 is Trực Khai: Hiệp Kỷ neither favours nor forbids haircuts on that day.
-    render(<DailyActivitySection date="2026-09-18" />)
-    await userEvent.click(screen.getByText(/^Hoạt động khác/))
-    await userEvent.click(screen.getByRole('button', { name: 'Cắt tóc' }))
-    const verdict = screen.getByRole('region', { name: 'Kết luận mục tiêu' })
-    expect(verdict).toHaveTextContent('Cân nhắc')
-    expect(verdict).toHaveTextContent('Không gặp ngày kỵ nào.')
-    expect(screen.getByRole('note', { name: 'Yếu tố trong ngày' })).toHaveTextContent(
-      'Không có yếu tố thuận hay bất lợi.',
-    )
-  })
+  it.each(['Cắt tóc', 'Ký kết / Lập khế ước'])(
+    'treats %s without taboos as neutral instead of insufficient',
+    async (name) => {
+      // 18/09/2026 is Trực Khai: Hiệp Kỷ neither favours nor forbids haircuts or contracts that day.
+      render(<DailyActivitySection date="2026-09-18" />)
+      await userEvent.click(screen.getByText(/^Hoạt động khác/))
+      await userEvent.click(screen.getByRole('button', { name }))
+      const verdict = screen.getByRole('region', { name: 'Kết luận mục tiêu' })
+      expect(verdict).toHaveTextContent('Cân nhắc')
+      expect(verdict).toHaveTextContent('Không gặp ngày kỵ nào.')
+      expect(screen.getByRole('note', { name: 'Yếu tố trong ngày' })).toHaveTextContent(
+        'Không có yếu tố thuận hay bất lợi.',
+      )
+    },
+  )
 })
 
 it('merges a rule that touches several activities into one factor', async () => {

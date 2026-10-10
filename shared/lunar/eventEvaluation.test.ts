@@ -21,30 +21,31 @@ describe('event classification guardrails', () => {
     expect(result.classification).toBe('not_recommended')
   })
   it('does not infer an event-fit pass from supporting activities', () => {
-    // Scan real dates for an event whose primary activity has no evidence while a supporting one
+    // Scan real dates for events whose primary activity has no evidence while a supporting one
     // is recommended, e.g. Chuyển nhà on a Trừ day (掃舍宇 suits 除日; 般移 does not mention it).
+    // very_high events stay insufficient; lighter ones are neutral but never recommended.
+    const found = new Set<string>()
     let candidate = '2026-10-01'
-    for (let i = 0; i < 366; i++, candidate = addDays(candidate, 1)) {
+    for (let i = 0; i < 366 && found.size < 2; i++, candidate = addDays(candidate, 1)) {
       const rows = getAlmanac(candidate).activityRecommendations
       const status = (id: string) => rows.find((row) => row.activityId === id)?.status
       for (const [eventId] of EVENT_OPTIONS) {
-        const activities = getEventProfile(eventId)!.activities
-        const primary = activities.find((item) => item.role === 'primary')!
-        const supporting = activities.filter((item) => item.role === 'supporting')
+        const profile = getEventProfile(eventId)!
+        const primary = profile.activities.find((item) => item.role === 'primary')!
+        const supporting = profile.activities.filter((item) => item.role === 'supporting')
         if (
-          status(primary.activityId) === 'no_evidence' &&
-          supporting.some((item) => status(item.activityId) === 'recommended')
-        ) {
-          expect(evaluateEventDay(candidate, eventId, { hour: 9 }).classification).toBe(
-            'insufficient_evidence',
-          )
-          return
-        }
+          status(primary.activityId) !== 'no_evidence' ||
+          !supporting.some((item) => status(item.activityId) === 'recommended')
+        )
+          continue
+        const result = evaluateEventDay(candidate, eventId, { hour: 9 })
+        expect(result.classification, `${candidate} ${eventId}`).not.toBe('recommended')
+        if (profile.severity === 'very_high')
+          expect(result.classification, `${candidate} ${eventId}`).toBe('insufficient_evidence')
+        found.add(profile.severity === 'very_high' ? 'very_high' : 'lighter')
       }
     }
-    throw new Error(
-      'Expected a real date with positive supporting evidence and missing primary evidence',
-    )
+    expect([...found].sort()).toEqual(['lighter', 'very_high'])
   })
   it('rejects invalid calendar dates before invoking lunar calculations', () => {
     expect(evaluateEventDay('2026-02-30', 'wedding').classification).toBe('not_recommended')
@@ -81,12 +82,14 @@ describe('event classification guardrails', () => {
     const next = findNextGoodEventDate('2026-10-05', 'open_business')
     if (next) expect(evaluateEventDay(next, 'open_business').classification).toBe('recommended')
   })
-  it('keeps low-severity events neutral without taboos, but not higher-severity ones', () => {
-    // 18/09/2026: no rule applies to haircuts or to contracts.
+  it('keeps events up to high severity neutral without taboos, but not very_high ones', () => {
+    // 18/09/2026: no rule applies to haircuts, contracts or buying property.
     const haircut = evaluateEventDay('2026-09-18', 'cut_hair')
     expect(haircut).toMatchObject({ classification: 'caution', score: 50, neutralByPolicy: true })
     const contract = evaluateEventDay('2026-09-18', 'sign_contract')
-    expect(contract).toMatchObject({
+    expect(contract).toMatchObject({ classification: 'caution', score: 50, neutralByPolicy: true })
+    const property = evaluateEventDay('2026-09-18', 'buy_property')
+    expect(property).toMatchObject({
       classification: 'insufficient_evidence',
       neutralByPolicy: false,
     })
