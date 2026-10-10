@@ -1552,15 +1552,16 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 
 ### Những gì chưa được chứng nhận
 
-1. **Sát Chủ:** bảng tháng 7/8 đã thống nhất calendar ↔ personal theo bài Hán văn (PR #8), nhưng văn bản gốc tiền hiện đại chưa tìm thấy; nhân chứng in duy nhất là sách biên soạn hiện đại; sub-sources “Thọ-Mai”, “Lưu-Thị” chưa định vị; **leap-month semantics UNRESOLVED** (product dùng tháng chính); month basis giữ lunar. Vẫn `SOURCE_DEPENDENT`. Không suy từ Thụ Tử, không chuyển Month Jian.
+1. **Sát Chủ:** bảng tháng 7/8 đã thống nhất calendar ↔ personal theo bài Hán văn (PR #8). **Tìm nguồn Hán văn 10/10/2026: không tìm thấy** (web, Wikisource “殺主” chỉ có nghĩa “giết chủ”); chỉ có nhân chứng Việt (Hán-Việt, Nôm, sách in). huyenbi.net có bài Nôm khác cũng cho 7 Hợi / 8 Sửu. Văn bản gốc tiền hiện đại chưa tìm thấy; nhân chứng in duy nhất là sách biên soạn hiện đại; sub-sources “Thọ-Mai”, “Lưu-Thị” chưa định vị; **leap-month semantics UNRESOLVED** (product dùng tháng chính); month basis giữ lunar. Vẫn `SOURCE_DEPENDENT`. Không suy từ Thụ Tử, không chuyển Month Jian.
 2. **Thiên Đức/Hợp directional tokens:** 坤/乾/艮/巽 chưa có normalization provenance hoàn chỉnh; partial legacy giữ nguyên ở các rows này.
 3. **Generic stars:** `byMonth` blanket lunar assumption, modern-derived table, meanings/provenance chưa toàn bộ source-lock. Không tự đổi tất cả sang Month Jian.
 4. **Duplicate Hoàng/Hắc concepts:** không để legacy duplicate ghi đè Phase 4C authority.
 5. **Phase 6 product/personal:** calendar annual directions chưa đưa vào calendar UI; personal annual afflictions/lunar conventions được bảo toàn chứ chưa được Phase 6 chứng nhận. Không gộp hai layer.
 6. **Phase 7 coverage:** other editions, old tailoring/study/business/bed/travel/boat claims chưa được selected poems hỗ trợ; vẫn UNKNOWN đối với authority này.
-7. **Taxonomy/mapping:** door_opening/waterworks đã thêm (PR #6). Còn gap: 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses) chưa có ID; đóng thuyền/hạ thủy không có clause trong subset 1880 nên không có căn cứ định nghĩa; lexical “hạ thủy” → water_travel không được chứng nhận.
+7. **Taxonomy/mapping:** door_opening/waterworks đã thêm (PR #6). **Owner quyết định 10/10/2026: không tạo ID** cho 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses) — giữ unmapped/reviewed; đóng thuyền/hạ thủy không có clause trong subset 1880 nên không có căn cứ định nghĩa; lexical “hạ thủy” → water_travel không được chứng nhận.
 8. **Interpretation review là single-reviewer (agent):** Golden diễn giải v2 chưa có thẩm định chuyên gia thứ hai; `interpretation_reviewed` không phải quyền chấm điểm.
-9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. Thêm rule cần provenance riêng.
+9. **Trực/thần cho activity mới:** không có rule Trực/cát/hung thần cho door_opening/waterworks → luôn `no_evidence`. 協紀 卷十一 có 開渠穿井 / 修飾垣墻 (ứng viên), chưa chứng minh tương đương 放水.
+15. **Audit Trực/thần context (10/10/2026, `docs/audits/truc-than-context-audit.md`):** **21/44 thần chấm điểm không bao giờ có mặt** (không có tên chính xác trong bảng sao ngày, không suy alias) — gồm 災煞, 月煞, 月厭, 往亡, 四廢, 五墓, 天願, 四相, 時德, 不將; 14 thần legacy tính theo **tháng âm** trong khi 協紀 định nghĩa theo Month Jian (`CONVENTION_DIFFERENCE`); ngoại lệ 卷十一 (止忌/德化煞) chưa mã hoá. Trực + 9 thần locked/day-rule gần sẵn sàng cho diagnostics. `godPresenceCoverage.test.ts` khoá danh sách 21.
 10. **Scoring/conflict resolver:** diagnostics đã deploy, chưa có audited resolution policy; mansion scoring vẫn tắt (`mansion28ScoringEnabled: false`).
 11. **Lệch trang scan 觜/參 — RESOLVED (nhánh `audit/mansion-scan-page-fix`):** xác nhận trên ảnh gốc: n63 畢, n64 參, n65 觜, n66 井. Đã sửa 觜 pdfPage 66 / 參 65 trong dataset + Golden Phase 7 (`GOLDEN_BUG`), version 1.0.1.
 12. **Tú 角 — RESOLVED cùng nhánh:** scan ghi 惟有葬埋不可用; đã sửa quote 角-3 (dataset, Golden Phase 7, Golden diễn giải v2 `reviewTerm` 葬埋).
@@ -1571,9 +1572,9 @@ d1209ece5b4737e51dc7b452df6f2f3d84281a09 merge PR #4
 
 1. Đọc phần 21, 23, 24, 31; `git pull` main; kiểm tra PR #10 đã merge chưa.
 2. ~~Kiểm tra 觜/參 và 角~~ — đã làm (nhánh `audit/mansion-scan-page-fix`); merge PR khi user cho phép.
-3. Quyết định có ID riêng cho xây dựng hẹp không (mỗi loại chỉ 1–2 clause).
-4. Audit context/conditions của Trực/cát/hung thần trước khi đưa vào diagnostics; Ngọc Hạp Chánh Tông tr. 110–127 là nhân chứng phụ (mỗi sao cần provenance riêng).
-5. Sát Chủ: tìm văn bản Hán gốc hoặc “Thọ-Mai”/“Lưu-Thị”; quyết định leap-month rule nếu có nguồn.
+3. ~~ID xây dựng hẹp~~ — owner quyết định không tạo.
+4. Audit Trực/thần đã làm (inventory). Tiếp: (a) evidence shape cho Trực + 9 thần locked/day-rule, không đổi điểm; (b) mã hoá ngoại lệ 卷十一 theo từng mục; (c) presence audit từng bảng thần, ưu tiên 災煞/月煞/月厭/往亡/四廢/五墓; (d) quyết định alias tường minh.
+5. Sát Chủ: web không có Hán văn; nếu tiếp tục cần nguồn offline (thư viện Hán Nôm, bản 玉匣記/通書 in ở Việt Nam, sách “Thọ-Mai”/“Lưu-Thị”).
 6. Resolution policy riêng; không majority vote, không tự mở scoring. Scoring mới cần authority/policy audit riêng; chưa gọi Phase 8.
 7. Giữ: zero mansion scoring, core astronomy, exact Jie boundaries, calendar/personal separation, Golden độc lập.
 8. Quy trình: local validation → branch `audit/**` hoặc `feature/**` (CI chạy trên push) → PR gates → **user cho phép merge** → main CI → deploy → production smoke đúng ngày bị ảnh hưởng → cập nhật handoff qua PR.

@@ -72,3 +72,7 @@ Giới hạn: review một người (agent), không phải thẩm định chuyê
 2. Có cần ID riêng cho xây dựng hẹp (cột, cao đường, tường…) hay không; hiện mỗi loại chỉ 1–2 clause.
 3. Audit context/conditions của Trực/cát/hung thần (có thể bổ sung rule cho door_opening/waterworks từ nguồn khác, cần provenance riêng).
 4. Resolution policy riêng; không majority vote, không tự mở scoring.
+
+## Quyết định 2026-10-10: không tạo ID cho xây dựng hẹp
+
+Owner quyết định **không** tạo activity ID riêng cho 5 scope xây dựng hẹp (`construction_columns`, `construction_high_hall`, `construction_new_room`, `construction_wall`, `construction_waterside`; 6 clauses). Chúng giữ `unmapped` (đã reviewed), tiếp tục hiển thị trong “Việc khác trong nguồn chưa có mục tương ứng”, không gộp vào `construction` hay `groundbreaking`.
