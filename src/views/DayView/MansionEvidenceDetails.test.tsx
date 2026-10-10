@@ -76,7 +76,7 @@ describe('mansion evidence explainability', () => {
     expect(screen.queryByText(/Các nguồn đã thống nhất/)).not.toBeInTheDocument()
   })
   it('integrates with the event selector and retains the existing verdict', () => {
-    // Trương (index 25) has an operative wedding clause; Tinh's only one is a consequence line.
+    // 2026-10-11 is Tinh: its scan link comes from the unmapped new-room clause, not from wedding.
     render(<DailyActivitySection date="2026-10-11" />)
     fireEvent.change(screen.getByRole('combobox', { name: 'Nhóm mục tiêu' }), {
       target: { value: 'relationship' },
