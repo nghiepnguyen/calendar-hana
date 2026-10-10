@@ -1,7 +1,8 @@
 import { resolveActivityScope } from './activityTaxonomy'
 
 export interface RuleActivityMapping {
-  version: 'mansion-activity-mapping-v2'
+  /** v2: 1880 mansion content; xieji-v1: 協紀 卷十一 用事 headings for Trực/gods. */
+  version: 'mansion-activity-mapping-v2' | 'xieji-activity-mapping-v1'
   /** Catalog activity the clause is interpreted as; '' while the scope is a catalog gap. */
   activityId: string
   /** `not_operative`: the excerpt is source-accurate but states a consequence, not an activity. */

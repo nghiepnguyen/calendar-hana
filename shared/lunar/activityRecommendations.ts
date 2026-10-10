@@ -4,6 +4,7 @@ import goodGodsData from '../almanac-data/good-gods.json'
 import trucData from '../almanac-data/truc.json'
 import manifest from '../almanac-data/manifest.json'
 import overrides from '../almanac-data/overrides.json'
+import xieji from '../almanac-data/xiejibianfangshu-yiji.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
@@ -38,6 +39,36 @@ export interface ActivityInput {
   presentBadGods?: string[]
   personalModifier?: number
   mansionNature?: 'good' | 'bad'
+  /** Explicit presence operands of source-locked or day-rule gods (diagnostics only). */
+  godPresence?: Readonly<Record<string, readonly { operand: string; equals: number }[]>>
+}
+
+export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'
+const TRUC_ORDER = trucData.calculation.order as readonly string[]
+const XIEJI_HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
+
+/** Diagnostics metadata for a Trực/god rule: which 用事 heading, which authority, which operands.
+ * The heading → activity mapping is a product interpretation not yet reviewed; no score effect. */
+function xiejiEvidence(
+  activityId: string,
+  ruleKey: string,
+  conditions: readonly { operand: string; equals: number }[],
+): Pick<Evidence, 'activityMapping' | 'conditions' | 'exceptions'> {
+  const headings = XIEJI_HEADINGS[activityId] ?? []
+  return {
+    activityMapping: {
+      version: 'xieji-activity-mapping-v1',
+      activityId,
+      status: 'exact_catalog_pair',
+      reviewStatus: 'interpretation_pending',
+      reason: `協紀 卷十一 用事 ${headings.join('、')} → ${activityId}; cách hiểu chưa thẩm định.`,
+      authorityId: XIEJI_AUTHORITY_ID,
+      clauseId: `${headings.join('+')}:${ruleKey}`,
+    },
+    conditions,
+    // 卷十一 lists carry no per-heading exception; 鋪註條例 extra taboos are missing witnesses.
+    exceptions: [],
+  }
 }
 export const ACTIVITY_LABELS = Object.fromEntries(
   activitiesData.items.map((item) => [item.id, item.label]),
@@ -77,9 +108,22 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         scoreDelta: delta,
         polarity: delta > 0 ? 'positive' : delta < 0 ? 'negative' : 'neutral',
       })
+      const officerIndex = TRUC_ORDER.indexOf(input.officerId)
       contributions.push(
         rule
-          ? make('truc', `${input.officerId}:${activity.id}`, `Trực ${officer!.label}`, rule.weight)
+          ? {
+              ...make(
+                'truc',
+                `${input.officerId}:${activity.id}`,
+                `Trực ${officer!.label}`,
+                rule.weight,
+              ),
+              ...(officerIndex >= 0 && XIEJI_HEADINGS[activity.id]
+                ? xiejiEvidence(activity.id, `truc:${input.officerId}`, [
+                    { operand: 'OFFICER_INDEX', equals: officerIndex },
+                  ])
+                : {}),
+            }
           : make(
               'truc',
               `${input.officerId}:${activity.id}`,
@@ -97,7 +141,13 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
           (god) => new Set(present ?? []).has(god.id) && god.activityIds.includes(activity.id),
         )) {
           const weights: Record<string, number> = dataset.weights
-          const row = make(source, god.id, god.label, weights[god.tier] ?? 0)
+          const presence = input.godPresence?.[god.id]
+          const row: Evidence = {
+            ...make(source, god.id, god.label, weights[god.tier] ?? 0),
+            ...(presence && XIEJI_HEADINGS[activity.id]
+              ? xiejiEvidence(activity.id, `${source}:${god.id}`, presence)
+              : {}),
+          }
           // A god that always falls on this Trực restates the same day relation; when the Trực
           // already scores this activity, keep the god visible (and its hard warning) but do not
           // count it a second time.
