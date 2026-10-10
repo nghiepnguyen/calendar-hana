@@ -453,6 +453,50 @@
       }
     },
     {
+      "id": "bach_ky_dan",
+      "han": "寅日",
+      "label": "Ngày Dần (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["worship"],
+      "sourceRef": "協紀辨方書 卷十一 祭祀; 卷十 百忌日 \"寅日忌祭祀\"",
+      "rule": {
+        "dayChi": [2]
+      }
+    },
+    {
+      "id": "bach_ky_dau",
+      "han": "酉日",
+      "label": "Ngày Dậu (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["meeting"],
+      "sourceRef": "協紀辨方書 卷十一 宴會; 卷十 百忌日 \"酉日忌宴㑹\"",
+      "rule": {
+        "dayChi": [9]
+      }
+    },
+    {
+      "id": "bach_ky_than",
+      "han": "申日",
+      "label": "Ngày Thân (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["bed_installation"],
+      "sourceRef": "協紀辨方書 卷十一 安牀; 卷十 百忌日 \"申日忌安牀\"",
+      "rule": {
+        "dayChi": [8]
+      }
+    },
+    {
+      "id": "bach_ky_mui",
+      "han": "未日",
+      "label": "Ngày Mùi (Bách Kỵ)",
+      "tier": "medium",
+      "activityIds": ["medical"],
+      "sourceRef": "協紀辨方書 卷十一 求醫療病; 卷十 百忌日 \"未日忌求醫療病\"",
+      "rule": {
+        "dayChi": [7]
+      }
+    },
+    {
       "id": "nhan_than_toc",
       "han": "每月十二日十五日",
       "label": "Nhân Thần (ngày 12, 15 âm)",

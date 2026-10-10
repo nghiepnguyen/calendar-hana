@@ -66,6 +66,46 @@
       "activityIds": ["planting"],
       "sourcePolicy": "協紀辨方書 卷十 百忌日 \"乙日忌栽種\": an Ất day is not marked favourable for planting",
       "enabled": true
+    },
+    {
+      "id": "dan_day_blocks_worship",
+      "when": {
+        "targetPresent": "bach_ky_dan"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["worship"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"寅日忌祭祀\" (專忌): a Dần day is not marked favourable for worship",
+      "enabled": true
+    },
+    {
+      "id": "dau_day_blocks_meeting",
+      "when": {
+        "targetPresent": "bach_ky_dau"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["meeting"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"酉日忌宴㑹\" (專忌): a Dậu day is not marked favourable for banquets",
+      "enabled": true
+    },
+    {
+      "id": "than_day_blocks_bed_installation",
+      "when": {
+        "targetPresent": "bach_ky_than"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["bed_installation"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"申日忌安牀\" (專忌): a Thân day is not marked favourable for installing a bed",
+      "enabled": true
+    },
+    {
+      "id": "mui_day_blocks_medical",
+      "when": {
+        "targetPresent": "bach_ky_mui"
+      },
+      "action": "preserve_bad",
+      "activityIds": ["medical"],
+      "sourcePolicy": "協紀辨方書 卷十 百忌日 \"未日忌求醫療病\" (專忌): a Mùi day is not marked favourable for seeking medical treatment",
+      "enabled": true
     }
   ]
 }

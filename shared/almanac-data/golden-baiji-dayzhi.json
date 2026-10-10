@@ -1,0 +1,697 @@
+{
+  "version": "golden-baiji-dayzhi-v1",
+  "status": "FROZEN_BEFORE_CODE",
+  "frozenAt": "2026-10-10",
+  "source": {
+    "primary": "欽定協紀辨方書 (四庫全書本) 卷十 百忌日, Wikisource action=raw SHA-1 prefix 355dc6c8fe2d: 「…寅日忌祭祀…未日忌求醫療病申日忌安牀酉日忌宴㑹…以上所忌」",
+    "secondary": "卷十一 (ce4ed7f23ff9): 祭祀 忌 天狗寅日; 宴會 忌 …四廢五離酉日; 安牀 忌 …四廢五墓申日; 求醫療病 忌 …往亡未日每月十五日朔望日",
+    "notEncoded": "卷十 鋪註條例 「凡天狗寅日忌祭祀不註宜求福祈嗣」, 「凡酉日忌宴㑹亦不註宜慶賜賞賀」: suppress 宜 marking for other headings; the current override only acts on activities the god lists, so these stay unencoded (as 丁日 「亦不註宜整容」 needed nothing extra)."
+  },
+  "derivation": "Day branch computed independently of the engine from 2000-01-07 = 甲子 (date arithmetic mod 12). Policy written before code, same as giap_nhat/at_nhat (PR #26): a day-branch bad god of tier medium (−10) listed only for its 卷十一 heading, with a preserve_bad override, so the activity carries a hard warning and is never recommended; its status is the stricter of consider and the score status (hardWarningKeepsWorseScoreStatus). Other activities and all 11 events are untouched (none of the four activities belongs to an event profile).",
+  "cases": [
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-02-12",
+      "dayBranch": "子",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-02-14",
+      "dayBranch": "寅",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-02-14",
+      "dayBranch": "寅",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-02-14",
+      "dayBranch": "寅",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-02-14",
+      "dayBranch": "寅",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-02-19",
+      "dayBranch": "未",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-02-19",
+      "dayBranch": "未",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-02-19",
+      "dayBranch": "未",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-02-19",
+      "dayBranch": "未",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-02-20",
+      "dayBranch": "申",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-02-20",
+      "dayBranch": "申",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-02-20",
+      "dayBranch": "申",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-02-20",
+      "dayBranch": "申",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-02-21",
+      "dayBranch": "酉",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-02-21",
+      "dayBranch": "酉",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-02-21",
+      "dayBranch": "酉",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-02-21",
+      "dayBranch": "酉",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-07-01",
+      "dayBranch": "未",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-07-01",
+      "dayBranch": "未",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-07-01",
+      "dayBranch": "未",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-07-01",
+      "dayBranch": "未",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-07-02",
+      "dayBranch": "申",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-07-02",
+      "dayBranch": "申",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-07-02",
+      "dayBranch": "申",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-07-02",
+      "dayBranch": "申",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-07-03",
+      "dayBranch": "酉",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-07-03",
+      "dayBranch": "酉",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-07-03",
+      "dayBranch": "酉",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-07-03",
+      "dayBranch": "酉",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-07-06",
+      "dayBranch": "子",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2025-07-08",
+      "dayBranch": "寅",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2025-07-08",
+      "dayBranch": "寅",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2025-07-08",
+      "dayBranch": "寅",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2025-07-08",
+      "dayBranch": "寅",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-01-16",
+      "dayBranch": "寅",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-01-16",
+      "dayBranch": "寅",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-01-16",
+      "dayBranch": "寅",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-01-16",
+      "dayBranch": "寅",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-01-21",
+      "dayBranch": "未",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-01-21",
+      "dayBranch": "未",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-01-21",
+      "dayBranch": "未",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-01-21",
+      "dayBranch": "未",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-01-22",
+      "dayBranch": "申",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-01-22",
+      "dayBranch": "申",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-01-22",
+      "dayBranch": "申",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-01-22",
+      "dayBranch": "申",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-01-23",
+      "dayBranch": "酉",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-01-23",
+      "dayBranch": "酉",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-01-23",
+      "dayBranch": "酉",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-01-23",
+      "dayBranch": "酉",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-01-26",
+      "dayBranch": "子",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-08-20",
+      "dayBranch": "寅",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-08-20",
+      "dayBranch": "寅",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-08-20",
+      "dayBranch": "寅",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-08-20",
+      "dayBranch": "寅",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-08-25",
+      "dayBranch": "未",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-08-25",
+      "dayBranch": "未",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-08-25",
+      "dayBranch": "未",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-08-25",
+      "dayBranch": "未",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-08-26",
+      "dayBranch": "申",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-08-26",
+      "dayBranch": "申",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2026-08-26",
+      "dayBranch": "申",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-08-26",
+      "dayBranch": "申",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2026-08-27",
+      "dayBranch": "酉",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2026-08-27",
+      "dayBranch": "酉",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2026-08-27",
+      "dayBranch": "酉",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2026-08-27",
+      "dayBranch": "酉",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2027-11-07",
+      "dayBranch": "寅",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2027-11-07",
+      "dayBranch": "寅",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2027-11-07",
+      "dayBranch": "寅",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2027-11-07",
+      "dayBranch": "寅",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2027-11-12",
+      "dayBranch": "未",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2027-11-12",
+      "dayBranch": "未",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2027-11-12",
+      "dayBranch": "未",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2027-11-12",
+      "dayBranch": "未",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2027-11-13",
+      "dayBranch": "申",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2027-11-13",
+      "dayBranch": "申",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": false
+    },
+    {
+      "date": "2027-11-13",
+      "dayBranch": "申",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2027-11-13",
+      "dayBranch": "申",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    },
+    {
+      "date": "2027-11-14",
+      "dayBranch": "酉",
+      "activityId": "worship",
+      "rule": "bach_ky_dan",
+      "present": false
+    },
+    {
+      "date": "2027-11-14",
+      "dayBranch": "酉",
+      "activityId": "meeting",
+      "rule": "bach_ky_dau",
+      "present": true,
+      "hardWarning": true,
+      "notRecommended": true
+    },
+    {
+      "date": "2027-11-14",
+      "dayBranch": "酉",
+      "activityId": "bed_installation",
+      "rule": "bach_ky_than",
+      "present": false
+    },
+    {
+      "date": "2027-11-14",
+      "dayBranch": "酉",
+      "activityId": "medical",
+      "rule": "bach_ky_mui",
+      "present": false
+    }
+  ]
+}
