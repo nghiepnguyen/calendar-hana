@@ -144,6 +144,14 @@ Không dùng: bảng ngày âm "tốt để cắt tóc" trên các trang tiếng
 
 Năm 2026, Cắt tóc: 0 ngày "Chưa đủ dữ liệu", 347 ngày "Cân nhắc" (120 ngày trong đó do policy này), 18 ngày "Thuận lợi".
 
+#### Cập nhật 10/10/2026: mở rộng tới mức high
+
+Owner quyết định đọc "không gặp quy tắc nào" là trung tính cho cả sự kiện mức medium và high. Policy đổi tên thành `manifest.policies.noTabooMeansNeutralUpToSeverity = "high"` (thay `lowSeverityNoTabooMeansNeutral`). Sự kiện mức `very_high` (cưới hỏi, động thổ, khai trương, mua nhà/đất) vẫn trả `insufficient_evidence`, vì việc lớn cần dấu hiệu tốt.
+
+Ngày trung tính theo policy không bao giờ được kết luận "Thuận lợi": hoạt động phụ vẫn cộng/trừ điểm nhưng kết luận tối đa là "Cân nhắc". Nếu không chặn, ví dụ Bàn giao nhà 18/09/2026 (hoạt động chính không có quy tắc, hoạt động phụ +17,5) sẽ thành "Thuận lợi" chỉ nhờ hoạt động phụ.
+
+Migration proof `shared/lunar/neutralNoTabooMigration.test.ts` (1095 ngày 2025–2027 × 11 sự kiện, giờ 9): contributions không đổi; chỉ sự kiện có hoạt động chính `no_evidence` ở mức medium/high đổi kết luận. 1.674 lượt `insufficient_evidence` → `caution` (high 1.462: mua xe 337, ký hợp đồng 337, bàn giao nhà 337, chuyển nhà 261, nhận xe 190; medium 212: xuất hành). Cắt tóc và mức very_high không đổi.
+
 Sửa kèm: câu cảnh báo cứng trước đây luôn ghi "Nguyệt Phá"; nay ghi đúng tên thần gây cảnh báo (ví dụ "Ngày Đinh (Bách Kỵ)").
 
 ## UI — 05/10/2026
