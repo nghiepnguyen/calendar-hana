@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #38.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-10 (giờ VN), sau PR #40.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
@@ -26,9 +26,9 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Main | `f9c1d1e` (PR #38) |
-| Bundle | `/assets/index-AMatzopN.js`, SHA-256 `3fd1e1b9b335bb1fe2cc2fb2d8d8e75f562beb06df0960140f46757c4dfc87bb` (trùng build local) |
-| Deploy gần nhất | CI, 2026-10-10 12:29:13 UTC (19:29 VN); smoke production 9/9 (desktop Chrome, Pixel 7, Safari desktop) |
+| Main | `533de2c` (PR #40) |
+| Bundle | `/assets/index-DDNF8sES.js`, SHA-256 `1c4ef927db4507d8d19661ec60f4696d2ee5af1966175126d9c384cc512d6d3d` (trùng build local) |
+| Deploy gần nhất | CI, 2026-10-10 13:36:14 UTC (20:36 VN); smoke production 6/6 (desktop Chrome, Pixel 7, Safari desktop): Cúng tế 2026-10-19 và Chữa bệnh 2026-10-24 “Nên làm” → “Cân nhắc” |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
@@ -64,7 +64,7 @@ Rollback 卷十: flag về false trên nhánh riêng → PR → CI deploy → sm
 | Trực/thần + 卷十 diagnostics | DEPLOYED | `docs/audits/truc-than-context-audit.md`, `xieji-vol10-resolution.md`, `xieji-monthly-sha-presence.md` |
 | Thiên Đức legacy tháng quẻ | RESOLVED, bỏ theo 月表 (PR #21) | `docs/audits/tiande-yuebiao.md` |
 | 百忌日 甲日/乙日 | DEPLOYED (PR #26) | `docs/audits/baiji-giap-at.md` |
-| 百忌日 寅/酉/申/未 (祭祀/宴會/安牀/求醫療病) | PR #40, chờ merge | `docs/audits/baiji-dayzhi.md`; chỉ activity đổi, event không đổi |
+| 百忌日 寅/酉/申/未 (祭祀/宴會/安牀/求醫療病) | DEPLOYED (PR #40) | `docs/audits/baiji-dayzhi.md`; chỉ activity đổi, event không đổi |
 | 土王用事 | DEPLOYED (PR #29), còn SOURCE_DEPENDENT | `docs/audits/tu-vuong-dung-su.md` |
 | Event bỏ activity phụ trùng heading | DEPLOYED (PR #37, #38) | `open_business` bỏ `business` (開市), `sign_contract` bỏ `transaction` (立券交易), `groundbreaking` bỏ `construction` (興造動土); 1095 ngày: recommended → caution 40 / 80 / 6, event khác không đổi. Proof `kaishiDoubleCountMigration.test.ts`, `sameHeadingDuplicateMigration.test.ts`; test lịch sử ghim mapping cũ qua `legacyEventMapping.ts` |
 | 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` (39 ca) |
@@ -100,7 +100,7 @@ Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp 
 
 | # | Vấn đề | Trạng thái | Việc tiếp theo | Phụ thuộc |
 |---|---|---|---|---|
-| P1 | **百忌日 không dính event:** 寅/酉/申/未 | Đã code (PR #40), chờ merge | Chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine) | — |
+| P1 | **百忌日 không dính event:** 寅/酉/申/未 | DEPLOYED (PR #40) | Còn: chú 鋪註條例 「寅日…不註宜求福祈嗣」, 「酉日…不註宜慶賜賞賀」 chưa mã hoá (cần engine; owner quyết) | — |
 | P2 | **百忌日 dính event:** 巳日 出行 (`travel` → Xuất hành, Nhận xe ×0.3), 亥日 嫁娶 (`wedding` → Cưới hỏi `very_high`) | Chờ đo + quyết | Đo tác động trước code (như PR #37); owner duyệt | 巳日: chốt cách hiểu `travel` (行幸遣使, 「出行同」) vs 鋪註條例 「凡巳日忌出行不註宜出師遣使」 → xem R1 |
 | P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence (`godPresenceCoverage.test.ts`); 14 thần legacy tính theo tháng âm, 協紀 dùng Month Jian (`CONVENTION_DIFFERENCE`). Generic `byMonth` giả định tháng âm — không đổi blanket; legacy Hoàng/Hắc trùng không ghi đè Phase 4C | Mở | Đọc nốt 月表 tháng 6/7/9/10/12 → audit từng thần (docs/diagnostics, không đổi điểm) → release chấm điểm tách riêng | 月表 đọc đủ |
 | P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | Mở | Spec + Golden sau P3 | P3 (cần presence cát thần). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵 |
@@ -173,4 +173,4 @@ REPORT_FILE=… npx vitest run shared/lunar/xiejiVol10ScoringMigration.test.ts
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `f9c1d1e`+ (PR #6–#38), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Việc tiếp theo theo bảng ưu tiên §5 (P2: 巳日 Xuất hành / 亥日 Cưới hỏi, đo trước). Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main `533de2c`+ (PR #6–#40), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production 卷十 ON, mansion scoring OFF. Activity phụ trùng heading đã bỏ khỏi open_business/sign_contract/groundbreaking. Việc tiếp theo theo bảng ưu tiên §5 (P2: 巳日 Xuất hành / 亥日 Cưới hỏi, đo trước). Lịch sử ở `docs/project-context/history.md`.
