@@ -296,7 +296,6 @@
         "transaction",
         "finance",
         "meeting",
-        "warehouse",
         "livestock",
         "burial"
       ],
@@ -329,7 +328,6 @@
         "contract",
         "transaction",
         "finance",
-        "warehouse",
         "planting",
         "livestock"
       ],
@@ -340,7 +338,7 @@
       "han": "天倉",
       "label": "Thiên Thương",
       "tier": "medium",
-      "activityIds": ["finance", "warehouse", "livestock"],
+      "activityIds": ["finance", "livestock"],
       "sourceRef": "協紀辨方書 卷十一"
     },
     {

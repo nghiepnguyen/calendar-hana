@@ -59,7 +59,7 @@ describe('event classification guardrails', () => {
   })
   it('records source caps, multipliers and dataset versions in the audit', () => {
     const result = evaluateEventDay('2026-10-05', 'open_business')
-    expect(result.datasetVersion).toBe('1.2.0')
+    expect(result.datasetVersion).toBe('1.2.1')
     expect(
       result.contributions.every((row) => !!row.ruleId && !!row.sourceRef && !!row.scope),
     ).toBe(true)
