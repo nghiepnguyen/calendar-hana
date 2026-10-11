@@ -2,6 +2,7 @@ import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { isMonthlyShaPresent, type MonthlyShaId } from './xiejiMonthlySha'
 import { getVol10VirtuesPresent, VOL10_VIRTUES } from './xiejiVirtues'
+import { LEGACY_STILL_AVOID_BASE_ONLY, YUE_PO_STILL_AVOID } from './yuePoStillAvoidPolicy'
 
 /** 協紀辨方書 卷十 宜忌 for source-locked 凶 entries: six present in production and 月厭/月刑/
  * 月煞/災煞 located by `xiejiMonthlySha`. Diagnostics only: the result is shown next to the product
@@ -169,9 +170,16 @@ function resolveEntry(entry: Entry, day: Vol10Day, depth = 0): Resolved {
         return { effect, avoided: new Set(splitHeadings(c!.list!)), reason: '止忌…餘皆不忌', quote }
       case 'still_avoid': {
         const spared = new Set(splitHeadings(c!.notAvoid!))
+        // 月破 子午未申: 仍忌 three headings outside the base list (yuePoStillAvoidPolicy).
+        const pool =
+          entry.id === 'yue_po' &&
+          (YUE_PO_STILL_AVOID.months as readonly string[]).includes(month) &&
+          !LEGACY_STILL_AVOID_BASE_ONLY
+            ? [...base, ...splitHeadings(YUE_PO_STILL_AVOID.headings)]
+            : base
         return {
           effect,
-          avoided: new Set(base.filter((h) => !spared.has(h))),
+          avoided: new Set(pool.filter((h) => !spared.has(h))),
           reason: '猶忌, 止不忌…',
           quote,
         }
