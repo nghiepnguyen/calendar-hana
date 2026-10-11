@@ -1,0 +1,11 @@
+{
+  "version": "p4-grade-resolution-lock-v2",
+  "parentLock": "p4-grade-resolution-lock-v1",
+  "reason": "Map still_avoid (月破 與德合併) to 從忌不從宜 and correct the 月厭 下 partner reading; v1 artifact and Golden unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-grade-resolution-v2.json",
+      "sha256": "c441331ae3424c34fa4cdb1989355d57a78e42fbdde35f72df9283a663141e13"
+    }
+  ]
+}

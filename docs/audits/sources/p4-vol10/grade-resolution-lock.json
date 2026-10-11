@@ -1,0 +1,16 @@
+{
+  "version": "p4-grade-resolution-lock-v1",
+  "parentLock": "p4-context-bridge-lock-v2",
+  "frozenAtCommit": "4f4cea7",
+  "reason": "A03: grid cell per (subject, Month Jian), named 德 group per entry clause, grade action vs clause effect; parent locks unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-grade-resolution.json",
+      "sha256": "57bbcf47d1b672fd2a4bc98efbeca0f6e34384a3ec9b5a1ba3b0800f9c1fe218"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-grade-resolution.json",
+      "sha256": "f48e1679b90460c55cb283c255b2413642b21a5c61c327cf17811e1f05c62e02"
+    }
+  ]
+}

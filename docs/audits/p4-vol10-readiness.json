@@ -9,7 +9,7 @@
   "localGradeFixtures": 132,
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
-    "P4-A03",
+    "P4-A03 (德願 membership, unaudited partner operands)",
     "P4-A04",
     "P4-A05"
   ],
@@ -24,9 +24,9 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 168,
-    "unitTests": 3191,
-    "p4GateTests": 239,
+    "unitFiles": 169,
+    "unitTests": 3212,
+    "p4GateTests": 260,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -60,5 +60,26 @@
     "mutationCaught": 6,
     "audit": "docs/audits/p4-vol10-context-bridge.md",
     "jieShaSource": "卷06 李鼎祚曰正月起亥逆行四孟"
+  },
+  "gradeResolution": {
+    "lockVersion": "p4-grade-resolution-lock-v2",
+    "oracleCommit": "4f4cea7",
+    "oracleCases": 13,
+    "newTests": 21,
+    "cellPerSubjectMonth": "verified 11×12",
+    "conflicts": 0,
+    "agree": 558,
+    "xiangdi": 100,
+    "noGridColumn": 120,
+    "undetermined": 2,
+    "mutationCaught": 6,
+    "readingCorrections": [
+      "yan:xia 月刑 belongs to 午月"
+    ],
+    "errata": [
+      "bridge v1/v2 kiep_sat note"
+    ],
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-grade-resolution.md"
   }
 }

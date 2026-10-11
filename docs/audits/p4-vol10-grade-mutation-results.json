@@ -1,0 +1,37 @@
+{
+  "scope": "AUDIT_A03_GRADE_RESOLUTION_ONLY_NOT_SCORING",
+  "mutations": [
+    {
+      "mutation": "global_de_boolean",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ignore_de_as_jian",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "de_yuan_as_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "swap_de_branches",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "own_clause_not_terminal",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "xiangdi_as_agree",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true,
+  "notCovered": "Heading annotation (A04), target 忌 scope (A05), scoring, penalty, warehouse and event mutations remain go-live prerequisites."
+}

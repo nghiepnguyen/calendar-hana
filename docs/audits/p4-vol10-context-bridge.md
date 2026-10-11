@@ -34,7 +34,7 @@ Gate P4 3 file/236 test; full unit 168 file/3188 test; typecheck/lint/build qua.
 - Câu nguồn: 卷06 「李鼎祚曰正月起亥逆行四孟」 (offset 2325), có lời 按 「按月刼煞義與嵗刼煞同」 (offset 2352), không bác bỏ. Theo Month Jian từ tháng 寅: 亥申巳寅 lặp lại.
 - Raw 卷06 lưu ở `docs/audits/sources/p4-vol10/vol06.raw.txt`. SHA-1 `a9ab67896fc9098e6842036979e84fde4f8aae19` trùng prefix đã ghi trong `xieji-god-definitions.json`.
 - Đối chiếu với 卷十: hai edge có tên 月害 巳亥 → 刼煞 và 收日 寅申巳亥 → 刼煞 đều rơi vào ngày 刼煞 có mặt theo quy tắc này. Bất biến kiểm trên đủ 720 context.
-- `kiep_sat` production vẫn lấy từ bảng sao Ngọc Hạp, không đổi. Quy tắc này chỉ là operand của P4.
+- **Đính chính (A03):** câu “`kiep_sat` production lấy từ bảng Ngọc Hạp” ở v1/v2 là sai. `catHungAuthority` (Phase 4D) đã khóa 刼煞 theo Month Jian, trùng quy tắc 卷06; xem `p4-vol10-grade-resolution.md`.
 - Artifact và Golden v2 là file mới (`p4-vol10-context-bridge-v2.json`, `golden-p4-context-bridge-v2.json`), commit `67c442b` trước khi đổi code. v1 và lock v1 giữ nguyên bytes, test vẫn kiểm. Golden v2 suy tay lại 11 ca v1, đổi ca 巳月甲寅 từ undetermined sang named deferral, thêm 2 ca 刼煞.
 - 720 context: 195 edge có tên tới đích có mặt, 585 đối tượng không có edge, **0 undetermined**, không còn đối tượng unknown.
 - Gate P4 239 test; full unit 168 file/3191 test; typecheck/lint/build qua; bundle SHA giữ nguyên. Sáu mutation đều bị bắt: đích unknown thành vắng, đích vắng thành terminal, 刼煞 trở lại unknown, 刼煞 lệch một tháng, chỉ đi một bước, bỏ 德作建論. Mutation “đi từ đối tượng unknown” của v1 được bỏ vì v2 không còn đối tượng unknown; trường hợp đích unknown được kiểm bằng đồ thị tổng hợp.
