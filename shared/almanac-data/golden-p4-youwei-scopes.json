@@ -1,0 +1,126 @@
+{
+  "version": "golden-p4-youwei-scopes-v1",
+  "status": "PARTIAL_SOURCE_ORACLE",
+  "authoring": "Hand-derived from the alias lists, parent presence and A04a/A05 rules, before the alias scopes were coded.",
+  "cases": [
+    {
+      "note": "辰月壬辰 月建→月刑 相抵: 土府 專忌 stays; 平治道塗 leaves the 月建 base, 伐木 stays uncovered",
+      "monthJian": "辰",
+      "pillar": "壬辰",
+      "youwei": {
+        "土府": {
+          "parent": "月建",
+          "status": "zhuanji",
+          "headings": {
+            "平治道塗": "only_ji",
+            "營建宮室": "only_ji",
+            "祭祀": "not_listed"
+          }
+        }
+      },
+      "scopes": {
+        "月建": {
+          "headings": {
+            "平治道塗": "not_avoided",
+            "伐木": "undetermined"
+          },
+          "uncoveredByDeferral": [
+            "伐木"
+          ]
+        }
+      }
+    },
+    {
+      "note": "寅月丁丑 閉日→月煞 如常例: 血支 專忌 keeps 針刺; 療目 stays uncovered",
+      "monthJian": "寅",
+      "pillar": "丁丑",
+      "youwei": {
+        "血支": {
+          "parent": "閉日",
+          "status": "zhuanji",
+          "headings": {
+            "針刺": "only_ji",
+            "嫁娶": "not_listed"
+          }
+        }
+      },
+      "scopes": {
+        "閉日": {
+          "headings": {
+            "針刺": "not_listed",
+            "療目": "undetermined"
+          },
+          "uncoveredByDeferral": [
+            "療目"
+          ]
+        }
+      }
+    },
+    {
+      "note": "卯月甲子 大時→月刑: 咸池 convention scope keeps 取魚/乘船渡水; day 乘船渡水 only_ji",
+      "monthJian": "卯",
+      "pillar": "甲子",
+      "youwei": {
+        "咸池": {
+          "parent": "大時",
+          "status": "convention",
+          "headings": {
+            "取魚": "only_ji",
+            "乘船渡水": "only_ji"
+          }
+        }
+      },
+      "day": {
+        "乘船渡水": "only_ji"
+      }
+    },
+    {
+      "note": "申月癸亥 平日 止忌 with 天德: no 死神 scope; 死神's 進人口 is lifted with 平日",
+      "monthJian": "申",
+      "pillar": "癸亥",
+      "youwei": {},
+      "scopes": {
+        "平日": {
+          "headings": {
+            "進人口": "undetermined",
+            "出師": "undetermined"
+          }
+        }
+      }
+    },
+    {
+      "note": "子月壬午 月破 猶忌 with 月德 + 災煞: 大耗 and 天火 scopes; 災煞 now fully covered after resolution",
+      "monthJian": "子",
+      "pillar": "壬午",
+      "youwei": {
+        "大耗": {
+          "parent": "月破",
+          "status": "convention",
+          "headings": {
+            "開市": "only_ji"
+          }
+        },
+        "天火": {
+          "parent": "災煞",
+          "status": "convention",
+          "headings": {
+            "苫蓋": "only_ji"
+          }
+        }
+      },
+      "scopes": {
+        "災煞": {
+          "headings": {
+            "苫蓋": "not_listed",
+            "求醫療病": "only_ji"
+          },
+          "uncoveredByDeferral": [
+            "解除",
+            "求醫療病",
+            "破屋壊垣"
+          ]
+        }
+      }
+    }
+  ]
+}

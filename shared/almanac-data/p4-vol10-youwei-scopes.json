@@ -1,0 +1,118 @@
+{
+  "version": "p4-youwei-scopes-v1",
+  "status": "AUDIT_ONLY_OWNER_DECISION",
+  "parentLock": "p4-deferral-coverage-lock-v2",
+  "scoringReady": false,
+  "decision": {
+    "date": "2026-10-11",
+    "by": "owner",
+    "choice": "B by source: 專忌 aliases are separate protected scopes; 死神 stays in 平日's base; the other aliases are separate scopes by named convention"
+  },
+  "presence": "An alias scope is present exactly when its parent subject is present (又為 = same day).",
+  "aliases": [
+    {
+      "alias": "土府",
+      "parent": "月建",
+      "status": "zhuanji",
+      "protected": true,
+      "source": {
+        "text": "又為土府專忌營建宮室修宮室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土",
+        "offset": 7567
+      },
+      "why": "專忌, like 百忌日 (鋪註 22 如遇專忌之日則仍註忌)"
+    },
+    {
+      "alias": "血支",
+      "parent": "閉日",
+      "status": "zhuanji",
+      "protected": true,
+      "source": {
+        "text": "又為血支專忌針刺",
+        "offset": 10869
+      },
+      "why": "專忌"
+    },
+    {
+      "alias": "死神",
+      "parent": "平日",
+      "status": "base",
+      "source": {
+        "text": "又為死神忌安撫邊境選將訓兵出師進人口解除求醫療病修置產室栽種牧養納畜",
+        "offset": 9021
+      },
+      "counterEvidence": [
+        {
+          "text": "亥月值相日又值時德六合即不與德願併其吉已足勝凶故止忌軍事療病餘皆不忌",
+          "offset": 9332
+        },
+        {
+          "text": "平日又為死神乃是真死與德神併吉凶僅足相抵故忌則不宜宜則不忌",
+          "offset": 9471
+        }
+      ],
+      "why": "平日's own balancing covers 死神 (餘皆不忌; 相抵 of 平日 又為死神), so it is part of 平日's base list"
+    },
+    {
+      "alias": "大耗",
+      "parent": "月破",
+      "status": "convention",
+      "protected": false,
+      "source": {
+        "text": "又為大耗忌修倉庫開市立劵交易納財開倉庫出貨財",
+        "offset": 8200
+      }
+    },
+    {
+      "alias": "地火",
+      "parent": "月厭",
+      "status": "convention",
+      "protected": false,
+      "source": {
+        "text": "又為地火忌栽種修築園圃",
+        "offset": 13994
+      },
+      "note": "修築園圃 has no heading"
+    },
+    {
+      "alias": "月虛",
+      "parent": "月煞",
+      "status": "convention",
+      "protected": false,
+      "source": {
+        "text": "又為月虛忌修倉庫開倉庫出貨財",
+        "offset": 12187
+      }
+    },
+    {
+      "alias": "天火",
+      "parent": "災煞",
+      "status": "convention",
+      "protected": false,
+      "source": {
+        "text": "又為天火忌苫葢",
+        "offset": 11889
+      }
+    },
+    {
+      "alias": "咸池",
+      "parent": "大時",
+      "status": "convention",
+      "protected": false,
+      "source": {
+        "text": "又為咸池忌取魚乘船渡水",
+        "offset": 15654
+      }
+    }
+  ],
+  "notYouwei": {
+    "entry": "月建",
+    "as": "正月建日",
+    "reason": "正月建日又忌出師 is a month condition of 月建 itself, not 又為X; stays in the base list"
+  },
+  "effects": {
+    "scope": "only_ji for the alias list, not_listed otherwise; never lifted or redirected by the parent's clause or deferral",
+    "protected": "zhuanji only: survives 相抵 and propagation (like 百忌日); convention aliases can be lifted by a 鋪註 propagation line",
+    "yi": "An alias scope notes 忌 only; it does not suppress 宜 evidence (as 百忌日)"
+  },
+  "coverageImpact": "Alias headings leave the parent's base list, so A05 uncovered sets shrink (deferral-coverage v3)."
+}
