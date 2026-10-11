@@ -1,0 +1,108 @@
+{
+  "version": "p4-deferral-coverage-v1",
+  "status": "AUDIT_ONLY_A05",
+  "parentLock": "p4-day-composition-lock-v1",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "principle": {
+    "text": "A 從重 deferral is valid because the target's 忌 contains the subject's; 月害 does not follow 天吏 because 天吏 cannot cover 月害's 忌.",
+    "sources": [
+      {
+        "text": "子午月值月煞己亥月值刼煞寅月值月刑申月值平日其凶皆重於月害故從重論",
+        "offset": 13665
+      },
+      {
+        "text": "天吏之凶亦重於月害而不從天吏論者天吏不能該月害之所忌故也",
+        "offset": 13698
+      }
+    ]
+  },
+  "lists": "Base lists = 忌 + month-filtered 又為X lists, with 忌同刼煞 applied (月煞, 災煞), headings in splitHeadings normal form, 劵→券.",
+  "rule": "Under a deferral, a heading in the subject's base list but outside the target's base list is undetermined (uncovered_by_deferral) in the subject scope, unless the target's resolution already gives only_ji. Never silently dropped, never silently kept.",
+  "provenance": "Coverage is a mechanical comparison; expected sets below were fixed after measuring and checked heading by heading against the lists' source text (not pre-registered like earlier oracles).",
+  "expectedUncovered": {
+    "jian_xing": {
+      "months": [
+        "辰",
+        "酉",
+        "亥"
+      ],
+      "headings": [
+        "伐木",
+        "平治道塗"
+      ],
+      "why": "伐木 in 月建's list, 平治道塗 in 又為土府; both in 月刑's 止不忌"
+    },
+    "shi_xing": {
+      "months": [
+        "卯"
+      ],
+      "headings": [
+        "取魚",
+        "乘船渡水"
+      ],
+      "why": "又為咸池 of 大時; 月刑 lists neither"
+    },
+    "bi_sha": {
+      "months": [
+        "寅",
+        "申",
+        "巳",
+        "亥"
+      ],
+      "headings": [
+        "療目",
+        "針刺"
+      ],
+      "why": "閉日 求醫療目 and 又為血支 針刺; 刼煞 list (月煞 忌同刼煞) has neither"
+    },
+    "zai_po": {
+      "months": [
+        "子",
+        "午",
+        "卯",
+        "酉"
+      ],
+      "headings": [
+        "解除",
+        "求醫療病",
+        "破屋壊垣",
+        "苫蓋"
+      ],
+      "resolvedCovered": true,
+      "why": "base 月破 lacks them; 子午 clause 仍忌 everything but the spared list and 卯酉 is 諸事皆忌, so the resolution covers all four"
+    }
+  },
+  "coveredEdges": [
+    "jian_yan",
+    "hai_sha",
+    "hai_jie",
+    "hai_xing",
+    "hai_ping",
+    "xing_yan",
+    "li_ping",
+    "li_xing",
+    "ping_xing",
+    "ping_sha",
+    "shou_jie",
+    "shou_xing"
+  ],
+  "nonDeferralWitness": {
+    "subject": "月害",
+    "target": "天吏",
+    "months": [
+      "辰",
+      "戌"
+    ],
+    "headings": [
+      "慶賜賞賀",
+      "宴會",
+      "經絡",
+      "醞釀",
+      "破土",
+      "安葬",
+      "啓攢"
+    ]
+  },
+  "openQuestion": "Whether 又為X lists (土府, 咸池, 血支, 天火…) are separate scopes that survive any deferral or lift is not stated; they are treated as part of the base list here."
+}
