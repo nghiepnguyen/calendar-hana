@@ -38,9 +38,20 @@ Ngày 2026-10-11, nhánh `codex/p4-authority-lock`, PR #48. Nối tiếp context
 
 Gate P4 260 test; full unit 169 file/3212 test; typecheck/lint/build qua; bundle SHA-256 giữ nguyên `00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33`. Sáu mutation bị bắt: 德 dùng boolean chung, bỏ 德作建論, 德願 coi như vắng, đảo nhánh 德, dùng clause của chính đối tượng thay vì đích, gộp 相抵 vào agree. Lần chạy đầu, mutation 德願 lọt; đã thêm ca suy tay 未月戊午 rồi chạy lại.
 
+## Quyết định 德願 (owner, 2026-10-11)
+
+Owner đề xuất chốt có điều kiện `deyuan := dehe + tianyuan` thành convention có tên (`resolved_by_convention`, nguồn chỉ ngầm định). Điều kiện: 德合 và 天願 cùng có mặt ở 未月戊午, và cần đúng cặp này mới tái tạo được annotation nguồn. Nếu không thì rút quyết định, giữ `undetermined`.
+
+Kiểm presence:
+
+- **未月戊午:** không thần 德合 nào (天德/月德 甲, 天德合/月德合 己); 天願 và 四相 có mặt.
+- **巳月丙午:** có 天德合, không có 天願. Đối tượng duy nhất là 大時 với clause vô điều kiện, nên 德願 không tác động.
+
+Điều kiện không đạt, nên **không áp convention; 未月戊午 giữ `undetermined`**. Thêm nữa, vì 德合 vắng ở cả hai context, phần 德合 của expansion không thể kiểm bằng mutation trên dữ liệu thật. Test `keeps 德願 undetermined` khóa bằng chứng này; nếu test đó đỏ thì phải xét lại quyết định, không cập nhật expected. Không tạo artifact v3 vì không có thay đổi dữ liệu.
+
 ## Còn lại
 
-- A03: thành viên 德願 (cần nguồn hoặc owner chốt convention có tên); operand 相日/王日/官日/守日/長生 để kiểm nốt sao đi kèm; ý nghĩa nhãn 德大會.
+- A03: thành viên 德願 vẫn `undetermined` (convention có điều kiện không đạt, xem trên); cần bằng chứng nội tại khác; operand 相日/王日/官日/守日/長生 để kiểm nốt sao đi kèm; ý nghĩa nhãn 德大會.
 - A04: annotation cuối theo heading, gồm quyết định `xiangdi` → `neither_recorded` theo 鋪註.
 - A05: áp danh sách 忌 của đích vào scope.
 - Full Golden, P5, 21 thần, penalty, flag, diff/rollback. Không merge/deploy.

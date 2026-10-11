@@ -9,14 +9,17 @@ import golden from '../almanac-data/golden-p4-grade-resolution.json'
 import lockV1 from '../../docs/audits/sources/p4-vol10/grade-resolution-lock.json'
 import lock from '../../docs/audits/sources/p4-vol10/grade-resolution-lock-v2.json'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
+import { getSourceLockedCatHungStars } from './catHungStars'
 import { getP4SubjectPresence } from './p4ContextBridge'
 import { getP4EntryClause, getP4GridCell, resolveP4Grades } from './p4GradeResolution'
 import { getXiejiGodPresence } from './xiejiGodPresence'
+import { getVol10VirtuesPresent } from './xiejiVirtues'
 
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const source = Array.from(readFileSync('docs/audits/sources/p4-vol10/vol10.raw.txt', 'utf8'))
 const COLUMNS = Object.keys(art.gridColumns)
+const STAR_DE_HE = { 'Thiên Đức': 1, 'Thiên Đức Hợp': 1, 'Nguyệt Đức': 1, 'Nguyệt Đức Hợp': 1 }
 const grades = new Map(authority.grades.map((g) => [g.id, g]))
 const actionEffect = art.actionEffect as unknown as Record<string, string[]>
 const corrected = new Map(art.partnerReadingCorrections.map((c) => [c.cell, c.correctedReading]))
@@ -154,6 +157,21 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
         status: 'undetermined',
         suppressedBy: ['pursuit', 'no_de_yuan'],
       })
+  })
+
+  // Owner decision 2026-10-11: adopt 德願 = 德合 + 天願 only if both co-occur on 未月戊午 and the
+  // pair is needed to reproduce the source. Evidence below fails that precondition, so 德願 stays
+  // undetermined; if this test ever fails, revisit the decision instead of updating it.
+  it('keeps 德願 undetermined: the convention precondition is not met on its contexts', () => {
+    const deHe = (m: number, s: number, b: number) =>
+      getSourceLockedCatHungStars(m, s, b).good.filter((x) => x.name in STAR_DE_HE)
+    expect(deHe(7, 4, 6)).toEqual([]) // 未月戊午: no 德合 god
+    expect(getVol10VirtuesPresent(7, 4, 6).has('天願')).toBe(true)
+    expect(deHe(5, 2, 6).map((x) => x.name)).toEqual(['Thiên Đức Hợp']) // 巳月丙午
+    expect(getVol10VirtuesPresent(5, 2, 6).has('天願')).toBe(false)
+    expect(resolveP4Grades('巳', '丙午').subjects).toEqual({
+      大時: expect.objectContaining({ deGroup: [], consistency: 'agree' }),
+    })
   })
 
   it('corrects only the exact frozen reading and moves no token between cells', () => {
