@@ -1,6 +1,6 @@
 # P4 — tiến độ audit-only (mục lục)
 
-Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balancing.md). Nhánh `codex/p4-authority-lock`, PR #48 (draft). Mọi module dưới đây **chỉ test import**: không đổi runtime, bundle trùng production.
+Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balancing.md). Nhánh `codex/p4-authority-lock`, đã merge qua PR #48 (`2cf7bb3`). Mọi module dưới đây **chỉ test import**: không đổi runtime, bundle trùng production.
 
 | Bước | Module | Oracle khóa trước code | Kết quả chính | Audit |
 |---|---|---|---|---|
