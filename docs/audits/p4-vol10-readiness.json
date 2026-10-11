@@ -9,8 +9,8 @@
   "localGradeFixtures": 132,
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
-    "P4-A03 (德願 membership, unaudited partner operands)",
-    "P4-A04",
+    "P4-A03 (德願, unaudited partner operands)",
+    "P4-A04b (day composition, propagation, 宜 evidence)",
     "P4-A05"
   ],
   "scoringReady": false,
@@ -24,9 +24,9 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 169,
-    "unitTests": 3213,
-    "p4GateTests": 261,
+    "unitFiles": 170,
+    "unitTests": 3229,
+    "p4GateTests": 277,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -82,5 +82,16 @@
     "productionImport": false,
     "audit": "docs/audits/p4-vol10-grade-resolution.md",
     "deYuanDecision": "Owner conditional convention 德合+天願 not applied: 未月戊午 has no 德合 god; stays undetermined"
+  },
+  "headingAnnotation": {
+    "lockVersion": "p4-heading-annotation-lock-v1",
+    "oracleCommit": "d36e2aa",
+    "oracleCases": 10,
+    "newTests": 16,
+    "headings": 74,
+    "mutationCaught": 6,
+    "productionFinding": "月破 子午未申 與德合併 仍忌解除求醫療病破屋壞垣: production still_avoid uses base list, medical/demolition not_listed (5 contexts); not fixed",
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-heading-annotation.md"
   }
 }

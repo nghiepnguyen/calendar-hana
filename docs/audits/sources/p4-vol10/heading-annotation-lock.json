@@ -1,0 +1,16 @@
+{
+  "version": "p4-heading-annotation-lock-v1",
+  "parentLock": "p4-grade-resolution-lock-v2",
+  "frozenAtCommit": "d36e2aa",
+  "reason": "A04a per-scope heading states; parent locks unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-heading-annotation.json",
+      "sha256": "41784e61ab49e8ff0c43bc69e280a4aed0ce7c684d407480165ba291719650f0"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-heading-annotation.json",
+      "sha256": "a97cb107ba3b36ef07f0ef8c29f1db13338ec93b5c72a6c0379a11ec4fba39b1"
+    }
+  ]
+}

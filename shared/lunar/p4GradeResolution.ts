@@ -71,10 +71,48 @@ function presentDe(monthJianBranch: number, dayStem: number, dayBranch: number) 
   ])
 }
 
+type PillarRule = ReturnType<typeof resolveP4Context>['pillarRules'][number]
+
+/** Named 德 group of the owner's clause for this month, after pillar 德 overrides, and the
+ * clause effect that follows. 德願 membership is not spelled out, so it stays undetermined. */
+export function evaluateP4Clause(
+  owner: string,
+  month: string,
+  de: ReadonlySet<string>,
+  pillarRules: readonly PillarRule[],
+) {
+  const clause = getP4EntryClause(owner, month)
+  const group = clause.with ?? []
+  const suppressedBy: string[] = []
+  let named = group.filter((g) => de.has(g))
+  let undetermined = false
+  for (const rule of pillarRules) {
+    const removesDeHe = DE_AS_JIAN.has(rule.id) || rule.ignoredVirtueGroup === '德合'
+    if (removesDeHe && group.some((g) => DE_HE.includes(g))) {
+      suppressedBy.push(rule.id)
+      named = named.filter((g) => !DE_HE.includes(g))
+    }
+    if (rule.ignoredVirtueGroup === '德願' && named.length) {
+      suppressedBy.push(rule.id)
+      undetermined = true
+    }
+  }
+  const dePresent = clause.with !== undefined && named.length > 0
+  const clauseEffect = clause.with
+    ? dePresent
+      ? clause.effect
+      : (clause.otherwise ?? 'as_usual')
+    : clause.effect
+  return { clause, group, named, dePresent, clauseEffect, suppressedBy, undetermined }
+}
+
+export function presentP4De(month: string, pillar: string) {
+  return presentDe(BRANCHES.indexOf(month), STEMS.indexOf(pillar[0]!), BRANCHES.indexOf(pillar[1]!))
+}
+
 export function resolveP4Grades(month: string, pillar: string) {
   const ctx = resolveP4Context(month, pillar)
-  const m = BRANCHES.indexOf(month)
-  const de = presentDe(m, STEMS.indexOf(pillar[0]!), BRANCHES.indexOf(pillar[1]!))
+  const de = presentP4De(month, pillar)
   const subjects: Record<string, unknown> = {}
   for (const [subject, walk] of Object.entries(ctx.deferrals)) {
     const cell = getP4GridCell(subject, month)
@@ -87,35 +125,19 @@ export function resolveP4Grades(month: string, pillar: string) {
       continue
     }
     const owner = walk.terminal
-    const clause = getP4EntryClause(owner, month)
-    const group = clause.with ?? []
-    const suppressedBy: string[] = []
-    let named = group.filter((g) => de.has(g))
-    let undetermined = false
-    for (const rule of ctx.pillarRules) {
-      const removesDeHe = DE_AS_JIAN.has(rule.id) || rule.ignoredVirtueGroup === '德合'
-      if (removesDeHe && group.some((g) => DE_HE.includes(g))) {
-        suppressedBy.push(rule.id)
-        named = named.filter((g) => !DE_HE.includes(g))
-      }
-      // 德願 membership is not spelled out by the source.
-      if (rule.ignoredVirtueGroup === '德願' && named.length) {
-        suppressedBy.push(rule.id)
-        undetermined = true
-      }
-    }
     const grade = GRADES.get(cell.gradeRows[0]!)!
-    if (undetermined) {
-      subjects[subject] = { cell: cell.id, grade: grade.id, status: 'undetermined', suppressedBy }
+    const e = evaluateP4Clause(owner, month, de, ctx.pillarRules)
+    if (e.undetermined) {
+      subjects[subject] = {
+        cell: cell.id,
+        grade: grade.id,
+        status: 'undetermined',
+        suppressedBy: e.suppressedBy,
+      }
       continue
     }
-    const dePresent = clause.with !== undefined && named.length > 0
+    const { group, named, dePresent, clauseEffect, suppressedBy } = e
     const gradeAction = (dePresent ? grade.withDe : grade.withoutDe) as GradeAction
-    const clauseEffect = clause.with
-      ? dePresent
-        ? clause.effect
-        : (clause.otherwise ?? 'as_usual')
-      : clause.effect
     subjects[subject] = {
       cell: cell.id,
       grade: grade.id,
