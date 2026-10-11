@@ -8,7 +8,11 @@
   "puzhuLines": 28,
   "localGradeFixtures": 132,
   "contextInputsWithoutScoreOracle": 720,
-  "remainingIssues": ["P4-A03", "P4-A04", "P4-A05"],
+  "remainingIssues": [
+    "P4-A03",
+    "P4-A04",
+    "P4-A05"
+  ],
   "scoringReady": false,
   "fullScoringGoldenReady": false,
   "productionFlagAdded": false,
@@ -20,16 +24,16 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 167,
-    "unitTests": 3162,
-    "p4GateTests": 217,
+    "unitFiles": 168,
+    "unitTests": 3188,
+    "p4GateTests": 236,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
     "mutationCaught": 3,
     "graphifyUpdate": "PASS"
   },
-  "note": "Full unit run passed before seven added named-deferral test cases; targeted 217-test gate passed afterward. Helpers are audit-only; canonical pipeline, scoring oracle and activation flag remain incomplete.",
+  "note": "Full unit and 236-test P4 gate passed after the context bridge. Helpers and bridge are audit-only; grid cell selection, heading annotation, scoring oracle and activation flag remain incomplete.",
   "namedClauseAudit": {
     "lockVersion": "p4-named-clauses-lock-v1",
     "pillarGroups": 18,
@@ -40,5 +44,22 @@
     "productionImport": false,
     "mutationCaught": 3,
     "audit": "docs/audits/p4-vol10-named-clauses.md"
+  },
+  "contextBridge": {
+    "lockVersion": "p4-context-bridge-lock-v1",
+    "oracleCommit": "4099d88",
+    "subjects": 13,
+    "unknownSubjects": [
+      "刼煞"
+    ],
+    "oracleCases": 11,
+    "newTests": 19,
+    "firedNamedEdges": 165,
+    "undeterminedEdges": 30,
+    "contextsWithUndetermined": 20,
+    "contextsWithPillarRules": 59,
+    "productionImport": false,
+    "mutationCaught": 5,
+    "audit": "docs/audits/p4-vol10-context-bridge.md"
   }
 }

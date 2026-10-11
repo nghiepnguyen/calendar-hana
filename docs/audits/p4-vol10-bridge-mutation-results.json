@@ -1,0 +1,32 @@
+{
+  "scope": "AUDIT_CONTEXT_BRIDGE_ONLY_NOT_SCORING",
+  "mutations": [
+    {
+      "mutation": "unknown_as_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "absent_target_as_terminal",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "walk_from_unknown_subject",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "single_hop_only",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_de_as_jian",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true,
+  "notCovered": "Grade selection, heading annotation, scoring, penalty, warehouse and event mutations remain go-live prerequisites."
+}
