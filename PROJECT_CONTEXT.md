@@ -145,9 +145,8 @@ Roadmap đánh số theo **thứ tự thực hiện**. Làm dứt điểm từng
 ### Phụ thuộc
 
 ```text
-1 smoke PR #49 ─┐
-2 merge PR #48 ─┴─► 3 quyết định 又為X ─► 4 凶 卷十一 + 21 thần ─► 5 operand 宜 ─► 6 P5
-                                                                   └──────────────► 7 full Golden ─► 8 adapter OFF ─► 9 diff + rollback ─► 10 activation
+1 smoke PR #49 ─► 2 merge PR #48 ─► 3 quyết định 又為X ─► 4 凶 卷十一 + 21 thần ─► 5 operand 宜 ─► 6 P5
+  ─► 7 full Golden (cần 4–6) ─► 8 adapter OFF ─► 9 diff + rollback ─► 10 activation
 P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
 P1, P2, S1, S2, R1–R4: độc lập
 ```
