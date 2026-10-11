@@ -12,6 +12,7 @@ import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { getSourceLockedCatHungStars } from './catHungStars'
 import { getP4SubjectPresence } from './p4ContextBridge'
 import { getP4EntryClause, getP4GridCell, resolveP4Grades } from './p4GradeResolution'
+import { getP4SeasonDays } from './p4SeasonDays'
 import { getXiejiGodPresence } from './xiejiGodPresence'
 import { getVol10VirtuesPresent } from './xiejiVirtues'
 
@@ -96,7 +97,7 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
       建日: 0, 除日: 1, 滿日: 2, 平日: 3, 定日: 4, 執日: 5, 破日: 6, 危日: 7, 成日: 8, 收日: 9, 開日: 10, 閉日: 11, 月建: 0, 月破: 6,
     } // prettier-ignore
     const subjectAlias: Record<string, string> = { 劫煞: '刼煞', 六害: '月害' }
-    const godAlias: Record<string, string> = { 六合: 'luc_hop', 時德: 'thoi_duc', 民日: 'dan_nhat' }
+    const godAlias: Record<string, string> = { 六合: 'luc_hop', 時德: 'thoi_duc' }
     let checked = 0
     for (const subject of COLUMNS)
       for (const cell of authority.cells.filter((c) =>
@@ -112,6 +113,7 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
               const p = getP4SubjectPresence(m, i % 10, i % 12)
               if (p[subject] !== 'present') continue
               const gods = getXiejiGodPresence(m, i % 10, i % 12)
+              const season = getP4SeasonDays(m, i % 12)
               for (const label of partners.split('、').filter(Boolean)) {
                 const name = subjectAlias[label] ?? label
                 const ok =
@@ -119,10 +121,14 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
                     ? (i % 12) - m === officer[label] || (i % 12) - m + 12 === officer[label]
                     : name in p
                       ? p[name] === 'present'
-                      : label in godAlias
-                        ? godAlias[label]! in gods
-                        : undefined
-                if (ok === undefined) continue // 相日/王日/官日/守日/長生/德大會: no audited operand
+                      : label in season
+                        ? season[label] === 'unknown'
+                          ? undefined
+                          : season[label] === 'present'
+                        : label in godAlias
+                          ? godAlias[label]! in gods
+                          : undefined
+                if (ok === undefined) continue // 德大會: uninterpreted label
                 expect(
                   ok,
                   `${subject} ${month}月 ${STEMS[i % 10]}${BRANCHES[i % 12]} ${label}`,

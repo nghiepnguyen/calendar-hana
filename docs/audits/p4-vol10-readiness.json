@@ -9,9 +9,9 @@
   "localGradeFixtures": 132,
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
-    "P4-A03 (德願, unaudited partner operands)",
+    "P4-A03 (德願; 德大會 label)",
     "又為X lists as separate scopes (open)",
-    "unmodeled 卷十一 凶 and unaudited 宜 operands"
+    "unmodeled 卷十一 凶 and 11 unaudited 宜 operands"
   ],
   "scoringReady": false,
   "fullScoringGoldenReady": false,
@@ -24,9 +24,9 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 172,
-    "unitTests": 3247,
-    "p4GateTests": 295,
+    "unitFiles": 173,
+    "unitTests": 3261,
+    "p4GateTests": 309,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -121,5 +121,18 @@
     "a04aFix": "忌同刼煞 lists for 月煞/災煞",
     "provenance": "expected fixed after measurement, hand-checked",
     "audit": "docs/audits/p4-vol10-deferral-coverage.md"
+  },
+  "seasonDays": {
+    "lockVersion": "p4-season-days-lock-v1",
+    "oracleCommit": "4f447f8",
+    "oracleCases": 12,
+    "readings": [
+      "王/官 old assignment",
+      "守日 = 辰未戌丑 (邵泰衢 swap)",
+      "長生 by 令星 season, 季月 unknown"
+    ],
+    "alternativeReadingsRejected": 3,
+    "a04bDecisive": 5,
+    "audit": "docs/audits/p4-vol10-season-days.md"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "version": "p4-day-composition-lock-v2",
+  "parentLock": "p4-day-composition-lock-v1",
+  "reason": "王日 operand from season days; v1 artifact and Golden unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    }
+  ]
+}

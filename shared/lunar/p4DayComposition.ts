@@ -1,9 +1,10 @@
-import art from '../almanac-data/p4-vol10-day-composition.json'
+import art from '../almanac-data/p4-vol10-day-composition-v2.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { getSourceLockedCatHungStars } from './catHungStars'
 import { resolveP4Context } from './p4ContextBridge'
 import { resolveP4Grades } from './p4GradeResolution'
 import { canonP4Heading, resolveP4Headings, type P4HeadingState } from './p4HeadingAnnotation'
+import { getP4SeasonDays } from './p4SeasonDays'
 import { getXiejiGodPresence } from './xiejiGodPresence'
 import { splitHeadings } from './xiejiVol10Resolution'
 import { getVol10VirtuesPresent } from './xiejiVirtues'
@@ -40,6 +41,7 @@ const VOCAB = [
   ...OPS.virtues,
   ...Object.keys(XIEJI_GOD),
   ...Object.keys(OFFICER_GOD),
+  ...OPS.seasonDays,
   ...art.yiEvidence.unknown,
 ].sort((a, b) => b.length - a.length)
 const SUBJECT_NAMES = /月建|月破|平日|收日|閉日|劫煞|刼煞|災煞|月煞|月刑|月害|月厭|大時|天吏/g
@@ -75,14 +77,19 @@ function yiEvidence(month: string, pillar: string) {
   ])
   const gods = getXiejiGodPresence(m, stem, branch)
   const officer = OFFICERS[(branch - m + 12) % 12]
+  const season = getP4SeasonDays(m, branch)
   const isPresent = (god: string): boolean | undefined =>
     art.yiEvidence.unknown.includes(god)
       ? undefined
-      : god in XIEJI_GOD
-        ? XIEJI_GOD[god]! in gods
-        : god in OFFICER_GOD
-          ? OFFICER_GOD[god] === officer
-          : present.has(god)
+      : OPS.seasonDays.includes(god)
+        ? season[god] === 'unknown'
+          ? undefined
+          : season[god] === 'present'
+        : god in XIEJI_GOD
+          ? XIEJI_GOD[god]! in gods
+          : god in OFFICER_GOD
+            ? OFFICER_GOD[god] === officer
+            : present.has(god)
   const out: Record<string, boolean | undefined> = {}
   for (const [raw, entry] of Object.entries(ENTRIES)) {
     const h = norm(raw)

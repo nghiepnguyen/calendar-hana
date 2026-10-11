@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import art from '../almanac-data/p4-vol10-day-composition.json'
+import art from '../almanac-data/p4-vol10-day-composition-v2.json'
 import golden from '../almanac-data/golden-p4-day-composition.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
-import lock from '../../docs/audits/sources/p4-vol10/day-composition-lock.json'
+import lockV1 from '../../docs/audits/sources/p4-vol10/day-composition-lock.json'
+import lock from '../../docs/audits/sources/p4-vol10/day-composition-lock-v2.json'
 import {
   applyP4Propagation,
   P4_DAY_HEADINGS,
@@ -23,7 +24,7 @@ const quoted = (r: { offset: number; text: string }) =>
 
 describe('P4 day composition (A04b), audit only', () => {
   it('keeps the frozen oracle and source quotations intact', () => {
-    for (const f of lock.files)
+    for (const f of [...lockV1.files, ...lock.files])
       expect(createHash('sha256').update(readFileSync(f.path)).digest('hex')).toBe(f.sha256)
     const refs = [
       art.baiji.source,
