@@ -1,12 +1,12 @@
 {
-  "version": "golden-p4-vol10-authority-v1",
+  "version": "golden-p4-vol10-authority-v2",
   "status": "PRE_SCORING_PARTIAL_ORACLE",
   "baseline": "93a513d5200ff7ef456852a524f863622d5f6a0c",
   "authoring": "Manual source reading + independent stem/branch domain enumeration; no production resolver, scorer, presence evaluator, or calendar output used. Unknown results are intentional, not blanket day classifications.",
   "limitations": [
     "720 contexts enumerate the domain and explicitly have no global-grade/score oracle yet. They are not 720 successful score validations.",
     "Source-role map is not a hierarchy. Bare 德 predicate and global precedence unresolved.",
-    "Local monthly grades do not resolve pillar-specific overrides or the 月害 寅月 companion conflict.",
+    "Local monthly grades do not resolve pillar-specific overrides; scan-reading P4-A02 has been corrected by magnified source evidence.",
     "Warehouse cases cover 收日 co-presence subset; full source-clause activity Golden still required."
   ],
   "localGradeCases": [
@@ -976,7 +976,7 @@
       "monthJian": "寅",
       "expectedLocalGrade": "ci",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:卯",
@@ -984,7 +984,7 @@
       "monthJian": "卯",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:辰",
@@ -992,7 +992,7 @@
       "monthJian": "辰",
       "expectedLocalGrade": "ci",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:巳",
@@ -1000,7 +1000,7 @@
       "monthJian": "巳",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:午",
@@ -1008,7 +1008,7 @@
       "monthJian": "午",
       "expectedLocalGrade": "ci",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:未",
@@ -1016,7 +1016,7 @@
       "monthJian": "未",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:申",
@@ -1024,7 +1024,7 @@
       "monthJian": "申",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:酉",
@@ -1032,7 +1032,7 @@
       "monthJian": "酉",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:戌",
@@ -1040,7 +1040,7 @@
       "monthJian": "戌",
       "expectedLocalGrade": "ci",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:亥",
@@ -1048,7 +1048,7 @@
       "monthJian": "亥",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:子",
@@ -1056,7 +1056,7 @@
       "monthJian": "子",
       "expectedLocalGrade": "ci",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     },
     {
       "id": "local:月害:丑",
@@ -1064,7 +1064,7 @@
       "monthJian": "丑",
       "expectedLocalGrade": "zhong",
       "expectedGlobalGrade": "undetermined",
-      "note": "Local table grade is recorded; 寅月 六合/六害 witness conflict still prohibits a complete canonical predicate."
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
     }
   ],
   "gradeActionCases": [
@@ -6377,5 +6377,10 @@
       "existingNegative": true,
       "expectedDelta": 0
     }
-  ]
+  ],
+  "supersedes": {
+    "commit": "08e2aaf",
+    "version": "golden-p4-vol10-authority-v1",
+    "reason": "Metadata corrected after source reading P4-A02 was resolved. All expected values unchanged; no production code output used."
+  }
 }

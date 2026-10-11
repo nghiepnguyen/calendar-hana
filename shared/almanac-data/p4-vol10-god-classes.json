@@ -1,5 +1,5 @@
 {
-  "version": "p4-vol10-god-classes-v1",
+  "version": "p4-vol10-god-classes-v2",
   "status": "SOURCE_ROLE_MAPPING_LOCK_CANDIDATE",
   "meaning": "Classes encode roles, not weights or fixed severity. Grade is conditional on month/context. Unknown class/precedence never supplies a conservative canonical rank.",
   "deHeGodIds": ["thien_duc", "nguyet_duc", "thien_duc_hop", "nguyet_duc_hop"],
@@ -713,7 +713,7 @@
       ],
       "gradeSubject": "月害",
       "balancingCandidate": true,
-      "unresolved": ["P4-A02"],
+      "unresolved": [],
       "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
     },
     {

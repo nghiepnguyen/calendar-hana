@@ -1,5 +1,5 @@
 {
-  "version": "p4-vol10-authority-v1",
+  "version": "p4-vol10-authority-v2",
   "status": "TRANSCRIPTION_LOCK_CANDIDATE_NOT_SCORING_AUTHORITY",
   "baseline": "93a513d5200ff7ef456852a524f863622d5f6a0c",
   "review": "Single agent visual transcription cross-checked against two archive scan items and exact raw text. Second item is a scan witness, not an independent reviewer or proof of a different edition. Source conflicts retained.",
@@ -626,7 +626,7 @@
       "gradeRows": ["xia"],
       "image": "docs/audits/sources/p4-vol10/n221.jpg",
       "locator": "七十三 / column 月刑 / row xia",
-      "displayReading": "子月：平日、天吏 / 卯月：收日、大時 / 未申月：月破 / 午月：月建、德大會",
+      "displayReading": "子月：平日、天吏 / 卯月：收日、大時 / 未申月：月破 / 午月：德大會、月厭",
       "isBlank": false,
       "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
       "unresolved": ["P4-A03"]
@@ -901,10 +901,10 @@
       "gradeRows": ["ci"],
       "image": "docs/audits/sources/p4-vol10/n221.jpg",
       "locator": "七十三 / column 月害 / row ci",
-      "displayReading": "子午月：月煞、危日 / 辰戌月：官日、閉日、天吏 / 寅月：相日、六合",
+      "displayReading": "子午月：月煞、危日 / 辰戌月：官日、閉日、天吏 / 寅月：相日、六害、月刑",
       "isBlank": false,
       "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
-      "unresolved": ["P4-A02"]
+      "unresolved": []
     }
   ],
   "puzhu": [
@@ -1135,17 +1135,6 @@
   ],
   "issues": [
     {
-      "id": "P4-A02",
-      "classification": "SOURCE_DEPENDENT",
-      "detail": "Scan 月害 cell reads 寅月 相日 六合, while prose says 寅月值月刑 and 月刑 prose says 寅月值平日相日六害. Do not silently change scanned 六合 to 六害.",
-      "quote": {
-        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
-        "offset": 12957,
-        "text": "寅月值平日相日六害"
-      },
-      "activation": "No canonical predicate for the inconsistent cell; retain both witnesses."
-    },
-    {
       "id": "P4-A03",
       "classification": "UNKNOWN",
       "detail": "Table lists 德大會 under 月刑/月厭 lower grade; 月厭 prose instead distinguishes 陰陽大會 and 德作建論不作德論. A generic hasVirtue boolean loses these overrides.",
@@ -1183,6 +1172,17 @@
   "editorialCorrections": [
     {
       "detail": "Initial visual reading mistook the 月害 中/次 divider for a merged cell. Second scan confirms separate cells; 66 cells recorded before freeze. This is an authoring correction, not a source conflict."
+    },
+    {
+      "detail": "After v1 freeze at 08e2aaf, magnified crops of both scan witnesses show 六害 and 月刑 in 月害 寅月 cell. The alleged 六合/六害 conflict P4-A02 was a reading error, now resolved. 月刑 lower cell also records 午月 月厭/德大會 rather than an inferred 月建 label. Canonical scoring and Golden expected grades unchanged.",
+      "previousVersion": "p4-vol10-authority-v1",
+      "previousCommit": "08e2aaf",
+      "resolvedIssue": "P4-A02",
+      "evidence": [
+        "docs/audits/sources/p4-vol10/n221.jpg",
+        "docs/audits/sources/p4-vol10/witness2-n221.jpg"
+      ],
+      "region": "月害 column 次 row; 月刑 column 下 row"
     }
   ]
 }

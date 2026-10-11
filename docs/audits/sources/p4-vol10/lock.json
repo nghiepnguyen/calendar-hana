@@ -1,5 +1,5 @@
 {
-  "version": "p4-pre-scoring-lock-v1",
+  "version": "p4-pre-scoring-lock-v2",
   "status": "EVIDENCE_AND_PARTIAL_GOLDEN_FROZEN",
   "date": "2026-10-11",
   "scoringReady": false,
@@ -35,15 +35,20 @@
     },
     {
       "path": "shared/almanac-data/p4-vol10-authority.json",
-      "sha256": "f0faa2b7d14d722ce55b381d94ddc55c4697e88dc259ea85a68126b5093f6b26"
+      "sha256": "64973dddae8a050c4743e53d1fbf2e9f12f3e2c3e03897f4563371a360a29b02"
     },
     {
       "path": "shared/almanac-data/p4-vol10-god-classes.json",
-      "sha256": "33ce9de959f8e69c539a760daaec938d840ae733a9ebfef4a105dc0bec85c869"
+      "sha256": "c10831b7ea40c5d6553f1f7d275d2bc038f913f00b622023de938b370c006be8"
     },
     {
       "path": "shared/almanac-data/golden-p4-vol10-authority.json",
-      "sha256": "635bb5a85733fa85ffdc2faf2a38f09ffac6e9d41ead0f232e65b9d65ead96f6"
+      "sha256": "5c1c587753f4ed4a69727613bd60cdb803db11d8fd2f1c2b5ab74d75a5c609ae"
     }
-  ]
+  ],
+  "supersedes": {
+    "commit": "08e2aaf",
+    "version": "p4-pre-scoring-lock-v1",
+    "reason": "Magnified source scan corrects character reading, resolves P4-A02; Golden expected values unchanged."
+  }
 }

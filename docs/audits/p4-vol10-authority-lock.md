@@ -31,10 +31,11 @@ Scan chính: [06067686.cn](https://archive.org/details/06067686.cn), bảng n220
 
 | ID | Chứng cứ / vấn đề | Xử lý đã khóa |
 |---|---|---|
-| P4-A02 | Scan 月害, 寅月 ghi 相日/六合; prose 月刑 ghi 寅月值平日相日六害, 月害 cũng defer sang 月刑 | Giữ cả hai witness; không âm thầm sửa 六合 → 六害, không kích hoạt predicate đang xung đột |
 | P4-A03 | Một số can-chi có 德作建論不作德論; nhãn 德大會 không thể thay bằng “có sao tốt” | Cần bảng override can-chi/class trước generic scoring; không dùng hasVirtue chung để gỡ kỵ |
 | P4-A04 | Summary cấp ghi 從宜亦從忌, clause cụ thể có 不宜不忌 | Grade action không phải final annotation. Phải giải quyết heading-specific overlap, giữ bốn states độc lập |
 | P4-A05 | 從重論 có căn cứ cho các chuỗi được gọi tên; 月害 không theo 天吏 vì 天吏 không bao quát các việc nó kỵ | Không universal max-grade; giữ scope/deferral theo nguồn. Fallback bảo thủ nếu muốn thêm phải có product policy riêng |
+
+P4-A02 đã giải quyết: phóng lớn hai scan thấy **六害**, không phải 六合. Nhận định source conflict trước đó là lỗi đọc của agent. Authority/class mapping v2 sửa cách đọc này và ghi region/chứng cứ; Golden expected grades không đổi. V1 còn trong commit `08e2aaf`, không xóa dấu vết khóa cũ. Đây là sửa theo ảnh nguồn, không theo scorer.
 
 Bản đọc ban đầu tưởng cột 月害 có ô gộp; scan đối chiếu xác nhận hai ô 中/次 riêng. Đã sửa **trước freeze**, ghi vào `editorialCorrections`. Đây là lỗi đọc được sửa, không phải ambiguity nguồn.
 
@@ -48,7 +49,7 @@ Penalty mặc định −25 là product policy, không hard warning, `balancingE
 
 ## Việc tiếp theo
 
-1. Giải quyết A02 bằng audit bản chép/định nghĩa; không majority vote.
+1. A02 đã giải quyết bằng ảnh phóng lớn; còn cần audit predicates và danh sách clause per-heading đầy đủ.
 2. Khóa predicates của từng ô + override can-chi A03; bare 德 và named 德合/赦願 không gộp mặc định.
 3. Hoàn thành heading-specific applicability/overlap A04 và deferral scope A05; source-role table hiện có là inventory, chưa phải canonical class resolver đầy đủ.
 4. Bổ sung full Golden per-heading/presence/warehouse, đóng băng version trước code scoring.
