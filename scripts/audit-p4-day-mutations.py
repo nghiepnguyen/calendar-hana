@@ -11,13 +11,14 @@ root = Path(__file__).resolve().parents[1]
 target = root / 'shared/lunar/p4DayComposition.ts'
 original = target.read_bytes()
 mutations = [
-    ('baiji_unprotected', 'const protectedJi = baiji.has(h) ||', 'const protectedJi ='),
+    ('baiji_unprotected', 'const protectedJi =\n      baiji.has(h) ||', 'const protectedJi ='),
+    ('zhuanji_unprotected', 'youweiJi.some((y) => y.protected)', 'false'),
     ('neither_beats_protected', ": neither && !protectedJi\n", ": neither\n"),
     ('suppression_lines_ignored', 'suppressed.has(h) ||', ''),
     ('unknown_yi_as_false', 'seen.includes(undefined) ? undefined : false', 'false'),
     ('lifted_inference_off', "st === 'undetermined' && yiH === false", 'false'),
     ('propagation_ignores_protection', 'if (d.protectedJi) {', 'if (false) {'),
-    ('uncovered_inferred_lifted', ' && !s.uncoveredByDeferral?.includes(h)', ''),
+    ('youwei_ji_ignored', 'kept.length > 0 || youweiJi.length > 0', 'kept.length > 0'),
     ('propagation_lifts_undetermined', "if (d.state === 'undetermined') continue", 'void 0'),
 ]
 results = []
@@ -28,7 +29,7 @@ try:
             raise RuntimeError(f'Mutation did not apply: {name}')
         target.write_text(text.replace(old, new, 1))
         run = subprocess.run(
-            ['npx', 'vitest', 'run', 'shared/lunar/p4DayComposition.test.ts'],
+            ['npx', 'vitest', 'run', 'shared/lunar/p4DayComposition.test.ts', 'shared/lunar/p4YouweiScopes.test.ts'],
             cwd=root, capture_output=True, text=True, timeout=180,
         )
         output = run.stdout + run.stderr

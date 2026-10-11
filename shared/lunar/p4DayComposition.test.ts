@@ -88,10 +88,11 @@ describe('P4 day composition (A04b), audit only', () => {
       expect(counts[s], s).toBeGreaterThan(0)
   })
 
-  // Hand-derived: 卯月甲子 大時 defers to 月刑, which does not list 乘船渡水 (又為咸池); 宜 list is
-  // empty, so 宜 is known false. The uncovered 忌 must stay undetermined, not become not_recorded.
-  it('keeps a deferral-uncovered heading undetermined even when 宜 is known false', () => {
-    expect(resolveP4Day('卯', '甲子').headings['乘船渡水']!.state).toBe('undetermined')
+  // Owner decision B (p4-vol10-youwei-scopes.json): 乘船渡水 comes from 大時's 又為咸池 scope, which
+  // no deferral or lift removes. Under B no activity heading remains deferral-uncovered, so the
+  // review fix (no lifted inference for uncovered headings) has no live case; logic kept.
+  it('keeps 咸池 忌 on 乘船渡水 through 大時 → 月刑', () => {
+    expect(resolveP4Day('卯', '甲子').headings['乘船渡水']!.state).toBe('only_ji')
   })
 
   it('reports propagation headings outside the day scope instead of skipping them silently', () => {

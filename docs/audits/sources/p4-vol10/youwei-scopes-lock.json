@@ -1,0 +1,28 @@
+{
+  "version": "p4-youwei-scopes-lock-v1",
+  "parentLock": "p4-deferral-coverage-lock-v2",
+  "frozenAtCommit": "df4e1f9",
+  "reason": "又為X decision B by source; A04a Golden v2 and A05 v3 follow from it, earlier versions kept; Golden v2 fixes a hand-derivation omission (月虛 on 寅月丁丑)",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-youwei-scopes.json",
+      "sha256": "49015480e1156d03d7ba3a002a4b9332d100fceb3034b22e4cf669920f725606"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-youwei-scopes.json",
+      "sha256": "7cd6ec6e5fe051c10a488de4b954c877a77de17b4721e2baa3e599c90803e3a6"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-heading-annotation-v2.json",
+      "sha256": "3adfe4ad3e3365abca47b5953e834877462d7c800be48924419f481c9eb46aa0"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-deferral-coverage-v3.json",
+      "sha256": "f49ad86ee5a6724c6e6568be3a0d6ce1b499d324f3975f6f20a2649bacbd5444"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-youwei-scopes-v2.json",
+      "sha256": "967b918f9a5db709cfa94f9220c4043a2ff05ae8f8c8ea09c409049dab33b202"
+    }
+  ]
+}

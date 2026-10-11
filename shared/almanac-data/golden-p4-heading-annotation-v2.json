@@ -1,0 +1,274 @@
+{
+  "version": "golden-p4-heading-annotation-v2",
+  "status": "PARTIAL_SOURCE_ORACLE_NOT_SCORE_ORACLE",
+  "authoring": "Hand-derived from entry 忌/止忌/止不忌 lists, A03 clause effects and the heading-annotation rules, before p4HeadingAnnotation.ts existed. Heading sets are subsets; yi is caller-supplied 宜 evidence, absent = unknown.",
+  "cases": [
+    {
+      "note": "申月 平日 從宜不從忌 with 天德: 止忌 heading keeps 忌; lifted heading follows 宜 input; unknown 宜 stays undetermined",
+      "monthJian": "申",
+      "pillar": "癸亥",
+      "yi": {
+        "嫁娶": true,
+        "出師": true,
+        "開市": false
+      },
+      "scopes": {
+        "平日": {
+          "owner": "平日",
+          "clauseEffect": "only_avoid",
+          "headings": {
+            "嫁娶": "only_yi",
+            "出師": "both_present",
+            "開市": "undetermined",
+            "安葬": "undetermined",
+            "祭祀": "not_avoided",
+            "取魚": "not_avoided",
+            "針刺": "not_listed"
+          }
+        },
+        "月害": {
+          "owner": "平日",
+          "clauseEffect": "only_avoid",
+          "headings": {
+            "嫁娶": "only_yi",
+            "出師": "both_present",
+            "開市": "undetermined",
+            "祭祀": "not_avoided"
+          }
+        }
+      }
+    },
+    {
+      "note": "申月 平日 如常例: 宜 input ignored in scope",
+      "monthJian": "申",
+      "pillar": "乙亥",
+      "yi": {
+        "嫁娶": true
+      },
+      "scopes": {
+        "平日": {
+          "owner": "平日",
+          "clauseEffect": "as_usual",
+          "headings": {
+            "嫁娶": "only_ji",
+            "出師": "only_ji",
+            "開市": "only_ji",
+            "祭祀": "not_avoided",
+            "針刺": "not_listed"
+          }
+        },
+        "月害": {
+          "owner": "平日",
+          "clauseEffect": "as_usual",
+          "headings": {
+            "嫁娶": "only_ji",
+            "祭祀": "not_avoided"
+          }
+        }
+      }
+    },
+    {
+      "note": "卯月 相抵 → 不註宜亦不註忌 for every listed heading",
+      "monthJian": "卯",
+      "pillar": "甲午",
+      "yi": {
+        "嫁娶": true
+      },
+      "scopes": {
+        "平日": {
+          "owner": "平日",
+          "clauseEffect": "cancel_both",
+          "headings": {
+            "嫁娶": "neither_recorded",
+            "安葬": "neither_recorded",
+            "出師": "neither_recorded",
+            "祭祀": "not_avoided",
+            "針刺": "not_listed"
+          }
+        },
+        "天吏": {
+          "owner": "平日",
+          "clauseEffect": "cancel_both",
+          "headings": {
+            "嫁娶": "neither_recorded",
+            "祭祀": "not_avoided"
+          }
+        }
+      }
+    },
+    {
+      "note": "子月壬子 月厭 諸事皆忌, also over 止不忌 and unlisted headings; 月建 follows 月厭",
+      "monthJian": "子",
+      "pillar": "壬子",
+      "yi": {
+        "祭祀": true
+      },
+      "scopes": {
+        "月建": {
+          "owner": "月厭",
+          "clauseEffect": "avoid_all",
+          "headings": {
+            "祭祀": "only_ji",
+            "嫁娶": "only_ji",
+            "針刺": "only_ji"
+          }
+        },
+        "月厭": {
+          "owner": "月厭",
+          "clauseEffect": "avoid_all",
+          "headings": {
+            "祭祀": "only_ji",
+            "嫁娶": "only_ji",
+            "針刺": "only_ji"
+          }
+        }
+      }
+    },
+    {
+      "note": "子月甲子 天赦 → 月厭 如常例",
+      "monthJian": "子",
+      "pillar": "甲子",
+      "yi": {},
+      "scopes": {
+        "月建": {
+          "owner": "月厭",
+          "clauseEffect": "as_usual",
+          "headings": {
+            "嫁娶": "only_ji",
+            "祭祀": "not_avoided",
+            "針刺": "not_listed"
+          }
+        },
+        "月厭": {
+          "owner": "月厭",
+          "clauseEffect": "as_usual",
+          "headings": {
+            "嫁娶": "only_ji",
+            "祭祀": "not_avoided",
+            "針刺": "not_listed"
+          }
+        }
+      }
+    },
+    {
+      "note": "巳月丙申 平日→月刑 從宜不從忌: unknown 宜 undetermined; explicit no 宜 on 止忌 heading → only_ji",
+      "monthJian": "巳",
+      "pillar": "丙申",
+      "yi": {
+        "出師": false
+      },
+      "scopes": {
+        "平日": {
+          "owner": "月刑",
+          "clauseEffect": "only_avoid",
+          "headings": {
+            "嫁娶": "undetermined",
+            "出師": "only_ji",
+            "祭祀": "not_avoided"
+          }
+        },
+        "月刑": {
+          "owner": "月刑",
+          "clauseEffect": "only_avoid",
+          "headings": {
+            "嫁娶": "undetermined",
+            "出師": "only_ji",
+            "祭祀": "not_avoided"
+          }
+        }
+      }
+    },
+    {
+      "note": "未月戊午 德願 undetermined carries to every heading",
+      "monthJian": "未",
+      "pillar": "戊午",
+      "yi": {
+        "嫁娶": true
+      },
+      "scopes": {
+        "閉日": {
+          "status": "undetermined"
+        },
+        "天吏": {
+          "status": "undetermined"
+        }
+      }
+    },
+    {
+      "note": "子月壬午 月破 with 月德 猶忌 except its 止不忌 list; 災煞 follows 月破",
+      "monthJian": "子",
+      "pillar": "壬午",
+      "yi": {
+        "嫁娶": true
+      },
+      "scopes": {
+        "月破": {
+          "owner": "月破",
+          "clauseEffect": "still_avoid",
+          "headings": {
+            "嫁娶": "only_ji",
+            "祭祀": "not_avoided",
+            "取魚": "not_avoided",
+            "求醫療病": "only_ji",
+            "開市": "only_ji"
+          }
+        },
+        "災煞": {
+          "owner": "月破",
+          "clauseEffect": "still_avoid",
+          "headings": {
+            "嫁娶": "only_ji",
+            "祭祀": "not_avoided",
+            "求醫療病": "only_ji"
+          }
+        }
+      }
+    },
+    {
+      "note": "子月甲午 月破 without 德 → 諸事皆忌",
+      "monthJian": "子",
+      "pillar": "甲午",
+      "yi": {},
+      "scopes": {
+        "月破": {
+          "owner": "月破",
+          "clauseEffect": "avoid_all",
+          "headings": {
+            "祭祀": "only_ji",
+            "取魚": "only_ji"
+          }
+        },
+        "災煞": {
+          "owner": "月破",
+          "clauseEffect": "avoid_all",
+          "headings": {
+            "祭祀": "only_ji"
+          }
+        }
+      }
+    },
+    {
+      "note": "寅月乙卯 大時 unconditional 止忌 軍事 only: 求醫療病 lifted, 咸池 取魚 now in its own 又為 scope",
+      "monthJian": "寅",
+      "pillar": "乙卯",
+      "yi": {
+        "求醫療病": true,
+        "出師": true
+      },
+      "scopes": {
+        "大時": {
+          "owner": "大時",
+          "clauseEffect": "only_avoid",
+          "headings": {
+            "求醫療病": "only_yi",
+            "出師": "both_present",
+            "取魚": "not_listed",
+            "嫁娶": "undetermined",
+            "祭祀": "not_listed"
+          }
+        }
+      }
+    }
+  ],
+  "v2Note": "Owner decision 2026-10-11 (p4-vol10-youwei-scopes.json): 咸池 is a separate 又為 scope, so 取魚 leaves 大時's scope (undetermined → not_listed). Only this expectation changes; v1 bytes kept."
+}

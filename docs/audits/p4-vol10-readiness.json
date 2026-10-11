@@ -10,7 +10,6 @@
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
     "P4-A03 (德願; 德大會 label)",
-    "又為X lists as separate scopes (open)",
     "unmodeled 卷十一 凶 and 11 unaudited 宜 operands"
   ],
   "scoringReady": false,
@@ -25,9 +24,9 @@
     "baseline": "main 1fc9940 (PR #49)"
   },
   "checks": {
-    "unitFiles": 173,
-    "unitTests": 3265,
-    "p4GateTests": 313,
+    "unitFiles": 175,
+    "unitTests": 3276,
+    "p4GateTests": 321,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -153,5 +152,27 @@
       "repeated context computation",
       "duplicated constants"
     ]
+  },
+  "youweiScopes": {
+    "decision": "B by source (owner 2026-10-11)",
+    "zhuanji": [
+      "土府",
+      "血支"
+    ],
+    "base": [
+      "死神"
+    ],
+    "convention": [
+      "大耗",
+      "地火",
+      "月虛",
+      "天火",
+      "咸池"
+    ],
+    "oracleCommit": "df4e1f9",
+    "goldenV2": "adds 月虛 omitted on 寅月丁丑",
+    "dayUndetermined": "2585 → 2607",
+    "propagationBlocked": 36,
+    "audit": "docs/audits/p4-vol10-youwei-scopes.md"
   }
 }

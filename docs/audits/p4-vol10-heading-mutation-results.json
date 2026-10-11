@@ -30,6 +30,16 @@
       "mutation": "unknown_yi_as_false",
       "caughtByAssertion": true,
       "exitCode": 1
+    },
+    {
+      "mutation": "youwei_kept_in_base",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "youwei_scopes_dropped",
+      "caughtByAssertion": true,
+      "exitCode": 1
     }
   ],
   "restored": true,

@@ -1,0 +1,96 @@
+{
+  "version": "p4-deferral-coverage-v3",
+  "status": "AUDIT_ONLY_A05",
+  "parentLock": "p4-deferral-coverage-lock-v2",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "principle": {
+    "text": "A 從重 deferral is valid because the target's 忌 contains the subject's; 月害 does not follow 天吏 because 天吏 cannot cover 月害's 忌.",
+    "sources": [
+      {
+        "text": "子午月值月煞己亥月值刼煞寅月值月刑申月值平日其凶皆重於月害故從重論",
+        "offset": 13665
+      },
+      {
+        "text": "天吏之凶亦重於月害而不從天吏論者天吏不能該月害之所忌故也",
+        "offset": 13698
+      }
+    ]
+  },
+  "lists": "Base lists = 忌 + month-filtered 又為X lists that stay in the base (死神), with 忌同刼煞 applied; separate 又為 scopes excluded (p4-vol10-youwei-scopes.json).",
+  "rule": "Under a deferral, a heading in the subject's base list but outside the target's base list is undetermined (uncovered_by_deferral) in the subject scope, unless the target's resolution already gives only_ji. Never silently dropped, never silently kept.",
+  "provenance": "Coverage is a mechanical comparison; expected sets below were fixed after measuring and checked heading by heading against the lists' source text (not pre-registered like earlier oracles).",
+  "expectedUncovered": {
+    "jian_xing": {
+      "months": [
+        "辰",
+        "酉",
+        "亥"
+      ],
+      "headings": [
+        "伐木"
+      ],
+      "why": "伐木 in 月建's list, in 月刑's 止不忌; 平治道塗 moved to the separate 土府 scope"
+    },
+    "bi_sha": {
+      "months": [
+        "寅",
+        "申",
+        "巳",
+        "亥"
+      ],
+      "headings": [
+        "療目"
+      ],
+      "why": "閉日 求醫療目; 刼煞 list (月煞 忌同刼煞) lacks it; 針刺 moved to the separate 血支 scope"
+    },
+    "zai_po": {
+      "months": [
+        "子",
+        "午",
+        "卯",
+        "酉"
+      ],
+      "headings": [
+        "解除",
+        "求醫療病",
+        "破屋壊垣"
+      ],
+      "why": "base 月破 lacks them; with 德 the 子午 clause 仍忌 exactly these three, without 德 諸事皆忌; 苫蓋 moved to the separate 天火 scope",
+      "resolvedCovered": true
+    }
+  },
+  "coveredEdges": [
+    "hai_jie",
+    "hai_ping",
+    "hai_sha",
+    "hai_xing",
+    "jian_yan",
+    "li_ping",
+    "li_xing",
+    "ping_sha",
+    "ping_xing",
+    "shi_xing",
+    "shou_jie",
+    "shou_xing",
+    "xing_yan"
+  ],
+  "nonDeferralWitness": {
+    "subject": "月害",
+    "target": "天吏",
+    "months": [
+      "辰",
+      "戌"
+    ],
+    "headings": [
+      "慶賜賞賀",
+      "宴會",
+      "經絡",
+      "醞釀",
+      "破土",
+      "安葬",
+      "啓攢"
+    ]
+  },
+  "v3Note": "又為X decision B by source: separate alias scopes leave the base lists, so uncovered sets shrink."
+}

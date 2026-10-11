@@ -1,5 +1,6 @@
 import art from '../almanac-data/p4-vol10-heading-annotation.json'
 import gradeArt from '../almanac-data/p4-vol10-grade-resolution-v2.json'
+import youwei from '../almanac-data/p4-vol10-youwei-scopes.json'
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { classifyP4Annotation } from './p4Annotation'
@@ -21,7 +22,7 @@ export type P4HeadingState =
 
 type Lists = {
   avoid: string
-  extraAvoid: { avoid: string; months?: string[] }[]
+  extraAvoid: { avoid: string; months?: string[]; as?: string }[]
   notAvoid: string
   stopLists?: Partial<Record<string, string>>
 }
@@ -54,14 +55,44 @@ export const P4_HEADINGS: readonly string[] = [
 ]
 
 /** 忌 + month-filtered 又為X lists of a subject's entry, in splitHeadings normal form. */
+/** 又為X lists that are scopes of their own (p4-vol10-youwei-scopes.json); 死神 stays in the base. */
+type Youwei = {
+  alias: string
+  parent: string
+  status: 'zhuanji' | 'convention'
+  protected: boolean
+}
+export const P4_YOUWEI: readonly Youwei[] = (youwei.aliases as { status: string }[]).filter(
+  (a) => a.status !== 'base',
+) as Youwei[]
+const SEPARATE = new Set(P4_YOUWEI.map((a) => a.alias))
+
+/** 忌 + month-filtered 又為X lists of a subject's entry (separate 又為 scopes excluded). */
 export function getP4BaseAvoid(subject: string, month: string) {
   const lists = LISTS.get(ENTRY_BY_SUBJECT[subject]!)!
   return new Set([
     ...split(lists.avoid),
     ...lists.extraAvoid
-      .filter((x) => !x.months || x.months.includes(month))
+      .filter((x) => (!x.months || x.months.includes(month)) && !SEPARATE.has(x.as ?? ''))
       .flatMap((x) => [...split(x.avoid)]),
   ])
+}
+
+/** The 又為 scopes present with a subject: 忌 of the alias list only, never lifted by the parent. */
+export function getP4YouweiScopes(subjects: readonly string[]) {
+  const out: Record<string, Youwei & { headings: Record<string, 'only_ji' | 'not_listed'> }> = {}
+  for (const a of P4_YOUWEI.filter((a) => subjects.includes(a.parent))) {
+    const list = LISTS.get(ENTRY_BY_SUBJECT[a.parent]!)!.extraAvoid.find((x) => x.as === a.alias)
+    if (!list) throw new Error(`No 又為 list ${a.alias} on ${a.parent}`)
+    const avoided = split(list.avoid)
+    out[a.alias] = {
+      ...a,
+      headings: Object.fromEntries(
+        P4_HEADINGS.map((h) => [h, avoided.has(h) ? 'only_ji' : 'not_listed']),
+      ),
+    }
+  }
+  return out
 }
 
 /** A05: subject 忌 the deferral target's own list does not contain (天吏不能該月害之所忌). */
@@ -144,5 +175,5 @@ export function resolveP4Headings(
       ...(uncovered.length ? { uncoveredByDeferral: uncovered } : {}),
     }
   }
-  return { scopes }
+  return { scopes, youweiScopes: getP4YouweiScopes(Object.keys(ctx.deferrals)) }
 }
