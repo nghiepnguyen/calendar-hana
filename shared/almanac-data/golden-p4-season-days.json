@@ -1,0 +1,90 @@
+{
+  "version": "golden-p4-season-days-v1",
+  "status": "PARTIAL_SOURCE_ORACLE",
+  "authoring": "Hand-read from the 卷05/卷04/卷十 quotes before p4SeasonDays.ts existed.",
+  "cases": [
+    {
+      "monthJian": "寅",
+      "dayBranch": "寅",
+      "present": [
+        "王日"
+      ]
+    },
+    {
+      "monthJian": "卯",
+      "dayBranch": "辰",
+      "present": [
+        "守日"
+      ]
+    },
+    {
+      "monthJian": "卯",
+      "dayBranch": "酉",
+      "present": []
+    },
+    {
+      "monthJian": "巳",
+      "dayBranch": "寅",
+      "present": [
+        "長生"
+      ]
+    },
+    {
+      "monthJian": "巳",
+      "dayBranch": "申",
+      "present": [
+        "相日"
+      ]
+    },
+    {
+      "monthJian": "午",
+      "dayBranch": "午",
+      "present": [
+        "官日"
+      ]
+    },
+    {
+      "monthJian": "申",
+      "dayBranch": "巳",
+      "present": [
+        "長生"
+      ]
+    },
+    {
+      "monthJian": "酉",
+      "dayBranch": "戌",
+      "present": [
+        "守日"
+      ]
+    },
+    {
+      "monthJian": "子",
+      "dayBranch": "卯",
+      "present": [
+        "民日"
+      ]
+    },
+    {
+      "monthJian": "亥",
+      "dayBranch": "寅",
+      "present": [
+        "相日"
+      ]
+    },
+    {
+      "monthJian": "亥",
+      "dayBranch": "申",
+      "present": [
+        "長生"
+      ]
+    },
+    {
+      "monthJian": "辰",
+      "dayBranch": "亥",
+      "present": [],
+      "unknown": [
+        "長生"
+      ]
+    }
+  ]
+}
