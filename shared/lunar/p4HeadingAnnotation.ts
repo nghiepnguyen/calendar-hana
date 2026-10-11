@@ -1,4 +1,5 @@
 import art from '../almanac-data/p4-vol10-heading-annotation.json'
+import gradeArt from '../almanac-data/p4-vol10-grade-resolution-v2.json'
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { classifyP4Annotation } from './p4Annotation'
@@ -24,21 +25,7 @@ type Lists = {
   stopLists?: Partial<Record<string, string>>
 }
 
-const ENTRY_BY_SUBJECT: Record<string, string> = {
-  月建: 'yue_jian',
-  月破: 'yue_po',
-  平日: 'ping_ri',
-  收日: 'shou_ri',
-  閉日: 'bi_ri',
-  刼煞: 'jie_sha',
-  災煞: 'zai_sha',
-  月煞: 'yue_sha',
-  月刑: 'yue_xing',
-  月厭: 'yue_yan',
-  月害: 'yue_hai',
-  大時: 'da_shi',
-  天吏: 'tian_li',
-}
+const ENTRY_BY_SUBJECT = gradeArt.subjectEntries as Record<string, string>
 const LISTS = new Map<string, Lists>([
   // 忌同刼煞 (月煞, 災煞): share 刼煞's 忌 and 止不忌 lists, as the production resolver does.
   ...vol10.entries.map((e) => {

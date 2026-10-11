@@ -35,3 +35,16 @@ Gate P4 290 test; full unit 171 file/3242 test; typecheck/lint/build qua; bundle
 ## Còn lại
 
 Mô hình các 凶 khác của 卷十一 và 21 thần dormant; operand cho 12 thần 宜 chưa audit (王日 thuộc việc presence sắp tới); P5 修倉庫; score/event chưa nối.
+
+## Sửa sau code review (PR #48)
+
+- Suy luận "忌 đã gỡ" (止忌 + 宜 false → `not_avoided`) không còn áp cho heading mà A05 đánh `undetermined` vì deferral hụt. Ca suy tay 卯月甲子 乘船渡水 → `undetermined` (trước đó lặng lẽ thành `not_recorded`). Có đúng 1 trạng thái ngày đổi trên 720 × 29.
+- Lan truyền không còn biến heading đang `undetermined` thành trạng thái xác định.
+- `resolveP4Day` kiểm input trước khi tra cứu.
+- Heading lan truyền nằm ngoài 29 heading ngày được export và trả về (`propagationOutOfScope`), không còn bị bỏ qua lặng lẽ.
+- A03: kiểm 德願 sau khi đã loại 德合, nên không phụ thuộc thứ tự rule. `suppressedBy` chỉ ghi rule loại một thần có mặt (xét theo presence ban đầu). Golden A03 đã khóa không đổi. Ca tay 未月戊午 đổi kỳ vọng thành `['no_de_yuan']` vì 逐陣 không loại thần nào có mặt; đây là đổi ngữ nghĩa theo review, không phải chỉnh theo output.
+- A04a: map subject → entry đọc từ artifact A03, không chép tay.
+- Ghi nhận, chưa sửa (refactor code audit-only): tính lặp context/德 3 lần mỗi ngày; hằng số BRANCHES/STEMS/OFFICERS chép ở nhiều module.
+- Còn lệch cách đọc 月破 子午未申: audit dùng "toàn bộ heading trừ phần chừa", production (PR #49) dùng cách sát chữ "danh sách gốc + 3 việc 仍忌". Sẽ đồng bộ sau khi #49 vào main.
+
+Mutation A04b thêm 2 ca (bỏ điều kiện heading hụt, lan truyền gỡ heading `undetermined`): bị bắt. Toàn bộ suite mutation A03 / A04a / A04b / A05 chạy lại: đều bị bắt.

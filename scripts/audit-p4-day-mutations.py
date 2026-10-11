@@ -17,6 +17,8 @@ mutations = [
     ('unknown_yi_as_false', 'seen.includes(undefined) ? undefined : false', 'false'),
     ('lifted_inference_off', "st === 'undetermined' && yiH === false", 'false'),
     ('propagation_ignores_protection', 'if (d.protectedJi) {', 'if (false) {'),
+    ('uncovered_inferred_lifted', ' && !s.uncoveredByDeferral?.includes(h)', ''),
+    ('propagation_lifts_undetermined', "if (d.state === 'undetermined') continue", 'void 0'),
 ]
 results = []
 try:

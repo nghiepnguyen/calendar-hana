@@ -25,8 +25,8 @@
   },
   "checks": {
     "unitFiles": 173,
-    "unitTests": 3261,
-    "p4GateTests": 309,
+    "unitTests": 3265,
+    "p4GateTests": 313,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -134,5 +134,23 @@
     "alternativeReadingsRejected": 3,
     "a04bDecisive": 5,
     "audit": "docs/audits/p4-vol10-season-days.md"
+  },
+  "codeReview": {
+    "pr": 48,
+    "findings": 10,
+    "fixed": [
+      "uncovered heading lifted by inference",
+      "propagation over undetermined",
+      "德願 rule order",
+      "input validation order",
+      "suppressedBy without present removal",
+      "subject→entry map duplicated",
+      "propagation out-of-scope reporting"
+    ],
+    "deferred": [
+      "repeated context computation",
+      "duplicated constants",
+      "月破 reading alignment after PR #49"
+    ]
   }
 }

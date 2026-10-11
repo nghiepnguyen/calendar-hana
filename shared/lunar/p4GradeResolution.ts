@@ -86,17 +86,19 @@ export function evaluateP4Clause(
   const suppressedBy: string[] = []
   let named = group.filter((g) => de.has(g))
   let undetermined = false
-  for (const rule of pillarRules) {
-    const removesDeHe = DE_AS_JIAN.has(rule.id) || rule.ignoredVirtueGroup === '德合'
-    if (removesDeHe && group.some((g) => DE_HE.includes(g))) {
+  // Removals first, so the 德願 check does not depend on rule order. A rule is recorded when it
+  // excludes a god present on the day, judged against the original presence, not the loop order.
+  const presentDeHe = named.some((g) => DE_HE.includes(g))
+  for (const rule of pillarRules)
+    if (presentDeHe && (DE_AS_JIAN.has(rule.id) || rule.ignoredVirtueGroup === '德合')) {
       suppressedBy.push(rule.id)
       named = named.filter((g) => !DE_HE.includes(g))
     }
+  for (const rule of pillarRules)
     if (rule.ignoredVirtueGroup === '德願' && named.length) {
       suppressedBy.push(rule.id)
       undetermined = true
     }
-  }
   const dePresent = clause.with !== undefined && named.length > 0
   const clauseEffect = clause.with
     ? dePresent

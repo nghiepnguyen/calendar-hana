@@ -8,6 +8,7 @@ import lockV1 from '../../docs/audits/sources/p4-vol10/day-composition-lock.json
 import lock from '../../docs/audits/sources/p4-vol10/day-composition-lock-v2.json'
 import {
   applyP4Propagation,
+  P4_PROPAGATION_OUT_OF_SCOPE,
   P4_DAY_HEADINGS,
   resolveP4Day,
   splitP4YiGods,
@@ -87,6 +88,27 @@ describe('P4 day composition (A04b), audit only', () => {
       expect(counts[s], s).toBeGreaterThan(0)
   })
 
+  // Hand-derived: 卯月甲子 大時 defers to 月刑, which does not list 乘船渡水 (又為咸池); 宜 list is
+  // empty, so 宜 is known false. The uncovered 忌 must stay undetermined, not become not_recorded.
+  it('keeps a deferral-uncovered heading undetermined even when 宜 is known false', () => {
+    expect(resolveP4Day('卯', '甲子').headings['乘船渡水']!.state).toBe('undetermined')
+  })
+
+  it('reports propagation headings outside the day scope instead of skipping them silently', () => {
+    const known = new Set(P4_HEADINGS)
+    expect(P4_PROPAGATION_OUT_OF_SCOPE.length).toBeGreaterThan(0)
+    for (const h of P4_PROPAGATION_OUT_OF_SCOPE) {
+      expect(known.has(h), h).toBe(true)
+      expect(P4_DAY_HEADINGS).not.toContain(h)
+    }
+    expect(resolveP4Day('寅', '丁未').propagationOutOfScope).toEqual(P4_PROPAGATION_OUT_OF_SCOPE)
+  })
+
+  it('validates input before any lookup', () => {
+    expect(() => resolveP4Day('X', '甲子')).toThrow(RangeError)
+    expect(() => resolveP4Day('子', '甲丑')).toThrow(RangeError)
+  })
+
   it('propagates a 相抵 lift only to unprotected 忌, once', () => {
     const d = (
       state: string,
@@ -110,6 +132,12 @@ describe('P4 day composition (A04b), audit only', () => {
     expect(out['般移']).toMatchObject({ state: 'only_ji', propagationBlocked: '嫁娶' })
     expect(out['冠帶']!.state).toBe('undetermined')
     expect(out['結婚姻']!.state).toBe('only_yi')
+    // A to-heading undetermined for other reasons is not made determinate by propagation.
+    const pending = applyP4Propagation({
+      嫁娶: d('neither_recorded', false),
+      安牀: d('undetermined', true, false, true),
+    })
+    expect(pending['安牀']!.state).toBe('undetermined')
     // A lifted to-heading does not chain into its own lines (安牀 → 般移 needs 安牀 相抵).
     expect(out['般移']!.state).toBe('only_ji')
     // requireAll: 開倉 needs both 開市 and 立券交易 at 相抵.

@@ -30,6 +30,16 @@
       "mutation": "propagation_ignores_protection",
       "caughtByAssertion": true,
       "exitCode": 1
+    },
+    {
+      "mutation": "uncovered_inferred_lifted",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "propagation_lifts_undetermined",
+      "caughtByAssertion": true,
+      "exitCode": 1
     }
   ],
   "restored": true,

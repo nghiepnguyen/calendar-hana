@@ -11,7 +11,12 @@ import lock from '../../docs/audits/sources/p4-vol10/grade-resolution-lock-v2.js
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { getSourceLockedCatHungStars } from './catHungStars'
 import { getP4SubjectPresence } from './p4ContextBridge'
-import { getP4EntryClause, getP4GridCell, resolveP4Grades } from './p4GradeResolution'
+import {
+  evaluateP4Clause,
+  getP4EntryClause,
+  getP4GridCell,
+  resolveP4Grades,
+} from './p4GradeResolution'
 import { getP4SeasonDays } from './p4SeasonDays'
 import { getXiejiGodPresence } from './xiejiGodPresence'
 import { getVol10VirtuesPresent } from './xiejiVirtues'
@@ -161,7 +166,8 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
         cell,
         grade: 'ci',
         status: 'undetermined',
-        suppressedBy: ['pursuit', 'no_de_yuan'],
+        // 逐陣 removes no present god (no 德合 that day); only the 德願 rule decides.
+        suppressedBy: ['no_de_yuan'],
       })
   })
 
@@ -178,6 +184,15 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
     expect(resolveP4Grades('巳', '丙午').subjects).toEqual({
       大時: expect.objectContaining({ deGroup: [], consistency: 'agree' }),
     })
+  })
+
+  it('decides 德願 independently of pillar-rule order', () => {
+    const rules = clauses.pillarRules.filter((r) => ['no_de_yuan', 'yang_no_de_he'].includes(r.id))
+    const de = new Set(['天德合'])
+    const a = evaluateP4Clause('閉日', '未', de, rules)
+    const b = evaluateP4Clause('閉日', '未', de, [...rules].reverse())
+    expect([a.undetermined, a.dePresent, a.named]).toEqual([false, false, []])
+    expect([b.undetermined, b.dePresent, b.named]).toEqual([false, false, []])
   })
 
   it('corrects only the exact frozen reading and moves no token between cells', () => {

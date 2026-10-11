@@ -102,6 +102,16 @@ function yiEvidence(month: string, pillar: string) {
 
 type Line = { from?: string[]; to?: string[]; pairs?: string[][]; requireAll?: boolean }
 
+/** Propagation headings outside the 29 day headings: never composed here, reported, not hidden. */
+export const P4_PROPAGATION_OUT_OF_SCOPE: readonly string[] = [
+  ...new Set(
+    (art.propagation.lines as Line[])
+      .flatMap((l) => [...(l.from ?? []), ...(l.to ?? []), ...(l.pairs ?? []).flat()])
+      .map(norm)
+      .filter((h) => !P4_DAY_HEADINGS.includes(h)),
+  ),
+]
+
 /** Single pass over composed day states: a 相抵 from-heading lifts the to-heading's unprotected 忌. */
 export function applyP4Propagation(
   days: Record<string, Day>,
@@ -123,6 +133,8 @@ export function applyP4Propagation(
     for (const h of to) {
       const d = days[h]
       if (!d?.ji) continue
+      // A heading still undetermined for other reasons stays so; propagation only lifts a known 忌.
+      if (d.state === 'undetermined') continue
       if (d.protectedJi) {
         out[h] = { ...out[h]!, propagationBlocked: fired.join('+') }
         continue
@@ -139,8 +151,8 @@ export function applyP4Propagation(
 }
 
 export function resolveP4Day(month: string, pillar: string) {
+  const ctx = resolveP4Context(month, pillar) // validates input before any lookup
   const yi = yiEvidence(month, pillar)
-  const ctx = resolveP4Context(month, pillar)
   const allTaboo = resolveP4Grades(month, pillar).allTabooRuleIds
   const { scopes } = resolveP4Headings(
     month,
@@ -176,7 +188,10 @@ export function resolveP4Day(month: string, pillar: string) {
       const st = s.headings[h] ?? 'not_listed'
       // A 止忌 scope cannot be undetermined with known-false 宜 unless the 忌 was lifted.
       return {
-        st: st === 'undetermined' && yiH === false ? ('not_avoided' as const) : st,
+        st:
+          st === 'undetermined' && yiH === false && !s.uncoveredByDeferral?.includes(h)
+            ? ('not_avoided' as const)
+            : st,
         effect: s.clauseEffect,
       }
     })
@@ -219,5 +234,6 @@ export function resolveP4Day(month: string, pillar: string) {
     headings: applyP4Propagation(days),
     // 卷十一 忌 gods outside the modeled scopes (raw text, presence not audited here).
     unmodeledJi: unmodeled,
+    propagationOutOfScope: P4_PROPAGATION_OUT_OF_SCOPE,
   }
 }
