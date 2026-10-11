@@ -13,7 +13,7 @@ original = target.read_bytes()
 mutations = [
     ('xiangdi_keeps_ji', "else if (effect === 'cancel_both') out[h] = 'neither_recorded'", "else if (effect === 'cancel_both') out[h] = 'only_ji'"),
     ('as_usual_follows_yi', "else if (effect === 'as_usual') out[h] = 'only_ji'", "else if (effect === 'as_usual') out[h] = yi[h] ? 'both_present' : 'only_ji'"),
-    ('still_avoid_base_only', 'for (const h of P4_HEADINGS) avoided.add(h)', 'void 0'),
+    ('still_avoid_base_only', 'for (const h of split(YUE_PO_STILL_AVOID.headings)) avoided.add(h)', 'void 0'),
     ('stop_list_ignored', 'ji: stop.has(h)', 'ji: avoided.has(h)'),
     ('avoid_all_spares_listed', "if (effect === 'avoid_all') out[h] = 'only_ji'", "if (effect === 'avoid_all' && avoided.has(h)) out[h] = 'only_ji'"),
     ('unknown_yi_as_false', 'yi: yi[h],', 'yi: yi[h] ?? false,'),

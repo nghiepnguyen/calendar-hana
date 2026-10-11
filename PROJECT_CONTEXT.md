@@ -26,9 +26,9 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Main đã deploy | `93a513d` (merge PR #47; Release A PR #45 vẫn là thay đổi runtime gần nhất) |
-| Bundle | `/assets/index-D6Jh5JwV.js`, SHA-256 `00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33` (trùng build local) |
-| Deploy gần nhất | [CI run 38099256995](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38099256995), commit `93a513d`, hoàn tất 2026-10-11 00:51:10 UTC (**07:51:10 VN**). Typecheck/lint, unit + emulator + authority mutation gates, Playwright desktop 2 shard và bước Deploy đều SUCCESS. Production HTTP 200, bundle trùng từng byte với build local; smoke browser trong app: tải hôm nay/lịch vạn niên, chuyển 12/10/2026, quay về hôm nay đều qua. Đã áp dụng bản app hiện hành qua nút Cập nhật trước smoke |
+| Main đã deploy | `1fc9940` (merge PR #49: sửa 月破 仍忌, thay đổi runtime) |
+| Bundle | `/assets/index-CeLinrvj.js`, SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` (trùng build local; kiểm trên production 2026-10-11) |
+| Deploy gần nhất | [CI run 38137324257](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38137324257), commit `1fc9940`, SUCCESS (typecheck/lint, unit + emulator, Playwright desktop 2 shard, Deploy). Smoke UI cho 11 ngày đổi chưa chạy. |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
@@ -74,7 +74,7 @@ Rollback (flag về false trên nhánh riêng → PR → CI deploy → smoke; kh
 | P3a — định nghĩa 協紀 cho 35 thần | DONE (PR #43, audit) | `shared/almanac-data/xieji-god-definitions.json` (quy tắc + trích dẫn nguyên văn + offset, SHA-1 từng quyển), `xiejiGodDefinitions.test.ts`; owner chốt 往亡 (氣往亡 = tên liên quan, quy tắc khác), 不將 bỏ 六月戊午, 五富 順行 (逆行 lưu `alternative`) |
 | P3b — presence evaluator | DONE (PR #44) | `shared/lunar/xiejiGodPresence.ts` (`xieji-god-presence-v1`), runtime đọc `xieji-god-tables.json` (bảng không trích dẫn, test buộc khớp definitions); `docs/audits/xieji-god-presence-2025-2027.tsv` |
 | Release A — 14 thần legacy theo Month Jian | **DEPLOYED (PR #45)** | Flag `legacyGodsMonthJian`; Golden `golden-legacy-gods-month-jian.json` (52 ca, đóng băng `70ed321`); migration `legacyGodsMonthJian.test.ts` + `docs/audits/legacy-gods-month-jian-migration.tsv`; `docs/audits/dormant-legacy-gods.md` |
-| 月破 子午未申 仍忌 | PR (chờ merge) | Clause 「…不忌祭祀覃恩肆赦等事仍忌解除求醫療病破屋壞垣」: resolver trước chỉ giữ danh sách gốc nên medical/demolition `not_listed`, Trực Phá vẫn +25. Sửa (`yuePoStillAvoidPolicy.ts`, cách đọc sát chữ: danh sách gốc + 3 việc 仍忌); 1095 ngày: 11 ngày, medical recommended → watch 5 / watch giữ 6, demolition recommended → avoid 5 / watch → strong_avoid 6, mỗi dòng −50; event không đổi. `yuePoStillAvoidMigration.test.ts` |
+| 月破 子午未申 仍忌 | **DEPLOYED (PR #49)** | Clause 「…不忌祭祀覃恩肆赦等事仍忌解除求醫療病破屋壞垣」: resolver trước chỉ giữ danh sách gốc nên medical/demolition `not_listed`, Trực Phá vẫn +25. Sửa (`yuePoStillAvoidPolicy.ts`, cách đọc sát chữ: danh sách gốc + 3 việc 仍忌); 1095 ngày: 11 ngày, medical recommended → watch 5 / watch giữ 6, demolition recommended → avoid 5 / watch → strong_avoid 6, mỗi dòng −50; event không đổi. `yuePoStillAvoidMigration.test.ts` |
 | 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` (39 ca) |
 | Coverage P2 / R5 — 百忌日 + hard warning | **DONE, MERGED & DEPLOYED (PR #47)** | Golden P2 dùng manifest thật; migration lịch sử tách riêng; 9 rule trên 1095 ngày 2025–2027, event có/không giờ, 3 vùng điểm hard warning; 2 mutation bị bắt; local 165 file / 2952 test qua; [CI PR](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38098804753) và CI main xanh; `docs/audits/baiji-production-coverage.md` |
 | Personal (feng-shui, Bazi, daily) | Code có sẵn, chưa có phase audit riêng | Personal annual afflictions giữ convention cũ, chưa chứng nhận |

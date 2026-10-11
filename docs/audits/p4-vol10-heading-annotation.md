@@ -58,3 +58,7 @@ Gate P4 277 test; full unit 170 file/3229 test; typecheck/lint/build qua; bundle
 - A04b: ghép các phạm vi trong ngày và lan truyền 鋪註 11, 16–24; nguồn evidence 宜 (卷十一 / 吉神 cần presence).
 - A05: danh sách 忌 của đích có bao trùm đối tượng không (negative witness 月害/天吏).
 - Presence 相日/王日/官日/守日/長生, nhãn 德大會; 德願 vẫn `undetermined`.
+
+## Đồng bộ với production (PR #49)
+
+Production sửa lỗi 月破 theo cách đọc sát chữ: danh sách gốc + 3 việc 「仍忌」 (解除 / 求醫療病 / 破屋壞垣), không phải "mọi heading trừ phần chừa". Audit A04a đổi theo, dùng chung `YUE_PO_STILL_AVOID`. Hệ quả cho A05: khi gặp 德, 災煞 → 月破 không còn bao trùm `苫蓋` (又為天火), nên heading này là `undetermined` (artifact `p4-vol10-deferral-coverage-v2.json`, v1 giữ nguyên). Golden A04a không đổi. Migration 1095 ngày của production: 11 ngày, chỉ medical/demolition, mỗi dòng −50, event không đổi.

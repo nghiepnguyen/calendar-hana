@@ -6,6 +6,7 @@ import { classifyP4Annotation } from './p4Annotation'
 import { resolveP4Context } from './p4ContextBridge'
 import { evaluateP4Clause, presentP4De } from './p4GradeResolution'
 import { splitHeadings } from './xiejiVol10Resolution'
+import { YUE_PO_STILL_AVOID } from './yuePoStillAvoidPolicy'
 
 /** Source audit only (A04a): per 卷十 subject scope, the annotation state of each heading.
  * Scopes are never merged here; not imported by the production pipeline. */
@@ -83,10 +84,14 @@ function annotate(
       Object.entries(lists.stopLists ?? {}).find(([months]) => months.includes(month))?.[1],
   )
   const spared = split(clause.notAvoid)
-  // 月破 子午未申: 不與德合併諸事皆忌, so 與德合併 仍忌 everything but the spared list
-  // (仍忌解除求醫療病破屋壞垣 names headings outside the base list).
-  if (effect === 'still_avoid' && clause.otherwise === 'avoid_all')
-    for (const h of P4_HEADINGS) avoided.add(h)
+  // 月破 子午未申 with 德: 仍忌 three headings outside the base list, read literally as in the
+  // production resolver (yuePoStillAvoidPolicy).
+  if (
+    effect === 'still_avoid' &&
+    owner === '月破' &&
+    (YUE_PO_STILL_AVOID.months as readonly string[]).includes(month)
+  )
+    for (const h of split(YUE_PO_STILL_AVOID.headings)) avoided.add(h)
   const notAvoided = new Set([...split(lists.notAvoid), ...spared])
   const out: Record<string, P4HeadingState> = {}
   for (const h of P4_HEADINGS) {
