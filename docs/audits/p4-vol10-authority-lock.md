@@ -55,6 +55,10 @@ Build main client `/assets/index-D6Jh5JwV.js` có SHA-256 `00c37f604701221d662aa
 
 `p4-vol10-readiness.json` ghi rõ full scoring Golden, canonical resolver và rollback activation flag **chưa có**; đây chưa phải diff report của release đổi điểm hay chứng nhận go-live. Không có merge/deploy trong bước này.
 
+## Bước tiếp nối
+
+Named-clause lock v1 đã thêm 18 nhóm/67 cặp override can-chi, 16 nhóm deferral có tên và 26 partial oracle cases; helper heading-specific có 49 tests. Chi tiết: [`p4-vol10-named-clauses.md`](p4-vol10-named-clauses.md). Các helper chưa nối production; chưa đóng A03–A05 hay nâng scoring readiness.
+
 ## Việc tiếp theo
 
 1. A02 đã giải quyết bằng ảnh phóng lớn; còn cần audit predicates và danh sách clause per-heading đầy đủ.

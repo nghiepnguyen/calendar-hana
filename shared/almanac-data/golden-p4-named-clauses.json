@@ -1,0 +1,137 @@
+{
+  "version": "golden-p4-named-clauses-v1",
+  "status": "PARTIAL_SOURCE_ORACLE_NOT_SCORE_ORACLE",
+  "authoring": "Expected rule IDs hand-transcribed into tests before helper implementation; red run missing module, then preserved verbatim in this artifact",
+  "pillarCases": [
+    {
+      "monthJian": "午",
+      "pillar": "丙午",
+      "expectedRuleIds": ["great_meeting", "both_errors"]
+    },
+    {
+      "monthJian": "子",
+      "pillar": "壬子",
+      "expectedRuleIds": ["great_meeting", "both_errors"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "己巳",
+      "expectedRuleIds": ["small_meeting"]
+    },
+    {
+      "monthJian": "未",
+      "pillar": "己未",
+      "expectedRuleIds": ["yang_error", "yang_no_de_he"]
+    },
+    {
+      "monthJian": "未",
+      "pillar": "己巳",
+      "expectedRuleIds": ["yin_error", "yin_no_de_he"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "丙午",
+      "expectedRuleIds": ["thin_year", "no_de_yuan"]
+    },
+    {
+      "monthJian": "未",
+      "pillar": "戊午",
+      "expectedRuleIds": ["pursuit", "no_de_yuan"]
+    },
+    {
+      "monthJian": "卯",
+      "pillar": "辛酉",
+      "expectedRuleIds": ["yin_error_exceptions"]
+    },
+    {
+      "monthJian": "酉",
+      "pillar": "乙卯",
+      "expectedRuleIds": ["yin_error_exceptions"]
+    },
+    {
+      "monthJian": "未",
+      "pillar": "丁巳",
+      "expectedRuleIds": ["great_meeting", "yin_error_exceptions"]
+    },
+    {
+      "monthJian": "丑",
+      "pillar": "癸亥",
+      "expectedRuleIds": ["great_meeting", "yin_error_exceptions"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "丁巳",
+      "expectedRuleIds": ["yang_error"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "丁未",
+      "expectedRuleIds": ["yin_error"]
+    },
+    {
+      "monthJian": "寅",
+      "pillar": "甲寅",
+      "expectedRuleIds": ["yang_error"]
+    },
+    {
+      "monthJian": "寅",
+      "pillar": "庚戌",
+      "expectedRuleIds": ["yin_error"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "戊辰",
+      "expectedRuleIds": ["extreme_yin_yang"]
+    },
+    {
+      "monthJian": "亥",
+      "pillar": "戊戌",
+      "expectedRuleIds": ["extreme_yin_yang"]
+    },
+    {
+      "monthJian": "寅",
+      "pillar": "辛酉",
+      "expectedRuleIds": ["three_yin"]
+    },
+    {
+      "monthJian": "申",
+      "pillar": "乙卯",
+      "expectedRuleIds": ["three_yin"]
+    },
+    {
+      "monthJian": "辰",
+      "pillar": "庚辰",
+      "expectedRuleIds": ["yin_position"]
+    },
+    {
+      "monthJian": "巳",
+      "pillar": "癸亥",
+      "expectedRuleIds": ["cross_break"]
+    },
+    {
+      "monthJian": "午",
+      "pillar": "壬子",
+      "expectedRuleIds": ["strike"]
+    },
+    {
+      "monthJian": "未",
+      "pillar": "癸丑",
+      "expectedRuleIds": ["yang_break"]
+    },
+    {
+      "monthJian": "卯",
+      "pillar": "己酉",
+      "expectedRuleIds": ["yin_path"]
+    },
+    {
+      "monthJian": "午",
+      "pillar": "甲午",
+      "expectedRuleIds": []
+    },
+    {
+      "monthJian": "寅",
+      "pillar": "己巳",
+      "expectedRuleIds": []
+    }
+  ]
+}

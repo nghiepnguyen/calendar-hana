@@ -20,14 +20,25 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 166,
-    "unitTests": 3120,
-    "p4GateTests": 168,
+    "unitFiles": 167,
+    "unitTests": 3162,
+    "p4GateTests": 217,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
     "mutationCaught": 3,
     "graphifyUpdate": "PASS"
   },
-  "note": "Full unit run passed before source v2 reading correction; targeted P4 gate passed after correction. Source ambiguity is retained, not a conservative canonical interpretation."
+  "note": "Full unit run passed before seven added named-deferral test cases; targeted 217-test gate passed afterward. Helpers are audit-only; canonical pipeline, scoring oracle and activation flag remain incomplete.",
+  "namedClauseAudit": {
+    "lockVersion": "p4-named-clauses-lock-v1",
+    "pillarGroups": 18,
+    "pillarPairs": 67,
+    "namedDeferralGroups": 16,
+    "partialOracleCases": 26,
+    "newHelperTests": 49,
+    "productionImport": false,
+    "mutationCaught": 3,
+    "audit": "docs/audits/p4-vol10-named-clauses.md"
+  }
 }
