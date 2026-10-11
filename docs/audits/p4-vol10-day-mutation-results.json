@@ -7,6 +7,11 @@
       "exitCode": 1
     },
     {
+      "mutation": "zhuanji_unprotected",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
       "mutation": "neither_beats_protected",
       "caughtByAssertion": true,
       "exitCode": 1
@@ -32,7 +37,7 @@
       "exitCode": 1
     },
     {
-      "mutation": "uncovered_inferred_lifted",
+      "mutation": "youwei_ji_ignored",
       "caughtByAssertion": true,
       "exitCode": 1
     },

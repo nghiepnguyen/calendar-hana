@@ -154,7 +154,7 @@ export function resolveP4Day(month: string, pillar: string) {
   const ctx = resolveP4Context(month, pillar) // validates input before any lookup
   const yi = yiEvidence(month, pillar)
   const allTaboo = resolveP4Grades(month, pillar).allTabooRuleIds
-  const { scopes } = resolveP4Headings(
+  const { scopes, youweiScopes } = resolveP4Headings(
     month,
     pillar,
     Object.fromEntries(Object.entries(yi).filter(([, v]) => v !== undefined)) as Record<
@@ -196,8 +196,13 @@ export function resolveP4Day(month: string, pillar: string) {
       }
     })
     const kept = states.filter((x) => x.st === 'only_ji' || x.st === 'both_present')
-    const ji = baiji.has(h) || kept.length > 0
-    const protectedJi = baiji.has(h) || kept.some((x) => x.effect === 'only_avoid')
+    // 又為 scopes note 忌 only; 專忌 ones are protected like 百忌日, and none suppresses 宜.
+    const youweiJi = Object.values(youweiScopes).filter((y) => y.headings[h] === 'only_ji')
+    const ji = baiji.has(h) || kept.length > 0 || youweiJi.length > 0
+    const protectedJi =
+      baiji.has(h) ||
+      kept.some((x) => x.effect === 'only_avoid') ||
+      youweiJi.some((y) => y.protected)
     const neither = states.some((x) => x.st === 'neither_recorded')
     const suppress =
       suppressed.has(h) ||

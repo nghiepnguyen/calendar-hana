@@ -17,6 +17,8 @@ mutations = [
     ('stop_list_ignored', 'ji: stop.has(h)', 'ji: avoided.has(h)'),
     ('avoid_all_spares_listed', "if (effect === 'avoid_all') out[h] = 'only_ji'", "if (effect === 'avoid_all' && avoided.has(h)) out[h] = 'only_ji'"),
     ('unknown_yi_as_false', 'yi: yi[h],', 'yi: yi[h] ?? false,'),
+    ('youwei_kept_in_base', "&& !SEPARATE.has(x.as ?? '')", ''),
+    ('youwei_scopes_dropped', 'youweiScopes: getP4YouweiScopes(Object.keys(ctx.deferrals))', 'youweiScopes: getP4YouweiScopes([])'),
 ]
 results = []
 try:
@@ -26,7 +28,7 @@ try:
             raise RuntimeError(f'Mutation did not apply: {name}')
         target.write_text(text.replace(old, new, 1))
         run = subprocess.run(
-            ['npx', 'vitest', 'run', 'shared/lunar/p4HeadingAnnotation.test.ts'],
+            ['npx', 'vitest', 'run', 'shared/lunar/p4HeadingAnnotation.test.ts', 'shared/lunar/p4YouweiScopes.test.ts'],
             cwd=root, capture_output=True, text=True, timeout=180,
         )
         output = run.stdout + run.stderr

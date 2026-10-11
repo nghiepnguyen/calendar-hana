@@ -120,7 +120,7 @@ Roadmap đánh số theo **thứ tự thực hiện**. Làm dứt điểm từng
 |---|---|---|---|---|
 | 1 | ~~Smoke production PR #49~~ | **XONG** 2026-10-11: 6/6 desktop Chrome + Pixel 7 (`docs/audits/yue-po-still-avoid-release.md`) | — | — |
 | 2 | ~~Merge PR #48~~ | **XONG**: merge `2cf7bb3`, deploy SUCCESS, bundle production vẫn `f29f5aab…` | — | — |
-| 3 | **Quyết định nguồn trước khi mô hình tiếp:** (a) danh sách 「又為X」 (土府, 咸池, 血支, 天火, 大耗, 月虛, 死神, 地火) là phạm vi riêng còn hiệu lực qua deferral/gỡ kỵ, hay thuộc danh sách gốc (hiện tại); (b) 德願 giữ `undetermined` | Mở | Owner chốt (a), ghi convention có tên + test; (b) giữ nguyên trừ khi có nguồn mới | **Chốt (a)** |
+| 3 | ~~Quyết định 「又為X」~~ | **XONG** (audit-only, chờ merge): B theo nguồn — 土府/血支 專忌 = phạm vi bảo vệ, 死神 thuộc 平日, 大耗/地火/月虛/天火/咸池 = phạm vi riêng convention; 德願 giữ undetermined (`docs/audits/p4-vol10-youwei-scopes.md`) | — | — |
 | 4 | **P4-B — mô hình các 凶 khác của 卷十一** (四廢, 五墓, 往亡, 八專, 四忌, 四窮, 厭對, 歸忌, 天賊, 小耗, 死氣, 遊禍…) và 21 thần dormant vào ghép ngày (audit-only) | Chưa làm; hiện chỉ báo `unmodeledJi` | Mỗi 凶 có entry 卷十 chép kèm offset, presence đã audit, clause → phạm vi heading; Golden suy tay khóa trước code; lan truyền 鋪註 được kiểm trên dữ liệu thật; mutation bắt hết | — |
 | 5 | **P4-C — operand cho 11 thần 宜 còn thiếu** (母倉, 福德, 天恩, 天巫, 天后, 天醫, 除神, 驛馬, 天馬, 吉期, 鳴吠) | Chưa làm (王日 đã xong) | Định nghĩa 協紀 kèm offset + SHA-1; đối chiếu chéo với bảng/nhãn sẵn có; số heading `undetermined` do 宜 giảm và được báo cáo | — |
 | 6 | **P5 — warehouse** (修倉庫 co-presence; 開倉庫出貨財 với 德/月恩/四相/時德) | Chưa làm; 修倉庫 đang hoãn trong A04b | Predicate khóa theo spec §6 (ANY, không ALL), negative fixture cho đồng hiện không thể; Golden trước code | — |
@@ -145,7 +145,7 @@ Roadmap đánh số theo **thứ tự thực hiện**. Làm dứt điểm từng
 ### Phụ thuộc
 
 ```text
-(1, 2 xong) ─► 3 quyết định 又為X ─► 4 凶 卷十一 + 21 thần ─► 5 operand 宜 ─► 6 P5
+(1, 2, 3 xong) ─► 4 凶 卷十一 + 21 thần ─► 5 operand 宜 ─► 6 P5
   ─► 7 full Golden (cần 4–6) ─► 8 adapter OFF ─► 9 diff + rollback ─► 10 activation
 P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
 P1, P2, S1, S2, R1–R4: độc lập
@@ -199,4 +199,4 @@ REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/l
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main đã deploy `2cf7bb3` (PR #48 P4 audit-only, không đổi runtime); runtime gần nhất là PR #49 (sửa 月破 仍忌: 11/1095 ngày, medical/demolition −50, event không đổi), đã smoke production. Repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian, 21 thần dormant chưa bật. P4 audit-only (mục lục `docs/audits/p4-vol10-progress.md`). Làm theo roadmap §5 đúng thứ tự, dứt điểm từng mục; mục kế tiếp là (3) owner chốt 「又為X」, rồi (4) mô hình 凶 卷十一 + 21 thần, (5) operand 11 thần 宜, (6) P5, (7) full Golden, (8) adapter OFF, (9) diff + rollback, (10) activation. Golden trước code; unknown không kích hoạt; penalty mặc định là product policy; không merge/deploy khi owner chưa cho phép. Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main đã deploy `2cf7bb3` (PR #48 P4 audit-only, không đổi runtime); runtime gần nhất là PR #49 (sửa 月破 仍忌: 11/1095 ngày, medical/demolition −50, event không đổi), đã smoke production. Repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian, 21 thần dormant chưa bật. P4 audit-only (mục lục `docs/audits/p4-vol10-progress.md`). Làm theo roadmap §5 đúng thứ tự, dứt điểm từng mục; 「又為X」 đã chốt (B theo nguồn); mục kế tiếp là (4) mô hình 凶 卷十一 + 21 thần, (5) operand 11 thần 宜, (6) P5, (7) full Golden, (8) adapter OFF, (9) diff + rollback, (10) activation. Golden trước code; unknown không kích hoạt; penalty mặc định là product policy; không merge/deploy khi owner chưa cho phép. Lịch sử ở `docs/project-context/history.md`.
