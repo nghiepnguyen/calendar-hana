@@ -1,4 +1,4 @@
-import bridge from '../almanac-data/p4-vol10-context-bridge.json'
+import bridge from '../almanac-data/p4-vol10-context-bridge-v2.json'
 import clauses from '../almanac-data/p4-vol10-named-clauses.json'
 import { matchP4PillarRules } from './p4NamedClauses'
 import { getXiejiGodPresence } from './xiejiGodPresence'
@@ -33,27 +33,30 @@ export interface P4DeferralWalk {
   terminal: string | null
 }
 
+type SubjectRule = {
+  officer?: string
+  monthlySha?: string
+  xiejiGod?: string
+  branchByMonthJian?: { targets: string }
+  unknown?: string
+}
+
 export function getP4SubjectPresence(monthJianBranch: number, dayStem: number, dayBranch: number) {
   const gods = getXiejiGodPresence(monthJianBranch, dayStem, dayBranch)
   const officer = OFFICERS[(dayBranch - monthJianBranch + 12) % 12]
+  const isPresent = (p: SubjectRule) =>
+    p.officer
+      ? p.officer === officer
+      : p.monthlySha
+        ? isMonthlyShaPresent(p.monthlySha as MonthlyShaId, monthJianBranch, dayBranch)
+        : p.branchByMonthJian
+          ? // targets run from Month Jian 寅, like xiejiMonthlySha.
+            p.branchByMonthJian.targets[(monthJianBranch + 10) % 12] === BRANCHES[dayBranch]
+          : p.xiejiGod! in gods
   const out: Record<string, P4Presence> = {}
-  for (const { han, presence: p } of bridge.subjects as {
-    han: string
-    presence: { officer?: string; monthlySha?: string; xiejiGod?: string; unknown?: string }
-  }[]) {
+  for (const { han, presence } of bridge.subjects as { han: string; presence: SubjectRule }[])
     out[han] =
-      p.unknown !== undefined
-        ? 'unknown'
-        : (
-              p.officer
-                ? p.officer === officer
-                : p.monthlySha
-                  ? isMonthlyShaPresent(p.monthlySha as MonthlyShaId, monthJianBranch, dayBranch)
-                  : p.xiejiGod! in gods
-            )
-          ? 'present'
-          : 'absent'
-  }
+      presence.unknown !== undefined ? 'unknown' : isPresent(presence) ? 'present' : 'absent'
   return out
 }
 

@@ -25,8 +25,8 @@
   },
   "checks": {
     "unitFiles": 168,
-    "unitTests": 3188,
-    "p4GateTests": 236,
+    "unitTests": 3191,
+    "p4GateTests": 239,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -46,20 +46,19 @@
     "audit": "docs/audits/p4-vol10-named-clauses.md"
   },
   "contextBridge": {
-    "lockVersion": "p4-context-bridge-lock-v1",
-    "oracleCommit": "4099d88",
+    "lockVersion": "p4-context-bridge-lock-v2",
+    "oracleCommit": "67c442b",
     "subjects": 13,
-    "unknownSubjects": [
-      "刼煞"
-    ],
-    "oracleCases": 11,
-    "newTests": 19,
-    "firedNamedEdges": 165,
-    "undeterminedEdges": 30,
-    "contextsWithUndetermined": 20,
+    "unknownSubjects": [],
+    "oracleCases": 13,
+    "newTests": 22,
+    "firedNamedEdges": 195,
+    "undeterminedEdges": 0,
+    "contextsWithUndetermined": 0,
     "contextsWithPillarRules": 59,
     "productionImport": false,
-    "mutationCaught": 5,
-    "audit": "docs/audits/p4-vol10-context-bridge.md"
+    "mutationCaught": 6,
+    "audit": "docs/audits/p4-vol10-context-bridge.md",
+    "jieShaSource": "卷06 李鼎祚曰正月起亥逆行四孟"
   }
 }

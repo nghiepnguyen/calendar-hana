@@ -11,13 +11,18 @@ root = Path(__file__).resolve().parents[1]
 bridge = root / 'shared/lunar/p4ContextBridge.ts'
 original = bridge.read_bytes()
 mutations = [
-    ('unknown_as_absent', "? 'unknown'\n", "? 'absent'\n"),
+    (
+        'unknown_target_as_absent',
+        "if (p === 'unknown') return { status: 'undetermined', path, terminal: null }",
+        "if (p === 'unknown') return { status: 'target_absent', path, terminal: null }",
+    ),
     (
         'absent_target_as_terminal',
         "return { status: 'target_absent', path, terminal: null }",
         "return { status: 'named_deferral', path, terminal: edge.target }",
     ),
-    ('walk_from_unknown_subject', "if (subjects[s] === 'present')", "if (subjects[s] !== 'absent')"),
+    ('jie_sha_back_to_unknown', "presence.unknown !== undefined ?", "presence.unknown !== undefined || presence.branchByMonthJian ?"),
+    ('jie_sha_shifted_month', 'targets[(monthJianBranch + 10) % 12]', 'targets[(monthJianBranch + 11) % 12]'),
     ('single_hop_only', 'for (;;) {', 'for (let hop = 0; hop < 2; hop++) {\n    if (hop) return { status: \'named_deferral\', path, terminal: path.at(-1)! }'),
     ('drop_de_as_jian', 'g.ruleIds.filter((id) => ids.has(id))', '[] as string[]'),
 ]

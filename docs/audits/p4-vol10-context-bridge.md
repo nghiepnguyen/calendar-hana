@@ -29,10 +29,20 @@ Ngày 2026-10-11, nhánh `codex/p4-authority-lock`, PR #48. Nối tiếp named-c
 
 Gate P4 3 file/236 test; full unit 168 file/3188 test; typecheck/lint/build qua. Bundle SHA-256 giữ nguyên `00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33`. Năm mutation (unknown → absent, đích vắng thành terminal, đi từ đối tượng unknown, chỉ một bước, bỏ 德作建論) đều bị bắt; file đã phục hồi (`p4-vol10-bridge-mutation-results.json`).
 
+## v2 — presence 刼煞 theo 卷六 (A05)
+
+- Câu nguồn: 卷06 「李鼎祚曰正月起亥逆行四孟」 (offset 2325), có lời 按 「按月刼煞義與嵗刼煞同」 (offset 2352), không bác bỏ. Theo Month Jian từ tháng 寅: 亥申巳寅 lặp lại.
+- Raw 卷06 lưu ở `docs/audits/sources/p4-vol10/vol06.raw.txt`. SHA-1 `a9ab67896fc9098e6842036979e84fde4f8aae19` trùng prefix đã ghi trong `xieji-god-definitions.json`.
+- Đối chiếu với 卷十: hai edge có tên 月害 巳亥 → 刼煞 và 收日 寅申巳亥 → 刼煞 đều rơi vào ngày 刼煞 có mặt theo quy tắc này. Bất biến kiểm trên đủ 720 context.
+- `kiep_sat` production vẫn lấy từ bảng sao Ngọc Hạp, không đổi. Quy tắc này chỉ là operand của P4.
+- Artifact và Golden v2 là file mới (`p4-vol10-context-bridge-v2.json`, `golden-p4-context-bridge-v2.json`), commit `67c442b` trước khi đổi code. v1 và lock v1 giữ nguyên bytes, test vẫn kiểm. Golden v2 suy tay lại 11 ca v1, đổi ca 巳月甲寅 từ undetermined sang named deferral, thêm 2 ca 刼煞.
+- 720 context: 195 edge có tên tới đích có mặt, 585 đối tượng không có edge, **0 undetermined**, không còn đối tượng unknown.
+- Gate P4 239 test; full unit 168 file/3191 test; typecheck/lint/build qua; bundle SHA giữ nguyên. Sáu mutation đều bị bắt: đích unknown thành vắng, đích vắng thành terminal, 刼煞 trở lại unknown, 刼煞 lệch một tháng, chỉ đi một bước, bỏ 德作建論. Mutation “đi từ đối tượng unknown” của v1 được bỏ vì v2 không còn đối tượng unknown; trường hợp đích unknown được kiểm bằng đồ thị tổng hợp.
+
 ## Còn lại trước scoring
 
 - **A03**: chưa chọn ô 等第 theo predicate tháng + đồng hiện. Cần tiêu thụ `deAsJianRuleIds`/`ignoredVirtueGroups` và bare 遇德.
 - **A04**: chưa có applicability theo từng heading.
-- **A05**: path deferral đã có. Chưa áp danh sách 忌 của đích vào scope của đối tượng. Còn quy tắc presence 刼煞 theo Month Jian (cần nguồn 卷六) để gỡ 30 edge undetermined.
+- **A05**: path deferral và presence đích đã đủ. Chưa áp danh sách 忌 của đích vào scope của đối tượng.
 
 Full Golden, P5, bridge 21 thần, penalty, flag và diff/rollback chưa làm. Không merge/deploy.

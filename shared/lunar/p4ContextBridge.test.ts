@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import bridge from '../almanac-data/p4-vol10-context-bridge.json'
+import bridge from '../almanac-data/p4-vol10-context-bridge-v2.json'
 import clauses from '../almanac-data/p4-vol10-named-clauses.json'
-import golden from '../almanac-data/golden-p4-context-bridge.json'
-import lock from '../../docs/audits/sources/p4-vol10/context-bridge-lock.json'
+import golden from '../almanac-data/golden-p4-context-bridge-v2.json'
+import lockV1 from '../../docs/audits/sources/p4-vol10/context-bridge-lock.json'
+import lock from '../../docs/audits/sources/p4-vol10/context-bridge-lock-v2.json'
 import { getXiejiGodPresence } from './xiejiGodPresence'
 import { isMonthlyShaPresent } from './xiejiMonthlySha'
 import {
@@ -17,6 +18,9 @@ import {
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const source = Array.from(readFileSync('docs/audits/sources/p4-vol10/vol10.raw.txt', 'utf8'))
+const vol06 = Array.from(readFileSync(bridge.sources.vol06.path, 'utf8'))
+const quoted = (raw: string[], ref: { offset: number; text: string }) =>
+  raw.slice(ref.offset, ref.offset + Array.from(ref.text).length).join('')
 const contexts = [...BRANCHES].flatMap((month) =>
   Array.from({ length: 60 }, (_, i) => ({ month, pillar: STEMS[i % 10]! + BRANCHES[i % 12]! })),
 )
@@ -25,12 +29,15 @@ const edgesFor = (subject: string, month: string) =>
 
 describe('P4 context bridge, audit only', () => {
   it('keeps the frozen oracle and source quotations intact', () => {
-    for (const f of lock.files)
+    for (const f of [...lockV1.files, ...lock.files])
       expect(createHash('sha256').update(readFileSync(f.path)).digest('hex')).toBe(f.sha256)
-    for (const { source: ref } of bridge.deAsJian)
-      expect(source.slice(ref.offset, ref.offset + Array.from(ref.text).length).join('')).toBe(
-        ref.text,
-      )
+    expect(createHash('sha1').update(readFileSync(bridge.sources.vol06.path)).digest('hex')).toBe(
+      bridge.sources.vol06.sha1,
+    )
+    for (const { source: ref } of bridge.deAsJian) expect(quoted(source, ref)).toBe(ref.text)
+    for (const { presence } of bridge.subjects)
+      for (const ref of ('source' in presence && presence.source) || [])
+        expect(quoted(vol06, ref)).toBe(ref.text)
     expect(bridge.scoringReady).toBe(false)
   })
 
@@ -39,7 +46,7 @@ describe('P4 context bridge, audit only', () => {
     const r = resolveP4Context(c.monthJian, c.pillar)
     expect(r.officer).toBe(c.officer)
     expect(P4_SUBJECTS.filter((s) => r.subjects[s] === 'present')).toEqual(c.present)
-    expect(r.subjects['刼煞']).toBe('unknown')
+    expect(P4_SUBJECTS.filter((s) => r.subjects[s] === 'unknown')).toEqual(golden.unknownSubjects)
     expect(r.pillarRules.map((rule) => rule.id)).toEqual(c.pillarRuleIds)
     expect(
       Object.fromEntries(
@@ -68,12 +75,14 @@ describe('P4 context bridge, audit only', () => {
 
   it('fires every named edge only toward a co-present or unaudited target, over all 720 contexts', () => {
     let fired = 0
+    let undetermined = 0
     for (const { month, pillar } of contexts) {
       const r = resolveP4Context(month, pillar)
       for (const [subject, d] of Object.entries(r.deferrals)) {
         expect(r.subjects[subject as (typeof P4_SUBJECTS)[number]]).toBe('present')
         if (d.path.length > 1) fired++
         if (d.status === 'undetermined') {
+          undetermined++
           expect(r.subjects[d.path.at(-1) as (typeof P4_SUBJECTS)[number]]).toBe('unknown')
           continue
         }
@@ -83,6 +92,7 @@ describe('P4 context bridge, audit only', () => {
       expect(r.terminals).toEqual([...new Set(r.terminals)])
     }
     expect(fired).toBeGreaterThan(0)
+    expect(undetermined).toBe(0)
   })
 
   it('applies the date predicate of every named pillar context and nothing else', () => {
@@ -116,6 +126,15 @@ describe('P4 context bridge, audit only', () => {
     expect(walkP4Deferral('A', '子', () => 'present', edges)).toEqual({
       status: 'cycle',
       path: ['A', 'B', 'A'],
+      terminal: null,
+    })
+  })
+
+  it('keeps an unknown target undetermined, never absent', () => {
+    const edges = [{ subject: 'A', months: ['子'], target: 'B' }]
+    expect(walkP4Deferral('A', '子', (s) => (s === 'B' ? 'unknown' : 'present'), edges)).toEqual({
+      status: 'undetermined',
+      path: ['A', 'B'],
       terminal: null,
     })
   })

@@ -2,7 +2,7 @@
   "scope": "AUDIT_CONTEXT_BRIDGE_ONLY_NOT_SCORING",
   "mutations": [
     {
-      "mutation": "unknown_as_absent",
+      "mutation": "unknown_target_as_absent",
       "caughtByAssertion": true,
       "exitCode": 1
     },
@@ -12,7 +12,12 @@
       "exitCode": 1
     },
     {
-      "mutation": "walk_from_unknown_subject",
+      "mutation": "jie_sha_back_to_unknown",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "jie_sha_shifted_month",
       "caughtByAssertion": true,
       "exitCode": 1
     },
