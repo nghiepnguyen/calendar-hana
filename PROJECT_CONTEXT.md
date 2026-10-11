@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-11 (giờ VN), sau PR #47 (coverage P2/R5, đã merge và deploy; không đổi runtime/điểm).
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-11 (giờ VN), sau PR #49 (sửa 月破 仍忌, đã merge và deploy, đổi điểm 11 ngày). PR #48 (P4 audit-only) còn draft.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
@@ -32,7 +32,7 @@
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
-PR #47 chỉ sửa test/tài liệu; bundle và SHA-256 giữ nguyên. Smoke đổi điểm của Release A (PR #45, 10/10/2026) đã qua 6/6 trên desktop Chrome, Pixel 7, Safari desktop: 2025-01-29 Tam Hợp + Thiên Hỷ biến mất, 2025-03-31 xuất hiện (ô sao đã mở “xem thêm”); chi tiết `docs/audits/dormant-legacy-gods.md`. Smoke PR #47 là kiểm tải/chuyển ngày, không phải chạy lại ma trận đổi điểm này.
+PR #49 đổi điểm `medical`/`demolition` ở 11/1095 ngày (chi tiết bảng §3); CI và deploy xanh, bundle production đã kiểm SHA-256. **Smoke UI production cho PR #49 chưa chạy** (việc 1 ở §5). Smoke đổi điểm gần nhất đã chạy là Release A (PR #45): 6/6 trên desktop Chrome, Pixel 7, Safari desktop (`docs/audits/dormant-legacy-gods.md`).
 
 `shared/almanac-data/manifest.json` → `policies`:
 
@@ -76,6 +76,7 @@ Rollback (flag về false trên nhánh riêng → PR → CI deploy → smoke; kh
 | Release A — 14 thần legacy theo Month Jian | **DEPLOYED (PR #45)** | Flag `legacyGodsMonthJian`; Golden `golden-legacy-gods-month-jian.json` (52 ca, đóng băng `70ed321`); migration `legacyGodsMonthJian.test.ts` + `docs/audits/legacy-gods-month-jian-migration.tsv`; `docs/audits/dormant-legacy-gods.md` |
 | 月破 子午未申 仍忌 | **DEPLOYED (PR #49)** | Clause 「…不忌祭祀覃恩肆赦等事仍忌解除求醫療病破屋壞垣」: resolver trước chỉ giữ danh sách gốc nên medical/demolition `not_listed`, Trực Phá vẫn +25. Sửa (`yuePoStillAvoidPolicy.ts`, cách đọc sát chữ: danh sách gốc + 3 việc 仍忌); 1095 ngày: 11 ngày, medical recommended → watch 5 / watch giữ 6, demolition recommended → avoid 5 / watch → strong_avoid 6, mỗi dòng −50; event không đổi. `yuePoStillAvoidMigration.test.ts` |
 | 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` (39 ca) |
+| P4 — cân bằng 卷十 (audit-only) | ĐANG LÀM, PR #48 draft; không đổi runtime | Mục lục và số liệu: [`docs/audits/p4-vol10-progress.md`](docs/audits/p4-vol10-progress.md); spec `docs/plans/p4-xieji-vol10-balancing.md` |
 | Coverage P2 / R5 — 百忌日 + hard warning | **DONE, MERGED & DEPLOYED (PR #47)** | Golden P2 dùng manifest thật; migration lịch sử tách riêng; 9 rule trên 1095 ngày 2025–2027, event có/không giờ, 3 vùng điểm hard warning; 2 mutation bị bắt; local 165 file / 2952 test qua; [CI PR](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38098804753) và CI main xanh; `docs/audits/baiji-production-coverage.md` |
 | Personal (feng-shui, Bazi, daily) | Code có sẵn, chưa có phase audit riêng | Personal annual afflictions giữ convention cũ, chưa chứng nhận |
 
@@ -111,41 +112,44 @@ Lưu ý UI: ô “Sao tốt & sao xấu” (`StarChips`) chỉ hiện 5 sao đ�
 
 ## 5. Vấn đề mở và việc tiếp theo
 
-Một danh sách duy nhất: mỗi vấn đề có trạng thái, việc tiếp theo và phụ thuộc. **P4 đã được owner duyệt hướng triển khai có điều kiện (2026-10-11, spec §9)**; chưa duyệt activation/merge/deploy. Trước code scoring khóa bản chép đầy đủ 等第 + bảng thần → class; tách bốn trạng thái annotation, penalty mặc định có nhãn product policy không tham gia balancing release đầu; Golden trước code, diff report và rollback flag bắt buộc trước go-live.
+Roadmap đánh số theo **thứ tự thực hiện**. Làm dứt điểm từng mục: chỉ chuyển mục kế khi mục hiện tại đạt “Xong khi”. Mục cần owner quyết thì dừng ở đó và hỏi, không tự chọn. P4 được owner duyệt hướng triển khai có điều kiện (spec §9); chưa duyệt activation/merge/deploy của scoring P4.
 
-### Ưu tiên
+### Roadmap
 
-| # | Vấn đề | Trạng thái | Việc tiếp theo | Phụ thuộc |
+| # | Việc | Trạng thái | Xong khi | Cần owner |
 |---|---|---|---|---|
-| P1 | **百忌日 không dính event:** 寅日 祭祀 (`worship`), 酉日 宴會 (`meeting`), 申日 安牀 (`bed_installation`), 未日 求醫療病 (`medical`) | **DEPLOYED phạm vi chính (PR #40).** Kiểm lại 10/10/2026 trên cấu hình production (sau Release A, 1095 ngày): thần có mặt đúng và chỉ ở ngày chi tương ứng, kèm hard warning; activity không bao giờ “Nên làm” | **Còn:** (1) 鋪註條例 「凡天狗寅日忌祭祀不註宜求福祈嗣」 → ngày Dần không ghi tốt cho `pray_blessing`/`pray_children` — cần engine (override hiện chỉ áp lên activity của thần), owner quyết; (2) 天狗 (kỵ khác của 祭祀) không có trong catalog; (3) 「酉日…不註宜慶賜賞賀」: không có activity → không làm | — |
-| P2 | **百忌日 dính event:** 巳日 出行 (`travel`), 亥日 嫁娶 (`wedding`) | **DEPLOYED phạm vi chính (PR #42); coverage DONE (PR #47, merged/deployed).** Golden P2 dùng manifest thật, migration giữ cấu hình lịch sử trong `baijiTyHoiMigration.test.ts`; suite production tự động kiểm 91 ngày Tỵ/91 ngày Hợi, không giờ và giờ 9: Xuất hành không recommended, Cưới hỏi not_recommended. Bằng chứng `docs/audits/baiji-production-coverage.md` | **Còn:** 「凡巳日忌出行不註宜出師遣使」 không có activity → không làm. `travel` = 出行 đã được owner chốt; review mapping thứ hai vẫn thuộc R1 | — |
-| P3 | **Thần vắng mặt / legacy:** 21/44 thần chấm điểm không bao giờ có presence; 14 thần legacy tính theo tháng âm | P3a (PR #43) + P3b (PR #44) xong. **Release A DEPLOYED (PR #45):** 14 thần legacy theo Month Jian — 741 kết luận event đổi (caution → recommended 170, not_recommended → recommended 129, recommended → caution 115, …), 1.835 điểm event, 3.724 điểm activity; 0 thay đổi ở ngày tháng âm = Month Jian. Bảng legacy vốn đúng 12/12 tháng, chỉ sai cơ sở tháng. 5 tên gần giống (Phổ Hộ (Hội Hộ) = 普護, Phi Ma Sát (Tai Sát) = 災煞, Nguyệt Hư (Nguyệt Sát) = 月煞, Nguyệt Yếm Đại Hoạ = 月厭, Vãng Vong (Thổ Kỵ) = 往亡) đã chứng minh bằng bảng | **Còn:** bật 21 thần vắng mặt — làm cùng P4. Đo (so với trước Release A): +7 cát → 1.042 kết luận đổi, recommended 3.008 → 3.472; +đủ 21 → 2.892, recommended 3.008 → 1.988, not_recommended 3.962 → 5.920 (14 hung thần trừ điểm khi chưa có cân bằng 卷十) | Owner đã chốt 往亡/不將/五富 |
-| P4 | **卷十 chưa mã hoá:** cân bằng chung (“凡吉足勝凶…”, “凡吉凶相抵…”), phần 宜 theo thần; 月厭/月刑/月煞/災煞 chỉ tác động qua deferral | **ĐANG LÀM — nguồn/partial Golden đã khóa v2 `19e8673` (2026-10-11)** — [`spec P4`](docs/plans/p4-xieji-vol10-balancing.md); chưa triển khai đổi điểm | Đã chép 66 ô 等第 + 28 dòng 鋪註, source-role đủ 53 IDs và partial Golden v2 `19e8673`; gate P4 168 test, toàn bộ unit 166 file/3120 test, 3 mutation, typecheck/lint/build qua; bundle giữ nguyên; [`audit nguồn`](docs/audits/p4-vol10-authority-lock.md). Đã thêm named-clause lock v1: 18 nhóm/67 cặp override can-chi, 16 nhóm deferral, 26 oracle cases và 49 test mới (audit-only); [`audit predicates`](docs/audits/p4-vol10-named-clauses.md). Context bridge v2 (audit-only): presence đủ 13 đối tượng bảng (刼煞 theo 卷06 正月起亥逆行四孟), override can-chi theo ngày, deferral bắc cầu có path, 0 undetermined/720; Golden v1 `4099d88`, v2 `67c442b` khóa trước code, gate P4 239 test, 6 mutation; [`audit bridge`](docs/audits/p4-vol10-context-bridge.md). A03 (audit-only, `p4GradeResolution.ts`): ô 等第 chọn theo (đối tượng, Month Jian), đã kiểm 11×12; bare 遇德 = nhóm thần do clause từng entry nêu; ô ↔ clause 0 conflict, 100 ca 相抵 tách riêng cho A04; đọc lại ô 月厭 下 (月刑 thuộc 午月), đính chính ghi chú kiep_sat; Golden `4f4cea7`, gate P4 260 test, 6 mutation; [`audit A03`](docs/audits/p4-vol10-grade-resolution.md). A04a (audit-only, `p4HeadingAnnotation.ts`): trạng thái 74 heading trong từng phạm vi đối tượng, 相抵 → neither_recorded (owner duyệt), Golden `d36e2aa`, gate P4 277 test, 6 mutation; [`audit A04`](docs/audits/p4-vol10-heading-annotation.md). **Phát hiện production chưa sửa:** 月破 子午未申 có 德 「仍忌解除求醫療病破屋壞垣」 nhưng resolver production để `not_listed`, Trực Phá vẫn +25 cho medical/demolition. A04b (audit-only, `p4DayComposition.ts`): ghép 13 phạm vi + 諸事皆忌 can-chi + 百忌日 cho 29 heading, evidence 宜 卷十一 (12 thần chưa có operand → undetermined), 鋪註 07–10 và lan truyền 11/16–24 (0 lần áp, 24 lần bị chặn trên dữ liệu thật), sửa khóa 立劵/立券 của A04a; Golden `3d03947`, gate P4 290 test; [`audit A04b`](docs/audits/p4-vol10-day-composition.md). A05: 12/16 edge bao trùm đủ; 月建→月刑, 大時→月刑, 閉日→月煞 hụt heading (đánh dấu undetermined), 災煞→月破 chỉ bao trùm sau resolve (củng cố cách đọc 仍忌 của 月破); sửa lỗi A04a bỏ qua 忌同刼煞; [`audit A05`](docs/audits/p4-vol10-deferral-coverage.md). Presence 四時 日 (`p4SeasonDays.ts`, 卷04/05): 王/官 theo thuyết cũ, 守日 = 辰未戌丑 (邵泰衢), 長生 theo 令星 (tháng quý unknown); mọi nhãn đi kèm trong bảng 等第 khớp, 3 cách đọc khác bị bác; [`audit`](docs/audits/p4-vol10-season-days.md). Còn 德願, nhãn 德大會, 又為X là phạm vi riêng hay không, các 凶 卷十一 + 11 thần 宜 chưa mô hình + full Golden trước scoring; 720 contexts chưa có score oracle. Resolution trước cap đã duyệt; penalty product policy ngoài balancing release đầu. Bật gộp 21 thần + P5 chỉ sau diff report và kiểm rollback, migration so với sau Release A | Presence 35 thần đã sẵn (`getXiejiGodPresence`). Ràng buộc: ngày 專忌 (百忌日) vẫn kỵ dù 吉凶相抵; event `very_high` fail `event_fit` khi activity chính có bất kỳ dòng âm (chính sách hiện hành, xem có cần đổi trong P4) |
-| P5 | **Warehouse:** co-presence 修倉庫; ngoại lệ 開倉庫出貨財 với 德/月恩/四相/時德 | Mở | Làm trong P4 | Presence 時德/四相 đã có (P3b), chờ P4 |
+| 1 | **Smoke production PR #49** — 11 ngày đổi (vd. 2025-07-06: `medical` 100 → 50 recommended → watch, `demolition` 75 → 25 recommended → avoid) | Chưa chạy | Playwright production trên desktop Chrome (+ Pixel 7) xác nhận điểm/trạng thái của ít nhất 2 ngày đổi và 1 ngày không đổi; ghi kết quả vào `docs/audits/` | — |
+| 2 | **Merge PR #48** (P4 audit-only, bundle trùng production) | Draft, CI chạy trên `bf1e62c`; code review đã xử lý (7/10 sửa) | CI xanh → owner cho phép → merge → deploy job xong → bundle production vẫn `f29f5aab…` | **Cho phép merge** |
+| 3 | **Quyết định nguồn trước khi mô hình tiếp:** (a) danh sách 「又為X」 (土府, 咸池, 血支, 天火, 大耗, 月虛, 死神, 地火) là phạm vi riêng còn hiệu lực qua deferral/gỡ kỵ, hay thuộc danh sách gốc (hiện tại); (b) 德願 giữ `undetermined` | Mở | Owner chốt (a), ghi convention có tên + test; (b) giữ nguyên trừ khi có nguồn mới | **Chốt (a)** |
+| 4 | **P4-B — mô hình các 凶 khác của 卷十一** (四廢, 五墓, 往亡, 八專, 四忌, 四窮, 厭對, 歸忌, 天賊, 小耗, 死氣, 遊禍…) và 21 thần dormant vào ghép ngày (audit-only) | Chưa làm; hiện chỉ báo `unmodeledJi` | Mỗi 凶 có entry 卷十 chép kèm offset, presence đã audit, clause → phạm vi heading; Golden suy tay khóa trước code; lan truyền 鋪註 được kiểm trên dữ liệu thật; mutation bắt hết | — |
+| 5 | **P4-C — operand cho 11 thần 宜 còn thiếu** (母倉, 福德, 天恩, 天巫, 天后, 天醫, 除神, 驛馬, 天馬, 吉期, 鳴吠) | Chưa làm (王日 đã xong) | Định nghĩa 協紀 kèm offset + SHA-1; đối chiếu chéo với bảng/nhãn sẵn có; số heading `undetermined` do 宜 giảm và được báo cáo | — |
+| 6 | **P5 — warehouse** (修倉庫 co-presence; 開倉庫出貨財 với 德/月恩/四相/時德) | Chưa làm; 修倉庫 đang hoãn trong A04b | Predicate khóa theo spec §6 (ANY, không ALL), negative fixture cho đồng hiện không thể; Golden trước code | — |
+| 7 | **Full Golden P4** cho 720 context × heading + presence + warehouse | Chưa làm (mới có partial oracle) | Golden độc lập (không gọi resolver) đóng băng, checksum, reviewer; bao phủ theo spec §7.1 | Review Golden |
+| 8 | **Adapter điểm sau flag `xiejiVol10BalancingEnabled` = OFF** | Chưa làm | Resolution trước cap; penalty −25 `product_policy_default_penalty` (`balancingEligible: false`); flag OFF tương đương baseline byte-for-byte trên 1095 ngày; P2/R5 manifest thật vẫn qua | — |
+| 9 | **Migration diff + rollback** | Chưa làm | TSV 4 cấu hình (baseline / presence-only / balancing-only / full) trên 1095 ngày × 32 activity × 11 event; 0 `UNEXPECTED_REGRESSION`; rollback bằng flag đã kiểm | **Go-live review** |
+| 10 | **Activation PR** (flag ON + 21 thần + P5) → merge → deploy → smoke → cập nhật file này | Chưa làm | CI xanh, deploy, bundle SHA, smoke desktop Chrome/Pixel 7/Safari | **Cho phép merge/deploy** |
 
-### Chờ nguồn
+### Việc độc lập (làm khi owner yêu cầu, không chặn roadmap)
 
-| # | Vấn đề | Việc tiếp theo |
+| # | Vấn đề | Trạng thái / việc tiếp theo |
 |---|---|---|
-| S1 | **土王用事 SOURCE_DEPENDENT:** đếm ngày hay thời khắc 立, biên 「後」, 時憲書/定氣, 德 có 止忌 như 土府 không; 補垣/開渠穿井 chưa có activity | Tìm nguồn; không đổi khi chưa có |
-| S2 | **Sát Chủ:** chưa có nguồn Hán văn tiền hiện đại; leap-month UNRESOLVED; không suy từ Thụ Tử, không chuyển Month Jian | Nguồn offline |
-
-### Ghi nhận, chưa lên lịch
-
-| # | Vấn đề | Ghi chú |
-|---|---|---|
-| R1 | **Review mapping single reviewer (agent):** mansion 115/115, 用事 29/29; chưa có chuyên gia thứ hai. 5 scope xây dựng hẹp giữ unmapped (owner); door_opening/waterworks không có rule Trực/thần → `no_evidence` | Cách hiểu 巳日 ↔ `travel` đã được owner chốt (P2) |
-| R2 | **Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích):** vd. `finance` 納財 trong `open_business`, `engagement` 納采問名 trong `wedding` — 卷十一 ghi thần cho cả hai việc | Mỗi thần chỉ tính một lần/event = đổi policy cả 11 event → phase riêng nếu muốn |
-| R3 | **Coverage:** iPhone thật, Firefox chưa chạy cho release 卷十 và các release PR #37–#45 (smoke Release A chỉ desktop Chrome, Pixel 7, Safari desktop); emulator và desktop Playwright 2 shard đã qua trên main `93a513d` (PR #47); smoke PR #47 dùng browser trong app; Phase 6 hướng năm chưa vào calendar UI; 月表 tháng 6/7/9/10/12 chưa đọc (không còn chặn P3 — định nghĩa đều có chữ) | Đối chiếu 月表 là kiểm chứng thêm, không bắt buộc |
-| R4 | **百忌日 còn 6 ngày không có activity:** 庚日 經絡, 辛日 醖釀, 壬日 開渠, 卯日 穿井, 丑日 冠帶, 午日 苫蓋 | Không tự map (nguyên tắc); chỉ làm nếu thêm activity tương ứng |
+| P1 | 百忌日 phần còn lại: 「凡天狗寅日忌祭祀不註宜求福祈嗣」 → ngày Dần không ghi tốt cho `pray_blessing`/`pray_children` | Production chưa áp (cần engine chặn 宜 theo heading); audit đã mô hình ở A04b (鋪註 07). Owner quyết làm riêng hay gộp P4. 天狗 không có trong catalog; 「酉日…不註宜慶賜賞賀」 không có activity → không làm |
+| P2 | 「凡巳日忌出行不註宜出師遣使」 | Không có activity 出師 → không làm. 巳日/亥日 chính đã deploy (PR #42), coverage PR #47 |
+| S1 | 土王用事 SOURCE_DEPENDENT (đếm ngày hay thời khắc 立, biên 「後」, 時憲書/定氣, 德 có 止忌 như 土府 không) | Tìm nguồn; không đổi khi chưa có |
+| S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại; leap-month UNRESOLVED | Nguồn offline |
+| R1 | Review mapping single reviewer (agent): mansion 115/115, 用事 29/29 | Cần chuyên gia thứ hai nếu muốn nâng chứng nhận |
+| R2 | Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích) | Đổi policy cả 11 event → phase riêng nếu muốn |
+| R3 | Coverage thiết bị: iPhone thật, Firefox chưa chạy cho các release đổi điểm | Kiểm thêm khi có thiết bị |
+| R4 | 百忌日 còn 6 ngày không có activity (庚 經絡, 辛 醖釀, 壬 開渠, 卯 穿井, 丑 冠帶, 午 苫蓋) | Không tự map; chỉ làm nếu thêm activity |
 
 ### Phụ thuộc
 
 ```text
-P4 cân bằng chung 卷十 + bật 21 thần vắng mặt ─► P5 warehouse
-(P3a/P3b/Release A đã xong và deploy; coverage P2/R5 DONE — PR #47)
-P4 phải giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵)
-P1, P2 (phần còn lại), S1, S2, R2, R4: độc lập
+1 smoke PR #49 ─┐
+2 merge PR #48 ─┴─► 3 quyết định 又為X ─► 4 凶 卷十一 + 21 thần ─► 5 operand 宜 ─► 6 P5
+                                                                   └──────────────► 7 full Golden ─► 8 adapter OFF ─► 9 diff + rollback ─► 10 activation
+P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
+P1, P2, S1, S2, R1–R4: độc lập
 ```
 
 ## 6. Quy tắc cho agent
@@ -172,6 +176,7 @@ npm run test:emulator            # cần Firebase CLI + Java
 # Mutation runners: chạy TUẦN TỰ, không song song với test/build/edit
 python3 scripts/audit-annual-directions-mutations.py
 python3 scripts/audit-mansion-content-mutations.py
+python3 scripts/audit-p4-grade-mutations.py   # và audit-p4-{authority,bridge,heading,day,coverage,season}-mutations.py
 npx playwright test --project=desktop
 npx playwright test e2e/mansion-content.spec.ts --project=desktop --project=mobile
 # Báo cáo migration / chẩn đoán (ghi TSV qua REPORT_FILE)
@@ -195,4 +200,4 @@ REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/l
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main đã deploy `93a513d` (PR #47), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian (`legacyGodsMonthJian`), activity phụ trùng heading đã bỏ. 35 thần có định nghĩa 協紀 (`xieji-god-definitions.json`) + presence (`getXiejiGodPresence`); 21 thần vắng mặt chưa bật. Coverage P2/R5 DONE: 9 rule 百忌日/hard warning chạy cấu hình production trên 1095 ngày; Golden P2 tách khỏi migration lịch sử; CI main và deploy xanh, bundle giữ nguyên. P1 và phần nguồn/mapping còn lại của P2 vẫn mở. Spec P4 được duyệt hướng triển khai có điều kiện (§9) ở `docs/plans/p4-xieji-vol10-balancing.md`: cân bằng chung 卷十 + 21 thần + P5 warehouse. Nguồn/bản chép 66 ô, source-role 53 IDs và partial Golden khóa v2 `19e8673`, audit `docs/audits/p4-vol10-authority-lock.md`; 720 contexts chưa có score oracle. Named-clause lock v1 đã thêm 18 nhóm/67 cặp override và 16 nhóm deferral (audit-only; xem `docs/audits/p4-vol10-named-clauses.md`). Context bridge v2 (`shared/lunar/p4ContextBridge.ts`, audit-only) nối presence 13 đối tượng → override can-chi → deferral có tên; 刼煞 theo 卷06, 0 edge undetermined (`docs/audits/p4-vol10-context-bridge.md`). A03 audit-only xong phần ô bảng + nhóm 德 có tên (`docs/audits/p4-vol10-grade-resolution.md`); 德願: owner duyệt convention 德合+天願 có điều kiện, nhưng 未月戊午 không có 德合 nên không áp, vẫn undetermined. A04a xong (`docs/audits/p4-vol10-heading-annotation.md`), kèm phát hiện production 月破 仍忌 chưa sửa. A04b xong (`docs/audits/p4-vol10-day-composition.md`). A05 và presence 四時 日 xong (`docs/audits/p4-vol10-deferral-coverage.md`, `docs/audits/p4-vol10-season-days.md`). Việc tiếp theo: mô hình các 凶 卷十一 còn lại / 21 thần, full Golden, P5, rồi bridge scoring OFF và canonical resolver + full Golden trước code scoring; tách both_present/only_yi/only_ji/neither_recorded. Penalty mặc định có nhãn product policy, ngoài balancing release đầu; không dùng thận trọng thay authority. Resolution trước cap và giữ event_fit đã duyệt; go-live cần diff report + rollback flag, chưa cho phép activation/merge/deploy. Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main đã deploy `1fc9940` (PR #49 sửa 月破 仍忌: 11/1095 ngày, chỉ medical/demolition −50, event không đổi), repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian, 21 thần dormant chưa bật. P4 audit-only ở PR #48 (draft, nhánh `codex/p4-authority-lock`): nguồn khóa, mệnh đề có tên, context bridge, A03 ô 等第 + nhóm 德, A04a/A04b heading + ghép ngày, A05 bao trùm deferral, presence 四時 日 — mục lục `docs/audits/p4-vol10-progress.md`. Làm theo roadmap §5 đúng thứ tự, dứt điểm từng mục: (1) smoke production PR #49, (2) merge PR #48 khi owner cho phép, (3) owner chốt 又為X, (4) mô hình 凶 卷十一 + 21 thần, (5) operand 11 thần 宜, (6) P5, (7) full Golden, (8) adapter OFF, (9) diff + rollback, (10) activation. Golden trước code; unknown không kích hoạt; penalty mặc định là product policy; không merge/deploy khi owner chưa cho phép. Lịch sử ở `docs/project-context/history.md`.
