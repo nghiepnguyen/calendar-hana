@@ -1,0 +1,88 @@
+{
+  "version": "golden-p4-day-composition-v1",
+  "status": "PARTIAL_SOURCE_ORACLE_NOT_SCORE_ORACLE",
+  "authoring": "Hand-derived from A04a scope states, 卷十一 宜 lists with the presence tables, 百忌日 and 鋪註 07–10, before p4DayComposition.ts existed. Subsets of the 29 activity headings.",
+  "cases": [
+    {
+      "note": "卯月甲午 相抵 (平日/天吏 with 月德): 不註; 甲日 百忌 keeps 開倉 忌; canonical 立券交易",
+      "monthJian": "卯",
+      "pillar": "甲午",
+      "headings": {
+        "嫁娶": "neither_recorded",
+        "結婚姻": "neither_recorded",
+        "安牀": "neither_recorded",
+        "立券交易": "neither_recorded",
+        "開倉庫出貨財": "only_ji",
+        "入學": "not_recorded"
+      }
+    },
+    {
+      "note": "申月癸亥 平日 從宜不從忌 with 天德: 宜 follows evidence; 亥日 百忌 嫁娶",
+      "monthJian": "申",
+      "pillar": "癸亥",
+      "headings": {
+        "嫁娶": "both_present",
+        "求醫療病": "both_present",
+        "結婚姻": "only_yi",
+        "開市": "not_recorded",
+        "安牀": "not_recorded"
+      }
+    },
+    {
+      "note": "子月壬子 陰陽大會: 諸事皆忌",
+      "monthJian": "子",
+      "pillar": "壬子",
+      "headings": {
+        "嫁娶": "only_ji",
+        "祭祀": "only_ji",
+        "乘船渡水": "only_ji",
+        "入學": "only_ji"
+      }
+    },
+    {
+      "note": "子月甲子 月厭 如常例 via 天赦; 祭祀 outside the scope follows 宜",
+      "monthJian": "子",
+      "pillar": "甲子",
+      "headings": {
+        "嫁娶": "only_ji",
+        "祭祀": "only_yi",
+        "開倉庫出貨財": "only_ji",
+        "入學": "not_recorded"
+      }
+    },
+    {
+      "note": "卯月甲申 刼煞 相抵 with 月德; 申日 百忌 keeps 安牀 忌 against 嫁娶 propagation",
+      "monthJian": "卯",
+      "pillar": "甲申",
+      "headings": {
+        "嫁娶": "neither_recorded",
+        "安牀": "only_ji",
+        "開倉庫出貨財": "only_ji",
+        "整容剃頭": "neither_recorded",
+        "入學": "not_recorded"
+      }
+    },
+    {
+      "note": "寅月丁未 no 卷十 subject: 丁日 剃頭 忌 + 整容 宜 suppressed; 未日 百忌 求醫療病 with 天德 宜",
+      "monthJian": "寅",
+      "pillar": "丁未",
+      "headings": {
+        "整容剃頭": "only_ji",
+        "求醫療病": "both_present",
+        "嫁娶": "only_yi",
+        "祈福": "only_yi",
+        "乘船渡水": "not_recorded"
+      }
+    },
+    {
+      "note": "午月庚寅 no 卷十 subject: 寅日 祭祀 百忌 with 益後 宜; 天狗 line suppresses 祈福/求嗣 宜",
+      "monthJian": "午",
+      "pillar": "庚寅",
+      "headings": {
+        "祭祀": "both_present",
+        "祈福": "not_recorded",
+        "求嗣": "not_recorded"
+      }
+    }
+  ]
+}
