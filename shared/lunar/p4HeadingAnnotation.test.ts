@@ -89,7 +89,7 @@ describe('P4 per-scope heading annotation (A04a), audit only', () => {
       }
     expect(counts['neither_recorded']).toBeGreaterThan(0)
     expect(counts['undetermined']).toBeGreaterThan(0)
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   // Hand-derived: 求醫療病 is in 平日's 止忌 list on 申月癸亥, so 忌 stays; unknown 宜 cannot tell
   // both_present from only_ji.

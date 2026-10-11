@@ -143,7 +143,7 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
             }
         }
     expect(checked).toBeGreaterThan(100)
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   it('resolves all 720 contexts without a grade/clause conflict', () => {
     for (const month of BRANCHES)
@@ -152,7 +152,7 @@ describe('P4 等第 cell and named 德 group (A03), audit only', () => {
         for (const s of Object.values(r.subjects) as { consistency?: string }[])
           expect(s.consistency).not.toBe('conflict')
       }
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   // Hand-derived: 未月戊午 is 逐陣 + 不從德願所宜; 天願 (六月戊午) is named by both clauses.
   it('leaves 德願 undetermined where a named group god is present', () => {
