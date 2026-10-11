@@ -86,7 +86,7 @@ describe('P4 day composition (A04b), audit only', () => {
       }
     for (const s of ['only_ji', 'neither_recorded', 'not_recorded', 'undetermined', 'only_yi'])
       expect(counts[s], s).toBeGreaterThan(0)
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   // Owner decision B (p4-vol10-youwei-scopes.json): 乘船渡水 comes from 大時's 又為咸池 scope, which
   // no deferral or lift removes. Under B no activity heading remains deferral-uncovered, so the

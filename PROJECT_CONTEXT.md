@@ -165,7 +165,7 @@ P1, P2, S1, S2, R1–R4: độc lập
 
 **Quy trình:** branch → gate local → PR → CI xanh → **owner cho phép merge** → CI deploy → smoke production → cập nhật file này.
 
-**CI** (`.github/workflows/ci.yml`): typecheck/lint, unit + emulator, Playwright desktop 2 shard; push `main` → `firebase deploy --only firestore,hosting,functions --project calendar-hana`. **Merge vào main = deploy production**, luôn hỏi owner trước. Main có thể reuse audit khi Git tree giống hệt. Mobile Safari/iPhone không thuộc gate bắt buộc. Deploy tay (`npx firebase deploy --only hosting --project calendar-hana`) chỉ khi CI hỏng và owner đồng ý.
+**CI** (`.github/workflows/ci.yml`): typecheck/lint; unit Vitest chia 4 shard song song (`npm test -- --shard=i/4`; 12 file migration 1095 ngày chiếm ~75% thời gian); job riêng “Mutation and emulator gates” (2 mutation gate + Firebase emulator); Playwright desktop 2 shard. Deploy cần cả 4 shard, gates, e2e và typecheck xanh; push `main` → `firebase deploy --only firestore,hosting,functions --project calendar-hana`. **Merge vào main = deploy production**, luôn hỏi owner trước. Main có thể reuse audit khi Git tree giống hệt. Mobile Safari/iPhone không thuộc gate bắt buộc. Deploy tay (`npx firebase deploy --only hosting --project calendar-hana`) chỉ khi CI hỏng và owner đồng ý.
 
 ```sh
 npm run typecheck

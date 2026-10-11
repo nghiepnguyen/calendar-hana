@@ -93,7 +93,7 @@ describe('P4 context bridge, audit only', () => {
     }
     expect(fired).toBeGreaterThan(0)
     expect(undetermined).toBe(0)
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   it('applies the date predicate of every named pillar context and nothing else', () => {
     const expected = clauses.pillarRules.flatMap((rule) =>
@@ -103,7 +103,7 @@ describe('P4 context bridge, audit only', () => {
       resolveP4Context(month, pillar).pillarRules.map((rule) => `${rule.id}:${month}${pillar}`),
     )
     expect(actual.sort()).toEqual([...expected].sort())
-  })
+  }, 60_000) // full-domain sweep: CI runners are ~4× slower than local
 
   it('walks multi-hop chains transitively, keeping every hop', () => {
     const edges = [

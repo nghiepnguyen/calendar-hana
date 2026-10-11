@@ -141,7 +141,10 @@ describe('App', () => {
     send('pointerdown', 700)
     for (const x of [650, 600, 550, 500, 450]) send('pointermove', x)
     send('pointerup', 450)
-    expect(await screen.findByRole('heading', { name: 'Thứ Năm, 24/9/2026' })).toBeInTheDocument()
+    // Swipe navigation re-renders the whole day view; a loaded CI runner needs more than the 1 s default.
+    expect(
+      await screen.findByRole('heading', { name: 'Thứ Năm, 24/9/2026' }, { timeout: 5000 }),
+    ).toBeInTheDocument()
     expect(track).toHaveBeenCalledWith('swipe_navigate', {
       view: 'day',
       direction: 'next',
