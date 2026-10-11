@@ -26,3 +26,7 @@ Both runners returned exit 1. The unmodified production suite passes (3 tests). 
 ## Limits
 
 This closes automated coverage gaps, not new source/mapping decisions. P1 prayer activities, unmapped activities, P4 balancing, and dormant gods remain outside scope. Hour coverage is none/9, not all 24 hours. No production behavior is changed.
+
+## Validation
+
+PR #47 (`codex/baiji-production-coverage`). Local `npm test`: 165 files / 2,952 tests passed. Typecheck, lint, changed-file Prettier checks, and `git diff --check` passed. Historical P2 migration body was compared byte-for-byte with main and is unchanged. `graphify update .` completed. CI remains pending until GitHub Actions confirms its result.
