@@ -102,6 +102,15 @@ describe('P4 per-scope heading annotation (A04a), audit only', () => {
     expect(known.headings['求醫療病']).toBe('only_ji')
   })
 
+  // Hand-derived: 辰月丁未 平日 defers to 月煞 (忌同刼煞); 天德合/月德合 present → 如常例.
+  it('reads 月煞/災煞 lists through 忌同刼煞', () => {
+    const scope = resolveP4Headings('辰', '丁未').scopes['平日']!
+    expect(scope).toMatchObject({ owner: '月煞', clauseEffect: 'as_usual' })
+    if (!('headings' in scope)) throw new Error('平日 unresolved')
+    expect(scope.headings['嫁娶']).toBe('only_ji')
+    expect(scope.headings['伐木']).toBe('not_avoided')
+  })
+
   it('never lets 宜 evidence change a scope that does not follow 宜', () => {
     const all = Object.fromEntries(P4_HEADINGS.map((h) => [h, true]))
     for (const [month, pillar] of [

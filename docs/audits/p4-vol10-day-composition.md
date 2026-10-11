@@ -21,7 +21,7 @@ Với 29 heading 卷十一 có ánh xạ activity, mỗi ngày được ghép t�
 
 ## Kết quả 720 context × 29 heading
 
-`only_ji` 7.247, `only_yi` 5.970, `not_recorded` 3.305, `undetermined` 2.863, `neither_recorded` 1.209, `both_present` 286. Lan truyền chưa lần nào được áp (0), bị chặn 24 lần vì 忌 được bảo vệ. Với 13 đối tượng đã mô hình, heading đích luôn cùng phạm vi 相抵 với heading nguồn; lan truyền chỉ có tác dụng khi mô hình thêm các 凶 khác. Logic lan truyền được kiểm bằng ca tổng hợp: gỡ đúng, chặn đúng, không lan tiếp, `requireAll`.
+Sau các sửa ở A05 (忌同刼煞, heading hụt khi deferral): `only_ji` 8.105, `only_yi` 5.197, `not_recorded` 2.975, `undetermined` 2.589, `neither_recorded` 1.730, `both_present` 284. Lan truyền chưa lần nào được áp (0), bị chặn 27 lần vì 忌 được bảo vệ. Với 13 đối tượng đã mô hình, heading đích luôn cùng phạm vi 相抵 với heading nguồn; lan truyền chỉ có tác dụng khi mô hình thêm các 凶 khác. Logic lan truyền được kiểm bằng ca tổng hợp: gỡ đúng, chặn đúng, không lan tiếp, `requireAll`.
 
 ## Artifact / oracle
 

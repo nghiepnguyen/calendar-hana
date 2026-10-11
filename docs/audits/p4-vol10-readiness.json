@@ -10,7 +10,7 @@
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
     "P4-A03 (德願, unaudited partner operands)",
-    "P4-A05",
+    "又為X lists as separate scopes (open)",
     "unmodeled 卷十一 凶 and unaudited 宜 operands"
   ],
   "scoringReady": false,
@@ -24,9 +24,9 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 171,
-    "unitTests": 3242,
-    "p4GateTests": 290,
+    "unitFiles": 172,
+    "unitTests": 3247,
+    "p4GateTests": 295,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -101,10 +101,25 @@
     "newTests": 13,
     "headings": 29,
     "propagationApplied": 0,
-    "propagationBlocked": 24,
+    "propagationBlocked": 27,
     "mutationCaught": 6,
     "a04aFix": "立劵/立券 canonical key",
     "productionImport": false,
     "audit": "docs/audits/p4-vol10-day-composition.md"
+  },
+  "deferralCoverage": {
+    "lockVersion": "p4-deferral-coverage-lock-v1",
+    "artifactCommit": "0e953c8",
+    "coveredEdges": 12,
+    "uncoveredBaseEdges": [
+      "jian_xing",
+      "shi_xing",
+      "bi_sha",
+      "zai_po (covered after resolution)"
+    ],
+    "mutationCaught": 4,
+    "a04aFix": "忌同刼煞 lists for 月煞/災煞",
+    "provenance": "expected fixed after measurement, hand-checked",
+    "audit": "docs/audits/p4-vol10-deferral-coverage.md"
   }
 }

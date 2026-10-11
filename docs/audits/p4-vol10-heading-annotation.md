@@ -41,9 +41,13 @@ Clause 子午未申 của 月破: 「與月德天德合月德合併不忌祭祀�
 - `p4-vol10-heading-annotation.json` và Golden 10 ca suy tay: commit `d36e2aa` trước resolver. Golden qua mà không sửa.
 - `shared/lunar/p4HeadingAnnotation.ts` + test (16 test). A03 được refactor để export `evaluateP4Clause` / `presentP4De`; output A03 giữ nguyên, Golden A03 vẫn qua.
 
+## Đính chính sau A05
+
+Bản đầu đọc 月煞/災煞 với danh sách rỗng (bỏ qua 忌同刼煞), và chưa xử lý heading hụt khi deferral. Đã sửa ở bước A05 (`p4-vol10-deferral-coverage.md`). Số liệu dưới đây là bản đã sửa (73 heading sau khi chuẩn hóa 劵→券).
+
 ## Kết quả 720 context (không có evidence 宜)
 
-Trạng thái heading của các phạm vi resolve được: `only_ji` 27.153, `not_listed` 16.771, `undetermined` 5.233 (tất cả do chưa biết 宜 trong phạm vi 止忌), `not_avoided` 4.445, `neither_recorded` 3.970. Không có `only_yi` / `both_present` khi chưa có evidence 宜. 2 phạm vi `undetermined` cả phạm vi (德願, 未月戊午).
+Trạng thái heading của các phạm vi resolve được: `only_ji` 30.042, `not_listed` 9.859, `undetermined` 6.061 (chưa biết 宜 trong phạm vi 止忌, hoặc heading hụt khi deferral), `not_avoided` 5.542, `neither_recorded` 5.290. Không có `only_yi` / `both_present` khi chưa có evidence 宜. 2 phạm vi `undetermined` cả phạm vi (德願, 未月戊午).
 
 ## Kiểm chứng
 

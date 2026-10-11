@@ -40,7 +40,12 @@ const ENTRY_BY_SUBJECT: Record<string, string> = {
   天吏: 'tian_li',
 }
 const LISTS = new Map<string, Lists>([
-  ...vol10.entries.map((e) => [e.id, e as Lists] as const),
+  // 忌同刼煞 (月煞, 災煞): share 刼煞's 忌 and 止不忌 lists, as the production resolver does.
+  ...vol10.entries.map((e) => {
+    const same = (e as { avoidSameAs?: string }).avoidSameAs
+    const src = same ? vol10.entries.find((x) => x.id === same)! : undefined
+    return [e.id, (src ? { ...e, avoid: src.avoid, notAvoid: src.notAvoid } : e) as Lists] as const
+  }),
   ...art.entryLists.map((e) => [e.entry, { extraAvoid: [], ...e } as Lists] as const),
 ])
 /** 卷十 writes 立劵交易, 卷十一 and the activity map 立券交易 (p4-vol10-day-composition.json). */
@@ -60,6 +65,23 @@ export const P4_HEADINGS: readonly string[] = [
   ]),
 ]
 
+/** 忌 + month-filtered 又為X lists of a subject's entry, in splitHeadings normal form. */
+export function getP4BaseAvoid(subject: string, month: string) {
+  const lists = LISTS.get(ENTRY_BY_SUBJECT[subject]!)!
+  return new Set([
+    ...split(lists.avoid),
+    ...lists.extraAvoid
+      .filter((x) => !x.months || x.months.includes(month))
+      .flatMap((x) => [...split(x.avoid)]),
+  ])
+}
+
+/** A05: subject 忌 the deferral target's own list does not contain (天吏不能該月害之所忌). */
+export function getP4DeferralUncovered(subject: string, target: string, month: string) {
+  const covered = getP4BaseAvoid(target, month)
+  return [...getP4BaseAvoid(subject, month)].filter((h) => !covered.has(h))
+}
+
 function annotate(
   owner: string,
   month: string,
@@ -68,12 +90,7 @@ function annotate(
   yi: Readonly<Record<string, boolean>>,
 ): Record<string, P4HeadingState> {
   const lists = LISTS.get(ENTRY_BY_SUBJECT[owner]!)!
-  const avoided = new Set([
-    ...split(lists.avoid),
-    ...lists.extraAvoid
-      .filter((x) => !x.months || x.months.includes(month))
-      .flatMap((x) => [...split(x.avoid)]),
-  ])
+  const avoided = getP4BaseAvoid(owner, month)
   const stop = split(
     clause.list ??
       Object.entries(lists.stopLists ?? {}).find(([months]) => months.includes(month))?.[1],
@@ -109,7 +126,12 @@ export function resolveP4Headings(
   const scopes: Record<
     string,
     | { status: 'undetermined' }
-    | { owner: string; clauseEffect: string; headings: Record<string, P4HeadingState> }
+    | {
+        owner: string
+        clauseEffect: string
+        headings: Record<string, P4HeadingState>
+        uncoveredByDeferral?: string[]
+      }
   > = {}
   for (const [subject, walk] of Object.entries(ctx.deferrals)) {
     const e =
@@ -118,10 +140,16 @@ export function resolveP4Headings(
       scopes[subject] = { status: 'undetermined' }
       continue
     }
+    const headings = annotate(walk.terminal!, month, e.clause, e.clauseEffect, yi)
+    // A05: never drop or keep an uncovered 忌 silently; the target's 忌 may still cover it.
+    const uncovered =
+      walk.path.length > 1 ? getP4DeferralUncovered(subject, walk.terminal!, month) : []
+    for (const h of uncovered) if (headings[h] !== 'only_ji') headings[h] = 'undetermined'
     scopes[subject] = {
       owner: walk.terminal!,
       clauseEffect: e.clauseEffect,
-      headings: annotate(walk.terminal!, month, e.clause, e.clauseEffect, yi),
+      headings,
+      ...(uncovered.length ? { uncoveredByDeferral: uncovered } : {}),
     }
   }
   return { scopes }
