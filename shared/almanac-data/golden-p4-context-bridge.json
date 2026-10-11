@@ -1,0 +1,176 @@
+{
+  "version": "golden-p4-context-bridge-v1",
+  "status": "PARTIAL_SOURCE_ORACLE_NOT_SCORE_ORACLE",
+  "authoring": "Hand-derived from the officer cycle, xiejiMonthlySha targets, xieji-god-tables rows for 月害/大時/天吏 and the named-clause artifact, before p4ContextBridge.ts existed. Not regenerated from the bridge.",
+  "cases": [
+    {
+      "note": "子月 月建 = 月厭; 陰陽大會 + 俱錯",
+      "monthJian": "子",
+      "pillar": "壬子",
+      "officer": "kien",
+      "present": ["月建", "月厭"],
+      "pillarRuleIds": ["great_meeting", "both_errors"],
+      "deferrals": {
+        "月建": { "status": "named_deferral", "path": ["月建", "月厭"], "terminal": "月厭" },
+        "月厭": { "status": "no_named_deferral", "path": ["月厭"], "terminal": "月厭" }
+      },
+      "terminals": ["月厭"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": ["both_errors"]
+    },
+    {
+      "note": "天吏 and 平日 converge on one terminal",
+      "monthJian": "卯",
+      "pillar": "甲午",
+      "officer": "binh",
+      "present": ["平日", "天吏"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "平日": { "status": "no_named_deferral", "path": ["平日"], "terminal": "平日" },
+        "天吏": { "status": "named_deferral", "path": ["天吏", "平日"], "terminal": "平日" }
+      },
+      "terminals": ["平日"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "子月 月害 從重 to 月煞",
+      "monthJian": "子",
+      "pillar": "丁未",
+      "officer": "nguy",
+      "present": ["月煞", "月害"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "月煞": { "status": "no_named_deferral", "path": ["月煞"], "terminal": "月煞" },
+        "月害": { "status": "named_deferral", "path": ["月害", "月煞"], "terminal": "月煞" }
+      },
+      "terminals": ["月煞"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "寅月 月害 and 平日 both defer to 月刑",
+      "monthJian": "寅",
+      "pillar": "己巳",
+      "officer": "binh",
+      "present": ["平日", "月刑", "月害"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "平日": { "status": "named_deferral", "path": ["平日", "月刑"], "terminal": "月刑" },
+        "月刑": { "status": "no_named_deferral", "path": ["月刑"], "terminal": "月刑" },
+        "月害": { "status": "named_deferral", "path": ["月害", "月刑"], "terminal": "月刑" }
+      },
+      "terminals": ["月刑"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "巳月 targets 刼煞, whose presence is not audited: undetermined, not absent",
+      "monthJian": "巳",
+      "pillar": "甲寅",
+      "officer": "thu",
+      "present": ["收日", "月害"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "收日": { "status": "undetermined", "path": ["收日", "刼煞"], "terminal": null },
+        "月害": { "status": "undetermined", "path": ["月害", "刼煞"], "terminal": null }
+      },
+      "terminals": [],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "午月 月建 and 月刑 both defer to 月厭",
+      "monthJian": "午",
+      "pillar": "丙午",
+      "officer": "kien",
+      "present": ["月建", "月刑", "月厭"],
+      "pillarRuleIds": ["great_meeting", "both_errors"],
+      "deferrals": {
+        "月建": { "status": "named_deferral", "path": ["月建", "月厭"], "terminal": "月厭" },
+        "月刑": { "status": "named_deferral", "path": ["月刑", "月厭"], "terminal": "月厭" },
+        "月厭": { "status": "no_named_deferral", "path": ["月厭"], "terminal": "月厭" }
+      },
+      "terminals": ["月厭"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": ["both_errors"]
+    },
+    {
+      "note": "陽錯 with named 德合 exclusion; 未月 月建 has no deferral",
+      "monthJian": "未",
+      "pillar": "己未",
+      "officer": "kien",
+      "present": ["月建"],
+      "pillarRuleIds": ["yang_error", "yang_no_de_he"],
+      "deferrals": {
+        "月建": { "status": "no_named_deferral", "path": ["月建"], "terminal": "月建" }
+      },
+      "terminals": ["月建"],
+      "ignoredVirtueGroups": ["德合"],
+      "deAsJianRuleIds": ["yang_error"]
+    },
+    {
+      "note": "酉月 災煞 defers to 月破; 月厭 co-present",
+      "monthJian": "酉",
+      "pillar": "乙卯",
+      "officer": "pha",
+      "present": ["月破", "災煞", "月厭"],
+      "pillarRuleIds": ["yin_error_exceptions"],
+      "deferrals": {
+        "月破": { "status": "no_named_deferral", "path": ["月破"], "terminal": "月破" },
+        "災煞": { "status": "named_deferral", "path": ["災煞", "月破"], "terminal": "月破" },
+        "月厭": { "status": "no_named_deferral", "path": ["月厭"], "terminal": "月厭" }
+      },
+      "terminals": ["月破", "月厭"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "申月 月害 defers to 平日",
+      "monthJian": "申",
+      "pillar": "乙亥",
+      "officer": "binh",
+      "present": ["平日", "月害"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "平日": { "status": "no_named_deferral", "path": ["平日"], "terminal": "平日" },
+        "月害": { "status": "named_deferral", "path": ["月害", "平日"], "terminal": "平日" }
+      },
+      "terminals": ["平日"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "Negative witness: 辰月 天吏 co-present with 月害, but 月害 does not follow 天吏",
+      "monthJian": "辰",
+      "pillar": "丁卯",
+      "officer": "be",
+      "present": ["閉日", "月害", "天吏"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "閉日": { "status": "no_named_deferral", "path": ["閉日"], "terminal": "閉日" },
+        "月害": { "status": "no_named_deferral", "path": ["月害"], "terminal": "月害" },
+        "天吏": { "status": "no_named_deferral", "path": ["天吏"], "terminal": "天吏" }
+      },
+      "terminals": ["閉日", "月害", "天吏"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    },
+    {
+      "note": "卯月 大時 and 收日 converge on 月刑",
+      "monthJian": "卯",
+      "pillar": "甲子",
+      "officer": "thu",
+      "present": ["收日", "月刑", "大時"],
+      "pillarRuleIds": [],
+      "deferrals": {
+        "收日": { "status": "named_deferral", "path": ["收日", "月刑"], "terminal": "月刑" },
+        "月刑": { "status": "no_named_deferral", "path": ["月刑"], "terminal": "月刑" },
+        "大時": { "status": "named_deferral", "path": ["大時", "月刑"], "terminal": "月刑" }
+      },
+      "terminals": ["月刑"],
+      "ignoredVirtueGroups": [],
+      "deAsJianRuleIds": []
+    }
+  ]
+}
