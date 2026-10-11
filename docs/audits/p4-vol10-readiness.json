@@ -1,0 +1,33 @@
+{
+  "baseline": "93a513d5200ff7ef456852a524f863622d5f6a0c",
+  "phase": "PRE_SCORING",
+  "frozenSourceCommit": "19e8673",
+  "sourceGridCells": 66,
+  "sourceRoleGodIds": 53,
+  "annotationStates": 4,
+  "puzhuLines": 28,
+  "localGradeFixtures": 132,
+  "contextInputsWithoutScoreOracle": 720,
+  "remainingIssues": ["P4-A03", "P4-A04", "P4-A05"],
+  "scoringReady": false,
+  "fullScoringGoldenReady": false,
+  "productionFlagAdded": false,
+  "rollbackFlagImplemented": false,
+  "runtimeScoreDiff": "Not applicable: no scoring implementation/activation; main client bundle byte-identical to deployed baseline. Full P4 diff report still required before go-live.",
+  "bundle": {
+    "path": "dist/assets/index-D6Jh5JwV.js",
+    "sha256": "00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33",
+    "matchesBaseline": true
+  },
+  "checks": {
+    "unitFiles": 166,
+    "unitTests": 3120,
+    "p4GateTests": 168,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "mutationCaught": 3,
+    "graphifyUpdate": "PASS"
+  },
+  "note": "Full unit run passed before source v2 reading correction; targeted P4 gate passed after correction. Source ambiguity is retained, not a conservative canonical interpretation."
+}

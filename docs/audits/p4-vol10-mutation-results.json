@@ -1,0 +1,26 @@
+{
+  "scope": "PRE_SCORING_SOURCE_AND_ANNOTATION_ONLY",
+  "frozenSourceCommit": "19e8673",
+  "mutations": [
+    {
+      "mutation": "both_as_neither",
+      "caught": true,
+      "exitCode": 1,
+      "assertions": "Source/contract gate failed as expected; no test or Golden weakened."
+    },
+    {
+      "mutation": "unknown_as_neither",
+      "caught": true,
+      "exitCode": 1,
+      "assertions": "Source/contract gate failed as expected; no test or Golden weakened."
+    },
+    {
+      "mutation": "protected_baiji_balanced",
+      "caught": true,
+      "exitCode": 1,
+      "assertions": "Source/contract gate failed as expected; no test or Golden weakened."
+    }
+  ],
+  "restored": true,
+  "notCovered": "Scoring, penalty implementation, presence activation, event and warehouse mutations remain go-live prerequisites."
+}

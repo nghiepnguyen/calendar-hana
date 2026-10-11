@@ -47,6 +47,14 @@ Các quote còn có thể nghiên cứu tiếp mà không cần owner tự chọ
 
 Penalty mặc định −25 là product policy, không hard warning, `balancingEligible: false`. Chỉ áp sau khi clause đã chứng minh khớp và thiếu dòng âm, không sinh từ unknown và không phạt trùng. Golden ghi contract này; **chưa có penalty scoring implementation** vì source gate chưa đạt.
 
+## Kiểm chứng hiện tại
+
+Nguồn/partial Golden v1 khóa ở `08e2aaf`, v2 sửa cách đọc theo ảnh nguồn ở `19e8673`; expected values không đổi. Gate P4 **168 test qua**; full suite **166 file / 3120 test qua** (full run trước sửa metadata v2, gate P4 chạy lại sau sửa). Typecheck/lint/build qua. Ba mutation annotation/nguồn bị bắt, bytes phục hồi và gate chạy lại xanh. Runner lưu tại `scripts/audit-p4-authority-mutations.py`; report `p4-vol10-mutation-results.json`.
+
+Build main client `/assets/index-D6Jh5JwV.js` có SHA-256 `00c37f604701221d662aa3f4401f9419964bf921ef8451647b879a249ce7ac33`, trùng baseline đã deploy. Helper annotation chỉ được test import, chưa nối production. `graphify update .` đã chạy. Build có cảnh báo chunk size/deprecation và full unit có cảnh báo jsdom scrollTo; các gate hoàn tất thành công.
+
+`p4-vol10-readiness.json` ghi rõ full scoring Golden, canonical resolver và rollback activation flag **chưa có**; đây chưa phải diff report của release đổi điểm hay chứng nhận go-live. Không có merge/deploy trong bước này.
+
 ## Việc tiếp theo
 
 1. A02 đã giải quyết bằng ảnh phóng lớn; còn cần audit predicates và danh sách clause per-heading đầy đủ.
