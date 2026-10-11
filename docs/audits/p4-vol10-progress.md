@@ -1,6 +1,6 @@
 # P4 — tiến độ audit-only (mục lục)
 
-Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balancing.md). Nhánh `codex/p4-authority-lock`, đã merge qua PR #48 (`2cf7bb3`). Mọi module dưới đây **chỉ test import**: không đổi runtime, bundle trùng production.
+Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balancing.md). Nhánh `codex/p4-authority-lock`, đã merge qua PR #48 (`2cf7bb3`); 「又為X」 qua PR #51 (`2f14092`). Mọi module dưới đây **chỉ test import**: không đổi runtime, bundle trùng production.
 
 | Bước | Module | Oracle khóa trước code | Kết quả chính | Audit |
 |---|---|---|---|---|
@@ -15,6 +15,6 @@ Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balanci
 | 又為X (roadmap 3) | trong A04a / A04b | `df4e1f9` (+v2) | 土府/血支 專忌 = phạm vi bảo vệ; 死神 thuộc 平日; 5 thần convention = phạm vi riêng | [youwei-scopes](p4-vol10-youwei-scopes.md) |
 | Code review PR #48 | — | — | 10 phát hiện, sửa 7, đồng bộ cách đọc 月破 với production (PR #49) | [day-composition §Sửa sau code review](p4-vol10-day-composition.md) |
 
-**Kiểm chứng gần nhất (nhánh `codex/p4-youwei-scopes`):** gate P4 321 test; full unit 175 file / 3276 test; typecheck/lint/build qua; bundle `index-CeLinrvj.js` trùng production. Mutation runner (chạy tuần tự): `scripts/audit-p4-{authority,bridge,grade,heading,day,coverage,season}-mutations.py`, đều bắt hết.
+**Kiểm chứng gần nhất (main `94cdb05`):** gate P4 321 test; full unit 175 file / 3276 test; typecheck/lint/build qua; bundle `index-CeLinrvj.js` trùng production. Mutation runner (chạy tuần tự): `scripts/audit-p4-{authority,bridge,grade,heading,day,coverage,season}-mutations.py`, đều bắt hết.
 
 **Phát hiện production đã sửa từ P4:** 月破 子午未申 仍忌 (PR #49, deployed `1fc9940`).
