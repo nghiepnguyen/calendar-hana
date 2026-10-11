@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-11 (giờ VN), sau PR #49 (sửa 月破 仍忌, đổi điểm 11 ngày) và PR #48 (P4 audit-only); cả hai đã merge, deploy và smoke.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-11 (giờ VN), sau PR #52 (CI chia shard). Runtime gần nhất: PR #49 (sửa 月破 仍忌, đổi điểm 11 ngày, đã smoke). PR #48, #50, #51 là audit/tài liệu, không đổi runtime.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
@@ -26,13 +26,13 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Main đã deploy | `2cf7bb3` (merge PR #48, audit-only); thay đổi runtime gần nhất là `1fc9940` (PR #49) |
+| Main đã deploy | `94cdb05` (merge PR #52, chỉ CI/test); thay đổi runtime gần nhất là `1fc9940` (PR #49) |
 | Bundle | `/assets/index-CeLinrvj.js`, SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` (trùng build local; kiểm trên production 2026-10-11) |
-| Deploy gần nhất | [CI run 38141047258](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38141047258), commit `2cf7bb3`, SUCCESS; bundle không đổi so với PR #49. Smoke production PR #49: 6/6 (desktop Chrome, Pixel 7), `docs/audits/yue-po-still-avoid-release.md` |
+| Deploy gần nhất | [CI run 38146400830](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38146400830), commit `94cdb05`, SUCCESS (4 shard unit, gates, Playwright 2 shard, Deploy); cả pipeline 5m11s (trước 11m43s). Bundle production kiểm lại sau deploy: không đổi so với PR #49 |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
-PR #49 đổi điểm `medical`/`demolition` ở 11/1095 ngày (chi tiết bảng §3). Smoke production sau deploy: 2025-07-06 / 2025-07-19 / 2025-07-05 (đối chứng) đúng kỳ vọng trên desktop Chrome và Pixel 7. Safari desktop, iPhone, Firefox chưa chạy (R3).
+PR #49 đổi điểm `medical`/`demolition` ở 11/1095 ngày (chi tiết bảng §3). Run main của PR #51 (`2f14092`) đỏ do test 720 context vượt timeout 5 s nên bỏ qua deploy; PR #52 sửa timeout và deploy lại xanh (production không bị ảnh hưởng vì #51 không đổi runtime). Smoke production PR #49: 2025-07-06 / 2025-07-19 / 2025-07-05 (đối chứng) đúng kỳ vọng trên desktop Chrome và Pixel 7. Safari desktop, iPhone, Firefox chưa chạy (R3).
 
 `shared/almanac-data/manifest.json` → `policies`:
 
@@ -76,7 +76,8 @@ Rollback (flag về false trên nhánh riêng → PR → CI deploy → smoke; kh
 | Release A — 14 thần legacy theo Month Jian | **DEPLOYED (PR #45)** | Flag `legacyGodsMonthJian`; Golden `golden-legacy-gods-month-jian.json` (52 ca, đóng băng `70ed321`); migration `legacyGodsMonthJian.test.ts` + `docs/audits/legacy-gods-month-jian-migration.tsv`; `docs/audits/dormant-legacy-gods.md` |
 | 月破 子午未申 仍忌 | **DEPLOYED (PR #49)** | Clause 「…不忌祭祀覃恩肆赦等事仍忌解除求醫療病破屋壞垣」: resolver trước chỉ giữ danh sách gốc nên medical/demolition `not_listed`, Trực Phá vẫn +25. Sửa (`yuePoStillAvoidPolicy.ts`, cách đọc sát chữ: danh sách gốc + 3 việc 仍忌); 1095 ngày: 11 ngày, medical recommended → watch 5 / watch giữ 6, demolition recommended → avoid 5 / watch → strong_avoid 6, mỗi dòng −50; event không đổi. `yuePoStillAvoidMigration.test.ts` |
 | 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` (39 ca) |
-| P4 — cân bằng 卷十 (audit-only) | ĐANG LÀM; phần audit đã merge (PR #48), không đổi runtime | Mục lục và số liệu: [`docs/audits/p4-vol10-progress.md`](docs/audits/p4-vol10-progress.md); spec `docs/plans/p4-xieji-vol10-balancing.md` |
+| P4 — cân bằng 卷十 (audit-only) | ĐANG LÀM; audit đã merge (PR #48, #51), không đổi runtime | Mục lục và số liệu: [`docs/audits/p4-vol10-progress.md`](docs/audits/p4-vol10-progress.md); spec `docs/plans/p4-xieji-vol10-balancing.md` |
+| CI — chia shard unit | **DEPLOYED (PR #52)** | Vitest 4 shard song song + job “Mutation and emulator gates”; timeout 60 s cho 6 test quét 720 context P4 và 5 s cho test vuốt `App.test.tsx`; job Unit ~10 phút → 4 × ~2m20s |
 | Coverage P2 / R5 — 百忌日 + hard warning | **DONE, MERGED & DEPLOYED (PR #47)** | Golden P2 dùng manifest thật; migration lịch sử tách riêng; 9 rule trên 1095 ngày 2025–2027, event có/không giờ, 3 vùng điểm hard warning; 2 mutation bị bắt; local 165 file / 2952 test qua; [CI PR](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38098804753) và CI main xanh; `docs/audits/baiji-production-coverage.md` |
 | Personal (feng-shui, Bazi, daily) | Code có sẵn, chưa có phase audit riêng | Personal annual afflictions giữ convention cũ, chưa chứng nhận |
 
@@ -120,7 +121,7 @@ Roadmap đánh số theo **thứ tự thực hiện**. Làm dứt điểm từng
 |---|---|---|---|---|
 | 1 | ~~Smoke production PR #49~~ | **XONG** 2026-10-11: 6/6 desktop Chrome + Pixel 7 (`docs/audits/yue-po-still-avoid-release.md`) | — | — |
 | 2 | ~~Merge PR #48~~ | **XONG**: merge `2cf7bb3`, deploy SUCCESS, bundle production vẫn `f29f5aab…` | — | — |
-| 3 | ~~Quyết định 「又為X」~~ | **XONG** (audit-only, chờ merge): B theo nguồn — 土府/血支 專忌 = phạm vi bảo vệ, 死神 thuộc 平日, 大耗/地火/月虛/天火/咸池 = phạm vi riêng convention; 德願 giữ undetermined (`docs/audits/p4-vol10-youwei-scopes.md`) | — | — |
+| 3 | ~~Quyết định 「又為X」~~ | **XONG**, merged PR #51 (audit-only): B theo nguồn — 土府/血支 專忌 = phạm vi bảo vệ, 死神 thuộc 平日, 大耗/地火/月虛/天火/咸池 = phạm vi riêng convention; 德願 giữ undetermined (`docs/audits/p4-vol10-youwei-scopes.md`) | — | — |
 | 4 | **P4-B — mô hình các 凶 khác của 卷十一** (四廢, 五墓, 往亡, 八專, 四忌, 四窮, 厭對, 歸忌, 天賊, 小耗, 死氣, 遊禍…) và 21 thần dormant vào ghép ngày (audit-only) | Chưa làm; hiện chỉ báo `unmodeledJi` | Mỗi 凶 có entry 卷十 chép kèm offset, presence đã audit, clause → phạm vi heading; Golden suy tay khóa trước code; lan truyền 鋪註 được kiểm trên dữ liệu thật; mutation bắt hết | — |
 | 5 | **P4-C — operand cho 11 thần 宜 còn thiếu** (母倉, 福德, 天恩, 天巫, 天后, 天醫, 除神, 驛馬, 天馬, 吉期, 鳴吠) | Chưa làm (王日 đã xong) | Định nghĩa 協紀 kèm offset + SHA-1; đối chiếu chéo với bảng/nhãn sẵn có; số heading `undetermined` do 宜 giảm và được báo cáo | — |
 | 6 | **P5 — warehouse** (修倉庫 co-presence; 開倉庫出貨財 với 德/月恩/四相/時德) | Chưa làm; 修倉庫 đang hoãn trong A04b | Predicate khóa theo spec §6 (ANY, không ALL), negative fixture cho đồng hiện không thể; Golden trước code | — |
@@ -199,4 +200,4 @@ REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/l
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main đã deploy `2cf7bb3` (PR #48 P4 audit-only, không đổi runtime); runtime gần nhất là PR #49 (sửa 月破 仍忌: 11/1095 ngày, medical/demolition −50, event không đổi), đã smoke production. Repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian, 21 thần dormant chưa bật. P4 audit-only (mục lục `docs/audits/p4-vol10-progress.md`). Làm theo roadmap §5 đúng thứ tự, dứt điểm từng mục; 「又為X」 đã chốt (B theo nguồn); mục kế tiếp là (4) mô hình 凶 卷十一 + 21 thần, (5) operand 11 thần 宜, (6) P5, (7) full Golden, (8) adapter OFF, (9) diff + rollback, (10) activation. Golden trước code; unknown không kích hoạt; penalty mặc định là product policy; không merge/deploy khi owner chưa cho phép. Lịch sử ở `docs/project-context/history.md`.
+> Đọc PROJECT_CONTEXT.md. Main đã deploy `94cdb05` (PR #52: CI chia 4 shard unit + job gates, không đổi runtime); runtime gần nhất là PR #49 (sửa 月破 仍忌: 11/1095 ngày, medical/demolition −50, event không đổi), đã smoke production. Repo public, CI tự deploy khi merge main (hỏi trước khi merge). Production: 卷十 ON, mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian, 21 thần dormant chưa bật. P4 audit-only đã merge (PR #48, #51; mục lục `docs/audits/p4-vol10-progress.md`); 「又為X」 đã chốt B theo nguồn. Làm theo roadmap §5 đúng thứ tự, dứt điểm từng mục; mục kế tiếp là (4) mô hình 凶 卷十一 + 21 thần, rồi (5) operand 11 thần 宜, (6) P5, (7) full Golden, (8) adapter OFF, (9) diff + rollback, (10) activation. Golden trước code; unknown không kích hoạt; penalty mặc định là product policy; test quét toàn miền cần timeout rõ ràng (CI chậm ~4× local); không merge/deploy khi owner chưa cho phép. Lịch sử ở `docs/project-context/history.md`.
