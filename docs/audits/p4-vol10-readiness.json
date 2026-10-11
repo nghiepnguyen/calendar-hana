@@ -10,8 +10,8 @@
   "contextInputsWithoutScoreOracle": 720,
   "remainingIssues": [
     "P4-A03 (德願, unaudited partner operands)",
-    "P4-A04b (day composition, propagation, 宜 evidence)",
-    "P4-A05"
+    "P4-A05",
+    "unmodeled 卷十一 凶 and unaudited 宜 operands"
   ],
   "scoringReady": false,
   "fullScoringGoldenReady": false,
@@ -24,9 +24,9 @@
     "matchesBaseline": true
   },
   "checks": {
-    "unitFiles": 170,
-    "unitTests": 3229,
-    "p4GateTests": 277,
+    "unitFiles": 171,
+    "unitTests": 3242,
+    "p4GateTests": 290,
     "typecheck": "PASS",
     "lint": "PASS",
     "build": "PASS",
@@ -93,5 +93,18 @@
     "productionFinding": "月破 子午未申 與德合併 仍忌解除求醫療病破屋壞垣: production still_avoid uses base list, medical/demolition not_listed (5 contexts); not fixed",
     "productionImport": false,
     "audit": "docs/audits/p4-vol10-heading-annotation.md"
+  },
+  "dayComposition": {
+    "lockVersion": "p4-day-composition-lock-v1",
+    "oracleCommit": "3d03947",
+    "oracleCases": 7,
+    "newTests": 13,
+    "headings": 29,
+    "propagationApplied": 0,
+    "propagationBlocked": 24,
+    "mutationCaught": 6,
+    "a04aFix": "立劵/立券 canonical key",
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-day-composition.md"
   }
 }

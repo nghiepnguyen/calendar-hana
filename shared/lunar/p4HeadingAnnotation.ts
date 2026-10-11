@@ -43,7 +43,10 @@ const LISTS = new Map<string, Lists>([
   ...vol10.entries.map((e) => [e.id, e as Lists] as const),
   ...art.entryLists.map((e) => [e.entry, { extraAvoid: [], ...e } as Lists] as const),
 ])
-const split = (text: string | undefined) => new Set(text ? splitHeadings(text) : [])
+/** 卷十 writes 立劵交易, 卷十一 and the activity map 立券交易 (p4-vol10-day-composition.json). */
+export const canonP4Heading = (h: string) => h.replace(/劵/g, '券')
+const split = (text: string | undefined) =>
+  new Set(text ? splitHeadings(text).map(canonP4Heading) : [])
 export const P4_HEADINGS: readonly string[] = [
   ...new Set([
     ...[...LISTS.values()].flatMap((l) => [
@@ -53,7 +56,7 @@ export const P4_HEADINGS: readonly string[] = [
     ]),
     ...Object.values(vol11.activityEntries as Record<string, string[]>)
       .flat()
-      .flatMap((h) => splitHeadings(h)),
+      .flatMap((h) => splitHeadings(h).map(canonP4Heading)),
   ]),
 ]
 
