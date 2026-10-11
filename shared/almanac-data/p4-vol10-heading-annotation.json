@@ -1,0 +1,188 @@
+{
+  "version": "p4-heading-annotation-v1",
+  "status": "AUDIT_ONLY_PER_SCOPE_HEADING_ANNOTATION",
+  "parentLock": "p4-grade-resolution-lock-v2",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "scope": "One 卷十 subject (after deferral, the terminal entry's lists) per heading. Other scopes (other 凶, 吉神 宜 lists, 百忌日, pillar 諸事皆忌) stay separate; combining them per day is A04b.",
+  "entryLists": [
+    {
+      "entry": "yue_hai",
+      "avoid": "祈福求嗣上册進表章慶賜賞賀宴㑹安撫邊境選將訓兵出師結婚姻納采問名嫁娶進人口求醫療病修倉庫經絡醞釀開市立劵交易納財開倉庫出貨財修置産室牧養納畜破土安葬啟攢",
+      "source": {
+        "text": "忌祈福求嗣上册進表章慶賜賞賀宴㑹安撫邊境選將訓兵出師結婚姻納采問名嫁娶進人口求醫療病修倉庫經絡醞釀開市立劵交易納財開倉庫出貨財置産室牧養納畜破土安葬啟攢",
+        "offset": 13295
+      },
+      "readings": [
+        {
+          "raw": "置産室",
+          "read": "修置産室",
+          "evidence": {
+            "text": "修置産室重於牧養故並忌之",
+            "offset": 13560
+          }
+        }
+      ],
+      "stopLists": {
+        "卯酉丑未": "安撫邊境選將訓兵出師求醫療病"
+      },
+      "notAvoid": ""
+    },
+    {
+      "entry": "da_shi",
+      "avoid": "祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宮室修宮室繕城郭築隄防興造動土豎柱上梁修倉庫開市立劵交易納財開倉庫出貨財修置產室栽種牧養納畜",
+      "source": {
+        "text": "忌祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠{{SKchar|2917}}行幸遣使",
+        "offset": 15508
+      },
+      "readings": [
+        {
+          "raw": "冠{{SKchar|2917}}",
+          "read": "冠帶",
+          "evidence": "Wikisource glyph template; 天吏's identical list reads 冠帶 at the same position"
+        }
+      ],
+      "extraAvoid": [
+        {
+          "as": "咸池",
+          "avoid": "取魚乘船渡水",
+          "source": {
+            "text": "又為咸池忌取魚乘船渡水",
+            "offset": 15654
+          }
+        }
+      ],
+      "stopLists": {
+        "寅申巳亥辰戌丑未": "安撫邊境選將訓兵出師"
+      },
+      "notAvoid": ""
+    },
+    {
+      "entry": "tian_li",
+      "avoid": "祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫開市立劵交易納財開倉庫出貨財修置産室栽種牧養納畜",
+      "source": {
+        "text": "忌祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫開市立劵交易納財開倉庫出貨財修置産室栽種牧養納畜",
+        "offset": 16100
+      },
+      "stopLists": {
+        "寅申巳亥": "安撫邊境選將訓兵出師求醫療病"
+      },
+      "notAvoid": ""
+    }
+  ],
+  "effectRules": {
+    "only_avoid": {
+      "ji": "heading in the clause's 止忌 list",
+      "yi": "caller's 宜 evidence; unknown 宜 leaves the heading undetermined",
+      "source": {
+        "text": "凡吉足勝凶從宜不從忌者如遇徳猶忌之事則仍註忌",
+        "offset": 21765
+      }
+    },
+    "as_usual": {
+      "result": "only_ji",
+      "note": "從忌不從宜: 忌 kept, 宜 not followed in this scope, whatever the 吉 say"
+    },
+    "still_avoid": {
+      "result": "only_ji except the clause's 止不忌 list (not_avoided)"
+    },
+    "cancel_both": {
+      "result": "neither_recorded",
+      "note": "Covers both the clause's own 凡所忌者則不註宜所宜者亦不註忌 and the A03 相抵 rows; owner approved 相抵 → 不註宜亦不註忌 (2026-10-11).",
+      "source": {
+        "text": "凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌",
+        "offset": 21790
+      },
+      "clause": {
+        "text": "凡所忌者則不註宜所宜者亦不註忌",
+        "offset": 9167
+      }
+    },
+    "avoid_all": {
+      "result": "only_ji for every heading, including the entry's 止不忌 list"
+    },
+    "notAvoidList": "not_avoided (outside the 忌 transformation)",
+    "unlisted": "not_listed (this scope says nothing)",
+    "persistentInScope": "遇德猶忌 inside one scope is exactly the 止忌 list; a 猶忌 from another subject (月破, 天賊, 四廢…) is a separate protected scope and is not merged here."
+  },
+  "propagationInventory": {
+    "status": "INVENTORY_ONLY_A04B",
+    "note": "Each line links two headings whose 忌 come from different scopes; applied only by a day-level composer.",
+    "lines": [
+      {
+        "id": "puzhu:11",
+        "source": {
+          "text": "凡吉凶相抵不註忌祈福亦不註忌求嗣",
+          "offset": 21977
+        }
+      },
+      {
+        "id": "puzhu:16",
+        "source": {
+          "text": "凡吉凶相抵不註忌結婚姻亦不註忌冠帶納采問名嫁娶進人口如遇徳猶忌之日則仍註忌",
+          "offset": 22106
+        }
+      },
+      {
+        "id": "puzhu:17",
+        "source": {
+          "text": "凡吉凶相抵不註忌嫁娶亦不註忌冠帶結婚姻納采問名進人口般移安牀如遇徳猶忌之日則仍註忌遇不將而不註忌嫁娶者亦仍註忌遇亥日厭對八專四忌四窮而仍註忌嫁娶者止註所忌之事其不忌者仍不註忌",
+          "offset": 22146
+        }
+      },
+      {
+        "id": "puzhu:18",
+        "source": {
+          "text": "凡吉凶相抵不註忌般移亦不註忌安牀不註忌安牀亦不註忌般移如遇徳猶忌之日則仍註忌",
+          "offset": 22236
+        }
+      },
+      {
+        "id": "puzhu:19",
+        "source": {
+          "text": "凡吉凶相抵不註忌解除亦不註忌整容剃頭整手足甲如遇徳猶忌之日則仍註忌",
+          "offset": 22277
+        }
+      },
+      {
+        "id": "puzhu:20",
+        "source": {
+          "text": "凡吉凶相抵不註忌修造動土豎柱上梁亦不註忌修宫室繕城郭築隄防修倉庫鼓鑄苫葢修置産室開渠穿井安碓磑補垣塞穴修飾垣牆平治道塗破屋壊垣如遇徳猶忌之日則仍註忌",
+          "offset": 22313
+        }
+      },
+      {
+        "id": "puzhu:21",
+        "source": {
+          "text": "凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財",
+          "offset": 22390
+        }
+      },
+      {
+        "id": "puzhu:22",
+        "source": {
+          "text": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌",
+          "offset": 22443
+        }
+      },
+      {
+        "id": "puzhu:23",
+        "source": {
+          "text": "凡吉凶相抵不註忌牧養亦不註忌納畜不註忌納畜亦不註忌牧養",
+          "offset": 22480
+        }
+      },
+      {
+        "id": "puzhu:24",
+        "source": {
+          "text": "凡吉凶相抵有宜安葬不註忌啟攢有宜啟攢不註忌安葬",
+          "offset": 22510
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Per-scope heading states only; no day-level composition, propagation, 百忌日, score or event.",
+    "月建/月破 have no 等第 column; their own clauses are applied with the same named-德 rule."
+  ]
+}
