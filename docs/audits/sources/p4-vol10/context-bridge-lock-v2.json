@@ -1,0 +1,20 @@
+{
+  "version": "p4-context-bridge-lock-v2",
+  "parentLock": "p4-context-bridge-lock-v1",
+  "frozenAtCommit": "67c442b",
+  "reason": "Lock 刼煞 presence from 卷06 (正月起亥逆行四孟); v1 artifact, Golden and lock unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-context-bridge-v2.json",
+      "sha256": "a774096ed16b1205a4dc850e42e0e15eca006095de233b2342a6b68c1b4a4a21"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-context-bridge-v2.json",
+      "sha256": "7ec441705c7f194f45530460997452f311e849d68809d126c6fa00b7b44bead5"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+    }
+  ]
+}

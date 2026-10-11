@@ -1,0 +1,415 @@
+{
+  "version": "p4-day-composition-v1",
+  "status": "AUDIT_ONLY_DAY_COMPOSITION_MODELED_SCOPES",
+  "parentLock": "p4-heading-annotation-lock-v1",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "headingCanon": {
+    "立劵交易": "立券交易",
+    "note": "卷十 lists write 立劵交易, 卷十一 and the activity map 立券交易; A04a keyed them apart, so contract/transaction read not_listed. Canonical form fixes that here."
+  },
+  "yiEvidence": {
+    "source": "xiejibianfangshu-yiji.json (卷十一) 宜 lists per heading",
+    "operands": {
+      "catHung": [
+        "天德",
+        "月德",
+        "天德合",
+        "月德合"
+      ],
+      "virtues": [
+        "天赦",
+        "天願",
+        "月恩",
+        "四相"
+      ],
+      "xiejiGod": {
+        "時德": "thoi_duc",
+        "三合": "tam_hop",
+        "天喜": "thien_hy",
+        "六合": "luc_hop",
+        "不將": "bat_tuong",
+        "五富": "ngu_phu",
+        "天倉": "thien_thuong",
+        "民日": "dan_nhat",
+        "普護": "pho_ho",
+        "福生": "phuc_sinh",
+        "聖心": "thanh_tam",
+        "益後": "ich_hau",
+        "續世": "tuc_the",
+        "解神": "giai_than",
+        "五合": "ngu_hop"
+      },
+      "officer": {
+        "建日": "kien",
+        "除日": "tru",
+        "滿日": "man",
+        "危日": "nguy",
+        "成日": "thanh",
+        "收日": "thu",
+        "開日": "khai",
+        "破日": "pha",
+        "月破": "pha"
+      }
+    },
+    "unknown": [
+      "母倉",
+      "福德",
+      "天恩",
+      "王日",
+      "天巫",
+      "天后",
+      "天醫",
+      "除神",
+      "驛馬",
+      "天馬",
+      "吉期",
+      "鳴吠"
+    ],
+    "deferred": {
+      "修倉庫": "P5 warehouse co-presence (又收日母倉…與月德四相時德開日併者)"
+    },
+    "rule": "true if any listed god is present; false if every listed god is known absent (empty list = false); otherwise undetermined"
+  },
+  "baiji": {
+    "source": {
+      "text": "甲日忌開倉庫出貨財乙日忌栽種丁日忌剃頭庚日忌經絡辛日忌醖釀壬日忌開渠丑日忌冠帶寅日忌祭祀夘日忌穿井巳日忌出行午日忌苫葢未日忌求醫療病申日忌安牀酉日忌宴㑹亥日忌嫁娶",
+      "offset": 21523
+    },
+    "status": "protected 專忌: 忌 persists over 相抵, propagation and every lift",
+    "rules": [
+      {
+        "day": "甲",
+        "heading": "開倉庫出貨財"
+      },
+      {
+        "day": "乙",
+        "heading": "栽種"
+      },
+      {
+        "day": "丁",
+        "heading": "整容剃頭",
+        "part": "剃頭"
+      },
+      {
+        "day": "庚",
+        "heading": "經絡"
+      },
+      {
+        "day": "辛",
+        "heading": "醞釀"
+      },
+      {
+        "day": "壬",
+        "heading": "開渠穿井",
+        "part": "開渠"
+      },
+      {
+        "day": "丑",
+        "heading": "冠帶"
+      },
+      {
+        "day": "寅",
+        "heading": "祭祀"
+      },
+      {
+        "day": "卯",
+        "heading": "開渠穿井",
+        "part": "穿井"
+      },
+      {
+        "day": "巳",
+        "heading": null,
+        "raw": "出行",
+        "note": "出行 is not a 用事 heading; unmapped"
+      },
+      {
+        "day": "午",
+        "heading": "苫蓋"
+      },
+      {
+        "day": "未",
+        "heading": "求醫療病"
+      },
+      {
+        "day": "申",
+        "heading": "安牀"
+      },
+      {
+        "day": "酉",
+        "heading": "宴會"
+      },
+      {
+        "day": "亥",
+        "heading": "嫁娶"
+      }
+    ]
+  },
+  "yiSuppression": [
+    {
+      "id": "puzhu:07",
+      "source": {
+        "text": "凡天狗寅日忌祭祀不註宜求福祈嗣",
+        "offset": 21876
+      },
+      "day": "寅",
+      "headings": [
+        "祈福",
+        "求嗣"
+      ]
+    },
+    {
+      "id": "puzhu:08",
+      "source": {
+        "text": "凡夘日忌穿井不註宜開渠壬日忌開渠不註宜穿井凡巳日忌出行不註宜出師遣使",
+        "offset": 21894
+      },
+      "rules": [
+        {
+          "day": "卯",
+          "headings": [
+            "開渠穿井"
+          ],
+          "note": "不註宜開渠 on the combined heading"
+        },
+        {
+          "day": "壬",
+          "headings": [
+            "開渠穿井"
+          ],
+          "note": "不註宜穿井"
+        },
+        {
+          "day": "巳",
+          "headings": [
+            "行幸遣使"
+          ],
+          "note": "不註宜出師遣使: 遣使 is part of 行幸遣使"
+        }
+      ]
+    },
+    {
+      "id": "puzhu:09",
+      "source": {
+        "text": "凡酉日忌宴㑹亦不註宜慶賜賞賀",
+        "offset": 21931
+      },
+      "day": "酉",
+      "headings": [],
+      "note": "慶賜賞賀 has no activity heading"
+    },
+    {
+      "id": "puzhu:10",
+      "source": {
+        "text": "{{SK anchor|凡丁日忌剃頭亦不註宜整容}}",
+        "offset": 21948
+      },
+      "day": "丁",
+      "headings": [
+        "整容剃頭"
+      ],
+      "note": "剃頭 keeps 忌 (百忌), 整容 loses 宜: combined heading → only_ji"
+    }
+  ],
+  "composition": {
+    "pillarAllTaboo": "A named 諸事皆忌 pillar clause makes every heading only_ji.",
+    "ji": "忌 noted if any modeled scope keeps 忌 (only_ji/both_present) or the heading is the day's 百忌.",
+    "yiSuppressors": "宜 not noted if any scope that lists the heading is 從忌不從宜 (as_usual/still_avoid/avoid_all) or 不註 (neither_recorded), or a 鋪註 07–10 line applies.",
+    "neither": "neither_recorded only when a scope records 不註 (相抵) and no protected 忌 remains (鋪註 05).",
+    "liftedInference": "A 止忌 scope reporting undetermined while 宜 is known false can only be a lifted 忌 (not_avoided).",
+    "notRecorded": "not_recorded: nothing noted and no scope says 不註 (e.g. 宜 known absent, 忌 lifted or never listed).",
+    "undetermined": "Any scope still undetermined for the heading, or unknown 宜 where 宜 would decide, leaves the day state undetermined.",
+    "completeness": "Only the 13 卷十 subjects, pillar clauses and 百忌 are modeled; 卷十一 忌 gods outside them are reported as unmodeled (present/unknown), and the day result is partial when any is present or unknown."
+  },
+  "propagation": {
+    "source": "鋪註 11, 16–24",
+    "trigger": "from-heading is neither_recorded by 相抵",
+    "effect": "to-heading's 忌 is not noted unless it is protected (百忌, 止忌 list = 遇德猶忌, pillar 諸事皆忌); single pass over the composed day",
+    "lines": [
+      {
+        "id": "puzhu:11",
+        "source": {
+          "text": "凡吉凶相抵不註忌祈福亦不註忌求嗣",
+          "offset": 21977
+        },
+        "from": [
+          "祈福"
+        ],
+        "to": [
+          "求嗣"
+        ]
+      },
+      {
+        "id": "puzhu:16",
+        "source": {
+          "text": "凡吉凶相抵不註忌結婚姻亦不註忌冠帶納采問名嫁娶進人口如遇徳猶忌之日則仍註忌",
+          "offset": 22106
+        },
+        "from": [
+          "結婚姻"
+        ],
+        "to": [
+          "冠帶",
+          "納采問名",
+          "嫁娶",
+          "進人口"
+        ]
+      },
+      {
+        "id": "puzhu:17",
+        "source": {
+          "text": "凡吉凶相抵不註忌嫁娶亦不註忌冠帶結婚姻納采問名進人口般移安牀如遇徳猶忌之日則仍註忌遇不將而不註忌嫁娶者亦仍註忌遇亥日厭對八專四忌四窮而仍註忌嫁娶者止註所忌之事其不忌者仍不註忌",
+          "offset": 22146
+        },
+        "from": [
+          "嫁娶"
+        ],
+        "to": [
+          "冠帶",
+          "結婚姻",
+          "納采問名",
+          "進人口",
+          "般移",
+          "安牀"
+        ],
+        "exceptionsNote": "不將 / 亥日厭對八專四忌四窮 concern 嫁娶 itself, not the 相抵 trigger; 亥日 is protected by 百忌"
+      },
+      {
+        "id": "puzhu:18",
+        "source": {
+          "text": "凡吉凶相抵不註忌般移亦不註忌安牀不註忌安牀亦不註忌般移如遇徳猶忌之日則仍註忌",
+          "offset": 22236
+        },
+        "pairs": [
+          [
+            "般移",
+            "安牀"
+          ],
+          [
+            "安牀",
+            "般移"
+          ]
+        ]
+      },
+      {
+        "id": "puzhu:19",
+        "source": {
+          "text": "凡吉凶相抵不註忌解除亦不註忌整容剃頭整手足甲如遇徳猶忌之日則仍註忌",
+          "offset": 22277
+        },
+        "from": [
+          "解除"
+        ],
+        "to": [
+          "整容剃頭",
+          "整手足甲"
+        ]
+      },
+      {
+        "id": "puzhu:20",
+        "source": {
+          "text": "凡吉凶相抵不註忌修造動土豎柱上梁亦不註忌修宫室繕城郭築隄防修倉庫鼓鑄苫葢修置産室開渠穿井安碓磑補垣塞穴修飾垣牆平治道塗破屋壊垣如遇徳猶忌之日則仍註忌",
+          "offset": 22313
+        },
+        "from": [
+          "興造動土",
+          "豎柱上梁"
+        ],
+        "fromReading": "修造動土 read as 興造動土 (no 修造動土 heading exists)",
+        "to": [
+          "修宮室",
+          "繕城郭",
+          "築隄防",
+          "修倉庫",
+          "鼓鑄",
+          "苫蓋",
+          "修置産室",
+          "開渠穿井",
+          "安碓磑",
+          "補垣塞穴",
+          "修飾垣墻",
+          "平治道塗",
+          "破屋壞垣"
+        ]
+      },
+      {
+        "id": "puzhu:21",
+        "source": {
+          "text": "凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財",
+          "offset": 22390
+        },
+        "pairs": [
+          [
+            "開市",
+            "立券交易"
+          ],
+          [
+            "開市",
+            "納財"
+          ],
+          [
+            "納財",
+            "開市"
+          ],
+          [
+            "納財",
+            "立券交易"
+          ],
+          [
+            "立券交易",
+            "開市"
+          ],
+          [
+            "立券交易",
+            "納財"
+          ]
+        ]
+      },
+      {
+        "id": "puzhu:22",
+        "source": {
+          "text": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌",
+          "offset": 22443
+        },
+        "from": [
+          "開市",
+          "立券交易"
+        ],
+        "requireAll": true,
+        "to": [
+          "開倉庫出貨財"
+        ],
+        "exceptionsNote": "如遇專忌之日則仍註忌 = 甲日 百忌"
+      },
+      {
+        "id": "puzhu:23",
+        "source": {
+          "text": "凡吉凶相抵不註忌牧養亦不註忌納畜不註忌納畜亦不註忌牧養",
+          "offset": 22480
+        },
+        "pairs": [
+          [
+            "牧養",
+            "納畜"
+          ],
+          [
+            "納畜",
+            "牧養"
+          ]
+        ]
+      },
+      {
+        "id": "puzhu:24",
+        "source": {
+          "text": "凡吉凶相抵有宜安葬不註忌啟攢有宜啟攢不註忌安葬",
+          "offset": 22510
+        },
+        "note": "有宜安葬不註忌啟攢 / 有宜啟攢不註忌安葬: 啟攢 has no activity heading; inventoried, not applied"
+      }
+    ]
+  },
+  "limits": [
+    "Day states only for the 29 卷十一 activity headings; no score, event or status.",
+    "Dormant gods, other 凶 entries and P5 are not modeled."
+  ]
+}

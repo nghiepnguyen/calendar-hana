@@ -1,0 +1,6386 @@
+{
+  "version": "golden-p4-vol10-authority-v2",
+  "status": "PRE_SCORING_PARTIAL_ORACLE",
+  "baseline": "93a513d5200ff7ef456852a524f863622d5f6a0c",
+  "authoring": "Manual source reading + independent stem/branch domain enumeration; no production resolver, scorer, presence evaluator, or calendar output used. Unknown results are intentional, not blanket day classifications.",
+  "limitations": [
+    "720 contexts enumerate the domain and explicitly have no global-grade/score oracle yet. They are not 720 successful score validations.",
+    "Source-role map is not a hierarchy. Bare 德 predicate and global precedence unresolved.",
+    "Local monthly grades do not resolve pillar-specific overrides; scan-reading P4-A02 has been corrected by magnified source evidence.",
+    "Warehouse cases cover 收日 co-presence subset; full source-clause activity Golden still required."
+  ],
+  "localGradeCases": [
+    {
+      "id": "local:平日:寅",
+      "subject": "平日",
+      "monthJian": "寅",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:卯",
+      "subject": "平日",
+      "monthJian": "卯",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:辰",
+      "subject": "平日",
+      "monthJian": "辰",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:巳",
+      "subject": "平日",
+      "monthJian": "巳",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:午",
+      "subject": "平日",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:未",
+      "subject": "平日",
+      "monthJian": "未",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:申",
+      "subject": "平日",
+      "monthJian": "申",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:酉",
+      "subject": "平日",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:戌",
+      "subject": "平日",
+      "monthJian": "戌",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:亥",
+      "subject": "平日",
+      "monthJian": "亥",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:子",
+      "subject": "平日",
+      "monthJian": "子",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:平日:丑",
+      "subject": "平日",
+      "monthJian": "丑",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:寅",
+      "subject": "收日",
+      "monthJian": "寅",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:卯",
+      "subject": "收日",
+      "monthJian": "卯",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:辰",
+      "subject": "收日",
+      "monthJian": "辰",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:巳",
+      "subject": "收日",
+      "monthJian": "巳",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:午",
+      "subject": "收日",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:未",
+      "subject": "收日",
+      "monthJian": "未",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:申",
+      "subject": "收日",
+      "monthJian": "申",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:酉",
+      "subject": "收日",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:戌",
+      "subject": "收日",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:亥",
+      "subject": "收日",
+      "monthJian": "亥",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:子",
+      "subject": "收日",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:收日:丑",
+      "subject": "收日",
+      "monthJian": "丑",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:寅",
+      "subject": "閉日",
+      "monthJian": "寅",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:卯",
+      "subject": "閉日",
+      "monthJian": "卯",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:辰",
+      "subject": "閉日",
+      "monthJian": "辰",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:巳",
+      "subject": "閉日",
+      "monthJian": "巳",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:午",
+      "subject": "閉日",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:未",
+      "subject": "閉日",
+      "monthJian": "未",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:申",
+      "subject": "閉日",
+      "monthJian": "申",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:酉",
+      "subject": "閉日",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:戌",
+      "subject": "閉日",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:亥",
+      "subject": "閉日",
+      "monthJian": "亥",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:子",
+      "subject": "閉日",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:閉日:丑",
+      "subject": "閉日",
+      "monthJian": "丑",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:寅",
+      "subject": "劫煞",
+      "monthJian": "寅",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:卯",
+      "subject": "劫煞",
+      "monthJian": "卯",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:辰",
+      "subject": "劫煞",
+      "monthJian": "辰",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:巳",
+      "subject": "劫煞",
+      "monthJian": "巳",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:午",
+      "subject": "劫煞",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:未",
+      "subject": "劫煞",
+      "monthJian": "未",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:申",
+      "subject": "劫煞",
+      "monthJian": "申",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:酉",
+      "subject": "劫煞",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:戌",
+      "subject": "劫煞",
+      "monthJian": "戌",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:亥",
+      "subject": "劫煞",
+      "monthJian": "亥",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:子",
+      "subject": "劫煞",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:劫煞:丑",
+      "subject": "劫煞",
+      "monthJian": "丑",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:寅",
+      "subject": "災煞",
+      "monthJian": "寅",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:卯",
+      "subject": "災煞",
+      "monthJian": "卯",
+      "expectedLocalGrade": "xia_xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:辰",
+      "subject": "災煞",
+      "monthJian": "辰",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:巳",
+      "subject": "災煞",
+      "monthJian": "巳",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:午",
+      "subject": "災煞",
+      "monthJian": "午",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:未",
+      "subject": "災煞",
+      "monthJian": "未",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:申",
+      "subject": "災煞",
+      "monthJian": "申",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:酉",
+      "subject": "災煞",
+      "monthJian": "酉",
+      "expectedLocalGrade": "xia_xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:戌",
+      "subject": "災煞",
+      "monthJian": "戌",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:亥",
+      "subject": "災煞",
+      "monthJian": "亥",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:子",
+      "subject": "災煞",
+      "monthJian": "子",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:災煞:丑",
+      "subject": "災煞",
+      "monthJian": "丑",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:寅",
+      "subject": "月煞",
+      "monthJian": "寅",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:卯",
+      "subject": "月煞",
+      "monthJian": "卯",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:辰",
+      "subject": "月煞",
+      "monthJian": "辰",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:巳",
+      "subject": "月煞",
+      "monthJian": "巳",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:午",
+      "subject": "月煞",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:未",
+      "subject": "月煞",
+      "monthJian": "未",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:申",
+      "subject": "月煞",
+      "monthJian": "申",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:酉",
+      "subject": "月煞",
+      "monthJian": "酉",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:戌",
+      "subject": "月煞",
+      "monthJian": "戌",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:亥",
+      "subject": "月煞",
+      "monthJian": "亥",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:子",
+      "subject": "月煞",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月煞:丑",
+      "subject": "月煞",
+      "monthJian": "丑",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:寅",
+      "subject": "月刑",
+      "monthJian": "寅",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:卯",
+      "subject": "月刑",
+      "monthJian": "卯",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:辰",
+      "subject": "月刑",
+      "monthJian": "辰",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:巳",
+      "subject": "月刑",
+      "monthJian": "巳",
+      "expectedLocalGrade": "shang_ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:午",
+      "subject": "月刑",
+      "monthJian": "午",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:未",
+      "subject": "月刑",
+      "monthJian": "未",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:申",
+      "subject": "月刑",
+      "monthJian": "申",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:酉",
+      "subject": "月刑",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:戌",
+      "subject": "月刑",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:亥",
+      "subject": "月刑",
+      "monthJian": "亥",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:子",
+      "subject": "月刑",
+      "monthJian": "子",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月刑:丑",
+      "subject": "月刑",
+      "monthJian": "丑",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:寅",
+      "subject": "月厭",
+      "monthJian": "寅",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:卯",
+      "subject": "月厭",
+      "monthJian": "卯",
+      "expectedLocalGrade": "xia_xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:辰",
+      "subject": "月厭",
+      "monthJian": "辰",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:巳",
+      "subject": "月厭",
+      "monthJian": "巳",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:午",
+      "subject": "月厭",
+      "monthJian": "午",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:未",
+      "subject": "月厭",
+      "monthJian": "未",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:申",
+      "subject": "月厭",
+      "monthJian": "申",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:酉",
+      "subject": "月厭",
+      "monthJian": "酉",
+      "expectedLocalGrade": "xia_xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:戌",
+      "subject": "月厭",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:亥",
+      "subject": "月厭",
+      "monthJian": "亥",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:子",
+      "subject": "月厭",
+      "monthJian": "子",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月厭:丑",
+      "subject": "月厭",
+      "monthJian": "丑",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:寅",
+      "subject": "大時",
+      "monthJian": "寅",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:卯",
+      "subject": "大時",
+      "monthJian": "卯",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:辰",
+      "subject": "大時",
+      "monthJian": "辰",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:巳",
+      "subject": "大時",
+      "monthJian": "巳",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:午",
+      "subject": "大時",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:未",
+      "subject": "大時",
+      "monthJian": "未",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:申",
+      "subject": "大時",
+      "monthJian": "申",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:酉",
+      "subject": "大時",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:戌",
+      "subject": "大時",
+      "monthJian": "戌",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:亥",
+      "subject": "大時",
+      "monthJian": "亥",
+      "expectedLocalGrade": "shang",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:子",
+      "subject": "大時",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:大時:丑",
+      "subject": "大時",
+      "monthJian": "丑",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:寅",
+      "subject": "天吏",
+      "monthJian": "寅",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:卯",
+      "subject": "天吏",
+      "monthJian": "卯",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:辰",
+      "subject": "天吏",
+      "monthJian": "辰",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:巳",
+      "subject": "天吏",
+      "monthJian": "巳",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:午",
+      "subject": "天吏",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:未",
+      "subject": "天吏",
+      "monthJian": "未",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:申",
+      "subject": "天吏",
+      "monthJian": "申",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:酉",
+      "subject": "天吏",
+      "monthJian": "酉",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:戌",
+      "subject": "天吏",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:亥",
+      "subject": "天吏",
+      "monthJian": "亥",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:子",
+      "subject": "天吏",
+      "monthJian": "子",
+      "expectedLocalGrade": "xia",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:天吏:丑",
+      "subject": "天吏",
+      "monthJian": "丑",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "A local monthly class does not establish arbitrary cross-god precedence or final activity annotation. Pillar-specific overrides remain required."
+    },
+    {
+      "id": "local:月害:寅",
+      "subject": "月害",
+      "monthJian": "寅",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:卯",
+      "subject": "月害",
+      "monthJian": "卯",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:辰",
+      "subject": "月害",
+      "monthJian": "辰",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:巳",
+      "subject": "月害",
+      "monthJian": "巳",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:午",
+      "subject": "月害",
+      "monthJian": "午",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:未",
+      "subject": "月害",
+      "monthJian": "未",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:申",
+      "subject": "月害",
+      "monthJian": "申",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:酉",
+      "subject": "月害",
+      "monthJian": "酉",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:戌",
+      "subject": "月害",
+      "monthJian": "戌",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:亥",
+      "subject": "月害",
+      "monthJian": "亥",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:子",
+      "subject": "月害",
+      "monthJian": "子",
+      "expectedLocalGrade": "ci",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    },
+    {
+      "id": "local:月害:丑",
+      "subject": "月害",
+      "monthJian": "丑",
+      "expectedLocalGrade": "zhong",
+      "expectedGlobalGrade": "undetermined",
+      "note": "Local table grade is recorded; source 六害 and 月刑 are confirmed. Global precedence/final annotation remain undetermined."
+    }
+  ],
+  "gradeActionCases": [
+    {
+      "id": "grade:shang:0",
+      "grade": "shang",
+      "hasDe": false,
+      "expectedGradeAction": "only_yi",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:shang:1",
+      "grade": "shang",
+      "hasDe": true,
+      "expectedGradeAction": "only_yi",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:shang_ci:0",
+      "grade": "shang_ci",
+      "hasDe": false,
+      "expectedGradeAction": "both_present",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:shang_ci:1",
+      "grade": "shang_ci",
+      "hasDe": true,
+      "expectedGradeAction": "only_yi",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:zhong:0",
+      "grade": "zhong",
+      "hasDe": false,
+      "expectedGradeAction": "only_ji",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:zhong:1",
+      "grade": "zhong",
+      "hasDe": true,
+      "expectedGradeAction": "only_yi",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:ci:0",
+      "grade": "ci",
+      "hasDe": false,
+      "expectedGradeAction": "only_ji",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:ci:1",
+      "grade": "ci",
+      "hasDe": true,
+      "expectedGradeAction": "both_present",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:xia:0",
+      "grade": "xia",
+      "hasDe": false,
+      "expectedGradeAction": "all_taboo",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:xia:1",
+      "grade": "xia",
+      "hasDe": true,
+      "expectedGradeAction": "only_ji",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:xia_xia:0",
+      "grade": "xia_xia",
+      "hasDe": false,
+      "expectedGradeAction": "all_taboo",
+      "finalAnnotation": "undetermined"
+    },
+    {
+      "id": "grade:xia_xia:1",
+      "grade": "xia_xia",
+      "hasDe": true,
+      "expectedGradeAction": "all_taboo",
+      "finalAnnotation": "undetermined"
+    }
+  ],
+  "annotationCases": [
+    {
+      "id": "annotation:yi",
+      "yi": true,
+      "ji": false,
+      "explicitNeither": false,
+      "expected": "only_yi"
+    },
+    {
+      "id": "annotation:ji",
+      "yi": false,
+      "ji": true,
+      "explicitNeither": false,
+      "expected": "only_ji"
+    },
+    {
+      "id": "annotation:both",
+      "yi": true,
+      "ji": true,
+      "explicitNeither": false,
+      "expected": "both_present"
+    },
+    {
+      "id": "annotation:none-explicit",
+      "yi": false,
+      "ji": false,
+      "explicitNeither": true,
+      "expected": "neither_recorded"
+    },
+    {
+      "id": "annotation:unknown",
+      "yi": false,
+      "ji": false,
+      "explicitNeither": false,
+      "expected": "undetermined"
+    }
+  ],
+  "contexts": [
+    {
+      "id": "context:寅:00",
+      "monthJian": "寅",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:01",
+      "monthJian": "寅",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:02",
+      "monthJian": "寅",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:03",
+      "monthJian": "寅",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:04",
+      "monthJian": "寅",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:05",
+      "monthJian": "寅",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:06",
+      "monthJian": "寅",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:07",
+      "monthJian": "寅",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:08",
+      "monthJian": "寅",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:09",
+      "monthJian": "寅",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:10",
+      "monthJian": "寅",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:11",
+      "monthJian": "寅",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:12",
+      "monthJian": "寅",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:13",
+      "monthJian": "寅",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:14",
+      "monthJian": "寅",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:15",
+      "monthJian": "寅",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:16",
+      "monthJian": "寅",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:17",
+      "monthJian": "寅",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:18",
+      "monthJian": "寅",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:19",
+      "monthJian": "寅",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:20",
+      "monthJian": "寅",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:21",
+      "monthJian": "寅",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:22",
+      "monthJian": "寅",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:23",
+      "monthJian": "寅",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:24",
+      "monthJian": "寅",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:25",
+      "monthJian": "寅",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:26",
+      "monthJian": "寅",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:27",
+      "monthJian": "寅",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:28",
+      "monthJian": "寅",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:29",
+      "monthJian": "寅",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:30",
+      "monthJian": "寅",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:31",
+      "monthJian": "寅",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:32",
+      "monthJian": "寅",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:33",
+      "monthJian": "寅",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:34",
+      "monthJian": "寅",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:35",
+      "monthJian": "寅",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:36",
+      "monthJian": "寅",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:37",
+      "monthJian": "寅",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:38",
+      "monthJian": "寅",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:39",
+      "monthJian": "寅",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:40",
+      "monthJian": "寅",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:41",
+      "monthJian": "寅",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:42",
+      "monthJian": "寅",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:43",
+      "monthJian": "寅",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:44",
+      "monthJian": "寅",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:45",
+      "monthJian": "寅",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:46",
+      "monthJian": "寅",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:47",
+      "monthJian": "寅",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:48",
+      "monthJian": "寅",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:49",
+      "monthJian": "寅",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:50",
+      "monthJian": "寅",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:51",
+      "monthJian": "寅",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:52",
+      "monthJian": "寅",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:53",
+      "monthJian": "寅",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:54",
+      "monthJian": "寅",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:55",
+      "monthJian": "寅",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:56",
+      "monthJian": "寅",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:57",
+      "monthJian": "寅",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:58",
+      "monthJian": "寅",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:寅:59",
+      "monthJian": "寅",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:00",
+      "monthJian": "卯",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:01",
+      "monthJian": "卯",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:02",
+      "monthJian": "卯",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:03",
+      "monthJian": "卯",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:04",
+      "monthJian": "卯",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:05",
+      "monthJian": "卯",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:06",
+      "monthJian": "卯",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:07",
+      "monthJian": "卯",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:08",
+      "monthJian": "卯",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:09",
+      "monthJian": "卯",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:10",
+      "monthJian": "卯",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:11",
+      "monthJian": "卯",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:12",
+      "monthJian": "卯",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:13",
+      "monthJian": "卯",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:14",
+      "monthJian": "卯",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:15",
+      "monthJian": "卯",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:16",
+      "monthJian": "卯",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:17",
+      "monthJian": "卯",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:18",
+      "monthJian": "卯",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:19",
+      "monthJian": "卯",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:20",
+      "monthJian": "卯",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:21",
+      "monthJian": "卯",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:22",
+      "monthJian": "卯",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:23",
+      "monthJian": "卯",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:24",
+      "monthJian": "卯",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:25",
+      "monthJian": "卯",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:26",
+      "monthJian": "卯",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:27",
+      "monthJian": "卯",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:28",
+      "monthJian": "卯",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:29",
+      "monthJian": "卯",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:30",
+      "monthJian": "卯",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:31",
+      "monthJian": "卯",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:32",
+      "monthJian": "卯",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:33",
+      "monthJian": "卯",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:34",
+      "monthJian": "卯",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:35",
+      "monthJian": "卯",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:36",
+      "monthJian": "卯",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:37",
+      "monthJian": "卯",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:38",
+      "monthJian": "卯",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:39",
+      "monthJian": "卯",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:40",
+      "monthJian": "卯",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:41",
+      "monthJian": "卯",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:42",
+      "monthJian": "卯",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:43",
+      "monthJian": "卯",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:44",
+      "monthJian": "卯",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:45",
+      "monthJian": "卯",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:46",
+      "monthJian": "卯",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:47",
+      "monthJian": "卯",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:48",
+      "monthJian": "卯",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:49",
+      "monthJian": "卯",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:50",
+      "monthJian": "卯",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:51",
+      "monthJian": "卯",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:52",
+      "monthJian": "卯",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:53",
+      "monthJian": "卯",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:54",
+      "monthJian": "卯",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:55",
+      "monthJian": "卯",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:56",
+      "monthJian": "卯",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:57",
+      "monthJian": "卯",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:58",
+      "monthJian": "卯",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:卯:59",
+      "monthJian": "卯",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:00",
+      "monthJian": "辰",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:01",
+      "monthJian": "辰",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:02",
+      "monthJian": "辰",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:03",
+      "monthJian": "辰",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:04",
+      "monthJian": "辰",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:05",
+      "monthJian": "辰",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:06",
+      "monthJian": "辰",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:07",
+      "monthJian": "辰",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:08",
+      "monthJian": "辰",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:09",
+      "monthJian": "辰",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:10",
+      "monthJian": "辰",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:11",
+      "monthJian": "辰",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:12",
+      "monthJian": "辰",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:13",
+      "monthJian": "辰",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:14",
+      "monthJian": "辰",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:15",
+      "monthJian": "辰",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:16",
+      "monthJian": "辰",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:17",
+      "monthJian": "辰",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:18",
+      "monthJian": "辰",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:19",
+      "monthJian": "辰",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:20",
+      "monthJian": "辰",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:21",
+      "monthJian": "辰",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:22",
+      "monthJian": "辰",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:23",
+      "monthJian": "辰",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:24",
+      "monthJian": "辰",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:25",
+      "monthJian": "辰",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:26",
+      "monthJian": "辰",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:27",
+      "monthJian": "辰",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:28",
+      "monthJian": "辰",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:29",
+      "monthJian": "辰",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:30",
+      "monthJian": "辰",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:31",
+      "monthJian": "辰",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:32",
+      "monthJian": "辰",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:33",
+      "monthJian": "辰",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:34",
+      "monthJian": "辰",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:35",
+      "monthJian": "辰",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:36",
+      "monthJian": "辰",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:37",
+      "monthJian": "辰",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:38",
+      "monthJian": "辰",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:39",
+      "monthJian": "辰",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:40",
+      "monthJian": "辰",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:41",
+      "monthJian": "辰",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:42",
+      "monthJian": "辰",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:43",
+      "monthJian": "辰",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:44",
+      "monthJian": "辰",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:45",
+      "monthJian": "辰",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:46",
+      "monthJian": "辰",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:47",
+      "monthJian": "辰",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:48",
+      "monthJian": "辰",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:49",
+      "monthJian": "辰",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:50",
+      "monthJian": "辰",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:51",
+      "monthJian": "辰",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:52",
+      "monthJian": "辰",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:53",
+      "monthJian": "辰",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:54",
+      "monthJian": "辰",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:55",
+      "monthJian": "辰",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:56",
+      "monthJian": "辰",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:57",
+      "monthJian": "辰",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:58",
+      "monthJian": "辰",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:辰:59",
+      "monthJian": "辰",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:00",
+      "monthJian": "巳",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:01",
+      "monthJian": "巳",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:02",
+      "monthJian": "巳",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:03",
+      "monthJian": "巳",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:04",
+      "monthJian": "巳",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:05",
+      "monthJian": "巳",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:06",
+      "monthJian": "巳",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:07",
+      "monthJian": "巳",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:08",
+      "monthJian": "巳",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:09",
+      "monthJian": "巳",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:10",
+      "monthJian": "巳",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:11",
+      "monthJian": "巳",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:12",
+      "monthJian": "巳",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:13",
+      "monthJian": "巳",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:14",
+      "monthJian": "巳",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:15",
+      "monthJian": "巳",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:16",
+      "monthJian": "巳",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:17",
+      "monthJian": "巳",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:18",
+      "monthJian": "巳",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:19",
+      "monthJian": "巳",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:20",
+      "monthJian": "巳",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:21",
+      "monthJian": "巳",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:22",
+      "monthJian": "巳",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:23",
+      "monthJian": "巳",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:24",
+      "monthJian": "巳",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:25",
+      "monthJian": "巳",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:26",
+      "monthJian": "巳",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:27",
+      "monthJian": "巳",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:28",
+      "monthJian": "巳",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:29",
+      "monthJian": "巳",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:30",
+      "monthJian": "巳",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:31",
+      "monthJian": "巳",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:32",
+      "monthJian": "巳",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:33",
+      "monthJian": "巳",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:34",
+      "monthJian": "巳",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:35",
+      "monthJian": "巳",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:36",
+      "monthJian": "巳",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:37",
+      "monthJian": "巳",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:38",
+      "monthJian": "巳",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:39",
+      "monthJian": "巳",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:40",
+      "monthJian": "巳",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:41",
+      "monthJian": "巳",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:42",
+      "monthJian": "巳",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:43",
+      "monthJian": "巳",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:44",
+      "monthJian": "巳",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:45",
+      "monthJian": "巳",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:46",
+      "monthJian": "巳",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:47",
+      "monthJian": "巳",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:48",
+      "monthJian": "巳",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:49",
+      "monthJian": "巳",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:50",
+      "monthJian": "巳",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:51",
+      "monthJian": "巳",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:52",
+      "monthJian": "巳",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:53",
+      "monthJian": "巳",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:54",
+      "monthJian": "巳",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:55",
+      "monthJian": "巳",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:56",
+      "monthJian": "巳",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:57",
+      "monthJian": "巳",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:58",
+      "monthJian": "巳",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:巳:59",
+      "monthJian": "巳",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:00",
+      "monthJian": "午",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:01",
+      "monthJian": "午",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:02",
+      "monthJian": "午",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:03",
+      "monthJian": "午",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:04",
+      "monthJian": "午",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:05",
+      "monthJian": "午",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:06",
+      "monthJian": "午",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:07",
+      "monthJian": "午",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:08",
+      "monthJian": "午",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:09",
+      "monthJian": "午",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:10",
+      "monthJian": "午",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:11",
+      "monthJian": "午",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:12",
+      "monthJian": "午",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:13",
+      "monthJian": "午",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:14",
+      "monthJian": "午",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:15",
+      "monthJian": "午",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:16",
+      "monthJian": "午",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:17",
+      "monthJian": "午",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:18",
+      "monthJian": "午",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:19",
+      "monthJian": "午",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:20",
+      "monthJian": "午",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:21",
+      "monthJian": "午",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:22",
+      "monthJian": "午",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:23",
+      "monthJian": "午",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:24",
+      "monthJian": "午",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:25",
+      "monthJian": "午",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:26",
+      "monthJian": "午",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:27",
+      "monthJian": "午",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:28",
+      "monthJian": "午",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:29",
+      "monthJian": "午",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:30",
+      "monthJian": "午",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:31",
+      "monthJian": "午",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:32",
+      "monthJian": "午",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:33",
+      "monthJian": "午",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:34",
+      "monthJian": "午",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:35",
+      "monthJian": "午",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:36",
+      "monthJian": "午",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:37",
+      "monthJian": "午",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:38",
+      "monthJian": "午",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:39",
+      "monthJian": "午",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:40",
+      "monthJian": "午",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:41",
+      "monthJian": "午",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:42",
+      "monthJian": "午",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:43",
+      "monthJian": "午",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:44",
+      "monthJian": "午",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:45",
+      "monthJian": "午",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:46",
+      "monthJian": "午",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:47",
+      "monthJian": "午",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:48",
+      "monthJian": "午",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:49",
+      "monthJian": "午",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:50",
+      "monthJian": "午",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:51",
+      "monthJian": "午",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:52",
+      "monthJian": "午",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:53",
+      "monthJian": "午",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:54",
+      "monthJian": "午",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:55",
+      "monthJian": "午",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:56",
+      "monthJian": "午",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:57",
+      "monthJian": "午",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:58",
+      "monthJian": "午",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:午:59",
+      "monthJian": "午",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:00",
+      "monthJian": "未",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:01",
+      "monthJian": "未",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:02",
+      "monthJian": "未",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:03",
+      "monthJian": "未",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:04",
+      "monthJian": "未",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:05",
+      "monthJian": "未",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:06",
+      "monthJian": "未",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:07",
+      "monthJian": "未",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:08",
+      "monthJian": "未",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:09",
+      "monthJian": "未",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:10",
+      "monthJian": "未",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:11",
+      "monthJian": "未",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:12",
+      "monthJian": "未",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:13",
+      "monthJian": "未",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:14",
+      "monthJian": "未",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:15",
+      "monthJian": "未",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:16",
+      "monthJian": "未",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:17",
+      "monthJian": "未",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:18",
+      "monthJian": "未",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:19",
+      "monthJian": "未",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:20",
+      "monthJian": "未",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:21",
+      "monthJian": "未",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:22",
+      "monthJian": "未",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:23",
+      "monthJian": "未",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:24",
+      "monthJian": "未",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:25",
+      "monthJian": "未",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:26",
+      "monthJian": "未",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:27",
+      "monthJian": "未",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:28",
+      "monthJian": "未",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:29",
+      "monthJian": "未",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:30",
+      "monthJian": "未",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:31",
+      "monthJian": "未",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:32",
+      "monthJian": "未",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:33",
+      "monthJian": "未",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:34",
+      "monthJian": "未",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:35",
+      "monthJian": "未",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:36",
+      "monthJian": "未",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:37",
+      "monthJian": "未",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:38",
+      "monthJian": "未",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:39",
+      "monthJian": "未",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:40",
+      "monthJian": "未",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:41",
+      "monthJian": "未",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:42",
+      "monthJian": "未",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:43",
+      "monthJian": "未",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:44",
+      "monthJian": "未",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:45",
+      "monthJian": "未",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:46",
+      "monthJian": "未",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:47",
+      "monthJian": "未",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:48",
+      "monthJian": "未",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:49",
+      "monthJian": "未",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:50",
+      "monthJian": "未",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:51",
+      "monthJian": "未",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:52",
+      "monthJian": "未",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:53",
+      "monthJian": "未",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:54",
+      "monthJian": "未",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:55",
+      "monthJian": "未",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:56",
+      "monthJian": "未",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:57",
+      "monthJian": "未",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:58",
+      "monthJian": "未",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:未:59",
+      "monthJian": "未",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:00",
+      "monthJian": "申",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:01",
+      "monthJian": "申",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:02",
+      "monthJian": "申",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:03",
+      "monthJian": "申",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:04",
+      "monthJian": "申",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:05",
+      "monthJian": "申",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:06",
+      "monthJian": "申",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:07",
+      "monthJian": "申",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:08",
+      "monthJian": "申",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:09",
+      "monthJian": "申",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:10",
+      "monthJian": "申",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:11",
+      "monthJian": "申",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:12",
+      "monthJian": "申",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:13",
+      "monthJian": "申",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:14",
+      "monthJian": "申",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:15",
+      "monthJian": "申",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:16",
+      "monthJian": "申",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:17",
+      "monthJian": "申",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:18",
+      "monthJian": "申",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:19",
+      "monthJian": "申",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:20",
+      "monthJian": "申",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:21",
+      "monthJian": "申",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:22",
+      "monthJian": "申",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:23",
+      "monthJian": "申",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:24",
+      "monthJian": "申",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:25",
+      "monthJian": "申",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:26",
+      "monthJian": "申",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:27",
+      "monthJian": "申",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:28",
+      "monthJian": "申",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:29",
+      "monthJian": "申",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:30",
+      "monthJian": "申",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:31",
+      "monthJian": "申",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:32",
+      "monthJian": "申",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:33",
+      "monthJian": "申",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:34",
+      "monthJian": "申",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:35",
+      "monthJian": "申",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:36",
+      "monthJian": "申",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:37",
+      "monthJian": "申",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:38",
+      "monthJian": "申",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:39",
+      "monthJian": "申",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:40",
+      "monthJian": "申",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:41",
+      "monthJian": "申",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:42",
+      "monthJian": "申",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:43",
+      "monthJian": "申",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:44",
+      "monthJian": "申",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:45",
+      "monthJian": "申",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:46",
+      "monthJian": "申",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:47",
+      "monthJian": "申",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:48",
+      "monthJian": "申",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:49",
+      "monthJian": "申",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:50",
+      "monthJian": "申",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:51",
+      "monthJian": "申",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:52",
+      "monthJian": "申",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:53",
+      "monthJian": "申",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:54",
+      "monthJian": "申",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:55",
+      "monthJian": "申",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:56",
+      "monthJian": "申",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:57",
+      "monthJian": "申",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:58",
+      "monthJian": "申",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:申:59",
+      "monthJian": "申",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:00",
+      "monthJian": "酉",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:01",
+      "monthJian": "酉",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:02",
+      "monthJian": "酉",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:03",
+      "monthJian": "酉",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:04",
+      "monthJian": "酉",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:05",
+      "monthJian": "酉",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:06",
+      "monthJian": "酉",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:07",
+      "monthJian": "酉",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:08",
+      "monthJian": "酉",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:09",
+      "monthJian": "酉",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:10",
+      "monthJian": "酉",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:11",
+      "monthJian": "酉",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:12",
+      "monthJian": "酉",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:13",
+      "monthJian": "酉",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:14",
+      "monthJian": "酉",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:15",
+      "monthJian": "酉",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:16",
+      "monthJian": "酉",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:17",
+      "monthJian": "酉",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:18",
+      "monthJian": "酉",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:19",
+      "monthJian": "酉",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:20",
+      "monthJian": "酉",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:21",
+      "monthJian": "酉",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:22",
+      "monthJian": "酉",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:23",
+      "monthJian": "酉",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:24",
+      "monthJian": "酉",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:25",
+      "monthJian": "酉",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:26",
+      "monthJian": "酉",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:27",
+      "monthJian": "酉",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:28",
+      "monthJian": "酉",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:29",
+      "monthJian": "酉",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:30",
+      "monthJian": "酉",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:31",
+      "monthJian": "酉",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:32",
+      "monthJian": "酉",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:33",
+      "monthJian": "酉",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:34",
+      "monthJian": "酉",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:35",
+      "monthJian": "酉",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:36",
+      "monthJian": "酉",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:37",
+      "monthJian": "酉",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:38",
+      "monthJian": "酉",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:39",
+      "monthJian": "酉",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:40",
+      "monthJian": "酉",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:41",
+      "monthJian": "酉",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:42",
+      "monthJian": "酉",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:43",
+      "monthJian": "酉",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:44",
+      "monthJian": "酉",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:45",
+      "monthJian": "酉",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:46",
+      "monthJian": "酉",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:47",
+      "monthJian": "酉",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:48",
+      "monthJian": "酉",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:49",
+      "monthJian": "酉",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:50",
+      "monthJian": "酉",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:51",
+      "monthJian": "酉",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:52",
+      "monthJian": "酉",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:53",
+      "monthJian": "酉",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:54",
+      "monthJian": "酉",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:55",
+      "monthJian": "酉",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:56",
+      "monthJian": "酉",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:57",
+      "monthJian": "酉",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:58",
+      "monthJian": "酉",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:酉:59",
+      "monthJian": "酉",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:00",
+      "monthJian": "戌",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:01",
+      "monthJian": "戌",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:02",
+      "monthJian": "戌",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:03",
+      "monthJian": "戌",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:04",
+      "monthJian": "戌",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:05",
+      "monthJian": "戌",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:06",
+      "monthJian": "戌",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:07",
+      "monthJian": "戌",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:08",
+      "monthJian": "戌",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:09",
+      "monthJian": "戌",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:10",
+      "monthJian": "戌",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:11",
+      "monthJian": "戌",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:12",
+      "monthJian": "戌",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:13",
+      "monthJian": "戌",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:14",
+      "monthJian": "戌",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:15",
+      "monthJian": "戌",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:16",
+      "monthJian": "戌",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:17",
+      "monthJian": "戌",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:18",
+      "monthJian": "戌",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:19",
+      "monthJian": "戌",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:20",
+      "monthJian": "戌",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:21",
+      "monthJian": "戌",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:22",
+      "monthJian": "戌",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:23",
+      "monthJian": "戌",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:24",
+      "monthJian": "戌",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:25",
+      "monthJian": "戌",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:26",
+      "monthJian": "戌",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:27",
+      "monthJian": "戌",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:28",
+      "monthJian": "戌",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:29",
+      "monthJian": "戌",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:30",
+      "monthJian": "戌",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:31",
+      "monthJian": "戌",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:32",
+      "monthJian": "戌",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:33",
+      "monthJian": "戌",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:34",
+      "monthJian": "戌",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:35",
+      "monthJian": "戌",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:36",
+      "monthJian": "戌",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:37",
+      "monthJian": "戌",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:38",
+      "monthJian": "戌",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:39",
+      "monthJian": "戌",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:40",
+      "monthJian": "戌",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:41",
+      "monthJian": "戌",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:42",
+      "monthJian": "戌",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:43",
+      "monthJian": "戌",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:44",
+      "monthJian": "戌",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:45",
+      "monthJian": "戌",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:46",
+      "monthJian": "戌",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:47",
+      "monthJian": "戌",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:48",
+      "monthJian": "戌",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:49",
+      "monthJian": "戌",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:50",
+      "monthJian": "戌",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:51",
+      "monthJian": "戌",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:52",
+      "monthJian": "戌",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:53",
+      "monthJian": "戌",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:54",
+      "monthJian": "戌",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:55",
+      "monthJian": "戌",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:56",
+      "monthJian": "戌",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:57",
+      "monthJian": "戌",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:58",
+      "monthJian": "戌",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:戌:59",
+      "monthJian": "戌",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:00",
+      "monthJian": "亥",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:01",
+      "monthJian": "亥",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:02",
+      "monthJian": "亥",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:03",
+      "monthJian": "亥",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:04",
+      "monthJian": "亥",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:05",
+      "monthJian": "亥",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:06",
+      "monthJian": "亥",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:07",
+      "monthJian": "亥",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:08",
+      "monthJian": "亥",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:09",
+      "monthJian": "亥",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:10",
+      "monthJian": "亥",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:11",
+      "monthJian": "亥",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:12",
+      "monthJian": "亥",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:13",
+      "monthJian": "亥",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:14",
+      "monthJian": "亥",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:15",
+      "monthJian": "亥",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:16",
+      "monthJian": "亥",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:17",
+      "monthJian": "亥",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:18",
+      "monthJian": "亥",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:19",
+      "monthJian": "亥",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:20",
+      "monthJian": "亥",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:21",
+      "monthJian": "亥",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:22",
+      "monthJian": "亥",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:23",
+      "monthJian": "亥",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:24",
+      "monthJian": "亥",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:25",
+      "monthJian": "亥",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:26",
+      "monthJian": "亥",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:27",
+      "monthJian": "亥",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:28",
+      "monthJian": "亥",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:29",
+      "monthJian": "亥",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:30",
+      "monthJian": "亥",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:31",
+      "monthJian": "亥",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:32",
+      "monthJian": "亥",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:33",
+      "monthJian": "亥",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:34",
+      "monthJian": "亥",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:35",
+      "monthJian": "亥",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:36",
+      "monthJian": "亥",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:37",
+      "monthJian": "亥",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:38",
+      "monthJian": "亥",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:39",
+      "monthJian": "亥",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:40",
+      "monthJian": "亥",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:41",
+      "monthJian": "亥",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:42",
+      "monthJian": "亥",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:43",
+      "monthJian": "亥",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:44",
+      "monthJian": "亥",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:45",
+      "monthJian": "亥",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:46",
+      "monthJian": "亥",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:47",
+      "monthJian": "亥",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:48",
+      "monthJian": "亥",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:49",
+      "monthJian": "亥",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:50",
+      "monthJian": "亥",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:51",
+      "monthJian": "亥",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:52",
+      "monthJian": "亥",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:53",
+      "monthJian": "亥",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:54",
+      "monthJian": "亥",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:55",
+      "monthJian": "亥",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:56",
+      "monthJian": "亥",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:57",
+      "monthJian": "亥",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:58",
+      "monthJian": "亥",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:亥:59",
+      "monthJian": "亥",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:00",
+      "monthJian": "子",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:01",
+      "monthJian": "子",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:02",
+      "monthJian": "子",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:03",
+      "monthJian": "子",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:04",
+      "monthJian": "子",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:05",
+      "monthJian": "子",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:06",
+      "monthJian": "子",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:07",
+      "monthJian": "子",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:08",
+      "monthJian": "子",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:09",
+      "monthJian": "子",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:10",
+      "monthJian": "子",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:11",
+      "monthJian": "子",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:12",
+      "monthJian": "子",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:13",
+      "monthJian": "子",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:14",
+      "monthJian": "子",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:15",
+      "monthJian": "子",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:16",
+      "monthJian": "子",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:17",
+      "monthJian": "子",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:18",
+      "monthJian": "子",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:19",
+      "monthJian": "子",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:20",
+      "monthJian": "子",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:21",
+      "monthJian": "子",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:22",
+      "monthJian": "子",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:23",
+      "monthJian": "子",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:24",
+      "monthJian": "子",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:25",
+      "monthJian": "子",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:26",
+      "monthJian": "子",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:27",
+      "monthJian": "子",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:28",
+      "monthJian": "子",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:29",
+      "monthJian": "子",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:30",
+      "monthJian": "子",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:31",
+      "monthJian": "子",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:32",
+      "monthJian": "子",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:33",
+      "monthJian": "子",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:34",
+      "monthJian": "子",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:35",
+      "monthJian": "子",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:36",
+      "monthJian": "子",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:37",
+      "monthJian": "子",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:38",
+      "monthJian": "子",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:39",
+      "monthJian": "子",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:40",
+      "monthJian": "子",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:41",
+      "monthJian": "子",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:42",
+      "monthJian": "子",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:43",
+      "monthJian": "子",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:44",
+      "monthJian": "子",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:45",
+      "monthJian": "子",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:46",
+      "monthJian": "子",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:47",
+      "monthJian": "子",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:48",
+      "monthJian": "子",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:49",
+      "monthJian": "子",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:50",
+      "monthJian": "子",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:51",
+      "monthJian": "子",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:52",
+      "monthJian": "子",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:53",
+      "monthJian": "子",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:54",
+      "monthJian": "子",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:55",
+      "monthJian": "子",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:56",
+      "monthJian": "子",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:57",
+      "monthJian": "子",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:58",
+      "monthJian": "子",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:子:59",
+      "monthJian": "子",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:00",
+      "monthJian": "丑",
+      "dayPillar": "甲子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:01",
+      "monthJian": "丑",
+      "dayPillar": "乙丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:02",
+      "monthJian": "丑",
+      "dayPillar": "丙寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:03",
+      "monthJian": "丑",
+      "dayPillar": "丁卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:04",
+      "monthJian": "丑",
+      "dayPillar": "戊辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:05",
+      "monthJian": "丑",
+      "dayPillar": "己巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:06",
+      "monthJian": "丑",
+      "dayPillar": "庚午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:07",
+      "monthJian": "丑",
+      "dayPillar": "辛未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:08",
+      "monthJian": "丑",
+      "dayPillar": "壬申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:09",
+      "monthJian": "丑",
+      "dayPillar": "癸酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:10",
+      "monthJian": "丑",
+      "dayPillar": "甲戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:11",
+      "monthJian": "丑",
+      "dayPillar": "乙亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:12",
+      "monthJian": "丑",
+      "dayPillar": "丙子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:13",
+      "monthJian": "丑",
+      "dayPillar": "丁丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:14",
+      "monthJian": "丑",
+      "dayPillar": "戊寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:15",
+      "monthJian": "丑",
+      "dayPillar": "己卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:16",
+      "monthJian": "丑",
+      "dayPillar": "庚辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:17",
+      "monthJian": "丑",
+      "dayPillar": "辛巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:18",
+      "monthJian": "丑",
+      "dayPillar": "壬午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:19",
+      "monthJian": "丑",
+      "dayPillar": "癸未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:20",
+      "monthJian": "丑",
+      "dayPillar": "甲申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:21",
+      "monthJian": "丑",
+      "dayPillar": "乙酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:22",
+      "monthJian": "丑",
+      "dayPillar": "丙戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:23",
+      "monthJian": "丑",
+      "dayPillar": "丁亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:24",
+      "monthJian": "丑",
+      "dayPillar": "戊子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:25",
+      "monthJian": "丑",
+      "dayPillar": "己丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:26",
+      "monthJian": "丑",
+      "dayPillar": "庚寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:27",
+      "monthJian": "丑",
+      "dayPillar": "辛卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:28",
+      "monthJian": "丑",
+      "dayPillar": "壬辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:29",
+      "monthJian": "丑",
+      "dayPillar": "癸巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:30",
+      "monthJian": "丑",
+      "dayPillar": "甲午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:31",
+      "monthJian": "丑",
+      "dayPillar": "乙未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:32",
+      "monthJian": "丑",
+      "dayPillar": "丙申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:33",
+      "monthJian": "丑",
+      "dayPillar": "丁酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:34",
+      "monthJian": "丑",
+      "dayPillar": "戊戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:35",
+      "monthJian": "丑",
+      "dayPillar": "己亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:36",
+      "monthJian": "丑",
+      "dayPillar": "庚子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:37",
+      "monthJian": "丑",
+      "dayPillar": "辛丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:38",
+      "monthJian": "丑",
+      "dayPillar": "壬寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:39",
+      "monthJian": "丑",
+      "dayPillar": "癸卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:40",
+      "monthJian": "丑",
+      "dayPillar": "甲辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:41",
+      "monthJian": "丑",
+      "dayPillar": "乙巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:42",
+      "monthJian": "丑",
+      "dayPillar": "丙午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:43",
+      "monthJian": "丑",
+      "dayPillar": "丁未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:44",
+      "monthJian": "丑",
+      "dayPillar": "戊申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:45",
+      "monthJian": "丑",
+      "dayPillar": "己酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:46",
+      "monthJian": "丑",
+      "dayPillar": "庚戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:47",
+      "monthJian": "丑",
+      "dayPillar": "辛亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:48",
+      "monthJian": "丑",
+      "dayPillar": "壬子",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:49",
+      "monthJian": "丑",
+      "dayPillar": "癸丑",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:50",
+      "monthJian": "丑",
+      "dayPillar": "甲寅",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:51",
+      "monthJian": "丑",
+      "dayPillar": "乙卯",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:52",
+      "monthJian": "丑",
+      "dayPillar": "丙辰",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:53",
+      "monthJian": "丑",
+      "dayPillar": "丁巳",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:54",
+      "monthJian": "丑",
+      "dayPillar": "戊午",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:55",
+      "monthJian": "丑",
+      "dayPillar": "己未",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:56",
+      "monthJian": "丑",
+      "dayPillar": "庚申",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:57",
+      "monthJian": "丑",
+      "dayPillar": "辛酉",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:58",
+      "monthJian": "丑",
+      "dayPillar": "壬戌",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    },
+    {
+      "id": "context:丑:59",
+      "monthJian": "丑",
+      "dayPillar": "癸亥",
+      "expectedGlobalGrade": "undetermined",
+      "scoreExpected": null
+    }
+  ],
+  "warehouseCases": [
+    {
+      "id": "warehouse:shou:none",
+      "base": "收日",
+      "partners": [],
+      "activity": "warehouse",
+      "expectedYi": false
+    },
+    {
+      "id": "warehouse:shou:月恩",
+      "base": "收日",
+      "partners": ["月恩"],
+      "activity": "warehouse",
+      "expectedYi": true
+    },
+    {
+      "id": "warehouse:shou:四相",
+      "base": "收日",
+      "partners": ["四相"],
+      "activity": "warehouse",
+      "expectedYi": true
+    },
+    {
+      "id": "warehouse:shou:時德",
+      "base": "收日",
+      "partners": ["時德"],
+      "activity": "warehouse",
+      "expectedYi": true
+    },
+    {
+      "id": "warehouse:partner-only",
+      "base": null,
+      "partners": ["四相"],
+      "activity": "warehouse",
+      "expectedYiFromCoPresence": false
+    },
+    {
+      "id": "warehouse:shou-kai-impossible",
+      "base": "收日",
+      "partners": ["開日"],
+      "expectedContextValidity": false
+    },
+    {
+      "id": "warehouse:tiancang-shide-impossible",
+      "base": "天倉",
+      "partners": ["時德"],
+      "expectedContextValidity": false
+    }
+  ],
+  "protectedCases": [
+    {
+      "id": "protected:dinh_nhat",
+      "godId": "dinh_nhat",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:giap_nhat",
+      "godId": "giap_nhat",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:at_nhat",
+      "godId": "at_nhat",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_dan",
+      "godId": "bach_ky_dan",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_dau",
+      "godId": "bach_ky_dau",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_than",
+      "godId": "bach_ky_than",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_mui",
+      "godId": "bach_ky_mui",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_ty",
+      "godId": "bach_ky_ty",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    },
+    {
+      "id": "protected:bach_ky_hoi",
+      "godId": "bach_ky_hoi",
+      "expectedBalancingEligible": false,
+      "expectedProtectedJi": true
+    }
+  ],
+  "policyPenaltyCases": [
+    {
+      "id": "policy:all-taboo",
+      "clauseMatch": "match",
+      "reason": "all_taboo",
+      "existingNegative": false,
+      "expectedDelta": -25,
+      "expectedOrigin": "product_policy",
+      "expectedBalancingEligible": false
+    },
+    {
+      "id": "policy:missing-negative",
+      "clauseMatch": "match",
+      "reason": "missing_negative",
+      "existingNegative": false,
+      "expectedDelta": -25,
+      "expectedOrigin": "product_policy",
+      "expectedBalancingEligible": false
+    },
+    {
+      "id": "policy:unknown",
+      "clauseMatch": "unknown",
+      "reason": "missing_negative",
+      "existingNegative": false,
+      "expectedDelta": 0
+    },
+    {
+      "id": "policy:no-match",
+      "clauseMatch": "no_match",
+      "reason": "missing_negative",
+      "existingNegative": false,
+      "expectedDelta": 0
+    },
+    {
+      "id": "policy:existing",
+      "clauseMatch": "match",
+      "reason": "missing_negative",
+      "existingNegative": true,
+      "expectedDelta": 0
+    }
+  ],
+  "supersedes": {
+    "commit": "08e2aaf",
+    "version": "golden-p4-vol10-authority-v1",
+    "reason": "Metadata corrected after source reading P4-A02 was resolved. All expected values unchanged; no production code output used."
+  }
+}

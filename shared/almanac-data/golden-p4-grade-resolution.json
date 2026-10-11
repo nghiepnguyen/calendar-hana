@@ -1,0 +1,491 @@
+{
+  "version": "golden-p4-grade-resolution-v1",
+  "status": "PARTIAL_SOURCE_ORACLE_NOT_SCORE_ORACLE",
+  "authoring": "Hand-derived from the 等第 transcription, entry clauses (production 卷十 artifact + p4-vol10-grade-resolution.json), catHungAuthority 德 rows and 卷五 virtues, before p4GradeResolution.ts existed. dePresentIds lists named gods that count after pillar overrides.",
+  "cases": [
+    {
+      "note": "申月 平日 中 with named 天德 present; 月害 defers to 平日",
+      "monthJian": "申",
+      "pillar": "癸亥",
+      "subjects": {
+        "平日": {
+          "cell": "ping:zhong",
+          "grade": "zhong",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "天德",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "天德"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        },
+        "月害": {
+          "cell": "hai:zhong",
+          "grade": "zhong",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "天德",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "天德"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "申月 平日 中 without the named 德",
+      "monthJian": "申",
+      "pillar": "乙亥",
+      "subjects": {
+        "平日": {
+          "cell": "ping:zhong",
+          "grade": "zhong",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "天德",
+            "月德合"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        },
+        "月害": {
+          "cell": "hai:zhong",
+          "grade": "zhong",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "天德",
+            "月德合"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "卯月 平日/天吏 次 with 月德: 相抵",
+      "monthJian": "卯",
+      "pillar": "甲午",
+      "subjects": {
+        "平日": {
+          "cell": "ping:ci",
+          "grade": "ci",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "月德"
+          ],
+          "dePresentIds": [
+            "月德"
+          ],
+          "dePresent": true,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        },
+        "天吏": {
+          "cell": "li:ci",
+          "grade": "ci",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "月德"
+          ],
+          "dePresentIds": [
+            "月德"
+          ],
+          "dePresent": true,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "卯月 平日/天吏 次 without 月德",
+      "monthJian": "卯",
+      "pillar": "丙午",
+      "subjects": {
+        "平日": {
+          "cell": "ping:ci",
+          "grade": "ci",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "月德"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        },
+        "天吏": {
+          "cell": "li:ci",
+          "grade": "ci",
+          "clauseOwner": "平日",
+          "deGroup": [
+            "月德"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "子月壬子: 月厭 下 needs 天赦; 月德 present but not named; 大會 avoid_all reported beside",
+      "monthJian": "子",
+      "pillar": "壬子",
+      "subjects": {
+        "月建": {
+          "status": "no_grid_column"
+        },
+        "月厭": {
+          "cell": "yan:xia",
+          "grade": "xia",
+          "clauseOwner": "月厭",
+          "deGroup": [
+            "天赦"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "all_taboo",
+          "clauseEffect": "avoid_all",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": [
+        "great_meeting",
+        "both_errors"
+      ]
+    },
+    {
+      "note": "子月甲子: 天赦 lifts 月厭 下 to 從忌不從宜",
+      "monthJian": "子",
+      "pillar": "甲子",
+      "subjects": {
+        "月建": {
+          "status": "no_grid_column"
+        },
+        "月厭": {
+          "cell": "yan:xia",
+          "grade": "xia",
+          "clauseOwner": "月厭",
+          "deGroup": [
+            "天赦"
+          ],
+          "dePresentIds": [
+            "天赦"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "未月己巳 陰錯: 天德合/月德合 present but 德作建論 and named 德合 exclusion suppress them",
+      "monthJian": "未",
+      "pillar": "己巳",
+      "subjects": {
+        "月厭": {
+          "cell": "yan:zhong",
+          "grade": "zhong",
+          "clauseOwner": "月厭",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree",
+          "suppressedBy": [
+            "yin_error",
+            "yin_no_de_he"
+          ]
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "丑月乙亥: same 月厭 中 group, no override, 德 present",
+      "monthJian": "丑",
+      "pillar": "乙亥",
+      "subjects": {
+        "月厭": {
+          "cell": "yan:zhong",
+          "grade": "zhong",
+          "clauseOwner": "月厭",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "月德合"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "巳月丙申: 平日 defers to 月刑 上次; 天德合 and 天願 named and present",
+      "monthJian": "巳",
+      "pillar": "丙申",
+      "subjects": {
+        "平日": {
+          "cell": "ping:shang_ci",
+          "grade": "shang_ci",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "天願"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "天願"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        },
+        "月刑": {
+          "cell": "xing:shang_ci",
+          "grade": "shang_ci",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "天願"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "天願"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "巳月甲申: 上次 without 德: 相抵",
+      "monthJian": "巳",
+      "pillar": "甲申",
+      "subjects": {
+        "平日": {
+          "cell": "ping:shang_ci",
+          "grade": "shang_ci",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "天願"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        },
+        "月刑": {
+          "cell": "xing:shang_ci",
+          "grade": "shang_ci",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "月德",
+            "天德合",
+            "天願"
+          ],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "亥月 平日 上: unconditional",
+      "monthJian": "亥",
+      "pillar": "甲寅",
+      "subjects": {
+        "平日": {
+          "cell": "ping:shang",
+          "grade": "shang",
+          "clauseOwner": "平日",
+          "deGroup": [],
+          "dePresentIds": [],
+          "dePresent": false,
+          "gradeAction": "only_yi",
+          "clauseEffect": "only_avoid",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "卯月甲子: 收日/大時 defer to 月刑 下; 月德 present",
+      "monthJian": "卯",
+      "pillar": "甲子",
+      "subjects": {
+        "收日": {
+          "cell": "shou:xia",
+          "grade": "xia",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "月德"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        },
+        "月刑": {
+          "cell": "xing:xia",
+          "grade": "xia",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "月德"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        },
+        "大時": {
+          "cell": "shi:xia",
+          "grade": "xia",
+          "clauseOwner": "月刑",
+          "deGroup": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "月德"
+          ],
+          "dePresent": true,
+          "gradeAction": "only_ji",
+          "clauseEffect": "as_usual",
+          "consistency": "agree"
+        }
+      },
+      "allTabooRuleIds": []
+    },
+    {
+      "note": "辰月丁卯: 閉日/月害/天吏 each with its own named group; 天德合+月德合 present: 相抵 ×3",
+      "monthJian": "辰",
+      "pillar": "丁卯",
+      "subjects": {
+        "閉日": {
+          "cell": "bi:ci",
+          "grade": "ci",
+          "clauseOwner": "閉日",
+          "deGroup": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合",
+            "天赦",
+            "天願"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "月德合"
+          ],
+          "dePresent": true,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        },
+        "月害": {
+          "cell": "hai:ci",
+          "grade": "ci",
+          "clauseOwner": "月害",
+          "deGroup": [
+            "天德合",
+            "月德合"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "月德合"
+          ],
+          "dePresent": true,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        },
+        "天吏": {
+          "cell": "li:ci",
+          "grade": "ci",
+          "clauseOwner": "天吏",
+          "deGroup": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合",
+            "天赦",
+            "天願"
+          ],
+          "dePresentIds": [
+            "天德合",
+            "月德合"
+          ],
+          "dePresent": true,
+          "gradeAction": "both_present",
+          "clauseEffect": "cancel_both",
+          "consistency": "xiangdi"
+        }
+      },
+      "allTabooRuleIds": []
+    }
+  ]
+}

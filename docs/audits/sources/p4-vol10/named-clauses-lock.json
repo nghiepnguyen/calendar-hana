@@ -1,0 +1,15 @@
+{
+  "version": "p4-named-clauses-lock-v1",
+  "parentEvidenceLock": "p4-pre-scoring-lock-v2",
+  "reason": "Add source-derived named pillar overrides and scoped deferrals; existing frozen authority and Golden unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-named-clauses.json",
+      "sha256": "236c8e9df5202cc2934a14f63b5ba5c29871de744132cc7d77115ab7b9bdb1e4"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-named-clauses.json",
+      "sha256": "d7e817e2d51d5834d08d08dfb12dfc8f02d4779ed4389b7ed954af3f086ffc11"
+    }
+  ]
+}

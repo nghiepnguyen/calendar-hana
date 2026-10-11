@@ -1,0 +1,21 @@
+{
+  "scope": "AUDIT_SEASON_DAY_READINGS",
+  "mutations": [
+    {
+      "mutation": "wang_guan_modern_swap",
+      "caughtByPartnerInvariant": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "shou_not_swapped",
+      "caughtByPartnerInvariant": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "season_shifted",
+      "caughtByPartnerInvariant": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true
+}

@@ -1,0 +1,12 @@
+{
+  "version": "p4-deferral-coverage-lock-v1",
+  "parentLock": "p4-day-composition-lock-v1",
+  "frozenAtCommit": "0e953c8",
+  "reason": "A05 coverage expectations; parent locks unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-deferral-coverage.json",
+      "sha256": "0d2f8c2cb085633ac3e2549aa73d55c8d02365426c885d20ed7681216302c8f8"
+    }
+  ]
+}

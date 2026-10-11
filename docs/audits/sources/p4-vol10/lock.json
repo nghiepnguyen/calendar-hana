@@ -1,0 +1,54 @@
+{
+  "version": "p4-pre-scoring-lock-v2",
+  "status": "EVIDENCE_AND_PARTIAL_GOLDEN_FROZEN",
+  "date": "2026-10-11",
+  "scoringReady": false,
+  "note": "Changing this lock requires a new version with source evidence/reason; never refresh hashes to fit scorer output. No score oracle yet.",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n220.jpg",
+      "sha256": "feb2029bb91cbb7b8c6e004a07d95920a0759ad5db4321918da16b1bb8759aef"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n221.jpg",
+      "sha256": "d41ce2bb0edf0d4830ececa680fa6d31759f02213a0ce4c0360c263ec46a75d4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n222.jpg",
+      "sha256": "f86c9eea82e053840544bee5f99f7e21e88de087eba17b8e1e2beb3489e8c051"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n223.jpg",
+      "sha256": "6bf6ac942c42db59b82163d04284d27afd51de1319fe9a741e7aea66acecd3ef"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/witness2-n220.jpg",
+      "sha256": "70f949faf7e98a5f0cb3da47abaf503d9b5c0335a0a483e5b2cbf371e8feead3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/witness2-n221.jpg",
+      "sha256": "7b56a5a6ea8006838f29e4595814b2993d2d32e55adf9eaf9c3c986c225651cc"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-authority.json",
+      "sha256": "64973dddae8a050c4743e53d1fbf2e9f12f3e2c3e03897f4563371a360a29b02"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-god-classes.json",
+      "sha256": "c10831b7ea40c5d6553f1f7d275d2bc038f913f00b622023de938b370c006be8"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-vol10-authority.json",
+      "sha256": "5c1c587753f4ed4a69727613bd60cdb803db11d8fd2f1c2b5ab74d75a5c609ae"
+    }
+  ],
+  "supersedes": {
+    "commit": "08e2aaf",
+    "version": "p4-pre-scoring-lock-v1",
+    "reason": "Magnified source scan corrects character reading, resolves P4-A02; Golden expected values unchanged."
+  }
+}

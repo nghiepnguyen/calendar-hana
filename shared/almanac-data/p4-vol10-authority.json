@@ -1,0 +1,1188 @@
+{
+  "version": "p4-vol10-authority-v2",
+  "status": "TRANSCRIPTION_LOCK_CANDIDATE_NOT_SCORING_AUTHORITY",
+  "baseline": "93a513d5200ff7ef456852a524f863622d5f6a0c",
+  "review": "Single agent visual transcription cross-checked against two archive scan items and exact raw text. Second item is a scan witness, not an independent reviewer or proof of a different edition. Source conflicts retained.",
+  "sourceRawSha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+  "sources": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+      "bytes": 60422,
+      "url": "https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷10&oldid=787351&action=raw"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n220.jpg",
+      "sha256": "feb2029bb91cbb7b8c6e004a07d95920a0759ad5db4321918da16b1bb8759aef",
+      "bytes": 621978,
+      "url": "https://archive.org/download/06067686.cn/page/n220_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n221.jpg",
+      "sha256": "d41ce2bb0edf0d4830ececa680fa6d31759f02213a0ce4c0360c263ec46a75d4",
+      "bytes": 559665,
+      "url": "https://archive.org/download/06067686.cn/page/n221_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n222.jpg",
+      "sha256": "f86c9eea82e053840544bee5f99f7e21e88de087eba17b8e1e2beb3489e8c051",
+      "bytes": 604925,
+      "url": "https://archive.org/download/06067686.cn/page/n222_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/n223.jpg",
+      "sha256": "6bf6ac942c42db59b82163d04284d27afd51de1319fe9a741e7aea66acecd3ef",
+      "bytes": 666690,
+      "url": "https://archive.org/download/06067686.cn/page/n223_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/witness2-n220.jpg",
+      "sha256": "70f949faf7e98a5f0cb3da47abaf503d9b5c0335a0a483e5b2cbf371e8feead3",
+      "bytes": 670184,
+      "url": "https://archive.org/download/06056510.cn/page/n220_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/witness2-n221.jpg",
+      "sha256": "7b56a5a6ea8006838f29e4595814b2993d2d32e55adf9eaf9c3c986c225651cc",
+      "bytes": 607518,
+      "url": "https://archive.org/download/06056510.cn/page/n221_w1200.jpg"
+    }
+  ],
+  "grades": [
+    {
+      "id": "shang",
+      "label": "上",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9689,
+        "text": "吉足勝凶從宜不從忌"
+      },
+      "withDe": "only_yi",
+      "withoutDe": "only_yi",
+      "meaning": "Grade action only; not final annotation or product status."
+    },
+    {
+      "id": "shang_ci",
+      "label": "上次",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9700,
+        "text": "吉足抵凶遇德從宜不從忌不遇從宜亦從忌"
+      },
+      "withDe": "only_yi",
+      "withoutDe": "both_present",
+      "meaning": "Grade action only; not final annotation or product status."
+    },
+    {
+      "id": "zhong",
+      "label": "中",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9720,
+        "text": "吉不抵凶遇德則吉勝從宜不從忌不遇從忌不從宜"
+      },
+      "withDe": "only_yi",
+      "withoutDe": "only_ji",
+      "meaning": "Grade action only; not final annotation or product status."
+    },
+    {
+      "id": "ci",
+      "label": "次",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9743,
+        "text": "凶勝於吉遇德始相抵從宜亦從忌不遇從忌不從宜"
+      },
+      "withDe": "both_present",
+      "withoutDe": "only_ji",
+      "meaning": "Grade action only; not final annotation or product status."
+    },
+    {
+      "id": "xia",
+      "label": "下",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9766,
+        "text": "凶又逢凶遇德從忌不從宜不遇諸事皆忌"
+      },
+      "withDe": "only_ji",
+      "withoutDe": "all_taboo",
+      "meaning": "Grade action only; not final annotation or product status."
+    },
+    {
+      "id": "xia_xia",
+      "label": "下下",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9785,
+        "text": "凶叠大凶遇德仍諸事皆忌"
+      },
+      "withDe": "all_taboo",
+      "withoutDe": "all_taboo",
+      "meaning": "Grade action only; not final annotation or product status."
+    }
+  ],
+  "columns": [
+    {
+      "id": "ping",
+      "han": "平日",
+      "page": 220
+    },
+    {
+      "id": "shou",
+      "han": "收日",
+      "page": 220
+    },
+    {
+      "id": "bi",
+      "han": "閉日",
+      "page": 220
+    },
+    {
+      "id": "jie",
+      "han": "劫煞",
+      "page": 220
+    },
+    {
+      "id": "zai",
+      "han": "災煞",
+      "page": 220
+    },
+    {
+      "id": "sha",
+      "han": "月煞",
+      "page": 221
+    },
+    {
+      "id": "xing",
+      "han": "月刑",
+      "page": 221
+    },
+    {
+      "id": "hai",
+      "han": "月害",
+      "page": 221
+    },
+    {
+      "id": "yan",
+      "han": "月厭",
+      "page": 221
+    },
+    {
+      "id": "shi",
+      "han": "大時",
+      "page": 221
+    },
+    {
+      "id": "li",
+      "han": "天吏",
+      "page": 221
+    }
+  ],
+  "cells": [
+    {
+      "id": "ping:shang",
+      "subject": "平日",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row shang",
+      "displayReading": "亥月：相日、時德、六合",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "ping:shang_ci",
+      "subject": "平日",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row shang_ci",
+      "displayReading": "巳月：相日、六合、月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "ping:zhong",
+      "subject": "平日",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row zhong",
+      "displayReading": "申月：相日、月害",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "ping:ci",
+      "subject": "平日",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row ci",
+      "displayReading": "寅月：相日、月害、月刑 / 卯午酉月：天吏",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "ping:xia",
+      "subject": "平日",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row xia",
+      "displayReading": "辰戌丑未月：月煞 / 子月：天吏、月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "ping:xia_xia",
+      "subject": "平日",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 平日 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:shang",
+      "subject": "收日",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row shang",
+      "displayReading": "寅申月：長生、劫煞",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:shang_ci",
+      "subject": "收日",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:zhong",
+      "subject": "收日",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row zhong",
+      "displayReading": "巳亥月：月害、長生、劫煞 / 辰未月",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:ci",
+      "subject": "收日",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row ci",
+      "displayReading": "子午酉月：大時 / 丑戌月：月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:xia",
+      "subject": "收日",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row xia",
+      "displayReading": "卯月：月刑、大時",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shou:xia_xia",
+      "subject": "收日",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 收日 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:shang",
+      "subject": "閉日",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:shang_ci",
+      "subject": "閉日",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:zhong",
+      "subject": "閉日",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row zhong",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:ci",
+      "subject": "閉日",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row ci",
+      "displayReading": "子午卯酉月：王日 / 辰戌丑未月：官日、天吏",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:xia",
+      "subject": "閉日",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row xia",
+      "displayReading": "寅申巳亥月：月煞",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "bi:xia_xia",
+      "subject": "閉日",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 閉日 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:shang",
+      "subject": "劫煞",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row shang",
+      "displayReading": "寅申月：長生、六合、收日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:shang_ci",
+      "subject": "劫煞",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row shang_ci",
+      "displayReading": "辰戌丑未月：除日、相日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:zhong",
+      "subject": "劫煞",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row zhong",
+      "displayReading": "巳亥月：長生、月害、收日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:ci",
+      "subject": "劫煞",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row ci",
+      "displayReading": "子午卯酉月：執日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:xia",
+      "subject": "劫煞",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "jie:xia_xia",
+      "subject": "劫煞",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 劫煞 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:shang",
+      "subject": "災煞",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:shang_ci",
+      "subject": "災煞",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row shang_ci",
+      "displayReading": "寅申巳亥月：開日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:zhong",
+      "subject": "災煞",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row zhong",
+      "displayReading": "辰戌丑未月：滿日、民日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:ci",
+      "subject": "災煞",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:xia",
+      "subject": "災煞",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row xia",
+      "displayReading": "子午月：月破",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "zai:xia_xia",
+      "subject": "災煞",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n220.jpg",
+      "locator": "七十三 / column 災煞 / row xia_xia",
+      "displayReading": "卯酉月：月破、月厭",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:shang",
+      "subject": "月煞",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:shang_ci",
+      "subject": "月煞",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row shang_ci",
+      "displayReading": "卯酉月：六合、危日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:zhong",
+      "subject": "月煞",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row zhong",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:ci",
+      "subject": "月煞",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row ci",
+      "displayReading": "子午月：月害、危日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:xia",
+      "subject": "月煞",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row xia",
+      "displayReading": "寅申巳亥月：閉日 / 辰戌丑未月：平日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "sha:xia_xia",
+      "subject": "月煞",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月煞 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "xing:shang",
+      "subject": "月刑",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "xing:shang_ci",
+      "subject": "月刑",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row shang_ci",
+      "displayReading": "巳月：相日、平日、六合",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "xing:zhong",
+      "subject": "月刑",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row zhong",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "xing:ci",
+      "subject": "月刑",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row ci",
+      "displayReading": "寅月：相日、平日、月害 / 辰酉亥月：建日 / 丑戌月：收日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "xing:xia",
+      "subject": "月刑",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row xia",
+      "displayReading": "子月：平日、天吏 / 卯月：收日、大時 / 未申月：月破 / 午月：德大會、月厭",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": ["P4-A03"]
+    },
+    {
+      "id": "xing:xia_xia",
+      "subject": "月刑",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月刑 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:shang",
+      "subject": "月害",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:shang_ci",
+      "subject": "月害",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:zhong",
+      "subject": "月害",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row zhong",
+      "displayReading": "卯酉月：守日、除日 / 丑未月：執日、大時 / 巳亥月：長生、劫煞 / 申月：相日、平日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:xia",
+      "subject": "月害",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:xia_xia",
+      "subject": "月害",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "yan:shang",
+      "subject": "月厭",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "yan:shang_ci",
+      "subject": "月厭",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "yan:zhong",
+      "subject": "月厭",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row zhong",
+      "displayReading": "寅申月：成日 / 丑未月：開日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "yan:ci",
+      "subject": "月厭",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row ci",
+      "displayReading": "辰戌月：定日 / 巳亥月：滿日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "yan:xia",
+      "subject": "月厭",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row xia",
+      "displayReading": "子月：月建、德大會、月刑 / 午月：月建、德大會",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": ["P4-A03"]
+    },
+    {
+      "id": "yan:xia_xia",
+      "subject": "月厭",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月厭 / row xia_xia",
+      "displayReading": "卯酉月：月破、災煞",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:shang",
+      "subject": "大時",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row shang",
+      "displayReading": "寅申巳亥月：除日、官日 / 辰戌月：執日、六合",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:shang_ci",
+      "subject": "大時",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:zhong",
+      "subject": "大時",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row zhong",
+      "displayReading": "丑未月：執日、月害",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:ci",
+      "subject": "大時",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row ci",
+      "displayReading": "子午酉月：收日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:xia",
+      "subject": "大時",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row xia",
+      "displayReading": "卯月：收日、月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "shi:xia_xia",
+      "subject": "大時",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 大時 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:shang",
+      "subject": "天吏",
+      "gradeRows": ["shang"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row shang",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:shang_ci",
+      "subject": "天吏",
+      "gradeRows": ["shang_ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row shang_ci",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:zhong",
+      "subject": "天吏",
+      "gradeRows": ["zhong"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row zhong",
+      "displayReading": "寅申巳亥月：危日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:ci",
+      "subject": "天吏",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row ci",
+      "displayReading": "辰戌丑未月：閉日 / 卯午酉月：平日",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:xia",
+      "subject": "天吏",
+      "gradeRows": ["xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row xia",
+      "displayReading": "子月：平日、月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "li:xia_xia",
+      "subject": "天吏",
+      "gradeRows": ["xia_xia"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 天吏 / row xia_xia",
+      "displayReading": "",
+      "isBlank": true,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    },
+    {
+      "id": "hai:ci",
+      "subject": "月害",
+      "gradeRows": ["ci"],
+      "image": "docs/audits/sources/p4-vol10/n221.jpg",
+      "locator": "七十三 / column 月害 / row ci",
+      "displayReading": "子午月：月煞、危日 / 辰戌月：官日、閉日、天吏 / 寅月：相日、六害、月刑",
+      "isBlank": false,
+      "readingConvention": "Separators/punctuation and 巳/卯/劫 normalization are editorial; not predicates. 德大會 preserves the label without interpreting 德 as virtue.",
+      "unresolved": []
+    }
+  ],
+  "puzhu": [
+    {
+      "id": "puzhu:01",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21670,
+        "text": "凡鋪註萬年書通書先依用事次第察其所宜忌之日於某日下註宜某事某日下註忌某事次按宜忌較量其吉凶之輕重以定去取"
+      }
+    },
+    {
+      "id": "puzhu:02",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21725,
+        "text": "凡宜宣政事布政事之日止註宜宣政事"
+      }
+    },
+    {
+      "id": "puzhu:03",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21744,
+        "text": "凡宜營建宫室修宫室之日止註宜營建宫室"
+      }
+    },
+    {
+      "id": "puzhu:04",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21765,
+        "text": "凡吉足勝凶從宜不從忌者如遇徳猶忌之事則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:05",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21790,
+        "text": "凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:06",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21817,
+        "text": "凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:07",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21876,
+        "text": "凡天狗寅日忌祭祀不註宜求福祈嗣"
+      }
+    },
+    {
+      "id": "puzhu:08",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21894,
+        "text": "凡夘日忌穿井不註宜開渠壬日忌開渠不註宜穿井凡巳日忌出行不註宜出師遣使"
+      }
+    },
+    {
+      "id": "puzhu:09",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21931,
+        "text": "凡酉日忌宴㑹亦不註宜慶賜賞賀"
+      }
+    },
+    {
+      "id": "puzhu:10",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21948,
+        "text": "{{SK anchor|凡丁日忌剃頭亦不註宜整容}}"
+      }
+    },
+    {
+      "id": "puzhu:11",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21977,
+        "text": "凡吉凶相抵不註忌祈福亦不註忌求嗣"
+      }
+    },
+    {
+      "id": "puzhu:12",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21996,
+        "text": "凡忌詔命公卿招賢不註宜施恩封拜舉正直襲爵受封"
+      }
+    },
+    {
+      "id": "puzhu:13",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22021,
+        "text": "凡忌施恩封拜舉正直襲爵受封亦不註宜詔命公卿招賢"
+      }
+    },
+    {
+      "id": "puzhu:14",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22047,
+        "text": "凡宜宣政事之日遇往亡則改宣為布"
+      }
+    },
+    {
+      "id": "puzhu:15",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22065,
+        "text": "凡月厭忌行幸上官不註宜頒詔施恩封拜詔命公卿招賢舉正直遇宜宣政事之日則改宣為布"
+      }
+    },
+    {
+      "id": "puzhu:16",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22106,
+        "text": "凡吉凶相抵不註忌結婚姻亦不註忌冠帶納采問名嫁娶進人口如遇徳猶忌之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:17",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22146,
+        "text": "凡吉凶相抵不註忌嫁娶亦不註忌冠帶結婚姻納采問名進人口般移安牀如遇徳猶忌之日則仍註忌遇不將而不註忌嫁娶者亦仍註忌遇亥日厭對八專四忌四窮而仍註忌嫁娶者止註所忌之事其不忌者仍不註忌"
+      }
+    },
+    {
+      "id": "puzhu:18",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22236,
+        "text": "凡吉凶相抵不註忌般移亦不註忌安牀不註忌安牀亦不註忌般移如遇徳猶忌之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:19",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22277,
+        "text": "凡吉凶相抵不註忌解除亦不註忌整容剃頭整手足甲如遇徳猶忌之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:20",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22313,
+        "text": "凡吉凶相抵不註忌修造動土豎柱上梁亦不註忌修宫室繕城郭築隄防修倉庫鼓鑄苫葢修置産室開渠穿井安碓磑補垣塞穴修飾垣牆平治道塗破屋壊垣如遇徳猶忌之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:21",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22390,
+        "text": "凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財"
+      }
+    },
+    {
+      "id": "puzhu:22",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22443,
+        "text": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌"
+      }
+    },
+    {
+      "id": "puzhu:23",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22480,
+        "text": "凡吉凶相抵不註忌牧養亦不註忌納畜不註忌納畜亦不註忌牧養"
+      }
+    },
+    {
+      "id": "puzhu:24",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22510,
+        "text": "凡吉凶相抵有宜安葬不註忌啟攢有宜啟攢不註忌安葬"
+      }
+    },
+    {
+      "id": "puzhu:25",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22536,
+        "text": "凡土府土符地囊止註忌補垣亦不註宜塞穴"
+      }
+    },
+    {
+      "id": "puzhu:26",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22557,
+        "text": "凡開日不註宜破土安葬啟攢亦不註忌遇忌則註凡四忌四窮止忌安葬如遇鳴吠鳴吠對亦不註宜破土啟攢"
+      }
+    },
+    {
+      "id": "puzhu:27",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22604,
+        "text": "凡天吏大時不以死敗論者遇四廢嵗薄逐陣仍以死敗論"
+      }
+    },
+    {
+      "id": "puzhu:28",
+      "raw": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 22630,
+        "text": "凡嵗薄逐陣日所宜事照月厭所忌刪所忌仍從本日二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "P4-A03",
+      "classification": "UNKNOWN",
+      "detail": "Table lists 德大會 under 月刑/月厭 lower grade; 月厭 prose instead distinguishes 陰陽大會 and 德作建論不作德論. A generic hasVirtue boolean loses these overrides.",
+      "quote": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 15042,
+        "text": "德作建論不作德論"
+      },
+      "activation": "Require pillar-specific virtue overrides, not all good gods as 德."
+    },
+    {
+      "id": "P4-A04",
+      "classification": "UNKNOWN",
+      "detail": "Specific entry explains 不宜不忌 even where the grade summary says 從宜亦從忌. A day-grade action is not a final per-heading annotation without resolving applicability/overlap.",
+      "quote": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 11754,
+        "text": "若不與德神併則吉凶僅足相抵故忌則不宜宜則不忌也"
+      },
+      "activation": "Keep four annotation states; no direct grade-to-final-status mapping."
+    },
+    {
+      "id": "P4-A05",
+      "classification": "UNKNOWN",
+      "detail": "從重論 is supported for named deferrals, not a universal max-grade rule for arbitrary co-present gods.",
+      "quote": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 13665,
+        "text": "子午月值月煞己亥月值刼煞寅月值月刑申月值平日其凶皆重於月害故從重論"
+      },
+      "activation": "No universal worst-grade fallback labelled canonical."
+    }
+  ],
+  "scoringReady": false,
+  "editorialCorrections": [
+    {
+      "detail": "Initial visual reading mistook the 月害 中/次 divider for a merged cell. Second scan confirms separate cells; 66 cells recorded before freeze. This is an authoring correction, not a source conflict."
+    },
+    {
+      "detail": "After v1 freeze at 08e2aaf, magnified crops of both scan witnesses show 六害 and 月刑 in 月害 寅月 cell. The alleged 六合/六害 conflict P4-A02 was a reading error, now resolved. 月刑 lower cell also records 午月 月厭/德大會 rather than an inferred 月建 label. Canonical scoring and Golden expected grades unchanged.",
+      "previousVersion": "p4-vol10-authority-v1",
+      "previousCommit": "08e2aaf",
+      "resolvedIssue": "P4-A02",
+      "evidence": [
+        "docs/audits/sources/p4-vol10/n221.jpg",
+        "docs/audits/sources/p4-vol10/witness2-n221.jpg"
+      ],
+      "region": "月害 column 次 row; 月刑 column 下 row"
+    }
+  ]
+}

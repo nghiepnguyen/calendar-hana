@@ -1,0 +1,16 @@
+{
+  "version": "p4-context-bridge-lock-v1",
+  "parentLock": "p4-named-clauses-lock-v1",
+  "frozenAtCommit": "4099d88",
+  "reason": "Bridge subject presence, named pillar predicates and transitive named deferrals; parent locks and their expected values unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-context-bridge.json",
+      "sha256": "7e62cddb4ef97bb1b64f1c3cef6247db11acb25addd9ddab6ce36b69e56166ec"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-context-bridge.json",
+      "sha256": "9a599617a2e7a4c506d96985f9ff4a41a72eb65dab8e82eb834d5835406574d0"
+    }
+  ]
+}

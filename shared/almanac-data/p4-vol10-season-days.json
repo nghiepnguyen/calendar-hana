@@ -1,0 +1,142 @@
+{
+  "version": "p4-season-days-v1",
+  "status": "AUDIT_ONLY_PRESENCE_OPERANDS",
+  "parentLock": "p4-deferral-coverage-lock-v1",
+  "scoringReady": false,
+  "sources": {
+    "04": {
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    "05": {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+    }
+  },
+  "season": "Month Jian 寅卯辰 = 春, 巳午未 = 夏, 申酉戌 = 秋, 亥子丑 = 冬",
+  "days": {
+    "王日": {
+      "branches": {
+        "春": "寅",
+        "夏": "巳",
+        "秋": "申",
+        "冬": "亥"
+      },
+      "source": [
+        {
+          "volume": "卷05",
+          "text": "王日者春寅夏巳秋申冬亥",
+          "offset": 6824
+        },
+        {
+          "volume": "卷05",
+          "text": "至王日向為寅巳申亥官日向為卯午酉子後人兩易其位",
+          "offset": 7291
+        },
+        {
+          "volume": "卷05",
+          "text": "然細繹其理不如舊說為高",
+          "offset": 7332
+        }
+      ],
+      "reading": "The 歴例 notes 今易為官日/今易為王日; 協紀's 按 keeps the old assignment, used here."
+    },
+    "官日": {
+      "branches": {
+        "春": "卯",
+        "夏": "午",
+        "秋": "酉",
+        "冬": "子"
+      },
+      "source": [
+        {
+          "volume": "卷05",
+          "text": "官日者春卯夏午秋酉冬子",
+          "offset": 6853
+        }
+      ]
+    },
+    "相日": {
+      "branches": {
+        "春": "巳",
+        "夏": "申",
+        "秋": "亥",
+        "冬": "寅"
+      },
+      "source": [
+        {
+          "volume": "卷05",
+          "text": "相日者春巳夏申秋亥冬寅",
+          "offset": 6882
+        }
+      ]
+    },
+    "民日": {
+      "branches": {
+        "春": "午",
+        "夏": "酉",
+        "秋": "子",
+        "冬": "卯"
+      },
+      "source": [
+        {
+          "volume": "卷05",
+          "text": "民日者春午夏酉秋子冬卯",
+          "offset": 6893
+        }
+      ],
+      "crossCheck": "xieji-god-tables dan_nhat"
+    },
+    "守日": {
+      "branches": {
+        "春": "辰",
+        "夏": "未",
+        "秋": "戌",
+        "冬": "丑"
+      },
+      "source": [
+        {
+          "volume": "卷05",
+          "text": "又按歴例以春酉夏子秋卯冬午為守日以春辰夏未秋戌冬丑為牢日邵泰衢作歴神原始謂守與牢二字相近而訛易之則吉凶各以類聚且與五勝義恰符甚為有理今從之",
+          "offset": 7797
+        }
+      ],
+      "reading": "協紀 adopts 邵泰衢's swap: 守日 = 春辰夏未秋戌冬丑 (歴例's 春酉… becomes 牢日)."
+    },
+    "長生": {
+      "branches": {
+        "春": "亥",
+        "夏": "寅",
+        "秋": "巳",
+        "冬": "申"
+      },
+      "unknownMonths": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "source": [
+        {
+          "volume": "卷10",
+          "text": "寅申巳亥月值收日為月令長生",
+          "offset": 11351
+        },
+        {
+          "volume": "卷10",
+          "text": "葢亥寅申皆令星之長生",
+          "offset": 2979
+        },
+        {
+          "volume": "卷04",
+          "text": "木之長生在亥也木衰於辰生火於前火之長生在寅也火衰於未生金於前金生於巳也金衰於戌生水於前水生於申也",
+          "offset": 6460
+        }
+      ],
+      "reading": "月令/令星長生 by season. 季月 (土) is left unknown: the source also says 土與水同, so the 長生 of a 土 month is not fixed here. The 等第 table uses 長生 only in 寅申巳亥 months."
+    }
+  },
+  "limits": [
+    "Presence operands only; no 宜/忌 effect by themselves. 德大會 remains an uninterpreted label."
+  ]
+}

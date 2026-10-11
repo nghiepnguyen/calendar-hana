@@ -1,0 +1,1184 @@
+{
+  "version": "p4-vol10-god-classes-v2",
+  "status": "SOURCE_ROLE_MAPPING_LOCK_CANDIDATE",
+  "meaning": "Classes encode roles, not weights or fixed severity. Grade is conditional on month/context. Unknown class/precedence never supplies a conservative canonical rank.",
+  "deHeGodIds": ["thien_duc", "nguyet_duc", "thien_duc_hop", "nguyet_duc_hop"],
+  "deScope": "Exact 德合 expansion in named clauses. Bare 遇德 grade-wide scope remains unresolved; no automatic runtime inference.",
+  "bareDeResolved": false,
+  "items": [
+    {
+      "godId": "thien_duc",
+      "han": "天德",
+      "classes": ["de_he", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 341,
+          "text": "天德"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 341,
+          "text": "天德　月德　天德合　月德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣上冊進表章"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_duc",
+      "han": "月德",
+      "classes": ["de_he", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 344,
+          "text": "月德"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 341,
+          "text": "天德　月德　天德合　月德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣上冊進表章"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_duc_hop",
+      "han": "天德合",
+      "classes": ["de_he", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 347,
+          "text": "天德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 341,
+          "text": "天德　月德　天德合　月德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣上冊進表章"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_duc_hop",
+      "han": "月德合",
+      "classes": ["de_he", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 351,
+          "text": "月德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 341,
+          "text": "天德　月德　天德合　月德合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣上冊進表章"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_xa",
+      "han": "天赦",
+      "classes": ["she_yuan", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 393,
+          "text": "天赦"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3289,
+          "text": "天赦天願皆合干支取義其氣純其力大"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2661,
+          "text": "宜祭祀祈福求嗣上册進表章頒詔覃恩肆赦"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_nguyen",
+      "han": "天願",
+      "classes": ["she_yuan", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 417,
+          "text": "天願"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3289,
+          "text": "天赦天願皆合干支取義其氣純其力大"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2661,
+          "text": "宜祭祀祈福求嗣上册進表章頒詔覃恩肆赦"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_an",
+      "han": "月恩",
+      "classes": ["sheng_benefic", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 424,
+          "text": "月恩"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3457,
+          "text": "月恩四相時德皆月建所生之日"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3362,
+          "text": "宜祭祀祈福求嗣施恩封拜舉正直"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tu_tuong",
+      "han": "四相",
+      "classes": ["sheng_benefic", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 427,
+          "text": "四相"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3457,
+          "text": "月恩四相時德皆月建所生之日"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3362,
+          "text": "宜祭祀祈福求嗣施恩封拜舉正直"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thoi_duc",
+      "han": "時德",
+      "classes": ["sheng_benefic", "yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 430,
+          "text": "時德"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3457,
+          "text": "月恩四相時德皆月建所生之日"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3362,
+          "text": "宜祭祀祈福求嗣施恩封拜舉正直"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "dan_nhat",
+      "han": "民日",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 459,
+          "text": "民日"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 3834,
+          "text": "宜宴㑹結婚姻納采問名進人口般移開市立劵交易納財栽種牧養納畜"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tam_hop",
+      "han": "三合",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 476,
+          "text": "三合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 4054,
+          "text": "宜慶賜賞賀宴㑹結婚姻納采問名嫁娶進人口裁製"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_hy",
+      "han": "天喜",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 730,
+          "text": "天喜"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5701,
+          "text": "又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "luc_hop",
+      "han": "六合",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 818,
+          "text": "六合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6351,
+          "text": "宜宴㑹結婚姻嫁娶進人口經絡醞釀立劵交易納財納畜安葬"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "ngu_hop",
+      "han": "五合",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 932,
+          "text": "五合"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6420,
+          "text": "宜宴㑹結婚姻立劵交易"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bat_tuong",
+      "han": "不將",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 866,
+          "text": "不將"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6714,
+          "text": "宜嫁娶"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "ngu_phu",
+      "han": "五富",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 842,
+          "text": "五富"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6508,
+          "text": "宜經絡醞釀開市立劵交易納財開倉庫出貨財栽種牧養納畜"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_thuong",
+      "han": "天倉",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 849,
+          "text": "天倉"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6615,
+          "text": "宜進人口納財納畜"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "giai_than",
+      "han": "解神",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 908,
+          "text": "解神"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6891,
+          "text": "宜上表章陳詞訟解除沐浴整容剃頭整手足甲求醫療病"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tru_than",
+      "han": "除神",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 925,
+          "text": "除神"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 4902,
+          "text": "宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "pho_ho",
+      "han": "普護",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 889,
+          "text": "普䕶"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "phuc_sinh",
+      "han": "福生",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 892,
+          "text": "福生"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thanh_tam",
+      "han": "聖心",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 895,
+          "text": "聖心"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "ich_hau",
+      "han": "益後",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 900,
+          "text": "益後"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tuc_the",
+      "han": "續世",
+      "classes": ["yi_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 903,
+          "text": "續世"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2010,
+          "text": "宜祭祀祈福求嗣"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_pha",
+      "han": "月破",
+      "classes": ["specific_chain_outside_grade_table"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1082,
+          "text": "月破"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 8440,
+          "text": "月破為月建之衝又為月建氣絶之地"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "kiep_sat",
+      "han": "刼煞",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1223,
+          "text": "刼煞"
+        }
+      ],
+      "gradeSubject": "劫煞",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tai_sat",
+      "han": "災煞",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1230,
+          "text": "災煞"
+        }
+      ],
+      "gradeSubject": "災煞",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_sat",
+      "han": "月煞",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1262,
+          "text": "月煞"
+        }
+      ],
+      "gradeSubject": "月煞",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_hinh",
+      "han": "月刑",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1296,
+          "text": "月刑"
+        }
+      ],
+      "gradeSubject": "月刑",
+      "balancingCandidate": true,
+      "unresolved": ["P4-A03"],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_hai",
+      "han": "月害",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1303,
+          "text": "月害"
+        }
+      ],
+      "gradeSubject": "月害",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nguyet_yem",
+      "han": "月厭",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1320,
+          "text": "月厭"
+        }
+      ],
+      "gradeSubject": "月厭",
+      "balancingCandidate": true,
+      "unresolved": ["P4-A03"],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "yem_doi",
+      "han": "厭對",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1354,
+          "text": "厭對"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 15371,
+          "text": "與天德月德天德合月德合天赦併則不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "dai_thoi",
+      "han": "大時",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1388,
+          "text": "大時"
+        }
+      ],
+      "gradeSubject": "大時",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "thien_lai",
+      "han": "天吏",
+      "classes": ["contextual_grade_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1432,
+          "text": "天吏"
+        }
+      ],
+      "gradeSubject": "天吏",
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tu_phe",
+      "han": "四廢",
+      "classes": ["persistent_ji_in_named_scope"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1519,
+          "text": "四廢"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 17440,
+          "text": "與德合併猶忌與月破併諸事皆忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tu_ky",
+      "han": "四忌",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1524,
+          "text": "四忌"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 17619,
+          "text": "惟正月乙亥與天願併止忌安撫邊境選將訓兵出師餘皆不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tu_cung",
+      "han": "四窮",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1527,
+          "text": "四窮"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 17619,
+          "text": "惟正月乙亥與天願併止忌安撫邊境選將訓兵出師餘皆不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "ngu_mo",
+      "han": "五墓",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1592,
+          "text": "五墓"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 18173,
+          "text": "五月十一月與月德併則不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "ngu_ly",
+      "han": "五離",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1711,
+          "text": "五離"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 19501,
+          "text": "與天德月德天德合月德合天赦三合六合併則不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "vang_vong",
+      "han": "往亡",
+      "classes": ["persistent_ji_in_named_scope"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1694,
+          "text": "徃亡"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 19024,
+          "text": "按徃亡本不為凶第取三合溺於所生而無尅制之義有徃而不返之象故所忌如此然世俗避之惟謹雖值德合赦願不能無疑故與併猶忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bat_chuyen",
+      "han": "八專",
+      "classes": ["conditional_ji_subject"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1728,
+          "text": "八專"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 19698,
+          "text": "與天願併止忌安撫邊境選將訓兵出師餘不忌"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "quy_ky",
+      "han": "歸忌",
+      "classes": ["persistent_ji_in_named_scope"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1670,
+          "text": "歸忌"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 18862,
+          "text": "忌般移逺廻"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 18841,
+          "text": "　　{{SK anchor|歸忌}}\n　　忌般移逺廻\n　　{{SK anchor|與德合赦願併猶忌}}"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": true,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "dinh_nhat",
+      "han": "Ngày Đinh (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21537,
+          "text": "丁日忌剃頭"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "giap_nhat",
+      "han": "Ngày Giáp (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21523,
+          "text": "甲日忌開倉庫出貨財"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "at_nhat",
+      "han": "Ngày Ất (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21532,
+          "text": "乙日忌栽種"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_dan",
+      "han": "Ngày Dần (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21562,
+          "text": "寅日忌祭祀"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_dau",
+      "han": "Ngày Dậu (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21594,
+          "text": "酉日忌宴㑹"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_than",
+      "han": "Ngày Thân (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21589,
+          "text": "申日忌安牀"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_mui",
+      "han": "Ngày Mùi (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21582,
+          "text": "未日忌求醫療病"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_ty",
+      "han": "Ngày Tỵ (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21572,
+          "text": "巳日忌出行"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "bach_ky_hoi",
+      "han": "Ngày Hợi (Bách Kỵ)",
+      "classes": ["protected_baiji"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21599,
+          "text": "亥日忌嫁娶"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "nhan_than_toc",
+      "han": "Nhân Thần (ngày 12, 15 âm)",
+      "classes": ["protected_named_taboo"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 21411,
+          "text": "十二日在髮際十五日在徧身忌剃頭"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": [],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    },
+    {
+      "godId": "tho_vuong_dung_su",
+      "han": "Thổ Vương Dụng Sự",
+      "classes": ["source_dependent_out_of_scope"],
+      "classOrigin": "encoding_of_source_role_not_numeric_rank",
+      "canonicalRank": null,
+      "sourceRefs": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 1819,
+          "text": "土王用事"
+        }
+      ],
+      "gradeSubject": null,
+      "balancingCandidate": false,
+      "unresolved": ["S1"],
+      "note": "Role membership alone never grants blanket exemption; use heading-specific clauses and exceptions. Non-four 德 gods are not implicitly in 德合."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "baseline": "1fc9940bdcb1863b5f41b64eaff735e4be79e59b",
+  "phase": "PRE_SCORING",
+  "frozenSourceCommit": "19e8673",
+  "sourceGridCells": 66,
+  "sourceRoleGodIds": 53,
+  "annotationStates": 4,
+  "puzhuLines": 28,
+  "localGradeFixtures": 132,
+  "contextInputsWithoutScoreOracle": 720,
+  "remainingIssues": [
+    "P4-A03 (德願; 德大會 label)",
+    "又為X lists as separate scopes (open)",
+    "unmodeled 卷十一 凶 and 11 unaudited 宜 operands"
+  ],
+  "scoringReady": false,
+  "fullScoringGoldenReady": false,
+  "productionFlagAdded": false,
+  "rollbackFlagImplemented": false,
+  "runtimeScoreDiff": "Not applicable: no scoring implementation/activation; main client bundle byte-identical to deployed baseline. Full P4 diff report still required before go-live.",
+  "bundle": {
+    "path": "dist/assets/index-CeLinrvj.js",
+    "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969",
+    "matchesBaseline": true,
+    "baseline": "main 1fc9940 (PR #49)"
+  },
+  "checks": {
+    "unitFiles": 173,
+    "unitTests": 3265,
+    "p4GateTests": 313,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "mutationCaught": 3,
+    "graphifyUpdate": "PASS"
+  },
+  "note": "Full unit and 236-test P4 gate passed after the context bridge. Helpers and bridge are audit-only; grid cell selection, heading annotation, scoring oracle and activation flag remain incomplete.",
+  "namedClauseAudit": {
+    "lockVersion": "p4-named-clauses-lock-v1",
+    "pillarGroups": 18,
+    "pillarPairs": 67,
+    "namedDeferralGroups": 16,
+    "partialOracleCases": 26,
+    "newHelperTests": 49,
+    "productionImport": false,
+    "mutationCaught": 3,
+    "audit": "docs/audits/p4-vol10-named-clauses.md"
+  },
+  "contextBridge": {
+    "lockVersion": "p4-context-bridge-lock-v2",
+    "oracleCommit": "67c442b",
+    "subjects": 13,
+    "unknownSubjects": [],
+    "oracleCases": 13,
+    "newTests": 22,
+    "firedNamedEdges": 195,
+    "undeterminedEdges": 0,
+    "contextsWithUndetermined": 0,
+    "contextsWithPillarRules": 59,
+    "productionImport": false,
+    "mutationCaught": 6,
+    "audit": "docs/audits/p4-vol10-context-bridge.md",
+    "jieShaSource": "卷06 李鼎祚曰正月起亥逆行四孟"
+  },
+  "gradeResolution": {
+    "lockVersion": "p4-grade-resolution-lock-v2",
+    "oracleCommit": "4f4cea7",
+    "oracleCases": 13,
+    "newTests": 21,
+    "cellPerSubjectMonth": "verified 11×12",
+    "conflicts": 0,
+    "agree": 558,
+    "xiangdi": 100,
+    "noGridColumn": 120,
+    "undetermined": 2,
+    "mutationCaught": 6,
+    "readingCorrections": [
+      "yan:xia 月刑 belongs to 午月"
+    ],
+    "errata": [
+      "bridge v1/v2 kiep_sat note"
+    ],
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-grade-resolution.md",
+    "deYuanDecision": "Owner conditional convention 德合+天願 not applied: 未月戊午 has no 德合 god; stays undetermined"
+  },
+  "headingAnnotation": {
+    "lockVersion": "p4-heading-annotation-lock-v1",
+    "oracleCommit": "d36e2aa",
+    "oracleCases": 10,
+    "newTests": 16,
+    "headings": 74,
+    "mutationCaught": 6,
+    "productionFinding": "月破 子午未申 與德合併 仍忌解除求醫療病破屋壞垣: production still_avoid uses base list, medical/demolition not_listed (5 contexts); not fixed",
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-heading-annotation.md"
+  },
+  "dayComposition": {
+    "lockVersion": "p4-day-composition-lock-v1",
+    "oracleCommit": "3d03947",
+    "oracleCases": 7,
+    "newTests": 13,
+    "headings": 29,
+    "propagationApplied": 0,
+    "propagationBlocked": 27,
+    "mutationCaught": 6,
+    "a04aFix": "立劵/立券 canonical key",
+    "productionImport": false,
+    "audit": "docs/audits/p4-vol10-day-composition.md"
+  },
+  "deferralCoverage": {
+    "lockVersion": "p4-deferral-coverage-lock-v1",
+    "artifactCommit": "0e953c8",
+    "coveredEdges": 12,
+    "uncoveredBaseEdges": [
+      "jian_xing",
+      "shi_xing",
+      "bi_sha",
+      "zai_po (covered after resolution)"
+    ],
+    "mutationCaught": 4,
+    "a04aFix": "忌同刼煞 lists for 月煞/災煞",
+    "provenance": "expected fixed after measurement, hand-checked",
+    "audit": "docs/audits/p4-vol10-deferral-coverage.md"
+  },
+  "seasonDays": {
+    "lockVersion": "p4-season-days-lock-v1",
+    "oracleCommit": "4f447f8",
+    "oracleCases": 12,
+    "readings": [
+      "王/官 old assignment",
+      "守日 = 辰未戌丑 (邵泰衢 swap)",
+      "長生 by 令星 season, 季月 unknown"
+    ],
+    "alternativeReadingsRejected": 3,
+    "a04bDecisive": 5,
+    "audit": "docs/audits/p4-vol10-season-days.md"
+  },
+  "codeReview": {
+    "pr": 48,
+    "findings": 10,
+    "fixed": [
+      "uncovered heading lifted by inference",
+      "propagation over undetermined",
+      "德願 rule order",
+      "input validation order",
+      "suppressedBy without present removal",
+      "subject→entry map duplicated",
+      "propagation out-of-scope reporting",
+      "月破 reading aligned with production (PR #49)"
+    ],
+    "deferred": [
+      "repeated context computation",
+      "duplicated constants"
+    ]
+  }
+}

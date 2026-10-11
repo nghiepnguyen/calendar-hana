@@ -1,0 +1,158 @@
+{
+  "version": "p4-context-bridge-v2",
+  "status": "AUDIT_ONLY_PRESENCE_AND_DEFERRAL_BRIDGE",
+  "parentLock": "p4-context-bridge-lock-v1",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "subjects": [
+    {
+      "han": "月建",
+      "presence": {
+        "officer": "kien"
+      }
+    },
+    {
+      "han": "月破",
+      "presence": {
+        "officer": "pha"
+      }
+    },
+    {
+      "han": "平日",
+      "presence": {
+        "officer": "binh"
+      }
+    },
+    {
+      "han": "收日",
+      "presence": {
+        "officer": "thu"
+      }
+    },
+    {
+      "han": "閉日",
+      "presence": {
+        "officer": "be"
+      }
+    },
+    {
+      "han": "刼煞",
+      "presence": {
+        "branchByMonthJian": {
+          "targets": "亥申巳寅亥申巳寅亥申巳寅",
+          "order": "Month Jian 寅 卯 辰 巳 午 未 申 酉 戌 亥 子 丑"
+        },
+        "source": [
+          {
+            "volume": "卷06",
+            "text": "李鼎祚曰正月起亥逆行四孟",
+            "offset": 2325
+          },
+          {
+            "volume": "卷06",
+            "text": "按月刼煞義與嵗刼煞同",
+            "offset": 2352
+          }
+        ],
+        "vol10Check": "月害 巳亥 → 刼煞 and 收日 寅申巳亥 → 刼煞 name co-present days; both agree with this rule",
+        "replaces": "v1 unknown: production kiep_sat still comes from the Ngọc Hạp star table and is not a P4 operand"
+      }
+    },
+    {
+      "han": "災煞",
+      "presence": {
+        "monthlySha": "zai_sha"
+      }
+    },
+    {
+      "han": "月煞",
+      "presence": {
+        "monthlySha": "yue_sha"
+      }
+    },
+    {
+      "han": "月刑",
+      "presence": {
+        "monthlySha": "yue_xing"
+      }
+    },
+    {
+      "han": "月害",
+      "presence": {
+        "xiejiGod": "nguyet_hai"
+      }
+    },
+    {
+      "han": "月厭",
+      "presence": {
+        "monthlySha": "yue_yan"
+      }
+    },
+    {
+      "han": "大時",
+      "presence": {
+        "xiejiGod": "dai_thoi"
+      }
+    },
+    {
+      "han": "天吏",
+      "presence": {
+        "xiejiGod": "thien_lai"
+      }
+    }
+  ],
+  "pillarClausePredicate": "Month Jian + day pillar exactly as the clause lists them; the clause states no further presence term. Which entry's annotation scope a match transforms is still resolved by the caller.",
+  "deAsJian": [
+    {
+      "ruleIds": [
+        "both_errors"
+      ],
+      "source": {
+        "text": "丙壬只作建論不作德論",
+        "offset": 14833
+      }
+    },
+    {
+      "ruleIds": [
+        "thin_year",
+        "pursuit"
+      ],
+      "source": {
+        "text": "嵗薄逐陣則取二建將合而先合始分而未分為義故與辰戌己亥月月厭例同德作建論不作德論故又與子午月例同",
+        "offset": 15011
+      }
+    },
+    {
+      "ruleIds": [
+        "yang_error",
+        "yin_error"
+      ],
+      "source": {
+        "text": "陽建疊陽建為陽錯隂建疊隂建為隂錯故德作建論不作德論與厭建常例同",
+        "offset": 15079
+      }
+    },
+    {
+      "ruleIds": [
+        "both_errors"
+      ],
+      "source": {
+        "text": "子午月二建併又疊同建之干為隂陽俱錯故德作建論不作德論與子午月月厭例同",
+        "offset": 15110
+      }
+    }
+  ],
+  "limits": [
+    "Presence of the 13 table subjects and named deferral paths only; no 等第 cell selection, no grade, no heading annotation, no score.",
+    "A deferral fires only when its subject is present; a target whose presence is unknown would leave the edge undetermined, never absent. v2 has no unknown subject.",
+    "deAsJian records that 德 on these pillars is not counted as 德; it does not say which grade results. A03 stays open until the grid predicates consume it."
+  ],
+  "sources": {
+    "vol06": {
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19",
+      "url": "https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/卷06",
+      "note": "Same raw as the SHA-1 prefix a9ab67896fc9 recorded in xieji-god-definitions.json"
+    }
+  }
+}

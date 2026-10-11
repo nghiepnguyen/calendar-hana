@@ -1,0 +1,289 @@
+{
+  "version": "p4-grade-resolution-v1",
+  "status": "AUDIT_ONLY_GRID_CELL_AND_NAMED_DE_GROUP",
+  "parentLock": "p4-context-bridge-lock-v2",
+  "sourceRawSha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "scoringReady": false,
+  "gridPredicate": "Each 等第 column assigns every Month Jian to exactly one cell; the cell's listed partners describe what co-occurs with the subject in that month. Selection is (subject, Month Jian); verified by test over 11 columns × 12 months, not assumed.",
+  "deRule": "Bare 遇德 of the grade table is resolved per (subject, month) to the gods the subject's own entry clause names for that month (or the deferral terminal's clause). No global 德 boolean; a clause without a named group is unconditional.",
+  "subjectEntries": {
+    "月建": "yue_jian",
+    "月破": "yue_po",
+    "平日": "ping_ri",
+    "收日": "shou_ri",
+    "閉日": "bi_ri",
+    "刼煞": "jie_sha",
+    "災煞": "zai_sha",
+    "月煞": "yue_sha",
+    "月刑": "yue_xing",
+    "月厭": "yue_yan",
+    "月害": "yue_hai",
+    "大時": "da_shi",
+    "天吏": "tian_li"
+  },
+  "gridColumns": {
+    "平日": "ping",
+    "收日": "shou",
+    "閉日": "bi",
+    "刼煞": "jie",
+    "災煞": "zai",
+    "月煞": "sha",
+    "月刑": "xing",
+    "月害": "hai",
+    "月厭": "yan",
+    "大時": "shi",
+    "天吏": "li"
+  },
+  "noGridColumn": {
+    "subjects": [
+      "月建",
+      "月破"
+    ],
+    "source": {
+      "text": "除建破等日條例簡易及專忌之日無庸分别外餘分為六等",
+      "offset": 9663
+    }
+  },
+  "entries": [
+    {
+      "id": "yue_hai",
+      "han": "月害",
+      "source": {
+        "text": "卯酉月值除日守日丑未月值執日大時與天德月德併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與二德併如常例辰戌月值閉日官日天吏與天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與徳合併如常例子午月值月煞己亥月值刼煞寅月值月刑申月值平日各從重論",
+        "offset": 13374
+      },
+      "clauses": [
+        {
+          "months": [
+            "卯",
+            "酉",
+            "丑",
+            "未"
+          ],
+          "with": [
+            "天德",
+            "月德"
+          ],
+          "effect": "only_avoid",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "辰",
+            "戌"
+          ],
+          "with": [
+            "天德合",
+            "月德合"
+          ],
+          "effect": "cancel_both",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "子",
+            "午"
+          ],
+          "effect": "defer",
+          "to": "月煞"
+        },
+        {
+          "months": [
+            "巳",
+            "亥"
+          ],
+          "effect": "defer",
+          "to": "刼煞"
+        },
+        {
+          "months": [
+            "寅"
+          ],
+          "effect": "defer",
+          "to": "月刑"
+        },
+        {
+          "months": [
+            "申"
+          ],
+          "effect": "defer",
+          "to": "平日"
+        }
+      ],
+      "readings": [
+        "己亥月 read as 巳亥, as in the named-clause artifact"
+      ]
+    },
+    {
+      "id": "da_shi",
+      "han": "大時",
+      "source": {
+        "text": "寅申巳亥月值除日官日辰戌月值執日六合止忌安撫邊境選將訓兵出師餘皆不忌丑未月值執日六害與二德併亦止忌安撫邊境選將訓兵出師餘皆不忌不與二德併如常例子午卯酉月值收日子午月與月德合併酉月與月德併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例卯月又值月刑從月刑論",
+        "offset": 15670
+      },
+      "clauses": [
+        {
+          "months": [
+            "寅",
+            "申",
+            "巳",
+            "亥",
+            "辰",
+            "戌"
+          ],
+          "effect": "only_avoid"
+        },
+        {
+          "months": [
+            "丑",
+            "未"
+          ],
+          "with": [
+            "天德",
+            "月德"
+          ],
+          "effect": "only_avoid",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "子",
+            "午"
+          ],
+          "with": [
+            "月德合"
+          ],
+          "effect": "cancel_both",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "酉"
+          ],
+          "with": [
+            "月德"
+          ],
+          "effect": "cancel_both",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "卯"
+          ],
+          "effect": "defer",
+          "to": "月刑"
+        }
+      ],
+      "readings": [
+        "二德 = 天德, 月德 (the 月害 clause spells the same pair out)"
+      ]
+    },
+    {
+      "id": "tian_li",
+      "han": "天吏",
+      "source": {
+        "text": "寅申巳亥月值危日與天德月德天德合月德合併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德合併如常例辰戌丑未月值閉日與德合赦願併凡所忌者則不註宜所宜者亦不註忌不與德合赦願併如常例午卯酉月值平日從平日論子月又值月刑從月刑論",
+        "offset": 16220
+      },
+      "clauses": [
+        {
+          "months": [
+            "寅",
+            "申",
+            "巳",
+            "亥"
+          ],
+          "with": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合"
+          ],
+          "effect": "only_avoid",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "辰",
+            "戌",
+            "丑",
+            "未"
+          ],
+          "with": [
+            "天德",
+            "月德",
+            "天德合",
+            "月德合",
+            "天赦",
+            "天願"
+          ],
+          "effect": "cancel_both",
+          "otherwise": "as_usual"
+        },
+        {
+          "months": [
+            "午",
+            "卯",
+            "酉"
+          ],
+          "effect": "defer",
+          "to": "平日"
+        },
+        {
+          "months": [
+            "子"
+          ],
+          "effect": "defer",
+          "to": "月刑"
+        }
+      ],
+      "readings": [
+        "德合赦願 = virtueGroups 德合 + 赦願 of the production 卷十 artifact"
+      ]
+    }
+  ],
+  "actionEffect": {
+    "only_yi": [
+      "only_avoid"
+    ],
+    "only_ji": [
+      "as_usual"
+    ],
+    "all_taboo": [
+      "avoid_all"
+    ],
+    "both_present": [
+      "cancel_both"
+    ],
+    "bothPresentNote": "Only the two grade branches the table itself calls 相抵 (上次 without 德, 次 with 德) carry 從宜亦從忌; every specific clause on those branches reads 凡所忌者則不註宜所宜者亦不註忌, and 鋪註 says 凡吉凶相抵不註宜亦不註忌. Recorded as consistency 'xiangdi', not merged: deciding the final annotation is A04.",
+    "sources": [
+      {
+        "text": "上次吉足抵凶遇德從宜不從忌不遇從宜亦從忌",
+        "offset": 9698
+      },
+      {
+        "text": "中次凶勝於吉遇德始相抵從宜亦從忌不遇從忌不從宜",
+        "offset": 9741
+      },
+      {
+        "text": "凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌",
+        "offset": 21790
+      }
+    ]
+  },
+  "pillarOverrides": {
+    "deAsJian": "Remove 天德/月德/天德合/月德合 from the named group (德作建論不作德論); 天赦/天願/月恩/四相 stay.",
+    "ignoredDeHe": "Remove the four 德合 gods (deHeGodIds).",
+    "ignoredDeYuan": "Membership of 德願 is not spelled out; if any god of the named group is present the result is undetermined."
+  },
+  "errata": [
+    {
+      "artifact": "p4-vol10-context-bridge.json, p4-vol10-context-bridge-v2.json",
+      "detail": "Both notes say production kiep_sat comes only from the Ngọc Hạp star table. Wrong: catHungAuthority (Phase 4D, Month Jian) already locks 刼煞 = 亥申巳寅…, identical to the 卷06 rule. Values unaffected; the locked files are left byte-identical and this test cross-checks the two sources."
+    }
+  ],
+  "limits": [
+    "Grade, named 德 group and clause effect only; no heading annotation, protected 猶忌 list, propagation, penalty or score.",
+    "avoid_all pillar clauses are reported beside the grade, not merged into it."
+  ]
+}

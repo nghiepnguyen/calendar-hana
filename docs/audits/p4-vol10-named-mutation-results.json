@@ -1,0 +1,21 @@
+{
+  "scope": "AUDIT_HELPERS_ONLY_NOT_SCORING",
+  "mutations": [
+    {
+      "mutation": "unknown_activates",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "unnamed_deferral",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "cancel_becomes_both",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true
+}

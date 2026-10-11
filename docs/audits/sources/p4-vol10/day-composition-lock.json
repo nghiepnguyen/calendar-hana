@@ -1,0 +1,16 @@
+{
+  "version": "p4-day-composition-lock-v1",
+  "parentLock": "p4-heading-annotation-lock-v1",
+  "frozenAtCommit": "3d03947",
+  "reason": "A04b day composition over modeled scopes; parent locks unchanged",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition.json",
+      "sha256": "453109d010542432ff829c6aad7c0899abde13ae5185c3843269c499fa185663"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-day-composition.json",
+      "sha256": "b85a966a503fca2795f057bfbfc924e0443d95622c7fdd632e6a23decf8b309b"
+    }
+  ]
+}

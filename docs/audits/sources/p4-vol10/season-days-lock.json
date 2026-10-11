@@ -1,0 +1,16 @@
+{
+  "version": "p4-season-days-lock-v1",
+  "parentLock": "p4-deferral-coverage-lock-v1",
+  "frozenAtCommit": "4f447f8",
+  "reason": "四時 days and 月令長生 presence operands",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-season-days.json",
+      "sha256": "b24fc7a0568431914fa36fb271f982f3d3f697212d22fcc7833a1db7b6948242"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-season-days.json",
+      "sha256": "3de51c583da8d6a4e97a6da22df85e109206f85531dba79071ebe288258b4973"
+    }
+  ]
+}

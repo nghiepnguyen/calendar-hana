@@ -1,0 +1,26 @@
+{
+  "scope": "AUDIT_A05_DEFERRAL_COVERAGE_ONLY_NOT_SCORING",
+  "mutations": [
+    {
+      "mutation": "uncovered_dropped",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "uncovered_overrides_target_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "same_as_ignored",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "target_list_as_subject",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true
+}
