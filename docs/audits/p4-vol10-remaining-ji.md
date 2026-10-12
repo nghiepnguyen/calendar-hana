@@ -53,13 +53,27 @@ Lệnh tái tạo: `P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test
 | 八風 | 卷05 歴例 / 按 khác nhau ở 春/秋 | **OWNER_ADOPTED** 2026-10-12: dùng 按, giữ 歴例 làm alternative |
 | 復日 | 歴例 gom cặp tháng; 地理新書 / 按 giải thích theo 本建令干 | **OWNER_ADOPTED**: 正甲、二乙、三戊、四丙、五丁、六己、七庚、八辛、九戊、十壬、十一癸、十二己 |
 | 重日 | 原文「己亥二日」, diễn giải sau nói 巳/亥 | **OWNER_ADOPTED**: hai chi 巳/亥, không phải một pillar 己亥 |
-| 天願 + 遊禍 | P3 source-locked 天願 = 巳月丙申/亥月壬寅; 卷06 遊禍 đúng là 申/寅 tại hai tháng ấy, nhưng 卷十 chú「天願不得與遊禍併」 | SOURCE_DEPENDENT; presence giữ P3, exception undetermined, raw 忌 giữ nguyên; owner giữ pending, không coi chú là lỗi nguồn; scan n182 đã xác nhận chú đúng bản text |
+| 天願 + 遊禍 | P3 source-locked 天願 = 巳月丙申/亥月壬寅; 卷06 遊禍 đúng là 申/寅 tại hai tháng ấy, nhưng 卷十 chú「天願不得與遊禍併」 | SOURCE_DEPENDENT; presence giữ P3, exception undetermined, raw 忌 giữ nguyên; owner giữ pending, không coi chú là lỗi nguồn; scan n182 đã xác nhận chú đúng bản text. **月表 witness**: cả hai thần đều có mặt; 十月壬寅 giữ 忌, 四月丙申 thì 諸事不忌 theo `puzhu:28`, nên có thể đóng mục này khi owner duyệt |
 | 每月十二日十五日 / 每月十五日 / 朔望日 | Context 720 chỉ Month Jian + pillar; chưa đưa operand ngày âm / phase chính xác vào API P4-B | UNSUPPORTED_OPERAND, không giả absent; cần mở rộng audit context và Golden trước code |
 | 土王用事後 | S1 vẫn SOURCE_DEPENDENT, không lấy quy ước cũ làm authority mới | UNSUPPORTED_OPERAND, tiếp tục S1 |
-| 天狗 | Nguồn 卷04 按 chỉ 申月戌日 ở 滿日; P1 được giữ scope riêng trong spec, chưa được owner nhập P4 | OWNER_SCOPE_PENDING, không coi mọi 滿日 là 天狗 |
-| 滿日 (求醫療病) | Inventory có nhưng chưa khóa đầy đủ entry 忌 / clause riêng | SOURCE_ENTRY_PENDING, không suy từ tên Trực |
+| 天狗 | Nguồn 卷04 按 chỉ 申月戌日 ở 滿日; P1 được giữ scope riêng trong spec, chưa được owner nhập P4 | OWNER_SCOPE_PENDING, không coi mọi 滿日 là 天狗. 月表: 七月庚戌 có 天狗, các 滿日 của 正月 thì không |
+| 滿日 (求醫療病) | Inventory có nhưng chưa khóa đầy đủ entry 忌 / clause riêng | SOURCE_ENTRY_PENDING, không suy từ tên Trực. 月表: 滿日 không có 德 thì 忌 求醫療病, nhưng 3 trang đã đọc đều có 厭對/招搖 nên chưa tách được |
 
 Quotes và offset của ba presence đã chốt: `sources/p4-vol10/remaining-ji-open-presence.json`. Các câu 卷十 và conflict P3 nằm trong artifact nguồn / `xieji-god-definitions.json`. Đã đọc trực tiếp [scan n182](https://archive.org/download/06067686.cn/page/n182_w1200.jpg): mục 遊禍 có chú **天願不得與遊禍併**. Ảnh gốc `sources/p4-vol10/youhuo-n182.jpg`, checksum/locator ở `youhuo-scan-lock.json`. OCR không đọc được, không dùng OCR làm oracle. Scan này xác nhận provenance của chú; không giải quyết mâu thuẫn với presence P3, nên giữ pending đúng quyết định owner.
+
+## Witness 月表 (卷二十–三十一)
+
+Đọc bằng mắt 17 trang ngày của 月表 (四庫全書, archive.org `06067692.cn`–`06067697.cn`; leaf n6+i ở quyển đầu, n73+i ở quyển sau, i tính từ 甲子). Ảnh, SHA-256 và bản đọc các cột: `sources/p4-vol10/yuebiao-witness-lock.json`, ảnh ở `sources/p4-vol10/yuebiao/`. Đây là witness, không dùng output evaluator và không đổi Golden. Test mới so presence của mọi scope đã xác định với danh sách 凶神 trên từng trang: **0 lệch**. Mutation bỏ 八風 khỏi trang 正月丁巳 bị test bắt.
+
+- **八風 theo 按**: 正月丁巳 và 七月丁亥 có; 正月己酉 và 七月辛未 (các ngày chỉ có trong 歴例) không có.
+- **復日 theo 本建令干**: 正月甲辰, 五月丁未, 七月庚戌 và 四月丙申/十月壬寅 có; 正月庚午, 七月甲子 và 三月己卯 (cặp của 歴例) không có.
+- **重日 theo chi 巳/亥**: có trên 乙亥, 丁巳, 丁亥 (không phải pillar 己亥).
+- Ngoại lệ đã mô hình: 五墓 + 月德 ở 午/子 (五月丙戌, 十一月壬辰) cho 嫁娶 vào 宜. 八專 + 天願 (五月丁未) cũng cho 嫁娶 vào 宜. 四窮 + 天願 (正月乙亥) cho 結婚姻/納采問名 vào 宜 nhưng vẫn 忌 嫁娶. 遊禍 + 月德合 (七月丁亥) vẫn 忌 (猶忌).
+- **天願 + 遊禍**: 月表 in **cả hai** thần trên 四月丙申 và 十月壬寅, nên presence P3 đúng với thực hành của chính sách. 十月壬寅 không có 德合 và in 忌 祭祀 祈福 求嗣 解除 求醫療病 開渠, tức 天願 không gỡ 遊禍. 四月丙申 có thêm 天德合 và không in 忌 nào. Lý do là 鋪註條例 cuối 卷十 (`puzhu:28`, offset 22630): 「…四月丙申…徳合與赦願所㑹之辰諸事不忌」. Chú 「天願不得與遊禍併」 không phải lỗi chép, nhưng 月表 không dùng nó để xoá presence.
+- **天狗**: có trên 七月庚戌 (申月戌, 滿日). 正月丙辰/甲辰/戊辰 (滿日, tháng khác) không có.
+- **滿日 求醫療病**: 正月甲辰/戊辰 (không có 德) 忌 求醫療病. 正月丙辰 (có 月德) cho nó vào 宜. Các trang này còn 厭對/招搖/九空, nên chưa tách được 忌 riêng của 滿日. Cần thêm một trang 滿日 không có các thần ấy.
+
+**Lỗ hổng mới**: `puzhu:28` đã được chép trong `p4-vol10-authority.json` nhưng không thuộc propagation inventory và evaluator không áp. TSV vẫn để 2025-05-27 (巳月丙申) ở `undetermined`. Muốn sửa phải viết Golden riêng cho 8 pillar của câu này trước, sau đó mới sửa code.
 
 Không chuyển roadmap sang mục 5 trước khi mục 4 đạt tiêu chí. 11 宜, P5 warehouse, full Golden, adapter OFF, migration và activation vẫn là các bước kế tiếp riêng.
 

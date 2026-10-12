@@ -5,6 +5,7 @@ import definitions from '../almanac-data/xieji-god-definitions.json'
 import art from '../almanac-data/p4-vol10-remaining-ji-v5.json'
 import golden from '../almanac-data/golden-p4-remaining-ji-v6.json'
 import scanLock from '../../docs/audits/sources/p4-vol10/youhuo-scan-lock.json'
+import yuebiaoLock from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock.json'
 import lock from '../../docs/audits/sources/p4-vol10/remaining-ji-lock.json'
 import goldenLockV6 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v6.json'
 import goldenLockV4 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v4.json'
@@ -23,6 +24,7 @@ describe('P4-B remaining 忌, audit only', () => {
     for (const f of [
       ...lock.files,
       ...scanLock.files,
+      ...yuebiaoLock.pages,
       ...lockV2.files,
       ...goldenLockV2.files,
       ...lockV3.files,
@@ -83,5 +85,21 @@ describe('P4-B remaining 忌, audit only', () => {
   it('rejects invalid context', () => {
     expect(() => resolveP4RemainingJi('X', '甲子')).toThrow(RangeError)
     expect(() => resolveP4RemainingJi('寅', '甲丑')).toThrow(RangeError)
+  })
+})
+
+describe('P4-B presence against the 月表 day pages (witness, read by eye)', () => {
+  it('lists a 凶神 on the page iff the scope is present', () => {
+    const misses: string[] = []
+    for (const page of yuebiaoLock.pages) {
+      const r = resolveP4RemainingJi(page.monthJian, page.pillar)
+      for (const [han, scope] of Object.entries(r.scopes)) {
+        if (scope.presence === 'unknown') continue
+        const listed = page.xiongShen.includes(han)
+        if (listed !== (scope.presence === 'present'))
+          misses.push(`${page.monthJian}${page.pillar} ${han}: page=${listed} model=${scope.presence}`)
+      }
+    }
+    expect(misses).toEqual([])
   })
 })
