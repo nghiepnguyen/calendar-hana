@@ -1,0 +1,145 @@
+{
+  "version": "golden-p4-remaining-ji-v2",
+  "independent": true,
+  "derivation": "Hand-derived from frozen raw text and P3 presence definitions, before evaluator code; source conflict stays unknown. Scope outcomes, not full-day scoring.",
+  "cases": [
+    {
+      "month": "寅",
+      "pillar": "乙亥",
+      "god": "四窮",
+      "headings": {
+        "嫁娶": "lifted",
+        "安葬": "lifted",
+        "開市": "lifted"
+      },
+      "note": "正月乙亥 天願 exception; military only"
+    },
+    {
+      "month": "卯",
+      "pillar": "乙亥",
+      "god": "四窮",
+      "headings": {
+        "嫁娶": "protected",
+        "開市": "protected"
+      },
+      "note": "same seasonal 四窮; no 正月 exception"
+    },
+    {
+      "month": "午",
+      "pillar": "丁未",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "lifted",
+        "結婚姻": "lifted"
+      },
+      "note": "五月 天願 丁未 lifts marriage only"
+    },
+    {
+      "month": "子",
+      "pillar": "癸丑",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "lifted"
+      },
+      "note": "十一月 天願 癸丑"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲寅",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "protected"
+      },
+      "note": "八專 without 天願"
+    },
+    {
+      "month": "午",
+      "pillar": "丙戌",
+      "god": "五墓",
+      "headings": {
+        "嫁娶": "lifted",
+        "般移": "lifted"
+      },
+      "note": "五月 丙 月德 exception"
+    },
+    {
+      "month": "巳",
+      "pillar": "丙戌",
+      "god": "五墓",
+      "headings": {
+        "嫁娶": "kept"
+      },
+      "note": "四月 outside month exception"
+    },
+    {
+      "month": "辰",
+      "pillar": "庚申",
+      "god": "四廢",
+      "headings": {
+        "嫁娶": "protected",
+        "掃舍宇": "not_listed"
+      },
+      "note": "四廢 present, 月破 absent (戌); no 諸事皆忌"
+    },
+    {
+      "month": "寅",
+      "pillar": "庚申",
+      "god": "四廢",
+      "headings": {
+        "嫁娶": "all_taboo"
+      },
+      "note": "spring 庚申 四廢 + 月破"
+    },
+    {
+      "month": "巳",
+      "pillar": "丙申",
+      "god": "遊禍",
+      "headings": {
+        "祈福": "undetermined"
+      },
+      "note": "天願 conflict already documented P3"
+    },
+    {
+      "month": "亥",
+      "pillar": "壬寅",
+      "god": "遊禍",
+      "headings": {
+        "求醫療病": "undetermined"
+      },
+      "note": "second 天願 conflict"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙巳",
+      "god": "遊禍",
+      "headings": {
+        "祈福": "protected",
+        "求醫療病": "protected"
+      },
+      "note": "遊禍 still taboo; no conflict"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙子",
+      "god": "觸水龍",
+      "headings": {
+        "乘船渡水": "protected"
+      },
+      "note": "fixed 丙子 taboo"
+    },
+    {
+      "month": "卯",
+      "pillar": "甲辰",
+      "god": "天賊",
+      "headings": {
+        "行幸遣使": "absent"
+      },
+      "note": "二月 天賊 子; not 辰"
+    }
+  ],
+  "parent": "golden-p4-remaining-ji-v1",
+  "correction": {
+    "classification": "GOLDEN_BUG",
+    "proof": "辰月 月破=戌 (辰+6); 庚申 四廢 but 申≠戌. 卷十 四廢 lists 嫁娶, not 掃舍宇. This correction changes no evaluator."
+  }
+}
