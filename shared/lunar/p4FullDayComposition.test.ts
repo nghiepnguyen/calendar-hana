@@ -3,6 +3,7 @@ import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import golden from '../almanac-data/golden-p4-remaining-ji-v8.json'
 import { resolveP4Day } from './p4DayComposition'
 import { resolveP4FullDay } from './p4FullDayComposition'
+import { getP4MoonPhase } from './p4LunarPhase'
 
 const B = '子丑寅卯辰巳午未申酉戌亥'
 const S = '甲乙丙丁戊己庚辛壬癸'
@@ -17,6 +18,11 @@ describe('P4-B composed day, audit only', () => {
     const r = resolveP4FullDay('寅', '甲寅')
     expect(r.headings['嫁娶']!.ji).toBe(true)
     expect(r.headings['嫁娶']!.protectedJi).toBe(true)
+  })
+  it('keeps the 土王 operand on demolition despite 壞/壊 heading normalization', () => {
+    const r = resolveP4FullDay('寅', '丙辰', { lunarDay: 11, phase: getP4MoonPhase('2025-01-15') })
+    expect(r.unresolvedJi['破屋壊垣']).toContain('土王用事後')
+    expect(r.headings['破屋壊垣']!.state).toBe('undetermined')
   })
   it('keeps missing source operands visible and blocks favourable inference', () => {
     // 寅丁卯: 除日 and 天德丁 prove 宜 medical, but lunar date/phase is missing.
@@ -77,7 +83,7 @@ import { getAlmanac } from './almanac'
 
 it('audits propagation on all 1095 real dates with explicit unresolved evidence', () => {
   const rows = [
-    'date\tlunar_day\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tunresolved\tpropagated_from\tblocked_by',
+    'date\tlunar_day\tphase\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tyi\tpuzhu_end\tdeath_defeat\tunresolved\tpropagated_from\tblocked_by',
   ]
   const counts = { dates: 0, headings: 0, lifted: 0, blocked: 0, unresolved: 0 }
   const dormant: Record<string, number> = {}
@@ -87,7 +93,7 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
     const month = B[a.selectionContext.MONTH_JIAN_BRANCH!]!
     const pillar = S[a.dayCanChi.can]! + B[a.dayCanChi.chi]!
     const lunarDay = a.selectionContext.LUNAR_DAY!
-    const r = resolveP4FullDay(month, pillar, { lunarDay })
+    const r = resolveP4FullDay(month, pillar, { lunarDay, phase: getP4MoonPhase(date) })
     counts.dates++
     for (const [id, present] of Object.entries(r.remaining.dormantPresence))
       dormant[id] = (dormant[id] ?? 0) + Number(present)
@@ -107,6 +113,7 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
         [
           date,
           lunarDay,
+          r.phaseScope.evidence!.phase,
           month,
           pillar,
           h,
@@ -114,6 +121,9 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
           d.state,
           d.ji,
           d.protectedJi,
+          d.yi ?? 'unknown',
+          r.puzhuEnd.suppressedYiHeadings.includes(h) ? r.puzhuEnd.pillarRuleIds.join('+') : '',
+          r.puzhuEnd.restoredJiHeadings.includes(h) ? r.puzhuEnd.restoredSubjects.join('+') : '',
           r.unresolvedJi[h]!.join('+'),
           'propagatedFrom' in d ? d.propagatedFrom : '',
           'propagationBlocked' in d ? d.propagationBlocked : '',

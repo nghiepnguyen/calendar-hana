@@ -2,6 +2,41 @@
   "scope": "P4_B_AUDIT_ONLY_PARTIAL",
   "mutations": [
     {
+      "mutation": "raw_inventory_heading_alias",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_phase_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "omit_quarters",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "phase_outside_coverage_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_death_defeat_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_suibao_yi_suppression",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "restore_death_defeat_every_day",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
       "mutation": "drop_lunar_day_ji",
       "caughtByAssertion": true,
       "exitCode": 1
@@ -74,8 +109,9 @@
   ],
   "restored": true,
   "targetHashes": {
-    "shared/lunar/p4FullDayComposition.ts": "9eebaa05e413a7dbb226efaf46baa19a7eb1d8a097fa77d03a808951713b312f",
-    "shared/lunar/p4RemainingJi.ts": "41881afd8c12e06af4a373664fd0374b8b1a7a1020cf4058d5d28c11b5110d40"
+    "shared/lunar/p4FullDayComposition.ts": "66685c8fa568e64714d900d354e4ac5d415fbab0a72bba5863de079876cb8c01",
+    "shared/lunar/p4RemainingJi.ts": "41881afd8c12e06af4a373664fd0374b8b1a7a1020cf4058d5d28c11b5110d40",
+    "shared/lunar/p4LunarPhase.ts": "b19e12e74f6d63dbc17bb237c8f81987c066c55bb78b914c5dc7b92d610f31e4"
   },
   "limits": "Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved."
 }

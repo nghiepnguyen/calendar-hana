@@ -1,16 +1,47 @@
+import phaseAuthority from '../almanac-data/p4-lunar-phase-authority-v1.json'
+import type { getP4MoonPhase } from './p4LunarPhase'
+import puzhuEndAuthority from '../almanac-data/p4-puzhu-end-v1.json'
 import lunarDayAuthority from '../almanac-data/p4-lunar-day-taboo-v1.json'
 import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import { applyP4Propagation, resolveP4Day } from './p4DayComposition'
+import { canonP4Heading, getP4BaseAvoid } from './p4HeadingAnnotation'
+import { splitHeadings } from './xiejiVol10Resolution'
+import { matchP4PillarRules } from './p4NamedClauses'
 import { resolveP4RemainingJi } from './p4RemainingJi'
+
+// Inventory labels and evaluated headings must use the same source spelling normalization.
+const jiInventory = new Map(
+  Object.entries(art.jiInventory).map(([h, tokens]) => [
+    canonP4Heading(splitHeadings(h)[0]!),
+    tokens,
+  ]),
+)
 
 /** Audit-only assembly before 鋪註. Existing partial oracle and production pipeline remain unchanged.
  * Unknown operands affect only their listed heading; proved 忌 stays in evidence. */
 export function resolveP4FullDay(
   month: string,
   pillar: string,
-  operands: { lunarDay?: number } = {},
+  operands: { lunarDay?: number; phase?: ReturnType<typeof getP4MoonPhase> } = {},
 ) {
-  const { lunarDay } = operands
+  const { lunarDay, phase } = operands
+  if (
+    phase &&
+    (phase.authorityId !== phaseAuthority.version ||
+      ![...phaseAuthority.phases, 'none', 'unknown'].includes(phase.phase))
+  )
+    throw new RangeError('Unrecognized phase authority or value')
+  const phaseScope = {
+    heading: phaseAuthority.heading,
+    source: phaseAuthority.source,
+    evidence: phase,
+    presence:
+      !phase || phase.phase === 'unknown'
+        ? 'unknown'
+        : phase.phase === 'none'
+          ? 'absent'
+          : 'present',
+  }
   if (lunarDay !== undefined && (!Number.isInteger(lunarDay) || lunarDay < 1 || lunarDay > 30))
     throw new RangeError('Invalid lunar day')
   const lunarDayScopes = Object.fromEntries(
@@ -28,6 +59,25 @@ export function resolveP4FullDay(
   const base = resolveP4Day(month, pillar)
   const remaining = resolveP4RemainingJi(month, pillar)
   const days = { ...base.prePropagationHeadings }
+  const pillarRuleIds = matchP4PillarRules(month, pillar, true)
+    .rules.filter((r) => puzhuEndAuthority.suppressYiRuleIds.includes(r.id))
+    .map((r) => r.id)
+  const deathDefeat = pillarRuleIds.length > 0 || remaining.scopes['四廢']?.presence === 'present'
+  const restoredSubjects = deathDefeat
+    ? puzhuEndAuthority.deathDefeatSubjects.filter((subject) => base.subjects.includes(subject))
+    : []
+  const restoredJiHeadings = new Set(
+    restoredSubjects.flatMap((subject) => [...getP4BaseAvoid(subject, month)]),
+  )
+  const suppressedYiHeadings = pillarRuleIds.length
+    ? getP4BaseAvoid('月厭', month)
+    : new Set<string>()
+  const puzhuEnd = {
+    pillarRuleIds,
+    restoredSubjects,
+    restoredJiHeadings: [...restoredJiHeadings],
+    suppressedYiHeadings: [...suppressedYiHeadings],
+  }
   const unresolvedJi: Record<string, string[]> = {}
   // 卷十 puzhu:28 「…德合與赦願所會之辰諸事不忌」: listed days drop every 忌, 百忌 included (月表
   // prints no 忌 on them). Owner corrected the 六月 item to 未月甲午 from the 月表 witness.
@@ -59,16 +109,19 @@ export function resolveP4FullDay(
     '咸池',
     '無',
   ])
-  for (const [h, initial] of Object.entries(days)) {
+  for (const [h, original] of Object.entries(days)) {
+    const suppressedYi = suppressedYiHeadings.has(h) || restoredJiHeadings.has(h)
+    const initial = suppressedYi ? { ...original, yi: false } : original
     const states = Object.values(remaining.scopes).map((s) => s.headings[h])
     const unresolved = Object.entries(remaining.scopes)
       .filter(([, s]) => s.headings[h] === 'undetermined')
       .map(([g]) => g)
-    const tokens = (art.jiInventory as Record<string, string[]>)[h] ?? []
+    const tokens = jiInventory.get(h) ?? []
     for (const token of tokens)
       if (
         !(token in remaining.scopes) &&
         !known.has(token) &&
+        !(token === phaseAuthority.inventoryToken && phaseScope.presence !== 'unknown') &&
         !(token in lunarDayScopes && lunarDayScopes[token]!.presence !== 'unknown') &&
         !/^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]日$/.test(token)
       )
@@ -91,12 +144,15 @@ export function resolveP4FullDay(
     const lunarJi = Object.values(lunarDayScopes).some(
       (scope) => scope.heading === h && scope.presence === 'present',
     )
-    const extraJi = lunarJi || states.some((s) => s === 'kept' || s === 'protected')
+    const phaseJi = phaseScope.heading === h && phaseScope.presence === 'present'
+    const deathDefeatJi = restoredJiHeadings.has(h)
+    const extraJi =
+      phaseJi || deathDefeatJi || lunarJi || states.some((s) => s === 'kept' || s === 'protected')
     const pendingProvedJi = Object.values(remaining.scopes).some(
       (s) => s.presence === 'present' && s.headings[h] === 'undetermined',
     )
     const ji = initial.ji || extraJi || pendingProvedJi
-    const protectedJi = lunarJi || initial.protectedJi || states.includes('protected')
+    const protectedJi = phaseJi || lunarJi || initial.protectedJi || states.includes('protected')
     const ambiguous =
       initial.state === 'undetermined' ||
       unresolved.length > 0 ||
@@ -109,13 +165,17 @@ export function resolveP4FullDay(
           ? initial.yi
             ? 'both_present'
             : 'only_ji'
-          : initial.state
+          : suppressedYi && initial.state !== 'neither_recorded'
+            ? 'not_recorded'
+            : initial.state
     days[h] = { ...initial, ji, protectedJi, state }
   }
   return {
     ...base,
     remaining,
     lunarDayScopes,
+    phaseScope,
+    puzhuEnd,
     ...(dayRule ? { dayRule } : {}),
     prePropagationHeadings: days,
     headings: applyP4Propagation(days),

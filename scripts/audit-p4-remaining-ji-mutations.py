@@ -6,9 +6,16 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 mutations = [
- ('drop_lunar_day_ji', 'p4FullDayComposition.ts', 'const extraJi = lunarJi ||', 'const extraJi = false ||'),
- ('drop_lunar_day_protection', 'p4FullDayComposition.ts', 'const protectedJi = lunarJi ||', 'const protectedJi = false ||'),
- ('missing_lunar_day_absent', 'p4FullDayComposition.ts', "? 'unknown'", "? 'absent'"),
+ ('raw_inventory_heading_alias', 'p4FullDayComposition.ts', 'canonP4Heading(splitHeadings(h)[0]!)', 'h'),
+ ('drop_phase_ji', 'p4FullDayComposition.ts', 'phaseJi || deathDefeatJi ||', 'false || deathDefeatJi ||'),
+ ('omit_quarters', 'p4LunarPhase.ts', 'events.set(date, {', "if (!e.phase.includes('Quarter')) events.set(date, {"),
+ ('phase_outside_coverage_absent', 'p4LunarPhase.ts', 'date < start! || date > end!', 'false'),
+ ('drop_death_defeat_ji', 'p4FullDayComposition.ts', 'deathDefeatJi || lunarJi ||', 'false || lunarJi ||'),
+ ('drop_suibao_yi_suppression', 'p4FullDayComposition.ts', 'suppressedYiHeadings.has(h)', 'false'),
+ ('restore_death_defeat_every_day', 'p4FullDayComposition.ts', 'const restoredSubjects = deathDefeat', 'const restoredSubjects = true'),
+ ('drop_lunar_day_ji', 'p4FullDayComposition.ts', 'deathDefeatJi || lunarJi ||', 'deathDefeatJi || false ||'),
+ ('drop_lunar_day_protection', 'p4FullDayComposition.ts', 'phaseJi || lunarJi || initial.protectedJi', 'phaseJi || false || initial.protectedJi'),
+ ('missing_lunar_day_absent', 'p4FullDayComposition.ts', "lunarDay === undefined ? 'unknown'", "lunarDay === undefined ? 'absent'"),
  ('monthly_stem_as_all_stems', 'p4RemainingJi.ts', 'S.includes(v) ? v === pillar[0] : v === pillar[1]', 'S.includes(v) ? true : v === pillar[1]'),
  ('drop_puzhu28_day_rule', 'p4FullDayComposition.ts', 'if (dayRule) {', 'if (false) {'),
  ('defer_reads_unknown_yi', 'p4RemainingJi.ts', 'P4_DAY_HEADINGS.map((h) => [h, true])', 'P4_DAY_HEADINGS.map((h) => [h, false])'),
@@ -32,7 +39,7 @@ try:
    raise RuntimeError(f'Mutation does not apply: {name}')
   target.write_text(original.replace(old, new, 1))
   try:
-   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', 'shared/lunar/p4LunarDayComposition.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
+   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', 'shared/lunar/p4LunarDayComposition.test.ts', 'shared/lunar/p4PuzhuEnd.test.ts', 'shared/lunar/p4LunarPhase.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
    output = run.stdout + run.stderr
    results.append({'mutation': name, 'caughtByAssertion': run.returncode != 0 and 'AssertionError' in output, 'exitCode': run.returncode})
   finally:

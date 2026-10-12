@@ -46,7 +46,7 @@ Quét 1095 ngày 2025–2027, 29 heading/ngày: **31.755 dòng**. TSV: `p4-vol10
 
 - 21 dormant đều xuất hiện trong khoảng kiểm; presence còn được đối chiếu trực tiếp từng ô với definitions P3 trên 720 context.
 - **0 propagation gỡ; 75 propagation bị chặn** (bản đầu là 69). Khi thêm 滿日/天狗, số này lên 84: các heading trước kia `undetermined` vì token 滿日/天狗 nay đã xác định, propagation hiện ra và bị 忌 bảo vệ chặn. Áp 未月甲午 bỏ đi 9 ca chặn trên 3 ngày đó. Không thay số 0 bằng fixture nhân tạo để nói đã chứng minh lan truyền thành công trên dữ liệu thật.
-- **6.516 dòng còn thiếu operand 凶** (trước khi cấp ngày âm: 7.602) (bản đầu là 10.962), chỉ còn 土王用事後 và 朔望日. Đây là số dòng có `unresolvedJi`, không phải tổng số `undetermined` (vốn còn phụ thuộc 11 宜 của mục 5).
+- **6.516 dòng còn thiếu operand 凶** (sau phase từng báo 5.430 do bỏ sót alias phá dỡ; trước phase: 6.516; trước ngày âm: 7.602) (bản đầu là 10.962), chỉ còn 土王用事後. Đây là số dòng có `unresolvedJi`, không phải tổng số `undetermined` (vốn còn phụ thuộc 11 宜 của mục 5).
 - 0 ngày còn xung đột 天願/遊禍 (trước là 6). 巳月丙申 (2025-05-27, 2026-05-22, 2027-05-17) giờ là 諸事不忌. 亥月壬寅 (2025-11-29, 2026-11-24, 2027-11-19) giữ 忌 của 遊禍.
 - `puzhu:28` áp cho 9 ngày thực trong khoảng kiểm: 2025-03-06, 2025-05-27, 2025-07-24, 2025-08-07, 2025-09-08, 2026-05-22, 2026-07-19, 2027-05-17, 2027-07-14. Mọi heading đều `ji: false`. Khi thêm 未月甲午, TSV chỉ đổi ở 3 ngày 未月甲午; mọi dòng khác giữ nguyên.
 
@@ -60,11 +60,11 @@ Lệnh tái tạo: `P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test
 | 復日 | 歴例 gom cặp tháng; 地理新書 / 按 giải thích theo 本建令干 | **OWNER_ADOPTED**: 正甲、二乙、三戊、四丙、五丁、六己、七庚、八辛、九戊、十壬、十一癸、十二己 |
 | 重日 | 原文「己亥二日」, diễn giải sau nói 巳/亥 | **OWNER_ADOPTED**: hai chi 巳/亥, không phải một pillar 己亥 |
 | 天願 + 遊禍 | P3 天願 = 巳月丙申/亥月壬寅 trùng 遊禍; 卷十 chú「天願不得與遊禍併」 (scan n182 xác nhận) | **OWNER_ADOPTED** 2026-10-12 theo 月表: cả hai có mặt, 遊禍 giữ 忌; 巳月丙申 諸事不忌 theo `puzhu:28` |
-| 每月十二日十五日 / 每月十五日 / 朔望日 | API audit có context tùy chọn `{ lunarDay }`; sweep cấp `LUNAR_DAY` theo lịch hiện hành. 卷十: 十五日「忌求醫療病，義同朢日」 | Ngày 12/15 MODELED (Golden riêng `5442f10`); 朔望 vẫn UNSUPPORTED_OPERAND, không đồng nhất 望 với ngày 15 |
+| 每月十二日十五日 / 每月十五日 / 朔望日 | API audit có context tùy chọn `{ lunarDay }`; sweep cấp `LUNAR_DAY` theo lịch hiện hành. 卷十: 十五日「忌求醫療病，義同朢日」 | Ngày 12/15 MODELED (Golden riêng `5442f10`); 朔弦望 đã MODELED theo scan + USNO 2025–2027 (`1b2e9c2`); thiếu date/ngoài coverage vẫn unknown, không đồng nhất 望 với ngày 15 |
 | 土王用事後 | S1 vẫn SOURCE_DEPENDENT, không lấy quy ước cũ làm authority mới | UNSUPPORTED_OPERAND, tiếp tục S1 |
 | 天狗 | 卷十 entry 滿日: 申月又為天狗, 忌祭祀, 與德合併猶忌 | **MODELED** (申月戌, protected). 月表: 七月庚戌 có. P1 scope 卷04 vẫn tách riêng |
 | 滿日 | Entry riêng 卷十 offset 10434 | **MODELED**. 月表: 正月甲辰/戊辰 và 二月乙巳/辛巳 忌 (không có 德); 正月丙辰 (月德) và 二月丁巳 (月恩 + 四相) gỡ |
-| `puzhu:28` mục 六月 | Bản in n229 và raw ghi 六月甲子; 月表 六月甲子 không có 赦/願 và in 忌, còn 六月甲午 (天德 月德 天赦) không in 忌 | **OWNER_ADOPTED** 2026-10-12: coi 「甲子」 là lỗi in, áp cho 未月甲午 theo 月表; 未月甲子 không áp. Vế đầu 「嵗薄逐陣…」 chưa mô hình |
+| `puzhu:28` mục 六月 | Bản in n229 và raw ghi 六月甲子; 月表 六月甲子 không có 赦/願 và in 忌, còn 六月甲午 (天德 月德 天赦) không in 忌 | **OWNER_ADOPTED** 2026-10-12: coi 「甲子」 là lỗi in, áp cho 未月甲午 theo 月表; 未月甲子 không áp. Vế đầu 「嵗薄逐陣…」 đã mô hình theo source lock `07ae416` |
 
 Quotes và offset của ba presence đã chốt: `sources/p4-vol10/remaining-ji-open-presence.json`. Các câu 卷十 và conflict P3 nằm trong artifact nguồn / `xieji-god-definitions.json`. Đã đọc trực tiếp [scan n182](https://archive.org/download/06067686.cn/page/n182_w1200.jpg): mục 遊禍 có chú **天願不得與遊禍併**. Ảnh gốc `sources/p4-vol10/youhuo-n182.jpg`, checksum/locator ở `youhuo-scan-lock.json`. OCR không đọc được, không dùng OCR làm oracle. Scan này xác nhận provenance của chú; không giải quyết mâu thuẫn với presence P3, đã được owner giải quyết theo witness 月表 như bảng trên.
 
@@ -85,7 +85,7 @@ Không chuyển roadmap sang mục 5 trước khi mục 4 đạt tiêu chí. 11 
 
 ## Kiểm chứng
 
-Gate P4-B hiện hành: 3 file / 92 test qua, gồm quét 720 context, 1095 ngày, Golden v8 (51 ca scope + 10 ca ngày), Golden ngày âm v1 (9 ca) và witness 月表. Typecheck/oxlint/build qua; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline production. Không tuyên bố deploy mới. Full unit: **178 file / 3368 test qua**. Mutation P4-B: **14/14** bị assertion bắt, gồm 3 mutation mới cho kỵ ngày âm, bảo vệ ngày âm và missing ngày âm không được thành absent; runner phục hồi nguyên bytes. File A04b không đổi nên không chạy lại mutation A04b. Không dùng audit này để tuyên bố scoring đã chứng nhận.
+Gate P4-B hiện hành: 5 file / 132 test qua, gồm quét 720 context, 1095 ngày, Golden v8 (51 ca scope + 10 ca ngày), Golden ngày âm v1 (9 ca) và witness 月表. Typecheck/oxlint/build qua; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline production. Không tuyên bố deploy mới. Full unit: **180 file / 3408 test qua**. Mutation P4-B: **21/21** bị assertion bắt, gồm 3 mutation mới cho kỵ ngày âm, bảo vệ ngày âm và missing ngày âm không được thành absent; runner phục hồi nguyên bytes. File A04b không đổi nên không chạy lại mutation A04b. Không dùng audit này để tuyên bố scoring đã chứng nhận.
 
 ## Context ngày âm 12/15 (2026-10-12)
 
@@ -93,4 +93,18 @@ Authority `p4-lunar-day-taboo-v1.json` và `golden-p4-lunar-day-v1.json` khóa t
 
 `resolveP4FullDay(month, pillar, { lunarDay })`: ngày 12/15 giữ 忌 **剃頭** trong heading ghép 整容剃頭; ngày 15 giữ 忌 求醫療病. Presence độc lập với Month Jian; missing giữ unknown; ngoài 1–30 hoặc không nguyên bị từ chối. Theo phần 「與德合赦願併猶忌以下並同」 của đoạn nguồn, các 忌 này được bảo vệ khi ghép/propagation. Ngoại lệ cấp ngày puzhu:28 vẫn gỡ 忌, còn trace presence nguồn giữ lại. Không suy ra kỵ riêng 整容.
 
-Sweep ngày thật cấp `selectionContext.LUNAR_DAY` từ calendar đã có (Asia/Ho_Chi_Minh); cột `lunar_day` trong TSV cho phép tái hiện input. Số unresolved giảm đúng 1.086 dòng 整容剃頭; 求醫療病 đã biết điều kiện ngày 15 nhưng vẫn thiếu 朔望, nên vẫn unresolved. Còn 5.430 dòng 土王用事後 + 1.086 dòng 朔望 = **6.516**. 0 conflict; 0 propagation gỡ / 75 chặn. Không chứng nhận phase hoặc S1 bằng Golden ngày âm; vế 歲薄逐陣 vẫn chưa mô hình đầy đủ.
+Sweep ngày thật cấp `selectionContext.LUNAR_DAY` từ calendar đã có (Asia/Ho_Chi_Minh); cột `lunar_day` trong TSV cho phép tái hiện input. Số unresolved giảm đúng 1.086 dòng 整容剃頭; 求醫療病 đã biết điều kiện ngày 15 nhưng vẫn thiếu 朔望, nên vẫn unresolved. Còn 5.430 dòng 土王用事後 + 1.086 dòng 朔望 = **6.516**. 0 conflict; 0 propagation gỡ / 75 chặn. Không chứng nhận phase hoặc S1 bằng Golden ngày âm; vế 歲薄逐陣 đã mô hình trong 鋪註 27/28-first bên dưới.
+
+## 鋪註 27/28-first và 朔弦望 (2026-10-13)
+
+- **07ae416 trước code**: authority `p4-puzhu-end-v1.json`, Golden 8 context 歲薄/逐陣 + 四廢/天吏; lock `puzhu-end-lock-v1.json` có 8 scan 月表 đọc bằng mắt. Câu 27 restore raw 忌 大時/天吏 khi có 四廢/歲薄/逐陣. Câu 28-first xóa 宜 theo raw 月厭, không tự thêm 月厭 忌; 忌 vẫn theo ngày. Heading ngoài mask giữ evidence. Không đổi helper A04b và Golden cũ.
+- **1b2e9c2 trước code**: authority `p4-lunar-phase-authority-v1.json`, 13 Golden ngày dân sự đọc USNO và đổi UT+7 độc lập. Scan 卷十 n216/n217 xác nhận **朔弦望**; token inventory 朔望日 bỏ sót 弦 là SPEC_BUG, giữ token tương thích nhưng scope record đủ New Moon / First Quarter / Full Moon / Last Quarter.
+- `p4LunarPhase.ts` là input provider audit-only từ dataset USNO đã khóa, không dùng resolver hoặc engine repo để sinh expected, không tính lại astronomy production. 148 sự kiện trên 2025–2027 (37 mỗi phase), 947 ngày không phase; ngoài miền trả unknown. Không sự kiện nào ở trong một phút quanh nửa đêm VN, nên độ làm tròn phút/UT1–UTC không đổi ngày của các input này. Metadata ghi rõ JSON đã chuẩn hóa từ bản render web, không giả SHA cho HTTP bytes nguyên bản.
+- Context tùy chọn `{ lunarDay, phase }` vẫn giữ unknown nếu thiếu, tách ngày 15 khỏi ngày chứa phase. 忌 phase được bảo vệ trong ghép/propagation; puzhu:28 list vẫn gỡ 忌 nhưng không xóa trace presence.
+- Sweep có cột `lunar_day`, `phase`, `yi`, `puzhu_end`, `death_defeat`: **6.516** unresolved (bao gồm 1.086 dòng phá dỡ được sửa lookup), tất cả 土王用事後; 0 conflict, 0 propagation gỡ / 75 chặn. Không coi metric thiếu 凶 bằng metric thiếu 11 宜. Gate 5 file / 132 test; mutation 21/21 assertion bắt và phục hồi bytes.
+
+S1 còn gate presence/biên: xem [phương án review](p4-vol10-soil-convention-gate.md). So raw 土府 với đất xây dựng trong catalog cho thấy gặp 德 vẫn kỵ các heading này; không còn ambiguity miễn kỵ ảnh hưởng sáu activity hiện hành. Convention 18 ngày dân sự đã được owner chốt cho production, nhưng chưa dùng làm canonical authority P4 mới.
+
+### Sửa coverage lookup 壞/壊 (2026-10-13)
+
+Inventory khóa ghi `破屋壞垣`, evaluator dùng heading chuẩn `破屋壊垣`. Lookup trực tiếp theo key khiến operand 土王用事後 của phá dỡ bị bỏ sót, không phải đã resolve. Regression test đã thấy đỏ (`[]` thiếu token 土王) trước sửa. Lookup mới dùng cùng `splitHeadings` + `canonP4Heading` như tầng heading; không sửa bytes artifact hoặc Golden cũ. Mutation bỏ chuẩn hóa bắt được regression này. Số unresolved chính xác là 1.086 × **6** heading = **6.516**, toàn bộ 土王用事後. Metric trước sửa alias 5.430 phải được hiểu là thiếu coverage, không dùng để chứng nhận P4-B.

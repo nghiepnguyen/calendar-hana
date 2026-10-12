@@ -1,6 +1,6 @@
 # P4-B — phương án giải quyết operand còn thiếu
 
-Ngày kiểm: 2026-10-12. Bản nghiên cứu ban đầu dưới đây giữ số liệu trước triển khai. Cập nhật: phần ngày âm 12/15 đã triển khai audit-only (Golden khóa `5442f10`); sweep còn 6.516 dòng thiếu 凶. Phase, S1 và vế 歲薄逐陣 còn mở; mục 4 vẫn PARTIAL.
+Ngày kiểm: 2026-10-12. Bản nghiên cứu ban đầu dưới đây giữ số liệu trước triển khai. Cập nhật: phần ngày âm 12/15 đã triển khai audit-only (Golden khóa `5442f10`); ngày âm, 朔弦望 và 鋪註 27/28-first đã triển khai; sửa alias phá dỡ, sweep còn 6.516 dòng thiếu 凶 chỉ do 土王用事後. S1 còn gate owner (`p4-vol10-soil-convention-gate.md`); mục 4 vẫn PARTIAL.
 
 ## Phân rã số liệu hiện hành
 
