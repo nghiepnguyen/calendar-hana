@@ -77,7 +77,7 @@ import { getAlmanac } from './almanac'
 
 it('audits propagation on all 1095 real dates with explicit unresolved evidence', () => {
   const rows = [
-    'date\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tunresolved\tpropagated_from\tblocked_by',
+    'date\tlunar_day\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tunresolved\tpropagated_from\tblocked_by',
   ]
   const counts = { dates: 0, headings: 0, lifted: 0, blocked: 0, unresolved: 0 }
   const dormant: Record<string, number> = {}
@@ -86,7 +86,8 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
     const a = getAlmanac(date as never)
     const month = B[a.selectionContext.MONTH_JIAN_BRANCH!]!
     const pillar = S[a.dayCanChi.can]! + B[a.dayCanChi.chi]!
-    const r = resolveP4FullDay(month, pillar)
+    const lunarDay = a.selectionContext.LUNAR_DAY!
+    const r = resolveP4FullDay(month, pillar, { lunarDay })
     counts.dates++
     for (const [id, present] of Object.entries(r.remaining.dormantPresence))
       dormant[id] = (dormant[id] ?? 0) + Number(present)
@@ -105,6 +106,7 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
       rows.push(
         [
           date,
+          lunarDay,
           month,
           pillar,
           h,
@@ -121,6 +123,7 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
   }
   expect(counts.dates).toBe(1095)
   expect(counts.headings).toBe(1095 * 29)
+  expect(counts.unresolved).toBe(6516)
   expect(Object.keys(dormant)).toHaveLength(21)
   for (const n of Object.values(dormant)) expect(n).toBeGreaterThan(0)
   if (process.env.P4_B_REPORT) {

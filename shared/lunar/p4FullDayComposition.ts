@@ -1,16 +1,36 @@
+import lunarDayAuthority from '../almanac-data/p4-lunar-day-taboo-v1.json'
 import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import { applyP4Propagation, resolveP4Day } from './p4DayComposition'
 import { resolveP4RemainingJi } from './p4RemainingJi'
 
 /** Audit-only assembly before 鋪註. Existing partial oracle and production pipeline remain unchanged.
  * Unknown operands affect only their listed heading; proved 忌 stays in evidence. */
-export function resolveP4FullDay(month: string, pillar: string) {
+export function resolveP4FullDay(
+  month: string,
+  pillar: string,
+  operands: { lunarDay?: number } = {},
+) {
+  const { lunarDay } = operands
+  if (lunarDay !== undefined && (!Number.isInteger(lunarDay) || lunarDay < 1 || lunarDay > 30))
+    throw new RangeError('Invalid lunar day')
+  const lunarDayScopes = Object.fromEntries(
+    lunarDayAuthority.rules.map((rule) => [
+      rule.token,
+      {
+        heading: rule.heading,
+        sourceActivity: rule.sourceActivity,
+        source: rule.source,
+        presence:
+          lunarDay === undefined ? 'unknown' : rule.days.includes(lunarDay) ? 'present' : 'absent',
+      },
+    ]),
+  )
   const base = resolveP4Day(month, pillar)
   const remaining = resolveP4RemainingJi(month, pillar)
   const days = { ...base.prePropagationHeadings }
   const unresolvedJi: Record<string, string[]> = {}
   // 卷十 puzhu:28 「…德合與赦願所會之辰諸事不忌」: listed days drop every 忌, 百忌 included (月表
-  // prints no 忌 on them). The 六月 item is source-dependent and listed nowhere in `applied`.
+  // prints no 忌 on them). Owner corrected the 六月 item to 未月甲午 from the 月表 witness.
   const dayRule = art.dayRules.find((r) =>
     r.applied.some(([m, p]) => m === month && p === pillar),
   )?.id
@@ -49,6 +69,7 @@ export function resolveP4FullDay(month: string, pillar: string) {
       if (
         !(token in remaining.scopes) &&
         !known.has(token) &&
+        !(token in lunarDayScopes && lunarDayScopes[token]!.presence !== 'unknown') &&
         !/^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]日$/.test(token)
       )
         unresolved.push(token)
@@ -67,12 +88,15 @@ export function resolveP4FullDay(month: string, pillar: string) {
       days[h] = { ...initial, state: 'only_ji', ji: true, protectedJi: true }
       continue
     }
-    const extraJi = states.some((s) => s === 'kept' || s === 'protected')
+    const lunarJi = Object.values(lunarDayScopes).some(
+      (scope) => scope.heading === h && scope.presence === 'present',
+    )
+    const extraJi = lunarJi || states.some((s) => s === 'kept' || s === 'protected')
     const pendingProvedJi = Object.values(remaining.scopes).some(
       (s) => s.presence === 'present' && s.headings[h] === 'undetermined',
     )
     const ji = initial.ji || extraJi || pendingProvedJi
-    const protectedJi = initial.protectedJi || states.includes('protected')
+    const protectedJi = lunarJi || initial.protectedJi || states.includes('protected')
     const ambiguous =
       initial.state === 'undetermined' ||
       unresolved.length > 0 ||
@@ -91,6 +115,7 @@ export function resolveP4FullDay(month: string, pillar: string) {
   return {
     ...base,
     remaining,
+    lunarDayScopes,
     ...(dayRule ? { dayRule } : {}),
     prePropagationHeadings: days,
     headings: applyP4Propagation(days),

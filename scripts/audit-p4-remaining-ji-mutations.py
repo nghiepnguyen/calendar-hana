@@ -6,6 +6,9 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 mutations = [
+ ('drop_lunar_day_ji', 'p4FullDayComposition.ts', 'const extraJi = lunarJi ||', 'const extraJi = false ||'),
+ ('drop_lunar_day_protection', 'p4FullDayComposition.ts', 'const protectedJi = lunarJi ||', 'const protectedJi = false ||'),
+ ('missing_lunar_day_absent', 'p4FullDayComposition.ts', "? 'unknown'", "? 'absent'"),
  ('monthly_stem_as_all_stems', 'p4RemainingJi.ts', 'S.includes(v) ? v === pillar[0] : v === pillar[1]', 'S.includes(v) ? true : v === pillar[1]'),
  ('drop_puzhu28_day_rule', 'p4FullDayComposition.ts', 'if (dayRule) {', 'if (false) {'),
  ('defer_reads_unknown_yi', 'p4RemainingJi.ts', 'P4_DAY_HEADINGS.map((h) => [h, true])', 'P4_DAY_HEADINGS.map((h) => [h, false])'),
@@ -29,7 +32,7 @@ try:
    raise RuntimeError(f'Mutation does not apply: {name}')
   target.write_text(original.replace(old, new, 1))
   try:
-   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
+   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', 'shared/lunar/p4LunarDayComposition.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
    output = run.stdout + run.stderr
    results.append({'mutation': name, 'caughtByAssertion': run.returncode != 0 and 'AssertionError' in output, 'exitCode': run.returncode})
   finally:

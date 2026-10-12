@@ -2,6 +2,21 @@
   "scope": "P4_B_AUDIT_ONLY_PARTIAL",
   "mutations": [
     {
+      "mutation": "drop_lunar_day_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_lunar_day_protection",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "missing_lunar_day_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
       "mutation": "monthly_stem_as_all_stems",
       "caughtByAssertion": true,
       "exitCode": 1
@@ -59,8 +74,8 @@
   ],
   "restored": true,
   "targetHashes": {
-    "shared/lunar/p4RemainingJi.ts": "41881afd8c12e06af4a373664fd0374b8b1a7a1020cf4058d5d28c11b5110d40",
-    "shared/lunar/p4FullDayComposition.ts": "d3d32204e55b508aa4c46641f3f6bc6811d6e38c6fe2fdbae771a9389513dff6"
+    "shared/lunar/p4FullDayComposition.ts": "9eebaa05e413a7dbb226efaf46baa19a7eb1d8a097fa77d03a808951713b312f",
+    "shared/lunar/p4RemainingJi.ts": "41881afd8c12e06af4a373664fd0374b8b1a7a1020cf4058d5d28c11b5110d40"
   },
   "limits": "Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved."
 }
