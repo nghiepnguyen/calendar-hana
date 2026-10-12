@@ -1,0 +1,41 @@
+{
+  "scope": "AUDIT_ONLY_PARTIAL",
+  "counts": {
+    "dates": 1095,
+    "headings": 31755,
+    "lifted": 0,
+    "blocked": 69,
+    "unresolved": 10962
+  },
+  "dormant": {
+    "thien_nguyen": 16,
+    "tu_tuong": 217,
+    "thoi_duc": 92,
+    "ngu_hop": 182,
+    "bat_tuong": 229,
+    "thien_thuong": 91,
+    "pho_ho": 95,
+    "tai_sat": 93,
+    "nguyet_sat": 91,
+    "nguyet_hai": 90,
+    "nguyet_yem": 90,
+    "yem_doi": 94,
+    "dai_thoi": 91,
+    "tu_phe": 38,
+    "tu_ky": 17,
+    "tu_cung": 18,
+    "ngu_mo": 19,
+    "ngu_ly": 183,
+    "vang_vong": 91,
+    "bat_chuyen": 90,
+    "quy_ky": 92
+  },
+  "conflicts": [
+    "2025-05-27",
+    "2025-11-29",
+    "2026-05-22",
+    "2026-11-24",
+    "2027-05-17",
+    "2027-11-19"
+  ]
+}

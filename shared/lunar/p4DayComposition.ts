@@ -237,6 +237,7 @@ export function resolveP4Day(month: string, pillar: string) {
     pillarAllTaboo: allTaboo,
     subjects: Object.keys(ctx.deferrals),
     headings: applyP4Propagation(days),
+    prePropagationHeadings: days,
     // 卷十一 忌 gods outside the modeled scopes (raw text, presence not audited here).
     unmodeledJi: unmodeled,
     propagationOutOfScope: P4_PROPAGATION_OUT_OF_SCOPE,

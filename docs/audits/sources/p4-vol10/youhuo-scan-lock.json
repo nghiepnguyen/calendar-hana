@@ -1,0 +1,16 @@
+{
+  "version": "p4-youhuo-scan-lock-v1",
+  "date": "2026-10-12",
+  "source": "四庫全書 卷九–卷十, CADAL / Zhejiang University, Internet Archive 06067686.cn",
+  "url": "https://archive.org/download/06067686.cn/page/n182_w1200.jpg",
+  "leaf": 182,
+  "locator": "遊禍 entry; double-column note beside 與德合天赦併猶忌",
+  "transcription": "天願不得與遊禍併",
+  "review": "Visual reading of scan; OCR was unusable and is not an oracle. The scan agrees with raw text, so no GOLDEN_BUG/text-transcription error is established. Source conflict with locked presence remains pending.",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/youhuo-n182.jpg",
+      "sha256": "017ec218753bfb8ac9b328b9fc534576888fb70afd44939f2b4b0809181d3555"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "scope": "P4_B_AUDIT_ONLY_PARTIAL",
+  "mutations": [
+    {
+      "mutation": "monthly_stem_as_all_stems",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ignore_tianyuan_conflict",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ignore_month_filters",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ignore_exception_months",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "virtues_always_present",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_all_taboo",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_protected_scopes",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "unknown_heading_favourable",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "omit_remaining_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true,
+  "targetHashes": {
+    "shared/lunar/p4FullDayComposition.ts": "3f0b203a1632f7acf968c32c8b959558fb1939d4da74303b7e0b461193fd1f41",
+    "shared/lunar/p4RemainingJi.ts": "d1ea8b8b813d76ee15df775dda823af7a149249bb1aa6cf928895339060287ff"
+  },
+  "limits": "Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved."
+}
