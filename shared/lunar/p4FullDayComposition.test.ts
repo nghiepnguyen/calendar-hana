@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
+import golden from '../almanac-data/golden-p4-remaining-ji-v7.json'
 import { resolveP4FullDay } from './p4FullDayComposition'
 
 describe('P4-B composed day, audit only', () => {
@@ -18,9 +20,27 @@ describe('P4-B composed day, audit only', () => {
     expect(r.unresolvedJi['求醫療病']).toContain('朔望日')
     expect(r.headings['求醫療病']!.state).toBe('undetermined')
   })
-  it('retains proved 遊禍 raw 忌 while the 天願 exception remains unresolved', () => {
-    const r = resolveP4FullDay('巳', '丙申')
-    expect(r.headings['祈福']).toMatchObject({ ji: true, state: 'undetermined' })
+  it.each(golden.dayCases)('$month月$pillar puzhu:28 $rule: $note', (c) => {
+    const r = resolveP4FullDay(c.month, c.pillar)
+    expect(r.dayRule ?? null).toBe(c.rule)
+    if (c.rule)
+      for (const [h, d] of Object.entries(r.headings)) {
+        expect(d, h).toMatchObject({ ji: false, protectedJi: false })
+        expect(r.unresolvedJi[h], h).toEqual([])
+      }
+    for (const [h, ji] of Object.entries(c.ji ?? {})) expect(r.headings[h]!.ji, h).toBe(ji)
+  })
+  it('never lets the puzhu:28 list meet a whole-day taboo', () => {
+    for (const { applied } of art.dayRules)
+      for (const [m, p] of applied) {
+        const r = resolveP4FullDay(m!, p!)
+        expect(r.pillarAllTaboo, `${m}${p}`).toEqual([])
+        expect(
+          Object.values(r.remaining.scopes).some(
+            (s) => s.presence === 'present' && s.effect === 'all_taboo',
+          ),
+        ).toBe(false)
+      }
   })
   it('keeps full taboo on 四廢 with 月破', () => {
     const r = resolveP4FullDay('寅', '庚申')

@@ -1,4 +1,4 @@
-import art from '../almanac-data/p4-vol10-remaining-ji-v5.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
 import { applyP4Propagation, resolveP4Day } from './p4DayComposition'
 import { resolveP4RemainingJi } from './p4RemainingJi'
 
@@ -9,6 +9,11 @@ export function resolveP4FullDay(month: string, pillar: string) {
   const remaining = resolveP4RemainingJi(month, pillar)
   const days = { ...base.prePropagationHeadings }
   const unresolvedJi: Record<string, string[]> = {}
+  // 卷十 puzhu:28 「…德合與赦願所會之辰諸事不忌」: listed days drop every 忌, 百忌 included (月表
+  // prints no 忌 on them). The 六月 item is source-dependent and listed nowhere in `applied`.
+  const dayRule = art.dayRules.find((r) =>
+    r.applied.some(([m, p]) => m === month && p === pillar),
+  )?.id
   const allTaboo = Object.values(remaining.scopes).some(
     (s) => s.presence === 'present' && s.effect === 'all_taboo',
   )
@@ -47,6 +52,16 @@ export function resolveP4FullDay(month: string, pillar: string) {
         !/^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]日$/.test(token)
       )
         unresolved.push(token)
+    if (dayRule) {
+      unresolvedJi[h] = []
+      days[h] = {
+        ...initial,
+        ji: false,
+        protectedJi: false,
+        state: initial.yi === undefined ? 'undetermined' : initial.yi ? 'only_yi' : 'not_recorded',
+      }
+      continue
+    }
     unresolvedJi[h] = unresolved
     if (allTaboo || base.pillarAllTaboo.length) {
       days[h] = { ...initial, state: 'only_ji', ji: true, protectedJi: true }
@@ -76,6 +91,7 @@ export function resolveP4FullDay(month: string, pillar: string) {
   return {
     ...base,
     remaining,
+    ...(dayRule ? { dayRule } : {}),
     prePropagationHeadings: days,
     headings: applyP4Propagation(days),
     unresolvedJi,

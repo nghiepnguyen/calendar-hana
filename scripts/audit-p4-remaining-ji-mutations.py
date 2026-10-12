@@ -7,7 +7,9 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 mutations = [
  ('monthly_stem_as_all_stems', 'p4RemainingJi.ts', 'S.includes(v) ? v === pillar[0] : v === pillar[1]', 'S.includes(v) ? true : v === pillar[1]'),
- ('ignore_tianyuan_conflict', 'p4RemainingJi.ts', "const conflict =", "const conflict = false &&"),
+ ('drop_puzhu28_day_rule', 'p4FullDayComposition.ts', 'if (dayRule) {', 'if (false) {'),
+ ('defer_reads_unknown_yi', 'p4RemainingJi.ts', 'P4_DAY_HEADINGS.map((h) => [h, true])', 'P4_DAY_HEADINGS.map((h) => [h, false])'),
+ ('officer_offset_shifted', 'p4RemainingJi.ts', '=== rule.officerOffset', '=== (rule.officerOffset + 1) % 12'),
  ('ignore_month_filters', 'p4RemainingJi.ts', "(c.months === '*' || c.months.includes(month))", "true"),
  ('ignore_exception_months', 'p4RemainingJi.ts', '!c.exceptMonths?.includes(month)', 'true'),
  ('virtues_always_present', 'p4RemainingJi.ts', 'c.withGods.some((g) => present.has(g))', 'true'),

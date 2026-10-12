@@ -2,10 +2,13 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import definitions from '../almanac-data/xieji-god-definitions.json'
-import art from '../almanac-data/p4-vol10-remaining-ji-v5.json'
-import golden from '../almanac-data/golden-p4-remaining-ji-v6.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
+import golden from '../almanac-data/golden-p4-remaining-ji-v7.json'
 import scanLock from '../../docs/audits/sources/p4-vol10/youhuo-scan-lock.json'
-import yuebiaoLock from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock.json'
+import yuebiaoLockV1 from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock.json'
+import yuebiaoLock from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json'
+import goldenLockV7 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v7.json'
+import lockV6 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v6.json'
 import lock from '../../docs/audits/sources/p4-vol10/remaining-ji-lock.json'
 import goldenLockV6 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v6.json'
 import goldenLockV4 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v4.json'
@@ -16,6 +19,7 @@ import lockV4 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v4.json
 import lockV3 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v3.json'
 import lockV2 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v2.json'
 import { resolveP4RemainingJi } from './p4RemainingJi'
+import { getXiejiGodPresence } from './xiejiGodPresence'
 
 const B = '子丑寅卯辰巳午未申酉戌亥'
 const S = '甲乙丙丁戊己庚辛壬癸'
@@ -24,7 +28,11 @@ describe('P4-B remaining 忌, audit only', () => {
     for (const f of [
       ...lock.files,
       ...scanLock.files,
+      ...yuebiaoLockV1.pages,
       ...yuebiaoLock.pages,
+      ...yuebiaoLock.vol10Print.files,
+      ...lockV6.files,
+      ...goldenLockV7.files,
       ...lockV2.files,
       ...goldenLockV2.files,
       ...lockV3.files,
@@ -35,8 +43,11 @@ describe('P4-B remaining 忌, audit only', () => {
       ...goldenLockV6.files,
     ])
       expect(createHash('sha256').update(readFileSync(f.path)).digest('hex')).toBe(f.sha256)
-    for (const e of art.entries) {
-      const refs = [e.source, ...('quotes' in e.presence ? (e.presence.quotes ?? []) : [])]
+    for (const e of [...art.entries, ...art.dayRules]) {
+      const refs = [
+        e.source,
+        ...('presence' in e && 'quotes' in e.presence ? (e.presence.quotes ?? []) : []),
+      ]
       for (const q of refs) {
         const raw = Array.from(
           readFileSync(`docs/audits/sources/p4-vol10/vol${q.volume.slice(1)}.raw.txt`, 'utf8'),
@@ -95,11 +106,23 @@ describe('P4-B presence against the 月表 day pages (witness, read by eye)', ()
       const r = resolveP4RemainingJi(page.monthJian, page.pillar)
       for (const [han, scope] of Object.entries(r.scopes)) {
         if (scope.presence === 'unknown') continue
-        const listed = page.xiongShen.includes(han)
+        // 滿日 is the 建除 officer in the page heading, not a 凶神 row.
+        const listed = han === '滿日' ? page.officer === '滿' : page.xiongShen.includes(han)
         if (listed !== (scope.presence === 'present'))
-          misses.push(`${page.monthJian}${page.pillar} ${han}: page=${listed} model=${scope.presence}`)
+          misses.push(
+            `${page.monthJian}${page.pillar} ${han}: page=${listed} model=${scope.presence}`,
+          )
       }
     }
     expect(misses).toEqual([])
+  })
+  it('never puts 天赦 or 天願 on 滿日, as the 卷十 note says', () => {
+    for (const month of B)
+      for (let i = 0; i < 60; i++) {
+        const pillar = S[i % 10]! + B[i % 12]!
+        if (resolveP4RemainingJi(month, pillar).scopes['滿日']!.presence !== 'present') continue
+        const gods = getXiejiGodPresence(B.indexOf(month), i % 10, i % 12)
+        expect('thien_xa' in gods || 'thien_nguyen' in gods, `${month}${pillar}`).toBe(false)
+      }
   })
 })

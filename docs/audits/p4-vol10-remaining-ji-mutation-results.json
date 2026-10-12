@@ -7,7 +7,17 @@
       "exitCode": 1
     },
     {
-      "mutation": "ignore_tianyuan_conflict",
+      "mutation": "drop_puzhu28_day_rule",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "defer_reads_unknown_yi",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "officer_offset_shifted",
       "caughtByAssertion": true,
       "exitCode": 1
     },
@@ -49,8 +59,8 @@
   ],
   "restored": true,
   "targetHashes": {
-    "shared/lunar/p4FullDayComposition.ts": "3f0b203a1632f7acf968c32c8b959558fb1939d4da74303b7e0b461193fd1f41",
-    "shared/lunar/p4RemainingJi.ts": "d1ea8b8b813d76ee15df775dda823af7a149249bb1aa6cf928895339060287ff"
+    "shared/lunar/p4RemainingJi.ts": "a1a39e5a890331bc401e9cd45180de518f7f4b49946fab4efd5aba8d9d8b2600",
+    "shared/lunar/p4FullDayComposition.ts": "c9bc931ace270e75a828955108051069ac50fef20a3748e4f1a624a196e871b4"
   },
   "limits": "Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved."
 }

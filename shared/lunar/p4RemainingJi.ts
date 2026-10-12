@@ -1,4 +1,4 @@
-import art from '../almanac-data/p4-vol10-remaining-ji-v5.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
 import { resolveP4Context } from './p4ContextBridge'
 import { P4_DAY_HEADINGS } from './p4DayComposition'
 import { canonP4Heading, resolveP4Headings } from './p4HeadingAnnotation'
@@ -42,7 +42,6 @@ type Entry = {
   protected?: boolean
   protection?: { months: string[] | string; headings: string; allMonths?: string[] }
   conditions: Condition[]
-  conflictWith?: string
   aliases?: Record<string, string>
 }
 type Scope = {
@@ -66,7 +65,13 @@ export function resolveP4RemainingJi(month: string, pillar: string) {
   const present = new Set([...Object.keys(ctx.deferrals), ...presentP4De(month, pillar)])
   for (const [han, id] of Object.entries({ 三合: 'tam_hop', 六合: 'luc_hop' }))
     if (id in gods) present.add(han)
-  const baseScopes = resolveP4Headings(month, pillar).scopes
+  // Scopes here carry 忌 only; 宜 is composed later. Fix 宜 to true so a deferred 止忌 clause reads
+  // as both_present/only_yi (忌 yes/no) instead of 'undetermined' from the missing 宜 operand.
+  const baseScopes = resolveP4Headings(
+    month,
+    pillar,
+    Object.fromEntries(P4_DAY_HEADINGS.map((h) => [h, true])),
+  ).scopes
   const scopes: Record<string, Scope> = {}
   for (const entry of art.entries) {
     const e = entry as Entry
@@ -87,8 +92,6 @@ export function resolveP4RemainingJi(month: string, pillar: string) {
               )
             ? 'present'
             : 'absent'
-    const conflict =
-      presence === 'present' && e.conflictWith !== undefined && present.has(e.conflictWith)
     const clause = e.conditions.find(
       (c) =>
         (c.months === '*' || c.months.includes(month)) &&
@@ -97,7 +100,7 @@ export function resolveP4RemainingJi(month: string, pillar: string) {
         (!c.require || present.has(c.require)) &&
         (!c.withGods.length || c.withGods.some((g) => present.has(g))),
     )
-    const effect = conflict ? 'undetermined' : (clause?.effect ?? 'keep')
+    const effect = clause?.effect ?? 'keep'
     const avoided = new Set(headings(e.avoid))
     const keep = new Set(headings(clause?.keep ?? ''))
     const states: Record<string, RemainingJiState> = {}
@@ -105,14 +108,14 @@ export function resolveP4RemainingJi(month: string, pillar: string) {
       if (presence === 'absent') states[h] = 'absent'
       else if (effect === 'all_taboo') states[h] = 'all_taboo'
       else if (!avoided.has(h)) states[h] = 'not_listed'
-      else if (presence === 'unknown' || conflict) states[h] = 'undetermined'
+      else if (presence === 'unknown') states[h] = 'undetermined'
       else if (effect === 'defer') {
         const target = baseScopes[clause!.target!]
         const state = target && 'headings' in target ? target.headings[h] : 'undetermined'
         states[h] =
           state === 'only_ji' || state === 'both_present'
             ? 'kept'
-            : state === 'not_avoided' || state === 'neither_recorded'
+            : state === 'not_avoided' || state === 'neither_recorded' || state === 'only_yi'
               ? 'lifted'
               : 'undetermined'
       } else if (effect === 'lift' || (effect === 'only_avoid' && !keep.has(h)))
@@ -133,11 +136,7 @@ export function resolveP4RemainingJi(month: string, pillar: string) {
       headings: states,
       effect,
       sourceOffset: entry.source.offset,
-      ...(conflict
-        ? { reason: 'SOURCE_DEPENDENT: 天願不得與遊禍併 contradicts locked P3 presence' }
-        : rule.unknown
-          ? { reason: rule.unknown }
-          : {}),
+      ...(rule.unknown ? { reason: rule.unknown } : {}),
     }
     // 卷十 按 explicitly says 厭對/招搖 both take the 德赦 lift. Keep water and marriage headings separate.
     for (const [alias, raw] of Object.entries(e.aliases ?? {})) {
