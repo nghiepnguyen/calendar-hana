@@ -1,0 +1,27 @@
+{
+  "version": "p4-lunar-phase-lock-v1",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-lunar-phase-authority-v1.json",
+      "sha256": "463fb300a25c2f9c130c8089fe35347cae40c3630cea126b50c4932b787139fa"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-lunar-phase-v1.json",
+      "sha256": "f2810b117996bb45784b0566abd7213185b3237d4a967098743674be03aa4fea"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/usno-phase/normalized-response.json",
+      "sha256": "66118ad3e7e40098fd75d39788583e1677f4992638bf7600cb1b75813e1d7504"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/phase-clause/n216.jpg",
+      "sha256": "0ff845dd9dd2ae41ede8cfc4eb38fba43e1c916ba3ada64b80a0b858728bf26a",
+      "url": "https://archive.org/download/06067686.cn/page/n216_w1200.jpg"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/phase-clause/n217.jpg",
+      "sha256": "545754c9fb224ea70402f005525bbe9503fcdde8f00df5525ff01e0d0b6a99f0",
+      "url": "https://archive.org/download/06067686.cn/page/n217_w1200.jpg"
+    }
+  ]
+}
