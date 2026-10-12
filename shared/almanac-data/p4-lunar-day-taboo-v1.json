@@ -1,0 +1,40 @@
+{
+  "version": "p4-lunar-day-taboo-v1",
+  "status": "AUDIT_ONLY",
+  "scoringReady": false,
+  "rules": [
+    {
+      "token": "每月十二日十五日",
+      "heading": "整容剃頭",
+      "sourceActivity": "剃頭",
+      "days": [
+        12,
+        15
+      ],
+      "source": {
+        "volume": "10",
+        "text": "十二日在髮際十五日在徧身忌剃頭",
+        "offset": 21411,
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      }
+    },
+    {
+      "token": "每月十五日",
+      "heading": "求醫療病",
+      "sourceActivity": "求醫療病",
+      "days": [
+        15
+      ],
+      "source": {
+        "volume": "10",
+        "text": "十五日\n　　{{SK anchor|忌求醫療病}}\n　　義同朢日",
+        "offset": 21354,
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      }
+    }
+  ],
+  "limits": [
+    "Lunar day only; phase and 土王 remain unknown.",
+    "剃頭 is the taboo component of the combined heading 整容剃頭."
+  ]
+}

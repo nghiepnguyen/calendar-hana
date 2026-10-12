@@ -1,0 +1,51 @@
+{
+  "version": "golden-p4-lunar-day-v1",
+  "derivation": "Hand-derived directly from 卷十 十五日 and 人神所在日, before implementation; no resolver used.",
+  "cases": [
+    {
+      "day": 1,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 11,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 12,
+      "haircut": true,
+      "medical": false
+    },
+    {
+      "day": 13,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 14,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 15,
+      "haircut": true,
+      "medical": true
+    },
+    {
+      "day": 16,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 29,
+      "haircut": false,
+      "medical": false
+    },
+    {
+      "day": 30,
+      "haircut": false,
+      "medical": false
+    }
+  ]
+}
