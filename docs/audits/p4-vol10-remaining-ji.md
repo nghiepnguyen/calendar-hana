@@ -15,19 +15,19 @@ Trạng thái: **AUDIT_ONLY_PARTIAL — chưa đạt “Xong khi” của roadma
 
 ## Oracle và sửa lỗi minh bạch
 
-Artifact nguồn v1 và partial Golden v1 đóng băng ở `195423b`, trước evaluator; bản chép sửa tại `28dae02`, phạm vi bảo vệ sửa tại `7f44b87`. Các version cũ giữ nguyên bytes.
+Artifact nguồn v1 và partial Golden v1 đóng băng ở `0b405e6`, trước evaluator; bản chép sửa tại `f6de5e5`, phạm vi bảo vệ sửa tại `8f160c0`. Các version cũ giữ nguyên bytes.
 
 Partial oracle hiện hành: `golden-p4-remaining-ji-v6.json`, 42 ca suy tay. Các lock nằm trong `docs/audits/sources/p4-vol10/remaining-ji-*-lock*.json`. Test kiểm SHA-256 của mọi version và nguyên văn/offset trên raw khóa.
 
 Bốn lỗi oracle được phân loại **GOLDEN_BUG**, có bản sửa riêng và chứng minh không phụ thuộc evaluator:
 
-1. 辰月庚申 bị ghi nhầm đồng hiện 月破. 月破 của 辰 là 戌; 庚申 có 四廢 nhưng không có 月破. Sửa tại `729c2be`.
+1. 辰月庚申 bị ghi nhầm đồng hiện 月破. 月破 của 辰 là 戌; 庚申 có 四廢 nhưng không có 月破. Sửa tại `406da01`.
 2. Negative fixture 四耗 bỏ sót 寅月 天德合壬 (丁壬合), vốn thuộc ngoại lệ nguồn. Chuyển fixture âm sang 卯, ngoài các ngoại lệ được nêu.
-3. Fixture 歸忌 dùng 甲丑, không thuộc lục thập hoa giáp. Sửa thành 乙丑; presence chỉ xét chi. Hai sửa cuối tại `a51da79`.
+3. Fixture 歸忌 dùng 甲丑, không thuộc lục thập hoa giáp. Sửa thành 乙丑; presence chỉ xét chi. Hai sửa cuối tại `cf82ccc`.
 
-4. Fixture 八風申月丁亥 bỏ sót 月德合丁 (申子辰月德壬, 丁壬合). Sửa thành ca gỡ; thêm 戌月丁亥 làm ca còn kỵ, có chứng minh nhóm 德 riêng tại `c4897f8`.
+4. Fixture 八風申月丁亥 bỏ sót 月德合丁 (申子辰月德壬, 丁壬合). Sửa thành ca gỡ; thêm 戌月丁亥 làm ca còn kỵ, có chứng minh nhóm 德 riêng tại `f316732`.
 
-Owner chốt ba presence tại `0c1f312`: 八風 theo 按; 復日 một 本建令干 theo từng tháng; 重日 là hai chi 巳/亥. Golden mới thay expectation theo quyết định này, không lấy output evaluator.
+Owner chốt ba presence tại `51a7d2b`: 八風 theo 按; 復日 một 本建令干 theo từng tháng; 重日 là hai chi 巳/亥. Golden mới thay expectation theo quyết định này, không lấy output evaluator.
 
 Oracle này là scope oracle, **không phải full Golden 720 context × heading** của roadmap mục 7. Test bổ sung 招搖 và bảo toàn raw 忌 của 遊禍 đều được viết và thấy fail trước sửa evaluator.
 

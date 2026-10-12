@@ -13,7 +13,7 @@ Spec: [`docs/plans/p4-xieji-vol10-balancing.md`](../plans/p4-xieji-vol10-balanci
 | A05 bao trùm deferral | (trong A04a) | artifact `0e953c8`, v2 sau PR #49 | 12/16 edge đủ; heading hụt → undetermined | [deferral-coverage](p4-vol10-deferral-coverage.md) |
 | Presence 四時 日 | `p4SeasonDays.ts` | `4f447f8` | 王/官 thuyết cũ, 守日 = 辰未戌丑, 長生 theo 令星; mọi nhãn bảng khớp, 3 cách đọc khác bị bác | [season-days](p4-vol10-season-days.md) |
 | 又為X (roadmap 3) | trong A04a / A04b | `df4e1f9` (+v2) | 土府/血支 專忌 = phạm vi bảo vệ; 死神 thuộc 平日; 5 thần convention = phạm vi riêng | [youwei-scopes](p4-vol10-youwei-scopes.md) |
-| 凶 còn lại + 21 dormant (roadmap 4) | `p4RemainingJi.ts` / `p4FullDayComposition.ts` | source `195423b`, partial Golden v6 `c4897f8` | **PARTIAL**: 24 entry / 29 heading / đủ 21 IDs; 42 ca scope; 31.755 dòng thật; 0 propagation gỡ, 69 chặn, 10.962 unresolved; còn source/operand gate | [remaining-ji](p4-vol10-remaining-ji.md) |
+| 凶 còn lại + 21 dormant (roadmap 4) | `p4RemainingJi.ts` / `p4FullDayComposition.ts` | source `0b405e6`, partial Golden v6 `f316732` | **PARTIAL**: 24 entry / 29 heading / đủ 21 IDs; 42 ca scope; 31.755 dòng thật; 0 propagation gỡ, 69 chặn, 10.962 unresolved; còn source/operand gate | [remaining-ji](p4-vol10-remaining-ji.md) |
 | Code review PR #48 | — | — | 10 phát hiện, sửa 7, đồng bộ cách đọc 月破 với production (PR #49) | [day-composition §Sửa sau code review](p4-vol10-day-composition.md) |
 
 **Kiểm chứng gần nhất (main `94cdb05`):** gate P4 321 test; full unit 175 file / 3276 test; typecheck/lint/build qua; bundle `index-CeLinrvj.js` trùng production. Mutation runner (chạy tuần tự): `scripts/audit-p4-{authority,bridge,grade,heading,day,coverage,season}-mutations.py`, đều bắt hết.
