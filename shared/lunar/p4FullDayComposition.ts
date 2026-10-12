@@ -1,4 +1,4 @@
-import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import { applyP4Propagation, resolveP4Day } from './p4DayComposition'
 import { resolveP4RemainingJi } from './p4RemainingJi'
 

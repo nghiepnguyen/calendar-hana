@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
-import golden from '../almanac-data/golden-p4-remaining-ji-v7.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
+import golden from '../almanac-data/golden-p4-remaining-ji-v8.json'
+import { resolveP4Day } from './p4DayComposition'
 import { resolveP4FullDay } from './p4FullDayComposition'
+
+const B = '子丑寅卯辰巳午未申酉戌亥'
+const S = '甲乙丙丁戊己庚辛壬癸'
 
 describe('P4-B composed day, audit only', () => {
   it('adds protected 四窮 without spreading marriage taboo to 安牀', () => {
@@ -30,6 +34,24 @@ describe('P4-B composed day, audit only', () => {
       }
     for (const [h, ji] of Object.entries(c.ji ?? {})) expect(r.headings[h]!.ji, h).toBe(ji)
   })
+  it('applies puzhu:28 only to its listed days and keeps their 宜 evidence', () => {
+    const listed = new Set(art.dayRules.flatMap((r) => r.applied.map(([m, p]) => m! + p!)))
+    expect(listed.size).toBe(8)
+    for (const month of B)
+      for (let i = 0; i < 60; i++) {
+        const pillar = S[i % 10]! + B[i % 12]!
+        const r = resolveP4FullDay(month, pillar)
+        expect(r.dayRule !== undefined, `${month}${pillar}`).toBe(listed.has(month + pillar))
+        if (!r.dayRule) continue
+        const base = resolveP4Day(month, pillar).prePropagationHeadings
+        expect(
+          Object.values(base).some((d) => d.ji),
+          `${month}${pillar} had 忌`,
+        ).toBe(true)
+        for (const [h, d] of Object.entries(r.prePropagationHeadings))
+          expect(d.yi, h).toBe(base[h]!.yi)
+      }
+  }, 60_000)
   it('never lets the puzhu:28 list meet a whole-day taboo', () => {
     for (const { applied } of art.dayRules)
       for (const [m, p] of applied) {
@@ -54,8 +76,6 @@ import baseline from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 
 it('audits propagation on all 1095 real dates with explicit unresolved evidence', () => {
-  const B = '子丑寅卯辰巳午未申酉戌亥'
-  const S = '甲乙丙丁戊己庚辛壬癸'
   const rows = [
     'date\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tunresolved\tpropagated_from\tblocked_by',
   ]

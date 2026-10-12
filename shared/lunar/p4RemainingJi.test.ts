@@ -2,13 +2,15 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import definitions from '../almanac-data/xieji-god-definitions.json'
-import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
-import golden from '../almanac-data/golden-p4-remaining-ji-v7.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
+import golden from '../almanac-data/golden-p4-remaining-ji-v8.json'
 import scanLock from '../../docs/audits/sources/p4-vol10/youhuo-scan-lock.json'
 import yuebiaoLockV1 from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock.json'
 import yuebiaoLock from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json'
 import goldenLockV7 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v7.json'
 import lockV6 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v6.json'
+import lockV7 from '../../docs/audits/sources/p4-vol10/remaining-ji-lock-v7.json'
+import goldenLockV8 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v8.json'
 import lock from '../../docs/audits/sources/p4-vol10/remaining-ji-lock.json'
 import goldenLockV6 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v6.json'
 import goldenLockV4 from '../../docs/audits/sources/p4-vol10/remaining-ji-golden-lock-v4.json'
@@ -33,6 +35,8 @@ describe('P4-B remaining 忌, audit only', () => {
       ...yuebiaoLock.vol10Print.files,
       ...lockV6.files,
       ...goldenLockV7.files,
+      ...lockV7.files,
+      ...goldenLockV8.files,
       ...lockV2.files,
       ...goldenLockV2.files,
       ...lockV3.files,

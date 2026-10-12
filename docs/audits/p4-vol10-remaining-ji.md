@@ -4,7 +4,7 @@ Trạng thái: **AUDIT_ONLY_PARTIAL — chưa đạt “Xong khi” của roadma
 
 ## Mô hình và căn cứ
 
-- `shared/almanac-data/p4-vol10-remaining-ji-v6.json`: 26 entry riêng (v5 + 滿日, 天狗), một day rule `puzhu:28`, và inventory đầy đủ 29 heading 卷十一. Mỗi entry có nguyên văn 卷十, offset theo Unicode code point, SHA-1 raw nguồn, danh sách 忌, predicate và phạm vi bảo vệ. Không suy class từ dấu điểm hoặc nhãn sao.
+- `shared/almanac-data/p4-vol10-remaining-ji-v7.json`: 26 entry riêng (v5 + 滿日, 天狗), một day rule `puzhu:28`, và inventory đầy đủ 29 heading 卷十一. Mỗi entry có nguyên văn 卷十, offset theo Unicode code point, SHA-1 raw nguồn, danh sách 忌, predicate và phạm vi bảo vệ. Không suy class từ dấu điểm hoặc nhãn sao.
 - 9 凶 dormant còn thiếu scope được ghép: 厭對、四廢、四忌、四窮、五墓、五離、往亡、八專、歸忌. 5 hung dormant còn lại dùng các scope P4-A đã khóa: 災煞、月煞、月害、月厭、大時. 7 cát dormant đã có operand trong A04b; P4-B xuất presence đủ 21 IDs và dùng chúng qua đường 宜 hiện có, không tạo điểm.
 - Presence ngoài P3: 死氣 = Month Jian +4, 小耗 = +5; 天賊 từ 丑 nghịch 12 chi; 四耗 theo mùa; 五虛 theo mùa; 九空 từ 辰 nghịch 四季; 九坎/九焦 theo tháng; 土符 theo bảng; 地囊 theo **bản sửa rõ ràng của 按**, không theo bảng 歴例 bị chính nguồn bác; 觸水龍 = 丙子/癸丑/癸未.
 - 四廢 + 月破 → 諸事皆忌. 四窮 chỉ gỡ ở 寅月乙亥 có 天願; 八專 gỡ hôn nhân với 天願, không gỡ quân sự. 五墓 chỉ gỡ với 月德 ở 午/子. 不將 không miễn kỵ hôn nhân khác.
@@ -20,7 +20,7 @@ Trạng thái: **AUDIT_ONLY_PARTIAL — chưa đạt “Xong khi” của roadma
 
 Artifact nguồn v1 và partial Golden v1 đóng băng ở `0b405e6`, trước evaluator; bản chép sửa tại `f6de5e5`, phạm vi bảo vệ sửa tại `8f160c0`. Các version cũ giữ nguyên bytes.
 
-Partial oracle hiện hành: `golden-p4-remaining-ji-v7.json`, 51 ca scope và 10 ca ngày, đều suy tay. Golden v7 đóng băng ở `c988e12`, trước code. Các lock nằm trong `docs/audits/sources/p4-vol10/remaining-ji-*-lock*.json`. Test kiểm SHA-256 của mọi version và nguyên văn/offset trên raw khóa.
+Partial oracle hiện hành: `golden-p4-remaining-ji-v8.json`, 51 ca scope và 10 ca ngày, đều suy tay. Golden v7 đóng băng ở `c988e12` và v8 ở `5c9e3c0`, đều trước code. Các lock nằm trong `docs/audits/sources/p4-vol10/remaining-ji-*-lock*.json`. Test kiểm SHA-256 của mọi version và nguyên văn/offset trên raw khóa.
 
 Bốn lỗi oracle được phân loại **GOLDEN_BUG**, có bản sửa riêng và chứng minh không phụ thuộc evaluator:
 
@@ -45,10 +45,10 @@ Thiếu operand chỉ làm heading liên quan `undetermined`; không giả absen
 Quét 1095 ngày 2025–2027, 29 heading/ngày: **31.755 dòng**. TSV: `p4-vol10-remaining-ji-2025-2027.tsv`; tổng hợp: `p4-vol10-remaining-ji-summary.json`.
 
 - 21 dormant đều xuất hiện trong khoảng kiểm; presence còn được đối chiếu trực tiếp từng ô với definitions P3 trên 720 context.
-- **0 propagation gỡ; 84 propagation bị chặn** (trước là 69). 15 ca mới bị chặn đều do heading trước kia còn `undetermined` vì token 滿日/天狗, nay đã xác định nên propagation hiện ra và bị 忌 bảo vệ chặn. Không thay số 0 bằng fixture nhân tạo để nói đã chứng minh lan truyền thành công trên dữ liệu thật.
-- **7.623 dòng còn thiếu operand 凶** (trước là 10.962), chỉ còn 土王用事後 và các operand ngày âm. Đây là số dòng có `unresolvedJi`, không phải tổng số `undetermined` (vốn còn phụ thuộc 11 宜 của mục 5).
+- **0 propagation gỡ; 75 propagation bị chặn** (bản đầu là 69). Khi thêm 滿日/天狗, số này lên 84: các heading trước kia `undetermined` vì token 滿日/天狗 nay đã xác định, propagation hiện ra và bị 忌 bảo vệ chặn. Áp 未月甲午 bỏ đi 9 ca chặn trên 3 ngày đó. Không thay số 0 bằng fixture nhân tạo để nói đã chứng minh lan truyền thành công trên dữ liệu thật.
+- **7.602 dòng còn thiếu operand 凶** (bản đầu là 10.962), chỉ còn 土王用事後 và các operand ngày âm. Đây là số dòng có `unresolvedJi`, không phải tổng số `undetermined` (vốn còn phụ thuộc 11 宜 của mục 5).
 - 0 ngày còn xung đột 天願/遊禍 (trước là 6). 巳月丙申 (2025-05-27, 2026-05-22, 2027-05-17) giờ là 諸事不忌. 亥月壬寅 (2025-11-29, 2026-11-24, 2027-11-19) giữ 忌 của 遊禍.
-- `puzhu:28` áp cho 6 ngày thực trong khoảng kiểm: 2025-03-06, 2025-05-27, 2025-08-07, 2025-09-08, 2026-05-22, 2027-05-17. Mọi heading đều `ji: false`.
+- `puzhu:28` áp cho 9 ngày thực trong khoảng kiểm: 2025-03-06, 2025-05-27, 2025-07-24, 2025-08-07, 2025-09-08, 2026-05-22, 2026-07-19, 2027-05-17, 2027-07-14. Mọi heading đều `ji: false`. Khi thêm 未月甲午, TSV chỉ đổi ở 3 ngày 未月甲午; mọi dòng khác giữ nguyên.
 
 Lệnh tái tạo: `P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test.ts shared/lunar/p4FullDayComposition.test.ts`.
 
@@ -64,7 +64,7 @@ Lệnh tái tạo: `P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test
 | 土王用事後 | S1 vẫn SOURCE_DEPENDENT, không lấy quy ước cũ làm authority mới | UNSUPPORTED_OPERAND, tiếp tục S1 |
 | 天狗 | 卷十 entry 滿日: 申月又為天狗, 忌祭祀, 與德合併猶忌 | **MODELED** (申月戌, protected). 月表: 七月庚戌 có. P1 scope 卷04 vẫn tách riêng |
 | 滿日 | Entry riêng 卷十 offset 10434 | **MODELED**. 月表: 正月甲辰/戊辰 và 二月乙巳/辛巳 忌 (không có 德); 正月丙辰 (月德) và 二月丁巳 (月恩 + 四相) gỡ |
-| `puzhu:28` mục 六月 | Bản in n229 và raw ghi 六月甲子; 月表 六月甲子 không có 赦/願 và in 忌, còn 六月甲午 (天德 月德 天赦) không in 忌 | **SOURCE_DEPENDENT**, không áp cho cả hai pillar; vế đầu 「嵗薄逐陣…」 chưa mô hình |
+| `puzhu:28` mục 六月 | Bản in n229 và raw ghi 六月甲子; 月表 六月甲子 không có 赦/願 và in 忌, còn 六月甲午 (天德 月德 天赦) không in 忌 | **OWNER_ADOPTED** 2026-10-12: coi 「甲子」 là lỗi in, áp cho 未月甲午 theo 月表; 未月甲子 không áp. Vế đầu 「嵗薄逐陣…」 chưa mô hình |
 
 Quotes và offset của ba presence đã chốt: `sources/p4-vol10/remaining-ji-open-presence.json`. Các câu 卷十 và conflict P3 nằm trong artifact nguồn / `xieji-god-definitions.json`. Đã đọc trực tiếp [scan n182](https://archive.org/download/06067686.cn/page/n182_w1200.jpg): mục 遊禍 có chú **天願不得與遊禍併**. Ảnh gốc `sources/p4-vol10/youhuo-n182.jpg`, checksum/locator ở `youhuo-scan-lock.json`. OCR không đọc được, không dùng OCR làm oracle. Scan này xác nhận provenance của chú; không giải quyết mâu thuẫn với presence P3, nên giữ pending đúng quyết định owner.
 
@@ -79,10 +79,10 @@ Quotes và offset của ba presence đã chốt: `sources/p4-vol10/remaining-ji-
 - **天願 + 遊禍**: 月表 in **cả hai** thần trên 四月丙申 và 十月壬寅, nên presence P3 đúng với thực hành của chính sách. 十月壬寅 không có 德合 và in 忌 祭祀 祈福 求嗣 解除 求醫療病 開渠, tức 天願 không gỡ 遊禍. 四月丙申 có thêm 天德合 và không in 忌 nào. Lý do là 鋪註條例 cuối 卷十 (`puzhu:28`, offset 22630): 「…四月丙申…徳合與赦願所㑹之辰諸事不忌」. Chú 「天願不得與遊禍併」 không phải lỗi chép, nhưng 月表 không dùng nó để xoá presence.
 - **天狗**: có trên 七月庚戌 (申月戌, 滿日). Các 滿日 của 正月/二月 không có.
 - **滿日**: 二月乙巳/辛巳 (không có 德) 忌 結婚姻/納采問名; 二月丁巳 (月恩 + 四相) thì không. 求醫療病 không tách riêng được ở 二月 vì cả ba ngày đều có 往亡, nhưng nằm sẵn trong entry 卷十.
-- **puzhu:28**: 四月丙申, 七月戊申, 十二月甲子 đều không in 忌; 六月甲子 vẫn in 忌; 六月甲午 không in 忌.
+- **puzhu:28**: 四月丙申, 六月甲午, 七月戊申, 十二月甲子 đều không in 忌, dù có 月刑/血忌/遊禍 (丙申) hay 天吏/往亡/血支 (甲午). Phạm vi gỡ vì vậy là **toàn bộ 忌 của ngày** (諸事不忌), kể cả 百忌. 六月甲子 vẫn in 忌. Test xác nhận rule chỉ áp cho đúng 8 pillar trong 720 context và giữ nguyên bằng chứng 宜.
 
 Không chuyển roadmap sang mục 5 trước khi mục 4 đạt tiêu chí. 11 宜, P5 warehouse, full Golden, adapter OFF, migration và activation vẫn là các bước kế tiếp riêng.
 
 ## Kiểm chứng
 
-Gate P4-B hiện hành: 2 file / 73 test qua, gồm quét 720 context, 1095 ngày, Golden v7 (51 ca scope + 10 ca ngày) và witness 月表. Typecheck/oxlint/build qua; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline production. Không tuyên bố deploy mới. Full unit: **177 file / 3349 test qua**. Mutation P4-B: **11/11** bị assertion bắt, gồm 3 mutation mới cho day rule, cách đọc 忌 khi defer và officer offset; runner phục hồi nguyên bytes. File A04b không đổi nên không chạy lại mutation A04b. Không dùng audit này để tuyên bố scoring đã chứng nhận.
+Gate P4-B hiện hành: 2 file / 74 test qua, gồm quét 720 context, 1095 ngày, Golden v7 (51 ca scope + 10 ca ngày) và witness 月表. Typecheck/oxlint/build qua; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline production. Không tuyên bố deploy mới. Full unit: **177 file / 3350 test qua**. Mutation P4-B: **11/11** bị assertion bắt, gồm 3 mutation mới cho day rule, cách đọc 忌 khi defer và officer offset; runner phục hồi nguyên bytes. File A04b không đổi nên không chạy lại mutation A04b. Không dùng audit này để tuyên bố scoring đã chứng nhận.

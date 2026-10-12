@@ -1,4 +1,4 @@
-import art from '../almanac-data/p4-vol10-remaining-ji-v6.json'
+import art from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import { resolveP4Context } from './p4ContextBridge'
 import { P4_DAY_HEADINGS } from './p4DayComposition'
 import { canonP4Heading, resolveP4Headings } from './p4HeadingAnnotation'
