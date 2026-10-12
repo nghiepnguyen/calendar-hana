@@ -6,14 +6,21 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 mutations = [
+ ('soil_onset_excluded', 'p4SoilConvention.ts', 'date >= p.onset', 'date > p.onset'),
+ ('soil_li_included', 'p4SoilConvention.ts', 'date <= p.eve', 'date <= p.li'),
+ ('soil_outside_coverage_absent', 'p4SoilConvention.ts', "? 'unknown'", "? 'absent'"),
+ ('drop_soil_ji', 'p4FullDayComposition.ts', 'lunarJi ||\n      soilJi ||', 'lunarJi ||\n      false ||'),
+ ('drop_soil_protection', 'p4FullDayComposition.ts', "initial.protectedJi || soilJi ||", "initial.protectedJi || false ||"),
+ ('soil_all_headings', 'p4FullDayComposition.ts', 'soilScope.headings.includes(h)', 'true'),
+ ('missing_soil_absent', 'p4FullDayComposition.ts', "soil?.presence ?? 'unknown'", "soil?.presence ?? 'absent'"),
  ('raw_inventory_heading_alias', 'p4FullDayComposition.ts', 'canonP4Heading(splitHeadings(h)[0]!)', 'h'),
- ('drop_phase_ji', 'p4FullDayComposition.ts', 'phaseJi || deathDefeatJi ||', 'false || deathDefeatJi ||'),
+ ('drop_phase_ji', 'p4FullDayComposition.ts', 'phaseJi ||\n      deathDefeatJi ||', 'false ||\n      deathDefeatJi ||'),
  ('omit_quarters', 'p4LunarPhase.ts', 'events.set(date, {', "if (!e.phase.includes('Quarter')) events.set(date, {"),
  ('phase_outside_coverage_absent', 'p4LunarPhase.ts', 'date < start! || date > end!', 'false'),
- ('drop_death_defeat_ji', 'p4FullDayComposition.ts', 'deathDefeatJi || lunarJi ||', 'false || lunarJi ||'),
+ ('drop_death_defeat_ji', 'p4FullDayComposition.ts', 'deathDefeatJi ||\n      lunarJi ||', 'false ||\n      lunarJi ||'),
  ('drop_suibao_yi_suppression', 'p4FullDayComposition.ts', 'suppressedYiHeadings.has(h)', 'false'),
  ('restore_death_defeat_every_day', 'p4FullDayComposition.ts', 'const restoredSubjects = deathDefeat', 'const restoredSubjects = true'),
- ('drop_lunar_day_ji', 'p4FullDayComposition.ts', 'deathDefeatJi || lunarJi ||', 'deathDefeatJi || false ||'),
+ ('drop_lunar_day_ji', 'p4FullDayComposition.ts', 'deathDefeatJi ||\n      lunarJi ||', 'deathDefeatJi ||\n      false ||'),
  ('drop_lunar_day_protection', 'p4FullDayComposition.ts', 'phaseJi || lunarJi || initial.protectedJi', 'phaseJi || false || initial.protectedJi'),
  ('missing_lunar_day_absent', 'p4FullDayComposition.ts', "lunarDay === undefined ? 'unknown'", "lunarDay === undefined ? 'absent'"),
  ('monthly_stem_as_all_stems', 'p4RemainingJi.ts', 'S.includes(v) ? v === pillar[0] : v === pillar[1]', 'S.includes(v) ? true : v === pillar[1]'),
@@ -39,7 +46,7 @@ try:
    raise RuntimeError(f'Mutation does not apply: {name}')
   target.write_text(original.replace(old, new, 1))
   try:
-   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', 'shared/lunar/p4LunarDayComposition.test.ts', 'shared/lunar/p4PuzhuEnd.test.ts', 'shared/lunar/p4LunarPhase.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
+   run = subprocess.run(['npx', 'vitest', 'run', 'shared/lunar/p4RemainingJi.test.ts', 'shared/lunar/p4FullDayComposition.test.ts', 'shared/lunar/p4LunarDayComposition.test.ts', 'shared/lunar/p4PuzhuEnd.test.ts', 'shared/lunar/p4LunarPhase.test.ts', 'shared/lunar/p4SoilConvention.test.ts', '-t', 'P4-B'], cwd=root, capture_output=True, text=True, timeout=180)
    output = run.stdout + run.stderr
    results.append({'mutation': name, 'caughtByAssertion': run.returncode != 0 and 'AssertionError' in output, 'exitCode': run.returncode})
   finally:
@@ -47,7 +54,7 @@ try:
 finally:
  for path, content in originals.items():
   path.write_bytes(content)
-report = {'scope': 'P4_B_AUDIT_ONLY_PARTIAL', 'mutations': results, 'restored': all(p.read_bytes() == b for p,b in originals.items()), 'targetHashes': {str(p.relative_to(root)): hashlib.sha256(b).hexdigest() for p,b in originals.items()}, 'limits': 'Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved.'}
+report = {'scope': 'P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT', 'mutations': results, 'restored': all(p.read_bytes() == b for p,b in originals.items()), 'targetHashes': {str(p.relative_to(root)): hashlib.sha256(b).hexdigest() for p,b in originals.items()}, 'limits': 'Audit-only operand and composition gate under named owner convention; canonical soil witness and roadmap 5/full Golden/scoring remain open.'}
 (root/'docs/audits/p4-vol10-remaining-ji-mutation-results.json').write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps(report))
 if not all(r['caughtByAssertion'] for r in results):

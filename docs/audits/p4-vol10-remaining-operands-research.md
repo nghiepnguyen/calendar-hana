@@ -1,6 +1,6 @@
 # P4-B — phương án giải quyết operand còn thiếu
 
-Ngày kiểm: 2026-10-12. Bản nghiên cứu ban đầu dưới đây giữ số liệu trước triển khai. Cập nhật: phần ngày âm 12/15 đã triển khai audit-only (Golden khóa `5442f10`); ngày âm, 朔弦望 và 鋪註 27/28-first đã triển khai; sửa alias phá dỡ, sweep còn 6.516 dòng thiếu 凶 chỉ do 土王用事後. S1 còn gate owner (`p4-vol10-soil-convention-gate.md`); mục 4 vẫn PARTIAL.
+Ngày kiểm ban đầu: 2026-10-12; cập nhật 2026-10-13. Nghiên cứu lịch sử bên dưới giữ số liệu trước triển khai. Ngày âm 12/15, 朔弦望 và 鋪註 27/28-first đã triển khai audit-only. Owner phê duyệt mới soil convention cho P4-B dưới `p4-soil-owner-convention-v1` / **OWNER_ADOPTED_SOURCE_DEPENDENT**; mục 4 đã nghiệm thu audit-only, sweep 0 thiếu operand 凶 / 0 conflict. Đây không phải authority canonical; S1 onset/後/定氣 vẫn OPEN. Xem [gate](p4-vol10-soil-convention-gate.md).
 
 ## Phân rã số liệu hiện hành
 

@@ -1,6 +1,41 @@
 {
-  "scope": "P4_B_AUDIT_ONLY_PARTIAL",
+  "scope": "P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT",
   "mutations": [
+    {
+      "mutation": "soil_onset_excluded",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "soil_li_included",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "soil_outside_coverage_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_soil_ji",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_soil_protection",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "soil_all_headings",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "missing_soil_absent",
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
     {
       "mutation": "raw_inventory_heading_alias",
       "caughtByAssertion": true,
@@ -109,9 +144,10 @@
   ],
   "restored": true,
   "targetHashes": {
-    "shared/lunar/p4FullDayComposition.ts": "66685c8fa568e64714d900d354e4ac5d415fbab0a72bba5863de079876cb8c01",
+    "shared/lunar/p4SoilConvention.ts": "02a28d26da53f1156e15c8eaea9f19d43d6110e5458770bdea1e440fd7e0eb08",
+    "shared/lunar/p4FullDayComposition.ts": "94bb6d978511de7531682c653be1c635c632ea271c00e5402dfda81e49b98d36",
     "shared/lunar/p4RemainingJi.ts": "41881afd8c12e06af4a373664fd0374b8b1a7a1020cf4058d5d28c11b5110d40",
     "shared/lunar/p4LunarPhase.ts": "b19e12e74f6d63dbc17bb237c8f81987c066c55bb78b914c5dc7b92d610f31e4"
   },
-  "limits": "Partial oracle only; not a claim that all roadmap 4 mutations or source conflicts are resolved."
+  "limits": "Audit-only operand and composition gate under named owner convention; canonical soil witness and roadmap 5/full Golden/scoring remain open."
 }

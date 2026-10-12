@@ -1,6 +1,6 @@
 # P4-B — các 凶 còn lại của 卷十一 và 21 dormant
 
-Trạng thái: **AUDIT_ONLY_PARTIAL — chưa đạt “Xong khi” của roadmap mục 4**. Không activation, scoring, merge hoặc deploy. Nhánh `codex/p4-remaining-ji-audit`.
+Trạng thái: **P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT — đã nghiệm thu audit-only roadmap mục 4 theo owner 2026-10-13**. Không activation, scoring, merge hoặc deploy. Nhánh `codex/p4-remaining-ji-audit`.
 
 ## Mô hình và căn cứ
 
@@ -45,8 +45,8 @@ Thiếu operand chỉ làm heading liên quan `undetermined`; không giả absen
 Quét 1095 ngày 2025–2027, 29 heading/ngày: **31.755 dòng**. TSV: `p4-vol10-remaining-ji-2025-2027.tsv`; tổng hợp: `p4-vol10-remaining-ji-summary.json`.
 
 - 21 dormant đều xuất hiện trong khoảng kiểm; presence còn được đối chiếu trực tiếp từng ô với definitions P3 trên 720 context.
-- **0 propagation gỡ; 75 propagation bị chặn** (bản đầu là 69). Khi thêm 滿日/天狗, số này lên 84: các heading trước kia `undetermined` vì token 滿日/天狗 nay đã xác định, propagation hiện ra và bị 忌 bảo vệ chặn. Áp 未月甲午 bỏ đi 9 ca chặn trên 3 ngày đó. Không thay số 0 bằng fixture nhân tạo để nói đã chứng minh lan truyền thành công trên dữ liệu thật.
-- **6.516 dòng còn thiếu operand 凶** (sau phase từng báo 5.430 do bỏ sót alias phá dỡ; trước phase: 6.516; trước ngày âm: 7.602) (bản đầu là 10.962), chỉ còn 土王用事後. Đây là số dòng có `unresolvedJi`, không phải tổng số `undetermined` (vốn còn phụ thuộc 11 宜 của mục 5).
+- **0 propagation gỡ; 179 propagation bị chặn** (trước soil: 75) (bản đầu là 69). Khi thêm 滿日/天狗, số này lên 84: các heading trước kia `undetermined` vì token 滿日/天狗 nay đã xác định, propagation hiện ra và bị 忌 bảo vệ chặn. Áp 未月甲午 bỏ đi 9 ca chặn trên 3 ngày đó. Không thay số 0 bằng fixture nhân tạo để nói đã chứng minh lan truyền thành công trên dữ liệu thật.
+- **0 dòng thiếu operand 凶** dưới authority soil mới. Trước phê duyệt có 6.516 dòng thiếu soil (sau sửa alias 壞/壊); không dùng số thiếu operand để đếm tổng `undetermined`, vì còn 11 宜 của mục 5.
 - 0 ngày còn xung đột 天願/遊禍 (trước là 6). 巳月丙申 (2025-05-27, 2026-05-22, 2027-05-17) giờ là 諸事不忌. 亥月壬寅 (2025-11-29, 2026-11-24, 2027-11-19) giữ 忌 của 遊禍.
 - `puzhu:28` áp cho 9 ngày thực trong khoảng kiểm: 2025-03-06, 2025-05-27, 2025-07-24, 2025-08-07, 2025-09-08, 2026-05-22, 2026-07-19, 2027-05-17, 2027-07-14. Mọi heading đều `ji: false`. Khi thêm 未月甲午, TSV chỉ đổi ở 3 ngày 未月甲午; mọi dòng khác giữ nguyên.
 
@@ -61,7 +61,7 @@ Lệnh tái tạo: `P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test
 | 重日 | 原文「己亥二日」, diễn giải sau nói 巳/亥 | **OWNER_ADOPTED**: hai chi 巳/亥, không phải một pillar 己亥 |
 | 天願 + 遊禍 | P3 天願 = 巳月丙申/亥月壬寅 trùng 遊禍; 卷十 chú「天願不得與遊禍併」 (scan n182 xác nhận) | **OWNER_ADOPTED** 2026-10-12 theo 月表: cả hai có mặt, 遊禍 giữ 忌; 巳月丙申 諸事不忌 theo `puzhu:28` |
 | 每月十二日十五日 / 每月十五日 / 朔望日 | API audit có context tùy chọn `{ lunarDay }`; sweep cấp `LUNAR_DAY` theo lịch hiện hành. 卷十: 十五日「忌求醫療病，義同朢日」 | Ngày 12/15 MODELED (Golden riêng `5442f10`); 朔弦望 đã MODELED theo scan + USNO 2025–2027 (`1b2e9c2`); thiếu date/ngoài coverage vẫn unknown, không đồng nhất 望 với ngày 15 |
-| 土王用事後 | S1 vẫn SOURCE_DEPENDENT, không lấy quy ước cũ làm authority mới | UNSUPPORTED_OPERAND, tiếp tục S1 |
+| 土王用事後 | Phê duyệt mới owner 2026-10-13 tái dùng convention production dưới authority riêng | **OWNER_ADOPTED_SOURCE_DEPENDENT**, chỉ sáu heading; canonical S1 onset/後/定氣 OPEN |
 | 天狗 | 卷十 entry 滿日: 申月又為天狗, 忌祭祀, 與德合併猶忌 | **MODELED** (申月戌, protected). 月表: 七月庚戌 có. P1 scope 卷04 vẫn tách riêng |
 | 滿日 | Entry riêng 卷十 offset 10434 | **MODELED**. 月表: 正月甲辰/戊辰 và 二月乙巳/辛巳 忌 (không có 德); 正月丙辰 (月德) và 二月丁巳 (月恩 + 四相) gỡ |
 | `puzhu:28` mục 六月 | Bản in n229 và raw ghi 六月甲子; 月表 六月甲子 không có 赦/願 và in 忌, còn 六月甲午 (天德 月德 天赦) không in 忌 | **OWNER_ADOPTED** 2026-10-12: coi 「甲子」 là lỗi in, áp cho 未月甲午 theo 月表; 未月甲子 không áp. Vế đầu 「嵗薄逐陣…」 đã mô hình theo source lock `07ae416` |
@@ -108,3 +108,11 @@ S1 còn gate presence/biên: xem [phương án review](p4-vol10-soil-convention-
 ### Sửa coverage lookup 壞/壊 (2026-10-13)
 
 Inventory khóa ghi `破屋壞垣`, evaluator dùng heading chuẩn `破屋壊垣`. Lookup trực tiếp theo key khiến operand 土王用事後 của phá dỡ bị bỏ sót, không phải đã resolve. Regression test đã thấy đỏ (`[]` thiếu token 土王) trước sửa. Lookup mới dùng cùng `splitHeadings` + `canonP4Heading` như tầng heading; không sửa bytes artifact hoặc Golden cũ. Mutation bỏ chuẩn hóa bắt được regression này. Số unresolved chính xác là 1.086 × **6** heading = **6.516**, toàn bộ 土王用事後. Metric trước sửa alias 5.430 phải được hiểu là thiếu coverage, không dùng để chứng nhận P4-B.
+
+## Nghiệm thu soil theo authority owner mới (2026-10-13)
+
+Authority `p4-soil-owner-convention-v1` và Golden HKO độc lập khóa trước code tại `c0d8f56`. Quy tắc Asia/Ho_Chi_Minh: 18 ngày dân sự trước 四立, gồm onset, trừ ngày 四立. Không nâng authority cũ thành canonical và không dùng aggregate PR #29 làm oracle. Golden mới có 12 kỳ / 48 ca biên, raw scope chỉ 營建宮室、修宮室、興造動土、修倉庫、破屋壊垣、栽種. Đoạn 「以下並同」 bảo vệ raw 忌 khi gặp 德; `puzhu:28` vẫn gỡ toàn bộ 忌 của ngày. Thiếu operand/ngoài coverage 2025–2027 giữ unknown.
+
+Sweep cuối: **1095 ngày / 31.755 dòng / 0 unresolved operand 凶 / 0 conflict / 0 propagation gỡ / 179 chặn**. TSV thêm soil presence, authority ID và status. Scope chỉ audit, chưa giải operand 宜 mục 5 hay full Golden mục 7. Canonical witness audit vẫn OPEN cho onset, 後 và 定氣; chi tiết [gate](p4-vol10-soil-convention-gate.md). Các metric ở phần lịch sử trước phê duyệt giữ để tái hiện từng bước.
+
+Validation cuối ngày 2026-10-13: gate **6 file / 200 test**; mutation **28/28** bắt bằng assertion, bytes phục hồi; full unit **181 file / 3476 test**; build, main/functions typecheck, oxlint và formatting bốn file code đều qua. `graphify update .` đã chạy. Bundle `dist/assets/index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline runtime. TSV kiểm 31.755 dòng × 19 cột, soil status explicit và không còn unresolved token. Các Golden/lock cũ giữ nguyên bytes. Chưa push các commit mới, không merge/deploy.

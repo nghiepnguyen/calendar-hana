@@ -1,6 +1,6 @@
 # P4-B — gate 土王用事後
 
-2026-10-13. Không đổi runtime, chưa coi convention production thành authority canonical mới.
+2026-10-13. **Gate P4-B ACCEPTED dưới `OWNER_ADOPTED_SOURCE_DEPENDENT`**. Authority mới `p4-soil-owner-convention-v1`; không đổi runtime, không nâng authority cũ thành canonical.
 
 ## Phạm vi heading: ngoại lệ 德 không còn chặn các heading catalog hiện hành
 
@@ -22,10 +22,16 @@ Convention production đã được owner chốt 2026-10-10 và triển khai PR 
 - Onset bao gồm; ngày 四立 loại trừ.
 - Golden production khóa trước code `02302bb`, mốc 四立 từ HKO độc lập.
 
-Phương án có thể review cho P4-B: tái sử dụng chính presence này với authority ID/convention được đặt tên, trạng thái **OWNER_ADOPTED_SOURCE_DEPENDENT**, không gắn CANONICAL_SOURCE_LOCKED. Raw 忌 được ghép theo nguồn như trên; không thay production và không thêm điểm. Cần owner chốt việc dùng convention đó để nghiệm thu P4-B; context hiện hành còn ghi không lấy convention cũ làm authority mới.
+Owner phê duyệt mới ngày 2026-10-13 cho phạm vi P4-B: tái sử dụng presence production theo convention trên dưới tên `p4-soil-owner-convention-v1`, trạng thái **OWNER_ADOPTED_SOURCE_DEPENDENT**. Đây là authority riêng, không phải nâng authority cũ thành canonical. Raw 忌 chỉ ghép sáu heading đã xác nhận; giữ bảo vệ 德 theo đoạn 「以下並同」 và vẫn chịu override cấp ngày `puzhu:28`. Không thay production, không thêm điểm.
 
-Phương án tiếp tục yêu cầu canonical witness: giữ `土王用事後` unknown trong audit, tiếp tục đọc bản in/scan; chưa chuyển roadmap mục 5.
+Authority và Golden độc lập khóa trước code tại `c0d8f56`: bảng HKO 2025–2027 vừa tải lại, 12 kỳ / 48 ca biên; không nhập engine để tạo expected và không dùng số đếm PR #29. Test đối chiếu ngày HKO UTC+8 với mốc engine ở Asia/Ho_Chi_Minh UTC+7; cả 12 mốc đồng ngày trong miền kiểm. HKO chứng minh input biên của convention, không chứng minh cách tính cổ.
+
+**Audit canonical witness vẫn OPEN** cho onset, biên 「後」 và 定氣. Tiếp tục tìm bản in/scan 時憲書 đọc được và ghi locator/checksum/transcription trước khi đề xuất authority canonical mới. Bộ Tohoku hiện không đủ để kết luận ba mục này; không suy từ việc gate P4-B đã được nghiệm thu.
 
 ## Evidence hiện hành
 
-Sau ngày âm, bốn phase và 鋪註 27/28, 1095 ngày × 29 heading còn **6.516 dòng unresolved** (sau khi sửa lookup 壞/壊, thêm 1.086 dòng phá dỡ từng bị bỏ sót), tất cả do 土王用事後. Đây là số dòng thiếu presence, không phải 6.516 dòng thật sự kỵ. Các số đếm runtime/production của PR #29 không được dùng như Golden independent mới.
+Trước phê duyệt mới, sau ngày âm, bốn phase và 鋪註 27/28, 1095 ngày × 29 heading còn **6.516 dòng unresolved** (sau khi sửa lookup 壞/壊, thêm 1.086 dòng phá dỡ từng bị bỏ sót), tất cả do 土王用事後. Đây là số dòng thiếu presence, không phải 6.516 dòng thật sự kỵ. Các số đếm runtime/production của PR #29 không được dùng như Golden independent mới.
+
+Sau ghép soil theo authority mới: **31.755 dòng, 0 unresolved operand 凶, 0 conflict, 0 propagation gỡ / 179 chặn**. TSV có `soil_presence`, `soil_authority`, `soil_status`; thiếu operand hoặc ngoài 2025–2027 vẫn unknown. Đây là nghiệm thu roadmap 4 audit-only; chưa phải full Golden hay hoàn tất 11 operand 宜 của mục 5.
+
+Validation cuối ngày 2026-10-13: gate **6 file / 200 test**; mutation **28/28** bắt bằng assertion, bytes phục hồi; full unit **181 file / 3476 test**; build, main/functions typecheck, oxlint và formatting bốn file code đều qua. `graphify update .` đã chạy. Bundle `dist/assets/index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969`, trùng baseline runtime. TSV kiểm 31.755 dòng × 19 cột, soil status explicit và không còn unresolved token. Các Golden/lock cũ giữ nguyên bytes. Chưa push các commit mới, không merge/deploy.

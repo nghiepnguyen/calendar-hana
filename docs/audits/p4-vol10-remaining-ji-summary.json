@@ -1,11 +1,11 @@
 {
-  "scope": "AUDIT_ONLY_PARTIAL",
+  "scope": "P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT",
   "counts": {
     "dates": 1095,
     "headings": 31755,
     "lifted": 0,
-    "blocked": 58,
-    "unresolved": 6516
+    "blocked": 179,
+    "unresolved": 0
   },
   "dormant": {
     "thien_nguyen": 16,

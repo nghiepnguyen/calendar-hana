@@ -4,6 +4,7 @@ import golden from '../almanac-data/golden-p4-remaining-ji-v8.json'
 import { resolveP4Day } from './p4DayComposition'
 import { resolveP4FullDay } from './p4FullDayComposition'
 import { getP4MoonPhase } from './p4LunarPhase'
+import { getP4SoilPresence } from './p4SoilConvention'
 
 const B = '子丑寅卯辰巳午未申酉戌亥'
 const S = '甲乙丙丁戊己庚辛壬癸'
@@ -83,7 +84,7 @@ import { getAlmanac } from './almanac'
 
 it('audits propagation on all 1095 real dates with explicit unresolved evidence', () => {
   const rows = [
-    'date\tlunar_day\tphase\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tyi\tpuzhu_end\tdeath_defeat\tunresolved\tpropagated_from\tblocked_by',
+    'date\tlunar_day\tphase\tmonth_jian\tpillar\theading\tbefore\tafter\tji\tprotected\tyi\tpuzhu_end\tdeath_defeat\tsoil_presence\tsoil_authority\tsoil_status\tunresolved\tpropagated_from\tblocked_by',
   ]
   const counts = { dates: 0, headings: 0, lifted: 0, blocked: 0, unresolved: 0 }
   const dormant: Record<string, number> = {}
@@ -93,7 +94,11 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
     const month = B[a.selectionContext.MONTH_JIAN_BRANCH!]!
     const pillar = S[a.dayCanChi.can]! + B[a.dayCanChi.chi]!
     const lunarDay = a.selectionContext.LUNAR_DAY!
-    const r = resolveP4FullDay(month, pillar, { lunarDay, phase: getP4MoonPhase(date) })
+    const r = resolveP4FullDay(month, pillar, {
+      lunarDay,
+      phase: getP4MoonPhase(date),
+      soil: getP4SoilPresence(date),
+    })
     counts.dates++
     for (const [id, present] of Object.entries(r.remaining.dormantPresence))
       dormant[id] = (dormant[id] ?? 0) + Number(present)
@@ -124,6 +129,9 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
           d.yi ?? 'unknown',
           r.puzhuEnd.suppressedYiHeadings.includes(h) ? r.puzhuEnd.pillarRuleIds.join('+') : '',
           r.puzhuEnd.restoredJiHeadings.includes(h) ? r.puzhuEnd.restoredSubjects.join('+') : '',
+          r.soilScope.presence,
+          r.soilScope.authorityId,
+          r.soilScope.status,
           r.unresolvedJi[h]!.join('+'),
           'propagatedFrom' in d ? d.propagatedFrom : '',
           'propagationBlocked' in d ? d.propagationBlocked : '',
@@ -133,14 +141,18 @@ it('audits propagation on all 1095 real dates with explicit unresolved evidence'
   }
   expect(counts.dates).toBe(1095)
   expect(counts.headings).toBe(1095 * 29)
-  expect(counts.unresolved).toBe(6516)
+  expect(counts.unresolved).toBe(0)
   expect(Object.keys(dormant)).toHaveLength(21)
   for (const n of Object.values(dormant)) expect(n).toBeGreaterThan(0)
   if (process.env.P4_B_REPORT) {
     writeFileSync('docs/audits/p4-vol10-remaining-ji-2025-2027.tsv', rows.join('\n') + '\n')
     writeFileSync(
       'docs/audits/p4-vol10-remaining-ji-summary.json',
-      JSON.stringify({ scope: 'AUDIT_ONLY_PARTIAL', counts, dormant, conflicts }, null, 2) + '\n',
+      JSON.stringify(
+        { scope: 'P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT', counts, dormant, conflicts },
+        null,
+        2,
+      ) + '\n',
     )
   }
 }, 120_000)

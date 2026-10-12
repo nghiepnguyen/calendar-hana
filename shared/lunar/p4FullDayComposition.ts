@@ -1,3 +1,5 @@
+import soilAuthority from '../almanac-data/p4-soil-owner-convention-v1.json'
+import type { getP4SoilPresence } from './p4SoilConvention'
 import phaseAuthority from '../almanac-data/p4-lunar-phase-authority-v1.json'
 import type { getP4MoonPhase } from './p4LunarPhase'
 import puzhuEndAuthority from '../almanac-data/p4-puzhu-end-v1.json'
@@ -22,9 +24,28 @@ const jiInventory = new Map(
 export function resolveP4FullDay(
   month: string,
   pillar: string,
-  operands: { lunarDay?: number; phase?: ReturnType<typeof getP4MoonPhase> } = {},
+  operands: {
+    lunarDay?: number
+    phase?: ReturnType<typeof getP4MoonPhase>
+    soil?: ReturnType<typeof getP4SoilPresence>
+  } = {},
 ) {
-  const { lunarDay, phase } = operands
+  const { lunarDay, phase, soil } = operands
+  if (
+    soil &&
+    (soil.authorityId !== soilAuthority.version ||
+      soil.status !== soilAuthority.status ||
+      !['present', 'absent', 'unknown'].includes(soil.presence))
+  )
+    throw new RangeError('Unrecognized soil authority or value')
+  const soilScope = {
+    authorityId: soilAuthority.version,
+    status: soilAuthority.status,
+    source: soilAuthority.source,
+    headings: soilAuthority.headings,
+    evidence: soil,
+    presence: soil?.presence ?? 'unknown',
+  }
   if (
     phase &&
     (phase.authorityId !== phaseAuthority.version ||
@@ -121,6 +142,7 @@ export function resolveP4FullDay(
       if (
         !(token in remaining.scopes) &&
         !known.has(token) &&
+        !(token === soilAuthority.inventoryToken && soilScope.presence !== 'unknown') &&
         !(token === phaseAuthority.inventoryToken && phaseScope.presence !== 'unknown') &&
         !(token in lunarDayScopes && lunarDayScopes[token]!.presence !== 'unknown') &&
         !/^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]日$/.test(token)
@@ -145,14 +167,20 @@ export function resolveP4FullDay(
       (scope) => scope.heading === h && scope.presence === 'present',
     )
     const phaseJi = phaseScope.heading === h && phaseScope.presence === 'present'
+    const soilJi = soilScope.headings.includes(h) && soilScope.presence === 'present'
     const deathDefeatJi = restoredJiHeadings.has(h)
     const extraJi =
-      phaseJi || deathDefeatJi || lunarJi || states.some((s) => s === 'kept' || s === 'protected')
+      phaseJi ||
+      deathDefeatJi ||
+      lunarJi ||
+      soilJi ||
+      states.some((s) => s === 'kept' || s === 'protected')
     const pendingProvedJi = Object.values(remaining.scopes).some(
       (s) => s.presence === 'present' && s.headings[h] === 'undetermined',
     )
     const ji = initial.ji || extraJi || pendingProvedJi
-    const protectedJi = phaseJi || lunarJi || initial.protectedJi || states.includes('protected')
+    const protectedJi =
+      phaseJi || lunarJi || initial.protectedJi || soilJi || states.includes('protected')
     const ambiguous =
       initial.state === 'undetermined' ||
       unresolved.length > 0 ||
@@ -175,6 +203,7 @@ export function resolveP4FullDay(
     remaining,
     lunarDayScopes,
     phaseScope,
+    soilScope,
     puzhuEnd,
     ...(dayRule ? { dayRule } : {}),
     prePropagationHeadings: days,
