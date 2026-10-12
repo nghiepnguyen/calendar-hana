@@ -1,0 +1,293 @@
+{
+  "version": "golden-p4-soil-owner-convention-v1",
+  "authorityId": "p4-soil-owner-convention-v1",
+  "derivation": "Independent re-fetch of HKO daily tables; subtract 18 civil dates manually with datetime, no production engine imports or PR #29 counts. Expected boundary presence follows new owner convention.",
+  "periods": [
+    {
+      "term": "立春",
+      "li": "2025-02-03",
+      "onset": "2025-01-16",
+      "eve": "2025-02-02",
+      "sourceLine": "2025年2月3日          初六        星期一      立春"
+    },
+    {
+      "term": "立夏",
+      "li": "2025-05-05",
+      "onset": "2025-04-17",
+      "eve": "2025-05-04",
+      "sourceLine": "2025年5月5日          初八        星期一      立夏"
+    },
+    {
+      "term": "立秋",
+      "li": "2025-08-07",
+      "onset": "2025-07-20",
+      "eve": "2025-08-06",
+      "sourceLine": "2025年8月7日          十四        星期四      立秋"
+    },
+    {
+      "term": "立冬",
+      "li": "2025-11-07",
+      "onset": "2025-10-20",
+      "eve": "2025-11-06",
+      "sourceLine": "2025年11月7日         十八        星期五      立冬"
+    },
+    {
+      "term": "立春",
+      "li": "2026-02-04",
+      "onset": "2026-01-17",
+      "eve": "2026-02-03",
+      "sourceLine": "2026年2月4日          十七        星期三      立春"
+    },
+    {
+      "term": "立夏",
+      "li": "2026-05-05",
+      "onset": "2026-04-17",
+      "eve": "2026-05-04",
+      "sourceLine": "2026年5月5日          十九        星期二      立夏"
+    },
+    {
+      "term": "立秋",
+      "li": "2026-08-07",
+      "onset": "2026-07-20",
+      "eve": "2026-08-06",
+      "sourceLine": "2026年8月7日          廿五        星期五      立秋"
+    },
+    {
+      "term": "立冬",
+      "li": "2026-11-07",
+      "onset": "2026-10-20",
+      "eve": "2026-11-06",
+      "sourceLine": "2026年11月7日         廿九        星期六      立冬"
+    },
+    {
+      "term": "立春",
+      "li": "2027-02-04",
+      "onset": "2027-01-17",
+      "eve": "2027-02-03",
+      "sourceLine": "2027年2月4日          廿八        星期四      立春"
+    },
+    {
+      "term": "立夏",
+      "li": "2027-05-06",
+      "onset": "2027-04-18",
+      "eve": "2027-05-05",
+      "sourceLine": "2027年5月6日          四月        星期四      立夏"
+    },
+    {
+      "term": "立秋",
+      "li": "2027-08-08",
+      "onset": "2027-07-21",
+      "eve": "2027-08-07",
+      "sourceLine": "2027年8月8日          初七        星期日      立秋"
+    },
+    {
+      "term": "立冬",
+      "li": "2027-11-07",
+      "onset": "2027-10-20",
+      "eve": "2027-11-06",
+      "sourceLine": "2027年11月7日         初十        星期日      立冬"
+    }
+  ],
+  "cases": [
+    {
+      "date": "2025-01-15",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-01-16",
+      "presence": "present"
+    },
+    {
+      "date": "2025-02-02",
+      "presence": "present"
+    },
+    {
+      "date": "2025-02-03",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-04-16",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-04-17",
+      "presence": "present"
+    },
+    {
+      "date": "2025-05-04",
+      "presence": "present"
+    },
+    {
+      "date": "2025-05-05",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-07-19",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-07-20",
+      "presence": "present"
+    },
+    {
+      "date": "2025-08-06",
+      "presence": "present"
+    },
+    {
+      "date": "2025-08-07",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-10-19",
+      "presence": "absent"
+    },
+    {
+      "date": "2025-10-20",
+      "presence": "present"
+    },
+    {
+      "date": "2025-11-06",
+      "presence": "present"
+    },
+    {
+      "date": "2025-11-07",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-01-16",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-01-17",
+      "presence": "present"
+    },
+    {
+      "date": "2026-02-03",
+      "presence": "present"
+    },
+    {
+      "date": "2026-02-04",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-04-16",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-04-17",
+      "presence": "present"
+    },
+    {
+      "date": "2026-05-04",
+      "presence": "present"
+    },
+    {
+      "date": "2026-05-05",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-07-19",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-07-20",
+      "presence": "present"
+    },
+    {
+      "date": "2026-08-06",
+      "presence": "present"
+    },
+    {
+      "date": "2026-08-07",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-10-19",
+      "presence": "absent"
+    },
+    {
+      "date": "2026-10-20",
+      "presence": "present"
+    },
+    {
+      "date": "2026-11-06",
+      "presence": "present"
+    },
+    {
+      "date": "2026-11-07",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-01-16",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-01-17",
+      "presence": "present"
+    },
+    {
+      "date": "2027-02-03",
+      "presence": "present"
+    },
+    {
+      "date": "2027-02-04",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-04-17",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-04-18",
+      "presence": "present"
+    },
+    {
+      "date": "2027-05-05",
+      "presence": "present"
+    },
+    {
+      "date": "2027-05-06",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-07-20",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-07-21",
+      "presence": "present"
+    },
+    {
+      "date": "2027-08-07",
+      "presence": "present"
+    },
+    {
+      "date": "2027-08-08",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-10-19",
+      "presence": "absent"
+    },
+    {
+      "date": "2027-10-20",
+      "presence": "present"
+    },
+    {
+      "date": "2027-11-06",
+      "presence": "present"
+    },
+    {
+      "date": "2027-11-07",
+      "presence": "absent"
+    }
+  ],
+  "headings": [
+    "營建宮室",
+    "修宮室",
+    "興造動土",
+    "修倉庫",
+    "破屋壊垣",
+    "栽種"
+  ]
+}
