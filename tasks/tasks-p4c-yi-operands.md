@@ -52,10 +52,10 @@ Owner đã xác nhận **Go** để tạo danh sách chi tiết. Task list này 
 
 ## Tasks
 
-- [ ] 0.0 Create feature branch — tạo nhánh `codex/` cho P4-C từ baseline có P4-B đã merge, giữ các thay đổi tài liệu hiện có.
+- [x] 0.0 Create feature branch — tạo nhánh `codex/` cho P4-C từ baseline có P4-B đã merge, giữ các thay đổi tài liệu hiện có.
   - [x] 0.1 Kiểm tra branch/status/upstream và local release-evidence commit `b12f024`; xác định phần tài liệu đang thay đổi trước khi chuyển nhánh, không reset hoặc bỏ file. Evidence: bắt đầu trên `main`, upstream `origin/main`; local commit `b12f024` chưa push; chỉ có `PROJECT_CONTEXT.md` sửa và hai file PRD/task mới.
   - [x] 0.2 Tạo và checkout nhánh `codex/p4c-yi-operands` từ baseline chứa P4-B merge `1ad9b4b`, bảo toàn commit/tài liệu local và ghi starting commit/tree. Evidence: nhánh `codex/p4c-yi-operands` bắt đầu tại `b12f02438433ea7b039c4bd4695fabac9c92cfcd`, tree `c571965d4d21c7fee801b893e829788a899bf404`; merge `1ad9b4b` là ancestor, release evidence và các tài liệu local được giữ.
-  - [ ] 0.3 Commit PRD/task list/context vào nhánh P4-C trước implementation; xác nhận working tree không có thay đổi không rõ nguồn.
+  - [x] 0.3 Commit PRD/task list/context vào nhánh P4-C trước implementation; xác nhận working tree không có thay đổi không rõ nguồn. Evidence: commit `73aa326` chứa PRD/task/context; `git status --short` rỗng sau commit; format và diff check qua.
 
 - [ ] 1.0 Khóa baseline và inventory — xác nhận 11 operand thiếu, mapping heading/input hiện hành và số liệu trước thay đổi trên 1.095 ngày.
   - [ ] 1.1 Kiểm tra `yiEvidence.unknown` đúng 11 tên; 王日 nằm trong seasonDays, 修倉庫 còn deferred cho P5.
