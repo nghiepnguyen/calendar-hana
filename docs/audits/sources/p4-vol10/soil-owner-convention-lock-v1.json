@@ -1,0 +1,28 @@
+{
+  "version": "p4-soil-owner-convention-lock-v1",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2025c.txt",
+      "sha256": "7a2803584dcd12a38a13e3710e643369996f59e690d684b9e3705fc5e988ebc2",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T2025c.txt"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2026c.txt",
+      "sha256": "7b0831acb16a5a72a1ab553205e938b2f658c3837e06440f22c084e1a39832dd",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T2026c.txt"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2027c.txt",
+      "sha256": "2c6a406cd2f8c6f1cf11f154737b7c5ae4afb53c87d76b101bd561b482e3b93f",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T2027c.txt"
+    },
+    {
+      "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+      "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4-soil-owner-convention-v1.json",
+      "sha256": "b31d7800de1c2548427fd210ad7b8e87d3e715f5640337a66849f240bab28ff8"
+    }
+  ]
+}

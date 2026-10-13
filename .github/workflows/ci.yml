@@ -49,7 +49,7 @@ jobs:
                 ...repo, workflow_id: 'ci.yml', event: 'push', status: 'success', per_page: 100,
               });
               const requiredJobs = [
-                'Typecheck and lint', 'Mutation and emulator gates',
+                'Typecheck and lint', 'Mutation and emulator gates', 'P4-B audit mutation gate',
                 ...[1, 2, 3, 4].map(shard => `Unit tests (${shard}/4)`),
                 ...['desktop'].flatMap(project =>
                   [1, 2].map(shard => `Playwright tests (${project}, ${shard}/2)`)),
@@ -166,6 +166,28 @@ jobs:
         run: python3 scripts/audit-mansion-content-mutations.py
       - run: npm run test:emulator
 
+  p4-b-mutations:
+    name: P4-B audit mutation gate
+    needs: prepare
+    if: needs.prepare.outputs.reuse-audit != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-22-${{ hashFiles('package-lock.json', 'functions/package-lock.json') }}
+      - name: P4-B source, boundary and composition mutations
+        run: python3 scripts/audit-p4-remaining-ji-mutations.py
+
   e2e-tests:
     name: Playwright tests (${{ matrix.project }}, ${{ matrix.shard }}/2)
     needs: prepare
@@ -212,7 +234,7 @@ jobs:
 
   deploy:
     name: Deploy to Firebase
-    needs: [prepare, static-analysis, unit-tests, gates, e2e-tests]
+    needs: [prepare, static-analysis, unit-tests, gates, p4-b-mutations, e2e-tests]
     if: >-
       always() && !cancelled() &&
       github.ref == 'refs/heads/main' &&
@@ -221,6 +243,7 @@ jobs:
       (needs.prepare.outputs.reuse-audit == 'true' ||
        (needs.static-analysis.result == 'success' &&
         needs.unit-tests.result == 'success' && needs.gates.result == 'success' &&
+        needs.p4-b-mutations.result == 'success' &&
         needs.e2e-tests.result == 'success'))
     runs-on: ubuntu-latest
     timeout-minutes: 20

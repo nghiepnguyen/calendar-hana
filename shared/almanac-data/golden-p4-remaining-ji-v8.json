@@ -1,0 +1,574 @@
+{
+  "version": "golden-p4-remaining-ji-v8",
+  "independent": true,
+  "derivation": "Hand-derived from frozen raw text and P3 presence definitions, before evaluator code; source conflict stays unknown. Scope outcomes, not full-day scoring. v7: 滿日/天狗 from 卷十 offset 10434; puzhu:28 day list; 月表 pages as witness.",
+  "cases": [
+    {
+      "month": "寅",
+      "pillar": "乙亥",
+      "god": "四窮",
+      "headings": {
+        "嫁娶": "lifted",
+        "安葬": "lifted",
+        "開市": "lifted"
+      },
+      "note": "正月乙亥 天願 exception; military only"
+    },
+    {
+      "month": "卯",
+      "pillar": "乙亥",
+      "god": "四窮",
+      "headings": {
+        "嫁娶": "protected",
+        "開市": "protected"
+      },
+      "note": "same seasonal 四窮; no 正月 exception"
+    },
+    {
+      "month": "午",
+      "pillar": "丁未",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "lifted",
+        "結婚姻": "lifted"
+      },
+      "note": "五月 天願 丁未 lifts marriage only"
+    },
+    {
+      "month": "子",
+      "pillar": "癸丑",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "lifted"
+      },
+      "note": "十一月 天願 癸丑"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲寅",
+      "god": "八專",
+      "headings": {
+        "嫁娶": "protected"
+      },
+      "note": "八專 without 天願"
+    },
+    {
+      "month": "午",
+      "pillar": "丙戌",
+      "god": "五墓",
+      "headings": {
+        "嫁娶": "lifted",
+        "般移": "lifted"
+      },
+      "note": "五月 丙 月德 exception"
+    },
+    {
+      "month": "巳",
+      "pillar": "丙戌",
+      "god": "五墓",
+      "headings": {
+        "嫁娶": "kept"
+      },
+      "note": "四月 outside month exception"
+    },
+    {
+      "month": "辰",
+      "pillar": "庚申",
+      "god": "四廢",
+      "headings": {
+        "嫁娶": "protected",
+        "掃舍宇": "not_listed"
+      },
+      "note": "四廢 present, 月破 absent (戌); no 諸事皆忌"
+    },
+    {
+      "month": "寅",
+      "pillar": "庚申",
+      "god": "四廢",
+      "headings": {
+        "嫁娶": "all_taboo"
+      },
+      "note": "spring 庚申 四廢 + 月破"
+    },
+    {
+      "month": "巳",
+      "pillar": "丙申",
+      "god": "遊禍",
+      "headings": {
+        "祈福": "protected"
+      },
+      "note": "OWNER_ADOPTED from 月表: 天願 and 遊禍 both listed; 遊禍 猶忌 at scope level (巳丙申 day handled by puzhu:28)"
+    },
+    {
+      "month": "亥",
+      "pillar": "壬寅",
+      "god": "遊禍",
+      "headings": {
+        "求醫療病": "protected"
+      },
+      "note": "OWNER_ADOPTED from 月表: 天願 and 遊禍 both listed; 遊禍 猶忌 at scope level (巳丙申 day handled by puzhu:28)"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙巳",
+      "god": "遊禍",
+      "headings": {
+        "祈福": "protected",
+        "求醫療病": "protected"
+      },
+      "note": "遊禍 still taboo; no conflict"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙子",
+      "god": "觸水龍",
+      "headings": {
+        "乘船渡水": "protected"
+      },
+      "note": "fixed 丙子 taboo"
+    },
+    {
+      "month": "卯",
+      "pillar": "甲辰",
+      "god": "天賊",
+      "headings": {
+        "行幸遣使": "absent"
+      },
+      "note": "二月 天賊 子; not 辰"
+    },
+    {
+      "month": "寅",
+      "pillar": "丁未",
+      "god": "小耗",
+      "headings": {
+        "開市": "lifted"
+      },
+      "note": "寅 小耗=未, 天德丁; outside 四仲"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙未",
+      "god": "小耗",
+      "headings": {
+        "開市": "kept"
+      },
+      "note": "no named virtue; ordinary finance taboo is unprotected"
+    },
+    {
+      "month": "午",
+      "pillar": "乙亥",
+      "god": "小耗",
+      "headings": {
+        "開市": "protected"
+      },
+      "note": "午 小耗=亥; 四仲 exception"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙午",
+      "god": "死氣",
+      "headings": {
+        "栽種": "lifted",
+        "求醫療病": "protected"
+      },
+      "note": "定日 + 月德丙; only medicine/military remain"
+    },
+    {
+      "month": "辰",
+      "pillar": "壬申",
+      "god": "死氣",
+      "headings": {
+        "栽種": "protected"
+      },
+      "note": "辰月 月厭 co-presence: still 忌 even 月德壬"
+    },
+    {
+      "month": "卯",
+      "pillar": "壬子",
+      "god": "四耗",
+      "headings": {
+        "開市": "kept"
+      },
+      "note": "春 壬子; 卯 is outside all named virtue exceptions"
+    },
+    {
+      "month": "辰",
+      "pillar": "壬子",
+      "god": "四耗",
+      "headings": {
+        "開市": "lifted"
+      },
+      "note": "辰 壬子 天德/月德 壬"
+    },
+    {
+      "month": "寅",
+      "pillar": "丁丑",
+      "god": "天賊",
+      "headings": {
+        "行幸遣使": "protected",
+        "修倉庫": "protected"
+      },
+      "note": "天賊丑 天德丁 does not lift"
+    },
+    {
+      "month": "寅",
+      "pillar": "丁巳",
+      "god": "五虛",
+      "headings": {
+        "修倉庫": "lifted"
+      },
+      "note": "春 五虛巳 + 天德丁"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙酉",
+      "god": "五虛",
+      "headings": {
+        "修倉庫": "kept"
+      },
+      "note": "春 五虛酉 without named virtue/六合"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙辰",
+      "god": "九空",
+      "headings": {
+        "開市": "lifted"
+      },
+      "note": "九空辰 + 月德丙"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲辰",
+      "god": "九坎",
+      "headings": {
+        "乘船渡水": "protected"
+      },
+      "note": "正月 九坎辰; no virtue lift"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲辰",
+      "god": "九焦",
+      "headings": {
+        "栽種": "protected"
+      },
+      "note": "九焦 same presence but different scope"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙丑",
+      "god": "土符",
+      "headings": {
+        "興造動土": "protected"
+      },
+      "note": "正月 土符丑"
+    },
+    {
+      "month": "卯",
+      "pillar": "乙未",
+      "god": "地囊",
+      "headings": {
+        "興造動土": "protected"
+      },
+      "note": "二月乙未 per 按 correction, not corrupted 癸未"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙丑",
+      "god": "歸忌",
+      "headings": {
+        "般移": "protected",
+        "嫁娶": "not_listed"
+      },
+      "note": "四孟歸忌丑; moving only"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲寅",
+      "god": "往亡",
+      "headings": {
+        "嫁娶": "protected",
+        "結婚姻": "not_listed"
+      },
+      "note": "正月往亡寅; not 氣往亡"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙申",
+      "god": "五離",
+      "headings": {
+        "立券交易": "lifted",
+        "嫁娶": "not_listed"
+      },
+      "note": "月德丙 lifts 五離; 嫁娶 not listed"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲子",
+      "god": "復日",
+      "headings": {
+        "安葬": "kept"
+      },
+      "note": "寅甲子: 復日甲, no 德赦六合; raw burial taboo"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲子",
+      "god": "重日",
+      "headings": {
+        "安葬": "absent"
+      },
+      "note": "重日巳/亥; 甲子 absent"
+    },
+    {
+      "month": "寅",
+      "pillar": "丁丑",
+      "god": "八風",
+      "headings": {
+        "乘船渡水": "lifted"
+      },
+      "note": "春丁丑 八風 + 天德丁 -> lift"
+    },
+    {
+      "month": "寅",
+      "pillar": "庚子",
+      "god": "復日",
+      "headings": {
+        "安葬": "absent"
+      },
+      "note": "寅 only 甲, not paired 七月庚"
+    },
+    {
+      "month": "申",
+      "pillar": "庚子",
+      "god": "復日",
+      "headings": {
+        "安葬": "kept"
+      },
+      "note": "申 only 庚; 甲申 天赦 not 庚子"
+    },
+    {
+      "month": "寅",
+      "pillar": "乙亥",
+      "god": "重日",
+      "headings": {
+        "安葬": "no_annotation"
+      },
+      "note": "重日亥 + 天願=六合: not 忌, not 宜"
+    },
+    {
+      "month": "卯",
+      "pillar": "乙巳",
+      "god": "重日",
+      "headings": {
+        "安葬": "kept"
+      },
+      "note": "巳日 regardless stem; no named 德赦六合"
+    },
+    {
+      "month": "申",
+      "pillar": "丁亥",
+      "god": "八風",
+      "headings": {
+        "乘船渡水": "lifted"
+      },
+      "note": "秋 丁亥 八風 + 申月 月德合丁 -> lift"
+    },
+    {
+      "month": "申",
+      "pillar": "辛未",
+      "god": "八風",
+      "headings": {
+        "乘船渡水": "absent"
+      },
+      "note": "秋 按 excludes corrupted 歴例 辛未"
+    },
+    {
+      "month": "戌",
+      "pillar": "丁亥",
+      "god": "八風",
+      "headings": {
+        "乘船渡水": "kept"
+      },
+      "note": "秋 丁亥 八風, 戌月 no 德合/六合"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲辰",
+      "god": "滿日",
+      "headings": {
+        "求醫療病": "kept",
+        "結婚姻": "kept",
+        "嫁娶": "not_listed"
+      },
+      "note": "寅月滿=辰; 甲 has no 月德丙/天德合壬/月德合辛/月恩丙/四相丙丁. 月表 忌 求醫療病"
+    },
+    {
+      "month": "寅",
+      "pillar": "丙辰",
+      "god": "滿日",
+      "headings": {
+        "求醫療病": "lifted",
+        "納采問名": "lifted"
+      },
+      "note": "月德丙 (also 月恩/四相). 月表 宜 求醫療病"
+    },
+    {
+      "month": "卯",
+      "pillar": "丁巳",
+      "god": "滿日",
+      "headings": {
+        "結婚姻": "lifted",
+        "求醫療病": "lifted"
+      },
+      "note": "卯月 滿=巳=相日; 月恩丁 四相丁. 月表 no 結婚姻 in 忌 (medical still 忌 by 往亡)"
+    },
+    {
+      "month": "卯",
+      "pillar": "辛巳",
+      "god": "滿日",
+      "headings": {
+        "結婚姻": "kept",
+        "納采問名": "kept"
+      },
+      "note": "no lifting god. 月表 忌 結婚姻 納采問名"
+    },
+    {
+      "month": "辰",
+      "pillar": "壬午",
+      "god": "滿日",
+      "headings": {
+        "求醫療病": "kept",
+        "結婚姻": "lifted"
+      },
+      "note": "辰月 滿=午=災煞, defer; 壬 is 天德/月德 of 辰 → 災煞 止忌 …求醫療病, 餘皆不忌"
+    },
+    {
+      "month": "申",
+      "pillar": "庚戌",
+      "god": "天狗",
+      "headings": {
+        "祭祀": "protected",
+        "嫁娶": "not_listed"
+      },
+      "note": "申月 滿=戌. 月表 lists 天狗, 忌 祭祀"
+    },
+    {
+      "month": "申",
+      "pillar": "壬戌",
+      "god": "天狗",
+      "headings": {
+        "祭祀": "protected"
+      },
+      "note": "月德壬 present; 與德合併猶忌"
+    },
+    {
+      "month": "申",
+      "pillar": "壬戌",
+      "god": "滿日",
+      "headings": {
+        "結婚姻": "lifted"
+      },
+      "note": "申月 守日 with 月德壬 → 不忌"
+    },
+    {
+      "month": "寅",
+      "pillar": "甲辰",
+      "god": "天狗",
+      "headings": {
+        "祭祀": "absent"
+      },
+      "note": "天狗 only in 申月"
+    }
+  ],
+  "parent": "golden-p4-remaining-ji-v7",
+  "correction": {
+    "classification": "GOLDEN_BUG",
+    "proof": "辰月 月破=戌 (辰+6); 庚申 四廢 but 申≠戌. 卷十 四廢 lists 嫁娶, not 掃舍宇. This correction changes no evaluator."
+  },
+  "additionalCorrections": [
+    {
+      "classification": "GOLDEN_BUG",
+      "proof": "寅月 天德合=壬 (丁壬合); source explicitly lifts 四耗 in 寅 with 天德合. Move negative fixture to 卯, which has no such exception."
+    },
+    {
+      "classification": "GOLDEN_BUG",
+      "proof": "甲陽干 cannot pair with 丑陰支. 歸忌 fixture uses valid 乙丑; presence only uses branch."
+    }
+  ],
+  "ownerDecision": "2026-10-12: owner adopts 八風 按; 復日 single ruling stem per month; 重日 two branches 巳/亥. Later 2026-10-12: owner adopts the 月表 witness for 遊禍–天願: both present, 遊禍 忌 kept; 巳月丙申 resolved by puzhu:28 諸事不忌.",
+  "note": "v8: 未月甲午 day case follows owner print correction backed by the 月表 witness, not evaluator output; v7 unchanged.",
+  "additionalCorrection": {
+    "classification": "GOLDEN_BUG",
+    "proof": "申 month belongs to 申子辰: 月德壬, 月德合丁 (丁壬合). 丁亥 八風 therefore lifted. 戌 month belongs to 寅午戌: 月德丙/月德合辛, 天德丙/天德合辛, 六合卯; 丁亥 has none of these. Add a separate 戌 negative fixture."
+  },
+  "dayCases": [
+    {
+      "month": "卯",
+      "pillar": "甲戌",
+      "rule": "puzhu:28",
+      "note": "二月甲戌: 月德甲 + 天願"
+    },
+    {
+      "month": "巳",
+      "pillar": "丙申",
+      "rule": "puzhu:28",
+      "note": "四月丙申: 天德合丙 + 天願; 月表 no 忌"
+    },
+    {
+      "month": "申",
+      "pillar": "戊申",
+      "rule": "puzhu:28",
+      "note": "七月戊申: 天德合戊 + 天赦; 月表 no 忌"
+    },
+    {
+      "month": "酉",
+      "pillar": "庚辰",
+      "rule": "puzhu:28",
+      "note": "八月庚辰: 月德庚 + 天願"
+    },
+    {
+      "month": "戌",
+      "pillar": "辛卯",
+      "rule": "puzhu:28",
+      "note": "九月辛卯: 天德合辛 + 天願"
+    },
+    {
+      "month": "亥",
+      "pillar": "甲子",
+      "rule": "puzhu:28",
+      "note": "十月甲子: 月德甲 + 天赦"
+    },
+    {
+      "month": "丑",
+      "pillar": "甲子",
+      "rule": "puzhu:28",
+      "note": "十二月甲子: 天赦 + 天願; 月表 no 忌"
+    },
+    {
+      "month": "未",
+      "pillar": "甲子",
+      "rule": null,
+      "note": "print reads 六月甲子 but owner adopts 甲午 from 月表; 月表 甲子 prints 忌 移徙 求醫療病…",
+      "ji": {
+        "求醫療病": true
+      }
+    },
+    {
+      "month": "未",
+      "pillar": "甲午",
+      "rule": "puzhu:28",
+      "note": "六月甲午: 天德甲 月德甲 + 天赦 (夏甲午); 月表 no 忌. OWNER_ADOPTED print correction of 「六月甲子」"
+    },
+    {
+      "month": "亥",
+      "pillar": "壬寅",
+      "rule": null,
+      "ji": {
+        "求醫療病": true
+      },
+      "note": "not a listed day; 遊禍 忌 kept (月表 忌 求醫療病)"
+    }
+  ]
+}

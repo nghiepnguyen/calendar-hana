@@ -1,0 +1,124 @@
+{
+  "status": "RESEARCH_SOURCE_DISCOVERED_NOT_AUTHORITY_LOCKED",
+  "retrievedDate": "2026-10-12",
+  "holdingInstitution": "Tohoku University Library / 藤原文庫",
+  "record": "https://touda.tohoku.ac.jp/collection/database/library/10020000012396",
+  "manifestUrl": "https://touda.tohoku.ac.jp/collection/iiif/metadata/10020000012396/manifest.json",
+  "manifestSha256": "0df7c44581b00cb96e298a9494804a50b0cb56a0736ceb64ad5a1d0262ce98f5",
+  "canvasCount": 225,
+  "attribution": "東北大学附属図書館",
+  "licenseAsReportedByManifest": "CC BY (version not specified in metadata)",
+  "catalogDate": "同治3年",
+  "page6TitleReading": "大清咸豐元年歲次辛亥時憲書",
+  "limits": [
+    "Record-level year is not the year of every volume; identify each volume from its title page.",
+    "Images are research witnesses, not Golden and not proof that S1 is resolved.",
+    "No definite 土王 onset or boundary has been transcribed yet."
+  ],
+  "images": [
+    {
+      "canvasNumber": 2,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p2",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010002l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p002.jpg",
+      "sha256": "30539e8103015d7a631861d17ff5d6a49fd735d4340e1d0735193785eeafbec5",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 3,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p3",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010003l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p003.jpg",
+      "sha256": "4dc2b697fb745886bd226391a4adaf33a9ba856d59d8fe3f4b1a9b155464cd32",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 4,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p4",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010004l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p004.jpg",
+      "sha256": "f1b8a604bdd1288ccb4a6fd925e39d1305b67f91f74e5749031b02e2714c5f17",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 5,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p5",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010005l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p005.jpg",
+      "sha256": "1e7c8fb2a71b28c41fa25522daab45be8cde463a2f6843459c90c2b414973e69",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 6,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p6",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010006l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p006.jpg",
+      "sha256": "a23c62aefbcf62f77ef7ea409b741368df16482a07205c0a00a6c1eb25214bd0",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 7,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p7",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010007l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p007.jpg",
+      "sha256": "22fedc726989704417b1a1165364d5b99ba7f45f8bbe16e3ac6e4bc02b43c44e",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 8,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p8",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010008l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p008.jpg",
+      "sha256": "871b96640b039280a7fc2c74bcfdf35b489feb3928f0d685905b1c58a6095ae4",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 10,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p10",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010010l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p010.jpg",
+      "sha256": "a417b04d40dadd098d2c6cfcc850afae2d534648b203cf63e70d0da69b57eb71",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 11,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p11",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010011l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p011.jpg",
+      "sha256": "89ddc751755507f751517c71d2e7df6a2b94b083955a0ad14ab700685108e35e",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 12,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p12",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010012l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p012.jpg",
+      "sha256": "1559fd1d3651edbadb6518ddc33e2703ec51bfdb8c9dc38c1b60acf3f3b25a7f",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 13,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p13",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010013l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p013.jpg",
+      "sha256": "d42f0231f87d583b9bffb8e0b6d3c33eae985289ad083f9767ca16f672fdee5d",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 14,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p14",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010014l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p014.jpg",
+      "sha256": "068caa256750baaa495fe18c1dcdaba4ced188b18c305f3897754b1c51b3056b",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    },
+    {
+      "canvasNumber": 15,
+      "canvasId": "https://touda.tohoku.ac.jp/iiif/2/10020000012396/canvas/p15",
+      "url": "https://touda.tohoku.ac.jp/iiif/2/public%2Flibrary%2Fwasan%2Fportal%2Fh%2Fh045%2F01%2Fh045010015l.tif/full/max/0/default.jpg",
+      "file": "docs/audits/sources/p4-vol10/shixian-tohoku/p015.jpg",
+      "sha256": "a0174e713b2a69f9e9dceeede077af4549ac85218f4ce098907d4f3c242742b8",
+      "readingStatus": "RESEARCH_ONLY_NOT_GOLDEN"
+    }
+  ]
+}

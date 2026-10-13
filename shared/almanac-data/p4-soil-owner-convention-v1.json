@@ -1,0 +1,45 @@
+{
+  "version": "p4-soil-owner-convention-v1",
+  "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+  "ownerApprovalDate": "2026-10-13",
+  "scope": "P4_B_AUDIT_ONLY",
+  "inventoryToken": "土王用事後",
+  "headings": [
+    "營建宮室",
+    "修宮室",
+    "興造動土",
+    "修倉庫",
+    "破屋壊垣",
+    "栽種"
+  ],
+  "convention": {
+    "timezone": "Asia/Ho_Chi_Minh",
+    "daysBeforeSiLi": 18,
+    "includeOnset": true,
+    "includeLi": false,
+    "coverage": [
+      "2025-01-01",
+      "2027-12-31"
+    ]
+  },
+  "source": {
+    "text": "　　{{SK anchor|土王用事}}\n　　忌營建宫室修宫室繕城郭築隄防興造動土修倉庫修置産室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壊垣栽種破土\n　　{{SK anchor|義同土府}}\n",
+    "offset": 21026,
+    "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+    "scopeEvidenceLock": "docs/audits/sources/p4-vol10/soil-scope-evidence-lock-v1.json"
+  },
+  "canonicalWitnessAudit": {
+    "status": "OPEN",
+    "items": [
+      "onset",
+      "後 boundary",
+      "定氣"
+    ]
+  },
+  "limits": [
+    "New P4-B adoption of existing production convention; not promotion of prior authority to canonical.",
+    "Raw 忌 restricted to the six confirmed catalog headings; protected under 德 and subject to puzhu:28 override.",
+    "No runtime, production or scoring changes. HKO civil dates are astronomical boundary inputs, not historical canonical witnesses.",
+    "No PR #29 aggregate counts used as an independent oracle. HKO UTC+8 dates verified against project UTC+7 boundaries in tests."
+  ]
+}

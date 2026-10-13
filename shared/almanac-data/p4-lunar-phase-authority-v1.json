@@ -1,0 +1,53 @@
+{
+  "version": "p4-lunar-phase-authority-v1",
+  "status": "AUDIT_ONLY",
+  "scoringReady": false,
+  "heading": "求醫療病",
+  "inventoryToken": "朔望日",
+  "sourceActivity": "求醫療病",
+  "phases": [
+    "New Moon",
+    "First Quarter",
+    "Full Moon",
+    "Last Quarter"
+  ],
+  "source": {
+    "text": "　　朔{{SKchar|2959}}朢\n　　{{SK anchor|忌求醫療病}}\n　　按朔為日月同度{{SKchar|2959}}為近一逺三朢為日月相對猶建破平收之義也故忌療病\n",
+    "offset": 21182,
+    "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+    "scanTranscription": "朔弦望　忌求醫療病　按朔為日月同度弦為近一遠三望為日月相對猶建破平收之義也故忌療病"
+  },
+  "correction": {
+    "classification": "SPEC_BUG",
+    "reason": "The abbreviated inventory token 朔望日 omitted 弦 from the explicit 卷十 clause; scan n216/217 confirms it. Keep token as compatibility name, record all four phases in the scope."
+  },
+  "astronomicalInput": {
+    "provider": "USNO primary-phase API",
+    "sourceUrls": [
+      "https://aa.usno.navy.mil/api/moon/phases/year?year=2024",
+      "https://aa.usno.navy.mil/api/moon/phases/year?year=2025",
+      "https://aa.usno.navy.mil/api/moon/phases/year?year=2026",
+      "https://aa.usno.navy.mil/api/moon/phases/year?year=2027"
+    ],
+    "timeScaleAsPublished": "UT",
+    "precision": "minute",
+    "civilConvention": "Asia/Ho_Chi_Minh UTC+07:00; day containing the published phase instant",
+    "coverage": [
+      "2025-01-01",
+      "2027-12-31"
+    ],
+    "count": 148,
+    "phaseCounts": {
+      "First Quarter": 37,
+      "Full Moon": 37,
+      "Last Quarter": 37,
+      "New Moon": 37
+    },
+    "nearMidnightRounding": "No phase within one minute of Vietnamese midnight in the covered data; UT1/UTC and minute rounding do not change these civil dates."
+  },
+  "limits": [
+    "Finite audit input table only; dates outside coverage remain unknown.",
+    "Civil timezone is the project convention, not a claim of historical Chinese timezone.",
+    "No astronomy/calendar production engine change."
+  ]
+}

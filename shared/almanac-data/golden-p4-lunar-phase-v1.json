@@ -1,0 +1,58 @@
+{
+  "version": "golden-p4-lunar-phase-v1",
+  "derivation": "Selected civil-day cases independently read from USNO phase dates/times and hand-converted UT+7 before code; no resolver/calendar engine used. Jan 13 UT Full Moon 22:27 is Jan 14 05:27 VN, not Jan 13.",
+  "cases": [
+    {
+      "date": "2025-01-01",
+      "phase": "none"
+    },
+    {
+      "date": "2025-01-06",
+      "phase": "none"
+    },
+    {
+      "date": "2025-01-07",
+      "phase": "First Quarter"
+    },
+    {
+      "date": "2025-01-13",
+      "phase": "none"
+    },
+    {
+      "date": "2025-01-14",
+      "phase": "Full Moon"
+    },
+    {
+      "date": "2025-01-15",
+      "phase": "none"
+    },
+    {
+      "date": "2025-01-22",
+      "phase": "Last Quarter"
+    },
+    {
+      "date": "2025-01-29",
+      "phase": "New Moon"
+    },
+    {
+      "date": "2025-02-12",
+      "phase": "Full Moon"
+    },
+    {
+      "date": "2025-02-28",
+      "phase": "New Moon"
+    },
+    {
+      "date": "2025-12-31",
+      "phase": "none"
+    },
+    {
+      "date": "2024-12-31",
+      "phase": "unknown"
+    },
+    {
+      "date": "2028-01-01",
+      "phase": "unknown"
+    }
+  ]
+}

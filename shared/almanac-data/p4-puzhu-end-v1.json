@@ -1,0 +1,36 @@
+{
+  "version": "p4-puzhu-end-v1",
+  "status": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sourceRawSha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+  "source": [
+    {
+      "id": "puzhu:27",
+      "text": "凡天吏大時不以死敗論者遇四廢嵗薄逐陣仍以死敗論",
+      "offset": 22604
+    },
+    {
+      "id": "puzhu:28-first",
+      "text": "凡嵗薄逐陣日所宜事照月厭所忌刪所忌仍從本日",
+      "offset": 22630
+    }
+  ],
+  "suppressYiRuleIds": [
+    "thin_year",
+    "pursuit"
+  ],
+  "deathDefeatSubjects": [
+    "天吏",
+    "大時"
+  ],
+  "deathDefeatTriggers": [
+    "四廢",
+    "歲薄",
+    "逐陣"
+  ],
+  "suppressionScope": "Raw 月厭 忌 heading list; suppression of 宜 only. 忌 follows the actual day, including puzhu:27 restoration.",
+  "limits": [
+    "Does not create whole-day taboo; does not assign a global grade.",
+    "Does not certify lunar phase or 土王用事."
+  ]
+}

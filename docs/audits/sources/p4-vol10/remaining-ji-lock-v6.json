@@ -1,0 +1,22 @@
+{
+  "version": "p4-remaining-ji-lock-v6",
+  "reason": "Adds 滿日/天狗 entries and puzhu:28 day rule from 卷十; removes 遊禍 conflict by owner adoption of the 月表 witness.",
+  "files": [
+    {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v6.json",
+      "sha256": "7f0600a48da02ef36ee604c21cb675f155b45348b7d9fafb2ea4c514356f9ac1"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+      "sha256": "21db0e252d76781bd5a84ae40a8dbac8ff0721a335efc715b4523c1d7f3723fc"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10-n228.jpg",
+      "sha256": "048aa097f11aa24294dc2bd16bbe0196be002a403949768cea8f7386a1185457"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10-n229.jpg",
+      "sha256": "00df524edb15589aa0100c878b7af72be605f6b4526842eb2df526a87a38e107"
+    }
+  ]
+}
