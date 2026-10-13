@@ -1,6 +1,6 @@
 # P4-C — baseline và inventory operand 宜
 
-2026-10-13. **TASK 1 BASELINE — chưa chốt authority mới, chưa triển khai presence P4-C.**
+2026-10-13. **TASK 1 HOÀN TẤT — baseline khóa tại `991e87c`; chưa chốt authority mới, chưa triển khai presence P4-C.**
 
 Owner chọn 1A: P4-C chỉ nghiệm thu khi 11/11 authority được chốt. Hoàn tất task 1 không đồng nghĩa hoàn tất P4-C.
 
@@ -10,6 +10,7 @@ Owner chọn 1A: P4-C chỉ nghiệm thu khi 11/11 authority được chốt. Ho
 - Nhánh: `codex/p4c-yi-operands`; P4-B merge `1ad9b4b` là ancestor; release evidence `b12f024` được giữ.
 - Snapshot, inventory, inputs, summary và lock: [`sources/p4-vol10/yi-baseline-v1/`](sources/p4-vol10/yi-baseline-v1/).
 - Runner: `shared/lunar/p4YiBaseline.test.ts`; chỉ chạy opt-in, unit bình thường skip. Runner quan sát lookup hiện hành và không sửa evaluator/runtime.
+- Checkout tái tạo: `991e87c` (commit chứa reporter và toàn bộ snapshot; code/data evaluator vẫn là baseline `db382ba`).
 - Lệnh verify: `P4C_BASELINE_VERIFY=1 npx vitest run shared/lunar/p4YiBaseline.test.ts`.
 - Lệnh tạo lần đầu: `P4C_BASELINE_WRITE=1 npx vitest run shared/lunar/p4YiBaseline.test.ts`. Nếu file đã tồn tại, runner chỉ so bytes và từ chối ghi đè kết quả khác.
 - Sau khi predicates thay đổi, verify trong checkout/worktree của commit khóa evidence task 1, không dùng evaluator mới để viết lại baseline. Source guard so code/data ngoài test với starting commit.
