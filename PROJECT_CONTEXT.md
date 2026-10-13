@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-13 (giờ VN), sau audit P4-B local (witness 月表, ngày âm 12/15, 朔弦望 và 鋪註 27/28, nghiệm thu P4-B theo soil authority owner 2026-10-13; nhánh `codex/p4-remaining-ji-audit`, draft PR #54, P4-B đã commit local: authority/Golden `c0d8f56`, implementation/evidence `1e90669`; chưa push các commit mới nhất); PR #53 đã merge (`8789115`, timeout test), chưa kiểm lại deploy của #53 trong lượt này. Runtime gần nhất: PR #49 (sửa 月破 仍忌, đổi điểm 11 ngày, đã smoke). PR #48, #50, #51 là audit/tài liệu, không đổi runtime.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-13 (giờ VN), sau audit P4-B local (witness 月表, ngày âm 12/15, 朔弦望 và 鋪註 27/28, nghiệm thu P4-B theo soil authority owner 2026-10-13; nhánh `codex/p4-remaining-ji-audit`, draft PR #54, P4-B đã commit local: authority/Golden `c0d8f56`, implementation/evidence `1e90669`; chuẩn bị push và CI cuối PR #54); PR #53 đã merge (`8789115`, timeout test), chưa kiểm lại deploy của #53 trong lượt này. Runtime gần nhất: PR #49 (sửa 月破 仍忌, đổi điểm 11 ngày, đã smoke). PR #48, #50, #51 là audit/tài liệu, không đổi runtime.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence): [`docs/project-context/history.md`](docs/project-context/history.md) — “history §N” trỏ về phần N trong file đó.
 > **Quy tắc cập nhật:** sửa tại chỗ các mục trạng thái / vấn đề mở / next steps. Không thêm “phần N+1”. Chi tiết release ghi vào `docs/audits/` hoặc history.
