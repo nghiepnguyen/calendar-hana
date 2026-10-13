@@ -58,12 +58,12 @@ Owner đã xác nhận **Go** để tạo danh sách chi tiết. Task list này 
   - [x] 0.3 Commit PRD/task list/context vào nhánh P4-C trước implementation; xác nhận working tree không có thay đổi không rõ nguồn. Evidence: commit `73aa326` chứa PRD/task/context; `git status --short` rỗng sau commit; format và diff check qua.
 
 - [ ] 1.0 Khóa baseline và inventory — xác nhận 11 operand thiếu, mapping heading/input hiện hành và số liệu trước thay đổi trên 1.095 ngày.
-  - [ ] 1.1 Kiểm tra `yiEvidence.unknown` đúng 11 tên; 王日 nằm trong seasonDays, 修倉庫 còn deferred cho P5.
-  - [ ] 1.2 Lập bảng 11 thần → tên/alias/stable ID hiện có → heading 宜 trong 卷十一; kiểm normalization và các heading không thuộc phạm vi catalog.
-  - [ ] 1.3 Ghi nguồn input Month Jian/pillar/lunar day/phase/soil và authority IDs của sweep; liệt kê input bổ sung cần điều tra, chưa giả định predicate.
-  - [ ] 1.4 Lưu baseline trước thay đổi đủ 1.095 ngày × 29 heading, commit/tree/hash và phương pháp tái tạo; giữ báo cáo P4-B cũ bất biến.
-  - [ ] 1.5 Đếm riêng unresolved operand 宜 theo từng thần/heading, tổng heading undetermined và lý do P5/khác; kiểm baseline có 0 unresolved operand 凶 với đủ input P4-B.
-  - [ ] 1.6 Ghi baseline runtime/manifest và bundle SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` vào audit report.
+  - [x] 1.1 Kiểm tra `yiEvidence.unknown` đúng 11 tên; 王日 nằm trong seasonDays, 修倉庫 còn deferred cho P5. Evidence: đọc artifact v2 tại baseline `db382ba`; 11 tên khớp PRD, chưa đổi artifact/evaluator.
+  - [x] 1.2 Lập bảng 11 thần → tên/alias/stable ID hiện có → heading 宜 trong 卷十一; kiểm normalization và các heading không thuộc phạm vi catalog. Evidence: inventory.json khóa mapping raw/normalized/activities; 除神 có ID tru_than, 10 tên khác chưa có catalog ID đã kiểm; không có entry authority hiện hành cho cả 11.
+  - [x] 1.3 Ghi nguồn input Month Jian/pillar/lunar day/phase/soil và authority IDs của sweep; liệt kê input bổ sung cần điều tra, chưa giả định predicate. Evidence: inputs.json ghi providers/authority IDs, timezone/coverage và input gaps task 2; chưa chốt predicate mới.
+  - [x] 1.4 Lưu baseline trước thay đổi đủ 1.095 ngày × 29 heading, commit/tree/hash và phương pháp tái tạo; giữ báo cáo P4-B cũ bất biến. Evidence: baseline.tsv có 31.755 dòng và checkpoint db382ba/tree ad1de4d; lock.json khóa outputs/inputs/runner; verify không ghi đè.
+  - [x] 1.5 Đếm riêng unresolved operand 宜 theo từng thần/heading, tổng heading undetermined và lý do P5/khác; kiểm baseline có 0 unresolved operand 凶 với đủ input P4-B. Evidence: summary.json phân nhóm raw unknown/masked/P5/final undetermined theo thần và heading; 0 unresolved operand 凶, 0 conflict; khớp 31.755 dòng P4-B.
+  - [x] 1.6 Ghi baseline runtime/manifest và bundle SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` vào audit report. Evidence: inputs.json/lock.json ghi manifest hash và bundle đo sau build; SHA-256 trùng baseline; build/main/functions typecheck và lint qua.
 
 - [ ] 2.0 Chốt authority 11/11 thần — đọc nguồn 協紀, khóa nguyên văn/locator/offset/checksum, predicate/input/coverage và đối chiếu definitions/bảng hiện có; xử lý mọi điểm chưa chốt trước nghiệm thu.
   - [ ] 2.1 Thu thập raw/scan cần thiết, lưu bytes/checksum và locator; quy định offset Unicode code point và mẫu entry authority thống nhất.

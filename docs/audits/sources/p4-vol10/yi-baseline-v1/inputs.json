@@ -1,0 +1,79 @@
+{
+  "scope": "BASELINE_INPUT_PROVENANCE_NOT_NEW_AUTHORITY",
+  "baselineCommit": "db382ba05175f061e0b1031de5361b49a2973ced",
+  "baselineTree": "ad1de4d9555e811bd89a31e36faeeefcd5eed49b",
+  "dateDomain": {
+    "start": "2025-01-01",
+    "end": "2027-12-31",
+    "count": 1095,
+    "fixture": "shared/lunar/audit-fixtures/mansion-decision-baseline-v1.json",
+    "fixtureUse": "Dates only. Historical fixture output hashes/hour are not an oracle for this audit."
+  },
+  "timezone": "Asia/Ho_Chi_Minh",
+  "inputs": {
+    "monthJian": {
+      "provider": "getAlmanac(date).selectionContext.MONTH_JIAN_BRANCH",
+      "representation": "子丑寅卯辰巳午未申酉戌亥 indexed 0..11; not lunar month"
+    },
+    "pillar": {
+      "provider": "getAlmanac(date).dayCanChi.can/chi",
+      "representation": "甲乙丙丁戊己庚辛壬癸 + 子丑寅卯辰巳午未申酉戌亥"
+    },
+    "lunarDay": {
+      "provider": "getAlmanac(date).selectionContext.LUNAR_DAY",
+      "validRange": [
+        1,
+        30
+      ]
+    },
+    "phase": {
+      "provider": "getP4MoonPhase(date)",
+      "authorityId": "p4-lunar-phase-authority-v1",
+      "coverage": [
+        "2025-01-01",
+        "2027-12-31"
+      ]
+    },
+    "soil": {
+      "provider": "getP4SoilPresence(date)",
+      "authorityId": "p4-soil-owner-convention-v1",
+      "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+      "coverage": [
+        "2025-01-01",
+        "2027-12-31"
+      ]
+    }
+  },
+  "authorityVersions": {
+    "shared/almanac-data/p4-vol10-day-composition-v2.json": "p4-day-composition-v2",
+    "shared/almanac-data/p4-vol10-remaining-ji-v7.json": "p4-remaining-ji-v7",
+    "shared/almanac-data/p4-lunar-day-taboo-v1.json": "p4-lunar-day-taboo-v1",
+    "shared/almanac-data/p4-lunar-phase-authority-v1.json": "p4-lunar-phase-authority-v1",
+    "shared/almanac-data/p4-soil-owner-convention-v1.json": "p4-soil-owner-convention-v1",
+    "shared/almanac-data/p4-puzhu-end-v1.json": "p4-puzhu-end-v1",
+    "shared/almanac-data/p4-vol10-season-days.json": "p4-season-days-v1"
+  },
+  "additionalInputsToInvestigateInTask2": [
+    "Month Jian versus lunar month per exact definition",
+    "Season and its source definition",
+    "Day stem/branch/sexagenary position or source-specific cycle",
+    "Lunar date, solar term or other date operands only if required by source",
+    "Aliases and presence authority for each god; existing catalog ID alone is insufficient"
+  ],
+  "perGodInputs": "All 11 unresolved until task 2 reads definitions; this list does not assert that any extra input is needed.",
+  "manifest": {
+    "path": "shared/almanac-data/manifest.json",
+    "sha256": "5726562cdf843bcb0db0987b5b8a450610b60e58d2a2dad5dc26acf2ad29a323"
+  },
+  "runtimeBundle": {
+    "path": "dist/assets/index-CeLinrvj.js",
+    "sha256Expected": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969",
+    "sha256Measured": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969"
+  },
+  "reproduce": "P4C_BASELINE_VERIFY=1 npx vitest run shared/lunar/p4YiBaseline.test.ts",
+  "limits": [
+    "Measurement only; no new presence/Golden oracle or predicate adoption.",
+    "Undetermined bucket labels are observational and may have coexisting source/state ambiguities.",
+    "pre_ji is composed P4-B before propagation, not the literal raw-source taboo list."
+  ]
+}
