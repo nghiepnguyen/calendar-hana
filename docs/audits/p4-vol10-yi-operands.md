@@ -103,3 +103,9 @@ Manifest baseline: `shared/almanac-data/manifest.json`, SHA-256 trong `inputs.js
 Task 2: đọc và chốt authority cho 11 thần. Không tạo Golden presence mới hoặc implementation trong task 1; không chuyển P5.
 
 Validation task 1: baseline create và verify đều **3/3 test** qua; verify byte-for-byte và lock hash qua; build/main typecheck, functions typecheck, oxlint qua. Runtime bundle sau build trùng baseline. `graphify update .` đã chạy cho reporter mới. Chỉ thêm reporter measurement và evidence; không sửa evaluator, manifest hoặc artifact/Golden lịch sử.
+
+## Task 2.1 — collection và protocol đã khóa
+
+Hoàn tất 2026-10-13, commit `2371a80`. [Source collection](sources/p4-vol10/yi-sources-v1/README.md) có 5 raw (4 tái dùng byte-identical + raw 卷十一 revision 787353 mới), 5 scan PDF đầy đủ, manifest/locator/checksum, candidate index 11 thần / 230 occurrence, mẫu authority entry và protocol Unicode code point zero-based. Tiêu đề volume đã đọc trực tiếp; scan mỗi clause/printed folio chưa review, thuộc task entry. Không dùng OCR làm authority, không chốt predicate hoặc alias từ index.
+
+`python3 scripts/verify-p4-yi-sources.py --self-test` qua: 31 locked files, published PDF checksum/size, revision raw content/hash, mọi occurrence/context quote, template UNREVIEWED và lock baseline task 1. Hai ca offset hợp lệ / sáu ca sai (UTF-16, bounds, length, quote, type) được kiểm; Python compile/Markdown format qua. Raw/Golden/evaluator/runtime cũ không đổi. Tiếp theo **2.2 母倉**; parent task 2/P4-C chưa hoàn tất và chưa có authority mới được nhận.

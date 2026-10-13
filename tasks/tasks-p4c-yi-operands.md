@@ -66,7 +66,7 @@ Owner đã xác nhận **Go** để tạo danh sách chi tiết. Task list này 
   - [x] 1.6 Ghi baseline runtime/manifest và bundle SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` vào audit report. Evidence: inputs.json/lock.json ghi manifest hash và bundle đo sau build; SHA-256 trùng baseline; build/main/functions typecheck và lint qua.
 
 - [ ] 2.0 Chốt authority 11/11 thần — đọc nguồn 協紀, khóa nguyên văn/locator/offset/checksum, predicate/input/coverage và đối chiếu definitions/bảng hiện có; xử lý mọi điểm chưa chốt trước nghiệm thu.
-  - [ ] 2.1 Thu thập raw/scan cần thiết, lưu bytes/checksum và locator; quy định offset Unicode code point và mẫu entry authority thống nhất.
+  - [x] 2.1 Thu thập raw/scan cần thiết, lưu bytes/checksum và locator; quy định offset Unicode code point và mẫu entry authority thống nhất. Evidence: collection `yi-sources-v1` khóa tại `2371a80`: 5 raw / 5 scan PDF đầy đủ, manifest/checksum/revision và 230 occurrence; protocol/mẫu entry UNREVIEWED; verify 31 file + 8 ca offset qua; predicate chưa chốt.
   - [ ] 2.2 Chốt entry 母倉: nguyên văn, predicate/input/coverage, alias, heading, ngoại lệ và đối chiếu definitions/bảng sẵn có.
   - [ ] 2.3 Chốt entry 福德 với cùng bộ evidence và đối chiếu; không suy từ nhãn sao trùng tên.
   - [ ] 2.4 Chốt entry 天恩 với cùng bộ evidence; xác định chính xác input/chu kỳ mà nguồn yêu cầu.
