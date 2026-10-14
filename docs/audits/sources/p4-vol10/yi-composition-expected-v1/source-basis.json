@@ -1,0 +1,1034 @@
+{
+  "version": "p4-yi-composition-source-basis-v1",
+  "task": "3.4",
+  "scope": "AUDIT_ONLY",
+  "entries": [
+    {
+      "han": "母倉",
+      "id": "mu-cang",
+      "authorityId": "p4-yi-mucang-v2",
+      "ruleId": "p4-yi-mucang-v2:presence",
+      "aliases": [],
+      "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+      "directHeadings": ["納財", "栽種", "牧養", "納畜"],
+      "headingScopes": [
+        {
+          "raw": "修倉庫",
+          "normalized": "修倉庫",
+          "activities": ["warehouse"],
+          "sourceRefs": [2],
+          "mode": "P5_DEFERRED_CO_PRESENCE"
+        },
+        {
+          "raw": "納財",
+          "normalized": "納財",
+          "activities": ["finance"],
+          "sourceRefs": [3],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "栽種",
+          "normalized": "栽種",
+          "activities": ["planting"],
+          "sourceRefs": [4],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "牧養",
+          "normalized": "牧養",
+          "activities": ["livestock"],
+          "sourceRefs": [5],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "納畜",
+          "normalized": "納畜",
+          "activities": ["livestock"],
+          "sourceRefs": [6],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_修倉庫",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 5030,
+          "length": 118,
+          "quote": "　　{{SK anchor|修倉庫}}\n　　宜天徳月徳天徳合月徳合天赦天願三合滿日又收日母倉六合五富天倉與月徳四相時徳開日併者\n　　忌月建土府月破大耗平日劫煞災煞月煞月虚月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虚九空土符地囊土王用事後",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_納財",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 5493,
+          "length": 82,
+          "quote": "　　{{SK anchor|納財}}\n　　宜母倉天願月恩四相時徳民日三合滿日收日六合五富天倉\n　　忌月破大耗平日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮九空",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_栽種",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 6406,
+          "length": 99,
+          "quote": "　　{{SK anchor|栽種}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n　　忌月建土府月破平日死神劫煞災煞月煞月刑月厭地火大時天吏死氣四廢五墓九焦土符地囊乙日土王用事後",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_牧養",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 6506,
+          "length": 80,
+          "quote": "　　{{SK anchor|牧養}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n　　忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 6,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_納畜",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 6587,
+          "length": 80,
+          "quote": "　　{{SK anchor|納畜}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願民日三合收日六合五富天倉\n　　忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "福德",
+      "id": "fu-de",
+      "authorityId": "p4-yi-fude-v1",
+      "ruleId": "p4-yi-fude-v1:presence",
+      "aliases": ["福徳"],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["宴會", "修宮室"],
+      "headingScopes": [
+        {
+          "raw": "宴會",
+          "normalized": "宴會",
+          "activities": ["meeting"],
+          "sourceRefs": [3],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "修宮室",
+          "normalized": "修宮室",
+          "activities": ["renovation"],
+          "sourceRefs": [4],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "上冊進表章",
+          "normalized": "上冊進表章",
+          "activities": [],
+          "sourceRefs": [5],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        },
+        {
+          "raw": "上表章",
+          "normalized": "上表章",
+          "activities": [],
+          "sourceRefs": [6],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        },
+        {
+          "raw": "繕城郭",
+          "normalized": "繕城郭",
+          "activities": [],
+          "sourceRefs": [7],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        },
+        {
+          "raw": "慶賜賞賀",
+          "normalized": "慶賜賞賀",
+          "activities": [],
+          "sourceRefs": [8],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        }
+      ],
+      "sources": [
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_宴會",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2627,
+          "length": 107,
+          "quote": "　　{{SK anchor|宴會}}{{SK notes|㑹親友同}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_修宮室",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4606,
+          "length": 78,
+          "quote": "　　{{SK anchor|修宮室}}\n　　宜月恩四相時徳三合福徳開日\n　　忌月建土府月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_上冊進表章",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1672,
+          "length": 97,
+          "quote": "　　{{SK anchor|上冊進表章}}{{SK notes|上冊受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願臨日福徳開日\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 6,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_上表章",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1770,
+          "length": 81,
+          "quote": "　　{{SK anchor|上表章}}\n　　宜天徳月徳天徳合月徳合月空天赦天願臨日福徳開日解神\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 7,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_繕城郭",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4685,
+          "length": 90,
+          "quote": "　　{{SK anchor|繕城郭}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳三合福徳開日\n　　忌月建土府月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 8,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_慶賜賞賀",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2556,
+          "length": 70,
+          "quote": "　　慶賜賞賀\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "天恩",
+      "id": "tian-en",
+      "authorityId": "p4-yi-tianen-v1",
+      "ruleId": "p4-yi-tianen-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["宴會"],
+      "headingScopes": [
+        {
+          "raw": "宴會",
+          "normalized": "宴會",
+          "activities": ["meeting"],
+          "sourceRefs": [2],
+          "mode": "DIRECT_YI",
+          "condition": null
+        },
+        {
+          "raw": "頒詔",
+          "normalized": "頒詔",
+          "activities": [],
+          "sourceRefs": [3],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": "天恩與驛馬天馬建日併者; preserve compound clause, no implementation in this task"
+        },
+        {
+          "raw": "覃恩肆赦",
+          "normalized": "覃恩肆赦",
+          "activities": [],
+          "sourceRefs": [4],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": null
+        },
+        {
+          "raw": "施恩惠恤孤惸",
+          "normalized": "施恩惠恤孤惸",
+          "activities": [],
+          "sourceRefs": [5],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": null
+        },
+        {
+          "raw": "布政事",
+          "normalized": "布政事",
+          "activities": [],
+          "sourceRefs": [6],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": null
+        },
+        {
+          "raw": "行惠愛雪寃枉緩刑獄",
+          "normalized": "行惠愛雪寃枉緩刑獄",
+          "activities": [],
+          "sourceRefs": [7],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": null
+        },
+        {
+          "raw": "宣政事",
+          "normalized": "宣政事",
+          "activities": [],
+          "sourceRefs": [8],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": "天恩與驛馬天馬建日併者; preserve compound clause, no implementation in this task"
+        },
+        {
+          "raw": "慶賜賞賀",
+          "normalized": "慶賜賞賀",
+          "activities": [],
+          "sourceRefs": [9],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+          "condition": null
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_宴會",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2627,
+          "length": 107,
+          "quote": "　　{{SK anchor|宴會}}{{SK notes|㑹親友同}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_頒詔",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1852,
+          "length": 78,
+          "quote": "　　{{SK anchor|頒詔}}\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_覃恩肆赦",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1931,
+          "length": 63,
+          "quote": "　　{{SK anchor|覃恩肆赦}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願王日開日\n　　{{SK anchor|忌無}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_施恩惠恤孤惸",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2297,
+          "length": 69,
+          "quote": "　　{{SK anchor|施恩惠恤孤惸}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 6,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_布政事",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2433,
+          "length": 49,
+          "quote": "　　{{SK anchor|布政事}}\n　　宜天恩\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 7,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_行惠愛雪寃枉緩刑獄",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2483,
+          "length": 72,
+          "quote": "　　{{SK anchor|行惠愛雪寃枉緩刑獄}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 8,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_宣政事",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2367,
+          "length": 65,
+          "quote": "　　宣政事\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 9,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_慶賜賞賀",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2556,
+          "length": 70,
+          "quote": "　　慶賜賞賀\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "天巫",
+      "id": "tian-wu",
+      "authorityId": "p4-yi-tianwu-v1",
+      "ruleId": "p4-yi-tianwu-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["祭祀", "祈福"],
+      "headingScopes": [
+        {
+          "raw": "祭祀",
+          "normalized": "祭祀",
+          "activities": ["worship"],
+          "sourceRefs": [4],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "祈福",
+          "normalized": "祈福",
+          "activities": ["pray_blessing"],
+          "sourceRefs": [5],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_祭祀",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1408,
+          "length": 78,
+          "quote": "　　{{SK anchor|祭祀}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　{{SK anchor|忌天狗寅日}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_祈福",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 1487,
+          "length": 103,
+          "quote": "　　祈福\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢{{SK notes|又忌禄空上朔等日見鋪註條例餘倣此}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "天后",
+      "id": "tian-hou",
+      "authorityId": "p4-yi-tianhou-v1",
+      "ruleId": "p4-yi-tianhou-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["求醫療病"],
+      "headingScopes": [
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": ["medical"],
+          "sourceRefs": [1, 2],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_SCOPE",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 4396,
+          "length": 216,
+          "quote": "　　驛馬{{SK notes|天后}}\n　　{{SK anchor|宜行幸遣使般移}}\n　　與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢\n　　{{SK anchor|又為天后宜求醫療病}}\n　　按驛馬天馬皆第取行遠之義舊本謂驛馬宜封拜官爵詔命公卿出行赴任移徙天馬宜頒詔封拜招賢宣政事遠行出征則失其義矣今以其日止宜行幸遣使般移與覃恩吉日併而後宜頒詔與封拜舉正直吉日併而後宜詔命公卿招賢與布政事吉日併而後宜宣政事庶為允協天后見義例",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        {
+          "index": 2,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_求醫療病",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4257,
+          "length": 123,
+          "quote": "　　{{SK anchor|求醫療病}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n　　忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔{{SKchar|2959}}望日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "天醫",
+      "id": "tian-yi",
+      "authorityId": "p4-yi-tianyi-v1",
+      "ruleId": "p4-yi-tianyi-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["求醫療病"],
+      "headingScopes": [
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": ["medical"],
+          "sourceRefs": [2, 3],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_SCOPE",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5645,
+          "length": 221,
+          "quote": "　　{{SK anchor|成日}}{{SK notes|天喜　天醫}}\n　　宜入學安撫邊境般移築隄防開市\n　　又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名嫁娶五月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與天喜併}}\n　　{{SK anchor|乂為天醫宜求醫療病}}\n　　按成為合局之終開為生氣之始故其日宜入學原始要終之義也宜安撫邊境者功成而永奠也般移築隄防開市皆取成義天喜舊宜封拜自宜上官義同建日",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_求醫療病",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4257,
+          "length": 123,
+          "quote": "　　{{SK anchor|求醫療病}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n　　忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔{{SKchar|2959}}望日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "除神",
+      "id": "tru_than",
+      "authorityId": "p4-yi-chushen-v1",
+      "ruleId": "p4-yi-chushen-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["掃舍宇", "整容剃頭", "求醫療病"],
+      "headingScopes": [
+        {
+          "raw": "掃舍宇",
+          "normalized": "掃舍宇",
+          "activities": ["cleaning"],
+          "sourceRefs": [2],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "整容剃頭",
+          "normalized": "整容剃頭",
+          "activities": ["cut_hair"],
+          "sourceRefs": [7],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": ["medical"],
+          "sourceRefs": [3],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "解除",
+          "normalized": "解除",
+          "activities": [],
+          "sourceRefs": [4],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        },
+        {
+          "raw": "沐浴",
+          "normalized": "沐浴",
+          "activities": [],
+          "sourceRefs": [5],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        },
+        {
+          "raw": "整手足甲",
+          "normalized": "整手足甲",
+          "activities": [],
+          "sourceRefs": [6],
+          "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_掃舍宇",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 5954,
+          "length": 46,
+          "quote": "　　{{SK anchor|掃舍宇}}\n　　宜除日除神\n　　{{SK anchor|忌無}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_求醫療病",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4257,
+          "length": 123,
+          "quote": "　　{{SK anchor|求醫療病}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n　　忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔{{SKchar|2959}}望日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_解除",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 3993,
+          "length": 82,
+          "quote": "　　{{SK anchor|解除}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳除日開日解神除神\n　　忌月建平日死神收日劫煞災煞月煞月刑月厭大時遊禍天吏死氣四廢五墓",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_沐浴",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4076,
+          "length": 52,
+          "quote": "　　{{SK anchor|沐浴}}\n　　宜除日解神除神亥子日\n　　{{SK anchor|忌伏社日}}",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 6,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_整手足甲",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 4188,
+          "length": 68,
+          "quote": "　　{{SK anchor|整手足甲}}\n　　宜除日解神除神\n　　忌月建月破劫煞災煞月煞月刑月厭每月一日六日十五日十九日二十一日二十三日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 7,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_整容剃頭",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 607,
+          "length": 3580,
+          "quote": "　　整容剃頭\n　　整手足甲　　求醫療病　　裁製\n　　營建宮室　　修宮室　　　繕城郭\n　　築隄防　　　興造動土　　豎柱上梁\n　　經絡　　　　開市　　　　立券\n　　交易　　　　納財　　　　修置産室\n　　開渠穿井　　安碓磑　　　補垣\n　　掃舍宇　　　修飾垣墻　　平治道塗\n　　伐木　　　　捕捉　　　　畋獵\n　　取魚　　　　栽種　　　　牧養\n　　{{SK anchor|納畜}}\n　　民用三十七事\n　　祭祀　　　　上表章　　　上官\n　　入學　　　　冠帶　　　　結婚姻\n　　會親友　　　嫁娶　　　　進人口\n　　出行　　　　移徙　　　　安牀\n　　沐浴　　　　剃頭　　　　療病\n　　裁衣　　　　修造動土　　豎柱上梁\n　　經絡　　　　開市　　　　立券\n　　交易　　　　納財　　　　修置産室\n　　開渠穿井　　安碓磑　　　掃舍宇\n　　平治道塗　　破屋壊垣　　伐木\n　　捕捉　　　　畋獵　　　　栽種\n　　牧養　　　　破土　　　　安葬\n　　{{SK anchor|啓攢}}\n　　通書選擇六十事\n　　祭祀　　　　祈福　　　　求嗣\n　　上冊受封　　上表章　　　襲爵受封\n　　會親友　　　入學　　　　冠帶\n　　出行　　　　上官赴任　　臨政親民\n　　結婚姻　　　納采問名　　嫁娶\n　　進人口　　　移徙　　　　遠迴\n　　安牀　　　　解除　　　　沐浴\n　　剃頭　　　　整手足甲　　求醫療病\n　　療目　　　　針刺　　　　裁衣\n　　築隄防　　　修造動土　　豎柱上梁\n　　修倉庫　　　鼓鑄　　　　苫蓋\n　　經絡　　　　醞釀　　　　開市\n　　立券　　　　交易　　　　納財\n　　開倉庫　　　出貨財　　　修置産室\n　　開渠穿井　　安碓磑　　　補垣塞穴\n　　掃舍宇　　　修飾垣墻　　平治道塗\n　　破屋壊垣　　伐木　　　　捕捉\n　　畋獵　　　　取魚　　　　乘船渡水\n　　栽種　　　　牧養　　　　納畜\n　　破土　　　　安葬　　　　啓攢\n\n\n\n\n\n\n\n\n\n\n　　{{SK anchor|祭祀}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　{{SK anchor|忌天狗寅日}}\n　　祈福\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢{{SK notes|又忌禄空上朔等日見鋪註條例餘倣此}}\n　　{{SK anchor|求嗣}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳開日益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢\n　　{{SK anchor|上冊進表章}}{{SK notes|上冊受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願臨日福徳開日\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡\n　　{{SK anchor|上表章}}\n　　宜天徳月徳天徳合月徳合月空天赦天願臨日福徳開日解神\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡\n　　{{SK anchor|頒詔}}\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡\n　　{{SK anchor|覃恩肆赦}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願王日開日\n　　{{SK anchor|忌無}}\n　　施恩封拜{{SK notes|襲爵受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　{{SK anchor|官日守日相日止宜襲爵受封}}\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢\n　　詔命公{{SKchar|2721}}招賢\n　　宜天徳月徳天徳合月徳合天赦天願王日建日開日\n　　又月恩四相時徳吉期天喜與驛馬天馬併者\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢往亡\n　　{{SK anchor|舉正直}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢\n　　{{SK anchor|施恩惠恤孤惸}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}\n　　宣政事\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡\n　　{{SK anchor|布政事}}\n　　宜天恩\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢\n　　{{SK anchor|行惠愛雪寃枉緩刑獄}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}\n　　慶賜賞賀\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離\n　　{{SK anchor|宴會}}{{SK notes|㑹親友同}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日\n　　{{SK anchor|入學}}\n　　宜成日開日\n　　{{SK anchor|忌無}}\n　　冠帶\n　　{{SK anchor|宜定日}}\n　　忌月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢五墓丑日\n　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日\n　　{{SK anchor|安撫邊境}}\n　　宜天徳月徳天徳合月徳合天赦天願王日守日兵福兵寶兵吉危日成日\n　　忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|選將訓兵}}\n　　宜天徳月徳天徳合月徳合天赦天願王日兵福兵寶兵吉危日\n　　忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|出師}}\n　　宜天徳月徳天徳合月徳合兵福兵寶兵吉\n　　忌月破平日死神收日閉日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|上官赴任}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡\n　　{{SK anchor|臨政親民}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日六儀\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡\n　　{{SK anchor|結婚姻}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜六合五合\n　　忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專\n　　{{SK anchor|納采問名}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜\n　　忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專\n　　{{SK anchor|嫁娶}}\n　　宜天徳月徳天徳合月徳合天赦天願三合天喜六合不將\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭厭對大時天吏四廢四忌四窮五墓往亡八專亥日\n　　{{SK anchor|進人口}}\n　　宜天願民日三合滿日收日六合天倉\n　　忌月破平日死神閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四窮五墓九空往亡\n　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌\n　　{{SK anchor|安牀}}\n　　宜危日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓申日\n　　{{SK anchor|解除}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳除日開日解神除神\n　　忌月建平日死神收日劫煞災煞月煞月刑月厭大時遊禍天吏死氣四廢五墓\n　　{{SK anchor|沐浴}}\n　　宜除日解神除神亥子日\n　　{{SK anchor|忌伏社日}}\n　　整容剃頭\n　　{{SK anchor|宜除日解神除神}}\n　　忌月建月破劫煞災煞月煞月刑月厭丁日每月十二日十五日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "驛馬",
+      "id": "yi-ma",
+      "authorityId": "p4-yi-yima-v1",
+      "ruleId": "p4-yi-yima-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["行幸遣使", "般移"],
+      "headingScopes": [
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": ["travel"],
+          "sourceRefs": [2],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "般移",
+          "normalized": "般移",
+          "activities": ["moving"],
+          "sourceRefs": [3],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_行幸遣使",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2836,
+          "length": 110,
+          "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_般移",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 3806,
+          "length": 129,
+          "quote": "　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "天馬",
+      "id": "tian-ma",
+      "authorityId": "p4-yi-tianma-v1",
+      "ruleId": "p4-yi-tianma-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["行幸遣使", "般移"],
+      "headingScopes": [
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": ["travel"],
+          "sourceRefs": [5],
+          "mode": "DIRECT_YI"
+        },
+        {
+          "raw": "般移",
+          "normalized": "般移",
+          "activities": ["moving"],
+          "sourceRefs": [6],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_行幸遣使",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2836,
+          "length": 110,
+          "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        },
+        {
+          "index": 6,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_般移",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 3806,
+          "length": 129,
+          "quote": "　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "吉期",
+      "id": "ji-qi",
+      "authorityId": "p4-yi-jiqi-v1",
+      "ruleId": "p4-yi-jiqi-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["行幸遣使"],
+      "headingScopes": [
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": ["travel"],
+          "sourceRefs": [1, 5],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "sourceId": "ws-vol10-787351",
+          "role": "NAMED_DIRECT_CONDITIONAL_AND_EDITOR_CORRECTIONS",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 4863,
+          "length": 213,
+          "quote": "　　{{SK anchor|除日}}{{SK notes|吉期　兵寶}}\n　　宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民\n　　十月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與吉期併}}\n　　又為兵寶宜安撫邊境選將訓兵出師\n　　按舊本除日宜解除求醫療病掃舍宇取除義也沐浴等事亦除舊取新之義故并宜之吉期兵寶義取旺辰故所宜同建日舊謂吉期宜兵事葢兵寶之誤又謂宜結婚姻於義無取故刪",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        {
+          "index": 5,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_行幸遣使",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 2836,
+          "length": 110,
+          "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    },
+    {
+      "han": "鳴吠",
+      "id": "ming-fei",
+      "authorityId": "p4-yi-mingfei-v1",
+      "ruleId": "p4-yi-mingfei-v1:presence",
+      "aliases": [],
+      "status": "SOURCE_REVIEWED",
+      "directHeadings": ["安葬"],
+      "headingScopes": [
+        {
+          "raw": "安葬",
+          "normalized": "安葬",
+          "activities": ["burial"],
+          "sourceRefs": [2, 4],
+          "mode": "DIRECT_YI"
+        }
+      ],
+      "sources": [
+        {
+          "index": 2,
+          "sourceId": "ws-vol10-787351",
+          "role": "SEPARATE_NAMED_USE_MINGFEI_AND_MINGFEIDUI",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 7270,
+          "length": 74,
+          "quote": "　　{{SK anchor|鳴吠}}\n　　宜破土安葬\n　　{{SK anchor|鳴吠對}}\n　　宜破土啟攢\n　　{{SK anchor|見義例}}",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        {
+          "index": 4,
+          "sourceId": "ws-vol11-787353",
+          "role": "HEADING_安葬",
+          "volume": 11,
+          "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+          "offset": 6739,
+          "length": 73,
+          "quote": "　　{{SK anchor|安葬}}\n　　宜天徳月徳天徳合月徳合天赦天願六合鳴吠忌月建月破平日收日劫煞災煞月煞月刑月害月厭四廢四忌四窮五墓復日重日",
+          "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+        }
+      ]
+    }
+  ],
+  "rawCatalogHeadings": [
+    "祭祀",
+    "祈福",
+    "求嗣",
+    "結婚姻",
+    "嫁娶",
+    "納采問名",
+    "般移",
+    "安牀",
+    "開市",
+    "立券交易",
+    "納財",
+    "行幸遣使",
+    "宴會",
+    "入學",
+    "求醫療病",
+    "掃舍宇",
+    "整容剃頭",
+    "興造動土",
+    "營建宮室",
+    "修宮室",
+    "豎柱上梁",
+    "修倉庫",
+    "開倉庫出貨財",
+    "栽種",
+    "牧養",
+    "納畜",
+    "安葬",
+    "破屋壞垣",
+    "乘船渡水"
+  ],
+  "normalization": {
+    "headingMap": {
+      "立劵交易": "立券交易",
+      "破屋壞垣": "破屋壊垣",
+      "宴㑹": "宴會",
+      "修宫室": "修宮室"
+    },
+    "godAlias": {
+      "福徳": "福德"
+    },
+    "limits": "Only locked spelling equivalence; no alias union across different god/heading scopes"
+  },
+  "rawClauses": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21765,
+      "length": 22,
+      "quote": "凡吉足勝凶從宜不從忌者如遇徳猶忌之事則仍註忌",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21790,
+      "length": 24,
+      "quote": "凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21977,
+      "length": 16,
+      "quote": "凡吉凶相抵不註忌祈福亦不註忌求嗣",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 22443,
+      "length": 34,
+      "quote": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21876,
+      "length": 15,
+      "quote": "凡天狗寅日忌祭祀不註宜求福祈嗣",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21960,
+      "length": 12,
+      "quote": "凡丁日忌剃頭亦不註宜整容",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 22651,
+      "length": 46,
+      "quote": "二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 10580,
+      "length": 15,
+      "quote": "申月又為天狗忌祭祀與德合併猶忌",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21523,
+      "length": 19,
+      "quote": "甲日忌開倉庫出貨財乙日忌栽種丁日忌剃頭",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    }
+  ],
+  "anyContract": {
+    "source": "tasks/prd-p4c-yi-operands.md FR-08 and task5.2 empty-list contract",
+    "present": "true",
+    "allAbsentOrEmpty": "false",
+    "noPresentAndUnknown": "unknown",
+    "trace": "Unknown operands retained even if present resolves ANY"
+  },
+  "warehouseContract": {
+    "source": "PRD FR-11 / 母倉 authority v2",
+    "heading": "修倉庫",
+    "status": "P5_DEFERRED",
+    "expectedYi": "unknown",
+    "presenceDoesNotResolveCoPresence": true
+  },
+  "dayOverride": {
+    "id": "puzhu:28",
+    "applied": [
+      ["卯", "甲戌"],
+      ["巳", "丙申"],
+      ["未", "甲午"],
+      ["申", "戊申"],
+      ["酉", "庚辰"],
+      ["戌", "辛卯"],
+      ["亥", "甲子"],
+      ["丑", "甲子"]
+    ],
+    "source": {
+      "volume": "卷10",
+      "offset": 22651,
+      "text": "二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌"
+    },
+    "printCorrection": {
+      "month": "未",
+      "printed": "甲子",
+      "adopted": "甲午",
+      "classification": "OWNER_ADOPTED",
+      "decidedOn": "2026-10-12",
+      "basis": "卷十 print (vol10-n229.jpg, page 七十七) and raw both read 六月甲子; the 月表 shows 六月甲子 with no 赦/願 and printed 忌, and 六月甲午 (天德 月德 天赦) with no 忌. Owner treats 甲子 as a 子/午 print error and follows the 月表. 未月甲子 stays unaffected.",
+      "witness": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json"
+    },
+    "scope": "諸事不忌: every 忌 of the day, 百忌 and other scopes included (月表 四月丙申/六月甲午/七月戊申/十二月甲子 print no 忌)",
+    "yiInvariant": true
+  },
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "method": "Raw clauses/locked source-derived scopes and owner correction; no composer output"
+  },
+  "inputs": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/lock.json",
+      "sha256": "386f648a27e5234220378ce8d9d99daa85cc1a70d958e8e1da2b3734e1b6d34d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/lock.json",
+      "sha256": "72f1103a3647659041cdceeb2b6f8b8da06b442902f54c057cae9d22fe0b3f5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+      "sha256": "21db0e252d76781bd5a84ae40a8dbac8ff0721a335efc715b4523c1d7f3723fc"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+      "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+    },
+    {
+      "path": "shared/almanac-data/p4-yi-operands-v1.json",
+      "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+    },
+    {
+      "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+      "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+      "sha256": "52ae297a0fd1a1f68dc0d8dbf9d461b8fac52376433dd14891b44bd14757b838"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+      "sha256": "eedc9f3b4396fca6f514c2884abacf6d668301e4f79fc3cfb2fea90cee17412d"
+    }
+  ]
+}

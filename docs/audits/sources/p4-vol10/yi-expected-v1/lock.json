@@ -1,0 +1,43 @@
+{
+  "version": "p4-yi-independent-expected-integrity-v1",
+  "status": "EXPECTED_DERIVED_NOT_COMMIT_FROZEN",
+  "task": "3.2",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/README.md",
+      "sha256": "bc86f28cb55175c0a0ac30ab30d48900263044dba8ca7c090f69418e19c1c995"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+      "sha256": "eedc9f3b4396fca6f514c2884abacf6d668301e4f79fc3cfb2fea90cee17412d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/prior-hashes.json",
+      "sha256": "d1aaee63211bdb50d9d3d5c068df4571dd8a49b119122f84f12d95348d4616fb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+      "sha256": "52ae297a0fd1a1f68dc0d8dbf9d461b8fac52376433dd14891b44bd14757b838"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/validation.json",
+      "sha256": "f63e3cf0e4c3e67e2254430dbd5bff1055da3f2634c373d19b7a27e8a7a5035b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-v1/lock.json",
+      "sha256": "662296b5c4f3bc92a3fc27a7c38102729dfaf3cda65a418c8d5c7d6099fd266a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/lock.json",
+      "sha256": "43679beafd55782990a6f44a1f88038ce77fe93f7cd5b5257c284f8108e0c623"
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "yi-ma",
+  "han": "驛馬",
+  "aliases": [],
+  "authorityId": "p4-yi-yima-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol06-787343",
+      "role": "MONTHLY_DEFINITION_AND_VARIANTS",
+      "volume": 6,
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "offset": 1517,
+      "length": 762,
+      "quote": "　　神樞經曰驛馬者驛騎也其日宜封贈官爵詔命公卿逺行赴任移徙遷居○李鼎祚曰驛馬者正月起申逆行四孟○總要歴曰天后者月中福神也其日宜求醫療病祈福禮神○歴例曰天后與驛馬同位○儲泳祛疑說曰今世之所謂驛馬者先天三合數也先天寅七午九而戌五合數二十有一故自子順至申凡二十有一而為火局之驛馬亥夘未之數四六八合為十八故自子順至巳凡十八而為木局之驛馬木火陽局也從子一陽順行金水隂局也從午一隂順行故申子辰之數七九五合二十有一自午順至寅凡二十有一而為水局之驛馬巳酉丑之數四六八合為十八自午順至亥凡十有八而為金局之驛馬此驛馬之法所由起也○曹震圭曰驛馬者五行將病得見妻子似人値困途逢妻子者也假令寅午戌火也病於申中有庚為妻戊為子故以申為馬申子辰水也病於寅中有丙為妻甲為子亥夘未木也病於巳中有戊為妻丙為子巳酉丑金也病於亥中有申為妻壬為子也洞源經曰既病見子驛馬到來又曰天后者驛馬也五行受病得見妻子反有救助天后主生育萬物為萬物之母故以名之按寅為功曹申為傳送亥為天門巳為地户皆道路之象也三合在寅午戌則對寅之申有驛馬之象焉三合在巳酉丑則對巳之亥有驛馬之象焉又驛馬者不安其居之謂也數窮則變寅午戌之數盡而恰遇夫申則火將變而之乎水矣火生於木木絶於申而申又生水以生木是火以變而不窮也巳酉丑之數盡而恰遇夫亥則金將變而之乎木矣金生於火土火土絶於亥而亥又生木以生火是金以變而不窮也申子辰亥卯未倣此易稱乘馬班如用拯馬壯皆以舍舊圖新改過遷善為義故驛馬又曰天后亦絶處逢生之意也若洞源經所謂既病見子驛馬到來者則以申為火病巳為木病以見驛馬即是三合病鄉聊以識之耳猶三煞為太嵗三合絶胎養之類恰遇其方即用以為記而非於病絶胎養有所取義也於此穿鑿附㑹則失之逺矣曹震圭以三煞為絶胎養則絶胎養皆屬幽隂之地猶若可通至以驛馬為五行將病得見妻子則妄謬已甚矣又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+      "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "NAMED_DIRECT_AND_CONDITIONAL_USE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 4396,
+      "length": 216,
+      "quote": "　　驛馬{{SK notes|天后}}\n　　{{SK anchor|宜行幸遣使般移}}\n　　與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢\n　　{{SK anchor|又為天后宜求醫療病}}\n　　按驛馬天馬皆第取行遠之義舊本謂驛馬宜封拜官爵詔命公卿出行赴任移徙天馬宜頒詔封拜招賢宣政事遠行出征則失其義矣今以其日止宜行幸遣使般移與覃恩吉日併而後宜頒詔與封拜舉正直吉日併而後宜詔命公卿招賢與布政事吉日併而後宜宣政事庶為允協天后見義例",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_行幸遣使",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2836,
+      "length": 110,
+      "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_般移",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3806,
+      "length": 129,
+      "quote": "　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 17,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf17.png",
+      "transcription": "驛馬　天后 (monthly position chart)",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 18,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf18.png",
+      "transcription": "驛馬者正月起申逆行四孟；天后與驛馬同位",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 19,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf19.png",
+      "transcription": "亥卯未木也病於巳",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 20,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf20.png",
+      "transcription": "三合在寅午戌則對寅之申有驛馬之象焉；三合在巳酉丑則對巳之亥有驛馬之象焉",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 21,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf21.png",
+      "transcription": "故驛馬又曰天后亦絶處逢生之意也",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 22,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf22.png",
+      "transcription": "又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 108,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf108.png",
+      "transcription": "又為天后宜求醫療病",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 109,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf109.png",
+      "transcription": "天后見義例",
+      "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+      "reviewer": "Codex (single agent)",
+      "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 23,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf23.png",
+      "transcription": "行幸遣使 出行同；宜…驛馬天馬建日吉期天喜開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; raw quote full and unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct heading scan reading"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 30,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf30.png",
+      "transcription": "般移 移徙同；宜…民日驛馬天馬成日開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; raw quote full and unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct heading scan reading"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact Jie selectionContext.MONTH_JIAN_BRANCH; not lunarMonth, birthYear, viewed-day horse-base or personal pillar",
+      "sourceRefs": [0]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid civil-day sexagenary pillar; compare to MONTH target, do not use it as the horse-base input",
+      "sourceRefs": [0]
+    }
+  ],
+  "predicate": {
+    "type": "MONTH_JIAN_TRINE_HORSE_BRANCH_LOOKUP",
+    "byMonthJian": {
+      "子": "寅",
+      "丑": "亥",
+      "寅": "申",
+      "卯": "巳",
+      "辰": "寅",
+      "巳": "亥",
+      "午": "申",
+      "未": "巳",
+      "申": "寅",
+      "酉": "亥",
+      "戌": "申",
+      "亥": "巳"
+    },
+    "monthGroups": [
+      {
+        "months": ["寅", "午", "戌"],
+        "dayBranch": "申"
+      },
+      {
+        "months": ["亥", "卯", "未"],
+        "dayBranch": "巳"
+      },
+      {
+        "months": ["申", "子", "辰"],
+        "dayBranch": "寅"
+      },
+      {
+        "months": ["巳", "酉", "丑"],
+        "dayBranch": "亥"
+      }
+    ],
+    "derivation": "正月起申逆行四孟 and monthly chart: 寅→申, 卯→巳, 辰→寅, 巳→亥, repeat. 天后 same position but different named use, no alias.",
+    "sourceRefs": [0]
+  },
+  "coverage": {
+    "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+    "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+    "notNeeded": [
+      "dayStem",
+      "lunarMonth",
+      "lunarDay",
+      "moonPhase",
+      "soil",
+      "birthYear",
+      "personalPillar"
+    ]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "No source clause deletes a monthly table hit; negative/protected heading 忌 remains separate.",
+      "sourceRefs": [0, 2, 3]
+    },
+    {
+      "kind": "YEAR_AND_DAY_HORSE_VARIANTS_OUTSIDE_SCOPE",
+      "detail": "從年支取/從日支取 variants explicitly noted in source but not adopted as monthly P4-C base input.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "OLD_COURT_USAGE_NARROWED",
+      "detail": "卷十 says old 封拜官爵/詔命公卿/赴任 uses lose intended meaning; direct scope limited to 行幸遣使般移 and court uses conditional.",
+      "sourceRefs": [1]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "行幸遣使",
+      "normalized": "行幸遣使",
+      "activities": ["travel"],
+      "sourceRefs": [2],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "般移",
+      "normalized": "般移",
+      "activities": ["moving"],
+      "sourceRefs": [3],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "same-position-tianhou",
+      "status": "RESOLVED_SEPARATE_NAMED_USAGE",
+      "detail": "天后與驛馬同位 and explanatory 天后者驛馬也 do not merge P4-C tokens; 天后 medical use distinct from 驛馬 travel/moving."
+    },
+    {
+      "id": "legacy-lunar-month-input",
+      "status": "MATCHED_BRANCH_SEQUENCE_DIFFERENT_INPUT",
+      "detail": "stars.data.ts Dịch Mã byMonth [申,巳,寅,亥]×3 matches monthly sequence but uses lunar month; P4-C exact-Jie Month Jian changes boundary semantics. Do not alter runtime or treat translated label as authority alias."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Locked definition/use source reread; inherited direct scan evidence + direct heading scans; legacy/definitions/catalog comparison",
+    "limitations": [
+      "Single reviewer, not independent second review of 天后 or this entry",
+      "Not Golden or presence implementation",
+      "Court conditional scopes recorded, no new activity mapping"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "No accepted aliases, including 天后 or translated Dịch Mã label",
+    "No year/day/natal horse base imported",
+    "Legacy description good for all activities not a source heading scope"
+  ],
+  "conditionalSourceScopes": [
+    {
+      "raw": "頒詔",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [1],
+      "clause": "與天恩併宜頒詔宣政事",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "宣政事",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [1],
+      "clause": "與天恩併宜頒詔宣政事",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "詔命公卿招賢",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [1],
+      "clause": "與月恩四相時德併宜詔命公卿招賢",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    }
+  ]
+}

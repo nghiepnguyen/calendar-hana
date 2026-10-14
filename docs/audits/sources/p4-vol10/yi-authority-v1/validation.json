@@ -1,0 +1,36 @@
+{
+  "task": "2.14",
+  "date": "2026-10-14",
+  "status": "PASS",
+  "reviewer": "Codex (single agent)",
+  "checks": [
+    "Lossless copy of all 11 locked entry fields; only ruleId/provenance added",
+    "11 unique stable IDs/authority IDs/version-qualified presence rule IDs",
+    "Predicate/input/coverage/heading/unknown contract and reviewer limitations present",
+    "74 exact raw source slices and SHA-1",
+    "130 unique raw/PDF/render SHA-256 references",
+    "Recursive prior source/authority/baseline/comparison locks",
+    "10 SOURCE_REVIEWED + 母倉 OWNER_ADOPTED_SOURCE_DEPENDENT dated 2025–2027; S1/P5 remain open",
+    "npx prettier --check: PASS",
+    "npm run lint: PASS",
+    "npm run typecheck: PASS (main tsc -b + functions tsc --noEmit)",
+    "graphify update .: PASS (AST-only graph refreshed)",
+    "git diff --check: PASS"
+  ],
+  "commands": [
+    "python3 -c \"import json; from pathlib import Path; exec(json.loads(Path('docs/audits/sources/p4-vol10/yi-authority-v1/validation.json').read_text())['verificationPython'])\"",
+    "npx prettier --check shared/almanac-data/p4-yi-operands-v1.json",
+    "npm run lint",
+    "npm run typecheck",
+    "graphify update .",
+    "git diff --check"
+  ],
+  "verificationPython": "from pathlib import Path\nimport json,hashlib\nb=Path('docs/audits/sources/p4-vol10');out=b/'yi-authority-v1';p=Path('shared/almanac-data/p4-yi-operands-v1.json');a=json.loads(p.read_text());d=json.loads((b/'yi-comparison-v1/decisions.json').read_text());visited=set();locked=set()\ndef verify_lock(p):\n if p in visited:return\n visited.add(p)\n for f in json.loads(p.read_text())['files']:\n  q=Path(f['path']);assert hashlib.sha256(q.read_bytes()).hexdigest()==f['sha256'],str(q);locked.add(q)\n  if q.name=='lock.json':verify_lock(q)\nfor p in sorted(b.glob('yi-*/lock.json')):\n if p.parent!=out:verify_lock(p)\nassert a['version']=='p4-yi-operands-v1' and a['scope']=='AUDIT_ONLY' and a['scoringReady'] is False\nassert a['status']=='AUTHORITY_ASSEMBLED_PENDING_2_15_GATE'\nassert len(a['entries'])==11 and {e['han'] for e in a['entries']}=={e['han'] for e in d['entries']}\nfor field in ['id','authorityId','ruleId','han']:assert len({e[field] for e in a['entries']})==11\nslices=0;needed=set();m=json.loads((b/'yi-sources-v1/manifest.json').read_text());scans={x['sourceId']:x for x in m['scanSources']}\nfor e in a['entries']:\n v=e['provenance'];src=Path(v['entryPath']);assert hashlib.sha256(src.read_bytes()).hexdigest()==v['entrySha256']\n assert hashlib.sha256(Path(v['lockPath']).read_bytes()).hexdigest()==v['lockSha256']\n original=json.loads(src.read_text());copied={k:x for k,x in e.items() if k not in ['provenance','ruleId']};assert copied==original\n assert e['ruleId']==e['authorityId']+':presence'\n for field in ['predicate','operandInputs','coverage','headingScopes','sources','scanChecks','review','unknownPolicy']:assert e[field]\n assert e['review']['reviewer']=='Codex (single agent)' and e['review']['limitations']\n assert e['unknownPolicy']==a['unknownPolicy']\n for r in e['sources']:\n  q=Path(r['path']);raw=q.read_bytes();t=raw.decode('utf8');assert hashlib.sha1(raw).hexdigest()==r['sha1']\n  assert t[r['offset']:r['offset']+r['length']]==r['quote'] and len(r['quote'])==r['length'];needed.add(str(q));slices+=1\n for c in e['scanChecks']:needed.add(c['renderPath']);needed.add(scans[c['sourceId']]['path'])\n assert e['status']==('OWNER_ADOPTED_SOURCE_DEPENDENT' if e['han']=='母倉' else 'SOURCE_REVIEWED')\nassert len(a['evidenceFiles'])==len({x['path'] for x in a['evidenceFiles']})==130 and {x['path'] for x in a['evidenceFiles']}==needed\nfor f in a['evidenceFiles']:assert hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256']\nmc=next(e for e in a['entries'] if e['han']=='母倉');assert mc['soilConvention']['coverage']==['2025-01-01','2027-12-31'] and mc['soilConvention']['canonicalWitnessStatus']=='OPEN_S1'\nassert a['residualIssues']==d['openIssues'] and len(a['residualIssues'])==2\nassert a['review']['independentSecondReview'] is False\nassert a['readiness']==dict(authorityAssemblyComplete=True,authorityGate2_15Complete=False,goldenFrozen=False,presenceImplemented=False,productionActivation=False)\nassert hashlib.sha256(Path(a['comparison']['path']).read_bytes()).hexdigest()==a['comparison']['sha256']\nif (out/'lock.json').exists():verify_lock(out/'lock.json')\nprint(f'PASS: lossless 11-entry assembly / unique IDs and version-qualified rule IDs; {slices} exact raw slices; 130 evidence-file hashes; reviewer/input/coverage/heading/status contract; residual S1/P5; {len(visited)} recursive locks / {len(locked)} locked files. Gate 2.15 remains open.')\n",
+  "limits": [
+    "Assembly validation, not independent second source review",
+    "Gate 2.15/parent 2.0 not completed here",
+    "Not Golden or presence implementation",
+    "Checksum assembly lock does not replace task-3.6 commit freeze",
+    "No production import/evaluator/scoring changes"
+  ]
+}

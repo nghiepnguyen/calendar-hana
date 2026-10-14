@@ -1,0 +1,43 @@
+{
+  "version": "p4-yi-composition-expected-integrity-v1",
+  "task": "3.4",
+  "status": "COMPOSITION_EXPECTED_NOT_COMMIT_FROZEN",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/README.md",
+      "sha256": "d7cb3278a1a73e919d5348e4586b17246f5355cff1a09ea2c83f8295477ff642"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/derive.py",
+      "sha256": "d5fdf0ca6657750b280a87191872cc05c3fe53f039802d6c8d7edd124fa299f6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+      "sha256": "f5327af81350bd228932c2f48b25555cbba17fb9ad040dbb42ccb1ac1ad49a21"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+      "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/prior-hashes.json",
+      "sha256": "da840a816484229f46cafb97840e5c601ce657ae69776a44b8d72601ac64d166"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/validation.json",
+      "sha256": "bdf7304e0bc7098a7bb32e4dc48accabd07df20bc5812b15dce8ba39530538e9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/lock.json",
+      "sha256": "72f1103a3647659041cdceeb2b6f8b8da06b442902f54c057cae9d22fe0b3f5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/lock.json",
+      "sha256": "386f648a27e5234220378ce8d9d99daa85cc1a70d958e8e1da2b3734e1b6d34d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    }
+  ]
+}

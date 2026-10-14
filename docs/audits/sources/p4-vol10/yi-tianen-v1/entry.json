@@ -1,0 +1,426 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "tian-en",
+  "han": "天恩",
+  "aliases": [],
+  "authorityId": "p4-yi-tianen-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol05-787341",
+      "role": "DEFINITION_AND_CYCLE",
+      "volume": 5,
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "offset": 3559,
+      "length": 439,
+      "quote": "　　天寳歴曰天恩者施徳寛下之辰也天有四禁常開一門甲為陽徳配巳成養育之功故甲配子巳配卯酉各五日而為恩也萬物非土不生故以巳土配甲成功其日可以施恩賞布政事恤孤惸興宴樂○歴例曰常以甲子至戊辰巳卯至癸未巳酉至癸丑凡一十五日○曹震圭曰天有四禁子午卯酉也子為元武門午為明堂門卯為日門酉為月門蓋聖人居明堂而治天下故常開此門易所謂聖人南面聽天下嚮明而治者也甲為乾之納甲巳為離之納甲先天乾居正南後天離居正南故以甲配子巳配卯酉然則不配午者以甲巳皆南方卦之納甲也各進五辰而不及六者謂五為君位中央之数不可過也故各配五日合之成一十有五為天恩大吉日\n　　按十母皆天也十二子皆地也然就十母而分之則甲乙丙丁戊又屬天巳庚辛壬癸又屬地天地之心無往而非恩也然必有所見端焉其端維何曰天必以始而地必以中元善乾之所以統也黄中坤之所以大也天必以始故自甲子以至戊辰六十甲子之首五日為天恩地必以中故自巳卯至癸未巳酉至癸丑分六十而半之此十日者各居其中亦為天恩甲至戊天也巳至癸地也天五而地十者陽一而隂兩也不曰地恩而皆名天恩者地統于天也",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "USE_AND_CO_PRESENCE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 2467,
+      "length": 172,
+      "quote": "　　天恩\n　　宜覃恩肆赦施恩惠恤孤惸布政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹\n　　與驛馬天馬建日併宜頒詔宣政事與修造吉神併尤宜興作\n　　按舊本以天恩為上吉日而所宜止於覃恩慶賞等事葢其日止取一定之干支而不參諸月令其力輕㣲不得與德合赦願比也又按舊本謂天德嵗德月德天德合嵗德合月德合天恩天赦母倉所㑹之辰並宜修營㑹之云者則非專指天恩故曰與修造吉神併尤宜興作",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_宴會",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2627,
+      "length": 107,
+      "quote": "　　{{SK anchor|宴會}}{{SK notes|㑹親友同}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_頒詔",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 1852,
+      "length": 78,
+      "quote": "　　{{SK anchor|頒詔}}\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_覃恩肆赦",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 1931,
+      "length": 63,
+      "quote": "　　{{SK anchor|覃恩肆赦}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願王日開日\n　　{{SK anchor|忌無}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_施恩惠恤孤惸",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2297,
+      "length": 69,
+      "quote": "　　{{SK anchor|施恩惠恤孤惸}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_布政事",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2433,
+      "length": 49,
+      "quote": "　　{{SK anchor|布政事}}\n　　宜天恩\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_行惠愛雪寃枉緩刑獄",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2483,
+      "length": 72,
+      "quote": "　　{{SK anchor|行惠愛雪寃枉緩刑獄}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_宣政事",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2367,
+      "length": 65,
+      "quote": "　　宣政事\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_慶賜賞賀",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2556,
+      "length": 70,
+      "quote": "　　慶賜賞賀\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 37,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf37.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 38,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf38.png",
+      "transcription": "甲子至戊辰己卯至癸未己酉至癸丑凡一十五日",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 39,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf39.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 40,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf40.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 94,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf94.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 95,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf95.png",
+      "transcription": "其日止取一定之干支而不參諸月令",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 96,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf96.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 16,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf16.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 17,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf17.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 19,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf19.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 20,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf20.png",
+      "transcription": "宜天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 21,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf21.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 22,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf22.png",
+      "transcription": "天恩",
+      "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading; source differences in README"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "DAY_PILLAR",
+      "required": true,
+      "origin": "Valid civil-day sexagenary pillar from audited dayCanChi provider; both stem and branch required; index 0=甲子",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "predicate": {
+    "type": "SEXAGENARY_DAY_RANGES",
+    "indexBase": "0=甲子",
+    "rangesInclusive": [
+      [0, 4],
+      [15, 19],
+      [45, 49]
+    ],
+    "pillars": [
+      "甲子",
+      "乙丑",
+      "丙寅",
+      "丁卯",
+      "戊辰",
+      "己卯",
+      "庚辰",
+      "辛巳",
+      "壬午",
+      "癸未",
+      "己酉",
+      "庚戌",
+      "辛亥",
+      "壬子",
+      "癸丑"
+    ],
+    "derivation": "Three inclusive five-day ranges read directly from scan; 15/60 days, no lunar-day or monthly reset. 卷十 explicitly 不參諸月令.",
+    "sourceRefs": [0, 1]
+  },
+  "coverage": {
+    "structuralDomain": "All 60 valid day pillars, exactly 15 present / 45 absent",
+    "calendarCoverage": "Inherited from validated day pillar provider; no independent dated restriction",
+    "notNeeded": ["MonthJian", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "Heading 忌 or co-presence does not remove 天恩 from its 15 pillars.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "CONDITIONAL_USAGE_NOT_PRESENCE",
+      "detail": "頒詔/宣政事 require 天恩 with 驛馬/天馬/建日; construction enhancement 與修造吉神併尤宜興作 is not unconditional direct 宜.",
+      "sourceRefs": [1, 3, 8]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "宴會",
+      "normalized": "宴會",
+      "activities": ["meeting"],
+      "sourceRefs": [2],
+      "mode": "DIRECT_YI",
+      "condition": null
+    },
+    {
+      "raw": "頒詔",
+      "normalized": "頒詔",
+      "activities": [],
+      "sourceRefs": [3],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": "天恩與驛馬天馬建日併者; preserve compound clause, no implementation in this task"
+    },
+    {
+      "raw": "覃恩肆赦",
+      "normalized": "覃恩肆赦",
+      "activities": [],
+      "sourceRefs": [4],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": null
+    },
+    {
+      "raw": "施恩惠恤孤惸",
+      "normalized": "施恩惠恤孤惸",
+      "activities": [],
+      "sourceRefs": [5],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": null
+    },
+    {
+      "raw": "布政事",
+      "normalized": "布政事",
+      "activities": [],
+      "sourceRefs": [6],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": null
+    },
+    {
+      "raw": "行惠愛雪寃枉緩刑獄",
+      "normalized": "行惠愛雪寃枉緩刑獄",
+      "activities": [],
+      "sourceRefs": [7],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": null
+    },
+    {
+      "raw": "宣政事",
+      "normalized": "宣政事",
+      "activities": [],
+      "sourceRefs": [8],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": "天恩與驛馬天馬建日併者; preserve compound clause, no implementation in this task"
+    },
+    {
+      "raw": "慶賜賞賀",
+      "normalized": "慶賜賞賀",
+      "activities": [],
+      "sourceRefs": [9],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "condition": null
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "raw-si-vs-scan-ji",
+      "status": "RESOLVED_BY_SCAN",
+      "detail": "Locked raw 卷五 prints 巳 in stem 己 positions (巳卯,巳酉 and explanatory 巳土). Scan pages 38–40 explicitly 己. Preserve raw bytes; adopted pillar list uses 己, not illegal 巳卯/巳酉."
+    },
+    {
+      "id": "monthly-cycle-reading",
+      "status": "REJECTED_BY_EXPLICIT_SOURCE",
+      "detail": "六十甲子首五日 and two midpoint five-day ranges, plus 不參諸月令; never lunar days 1–5/16–20 or Month Jian lookup."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Direct scan + locked raw offsets + valid pillar derivation + existing inventory/catalog comparison",
+    "limitations": [
+      "No independent second reviewer",
+      "No Golden or presence implementation",
+      "No inference of date coverage outside input provider"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "AUDIT_ONLY; runtime and scoring unchanged",
+    "No accepted aliases or reused translated same-name labels",
+    "Only 宴會 is in current 29-heading catalog; seven other named source headings recorded outside catalog",
+    "construction co-presence enhancement remains source commentary, no new direct heading"
+  ]
+}

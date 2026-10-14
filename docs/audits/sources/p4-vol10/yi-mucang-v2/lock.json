@@ -1,0 +1,114 @@
+{
+  "version": "p4-yi-mucang-authority-lock-v2",
+  "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf53.png",
+      "sha256": "7eaa4951b276742767532bcd257b2238c6b52bba0bbb0b46bc5f9a7fb710f817"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf54.png",
+      "sha256": "02b042703aae0fda1e602690da01e6a6185018f1e8420334c8b530ee669964cc"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf55.png",
+      "sha256": "3360b26681c302f7e4bafeabb169285ebc98757fd0777cc32dc0ae04279955a0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067686-pdf97.png",
+      "sha256": "e647536fb8bd81b10d611518886272667b00283115acf99ad52d9734e55365a7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067686-pdf98.png",
+      "sha256": "cbb069667d806236f43670991bfaf2c8000a9e5800e222e3eceba00351f146e4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf39.png",
+      "sha256": "de14c97772817be378cbf37d73cc67ff4d4e4b6fa5e5da28898561e09943ec20"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf40.png",
+      "sha256": "f5f17cd88ea2bfe8a437034605141f66dbddf7c2bbca4574776d6a6fe4442ad8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf42.png",
+      "sha256": "d6cfeabf93d832906294c5dd38072965f55f3911a227dbb167afbdaed67cceee"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf43.png",
+      "sha256": "0336c2881dd79a2b8865be087d56955f6a04779dd8f594108b66b36837a9c850"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf50.png",
+      "sha256": "2b2d51dbc7800163461f2969ff47632e9d4268d03b62052d4c1272fc2bd0c98b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf51.png",
+      "sha256": "467275ecc8d2833f591fb4f906b7e7b8a8270e60ffd7d7fb72df826d4039e2e8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/README.md",
+      "sha256": "a563dc76795f297fc865fdb26dbb21a7ce97b415b9fb43727c7ee38001dfae14"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/entry.json",
+      "sha256": "8112734341b1322bc1aa6fc0bda54a1d593c6b69f5688e67bd3dc1f3f0cdf263"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/lock.json",
+      "sha256": "62f9cdfa1372178bfe1c3e13d55a267a8f49e7655939f1ffb486951875a909b4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sha256": "3d4db81a83423a50e5ae13d95ceecbb40d35dc2b8e8e8146bdf44a7e10c780b3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "sha256": "7cc1a29d800f907d4eb56130e72b8756fb0d1e30f766d494df502acf2b862496"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067683.cn.pdf",
+      "sha256": "97c5edf6ddeefe6ea8484cb3d08c821d6531a9587f97d250cd35b60cc2eae84c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067686.cn.pdf",
+      "sha256": "b12fd373c2d1ee70c841407f403eeca3d0531348f2eeee571f24e7905aacb499"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.cn.pdf",
+      "sha256": "472a6066a1be0dd8d3c8163812dbfdb2c933688b6428a65fcaeeb798806afdd4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+    },
+    {
+      "path": "shared/almanac-data/good-gods.json",
+      "sha256": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32"
+    },
+    {
+      "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+      "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+    },
+    {
+      "path": "shared/almanac-data/xieji-god-definitions.json",
+      "sha256": "5ca0629da282a5d3f0ba7de8ba69d5adafeaa593ff9d2c46a4362bd9801aa19a"
+    },
+    {
+      "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+      "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+    },
+    {
+      "path": "shared/lunar/stars.data.ts",
+      "sha256": "0c9e6a346d32203c3c7214e6652cfb784247b89b95c0a3604ee8ccdab55bb317"
+    }
+  ]
+}

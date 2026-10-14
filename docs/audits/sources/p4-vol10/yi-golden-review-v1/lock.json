@@ -1,0 +1,119 @@
+{
+  "version": "p4-yi-golden-review-integrity-v1",
+  "task": "3.5",
+  "status": "REVIEW_PASS_NOT_COMMIT_FROZEN",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-golden-review-v1/README.md",
+      "sha256": "fb4d094e1d4efe2a6c8f8dc1188e29004011e8203f581fecc71a32f24560579d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-golden-review-v1/review.json",
+      "sha256": "7efb7700e1f0f30a3384380a79630f17cf2564da0acf4896a45845ae02101f9a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-golden-review-v1/validation.json",
+      "sha256": "dcba03b197650f6ebad4cfe4f5298774193f374902d3bc1743a49eac4d0babe3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-golden-review-v1/prior-hashes.json",
+      "sha256": "1d61711d5b54f4464ad757250e3f6c2ea224d73985fe986c67137f19740c2964"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/matrix.json",
+      "sha256": "e2c3fb437898fff03d7eae541b363b4d38800d901fe51334f2e213fa8cc87d83"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/lock.json",
+      "sha256": "43679beafd55782990a6f44a1f88038ce77fe93f7cd5b5257c284f8108e0c623"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/validation.json",
+      "sha256": "02a842fa8741ba4e4fd42585dacbf554a87a5c81b650e21860303be26f9a7c69"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+      "sha256": "52ae297a0fd1a1f68dc0d8dbf9d461b8fac52376433dd14891b44bd14757b838"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+      "sha256": "eedc9f3b4396fca6f514c2884abacf6d668301e4f79fc3cfb2fea90cee17412d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/validation.json",
+      "sha256": "f63e3cf0e4c3e67e2254430dbd5bff1055da3f2634c373d19b7a27e8a7a5035b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/lock.json",
+      "sha256": "72f1103a3647659041cdceeb2b6f8b8da06b442902f54c057cae9d22fe0b3f5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/domains.py",
+      "sha256": "919fcaa142eb61a8d05de4b411c5771c67f3aa1f42fffaee10a6d7607253417e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/inputs.json",
+      "sha256": "deeed1debf2bb4c74eec502adb3120273648813cc2b93e4618e8d5b360b5a3c0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/summary.json",
+      "sha256": "1597f55d56eca36aa43db2bfe3fc2ce1deddf6c9d9bd722b20ac5d7920123e89"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/validation.json",
+      "sha256": "03e4444cc7a4ca612ed422b6cae06ecdbf353c967f99a304e24d325df9f4d878"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/lock.json",
+      "sha256": "386f648a27e5234220378ce8d9d99daa85cc1a70d958e8e1da2b3734e1b6d34d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/derive.py",
+      "sha256": "d5fdf0ca6657750b280a87191872cc05c3fe53f039802d6c8d7edd124fa299f6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+      "sha256": "f5327af81350bd228932c2f48b25555cbba17fb9ad040dbb42ccb1ac1ad49a21"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+      "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/validation.json",
+      "sha256": "bdf7304e0bc7098a7bb32e4dc48accabd07df20bc5812b15dce8ba39530538e9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/lock.json",
+      "sha256": "2ac13eb1e4152c0d42e24df33d0cef644256c481bc1c76c3a24b1c1be889de5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/gate.json",
+      "sha256": "94b859f866a6e1a61dc32a89af8219b4e123bde865086546234be8a6d5c54bdb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    },
+    {
+      "path": "shared/almanac-data/p4-yi-operands-v1.json",
+      "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+    },
+    {
+      "path": "tasks/prd-p4c-yi-operands.md",
+      "sha256": "5318b9b108bdc702dfdf8de660ad675b77c3cf99cbaa640bd4f72d88a509f01f"
+    },
+    {
+      "path": "docs/plans/p4-xieji-vol10-balancing.md",
+      "sha256": "701674ebaf5326efcd70da6929b0c0c3563dd81f0997f96b8561bc0708902a67"
+    }
+  ]
+}

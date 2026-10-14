@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "mu-cang",
+  "han": "母倉",
+  "aliases": [],
+  "authorityId": "p4-yi-mucang-v2",
+  "authorityVersion": 2,
+  "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol05-787341",
+      "role": "DEFINITION",
+      "volume": 5,
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "offset": 5572,
+      "length": 321,
+      "quote": "　　天寳歴曰母倉者五行當王所生者為母倉如遇土王後則以巳午為之其日宜飬育羣畜栽植種蒔○歴例曰春亥子夏寅卯秋辰戌丑未冬申酉土王後巳午○曹震圭曰生我者為母積藏者為倉故以名之各以生當時五行之辰為之○考原曰春屬木水生之故以亥子為母倉也餘倣此不用干而用支者支為地有母道焉萬物生於土有藏道焉\n　　按母倉者種植畜牧納財等事之吉辰也春木以亥子為母木者亥子之所生水至木成則休矣母老則待養於子也故以倉為名又木生於水木之所以能旺於春者由水生之則木固由水而得養也故以母為名又我尅者為財而尅我之所由生者亦財也以母倉之辰而納財一以見藏于生我之方則其原不匱也一以見生我之方之宜致養焉以是為報本返始也一以見財者所以養人而多藏則尅我之所由生轉以為我害矣非所以為養也母倉之義大矣哉",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "USE_AND_RANKING",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 2847,
+      "length": 183,
+      "quote": "　　{{SK anchor|母倉}}\n　　宜納財栽種牧養納畜\n　　{{SK anchor|與月恩四相開日併宜修倉庫}}\n　　按舊本以母倉為上吉日而所宜止於納財栽種牧養納畜葢其日係四時休氣又不得與天恩比也又按母倉春月亥日吉子日次之夏月寅日吉卯日次之冬月申日吉酉日次之葢亥寅申皆令星之長生而子卯酉為令星之敗地也至秋月之辰戌丑未日土王後之己午日則衰旺各有不同是又不可以不辨",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_修倉庫",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 5030,
+      "length": 118,
+      "quote": "　　{{SK anchor|修倉庫}}\n　　宜天徳月徳天徳合月徳合天赦天願三合滿日又收日母倉六合五富天倉與月徳四相時徳開日併者\n　　忌月建土府月破大耗平日劫煞災煞月煞月虚月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虚九空土符地囊土王用事後",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_納財",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 5493,
+      "length": 82,
+      "quote": "　　{{SK anchor|納財}}\n　　宜母倉天願月恩四相時徳民日三合滿日收日六合五富天倉\n　　忌月破大耗平日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮九空",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_栽種",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 6406,
+      "length": 99,
+      "quote": "　　{{SK anchor|栽種}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n　　忌月建土府月破平日死神劫煞災煞月煞月刑月厭地火大時天吏死氣四廢五墓九焦土符地囊乙日土王用事後",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_牧養",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 6506,
+      "length": 80,
+      "quote": "　　{{SK anchor|牧養}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n　　忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_納畜",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 6587,
+      "length": 80,
+      "quote": "　　{{SK anchor|納畜}}\n　　宜天徳月徳天徳合月徳合天赦母倉天願民日三合收日六合五富天倉\n　　忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 53,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十五 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf53.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 54,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十六 recto (number on paired verso)",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf54.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 55,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十六 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067683-pdf55.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 97,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "十一 recto (number on paired verso)",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067686-pdf97.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 98,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "十一 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067686-pdf98.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 39,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "十九 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf39.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 40,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十 recto (number on paired verso)",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf40.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 42,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十一 recto (number on paired verso)",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf42.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 43,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十一 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf43.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 50,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十五 recto (number on paired verso)",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf50.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 51,
+      "archiveImageIndex": null,
+      "archiveAlignmentStatus": "NOT_VERIFIED; PDF page only",
+      "printedFolio": "二十五 verso",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-mucang-v1/06067687-pdf51.png",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual reading; see README transcription and differences"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact Jie Month Jian selectionContext; seasonal grouping 寅卯辰 / 巳午未 / 申酉戌 / 亥子丑",
+      "sourceRefs": [0]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Valid sexagenary day pillar branch; stem is not used (不用干而用支)",
+      "sourceRefs": [0]
+    },
+    {
+      "key": "SOIL_REIGN_STATE",
+      "required": true,
+      "origin": "Date-derived 土王後 under separate 母倉 owner convention; same astronomical boundary inputs and civil-date method as P4-B, no change to P4-B authority scope.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "predicate": {
+    "type": "SEASONAL_BRANCH_WITH_SOIL_OVERRIDE",
+    "seasonBranches": {
+      "spring": ["寅", "卯", "辰"],
+      "summer": ["巳", "午", "未"],
+      "autumn": ["申", "酉", "戌"],
+      "winter": ["亥", "子", "丑"]
+    },
+    "ordinaryDayBranches": {
+      "spring": ["亥", "子"],
+      "summer": ["寅", "卯"],
+      "autumn": ["辰", "戌", "丑", "未"],
+      "winter": ["申", "酉"]
+    },
+    "soilDayBranches": ["巳", "午"],
+    "derivation": "Under the owner-adopted soil convention: soil present replaces seasonal set with 巳午; soil absent uses ordinary seasonal set. Missing/unknown soil retains unknown; no fallback to ordinary absent.",
+    "sourceRefs": [0, 1]
+  },
+  "coverage": {
+    "structuralDomain": "12 Month Jian × 60 valid pillars × validated soil present/absent",
+    "calendarCoverage": ["2025-01-01", "2027-12-31"],
+    "status": "OWNER_ADOPTED_DATED_SOIL_COVERAGE",
+    "notNeeded": ["lunarDay", "moonPhase", "dayStem"]
+  },
+  "exceptions": [
+    {
+      "kind": "SOIL_OVERRIDE",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "RANKING_NOT_PRESENCE",
+      "detail": "春亥 > 子; 夏寅 > 卯; 冬申 > 酉; both branches remain present. No numeric score adopted.",
+      "sourceRefs": [1]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "修倉庫",
+      "normalized": "修倉庫",
+      "activities": ["warehouse"],
+      "sourceRefs": [2],
+      "mode": "P5_DEFERRED_CO_PRESENCE"
+    },
+    {
+      "raw": "納財",
+      "normalized": "納財",
+      "activities": ["finance"],
+      "sourceRefs": [3],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "栽種",
+      "normalized": "栽種",
+      "activities": ["planting"],
+      "sourceRefs": [4],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "牧養",
+      "normalized": "牧養",
+      "activities": ["livestock"],
+      "sourceRefs": [5],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "納畜",
+      "normalized": "納畜",
+      "activities": ["livestock"],
+      "sourceRefs": [6],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "soil-calendar",
+      "status": "RESOLVED_BY_OWNER_CONVENTION_CANONICAL_OPEN",
+      "detail": "Owner approved proposal on 2026-10-14 (làm theo đề xuất). Separate adoption for 母倉; P4-B authority unchanged. S1 onset/後/定氣 remains OPEN."
+    },
+    {
+      "id": "si-ji",
+      "status": "RESOLVED_FOR_BRANCH_PREDICATE",
+      "detail": "卷五 explicit 巳午 twice and 不用干而用支; 卷十 raw and scan commentary 己午 retained verbatim; use definition 巳午, not mixed stem/branch."
+    },
+    {
+      "id": "warehouse-en-de",
+      "status": "DEFERRED_P5",
+      "detail": "卷十 raw/scan 月恩; 卷十一 raw/scan 月德. Preserve both; no warehouse predicate selected."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": {
+    "owner": "Project owner (this chat)",
+    "date": "2026-10-14",
+    "authorization": "làm theo đề xuất",
+    "decision": "Adopt the proposed 18 civil days before 四立, onset included / 四立 excluded, UTC+7, 2025–2027, for audit-only 母倉 presence and four direct 宜 headings. Soil present replaces seasonal set with 巳午.",
+    "scope": "P4_C_MU_CANG_AUDIT_ONLY",
+    "reason": "Canonical witness unresolved; explicit convention permits bounded audit presence without promoting S1.",
+    "alternative": "Wait for canonical onset/後/定氣 witness; keep SOURCE_DEPENDENT/unknown",
+    "excluded": [
+      "P5 修倉庫 co-presence",
+      "production/scoring activation",
+      "changes to P4-B soil authority",
+      "canonical certification"
+    ]
+  },
+  "review": {
+    "status": "REVIEWED_OWNER_ADOPTED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Locked raw offsets + direct scan reading + legacy cross-check",
+    "limitations": [
+      "Single agent review; no independent second reviewer",
+      "Canonical S1 remains OPEN",
+      "No Golden or presence implementation"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "No accepted aliases; 母仓 and Vietnamese label not authority aliases",
+    "Runtime unchanged; P4-C 11/11 gate not met",
+    "Month Jian seasonal contract does not use legacy lunar month table"
+  ],
+  "soilConvention": {
+    "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+    "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "daysBeforeSiLi": 18,
+    "includeOnset": true,
+    "includeLi": false,
+    "coverage": ["2025-01-01", "2027-12-31"],
+    "boundaryInput": "Same locked 四立 boundary inputs and UTC+7 civil-date calculation as p4-soil-owner-convention-v1; separate adoption for 母倉 presence",
+    "scope": "P4_C_MU_CANG_AUDIT_ONLY",
+    "canonicalWitnessStatus": "OPEN_S1"
+  },
+  "corrections": [
+    {
+      "classification": "WRONG_RAW_LOCATOR",
+      "field": "sources[6] HEADING_納畜",
+      "beforeOffset": 774,
+      "afterOffset": 6587,
+      "reason": "v1 matched the contents anchor; v2 selects anchor followed by 宜 and matches scan PDF page 51. Source bytes and expected predicates unchanged."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "version": "p4-yi-mingfei-authority-lock-v1",
+  "status": "SOURCE_REVIEWED",
+  "offsetProtocol": "unicode-code-point-zero-based-end-exclusive-v1",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "sha256": "8782423ab87161f9e60c8b2ee23609bbc1c05bd71f9e85804910d09d46bfb922"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/inventory.json",
+      "sha256": "f3841d597e154044b49b6064f3259ae945b39162438f644e51d28fac5226dca6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/lock.json",
+      "sha256": "af5c5f095939cb6fdae1c5cadf22003e40b5123656a20cfc04dd8a94c940ec4b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/lock.json",
+      "sha256": "adb08cb532be732b0adb937f1533cda20cdf6f3f7f0428172d08bf64983cb501"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/lock.json",
+      "sha256": "e27e62f7bf65009e49792e83b8412dd3e7318cf269f92920048a2353caf2c4f9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf124.png",
+      "sha256": "5fc8c88c65c906755858663284ae17ecf866af6b6e4e8ec93bbf700bd2e0efce"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf125.png",
+      "sha256": "d4b2bb5ef34a858cbd609420c087ccac06dd067511070905aa8f8b2a7150f813"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf130.png",
+      "sha256": "29e28a6818c562f1346aab24d5cacf649b594b87af527251a0f89bd8a23c1feb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf131.png",
+      "sha256": "a3b101644393c9cc35ce9275b1fc6cb34cbb39ab4a99df84aa204db30994d958"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf132.png",
+      "sha256": "a31e8953ced9796b28435bcd5fc9f94750b3164dc5fdb0b5cf24258002b765ac"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf133.png",
+      "sha256": "10b8a1225c9ae59c93859229f1ea8e1c347325e68395d455e855815108ffc004"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf134.png",
+      "sha256": "77f2da8ca5cbd81a5eea3021caca86816f863592f86200fc6b7bfc829bf0a075"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf135.png",
+      "sha256": "4fb4e3db9c1ff00b47ab1639ac75691a95af98268c30daf56e34bdaeb22dee6d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf137.png",
+      "sha256": "29e21be2ae38d1bae5eebfabaf1c1e5947546019751468095889e4149e8efe80"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf138.png",
+      "sha256": "121b6578ed785007f5a6aea530d5c0c911789d96b40663730c4e47e83cc7040c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf139.png",
+      "sha256": "b5d72944f793d697b4e3c12c93babb7d9470327c7cf3da8becc1ccdf9d5695da"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf140.png",
+      "sha256": "aad2124bcbeae9619cc1e11de37aa7e6dbc55c78ab163782c8eb9912f49853e7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067686-pdf128.png",
+      "sha256": "05a84b1ea7696a8a2b93d7a3587eaa6eac2f2db063f2f30da0a3f44d6c401165"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf52.png",
+      "sha256": "0716e1b9a29e2af72e65cf1e184a7a669a14d73deef6200a7ffd260130a33522"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf53.png",
+      "sha256": "c279da46b626038244792b647d6579f673a4d5812e9263a972a44944879b9296"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sha256": "b7f65e9b88194c23f253c227d7c039cdc0e56f32aa5fbb11bbccbfc70f7fc101"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "sha256": "e4a5254c7800f8680ec42333aa31a8f8342e506c84122ed333a7d60564bd6794"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/validation.json",
+      "sha256": "b560433636d60605a57712fbd3cc434f848e728df46c5e9716e689fa22d2289d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/lock.json",
+      "sha256": "62f9cdfa1372178bfe1c3e13d55a267a8f49e7655939f1ffb486951875a909b4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v2/lock.json",
+      "sha256": "fc4db4c31a1a8eee48970ab00de4e7a1cf34a74a85144604046aad7191614421"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067682.cn.pdf",
+      "sha256": "d5e478b5a3e2e4a65ef5974f2e5983849b1f1c4ee1c0a71de88c1fe461d9ef90"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067683.cn.pdf",
+      "sha256": "97c5edf6ddeefe6ea8484cb3d08c821d6531a9587f97d250cd35b60cc2eae84c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067684.cn.pdf",
+      "sha256": "2498edeb31860f81caa8db863b285f6ac6d1f09de2ec7e0c5116c3f9cdadbe59"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067686.cn.pdf",
+      "sha256": "b12fd373c2d1ee70c841407f403eeca3d0531348f2eeee571f24e7905aacb499"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.cn.pdf",
+      "sha256": "472a6066a1be0dd8d3c8163812dbfdb2c933688b6428a65fcaeeb798806afdd4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/lock.json",
+      "sha256": "d6a430763f92eb7a3369705f6d9d0376fc5d3373267bbab77862cbab0ae39a6a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/lock.json",
+      "sha256": "0b05036b58cec7b741c8a1eefca3f310fd561693908adfaf38f66405978b5611"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/lock.json",
+      "sha256": "cd2fc9a0176b7edbf899ae76029de64cb9fbc146ef13f0f61dc2ba74476c19f3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/lock.json",
+      "sha256": "8cdf621f1fbff0de0e5cdee15dcfef22639d0dbd841a3f5440cad721ff00a1d8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/lock.json",
+      "sha256": "d8a9f26788966c87d486adf4ad3ee67c12953bd665ce54a925a248318f2505ed"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/lock.json",
+      "sha256": "b646aaf40c8b99da6be04fd1fedd9ff8d055e9770474bf395e1c6f6f1f8d0748"
+    },
+    {
+      "path": "shared/almanac-data/good-gods.json",
+      "sha256": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32"
+    },
+    {
+      "path": "shared/almanac-data/xieji-god-definitions.json",
+      "sha256": "5ca0629da282a5d3f0ba7de8ba69d5adafeaa593ff9d2c46a4362bd9801aa19a"
+    },
+    {
+      "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+      "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+    },
+    {
+      "path": "shared/lunar/stars.data.ts",
+      "sha256": "0c9e6a346d32203c3c7214e6652cfb784247b89b95c0a3604ee8ccdab55bb317"
+    }
+  ]
+}

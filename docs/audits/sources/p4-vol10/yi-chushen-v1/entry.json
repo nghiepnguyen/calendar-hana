@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "tru_than",
+  "han": "除神",
+  "aliases": [],
+  "authorityId": "p4-yi-chushen-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol05-787341",
+      "role": "DEFINITION_AND_MONTH_INDEPENDENCE",
+      "volume": 5,
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "offset": 11726,
+      "length": 148,
+      "quote": "　　{{SK anchor|五離}}{{SK notes|除神}}\n　　樞要歴曰五離者月中離神也其日忌結婚姻㑹親友作交闗立契劵○歴例曰五離者申酉日是也○曹震圭曰五離者是隂陽重㑹之辰再合則離也○考原曰按通書以申酉日為除神與五合對衝之日也宜沐浴祓除災眚\n　　按日神不從年月天干起義者唯此三條故并為一圖",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "USE_SCOPE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 6960,
+      "length": 62,
+      "quote": "　　{{SK anchor|除神}}\n　　宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇\n　　{{SK anchor|義同除日}}",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_掃舍宇",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 5954,
+      "length": 46,
+      "quote": "　　{{SK anchor|掃舍宇}}\n　　宜除日除神\n　　{{SK anchor|忌無}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_求醫療病",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 4257,
+      "length": 123,
+      "quote": "　　{{SK anchor|求醫療病}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n　　忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔{{SKchar|2959}}望日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_解除",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3993,
+      "length": 82,
+      "quote": "　　{{SK anchor|解除}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳除日開日解神除神\n　　忌月建平日死神收日劫煞災煞月煞月刑月厭大時遊禍天吏死氣四廢五墓",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_沐浴",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 4076,
+      "length": 52,
+      "quote": "　　{{SK anchor|沐浴}}\n　　宜除日解神除神亥子日\n　　{{SK anchor|忌伏社日}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_整手足甲",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 4188,
+      "length": 68,
+      "quote": "　　{{SK anchor|整手足甲}}\n　　宜除日解神除神\n　　忌月建月破劫煞災煞月煞月刑月厭每月一日六日十五日十九日二十一日二十三日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_整容剃頭",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 607,
+      "length": 3580,
+      "quote": "　　整容剃頭\n　　整手足甲　　求醫療病　　裁製\n　　營建宮室　　修宮室　　　繕城郭\n　　築隄防　　　興造動土　　豎柱上梁\n　　經絡　　　　開市　　　　立券\n　　交易　　　　納財　　　　修置産室\n　　開渠穿井　　安碓磑　　　補垣\n　　掃舍宇　　　修飾垣墻　　平治道塗\n　　伐木　　　　捕捉　　　　畋獵\n　　取魚　　　　栽種　　　　牧養\n　　{{SK anchor|納畜}}\n　　民用三十七事\n　　祭祀　　　　上表章　　　上官\n　　入學　　　　冠帶　　　　結婚姻\n　　會親友　　　嫁娶　　　　進人口\n　　出行　　　　移徙　　　　安牀\n　　沐浴　　　　剃頭　　　　療病\n　　裁衣　　　　修造動土　　豎柱上梁\n　　經絡　　　　開市　　　　立券\n　　交易　　　　納財　　　　修置産室\n　　開渠穿井　　安碓磑　　　掃舍宇\n　　平治道塗　　破屋壊垣　　伐木\n　　捕捉　　　　畋獵　　　　栽種\n　　牧養　　　　破土　　　　安葬\n　　{{SK anchor|啓攢}}\n　　通書選擇六十事\n　　祭祀　　　　祈福　　　　求嗣\n　　上冊受封　　上表章　　　襲爵受封\n　　會親友　　　入學　　　　冠帶\n　　出行　　　　上官赴任　　臨政親民\n　　結婚姻　　　納采問名　　嫁娶\n　　進人口　　　移徙　　　　遠迴\n　　安牀　　　　解除　　　　沐浴\n　　剃頭　　　　整手足甲　　求醫療病\n　　療目　　　　針刺　　　　裁衣\n　　築隄防　　　修造動土　　豎柱上梁\n　　修倉庫　　　鼓鑄　　　　苫蓋\n　　經絡　　　　醞釀　　　　開市\n　　立券　　　　交易　　　　納財\n　　開倉庫　　　出貨財　　　修置産室\n　　開渠穿井　　安碓磑　　　補垣塞穴\n　　掃舍宇　　　修飾垣墻　　平治道塗\n　　破屋壊垣　　伐木　　　　捕捉\n　　畋獵　　　　取魚　　　　乘船渡水\n　　栽種　　　　牧養　　　　納畜\n　　破土　　　　安葬　　　　啓攢\n\n\n\n\n\n\n\n\n\n\n　　{{SK anchor|祭祀}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　{{SK anchor|忌天狗寅日}}\n　　祈福\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢{{SK notes|又忌禄空上朔等日見鋪註條例餘倣此}}\n　　{{SK anchor|求嗣}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳開日益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢\n　　{{SK anchor|上冊進表章}}{{SK notes|上冊受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願臨日福徳開日\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡\n　　{{SK anchor|上表章}}\n　　宜天徳月徳天徳合月徳合月空天赦天願臨日福徳開日解神\n　　忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡\n　　{{SK anchor|頒詔}}\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡\n　　{{SK anchor|覃恩肆赦}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願王日開日\n　　{{SK anchor|忌無}}\n　　施恩封拜{{SK notes|襲爵受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　{{SK anchor|官日守日相日止宜襲爵受封}}\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢\n　　詔命公{{SKchar|2721}}招賢\n　　宜天徳月徳天徳合月徳合天赦天願王日建日開日\n　　又月恩四相時徳吉期天喜與驛馬天馬併者\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢往亡\n　　{{SK anchor|舉正直}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢\n　　{{SK anchor|施恩惠恤孤惸}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}\n　　宣政事\n　　宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡\n　　{{SK anchor|布政事}}\n　　宜天恩\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢\n　　{{SK anchor|行惠愛雪寃枉緩刑獄}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日\n　　{{SK anchor|忌無}}\n　　慶賜賞賀\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離\n　　{{SK anchor|宴會}}{{SK notes|㑹親友同}}\n　　宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日\n　　{{SK anchor|入學}}\n　　宜成日開日\n　　{{SK anchor|忌無}}\n　　冠帶\n　　{{SK anchor|宜定日}}\n　　忌月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢五墓丑日\n　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日\n　　{{SK anchor|安撫邊境}}\n　　宜天徳月徳天徳合月徳合天赦天願王日守日兵福兵寶兵吉危日成日\n　　忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|選將訓兵}}\n　　宜天徳月徳天徳合月徳合天赦天願王日兵福兵寶兵吉危日\n　　忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|出師}}\n　　宜天徳月徳天徳合月徳合兵福兵寶兵吉\n　　忌月破平日死神收日閉日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日\n　　{{SK anchor|上官赴任}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡\n　　{{SK anchor|臨政親民}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日六儀\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡\n　　{{SK anchor|結婚姻}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜六合五合\n　　忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專\n　　{{SK anchor|納采問名}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜\n　　忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專\n　　{{SK anchor|嫁娶}}\n　　宜天徳月徳天徳合月徳合天赦天願三合天喜六合不將\n　　忌月破平日收日閉日劫煞災煞月煞月刑月害月厭厭對大時天吏四廢四忌四窮五墓往亡八專亥日\n　　{{SK anchor|進人口}}\n　　宜天願民日三合滿日收日六合天倉\n　　忌月破平日死神閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四窮五墓九空往亡\n　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌\n　　{{SK anchor|安牀}}\n　　宜危日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓申日\n　　{{SK anchor|解除}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳除日開日解神除神\n　　忌月建平日死神收日劫煞災煞月煞月刑月厭大時遊禍天吏死氣四廢五墓\n　　{{SK anchor|沐浴}}\n　　宜除日解神除神亥子日\n　　{{SK anchor|忌伏社日}}\n　　整容剃頭\n　　{{SK anchor|宜除日解神除神}}\n　　忌月建月破劫煞災煞月煞月刑月厭丁日每月十二日十五日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 113,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf113.png",
+      "transcription": "重日　五合　五離　除神 (day chart)",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 116,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf116.png",
+      "transcription": "申酉為秋清肅之氣也故宜解除；五離　除神",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "pdfPage": 117,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf117.png",
+      "transcription": "按通書以申酉日為除神…按日神不從年月天干起義者唯此三條故并為一圖",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 126,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067686-pdf126.png",
+      "transcription": "除神；宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇；義同除日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 31,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf31.png",
+      "transcription": "解除",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 32,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf32.png",
+      "transcription": "除日開日解神除神；沐浴；整容剃頭",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 33,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf33.png",
+      "transcription": "整手足甲；宜除日解神除神；求醫療病",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 34,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf34.png",
+      "transcription": "后除日破日天醫開日解神除神",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 46,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf46.png",
+      "transcription": "掃舍宇；宜除日除神；忌無",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct definition/chart/use/heading scan review"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid sexagenary day pillar; 子=0…亥=11, 申=8 酉=9. No Month Jian or lunarMonth required.",
+      "sourceRefs": [0]
+    }
+  ],
+  "predicate": {
+    "type": "DAY_BRANCH_SET",
+    "branches": ["申", "酉"],
+    "branchIndices": [8, 9],
+    "expression": "dayBranch in [申, 酉]",
+    "derivation": "通書以申酉日為除神; explicit 日神不從年月天干起義 and day chart establish month/stem independence.",
+    "sourceRefs": [0]
+  },
+  "coverage": {
+    "structuralDomain": "All 60 valid day pillars; 10 present / 50 absent. Optional 12×60 month-independence regression, not required Month Jian input.",
+    "calendarCoverage": "Inherited from validated day-pillar provider; no separate dated restriction",
+    "notNeeded": [
+      "MonthJian",
+      "lunarMonth",
+      "lunarDay",
+      "dayStem",
+      "moonPhase",
+      "soil",
+      "birthYear"
+    ]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "No source clause deletes 申/酉 presence; heading 忌/protection/override remains separate.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "YI_SCOPE_NOT_WU_LI_JI_SCOPE",
+      "detail": "五離同位 has distinct negative usage; do not copy marriage/friends/contracts 忌 into 除神 宜/scoring.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "掃舍宇",
+      "normalized": "掃舍宇",
+      "activities": ["cleaning"],
+      "sourceRefs": [2],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "整容剃頭",
+      "normalized": "整容剃頭",
+      "activities": ["cut_hair"],
+      "sourceRefs": [7],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "求醫療病",
+      "normalized": "求醫療病",
+      "activities": ["medical"],
+      "sourceRefs": [3],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "解除",
+      "normalized": "解除",
+      "activities": [],
+      "sourceRefs": [4],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+    },
+    {
+      "raw": "沐浴",
+      "normalized": "沐浴",
+      "activities": [],
+      "sourceRefs": [5],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+    },
+    {
+      "raw": "整手足甲",
+      "normalized": "整手足甲",
+      "activities": [],
+      "sourceRefs": [6],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "chu-ri-vs-chu-shen",
+      "status": "RESOLVED_DIFFERENT_PREDICATES",
+      "detail": "義同除日 describes usage, not presence equality: 除日 monthly offset +1, 除神 fixed 申/酉; 卷十一 lists both."
+    },
+    {
+      "id": "wu-li-same-position",
+      "status": "SCOPED_NOT_ALIASED",
+      "detail": "五離 same day positions, distinct named 宜/忌. No token alias adopted."
+    },
+    {
+      "id": "catalog-reuse",
+      "status": "MATCH_CONFIRMED_NOT_AUTHORITY_INFERENCE",
+      "detail": "Existing tru_than han=除神, dayChi=[8,9], medical/cleaning/cut_hair match independently reviewed source."
+    },
+    {
+      "id": "raw-scan-wording",
+      "status": "NO_PREDICATE_DELTA",
+      "detail": "Raw 宜沐浴祓除災眚; scan PDF117 宜沐浴祓除災害. Preserve both wordings, no predicate change."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Locked raw offsets + direct scans + catalog predicate/heading mapping comparison",
+    "limitations": [
+      "Single reviewer; no independent second review",
+      "Not Golden or presence implementation",
+      "No date coverage beyond provider"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "Catalog ID tru_than reused as identity; translated label not token alias",
+    "No aliases 除日/五離/解神 adopted",
+    "No new catalog headings or production scoring changes"
+  ]
+}

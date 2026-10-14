@@ -1,0 +1,26 @@
+{
+  "version": "p4-yi-fixture-matrix-lock-v1",
+  "status": "MATRIX_INTEGRITY_NOT_GOLDEN_FREEZE",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/README.md",
+      "sha256": "686f8c3476ffda5197c4a68734d5f93c899c2b3e3e40d6e352e20c67fbb2d4ff"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/matrix.json",
+      "sha256": "e2c3fb437898fff03d7eae541b363b4d38800d901fe51334f2e213fa8cc87d83"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/validation.json",
+      "sha256": "02a842fa8741ba4e4fd42585dacbf554a87a5c81b650e21860303be26f9a7c69"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-v1/lock.json",
+      "sha256": "662296b5c4f3bc92a3fc27a7c38102729dfaf3cda65a418c8d5c7d6099fd266a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    }
+  ]
+}

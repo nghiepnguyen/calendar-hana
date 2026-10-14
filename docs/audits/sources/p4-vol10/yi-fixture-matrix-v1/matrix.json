@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "p4-yi-fixture-matrix-v1",
+  "task": "3.1",
+  "date": "2026-10-14",
+  "status": "FIXTURE_SELECTION_PLAN_NOT_GOLDEN",
+  "scope": "AUDIT_ONLY",
+  "authority": {
+    "path": "shared/almanac-data/p4-yi-operands-v1.json",
+    "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb",
+    "gatePath": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/gate.json",
+    "gateSha256": "94b859f866a6e1a61dc32a89af8219b4e123bde865086546234be8a6d5c54bdb"
+  },
+  "categories": ["present", "absent", "boundary", "missingInput", "outsideCoverage", "alias"],
+  "rows": [
+    {
+      "id": "mu-cang",
+      "han": "母倉",
+      "authorityId": "p4-yi-mucang-v2",
+      "ruleId": "p4-yi-mucang-v2:presence",
+      "sourceRefs": [0, 1],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "domainPlan": "12 Month Jian × 60 valid pillars × validated soil present/absent",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Mỗi mùa một branch thuộc ordinary set; soil absent, dated provenance hợp lệ"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Mỗi mùa một branch ngoài ordinary set; thêm soil present với ordinary-only branch để kiểm override"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Bốn biên chuyển mùa exact Jie: trước/đúng/sau; mỗi 四立 2025–2027: onset−1/onset/onset+1, Li−1/Li/Li+1 (UTC+7 civil dates); soil present với 巳、午 và branch ngoài set; ordinary autumn đủ 辰戌丑未"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent; soil thiếu date/boundary evidence hoặc provenance chưa validated giữ unknown; sai authority/status/timezone là malformed, không trộn hai loại",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH", "SOIL_REIGN_STATE"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "2024-12-31 / 2025-01-01 / 2027-12-31 / 2028-01-01 với provenance ngày thật; soil unknown; Month Jian/day provider ngoài coverage độc lập",
+          "notApplicable": {
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; không lấy soil authority P4-B làm alias authority 母倉",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": ["lunarDay", "moonPhase", "dayStem"],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "fu-de",
+      "han": "福德",
+      "authorityId": "p4-yi-fude-v1",
+      "ruleId": "p4-yi-fude-v1:presence",
+      "sourceRefs": [0, 2],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "domainPlan": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲辰; 子/丙寅"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/乙卯 và 寅/乙巳 (hai phía target)"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "戌→子、亥→丑 wrap; target±1; trước/đúng/sau exact Jie với cùng valid pillar; 申/甲戌 giữ presence riêng khỏi 天狗"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "APPLICABLE",
+          "acceptedAliases": ["福徳"],
+          "selectionPlan": "福徳→福德: canonical/alias cùng input, authority/rule/source trace; không alias 滿日、天巫、四利三元"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tian-en",
+      "han": "天恩",
+      "authorityId": "p4-yi-tianen-v1",
+      "ruleId": "p4-yi-tianen-v1:presence",
+      "sourceRefs": [0, 1],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "domainPlan": "All 60 valid day pillars, exactly 15 present / 45 absent",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "甲子、戊辰、己卯、癸未、己酉、癸丑 (hai đầu ba đoạn)"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "己巳、戊寅、甲申、戊申、甲寅、癸亥"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Indices 59/0/4/5, 14/15/19/20, 44/45/49/50; chu kỳ 59→0; 己卯/己酉 kiểm correction 巳→己; không reset theo tháng/ngày âm"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["DAY_PILLAR"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; raw 巳 không là alias can 己 (correction nguồn)",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": ["MonthJian", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tian-wu",
+      "han": "天巫",
+      "authorityId": "p4-yi-tianwu-v1",
+      "ruleId": "p4-yi-tianwu-v1:presence",
+      "sourceRefs": [0, 1, 3],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "domainPlan": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲辰; 子/丙寅"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/乙卯 và 寅/乙巳"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "戌→子、亥→丑 wrap; target±1; exact Jie trước/đúng/sau; 申/甲戌 không xóa presence bởi 天狗"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; không gộp 福德、滿日、天狗",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tian-hou",
+      "han": "天后",
+      "authorityId": "p4-yi-tianhou-v1",
+      "ruleId": "p4-yi-tianhou-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "domainPlan": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲申、卯/乙巳、辰/丙寅、巳/乙亥 (đủ bốn target)"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/癸未、寅/乙酉; đối chứng target trong tháng kế"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "12 monthly rows; sequence 寅→卯→辰→巳→午; 亥→子 và 丑→寅; exact Jie trước/đúng/sau với pillar cố định"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; 天后/驛馬 cùng vị trí vẫn separate rule/heading; không year/day/natal horse",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tian-yi",
+      "han": "天醫",
+      "authorityId": "p4-yi-tianyi-v1",
+      "ruleId": "p4-yi-tianyi-v1:presence",
+      "sourceRefs": [0, 1, 2],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "domainPlan": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲戌、卯/乙亥、辰/甲子"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/乙酉、寅/乙亥; 寅/乙丑 bắt lỗi offset −1"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Offset +8: 寅→戌、辰→子 wrap; 亥→子、丑→寅; target±1; exact Jie trước/đúng/sau"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; không gộp 成日、天喜 hoặc seasonal 天喜 table",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tru_than",
+      "han": "除神",
+      "authorityId": "p4-yi-chushen-v1",
+      "ruleId": "p4-yi-chushen-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "domainPlan": "All 60 valid day pillars; 10 present / 50 absent. Optional 12×60 month-independence regression, not required Month Jian input.",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "甲申、乙酉; thêm 戊申、己酉 để kiểm stem independence"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "癸未、甲戌"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Biên chi 未/申/酉/戌; cùng branch với các stem hợp lệ; bỏ Month Jian hoàn toàn và thay optional Month Jian không đổi predicate"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; tru_than giữ stable catalog ID; 除日、五離、解神 không alias",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "MonthJian",
+          "lunarMonth",
+          "lunarDay",
+          "dayStem",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "yi-ma",
+      "han": "驛馬",
+      "authorityId": "p4-yi-yima-v1",
+      "ruleId": "p4-yi-yima-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "domainPlan": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲申、卯/乙巳、辰/丙寅、巳/乙亥"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/癸未、寅/乙酉; 寅/丙寅 bắt nhầm day-horse base"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "12 monthly rows; bốn target lặp ba lần; 亥→子、丑→寅; exact Jie trước/đúng/sau; thay natal/year input không đổi"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; 天后、天馬 riêng; legacy Dịch Mã cùng sequence không đổi basis sang tháng âm",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "tian-ma",
+      "han": "天馬",
+      "authorityId": "p4-yi-tianma-v1",
+      "ruleId": "p4-yi-tianma-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "domainPlan": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/甲午、巳/甲子、亥/甲子"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/乙巳、寅/癸未; 寅/甲申 phân biệt 驛馬"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Sáu 陽辰 theo thứ tự từ 寅 và repeat sau sáu tháng; 四/十月 target 子 (巳/亥建); 丑→寅 wrap; exact Jie trước/đúng/sau"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; 驛馬、天后、Lộc Mã không tự canonicalize",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "ji-qi",
+      "han": "吉期",
+      "authorityId": "p4-yi-jiqi-v1",
+      "ruleId": "p4-yi-jiqi-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "domainPlan": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/乙卯、亥/甲子"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "寅/丙寅、寅/甲辰 (target±1)"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Offset +1 wrap 亥→子; 丑→寅; exact Jie trước/đúng/sau; 亥/甲子 đồng vị 天馬 nhưng không merge presence/use"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; 除日、兵寶 không alias; cùng vị trí không nhập military/marriage scope",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    },
+    {
+      "id": "ming-fei",
+      "han": "鳴吠",
+      "authorityId": "p4-yi-mingfei-v1",
+      "ruleId": "p4-yi-mingfei-v1:presence",
+      "sourceRefs": [0],
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "domainPlan": "All 60 valid day pillars: 13 present / 47 absent; independent of Month Jian",
+      "cells": {
+        "present": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Đủ corrected 13 pillars; nhấn 甲午、己酉"
+        },
+        "absent": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "庚寅、壬寅 (old14 removed), 戊午、戊申、癸亥"
+        },
+        "boundary": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Mỗi index trong corrected set có index−1/index/index+1 modulo 60; cùng 午/申 branch với 戊; 甲午 added, 庚寅/壬寅 removed; 己酉 correction; Month Jian không đổi predicate"
+        },
+        "missingInput": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Omit từng required input riêng; omit tất cả; explicit unknown từ provider không biến thành absent",
+          "requiredInputKeys": ["DAY_PILLAR"]
+        },
+        "outsideCoverage": {
+          "applicability": "APPLICABLE",
+          "selectionPlan": "Required day-pillar provider ngoài coverage; thêm exact-Jie Month Jian provider ngoài coverage nếu required, từng provider riêng; valid structural input không có cutoff ngày tự đặt",
+          "notApplicable": {
+            "localDatedCutoff": "Không có dated cutoff riêng; inherited provider coverage, không dùng 2024/2028 như unknown chỉ vì năm",
+            "structuralOutside": "Ngoài 12 chi / 60 valid pillars là malformed input, không phải outside coverage"
+          }
+        },
+        "alias": {
+          "applicability": "NOT_APPLICABLE",
+          "acceptedAliases": [],
+          "selectionPlan": "Không accepted alias; 鳴吠對 11-day set/啓攢 không gộp; 復日 là heading interaction riêng",
+          "reason": "Authority không nhận alias nào; kiểm chống gộp tên ở normalization/scope, không bịa positive alias fixture"
+        }
+      },
+      "irrelevantInputPlan": {
+        "notNeeded": [
+          "monthJian",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ],
+        "method": "Omit hoặc thay valid irrelevant inputs từng loại; không bổ sung required input; malformed required input kiểm riêng"
+      }
+    }
+  ],
+  "rules": [
+    "No expected outputs in task 3.1; task 3.2 derives each expected independently from raw/scan and sourceRefs, never copies output of authority evaluator/resolver/scorer",
+    "Concrete pillar candidates are valid sexagenary pillars; dates/instant/pillar provenance for boundary cases must be derived and checked independently in 3.2, not forged by mixing unrelated inputs",
+    "7 monthly rules: 720 per rule in 3.3; 3 day rules: separate 60-pillar domains; 母倉: structural soil states plus dated provenance/boundaries, 720 alone insufficient",
+    "Presence sourceRefs index each entry sources array; alias retains rule identity; no alias union of god scopes",
+    "Inherited coverage adapter contract finalized 4.1; do not invent provider cutoff or raw API shape in this plan"
+  ],
+  "supplementalPlan": {
+    "malformedRequiredInputs": "Invalid chi/type, invalid sexagenary pairing 甲丑, invalid index/lunar-day substitution; 母倉 invalid date/authority/status/timezone/provenance. Clear errors per authority, distinct from missing/coverage unknown",
+    "compositionDeferredTo": "3.4: ANY empty/all absent/unknown/present masking unknown trace; listed/unlisted headings; normalization 破屋壞垣→破屋壊垣; protection, override puzhu:28 六月甲午/甲子, 王日 regression, P5 warehouse stays deferred even 母倉 present"
+  },
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "method": "Fixture selection mapped to locked authority; structural validation only, not expected derivation or Golden review",
+    "limits": [
+      "3.2–3.6 open; no freeze commit or Golden created",
+      "S1 canonical/P5 warehouse remain open; 母倉 OWNER_ADOPTED_SOURCE_DEPENDENT remains bounded"
+    ]
+  }
+}
