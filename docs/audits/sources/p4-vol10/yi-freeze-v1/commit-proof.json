@@ -1,0 +1,39 @@
+{
+  "version": "p4-yi-freeze-commit-proof-v1",
+  "task": "3.6",
+  "date": "2026-10-14",
+  "status": "GIT_BLOB_FREEZE_VERIFIED",
+  "freezeCommit": "c12df53207d28a82f4def6a67e63c69bc68e141c",
+  "freezeTree": "009e4b35699ce76096200418b023ac98760f0468",
+  "freezeParent": "f54aaf849fdb4b42d07c6919f13ec7c18c93c1ac",
+  "sourceLockSha256": "a66f8984471f736a3f73ca087db44213dc42b356814750d1941418be6e054c12",
+  "goldenSha256": "ba5544c3e7b0bd540acfff8a673ab22c0c4b78dc8680c18d18cea07523f797d1",
+  "authoritySha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb",
+  "lockedGitBlobCount": 677,
+  "preFreezePriorByteChecks": 672,
+  "nonSourceExclusions": [
+    {
+      "path": "golden-v3/.DS_Store",
+      "sha256": "88e5e7cfe9074990ba0381a58d723da13890a35c72ff8786696d879aa238907c",
+      "classification": "SPEC_BUG_IN_HISTORICAL_SNAPSHOT_SCOPE",
+      "reason": "Ignored local Finder metadata accidentally recorded by broad prior snapshots; no expected generator reads it; not a source/authority/Golden artifact and not committed. Original prior-hashes bytes preserved."
+    }
+  ],
+  "noImplementationAtFreeze": true,
+  "runtimePathsDiffEmpty": [
+    "src",
+    "shared/lunar",
+    "shared/astronomy",
+    "functions",
+    ".github",
+    "package.json",
+    "package-lock.json",
+    "shared/almanac-data/manifest.json"
+  ],
+  "recordCount": 10668,
+  "independentSecondReview": false,
+  "receiptPolicy": "Created after immutable freeze commit; receipt/status updates committed separately, never amend freeze",
+  "cleanCheckoutValidation": "PASS_GIT_ARCHIVE_WITHOUT_IGNORED_FINDER_METADATA",
+  "cleanCheckoutMethod": "git archive freezeCommit to temporary directory, copy external receipt only, semantic source replay + 677 exact Git blobs verified; no expected/source edits",
+  "cleanCheckoutPath": "/tmp/p4c-freeze-check-pzm_zpsc"
+}
