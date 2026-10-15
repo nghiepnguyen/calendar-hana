@@ -1,0 +1,605 @@
+{
+  "scope": "P4_C_TASK_6_AUDIT_ONLY_MUTATION_GATE",
+  "tests": [
+    "shared/lunar/p4Yi"
+  ],
+  "control": {
+    "outcome": "NOT_CAUGHT",
+    "passed": 4523,
+    "failed": 0
+  },
+  "mutations": [
+    {
+      "mutation": "monthly_lookup_offset_shifted",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 3874,
+      "failed": 649,
+      "assertionFailures": 649,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiInputContract.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 5.3 opt-in assembly contract builds all eleven stable provider traces before heading classification",
+        "P4-C 4.4 full frozen domains and soil provenance 福德:MONTH_PILLAR_720 matches independently derived expected",
+        "P4-C 4.4 full frozen domains and soil provenance 天巫:MONTH_PILLAR_720 matches independently derived expected",
+        "P4-C 4.4 full frozen domains and soil provenance 天后:MONTH_PILLAR_720 matches independently derived expected"
+      ]
+    },
+    {
+      "mutation": "pillar_range_upper_exclusive",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4507,
+      "failed": 16,
+      "assertionFailures": 16,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 天恩:DAY_PILLAR_60 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-戊辰 -> present",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-癸未 -> present",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-癸丑 -> present"
+      ]
+    },
+    {
+      "mutation": "pillar_range_cycle_shifted",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4495,
+      "failed": 28,
+      "assertionFailures": 28,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 天恩:DAY_PILLAR_60 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-戊辰 -> present",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-癸未 -> present",
+        "P4-C 4.2 source-derived resolved presence tian-en:candidate-present-癸丑 -> present"
+      ]
+    },
+    {
+      "mutation": "branch_set_drops_member",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4504,
+      "failed": 19,
+      "assertionFailures": 19,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 除神:DAY_PILLAR_60 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence tru_than:candidate-present-乙酉 -> present",
+        "P4-C 4.2 source-derived resolved presence tru_than:candidate-present-己酉 -> present",
+        "P4-C 4.2 source-derived resolved presence tru_than:branch-edge-癸酉 -> present"
+      ]
+    },
+    {
+      "mutation": "pillar_set_reads_branch_only",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4513,
+      "failed": 10,
+      "assertionFailures": 10,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 鳴吠:DAY_PILLAR_60 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence ming-fei:candidate-absent-戊午 -> absent",
+        "P4-C 4.2 source-derived resolved presence ming-fei:candidate-absent-戊申 -> absent",
+        "P4-C 4.2 source-derived resolved presence ming-fei:corrected-set-neighbor-44 -> absent"
+      ]
+    },
+    {
+      "mutation": "soil_override_ignored",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4488,
+      "failed": 35,
+      "assertionFailures": 35,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 母倉:MU_CANG_CONDITIONAL_1440 matches independently derived expected",
+        "P4-C 4.4 full frozen domains and soil provenance 母倉:MU_CANG_DATED_1095 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence mu-cang:soil-override-ordinary-replaced -> absent",
+        "P4-C 4.2 source-derived resolved presence mu-cang:soil-override-巳 -> present"
+      ]
+    },
+    {
+      "mutation": "soil_override_unions_season",
+      "file": "shared/lunar/p4YiPredicates.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4496,
+      "failed": 27,
+      "assertionFailures": 27,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDomains.test.ts",
+        "p4YiOperands.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 4.4 full frozen domains and soil provenance 母倉:MU_CANG_CONDITIONAL_1440 matches independently derived expected",
+        "P4-C 4.4 full frozen domains and soil provenance 母倉:MU_CANG_DATED_1095 matches independently derived expected",
+        "P4-C 4.2 source-derived resolved presence mu-cang:soil-override-ordinary-replaced -> absent",
+        "P4-C 4.2 source-derived resolved presence mu-cang:soil-boundary-2025-21-onset -> absent"
+      ]
+    },
+    {
+      "mutation": "soil_li_day_included",
+      "file": "shared/lunar/p4YiSoil.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4409,
+      "failed": 114,
+      "assertionFailures": 16,
+      "otherFailures": 98,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiDatedInputs.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.6 dated sweep keeps every input and status in the trace matches the frozen dated 母倉 domain and P4-B scopes on 1,095 dates",
+        "P4-C 5.6 dated sweep keeps every input and status in the trace carries exact-Jie instants through for the 108 frozen crossing records",
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C task 6 before/after sweep (audit-only) reports 1,095 dates x 29 headings with explained transitions",
+        "P4-C 4.5 dated 母倉 soil evidence builder 2025-02-03 matches the independent frozen boundary evidence"
+      ]
+    },
+    {
+      "mutation": "unknown_becomes_absent",
+      "file": "shared/lunar/p4YiOperands.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4335,
+      "failed": 188,
+      "assertionFailures": 188,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiDatedInputs.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiInputContract.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiTrace.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope no dated input on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope P4-B inputs only, no 母倉 soil on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope outside 2025-2027 coverage on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 provider state unknown, P4-B soil known on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 soil unvalidated on 720 contexts"
+      ]
+    },
+    {
+      "mutation": "outside_provider_coverage_ignored",
+      "file": "shared/lunar/p4YiOperands.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4482,
+      "failed": 41,
+      "assertionFailures": 41,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiDayComposition.test.ts",
+        "p4YiInputContract.test.ts",
+        "p4YiTrace.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.3 opt-in assembly contract does not reuse the P4-B soil operand as 母倉 authority",
+        "P4-C 4.3 unknown needs reason and trace, not an unconditional unknown #4 mu-cang:provider-outside-MONTH_JIAN_BRA… -> unknown with source and input trace",
+        "P4-C 4.3 unknown needs reason and trace, not an unconditional unknown #7 mu-cang:provider-outside-DAY_BRANCH -> unknown with source and input trace",
+        "P4-C 4.3 unknown needs reason and trace, not an unconditional unknown #10 mu-cang:provider-outside-SOIL_REIGN_STA… -> unknown with source and input trace",
+        "P4-C 4.3 unknown needs reason and trace, not an unconditional unknown #18 fu-de:provider-outside-MONTH_JIAN_BRANCH -> unknown with source and input trace"
+      ]
+    },
+    {
+      "mutation": "drop_p4c_operand_mucang",
+      "file": "shared/lunar/p4YiOperands.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4505,
+      "failed": 18,
+      "assertionFailures": 16,
+      "otherFailures": 2,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDatedInputs.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiTrace.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope no dated input on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope P4-B inputs only, no 母倉 soil on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope outside 2025-2027 coverage on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 provider state unknown, P4-B soil known on 720 contexts"
+      ]
+    },
+    {
+      "mutation": "drop_legacy_yi_operands",
+      "file": "shared/lunar/p4YiDayComposition.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4513,
+      "failed": 10,
+      "assertionFailures": 10,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings"
+      ]
+    },
+    {
+      "mutation": "any_requires_all_present",
+      "file": "shared/lunar/p4YiEvidence.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4473,
+      "failed": 50,
+      "assertionFailures": 50,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiAny.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiInputContract.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.2 ANY decision RED decision 5 any:2:present-absent",
+        "P4-C 5.2 ANY decision RED decision 6 any:2:present-unknown",
+        "P4-C 5.2 ANY decision RED decision 7 any:2:absent-present",
+        "P4-C 5.2 ANY decision RED decision 10 any:2:unknown-present",
+        "P4-C 5.2 ANY decision RED decision 14 any:3:present-present-absent"
+      ]
+    },
+    {
+      "mutation": "any_unknown_becomes_false",
+      "file": "shared/lunar/p4YiEvidence.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4457,
+      "failed": 66,
+      "assertionFailures": 66,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiAny.test.ts",
+        "p4YiHeadingScope.test.ts",
+        "p4YiPropagation.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.2 ANY decision RED decision 3 any:1:unknown",
+        "P4-C 5.2 ANY decision RED decision 9 any:2:absent-unknown",
+        "P4-C 5.2 ANY decision RED decision 11 any:2:unknown-absent",
+        "P4-C 5.2 ANY decision RED decision 12 any:2:unknown-unknown",
+        "P4-C 5.2 ANY decision RED decision 27 any:3:absent-absent-unknown"
+      ]
+    },
+    {
+      "mutation": "heading_scope_ignored",
+      "file": "shared/lunar/p4YiEvidence.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 3928,
+      "failed": 595,
+      "assertionFailures": 595,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDatedInputs.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiHeadingScope.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined"
+      ]
+    },
+    {
+      "mutation": "warehouse_resolved_by_any",
+      "file": "shared/lunar/p4YiEvidence.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4466,
+      "failed": 57,
+      "assertionFailures": 57,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompositionGate.test.ts",
+        "p4YiDayComposition.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 5.3 opt-in assembly contract builds all eleven stable provider traces before heading classification",
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C task 6 before/after sweep (audit-only) reports 1,095 dates x 29 headings with explained transitions",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:present"
+      ]
+    },
+    {
+      "mutation": "baiji_protection_dropped",
+      "file": "shared/lunar/p4YiDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4507,
+      "failed": 16,
+      "assertionFailures": 16,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "versioned full core preserves historical optional input and override handling",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings"
+      ]
+    },
+    {
+      "mutation": "yi_suppression_dropped",
+      "file": "shared/lunar/p4YiDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4512,
+      "failed": 11,
+      "assertionFailures": 11,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "versioned full core preserves historical optional input and override handling",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined"
+      ]
+    },
+    {
+      "mutation": "stop_ji_reveal_dropped",
+      "file": "shared/lunar/p4YiDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4518,
+      "failed": 5,
+      "assertionFailures": 5,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiSweep.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "versioned full core preserves historical optional input and override handling",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path A04b undefined",
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C task 6 before/after sweep (audit-only) reports 1,095 dates x 29 headings with explained transitions"
+      ]
+    },
+    {
+      "mutation": "full_day_protection_dropped",
+      "file": "shared/lunar/p4YiFullDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4505,
+      "failed": 18,
+      "assertionFailures": 18,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "versioned full core preserves historical optional input and override handling",
+        "P4-C 5.7 dated diff against the frozen baseline explains every changed row on 1,095 dates x 29 headings",
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲戌"
+      ]
+    },
+    {
+      "mutation": "puzhu28_override_dropped",
+      "file": "shared/lunar/p4YiFullDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4496,
+      "failed": 27,
+      "assertionFailures": 27,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiDatedInputs.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "versioned full core preserves historical optional input and override handling",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu:28 undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu:28 undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu:28 undefined"
+      ]
+    },
+    {
+      "mutation": "raw_ji_view_lost",
+      "file": "shared/lunar/p4YiFullDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4515,
+      "failed": 8,
+      "assertionFailures": 8,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts"
+      ],
+      "firstFailures": [
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲戌",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙申",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲午",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊申"
+      ]
+    },
+    {
+      "mutation": "death_defeat_suppression_dropped",
+      "file": "shared/lunar/p4YiFullDayCore.ts",
+      "outcome": "ASSERTION_CAUGHT",
+      "exitCode": 1,
+      "passed": 4512,
+      "failed": 11,
+      "assertionFailures": 11,
+      "otherFailures": 0,
+      "loadErrors": [],
+      "caughtByFiles": [
+        "p4YiCompatibility.test.ts",
+        "p4YiCompositionGate.test.ts",
+        "p4YiPropagation.test.ts",
+        "p4YiSweep.test.ts",
+        "p4YiWarehouse.test.ts"
+      ],
+      "firstFailures": [
+        "versioned cores reproduce the pre-change hashes when supplied historical 宜",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu-end undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu-end undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu-end undefined",
+        "P4-C 5.7 frozen A04b / P4-B Goldens on the new 宜 path puzhu-end undefined"
+      ]
+    }
+  ],
+  "allAssertionCaught": true,
+  "restored": true,
+  "restoredSha256": {
+    "shared/lunar/p4YiDayComposition.ts": "020cee6843a94bea84382a4941951f625b506d31fce630e2d13c6550ba8c0aa0",
+    "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7",
+    "shared/lunar/p4YiEvidence.ts": "314a380574470175712b637885ee8acbafb3c3afcf6aa10f0d2e74c2f387ce42",
+    "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6",
+    "shared/lunar/p4YiOperands.ts": "98458e76892c20259e41e03b946c231626c9c47cdea60d984b55521d4e8b9396",
+    "shared/lunar/p4YiPredicates.ts": "4b7b8cc7d711cd2b1b9e0e6bcfecc6016a0de4154b079dc95e90ca6e3c1ba338",
+    "shared/lunar/p4YiSoil.ts": "fae15ad9d0b9051dc58a1a01fa67afced11d24df800de507093805d1023ce6b9"
+  },
+  "limits": "Audit-only P4-C path; production pipeline, Golden and locks are never mutated. Heading spelling normalization is covered by 5.1 helper tests, not mutated here."
+}

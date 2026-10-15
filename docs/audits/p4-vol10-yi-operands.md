@@ -207,3 +207,70 @@ Reviewer Codex cùng agent đã tạo expected, independentSecondReview false; k
 Staging phát hiện snapshot lịch sử có `golden-v3/.DS_Store` bị ignore: giữ hash record cũ nhưng loại khỏi source Git closure, không force-commit Finder metadata hoặc giả checksum trong clean checkout. TSV comparison có CRLF: giữ exact bytes, check `cr-at-eol` thay vì format phá locks. Cả hai có packaging correction evidence. Replay source arithmetic trong Git archive sạch (metadata không có) và proof677 committed blobs qua; source/Golden không sửa để test xanh. Diff product runtime/manifest paths từ freeze parent rỗng; matching lint/types/compile trước đó được reuse vì code/reference bất biến.
 
 **Task3.6 và parent3.0 hoàn tất; next4.1 contract/callers**, chưa provider implementation hoặc toàn P4-C acceptance. Reviewer single Codex, no independent second review; 69 recipes/stubs/projection limits kế thừa, S1 canonical/P5 warehouse còn OPEN/deferred, 母倉 OWNER_ADOPTED_SOURCE_DEPENDENT. Không push/merge/deploy.
+
+## Task 4.1 — Contract và callers chốt
+
+2026-10-15: [contract v1](sources/p4-vol10/yi-contract-v1/README.md), [validation](sources/p4-vol10/yi-contract-v1/validation.json), CONTRACT_REVIEWED_NOT_IMPLEMENTED. Kiểm callers transitive bằng graft, graphify map quan hệ, literal consumers/mutation scripts và production import closure. Chốt single-entry/bulk provider với required inputs theo từng rule, error/unknown policy, alias và source/input trace; soil 母倉 dùng authority adoption riêng, không relabel soil P4-B. Entry point mới opt-in ghép evidence trước heading scopes/suppression/P4-B assembly/propagation; wrappers/default/oracle A04b/P4-B giữ nguyên. Warehouse P5 và 四相 existing stub mapping được ghi rõ; không mở heading ngoài catalog.
+
+Chỉ thêm tài liệu/evidence và cập nhật tiến độ; chưa module/provider/test đỏ. Authority/Golden/source frozen hashes và legacy code/manifest giữ bytes. Reviewer single Codex, không independent second review; import proof tĩnh không thay build checksum/CI cuối. **4.1 xong; next4.2 test đỏ**, parent4.0/P4-C chưa hoàn tất, S1 canonical OPEN/P5 deferred.
+
+## Task 4.2 — Test lock/raw offset và presence RED
+
+2026-10-15: [RED presence v1](sources/p4-vol10/yi-red-presence-v1/README.md), [assertion evidence](sources/p4-vol10/yi-red-presence-v1/red-results.json). Thêm `p4YiOperands.test.ts` và API shell `evaluateP4YiOperand` chỉ trả unknown, không predicate/validation/trace. 82 tests integrity PASS: source lock/Golden pins, 677 hashes, 5 raw SHA-1, 74 code-point offset slices, inventory/derivation/source refs. 828 resolved presence fixtures của đủ11 thần thất bại đúng `AssertionError` unknown so present/absent (260/568), không lỗi import/tooling/timeout hoặc skip. Expected/source frozen bytes giữ nguyên; 78 unknown cases và malformed chưa behavior-test, thuộc4.3; full domains mới kiểm hash.
+
+Regression A04b/P4-B 9 files/198 tests PASS, lint/main+functions typecheck/format/diff/source hashes/production import closure PASS; graphify AST update xong. Không triển khai predicate hoặc ghép heading, không thay legacy API/runtime/manifest; single reviewer, no independent second review. **4.2 xong, next4.3**; parent4.0/P4-C chưa nghiệm thu, S1 canonical OPEN/P5 deferred. Unit suite còn RED có chủ đích đến implementation4.4; không dùng status RED này làm CI/merge gate xanh.
+
+## Task 4.3 — Input contract và masked unknown RED
+
+2026-10-15: [input contract RED v1](sources/p4-vol10/yi-red-contract-v1/README.md), [assertion evidence](sources/p4-vol10/yi-red-contract-v1/red-results.json). Thêm `p4YiInputContract.test.ts`: 502 tests, 2 fixture/adapter guards PASS và 500 assertion RED. Bao phủ 78 frozen unknown với reason/input/source trace +20 explicit undefined, 24 frozen malformed +20 required null/+20 invalid provider tag/+34 validation precedence, 69 irrelevant recipes cụ thể hóa thành276 variants, 14 frozen masked ANY vectors với28 trace/evidence assertions. Không dùng default unknown làm pass giả, không import/tooling error/skip.
+
+`p4YiEvidence.ts` chỉ seam RED cho listed operands, chưa ANY/routing/full-day integration; provider và test4.2 giữ bytes (82 integrity PASS/828 presence RED). 198 legacy regression/lint/main+functions types/format/diff/677 frozen hashes/production closure PASS, graph AST updated. Không sửa expected/source/evidence4.1–4.2; single reviewer, không independent second review. **4.3 xong; next4.4 predicates**, parent4.0/P4-C chưa nghiệm thu, S1 OPEN/P5 deferred.
+
+## Task 4.4 — Provider 11 predicate audit-only
+
+2026-10-15: [provider v1](sources/p4-vol10/yi-provider-v1/README.md), [results](sources/p4-vol10/yi-provider-v1/results.json). Thay khung unknown bằng presence provider đúng11 entries, required-input/error/coverage handling và metadata cơ bản; pure predicate đọc locked tables/ranges/sets, soil 母倉 xác thực riêng bằng runtime JPL/civil periods, không tin validated flag/label/score. Full domains7863 khớp: 6423 full-provider và1440 conditional lower-layer (không soil/date giả). Sáu forged provenance tests bị chặn.
+
+Before-code domain tests1 PASS/19 assertion RED; after-code provider suites1404 PASS/28 masked ANY/trace RED giữ cho5.x, legacy198/lint/main+functions types/format/diff/build PASS. 677 source/Golden hashes và production bundle index-CeLinrvj.js SHA256 f29f5aab… giữ nguyên; graph updated. Correction một dòng kiểu helper OptionalTrace.reason cho phép null theo contract, assertions/expected cũ không đổi; evidence4.1–4.3 giữ bytes. **4.4 xong, next4.5 full trace export**; parent4.0/P4-C chưa nghiệm thu, chưa heading/ANY integration, S1 OPEN/P5 deferred.
+
+## Task 4.5 — Full source/input trace và alias scope
+
+2026-10-15: [trace v1](sources/p4-vol10/yi-trace-v1/README.md), [results](sources/p4-vol10/yi-trace-v1/results.json). Source snapshots giữ toàn bộ local indices/raw offsets/quotes/SHA-1/SHA-256/scan locators và entry-lock hashes, nguyên headingScopes/review/coverage. Required-key provenance tách caller declaration khỏi rule inputs, immutable snapshots; alias 福徳 giữ requestName nhưng canonical/rule/source/scope không đổi, không merge các thần trùng vị trí. Bulk đủ11 entries/stable trace IDs; dated 母倉 soil builder dùng adoption riêng và frozen boundary inputs.
+
+Before implementation17 PASS/1025 assertion RED; after1047 trace tests PASS (906 replay,74 raw slices,25 negative identities,3 alias,88 dated soil). Ba nhóm edge bugs mới về bulk null/soil metadata scope/optional astronomy identity claims có RED proof rồi sửa đúng tầng, không Golden correction. Tổng provider/trace suites2451 PASS/28 masked ANY-trace RED giữ5.x, legacy198/lint/main+functions types/format/diff/build/677 frozen hashes/production closure PASS, graph updated. Runtime bundle f29f5aab… và evidence4.1–4.4 giữ nguyên. **4.5 xong; next4.6 presence/coverage/lock gate**, parent4.0/P4-C chưa nghiệm thu, S1 OPEN/P5 deferred; chưa heading/ANY integration.
+
+
+## Task 4.6 — Presence / coverage / lock gate
+
+[Evidence v1](sources/p4-vol10/yi-presence-gate-v1/README.md): rerun2479 tests,2451 PASS/28 exact masked ANY-trace RED giữ5.x; no unexpected failure/skip/todo/collection error. Legacy198/lint/main+functions types PASS. Replay677 frozen hashes, source/Golden/code/old evidence/production closure và bundle f29f5aab… bất biến trước/sau gate; reuse matching build4.5. Chỉ tài liệu/evidence, graph AST không đổi. **4.6 và parent4.0 hoàn tất presence audit-only; next5.1 regression heading đỏ.** P4-C chưa nghiệm thu, S1 OPEN/P5 deferred; reviewer single Codex, no independent second review.
+
+### P4-C 5.1 — regression heading RED (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-red-heading-v1/README.md): 958 tests, 39 PASS/919 assertion RED; 11 thần × 28 non-warehouse heading × 3 states; normalization/helper/key và alias trace. Expected dùng Golden frozen, không sửa runtime/provider/resolver. Next5.2; parent5.0/P4-C chưa hoàn tất, S1 OPEN/P5 deferred.
+
+### P4-C 5.2 — ANY regression RED (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-red-any-v1/README.md):40 frozen vectors lengths0–3,161 tests:68 PASS/93 assertion RED; decision/trace/unresolved/input immutability kiểm riêng,14 masked vectors. Regression5.1+4.3 giữ513 PASS/947 RED; lint/main+functions types,677 frozen hashes và5.1 evidence giữ bytes. Chưa implementation; next5.3,parent5.0/P4-C mở,S1 OPEN/P5 deferred.
+
+### P4-C 5.3 — Opt-in audit integration (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-integration-v1/README.md):resolveP4YiDay chạy11 provider rồi route/ANY vào versioned core trước classification/propagation; trace giữ unknown, source refs theo heading, 修倉庫 P5. 3604 tests PASS;198 legacy+3 compatibility PASS;720 contexts khớp pre-change hashes cho wrappers/core với historical lookup. Giữ bytes resolver cũ vì freeze677 gồm source; không sửa lock, không đổi inventory/vocabulary.3 focused mutations caught/restored,167 post-restoration PASS; lint/main+functions types/build/bundle/hash/production closure qua. Hai correction test mới theo source ghi SPEC_BUG;Golden giữ bytes. Next5.4; parent5.0/P4-C mở,S1 canonical OPEN/P5 deferred; chưa full gate6.x/CI hoặc push/merge/deploy.
+
+### P4-C 5.4 — Raw/protected 忌, puzhu:28, propagation (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-propagation-v1/README.md): Golden độc lập `yi-propagation-v1` (Python stdlib, input pin hash: baseline 1.4, domains 3.3, authority, composition 3.4, raw 卷十). Dated sweep 31.755 dòng: propagation thay đổi 0 (vẫn 0 gỡ/179 chặn); raw/protected 忌 thay đổi đúng 9 dòng 求醫療病 刼煞 收日 寅/申 止忌 (offset 11351), Golden suy từ nguồn khớp. puzhu:28 8 context (未甲午 áp, 未甲子 không); thêm `rawJiHeadings` giữ raw 忌 trước override (RED 725 assertion → GREEN 823), `assembleP4YiFullDay` công khai giữ output/hash 5.3. Nối 3.4 `dayOverride`/`sourceContextControls`/evidence `protection` vào resolver thật. P4-C suites 4.427 PASS, legacy+compat 201 PASS; 4/4 mutation bắt/phục hồi; lint/types/build PASS, bundle f29f5aab… bất biến. 2 GOLDEN_BUG derive + 2 SPEC_BUG test ghi ledger; 20 ngày Jie CONVENTION_DIFFERENCE chuyển 5.6. Next 5.5; parent5.0/P4-C mở, S1 OPEN/P5 deferred.
+
+### P4-C 5.5 — 王日, operand sẵn có, 修倉庫 P5 (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-warehouse-v1/README.md): 王日 trên 720 context khớp 卷05 「王日者春寅夏巳秋申冬亥」 và season Golden; legacy present trong trace = baseline 1.4 trên 31.755 dòng; 修倉庫 pre/final = resolver lịch sử (720) và baseline (1.095 ngày), 宜 luôn unknown kể cả 母倉 present, không thêm rule đồng hiện. Compose 修倉庫 giờ giữ trace/unknown của mệnh đề với `deferred: 'P5'` theo Golden 3.4 warehouse 18 + headingScope deferred 33 (RED 53 → GREEN 56). P4-C 4.483 PASS, legacy+compat 201 PASS; 4/4 mutation; lint/types/build PASS, bundle f29f5aab… bất biến. Next 5.6; parent5.0/P4-C mở, S1 OPEN/P5 deferred.
+
+### P4-C 5.6 — Dated inputs và status trong trace (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-dated-inputs-v1/README.md): 1.095 ngày giữ soil P4-B/phase/lunar day/母倉 `SOIL_REIGN_STATE` cùng status OWNER_ADOPTED_SOURCE_DEPENDENT trong trace, khớp domain dated 3.3; hai soil convention cùng presence. 5 biến thể × 720 context: token dated chỉ unresolved ở heading `jiInventory` liệt kê, 母倉 chỉ unknown ở 5 heading của nó với reason đúng vocabulary; 108 exact-Jie giữ instant. Thêm `lunarDayInput` và `CONFLICTING_DATED_INPUT` (RED 7 → GREEN 8). CONVENTION_DIFFERENCE: Month Jian sản phẩm là calendar-day, domain dated noon; 20 ngày Jie, 母倉 lệch 3 ngày (2026-05-05/08-07/11-07) → review 6.8. P4-C 4.491 PASS, legacy+compat 201 PASS; 4/4 mutation; lint/types/build PASS, bundle f29f5aab… bất biến. Next 5.7; parent5.0/P4-C mở.
+
+### P4-C 5.7 — Gate phép ghép, regression A04b/P4-B (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-composition-gate-v1/README.md): Golden tay A04b/又為/puzhu-end/dayCases trên đường 宜 mới không lệch. Diff 31.755 dòng so baseline: mọi thay đổi có lý do Golden (RECORDED_YI_RESOLVED 3.708, EVIDENCE_YI_RESOLVED 85, STOP_JI_REVEAL 10), 0 unexplained; heading final undetermined 4.040 → 642 (số đo, không oracle). Replay 6 test P4-B nguyên văn qua mock: 193/200, 7 lệch EXPECTED_AUTHORITY_MIGRATION_CHANGE (so recorded 宜 với resolveP4Day lịch sử). Toàn `shared/lunar/p4*` 5.043 PASS/3 skip opt-in; lint/types/build PASS, bundle f29f5aab… bất biến. Mutation runner P4-B chưa chạy lại → 6.x/7.1. Parent 5.0 xong; next 6.1, P4-C chưa nghiệm thu.
+
+### P4-C 6.x — Sweep trước/sau, mutation gate, review (2026-10-15)
+
+[Evidence](sources/p4-vol10/yi-sweep-v1/README.md): `p4YiSweep.test.ts` quét cùng 1.095 ngày/input/29 heading baseline, verify bytes [TSV](p4-vol10-yi-operands-2025-2027.tsv) (31.755 dòng × 44 cột) và [summary](p4-vol10-yi-operands-summary.json). 0 operand 11 thần unknown/thiếu input, 0 unresolved 凶, 0 conflict, 3.803 dòng đổi đều có lý do Golden (0 unexplained). Final undetermined 4.040 → 642: P5 修倉庫 539, scope khác 103 (20 dòng chuyển bucket, state không đổi). [Mutation](p4-vol10-yi-mutation-results.json) `scripts/audit-p4-yi-mutations.py`: 23/23 assertion-caught, bytes phục hồi; 1 mutation thiết kế sai (tokenizer crash, TOOLING_ERROR) đã thay và chạy lại. 6.8: 3 ngày Jie 母倉 không đổi state/忌; không correction Golden, không quyết định owner mới. Parent 6.0 xong; next 7.1 CI, P4-C chưa nghiệm thu.
