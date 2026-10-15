@@ -318,3 +318,7 @@ Tại `c32f441`: `npm test` 194 file / 7.999 PASS / 3 skip (baseline 1.4 opt-in)
 ### P4-C 7.3–7.4 — Runtime bất biến, graph, report (2026-10-15)
 
 `git diff main...HEAD` ngoài test: chỉ thêm 10 file mới (8 module `p4Yi*`, authority, Golden index), không sửa file runtime nào; grep import: 0 file trong `src`/`functions/src` hay module production đọc `p4Yi*`/`p4-yi-operands`; `manifest.json` không đổi; bundle build `f29f5aab…` = baseline (7.2). 677 path trong `yi-freeze-v1/lock.json` + `prior-hashes.json` không đổi từ freeze `c12df53` đến HEAD. `graphify update .` đã chạy. Bảng tổng kết P4-C thêm ở đầu report. Next 7.5 push/PR.
+
+### P4-C 7.5 — PR và CI (2026-10-15)
+
+[PR #55](https://github.com/nghiepnguyen/calendar-hana/pull/55) vào `main`. [CI run 38764920607](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38764920607) **success** trên HEAD `efc5ffa`: Typecheck and lint, Unit tests 4/4, Mutation and emulator gates, P4-B audit mutation gate, P4-C audit mutation gate 1–4/4 (16m25s–20m15s, timeout 45 phút), Playwright desktop 2/2; Deploy skipped vì là PR. Commit tài liệu này đẩy HEAD mới nên CI chạy lại trên PR. Chưa merge/deploy: cần owner cho phép.
