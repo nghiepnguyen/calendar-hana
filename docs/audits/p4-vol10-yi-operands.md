@@ -322,3 +322,7 @@ Tại `c32f441`: `npm test` 194 file / 7.999 PASS / 3 skip (baseline 1.4 opt-in)
 ### P4-C 7.5 — PR và CI (2026-10-15)
 
 [PR #55](https://github.com/nghiepnguyen/calendar-hana/pull/55) vào `main`. [CI run 38764920607](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38764920607) **success** trên HEAD `efc5ffa`: Typecheck and lint, Unit tests 4/4, Mutation and emulator gates, P4-B audit mutation gate, P4-C audit mutation gate 1–4/4 (16m25s–20m15s, timeout 45 phút), Playwright desktop 2/2; Deploy skipped vì là PR. Commit tài liệu này đẩy HEAD mới nên CI chạy lại trên PR. Chưa merge/deploy: cần owner cho phép.
+
+### P4-C 7.6 — Acceptance gate PRD §8 (2026-10-15)
+
+[Gate v1](sources/p4-vol10/yi-acceptance-gate-v1/README.md): gate 1–7 **PASS** với evidence kiểm lại trực tiếp (authority 11/11 đủ trường; sweep 0 operand unknown, 0 unresolved 凶, 0 unexplained; freeze `c12df53` trước code, authority/Golden giữ bytes; mutation 23/23; CI 38764920607 trên `efc5ffa`; runtime/manifest/bundle bất biến). Gate 8 chờ 7.7: progress.md và PROJECT_CONTEXT cuối. Không có entry cần owner quyết. P4-C chưa đánh dấu hoàn tất.
