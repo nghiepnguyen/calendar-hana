@@ -79,6 +79,14 @@ for name, file, old, _ in mutations:
     count = originals[root / L / file].decode().count(old)
     if count != 1:
         raise SystemExit(f'Mutation {name} matches {count} times in {file}')
+# CI: --shard=i/n runs every n-th mutation and only prints its report; the tracked report is
+# written by full local runs.
+shard = next((a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--shard=')), None)
+if shard:
+    index, total = map(int, shard.split('/'))
+    if not 1 <= index <= total:
+        raise SystemExit(f'Invalid shard {shard}')
+    mutations = mutations[index - 1::total]
 
 
 def run_suites():
@@ -132,6 +140,7 @@ finally:
 report = {
     'scope': 'P4_C_TASK_6_AUDIT_ONLY_MUTATION_GATE',
     'tests': TESTS,
+    'shard': shard,
     'control': {k: control[k] for k in ('outcome', 'passed', 'failed')},
     'mutations': results,
     'allAssertionCaught': all(r['outcome'] == 'ASSERTION_CAUGHT' for r in results),
@@ -141,8 +150,11 @@ report = {
     'limits': 'Audit-only P4-C path; production pipeline, Golden and locks are never mutated. '
               'Heading spelling normalization is covered by 5.1 helper tests, not mutated here.',
 }
-(root / 'docs/audits/p4-vol10-yi-mutation-results.json').write_text(
-    json.dumps(report, indent=2, ensure_ascii=False) + '\n')
-print(json.dumps({k: report[k] for k in ('allAssertionCaught', 'restored')}))
+if shard:
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+else:
+    (root / 'docs/audits/p4-vol10-yi-mutation-results.json').write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+    print(json.dumps({k: report[k] for k in ('allAssertionCaught', 'restored')}))
 if not (report['allAssertionCaught'] and report['restored']):
     sys.exit(1)

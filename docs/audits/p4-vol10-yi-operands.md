@@ -274,3 +274,7 @@ Before implementation17 PASS/1025 assertion RED; after1047 trace tests PASS (906
 ### P4-C 6.x — Sweep trước/sau, mutation gate, review (2026-10-15)
 
 [Evidence](sources/p4-vol10/yi-sweep-v1/README.md): `p4YiSweep.test.ts` quét cùng 1.095 ngày/input/29 heading baseline, verify bytes [TSV](p4-vol10-yi-operands-2025-2027.tsv) (31.755 dòng × 44 cột) và [summary](p4-vol10-yi-operands-summary.json). 0 operand 11 thần unknown/thiếu input, 0 unresolved 凶, 0 conflict, 3.803 dòng đổi đều có lý do Golden (0 unexplained). Final undetermined 4.040 → 642: P5 修倉庫 539, scope khác 103 (20 dòng chuyển bucket, state không đổi). [Mutation](p4-vol10-yi-mutation-results.json) `scripts/audit-p4-yi-mutations.py`: 23/23 assertion-caught, bytes phục hồi; 1 mutation thiết kế sai (tokenizer crash, TOOLING_ERROR) đã thay và chạy lại. 6.8: 3 ngày Jie 母倉 không đổi state/忌; không correction Golden, không quyết định owner mới. Parent 6.0 xong; next 7.1 CI, P4-C chưa nghiệm thu.
+
+### P4-C 7.1 — CI mutation gate (2026-10-15)
+
+Job `p4-c-mutations` (“P4-C audit mutation gate (i/4)”) chạy `scripts/audit-p4-yi-mutations.py --shard=i/4` song song 4 shard (6/6/6/5 mutation + control mỗi shard), timeout 45 phút; bắt buộc trong `deploy.needs`, điều kiện deploy và danh sách job reuse-audit. Shard chỉ in report ra log; report tracked chỉ do bản chạy đầy đủ local ghi. Thử local shard 4/4: 5/5 assertion-caught, restored, 5m48s. Chưa chạy trên Actions (chưa push).

@@ -50,6 +50,7 @@ jobs:
               });
               const requiredJobs = [
                 'Typecheck and lint', 'Mutation and emulator gates', 'P4-B audit mutation gate',
+                ...[1, 2, 3, 4].map(shard => `P4-C audit mutation gate (${shard}/4)`),
                 ...[1, 2, 3, 4].map(shard => `Unit tests (${shard}/4)`),
                 ...['desktop'].flatMap(project =>
                   [1, 2].map(shard => `Playwright tests (${project}, ${shard}/2)`)),
@@ -188,6 +189,33 @@ jobs:
       - name: P4-B source, boundary and composition mutations
         run: python3 scripts/audit-p4-remaining-ji-mutations.py
 
+  p4-c-mutations:
+    name: P4-C audit mutation gate (${{ matrix.shard }}/4)
+    needs: prepare
+    if: needs.prepare.outputs.reuse-audit != 'true'
+    runs-on: ubuntu-latest
+    # Each mutation reruns every P4-C suite (~1 min local, ~4x on CI); 6 per shard + control.
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-22-${{ hashFiles('package-lock.json', 'functions/package-lock.json') }}
+      - name: P4-C yi predicate, provider and composition mutations
+        run: python3 scripts/audit-p4-yi-mutations.py --shard=${{ matrix.shard }}/4
+
   e2e-tests:
     name: Playwright tests (${{ matrix.project }}, ${{ matrix.shard }}/2)
     needs: prepare
@@ -234,7 +262,7 @@ jobs:
 
   deploy:
     name: Deploy to Firebase
-    needs: [prepare, static-analysis, unit-tests, gates, p4-b-mutations, e2e-tests]
+    needs: [prepare, static-analysis, unit-tests, gates, p4-b-mutations, p4-c-mutations, e2e-tests]
     if: >-
       always() && !cancelled() &&
       github.ref == 'refs/heads/main' &&
@@ -244,6 +272,7 @@ jobs:
        (needs.static-analysis.result == 'success' &&
         needs.unit-tests.result == 'success' && needs.gates.result == 'success' &&
         needs.p4-b-mutations.result == 'success' &&
+        needs.p4-c-mutations.result == 'success' &&
         needs.e2e-tests.result == 'success'))
     runs-on: ubuntu-latest
     timeout-minutes: 20
