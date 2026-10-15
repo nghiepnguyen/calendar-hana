@@ -1,0 +1,27 @@
+{
+  "task": "2.10",
+  "date": "2026-10-14",
+  "reviewer": "Codex (single agent)",
+  "status": "PASS",
+  "checks": [
+    "Task-2.1 source verifier and offset self-test",
+    "Recursive prior authority/source/baseline lock checks",
+    "7 exact Unicode code-point source slices and SHA-1",
+    "9 PNG scan render signatures; visual reading documented in entry",
+    "12 chart targets and structural 12 × 60 domain; authority consistency, not Golden",
+    "Baseline inventory/direct headings/conditional source references",
+    "Unknown/malformed-input authority contract",
+    "git diff --check"
+  ],
+  "commands": [
+    "python3 scripts/verify-p4-yi-sources.py --self-test",
+    "python3 -c \"import json; from pathlib import Path; exec(json.loads(Path('docs/audits/sources/p4-vol10/yi-tianma-v1/validation.json').read_text())['verificationPython'])\"",
+    "git diff --check"
+  ],
+  "verificationPython": "import hashlib,json\nfrom pathlib import Path\nbase=Path('docs/audits/sources/p4-vol10');out=base/'yi-tianma-v1'\ne=json.loads((out/'entry.json').read_text())\nvisited=set();locked=set()\ndef verify_lock(p):\n if p in visited:return\n visited.add(p)\n for f in json.loads(p.read_text())['files']:\n  q=Path(f['path']);assert hashlib.sha256(q.read_bytes()).hexdigest()==f['sha256'],str(q)\n  locked.add(q)\n  if q.name=='lock.json':verify_lock(q)\nfor p in sorted(base.glob('yi-*/lock.json')):\n if p.parent!=out:verify_lock(p)\nfor r in e['sources']:\n p=Path(r['path']);assert hashlib.sha1(p.read_bytes()).hexdigest()==r['sha1']\n t=p.read_bytes().decode('utf8');assert t[r['offset']:r['offset']+r['length']]==r['quote'];assert len(r['quote'])==r['length']\nexpected=dict(zip('子丑寅卯辰巳午未申酉戌亥','寅辰午申戌子寅辰午申戌子'))\nassert e['predicate']['byMonthJian']==expected\nassert e['predicate']['sequenceFromYin']==list('午申戌子寅辰')*2\npillars=[('甲乙丙丁戊己庚辛壬癸'[i%10]+'子丑寅卯辰巳午未申酉戌亥'[i%12]) for i in range(60)]\nassert len(set(pillars))==60\nhits=sum(p[-1]==v for v in expected.values() for p in pillars)\nassert hits==60 # 5 pillars per target × 12 months; not production expected fixtures\ninv=json.loads((base/'yi-baseline-v1/inventory.json').read_text());it=next(x for x in inv['items'] if x['han']=='天馬')\nassert sorted((x['normalized'],x['activities']) for x in it['headings'])==sorted((x['normalized'],x['activities']) for x in e['headingScopes'])\nfor h in e['headingScopes']:\n r=e['sources'][h['sourceRefs'][0]];assert h['raw'] in r['quote'] and '天馬' in r['quote']\nassert len(e['sources'])==7 and len(e['scanChecks'])==9\nassert e['aliases']==[] and e['status']=='SOURCE_REVIEWED' and e['scoringReady'] is False\nassert e['unknownPolicy']==dict(missingRequiredInput='unknown',outsideCoverage='unknown',malformedInput='error')\nfor c in e['scanChecks']:assert Path(c['renderPath']).read_bytes().startswith(b'\\x89PNG\\r\\n\\x1a\\n')\nfor c in e['conditionalSourceScopes']:\n assert c['clause'] in e['sources'][c['sourceRefs'][0]]['quote']\nif (out/'lock.json').exists():verify_lock(out/'lock.json')\nprint(f'PASS: {len(visited)} recursive locks / {len(locked)} unique locked files; 7 source slices; 9 scans; 12 targets / 720 structurally valid contexts ({hits} present); inventory/heading/conditional refs; unknown contract. Authority consistency only, not Golden.')\n",
+  "limits": [
+    "Read-only authority consistency checks; not independent Golden or production predicate test",
+    "Single source reviewer; no second independent expert review",
+    "No presence/evaluator/runtime changes"
+  ]
+}

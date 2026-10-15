@@ -1,0 +1,51 @@
+{
+  "scope": "P4_C_5_6_FOCUSED_NOT_6_X_GATE",
+  "mutations": [
+    {
+      "mutation": "lunar_day_value_dropped",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 4,
+      "failures": [
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope P4-B inputs only, no 母倉 soil on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 provider state unknown, P4-B soil known on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 soil unvalidated on 720 contexts",
+        "P4-C 5.6 dated sweep keeps every input and status in the trace matches the frozen dated 母倉 domain and P4-B scopes on 1,095 dates"
+      ]
+    },
+    {
+      "mutation": "dated_day_guard_removed",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 1,
+      "failures": [
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope rejects dated evidence from different civil days"
+      ]
+    },
+    {
+      "mutation": "missing_soil_becomes_absent",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 2,
+      "failures": [
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope no dated input on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 soil unvalidated on 720 contexts"
+      ]
+    },
+    {
+      "mutation": "unknown_phase_resolved",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 2,
+      "failures": [
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope outside 2025-2027 coverage on 720 contexts",
+        "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 provider state unknown, P4-B soil known on 720 contexts"
+      ]
+    }
+  ],
+  "restored": true,
+  "restoredSha256": {
+    "shared/lunar/p4YiDayComposition.ts": "020cee6843a94bea84382a4941951f625b506d31fce630e2d13c6550ba8c0aa0",
+    "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6"
+  }
+}

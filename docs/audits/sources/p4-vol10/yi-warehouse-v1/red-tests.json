@@ -1,0 +1,225 @@
+{
+ "command": "npx vitest run shared/lunar/p4YiWarehouse.test.ts",
+ "phase": "RED_BEFORE_WAREHOUSE_TRACE",
+ "preEditSha256": {
+  "shared/lunar/p4YiEvidence.ts": "dd9a4a9bc3e1f97a45a32edef50420d122b55b86a6a54143385caa37888bd096",
+  "shared/lunar/p4YiDayComposition.ts": "851b681446ad33257e8c2b5de12fcbc82c2495de8488d826ac8c277ab4339aa6"
+ },
+ "passed": 3,
+ "failed": 53,
+ "total": 56,
+ "failures": [
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:fu-de:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:fu-de:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:fu-de:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-en:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-en:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-en:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-wu:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-wu:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-wu:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-hou:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-hou:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-hou:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-yi:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-yi:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-yi:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tru_than:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tru_than:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tru_than:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:yi-ma:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:yi-ma:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:yi-ma:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-ma:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-ma:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:tian-ma:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ji-qi:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ji-qi:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ji-qi:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ming-fei:修倉庫:present",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ming-fei:修倉庫:absent",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:ming-fei:修倉庫:unknown",
+   "message": "AssertionError: expected undefined to be 'P5' // Object.is equality"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:absent:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:absent:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:unknown:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:unknown:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:absent:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:absent:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:unknown:0",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:unknown:1",
+   "message": "AssertionError: expected { yi: null, status: undefined, …(2) } to deeply equal { yi: null, …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 王日 from 卷05 on 720 structural contexts leaves 修倉庫 and every heading record of the historical resolver for 修倉庫 unchanged",
+   "message": "AssertionError: expected { yi: undefined, trace: [], …(5) } to match object { yi: undefined, deferred: 'P5', …(3) }"
+  },
+  {
+   "test": "P4-C 5.5 dated sweep: existing operands and 修倉庫 against the frozen baseline matches baseline legacy presence and 修倉庫 records on 1,095 dates",
+   "message": "AssertionError: expected [] to deep equally contain { …(16) }"
+  }
+ ]
+}

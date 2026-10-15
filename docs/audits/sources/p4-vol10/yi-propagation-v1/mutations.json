@@ -1,0 +1,92 @@
+{
+  "scope": "P4_C_5_4_FOCUSED_NOT_6_X_GATE",
+  "mutations": [
+    {
+      "mutation": "raw_view_equals_effective",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 7,
+      "failures": [
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲戌",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙申",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲午",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊申",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲子",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲子"
+      ]
+    },
+    {
+      "mutation": "override_keeps_protection",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 8,
+      "failures": [
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲戌",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙申",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲午",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊申",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚辰",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲子",
+        "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲子"
+      ]
+    },
+    {
+      "mutation": "known_absent_becomes_unknown",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 33,
+      "failures": [
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:0:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:0:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:0:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:0:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:1:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:1:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:1:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:none:1:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:0:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:0:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:0:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:0:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:1:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:1:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:1:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:baiji:1:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:0:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:0:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:0:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:0:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:1:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:1:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:1:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:stopJi:1:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:0:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:0:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:0:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:0:1:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:1:0:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:1:0:1",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:1:1:0",
+        "P4-C 5.4 frozen 3.4 protection projections: evidence half protect:absent:youweiSpecial:1:1:1"
+      ]
+    },
+    {
+      "mutation": "propagation_ignores_protection",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 1,
+      "failures": [
+        "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings"
+      ]
+    }
+  ],
+  "restored": true,
+  "restoredSha256": {
+    "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6",
+    "shared/lunar/p4YiEvidence.ts": "dd9a4a9bc3e1f97a45a32edef50420d122b55b86a6a54143385caa37888bd096",
+    "shared/lunar/p4DayComposition.ts": "dd01594a14cdab6c2f1499f25c46e3103c8883d9e71086c356fbc8db149e5949"
+  }
+}

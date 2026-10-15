@@ -1,0 +1,28 @@
+{
+  "task": "3.6",
+  "date": "2026-10-14",
+  "status": "CHECKSUM_LOCKED_GIT_PROOF_REQUIRED_BEFORE_COMPLETION",
+  "verificationPython": "from pathlib import Path\nimport csv,hashlib,json,re,subprocess\nout=Path('docs/audits/sources/p4-vol10/yi-freeze-v1');base=out.parent\nsha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()\nprior=json.loads((out/'prior-hashes.json').read_text())\nlock=json.loads((out/'lock.json').read_text())\nexcluded={f['path'] for f in lock.get('nonSourceExclusions',[])}\nassert excluded=={'golden-v3/.DS_Store'}\nfor path,h in prior.items():\n if path in excluded and not Path(path).exists():continue\n assert sha(Path(path))==h,path\n# Before-code validation. Later reproduction runs in the freeze checkout,\n# avoiding accidental reuse of an evolving runtime as a Golden oracle.\nif all(Path(p).exists() for p in excluded):\n exec(json.loads((base/'yi-golden-review-v1/validation.json').read_text())['verificationPython'],{})\nelse:\n # Portable source arithmetic replay in clean Git checkout: historical broad\n # snapshot validators need untracked Finder metadata; do not fake its hash.\n for directory,script in [('yi-expected-v1','derive.py'),('yi-domains-v1','domains.py'),('yi-composition-expected-v1','derive.py')]:\n  subprocess.run(['python3',str(base/directory/script)],check=True)\n print('Clean-checkout replay: ignored Finder metadata absent; source/Golden generators and frozen Git blob proof verified instead of local-Finder snapshot guards')\ngolden_path=Path('shared/almanac-data/golden-p4-yi-operands-v1.json');g=json.loads(golden_path.read_text())\nassert g['status']=='REVIEWED_HASH_LOCKED_PRE_IMPLEMENTATION' and g['scope']=='AUDIT_ONLY' and g['scoringReady'] is False\nassert sha(Path(g['authority']['path']))==g['authority']['sha256']\nassert sha(Path(g['review']['path']))==g['review']['sha256'] and g['review']['independentSecondReview'] is False\nexpected_kinds={'presence':906,'identity':25,'malformed':24,'fullDomains':7863,'composition':1850}\nassert {b['kind']:b['count'] for b in g['blocks']}==expected_kinds\nfor b in g['blocks']:\n p=Path(b['path']);assert sha(p)==b['sha256'],b['path']\n if b['kind']=='fullDomains':\n  with p.open() as handle:n=sum(1 for _ in csv.DictReader(handle,delimiter='\\t'))\n else:\n  a=json.loads(p.read_text())[b['selector']];n=sum(len(v) for v in a.values()) if isinstance(a,dict) else len(a)\n assert n==b['count'],b['kind']\nassert sum(b['count'] for b in g['blocks'])==10668==g['recordCount']\nassert g['formatContract']['indexOnly'] is True\nlock=json.loads((out/'lock.json').read_text())\nfor f in lock['files']:assert sha(Path(f['path']))==f['sha256'],f['path']\n# Guard task boundary: no implementation or runtime change in the freeze.\nassert not Path('shared/lunar/p4YiOperands.ts').exists()\nassert not Path('shared/lunar/p4YiComposition.test.ts').exists()\nproof_path=out/'commit-proof.json'\nif proof_path.exists():\n proof=json.loads(proof_path.read_text());commit=proof['freezeCommit']\n assert re.fullmatch('[a-f0-9]{40}',commit)\n assert subprocess.check_output(['git','rev-parse',commit+'^{tree}'],text=True).strip()==proof['freezeTree']\n subprocess.run(['git','merge-base','--is-ancestor',commit,'HEAD'],check=True)\n # Git object reads confirm exact committed source/authority/expected blobs.\n for f in lock['files']:\n  blob=subprocess.check_output(['git','show',commit+':'+f['path']]);assert hashlib.sha256(blob).hexdigest()==f['sha256'],f['path']\n blob=subprocess.check_output(['git','show',commit+':'+str(out/'lock.json')]);assert hashlib.sha256(blob).hexdigest()==proof['sourceLockSha256']\n assert sha(golden_path)==proof['goldenSha256'] and sha(Path(g['authority']['path']))==proof['authoritySha256']\n assert proof['noImplementationAtFreeze'] is True\n print('PASS Git freeze commit/tree/locked blob proof:',commit)\nprint('PASS task3.6 checksum/package gate: 11-entry authority + index Golden10668 + source closure; 672 pre-freeze files unchanged; no implementation')\n",
+  "commands": [
+    "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-freeze-v1/validation.json'))['verificationPython'])\nPY",
+    "npx prettier --ignore-path /dev/null --check shared/almanac-data/golden-p4-yi-operands-v1.json docs/audits/sources/p4-vol10/yi-freeze-v1/*.json docs/audits/sources/p4-vol10/yi-freeze-v1/README.md",
+    "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check"
+  ],
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "scope": "Package/index/checksum/Git freeze proof only; no expected or generator modification",
+  "completionPolicy": "Task3.6/parent3.0 complete only after external receipt commit/tree/ancestor and every locked Git blob checksum verification",
+  "historicalReplayPolicy": "After implementation changes, run this before-code verifier in a freeze checkout. Never alter expected or prior guards to match new runtime.",
+  "packagingCorrections": [
+    {
+      "classification": "SPEC_BUG",
+      "scope": "Historical broad snapshot packaging",
+      "detail": "One ignored Finder metadata file included in prior-hashes guards. Preserve prior bytes, exclude from source Git closure; clean-checkout semantic source replay does not fabricate absent metadata hash."
+    },
+    {
+      "classification": "NAMING_ONLY",
+      "scope": "Historical comparison.tsv serialization",
+      "detail": "Git default whitespace check flags CRLF as trailing whitespace. Accept cr-at-eol in check only; file/expected/lock bytes unchanged."
+    }
+  ]
+}

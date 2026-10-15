@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "ji-qi",
+  "han": "吉期",
+  "aliases": [],
+  "authorityId": "p4-yi-jiqi-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "MONTHLY_DEFINITION_WITH_SEPARATE_BINGBAO",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 2706,
+      "length": 145,
+      "quote": "　　總要厯曰吉期者吉慶之神也所值之日宜出軍行師攻城寨興弔伐㑹親姻○厯例曰常居月建前一辰也○曹震圭曰吉期者是月建腹心同契之侍臣也蓋常居建前一辰可與要約吉事故因名之\n　　{{SK anchor|厯例曰兵寳者月建前一辰也}}\n　　按兵寶之義與兵福同説已見前假如寅為兵福則夘為兵寶皆四時當王之氣云耳",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "NAMED_DIRECT_CONDITIONAL_AND_EDITOR_CORRECTIONS",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 4863,
+      "length": 213,
+      "quote": "　　{{SK anchor|除日}}{{SK notes|吉期　兵寶}}\n　　宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民\n　　十月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與吉期併}}\n　　又為兵寶宜安撫邊境選將訓兵出師\n　　按舊本除日宜解除求醫療病掃舍宇取除義也沐浴等事亦除舊取新之義故并宜之吉期兵寶義取旺辰故所宜同建日舊謂吉期宜兵事葢兵寶之誤又謂宜結婚姻於義無取故刪",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_施恩封拜",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 1995,
+      "length": 117,
+      "quote": "　　施恩封拜{{SK notes|襲爵受封同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　{{SK anchor|官日守日相日止宜襲爵受封}}\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "CONDITIONAL_詔命公卿招賢",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2113,
+      "length": 99,
+      "quote": "　　詔命公{{SKchar|2721}}招賢\n　　宜天徳月徳天徳合月徳合天赦天願王日建日開日\n　　又月恩四相時徳吉期天喜與驛馬天馬併者\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢往亡",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_舉正直",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2213,
+      "length": 83,
+      "quote": "　　{{SK anchor|舉正直}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_行幸遣使",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2836,
+      "length": 110,
+      "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_上官赴任",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3252,
+      "length": 96,
+      "quote": "　　{{SK anchor|上官赴任}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_臨政親民",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3349,
+      "length": 98,
+      "quote": "　　{{SK anchor|臨政親民}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日六儀\n　　忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "NEGATIVE_結婚姻",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3448,
+      "length": 97,
+      "quote": "　　{{SK anchor|結婚姻}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜六合五合\n　　忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "SEPARATE_BINGBAO_出師",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3157,
+      "length": 94,
+      "quote": "　　{{SK anchor|出師}}\n　　宜天徳月徳天徳合月徳合兵福兵寶兵吉\n　　忌月破平日死神收日閉日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 25,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf25.png",
+      "transcription": "除　吉期　兵寶 monthly chart; 寅→卯、卯→辰…丑→寅",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 26,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf26.png",
+      "transcription": "吉期者吉慶之神也；常居月建前一辰也；假如寅為兵福則卯為兵寶",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 111,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf111.png",
+      "transcription": "又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民；十月與天馬併宜詔命公卿招賢；驛馬不得與吉期併",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 112,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf112.png",
+      "transcription": "舊謂吉期宜兵事蓋兵寶之誤又謂宜結婚姻於義無取故刪",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 17,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf17.png",
+      "transcription": "施恩封拜 襲爵受封同；宜…建日吉期天喜開日；詔命公卿招賢",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 18,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf18.png",
+      "transcription": "又月恩四相時德吉期天喜與驛馬天馬併者；舉正直 宜…建日吉期天喜開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 23,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf23.png",
+      "transcription": "行幸遣使 出行同；宜…建日吉期天喜開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 25,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf25.png",
+      "transcription": "出師 宜…兵福兵寶兵吉；no 吉期 in direct 宜",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 26,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf26.png",
+      "transcription": "上官赴任 宜…建日吉期天喜開日；臨政親民",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 27,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf27.png",
+      "transcription": "臨政親民 宜…建日吉期天喜開日六儀；結婚姻 宜…三合天喜六合五合, no 吉期",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact-Jie Month Jian; not lunar month or natal/year horse base",
+      "sourceRefs": [
+        0
+      ]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid civil-day sexagenary pillar, compared with monthly target",
+      "sourceRefs": [
+        0
+      ]
+    }
+  ],
+  "predicate": {
+    "type": "MONTH_JIAN_FORWARD_ONE_BRANCH",
+    "branchOffset": 1,
+    "byMonthJian": {
+      "子": "丑",
+      "丑": "寅",
+      "寅": "卯",
+      "卯": "辰",
+      "辰": "巳",
+      "巳": "午",
+      "午": "未",
+      "未": "申",
+      "申": "酉",
+      "酉": "戌",
+      "戌": "亥",
+      "亥": "子"
+    },
+    "derivation": "常居月建前一辰; scan chart independently confirms all twelve targets; 寅為兵福則卯為兵寶 confirms forward direction for the shared position, not an alias/use merge.",
+    "sourceRefs": [
+      0
+    ]
+  },
+  "coverage": {
+    "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+    "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+    "notNeeded": [
+      "dayStem",
+      "lunarMonth",
+      "lunarDay",
+      "moonPhase",
+      "soil",
+      "birthYear",
+      "personalPillar"
+    ]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "Heading 忌 and narrowed uses do not delete monthly position hits.",
+      "sourceRefs": [
+        0,
+        1
+      ]
+    },
+    {
+      "kind": "OLD_MILITARY_USE_REASSIGNED_TO_BINGBAO",
+      "detail": "舊謂吉期宜兵事蓋兵寶之誤: military scope belongs to separately named 兵寶.",
+      "sourceRefs": [
+        1,
+        9
+      ]
+    },
+    {
+      "kind": "OLD_MARRIAGE_USE_REJECTED",
+      "detail": "又謂宜結婚姻於義無取故刪: do not adopt marriage heading from old quotation.",
+      "sourceRefs": [
+        1,
+        8
+      ]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "行幸遣使",
+      "normalized": "行幸遣使",
+      "activities": [
+        "travel"
+      ],
+      "sourceRefs": [
+        1,
+        5
+      ],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "same-position-chu-bingbao",
+      "status": "RESOLVED_SEPARATE_NAMED_SCOPE",
+      "detail": "Shared 除/吉期/兵寶 chart and position do not authorize merging god token identities or medical/bathing/military heading scopes."
+    },
+    {
+      "id": "old-definition-usage",
+      "status": "RESOLVED_EDITOR_CORRECTIONS",
+      "detail": "卷四 older military/marriage quotation preserved; 卷十 editor reassigns military use to 兵寶 and rejects marriage use."
+    },
+    {
+      "id": "raw-heading-template",
+      "status": "SCAN_CONFIRMED_HEADING_NORMALIZATION",
+      "detail": "卷十一 raw 詔命公{{SKchar|2721}}招賢 preserved byte-for-byte; scan shows 詔命公卿招賢. Normalized heading only, not a god alias."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Direct raw/scan definition, twelve-position chart, editor corrections, direct/conditional/negative headings; catalog and prior 天馬/驛馬 table comparison",
+    "limitations": [
+      "Single Codex reviewer, no independent second expert review",
+      "Not Golden or presence implementation",
+      "Court/office headings remain outside current catalog"
+    ]
+  },
+  "traceFields": [
+    "authorityId",
+    "ruleId",
+    "inputs",
+    "presence",
+    "sourceRefs"
+  ],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "No aliases adopted, including 除日 or 兵寶",
+    "No military/marriage/medical/bathing scope copied from same-position god",
+    "No lunar-month or natal/year/day horse-base input",
+    "No career/appointment activity mapping inferred from source-only headings"
+  ],
+  "conditionalSourceScopes": [
+    {
+      "raw": "詔命公{{SKchar|2721}}招賢",
+      "normalized": "詔命公卿招賢",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        1,
+        3
+      ],
+      "clause": "十月與天馬併宜詔命公卿招賢",
+      "coPresence": "天馬",
+      "monthJian": "亥",
+      "status": "RECORDED_NOT_IMPLEMENTED",
+      "detail": "卷十一 gives general co-presence list; 吉期 cannot meet monthly 驛馬. With reviewed 天馬 table the only intersection is 亥建/子日, matching 卷十 十月."
+    }
+  ],
+  "sourceOnlyHeadingScopes": [
+    {
+      "raw": "施恩封拜",
+      "normalized": "施恩封拜",
+      "activities": [],
+      "sourceRefs": [
+        1,
+        2
+      ],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "舉正直",
+      "normalized": "舉正直",
+      "activities": [],
+      "sourceRefs": [
+        1,
+        4
+      ],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "上官赴任",
+      "normalized": "上官赴任",
+      "activities": [],
+      "sourceRefs": [
+        1,
+        6
+      ],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "臨政親民",
+      "normalized": "臨政親民",
+      "activities": [],
+      "sourceRefs": [
+        1,
+        7
+      ],
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    }
+  ]
+}

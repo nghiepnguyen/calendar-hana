@@ -1,0 +1,28 @@
+{
+  "task": "2.11",
+  "date": "2026-10-14",
+  "reviewer": "Codex (single agent)",
+  "status": "PASS",
+  "checks": [
+    "Task-2.1 verifier and offset self-test",
+    "Recursive prior authority/source/baseline locked hashes",
+    "10 exact raw slices and SHA-1",
+    "10 scan render signatures; visual reading in entry",
+    "12 chart targets/720 structurally valid contexts",
+    "Baseline inventory/direct/source-only/negative/conditional scope refs",
+    "天馬 1/12 and 驛馬 0/12 intersections match source clauses",
+    "Unknown input contract",
+    "git diff --check"
+  ],
+  "commands": [
+    "python3 scripts/verify-p4-yi-sources.py --self-test",
+    "python3 -c \"import json; from pathlib import Path; exec(json.loads(Path('docs/audits/sources/p4-vol10/yi-jiqi-v1/validation.json').read_text())['verificationPython'])\"",
+    "git diff --check"
+  ],
+  "verificationPython": "import hashlib,json\nfrom pathlib import Path\nbase=Path('docs/audits/sources/p4-vol10');out=base/'yi-jiqi-v1'\ne=json.loads((out/'entry.json').read_text())\nvisited=set();locked=set()\ndef verify_lock(p):\n if p in visited:return\n visited.add(p)\n for f in json.loads(p.read_text())['files']:\n  q=Path(f['path']);assert hashlib.sha256(q.read_bytes()).hexdigest()==f['sha256'],str(q)\n  locked.add(q)\n  if q.name=='lock.json':verify_lock(q)\nfor p in sorted(base.glob('yi-*/lock.json')):\n if p.parent!=out:verify_lock(p)\nfor r in e['sources']:\n p=Path(r['path']);assert hashlib.sha1(p.read_bytes()).hexdigest()==r['sha1']\n t=p.read_bytes().decode('utf8');assert t[r['offset']:r['offset']+r['length']]==r['quote'];assert len(r['quote'])==r['length']\nexpected=dict(zip('子丑寅卯辰巳午未申酉戌亥','丑寅卯辰巳午未申酉戌亥子'))\nassert e['predicate']['byMonthJian']==expected and e['predicate']['branchOffset']==1\npillars=[('甲乙丙丁戊己庚辛壬癸'[i%10]+'子丑寅卯辰巳午未申酉戌亥'[i%12]) for i in range(60)]\nassert len(set(pillars))==60\nassert sum(p[-1]==v for v in expected.values() for p in pillars)==60\ninv=json.loads((base/'yi-baseline-v1/inventory.json').read_text());it=next(x for x in inv['items'] if x['han']=='吉期')\nassert [(x['normalized'],x['activities']) for x in it['headings']]==[(x['normalized'],x['activities']) for x in e['headingScopes']]\nfor h in e['headingScopes']+e['sourceOnlyHeadingScopes']:\n for i in h['sourceRefs']:\n  q=e['sources'][i]['quote'];assert h['raw'] in q and '吉期' in q\nassert {x['raw'] for x in e['sourceOnlyHeadingScopes']}=={'施恩封拜','舉正直','上官赴任','臨政親民'}\nc=e['conditionalSourceScopes'][0]\nassert c['clause'] in e['sources'][1]['quote'] and c['raw'] in e['sources'][3]['quote']\nassert c['normalized']=='詔命公卿招賢' and c['monthJian']=='亥' and c['coPresence']=='天馬'\nhorse=json.loads((base/'yi-tianma-v1/entry.json').read_text())['predicate']['byMonthJian']\nyima=json.loads((base/'yi-yima-v1/entry.json').read_text())['predicate']['byMonthJian']\nassert [m for m in expected if expected[m]==horse[m]]==['亥']\nassert [m for m in expected if expected[m]==yima[m]]==[]\nfor i in [8,9]:\n q=e['sources'][i]['quote'];yi=q.split('宜',1)[1].split('\\n')[0];assert '吉期' not in yi\nassert '兵寶' in e['sources'][9]['quote']\nassert e['aliases']==[] and e['status']=='SOURCE_REVIEWED' and e['scoringReady'] is False\nassert e['unknownPolicy']==dict(missingRequiredInput='unknown',outsideCoverage='unknown',malformedInput='error')\nassert len(e['sources'])==10 and len(e['scanChecks'])==10\nfor c in e['scanChecks']:assert Path(c['renderPath']).read_bytes().startswith(b'\\x89PNG\\r\\n\\x1a\\n')\nif (out/'lock.json').exists():verify_lock(out/'lock.json')\nprint(f'PASS: {len(visited)} recursive locks / {len(locked)} unique locked files; 10 raw slices/10 scans; 12 targets/720 structural contexts; direct/source-only/negative/conditional scopes; 天馬 1/12 and 驛馬 0/12 intersections. Authority consistency only, not Golden.')\n",
+  "limits": [
+    "Authority consistency only; no independent Golden or production implementation tests",
+    "Single Codex reviewer; no second independent expert review",
+    "No runtime/manifest/scoring changes"
+  ]
+}

@@ -1,0 +1,2374 @@
+{
+  "version": "p4-yi-independent-source-basis-v1",
+  "task": "3.2",
+  "date": "2026-10-14",
+  "entries": [
+    {
+      "id": "mu-cang",
+      "han": "母倉",
+      "authorityId": "p4-yi-mucang-v2",
+      "ruleId": "p4-yi-mucang-v2:presence",
+      "sourceRefs": [0, 1],
+      "rawAnchor": "春亥子夏寅卯秋辰戌丑未冬申酉土王後巳午",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol05-787341",
+          "role": "DEFINITION",
+          "volume": 5,
+          "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+          "offset": 5572,
+          "length": 321,
+          "quote": "　　天寳歴曰母倉者五行當王所生者為母倉如遇土王後則以巳午為之其日宜飬育羣畜栽植種蒔○歴例曰春亥子夏寅卯秋辰戌丑未冬申酉土王後巳午○曹震圭曰生我者為母積藏者為倉故以名之各以生當時五行之辰為之○考原曰春屬木水生之故以亥子為母倉也餘倣此不用干而用支者支為地有母道焉萬物生於土有藏道焉\n　　按母倉者種植畜牧納財等事之吉辰也春木以亥子為母木者亥子之所生水至木成則休矣母老則待養於子也故以倉為名又木生於水木之所以能旺於春者由水生之則木固由水而得養也故以母為名又我尅者為財而尅我之所由生者亦財也以母倉之辰而納財一以見藏于生我之方則其原不匱也一以見生我之方之宜致養焉以是為報本返始也一以見財者所以養人而多藏則尅我之所由生轉以為我害矣非所以為養也母倉之義大矣哉",
+          "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+        },
+        {
+          "index": 1,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_AND_RANKING",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2847,
+          "length": 183,
+          "quote": "　　{{SK anchor|母倉}}\n　　宜納財栽種牧養納畜\n　　{{SK anchor|與月恩四相開日併宜修倉庫}}\n　　按舊本以母倉為上吉日而所宜止於納財栽種牧養納畜葢其日係四時休氣又不得與天恩比也又按母倉春月亥日吉子日次之夏月寅日吉卯日次之冬月申日吉酉日次之葢亥寅申皆令星之長生而子卯酉為令星之敗地也至秋月之辰戌丑未日土王後之己午日則衰旺各有不同是又不可以不辨",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      ],
+      "scanEvidence": [],
+      "manualDerivationRule": {
+        "kind": "seasonal",
+        "seasonOrderFromYin": "春春春夏夏夏秋秋秋冬冬冬",
+        "ordinarySets": "亥子/寅卯/辰戌丑未/申酉",
+        "soilSet": "巳午"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH", "SOIL_REIGN_STATE"],
+      "notNeeded": ["lunarDay", "moonPhase", "dayStem"]
+    },
+    {
+      "id": "fu-de",
+      "han": "福德",
+      "authorityId": "p4-yi-fude-v1",
+      "ruleId": "p4-yi-fude-v1:presence",
+      "sourceRefs": [0, 2],
+      "rawAnchor": "福德常居月建前二辰",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol04-787340",
+          "role": "DEFINITION",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 2861,
+          "length": 204,
+          "quote": "　　總要厯曰福德者月中福德之神也其日宜祀神祗求福願修宫室獻封章○厯例曰福德常居月建前二辰○曹震圭曰建前二辰者是月所生之子以其當相氣在前為引與我能為福為德之神也故易卦以子孫爻為福徳其義一也大抵子能制乎鬼使不害已故為福德假令正月寅以火生辰土為子其土能制水鬼也二月夘木生巳火為子火能制金鬼也三月辰之衰木能生午火為子去制金鬼也餘倣此○考原曰十二地支各有所藏若以前二辰為月建所生者亦無不合則生氣之在月建前二辰亦當取此義",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        },
+        {
+          "index": 2,
+          "sourceId": "ws-vol10-787351",
+          "role": "VOL10_USE_SCOPE",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5077,
+          "length": 191,
+          "quote": "　　{{SK anchor|滿日}}{{SK notes|天巫　福德}}\n　　宜進人口裁製修倉庫經絡開市立劵交易納財開倉庫出貨財補垣塞穴\n　　{{SK anchor|又為天巫宜祭祀祈福}}\n　　又為福德宜上册進表章慶賜賞賀宴㑹修宮室繕城郭\n　　按滿取豐豫之義故所宜如此天巫見義例福德義同時德具體而微故止宜上册數事舊本無宴㑹然未有宜慶賞而不宜宴㑹者又謂天巫宜療病與滿日所忌自相牴牾故刪",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 27,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf27.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德　天巫",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 28,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf28.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德常居月建前二辰",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 29,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf29.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "月建前二辰",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 30,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf30.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "按滿為福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 31,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf31.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "天狗者戌日值滿也",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 32,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf32.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "月建前二辰",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 112,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067686-pdf112.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "滿日　天巫　福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 113,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067686-pdf113.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "又為福德宜上冊進表章慶賜賞賀宴會修宮室繕城郭",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 14,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf14.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 15,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf15.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 21,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf21.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 22,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf22.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 36,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf36.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "宜月恩四相時德三合福德開日",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 37,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "printedFolioStatus": "Use confirmed PDF page; do not infer unread folio",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf37.png",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual reading; full raw refs and source differences in README",
+          "transcription": "福德",
+          "transcriptionScope": "Reviewed excerpt; not normalized raw quote or full-page transcription"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "forward",
+        "steps": 2
+      },
+      "acceptedAliases": ["福徳"],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+    },
+    {
+      "id": "tian-en",
+      "han": "天恩",
+      "authorityId": "p4-yi-tianen-v1",
+      "ruleId": "p4-yi-tianen-v1:presence",
+      "sourceRefs": [0, 1],
+      "rawAnchor": "凡一十五日",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol05-787341",
+          "role": "DEFINITION_AND_CYCLE",
+          "volume": 5,
+          "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+          "offset": 3559,
+          "length": 439,
+          "quote": "　　天寳歴曰天恩者施徳寛下之辰也天有四禁常開一門甲為陽徳配巳成養育之功故甲配子巳配卯酉各五日而為恩也萬物非土不生故以巳土配甲成功其日可以施恩賞布政事恤孤惸興宴樂○歴例曰常以甲子至戊辰巳卯至癸未巳酉至癸丑凡一十五日○曹震圭曰天有四禁子午卯酉也子為元武門午為明堂門卯為日門酉為月門蓋聖人居明堂而治天下故常開此門易所謂聖人南面聽天下嚮明而治者也甲為乾之納甲巳為離之納甲先天乾居正南後天離居正南故以甲配子巳配卯酉然則不配午者以甲巳皆南方卦之納甲也各進五辰而不及六者謂五為君位中央之数不可過也故各配五日合之成一十有五為天恩大吉日\n　　按十母皆天也十二子皆地也然就十母而分之則甲乙丙丁戊又屬天巳庚辛壬癸又屬地天地之心無往而非恩也然必有所見端焉其端維何曰天必以始而地必以中元善乾之所以統也黄中坤之所以大也天必以始故自甲子以至戊辰六十甲子之首五日為天恩地必以中故自巳卯至癸未巳酉至癸丑分六十而半之此十日者各居其中亦為天恩甲至戊天也巳至癸地也天五而地十者陽一而隂兩也不曰地恩而皆名天恩者地統于天也",
+          "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+        },
+        {
+          "index": 1,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_AND_CO_PRESENCE",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2467,
+          "length": 172,
+          "quote": "　　天恩\n　　宜覃恩肆赦施恩惠恤孤惸布政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹\n　　與驛馬天馬建日併宜頒詔宣政事與修造吉神併尤宜興作\n　　按舊本以天恩為上吉日而所宜止於覃恩慶賞等事葢其日止取一定之干支而不參諸月令其力輕㣲不得與德合赦願比也又按舊本謂天德嵗德月德天德合嵗德合月德合天恩天赦母倉所㑹之辰並宜修營㑹之云者則非專指天恩故曰與修造吉神併尤宜興作",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 37,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf37.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 38,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf38.png",
+          "transcription": "甲子至戊辰己卯至癸未己酉至癸丑凡一十五日",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 39,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf39.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 40,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf40.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 94,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf94.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 95,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf95.png",
+          "transcription": "其日止取一定之干支而不參諸月令",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 96,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf96.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 16,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf16.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 17,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf17.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 19,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf19.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 20,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf20.png",
+          "transcription": "宜天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 21,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf21.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 22,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page verified; unread folio and Archive alignment not guessed",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf22.png",
+          "transcription": "天恩",
+          "transcriptionScope": "Reviewed excerpt, not full-page transcription or normalized raw quote",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading; source differences in README"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "ranges",
+        "scanEndpoints": ["甲子", "戊辰", "己卯", "癸未", "己酉", "癸丑"]
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["DAY_PILLAR"],
+      "notNeeded": ["MonthJian", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+    },
+    {
+      "id": "tian-wu",
+      "han": "天巫",
+      "authorityId": "p4-yi-tianwu-v1",
+      "ruleId": "p4-yi-tianwu-v1:presence",
+      "sourceRefs": [0, 1, 3],
+      "rawAnchor": "常居月建前二辰",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol04-787340",
+          "role": "DEFINITION",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 3066,
+          "length": 63,
+          "quote": "　　總要厯曰天巫者月中善神也所值之日宜合藥請醫祀鬼神求福願○厯例曰常居月建前二辰○曹震圭曰天巫者月中善神能克除鬼煞也義與福德同",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        },
+        {
+          "index": 1,
+          "sourceId": "ws-vol04-787340",
+          "role": "FORWARD_DIRECTION_EXAMPLES",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 2861,
+          "length": 204,
+          "quote": "　　總要厯曰福德者月中福德之神也其日宜祀神祗求福願修宫室獻封章○厯例曰福德常居月建前二辰○曹震圭曰建前二辰者是月所生之子以其當相氣在前為引與我能為福為德之神也故易卦以子孫爻為福徳其義一也大抵子能制乎鬼使不害已故為福德假令正月寅以火生辰土為子其土能制水鬼也二月夘木生巳火為子火能制金鬼也三月辰之衰木能生午火為子去制金鬼也餘倣此○考原曰十二地支各有所藏若以前二辰為月建所生者亦無不合則生氣之在月建前二辰亦當取此義",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        },
+        {
+          "index": 3,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_SCOPE_AND_MEDICAL_REJECTION",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5077,
+          "length": 191,
+          "quote": "　　{{SK anchor|滿日}}{{SK notes|天巫　福德}}\n　　宜進人口裁製修倉庫經絡開市立劵交易納財開倉庫出貨財補垣塞穴\n　　{{SK anchor|又為天巫宜祭祀祈福}}\n　　又為福德宜上册進表章慶賜賞賀宴㑹修宮室繕城郭\n　　按滿取豐豫之義故所宜如此天巫見義例福德義同時德具體而微故止宜上册數事舊本無宴㑹然未有宜慶賞而不宜宴㑹者又謂天巫宜療病與滿日所忌自相牴牾故刪",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 27,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf27.png",
+          "transcription": "滿　福德　天巫　天狗",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 28,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf28.png",
+          "transcription": "福德常居月建前二辰",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 29,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf29.png",
+          "transcription": "總要歷曰天巫者月中善神也所值之日宜合藥請醫祀鬼神求福願○歷例曰常居月建前二辰",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 30,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf30.png",
+          "transcription": "天巫云者巫能通幽明",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 31,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf31.png",
+          "transcription": "天狗者戌日值滿也",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 32,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf32.png",
+          "transcription": "又謂祈福願祠鬼神皆為正道故並忌之",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 33,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf33.png",
+          "transcription": "又按天狗為申建之戌止一位故不入圖",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 112,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf112.png",
+          "transcription": "滿日　天巫　福德",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 113,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf113.png",
+          "transcription": "又為天巫宜祭祀祈福；又謂天巫宜療病與滿日所忌自相牴牾故刪",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 13,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf13.png",
+          "transcription": "祭祀；祈福；時德天巫開日；忌天狗寅日",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 14,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf14.png",
+          "transcription": "祈福忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢",
+          "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading with raw/source hierarchy comparison"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "forward",
+        "steps": 2
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+    },
+    {
+      "id": "tian-hou",
+      "han": "天后",
+      "authorityId": "p4-yi-tianhou-v1",
+      "ruleId": "p4-yi-tianhou-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "天后與驛馬同位",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol06-787343",
+          "role": "DEFINITION_SAME_POSITION_AND_SCOPE",
+          "volume": 6,
+          "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+          "offset": 1517,
+          "length": 762,
+          "quote": "　　神樞經曰驛馬者驛騎也其日宜封贈官爵詔命公卿逺行赴任移徙遷居○李鼎祚曰驛馬者正月起申逆行四孟○總要歴曰天后者月中福神也其日宜求醫療病祈福禮神○歴例曰天后與驛馬同位○儲泳祛疑說曰今世之所謂驛馬者先天三合數也先天寅七午九而戌五合數二十有一故自子順至申凡二十有一而為火局之驛馬亥夘未之數四六八合為十八故自子順至巳凡十八而為木局之驛馬木火陽局也從子一陽順行金水隂局也從午一隂順行故申子辰之數七九五合二十有一自午順至寅凡二十有一而為水局之驛馬巳酉丑之數四六八合為十八自午順至亥凡十有八而為金局之驛馬此驛馬之法所由起也○曹震圭曰驛馬者五行將病得見妻子似人値困途逢妻子者也假令寅午戌火也病於申中有庚為妻戊為子故以申為馬申子辰水也病於寅中有丙為妻甲為子亥夘未木也病於巳中有戊為妻丙為子巳酉丑金也病於亥中有申為妻壬為子也洞源經曰既病見子驛馬到來又曰天后者驛馬也五行受病得見妻子反有救助天后主生育萬物為萬物之母故以名之按寅為功曹申為傳送亥為天門巳為地户皆道路之象也三合在寅午戌則對寅之申有驛馬之象焉三合在巳酉丑則對巳之亥有驛馬之象焉又驛馬者不安其居之謂也數窮則變寅午戌之數盡而恰遇夫申則火將變而之乎水矣火生於木木絶於申而申又生水以生木是火以變而不窮也巳酉丑之數盡而恰遇夫亥則金將變而之乎木矣金生於火土火土絶於亥而亥又生木以生火是金以變而不窮也申子辰亥卯未倣此易稱乘馬班如用拯馬壯皆以舍舊圖新改過遷善為義故驛馬又曰天后亦絶處逢生之意也若洞源經所謂既病見子驛馬到來者則以申為火病巳為木病以見驛馬即是三合病鄉聊以識之耳猶三煞為太嵗三合絶胎養之類恰遇其方即用以為記而非於病絶胎養有所取義也於此穿鑿附㑹則失之逺矣曹震圭以三煞為絶胎養則絶胎養皆屬幽隂之地猶若可通至以驛馬為五行將病得見妻子則妄謬已甚矣又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+          "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 17,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf17.png",
+          "transcription": "驛馬　天后 (monthly position chart)",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 18,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf18.png",
+          "transcription": "驛馬者正月起申逆行四孟；天后與驛馬同位",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 19,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf19.png",
+          "transcription": "亥卯未木也病於巳",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 20,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf20.png",
+          "transcription": "三合在寅午戌則對寅之申有驛馬之象焉；三合在巳酉丑則對巳之亥有驛馬之象焉",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 21,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf21.png",
+          "transcription": "故驛馬又曰天后亦絶處逢生之意也",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 22,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf22.png",
+          "transcription": "又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 108,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067686-pdf108.png",
+          "transcription": "又為天后宜求醫療病",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 109,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067686-pdf109.png",
+          "transcription": "天后見義例",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 33,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067687-pdf33.png",
+          "transcription": "求醫療病；宜天德月德天德合月德合天赦月恩四相時德天",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 34,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067687-pdf34.png",
+          "transcription": "后除日破日天醫開日解神除神",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan + monthly chart and scope comparison"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "horse",
+        "sequenceFromYin": "申巳寅亥"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": [
+        "dayStem",
+        "lunarMonth",
+        "lunarDay",
+        "moonPhase",
+        "soil",
+        "birthYear",
+        "personalPillar"
+      ]
+    },
+    {
+      "id": "tian-yi",
+      "han": "天醫",
+      "authorityId": "p4-yi-tianyi-v1",
+      "ruleId": "p4-yi-tianyi-v1:presence",
+      "sourceRefs": [0, 1, 2],
+      "rawAnchor": "正月起戌順行十二辰",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol04-787340",
+          "role": "DEFINITION",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 5800,
+          "length": 87,
+          "quote": "　　總要厯曰天醫者天之巫醫其日宜請藥避病尋巫禱祀○厯例曰天醫者正月起戌順行十二辰○曹震圭曰天醫者三合後辰能使萬物死而復生損而復益如正月建寅三合為寅午戌而戌為寅之後辰是也餘倣此",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        },
+        {
+          "index": 1,
+          "sourceId": "ws-vol04-787340",
+          "role": "ADJACENT_EDITORIAL_SCOPE",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 5888,
+          "length": 311,
+          "quote": "　　選擇宗鏡曰天喜者正月戌二月亥三月子四月丑順輪十二月乃日支與月建三合故曰天喜○通書曰春戌夏丑秋辰冬未今人不原其理嘗於卦書中得其要領大抵取日辰與月建相合為天喜也與成日同位按月建後二辰生氣也又後二辰即生氣之生氣也故曰天醫又成日也萬物莫不喜其有成故曰天喜厯書以春戌夏丑秋辰冬未為天喜日而曹震圭謂母喜見子然亦有成就之義如春之令屬木木生火火墓在戌至於戌則火之道成矣故春以戌為天喜夏之令屬火土火土生金金墓在丑至於丑則金之道成矣故夏以丑為天喜秋辰冬未可以類推今通書與宗鏡皆以成日為天喜惟寅申巳亥四孟月與戌丑辰未相合或古有兩説或一為後起俱未可知然成日之理為長且通書總論既取成日而立成又用戌丑辰未日不宜自相矛盾故改從畫一而並存其説以備㕘考",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        },
+        {
+          "index": 2,
+          "sourceId": "ws-vol10-787351",
+          "role": "USE_SCOPE",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5645,
+          "length": 221,
+          "quote": "　　{{SK anchor|成日}}{{SK notes|天喜　天醫}}\n　　宜入學安撫邊境般移築隄防開市\n　　又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名嫁娶五月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與天喜併}}\n　　{{SK anchor|乂為天醫宜求醫療病}}\n　　按成為合局之終開為生氣之始故其日宜入學原始要終之義也宜安撫邊境者功成而永奠也般移築隄防開市皆取成義天喜舊宜封拜自宜上官義同建日",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 57,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf57.png",
+          "transcription": "成　天醫　天喜 (monthly chart)",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 58,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf58.png",
+          "transcription": "天醫者正月起戌順行十二辰；正月建寅三合為寅午戌而戌為寅之後辰是也",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 59,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf59.png",
+          "transcription": "又後二辰即生氣之生氣也故曰天醫又成日也",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 60,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf60.png",
+          "transcription": "然成日之理為長…故改從畫一而並存其説以備參考 (天喜 discussion)",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 116,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf116.png",
+          "transcription": "成日　天喜　天醫",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 117,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf117.png",
+          "transcription": "又為天醫宜求醫療病",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 33,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf33.png",
+          "transcription": "求醫療病",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 34,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf34.png",
+          "transcription": "后除日破日天醫開日解神除神",
+          "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct visual scan, chart and explicit monthly source sequence"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "sequence",
+        "first": "戌",
+        "sequence": "子丑寅卯辰巳午未申酉戌亥"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+    },
+    {
+      "id": "tru_than",
+      "han": "除神",
+      "authorityId": "p4-yi-chushen-v1",
+      "ruleId": "p4-yi-chushen-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "通書以申酉日為除神",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol05-787341",
+          "role": "DEFINITION_AND_MONTH_INDEPENDENCE",
+          "volume": 5,
+          "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+          "offset": 11726,
+          "length": 148,
+          "quote": "　　{{SK anchor|五離}}{{SK notes|除神}}\n　　樞要歴曰五離者月中離神也其日忌結婚姻㑹親友作交闗立契劵○歴例曰五離者申酉日是也○曹震圭曰五離者是隂陽重㑹之辰再合則離也○考原曰按通書以申酉日為除神與五合對衝之日也宜沐浴祓除災眚\n　　按日神不從年月天干起義者唯此三條故并為一圖",
+          "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 113,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf113.png",
+          "transcription": "重日　五合　五離　除神 (day chart)",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 116,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf116.png",
+          "transcription": "申酉為秋清肅之氣也故宜解除；五離　除神",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 117,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf117.png",
+          "transcription": "按通書以申酉日為除神…按日神不從年月天干起義者唯此三條故并為一圖",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 126,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067686-pdf126.png",
+          "transcription": "除神；宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇；義同除日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 31,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf31.png",
+          "transcription": "解除",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 32,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf32.png",
+          "transcription": "除日開日解神除神；沐浴；整容剃頭",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 33,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf33.png",
+          "transcription": "整手足甲；宜除日解神除神；求醫療病",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 34,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf34.png",
+          "transcription": "后除日破日天醫開日解神除神",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 46,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "Direct PDF page verified; unread folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf46.png",
+          "transcription": "掃舍宇；宜除日除神；忌無",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation; raw quote unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct definition/chart/use/heading scan review"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "branchSet",
+        "set": "申酉"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["DAY_BRANCH"],
+      "notNeeded": [
+        "MonthJian",
+        "lunarMonth",
+        "lunarDay",
+        "dayStem",
+        "moonPhase",
+        "soil",
+        "birthYear"
+      ]
+    },
+    {
+      "id": "yi-ma",
+      "han": "驛馬",
+      "authorityId": "p4-yi-yima-v1",
+      "ruleId": "p4-yi-yima-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "正月起申逆行四孟",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol06-787343",
+          "role": "MONTHLY_DEFINITION_AND_VARIANTS",
+          "volume": 6,
+          "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+          "offset": 1517,
+          "length": 762,
+          "quote": "　　神樞經曰驛馬者驛騎也其日宜封贈官爵詔命公卿逺行赴任移徙遷居○李鼎祚曰驛馬者正月起申逆行四孟○總要歴曰天后者月中福神也其日宜求醫療病祈福禮神○歴例曰天后與驛馬同位○儲泳祛疑說曰今世之所謂驛馬者先天三合數也先天寅七午九而戌五合數二十有一故自子順至申凡二十有一而為火局之驛馬亥夘未之數四六八合為十八故自子順至巳凡十八而為木局之驛馬木火陽局也從子一陽順行金水隂局也從午一隂順行故申子辰之數七九五合二十有一自午順至寅凡二十有一而為水局之驛馬巳酉丑之數四六八合為十八自午順至亥凡十有八而為金局之驛馬此驛馬之法所由起也○曹震圭曰驛馬者五行將病得見妻子似人値困途逢妻子者也假令寅午戌火也病於申中有庚為妻戊為子故以申為馬申子辰水也病於寅中有丙為妻甲為子亥夘未木也病於巳中有戊為妻丙為子巳酉丑金也病於亥中有申為妻壬為子也洞源經曰既病見子驛馬到來又曰天后者驛馬也五行受病得見妻子反有救助天后主生育萬物為萬物之母故以名之按寅為功曹申為傳送亥為天門巳為地户皆道路之象也三合在寅午戌則對寅之申有驛馬之象焉三合在巳酉丑則對巳之亥有驛馬之象焉又驛馬者不安其居之謂也數窮則變寅午戌之數盡而恰遇夫申則火將變而之乎水矣火生於木木絶於申而申又生水以生木是火以變而不窮也巳酉丑之數盡而恰遇夫亥則金將變而之乎木矣金生於火土火土絶於亥而亥又生木以生火是金以變而不窮也申子辰亥卯未倣此易稱乘馬班如用拯馬壯皆以舍舊圖新改過遷善為義故驛馬又曰天后亦絶處逢生之意也若洞源經所謂既病見子驛馬到來者則以申為火病巳為木病以見驛馬即是三合病鄉聊以識之耳猶三煞為太嵗三合絶胎養之類恰遇其方即用以為記而非於病絶胎養有所取義也於此穿鑿附㑹則失之逺矣曹震圭以三煞為絶胎養則絶胎養皆屬幽隂之地猶若可通至以驛馬為五行將病得見妻子則妄謬已甚矣又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+          "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 17,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf17.png",
+          "transcription": "驛馬　天后 (monthly position chart)",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 18,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf18.png",
+          "transcription": "驛馬者正月起申逆行四孟；天后與驛馬同位",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 19,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf19.png",
+          "transcription": "亥卯未木也病於巳",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 20,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf20.png",
+          "transcription": "三合在寅午戌則對寅之申有驛馬之象焉；三合在巳酉丑則對巳之亥有驛馬之象焉",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 21,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf21.png",
+          "transcription": "故驛馬又曰天后亦絶處逢生之意也",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 22,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf22.png",
+          "transcription": "又按驛馬有從年支取者有從日支取者其義例皆與月同故不重列",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 108,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf108.png",
+          "transcription": "又為天后宜求醫療病",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 109,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf109.png",
+          "transcription": "天后見義例",
+          "transcriptionScope": "Reviewed excerpt; punctuation supplied in scan excerpt only; raw quote unmodified",
+          "reviewer": "Codex (single agent)",
+          "check": "Reused directly reviewed locked scan evidence from 天后 2.6; monthly 驛馬 definition/variants and separate named use reviewed in 2.9"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 23,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf23.png",
+          "transcription": "行幸遣使 出行同；宜…驛馬天馬建日吉期天喜開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; raw quote full and unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct heading scan reading"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 30,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf30.png",
+          "transcription": "般移 移徙同；宜…民日驛馬天馬成日開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; raw quote full and unchanged",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct heading scan reading"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "horse",
+        "sequenceFromYin": "申巳寅亥"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": [
+        "dayStem",
+        "lunarMonth",
+        "lunarDay",
+        "moonPhase",
+        "soil",
+        "birthYear",
+        "personalPillar"
+      ]
+    },
+    {
+      "id": "tian-ma",
+      "han": "天馬",
+      "authorityId": "p4-yi-tianma-v1",
+      "ruleId": "p4-yi-tianma-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "正月起午順行六陽辰",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol06-787343",
+          "role": "MONTHLY_DEFINITION_AND_EDITOR_EXPLANATION",
+          "volume": 6,
+          "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+          "offset": 8652,
+          "length": 151,
+          "quote": "　　神樞經曰天馬者天之驛騎也其日宜拜公卿擇賢良宣布政事逺行出征○李鼎祚曰天馬者正月起午順行六陽辰○曹震圭曰天馬者是乾體六陽用事之神也易曰乾為馬\n　　按乾卦納子寅辰午申戌天馬則四十月在子四月乾卦十月建亥又乾宮也午為馬詩曰吉日庚午既差我馬說者謂午為馬祖之神寅申為道路午起寅順歴六陽辰則申又得午取象於馬之用也",
+          "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 103,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf103.png",
+          "transcription": "天馬 monthly chart: 寅午、卯申、辰戌、巳子、午寅、未辰、申午、酉申、戌戌、亥子、子寅、丑辰",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067684.cn",
+          "pdfPage": 104,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf104.png",
+          "transcription": "李鼎祚曰天馬者正月起午順行六陽辰；天馬則四十月在子",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 108,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf108.png",
+          "transcription": "按驛馬天馬皆第取行遠之義",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 109,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf109.png",
+          "transcription": "天馬；宜行幸遣使般移；與天恩併宜頒詔宣政事與月恩四相時德併宜詔",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 110,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf110.png",
+          "transcription": "命公卿招賢；義見驛馬",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 111,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf111.png",
+          "transcription": "十月與天馬併宜詔命公卿招賢；驛馬不得與吉期併",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 117,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf117.png",
+          "transcription": "五月與天馬併宜詔命公卿招賢；驛馬不得與天喜併",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 23,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf23.png",
+          "transcription": "行幸遣使 出行同；宜…驛馬天馬建日吉期天喜開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 30,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf30.png",
+          "transcription": "般移 移徙同；宜…民日驛馬天馬成日開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "sequence",
+        "first": "午",
+        "sequence": "子寅辰午申戌"
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": [
+        "dayStem",
+        "lunarMonth",
+        "lunarDay",
+        "moonPhase",
+        "soil",
+        "birthYear",
+        "personalPillar"
+      ]
+    },
+    {
+      "id": "ji-qi",
+      "han": "吉期",
+      "authorityId": "p4-yi-jiqi-v1",
+      "ruleId": "p4-yi-jiqi-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "常居月建前一辰",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol04-787340",
+          "role": "MONTHLY_DEFINITION_WITH_SEPARATE_BINGBAO",
+          "volume": 4,
+          "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+          "offset": 2706,
+          "length": 145,
+          "quote": "　　總要厯曰吉期者吉慶之神也所值之日宜出軍行師攻城寨興弔伐㑹親姻○厯例曰常居月建前一辰也○曹震圭曰吉期者是月建腹心同契之侍臣也蓋常居建前一辰可與要約吉事故因名之\n　　{{SK anchor|厯例曰兵寳者月建前一辰也}}\n　　按兵寶之義與兵福同説已見前假如寅為兵福則夘為兵寶皆四時當王之氣云耳",
+          "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 25,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf25.png",
+          "transcription": "除　吉期　兵寶 monthly chart; 寅→卯、卯→辰…丑→寅",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067682.cn",
+          "pdfPage": 26,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf26.png",
+          "transcription": "吉期者吉慶之神也；常居月建前一辰也；假如寅為兵福則卯為兵寶",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 111,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf111.png",
+          "transcription": "又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民；十月與天馬併宜詔命公卿招賢；驛馬不得與吉期併",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 112,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf112.png",
+          "transcription": "舊謂吉期宜兵事蓋兵寶之誤又謂宜結婚姻於義無取故刪",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 17,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf17.png",
+          "transcription": "施恩封拜 襲爵受封同；宜…建日吉期天喜開日；詔命公卿招賢",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 18,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf18.png",
+          "transcription": "又月恩四相時德吉期天喜與驛馬天馬併者；舉正直 宜…建日吉期天喜開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 23,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf23.png",
+          "transcription": "行幸遣使 出行同；宜…建日吉期天喜開日",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 25,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf25.png",
+          "transcription": "出師 宜…兵福兵寶兵吉；no 吉期 in direct 宜",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 26,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf26.png",
+          "transcription": "上官赴任 宜…建日吉期天喜開日；臨政親民",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 27,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf27.png",
+          "transcription": "臨政親民 宜…建日吉期天喜開日六儀；結婚姻 宜…三合天喜六合五合, no 吉期",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quote retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.11; existing renders copied and reread where available"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "forward",
+        "steps": 1
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["MONTH_JIAN_BRANCH", "DAY_BRANCH"],
+      "notNeeded": [
+        "dayStem",
+        "lunarMonth",
+        "lunarDay",
+        "moonPhase",
+        "soil",
+        "birthYear",
+        "personalPillar"
+      ]
+    },
+    {
+      "id": "ming-fei",
+      "han": "鳴吠",
+      "authorityId": "p4-yi-mingfei-v1",
+      "ruleId": "p4-yi-mingfei-v1:presence",
+      "sourceRefs": [0],
+      "rawAnchor": "共十三日為鳴吠日",
+      "rawSources": [
+        {
+          "index": 0,
+          "sourceId": "ws-vol05-787341",
+          "role": "HISTORICAL_LISTS_DERIVATION_CORRECTED_LICHENG_AND_EDITOR",
+          "volume": 5,
+          "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+          "offset": 12509,
+          "length": 1721,
+          "quote": "　　一行云鳴吠者五性安葬之辰也用之者得金雞鳴玉犬吠上下相呼亡靈安穩子孫富昌○鳴吠日者庚午壬申癸酉壬午甲申乙酉庚寅丙申丁酉壬寅丙午己酉庚申辛酉也○歴事明原曰金雞者兌也兌宫酉也玉犬者艮也艮為犬也大抵外宅之要在山澤地勢是坤艮兌也故以坤兌徃來加艮順布八卦視艮所臨之辰為良也如兌加艮則艮臨離午也又以離加艮則艮臨兌酉也又以坤加艮則艮臨坤未申也又以艮自加艮丑寅也丑未二辰乃墓絶無氣之位故不可用又十干之中戊為陽土以配中宮明堂之位不可用也甲午甲寅丙寅者乃自死自旺自生之日故不用止餘一十四日為鳴吠吉日也\n　　一行經云鳴吠對日者用之破土斬草也○鳴吠對日者丙寅丁夘丙子辛夘甲午庚子癸夘壬子甲寅乙夘也○考原曰按鳴吠對者乃與鳴吠對衝之日其己丑日無對衝庚寅與甲申壬寅與丙申又互為對衝故止餘九日今取十日者蓋甲午日雖不用為鳴吠然其對衝庚子可用為鳴吠對也若甲寅之對庚申丙寅之對壬申則鳴吠日中巳用之矣惟甲午疑應作甲子蓋甲子本與庚午對衝且既用庚子不宜并用甲午也恐傳者有誤\n　　神煞起例曰金雞鳴玉犬吠並鳴吠對日相傳始於郭公而定於邵子舉世用之大葬日曰金雞鳴玉犬吠小葬日曰鳴吠對試問何為金雞玉犬何為對則莫知所由來矣蓋生人之禮属於陽葬者藏也則屬於隂夫人身有生死一世之隂陽也四序有春秋一嵗之隂陽也十二時有晝夜一日之隂陽也陽取乎陽隂取乎隂各從其類道本自然耳時日之隂陽分於日之出沒日出東方為陽生人之事也日入西方為隂送終之事也金雞者酉為日入之門玉犬者戌為閉物之㑹然埋藏於土而不敢犯土凡支干屬土者如戊巳名都天辰戌丑未名大墓皆所不宜故不用戌而用酉溯酉而上至午而止午乃一隂之始過午而巳則六陽之卦矣用五酉以為主巳隂土屬酉故亦不忌是謂金雞也申去戊而用四申越未而午亦去戊而用四午共為大葬之十三日謂之鳴吠者以此次酉之對為夘則去巳而用四夘以别於酉也申之對為寅亦去戊而用四寅午之對為子亦去戊子不用至於甲乃十干之長純陽也故亦不用而用三子共為小葬之十一日謂之鳴吠對者以此亥為巳之對故亦不用云又星命之術數人生時遇夘安命取東方出地之義而中陽子葬埋克擇則遇酉安命亦取西方入地之義豈非用酉之一証耶其餘因金雞而多張名目則術家巧飾耳目之為不足深究矣\n\n\n\n\n\n\n\n\n\n\n\n\n\n　　{{SK anchor|立成}}\n　　{{SK notes|一隂生日}}　庚午壬午甲午丙午{{SK notes|戊午不用}}\n　　鳴吠日　　　　　{{SK notes|未土不用用申日}}　壬申甲申丙申{{SK notes|戊申不用}}庚申\n　　{{SK anchor|癸酉乙酉丁酉己酉辛酉}}\n　　{{SK notes|五戌屬土　不用不用不用不用不用不用　　　甲戌丙戌戊戌庚戌壬戌\n　　酉對日}}　　癸夘乙夘丁夘{{SK notes|己夘不用}}辛夘\n　　鳴吠對日　　　　{{SK notes|丑土不用用申對日}}　壬寅甲寅丙寅{{SK notes|戊寅不用}}庚寅\n　　{{SK notes|隂生日對日}}庚子壬子{{SK notes|不用甲子}}丙子{{SK notes|戊子不用}}\n　　按通書安葬用庚寅壬寅丙午庚午壬午甲申丙申庚申壬申乙酉丁酉己酉辛酉癸酉十四日為鳴吠日啓攢用丙子庚子壬子甲寅丙寅乙夘丁夘辛夘癸夘甲午十日為鳴吠對日相傳始自郭璞謂之金雞鳴玉犬吠日而不知其所由明原曲為之解而不能通考原疑其有誤而未之定今按神煞起例之語於理為安庶幾可信其法以甲丙庚壬四干配午申得八日避戊土不用以乙丁巳辛癸五干配酉得五日避未土不用共十三日為鳴吠日巳為隂土生於酉故配酉而不避也又以丙庚壬三干配子得三日避戊土不用甲配子為純陽亦避不用以甲丙庚壬四干配寅得四日避戊不用以乙丁辛癸四干配卯得四日避巳不用共十一日為鳴吠對日通共二十四日通書誤以庚寅壬寅為鳴吠甲午為鳴吠對遂不可解今圖依起例改正又按起例以戌為土不用而止用酉則止有金雞鳴而無玉犬吠矣何以為鳴吠耶曰一行之言金雞鳴玉犬吠上下相呼亡靈安穩人之葬也歸骨於土戌為終萬物之地至亥則又為始矣故亥曰登明然則戌者指葬地而非指葬日也言擇日必以酉為主則是金雞鳴於上而地下之玉犬與之吠應上下相呼而亡靈安稳矣酉辛也然辛不居酉而居戌辛金也玉金之精也故有金雞玉犬之號人事行於地上魂魄安於地下正以地上之金雞呼地下之玉犬而非並用雞日犬日之謂也",
+          "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+        }
+      ],
+      "scanEvidence": [
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 130,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf130.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 131,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf131.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 132,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf132.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 133,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf133.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 134,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf134.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 135,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf135.png",
+          "transcription": "Historical lists and 神煞起例 discussion; retained as alternative witness, corrected 立成/editor below adopted",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 137,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf137.png",
+          "transcription": "立成: 鳴吠 4午+4申+5酉; 己酉 included; 鳴吠對 separate 3子+4寅+4卯",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 138,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf138.png",
+          "transcription": "以甲丙庚壬四干配午申得八日；以乙丁己辛癸五干配酉得五日；共十三 (continues)",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 139,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf139.png",
+          "transcription": "日為鳴吠日己為陰土生於酉故配酉而不避也；共十一日為鳴吠對日；通書誤以庚寅壬寅為鳴吠甲午為鳴吠對；今圖依起例改正",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 140,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf140.png",
+          "transcription": "戌者指葬地而非指葬日也；非並用雞日犬日之謂也",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 124,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf124.png",
+          "transcription": "復日 definition; separate monthly stem rule",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067683.cn",
+          "pdfPage": 125,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf125.png",
+          "transcription": "今定為鳴吠遇復日則忌德赦六合遇復日則不忌",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067686.cn",
+          "pdfPage": 128,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067686-pdf128.png",
+          "transcription": "鳴吠 宜破土安葬；鳴吠對 宜破土啟攢",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 52,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf52.png",
+          "transcription": "破土 宜鳴吠鳴吠對；安葬 宜…六合鳴吠; raw 忌 retained separately",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        },
+        {
+          "sourceId": "ia-06067687.cn",
+          "pdfPage": 53,
+          "archiveImageIndex": null,
+          "printedFolio": null,
+          "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+          "renderPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf53.png",
+          "transcription": "啓攢 宜鳴吠對; no direct 鳴吠 token",
+          "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw quotes retained separately",
+          "reviewer": "Codex (single agent)",
+          "check": "Direct scan reading in task 2.12"
+        }
+      ],
+      "manualDerivationRule": {
+        "kind": "correctedGroups",
+        "groups": [
+          {
+            "branches": "午申",
+            "stems": "甲丙庚壬"
+          },
+          {
+            "branches": "酉",
+            "stems": "乙丁己辛癸"
+          }
+        ]
+      },
+      "acceptedAliases": [],
+      "requiredInputs": ["DAY_PILLAR"],
+      "notNeeded": [
+        "monthJian",
+        "lunarMonth",
+        "lunarDay",
+        "moonPhase",
+        "soil",
+        "birthYear",
+        "personalPillar"
+      ]
+    }
+  ],
+  "soilConvention": {
+    "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+    "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "daysBeforeSiLi": 18,
+    "includeOnset": true,
+    "includeLi": false,
+    "coverage": ["2025-01-01", "2027-12-31"],
+    "boundaryInput": "Same locked 四立 boundary inputs and UTC+7 civil-date calculation as p4-soil-owner-convention-v1; separate adoption for 母倉 presence",
+    "scope": "P4_C_MU_CANG_AUDIT_ONLY",
+    "canonicalWitnessStatus": "OPEN_S1"
+  },
+  "soilOwnerAuthorization": {
+    "owner": "Project owner (this chat)",
+    "date": "2026-10-14",
+    "authorization": "làm theo đề xuất",
+    "decision": "Adopt the proposed 18 civil days before 四立, onset included / 四立 excluded, UTC+7, 2025–2027, for audit-only 母倉 presence and four direct 宜 headings. Soil present replaces seasonal set with 巳午.",
+    "scope": "P4_C_MU_CANG_AUDIT_ONLY",
+    "reason": "Canonical witness unresolved; explicit convention permits bounded audit presence without promoting S1.",
+    "alternative": "Wait for canonical onset/後/定氣 witness; keep SOURCE_DEPENDENT/unknown",
+    "excluded": [
+      "P5 修倉庫 co-presence",
+      "production/scoring activation",
+      "changes to P4-B soil authority",
+      "canonical certification"
+    ]
+  },
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error",
+    "source": "Audit contract in locked per-entry unknownPolicy, not a claimed classical quotation"
+  },
+  "dayPillarDerivation": {
+    "anchorDate": "1900-01-01",
+    "anchorPillar": "甲戌",
+    "anchorJdn": 2415021,
+    "sourcePath": "shared/lunar/audit-fixtures/calendar-golden-v2.1.json",
+    "sourceRecord": 0,
+    "method": "Gregorian integer JDN formula + elapsed civil dates from frozen calendar reference record; zero-based sexagenary sequence generated from 10 stems and 12 branches; cross-check all 100 frozen JDN/day-can-chi records, no engine code"
+  },
+  "monthDerivation": {
+    "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+    "method": "Read frozen independent JPL rows, not runtime authority.data.ts; odd termIndex exact Jie starts new month; order 21 寅,23 卯,1 辰,...,19 丑; choose last crossing <= instant; civil UTC+7 day pillar changes at midnight"
+  },
+  "manualReview": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "sourceReading": "Raw source slices read from locked bytes; prior scan transcriptions reused. Task 3.2 directly re-inspected 天恩 PDF38 and 鳴吠 corrected 立成 PDF137, preserving 己/巳 corrections. Remaining scans retain prior single-agent review, not second expert certification."
+  },
+  "inputs": [
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2025c.txt",
+      "sha256": "7a2803584dcd12a38a13e3710e643369996f59e690d684b9e3705fc5e988ebc2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2026c.txt",
+      "sha256": "7b0831acb16a5a72a1ab553205e938b2f658c3837e06440f22c084e1a39832dd"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-hko/T2027c.txt",
+      "sha256": "2c6a406cd2f8c6f1cf11f154737b7c5ae4afb53c87d76b101bd561b482e3b93f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/soil-owner-convention-lock-v1.json",
+      "sha256": "4ed62e961c4ebda3ea3c3129deaea3d5192d690316b080fa33a9988294f2662a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "sha256": "8782423ab87161f9e60c8b2ee23609bbc1c05bd71f9e85804910d09d46bfb922"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf113.png",
+      "sha256": "0953a26234b3e29291a0fdddd983d59cfc7a81674f6a65ecb61d5a771516cc0e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf116.png",
+      "sha256": "e3fb89a412f82bb43813660175c6c5ce3704096ca2af6316113d789ee193cb05"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067683-pdf117.png",
+      "sha256": "03b9cf826b09dc539d5ed531bf1eba275f2294f3346c2998a82337220fdd1ac1"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067686-pdf126.png",
+      "sha256": "bacc3b393aee4e1372eab5ccf1d46c9562546c27e4b7f98de8b41812ca3752e9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf31.png",
+      "sha256": "474537c4b71524041c622e74e8aee5a3553a2398e85c401b7e86d11f4b3376aa"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf32.png",
+      "sha256": "d792a33b9a10c53722b1443ce530236e42ea05e56d3f35c5d70a18d86dd181c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf33.png",
+      "sha256": "4f8d0a768a421504ef39d2d04ece32ff747ea0aa271f9e36b5cfcffc8d169fed"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf34.png",
+      "sha256": "fcbf14620a1ab0c603e3adc99fb8fbaeb27b69a85066014163ee953b433e04b2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/06067687-pdf46.png",
+      "sha256": "c1401c9a361f7bf9b4fdec062c0c3deaca14c021d037737e93c97a0e63605a25"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "sha256": "45a6de1d4b62b5c720628dd3d6fe495bc073bfd00bf3c1695051f0859141ff02"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/lock.json",
+      "sha256": "43679beafd55782990a6f44a1f88038ce77fe93f7cd5b5257c284f8108e0c623"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/matrix.json",
+      "sha256": "e2c3fb437898fff03d7eae541b363b4d38800d901fe51334f2e213fa8cc87d83"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf27.png",
+      "sha256": "7728184a583ed69ba0dc2f1a3224de55b5956f52c080f124138a7c9f6247c3e8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf28.png",
+      "sha256": "dc04249f2e1917859f379b74311a6b383bac756918976753a15cc4f8a4d767e2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf29.png",
+      "sha256": "c365805db63e27f62afcaa366cc97b1860eecf9e8878b387477f8ef31f0602c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf30.png",
+      "sha256": "a7679dd52849a3f7b89beb28049c6bf1c5472de4e4b934a4fd2d2cc71a2e5aa6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf31.png",
+      "sha256": "be2ad300e12247444cbc994951a3f98a1b595a9da839bc75f72612b173d7aec2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067682-pdf32.png",
+      "sha256": "385df64d81a9ff37d77e8b68620da958b23e08ce6b7b00894695af2491bdc652"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067686-pdf112.png",
+      "sha256": "22c606e1acb10a6fbe825d4e8a1497357500526f6313feb766ff180b347efc87"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067686-pdf113.png",
+      "sha256": "a2bc608b9fde7da023d468acdf868b65d7edf0e7a45672be5c71567236b2622a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf14.png",
+      "sha256": "561d24cde285437bcb9f95cf66555659e90b5e6a75f80719b74fa0f2a7871218"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf15.png",
+      "sha256": "5e1e6e1e1d340c97f39fb4bb693f16b0f7e03c14da1162820c4b6811f2bd276d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf21.png",
+      "sha256": "ab95f34730794bb108ebcb822b479b8f4db054a6793c39d8a1f1758bc694d47f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf22.png",
+      "sha256": "9fd26d37bdd83f9dd7341560cae567d18164e2d5feddefc840239be9ddd1a635"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf36.png",
+      "sha256": "24fe393b98bbfc04dc1757a5c11914c91745da64bb4d0ba8cd1a9d7fb4d35534"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/06067687-pdf37.png",
+      "sha256": "70fb72b454d2cb67703968e1429dd44d07606a3c833d8cf8b765cdefdef18e95"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "sha256": "3c6c4ae677d817ee71f88e27b539568f9017629c96b0ab57b4aea1ffc2d5a1a3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf25.png",
+      "sha256": "fb1281c9cae42eb33f4360be8ce3ee711f1fb5311f49335e8f500ab2486c25c9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067682-pdf26.png",
+      "sha256": "9c861afc7c10c6f9f00e01b3319c5070cf3782c1b52435c7a4bfde6b8026dc56"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf111.png",
+      "sha256": "bee1e97bd7ee7b44322c28118bb952045e2470749aa9c232443a50e2e357cce3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067686-pdf112.png",
+      "sha256": "22c606e1acb10a6fbe825d4e8a1497357500526f6313feb766ff180b347efc87"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf17.png",
+      "sha256": "bc23b77c9f982d02f50fcbbfd827e0af6de2db669a50dc9fcbc20718f9bd4eae"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf18.png",
+      "sha256": "50a7348ac39e9ececde670a26f6e2c0a8bcd9083f8bd6ea38a8b57008d9d1cc6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf23.png",
+      "sha256": "a08e5f875d89a547fef3e363ee753d85fa577f9d0b34783b9f2553187ef54955"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf25.png",
+      "sha256": "d85e5c8e644cc6341dd5b1c766015a4523c022810d1c73fc37704e388cf4c9a2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf26.png",
+      "sha256": "831c73c78fc647260635c220ba8f1629ab4db703d9467b9acbb63ce4ddf7ecfd"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/06067687-pdf27.png",
+      "sha256": "ad073801916be5f4f84de304c4fb10e2065af206b0786803b3c38b9f859ba6ac"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "sha256": "71edc5085deec93ac232298f13be048309e7f6070185f56c1fa6bb3647c9412c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf124.png",
+      "sha256": "5fc8c88c65c906755858663284ae17ecf866af6b6e4e8ec93bbf700bd2e0efce"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf125.png",
+      "sha256": "d4b2bb5ef34a858cbd609420c087ccac06dd067511070905aa8f8b2a7150f813"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf130.png",
+      "sha256": "29e28a6818c562f1346aab24d5cacf649b594b87af527251a0f89bd8a23c1feb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf131.png",
+      "sha256": "a3b101644393c9cc35ce9275b1fc6cb34cbb39ab4a99df84aa204db30994d958"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf132.png",
+      "sha256": "a31e8953ced9796b28435bcd5fc9f94750b3164dc5fdb0b5cf24258002b765ac"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf133.png",
+      "sha256": "10b8a1225c9ae59c93859229f1ea8e1c347325e68395d455e855815108ffc004"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf134.png",
+      "sha256": "77f2da8ca5cbd81a5eea3021caca86816f863592f86200fc6b7bfc829bf0a075"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf135.png",
+      "sha256": "4fb4e3db9c1ff00b47ab1639ac75691a95af98268c30daf56e34bdaeb22dee6d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf137.png",
+      "sha256": "29e21be2ae38d1bae5eebfabaf1c1e5947546019751468095889e4149e8efe80"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf138.png",
+      "sha256": "121b6578ed785007f5a6aea530d5c0c911789d96b40663730c4e47e83cc7040c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf139.png",
+      "sha256": "b5d72944f793d697b4e3c12c93babb7d9470327c7cf3da8becc1ccdf9d5695da"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067683-pdf140.png",
+      "sha256": "aad2124bcbeae9619cc1e11de37aa7e6dbc55c78ab163782c8eb9912f49853e7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067686-pdf128.png",
+      "sha256": "05a84b1ea7696a8a2b93d7a3587eaa6eac2f2db063f2f30da0a3f44d6c401165"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf52.png",
+      "sha256": "0716e1b9a29e2af72e65cf1e184a7a669a14d73deef6200a7ffd260130a33522"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/06067687-pdf53.png",
+      "sha256": "c279da46b626038244792b647d6579f673a4d5812e9263a972a44944879b9296"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "sha256": "e4a5254c7800f8680ec42333aa31a8f8342e506c84122ed333a7d60564bd6794"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/README.md",
+      "sha256": "a563dc76795f297fc865fdb26dbb21a7ce97b415b9fb43727c7ee38001dfae14"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "sha256": "7cc1a29d800f907d4eb56130e72b8756fb0d1e30f766d494df502acf2b862496"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf37.png",
+      "sha256": "84fb528d5ffdec9ec5a84c5647976534e3f461860469e0ae0c8a1c734017ea83"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf38.png",
+      "sha256": "30424e87d7e565629f728856f7ffe7ad92c88798bd8bcd0ee9fcdd52a2002c70"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf39.png",
+      "sha256": "45a888fde9accb331f474d65d90732437c7ec412d56e0b23b48e73646f75cb2d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067683-pdf40.png",
+      "sha256": "c17f91c0c098bfd9461c27ecfa881586f0d18bdf875689e2f6c8d0eaa06065c9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf94.png",
+      "sha256": "43ac12ffef14f99f0f1431d19813c64ff611e35f1ff381e1f6fafd4586bb6364"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf95.png",
+      "sha256": "d7baa1863fa6fd78aac609e5eba8280d77d4e8437afe0095fc96af795ee09372"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067686-pdf96.png",
+      "sha256": "481a157709f5ef543ea75215446ffe7a5f0f7939dc2f54b5d04b14728d7777d3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf16.png",
+      "sha256": "7747f518388df8b6f51b0f0d790f63651f48a915f7a707d164a36862ea8ccfd1"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf17.png",
+      "sha256": "2a88ffeb2fe1af2764b3608502f82fc1f444998dec062abdc627b0a667de6ab1"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf19.png",
+      "sha256": "659e5f7f73be4050be1e833956fb87b7a66f312d31ae6dcf96ab72ff017343fd"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf20.png",
+      "sha256": "9e500eccfd685e9302a89a6f304a8ca9f46cd69ebee6d9a87a2e719538c9c930"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf21.png",
+      "sha256": "ab95f34730794bb108ebcb822b479b8f4db054a6793c39d8a1f1758bc694d47f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/06067687-pdf22.png",
+      "sha256": "9fd26d37bdd83f9dd7341560cae567d18164e2d5feddefc840239be9ddd1a635"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "sha256": "32f4b1ba3dab9e024491298cb50563eb09885febd5f7fb218058761275666a99"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf17.png",
+      "sha256": "426db6b19d88189db4a0e0ed1eb3b40e15360091f7430c3af143d7cf752354fa"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf18.png",
+      "sha256": "925faa993e0fcf15fd5feab880cc412e06c1c79023238f313f3d67d199591357"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf19.png",
+      "sha256": "2551542ae7ed65396c65eb6c73d4c2cb7b2b84b70bd2fa44b5a03f8a6463b22f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf20.png",
+      "sha256": "6295b42a3ccca0ff004f9c7e7d78fc35866b6e1200900e71901ffba4a6651493"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf21.png",
+      "sha256": "e72af8904cf833628815e95e91c1d2e3b8f03470cb9e8855705cc93be474e9b7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067684-pdf22.png",
+      "sha256": "09594e965d76bd9cedeac8b2d146060137970096ccba0b87cb42bc7b63bda5df"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067686-pdf108.png",
+      "sha256": "4b799c8538a2f80da3e47694f481f870ae394588c214e821875da7f7306b91c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067686-pdf109.png",
+      "sha256": "1a275ec23ec20b9178896f5a24b31276f4a50e7ec807a370df4175ae2957d187"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067687-pdf33.png",
+      "sha256": "4f8d0a768a421504ef39d2d04ece32ff747ea0aa271f9e36b5cfcffc8d169fed"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/06067687-pdf34.png",
+      "sha256": "fcbf14620a1ab0c603e3adc99fb8fbaeb27b69a85066014163ee953b433e04b2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "sha256": "91233d4b4b5920f0a39eb8f786e4a5ad24e9c3b94be845860b5a6498684dd050"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf103.png",
+      "sha256": "b7ca85078a83e8d9a28423bcbbb660486276f5445979e3b5c15f2033769420c0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf104.png",
+      "sha256": "44e35675fe5be7206990ff42b8ebb56b44739503d7a46e7d5b16cd80c8a951ef"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf108.png",
+      "sha256": "4b799c8538a2f80da3e47694f481f870ae394588c214e821875da7f7306b91c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf109.png",
+      "sha256": "1a275ec23ec20b9178896f5a24b31276f4a50e7ec807a370df4175ae2957d187"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf110.png",
+      "sha256": "b64543aed911645ed00a49770c149a68a26ac22b7723a4c2636d44c9af84e99e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf111.png",
+      "sha256": "bee1e97bd7ee7b44322c28118bb952045e2470749aa9c232443a50e2e357cce3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf117.png",
+      "sha256": "7f23f4462bd0704ec4dad8c0e14e06537c43d0a34e6804cc8a9673b24bc8f242"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf23.png",
+      "sha256": "a08e5f875d89a547fef3e363ee753d85fa577f9d0b34783b9f2553187ef54955"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf30.png",
+      "sha256": "a31ed69551bffeadec7773801d6352712eea052728289b7b975e063622d8c6d3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "sha256": "00787c5157e4f1bb690e0922db9d967d32f96283ef722a6a0f528487868cf175"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf27.png",
+      "sha256": "7728184a583ed69ba0dc2f1a3224de55b5956f52c080f124138a7c9f6247c3e8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf28.png",
+      "sha256": "dc04249f2e1917859f379b74311a6b383bac756918976753a15cc4f8a4d767e2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf29.png",
+      "sha256": "c365805db63e27f62afcaa366cc97b1860eecf9e8878b387477f8ef31f0602c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf30.png",
+      "sha256": "a7679dd52849a3f7b89beb28049c6bf1c5472de4e4b934a4fd2d2cc71a2e5aa6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf31.png",
+      "sha256": "be2ad300e12247444cbc994951a3f98a1b595a9da839bc75f72612b173d7aec2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf32.png",
+      "sha256": "385df64d81a9ff37d77e8b68620da958b23e08ce6b7b00894695af2491bdc652"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf33.png",
+      "sha256": "2761bd56a2f3c8e4e4759745422e7e3a11e45b795cae22c9b53fc8eb05c9f144"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf112.png",
+      "sha256": "22c606e1acb10a6fbe825d4e8a1497357500526f6313feb766ff180b347efc87"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf113.png",
+      "sha256": "a2bc608b9fde7da023d468acdf868b65d7edf0e7a45672be5c71567236b2622a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf13.png",
+      "sha256": "4480df6b86f446a8d7054622d1f6e92fb25a97175a7e4b8e2585fdb67cca9dec"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf14.png",
+      "sha256": "561d24cde285437bcb9f95cf66555659e90b5e6a75f80719b74fa0f2a7871218"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "sha256": "5175fcf7298e8e00c4a7010edbc6802bed9dd2190d0cad816dee4f27ae5006cb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf57.png",
+      "sha256": "8101233cb79d9e6ceb2a974342703c097f014dcc5082369e325cb1f1f167c7b1"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf58.png",
+      "sha256": "c2755a5edcee10b08494b4c1ea50fbf6f66b70f869ccc3b2c0bb9a5ba632a4c7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf59.png",
+      "sha256": "e54ec0e65ce76ad076a575dcebdeceb77126138f9281404388b9e0aad40595de"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf60.png",
+      "sha256": "25674898cf6b44ab23acd29c83e09a516b94ac8147f99b6391eccc8463799ba9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf116.png",
+      "sha256": "7fecee92020633178d65d89071864a6e4ff4fa428e7b1789ddeab9522b53bd6a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf117.png",
+      "sha256": "b2c0c68505e8d79cc41c5a147aa917c5920828ed11322dd9f24e7f8c660230f5"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf33.png",
+      "sha256": "4f8d0a768a421504ef39d2d04ece32ff747ea0aa271f9e36b5cfcffc8d169fed"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf34.png",
+      "sha256": "fcbf14620a1ab0c603e3adc99fb8fbaeb27b69a85066014163ee953b433e04b2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "sha256": "2e2e277c4fdf461a7ad940c8b9902d4ebe9f07fcfe35df60464736036543cba5"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf17.png",
+      "sha256": "426db6b19d88189db4a0e0ed1eb3b40e15360091f7430c3af143d7cf752354fa"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf18.png",
+      "sha256": "925faa993e0fcf15fd5feab880cc412e06c1c79023238f313f3d67d199591357"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf19.png",
+      "sha256": "2551542ae7ed65396c65eb6c73d4c2cb7b2b84b70bd2fa44b5a03f8a6463b22f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf20.png",
+      "sha256": "6295b42a3ccca0ff004f9c7e7d78fc35866b6e1200900e71901ffba4a6651493"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf21.png",
+      "sha256": "e72af8904cf833628815e95e91c1d2e3b8f03470cb9e8855705cc93be474e9b7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067684-pdf22.png",
+      "sha256": "09594e965d76bd9cedeac8b2d146060137970096ccba0b87cb42bc7b63bda5df"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf108.png",
+      "sha256": "4b799c8538a2f80da3e47694f481f870ae394588c214e821875da7f7306b91c2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067686-pdf109.png",
+      "sha256": "1a275ec23ec20b9178896f5a24b31276f4a50e7ec807a370df4175ae2957d187"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf23.png",
+      "sha256": "a08e5f875d89a547fef3e363ee753d85fa577f9d0b34783b9f2553187ef54955"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/06067687-pdf30.png",
+      "sha256": "a31ed69551bffeadec7773801d6352712eea052728289b7b975e063622d8c6d3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "sha256": "40254d097e66027b8906d802c73b15a2c955ebb4d258686936579f74c02304fa"
+    },
+    {
+      "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+      "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+    },
+    {
+      "path": "golden-v4/manifest.json",
+      "sha256": "35bdfa7ceb17f2051e32c36fc13c249ac0e220d4f376c0c3ba737c25664c20d6"
+    },
+    {
+      "path": "shared/lunar/audit-fixtures/calendar-golden-v2.1.json",
+      "sha256": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300"
+    },
+    {
+      "path": "tasks/calendar-audit/group-a-frozen-hashes.json",
+      "sha256": "781e407efdda2b81a77e8a2cd5792ee95da96a186ea7ac4fbbcaa5da673a00d5"
+    }
+  ]
+}

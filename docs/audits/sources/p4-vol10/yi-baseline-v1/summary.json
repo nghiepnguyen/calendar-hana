@@ -1,0 +1,418 @@
+{
+  "scope": "MEASURED_BASELINE_NOT_GOLDEN",
+  "baselineCommit": "db382ba05175f061e0b1031de5361b49a2973ced",
+  "baselineTree": "ad1de4d9555e811bd89a31e36faeeefcd5eed49b",
+  "counts": {
+    "dates": 1095,
+    "headings": 31755,
+    "rowsWithListedUnknown": 16425,
+    "rawYiUnknownEleven": 7115,
+    "rawYiKnownTrueDespiteUnknown": 8215,
+    "warehouseDeferred": 1095,
+    "preYiUnknown": 4273,
+    "preYiUnknownEleven": 3718,
+    "preYiUnknownWarehouse": 555,
+    "preYiUnknownOther": 0,
+    "rawUnknownSuppressed": 3397,
+    "finalUndetermined": 4040,
+    "undeterminedWarehouse": 539,
+    "undeterminedRawElevenUnknown": 3418,
+    "undeterminedOtherState": 83,
+    "unresolvedJi": 0,
+    "lifted": 0,
+    "blocked": 179,
+    "conflicts": 0
+  },
+  "perGod": {
+    "母倉": {
+      "headings": [
+        "修倉庫",
+        "栽種",
+        "牧養",
+        "納畜",
+        "納財"
+      ],
+      "listedRows": 5475,
+      "rawYiUnknownRows": 1685,
+      "knownPresentMasksRows": 2695,
+      "warehouseRows": 1095,
+      "finalUndeterminedRows": 1193
+    },
+    "福德": {
+      "headings": [
+        "修宮室",
+        "宴會"
+      ],
+      "listedRows": 2190,
+      "rawYiUnknownRows": 896,
+      "knownPresentMasksRows": 1294,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 286
+    },
+    "天恩": {
+      "headings": [
+        "宴會"
+      ],
+      "listedRows": 1095,
+      "rawYiUnknownRows": 307,
+      "knownPresentMasksRows": 788,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 101
+    },
+    "天巫": {
+      "headings": [
+        "祈福",
+        "祭祀"
+      ],
+      "listedRows": 2190,
+      "rawYiUnknownRows": 588,
+      "knownPresentMasksRows": 1602,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 342
+    },
+    "天后": {
+      "headings": [
+        "求醫療病"
+      ],
+      "listedRows": 1095,
+      "rawYiUnknownRows": 425,
+      "knownPresentMasksRows": 670,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 176
+    },
+    "天醫": {
+      "headings": [
+        "求醫療病"
+      ],
+      "listedRows": 1095,
+      "rawYiUnknownRows": 425,
+      "knownPresentMasksRows": 670,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 176
+    },
+    "除神": {
+      "headings": [
+        "掃舍宇",
+        "整容剃頭",
+        "求醫療病"
+      ],
+      "listedRows": 3285,
+      "rawYiUnknownRows": 2345,
+      "knownPresentMasksRows": 940,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 1536
+    },
+    "驛馬": {
+      "headings": [
+        "般移",
+        "行幸遣使"
+      ],
+      "listedRows": 2190,
+      "rawYiUnknownRows": 881,
+      "knownPresentMasksRows": 1309,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 316
+    },
+    "天馬": {
+      "headings": [
+        "般移",
+        "行幸遣使"
+      ],
+      "listedRows": 2190,
+      "rawYiUnknownRows": 881,
+      "knownPresentMasksRows": 1309,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 316
+    },
+    "吉期": {
+      "headings": [
+        "行幸遣使"
+      ],
+      "listedRows": 1095,
+      "rawYiUnknownRows": 417,
+      "knownPresentMasksRows": 678,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 141
+    },
+    "鳴吠": {
+      "headings": [
+        "安葬"
+      ],
+      "listedRows": 1095,
+      "rawYiUnknownRows": 720,
+      "knownPresentMasksRows": 375,
+      "warehouseRows": 0,
+      "finalUndeterminedRows": 306
+    }
+  },
+  "perHeading": {
+    "乘船渡水": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "修倉庫": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 555,
+      "finalUndetermined": 539,
+      "warehouse": 1095
+    },
+    "修宮室": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 589,
+      "knownPresentMasks": 506,
+      "preYiUnknown": 207,
+      "finalUndetermined": 185,
+      "warehouse": 0
+    },
+    "入學": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "嫁娶": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "安牀": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "安葬": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 720,
+      "knownPresentMasks": 375,
+      "preYiUnknown": 322,
+      "finalUndetermined": 306,
+      "warehouse": 0
+    },
+    "宴會": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 307,
+      "knownPresentMasks": 788,
+      "preYiUnknown": 112,
+      "finalUndetermined": 101,
+      "warehouse": 0
+    },
+    "掃舍宇": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 1006,
+      "knownPresentMasks": 89,
+      "preYiUnknown": 916,
+      "finalUndetermined": 865,
+      "warehouse": 0
+    },
+    "整容剃頭": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 914,
+      "knownPresentMasks": 181,
+      "preYiUnknown": 531,
+      "finalUndetermined": 495,
+      "warehouse": 0
+    },
+    "栽種": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 451,
+      "knownPresentMasks": 644,
+      "preYiUnknown": 191,
+      "finalUndetermined": 180,
+      "warehouse": 0
+    },
+    "求嗣": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "求醫療病": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 425,
+      "knownPresentMasks": 670,
+      "preYiUnknown": 186,
+      "finalUndetermined": 176,
+      "warehouse": 0
+    },
+    "營建宮室": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "牧養": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 451,
+      "knownPresentMasks": 644,
+      "preYiUnknown": 209,
+      "finalUndetermined": 190,
+      "warehouse": 0
+    },
+    "破屋壊垣": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "祈福": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 294,
+      "knownPresentMasks": 801,
+      "preYiUnknown": 121,
+      "finalUndetermined": 107,
+      "warehouse": 0
+    },
+    "祭祀": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 294,
+      "knownPresentMasks": 801,
+      "preYiUnknown": 253,
+      "finalUndetermined": 235,
+      "warehouse": 0
+    },
+    "立券交易": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 9,
+      "warehouse": 0
+    },
+    "納畜": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 411,
+      "knownPresentMasks": 684,
+      "preYiUnknown": 173,
+      "finalUndetermined": 149,
+      "warehouse": 0
+    },
+    "納財": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 372,
+      "knownPresentMasks": 723,
+      "preYiUnknown": 162,
+      "finalUndetermined": 135,
+      "warehouse": 0
+    },
+    "開倉庫出貨財": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 24,
+      "warehouse": 0
+    },
+    "納采問名": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 9,
+      "warehouse": 0
+    },
+    "結婚姻": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 9,
+      "warehouse": 0
+    },
+    "興造動土": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "般移": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 464,
+      "knownPresentMasks": 631,
+      "preYiUnknown": 190,
+      "finalUndetermined": 175,
+      "warehouse": 0
+    },
+    "行幸遣使": {
+      "rows": 1095,
+      "listedUnknown": 1095,
+      "rawYiUnknown": 417,
+      "knownPresentMasks": 678,
+      "preYiUnknown": 145,
+      "finalUndetermined": 141,
+      "warehouse": 0
+    },
+    "豎柱上梁": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    },
+    "開市": {
+      "rows": 1095,
+      "listedUnknown": 0,
+      "rawYiUnknown": 0,
+      "knownPresentMasks": 0,
+      "preYiUnknown": 0,
+      "finalUndetermined": 1,
+      "warehouse": 0
+    }
+  },
+  "limits": [
+    "Unknown tokens remain listed even when another listed god proves 宜.",
+    "Per-god counts overlap; do not sum to obtain unique heading rows.",
+    "Raw 宜 measurement mirrors baseline lookup; no independent new presence authority is asserted.",
+    "Undetermined buckets classify observable context, not exclusive root causes.",
+    "Warehouse is deferred, not resolved by a mother-store god label."
+  ]
+}

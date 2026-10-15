@@ -1,0 +1,258 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "tian-yi",
+  "han": "天醫",
+  "aliases": [],
+  "authorityId": "p4-yi-tianyi-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "DEFINITION",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 5800,
+      "length": 87,
+      "quote": "　　總要厯曰天醫者天之巫醫其日宜請藥避病尋巫禱祀○厯例曰天醫者正月起戌順行十二辰○曹震圭曰天醫者三合後辰能使萬物死而復生損而復益如正月建寅三合為寅午戌而戌為寅之後辰是也餘倣此",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "ADJACENT_EDITORIAL_SCOPE",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 5888,
+      "length": 311,
+      "quote": "　　選擇宗鏡曰天喜者正月戌二月亥三月子四月丑順輪十二月乃日支與月建三合故曰天喜○通書曰春戌夏丑秋辰冬未今人不原其理嘗於卦書中得其要領大抵取日辰與月建相合為天喜也與成日同位按月建後二辰生氣也又後二辰即生氣之生氣也故曰天醫又成日也萬物莫不喜其有成故曰天喜厯書以春戌夏丑秋辰冬未為天喜日而曹震圭謂母喜見子然亦有成就之義如春之令屬木木生火火墓在戌至於戌則火之道成矣故春以戌為天喜夏之令屬火土火土生金金墓在丑至於丑則金之道成矣故夏以丑為天喜秋辰冬未可以類推今通書與宗鏡皆以成日為天喜惟寅申巳亥四孟月與戌丑辰未相合或古有兩説或一為後起俱未可知然成日之理為長且通書總論既取成日而立成又用戌丑辰未日不宜自相矛盾故改從畫一而並存其説以備㕘考",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "USE_SCOPE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 5645,
+      "length": 221,
+      "quote": "　　{{SK anchor|成日}}{{SK notes|天喜　天醫}}\n　　宜入學安撫邊境般移築隄防開市\n　　又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名嫁娶五月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與天喜併}}\n　　{{SK anchor|乂為天醫宜求醫療病}}\n　　按成為合局之終開為生氣之始故其日宜入學原始要終之義也宜安撫邊境者功成而永奠也般移築隄防開市皆取成義天喜舊宜封拜自宜上官義同建日",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_求醫療病",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 4257,
+      "length": 123,
+      "quote": "　　{{SK anchor|求醫療病}}\n　　宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n　　忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔{{SKchar|2959}}望日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 57,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf57.png",
+      "transcription": "成　天醫　天喜 (monthly chart)",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 58,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf58.png",
+      "transcription": "天醫者正月起戌順行十二辰；正月建寅三合為寅午戌而戌為寅之後辰是也",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 59,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf59.png",
+      "transcription": "又後二辰即生氣之生氣也故曰天醫又成日也",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 60,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067682-pdf60.png",
+      "transcription": "然成日之理為長…故改從畫一而並存其説以備參考 (天喜 discussion)",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 116,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf116.png",
+      "transcription": "成日　天喜　天醫",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 117,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067686-pdf117.png",
+      "transcription": "又為天醫宜求醫療病",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 33,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf33.png",
+      "transcription": "求醫療病",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 34,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/06067687-pdf34.png",
+      "transcription": "后除日破日天醫開日解神除神",
+      "transcriptionScope": "Reviewed excerpt, punctuation and scope notes supplied here only; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct visual scan, chart and explicit monthly source sequence"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact Jie monthly branch selectionContext.MONTH_JIAN_BRANCH, 子=0…亥=11; not lunarMonth or whole crossing-day officer",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid sexagenary day pillar; no day stem predicate",
+      "sourceRefs": [0]
+    }
+  ],
+  "predicate": {
+    "type": "MONTH_JIAN_FORWARD_BRANCH_OFFSET",
+    "offset": 8,
+    "expression": "(dayBranch - monthJianBranch + 12) % 12 == 8",
+    "byMonthJian": {
+      "子": "申",
+      "丑": "酉",
+      "寅": "戌",
+      "卯": "亥",
+      "辰": "子",
+      "巳": "丑",
+      "午": "寅",
+      "未": "卯",
+      "申": "辰",
+      "酉": "巳",
+      "戌": "午",
+      "亥": "未"
+    },
+    "derivation": "正月起戌順行十二辰 and explicit 正月建寅…戌 fixes 寅→戌, advancing both monthly and target branch by 1. Position coincides with 成日, 8 forward / 4 backward steps, not one branch backward.",
+    "sourceRefs": [0, 1, 2]
+  },
+  "coverage": {
+    "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+    "calendarCoverage": "Inherited only from validated exact-Jie Month Jian/day-pillar input provider; no independent dated restriction",
+    "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "No source clause removes a hit in the monthly table; negative/protected medical 忌 remains a separate composition layer.",
+      "sourceRefs": [0, 3]
+    },
+    {
+      "kind": "TIAN_XI_SEASON_VARIANT_NOT_TIAN_YI",
+      "detail": "Adjacent 春戌夏丑秋辰冬未 and competing 天喜 models are recorded as 天喜 discussion, not a replacement 天醫 seasonal lookup.",
+      "sourceRefs": [1]
+    },
+    {
+      "kind": "DEFINITION_RITUAL_USE_NOT_EXTENDED",
+      "detail": "尋巫禱祀 remains definition quotation, not new 祭祀/祈福 heading in adopted 卷十/十一 use scope.",
+      "sourceRefs": [0, 2, 3]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "求醫療病",
+      "normalized": "求醫療病",
+      "activities": ["medical"],
+      "sourceRefs": [2, 3],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "raw-yi-vs-scan-you",
+      "status": "RESOLVED_ORTHOGRAPHIC_TRANSCRIPTION_NO_PREDICATE_DELTA",
+      "detail": "卷十 raw anchor 乂為天醫宜求醫療病, scan PDF117 又為天醫宜求醫療病. Keep raw and record scan separately; no new god alias."
+    },
+    {
+      "id": "shared-position-scope",
+      "status": "RESOLVED_SEPARATE_NAMED_USAGE",
+      "detail": "成日/天喜 share position but own headings; do not alias either to 天醫 or inherit their 宜."
+    },
+    {
+      "id": "seasonal-tian-xi",
+      "status": "SCOPED_TO_ADJACENT_TIAN_XI_DISCUSSION",
+      "detail": "Read full editorial paragraph; monthly 天醫 rule is explicit and unchanged by adjacent 天喜 alternatives."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Locked raw offsets + direct scans/chart + monthly derivation + current inventory/definitions/catalog/legacy checks",
+    "limitations": [
+      "Single reviewer; no independent second review",
+      "Not Golden or presence implementation",
+      "No date coverage beyond validated provider"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "No accepted aliases; 成日/天喜 remain distinct named scopes",
+    "No lunar-day/soil/phase condition added to presence",
+    "天醫 present alone does not remove medical raw/protected 忌 or imply final recommendation"
+  ]
+}

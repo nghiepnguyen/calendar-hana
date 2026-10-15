@@ -1,0 +1,28 @@
+{
+  "task": "3.1",
+  "date": "2026-10-14",
+  "status": "PASS",
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "verificationPython": "from pathlib import Path\nimport json,hashlib,re,collections\nsha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()\nb=Path('docs/audits/sources/p4-vol10');out=b/'yi-fixture-matrix-v1'\nm=json.loads((out/'matrix.json').read_text());ap=Path(m['authority']['path']);a=json.loads(ap.read_text())\nassert sha(ap)==m['authority']['sha256']\nassert sha(Path(m['authority']['gatePath']))==m['authority']['gateSha256']\nassert m['status']=='FIXTURE_SELECTION_PLAN_NOT_GOLDEN'\nassert m['categories']==['present','absent','boundary','missingInput','outsideCoverage','alias']\nassert len(m['rows'])==11\npillars={s+b for i in range(60) for s,b in [('甲乙丙丁戊己庚辛壬癸'[i%10],'子丑寅卯辰巳午未申酉戌亥'[i%12])]}\ncounts=collections.Counter();seen=set();pairs=set()\nfor row,e in zip(m['rows'],a['entries']):\n for k in ['id','han','authorityId','ruleId']:assert row[k]==e[k]\n assert row['ruleId'] not in seen;seen.add(row['ruleId'])\n assert row['entryPath']==e['provenance']['entryPath']\n assert row['sourceRefs']==e['predicate']['sourceRefs']\n assert row['domainPlan']==e['coverage']['structuralDomain']\n assert set(row['cells'])==set(m['categories'])\n for cat,cell in row['cells'].items():\n  assert cell['selectionPlan'];counts[cell['applicability']]+=1\n  if cat!='alias':assert cell['applicability']=='APPLICABLE'\n  if cell['applicability']=='NOT_APPLICABLE':assert cell['reason'] and not e['aliases']\n  assert 'expected' not in cell\n assert row['cells']['missingInput']['requiredInputKeys']==[x['key'] for x in e['operandInputs'] if x['required']]\n assert row['cells']['alias']['acceptedAliases']==e['aliases']\n assert row['irrelevantInputPlan']['notNeeded']==e['coverage']['notNeeded']\n for cat in ['present','absent','boundary']:\n  for pair in re.findall(r'[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]',row['cells'][cat]['selectionPlan']):\n   assert pair in pillars,(row['han'],pair);pairs.add(pair)\nassert counts=={'APPLICABLE':56,'NOT_APPLICABLE':10}\nassert [r['han'] for r in m['rows'] if r['cells']['alias']['applicability']=='APPLICABLE']==['福德']\nmonthly=[e for e in a['entries'] if len(e['operandInputs'])==2 and e['operandInputs'][0]['key']=='MONTH_JIAN_BRANCH'];assert len(monthly)==7\nassert len([e for e in a['entries'] if len(e['operandInputs'])==1])==3\n# Replay prior gate proof; only source/lock checks, never resolver/scorer/presence.\nexec(json.loads((b/'yi-authority-gate-v1/validation.json').read_text())['verificationPython'],{})\nprint('PASS: 11 rows / 66 cells / 56 applicable / 10 justified N/A;',len(pairs),'valid candidate pillars; authority/gate/prior locks verified; no Golden expected')\n\nlockPath=out/\"lock.json\"\nif lockPath.exists():\n for f in json.loads(lockPath.read_text())[\"files\"]:assert sha(Path(f[\"path\"]))==f[\"sha256\"],f[\"path\"]\n print(\"PASS matrix integrity lock\")\n",
+  "commands": [
+    "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/validation.json'))['verificationPython'])\nPY",
+    "npx prettier --ignore-path /dev/null --check docs/audits/sources/p4-vol10/yi-fixture-matrix-v1",
+    "git diff --check"
+  ],
+  "checks": [
+    "11 unique authority-bound rows × 6 categories = 66 cells",
+    "56 applicable cells and 10 alias N/A with explicit reasons",
+    "Missing-input keys/sourceRefs/domain/aliases/notNeeded match authority snapshot",
+    "24 distinct explicit candidate pillars have valid sexagenary pairing; not an expected derivation",
+    "7 monthly domains / 3 day-only domains / 母倉 extra soil/date domain",
+    "Authority/gate hashes and replayed recursive prior locks/raw/scan proof PASS",
+    "623 prior source/authority/shared files byte-preserved against pre-task snapshot"
+  ],
+  "limits": [
+    "No expected/Golden freeze, full domain generation or implementation; 3.2–3.6 open",
+    "Historical validators print their original next-step labels; they validate frozen evidence, do not set current task status",
+    "Provider coverage API shape/provenance finalized 4.1; no invented cutoff",
+    "Single reviewer, no second independent source or Golden review"
+  ]
+}

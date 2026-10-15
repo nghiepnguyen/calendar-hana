@@ -1,0 +1,85 @@
+{
+  "scope": "P4_C_5_3_FOCUSED_WIRING_NOT_6_X_GATE",
+  "mutations": [
+    {
+      "mutation": "drop_preclassification_injection",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 1,
+      "failures": [
+        "P4-C 5.3 opt-in assembly contract builds all eleven stable provider traces before heading classification"
+      ]
+    },
+    {
+      "mutation": "present_becomes_unknown",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 25,
+      "failures": [
+        "P4-C 5.2 ANY decision RED decision 1 any:1:present",
+        "P4-C 5.2 ANY decision RED decision 4 any:2:present-present",
+        "P4-C 5.2 ANY decision RED decision 5 any:2:present-absent",
+        "P4-C 5.2 ANY decision RED decision 6 any:2:present-unknown",
+        "P4-C 5.2 ANY decision RED decision 7 any:2:absent-present",
+        "P4-C 5.2 ANY decision RED decision 10 any:2:unknown-present",
+        "P4-C 5.2 ANY decision RED decision 13 any:3:present-present-present",
+        "P4-C 5.2 ANY decision RED decision 14 any:3:present-present-absent",
+        "P4-C 5.2 ANY decision RED decision 15 any:3:present-present-unknown",
+        "P4-C 5.2 ANY decision RED decision 16 any:3:present-absent-present",
+        "P4-C 5.2 ANY decision RED decision 17 any:3:present-absent-absent",
+        "P4-C 5.2 ANY decision RED decision 18 any:3:present-absent-unknown",
+        "P4-C 5.2 ANY decision RED decision 19 any:3:present-unknown-present",
+        "P4-C 5.2 ANY decision RED decision 20 any:3:present-unknown-absent",
+        "P4-C 5.2 ANY decision RED decision 21 any:3:present-unknown-unknown",
+        "P4-C 5.2 ANY decision RED decision 22 any:3:absent-present-present",
+        "P4-C 5.2 ANY decision RED decision 23 any:3:absent-present-absent",
+        "P4-C 5.2 ANY decision RED decision 24 any:3:absent-present-unknown",
+        "P4-C 5.2 ANY decision RED decision 25 any:3:absent-absent-present",
+        "P4-C 5.2 ANY decision RED decision 28 any:3:absent-unknown-present",
+        "P4-C 5.2 ANY decision RED decision 31 any:3:unknown-present-present",
+        "P4-C 5.2 ANY decision RED decision 32 any:3:unknown-present-absent",
+        "P4-C 5.2 ANY decision RED decision 33 any:3:unknown-present-unknown",
+        "P4-C 5.2 ANY decision RED decision 34 any:3:unknown-absent-present",
+        "P4-C 5.2 ANY decision RED decision 37 any:3:unknown-unknown-present"
+      ]
+    },
+    {
+      "mutation": "erase_unresolved_ids",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 25,
+      "failures": [
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 3 any:1:unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 6 any:2:present-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 9 any:2:absent-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 10 any:2:unknown-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 11 any:2:unknown-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 12 any:2:unknown-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 15 any:3:present-present-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 18 any:3:present-absent-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 19 any:3:present-unknown-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 20 any:3:present-unknown-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 21 any:3:present-unknown-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 24 any:3:absent-present-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 27 any:3:absent-absent-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 28 any:3:absent-unknown-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 29 any:3:absent-unknown-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 30 any:3:absent-unknown-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 31 any:3:unknown-present-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 32 any:3:unknown-present-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 33 any:3:unknown-present-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 34 any:3:unknown-absent-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 35 any:3:unknown-absent-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 36 any:3:unknown-absent-unknown",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 37 any:3:unknown-unknown-present",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 38 any:3:unknown-unknown-absent",
+        "P4-C 5.2 unresolved trace independent of ANY result RED unresolved 39 any:3:unknown-unknown-unknown"
+      ]
+    }
+  ],
+  "restored": true,
+  "restoredSha256": {
+    "shared/lunar/p4YiFullDayCore.ts": "b47aa000bdf4e0e557df143035c033af39df738fcacb038a71a48675a26c4cc0",
+    "shared/lunar/p4YiEvidence.ts": "dd9a4a9bc3e1f97a45a32edef50420d122b55b86a6a54143385caa37888bd096"
+  }
+}

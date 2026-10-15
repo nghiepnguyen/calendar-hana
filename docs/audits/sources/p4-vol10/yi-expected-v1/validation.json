@@ -1,0 +1,52 @@
+{
+  "task": "3.2",
+  "date": "2026-10-14",
+  "status": "PASS_PENDING_REVIEW_AND_FREEZE",
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "verificationPython": "from pathlib import Path\nimport ast,collections,datetime as dt,hashlib,json,re,subprocess,sys\nout=Path('docs/audits/sources/p4-vol10/yi-expected-v1')\nsha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()\nfor path,h in json.loads((out/'prior-hashes.json').read_text()).items():assert sha(Path(path))==h,path\nbasis=json.loads((out/'source-basis.json').read_text());expected=json.loads((out/'expected.json').read_text());matrix=json.loads(Path('docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/matrix.json').read_text())\n# Isolation proof: generator imports only the listed standard library modules.\ntree=ast.parse((out/'derive.py').read_text());allowed={'argparse','bisect','collections','copy','datetime','hashlib','json','re','pathlib'}\nfor n in ast.walk(tree):\n if isinstance(n,(ast.Import,ast.ImportFrom)):\n  modules=[n.module] if isinstance(n,ast.ImportFrom) else [a.name for a in n.names]\n  assert all(m in allowed for m in modules),modules\n if isinstance(n,ast.Call) and isinstance(n.func,ast.Name):assert n.func.id not in {'eval','exec','__import__','compile'},n.func.id\nsrc=(out/'derive.py').read_text()\nassert not re.search(r\"\\[['\\\"]predicate['\\\"]\\]|resolveP4|getP4|scorer|subprocess|importlib\",src)\nassert expected['task']=='3.2' and expected['frozen'] is False\nassert expected['status']=='EXPECTED_DERIVED_PENDING_3_3_TO_3_6'\nassert expected['basisSha256']==sha(out/'source-basis.json')\nentries={e['han']:e for e in basis['entries']};pillars={'甲乙丙丁戊己庚辛壬癸'[i%10]+'子丑寅卯辰巳午未申酉戌亥'[i%12] for i in range(60)}\nfixtures=expected['presenceFixtures'];by_id={f['id']:f for f in fixtures};assert len(by_id)==len(fixtures)\ncounts=collections.defaultdict(collections.Counter)\nfor f in fixtures:\n e=entries[f['han']];x=f['expected'];p=f['inputProvenance'];v=f['inputs']\n assert f['derivation']['calculation'] and f['derivation']['rawAnchor']==e['rawAnchor']\n for category in ['present','absent']:\n  if category in f['categories']:assert x['outcome']==category,f['id']\n assert f['derivation']['sourceRefs']==e['sourceRefs']==x['sourceRefs']\n assert x['ruleId']==e['ruleId'] and x['authorityId']==e['authorityId'] and x['canonicalHan']==e['han']\n assert x['authorityStatus']==('OWNER_ADOPTED_SOURCE_DEPENDENT' if f['han']=='母倉' else 'SOURCE_REVIEWED')\n assert f['requestName'] in [e['han'],*e['acceptedAliases']]\n assert p['validPillar'] in pillars\n if 'DAY_PILLAR' in v:assert v['DAY_PILLAR']==p['validPillar']\n if 'DAY_BRANCH' in v:assert v['DAY_BRANCH']==p['validPillar'][1]\n if 'MONTH_JIAN_BRANCH' in v:assert v['MONTH_JIAN_BRANCH'] in '子丑寅卯辰巳午未申酉戌亥'\n if p['kind']=='DATED':\n  day=dt.date.fromisoformat(p['civilDateUtc7']);instant=dt.datetime.fromisoformat(p['instantUtc']);assert instant.astimezone(dt.timezone(dt.timedelta(hours=7))).date()==day\n  c=p['dayCalculation'];assert c['elapsedDays']==(day-dt.date(1900,1,1)).days\n  assert c['jdn']==2415021+c['elapsedDays']\n  assert p['validPillar']=='甲乙丙丁戊己庚辛壬癸'[c['index']%10]+'子丑寅卯辰巳午未申酉戌亥'[c['index']%12]\n  if 'MONTH_JIAN_BRANCH' in v:assert v['MONTH_JIAN_BRANCH']==p['monthCalculation']['month']\n for cat in f['categories']:counts[f['han']][cat]+=1\nfor row in matrix['rows']:\n han=row['han'];group=[f for f in fixtures if f['han']==han];outcomes={f['expected']['outcome'] for f in group}\n assert outcomes=={'present','absent','unknown'},(han,outcomes)\n for cat,cell in row['cells'].items():\n  if cell['applicability']=='APPLICABLE':assert counts[han][cat]>0,(han,cat)\n  else:assert cat=='alias' and not any(f['requestName']!=han for f in group)\n for key in entries[han]['requiredInputs']:\n  missing=by_id[row['id']+':missing-'+key];assert key not in missing['inputs'] and missing['expected']['outcome']=='unknown'\n  for state in ['unknown','outside']:\n   assert by_id[row['id']+':provider-'+state+'-'+key]['expected']['outcome']=='unknown'\n# Separate literal sentinel expectations from the viewed source, not generated counts.\nfor id,outcome in {'tian-en:range-edge-59':'absent','tian-en:range-edge-0':'present','tian-en:range-edge-4':'present','tian-en:range-edge-5':'absent','tian-en:range-edge-14':'absent','tian-en:range-edge-15':'present','tian-en:range-edge-19':'present','tian-en:range-edge-20':'absent','tian-en:range-edge-44':'absent','tian-en:range-edge-45':'present','tian-en:range-edge-49':'present','tian-en:range-edge-50':'absent','ming-fei:corrected-set-neighbor-30':'present','ming-fei:corrected-set-neighbor-45':'present','mu-cang:soil-override-ordinary-replaced':'absent','mu-cang:soil-override-巳':'present','mu-cang:soil-override-午':'present','mu-cang:coverage-edge-2024-12-31':'unknown','mu-cang:coverage-edge-2025-01-01':'absent','mu-cang:coverage-edge-2027-12-31':'present','mu-cang:coverage-edge-2028-01-01':'unknown','mu-cang:soil-unknown-no-fallback':'unknown'}.items():assert by_id[id]['expected']['outcome']==outcome,id\nfor pillar in ['庚寅','壬寅','戊午','戊申','癸亥']:\n f=by_id['ming-fei:candidate-absent-'+pillar];assert f['expected']['outcome']=='absent'\nfor han in ['天恩','除神','鳴吠']:\n for f in [f for f in fixtures if f['han']==han]:assert 'MONTH_JIAN_BRANCH' not in f['inputs']\nsoil=[f for f in fixtures if f['id'].startswith('mu-cang:soil-boundary-')];assert len(soil)==72\nfor f in soil:\n position=f['inputProvenance']['testedSoilBoundary']['position']\n assert f['inputs']['SOIL_REIGN_STATE']['state']==('present' if position in ['onset','onset-plus1','li-minus1'] else 'absent'),f['id']\nseason=[f for f in fixtures if f['id'].startswith('mu-cang:season-jie-')];assert len(season)==36\nfor f in season:assert f['inputs']['SOIL_REIGN_STATE']['state']=='absent'\nfor e in basis['entries']:\n if len(e['requiredInputs'])==2:\n  group=[f for f in fixtures if f['han']==e['han'] and ':jie-2025-' in f['id']];assert len(group)==36\n  for term in [19,21,23,1,3,5,7,9,11,13,15,17]:\n   trio=[by_id[e['id']+f':jie-2025-{term}-{delta}'] for delta in [-1,0,1]]\n   assert trio[0]['inputProvenance']['validPillar']==trio[1]['inputProvenance']['validPillar']==trio[2]['inputProvenance']['validPillar']\n   assert trio[0]['inputs']['MONTH_JIAN_BRANCH']!=trio[1]['inputs']['MONTH_JIAN_BRANCH']==trio[2]['inputs']['MONTH_JIAN_BRANCH']\nassert len(expected['identityFixtures'])==25 and all(f['expected']=={'aliasesToThisEntry':False} for f in expected['identityFixtures'])\nassert len(expected['malformedFixtures'])==24 and all(f['expected']['outcome']=='error' and f['derivation'] for f in expected['malformedFixtures'])\nassert collections.Counter(f['requestName'] for f in fixtures if f['requestName']!=f['han'])=={'福徳':3}\nsubprocess.run([sys.executable,str(out/'derive.py')],check=True)\nlock=out/'lock.json'\nif lock.exists():\n for f in json.loads(lock.read_text())['files']:assert sha(Path(f['path']))==f['sha256'],f['path']\nprint('PASS: 11 gods / all 56 applicable matrix cells; 906 presence + 25 identity + 24 malformed; source derivation, 72 soil civil-edge / 36 seasonal instant-edge / 252 monthly instant-edge cases; imports isolated; 645 prior bytes unchanged')\n",
+  "commands": [
+    "python3 docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+    "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-expected-v1/validation.json'))['verificationPython'])\nPY",
+    "python3 -m py_compile docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+    "npx prettier --ignore-path /dev/null --check docs/audits/sources/p4-vol10/yi-expected-v1/*.json docs/audits/sources/p4-vol10/yi-expected-v1/README.md",
+    "git diff --check",
+    "npm run lint",
+    "npm run typecheck",
+    "graphify update ."
+  ],
+  "checks": [
+    "Every fixture has source-bound derivation, valid input and version-qualified identity trace",
+    "Each applicable matrix cell represented, alias N/A retained",
+    "Independent JDN/pillar arithmetic checked against 100 frozen calendar records; frozen JPL rows supply astronomy input only",
+    "12 HKO 四立 civil dates agree with independent JPL UTC+7 dates",
+    "72 soil date boundary cases, 36 exact seasonal crossing cases and 252 exact monthly crossing cases",
+    "Source raw slices/scan correction policy + 645 protected prior file hashes unchanged",
+    "AST standard-library-only imports and no project predicate/evaluator/resolver/scorer calls",
+    "No expected overwrite (--write exclusive), read-only reproduction succeeds",
+    "Oxlint/main TypeScript/functions TypeScript passed; graph updated for new audit script",
+    "Present/absent selection labels match independently derived outcome for every labeled fixture; unknown/coverage boundaries stay distinct"
+  ],
+  "limits": [
+    "Expected arithmetic is independently implemented in Python, same single source reviewer; no second independent Golden review",
+    "Full 720/60 domains 3.3, heading/ANY 3.4, review 3.5, commit freeze 3.6 remain open",
+    "Declarative input/evidence contract; final runtime API belongs to 4.1",
+    "Frozen astronomy/calendar input references reused; not a fresh astronomy audit",
+    "S1 canonical/P5 warehouse unchanged; runtime unaffected",
+    "Ruff/Bandit/MyPy unavailable; stdlib compile/AST isolation/reproduction used for this audit-only Python script"
+  ],
+  "corrections": [
+    {
+      "classification": "SPEC_BUG",
+      "scope": "Fixture selection generator only, pre-review/pre-freeze",
+      "problem": "First structural validator found no boundary-tagged 除神 fixture although present/absent candidates existed",
+      "resolution": "Added 12 未/申/酉/戌 edge/stem-invariance fixtures; all prior 894 presence expected records and identity/malformed records asserted identical. No source, authority or production expectation changed."
+    },
+    {
+      "classification": "SPEC_BUG",
+      "scope": "Validator sentinel only",
+      "problem": "Sentinel assumed 2027-12-31 inside-coverage boundary would be absent",
+      "resolution": "Independent date calculation yields 甲申 / 子建 / soil absent; winter 申酉 makes present. Corrected validator sentinel, expected bytes unchanged; being coverage endpoint is not an absent rule."
+    }
+  ]
+}

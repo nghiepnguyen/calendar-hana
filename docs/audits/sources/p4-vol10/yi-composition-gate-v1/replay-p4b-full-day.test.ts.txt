@@ -1,0 +1,14 @@
+// Evidence-only replay (copy to shared/lunar/ to run): historical P4-B full-day tests with
+// resolveP4FullDay swapped for resolveP4YiDay; assertions unchanged.
+import { vi } from 'vitest'
+vi.mock('./p4FullDayComposition', async (orig) => {
+  const m = (await orig()) as Record<string, unknown>
+  const { resolveP4YiDay } = await import('./p4YiDayComposition')
+  return { ...m, resolveP4FullDay: (a: string, b: string, c?: never) => resolveP4YiDay(a, b, c) }
+})
+await import('./p4FullDayComposition.test')
+await import('./p4PuzhuEnd.test')
+await import('./p4LunarDayComposition.test')
+await import('./p4LunarPhase.test')
+await import('./p4SoilConvention.test')
+await import('./p4RemainingJi.test')

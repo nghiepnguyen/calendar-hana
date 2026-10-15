@@ -1,0 +1,551 @@
+{
+  "scope": "MEASURED_AUDIT_ONLY_NOT_GOLDEN",
+  "baseline": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+  "reasonGolden": "docs/audits/sources/p4-vol10/yi-propagation-v1/",
+  "counts": {
+    "dates": 1095,
+    "rows": 31755,
+    "changedRows": 3803,
+    "unexplained": 0,
+    "unresolvedJiRows": 0,
+    "conflicts": 0,
+    "p4cUnknownOperands": 0,
+    "p4cUnknownTracedRows": 0,
+    "finalUndeterminedBefore": 4040,
+    "finalUndeterminedAfter": 642
+  },
+  "undeterminedBuckets": {
+    "before": {
+      "RAW_YI_UNKNOWN_ELEVEN": 3418,
+      "P5_WAREHOUSE": 539,
+      "OTHER_STATE_WITH_KNOWN_RAW_YI": 83
+    },
+    "after": {
+      "P5_WAREHOUSE": 539,
+      "OTHER_STATE_WITH_KNOWN_YI": 103
+    }
+  },
+  "transitions": {
+    "RECORDED_YI_RESOLVED undetermined>not_recorded": 2197,
+    "RECORDED_YI_RESOLVED undetermined>only_yi": 569,
+    "RECORDED_YI_RESOLVED undetermined>only_ji": 430,
+    "EVIDENCE_YI_RESOLVED undetermined>not_recorded": 14,
+    "RECORDED_YI_RESOLVED undetermined>both_present": 107,
+    "RECORDED_YI_RESOLVED only_ji>only_ji": 404,
+    "STOP_JI_REVEAL undetermined>only_ji": 10,
+    "EVIDENCE_YI_RESOLVED undetermined>only_ji": 71,
+    "RECORDED_YI_RESOLVED undetermined>undetermined": 1
+  },
+  "perGod": {
+    "母倉": {
+      "authorityId": "p4-yi-mucang-v2",
+      "ruleId": "p4-yi-mucang-v2:presence",
+      "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH",
+        "SOIL_REIGN_STATE"
+      ],
+      "dates": {
+        "present": 218,
+        "absent": 877,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 1090,
+        "absent": 4385,
+        "unknown": 0
+      },
+      "soleProofRows": 309,
+      "resolvedBaselineUnknownRows": 1685
+    },
+    "福德": {
+      "authorityId": "p4-yi-fude-v1",
+      "ruleId": "p4-yi-fude-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 89,
+        "absent": 1006,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 178,
+        "absent": 2012,
+        "unknown": 0
+      },
+      "soleProofRows": 81,
+      "resolvedBaselineUnknownRows": 896
+    },
+    "天恩": {
+      "authorityId": "p4-yi-tianen-v1",
+      "ruleId": "p4-yi-tianen-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "DAY_PILLAR"
+      ],
+      "dates": {
+        "present": 275,
+        "absent": 820,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 275,
+        "absent": 820,
+        "unknown": 0
+      },
+      "soleProofRows": 71,
+      "resolvedBaselineUnknownRows": 307
+    },
+    "天巫": {
+      "authorityId": "p4-yi-tianwu-v1",
+      "ruleId": "p4-yi-tianwu-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 89,
+        "absent": 1006,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 178,
+        "absent": 2012,
+        "unknown": 0
+      },
+      "soleProofRows": 66,
+      "resolvedBaselineUnknownRows": 588
+    },
+    "天后": {
+      "authorityId": "p4-yi-tianhou-v1",
+      "ruleId": "p4-yi-tianhou-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 92,
+        "absent": 1003,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 92,
+        "absent": 1003,
+        "unknown": 0
+      },
+      "soleProofRows": 14,
+      "resolvedBaselineUnknownRows": 425
+    },
+    "天醫": {
+      "authorityId": "p4-yi-tianyi-v1",
+      "ruleId": "p4-yi-tianyi-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 90,
+        "absent": 1005,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 90,
+        "absent": 1005,
+        "unknown": 0
+      },
+      "soleProofRows": 29,
+      "resolvedBaselineUnknownRows": 425
+    },
+    "除神": {
+      "authorityId": "p4-yi-chushen-v1",
+      "ruleId": "p4-yi-chushen-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 183,
+        "absent": 912,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 549,
+        "absent": 2736,
+        "unknown": 0
+      },
+      "soleProofRows": 383,
+      "resolvedBaselineUnknownRows": 2345
+    },
+    "驛馬": {
+      "authorityId": "p4-yi-yima-v1",
+      "ruleId": "p4-yi-yima-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 92,
+        "absent": 1003,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 184,
+        "absent": 2006,
+        "unknown": 0
+      },
+      "soleProofRows": 76,
+      "resolvedBaselineUnknownRows": 881
+    },
+    "天馬": {
+      "authorityId": "p4-yi-tianma-v1",
+      "ruleId": "p4-yi-tianma-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 90,
+        "absent": 1005,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 180,
+        "absent": 2010,
+        "unknown": 0
+      },
+      "soleProofRows": 28,
+      "resolvedBaselineUnknownRows": 881
+    },
+    "吉期": {
+      "authorityId": "p4-yi-jiqi-v1",
+      "ruleId": "p4-yi-jiqi-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "dates": {
+        "present": 89,
+        "absent": 1006,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 89,
+        "absent": 1006,
+        "unknown": 0
+      },
+      "soleProofRows": 35,
+      "resolvedBaselineUnknownRows": 417
+    },
+    "鳴吠": {
+      "authorityId": "p4-yi-mingfei-v1",
+      "ruleId": "p4-yi-mingfei-v1:presence",
+      "status": "SOURCE_REVIEWED",
+      "requiredInputs": [
+        "DAY_PILLAR"
+      ],
+      "dates": {
+        "present": 239,
+        "absent": 856,
+        "unknown": 0
+      },
+      "unknownReasons": {},
+      "tracedRows": {
+        "present": 239,
+        "absent": 856,
+        "unknown": 0
+      },
+      "soleProofRows": 152,
+      "resolvedBaselineUnknownRows": 720
+    }
+  },
+  "perHeading": {
+    "乘船渡水": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 0,
+      "yiFalse": 1095,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "修倉庫": {
+      "rows": 1095,
+      "undeterminedBefore": 539,
+      "undeterminedAfter": 539,
+      "yiTrue": 0,
+      "yiFalse": 0,
+      "yiUnknown": 1095,
+      "changed": 0
+    },
+    "修宮室": {
+      "rows": 1095,
+      "undeterminedBefore": 185,
+      "undeterminedAfter": 1,
+      "yiTrue": 560,
+      "yiFalse": 535,
+      "yiUnknown": 0,
+      "changed": 218
+    },
+    "入學": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 184,
+      "yiFalse": 911,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "嫁娶": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 598,
+      "yiFalse": 497,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "安牀": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 91,
+      "yiFalse": 1004,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "安葬": {
+      "rows": 1095,
+      "undeterminedBefore": 306,
+      "undeterminedAfter": 16,
+      "yiTrue": 527,
+      "yiFalse": 568,
+      "yiUnknown": 0,
+      "changed": 326
+    },
+    "宴會": {
+      "rows": 1095,
+      "undeterminedBefore": 101,
+      "undeterminedAfter": 6,
+      "yiTrue": 899,
+      "yiFalse": 196,
+      "yiUnknown": 0,
+      "changed": 116
+    },
+    "掃舍宇": {
+      "rows": 1095,
+      "undeterminedBefore": 865,
+      "undeterminedAfter": 1,
+      "yiTrue": 257,
+      "yiFalse": 838,
+      "yiUnknown": 0,
+      "changed": 916
+    },
+    "整容剃頭": {
+      "rows": 1095,
+      "undeterminedBefore": 495,
+      "undeterminedAfter": 1,
+      "yiTrue": 334,
+      "yiFalse": 761,
+      "yiUnknown": 0,
+      "changed": 540
+    },
+    "栽種": {
+      "rows": 1095,
+      "undeterminedBefore": 180,
+      "undeterminedAfter": 9,
+      "yiTrue": 731,
+      "yiFalse": 364,
+      "yiUnknown": 0,
+      "changed": 200
+    },
+    "求嗣": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 659,
+      "yiFalse": 436,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "求醫療病": {
+      "rows": 1095,
+      "undeterminedBefore": 176,
+      "undeterminedAfter": 1,
+      "yiTrue": 789,
+      "yiFalse": 306,
+      "yiUnknown": 0,
+      "changed": 191
+    },
+    "營建宮室": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 319,
+      "yiFalse": 776,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "牧養": {
+      "rows": 1095,
+      "undeterminedBefore": 190,
+      "undeterminedAfter": 1,
+      "yiTrue": 731,
+      "yiFalse": 364,
+      "yiUnknown": 0,
+      "changed": 218
+    },
+    "破屋壊垣": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 92,
+      "yiFalse": 1003,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "祈福": {
+      "rows": 1095,
+      "undeterminedBefore": 107,
+      "undeterminedAfter": 1,
+      "yiTrue": 834,
+      "yiFalse": 261,
+      "yiUnknown": 0,
+      "changed": 125
+    },
+    "祭祀": {
+      "rows": 1095,
+      "undeterminedBefore": 235,
+      "undeterminedAfter": 1,
+      "yiTrue": 834,
+      "yiFalse": 261,
+      "yiUnknown": 0,
+      "changed": 253
+    },
+    "立券交易": {
+      "rows": 1095,
+      "undeterminedBefore": 9,
+      "undeterminedAfter": 9,
+      "yiTrue": 555,
+      "yiFalse": 540,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "納畜": {
+      "rows": 1095,
+      "undeterminedBefore": 149,
+      "undeterminedAfter": 1,
+      "yiTrue": 736,
+      "yiFalse": 359,
+      "yiUnknown": 0,
+      "changed": 177
+    },
+    "納財": {
+      "rows": 1095,
+      "undeterminedBefore": 135,
+      "undeterminedAfter": 1,
+      "yiTrue": 780,
+      "yiFalse": 315,
+      "yiUnknown": 0,
+      "changed": 168
+    },
+    "開倉庫出貨財": {
+      "rows": 1095,
+      "undeterminedBefore": 24,
+      "undeterminedAfter": 24,
+      "yiTrue": 454,
+      "yiFalse": 641,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "納采問名": {
+      "rows": 1095,
+      "undeterminedBefore": 9,
+      "undeterminedAfter": 9,
+      "yiTrue": 629,
+      "yiFalse": 466,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "結婚姻": {
+      "rows": 1095,
+      "undeterminedBefore": 9,
+      "undeterminedAfter": 9,
+      "yiTrue": 731,
+      "yiFalse": 364,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "興造動土": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 653,
+      "yiFalse": 442,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "般移": {
+      "rows": 1095,
+      "undeterminedBefore": 175,
+      "undeterminedAfter": 1,
+      "yiTrue": 689,
+      "yiFalse": 406,
+      "yiUnknown": 0,
+      "changed": 199
+    },
+    "行幸遣使": {
+      "rows": 1095,
+      "undeterminedBefore": 141,
+      "undeterminedAfter": 1,
+      "yiTrue": 763,
+      "yiFalse": 332,
+      "yiUnknown": 0,
+      "changed": 156
+    },
+    "豎柱上梁": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 653,
+      "yiFalse": 442,
+      "yiUnknown": 0,
+      "changed": 0
+    },
+    "開市": {
+      "rows": 1095,
+      "undeterminedBefore": 1,
+      "undeterminedAfter": 1,
+      "yiTrue": 430,
+      "yiFalse": 665,
+      "yiUnknown": 0,
+      "changed": 0
+    }
+  },
+  "limits": [
+    "Undetermined reduction is a measurement, not an oracle; reasons come from baseline + 5.4 Golden.",
+    "Month Jian uses the calendar-day selectionContext convention (5.6); 3 Jie days differ for 母倉 under noon.",
+    "母倉 is OWNER_ADOPTED_SOURCE_DEPENDENT within 2025-2027; canonical S1 stays OPEN.",
+    "修倉庫 stays deferred to P5; its rows are not resolved by any listed god.",
+    "Per-god traced rows overlap across gods; do not sum them to obtain unique rows."
+  ]
+}

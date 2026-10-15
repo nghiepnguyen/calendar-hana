@@ -1,0 +1,65 @@
+{
+ "task": "5.5",
+ "date": "2026-10-15",
+ "reviewer": "Claude (single agent)",
+ "independentSecondReview": false,
+ "expectedSources": {
+  "composition3.4": {
+   "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+   "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+  },
+  "seasonGolden": {
+   "path": "shared/almanac-data/golden-p4-season-days.json",
+   "sha256": "3de51c583da8d6a4e97a6da22df85e109206f85531dba79071ebe288258b4973"
+  },
+  "baseline1.4": {
+   "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+   "sha256": "6484bab71f7c7762a916ea792e305183311c9d62e43deb48b762813b35fec1d2"
+  },
+  "vol05": {
+   "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+   "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+  },
+  "propagationGoldenLock5.4": {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/lock.json",
+   "sha256": "4b3ae54b74e28aa9dd20828b0a5c0bfdea5e442343c5dba75567371ad63cec7c"
+  }
+ },
+ "newGolden": "none; expectations come from the frozen 3.4 warehouse/headingScope sections, golden-p4-season-days, the 卷05 王日 slice (offset 6824) and baseline 1.4 facts",
+ "codeChange": {
+  "shared/lunar/p4YiEvidence.ts": "修倉庫 returns yi undefined + deferred P5 with the clause operands traced (authority P5_DEFERRED_CO_PRESENCE scope, legacy labels via baseline grammar strip 又/與/併者) and unknowns kept; no ANY",
+  "shared/lunar/p4YiDayComposition.ts": "修倉庫 heading source refs use the P5 scope; deferred flag now from compose"
+ },
+ "testMappingCorrections": [
+  {
+   "classification": "SPEC_BUG",
+   "where": "p4YiWarehouse.test.ts dated legacy check",
+   "issue": "修倉庫 clause lists 月德 twice; baseline column keeps duplicates",
+   "fix": "compare label sets"
+  }
+ ],
+ "codeHashes": {
+  "shared/lunar/p4YiEvidence.ts": "314a380574470175712b637885ee8acbafb3c3afcf6aa10f0d2e74c2f387ce42",
+  "shared/lunar/p4YiDayComposition.ts": "b58871094afc3ba1eb3fe3456e27b12a44bc7b6446165fda9514c3247ba7385d",
+  "shared/lunar/p4YiWarehouse.test.ts": "757c3f660ecc1a210340413a880f91c418a5a433df7a3437c21780d4b22b8c74",
+  "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7",
+  "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6"
+ },
+ "checks": {
+  "lint": "PASS",
+  "typecheckMainFunctions": "PASS",
+  "build": "PASS",
+  "bundle": {
+   "path": "dist/assets/index-CeLinrvj.js",
+   "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969"
+  },
+  "verifyCoreBodies5.4": "PASS",
+  "productionImportClosure": "clean",
+  "trackedSharedSrcFunctionsDiff": "empty",
+  "mutations": "4/4 assertion-caught, restored"
+ },
+ "commands": [
+  "npx vitest run shared/lunar/p4YiWarehouse.test.ts",
+  "python3 -I docs/audits/sources/p4-vol10/yi-warehouse-v1/check-mutations.py"
+ ]
+}

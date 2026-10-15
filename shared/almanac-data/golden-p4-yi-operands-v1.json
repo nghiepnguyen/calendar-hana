@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "p4-yi-golden-index-v1",
+  "version": "golden-p4-yi-operands-v1",
+  "date": "2026-10-14",
+  "status": "REVIEWED_HASH_LOCKED_PRE_IMPLEMENTATION",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "authority": {
+    "path": "shared/almanac-data/p4-yi-operands-v1.json",
+    "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb",
+    "version": "p4-yi-operands-v1"
+  },
+  "blocks": [
+    {
+      "kind": "presence",
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "selector": "presenceFixtures",
+      "count": 906,
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "kind": "identity",
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "selector": "identityFixtures",
+      "count": 25,
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "kind": "malformed",
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "selector": "malformedFixtures",
+      "count": 24,
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "kind": "fullDomains",
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "format": "TSV_WITH_JSON_COLUMNS",
+      "count": 7863,
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    {
+      "kind": "composition",
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+      "selector": "sections",
+      "count": 1850,
+      "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+    }
+  ],
+  "recordCount": 10668,
+  "formatContract": {
+    "indexOnly": true,
+    "paths": "Repository-relative, load from project root; never interpreted as runtime imports",
+    "jsonSelectors": "Select the named immutable array; sections selects all composition fixture arrays",
+    "tsvJsonColumns": ["inputs", "providerStates", "inputProvenance", "expected", "derivation"],
+    "unknownYi": "JSON null; false is known absent",
+    "deduplication": "None across blocks/domains; counts are fixture records, not unique days or executed product tests",
+    "derivedExpectedPolicy": "Consume frozen blocks; never generate/rewrite expected from implementation outputs"
+  },
+  "review": {
+    "path": "docs/audits/sources/p4-vol10/yi-golden-review-v1/review.json",
+    "sha256": "7efb7700e1f0f30a3384380a79630f17cf2564da0acf4896a45845ae02101f9a",
+    "status": "PASS_SINGLE_REVIEWER_WITH_RECORDED_LIMITS",
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false
+  },
+  "sourceLock": "docs/audits/sources/p4-vol10/yi-freeze-v1/lock.json",
+  "freezeProtocol": {
+    "commitBinding": "Single Git commit containing this index, authority, source closure and exact expected block bytes; external commit-proof.json records that commit/tree after commit creation",
+    "commitProofPath": "docs/audits/sources/p4-vol10/yi-freeze-v1/commit-proof.json",
+    "selfReferencePolicy": "No commit SHA embedded in its own bytes and no lock hashes its own file; proof receipt added after freeze commit",
+    "next": "4.1 only after source/Git blob verification and 3.6/parent3.0 completion"
+  },
+  "limitations": [
+    {
+      "id": "single-reviewer",
+      "detail": "Expected derivation is independent from production implementation, but source interpretation and review are by the same Codex agent; no second expert review."
+    },
+    {
+      "id": "source-basis-reuse",
+      "detail": "3.3 and four 3.4 controls reuse locked 3.2 arithmetic. Reproduction is not an independent implementation-to-implementation comparison or new astronomy audit."
+    },
+    {
+      "id": "optional-input-recipes",
+      "detail": "69 irrelevantInput records hold a required tuple and omitted/valid-alternative recipe, not concrete optional values executed through an adapter. Do not count them as tested runtime invariance variants; finalize runnable mapping in4.1 and tests4.3/4.6."
+    },
+    {
+      "id": "declarative-errors",
+      "detail": "24 malformed fixtures declare expected error from contract; Python reference is not the future input validator. Malformed/coverage API representation and error class finalized4.1/4.3."
+    },
+    {
+      "id": "conditional-soil",
+      "detail": "1440 lower-layer soil assumptions are not valid full provider inputs or proof of calendar reachability; actual dated1095 plus exact Jie108 only claim their stated sampling."
+    },
+    {
+      "id": "projection-not-integration",
+      "detail": "ANY/protection/warehouse stubs do not claim physically simultaneous gods or full-day output; protection projections couple cancel/lift request. Actual propagation changes and integration unknown scopes need5.4/6.8 before full P4-C acceptance."
+    },
+    {
+      "id": "existing-stub",
+      "detail": "四相 stub has null authority/rule IDs by design. Bind existing audited operand in4.1; never create an authority from this placeholder."
+    },
+    {
+      "id": "open-source-scopes",
+      "detail": "母倉 remains OWNER_ADOPTED_SOURCE_DEPENDENT 2025–2027; S1 canonical OPEN/P5 warehouse 月恩/月德 conflict deferred."
+    },
+    {
+      "id": "freeze-pending",
+      "detail": "Historical pending-status fields and expected bytes stay immutable; this review report supplies the current review disposition. No commit freeze or completed parent3.0/P4-C; next3.6."
+    }
+  ],
+  "residualScopes": [
+    "Canonical S1 OPEN",
+    "P5 修倉庫 deferred",
+    "Mother authority OWNER_ADOPTED_SOURCE_DEPENDENT; dated coverage 2025–2027",
+    "Full P4-C acceptance/runtime activation not completed by Golden freeze"
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "version": "p4-yi-provider-result-v1",
+  "task": "4.4",
+  "date": "2026-10-15",
+  "status": "ELEVEN_PRESENCE_PREDICATES_IMPLEMENTED_AUDIT_ONLY",
+  "beforeImplementation": {
+    "tests": 20,
+    "passedIntegrity": 1,
+    "assertionFailures": 19,
+    "collectionFailures": 0,
+    "testSha256": "d641dedf767ff98a19425569a5eea91c1b440e9e075425c6dace01489699aec5",
+    "rawVitestJsonSha256": "b7ac6d2bcebf1bb0440e15bd139181a09e621079476575fc071972eddb259a58",
+    "failures": [
+      {
+        "title": "福德:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: fu-de:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "天巫:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: tian-wu:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "天后:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: tian-hou:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "天醫:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: tian-yi:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "驛馬:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: yi-ma:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "天馬:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: tian-ma:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "吉期:MONTH_PILLAR_720 matches independently derived expected",
+        "message": "AssertionError: ji-qi:MONTH_PILLAR_720:寅-甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "天恩:DAY_PILLAR_60 matches independently derived expected",
+        "message": "AssertionError: tian-en:DAY_PILLAR_60:甲子: expected 'unknown' to be 'present' // Object.is equality"
+      },
+      {
+        "title": "除神:DAY_PILLAR_60 matches independently derived expected",
+        "message": "AssertionError: tru_than:DAY_PILLAR_60:甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "鳴吠:DAY_PILLAR_60 matches independently derived expected",
+        "message": "AssertionError: ming-fei:DAY_PILLAR_60:甲子: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "母倉:MU_CANG_CONDITIONAL_1440 matches independently derived expected",
+        "message": "AssertionError: mu-cang:MU_CANG_CONDITIONAL_1440:寅-甲子-absent: expected undefined to be true // Object.is equality"
+      },
+      {
+        "title": "母倉:MU_CANG_DATED_1095 matches independently derived expected",
+        "message": "AssertionError: mu-cang:MU_CANG_DATED_1095:2025-01-01: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "母倉:MU_CANG_EXACT_JIE_108 matches independently derived expected",
+        "message": "AssertionError: mu-cang:MU_CANG_EXACT_JIE_108:2025-19--1: expected 'unknown' to be 'absent' // Object.is equality"
+      },
+      {
+        "title": "soil-state: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "soil-onset: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "soil-nextLi: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "soil-row: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "soil-path: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "soil-coverage: validated=true cannot authenticate contradictory evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      }
+    ]
+  },
+  "final": {
+    "tests": 1432,
+    "passed": 1404,
+    "plannedCompositionFailures": 28,
+    "collectionFailures": 0,
+    "pendingOrTodo": 0,
+    "files": [
+      {
+        "file": "p4YiDomains.test.ts",
+        "passed": 20
+      },
+      {
+        "file": "p4YiInputContract.test.ts",
+        "passed": 474,
+        "failed": 28
+      },
+      {
+        "file": "p4YiOperands.test.ts",
+        "passed": 910
+      }
+    ],
+    "rawVitestJsonSha256": "1a640c5451037ada628b9f156ab49d343781fed515b6296c6f59c8618e18d9fc"
+  },
+  "fullDomains": {
+    "records": 7863,
+    "fullProviderRecords": 6423,
+    "conditionalOnlyRecords": 1440,
+    "domainGroups": [
+      {
+        "han": "福德",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "天巫",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "天后",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "天醫",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "驛馬",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "天馬",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "吉期",
+        "domain": "MONTH_PILLAR_720",
+        "records": 720,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "天恩",
+        "domain": "DAY_PILLAR_60",
+        "records": 60,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "除神",
+        "domain": "DAY_PILLAR_60",
+        "records": 60,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "鳴吠",
+        "domain": "DAY_PILLAR_60",
+        "records": 60,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "母倉",
+        "domain": "MU_CANG_CONDITIONAL_1440",
+        "records": 1440,
+        "layer": "PURE_CONDITIONAL_PREDICATE"
+      },
+      {
+        "han": "母倉",
+        "domain": "MU_CANG_DATED_1095",
+        "records": 1095,
+        "layer": "FULL_PROVIDER"
+      },
+      {
+        "han": "母倉",
+        "domain": "MU_CANG_EXACT_JIE_108",
+        "records": 108,
+        "layer": "FULL_PROVIDER"
+      }
+    ],
+    "note": "20 Vitest tests in domain file: 1 integrity +13 domain loops +6 provenance-forgery assertions; record count is not Vitest test count"
+  },
+  "regression": {
+    "files": 9,
+    "tests": 198,
+    "status": "PASS",
+    "rawVitestJsonSha256": "ae69070ba9a4a6da9c211adf94b59a9e4d4d0307123ea7b411ec58d9c59255f6"
+  },
+  "remainingCompositionFailures": [
+    {
+      "title": "#0 any:2:present-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:2:present-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(1) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#1 any:2:unknown-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:2:unknown-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(1) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#2 any:3:present-present-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:present-present-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#3 any:3:present-absent-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:present-absent-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#4 any:3:present-unknown-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:present-unknown-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#5 any:3:present-unknown-absent: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:present-unknown-absent: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#6 any:3:present-unknown-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:present-unknown-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#7 any:3:absent-present-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:absent-present-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#8 any:3:absent-unknown-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:absent-unknown-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#9 any:3:unknown-present-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:unknown-present-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#10 any:3:unknown-present-absent: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:unknown-present-absent: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#11 any:3:unknown-present-unknown: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:unknown-present-unknown: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#12 any:3:unknown-absent-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:unknown-absent-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#13 any:3:unknown-unknown-present: keeps the complete trace and unresolved IDs",
+      "failureMessage": "AssertionError: any:3:unknown-unknown-present: expected [] to deeply equal [ { traceId: '天后:0', …(8) }, …(2) ]",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#0 any:2:present-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:2:present-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#1 any:2:unknown-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:2:unknown-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#2 any:3:present-present-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:present-present-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#3 any:3:present-absent-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:present-absent-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#4 any:3:present-unknown-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:present-unknown-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#5 any:3:present-unknown-absent: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:present-unknown-absent: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#6 any:3:present-unknown-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:present-unknown-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#7 any:3:absent-present-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:absent-present-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#8 any:3:absent-unknown-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:absent-unknown-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#9 any:3:unknown-present-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:unknown-present-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#10 any:3:unknown-present-absent: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:unknown-present-absent: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#11 any:3:unknown-present-unknown: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:unknown-present-unknown: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#12 any:3:unknown-absent-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:unknown-absent-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    },
+    {
+      "title": "#13 any:3:unknown-unknown-present: presence can prove 宜 without erasing an unknown",
+      "failureMessage": "AssertionError: any:3:unknown-unknown-present: expected undefined to be true // Object.is equality",
+      "deferredStage": "5.x evidence composition",
+      "reason": "composeP4YiEvidence remains the unchanged RED seam"
+    }
+  ],
+  "runtimeBuild": {
+    "status": "PASS",
+    "bundle": "index-CeLinrvj.js",
+    "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969",
+    "unchangedFromBaseline": true
+  },
+  "corrections": [
+    {
+      "classification": "SPEC_BUG",
+      "scope": "Test helper type only",
+      "file": "shared/lunar/p4YiInputContract.test.ts",
+      "before": "reason?: string",
+      "after": "reason?: string | null",
+      "basis": "Contract4.1 says resolved reason is null; RED scaffold did not expose this type mismatch. All assertions and frozen expected unchanged. Reverse replacement matches prior4.3 test hash."
+    }
+  ],
+  "nextTask": "4.5",
+  "p4cAccepted": false
+}

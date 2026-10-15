@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": null,
+  "han": null,
+  "aliases": [],
+  "authorityId": null,
+  "authorityVersion": null,
+  "status": "UNREVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [],
+  "scanChecks": [],
+  "operandInputs": [],
+  "predicate": null,
+  "coverage": null,
+  "exceptions": [],
+  "headingScopes": [],
+  "conflicts": [],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "PENDING",
+    "reviewer": null,
+    "date": null,
+    "method": null,
+    "limitations": []
+  },
+  "traceFields": [
+    "authorityId",
+    "ruleId",
+    "inputs",
+    "presence",
+    "sourceRefs"
+  ],
+  "limits": []
+}

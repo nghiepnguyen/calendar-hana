@@ -1,0 +1,26 @@
+{
+  "version": "p4-yi-authority-gate-lock-v1",
+  "status": "PASS_11_OF_11_AUTHORITY_ONLY",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/README.md",
+      "sha256": "3cb7e577717e29b3d20128a2bc0010eabdadc13835fa5a8c813cbbad1703d8a6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/gate.json",
+      "sha256": "94b859f866a6e1a61dc32a89af8219b4e123bde865086546234be8a6d5c54bdb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/validation.json",
+      "sha256": "b6ac9ae0629de07a7a20362559ae3a8b32e6a4424bd041357100c241121466da"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-v1/lock.json",
+      "sha256": "662296b5c4f3bc92a3fc27a7c38102729dfaf3cda65a418c8d5c7d6099fd266a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-comparison-v1/lock.json",
+      "sha256": "5c308cd96138bf857eb3782634dab94c6c115eca423f3ba377a2de91c64e6df5"
+    }
+  ]
+}

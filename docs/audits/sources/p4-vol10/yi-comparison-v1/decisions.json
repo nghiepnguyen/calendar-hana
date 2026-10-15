@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": "p4-yi-source-comparison-v1",
+  "task": "2.13",
+  "date": "2026-10-14",
+  "status": "REVIEWED_COMPARISON_NOT_AUTHORITY_GATE",
+  "scope": "AUDIT_ONLY",
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "method": "Consolidation of locked entry raw/scan/definition/table comparisons, with read-only integrity and catalog/legacy checks",
+    "limits": [
+      "No independent second source review",
+      "No new authority version, Golden or implementation",
+      "Does not complete tasks 2.14/2.15 or parent 2.0"
+    ]
+  },
+  "classificationPolicy": {
+    "SOURCE_DEPENDENT": "Different source readings, editorial correction, identity or use scope; disposition states accepted bounded rule or residual unknown",
+    "CONVENTION_DIFFERENCE": "Legacy lunar-month input differs from exact-Jie Month Jian",
+    "NAMING_ONLY": "Orthography or wording changes no adopted predicate; token alias only where entry explicitly accepts",
+    "SPEC_BUG": "Previously wrong evidence locator corrected by version, not engine/Golden output",
+    "noDifference": "classification null; explicit match rather than invented bug",
+    "notClaimed": [
+      "ENGINE_BUG",
+      "GOLDEN_BUG"
+    ]
+  },
+  "entries": [
+    {
+      "han": "母倉",
+      "authorityId": "p4-yi-mucang-v2",
+      "authorityStatus": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entrySha256": "7cc1a29d800f907d4eb56130e72b8756fb0d1e30f766d494df502acf2b862496",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH",
+        "SOIL_REIGN_STATE"
+      ],
+      "predicateType": "SEASONAL_BRANCH_WITH_SOIL_OVERRIDE",
+      "coverage": {
+        "structuralDomain": "12 Month Jian × 60 valid pillars × validated soil present/absent",
+        "calendarCoverage": [
+          "2025-01-01",
+          "2027-12-31"
+        ],
+        "status": "OWNER_ADOPTED_DATED_SOIL_COVERAGE",
+        "notNeeded": [
+          "lunarDay",
+          "moonPhase",
+          "dayStem"
+        ]
+      },
+      "directHeadings": [
+        "納財",
+        "栽種",
+        "牧養",
+        "納畜"
+      ],
+      "deferredHeadings": [
+        "修倉庫"
+      ],
+      "aliases": [],
+      "sourceCount": 7,
+      "scanCount": 11,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "Mẫu Thương: lunar month; autumn 丑辰 lacks 戌未; no soil override; broad label not adopted",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "福德",
+      "authorityId": "p4-yi-fude-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "entrySha256": "3c6c4ae677d817ee71f88e27b539568f9017629c96b0ab57b4aea1ffc2d5a1a3",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-fude-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-fude-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_FORWARD_BRANCH_OFFSET",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited only from validated exact-Jie Month Jian/day-pillar input provider; no separate dated or soil requirement",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ]
+      },
+      "directHeadings": [
+        "宴會",
+        "修宮室"
+      ],
+      "deferredHeadings": [],
+      "aliases": [
+        "福徳"
+      ],
+      "sourceCount": 9,
+      "scanCount": 14,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "天恩",
+      "authorityId": "p4-yi-tianen-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "entrySha256": "32f4b1ba3dab9e024491298cb50563eb09885febd5f7fb218058761275666a99",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-tianen-v1/README.md",
+      "inputKeys": [
+        "DAY_PILLAR"
+      ],
+      "predicateType": "SEXAGENARY_DAY_RANGES",
+      "coverage": {
+        "structuralDomain": "All 60 valid day pillars, exactly 15 present / 45 absent",
+        "calendarCoverage": "Inherited from validated day pillar provider; no independent dated restriction",
+        "notNeeded": [
+          "MonthJian",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ]
+      },
+      "directHeadings": [
+        "宴會"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 10,
+      "scanCount": 13,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "天巫",
+      "authorityId": "p4-yi-tianwu-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "entrySha256": "5175fcf7298e8e00c4a7010edbc6802bed9dd2190d0cad816dee4f27ae5006cb",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_FORWARD_BRANCH_OFFSET",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited only from validated exact-Jie Month Jian and day-pillar input provider; no independent dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ]
+      },
+      "directHeadings": [
+        "祭祀",
+        "祈福"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 6,
+      "scanCount": 11,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "天后",
+      "authorityId": "p4-yi-tianhou-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "entrySha256": "91233d4b4b5920f0a39eb8f786e4a5ad24e9c3b94be845860b5a6498684dd050",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_TRINE_HORSE_BRANCH_LOOKUP",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited only from validated exact-Jie Month Jian/day-pillar provider; no independent dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ]
+      },
+      "directHeadings": [
+        "求醫療病"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 3,
+      "scanCount": 10,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "天醫",
+      "authorityId": "p4-yi-tianyi-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "entrySha256": "2e2e277c4fdf461a7ad940c8b9902d4ebe9f07fcfe35df60464736036543cba5",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_FORWARD_BRANCH_OFFSET",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited only from validated exact-Jie Month Jian/day-pillar input provider; no independent dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ]
+      },
+      "directHeadings": [
+        "求醫療病"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 4,
+      "scanCount": 8,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated definition entry; adjacent 天喜 evidence is scope cross-check only",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "除神",
+      "authorityId": "p4-yi-chushen-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "entrySha256": "45a6de1d4b62b5c720628dd3d6fe495bc073bfd00bf3c1695051f0859141ff02",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-chushen-v1/README.md",
+      "inputKeys": [
+        "DAY_BRANCH"
+      ],
+      "predicateType": "DAY_BRANCH_SET",
+      "coverage": {
+        "structuralDomain": "All 60 valid day pillars; 10 present / 50 absent. Optional 12×60 month-independence regression, not required Month Jian input.",
+        "calendarCoverage": "Inherited from validated day-pillar provider; no separate dated restriction",
+        "notNeeded": [
+          "MonthJian",
+          "lunarMonth",
+          "lunarDay",
+          "dayStem",
+          "moonPhase",
+          "soil",
+          "birthYear"
+        ]
+      },
+      "directHeadings": [
+        "掃舍宇",
+        "整容剃頭",
+        "求醫療病"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 8,
+      "scanCount": 9,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "tru_than fixed 申酉 source match",
+      "legacyComparison": "Catalog tru_than dayChi [8,9] and medical/cleaning/cut_hair match; no definition entry",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "驛馬",
+      "authorityId": "p4-yi-yima-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "entrySha256": "40254d097e66027b8906d802c73b15a2c955ebb4d258686936579f74c02304fa",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-yima-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-yima-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_TRINE_HORSE_BRANCH_LOOKUP",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ]
+      },
+      "directHeadings": [
+        "行幸遣使",
+        "般移"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 4,
+      "scanCount": 10,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "Dịch Mã: sequence matches [申巳寅亥]×3; lunar month differs; broad usage not adopted",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "天馬",
+      "authorityId": "p4-yi-tianma-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "entrySha256": "00787c5157e4f1bb690e0922db9d967d32f96283ef722a6a0f528487868cf175",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-tianma-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_FORWARD_SIX_YANG_BRANCH_LOOKUP",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ]
+      },
+      "directHeadings": [
+        "行幸遣使",
+        "般移"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 7,
+      "scanCount": 9,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "Thiên Mã (Lộc Mã): sequence matches [午申戌子寅辰]×2; lunar month differs; alias/trade/wealth/business not adopted",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "吉期",
+      "authorityId": "p4-yi-jiqi-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "entrySha256": "71edc5085deec93ac232298f13be048309e7f6070185f56c1fa6bb3647c9412c",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/README.md",
+      "inputKeys": [
+        "MONTH_JIAN_BRANCH",
+        "DAY_BRANCH"
+      ],
+      "predicateType": "MONTH_JIAN_FORWARD_ONE_BRANCH",
+      "coverage": {
+        "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+        "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+        "notNeeded": [
+          "dayStem",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ]
+      },
+      "directHeadings": [
+        "行幸遣使"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 10,
+      "scanCount": 10,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    },
+    {
+      "han": "鳴吠",
+      "authorityId": "p4-yi-mingfei-v1",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entrySha256": "e4a5254c7800f8680ec42333aa31a8f8342e506c84122ed333a7d60564bd6794",
+      "lockPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/lock.json",
+      "readmePath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "inputKeys": [
+        "DAY_PILLAR"
+      ],
+      "predicateType": "FIXED_SEXAGENARY_PILLAR_SET",
+      "coverage": {
+        "structuralDomain": "All 60 valid day pillars: 13 present / 47 absent; independent of Month Jian",
+        "calendarCoverage": "Inherited from validated civil-day pillar provider; no separate dated restriction",
+        "notNeeded": [
+          "monthJian",
+          "lunarMonth",
+          "lunarDay",
+          "moonPhase",
+          "soil",
+          "birthYear",
+          "personalPillar"
+        ]
+      },
+      "directHeadings": [
+        "安葬"
+      ],
+      "deferredHeadings": [],
+      "aliases": [],
+      "sourceCount": 6,
+      "scanCount": 15,
+      "reviewer": "Codex (single agent)",
+      "definitionComparison": "No dedicated entry in xieji-god-definitions.json",
+      "catalogComparison": "No direct catalog god identity; authority not inferred from label",
+      "legacyComparison": "No dedicated legacy god label adopted; officer/shared-position labels are not aliases",
+      "inventoryComparison": "Adopted direct + deferred catalog headings match task-1 inventory; source-only/conditional scopes excluded from activity mapping"
+    }
+  ],
+  "decisions": [
+    {
+      "decisionId": "mu-cang:soil-calendar",
+      "han": "母倉",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "OWNER_ADOPTED_CANONICAL_OPEN",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "soil-calendar",
+        "status": "RESOLVED_BY_OWNER_CONVENTION_CANONICAL_OPEN",
+        "detail": "Owner approved proposal on 2026-10-14 (làm theo đề xuất). Separate adoption for 母倉; P4-B authority unchanged. S1 onset/後/定氣 remains OPEN."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": true
+    },
+    {
+      "decisionId": "mu-cang:si-ji",
+      "han": "母倉",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "si-ji",
+        "status": "RESOLVED_FOR_BRANCH_PREDICATE",
+        "detail": "卷五 explicit 巳午 twice and 不用干而用支; 卷十 raw and scan commentary 己午 retained verbatim; use definition 巳午, not mixed stem/branch."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "mu-cang:warehouse-en-de",
+      "han": "母倉",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "DEFERRED_P5",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "warehouse-en-de",
+        "status": "DEFERRED_P5",
+        "detail": "卷十 raw/scan 月恩; 卷十一 raw/scan 月德. Preserve both; no warehouse predicate selected."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": true
+    },
+    {
+      "decisionId": "fu-de:de-variant",
+      "han": "福德",
+      "classification": "NAMING_ONLY",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "de-variant",
+        "status": "RESOLVED_SOURCE_ORTHOGRAPHY",
+        "detail": "Raw 卷十一 uses 福徳 while scan and definition show 福德; equivalent name at same heading positions, retain raw quote and normalize token only."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-fude-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "fu-de:same-name-other-system",
+      "han": "福德",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "same-name-other-system",
+        "status": "SCOPED_NOT_ALIASED",
+        "detail": "卷四 introductory 四利三元 收為福德 differs from reviewed monthly 福德/滿. Do not reuse it, 天巫, generic 福德 or personal-star labels as aliases."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-fude-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-en:raw-si-vs-scan-ji",
+      "han": "天恩",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "raw-si-vs-scan-ji",
+        "status": "RESOLVED_BY_SCAN",
+        "detail": "Locked raw 卷五 prints 巳 in stem 己 positions (巳卯,巳酉 and explanatory 巳土). Scan pages 38–40 explicitly 己. Preserve raw bytes; adopted pillar list uses 己, not illegal 巳卯/巳酉."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-en:monthly-cycle-reading",
+      "han": "天恩",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "monthly-cycle-reading",
+        "status": "REJECTED_BY_EXPLICIT_SOURCE",
+        "detail": "六十甲子首五日 and two midpoint five-day ranges, plus 不參諸月令; never lunar days 1–5/16–20 or Month Jian lookup."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-wu:old-medical-use",
+      "han": "天巫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "old-medical-use",
+        "status": "RESOLVED_BY_VOL10_EXPLICIT_EDITORIAL_DELETION",
+        "detail": "Definition quotation retained; adopted heading scope follows 卷十 又為天巫宜祭祀祈福 and 卷十一 matching heading lists, not 合藥請醫."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianwu-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-wu:tian-gou-overgeneralization",
+      "han": "天巫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "tian-gou-overgeneralization",
+        "status": "RESOLVED_BY_VOL04_EDITORIAL_SCOPE",
+        "detail": "Quoted older 天狗常居月建前二辰 is narrowed by editor to 申建戌日 only; not all 滿日 and not a 天巫 alias."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianwu-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-wu:same-position-identity",
+      "han": "天巫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "same-position-identity",
+        "status": "SCOPED_NOT_ALIASED",
+        "detail": "滿日/福德 have same position, separate authority/use scopes. No aliases adopted."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianwu-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-hou:horse-alias-and-scope",
+      "han": "天后",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "horse-alias-and-scope",
+        "status": "RESOLVED_SEPARATE_USAGE_SCOPES",
+        "detail": "Source says 天后與驛馬同位/天后者驛馬也. P4-C keeps two named operands with same position and different named 宜; no alias merges travel/moving into medical or vice versa."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianhou-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-hou:month-vs-year-or-day-input",
+      "han": "天后",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "month-vs-year-or-day-input",
+        "status": "RESOLVED_MONTHLY_SCOPE",
+        "detail": "Main rule and chart are monthly; year/day variants remain documented outside coverage, not new required inputs."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianhou-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-yi:raw-yi-vs-scan-you",
+      "han": "天醫",
+      "classification": "NAMING_ONLY",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "raw-yi-vs-scan-you",
+        "status": "RESOLVED_ORTHOGRAPHIC_TRANSCRIPTION_NO_PREDICATE_DELTA",
+        "detail": "卷十 raw anchor 乂為天醫宜求醫療病, scan PDF117 又為天醫宜求醫療病. Keep raw and record scan separately; no new god alias."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianyi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-yi:shared-position-scope",
+      "han": "天醫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "shared-position-scope",
+        "status": "RESOLVED_SEPARATE_NAMED_USAGE",
+        "detail": "成日/天喜 share position but own headings; do not alias either to 天醫 or inherit their 宜."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianyi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-yi:seasonal-tian-xi",
+      "han": "天醫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "seasonal-tian-xi",
+        "status": "SCOPED_TO_ADJACENT_TIAN_XI_DISCUSSION",
+        "detail": "Read full editorial paragraph; monthly 天醫 rule is explicit and unchanged by adjacent 天喜 alternatives."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianyi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tru_than:chu-ri-vs-chu-shen",
+      "han": "除神",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "chu-ri-vs-chu-shen",
+        "status": "RESOLVED_DIFFERENT_PREDICATES",
+        "detail": "義同除日 describes usage, not presence equality: 除日 monthly offset +1, 除神 fixed 申/酉; 卷十一 lists both."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-chushen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tru_than:wu-li-same-position",
+      "han": "除神",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "wu-li-same-position",
+        "status": "SCOPED_NOT_ALIASED",
+        "detail": "五離 same day positions, distinct named 宜/忌. No token alias adopted."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-chushen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tru_than:catalog-reuse",
+      "han": "除神",
+      "classification": null,
+      "disposition": "MATCH_NO_DIFFERENCE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "catalog-reuse",
+        "status": "MATCH_CONFIRMED_NOT_AUTHORITY_INFERENCE",
+        "detail": "Existing tru_than han=除神, dayChi=[8,9], medical/cleaning/cut_hair match independently reviewed source."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-chushen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tru_than:raw-scan-wording",
+      "han": "除神",
+      "classification": "NAMING_ONLY",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "entryField": "conflicts[3]",
+      "originalConflict": {
+        "id": "raw-scan-wording",
+        "status": "NO_PREDICATE_DELTA",
+        "detail": "Raw 宜沐浴祓除災眚; scan PDF117 宜沐浴祓除災害. Preserve both wordings, no predicate change."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-chushen-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "yi-ma:same-position-tianhou",
+      "han": "驛馬",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "same-position-tianhou",
+        "status": "RESOLVED_SEPARATE_NAMED_USAGE",
+        "detail": "天后與驛馬同位 and explanatory 天后者驛馬也 do not merge P4-C tokens; 天后 medical use distinct from 驛馬 travel/moving."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-yima-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "yi-ma:legacy-lunar-month-input",
+      "han": "驛馬",
+      "classification": "CONVENTION_DIFFERENCE",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "legacy-lunar-month-input",
+        "status": "MATCHED_BRANCH_SEQUENCE_DIFFERENT_INPUT",
+        "detail": "stars.data.ts Dịch Mã byMonth [申,巳,寅,亥]×3 matches monthly sequence but uses lunar month; P4-C exact-Jie Month Jian changes boundary semantics. Do not alter runtime or treat translated label as authority alias."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-yima-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-ma:legacy-lunar-month-input",
+      "han": "天馬",
+      "classification": "CONVENTION_DIFFERENCE",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "legacy-lunar-month-input",
+        "status": "MATCHED_BRANCH_SEQUENCE_DIFFERENT_INPUT",
+        "detail": "stars.data.ts Thiên Mã (Lộc Mã) byMonth [6,8,10,0,2,4]×2 matches branch sequence; lunar month input differs from exact-Jie Month Jian."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianma-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-ma:legacy-alias-and-broad-use",
+      "han": "天馬",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "legacy-alias-and-broad-use",
+        "status": "NOT_ADOPTED_SOURCE_SCOPE",
+        "detail": "Lộc Mã label and legacy trade/wealth/business claims have no adopted alias/direct scope in this locked entry; do not change runtime."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianma-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "tian-ma:definition-old-use-vs-vol10",
+      "han": "天馬",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "definition-old-use-vs-vol10",
+        "status": "RESOLVED_EDITOR_NARROWING",
+        "detail": "Definition quotes older court and military uses; 卷十 explicitly limits direct uses and makes court uses conditional."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianma-v1/README.md",
+      "sourceIds": [
+        "ws-vol06-787343",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ji-qi:same-position-chu-bingbao",
+      "han": "吉期",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "same-position-chu-bingbao",
+        "status": "RESOLVED_SEPARATE_NAMED_SCOPE",
+        "detail": "Shared 除/吉期/兵寶 chart and position do not authorize merging god token identities or medical/bathing/military heading scopes."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-jiqi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ji-qi:old-definition-usage",
+      "han": "吉期",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "old-definition-usage",
+        "status": "RESOLVED_EDITOR_CORRECTIONS",
+        "detail": "卷四 older military/marriage quotation preserved; 卷十 editor reassigns military use to 兵寶 and rejects marriage use."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-jiqi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ji-qi:raw-heading-template",
+      "han": "吉期",
+      "classification": "NAMING_ONLY",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "raw-heading-template",
+        "status": "SCAN_CONFIRMED_HEADING_NORMALIZATION",
+        "detail": "卷十一 raw 詔命公{{SKchar|2721}}招賢 preserved byte-for-byte; scan shows 詔命公卿招賢. Normalized heading only, not a god alias."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-jiqi-v1/README.md",
+      "sourceIds": [
+        "ws-vol04-787340",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ming-fei:older-14-vs-corrected-13",
+      "han": "鳴吠",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entryField": "conflicts[0]",
+      "originalConflict": {
+        "id": "older-14-vs-corrected-13",
+        "status": "RESOLVED_EXPLICIT_EDITOR_CORRECTION",
+        "detail": "Older quoted list has 庚寅/壬寅 and omits 甲午; corrected 立成 removes those two and includes 甲午, 13 days. Preserve both quotations, adopt final editor."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ming-fei:raw-si-vs-scan-ji",
+      "han": "鳴吠",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entryField": "conflicts[1]",
+      "originalConflict": {
+        "id": "raw-si-vs-scan-ji",
+        "status": "RESOLVED_SCAN_TRANSCRIPTION",
+        "detail": "Final editor raw has 乙丁巳辛癸/巳為隂土; scan PDF138–139 reads 己 in both positions, and raw/scan 立成 includes 己酉. Raw bytes remain unchanged; predicate adopts day stem 己."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ming-fei:mingfeidui-distinct",
+      "han": "鳴吠",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entryField": "conflicts[2]",
+      "originalConflict": {
+        "id": "mingfeidui-distinct",
+        "status": "RESOLVED_SEPARATE_RULE_AND_HEADING",
+        "detail": "鳴吠對 has corrected 11-day set and separate 啓攢 usage; not an alias or automatic six-branch opposition of the 13-day set."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "ming-fei:dog-day-name",
+      "han": "鳴吠",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "RESOLVED_WITHIN_ENTRY_SCOPE",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entryField": "conflicts[3]",
+      "originalConflict": {
+        "id": "dog-day-name",
+        "status": "RESOLVED_EDITOR_EXPLANATION",
+        "detail": "戌者指葬地而非指葬日; 金雞鳴玉犬吠 explanatory phrase does not authorize 戌 days or accepted alias."
+      },
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sourceIds": [
+        "ws-vol05-787341",
+        "ws-vol10-787351",
+        "ws-vol11-787353"
+      ],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "母倉:locator-nachu",
+      "han": "母倉",
+      "classification": "SPEC_BUG",
+      "disposition": "VERSIONED_LOCATOR_CORRECTION",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "corrections[0]",
+      "originalConflict": null,
+      "detail": "v1 sources[6] matched contents 納畜 at 774; v2 uses heading at 6587. Source/predicate bytes unchanged; v1 retained.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "母倉:legacy-seasonal-table",
+      "han": "母倉",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "LEGACY_DIFFERENCE_RECORDED_NOT_CHANGED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "README.md#đối-chiếu-artifacts-hiện-có via yi-mucang-v1",
+      "originalConflict": null,
+      "detail": "Mẫu Thương ordinary autumn has 丑辰 only, lacks 戌未 and no soil override. Locked authority uses all four autumn earth branches and separate adopted 巳午 override.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "母倉:legacy-month-input",
+      "han": "母倉",
+      "classification": "CONVENTION_DIFFERENCE",
+      "disposition": "LEGACY_DIFFERENCE_RECORDED_NOT_CHANGED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "README.md via yi-mucang-v1",
+      "originalConflict": null,
+      "detail": "Legacy byMonth uses lunar month; P4-C season derives from exact-Jie Month Jian plus validated soil.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "母倉:legacy-broad-usage",
+      "han": "母倉",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "LEGACY_SCOPE_NOT_ADOPTED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "entryField": "README.md via yi-mucang-v1",
+      "originalConflict": null,
+      "detail": "Legacy khai trương/cầu tài label is not authority for 開市 or all finance uses; direct source scopes remain four headings.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mucang-v2/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "福德:definition-ritual-scope",
+      "han": "福德",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "NAMED_USE_SCOPE_RETAINED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "entryField": "exceptions[1]",
+      "originalConflict": null,
+      "detail": "Definition ritual quotation not imported; 卷十/十一 separate 福德 court/宴會/修宮室 from 天巫祭祀祈福.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-fude-v1/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "天后:definition-ritual-scope",
+      "han": "天后",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "NAMED_USE_SCOPE_RETAINED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "entryField": "exceptions[2]",
+      "originalConflict": null,
+      "detail": "祈福禮神 quotation does not open ritual heading; named use only 求醫療病.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianhou-v1/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "天醫:definition-ritual-scope",
+      "han": "天醫",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "NAMED_USE_SCOPE_RETAINED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "entryField": "exceptions[2]",
+      "originalConflict": null,
+      "detail": "尋巫禱祀 quotation does not open ritual heading; named use only 求醫療病.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianyi-v1/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "鳴吠:furi-not-presence",
+      "han": "鳴吠",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "HEADING_INTERACTION_RETAINED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "entryField": "exceptions[0]",
+      "originalConflict": null,
+      "detail": "鳴吠遇復日則忌 is heading interaction, not absence; P4-B/protected 忌 unchanged.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-mingfei-v1/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    },
+    {
+      "decisionId": "天恩:conditional-use-not-direct",
+      "han": "天恩",
+      "classification": "SOURCE_DEPENDENT",
+      "disposition": "CONDITIONAL_OUTSIDE_CATALOG",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "entryField": "exceptions[1]",
+      "originalConflict": null,
+      "detail": "頒詔/宣政事 need compound co-presence; 與修造吉神併尤宜興作 is enhancement, not unconditional construction scope.",
+      "evidenceLocator": "docs/audits/sources/p4-vol10/yi-tianen-v1/README.md",
+      "sourceIds": [],
+      "ownerActionRequiredNow": false,
+      "scopeUnknownRemains": false
+    }
+  ],
+  "openIssues": [
+    {
+      "issueId": "S1_CANONICAL_SOIL",
+      "classification": "SOURCE_DEPENDENT",
+      "status": "OPEN_CANONICAL",
+      "han": "母倉",
+      "decisionId": "mu-cang:soil-calendar",
+      "scope": "Canonical onset/後/定氣 witness outside accepted owner convention",
+      "adoptedAuditAvailability": "Available only within 2025–2027 using separate p4-yi-mucang-soil-owner-convention-v1; unknown if missing/outside coverage",
+      "ownerActionRequiredNow": false,
+      "reason": "Separate bounded adoption already recorded; no new canonical evidence or change of convention requested"
+    },
+    {
+      "issueId": "P5_WAREHOUSE_MONTH_EN_VS_DE",
+      "classification": "SOURCE_DEPENDENT",
+      "status": "DEFERRED_P5_UNKNOWN",
+      "han": "母倉",
+      "decisionId": "mu-cang:warehouse-en-de",
+      "scope": "修倉庫 co-presence 卷十 月恩 vs 卷十一 月德",
+      "adoptedAuditAvailability": "Do not select either warehouse predicate in P4-C",
+      "ownerActionRequiredNow": false,
+      "reason": "Outside P4-C operand scope; decide only with P5 evidence/work"
+    }
+  ],
+  "blockingUnresolvedWithinAdoptedP4CScope": [],
+  "ownerRequests": [],
+  "unknownContract": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error",
+    "warehouse": "P5_DEFERRED",
+    "canonicalSoil": "NOT_CERTIFIED"
+  },
+  "summary": {
+    "entryCount": 11,
+    "originalConflictCount": 31,
+    "additionalComparisonCount": 9,
+    "decisionCount": 40,
+    "classifications": {
+      "SOURCE_DEPENDENT": 31,
+      "NAMING_ONLY": 4,
+      "NO_DIFFERENCE": 1,
+      "CONVENTION_DIFFERENCE": 3,
+      "SPEC_BUG": 1
+    },
+    "openIssueCount": 2,
+    "nextTasks": [
+      "2.14",
+      "2.15"
+    ],
+    "parent2Complete": false
+  }
+}

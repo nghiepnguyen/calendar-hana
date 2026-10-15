@@ -1,0 +1,401 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "tian-ma",
+  "han": "天馬",
+  "aliases": [],
+  "authorityId": "p4-yi-tianma-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol06-787343",
+      "role": "MONTHLY_DEFINITION_AND_EDITOR_EXPLANATION",
+      "volume": 6,
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "offset": 8652,
+      "length": 151,
+      "quote": "　　神樞經曰天馬者天之驛騎也其日宜拜公卿擇賢良宣布政事逺行出征○李鼎祚曰天馬者正月起午順行六陽辰○曹震圭曰天馬者是乾體六陽用事之神也易曰乾為馬\n　　按乾卦納子寅辰午申戌天馬則四十月在子四月乾卦十月建亥又乾宮也午為馬詩曰吉日庚午既差我馬說者謂午為馬祖之神寅申為道路午起寅順歴六陽辰則申又得午取象於馬之用也",
+      "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "SHARED_EDITOR_NARROWING",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 4396,
+      "length": 216,
+      "quote": "　　驛馬{{SK notes|天后}}\n　　{{SK anchor|宜行幸遣使般移}}\n　　與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢\n　　{{SK anchor|又為天后宜求醫療病}}\n　　按驛馬天馬皆第取行遠之義舊本謂驛馬宜封拜官爵詔命公卿出行赴任移徙天馬宜頒詔封拜招賢宣政事遠行出征則失其義矣今以其日止宜行幸遣使般移與覃恩吉日併而後宜頒詔與封拜舉正直吉日併而後宜詔命公卿招賢與布政事吉日併而後宜宣政事庶為允協天后見義例",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "NAMED_DIRECT_AND_CONDITIONAL_USE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 4613,
+      "length": 77,
+      "quote": "　　{{SK anchor|天馬}}\n　　宜行幸遣使般移\n　　與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢\n　　{{SK anchor|義見驛馬}}",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "OCTOBER_JIQI_CO_PRESENCE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 4863,
+      "length": 213,
+      "quote": "　　{{SK anchor|除日}}{{SK notes|吉期　兵寶}}\n　　宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民\n　　十月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與吉期併}}\n　　又為兵寶宜安撫邊境選將訓兵出師\n　　按舊本除日宜解除求醫療病掃舍宇取除義也沐浴等事亦除舊取新之義故并宜之吉期兵寶義取旺辰故所宜同建日舊謂吉期宜兵事葢兵寶之誤又謂宜結婚姻於義無取故刪",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "MAY_TIANXI_CO_PRESENCE",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 5645,
+      "length": 221,
+      "quote": "　　{{SK anchor|成日}}{{SK notes|天喜　天醫}}\n　　宜入學安撫邊境般移築隄防開市\n　　又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名嫁娶五月與天馬併宜詔命公卿招賢{{SK notes|驛馬不得與天喜併}}\n　　{{SK anchor|乂為天醫宜求醫療病}}\n　　按成為合局之終開為生氣之始故其日宜入學原始要終之義也宜安撫邊境者功成而永奠也般移築隄防開市皆取成義天喜舊宜封拜自宜上官義同建日",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_行幸遣使",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 2836,
+      "length": 110,
+      "quote": "　　{{SK anchor|行幸遣使}}{{SK notes|出行同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_般移",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 3806,
+      "length": 129,
+      "quote": "　　{{SK anchor|般移}}{{SK notes|移徙同}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n　　忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡\n　　{{SK anchor|遠迴}}\n　　忌月厭歸忌",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 103,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf103.png",
+      "transcription": "天馬 monthly chart: 寅午、卯申、辰戌、巳子、午寅、未辰、申午、酉申、戌戌、亥子、子寅、丑辰",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "pdfPage": 104,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067684-pdf104.png",
+      "transcription": "李鼎祚曰天馬者正月起午順行六陽辰；天馬則四十月在子",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 108,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf108.png",
+      "transcription": "按驛馬天馬皆第取行遠之義",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 109,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf109.png",
+      "transcription": "天馬；宜行幸遣使般移；與天恩併宜頒詔宣政事與月恩四相時德併宜詔",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 110,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf110.png",
+      "transcription": "命公卿招賢；義見驛馬",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 111,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf111.png",
+      "transcription": "十月與天馬併宜詔命公卿招賢；驛馬不得與吉期併",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 117,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067686-pdf117.png",
+      "transcription": "五月與天馬併宜詔命公卿招賢；驛馬不得與天喜併",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 23,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf23.png",
+      "transcription": "行幸遣使 出行同；宜…驛馬天馬建日吉期天喜開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 30,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "PDF page directly verified; unrecorded folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/06067687-pdf30.png",
+      "transcription": "般移 移徙同；宜…民日驛馬天馬成日開日",
+      "transcriptionScope": "Reviewed excerpt with supplied punctuation/ellipsis; exact full raw source quote retained separately",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading in task 2.10; reused locked renders reread where available"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact-Jie Month Jian; not lunar month or natal/year horse base",
+      "sourceRefs": [
+        0
+      ]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid civil-day sexagenary pillar, compared with monthly target",
+      "sourceRefs": [
+        0
+      ]
+    }
+  ],
+  "predicate": {
+    "type": "MONTH_JIAN_FORWARD_SIX_YANG_BRANCH_LOOKUP",
+    "byMonthJian": {
+      "子": "寅",
+      "丑": "辰",
+      "寅": "午",
+      "卯": "申",
+      "辰": "戌",
+      "巳": "子",
+      "午": "寅",
+      "未": "辰",
+      "申": "午",
+      "酉": "申",
+      "戌": "戌",
+      "亥": "子"
+    },
+    "sequenceFromYin": [
+      "午",
+      "申",
+      "戌",
+      "子",
+      "寅",
+      "辰",
+      "午",
+      "申",
+      "戌",
+      "子",
+      "寅",
+      "辰"
+    ],
+    "derivation": "正月起午順行六陽辰: advance two branch positions each Month Jian; repeats after six months. Scan chart independently confirms all 12 targets, commentary confirms 四十月在子.",
+    "sourceRefs": [
+      0
+    ]
+  },
+  "coverage": {
+    "structuralDomain": "All 12 Month Jian × 60 valid day pillars (720 contexts)",
+    "calendarCoverage": "Inherited from validated exact-Jie Month Jian/day-pillar provider; no separate dated restriction",
+    "notNeeded": [
+      "dayStem",
+      "lunarMonth",
+      "lunarDay",
+      "moonPhase",
+      "soil",
+      "birthYear",
+      "personalPillar"
+    ]
+  },
+  "exceptions": [
+    {
+      "kind": "NO_PRESENCE_EXCEPTION_IDENTIFIED",
+      "detail": "Monthly table hit is not deleted by heading 忌 or conditional court uses.",
+      "sourceRefs": [
+        0,
+        5,
+        6
+      ]
+    },
+    {
+      "kind": "OLD_COURT_AND_MILITARY_USAGE_NARROWED",
+      "detail": "卷十 narrows direct use to 行幸遣使般移; old court/出征 quotation does not authorize extra direct headings.",
+      "sourceRefs": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "行幸遣使",
+      "normalized": "行幸遣使",
+      "activities": [
+        "travel"
+      ],
+      "sourceRefs": [
+        5
+      ],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "般移",
+      "normalized": "般移",
+      "activities": [
+        "moving"
+      ],
+      "sourceRefs": [
+        6
+      ],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "legacy-lunar-month-input",
+      "status": "MATCHED_BRANCH_SEQUENCE_DIFFERENT_INPUT",
+      "detail": "stars.data.ts Thiên Mã (Lộc Mã) byMonth [6,8,10,0,2,4]×2 matches branch sequence; lunar month input differs from exact-Jie Month Jian."
+    },
+    {
+      "id": "legacy-alias-and-broad-use",
+      "status": "NOT_ADOPTED_SOURCE_SCOPE",
+      "detail": "Lộc Mã label and legacy trade/wealth/business claims have no adopted alias/direct scope in this locked entry; do not change runtime."
+    },
+    {
+      "id": "definition-old-use-vs-vol10",
+      "status": "RESOLVED_EDITOR_NARROWING",
+      "detail": "Definition quotes older court and military uses; 卷十 explicitly limits direct uses and makes court uses conditional."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Direct locked raw and scan definition/chart/use/heading reading; legacy/definitions/catalog comparison",
+    "limitations": [
+      "Single Codex reviewer; no independent second expert review",
+      "Not Golden or presence implementation",
+      "Court co-presence is recorded outside current 29-heading catalog"
+    ]
+  },
+  "traceFields": [
+    "authorityId",
+    "ruleId",
+    "inputs",
+    "presence",
+    "sourceRefs"
+  ],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "No aliases adopted, including 驛馬/天后/祿馬/Lộc Mã",
+    "No year/day/natal horse base imported",
+    "No trade/wealth/business/military scope inferred from legacy label or old quotation"
+  ],
+  "conditionalSourceScopes": [
+    {
+      "raw": "頒詔",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        2
+      ],
+      "clause": "與天恩併宜頒詔宣政事",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "宣政事",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        2
+      ],
+      "clause": "與天恩併宜頒詔宣政事",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "詔命公卿招賢",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        2
+      ],
+      "clause": "與月恩四相時德併宜詔命公卿招賢",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "詔命公卿招賢",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        3
+      ],
+      "clause": "十月與天馬併宜詔命公卿招賢",
+      "coPresence": "吉期",
+      "monthJian": "亥",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    },
+    {
+      "raw": "詔命公卿招賢",
+      "mode": "SOURCE_HEADING_OUTSIDE_CURRENT_29_HEADING_CATALOG",
+      "sourceRefs": [
+        4
+      ],
+      "clause": "五月與天馬併宜詔命公卿招賢",
+      "coPresence": "天喜",
+      "monthJian": "午",
+      "status": "RECORDED_NOT_IMPLEMENTED"
+    }
+  ]
+}

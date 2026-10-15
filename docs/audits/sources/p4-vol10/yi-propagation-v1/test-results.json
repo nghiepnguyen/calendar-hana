@@ -1,0 +1,33 @@
+{
+ "phase": "GREEN_AFTER_RAW_RETENTION",
+ "newSuite": {
+  "command": "npx vitest run shared/lunar/p4YiPropagation.test.ts",
+  "passed": 823,
+  "failed": 0,
+  "total": 823
+ },
+ "p4cSuites": {
+  "files": 8,
+  "passed": 4427,
+  "failed": 0
+ },
+ "legacyAndCompatibility": {
+  "files": 10,
+  "passed": 201,
+  "failed": 0
+ },
+ "observedDatedSweep": {
+  "propagationChanged": [],
+  "jiChanged": [
+   "2025-02-23:求醫療病",
+   "2025-08-28:求醫療病",
+   "2026-02-18:求醫療病",
+   "2026-03-02:求醫療病",
+   "2026-08-23:求醫療病",
+   "2027-02-13:求醫療病",
+   "2027-02-25:求醫療病",
+   "2027-08-18:求醫療病",
+   "2027-08-30:求醫療病"
+  ]
+ }
+}

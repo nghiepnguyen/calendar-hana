@@ -1,0 +1,287 @@
+{
+  "scope": "MEASURED_BASELINE_NOT_AUTHORITY_NOT_GOLDEN",
+  "baselineCommit": "db382ba05175f061e0b1031de5361b49a2973ced",
+  "baselineTree": "ad1de4d9555e811bd89a31e36faeeefcd5eed49b",
+  "items": [
+    {
+      "han": "母倉",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "修倉庫",
+          "normalized": "修倉庫",
+          "activities": [
+            "warehouse"
+          ],
+          "warehouseDeferred": true
+        },
+        {
+          "raw": "栽種",
+          "normalized": "栽種",
+          "activities": [
+            "planting"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "牧養",
+          "normalized": "牧養",
+          "activities": [
+            "livestock"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "納畜",
+          "normalized": "納畜",
+          "activities": [
+            "livestock"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "納財",
+          "normalized": "納財",
+          "activities": [
+            "finance"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "福德",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "修宮室",
+          "normalized": "修宮室",
+          "activities": [
+            "renovation"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "宴會",
+          "normalized": "宴會",
+          "activities": [
+            "meeting"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "天恩",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "宴會",
+          "normalized": "宴會",
+          "activities": [
+            "meeting"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "天巫",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "祈福",
+          "normalized": "祈福",
+          "activities": [
+            "pray_blessing"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "祭祀",
+          "normalized": "祭祀",
+          "activities": [
+            "worship"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "天后",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": [
+            "medical"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "天醫",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": [
+            "medical"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "除神",
+      "adoptedAliases": [],
+      "catalogMatches": [
+        {
+          "id": "tru_than",
+          "han": "除神",
+          "label": "Trừ Thần"
+        }
+      ],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "掃舍宇",
+          "normalized": "掃舍宇",
+          "activities": [
+            "cleaning"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "整容剃頭",
+          "normalized": "整容剃頭",
+          "activities": [
+            "cut_hair"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "求醫療病",
+          "normalized": "求醫療病",
+          "activities": [
+            "medical"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "驛馬",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "般移",
+          "normalized": "般移",
+          "activities": [
+            "moving"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": [
+            "travel"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "天馬",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "般移",
+          "normalized": "般移",
+          "activities": [
+            "moving"
+          ],
+          "warehouseDeferred": false
+        },
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": [
+            "travel"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "吉期",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "行幸遣使",
+          "normalized": "行幸遣使",
+          "activities": [
+            "travel"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    },
+    {
+      "han": "鳴吠",
+      "adoptedAliases": [],
+      "catalogMatches": [],
+      "definitionMatches": [],
+      "headings": [
+        {
+          "raw": "安葬",
+          "normalized": "安葬",
+          "activities": [
+            "burial"
+          ],
+          "warehouseDeferred": false
+        }
+      ],
+      "predicateInputs": "UNRESOLVED_TASK_2; no inference from god label"
+    }
+  ],
+  "headingAliases": [
+    {
+      "raw": "破屋壞垣",
+      "normalized": "破屋壊垣"
+    }
+  ],
+  "headingsOutsideCatalog": []
+}

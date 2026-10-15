@@ -1,0 +1,202 @@
+{
+  "version": "p4-yi-source-collection-v1",
+  "scope": "TASK_2_1_EVIDENCE_ONLY_NOT_PRESENCE_AUTHORITY",
+  "retrievedOn": "2026-10-13",
+  "rawSources": [
+    {
+      "sourceId": "ws-vol04-787340",
+      "kind": "RAW_TRANSCRIPTION",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "title": "欽定協紀辨方書 (四庫全書本)/卷04",
+      "revisionId": 787340,
+      "revisionTimestamp": "2016-10-27T11:53:56Z",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=787340",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7",
+      "sha256": "8782423ab87161f9e60c8b2ee23609bbc1c05bd71f9e85804910d09d46bfb922",
+      "codePointCount": 15570,
+      "byteCount": 42686,
+      "adoptionStatus": "COLLECTED_UNREVIEWED"
+    },
+    {
+      "sourceId": "ws-vol05-787341",
+      "kind": "RAW_TRANSCRIPTION",
+      "volume": 5,
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "title": "欽定協紀辨方書 (四庫全書本)/卷05",
+      "revisionId": 787341,
+      "revisionTimestamp": "2016-10-27T11:54:16Z",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=787341",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6",
+      "codePointCount": 14403,
+      "byteCount": 40629,
+      "adoptionStatus": "COLLECTED_UNREVIEWED"
+    },
+    {
+      "sourceId": "ws-vol06-787343",
+      "kind": "RAW_TRANSCRIPTION",
+      "volume": 6,
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "title": "欽定協紀辨方書 (四庫全書本)/卷06",
+      "revisionId": 787343,
+      "revisionTimestamp": "2016-10-27T11:54:36Z",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=787343",
+      "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19",
+      "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6",
+      "codePointCount": 13730,
+      "byteCount": 38409,
+      "adoptionStatus": "COLLECTED_UNREVIEWED"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "kind": "RAW_TRANSCRIPTION",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "title": "欽定協紀辨方書 (四庫全書本)/卷10",
+      "revisionId": 787351,
+      "revisionTimestamp": "2016-10-27T11:55:57Z",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=787351",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+      "codePointCount": 22882,
+      "byteCount": 60422,
+      "adoptionStatus": "COLLECTED_UNREVIEWED"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "kind": "RAW_TRANSCRIPTION",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "title": "欽定協紀辨方書 (四庫全書本)/卷11",
+      "revisionId": 787353,
+      "revisionTimestamp": "2016-10-27T11:56:16Z",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=787353",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50",
+      "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e",
+      "codePointCount": 7072,
+      "byteCount": 17568,
+      "adoptionStatus": "COLLECTED_UNREVIEWED"
+    }
+  ],
+  "scanSources": [
+    {
+      "sourceId": "ia-06067682.cn",
+      "kind": "SCAN_PDF",
+      "volumes": [
+        4
+      ],
+      "title": "欽定協紀辨方書·卷四",
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067682.cn.pdf",
+      "url": "https://archive.org/download/06067682.cn/06067682.cn.pdf",
+      "itemUrl": "https://archive.org/details/06067682.cn",
+      "pageCount": 140,
+      "sha1": "86b99f34ab1ec34c9abc2bbc9bb5bf32fc5905d3",
+      "sha256": "d5e478b5a3e2e4a65ef5974f2e5983849b1f1c4ee1c0a71de88c1fe461d9ef90",
+      "metadataPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067682.metadata.json",
+      "titleCheck": {
+        "pdfPage": 3,
+        "renderPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067682.title-n2.png",
+        "observedVolume": 4,
+        "status": "VISUALLY_CONFIRMED_VOLUME_TITLE_ONLY"
+      },
+      "clauseReviewStatus": "NOT_YET_REVIEWED"
+    },
+    {
+      "sourceId": "ia-06067683.cn",
+      "kind": "SCAN_PDF",
+      "volumes": [
+        5
+      ],
+      "title": "欽定協紀辨方書·卷五",
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067683.cn.pdf",
+      "url": "https://archive.org/download/06067683.cn/06067683.cn.pdf",
+      "itemUrl": "https://archive.org/details/06067683.cn",
+      "pageCount": 140,
+      "sha1": "2a246343eeb46c048eb0c705710df57c88d2d7fd",
+      "sha256": "97c5edf6ddeefe6ea8484cb3d08c821d6531a9587f97d250cd35b60cc2eae84c",
+      "metadataPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067683.metadata.json",
+      "titleCheck": {
+        "pdfPage": 3,
+        "renderPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067683.title-n2.png",
+        "observedVolume": 5,
+        "status": "VISUALLY_CONFIRMED_VOLUME_TITLE_ONLY"
+      },
+      "clauseReviewStatus": "NOT_YET_REVIEWED"
+    },
+    {
+      "sourceId": "ia-06067684.cn",
+      "kind": "SCAN_PDF",
+      "volumes": [
+        6
+      ],
+      "title": "欽定協紀辨方書·卷六",
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067684.cn.pdf",
+      "url": "https://archive.org/download/06067684.cn/06067684.cn.pdf",
+      "itemUrl": "https://archive.org/details/06067684.cn",
+      "pageCount": 154,
+      "sha1": "e6813aeda6f8e80f27c61f1fec856b7e43347d30",
+      "sha256": "2498edeb31860f81caa8db863b285f6ac6d1f09de2ec7e0c5116c3f9cdadbe59",
+      "metadataPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067684.metadata.json",
+      "titleCheck": {
+        "pdfPage": 3,
+        "renderPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067684.title-n2.png",
+        "observedVolume": 6,
+        "status": "VISUALLY_CONFIRMED_VOLUME_TITLE_ONLY"
+      },
+      "clauseReviewStatus": "NOT_YET_REVIEWED"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "kind": "SCAN_PDF",
+      "volumes": [
+        9,
+        10
+      ],
+      "title": "欽定協紀辨方書·卷九~卷十",
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067686.cn.pdf",
+      "url": "https://archive.org/download/06067686.cn/06067686.cn.pdf",
+      "itemUrl": "https://archive.org/details/06067686.cn",
+      "pageCount": 231,
+      "sha1": "9d1813ad559739633a0e9533a7df107aec86cbe3",
+      "sha256": "b12fd373c2d1ee70c841407f403eeca3d0531348f2eeee571f24e7905aacb499",
+      "metadataPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067686.metadata.json",
+      "titleCheck": {
+        "pdfPage": 3,
+        "renderPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067686.title-n2.png",
+        "observedVolume": 9,
+        "status": "VISUALLY_CONFIRMED_VOLUME_TITLE_ONLY"
+      },
+      "clauseReviewStatus": "NOT_YET_REVIEWED"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "kind": "SCAN_PDF",
+      "volumes": [
+        11,
+        12
+      ],
+      "title": "欽定協紀辨方書·卷十一~卷十二",
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.cn.pdf",
+      "url": "https://archive.org/download/06067687.cn/06067687.cn.pdf",
+      "itemUrl": "https://archive.org/details/06067687.cn",
+      "pageCount": 112,
+      "sha1": "63f7da712fdf2b8c894341249dd64d84c6ce3115",
+      "sha256": "472a6066a1be0dd8d3c8163812dbfdb2c933688b6428a65fcaeeb798806afdd4",
+      "metadataPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.metadata.json",
+      "titleCheck": {
+        "pdfPage": 3,
+        "renderPath": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.title-n2.png",
+        "observedVolume": 11,
+        "status": "VISUALLY_CONFIRMED_VOLUME_TITLE_ONLY"
+      },
+      "clauseReviewStatus": "NOT_YET_REVIEWED"
+    }
+  ],
+  "ocrRole": "LOCATOR_ONLY_NOT_TRANSCRIPTION_NOT_GOLDEN; exact/simplified name lookup produced no usable hits. Full PDFs retained for manual entry review.",
+  "limits": [
+    "Full scan bytes and volume title confirmed; per-entry printed folio/page/clause transcription remains tasks 2.2–2.12.",
+    "Existing raw source files are reused byte-identically; source collection does not promote them or adopt a predicate.",
+    "Wikisource is a transcription; SKchar/template placeholders must be checked against scan before interpreting disputed text."
+  ]
+}

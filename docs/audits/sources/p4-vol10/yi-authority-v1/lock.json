@@ -1,0 +1,79 @@
+{
+  "version": "p4-yi-operands-authority-lock-v1",
+  "status": "AUTHORITY_ASSEMBLED_PENDING_2_15_GATE",
+  "offsetProtocol": "unicode-code-point-zero-based-end-exclusive-v1",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-v1/README.md",
+      "sha256": "96b6a743bafb3a938da0bee85f43a4b8817b51d3db103a5ad4321f6210960943"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-v1/validation.json",
+      "sha256": "e2b7fc56318c6be71698163904936c4dc65f3cfc64ce49725830e49bcb6a4483"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/lock.json",
+      "sha256": "3d47610ab4e6295ee665c0ca3a5f4979112e9893117df21492289f01b41cca6e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/lock.json",
+      "sha256": "af5c5f095939cb6fdae1c5cadf22003e40b5123656a20cfc04dd8a94c940ec4b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-comparison-v1/lock.json",
+      "sha256": "5c308cd96138bf857eb3782634dab94c6c115eca423f3ba377a2de91c64e6df5"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fude-v1/lock.json",
+      "sha256": "adb08cb532be732b0adb937f1533cda20cdf6f3f7f0428172d08bf64983cb501"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-jiqi-v1/lock.json",
+      "sha256": "e27e62f7bf65009e49792e83b8412dd3e7318cf269f92920048a2353caf2c4f9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mingfei-v1/lock.json",
+      "sha256": "e7f690d6efb102381c134a182334c77d3bc6f72a68e85773160dbc8384d19954"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v1/lock.json",
+      "sha256": "62f9cdfa1372178bfe1c3e13d55a267a8f49e7655939f1ffb486951875a909b4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-mucang-v2/lock.json",
+      "sha256": "fc4db4c31a1a8eee48970ab00de4e7a1cf34a74a85144604046aad7191614421"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/lock.json",
+      "sha256": "4c673859a7918101a8e47c8530de164472e00fd501d016e5a9c59cd56a25c83f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianen-v1/lock.json",
+      "sha256": "d6a430763f92eb7a3369705f6d9d0376fc5d3373267bbab77862cbab0ae39a6a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianhou-v1/lock.json",
+      "sha256": "0b05036b58cec7b741c8a1eefca3f310fd561693908adfaf38f66405978b5611"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianma-v1/lock.json",
+      "sha256": "cd2fc9a0176b7edbf899ae76029de64cb9fbc146ef13f0f61dc2ba74476c19f3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/lock.json",
+      "sha256": "8cdf621f1fbff0de0e5cdee15dcfef22639d0dbd841a3f5440cad721ff00a1d8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-tianyi-v1/lock.json",
+      "sha256": "d8a9f26788966c87d486adf4ad3ee67c12953bd665ce54a925a248318f2505ed"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-yima-v1/lock.json",
+      "sha256": "b646aaf40c8b99da6be04fd1fedd9ff8d055e9770474bf395e1c6f6f1f8d0748"
+    },
+    {
+      "path": "shared/almanac-data/p4-yi-operands-v1.json",
+      "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+    }
+  ]
+}

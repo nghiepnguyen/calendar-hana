@@ -1,0 +1,92 @@
+{
+  "version": "p4-yi-baseline-lock-v1",
+  "scope": "MEASURED_BASELINE_NOT_GOLDEN",
+  "baselineCommit": "db382ba05175f061e0b1031de5361b49a2973ced",
+  "baselineTree": "ad1de4d9555e811bd89a31e36faeeefcd5eed49b",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/inventory.json",
+      "sha256": "f3841d597e154044b49b6064f3259ae945b39162438f644e51d28fac5226dca6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/summary.json",
+      "sha256": "f2a3411cefb079b7509bc3cd6a05734f2eb4c29279bcd48aa680e3a2698fd62f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+      "sha256": "6484bab71f7c7762a916ea792e305183311c9d62e43deb48b762813b35fec1d2"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/inputs.json",
+      "sha256": "0fed46a2022cd8db4055a1ff9afb5334e6edb93a170481d685e9001570258765"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+      "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+    },
+    {
+      "path": "shared/almanac-data/p4-lunar-day-taboo-v1.json",
+      "sha256": "90a5be2252982d7e032d810e635332a91189a7e33de5cf423f9137db008d561a"
+    },
+    {
+      "path": "shared/almanac-data/p4-lunar-phase-authority-v1.json",
+      "sha256": "463fb300a25c2f9c130c8089fe35347cae40c3630cea126b50c4932b787139fa"
+    },
+    {
+      "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+      "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+    },
+    {
+      "path": "shared/almanac-data/p4-puzhu-end-v1.json",
+      "sha256": "3cb6aa9edeaf95189612486783a48bbef48f3894beab7ad6a0551b3860671c8a"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-season-days.json",
+      "sha256": "b24fc7a0568431914fa36fb271f982f3d3f697212d22fcc7833a1db7b6948242"
+    },
+    {
+      "path": "shared/lunar/p4YiBaseline.test.ts",
+      "sha256": "d89bcb06a20c291c586cd81b05d6f0de7690a5093cca0307f45b42235761ae88"
+    },
+    {
+      "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+      "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+    },
+    {
+      "path": "shared/almanac-data/xieji-god-definitions.json",
+      "sha256": "5ca0629da282a5d3f0ba7de8ba69d5adafeaa593ff9d2c46a4362bd9801aa19a"
+    },
+    {
+      "path": "shared/almanac-data/good-gods.json",
+      "sha256": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32"
+    },
+    {
+      "path": "shared/almanac-data/manifest.json",
+      "sha256": "5726562cdf843bcb0db0987b5b8a450610b60e58d2a2dad5dc26acf2ad29a323"
+    },
+    {
+      "path": "shared/lunar/audit-fixtures/mansion-decision-baseline-v1.json",
+      "sha256": "4ee182f6a4aeb35960ffff0565373dee88d9e825715ab35f3181279c40f66be5"
+    },
+    {
+      "path": "docs/audits/p4-vol10-remaining-ji-2025-2027.tsv",
+      "sha256": "3572b218bad756b06f675655d55d42fafcb1c146f86a1fba44b95bac1c34686c"
+    },
+    {
+      "path": "docs/audits/p4-vol10-remaining-ji-summary.json",
+      "sha256": "b5047af9e98a4081900cdbc0bd6368afb3cba2cec0b9e98fabc981cdf72c2423"
+    },
+    {
+      "path": "shared/lunar/p4DayComposition.ts",
+      "sha256": "dd01594a14cdab6c2f1499f25c46e3103c8883d9e71086c356fbc8db149e5949"
+    },
+    {
+      "path": "shared/lunar/p4FullDayComposition.ts",
+      "sha256": "94bb6d978511de7531682c653be1c635c632ea271c00e5402dfda81e49b98d36"
+    }
+  ]
+}

@@ -1,0 +1,2065 @@
+{
+  "version": "p4-yi-irrelevant-adapter-v1",
+  "task": "4.3",
+  "scope": "TEST_INPUT_ADAPTER_ONLY",
+  "basis": "Frozen yi-expected-v1 irrelevantInput recipes + contract4.1",
+  "policy": "Required tuple and expected remain unchanged. Optional values are concrete adapter test inputs, not new source predicates or Golden corrections. Null is allowed here only because the entry must ignore that key.",
+  "recipeCount": 69,
+  "variantCount": 276,
+  "recipes": [
+    {
+      "fixtureId": "fu-de:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "fu-de:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "fu-de:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "fu-de:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "fu-de:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "fu-de:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-MonthJian",
+      "authorityRecipeKey": "MonthJian",
+      "apiKey": "MONTH_JIAN_BRANCH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "午"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-en:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-wu:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-hou:irrelevant-personalPillar",
+      "authorityRecipeKey": "personalPillar",
+      "apiKey": "PERSONAL_PILLAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙丑"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-yi:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-MonthJian",
+      "authorityRecipeKey": "MonthJian",
+      "apiKey": "MONTH_JIAN_BRANCH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "午"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tru_than:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "yi-ma:irrelevant-personalPillar",
+      "authorityRecipeKey": "personalPillar",
+      "apiKey": "PERSONAL_PILLAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙丑"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "tian-ma:irrelevant-personalPillar",
+      "authorityRecipeKey": "personalPillar",
+      "apiKey": "PERSONAL_PILLAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙丑"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ji-qi:irrelevant-personalPillar",
+      "authorityRecipeKey": "personalPillar",
+      "apiKey": "PERSONAL_PILLAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙丑"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-monthJian",
+      "authorityRecipeKey": "monthJian",
+      "apiKey": "MONTH_JIAN_BRANCH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "午"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-lunarMonth",
+      "authorityRecipeKey": "lunarMonth",
+      "apiKey": "LUNAR_MONTH",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 12
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-soil",
+      "authorityRecipeKey": "soil",
+      "apiKey": "SOIL_REIGN_STATE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": {
+            "state": "absent",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-02-11",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-05-05",
+            "onset": "2025-04-17",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3032,
+            "arithmetic": "2025-05-05 - 18 civil days = 2025-04-17; onset <= date < Li"
+          }
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": {
+            "state": "present",
+            "authorityId": "p4-yi-mucang-soil-owner-convention-v1",
+            "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+            "timezone": "Asia/Ho_Chi_Minh",
+            "date": "2025-01-16",
+            "coverage": "inside",
+            "validated": true,
+            "nextLi": "2025-02-03",
+            "onset": "2025-01-16",
+            "sourcePath": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+            "sourceRowIndex": 3026,
+            "arithmetic": "2025-02-03 - 18 civil days = 2025-01-16; onset <= date < Li"
+          }
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-birthYear",
+      "authorityRecipeKey": "birthYear",
+      "apiKey": "BIRTH_YEAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1990
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 2000
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "ming-fei:irrelevant-personalPillar",
+      "authorityRecipeKey": "personalPillar",
+      "apiKey": "PERSONAL_PILLAR",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲子"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙丑"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "mu-cang:irrelevant-lunarDay",
+      "authorityRecipeKey": "lunarDay",
+      "apiKey": "LUNAR_DAY",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": 1
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": 30
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "mu-cang:irrelevant-moonPhase",
+      "authorityRecipeKey": "moonPhase",
+      "apiKey": "MOON_PHASE",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "none"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "full"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    },
+    {
+      "fixtureId": "mu-cang:irrelevant-dayStem",
+      "authorityRecipeKey": "dayStem",
+      "apiKey": "DAY_STEM",
+      "variants": [
+        {
+          "id": "omitted",
+          "supplied": false
+        },
+        {
+          "id": "valid-a",
+          "supplied": true,
+          "value": "甲"
+        },
+        {
+          "id": "valid-b",
+          "supplied": true,
+          "value": "乙"
+        },
+        {
+          "id": "malformed-irrelevant-null",
+          "supplied": true,
+          "value": null
+        }
+      ]
+    }
+  ]
+}

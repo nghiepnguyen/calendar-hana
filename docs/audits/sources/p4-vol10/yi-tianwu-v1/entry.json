@@ -1,0 +1,316 @@
+{
+  "schemaVersion": "p4-yi-authority-entry-v1",
+  "id": "tian-wu",
+  "han": "天巫",
+  "aliases": [],
+  "authorityId": "p4-yi-tianwu-v1",
+  "authorityVersion": 1,
+  "status": "SOURCE_REVIEWED",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "sources": [
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "DEFINITION",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 3066,
+      "length": 63,
+      "quote": "　　總要厯曰天巫者月中善神也所值之日宜合藥請醫祀鬼神求福願○厯例曰常居月建前二辰○曹震圭曰天巫者月中善神能克除鬼煞也義與福德同",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "FORWARD_DIRECTION_EXAMPLES",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 2861,
+      "length": 204,
+      "quote": "　　總要厯曰福德者月中福德之神也其日宜祀神祗求福願修宫室獻封章○厯例曰福德常居月建前二辰○曹震圭曰建前二辰者是月所生之子以其當相氣在前為引與我能為福為德之神也故易卦以子孫爻為福徳其義一也大抵子能制乎鬼使不害已故為福德假令正月寅以火生辰土為子其土能制水鬼也二月夘木生巳火為子火能制金鬼也三月辰之衰木能生午火為子去制金鬼也餘倣此○考原曰十二地支各有所藏若以前二辰為月建所生者亦無不合則生氣之在月建前二辰亦當取此義",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol04-787340",
+      "role": "EDITORIAL_TIAN_GOU_SCOPE",
+      "volume": 4,
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "offset": 3240,
+      "length": 458,
+      "quote": "　　按滿為福德總要厯謂其日宜祭神祇祈福願又謂之天巫亦謂宜祀鬼神求福願夫天巫云者巫能通幽明以見日吉辰良其誠意可逹於鬼神故比之天巫云耳豈真是日有神號天巫者下行世間哉顧同一滿日也忽又謂之天狗同一樞要歴也又云忌禱祀鬼神祈求福願誠不可解矣詳考其義蓋天狗者戌日值滿也天官家謂太白餘氣散為天狗滿既是戌建必在申滿之為滿也以三為數之極也天之刑神當令之時而又居盛滿之極則其與他滿日不可同例論明矣故又謂之天狗而謂不宜禱祀非謂凡為滿日皆天狗也夫滿日所以為福德而宜祭祀者以月建為本日之生氣有鬼神降福之象也若滿在戌日則從申至酉悉屬金行其為神也乃蓐收司刑之神而非降福之神矣故忌之也乃曹震圭以天狗為祛除私邪之神夫天狗本妖星如彗孛之類從未有被以嘉稱者其説不類又謂建前二辰為禦於門首之象犬之守宅亦不必其在門也又以寅為艮艮為犬而謂建子則滿寅有犬之象焉未識建丑滿夘則又何説也又謂祈福願祀鬼神皆為正道故並忌之然則為邪道則不須忌也無論隂陽之道本不為小人謀且前既以天狗為祛除私邪之神矣此又謂忌用正道倐命之為正倐命之為邪何其無特見也又按天狗為申建之戌止一位故不入圖",
+      "sha1": "da680c13601d1cb7b81a1b5e53645e87b8f524b7"
+    },
+    {
+      "sourceId": "ws-vol10-787351",
+      "role": "USE_SCOPE_AND_MEDICAL_REJECTION",
+      "volume": 10,
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 5077,
+      "length": 191,
+      "quote": "　　{{SK anchor|滿日}}{{SK notes|天巫　福德}}\n　　宜進人口裁製修倉庫經絡開市立劵交易納財開倉庫出貨財補垣塞穴\n　　{{SK anchor|又為天巫宜祭祀祈福}}\n　　又為福德宜上册進表章慶賜賞賀宴㑹修宮室繕城郭\n　　按滿取豐豫之義故所宜如此天巫見義例福德義同時德具體而微故止宜上册數事舊本無宴㑹然未有宜慶賞而不宜宴㑹者又謂天巫宜療病與滿日所忌自相牴牾故刪",
+      "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_祭祀",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 1408,
+      "length": 78,
+      "quote": "　　{{SK anchor|祭祀}}\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　{{SK anchor|忌天狗寅日}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    {
+      "sourceId": "ws-vol11-787353",
+      "role": "HEADING_祈福",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 1487,
+      "length": 103,
+      "quote": "　　祈福\n　　宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n　　忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢{{SK notes|又忌禄空上朔等日見鋪註條例餘倣此}}",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  ],
+  "scanChecks": [
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 27,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf27.png",
+      "transcription": "滿　福德　天巫　天狗",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 28,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf28.png",
+      "transcription": "福德常居月建前二辰",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 29,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf29.png",
+      "transcription": "總要歷曰天巫者月中善神也所值之日宜合藥請醫祀鬼神求福願○歷例曰常居月建前二辰",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 30,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf30.png",
+      "transcription": "天巫云者巫能通幽明",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 31,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf31.png",
+      "transcription": "天狗者戌日值滿也",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 32,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf32.png",
+      "transcription": "又謂祈福願祠鬼神皆為正道故並忌之",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067682.cn",
+      "pdfPage": 33,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067682-pdf33.png",
+      "transcription": "又按天狗為申建之戌止一位故不入圖",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 112,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf112.png",
+      "transcription": "滿日　天巫　福德",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067686.cn",
+      "pdfPage": 113,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067686-pdf113.png",
+      "transcription": "又為天巫宜祭祀祈福；又謂天巫宜療病與滿日所忌自相牴牾故刪",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 13,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf13.png",
+      "transcription": "祭祀；祈福；時德天巫開日；忌天狗寅日",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    },
+    {
+      "sourceId": "ia-06067687.cn",
+      "pdfPage": 14,
+      "archiveImageIndex": null,
+      "printedFolio": null,
+      "locatorStatus": "Confirmed PDF page; unread folio/Archive alignment not inferred",
+      "renderPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/06067687-pdf14.png",
+      "transcription": "祈福忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢",
+      "transcriptionScope": "Reviewed excerpt; punctuation added only in scan transcription; raw quote unchanged",
+      "reviewer": "Codex (single agent)",
+      "check": "Direct scan reading with raw/source hierarchy comparison"
+    }
+  ],
+  "operandInputs": [
+    {
+      "key": "MONTH_JIAN_BRANCH",
+      "required": true,
+      "origin": "Exact Jie Month Jian selectionContext.MONTH_JIAN_BRANCH, 子=0…亥=11; not lunarMonth or whole crossing-day officer",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "key": "DAY_BRANCH",
+      "required": true,
+      "origin": "Branch of valid sexagenary day pillar; stem is not used",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "predicate": {
+    "type": "MONTH_JIAN_FORWARD_BRANCH_OFFSET",
+    "offset": 2,
+    "expression": "(dayBranch - monthJianBranch + 12) % 12 == 2",
+    "byMonthJian": {
+      "子": "寅",
+      "丑": "卯",
+      "寅": "辰",
+      "卯": "巳",
+      "辰": "午",
+      "巳": "未",
+      "午": "申",
+      "未": "酉",
+      "申": "戌",
+      "酉": "亥",
+      "戌": "子",
+      "亥": "丑"
+    },
+    "derivation": "天巫 definition explicitly 常居月建前二辰 and 義與福德同; adjacent 福德 source examples 寅→辰/卯→巳/辰→午 and 滿 chart fix direction. Separate god/scope despite same position.",
+    "sourceRefs": [0, 1, 3]
+  },
+  "coverage": {
+    "structuralDomain": "All 12 Month Jian branches × 60 valid day pillars (720 contexts)",
+    "calendarCoverage": "Inherited only from validated exact-Jie Month Jian and day-pillar input provider; no independent dated restriction",
+    "notNeeded": ["dayStem", "lunarMonth", "lunarDay", "moonPhase", "soil", "birthYear"]
+  },
+  "exceptions": [
+    {
+      "kind": "SEPARATE_HEADING_JI_NOT_PRESENCE_SUPPRESSION",
+      "detail": "申建戌日 天狗 is a ritual 忌 scope, not a clause deleting 天巫 presence. 卷十一 lists 天巫 宜 and 天狗/寅日 忌 in same heading; preserve raw/protected 忌 and existing override/propagation when composing later.",
+      "sourceRefs": [2, 4]
+    },
+    {
+      "kind": "MEDICAL_USE_EXPLICITLY_REMOVED",
+      "detail": "卷四 cites 合藥請醫; 卷十 explicitly deletes old 天巫宜療病 due to conflict with 滿日所忌. No medical 宜 in P4-C.",
+      "sourceRefs": [0, 3]
+    }
+  ],
+  "headingScopes": [
+    {
+      "raw": "祭祀",
+      "normalized": "祭祀",
+      "activities": ["worship"],
+      "sourceRefs": [4],
+      "mode": "DIRECT_YI"
+    },
+    {
+      "raw": "祈福",
+      "normalized": "祈福",
+      "activities": ["pray_blessing"],
+      "sourceRefs": [5],
+      "mode": "DIRECT_YI"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "old-medical-use",
+      "status": "RESOLVED_BY_VOL10_EXPLICIT_EDITORIAL_DELETION",
+      "detail": "Definition quotation retained; adopted heading scope follows 卷十 又為天巫宜祭祀祈福 and 卷十一 matching heading lists, not 合藥請醫."
+    },
+    {
+      "id": "tian-gou-overgeneralization",
+      "status": "RESOLVED_BY_VOL04_EDITORIAL_SCOPE",
+      "detail": "Quoted older 天狗常居月建前二辰 is narrowed by editor to 申建戌日 only; not all 滿日 and not a 天巫 alias."
+    },
+    {
+      "id": "same-position-identity",
+      "status": "SCOPED_NOT_ALIASED",
+      "detail": "滿日/福德 have same position, separate authority/use scopes. No aliases adopted."
+    }
+  ],
+  "unknownPolicy": {
+    "missingRequiredInput": "unknown",
+    "outsideCoverage": "unknown",
+    "malformedInput": "error"
+  },
+  "ownerAdoption": null,
+  "review": {
+    "status": "REVIEWED",
+    "reviewer": "Codex (single agent)",
+    "date": "2026-10-14",
+    "method": "Locked raw offsets + direct scans of definition/editorial/heading clauses + existing mapping and name checks",
+    "limitations": [
+      "No independent second reviewer",
+      "Not Golden or presence implementation",
+      "No date coverage beyond input provider"
+    ]
+  },
+  "traceFields": ["authorityId", "ruleId", "inputs", "presence", "sourceRefs"],
+  "limits": [
+    "AUDIT_ONLY; scoringReady false",
+    "No accepted aliases; do not merge 福德/滿日/天狗 identity",
+    "Positive 宜 operand does not itself remove negative/protected ritual 忌",
+    "求嗣/求醫療病/other 滿日 headings excluded from 天巫 direct scope"
+  ]
+}

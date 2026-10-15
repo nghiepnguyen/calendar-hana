@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "p4-yi-authority-gate-v1",
+  "task": "2.15",
+  "date": "2026-10-14",
+  "result": "PASS",
+  "scope": "P4_C_AUTHORITY_STEP_2_ONLY",
+  "authorityArtifact": {
+    "path": "shared/almanac-data/p4-yi-operands-v1.json",
+    "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb",
+    "snapshotStatus": "AUTHORITY_ASSEMBLED_PENDING_2_15_GATE"
+  },
+  "prerequisites": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10",
+    "2.11",
+    "2.12",
+    "2.13",
+    "2.14"
+  ],
+  "entries": [
+    {
+      "han": "母倉",
+      "authorityId": "p4-yi-mucang-v2",
+      "ruleId": "p4-yi-mucang-v2:presence",
+      "authorityStatus": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mucang-v2/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true,
+        "boundedOwnerAdoption": true
+      }
+    },
+    {
+      "han": "福德",
+      "authorityId": "p4-yi-fude-v1",
+      "ruleId": "p4-yi-fude-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "天恩",
+      "authorityId": "p4-yi-tianen-v1",
+      "ruleId": "p4-yi-tianen-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianen-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "天巫",
+      "authorityId": "p4-yi-tianwu-v1",
+      "ruleId": "p4-yi-tianwu-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "天后",
+      "authorityId": "p4-yi-tianhou-v1",
+      "ruleId": "p4-yi-tianhou-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianhou-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "天醫",
+      "authorityId": "p4-yi-tianyi-v1",
+      "ruleId": "p4-yi-tianyi-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianyi-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "除神",
+      "authorityId": "p4-yi-chushen-v1",
+      "ruleId": "p4-yi-chushen-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "驛馬",
+      "authorityId": "p4-yi-yima-v1",
+      "ruleId": "p4-yi-yima-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-yima-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "天馬",
+      "authorityId": "p4-yi-tianma-v1",
+      "ruleId": "p4-yi-tianma-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-tianma-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "吉期",
+      "authorityId": "p4-yi-jiqi-v1",
+      "ruleId": "p4-yi-jiqi-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-jiqi-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    },
+    {
+      "han": "鳴吠",
+      "authorityId": "p4-yi-mingfei-v1",
+      "ruleId": "p4-yi-mingfei-v1:presence",
+      "authorityStatus": "SOURCE_REVIEWED",
+      "entryPath": "docs/audits/sources/p4-vol10/yi-mingfei-v1/entry.json",
+      "result": "PASS",
+      "checks": {
+        "identity": true,
+        "status": true,
+        "sourceEvidence": true,
+        "predicate": true,
+        "requiredInputs": true,
+        "coverage": true,
+        "headingScope": true,
+        "review": true,
+        "unknownContract": true,
+        "auditOnly": true,
+        "sourceReferenceIndices": true,
+        "scanLocators": true
+      }
+    }
+  ],
+  "summary": {
+    "requiredCount": 11,
+    "passedCount": 11,
+    "failedCount": 0,
+    "statusCounts": {
+      "OWNER_ADOPTED_SOURCE_DEPENDENT": 1,
+      "SOURCE_REVIEWED": 10
+    },
+    "blockingAuthorityIssues": 0,
+    "parent2Complete": true,
+    "p4CComplete": false,
+    "nextTask": "3.1"
+  },
+  "residualIssues": [
+    {
+      "issueId": "S1_CANONICAL_SOIL",
+      "classification": "SOURCE_DEPENDENT",
+      "status": "OPEN_CANONICAL",
+      "han": "母倉",
+      "decisionId": "mu-cang:soil-calendar",
+      "scope": "Canonical onset/後/定氣 witness outside accepted owner convention",
+      "adoptedAuditAvailability": "Available only within 2025–2027 using separate p4-yi-mucang-soil-owner-convention-v1; unknown if missing/outside coverage",
+      "ownerActionRequiredNow": false,
+      "reason": "Separate bounded adoption already recorded; no new canonical evidence or change of convention requested"
+    },
+    {
+      "issueId": "P5_WAREHOUSE_MONTH_EN_VS_DE",
+      "classification": "SOURCE_DEPENDENT",
+      "status": "DEFERRED_P5_UNKNOWN",
+      "han": "母倉",
+      "decisionId": "mu-cang:warehouse-en-de",
+      "scope": "修倉庫 co-presence 卷十 月恩 vs 卷十一 月德",
+      "adoptedAuditAvailability": "Do not select either warehouse predicate in P4-C",
+      "ownerActionRequiredNow": false,
+      "reason": "Outside P4-C operand scope; decide only with P5 evidence/work"
+    }
+  ],
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "method": "Read-only gate of previously locked entry/assembly/comparison evidence; no new source/predicate selection",
+    "limitations": [
+      "Not independent second source review",
+      "PASS within adopted authority scope; not canonical S1 certification",
+      "Does not resolve P5 warehouse, freeze Golden, implement presence or accept full P4-C"
+    ]
+  },
+  "snapshotPolicy": "Historical 2.14 assembled-pending snapshot kept byte-for-byte; this hash-bound report records later authority gate outcome",
+  "commands": [
+    "python3 scripts/verify-p4-yi-sources.py --self-test",
+    "python3 -c \"import json; from pathlib import Path; exec(json.loads(Path('docs/audits/sources/p4-vol10/yi-authority-gate-v1/validation.json').read_text())['verificationPython'])\"",
+    "git diff --check"
+  ]
+}

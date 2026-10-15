@@ -1,0 +1,47 @@
+{
+  "version": "p4-yi-domains-integrity-lock-v1",
+  "task": "3.3",
+  "status": "DOMAIN_EXPECTED_NOT_COMMIT_FROZEN",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/README.md",
+      "sha256": "76bc390f121b2e36058778de472669fe7c8cef773120f91307ce102b258d10a4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/domains.py",
+      "sha256": "919fcaa142eb61a8d05de4b411c5771c67f3aa1f42fffaee10a6d7607253417e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/summary.json",
+      "sha256": "1597f55d56eca36aa43db2bfe3fc2ce1deddf6c9d9bd722b20ac5d7920123e89"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/inputs.json",
+      "sha256": "deeed1debf2bb4c74eec502adb3120273648813cc2b93e4618e8d5b360b5a3c0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/prior-hashes.json",
+      "sha256": "aade73674e6bb574b82f5195bc401db16226267f67ecc1087443dc0224d5f69e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/validation.json",
+      "sha256": "03e4444cc7a4ca612ed422b6cae06ecdbf353c967f99a304e24d325df9f4d878"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/lock.json",
+      "sha256": "72f1103a3647659041cdceeb2b6f8b8da06b442902f54c057cae9d22fe0b3f5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/lock.json",
+      "sha256": "43679beafd55782990a6f44a1f88038ce77fe93f7cd5b5257c284f8108e0c623"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    }
+  ]
+}

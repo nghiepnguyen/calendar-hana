@@ -1,0 +1,280 @@
+{
+  "version": "p4-yi-full-domains-v1",
+  "task": "3.3",
+  "date": "2026-10-14",
+  "status": "DOMAIN_EXPECTED_COMPLETE_PENDING_3_4_TO_3_6",
+  "scope": "AUDIT_ONLY",
+  "frozen": false,
+  "recordCount": 7863,
+  "domains": [
+    {
+      "han": "福德",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "天巫",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "天后",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "天醫",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "驛馬",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "天馬",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "吉期",
+      "domain": "MONTH_PILLAR_720",
+      "count": 720,
+      "expectedCounts": {
+        "absent": 660,
+        "present": 60
+      }
+    },
+    {
+      "han": "天恩",
+      "domain": "DAY_PILLAR_60",
+      "count": 60,
+      "expectedCounts": {
+        "present": 15,
+        "absent": 45
+      }
+    },
+    {
+      "han": "除神",
+      "domain": "DAY_PILLAR_60",
+      "count": 60,
+      "expectedCounts": {
+        "absent": 50,
+        "present": 10
+      }
+    },
+    {
+      "han": "鳴吠",
+      "domain": "DAY_PILLAR_60",
+      "count": 60,
+      "expectedCounts": {
+        "absent": 47,
+        "present": 13
+      }
+    },
+    {
+      "han": "母倉",
+      "domain": "MU_CANG_CONDITIONAL_1440",
+      "count": 1440,
+      "expectedCounts": {
+        "present": 270,
+        "absent": 1170
+      }
+    },
+    {
+      "han": "母倉",
+      "domain": "MU_CANG_DATED_1095",
+      "count": 1095,
+      "expectedCounts": {
+        "absent": 880,
+        "present": 215
+      }
+    },
+    {
+      "han": "母倉",
+      "domain": "MU_CANG_EXACT_JIE_108",
+      "count": 108,
+      "expectedCounts": {
+        "absent": 89,
+        "present": 19
+      }
+    }
+  ],
+  "muCangPriorFixtureRefs": [
+    "mu-cang:soil-override-ordinary-replaced",
+    "mu-cang:soil-override-neither",
+    "mu-cang:soil-override-巳",
+    "mu-cang:soil-override-午",
+    "mu-cang:soil-boundary-2025-21-onset-minus1",
+    "mu-cang:soil-boundary-2025-21-onset",
+    "mu-cang:soil-boundary-2025-21-onset-plus1",
+    "mu-cang:soil-boundary-2025-21-li-minus1",
+    "mu-cang:soil-boundary-2025-21-li",
+    "mu-cang:soil-boundary-2025-21-li-plus1",
+    "mu-cang:season-jie-2025-21--1",
+    "mu-cang:season-jie-2025-21-0",
+    "mu-cang:season-jie-2025-21-1",
+    "mu-cang:soil-boundary-2025-3-onset-minus1",
+    "mu-cang:soil-boundary-2025-3-onset",
+    "mu-cang:soil-boundary-2025-3-onset-plus1",
+    "mu-cang:soil-boundary-2025-3-li-minus1",
+    "mu-cang:soil-boundary-2025-3-li",
+    "mu-cang:soil-boundary-2025-3-li-plus1",
+    "mu-cang:season-jie-2025-3--1",
+    "mu-cang:season-jie-2025-3-0",
+    "mu-cang:season-jie-2025-3-1",
+    "mu-cang:soil-boundary-2025-9-onset-minus1",
+    "mu-cang:soil-boundary-2025-9-onset",
+    "mu-cang:soil-boundary-2025-9-onset-plus1",
+    "mu-cang:soil-boundary-2025-9-li-minus1",
+    "mu-cang:soil-boundary-2025-9-li",
+    "mu-cang:soil-boundary-2025-9-li-plus1",
+    "mu-cang:season-jie-2025-9--1",
+    "mu-cang:season-jie-2025-9-0",
+    "mu-cang:season-jie-2025-9-1",
+    "mu-cang:soil-boundary-2025-15-onset-minus1",
+    "mu-cang:soil-boundary-2025-15-onset",
+    "mu-cang:soil-boundary-2025-15-onset-plus1",
+    "mu-cang:soil-boundary-2025-15-li-minus1",
+    "mu-cang:soil-boundary-2025-15-li",
+    "mu-cang:soil-boundary-2025-15-li-plus1",
+    "mu-cang:season-jie-2025-15--1",
+    "mu-cang:season-jie-2025-15-0",
+    "mu-cang:season-jie-2025-15-1",
+    "mu-cang:soil-boundary-2026-21-onset-minus1",
+    "mu-cang:soil-boundary-2026-21-onset",
+    "mu-cang:soil-boundary-2026-21-onset-plus1",
+    "mu-cang:soil-boundary-2026-21-li-minus1",
+    "mu-cang:soil-boundary-2026-21-li",
+    "mu-cang:soil-boundary-2026-21-li-plus1",
+    "mu-cang:season-jie-2026-21--1",
+    "mu-cang:season-jie-2026-21-0",
+    "mu-cang:season-jie-2026-21-1",
+    "mu-cang:soil-boundary-2026-3-onset-minus1",
+    "mu-cang:soil-boundary-2026-3-onset",
+    "mu-cang:soil-boundary-2026-3-onset-plus1",
+    "mu-cang:soil-boundary-2026-3-li-minus1",
+    "mu-cang:soil-boundary-2026-3-li",
+    "mu-cang:soil-boundary-2026-3-li-plus1",
+    "mu-cang:season-jie-2026-3--1",
+    "mu-cang:season-jie-2026-3-0",
+    "mu-cang:season-jie-2026-3-1",
+    "mu-cang:soil-boundary-2026-9-onset-minus1",
+    "mu-cang:soil-boundary-2026-9-onset",
+    "mu-cang:soil-boundary-2026-9-onset-plus1",
+    "mu-cang:soil-boundary-2026-9-li-minus1",
+    "mu-cang:soil-boundary-2026-9-li",
+    "mu-cang:soil-boundary-2026-9-li-plus1",
+    "mu-cang:season-jie-2026-9--1",
+    "mu-cang:season-jie-2026-9-0",
+    "mu-cang:season-jie-2026-9-1",
+    "mu-cang:soil-boundary-2026-15-onset-minus1",
+    "mu-cang:soil-boundary-2026-15-onset",
+    "mu-cang:soil-boundary-2026-15-onset-plus1",
+    "mu-cang:soil-boundary-2026-15-li-minus1",
+    "mu-cang:soil-boundary-2026-15-li",
+    "mu-cang:soil-boundary-2026-15-li-plus1",
+    "mu-cang:season-jie-2026-15--1",
+    "mu-cang:season-jie-2026-15-0",
+    "mu-cang:season-jie-2026-15-1",
+    "mu-cang:soil-boundary-2027-21-onset-minus1",
+    "mu-cang:soil-boundary-2027-21-onset",
+    "mu-cang:soil-boundary-2027-21-onset-plus1",
+    "mu-cang:soil-boundary-2027-21-li-minus1",
+    "mu-cang:soil-boundary-2027-21-li",
+    "mu-cang:soil-boundary-2027-21-li-plus1",
+    "mu-cang:season-jie-2027-21--1",
+    "mu-cang:season-jie-2027-21-0",
+    "mu-cang:season-jie-2027-21-1",
+    "mu-cang:soil-boundary-2027-3-onset-minus1",
+    "mu-cang:soil-boundary-2027-3-onset",
+    "mu-cang:soil-boundary-2027-3-onset-plus1",
+    "mu-cang:soil-boundary-2027-3-li-minus1",
+    "mu-cang:soil-boundary-2027-3-li",
+    "mu-cang:soil-boundary-2027-3-li-plus1",
+    "mu-cang:season-jie-2027-3--1",
+    "mu-cang:season-jie-2027-3-0",
+    "mu-cang:season-jie-2027-3-1",
+    "mu-cang:soil-boundary-2027-9-onset-minus1",
+    "mu-cang:soil-boundary-2027-9-onset",
+    "mu-cang:soil-boundary-2027-9-onset-plus1",
+    "mu-cang:soil-boundary-2027-9-li-minus1",
+    "mu-cang:soil-boundary-2027-9-li",
+    "mu-cang:soil-boundary-2027-9-li-plus1",
+    "mu-cang:season-jie-2027-9--1",
+    "mu-cang:season-jie-2027-9-0",
+    "mu-cang:season-jie-2027-9-1",
+    "mu-cang:soil-boundary-2027-15-onset-minus1",
+    "mu-cang:soil-boundary-2027-15-onset",
+    "mu-cang:soil-boundary-2027-15-onset-plus1",
+    "mu-cang:soil-boundary-2027-15-li-minus1",
+    "mu-cang:soil-boundary-2027-15-li",
+    "mu-cang:soil-boundary-2027-15-li-plus1",
+    "mu-cang:season-jie-2027-15--1",
+    "mu-cang:season-jie-2027-15-0",
+    "mu-cang:season-jie-2027-15-1",
+    "mu-cang:coverage-edge-2024-12-31",
+    "mu-cang:coverage-edge-2025-01-01",
+    "mu-cang:coverage-edge-2027-12-31",
+    "mu-cang:coverage-edge-2028-01-01",
+    "mu-cang:missing-MONTH_JIAN_BRANCH",
+    "mu-cang:provider-unknown-MONTH_JIAN_BRANCH",
+    "mu-cang:provider-outside-MONTH_JIAN_BRANCH",
+    "mu-cang:missing-DAY_BRANCH",
+    "mu-cang:provider-unknown-DAY_BRANCH",
+    "mu-cang:provider-outside-DAY_BRANCH",
+    "mu-cang:missing-SOIL_REIGN_STATE",
+    "mu-cang:provider-unknown-SOIL_REIGN_STATE",
+    "mu-cang:provider-outside-SOIL_REIGN_STATE",
+    "mu-cang:missing-all",
+    "mu-cang:soil-provenance-missing-date",
+    "mu-cang:soil-provenance-missing-sourcePath",
+    "mu-cang:soil-provenance-missing-validated",
+    "mu-cang:soil-unknown-no-fallback"
+  ],
+  "domainContract": {
+    "monthly": "7 × (12 exact-Jie Month Jian × 60 valid pillars); inherited provider coverage assumed inside for structural tuple",
+    "dayOnly": "3 × 60 valid pillars; Month Jian is not required",
+    "muCangConditional": "12 × 60 × 2 soil assumptions, predicate-only; not claimed calendar/provider reachability",
+    "muCangDated": "All 1095 adopted civil dates at noon UTC+7 plus 36 Jie × before/equal/after 1 ms; locked prior soil edges/missing/coverage cases referenced separately"
+  },
+  "sourceBasisPath": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+  "inputPinsPath": "docs/audits/sources/p4-vol10/yi-domains-v1/inputs.json",
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "method": "Independent source-reference arithmetic/domain enumeration and exact-set validation; not review 3.5"
+  },
+  "limits": [
+    "Coverage is not inferred from a count alone: validator asserts exact Cartesian sets and dated provenance",
+    "Dated noon is a day-level fixture, not every intraday instant; exact crossing variants handle Month Jian change. Soil uses civil dates",
+    "Conditional 母倉 tuples cannot certify provider date/provenance or widen 2025–2027 adopted coverage",
+    "3.4 composition, 3.5 review, 3.6 commit freeze and parent 3.0/P4-C remain open",
+    "Canonical S1/P5 deferred unchanged; runtime/scoring untouched"
+  ]
+}

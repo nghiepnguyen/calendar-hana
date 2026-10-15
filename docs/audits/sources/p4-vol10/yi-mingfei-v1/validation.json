@@ -1,0 +1,30 @@
+{
+  "task": "2.12",
+  "date": "2026-10-14",
+  "reviewer": "Codex (single agent)",
+  "status": "PASS",
+  "checks": [
+    "Task-2.1 verifier and offset self-test",
+    "Recursive prior authority/source/baseline lock hashes",
+    "6 exact full raw slices and SHA-1",
+    "15 scan render signatures; direct visual reading in entry",
+    "Corrected 13 valid sexagenary pillars / 47 absent; explicit old14 correction",
+    "Raw 巳 vs scan 己 correction backed by raw/scan 己酉 chart",
+    "Separate 11-day 鳴吠對 set / no aliases / no 啓攢 scope merge",
+    "Baseline inventory/direct/source-only/negative heading refs",
+    "Unknown input contract / single DAY_PILLAR input",
+    "git diff --check"
+  ],
+  "commands": [
+    "python3 scripts/verify-p4-yi-sources.py --self-test",
+    "python3 -c \"import json; from pathlib import Path; exec(json.loads(Path('docs/audits/sources/p4-vol10/yi-mingfei-v1/validation.json').read_text())['verificationPython'])\"",
+    "git diff --check"
+  ],
+  "verificationPython": "import hashlib,json\nfrom pathlib import Path\nbase=Path('docs/audits/sources/p4-vol10');out=base/'yi-mingfei-v1'\ne=json.loads((out/'entry.json').read_text());visited=set();locked=set()\ndef verify_lock(p):\n if p in visited:return\n visited.add(p)\n for f in json.loads(p.read_text())['files']:\n  q=Path(f['path']);assert hashlib.sha256(q.read_bytes()).hexdigest()==f['sha256'],str(q)\n  locked.add(q)\n  if q.name=='lock.json':verify_lock(q)\nfor p in sorted(base.glob('yi-*/lock.json')):\n if p.parent!=out:verify_lock(p)\nfor r in e['sources']:\n p=Path(r['path']);assert hashlib.sha1(p.read_bytes()).hexdigest()==r['sha1']\n t=p.read_bytes().decode('utf8');assert t[r['offset']:r['offset']+r['length']]==r['quote'];assert len(r['quote'])==r['length']\npillars=['甲乙丙丁戊己庚辛壬癸'[i%10]+'子丑寅卯辰巳午未申酉戌亥'[i%12] for i in range(60)]\nexpected={'甲午','丙午','庚午','壬午','甲申','丙申','庚申','壬申','乙酉','丁酉','己酉','辛酉','癸酉'}\nactual=e['predicate']['pillars'];assert len(actual)==len(set(actual))==13 and set(actual)==expected\nassert all(p in pillars for p in actual)\nassert e['predicate']['sexagenaryIndices']==[pillars.index(p) for p in actual]==[6,8,9,18,20,21,30,32,33,42,45,56,57]\nassert len(set(pillars)-expected)==47\nq=e['sources'][0]['quote'];old=q.split('○鳴吠日者',1)[1].split('也○',1)[0]\noldset={old[i:i+2] for i in range(0,len(old),2)};assert len(oldset)==14\nassert oldset-expected=={'庚寅','壬寅'} and expected-oldset=={'甲午'}\nassert '今圖依起例改正' in q and '共十三日為鳴吠日' in q\nassert '乙丁巳辛癸' in q and '巳為隂土' in q and '癸酉乙酉丁酉己酉辛酉' in q\nvariant=e['comparisonOnlyVariant'];dui={'丙子','庚子','壬子','甲寅','丙寅','庚寅','壬寅','乙卯','丁卯','辛卯','癸卯'}\nassert len(variant['correctedPillars'])==11 and set(variant['correctedPillars'])==dui\nassert dui.isdisjoint(expected) and dui.issubset(pillars) and '甲子' not in dui\ninv=json.loads((base/'yi-baseline-v1/inventory.json').read_text());it=next(x for x in inv['items'] if x['han']=='鳴吠')\nassert [(x['normalized'],x['activities']) for x in it['headings']]==[(x['normalized'],x['activities']) for x in e['headingScopes']]\nassert len(e['sourceOnlyHeadingScopes'])==1 and e['sourceOnlyHeadingScopes'][0]['raw']=='破土'\nfor h in e['headingScopes']+e['sourceOnlyHeadingScopes']:\n for i in h['sourceRefs']:assert h['raw'] in e['sources'][i]['quote'] and '鳴吠' in e['sources'][i]['quote']\nassert e['sources'][5]['quote'].split('宜',1)[1].split('\\n')[0]=='鳴吠對'\nassert '今定為鳴吠遇復日則忌' in e['sources'][1]['quote']\nassert e['operandInputs'][0]['key']=='DAY_PILLAR' and len(e['operandInputs'])==1\nassert e['aliases']==[] and e['status']=='SOURCE_REVIEWED' and e['scoringReady'] is False\nassert e['unknownPolicy']==dict(missingRequiredInput='unknown',outsideCoverage='unknown',malformedInput='error')\nassert len(e['sources'])==6 and len(e['scanChecks'])==15\nfor c in e['scanChecks']:assert Path(c['renderPath']).read_bytes().startswith(b'\\x89PNG\\r\\n\\x1a\\n')\nif (out/'lock.json').exists():verify_lock(out/'lock.json')\nprint(f'PASS: {len(visited)} recursive locks / {len(locked)} unique locked files; 6 raw slices/15 scans; corrected 13/60 pillars and old14 correction; distinct 11-day variant; source heading/unknown contract. Authority consistency only, not Golden.')\n",
+  "limits": [
+    "Authority consistency only; not independent Golden or implementation test",
+    "Single reviewer, no second independent expert review",
+    "No presence/evaluator/runtime code changes",
+    "11/11 individual entries completed; consolidation/version/gate tasks 2.13–2.15 remain open"
+  ]
+}

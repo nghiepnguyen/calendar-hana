@@ -1,0 +1,229 @@
+{
+  "version": "p4-yi-golden-review-v1",
+  "task": "3.5",
+  "date": "2026-10-14",
+  "status": "PASS_SINGLE_REVIEWER_WITH_RECORDED_LIMITS",
+  "scope": "P4_C_TASK_3_5_EXPECTED_REVIEW_ONLY",
+  "commitFrozen": false,
+  "checkpoint": {
+    "branch": "codex/p4c-yi-operands",
+    "head": "f54aaf849fdb4b42d07c6919f13ec7c18c93c1ac",
+    "headTree": "d410122e596268ad5f89bee2fa2fe217d05c9bb2",
+    "scopeNote": "Review binds actual working-tree/untracked artifacts by SHA-256; HEAD/tree are context only, not an authority/Golden freeze commit"
+  },
+  "review": {
+    "reviewer": "Codex (single agent)",
+    "independentSecondReview": false,
+    "relationship": "Same agent that assembled/derived 3.1–3.4; this is a later self-review turn, not a second source reviewer or expert certification",
+    "method": "Read generator dependency/data flow and source-basis/domain contracts; replay four frozen validators; recheck input kinds, deliberately malformed records, exact-set coverage and prior correction ledger; no composer outputs"
+  },
+  "recordInventory": {
+    "matrixCells": 66,
+    "presenceFixtures": 906,
+    "identityFixtures": 25,
+    "malformedFixtures": 24,
+    "domainRecords": 7863,
+    "compositionFixtures": 1850,
+    "totalRecords": 10668,
+    "notUniqueDays": true,
+    "presenceKinds": {
+      "STRUCTURAL": 507,
+      "DATED": 399
+    },
+    "irrelevantInputRecipes": 69
+  },
+  "acceptance": {
+    "independence": {
+      "status": "PASS",
+      "evidence": "Standard-library arithmetic reference, two fixed hash-bound reuses; no project engine/provider imports, no entry.predicate access; source-derived heading metadata allowed, not full independence from the reviewed authority text"
+    },
+    "inputValidity": {
+      "status": "PASS",
+      "evidence": "Every affirmative/known input pillar valid; JDN/calendar references and dated UTC+7/Jie/soil verified; error fixtures intentionally malformed; provider outside/unknown declarations are synthetic scenarios, not invented provider cutoffs"
+    },
+    "presenceCoverage": {
+      "status": "PASS",
+      "evidence": "11/11 present/absent/unknown and all applicable 56 matrix cells; exact seven720 and three60 domains; separate 母倉 conditional1440/dated1095/Jie108 and prior soil edge refs"
+    },
+    "compositionCoverage": {
+      "status": "PASS",
+      "evidence": "ANY40/scope957/norm15/protect96/mask720 exact8/warehouse18/context4; retained unknown trace, raw protection and P5 deferral"
+    },
+    "sourceIntegrity": {
+      "status": "PASS",
+      "evidence": "All locks/replays/source slices plus 667 pre-review files unchanged; reviewed inputs including PRD/spec separately pinned"
+    },
+    "reviewLimits": {
+      "status": "PASS",
+      "evidence": "Same source reviewer disclosed; no second-review claim, no canonical or production acceptance claim; recipes/projections and future integration explicitly bounded"
+    }
+  },
+  "reviewedInputs": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/matrix.json",
+      "sha256": "e2c3fb437898fff03d7eae541b363b4d38800d901fe51334f2e213fa8cc87d83"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/lock.json",
+      "sha256": "43679beafd55782990a6f44a1f88038ce77fe93f7cd5b5257c284f8108e0c623"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-fixture-matrix-v1/validation.json",
+      "sha256": "02a842fa8741ba4e4fd42585dacbf554a87a5c81b650e21860303be26f9a7c69"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/derive.py",
+      "sha256": "52ae297a0fd1a1f68dc0d8dbf9d461b8fac52376433dd14891b44bd14757b838"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+      "sha256": "eedc9f3b4396fca6f514c2884abacf6d668301e4f79fc3cfb2fea90cee17412d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/expected.json",
+      "sha256": "4e0aae63420309f8dbcb8246302fcb09127665f32f4aeaceee23d07ebf660d8a"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/validation.json",
+      "sha256": "f63e3cf0e4c3e67e2254430dbd5bff1055da3f2634c373d19b7a27e8a7a5035b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-expected-v1/lock.json",
+      "sha256": "72f1103a3647659041cdceeb2b6f8b8da06b442902f54c057cae9d22fe0b3f5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/domains.py",
+      "sha256": "919fcaa142eb61a8d05de4b411c5771c67f3aa1f42fffaee10a6d7607253417e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/inputs.json",
+      "sha256": "deeed1debf2bb4c74eec502adb3120273648813cc2b93e4618e8d5b360b5a3c0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/summary.json",
+      "sha256": "1597f55d56eca36aa43db2bfe3fc2ce1deddf6c9d9bd722b20ac5d7920123e89"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/validation.json",
+      "sha256": "03e4444cc7a4ca612ed422b6cae06ecdbf353c967f99a304e24d325df9f4d878"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/lock.json",
+      "sha256": "386f648a27e5234220378ce8d9d99daa85cc1a70d958e8e1da2b3734e1b6d34d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/derive.py",
+      "sha256": "d5fdf0ca6657750b280a87191872cc05c3fe53f039802d6c8d7edd124fa299f6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+      "sha256": "f5327af81350bd228932c2f48b25555cbba17fb9ad040dbb42ccb1ac1ad49a21"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+      "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/validation.json",
+      "sha256": "bdf7304e0bc7098a7bb32e4dc48accabd07df20bc5812b15dce8ba39530538e9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/lock.json",
+      "sha256": "2ac13eb1e4152c0d42e24df33d0cef644256c481bc1c76c3a24b1c1be889de5c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/gate.json",
+      "sha256": "94b859f866a6e1a61dc32a89af8219b4e123bde865086546234be8a6d5c54bdb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-authority-gate-v1/lock.json",
+      "sha256": "785a2d424cc86efe8fb060c7925e2de7033d1dedb94b8d57f5721cab9df80a4a"
+    },
+    {
+      "path": "shared/almanac-data/p4-yi-operands-v1.json",
+      "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+    },
+    {
+      "path": "tasks/prd-p4c-yi-operands.md",
+      "sha256": "5318b9b108bdc702dfdf8de660ad675b77c3cf99cbaa640bd4f72d88a509f01f"
+    },
+    {
+      "path": "docs/plans/p4-xieji-vol10-balancing.md",
+      "sha256": "701674ebaf5326efcd70da6929b0c0c3563dd81f0997f96b8561bc0708902a67"
+    }
+  ],
+  "historicalCorrections": [
+    {
+      "artifact": "yi-expected-v1",
+      "classification": "SPEC_BUG",
+      "scope": "Fixture selection generator only, pre-review/pre-freeze",
+      "problem": "First structural validator found no boundary-tagged 除神 fixture although present/absent candidates existed",
+      "resolution": "Added 12 未/申/酉/戌 edge/stem-invariance fixtures; all prior 894 presence expected records and identity/malformed records asserted identical. No source, authority or production expectation changed."
+    },
+    {
+      "artifact": "yi-expected-v1",
+      "classification": "SPEC_BUG",
+      "scope": "Validator sentinel only",
+      "problem": "Sentinel assumed 2027-12-31 inside-coverage boundary would be absent",
+      "resolution": "Independent date calculation yields 甲申 / 子建 / soil absent; winter 申酉 makes present. Corrected validator sentinel, expected bytes unchanged; being coverage endpoint is not an absent rule."
+    },
+    {
+      "artifact": "yi-composition-expected-v1",
+      "classification": "SPEC_BUG",
+      "scope": "Validator spelling assumption",
+      "problem": "Literal 福德 assertion missed locked raw 福徳 spelling in two source clauses",
+      "resolution": "Validator applies only accepted 福徳→福德 equivalence; raw/expected bytes unchanged"
+    },
+    {
+      "artifact": "yi-composition-expected-v1",
+      "classification": "SPEC_BUG",
+      "scope": "Pre-lock warehouse fixture scope",
+      "problem": "Generic second candidate 福德 was not listed in warehouse clause",
+      "resolution": "Use explicit existing 四相 stub present in raw clause; no fabricated authority ID/date. Deferred outcomes unchanged; all non-warehouse sections asserted identical before replacement. No composer output used."
+    }
+  ],
+  "newCorrections": [],
+  "blockingFindings": [],
+  "limitations": [
+    {
+      "id": "single-reviewer",
+      "detail": "Expected derivation is independent from production implementation, but source interpretation and review are by the same Codex agent; no second expert review."
+    },
+    {
+      "id": "source-basis-reuse",
+      "detail": "3.3 and four 3.4 controls reuse locked 3.2 arithmetic. Reproduction is not an independent implementation-to-implementation comparison or new astronomy audit."
+    },
+    {
+      "id": "optional-input-recipes",
+      "detail": "69 irrelevantInput records hold a required tuple and omitted/valid-alternative recipe, not concrete optional values executed through an adapter. Do not count them as tested runtime invariance variants; finalize runnable mapping in4.1 and tests4.3/4.6."
+    },
+    {
+      "id": "declarative-errors",
+      "detail": "24 malformed fixtures declare expected error from contract; Python reference is not the future input validator. Malformed/coverage API representation and error class finalized4.1/4.3."
+    },
+    {
+      "id": "conditional-soil",
+      "detail": "1440 lower-layer soil assumptions are not valid full provider inputs or proof of calendar reachability; actual dated1095 plus exact Jie108 only claim their stated sampling."
+    },
+    {
+      "id": "projection-not-integration",
+      "detail": "ANY/protection/warehouse stubs do not claim physically simultaneous gods or full-day output; protection projections couple cancel/lift request. Actual propagation changes and integration unknown scopes need5.4/6.8 before full P4-C acceptance."
+    },
+    {
+      "id": "existing-stub",
+      "detail": "四相 stub has null authority/rule IDs by design. Bind existing audited operand in4.1; never create an authority from this placeholder."
+    },
+    {
+      "id": "open-source-scopes",
+      "detail": "母倉 remains OWNER_ADOPTED_SOURCE_DEPENDENT 2025–2027; S1 canonical OPEN/P5 warehouse 月恩/月德 conflict deferred."
+    },
+    {
+      "id": "freeze-pending",
+      "detail": "Historical pending-status fields and expected bytes stay immutable; this review report supplies the current review disposition. No commit freeze or completed parent3.0/P4-C; next3.6."
+    }
+  ]
+}

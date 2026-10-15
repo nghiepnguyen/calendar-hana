@@ -1,0 +1,40 @@
+{
+ "command": "npx vitest run shared/lunar/p4YiDatedInputs.test.ts",
+ "phase": "RED_BEFORE_LUNAR_DAY_TRACE_AND_DATE_GUARD",
+ "preEditSha256": {
+  "shared/lunar/p4YiDayComposition.ts": "b58871094afc3ba1eb3fe3456e27b12a44bc7b6446165fda9514c3247ba7385d"
+ },
+ "passed": 1,
+ "failed": 7,
+ "total": 8,
+ "failures": [
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope no dated input on 720 contexts",
+   "message": "AssertionError: 子甲子: expected undefined to deeply equal { …(2) }"
+  },
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope P4-B inputs only, no 母倉 soil on 720 contexts",
+   "message": "AssertionError: 子甲子: expected undefined to deeply equal { …(2) }"
+  },
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope outside 2025-2027 coverage on 720 contexts",
+   "message": "AssertionError: 子甲子: expected undefined to deeply equal { …(2) }"
+  },
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 provider state unknown, P4-B soil known on 720 contexts",
+   "message": "AssertionError: 子甲子: expected undefined to deeply equal { …(2) }"
+  },
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope 母倉 soil unvalidated on 720 contexts",
+   "message": "AssertionError: 子甲子: expected undefined to deeply equal { …(2) }"
+  },
+  {
+   "test": "P4-C 5.6 missing / out-of-coverage inputs stay unknown in their own scope rejects dated evidence from different civil days",
+   "message": "AssertionError: expected function to throw an error, but it didn't"
+  },
+  {
+   "test": "P4-C 5.6 dated sweep keeps every input and status in the trace matches the frozen dated 母倉 domain and P4-B scopes on 1,095 dates",
+   "message": "AssertionError: expected undefined to deeply equal { …(2) }"
+  }
+ ]
+}

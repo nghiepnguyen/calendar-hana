@@ -1,0 +1,77 @@
+{
+ "task": "5.6",
+ "date": "2026-10-15",
+ "reviewer": "Claude (single agent)",
+ "independentSecondReview": false,
+ "expectedSources": {
+  "authority": {
+   "path": "shared/almanac-data/p4-yi-operands-v1.json",
+   "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+  },
+  "lunarDayAuthority": {
+   "path": "shared/almanac-data/p4-lunar-day-taboo-v1.json",
+   "sha256": "90a5be2252982d7e032d810e635332a91189a7e33de5cf423f9137db008d561a"
+  },
+  "phaseAuthority": {
+   "path": "shared/almanac-data/p4-lunar-phase-authority-v1.json",
+   "sha256": "463fb300a25c2f9c130c8089fe35347cae40c3630cea126b50c4932b787139fa"
+  },
+  "soilAuthority": {
+   "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+   "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+  },
+  "remainingJiInventory": {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+   "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+  },
+  "domains3.3": {
+   "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+   "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+  },
+  "compositionBasis3.4": {
+   "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+   "sha256": "f5327af81350bd228932c2f48b25555cbba17fb9ad040dbb42ccb1ac1ad49a21"
+  },
+  "propagationGolden5.4": {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/expected.json",
+   "sha256": "cfc16b51a2555339b169a1fa1d86a977c7b9b50ba6e75c0114cbb0dadfc1470c"
+  }
+ },
+ "newGolden": "none; scope expectations come from frozen authority/artifact JSON (jiInventory dated tokens, DIRECT_YI/P5 scopes of 母倉), dated/exact-Jie 母倉 domains 3.3",
+ "codeChange": {
+  "shared/lunar/p4YiDayComposition.ts": [
+   "lunarDayInput {authorityId, value} kept in output (lunar-day scopes recorded presence only)",
+   "RangeError code CONFLICTING_DATED_INPUT when P4-B soil, phase and 母倉 SOIL_REIGN_STATE name different civil dates (same pattern as 5.3 CONFLICTING_DERIVED_INPUT)"
+  ]
+ },
+ "conventionFindings": [
+  {
+   "classification": "CONVENTION_DIFFERENCE",
+   "report": "jie-convention.json",
+   "summary": "Product Month Jian is calendar-day (solarTermMonthChi: the whole crossing day uses the new month; CLOSED convention used by P4-B and the baseline). The frozen dated 母倉 domain samples local noon. On 20 civil Jie days the two Month Jian differ; 母倉 presence differs on 3 (2026-05-05, 2026-08-07, 2026-11-07: noon absent, calendar-day present). Sweep follows the calendar-day selectionContext; exact-instant callers pass instant provenance (108 exact-Jie records verified). Contract 4.1 wording \"civil date/noon selectionContext như baseline\" is inaccurate: baseline is calendar-day. Listed for 6.8 review; no owner decision requested in an audit-only step."
+  }
+ ],
+ "codeHashes": {
+  "shared/lunar/p4YiDayComposition.ts": "020cee6843a94bea84382a4941951f625b506d31fce630e2d13c6550ba8c0aa0",
+  "shared/lunar/p4YiDatedInputs.test.ts": "bffc98fbfc64711dce284f092fb5fc9c77ea66fb86f8f65769a297009a5f4de8",
+  "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6"
+ },
+ "checks": {
+  "lint": "PASS",
+  "typecheckMainFunctions": "PASS",
+  "build": "PASS",
+  "bundle": {
+   "path": "dist/assets/index-CeLinrvj.js",
+   "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969"
+  },
+  "verifyCoreBodies5.4": "PASS",
+  "productionImportClosure": "clean",
+  "trackedSharedSrcFunctionsDiff": "empty",
+  "mutations": "4/4 assertion-caught, restored"
+ },
+ "commands": [
+  "npx vitest run shared/lunar/p4YiDatedInputs.test.ts",
+  "python3 -I docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.py",
+  "python3 -I docs/audits/sources/p4-vol10/yi-dated-inputs-v1/check-mutations.py"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+  "version": "p4-yi-red-presence-validation-v1",
+  "date": "2026-10-15",
+  "task": "4.2",
+  "status": "RED_ASSERTIONS_VERIFIED_NOT_PROVIDER_ACCEPTANCE",
+  "checkpointCommit": "c6bc1e18fa27c81a595275b7c68864fa84079cd1",
+  "reportSha256": "54808c1e2d03d4e010d152d51188ac7e7b9f7c85cbb48f4d0ca77216c11b79d0",
+  "redResultsSha256": "6ead44e86fb295a859a66528f10c197ccf32d9c70c91fdce39abef69ab61caee",
+  "checks": {
+    "red": {
+      "status": "EXPECTED_RED",
+      "exitCode": 1,
+      "tests": 910,
+      "passedIntegrity": 82,
+      "failedPresence": 828,
+      "unhandledOrCollectionFailures": 0,
+      "skippedOrTodo": 0,
+      "sourceBlockFixtures": 906,
+      "unknownFixturesReservedFor4_3": 78,
+      "domainsProviderExecution": "NOT_YET_CLAIMED"
+    },
+    "regression": {
+      "status": "PASS",
+      "files": 9,
+      "tests": 198,
+      "command": "npx vitest run shared/lunar/p4DayComposition.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4LunarPhase.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4SoilConvention.test.ts shared/lunar/p4HeadingAnnotation.test.ts shared/lunar/p4SeasonDays.test.ts shared/lunar/p4YouweiScopes.test.ts --reporter=json --outputFile=/tmp/p4c-42-legacy-vitest.json",
+      "vitestJsonSha256": "b1e4caf2de4a8b93a618506e11b415ebf62d8cffd7bb848603afe709d016b49a"
+    },
+    "lint": {
+      "status": "PASS",
+      "command": "npm run lint"
+    },
+    "types": {
+      "status": "PASS",
+      "command": "npm run typecheck",
+      "scope": ["main tsc -b", "functions tsc --noEmit"]
+    },
+    "format": {
+      "status": "PASS",
+      "scope": ["new TS files", "new evidence JSON", "new README with ignore override"]
+    },
+    "frozenHashes": {
+      "status": "PASS",
+      "lockedFiles": 677,
+      "rawFiles": 5,
+      "rawSlices": 74
+    },
+    "productionIsolation": {
+      "status": "PASS_STATIC_LITERAL_IMPORT_CLOSURE",
+      "newProviderReachable": false,
+      "legacyCodeAndManifest": "BYTE_IDENTICAL_TO_4_1",
+      "scanner": "Unchanged replay from yi-contract-v1/validation.json; conservatively includes type-only local imports"
+    },
+    "graph": {
+      "status": "PASS",
+      "command": "graphify update .",
+      "mode": "AST_ONLY",
+      "nodes": 6982,
+      "edges": 9789,
+      "communities": 926,
+      "html": "Tool skipped HTML automatically above 5000-node limit; JSON/report rebuilt"
+    },
+    "diffCheck": "PASS_CR_AT_EOL"
+  },
+  "newCodeSha256": {
+    "shared/lunar/p4YiOperands.ts": "f3153cefdb3f5f25eb4eacfe4009324207fdf16bb5049fa0088e53116fefda8c",
+    "shared/lunar/p4YiOperands.test.ts": "8d315e398204bb87b1c5bd575661d011ac16d47a6c094a747514feb9e09565e5"
+  },
+  "verificationPython": "from pathlib import Path\nimport hashlib,json,re\nsha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()\nbase=Path('docs/audits/sources/p4-vol10/yi-red-presence-v1')\nv=json.loads((base/'validation.json').read_text())\nassert sha(base/'README.md')==v['reportSha256']\nassert sha(base/'red-results.json')==v['redResultsSha256']\n# Reuse the unchanged 4.1 literal import scanner, with its @shared and ?raw handling.\nns={}\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-contract-v1/validation.json').read_text())['verificationPython'],ns)\nassert 'shared/lunar/p4YiOperands.ts' not in ns['seen']\nassert 'shared/lunar/p4YiOperands.test.ts' not in ns['seen']\nred=json.loads((base/'red-results.json').read_text())\nfixtures=json.loads(Path('docs/audits/sources/p4-vol10/yi-expected-v1/expected.json').read_text())['presenceFixtures']\nresolved={f['id']:f for f in fixtures if f['expected']['outcome']!='unknown'}\nassert red['failedTests']==len(red['failedAssertions'])==len(resolved)==828\nassert red['passedTests']==len(red['passedAssertions'])==82\nassert red['totalTests']==910\nassert red['pendingTests']==red['todoTests']==red['unhandledOrCollectionFailures']==0\nassert {r['fixtureId'] for r in red['failedAssertions']}==set(resolved)\nassert len({r['han'] for r in red['failedAssertions']})==11\nfor r in red['failedAssertions']:\n assert r['expected']==resolved[r['fixtureId']]['expected']['outcome']\n assert r['received']=='unknown' and r['errorName']=='AssertionError'\n assert r['failureMessage'].startswith('AssertionError: '+r['fixtureId']+':')\n assert \"expected 'unknown' to be '\"+r['expected']+\"'\" in r['failureMessage']\nassert sum(r['expected']=='present' for r in red['failedAssertions'])==260\nassert sum(r['expected']=='absent' for r in red['failedAssertions'])==568\n# The initial RED shell is retained in the report; the live provider may later evolve in 4.4.\nassert hashlib.sha256(red['providerAtRed'].encode()).hexdigest()==red['providerSha256']\nassert \"return { presence: 'unknown' }\" in red['providerAtRed']\nassert v['checks']['regression']['tests']==198\nprint('PASS RED evidence: 828 assertion failures / 82 integrity passes; frozen sources and production isolation remain intact')\n",
+  "replayCommand": "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-red-presence-v1/validation.json'))['verificationPython'])\nPY",
+  "reportingCorrection": "Vitest truncates long parameterized test titles; fixture identity is extracted from the original assertion message (which retains the full ID), never from an ellipsized title. No fixture/expected correction.",
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "parent4Complete": false,
+  "p4cAccepted": false,
+  "nextTask": "4.3"
+}
