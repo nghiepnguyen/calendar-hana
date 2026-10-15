@@ -1,6 +1,6 @@
 # P4-C — baseline và inventory operand 宜
 
-2026-10-15. **P4-C ĐÃ NGHIỆM THU AUDIT-ONLY** — task 0–7.7 hoàn tất, acceptance gate PRD §8 8/8; PR #55 chưa merge (owner quyết). Lịch sử task 1 (2026-10-13, baseline `991e87c`) giữ nguyên bên dưới.
+2026-10-15. **P4-C ĐÃ NGHIỆM THU AUDIT-ONLY** — task 0–7.7 hoàn tất, acceptance gate PRD §8 8/8; PR #55 merge `9afd39f`, CI main 38771420451 và deploy SUCCESS 2026-10-16; bundle production `f29f5aab…` không đổi. Lịch sử task 1 (2026-10-13, baseline `991e87c`) giữ nguyên bên dưới.
 
 Owner chọn 1A: P4-C chỉ nghiệm thu khi 11/11 authority được chốt. Hoàn tất task 1 không đồng nghĩa hoàn tất P4-C.
 
