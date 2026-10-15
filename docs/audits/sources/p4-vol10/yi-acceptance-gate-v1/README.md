@@ -2,7 +2,7 @@
 
 2026-10-15, tại HEAD `060ed2c` (code cuối `efc5ffa`; commit sau chỉ là tài liệu). Reviewer Claude, single agent; không independent second review.
 
-**Kết luận: gate 1–7 PASS; gate 8 chờ 7.7.** P4-C chưa đánh dấu hoàn tất cho đến khi 7.7 cập nhật progress/PROJECT_CONTEXT cuối. Không có entry thiếu/mâu thuẫn nguồn cần owner quyết.
+**Kết luận: gate 8/8 PASS (gate 8 đạt ở 7.7). P4-C nghiệm thu audit-only 2026-10-15.** Không có entry thiếu/mâu thuẫn nguồn cần owner quyết.
 
 | # | Gate | Kết quả | Evidence kiểm lại ở 7.6 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | 5 | 0 unresolved 凶; không regression chưa giải thích; propagation/protection/puzhu:28 đúng | **PASS** | Sweep: `unresolvedJiRows` 0, `conflicts` 0, `unexplained` 0. [Propagation 5.4](../yi-propagation-v1/README.md): propagation đổi 0; raw/protected 忌 đổi đúng 9 dòng theo Golden; puzhu:28 8 context. [Gate 5.7](../yi-composition-gate-v1/README.md): Golden A04b/P4-B không lệch. Mutation bỏ protection/override/suppression/止忌 đều bị bắt. |
 | 6 | Mutation bắt bằng assertion; bytes phục hồi; CI xanh | **PASS** | [Mutation](../../../p4-vol10-yi-mutation-results.json) 23/23 ASSERTION_CAUGHT, restored; P4-B 28/28. [CI 38764920607](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38764920607) success trên code HEAD `efc5ffa`, gồm 4 shard P4-C. CI trên `060ed2c` (chỉ tài liệu) đang chạy lại; Auto-fix theo dõi. |
 | 7 | Runtime/manifest/scoring bất biến; bundle = baseline | **PASS** | Diff `main...HEAD` ngoài test chỉ thêm module audit `p4Yi*` + JSON authority/Golden; 0 importer production; `manifest.json` không đổi; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` (7.2/7.3). |
-| 8 | Audit report và PROJECT_CONTEXT cập nhật; P5 chỉ là bước kế sau gate | **CHỜ 7.7** | Audit report có bảng tổng kết (7.4) và evidence đến 7.6. Còn: `docs/audits/p4-vol10-progress.md` vẫn ghi “next4.1”; PROJECT_CONTEXT roadmap mục 5 chưa chuyển sang nghiệm thu và chưa ghi P5 là bước kế. |
+| 8 | Audit report và PROJECT_CONTEXT cập nhật; P5 chỉ là bước kế sau gate | **PASS (7.7)** | Audit report có bảng tổng kết (7.4) và evidence đến 7.7; `docs/audits/p4-vol10-progress.md` và PROJECT_CONTEXT (header, roadmap 5 XONG, roadmap 6 P5 TIẾP THEO, CI, starter prompt) đã cập nhật; S1 giữ OPEN. |
 
 ## Giới hạn được chấp nhận trong gate
 
@@ -22,6 +22,6 @@
 - P5 修倉庫 deferred; 103 heading-ngày undetermined do scope khác. Ngoài phạm vi P4-C.
 - Month Jian theo quy ước calendar-day (CLOSED); 3 ngày Jie lệch noon không đổi state nào (6.8).
 
-## Việc còn lại
+## Sau nghiệm thu
 
-7.7: cập nhật progress.md, PROJECT_CONTEXT (roadmap 5 → nghiệm thu audit-only, P5 là bước kế, S1 vẫn OPEN) và checkbox parent 7.0. Merge/deploy PR #55 cần owner cho phép.
+Không còn task P4-C. Merge PR #55 (= deploy, runtime không đổi) cần owner cho phép. Tiếp theo P5 warehouse.

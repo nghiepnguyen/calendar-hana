@@ -1,6 +1,6 @@
 # P4-C — baseline và inventory operand 宜
 
-2026-10-15. **TASK 0–7.4 HOÀN TẤT (audit-only); P4-C CHƯA NGHIỆM THU** — còn 7.5 PR/CI thật, 7.6 đối chiếu gate PRD §8, 7.7 cập nhật cuối. Lịch sử task 1 (2026-10-13, baseline `991e87c`) giữ nguyên bên dưới.
+2026-10-15. **P4-C ĐÃ NGHIỆM THU AUDIT-ONLY** — task 0–7.7 hoàn tất, acceptance gate PRD §8 8/8; PR #55 chưa merge (owner quyết). Lịch sử task 1 (2026-10-13, baseline `991e87c`) giữ nguyên bên dưới.
 
 Owner chọn 1A: P4-C chỉ nghiệm thu khi 11/11 authority được chốt. Hoàn tất task 1 không đồng nghĩa hoàn tất P4-C.
 
@@ -326,3 +326,7 @@ Tại `c32f441`: `npm test` 194 file / 7.999 PASS / 3 skip (baseline 1.4 opt-in)
 ### P4-C 7.6 — Acceptance gate PRD §8 (2026-10-15)
 
 [Gate v1](sources/p4-vol10/yi-acceptance-gate-v1/README.md): gate 1–7 **PASS** với evidence kiểm lại trực tiếp (authority 11/11 đủ trường; sweep 0 operand unknown, 0 unresolved 凶, 0 unexplained; freeze `c12df53` trước code, authority/Golden giữ bytes; mutation 23/23; CI 38764920607 trên `efc5ffa`; runtime/manifest/bundle bất biến). Gate 8 chờ 7.7: progress.md và PROJECT_CONTEXT cuối. Không có entry cần owner quyết. P4-C chưa đánh dấu hoàn tất.
+
+### P4-C 7.7 — Nghiệm thu audit-only (2026-10-15)
+
+Checkbox 0.0–7.7 đủ evidence; progress.md và PROJECT_CONTEXT cập nhật (roadmap 5 XONG, roadmap 6 P5 tiếp theo, S1 OPEN). Gate 8 PASS → [acceptance gate](sources/p4-vol10/yi-acceptance-gate-v1/README.md) 8/8: **P4-C nghiệm thu audit-only**. Runtime/scoring không đổi; merge PR #55 cần owner cho phép.
