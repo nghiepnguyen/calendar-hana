@@ -24,4 +24,4 @@
 
 ## Sau nghiệm thu
 
-Không còn task P4-C. Merge PR #55 (= deploy, runtime không đổi) cần owner cho phép. Tiếp theo P5 warehouse.
+Không còn task P4-C. Owner cho phép merge; PR #55 merge `9afd39f`, CI main 38771420451 và deploy SUCCESS 2026-10-16; bundle production `f29f5aab…` không đổi. Tiếp theo P5 warehouse.

@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P4-C](prd-p4c-yi-operands.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **HOÀN TẤT — P4-C nghiệm thu audit-only 2026-10-15** (gate 8/8). PR #55 mở, chưa merge/deploy; P5 là bước kế tiếp.
+Trạng thái: **HOÀN TẤT — P4-C nghiệm thu audit-only 2026-10-15** (gate 8/8). PR #55 merge `9afd39f` và deploy SUCCESS 2026-10-16 (bundle không đổi); P5 là bước kế tiếp.
 
 ## Relevant Files
 
