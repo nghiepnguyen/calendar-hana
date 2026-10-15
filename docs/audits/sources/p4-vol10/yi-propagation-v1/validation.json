@@ -1,0 +1,78 @@
+{
+ "task": "5.4",
+ "date": "2026-10-15",
+ "reviewer": "Claude (single agent)",
+ "independentSecondReview": false,
+ "goldenCorrections": [
+  {
+   "id": 1,
+   "classification": "GOLDEN_BUG",
+   "where": "derive.py override contexts",
+   "issue": "rawProtectedBaiji listed 經絡/醞釀/苫蓋, which are outside the 29 evaluated headings and carry no day record",
+   "fix": "filter to the 29-heading catalog; out-of-catalog 百忌 headings kept in rawProtectedBaijiOutsideCatalog",
+   "expectationsChanged": "override.contexts only; dated rows, evidence.tsv bytes unchanged"
+  },
+  {
+   "id": 2,
+   "classification": "GOLDEN_BUG",
+   "where": "derive.py stopJiReveal expected",
+   "issue": "resolving rows whose 止忌 was already recorded (pre_ji true, state undetermined because 宜 unknown) kept the baseline state instead of the recording rule",
+   "fix": "any resolving row on the clause records only_ji/both_present from known 宜 (same rule as reveal rows)",
+   "expectationsChanged": "1 stopJi row(s): 2026-09-04 辛巳 undetermined->only_ji; reveal set unchanged at 9; propagationBound/override.dated unchanged"
+  }
+ ],
+ "supersededDraft": {
+  "expected.json": "61e112932d0d471a5f2d0c111fb4072e495a1ac4303cb05f8308cf4faf5904e5",
+  "evidence.tsv": "60b52a00f02ff7cadd5f5b5aaab97f9a29d2f995f997f0a5bcccd2fd4ea9b665",
+  "lock.json": "547da85d71e7c9f45b76471155a5cf41d3e67f645df56fe9b25befae92cd9c20"
+ },
+ "testMappingCorrections": [
+  {
+   "classification": "SPEC_BUG",
+   "where": "p4YiPropagation.test.ts source-context controls",
+   "issue": "mapped recordedYiFromThisOperand to the real-day recorded 宜; 3.4 control fixes one source scope only (子月己酉: 收日 as_usual suppresses recording)",
+   "fix": "assert evidence contribution for every control; assert recorded false only for the 除神/丁日 suppression control; frozen expected untouched"
+  },
+  {
+   "classification": "SPEC_BUG",
+   "where": "p4YiPropagation.test.ts",
+   "issue": "p4cTraceIds matcher assumed one eligible operand; 求醫療病/宴會 list several",
+   "fix": "arrayContaining"
+  }
+ ],
+ "conventionFindings": [
+  {
+   "classification": "CONVENTION_DIFFERENCE",
+   "dates": 20,
+   "issue": "baseline/getAlmanac gives a civil Jie day the new Month Jian for the whole day; the frozen dated 母倉 domain samples local noon",
+   "handling": "Golden uses the frozen 1,440 conditional table with the baseline Month Jian and date-only soil; resolver input follows the same Month Jian; dated instant/provenance review stays 5.6"
+  }
+ ],
+ "codeHashes": {
+  "shared/lunar/p4YiFullDayCore.ts": "e8b0e1d3f1ffc08f449dfb4d7162537554e20e021314c0137781bfb145bb70c6",
+  "shared/lunar/p4YiDayComposition.ts": "851b681446ad33257e8c2b5de12fcbc82c2495de8488d826ac8c277ab4339aa6",
+  "shared/lunar/p4YiPropagation.test.ts": "54b2763b686545f0df577393b8cedf0aebe7132fb4fc1cd138b57358a5eb5f98",
+  "shared/lunar/p4YiEvidence.ts": "dd9a4a9bc3e1f97a45a32edef50420d122b55b86a6a54143385caa37888bd096",
+  "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7"
+ },
+ "checks": {
+  "verifyCoreBodies": "PASS (predecessor + 宜 injection + 5 raw-retention edits)",
+  "dayCoreParity": "PASS",
+  "lint": "PASS",
+  "typecheckMainFunctions": "PASS",
+  "build": "PASS",
+  "bundle": {
+   "path": "dist/assets/index-CeLinrvj.js",
+   "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969"
+  },
+  "productionImportClosure": "no non-test import of P4-C modules/authority/Golden",
+  "historicalSourcesDiff": "git diff of tracked shared/src/functions empty",
+  "mutations": "4/4 assertion-caught, restored"
+ },
+ "commands": [
+  "python3 -I docs/audits/sources/p4-vol10/yi-propagation-v1/derive.py",
+  "npx vitest run shared/lunar/p4YiPropagation.test.ts",
+  "python3 -I docs/audits/sources/p4-vol10/yi-propagation-v1/verify-core-bodies.py",
+  "python3 -I docs/audits/sources/p4-vol10/yi-propagation-v1/check-mutations.py"
+ ]
+}

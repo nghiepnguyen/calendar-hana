@@ -1,0 +1,33 @@
+{
+  "task": "5.1",
+  "status": "EXPECTED_ASSERTION_RED",
+  "total": 958,
+  "passed": 39,
+  "failed": 919,
+  "skipped": 0,
+  "scope": {
+    "total": 924,
+    "passed": 20,
+    "failed": 904
+  },
+  "normalizationHelpers": {
+    "passed": 15
+  },
+  "normalizedRouting": {
+    "passed": 3,
+    "failed": 12
+  },
+  "aliasTrace": {
+    "failed": 3
+  },
+  "selectionGuards": {
+    "passed": 1
+  },
+  "limits": [
+    "Synthetic isolated contribution vectors; no real-day co-presence claim",
+    "Warehouse excluded: task 5.5",
+    "ANY combinations remain task 5.2",
+    "No production/provider/resolver/Golden change; P4-C not accepted",
+    "Single Codex reviewer; no independent second review"
+  ]
+}

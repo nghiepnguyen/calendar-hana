@@ -1,0 +1,243 @@
+{
+  "version": "p4-yi-trace-results-v1",
+  "task": "4.5",
+  "date": "2026-10-15",
+  "status": "FULL_SOURCE_INPUT_TRACE_EXPORTED_AUDIT_ONLY",
+  "beforeImplementation": {
+    "passed": 17,
+    "assertionFailures": 1025,
+    "collectionOrToolingFailures": 0,
+    "rawVitestJsonSha256": "74912597e98cd949ac6cf72fdb004e5629a46ea1a913216ff233830a3a02d12d",
+    "note": "Trace and new bulk/soil APIs fail assertions against working RED signatures; no missing-module fallback"
+  },
+  "edgeRedBeforeFix": {
+    "passed": 1042,
+    "assertionFailures": 2,
+    "rawVitestJsonSha256": "18f90fa45fde1bafb8b5adf8e8ecfd2b680361725e0d54d33a4772911f2d2bfc",
+    "failures": [
+      {
+        "title": "bulk null container is a clear input error rather than a property-access TypeError",
+        "message": "AssertionError: expected error to be instance of RangeError"
+      },
+      {
+        "title": "missing soil provenance never borrows the unrelated day-pillar calculation",
+        "message": "AssertionError: expected { kind: 'DATED', …(4) } to deeply equal { kind: 'MISSING_SOIL_EVIDENCE' }"
+      }
+    ]
+  },
+  "astronomyIdentityRedBeforeFix": {
+    "passed": 1044,
+    "assertionFailures": 3,
+    "rawVitestJsonSha256": "2a146491f2d95e691a9f0de518b9ad19c0dd9cdcbdfc8e5314ff860649c41d0e",
+    "failures": [
+      {
+        "title": "sourceSha256 cannot claim a different astronomy input identity in caller evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "astronomyAuthorityId cannot claim a different astronomy input identity in caller evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      },
+      {
+        "title": "clockPolicy cannot claim a different astronomy input identity in caller evidence",
+        "message": "AssertionError: expected function to throw an error, but it didn't"
+      }
+    ]
+  },
+  "final": {
+    "tests": 2479,
+    "passed": 2451,
+    "planned5xCompositionFailures": 28,
+    "collectionFailures": 0,
+    "pendingOrTodo": 0,
+    "traceTestsPassed": 1047,
+    "files": [
+      {
+        "file": "p4YiDomains.test.ts",
+        "passed": 20
+      },
+      {
+        "file": "p4YiInputContract.test.ts",
+        "passed": 474,
+        "failed": 28
+      },
+      {
+        "file": "p4YiOperands.test.ts",
+        "passed": 910
+      },
+      {
+        "file": "p4YiTrace.test.ts",
+        "passed": 1047
+      }
+    ],
+    "rawVitestJsonSha256": "dd202c304f27fe394a5e35e3e710bc16fb8bd57a61f5af3591e5cc283c75d987"
+  },
+  "traceCoverage": {
+    "presenceRecordsReplayed": 906,
+    "states": {
+      "present": 260,
+      "absent": 568,
+      "unknown": 78
+    },
+    "authorityEntries": 11,
+    "sourceSlices": 74,
+    "scanCheckRecords": 120,
+    "distinctScanImages": 120,
+    "negativeIdentityRecords": 25,
+    "acceptedAliasPresenceRecords": 3,
+    "independentDatedSoilComparisons": 88,
+    "bulkTests": 4,
+    "provenanceSnapshotAndScopeTests": 3,
+    "malformedSoilDates": 2,
+    "datesBeyondAstronomyCoverage": 2,
+    "optionalAstronomyIdentityForgeryTests": 3
+  },
+  "regression": {
+    "files": 9,
+    "tests": 198,
+    "status": "PASS",
+    "rawVitestJsonSha256": "3b426d0bdae1f354932ed43cefc245d3c9c4de9fe2c28a6ab1980a3056081c22"
+  },
+  "corrections": [
+    {
+      "classification": "ENGINE_BUG",
+      "scope": "New4.5 bulk API before acceptance",
+      "problem": "Null inputs container was read before validation and produced TypeError",
+      "resolution": "Validate bulk map containers before pillar/branch consistency check; RangeError/code/key now explicit. Watched the added test fail before patch."
+    },
+    {
+      "classification": "ENGINE_BUG",
+      "scope": "New4.5 flat-provenance adapter before acceptance",
+      "problem": "Missing soil could inherit the unrelated day calculation in its evidence payload",
+      "resolution": "Missing soil has explicit MISSING_SOIL_EVIDENCE; never borrows day/month calculations. No presence/Golden changes; watched added test red before patch."
+    }
+  ],
+  "optionalIdentityCorrection": {
+    "classification": "ENGINE_BUG",
+    "scope": "New4.5 optional soil identity claims",
+    "problem": "New sourceSha256/astronomyAuthorityId/clockPolicy claims were exported but caller-supplied conflicts were not rejected",
+    "resolution": "Validate each optional claim when present, retain compatibility with frozen inputs that omit them; 3 added tests observed RED before patch; no frozen expectation changed"
+  },
+  "knownDeferredFailures": [
+    {
+      "title": "#0 any:2:present-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#1 any:2:unknown-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#2 any:3:present-present-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#3 any:3:present-absent-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#4 any:3:present-unknown-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#5 any:3:present-unknown-absent: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#6 any:3:present-unknown-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#7 any:3:absent-present-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#8 any:3:absent-unknown-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#9 any:3:unknown-present-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#10 any:3:unknown-present-absent: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#11 any:3:unknown-present-unknown: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#12 any:3:unknown-absent-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#13 any:3:unknown-unknown-present: keeps the complete trace and unresolved IDs",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#0 any:2:present-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#1 any:2:unknown-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#2 any:3:present-present-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#3 any:3:present-absent-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#4 any:3:present-unknown-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#5 any:3:present-unknown-absent: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#6 any:3:present-unknown-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#7 any:3:absent-present-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#8 any:3:absent-unknown-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#9 any:3:unknown-present-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#10 any:3:unknown-present-absent: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#11 any:3:unknown-present-unknown: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#12 any:3:unknown-absent-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    },
+    {
+      "title": "#13 any:3:unknown-unknown-present: presence can prove 宜 without erasing an unknown",
+      "reason": "Unchanged composeP4YiEvidence RED seam; implementation remains5.x"
+    }
+  ],
+  "runtimeBuild": {
+    "status": "PASS",
+    "bundle": "index-CeLinrvj.js",
+    "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969",
+    "unchanged": true
+  },
+  "nextTask": "4.6",
+  "p4cAccepted": false
+}

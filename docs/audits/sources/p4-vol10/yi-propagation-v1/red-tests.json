@@ -1,0 +1,2915 @@
+{
+ "command": "npx vitest run shared/lunar/p4YiPropagation.test.ts",
+ "phase": "RED_BEFORE_RAW_RETENTION",
+ "preEditSha256": {
+  "shared/lunar/p4YiFullDayCore.ts": "b47aa000bdf4e0e557df143035c033af39df738fcacb038a71a48675a26c4cc0",
+  "shared/lunar/p4YiDayComposition.ts": "c527f2c1ca1548544bd69f40d77290afb096551feaf120f21bf5398507ba43f6",
+  "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7"
+ },
+ "passed": 98,
+ "failed": 725,
+ "total": 823,
+ "errorsNotAssertion": 0,
+ "failures": [
+  {
+   "test": "P4-C 5.4 dated sweep: evidence, raw/protected 忌 and propagation bound matches Golden on 1,095 dates x 29 headings",
+   "message": "AssertionError: 2025-03-06:開倉庫出貨財: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:寅:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲戌",
+   "message": "AssertionError: 開倉庫出貨財: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:卯:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:辰:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙申",
+   "message": "AssertionError: 安牀: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:巳:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:午:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲午",
+   "message": "AssertionError: 苫蓋: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:未:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊申",
+   "message": "AssertionError: 安牀: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:申:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚辰",
+   "message": "AssertionError: 經絡: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:酉:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛卯",
+   "message": "AssertionError: 醞釀: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:戌:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲子",
+   "message": "AssertionError: 開倉庫出貨財: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:亥:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:子:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲子",
+   "message": "AssertionError: 開倉庫出貨財: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬子",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸丑",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:甲寅",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:乙卯",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丙辰",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:丁巳",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:戊午",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:己未",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:庚申",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:辛酉",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:壬戌",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: false, protectedJi: false }"
+  },
+  {
+   "test": "P4-C 5.4 puzhu:28 on 720 structural contexts (frozen 3.4 mask) override:丑:癸亥",
+   "message": "AssertionError: expected { ji: undefined, …(1) } to deeply equal { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 frozen 3.4 source-context controls on real contexts context:天醫:亥:癸未:求醫療病",
+   "message": "AssertionError: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 frozen 3.4 source-context controls on real contexts context:天恩:子:己酉:宴會",
+   "message": "AssertionError: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 frozen 3.4 source-context controls on real contexts context:天巫:申:甲戌:祭祀",
+   "message": "AssertionError: expected undefined to match object { ji: true, protectedJi: true }"
+  },
+  {
+   "test": "P4-C 5.4 frozen 3.4 source-context controls on real contexts context:除神:寅:丁酉:整容剃頭",
+   "message": "AssertionError: expected undefined to match object { ji: true, protectedJi: true }"
+  }
+ ]
+}

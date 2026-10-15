@@ -1,0 +1,82 @@
+{
+  "scope": "P4_C_5_5_FOCUSED_NOT_6_X_GATE",
+  "mutations": [
+    {
+      "mutation": "warehouse_resolved_by_any",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 13,
+      "failures": [
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:present",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:1",
+        "P4-C 5.5 王日 from 卷05 on 720 structural contexts leaves 修倉庫 and every heading record of the historical resolver for 修倉庫 unchanged",
+        "P4-C 5.5 dated sweep: existing operands and 修倉庫 against the frozen baseline matches baseline legacy presence and 修倉庫 records on 1,095 dates"
+      ]
+    },
+    {
+      "mutation": "warehouse_drops_trace",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 23,
+      "failures": [
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:present",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:absent",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) scope:mu-cang:修倉庫:unknown",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:present:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:absent:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:present:unknown:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:present:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:absent:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:absent:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:unknown:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:absent:unknown:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:present:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:absent:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:absent:1",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:unknown:0",
+        "P4-C 5.5 frozen 3.4 warehouse deferral (isolated evidence) warehouse:unknown:unknown:1",
+        "P4-C 5.5 王日 from 卷05 on 720 structural contexts leaves 修倉庫 and every heading record of the historical resolver for 修倉庫 unchanged",
+        "P4-C 5.5 dated sweep: existing operands and 修倉庫 against the frozen baseline matches baseline legacy presence and 修倉庫 records on 1,095 dates"
+      ]
+    },
+    {
+      "mutation": "wang_ri_removed",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 2,
+      "failures": [
+        "P4-C 5.5 王日 from 卷05 on 720 structural contexts keeps 王日 presence and its 宴會/行幸遣使 contribution",
+        "P4-C 5.5 dated sweep: existing operands and 修倉庫 against the frozen baseline matches baseline legacy presence and 修倉庫 records on 1,095 dates"
+      ]
+    },
+    {
+      "mutation": "warehouse_source_refs_direct_only",
+      "exitCode": 1,
+      "assertionCaught": true,
+      "failedAssertions": 1,
+      "failures": [
+        "P4-C 5.5 王日 from 卷05 on 720 structural contexts leaves 修倉庫 and every heading record of the historical resolver for 修倉庫 unchanged"
+      ]
+    }
+  ],
+  "restored": true,
+  "restoredSha256": {
+    "shared/lunar/p4YiEvidence.ts": "314a380574470175712b637885ee8acbafb3c3afcf6aa10f0d2e74c2f387ce42",
+    "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7",
+    "shared/lunar/p4YiDayComposition.ts": "b58871094afc3ba1eb3fe3456e27b12a44bc7b6446165fda9514c3247ba7385d"
+  }
+}

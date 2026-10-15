@@ -1,0 +1,15 @@
+{
+  "task": "5.2",
+  "checks": {
+    "lint": "PASS",
+    "mainAndFunctionsTypecheck": "PASS",
+    "graphifyUpdate": "PASS"
+  },
+  "sha256": {
+    "docs/audits/sources/p4-vol10/yi-red-any-v1/README.md": "aa6a2ce50c334d122d09b74396d59faddaf1de18ec7766519db51dc55558547a",
+    "docs/audits/sources/p4-vol10/yi-red-any-v1/test-results.json": "6109213750a17339e43b2e97329d7d6c553d5f39628b24077bdbc00e9dfd7aec",
+    "docs/audits/sources/p4-vol10/yi-red-any-v1/regression-results.json": "bf4cfe754f2a3338956b27ad9d383ecea0ccb863c99a3b0903a6a29e181ceec2",
+    "shared/lunar/p4YiAny.test.ts": "fa40b6d5dab8a3e82b9ff5899f1019e8d3425bc7f5cf4f2836fac953173ddf99"
+  },
+  "verificationPython": "from pathlib import Path\nimport json,hashlib\nb=Path('docs/audits/sources/p4-vol10/yi-red-any-v1')\nv=json.loads((b/'validation.json').read_text())\nfor p,h in v['sha256'].items(): assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p\nfor name,counts in [('test-results.json',(161,68,93,0)),('regression-results.json',(1460,513,947,0))]:\n d=json.loads((b/name).read_text())\n assert tuple(d[k] for k in ['numTotalTests','numPassedTests','numFailedTests','numPendingTests'])==counts\n a=[a for s in d['testResults'] for a in s['assertionResults']]\n assert len(a)==counts[0]\n assert all(x['status'] in ('passed','failed') for x in a)\n assert all('AssertionError' in ''.join(x['failureMessages']) for x in a if x['status']=='failed')\nfor p,h in json.load(open('docs/audits/sources/p4-vol10/yi-red-heading-v1/validation.json'))['sha256'].items():\n assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-presence-gate-v1/validation.json'))['verificationPython'],{})\nprint('PASS5.2:68 PASS/93 assertion RED;prior regression513/947;frozen677 and prior evidence unchanged')\n"
+}

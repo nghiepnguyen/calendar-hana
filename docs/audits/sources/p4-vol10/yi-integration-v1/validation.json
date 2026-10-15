@@ -1,0 +1,90 @@
+{
+  "task": "5.3",
+  "status": "PASS_TASK_AUDIT_ONLY",
+  "frozenFileCount": 677,
+  "preChangeLegacyContextCount": 720,
+  "testCounts": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-integration-v1/before-tests.json",
+      "counts": [
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-integration-v1/red-tests.json",
+      "counts": [
+        6,
+        0,
+        6,
+        0
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-integration-v1/test-results.json",
+      "counts": [
+        3604,
+        3604,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-integration-v1/legacy-results.json",
+      "counts": [
+        201,
+        201,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-integration-v1/restored-results.json",
+      "counts": [
+        167,
+        167,
+        0,
+        0
+      ]
+    }
+  ],
+  "checks": {
+    "lint": "PASS",
+    "mainAndFunctionsTypecheck": "PASS",
+    "build": "PASS",
+    "coreBodyParity": "PASS",
+    "graphifyUpdate": "PASS",
+    "focusedMutations": "3/3 assertion caught; restored"
+  },
+  "legacySourceFilesPreserved": true,
+  "versionedCoreReason": "Frozen677 includes historical resolver source; shared extraction replaced by versioned audit cores without changing locks.",
+  "corrections": [
+    {
+      "classification": "SPEC_BUG_NEW_INTEGRATION_TEST",
+      "detail": "Spring 天赦 uses 戊寅; 甲辰 is not 天恩 present. New tests corrected to source-locked contexts; Golden unchanged."
+    }
+  ],
+  "sha256": {
+    "docs/audits/sources/p4-vol10/yi-integration-v1/red-tests.json": "5b86471b9e9b2fb50d452dd552414c6445644b778303b54def92545264914717",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/legacy-results.json": "22db4fad678ea640bd02b3319efcb9c886a650da7a0422f96e5c03d9907f1203",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/before-tests.json": "39af3a2dbe4cf59970527f64371db97328214f418e1610686ddbb6aaba71e85d",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/test-results.json": "5c474bf5c4df17280dd488e803403baf0d5064de8b1516c413032deec41999d3",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/restored-results.json": "8bfc85061b41ccb6999093b1ce33fe0d0bf5baddab0bf236991dcaa8e4734265",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/mutations.json": "774368e5e72822525fc885f5af6c83071fd6cb9c6a1c6c0dc8f92299ecbb7f71",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/legacy-context-hashes.json": "37db5c1f1104479f122ef23bf43055353e133e8f5e5e888c02280802cbc349ce",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/verify-core-bodies.py": "c44e5e3048f5ab94385cf941e63082d9674fd9ee60ef86382ee98b5b9ce19f8c",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/check-mutations.py": "a1fc729afcd9f1cb0f14cfcf38cfa35800ca5c5186864faec0d08614761d4c86",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/verify.py": "336f3d409cba58a01d81f7e467c291638ff0fa9f7c86c297709fc71c019cc427",
+    "docs/audits/sources/p4-vol10/yi-integration-v1/README.md": "2840d4bd7bda9be3195b8b25fb5b617581b0dd44786e7496a98d1274a86fe954",
+    "shared/lunar/p4YiEvidence.ts": "dd9a4a9bc3e1f97a45a32edef50420d122b55b86a6a54143385caa37888bd096",
+    "shared/lunar/p4YiDayComposition.ts": "c527f2c1ca1548544bd69f40d77290afb096551feaf120f21bf5398507ba43f6",
+    "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7",
+    "shared/lunar/p4YiFullDayCore.ts": "b47aa000bdf4e0e557df143035c033af39df738fcacb038a71a48675a26c4cc0",
+    "shared/lunar/p4YiCompatibility.test.ts": "cbf658ee85a389e5358b6855021946addb41c4bfadf194f02bc2bb6fdeef8b0d",
+    "shared/lunar/p4YiDayComposition.test.ts": "43616f92f4aec9d4e093e3b94081ee75dae058fd383b8ed3f0f04206ccf94afe"
+  },
+  "next": "5.4",
+  "p4cAccepted": false
+}

@@ -1,0 +1,19 @@
+{
+ "phase": "GREEN",
+ "newSuite": {
+  "command": "npx vitest run shared/lunar/p4YiDatedInputs.test.ts",
+  "passed": 8,
+  "failed": 0,
+  "total": 8
+ },
+ "p4cSuites": {
+  "files": 10,
+  "passed": 4491,
+  "failed": 0
+ },
+ "legacyAndCompatibility": {
+  "files": 10,
+  "passed": 201,
+  "failed": 0
+ }
+}

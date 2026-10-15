@@ -1,0 +1,17 @@
+{
+  "task": "4.6",
+  "commands": [
+    "npx vitest run shared/lunar/p4YiTrace.test.ts shared/lunar/p4YiOperands.test.ts shared/lunar/p4YiDomains.test.ts shared/lunar/p4YiInputContract.test.ts --reporter=json --outputFile=/tmp/p4c-46-vitest.json",
+    "npx vitest run shared/lunar/p4DayComposition.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4HeadingAnnotation.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4LunarPhase.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4SeasonDays.test.ts shared/lunar/p4SoilConvention.test.ts shared/lunar/p4YouweiScopes.test.ts --reporter=json --outputFile=/tmp/p4c-46-legacy.json",
+    "npm run lint",
+    "npm run typecheck"
+  ],
+  "artifactSha256": {
+    "legacy-results.json": "2b0101ee2409e87935a9702974a930d6780cad3fcf1990922cf6b16cae23bf20",
+    "test-results.json": "e34a0e0e3920797f1aec8bf6768e1a82cd48402568d1245be92af3e5236c6d3a",
+    "results.json": "89d73bfe22dce7507da8cab5b6388c44149f1d3e44412ec75194c7708162333e",
+    "README.md": "692f5da1fa50cc45a1e28302a41d4ad21fe5da90824fbbcdb164bae87dbf79dd"
+  },
+  "verificationPython": "from pathlib import Path\nimport json,hashlib\nb=Path('docs/audits/sources/p4-vol10/yi-presence-gate-v1')\nsha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()\nv=json.loads((b/'validation.json').read_text())\nfor p,h in v['artifactSha256'].items():assert sha(b/p)==h,p\nr=json.loads((b/'results.json').read_text())\nfor p,h in r['codeAndPriorEvidenceSha256BeforeAndAfter'].items():assert sha(p)==h,p\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-trace-v1/validation.json').read_text())['verificationPython'], {})\nt=json.loads((b/'test-results.json').read_text())\nf=[a for s in t['testResults'] for a in s['assertionResults'] if a['status']=='failed']\nassert (t['numTotalTests'],t['numPassedTests'],t['numFailedTests'],t['numPendingTests'])==(2479,2451,28,0)\nassert sorted(a['fullName'] for a in f)==sorted(r['deferred5xFailures'])\nassert all(a['ancestorTitles']==['P4-C 4.3 listed heading retains unknown even when present masks it'] for a in f)\nassert all(a['status'] in ('passed','failed') for s in t['testResults'] for a in s['assertionResults'])\nl=json.loads((b/'legacy-results.json').read_text())\nassert (l['numTotalTests'],l['numPassedTests'],l['numFailedTests'],l['numPendingTests'])==(198,198,0,0)\nprint('PASS4.6:2451 presence/coverage/lock;28 exact deferred5.x;198 legacy;677 frozen hashes;code/evidence unchanged')\n",
+  "replayCommand": "python3 -c \"import json; exec(json.load(open('docs/audits/sources/p4-vol10/yi-presence-gate-v1/validation.json'))['verificationPython'])\""
+}

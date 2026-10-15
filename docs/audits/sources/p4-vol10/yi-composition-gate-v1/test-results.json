@@ -1,0 +1,69 @@
+{
+ "gate": {
+  "command": "npx vitest run shared/lunar/p4YiCompositionGate.test.ts",
+  "passed": 28,
+  "failed": 0
+ },
+ "datedDiff": {
+  "undeterminedFinal": {
+   "before": 4040,
+   "after": 642
+  },
+  "transitions": {
+   "RECORDED_YI_RESOLVED undetermined>not_recorded": 2197,
+   "RECORDED_YI_RESOLVED undetermined>only_yi": 569,
+   "RECORDED_YI_RESOLVED undetermined>only_ji": 430,
+   "EVIDENCE_YI_RESOLVED undetermined>not_recorded": 14,
+   "RECORDED_YI_RESOLVED undetermined>both_present": 107,
+   "RECORDED_YI_RESOLVED only_ji>only_ji": 404,
+   "STOP_JI_REVEAL undetermined>only_ji": 10,
+   "EVIDENCE_YI_RESOLVED undetermined>only_ji": 71,
+   "RECORDED_YI_RESOLVED undetermined>undetermined": 1
+  }
+ },
+ "replayP4BFullDay": {
+  "script": "replay-p4b-full-day.test.ts.txt",
+  "passed": 193,
+  "failed": 7,
+  "total": 200,
+  "explainedDifferences": [
+   {
+    "test": "P4-B composed day, audit only applies puzhu:28 only to its listed days and keeps their 宜 evidence",
+    "message": "AssertionError: 掃舍宇: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 亥 月 壬子 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 祭祀: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 亥 月 戊子 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 祭祀: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 未 月 丙午 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 祭祀: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 未 月 戊午 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 掃舍宇: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 丑 月 壬子 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 掃舍宇: expected false to be undefined // Object.is equality"
+   },
+   {
+    "test": "P4-B puzhu 27/28 first clause 丑 月 戊子 restores 死敗 and suppresses 宜 according to 月厭",
+    "message": "AssertionError: 掃舍宇: expected false to be undefined // Object.is equality"
+   }
+  ],
+  "classification": "EXPECTED_AUTHORITY_MIGRATION_CHANGE: tests compare full-day 祭祀/掃舍宇 recorded 宜 with historical resolveP4Day (legacy lookup unknown); new evidence knows 天巫/除神 absent, so 宜 is false. The invariant (月厭 mask leaves these headings to the day evidence) holds against the new evidence: gate test puzhu-end cases."
+ },
+ "allP4Suites": {
+  "command": "npx vitest run shared/lunar/p4",
+  "files": 28,
+  "passed": 5043,
+  "failed": 0,
+  "skipped": 3,
+  "skippedNote": "p4YiBaseline opt-in historical measurement (needs frozen checkout)"
+ }
+}

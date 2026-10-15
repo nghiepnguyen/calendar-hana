@@ -1,0 +1,108 @@
+{
+  "version": "p4-yi-full-trace-validation-v1",
+  "task": "4.5",
+  "date": "2026-10-15",
+  "status": "TRACE_EXPORT_COMPLETE_PRESENCE_GATE4_6_PENDING",
+  "checkpointCommit": "c6bc1e18fa27c81a595275b7c68864fa84079cd1",
+  "artifactSha256": {
+    "results.json": "145e8d027254131009b11d9361ddbb417d957a591a369d7e8dec758cc3e905da",
+    "README.md": "aa6ceee1faa6aaef1c1d0d9a691f6662d47565fc849d76c851e66f8882ae65f1"
+  },
+  "codeSha256At4_5": {
+    "shared/lunar/p4YiOperands.ts": "98458e76892c20259e41e03b946c231626c9c47cdea60d984b55521d4e8b9396",
+    "shared/lunar/p4YiSoil.ts": "fae15ad9d0b9051dc58a1a01fa67afced11d24df800de507093805d1023ce6b9",
+    "shared/lunar/p4YiTrace.ts": "ce9569154cb98684037e87e336450b28e0a4f02a7bd03f3212bc400020a2df21",
+    "shared/lunar/p4YiTrace.test.ts": "fe249664adb4683452ee4069ae4cb9aabc51b1453f2b7f5326928fefe838915b"
+  },
+  "checks": {
+    "traceRedGreen": {
+      "beforePassed": 17,
+      "beforeAssertionFailures": 1025,
+      "newEdgeAssertionFailuresBeforeFix": 2,
+      "newIdentityClaimAssertionFailuresBeforeFix": 3,
+      "finalTraceTestsPassed": 1047,
+      "collectionOrImportFailures": 0,
+      "commands": [
+        "npx vitest run shared/lunar/p4YiTrace.test.ts --reporter=json --outputFile=/tmp/p4c-45-before-vitest.json",
+        "npx vitest run shared/lunar/p4YiTrace.test.ts --reporter=json --outputFile=/tmp/p4c-45-edge-red-vitest.json",
+        "npx vitest run shared/lunar/p4YiTrace.test.ts --reporter=json --outputFile=/tmp/p4c-45-identity-red-vitest.json"
+      ]
+    },
+    "providerDomainAndTrace": {
+      "command": "npx vitest run shared/lunar/p4YiTrace.test.ts shared/lunar/p4YiOperands.test.ts shared/lunar/p4YiDomains.test.ts shared/lunar/p4YiInputContract.test.ts --reporter=json --outputFile=/tmp/p4c-45-final-vitest.json",
+      "exitCode": 1,
+      "passed": 2451,
+      "expected5xCompositionFailures": 28,
+      "unexpectedFailures": 0,
+      "pendingOrTodo": 0
+    },
+    "legacy": {
+      "command": "npx vitest run shared/lunar/p4DayComposition.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4LunarPhase.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4SoilConvention.test.ts shared/lunar/p4HeadingAnnotation.test.ts shared/lunar/p4SeasonDays.test.ts shared/lunar/p4YouweiScopes.test.ts --reporter=json --outputFile=/tmp/p4c-45-legacy-vitest.json",
+      "files": 9,
+      "tests": 198,
+      "status": "PASS",
+      "matchingScope": "All legacy source bytes unchanged; reused after optional identity checks added only in the new audit soil validator; final provider/domain/trace suites rerun"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "status": "PASS_AFTER_FINAL_CODE_CHANGE"
+    },
+    "types": {
+      "command": "npm run typecheck",
+      "scope": ["main", "functions"],
+      "status": "PASS"
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "PASS",
+      "bundle": "index-CeLinrvj.js",
+      "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969",
+      "existingWarnings": ["chunk size >500kB", "PWA inlineDynamicImports deprecated"]
+    },
+    "format": "PASS_NEW_CODE_AND_EVIDENCE",
+    "diffCheck": "PASS_CR_AT_EOL",
+    "frozenHashes": {
+      "files": 677,
+      "status": "PASS"
+    },
+    "productionClosure": {
+      "status": "PASS_STATIC_LITERAL_IMPORT_SCAN",
+      "newAuditModulesReachable": false,
+      "scanner": "Unchanged4.1 scanner for literal local imports/reexports, @shared, ?raw and conservative type-only edges; external package internals not inspected"
+    },
+    "graph": {
+      "command": "graphify update .",
+      "mode": "AST_ONLY",
+      "status": "PASS",
+      "nodes": 7099,
+      "edges": 9937,
+      "communities": 937,
+      "html": "Auto-skipped by tool above5000 nodes"
+    }
+  },
+  "sourceTraceSchema": {
+    "bundle": "path/version/pre-implementation SHA256",
+    "entry": "entryId/entryPath/entrySha256/lockPath/lockSha256",
+    "sources": "All entry-local refs with raw quote/code-point offset/length/SHA1/SHA256, no renumbering",
+    "scanChecks": "Original scan locator/review limitations plus rendered-image SHA256",
+    "scope": "Original headingScopes/coverage/review, not a heading computation",
+    "inputProvenance": "Required-key snapshots, originRequirement/supplied/providerState/evidenceOrigin=CALLER_DECLARED/evidence; metadata does not determine presence"
+  },
+  "addedAPIs": [
+    "getP4YiOperands(inputs, providerStates, inputProvenance)",
+    "getP4MuCangSoil(date)"
+  ],
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "limitations": [
+    "No independent second source review",
+    "Caller-declared input provenance is not proof of actual dates unless supplied by the proper audited provider",
+    "28 masked ANY/trace seam tests remain RED for5.x; no full suite/CI acceptance claimed",
+    "Header/heading selection, lunar day/phase/soil P4-B assembly, protection/override/propagation integration remain5.x"
+  ],
+  "verificationPython": "from pathlib import Path\nfrom collections import Counter\nimport json,hashlib\nbase=Path('docs/audits/sources/p4-vol10/yi-trace-v1')\nsha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()\nv=json.loads((base/'validation.json').read_text())\nfor name,digest in v['artifactSha256'].items():assert sha(base/name)==digest,name\nns={}\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-contract-v1/validation.json').read_text())['verificationPython'],ns)\nassert not {'shared/lunar/p4YiOperands.ts','shared/lunar/p4YiPredicates.ts','shared/lunar/p4YiSoil.ts','shared/lunar/p4YiTrace.ts','shared/lunar/p4YiEvidence.ts'}&ns['seen']\nhistory={}\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-provider-v1/validation.json').read_text())['verificationPython'],history)\nr=json.loads((base/'results.json').read_text())\nassert (r['final']['tests'],r['final']['passed'],r['final']['planned5xCompositionFailures'])==(2479,2451,28)\nassert r['final']['traceTestsPassed']==1047\nassert r['final']['collectionFailures']==r['final']['pendingOrTodo']==0\nassert r['beforeImplementation']['assertionFailures']==1025\nassert r['edgeRedBeforeFix']['assertionFailures']==2\nassert r['astronomyIdentityRedBeforeFix']['assertionFailures']==3\nassert r['traceCoverage']['presenceRecordsReplayed']==906\nassert r['traceCoverage']['states']=={'present':260,'absent':568,'unknown':78}\na=json.loads(Path('shared/almanac-data/p4-yi-operands-v1.json').read_text())\nassert sum(len(e['sources']) for e in a['entries'])==r['traceCoverage']['sourceSlices']==74\nassert sum(len(e['scanChecks']) for e in a['entries'])==r['traceCoverage']['scanCheckRecords']==120\nassert r['traceCoverage']['negativeIdentityRecords']==25 and r['traceCoverage']['independentDatedSoilComparisons']==88\nassert r['traceCoverage']['optionalAstronomyIdentityForgeryTests']==3\nassert r['regression']['tests']==198 and r['regression']['status']=='PASS'\nassert len(r['knownDeferredFailures'])==28\nexpected='f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969'\nassert r['runtimeBuild']['sha256']==expected\nif Path('dist/assets/index-CeLinrvj.js').exists():assert sha('dist/assets/index-CeLinrvj.js')==expected\nprint('PASS4.5 trace evidence1047 /906 replay /74 sources /120 scan checks /25 identities /88 dated soil;2451 PASS +28 deferred ANY; source locks and production bundle unchanged')\n",
+  "replayCommand": "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-trace-v1/validation.json'))['verificationPython'])\nPY",
+  "nextTask": "4.6",
+  "parent4Complete": false,
+  "p4cAccepted": false
+}

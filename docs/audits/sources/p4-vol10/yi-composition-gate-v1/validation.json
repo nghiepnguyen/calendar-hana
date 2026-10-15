@@ -1,0 +1,69 @@
+{
+ "task": "5.7",
+ "date": "2026-10-15",
+ "reviewer": "Claude (single agent)",
+ "independentSecondReview": false,
+ "expectedSources": {
+  "a04b": {
+   "path": "shared/almanac-data/golden-p4-day-composition.json",
+   "sha256": "b85a966a503fca2795f057bfbfc924e0443d95622c7fdd632e6a23decf8b309b"
+  },
+  "youwei": {
+   "path": "shared/almanac-data/golden-p4-youwei-scopes-v2.json",
+   "sha256": "967b918f9a5db709cfa94f9220c4043a2ff05ae8f8c8ea09c409049dab33b202"
+  },
+  "puzhuEnd": {
+   "path": "shared/almanac-data/golden-p4-puzhu-end-v1.json",
+   "sha256": "bea7e83d8789c17600557f344c42df9a08231f739bc3a044d49db71f6d5db8ee"
+  },
+  "remainingJiV8": {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v8.json",
+   "sha256": "3122b8f04490c1aa17740962557dd6c245ae06a489a1642ec869e59cf71a81bb"
+  },
+  "baseline": {
+   "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+   "sha256": "6484bab71f7c7762a916ea792e305183311c9d62e43deb48b762813b35fec1d2"
+  },
+  "propagationGolden": {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/expected.json",
+   "sha256": "cfc16b51a2555339b169a1fa1d86a977c7b9b50ba6e75c0114cbb0dadfc1470c"
+  },
+  "evidenceTsv": {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/evidence.tsv",
+   "sha256": "60b52a00f02ff7cadd5f5b5aaab97f9a29d2f995f997f0a5bcccd2fd4ea9b665"
+  }
+ },
+ "codeChange": "none (test only)",
+ "goldenChanged": false,
+ "testMappingCorrections": [
+  {
+   "classification": "SPEC_BUG",
+   "where": "p4YiCompositionGate dated diff",
+   "issue": "first draft explained only recorded 宜 changes; 14+71 rows change because the pre-suppression evidence resolves while recorded 宜 stays suppressed false (scope undetermined -> not_avoided)",
+   "fix": "add EVIDENCE_YI_RESOLVED from baseline raw_yi unknown + Golden expected_evidence_yi known"
+  }
+ ],
+ "notRun": [
+  {
+   "what": "P4-B mutation runners scripts/audit-p4-*-mutations.py",
+   "why": "they rewrite tracked docs/audits/*mutation-results.json; target historical files are byte-identical (git diff of tracked shared/src/functions empty), so the gates are unchanged by construction; full mutation gate belongs to 6.x/CI 7.1"
+  },
+  {
+   "what": "P4C_BASELINE_VERIFY",
+   "why": "needs the frozen baseline checkout"
+  }
+ ],
+ "checks": {
+  "lint": "PASS",
+  "typecheckMainFunctions": "PASS",
+  "build": "PASS",
+  "bundle": {
+   "path": "dist/assets/index-CeLinrvj.js",
+   "sha256": "f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969"
+  },
+  "historicalTrackedDiff": "empty"
+ },
+ "codeHashes": {
+  "shared/lunar/p4YiCompositionGate.test.ts": "4f217f607741bdf12ff890e8a4c33adb63b2d029264700a0ad1313385d592f91"
+ }
+}

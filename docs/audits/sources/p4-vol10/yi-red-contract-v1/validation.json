@@ -1,0 +1,93 @@
+{
+  "version": "p4-yi-input-contract-red-validation-v1",
+  "task": "4.3",
+  "date": "2026-10-15",
+  "status": "RED_ASSERTIONS_VERIFIED_NOT_INPUT_OR_PRESENCE_IMPLEMENTATION",
+  "checkpointCommit": "c6bc1e18fa27c81a595275b7c68864fa84079cd1",
+  "artifactSha256": {
+    "irrelevant-input-adapter.json": "840ef3f8f0689d79f086fd1bb6743e6ee3d422811120e6f0cc549cc66dabdf31",
+    "red-results.json": "3e3ac6817391638974f3c4a117c089fd662945b0e296febeaca652c9ffcdacd1",
+    "README.md": "74d07524beddb63c661b1588ca5727df2c0eb49eae17de10a052cfd1b5d3b822"
+  },
+  "codeSha256AtRed": {
+    "shared/lunar/p4YiOperands.ts": "f3153cefdb3f5f25eb4eacfe4009324207fdf16bb5049fa0088e53116fefda8c",
+    "shared/lunar/p4YiOperands.test.ts": "8d315e398204bb87b1c5bd575661d011ac16d47a6c094a747514feb9e09565e5",
+    "shared/lunar/p4YiInputContract.test.ts": "822ce23e61e4cfe0af165380d6fc2030b2c391e674a57f66db5599ba9b8f3394",
+    "shared/lunar/p4YiEvidence.ts": "7e4fbbf15f44b17ab661dcdb6d27f7ce795d2393017b6a8e427f293174aff7c0"
+  },
+  "checks": {
+    "red": {
+      "tests": 502,
+      "passed": 2,
+      "assertionFailures": 500,
+      "collectionOrUnhandledFailures": 0,
+      "skipsOrTodo": 0,
+      "command": "npx vitest run shared/lunar/p4YiInputContract.test.ts --reporter=json --outputFile=/tmp/p4c-43-red-vitest.json",
+      "exitCode": 1
+    },
+    "unchanged4_2": {
+      "providerAndTestBytes": "PASS_MATCH_4_2_CHECKPOINT",
+      "integrityPassed": 82,
+      "resolvedPresenceStillRed": 828
+    },
+    "regression": {
+      "files": 9,
+      "tests": 198,
+      "status": "PASS"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "status": "PASS"
+    },
+    "types": {
+      "command": "npm run typecheck",
+      "scope": ["main", "functions"],
+      "status": "PASS"
+    },
+    "format": "PASS_NEW_TS_AND_EVIDENCE",
+    "frozenHashes": {
+      "files": 677,
+      "status": "PASS"
+    },
+    "productionClosure": {
+      "status": "PASS_STATIC_LOCAL_IMPORT_SCAN",
+      "newProviderOrEvidenceReachable": false,
+      "scanner": "Same literal local imports + @shared/?raw/type-only handling as4.1; external package internals not scanned"
+    },
+    "graph": {
+      "command": "graphify update .",
+      "mode": "AST_ONLY",
+      "nodes": 7013,
+      "edges": 9819,
+      "communities": 931,
+      "status": "PASS",
+      "html": "Tool skipped HTML above5000 nodes; graph JSON/report rebuilt"
+    },
+    "diffCheck": "PASS_CR_AT_EOL"
+  },
+  "combinedReport": {
+    "sha256": "e93065967c5efc22afbc0e96a4d3335d6bf92c0de5302824c9f48a52ec33bca7",
+    "command": "npx vitest run shared/lunar/p4YiOperands.test.ts shared/lunar/p4YiInputContract.test.ts shared/lunar/p4DayComposition.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4LunarPhase.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4SoilConvention.test.ts shared/lunar/p4HeadingAnnotation.test.ts shared/lunar/p4SeasonDays.test.ts shared/lunar/p4YouweiScopes.test.ts --reporter=json --outputFile=/tmp/p4c-43-combined-vitest.json",
+    "scope": "Used only for unchanged legacy/4.2 regression. Final4.3 numeric case-label edit validated by a separate final 502-test run."
+  },
+  "contractAddendum": {
+    "signature": "composeP4YiEvidence(heading, listedOperands)",
+    "module": "shared/lunar/p4YiEvidence.ts",
+    "purpose": "RED seam for frozen synthetic listed-heading trace vectors; not heading routing or full-day integration",
+    "implementedAt4_3": false,
+    "implementationStage": "5.x"
+  },
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "corrections": [],
+  "limitations": [
+    "500 assertion failures are expected before implementation, not a green release gate",
+    "14 masked vectors synthetic; real-date co-presence, heading routing and full-day integration remain5.x",
+    "Snapshot red-stage code hashes are historical; later provider implementation must not update frozen expected or old evidence"
+  ],
+  "verificationPython": "from pathlib import Path\nfrom collections import Counter\nimport hashlib,json\nbase=Path('docs/audits/sources/p4-vol10/yi-red-contract-v1')\nsha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()\nv=json.loads((base/'validation.json').read_text())\nfor name,digest in v['artifactSha256'].items():assert sha(base/name)==digest,name\nns={}\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-contract-v1/validation.json').read_text())['verificationPython'],ns)\nassert not {'shared/lunar/p4YiOperands.ts','shared/lunar/p4YiEvidence.ts'}&ns['seen']\n# Previous RED evidence remains a historical artifact; never rewrite it for a new implementation.\nprior={}\nexec(json.loads(Path('docs/audits/sources/p4-vol10/yi-red-presence-v1/validation.json').read_text())['verificationPython'],prior)\nr=json.loads((base/'red-results.json').read_text())\nassert (r['totalTests'],r['passedTests'],r['failedTests'])==(502,2,500)\nassert r['pendingTests']==r['todoTests']==r['unhandledOrCollectionFailures']==0\nrows=r['failedAssertions']\nassert len(rows)==len({x['caseId'] for x in rows})==500\nassert all(x['status']=='failed' and x['errorName']=='AssertionError' and x['failureMessage'].startswith('AssertionError:') for x in rows)\ncounts=Counter(x['category'] for x in rows)\nassert counts==Counter({'frozen-unknown':78,'required-undefined':20,'frozen-malformed':24,'required-null':20,'invalid-provider-state':20,'validation-precedence':34,'irrelevant-input':276,'masked-unknown-trace':14,'masked-unknown-yi':14})\nf=json.loads(Path('docs/audits/sources/p4-vol10/yi-expected-v1/expected.json').read_text())\nunknown=[x for x in f['presenceFixtures'] if x['expected']['outcome']=='unknown']\nassert {x['sourceCaseId'] for x in rows if x['category']=='frozen-unknown'}=={x['id'] for x in unknown}\nassert {x['sourceCaseId'] for x in rows if x['category']=='frozen-malformed'}=={x['id'] for x in f['malformedFixtures']}\nassert r['unknownReasons']==dict(Counter(x['expected']['reason'] for x in unknown))\na=json.loads((base/'irrelevant-input-adapter.json').read_text())\nassert len(a['recipes'])==69 and sum(len(x['variants']) for x in a['recipes'])==276\nexpected={x['fixtureId']+':'+variant['id'] for x in a['recipes'] for variant in x['variants']}\nassert {x['sourceCaseId'] for x in rows if x['category']=='irrelevant-input'}==expected\nc=json.loads(Path('docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json').read_text())\nmasked={x['id'] for x in c['sections']['any'] if x['expected']['yi'] is True and x['expected']['unresolvedTraceIds']}\nassert len(masked)==14\nfor group in ['masked-unknown-trace','masked-unknown-yi']:\n assert {x['sourceCaseId'] for x in rows if x['category']==group}==masked\nassert hashlib.sha256(r['evidenceShellAtRed'].encode()).hexdigest()==r['evidenceShellSha256']\nassert r['matchingRegression']=={'files':9,'passedTests':198}\nassert r['matching4_2']['passedIntegrity']==82 and r['matching4_2']['failedPresence']==828\nprint('PASS 4.3: 500 assertion RED / 2 guards PASS; 69 recipes and 14 masked vectors; frozen hashes, prior evidence and production isolation intact')\n",
+  "replayCommand": "python3 - <<'PY'\nimport json\nexec(json.load(open('docs/audits/sources/p4-vol10/yi-red-contract-v1/validation.json'))['verificationPython'])\nPY",
+  "nextTask": "4.4",
+  "parent4Complete": false,
+  "p4cAccepted": false
+}

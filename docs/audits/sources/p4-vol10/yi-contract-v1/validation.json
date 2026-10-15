@@ -1,0 +1,100 @@
+{
+  "version": "p4-yi-contract-review-v1",
+  "date": "2026-10-15",
+  "task": "4.1",
+  "status": "CONTRACT_REVIEWED_NOT_IMPLEMENTED",
+  "scope": "AUDIT_ONLY",
+  "reviewer": "Codex (single agent)",
+  "independentSecondReview": false,
+  "checkpointCommit": "c6bc1e18fa27c81a595275b7c68864fa84079cd1",
+  "checkpointTree": "39a1024e69afa357995c8133406c912419b2df48",
+  "contractPath": "docs/audits/sources/p4-vol10/yi-contract-v1/README.md",
+  "contractSha256": "2f80383c1ee6d9659effeb7d180e70718134663f745ff75d3b2f26f242c927ed",
+  "frozenSourceLock": {
+    "path": "docs/audits/sources/p4-vol10/yi-freeze-v1/lock.json",
+    "verifiedFileCount": 677,
+    "sha256": "a66f8984471f736a3f73ca087db44213dc42b356814750d1941418be6e054c12"
+  },
+  "unchangedCodeAndManifest": {
+    "shared/lunar/p4DayComposition.ts": "dd01594a14cdab6c2f1499f25c46e3103c8883d9e71086c356fbc8db149e5949",
+    "shared/lunar/p4FullDayComposition.ts": "94bb6d978511de7531682c653be1c635c632ea271c00e5402dfda81e49b98d36",
+    "shared/lunar/p4HeadingAnnotation.ts": "f8df08b8d3d55efa5c57638a2b1f2266f22d2077065fac5788326bfcc2812d68",
+    "shared/lunar/p4SoilConvention.ts": "02a28d26da53f1156e15c8eaea9f19d43d6110e5458770bdea1e440fd7e0eb08",
+    "shared/lunar/p4SeasonDays.ts": "fc0fc687e586881b13a3dce320e4fd30f6a296f661a3d13307c670a2dd249884",
+    "shared/almanac-data/p4-vol10-day-composition-v2.json": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12",
+    "shared/almanac-data/manifest.json": "5726562cdf843bcb0db0987b5b8a450610b60e58d2a2dad5dc26acf2ad29a323"
+  },
+  "directLocalImportConsumers": {
+    "shared/lunar/p4DayComposition.ts": [
+      "shared/lunar/p4FullDayComposition.ts",
+      "shared/lunar/p4RemainingJi.ts"
+    ],
+    "shared/lunar/p4FullDayComposition.ts": [],
+    "shared/lunar/p4HeadingAnnotation.ts": [
+      "shared/lunar/p4DayComposition.ts",
+      "shared/lunar/p4FullDayComposition.ts",
+      "shared/lunar/p4RemainingJi.ts"
+    ],
+    "shared/almanac-data/p4-yi-operands-v1.json": [],
+    "shared/almanac-data/golden-p4-yi-operands-v1.json": []
+  },
+  "productionImportClosure": {
+    "roots": "All non-test TS/TSX in src and functions/src plus shared/lunar/almanac.ts; type-only edges conservatively included",
+    "rootCount": 143,
+    "reachableCount": 279,
+    "auditTargetsReachable": [],
+    "unresolvedLocalImportsReachable": [],
+    "nonliteralDynamicImportFilesReachable": [],
+    "limitations": [
+      "Static literal local import/re-export/dynamic-import/require scanner; package internals and variable dynamic imports are not resolved",
+      "No provider or new composer exists yet; rerun closure and build checksum after implementation"
+    ]
+  },
+  "graftCommands": [
+    "graft ask \"P4-C yi operands task 4.1\" --source",
+    "graft ask \"P4 audit entry point evaluateP4Heading yi operand presence P4B soil contract imports\" --source",
+    "graft callers resolveP4FullDay --depth all",
+    "graft callers resolveP4Day --depth all",
+    "graft callers applyP4Propagation --depth all"
+  ],
+  "graphifyCommand": "graphify query \"resolveP4FullDay resolveP4Day yiEvidence applyP4Propagation\" --budget 1500",
+  "additionalReferenceCheck": "rg -n p4DayComposition|p4FullDayComposition|p4HeadingAnnotation|p4SoilConvention|p4SeasonDays|p4-vol10-day-composition scripts .github (patterns passed as one quoted argument)",
+  "validation": {
+    "frozenHashes": "PASS",
+    "unchangedLegacyAPIAndManifest": "PASS",
+    "noProductionImport": "PASS",
+    "regression": {
+      "status": "PASS",
+      "files": 9,
+      "tests": 198,
+      "command": "P4C_BASELINE_VERIFY=1 npx vitest run shared/lunar/p4YiBaseline.test.ts shared/lunar/p4DayComposition.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4LunarPhase.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4SoilConvention.test.ts shared/lunar/p4HeadingAnnotation.test.ts shared/lunar/p4SeasonDays.test.ts shared/lunar/p4YouweiScopes.test.ts",
+      "note": "9 API regression files pass 198 tests; baseline outcomes recorded separately"
+    },
+    "baseline": {
+      "status": "PASS_AT_FROZEN_BASELINE",
+      "files": 1,
+      "tests": 3,
+      "archiveCommit": "991e87c",
+      "command": "git archive 991e87c extracted to /tmp/p4c-41-baseline; symlink existing node_modules; GIT_DIR=<repo>/.git GIT_WORK_TREE=/tmp/p4c-41-baseline P4C_BASELINE_VERIFY=1 npx vitest run shared/lunar/p4YiBaseline.test.ts",
+      "headAttempt": "1 historical source guard failed, 2 tests passed; guard compares shared/src/package files with db382ba baseline and correctly rejects post-baseline authority/Golden additions at current HEAD; no guard/expected edited"
+    },
+    "format": "PASS new contract Markdown (explicit ignore override) and JSON; existing Markdown ignored by repository policy",
+    "diffCheck": "PASS git diff --check (cr-at-eol)",
+    "graphUpdate": "Not required: only Markdown/JSON evidence changed; no code changes"
+  },
+  "nextTask": "4.2",
+  "parent4Complete": false,
+  "p4cAccepted": false,
+  "verificationPython": "from pathlib import Path\nimport json,re,hashlib,subprocess\nroot=Path.cwd(); out=root/'docs/audits/sources/p4-vol10/yi-contract-v1'\nsha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()\nfreeze=json.loads(Path('docs/audits/sources/p4-vol10/yi-freeze-v1/lock.json').read_text())\nfor item in freeze['files']:\n assert sha(Path(item['path']))==item['sha256'],item['path']\nauthority=json.loads(Path('shared/almanac-data/p4-yi-operands-v1.json').read_text())\nassert len(authority['entries'])==11\n# Import/re-export and literal dynamic-import dependencies, including type-only imports conservatively.\npattern=re.compile(r'''(?:\\bfrom\\s*|\\bimport\\s*(?:\\(\\s*)?|\\brequire\\s*\\(\\s*)['\"]([^'\"\\n]+)['\"]''')\nfiles=sorted([*Path('src').rglob('*.ts'),*Path('src').rglob('*.tsx'),*Path('functions/src').rglob('*.ts'),*Path('shared').rglob('*.ts')])\nfiles=[p for p in files if '.test.' not in p.name and '.spec.' not in p.name]\nrefs={}; unresolved=[]; dynamic=[]\nfor p in files:\n text=re.sub(r'/\\*.*?\\*/|//[^\\n]*', '', p.read_text(), flags=re.S); targets=[]\n for m in pattern.finditer(text):\n  s=m.group(1).split('?',1)[0]\n  if not s.startswith(('.', '@/', '@shared/')):continue\n  stem=(p.parent/s) if s.startswith('.') else (Path('shared')/s[8:] if s.startswith('@shared/') else Path('src')/s[2:])\n  candidates=[stem,Path(str(stem)+'.ts'),Path(str(stem)+'.tsx'),Path(str(stem)+'.json'),stem/'index.ts',stem/'index.tsx']\n  if stem.suffix=='.js':candidates += [stem.with_suffix('.ts'),stem.with_suffix('.tsx')]\n  hit=next((q.resolve() for q in candidates if q.is_file()),None)\n  if hit: targets.append(str(hit.relative_to(root)))\n  else:unresolved.append({'file':str(p),'specifier':s})\n if re.search(r'\\b(?:import|require)\\s*\\(\\s*[^\\s\\'\\\"]',text):dynamic.append(str(p))\n refs[str(p)]=targets\nroots=[str(p) for p in files if str(p).startswith(('src/','functions/src/'))]+['shared/lunar/almanac.ts']\nseen=set();stack=roots[:]\nwhile stack:\n p=stack.pop()\n if p in seen:continue\n seen.add(p);stack.extend(refs.get(p,[]))\ntargets=['shared/lunar/p4DayComposition.ts','shared/lunar/p4FullDayComposition.ts','shared/lunar/p4HeadingAnnotation.ts','shared/almanac-data/p4-yi-operands-v1.json','shared/almanac-data/golden-p4-yi-operands-v1.json']\nassert not (set(targets)&seen)\nassert not [u for u in unresolved if u['file'] in seen],unresolved\nsourcepaths=targets[:3]+['shared/lunar/p4SoilConvention.ts','shared/lunar/p4SeasonDays.ts','shared/almanac-data/p4-vol10-day-composition-v2.json','shared/almanac-data/manifest.json']\nfor p in sourcepaths:\n assert Path(p).read_bytes()==subprocess.check_output(['git','show','HEAD:'+p]),p\n\nsaved=json.loads((out/'validation.json').read_text())\nassert saved['contractSha256']==sha(out/'README.md')\nassert saved['productionImportClosure']['reachableCount']==len(seen)\nassert not set(targets)&seen\nprint('PASS contract hash, 677 frozen hashes, legacy code/manifest bytes and production import closure')\n",
+  "reviewCorrections": [
+    {
+      "classification": "SPEC_BUG",
+      "scope": "Unfrozen task4.1 draft only",
+      "detail": "Corrected 四相 stub binding from season-days 相日 to existing getVol10VirtuesPresent/VOL10_VIRTUES seasonal DAY_STEM rule; frozen expected/source unchanged."
+    },
+    {
+      "classification": "TOOLING_CORRECTION",
+      "detail": "Static scanner resolves Vite ?raw asset suffixes and @shared alias, excludes comments when inventorying nonliteral imports. Final reachable file count 279; nonliteral imports none."
+    }
+  ]
+}

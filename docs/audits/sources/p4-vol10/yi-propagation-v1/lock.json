@@ -1,0 +1,69 @@
+{
+  "version": "p4-yi-propagation-lock-v2",
+  "date": "2026-10-15",
+  "status": "LOCKED_AFTER_CLASSIFIED_GOLDEN_CORRECTIONS",
+  "note": "v1 lock (superseded-draft/) was taken before assertions; two GOLDEN_BUG derivation corrections are ledgered in validation.json. Commit freeze happens with the 5.4 commit.",
+  "supersedes": {
+    "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/superseded-draft/lock.json",
+    "sha256": "547da85d71e7c9f45b76471155a5cf41d3e67f645df56fe9b25befae92cd9c20"
+  },
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/derive.py",
+      "sha256": "32a4c78d197ebc1cc90b1021c7102055802231e8abbff7fa479dc520a3c5d249"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/expected.json",
+      "sha256": "cfc16b51a2555339b169a1fa1d86a977c7b9b50ba6e75c0114cbb0dadfc1470c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/evidence.tsv",
+      "sha256": "60b52a00f02ff7cadd5f5b5aaab97f9a29d2f995f997f0a5bcccd2fd4ea9b665"
+    }
+  ],
+  "inputs": {
+    "baseline": {
+      "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+      "sha256": "6484bab71f7c7762a916ea792e305183311c9d62e43deb48b762813b35fec1d2"
+    },
+    "domains": {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    "composition": {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+      "sha256": "1203bf64af5fab303a7a9d89b69ba80206af7b91e0e02b8e3860a50391651994"
+    },
+    "compositionBasis": {
+      "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+      "sha256": "f5327af81350bd228932c2f48b25555cbba17fb9ad040dbb42ccb1ac1ad49a21"
+    },
+    "authority": {
+      "path": "shared/almanac-data/p4-yi-operands-v1.json",
+      "sha256": "8c15e14bf21277004158b87c5ca36b285b44766c7704e1014e2f5ec94fe8a3fb"
+    },
+    "dayComposition": {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    "remainingJi": {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+      "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+    },
+    "vol10": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    }
+  },
+  "counts": {
+    "rows": 31755,
+    "dates": 1095,
+    "resolvingRows": 3314,
+    "revealCandidates": 2776,
+    "propagationCandidateTargets": 298,
+    "stopJiRows": 14,
+    "stopJiReveal": 9,
+    "overrideDatedRows": 261,
+    "jieDayConventionDates": 20
+  }
+}
