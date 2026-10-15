@@ -1,8 +1,40 @@
 # P4-C — baseline và inventory operand 宜
 
-2026-10-13. **TASK 1 HOÀN TẤT — baseline khóa tại `991e87c`; chưa chốt authority mới, chưa triển khai presence P4-C.**
+2026-10-15. **TASK 0–7.4 HOÀN TẤT (audit-only); P4-C CHƯA NGHIỆM THU** — còn 7.5 PR/CI thật, 7.6 đối chiếu gate PRD §8, 7.7 cập nhật cuối. Lịch sử task 1 (2026-10-13, baseline `991e87c`) giữ nguyên bên dưới.
 
 Owner chọn 1A: P4-C chỉ nghiệm thu khi 11/11 authority được chốt. Hoàn tất task 1 không đồng nghĩa hoàn tất P4-C.
+
+## Tổng kết P4-C (task 7.4)
+
+| Mục | Giá trị |
+|---|---|
+| Nhánh / commit | `codex/p4c-yi-operands`; baseline `991e87c`, authority/Golden freeze `c12df53`, code 4.x–5.x `9902fec`, sweep/mutation `18abea6`, CI `c32f441`, validation `8994b24` |
+| Authority | `shared/almanac-data/p4-yi-operands-v1.json`: 11/11 (10 SOURCE_REVIEWED, 母倉 OWNER_ADOPTED_SOURCE_DEPENDENT 2025–2027) |
+| Golden độc lập | `golden-p4-yi-operands-v1.json`, 10.668 records, freeze trước code; 677 path khóa không đổi từ `c12df53` đến HEAD |
+| Coverage | 7 thần × 720 context, 3 thần × 60 pillar, 母倉 1.440 conditional + 1.095 dated + 108 exact Jie; trên 1.095 ngày: 0 unknown, 0 missing input |
+| Sweep 31.755 dòng | 0 thiếu operand 11 thần, 0 unresolved 凶, 0 conflict, 3.803 dòng đổi đều có lý do Golden; final undetermined 4.040 → 642 (P5 修倉庫 539, scope khác 103) |
+| Mutation | P4-C 23/23 assertion-caught, restored; P4-B 28/28 vẫn bắt; CI job 4 shard bắt buộc trước deploy |
+| Validation | unit 7.999 PASS / 3 skip opt-in; typecheck main+functions, lint, build app+functions PASS |
+| Runtime | Diff `main...HEAD` ngoài test chỉ thêm 8 module `shared/lunar/p4Yi*.ts` + 2 JSON authority/Golden; 0 importer trong `src`/`functions/src`/production module; `manifest.json` không đổi; bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` = baseline |
+| Reviewer | Single agent (Codex task 1–4, Claude task 5–7); không independent second review |
+
+Lệnh tái tạo:
+
+```sh
+npx vitest run shared/lunar/p4Yi                                   # toàn bộ suite P4-C (~1 phút)
+P4C_SWEEP_WRITE=1 npx vitest run shared/lunar/p4YiSweep.test.ts    # tái tạo report trước/sau
+python3 scripts/audit-p4-yi-mutations.py                           # gate mutation đầy đủ (~25 phút, chạy riêng)
+P4C_BASELINE_VERIFY=1 npx vitest run shared/lunar/p4YiBaseline.test.ts  # trong checkout 991e87c
+```
+
+Còn mở / giới hạn:
+
+- 母倉 là convention owner adopt, chỉ 2025–2027; canonical S1 (onset/後/定氣) vẫn OPEN.
+- P5 修倉庫 co-presence (月恩/月德) deferred: 539 heading-ngày undetermined.
+- 103 heading-ngày undetermined do scope khác (宜 đã biết), ngoài phạm vi P4-C.
+- Month Jian theo quy ước calendar-day (CLOSED); 3 ngày Jie lệch noon với 母倉, không đổi state nào.
+- Audit-only: không đổi scoring/manifest/UI; full Golden P4, adapter, activation thuộc roadmap 6–10.
+- CI job P4-C chưa chạy trên Actions (chưa push).
 
 ## Checkpoint và cách tái tạo
 
@@ -282,3 +314,7 @@ Job `p4-c-mutations` (“P4-C audit mutation gate (i/4)”) chạy `scripts/audi
 ### P4-C 7.2 — Full validation (2026-10-15)
 
 Tại `c32f441`: `npm test` 194 file / 7.999 PASS / 3 skip (baseline 1.4 opt-in); `npm run typecheck` (main + functions), `npm run lint`, `npm run build`, `npm run build:functions` PASS. Bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` = baseline. `prettier --check .`: code/test nhánh sạch; 109 file lệch = 67 có sẵn trên `main` + 42 JSON evidence máy sinh P4-C (nhiều file bị lock SHA-256 nên giữ bytes); CI không có gate format.
+
+### P4-C 7.3–7.4 — Runtime bất biến, graph, report (2026-10-15)
+
+`git diff main...HEAD` ngoài test: chỉ thêm 10 file mới (8 module `p4Yi*`, authority, Golden index), không sửa file runtime nào; grep import: 0 file trong `src`/`functions/src` hay module production đọc `p4Yi*`/`p4-yi-operands`; `manifest.json` không đổi; bundle build `f29f5aab…` = baseline (7.2). 677 path trong `yi-freeze-v1/lock.json` + `prior-hashes.json` không đổi từ freeze `c12df53` đến HEAD. `graphify update .` đã chạy. Bảng tổng kết P4-C thêm ở đầu report. Next 7.5 push/PR.
