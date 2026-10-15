@@ -278,3 +278,7 @@ Before implementation17 PASS/1025 assertion RED; after1047 trace tests PASS (906
 ### P4-C 7.1 — CI mutation gate (2026-10-15)
 
 Job `p4-c-mutations` (“P4-C audit mutation gate (i/4)”) chạy `scripts/audit-p4-yi-mutations.py --shard=i/4` song song 4 shard (6/6/6/5 mutation + control mỗi shard), timeout 45 phút; bắt buộc trong `deploy.needs`, điều kiện deploy và danh sách job reuse-audit. Shard chỉ in report ra log; report tracked chỉ do bản chạy đầy đủ local ghi. Thử local shard 4/4: 5/5 assertion-caught, restored, 5m48s. Chưa chạy trên Actions (chưa push).
+
+### P4-C 7.2 — Full validation (2026-10-15)
+
+Tại `c32f441`: `npm test` 194 file / 7.999 PASS / 3 skip (baseline 1.4 opt-in); `npm run typecheck` (main + functions), `npm run lint`, `npm run build`, `npm run build:functions` PASS. Bundle `index-CeLinrvj.js` SHA-256 `f29f5aab62b23e92e44eea45fec642060156b48fd64d195fbbed30b55dbef969` = baseline. `prettier --check .`: code/test nhánh sạch; 109 file lệch = 67 có sẵn trên `main` + 42 JSON evidence máy sinh P4-C (nhiều file bị lock SHA-256 nên giữ bytes); CI không có gate format.
