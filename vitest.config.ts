@@ -4,6 +4,13 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [react()],
+  define: {
+    __BUILD_INFO__: JSON.stringify({
+      version: '0.0.0',
+      build: 'test',
+      builtAt: '2026-01-01T00:00:00.000Z',
+    }),
+  },
   resolve: {
     alias: {
       '@shared': fileURLToPath(new URL('./shared', import.meta.url)),

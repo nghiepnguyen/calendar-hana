@@ -12,7 +12,8 @@ test.beforeEach(({ browserName }, testInfo) => {
 })
 
 // Toast "App đã dùng được khi không có mạng" hiện vào lúc ngẫu nhiên (service worker cài xong).
-const style = '[role="status"] { display: none !important; }'
+// Dòng phiên bản đổi theo từng bản build.
+const style = '[role="status"], [data-testid="build-version"] { display: none !important; }'
 
 const pages = [
   { name: 'day', path: '/day/2026-09-23' },

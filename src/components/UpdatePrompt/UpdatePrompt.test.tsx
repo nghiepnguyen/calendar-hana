@@ -14,9 +14,16 @@ describe('UpdatePrompt', () => {
     const update = vi.fn()
     useAppUpdateStore.setState({ needRefresh: true, update })
     render(<UpdatePrompt />)
-    expect(screen.getByText('Có phiên bản mới.')).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: 'Cập nhật' }))
+    expect(screen.getByText('Có phiên bản mới')).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Cập nhật ngay' }))
     expect(update).toHaveBeenCalledTimes(1)
+  })
+
+  it('báo nhiều lần vẫn chỉ một thông báo', () => {
+    useAppUpdateStore.setState({ needRefresh: true })
+    render(<UpdatePrompt />)
+    act(() => useAppUpdateStore.setState({ needRefresh: true }))
+    expect(screen.getAllByRole('alert')).toHaveLength(1)
   })
 
   it('Để sau thì ẩn thông báo', async () => {

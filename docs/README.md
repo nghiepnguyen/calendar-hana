@@ -10,6 +10,7 @@
 | [plans/](plans/) | Kế hoạch triển khai |
 | [verification/](verification/) | Kiểm chứng ánh xạ và chấm điểm hoạt động |
 | [design/](design/) | Design system (docx/pdf) |
+| [pwa-update-strategy.md](pwa-update-strategy.md) | Phiên bản build, `version.json`, phát hiện bản mới và luồng Cập nhật ngay của PWA |
 | [templates/](templates/) | Prompt mẫu tạo PRD và danh sách task (dùng cho `tasks/`) |
 
 PRD, danh sách task và bằng chứng audit thô (log, hash, script tái lập) nằm ở [`../tasks/`](../tasks/).

@@ -26,6 +26,7 @@ import { ShortcutSection } from './ShortcutSection'
 import { TextSizeSection } from './TextSizeSection'
 import { FengShuiGuideSection } from './FengShuiGuideSection'
 import { LegalLinks } from '../../components/LegalLinks/LegalLinks'
+import { APP_VERSION, BUILD_VERSION } from '../../buildInfo'
 import { Toggle } from './Toggle'
 import { iconSize } from '../../styles/textSize'
 import styles from './SettingsPage.module.css'
@@ -343,6 +344,9 @@ export function SettingsPage({ children }: { children?: ReactNode }) {
       )}
       <footer className={styles.footer}>
         <LegalLinks />
+        <p className={styles.buildVersion} data-testid="build-version">
+          v{APP_VERSION} · {BUILD_VERSION}
+        </p>
       </footer>
     </div>
   )
