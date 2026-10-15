@@ -4,6 +4,16 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { prerenderDays } from './scripts/prerenderDays.ts'
 import { publicLegalPages } from './scripts/publicLegalPages.ts'
+import packageJson from './package.json' with { type: 'json' }
+
+// Định danh bản build: commit SHA của CI (GitHub Actions), chạy máy thì lấy giờ build.
+const builtAt = new Date()
+const buildInfo = {
+  version: packageJson.version,
+  build:
+    process.env.GITHUB_SHA?.slice(0, 7) || builtAt.toISOString().replace(/\D/g, '').slice(0, 14),
+  builtAt: builtAt.toISOString(),
+}
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,8 +22,21 @@ export default defineConfig({
       '@shared': fileURLToPath(new URL('./shared', import.meta.url)),
     },
   },
+  define: { __BUILD_INFO__: JSON.stringify(buildInfo) },
   plugins: [
     publicLegalPages(),
+    {
+      // /version.json: build mới nhất trên server, app so với build đang chạy (src/buildInfo.ts).
+      name: 'version-json',
+      apply: 'build',
+      generateBundle() {
+        this.emitFile({
+          type: 'asset',
+          fileName: 'version.json',
+          source: JSON.stringify(buildInfo),
+        })
+      },
+    },
     react(),
     VitePWA({
       // Tự viết service worker (src/sw.ts) để xử lý Web Push và bấm thông báo.
