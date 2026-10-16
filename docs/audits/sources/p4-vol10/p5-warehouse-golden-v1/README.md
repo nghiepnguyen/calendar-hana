@@ -23,6 +23,7 @@ Status: **HASH_LOCKED_PRE_IMPLEMENTATION**, audit-only. Frozen before any P5 pre
   - Trigram 天德 months (坤乾艮巽) fall on no day, the same as the 4D Cat Hung table.
   - 天願 uses 起例: the 協紀 按 rejects the 歴例 list as a copying error.
   - puzhu:28 reads 未 甲子 as 甲午, from the owner print correction of 2026-10-12.
+  - **Owner 2026-10-16:** on a 甲日 that is a puzhu:28 day, 諸事不忌 takes precedence over 百忌 專忌 for 開倉庫出貨財. The specific day wins over the general rule, as the puzhu:28 `no_ji` adoption of 2026-10-12 already did. This closes the open question from task 1.4.
 
 ## Semantics
 
@@ -56,6 +57,7 @@ Every base × partner subset is covered except the two impossible pairs, so ever
 - **Engine baseline.** The expected values were compared with `p5-warehouse-baseline-v1/baseline.tsv` on 1,095 dates: 17 gods, 開倉庫 宜, and 甲日 專忌. There are 0 mismatches. The first run found 82; they were classified before freezing:
   - **GOLDEN_BUG:** 天願 came from the 歴例 list. It now uses 起例 with the 按 quote, which is a source reading, not an engine copy.
   - **CONVENTION_DIFFERENCE:** the Jie days took noon Month Jian. They now use the frozen calendar-day rows.
+- **月煞/月厭 (after the freeze).** On all 1,440 contexts the Golden columns match the engine (`isMonthlyShaPresent` yue_sha/yue_yan, `getXiejiGodPresence` nguyet_yem): 4,320/4,320. They also match the 13 frozen `golden-p4-context-bridge-v2` cases. This was a one-off check; the locked validation is unchanged.
 - **Prior locks.** 1,287 entries in 58 P4 locks keep their bytes. The `yi-propagation-v1/superseded-draft` lock is skipped and listed: its files were replaced on purpose.
 
 ## Limits
