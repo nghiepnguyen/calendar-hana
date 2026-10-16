@@ -78,12 +78,12 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
   - [x] 4.4 Output version `p4b-puzhu06-day-v1`. Mọi field ngoài năm heading deep-equal P4-C trên 1.095 ngày. Full suite, typecheck và lint sạch; không có runtime import. Evidence: mọi field ngoài heading deep-equal P4-C trên 1.095 ngày và 720 context; không file runtime nào import `p4Puzhu06`.
 
 - [x] 5.0 Sweep, mutation, regression — [báo cáo](../docs/audits/p4b-puzhu06.md)
-  - [x] 5.1 `p4Puzhu06Sweep.test.ts`: 1.095 × 29 trước/sau → `docs/audits/p4b-puzhu06-2025-2027.tsv` và summary. 724 dòng phân rã khớp Golden, mỗi dòng có lý do; 0 đổi ở heading khác; 0 đổi trên 忌 protected; `undetermined` ngoài phạm vi giữ nguyên.
-  - [x] 5.2 Ghi từng ví dụ PRD §8 (2025-01-22, 2025-01-11, 2025-01-26, 2025-04-11, 2025-01-15) trước/sau trong báo cáo.
-  - [x] 5.3 Mutation runner `scripts/audit-p4-puzhu06-mutations.py` (PRD FR-11): tuần tự, bắt bằng assertion, phục hồi bytes; ghi kết quả JSON; nối job CI và gate deploy.
-  - [x] 5.4 Regression A04b/P4-B/P4-C (và P5 nếu đã merge), unit, build, typecheck main/functions, lint. So bundle với build local cùng SHA (thay `builtAt`): runtime không đổi.
+  - [x] 5.1 `p4Puzhu06Sweep.test.ts`: 1.095 × 29 trước/sau → `docs/audits/p4b-puzhu06-2025-2027.tsv` và summary. 724 dòng phân rã khớp Golden, mỗi dòng có lý do; 0 đổi ở heading khác; 0 đổi trên 忌 protected; `undetermined` ngoài phạm vi giữ nguyên. Evidence: `7a4901a`. 70 dòng đổi = 68 lift + 2 annotation propagationBlocked (開倉庫 未戊申, nằm trong Golden v3 `propagation.tsv`); 0 đổi 忌 protected. Sweep lần đầu phát hiện **SPEC_BUG** trong authority v2: dòng gỡ còn 相抵 phải là `neither_recorded`. Đã xử lý qua authority v3 `a5f95e3`, Golden v3 `f0454cb`, test đỏ `df3fded`, fix `e032235`; thêm assertion: dòng undetermined được gỡ phải kết thúc 相抵 hoặc vẫn mở.
+  - [x] 5.2 Ghi từng ví dụ PRD §8 (2025-01-22, 2025-01-11, 2025-01-26, 2025-04-11, 2025-01-15) trước/sau trong báo cáo. Evidence: [báo cáo §Worked examples](../docs/audits/p4b-puzhu06.md), thêm 巳丙戌 (Q4a) và 未戊申 (相抵 + propagation).
+  - [x] 5.3 Mutation runner `scripts/audit-p4-puzhu06-mutations.py` (PRD FR-11): tuần tự, bắt bằng assertion, phục hồi bytes; ghi kết quả JSON; nối job CI và gate deploy. Evidence: `64f186a`, 16/16 bắt bằng assertion, bytes phục hồi ([kết quả](../docs/audits/p4b-puzhu06-mutation-results.json)); job `p4b-puzhu06-mutations` nằm trong `needs` của deploy.
+  - [x] 5.4 Regression A04b/P4-B/P4-C (và P5 nếu đã merge), unit, build, typecheck main/functions, lint. So bundle với build local cùng SHA (thay `builtAt`): runtime không đổi. Evidence: full unit 204 file / 8.033 test; typecheck (main + functions), oxlint, build đều qua. Build `origin/main` và nhánh mỗi bên 1.125 file; sau khi chuẩn hóa hash chunk/`builtAt` chỉ còn khác build id và revision sw.js.
 
 - [x] 6.0 Nghiệm thu (trừ 6.3)
-  - [x] 6.1 Acceptance gate 7/7 (PRD §7) kèm evidence.
-  - [x] 6.2 `graphify update .`; cập nhật báo cáo, `p4-vol10-progress.md` và PROJECT_CONTEXT.md (dòng F1).
+  - [x] 6.1 Acceptance gate 7/7 (PRD §7) kèm evidence. Evidence: [bảng gate](../docs/audits/p4b-puzhu06.md#acceptance-gate-prd-7). Gate 2 có ghi chú: v3 đóng băng sau khi đã có composer v2. Gate 5: CI chờ PR.
+  - [x] 6.2 `graphify update .`; cập nhật báo cáo, `p4-vol10-progress.md` và PROJECT_CONTEXT.md (dòng F1). Evidence: đã chạy graphify update; có dòng progress và PROJECT_CONTEXT F1 (sẽ đụng dòng F1 của PR #60 khi merge).
   - [ ] 6.3 PR, CI xanh; merge hay deploy chỉ khi owner cho phép.
