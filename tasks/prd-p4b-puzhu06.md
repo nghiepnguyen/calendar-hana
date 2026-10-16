@@ -1,7 +1,7 @@
 # PRD — P4-B follow-up: 鋪註 puzhu:06 (德合赦願月恩四相時德等日不註忌…)
 
 Ngày: 2026-10-16.
-Trạng thái: PRD đã viết; owner đã chốt Q1–Q4 (§8). Chưa có Golden, chưa có code.
+Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16** (merge chờ owner). Owner chốt Q1–Q4 và Q4a (§8). Báo cáo: [p4b-puzhu06](../docs/audits/p4b-puzhu06.md).
 Quyết định owner (2026-10-16): xử lý puzhu:06 là việc P4-B audit-only riêng, không nằm trong P5. Đóng băng Golden trước, owner quyết cách đọc 「如常例」.
 Quyết định owner (2026-10-16): **Q1 không, Q2 không, Q3 không, Q4 có.** puzhu:06 chỉ gỡ 忌 của remaining-ji có danh sách gỡ riêng (九空, 五虛, 小耗, 五離, 五墓): **77 dòng** trên 2025–2027 (立券交易 28, 開倉庫出貨財 17, 開市 16, 納財 13, 安牀 3). 如常例 có grade 從忌不從宜, 「與德併如常例」 và 月破 không có 德 đều giữ 忌. Status `OWNER_ADOPTED`, không phải canonical.
 Quyết định owner Q4a (2026-10-16): **chặn** — 五墓 không bị puzhu:06 gỡ bằng 德合 (天德合, 月德合), theo 「不取德合者不同行也」. Kết quả sau Q4a: **gỡ 68 dòng** (立券交易 25, 開倉庫出貨財 17, 開市 13, 納財 13, 安牀 0), giữ 645, undetermined 11. Authority `p4b-puzhu06-v2`, Golden `golden-p4b-puzhu06-v2` (freeze `67af7c0`); v1 giữ nguyên làm parent.
