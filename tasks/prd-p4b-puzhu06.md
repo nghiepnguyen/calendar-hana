@@ -1,8 +1,9 @@
 # PRD — P4-B follow-up: 鋪註 puzhu:06 (德合赦願月恩四相時德等日不註忌…)
 
 Ngày: 2026-10-16.
-Trạng thái: PRD đã viết, **chờ owner chốt cách đọc Q1–Q3 (§8)**. Chưa có Golden, chưa có code.
+Trạng thái: PRD đã viết; owner đã chốt Q1–Q4 (§8). Chưa có Golden, chưa có code.
 Quyết định owner (2026-10-16): xử lý puzhu:06 là việc P4-B audit-only riêng, không nằm trong P5. Đóng băng Golden trước, owner quyết cách đọc 「如常例」.
+Quyết định owner (2026-10-16): **Q1 không, Q2 không, Q3 không, Q4 có.** puzhu:06 chỉ gỡ 忌 của remaining-ji có danh sách gỡ riêng (九空, 五虛, 小耗, 五離, 五墓): **77 dòng** trên 2025–2027 (立券交易 28, 開倉庫出貨財 17, 開市 16, 納財 13, 安牀 3). 如常例 có grade 從忌不從宜, 「與德併如常例」 và 月破 không có 德 đều giữ 忌. Status `OWNER_ADOPTED`, không phải canonical.
 
 ## 1. Introduction / Overview
 
@@ -185,7 +186,19 @@ Việc này hoàn tất khi **tất cả** đúng:
 6. Runtime, manifest và scoring giữ nguyên.
 7. Báo cáo, progress và PROJECT_CONTEXT.md đã cập nhật.
 
-## 8. Open Questions (cho owner — chặn task 2.0)
+## 8. Owner decision và câu hỏi đã hỏi
+
+**Quyết định owner (2026-10-16): Q1 không, Q2 không, Q3 không, Q4 có.** Kết quả trên 2025–2027: gỡ 77 dòng, giữ 636, undetermined 11. Lý do đã trình cho owner:
+
+- **Q1 không:** cùng một sách, cụm 「從忌不從宜」 của puzhu:06 được hiểu như trong bảng 等第. 月恩/四相/時德 không phải 德 của 等第, nên ngày chỉ có các thần đó là 「不遇」.
+- **Q2 không:** 「與德併如常例」 nghĩa là có 德 mà không giúp được, thực chất là 遇德猶忌.
+- **Q3 không:** 月破 có 德 còn 猶忌, nên không có 德 mà chỉ có 月恩/四相 càng không gỡ được.
+- **Q4 có:** danh sách heading của puzhu:06 gần trùng danh sách 忌 của 九空/大耗/小耗. Nếu cả bốn câu đều "không", puzhu:06 không bao giờ có tác dụng.
+- **諸事皆忌** giữ (owner không bác ghi chú dưới đây).
+
+Rủi ro đã nêu: Q4 là chỗ yếu nhất. Nếu bám chữ vào danh sách gỡ riêng của từng entry thì sẽ đọc "không", và puzhu:06 thành vô hiệu.
+
+Câu hỏi đã hỏi owner (giữ nguyên để truy vết):
 
 Mọi câu hỏi viết theo cùng một chiều: **"có" = puzhu:06 gỡ 忌**, "không" = giữ 忌. Bảng §2 dùng đúng quy ước này.
 

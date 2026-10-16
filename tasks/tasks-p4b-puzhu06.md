@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD puzhu:06](prd-p4b-puzhu06.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **CHỜ OWNER** trả lời Q1–Q4 (PRD §8). Task 0.0 xong. Baseline pre-PRD đã đo (PRD §2). Chưa có Golden, chưa có code.
+Trạng thái: owner chốt **Q1 không, Q2 không, Q3 không, Q4 có** (2026-10-16; PRD §8). Next: 1.0 baseline. Task 0.0 xong. Baseline pre-PRD đã đo (PRD §2). Chưa có Golden, chưa có code.
 
 ## Relevant Files
 
@@ -50,8 +50,8 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
   - [ ] 1.4 Ghi tương tác `puzhu:22`: các ngày mà lift puzhu:06 trên 開市 và 立券交易 có thể kích hoạt propagation sang 開倉庫出貨財.
   - [ ] 1.5 Xác nhận 進人口, 經絡 và 醞釀 không thuộc 29 heading (`P4_DAY_HEADINGS`).
 
-- [ ] 2.0 Câu hỏi owner và authority `p4b-puzhu06-v1` — **chặn đến khi owner trả lời Q1–Q4**
-  - [ ] 2.1 Ghi câu trả lời Q1–Q4 kèm ngày; status `OWNER_ADOPTED`, không phải canonical.
+- [ ] 2.0 Câu hỏi owner và authority `p4b-puzhu06-v1` 
+  - [x] 2.1 Ghi câu trả lời Q1–Q4 kèm ngày; status `OWNER_ADOPTED`, không phải canonical. Evidence: owner 2026-10-16 chốt không/không/không/có, ghi trong PRD §8. Dự kiến gỡ 77 dòng; Golden 3.x phải tái lập con số này độc lập.
   - [ ] 2.2 Chép nguyên văn puzhu:06; mọi clause 如常例, 猶忌 và 諸事皆忌 của các entry chạm 724 dòng (月破, 月建, 平日, 收日, 閉日, 刼煞, 災煞, 月煞, 月刑, 月害, 月厭, 大時, 天吏); grade 中/次/下; remaining-ji 九空, 五虛, 小耗, 五離, 五墓; puzhu:27. Kèm offset code point, SHA-1 raw và locator scan.
   - [ ] 2.3 Bảng quyết định lớp nguồn → gỡ/giữ theo Q1–Q4 (PRD FR-02..FR-05); kế thừa 又為 và defer.
   - [ ] 2.4 Validation và lock file; builder Python độc lập có verify bytes; gate `p4Puzhu06Authority.test.ts`. Review single-agent, ghi giới hạn.
