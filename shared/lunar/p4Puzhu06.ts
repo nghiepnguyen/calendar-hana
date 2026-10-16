@@ -1,10 +1,10 @@
-import authority from '../almanac-data/p4b-puzhu06-v2.json'
+import authority from '../almanac-data/p4b-puzhu06-v3.json'
 import { applyP4Propagation, type P4DayState } from './p4DayComposition'
 import { resolveP4Grades } from './p4GradeResolution'
 import { getP4YouweiScopes, resolveP4Headings } from './p4HeadingAnnotation'
 import { resolveP4YiDay, type P4YiDayOperands } from './p4YiDayComposition'
 
-/** Source audit only (P4-B follow-up, authority p4b-puzhu06-v2): 鋪註 puzhu:06
+/** Source audit only (P4-B follow-up, authority p4b-puzhu06-v3): 鋪註 puzhu:06
  * 「凡徳合赦願月恩四相時徳等日不註忌…如遇徳猶忌及從忌不從宜之日則仍註忌」 on the P4-C day.
  * Owner 2026-10-16: Q1-Q3 no, Q4 yes, Q4a block. Not imported by the production pipeline. */
 export type P4Puzhu06Source = Readonly<Record<string, unknown>>
@@ -113,7 +113,13 @@ export function decideP4Puzhu06(row: P4Puzhu06Row): Decision {
   if (actions.has('untouched')) specGap('protected source on an unprotected row')
   const action = actions.has('hold') ? 'hold' : actions.has('keep') ? 'keep' : 'lift'
   if (action !== 'lift') return { action, classes, ...before }
-  const state = { true: 'only_yi', false: 'not_recorded', unknown: 'undetermined' }[row.yi]
+  // A 相抵 subject left on the heading reads neither_recorded (puzhu:05, P4-B state model).
+  const xiangdi = (row.sources as Rec[]).some(
+    (s) => s.kind === 'subject' && s.state === 'neither_recorded',
+  )
+  const state = xiangdi
+    ? 'neither_recorded'
+    : { true: 'only_yi', false: 'not_recorded', unknown: 'undetermined' }[row.yi]
   return { action, classes, ji: false, state }
 }
 
