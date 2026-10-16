@@ -25,10 +25,11 @@ The baseline does no classification. Classification belongs to the Golden (task 
 - 532 / 1,095 dates are puzhu:06 days.
 - Candidates, meaning `ji` true, not protected, on a puzhu:06 day: 開倉庫出貨財 133, 開市 153, 立券交易 159, 納財 139, 安牀 140. These match P5 F1 and PRD §2.
 - 1.3 — 忌 that is already protected on a puzhu:06 day: 開倉庫出貨財 119, 安牀 61, 開市 / 立券交易 / 納財 36 each. These rows form the negative set: puzhu:06 does not touch them (FR-05).
-- 1.4 — No candidate is `neither_recorded`, and a puzhu:06 lift gives `not_recorded` / `only_yi` / `undetermined`, never `neither_recorded`. So puzhu:22 (開市 + 立券交易 相抵 → 開倉庫出貨財) cannot fire because of puzhu:06.
+- 1.4 — No candidate is `neither_recorded`. ~~A puzhu:06 lift never gives `neither_recorded`, so puzhu:22 cannot fire because of puzhu:06.~~ **Corrected in task 5.1:** a lift that leaves a 相抵 subject on the heading gives `neither_recorded` (authority v3). On 未戊申 this fires puzhu:22, and the protected 開倉庫 records only `propagationBlocked` (Golden v3 `propagation.tsv`).
 - 1.5 — 進人口, 經絡 and 醞釀 are not in `P4_DAY_HEADINGS`, which the generator asserts.
 - 9 puzhu:06 days are also puzhu:28 days (`dayRule`). There 諸事不忌 already removes the 忌.
 - Context domain: 521 candidates over 720 contexts. Without dated operands, part of the 忌 stays undetermined.
+- `context-p4c.tsv` (task 5.1 supplement): the P4-C pre/final state of all 29 headings on 720 contexts, used for the Golden v3 propagation replay.
 
 ## Limits
 
