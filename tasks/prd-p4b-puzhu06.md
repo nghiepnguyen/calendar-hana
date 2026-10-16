@@ -198,7 +198,7 @@ Việc này hoàn tất khi **tất cả** đúng:
 
 Rủi ro đã nêu: Q4 là chỗ yếu nhất. Nếu bám chữ vào danh sách gỡ riêng của từng entry thì sẽ đọc "không", và puzhu:06 thành vô hiệu.
 
-**Q4a (mở, chặn task 4.2 — phát hiện khi review Golden 3.0).** Lời bàn entry 五墓 kết thúc bằng 「…與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也」 (卷十, offset 18263 của 「不取德合者不同行也」): entry nói rõ 德合 không gỡ 五墓 vì khác hành. Golden v1 (theo Q4 = có) đang gỡ **9 dòng 五墓** chỉ nhờ 天德合: 巳丙戌 2025-05-17, 2026-05-12, 2027-05-07 × 開市, 立券交易, 安牀. Ngày tháng 巳, nên điều kiện gỡ riêng của 五墓 (月德, tháng 午/子) không áp dụng. Bốn thần Q4 còn lại (九空, 五虛, 小耗, 五離) không có câu loại trừ tương tự; 「天赦不得與五虛併」 là ghi chú về đồng hiện, không phải loại trừ.
+**Q4a (mở, chặn task 4.2 — phát hiện khi review Golden 3.0).** Lời bàn entry 五墓 kết thúc bằng 「…與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也」 (卷十, offset 18232 của 「不取德合者不同行也」): entry nói rõ 德合 không gỡ 五墓 vì khác hành. Golden v1 (theo Q4 = có) đang gỡ **9 dòng 五墓** chỉ nhờ 天德合: 巳丙戌 2025-05-17, 2026-05-12, 2027-05-07 × 開市, 立券交易, 安牀. Ngày tháng 巳, nên điều kiện gỡ riêng của 五墓 (月德, tháng 午/子) không áp dụng. Bốn thần Q4 còn lại (九空, 五虛, 小耗, 五離) không có câu loại trừ tương tự; 「天赦不得與五虛併」 là ghi chú về đồng hiện, không phải loại trừ.
 
 Câu hỏi: 「不取德合」 của 五墓 có chặn trigger 德合 của puzhu:06 không?
 - **Chặn:** 9 dòng đó chuyển sang keep; còn gỡ 68 dòng.
