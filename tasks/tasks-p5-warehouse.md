@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); next 4.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`); next 5.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -56,11 +56,11 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 3.3 Expected 開倉庫出貨財 (PRD FR-07). Evidence: 宜 ANY trên 1.440 + 1.095; truth table 16 dòng `requireAll` × 甲日 × puzhu:28; 甲日 110 (106 giữ 專忌, 4 puzhu:28); presence 月煞 91 / 月厭 90 cho 5.2 (khớp engine 4.320/4.320 trên 1.440 context). Owner 2026-10-16: 甲日 trùng puzhu:28 → 諸事不忌 thắng 專忌 (đóng câu hỏi 1.4).
   - [x] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit. Evidence: so baseline engine sau khi viết expected: 0 lệch (82 lệch lần đầu đã phân loại: 天願 歴例→起例 GOLDEN_BUG, ngày Tiết CONVENTION_DIFFERENCE); 1.287 entry/58 lock P4 giữ bytes; freeze commit `fc5c1fb` (tree `a2f61b4`), [commit-proof.json](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/commit-proof.json) ở commit kế, không amend.
 
-- [ ] 4.0 Test đỏ và predicate audit-only
-  - [ ] 4.1 `graft callers` các symbol ghép 宜/trace P5; chốt entry point, giữ API P4-C.
-  - [ ] 4.2 Test đỏ từ Golden frozen.
-  - [ ] 4.3 `p4Warehouse.ts`: R10, R11, D, trace từng base, SOURCE_DEPENDENT riêng với unknown.
-  - [ ] 4.4 Ghép vào composer qua artifact version mới; bỏ `deferred: 'P5'`; giữ raw/protected 忌, override, `puzhu:28`.
+- [x] 4.0 Test đỏ và predicate audit-only — `shared/lunar/p4Warehouse.ts`, test `shared/lunar/p4Warehouse.test.ts`.
+  - [x] 4.1 `graft callers` các symbol ghép 宜/trace P5; chốt entry point, giữ API P4-C. Evidence: `composeP4YiEvidence`/`resolveP4YiDay` chỉ có caller là test, không runtime. Composition v2: không dòng propagation/suppression nào lấy 修倉庫 làm nguồn. Chốt: lớp P5 `resolveP4WarehouseDay` bọc `resolveP4YiDay`; P4-C và test của nó giữ nguyên (vẫn `deferred: 'P5'` theo contract P4-C).
+  - [x] 4.2 Test đỏ từ Golden frozen. Evidence: commit `0810b96`, đỏ 5/5 trên stub. Sửa test sau đỏ: so thêm trường `base` mà Golden ghi (thiếu map, không nới assertion).
+  - [x] 4.3 `p4Warehouse.ts`: R10, R11, D, trace từng base, SOURCE_DEPENDENT riêng với unknown. Evidence: đọc partner từ authority `p5-warehouse-v1` (SHA-256 pin); Kleene + completion như `derive.py`; `IMPOSSIBLE_CO_PRESENCE` có code và pair; mỗi base trích clause R10 và heading R11. Xanh 5/5: 167 fixture, 1.440 context, 720 context end-to-end (母倉 unknown khi không có ngày), 1.095 ngày.
+  - [x] 4.4 Ghép vào composer qua artifact version mới; bỏ `deferred: 'P5'`; giữ raw/protected 忌, override, `puzhu:28`. Evidence: output `p5-warehouse-day-v1` (artifact mới là authority `p5-warehouse-v1`; không cần composition JSON v3). 修倉庫 không còn `deferred`. SOURCE_DEPENDENT: `yi` undefined, state `undetermined`, tag `warehouse: 'SOURCE_DEPENDENT'` (chỉ 2025-10-08). Mọi heading khác (headings, pre-propagation, raw 忌, yiEvidence) deep-equal P4-C trên 1.095 ngày. Full suite 8.018 pass; typecheck, lint sạch; module không được runtime import.
 
 - [ ] 5.0 Sweep, mutation, regression
   - [ ] 5.1 Sweep 31.755 dòng trước/sau → TSV + summary; 539 dòng P5 phân rã đủ, mỗi dòng có lý do.

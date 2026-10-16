@@ -29,7 +29,7 @@ Status: **HASH_LOCKED_PRE_IMPLEMENTATION**, audit-only. Frozen before any P5 pre
 
 - Presence: true, false or null (unknown).
 - Each reading is Kleene `base AND ANY(partners)`.
-- D per base and the 修倉庫 heading are the outcome over every completion of the unknown operands. If all completions agree, that outcome is expected; otherwise the expected value is `unknown`. This matches the FR-04 order (direct → agreed → unknown → SOURCE_DEPENDENT → no 宜).
+- D per base and the 修倉庫 heading are the outcome over every completion of the unknown operands. If all completions agree, that outcome is expected; otherwise the expected value is `unknown`. This follows the FR-04 order (direct → agreed → unknown → SOURCE_DEPENDENT → no 宜) except in one case. When a base is unknown and its completions reach only SOURCE_DEPENDENT or agreed_absent, and another base is known SOURCE_DEPENDENT, the completions give SOURCE_DEPENDENT. Read literally, FR-04 would give unknown. Example: 母倉 unknown, 收日 present, 月恩 present. No frozen fixture or dated row hits this case. The implementation computes completions, as the Golden does.
 - **Owner 2026-10-16:** an unknown base whose partners are all known absent gives no 宜. Authority v1 says "or the base is unknown"; the owner read it this way, and the authority bytes are unchanged.
 - 收日+開日 or 天倉+時德 both present gives `IMPOSSIBLE_CO_PRESENCE`.
 - 開倉庫出貨財 宜 is Kleene ANY(月恩 四相 時德 滿日 五富).

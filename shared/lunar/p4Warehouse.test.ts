@@ -23,7 +23,9 @@ const S = '甲乙丙丁戊己庚辛壬癸'
 const KAI = ['月恩', '四相', '時德', '滿日', '五富']
 const sha256 = (b: Buffer) => createHash('sha256').update(b).digest('hex')
 const tsv = (name: string) => {
-  const [head, ...lines] = readFileSync(DIR + name, 'utf8').replace(/\n$/, '').split('\n')
+  const [head, ...lines] = readFileSync(DIR + name, 'utf8')
+    .replace(/\n$/, '')
+    .split('\n')
   const keys = head!.split('\t')
   return lines.map((l) => Object.fromEntries(l.split('\t').map((v, i) => [keys[i]!, v])))
 }
@@ -43,7 +45,10 @@ type Fixture = {
     | {
         xiuCangKu: string
         kaiCangKuYi: boolean | null
-        bases: Record<string, { r10: boolean | null; r11: boolean | null; d: string }>
+        bases: Record<
+          string,
+          { base: boolean | null; r10: boolean | null; r11: boolean | null; d: string }
+        >
       }
 }
 const golden = JSON.parse(readFileSync(DIR + 'expected.json', 'utf8')) as { fixtures: Fixture[] }
@@ -73,11 +78,16 @@ describe('P5 warehouse predicate against the frozen Golden', () => {
       const r = resolveP4Warehouse(p)
       expect(r.heading, f.id).toBe(e.xiuCangKu)
       expect(
-        Object.fromEntries(r.bases.map((b) => [b.base, { r10: b.r10, r11: b.r11, d: b.d }])),
+        Object.fromEntries(
+          r.bases.map((b) => [b.base, { base: b.present, r10: b.r10, r11: b.r11, d: b.d }]),
+        ),
         f.id,
       ).toEqual(
         Object.fromEntries(
-          Object.entries(e.bases).map(([k, v]) => [k, { ...v, r10: nul(v.r10), r11: nul(v.r11) }]),
+          Object.entries(e.bases).map(([k, v]) => [
+            k,
+            { ...v, base: nul(v.base), r10: nul(v.r10), r11: nul(v.r11) },
+          ]),
         ),
       )
       const ops = KAI.map((han) => ({
