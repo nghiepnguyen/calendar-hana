@@ -1,0 +1,41 @@
+{
+  "version": "p4b-puzhu06-authority-lock-v3",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v3/build.py",
+      "sha256": "a38e8f42694b97fd7a6fff034ed8e3ead7f467508debb69c5953431d214ea3b8"
+    },
+    {
+      "path": "shared/almanac-data/p4b-puzhu06-v3.json",
+      "sha256": "2f25d9db3778a77d91deba3d197d43b88316f5a0ea9d17122276f09eb8202f01"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v3/validation.json",
+      "sha256": "45d3744ea671e2977b95a7d3b6f22a1bfee1fae100641021298fa20b9dda2a54"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-authority.json",
+      "sha256": "64973dddae8a050c4743e53d1fbf2e9f12f3e2c3e03897f4563371a360a29b02"
+    },
+    {
+      "path": "shared/almanac-data/p4-puzhu-end-v1.json",
+      "sha256": "3cb6aa9edeaf95189612486783a48bbef48f3894beab7ad6a0551b3860671c8a"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+      "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+    },
+    {
+      "path": "shared/almanac-data/p4b-puzhu06-v2.json",
+      "sha256": "c7d65ffbdb3d169e7e289539758660a9e1606668efc1c4a17f752353c018d846"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    }
+  ]
+}
