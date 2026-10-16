@@ -88,8 +88,22 @@ Checked against the frozen Golden columns on 1,095 dates:
 | F2 | COVERAGE_LIMIT | The puzhu:22 lift never fires on 2025–2027, so real data cannot show it. | Covered by the abstract 16-row table and the `kai_drop_require_all` mutation. |
 | F3 | SCOPE_OUTSIDE_P5 | 24 開倉庫出貨財 and 16 修倉庫 rows stay `undetermined` because a P4-B 忌 scope is open (月煞 卯/酉, 刼煞, 閉日+天吏). | Recorded; left for P4-B. |
 
+## Acceptance gate (PRD §7, task 6.1)
+
+| # | Gate | Status | Evidence |
+|---|---|---|---|
+| 1 | Authority locked: 5 bases × 2 readings, quotes, offsets, checksums, scans; D recorded as OWNER_ADOPTED_SOURCE_DEPENDENT | PASS | `p5-warehouse-v1`, `5c99dc0`; gate `p4WarehouseAuthority.test.ts` |
+| 2 | Golden frozen before code; P4-B/P4-C locks keep their bytes | PASS | Freeze `fc5c1fb` and commit proof `29d9f00`, both before red `0810b96` and code `da08a65`. 1,287 entries in 58 prior locks are unchanged (`derive.py` validation). |
+| 3 | All 1,095 修倉庫 rows resolved with a reason; no `deferred: 'P5'`; SOURCE_DEPENDENT counted and listed separately | PASS | Sweep reasons from the Golden. `deferredAfter` 0 on the P5 output. SOURCE_DEPENDENT: 1 (2025-10-08). 16 rows have a known 宜 but an open P4-B 忌 scope, each listed with its subject. |
+| 4 | Impossible co-presence: 0 on 720 contexts and 1,095 dates | PASS | Authority and Golden 720 checks. The predicate throws `IMPOSSIBLE_CO_PRESENCE`, and the sweep of 1,095 dates ran without a throw. |
+| 5 | 開倉庫出貨財 FR-07 on real data; gaps classified and handled under FR-08 | PASS, with a known limit | §5.2. F1 (puzhu:06) is moved to a separate P4-B task (owner, 2026-10-16) and stays a known limit of P5. |
+| 6 | 0 unresolved 凶 operands, 0 P4-B/P4-C regressions, every mutation caught, CI green | PASS* | All other rows match the P4-C sweep, which has 0 unresolved 凶. Mutations 12/12. Full unit 8,020. *CI: see PR #60, latest head. |
+| 7 | Runtime, manifest and scoring unchanged | PASS | No runtime import of `p4Warehouse`. Builds of main `1c4bb32` and the branch are equal apart from `builtAt`/build id. |
+| 8 | Report and PROJECT_CONTEXT.md updated | PASS | This report, the task list, `p4-vol10-progress.md` and PROJECT_CONTEXT.md. |
+
 ## Limits
 
 - Single-agent work (Claude); no independent second review.
+- F1 (puzhu:06) is unmodeled in P4-B. The owner moved it to a separate task on 2026-10-16, which reads 如常例 and freezes a Golden first.
 - 母倉 is OWNER_ADOPTED_SOURCE_DEPENDENT for 2025–2027. Outside that range 修倉庫 can stay unknown.
 - One corner of FR-04: an unknown base that can only reach SOURCE_DEPENDENT or agreed_absent, next to a known SOURCE_DEPENDENT base, gives SOURCE_DEPENDENT under completion semantics. FR-04 read literally would give unknown. No real or frozen row hits this case.

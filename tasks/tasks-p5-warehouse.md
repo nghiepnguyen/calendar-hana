@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`), 5.0 xong ([báo cáo](../docs/audits/p5-warehouse.md)); next 6.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16** (merge chờ owner) — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`), 5.0 xong ([báo cáo](../docs/audits/p5-warehouse.md)); next 6.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -68,7 +68,7 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 5.3 Mutation runner tuần tự (PRD FR-13), bytes phục hồi; nối CI. Evidence: `scripts/audit-p4-warehouse-mutations.py` 12/12 bắt bằng assertion, bytes phục hồi ([kết quả](../docs/audits/p5-warehouse-mutation-results.json)); job CI `p5-warehouse-mutations`, gate deploy.
   - [x] 5.4 Regression A04b/P4-B/P4-C, unit, build, typecheck, lint; bundle so build local (thay `builtAt`) không đổi runtime. Evidence: full unit 200 file / 8.020 test; typecheck, lint sạch; Golden derive verify bytes. Build `origin/main` (`1c4bb32`) và nhánh (`8d8667c`) trong worktree riêng: 1.125 file, sau khi chuẩn hóa `builtAt`/build id/hash chunk thì `index-*.js` và mọi file khác trùng (sw.js chỉ khác revision dẫn xuất).
 
-- [ ] 6.0 Nghiệm thu
-  - [ ] 6.1 Acceptance gate 8/8 (PRD §7) với evidence.
-  - [ ] 6.2 `graphify update .`; cập nhật audit report, progress, PROJECT_CONTEXT.md.
+- [x] 6.0 Nghiệm thu
+  - [x] 6.1 Acceptance gate 8/8 (PRD §7) với evidence. Evidence: [bảng gate](../docs/audits/p5-warehouse.md#acceptance-gate-prd-7-task-61). F1 puzhu:06 = giới hạn đã biết, owner 2026-10-16 tách việc P4-B riêng.
+  - [x] 6.2 `graphify update .`; cập nhật audit report, progress, PROJECT_CONTEXT.md.
   - [ ] 6.3 PR, CI xanh; merge/deploy chỉ khi owner cho phép.
