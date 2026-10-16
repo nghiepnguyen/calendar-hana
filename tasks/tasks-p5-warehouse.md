@@ -54,7 +54,7 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 3.1 Fixture matrix: base-only, partner-only, từng partner, nhiều partner, mọi tổ hợp lệch, impossible, 德 trực tiếp, unknown mỗi phía, 母倉 ngoài coverage, sửa kho ≠ mở kho. Evidence: 167 fixture (mọi base × tập partner trừ 2 cặp impossible). Owner 2026-10-16: base unknown + mọi partner absent → không 宜.
   - [x] 3.2 Python reference độc lập (không import resolver), expected 720 context + miền ngày cho 母倉 soil / partner theo mùa. Evidence: 1.440 context (720 × soil) và 1.095 ngày (input từ P4-C frozen `MU_CANG_DATED_1095`, 20 ngày Tiết theo calendar-day). 修倉庫 2025–2027: 宜 588 / không 506 / SOURCE_DEPENDENT 1 (2025-10-08).
   - [x] 3.3 Expected 開倉庫出貨財 (PRD FR-07). Evidence: 宜 ANY trên 1.440 + 1.095; truth table 16 dòng `requireAll` × 甲日 × puzhu:28; 甲日 110 (106 giữ 專忌, 4 puzhu:28); presence 月煞 91 / 月厭 90 cho 5.2.
-  - [x] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit. Evidence: so baseline engine sau khi viết expected: 0 lệch (82 lệch lần đầu đã phân loại: 天願 歴例→起例 GOLDEN_BUG, ngày Tiết CONVENTION_DIFFERENCE); 1.287 entry/58 lock P4 giữ bytes; commit freeze + `commit-proof.json` ở commit kế.
+  - [x] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit. Evidence: so baseline engine sau khi viết expected: 0 lệch (82 lệch lần đầu đã phân loại: 天願 歴例→起例 GOLDEN_BUG, ngày Tiết CONVENTION_DIFFERENCE); 1.287 entry/58 lock P4 giữ bytes; freeze commit `fc5c1fb` (tree `a2f61b4`), [commit-proof.json](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/commit-proof.json) ở commit kế, không amend.
 
 - [ ] 4.0 Test đỏ và predicate audit-only
   - [ ] 4.1 `graft callers` các symbol ghép 宜/trace P5; chốt entry point, giữ API P4-C.
