@@ -1,0 +1,40 @@
+{
+  "version": "golden-p4b-puzhu06-validation-v2",
+  "engineBaseline": {
+    "compared": [
+      "triggers",
+      "puzhu28",
+      "yi",
+      "ji",
+      "protected_ji",
+      "state"
+    ],
+    "rows": 9075,
+    "mismatches": 0,
+    "examples": []
+  },
+  "prdCounts": {
+    "compared": [
+      "hold",
+      "keptBySourcedException",
+      "lift",
+      "q4aRows"
+    ],
+    "match": true
+  },
+  "v1ToV2": {
+    "changedRows": 9,
+    "unexpected": 0,
+    "rows": [
+      "2025-05-17 巳丙戌 安牀",
+      "2025-05-17 巳丙戌 立券交易",
+      "2025-05-17 巳丙戌 開市",
+      "2026-05-12 巳丙戌 安牀",
+      "2026-05-12 巳丙戌 立券交易",
+      "2026-05-12 巳丙戌 開市",
+      "2027-05-07 巳丙戌 安牀",
+      "2027-05-07 巳丙戌 立券交易",
+      "2027-05-07 巳丙戌 開市"
+    ]
+  }
+}
