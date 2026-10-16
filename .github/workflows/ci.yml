@@ -1,8 +1,9 @@
 name: CI / Deploy
 
 on:
+  # Branches get CI through their PR; push covers main only (no duplicate push+PR runs).
   push:
-    branches: [main, 'feature/**', 'audit/**']
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -26,8 +27,26 @@ jobs:
       actions: read
     outputs:
       reuse-audit: ${{ steps.reuse-audit.outputs.reuse }}
+      p4-changed: ${{ steps.p4-changed.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
+      - name: Detect P4 mutation-gate changes
+        id: p4-changed
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          # Unknown base (manual run, new branch, fetch failure) runs the gates.
+          if [ "$GITHUB_EVENT_NAME" = workflow_dispatch ] || [ -z "$BASE" ] ||
+             [ "$BASE" = 0000000000000000000000000000000000000000 ] ||
+             ! git fetch --depth=1 origin "$BASE" ||
+             ! files=$(git diff --name-only "$BASE" HEAD); then
+            echo changed=true >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if printf '%s\n' "$files" | grep -qE '^(shared/lunar/p4|scripts/audit-p4-)'; then
+            echo changed=true >> "$GITHUB_OUTPUT"
+          else
+            echo changed=false >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -46,18 +65,18 @@ jobs:
               const repo = context.repo;
               const { data: commit } = await github.rest.repos.getCommit({ ...repo, ref: context.sha });
               const { data } = await github.rest.actions.listWorkflowRuns({
-                ...repo, workflow_id: 'ci.yml', event: 'push', status: 'success', per_page: 100,
+                ...repo, workflow_id: 'ci.yml', event: 'pull_request', status: 'success', per_page: 100,
               });
+              // P4 mutation gates may be skipped by path; a successful run means none failed.
               const requiredJobs = [
-                'Typecheck and lint', 'Mutation and emulator gates', 'P4-B audit mutation gate',
-                ...[1, 2, 3, 4].map(shard => `P4-C audit mutation gate (${shard}/4)`),
+                'Typecheck and lint', 'Mutation and emulator gates',
                 ...[1, 2, 3, 4].map(shard => `Unit tests (${shard}/4)`),
                 ...['desktop'].flatMap(project =>
                   [1, 2].map(shard => `Playwright tests (${project}, ${shard}/2)`)),
               ];
               for (const run of data.workflow_runs) {
                 if (run.conclusion !== 'success' ||
-                    !/^(audit|feature)\//.test(run.head_branch || '') ||
+                    !run.head_branch ||
                     run.head_repository?.full_name !== `${repo.owner}/${repo.repo}` ||
                     run.head_commit?.tree_id !== commit.commit.tree.sha) continue;
                 const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {
@@ -170,7 +189,7 @@ jobs:
   p4-b-mutations:
     name: P4-B audit mutation gate
     needs: prepare
-    if: needs.prepare.outputs.reuse-audit != 'true'
+    if: needs.prepare.outputs.reuse-audit != 'true' && needs.prepare.outputs.p4-changed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -192,7 +211,7 @@ jobs:
   p4-c-mutations:
     name: P4-C audit mutation gate (${{ matrix.shard }}/4)
     needs: prepare
-    if: needs.prepare.outputs.reuse-audit != 'true'
+    if: needs.prepare.outputs.reuse-audit != 'true' && needs.prepare.outputs.p4-changed == 'true'
     runs-on: ubuntu-latest
     # Each mutation reruns every P4-C suite (~1 min local, ~4x on CI); 6 per shard + control.
     timeout-minutes: 45
@@ -271,8 +290,8 @@ jobs:
       (needs.prepare.outputs.reuse-audit == 'true' ||
        (needs.static-analysis.result == 'success' &&
         needs.unit-tests.result == 'success' && needs.gates.result == 'success' &&
-        needs.p4-b-mutations.result == 'success' &&
-        needs.p4-c-mutations.result == 'success' &&
+        contains(fromJSON('["success","skipped"]'), needs.p4-b-mutations.result) &&
+        contains(fromJSON('["success","skipped"]'), needs.p4-c-mutations.result) &&
         needs.e2e-tests.result == 'success'))
     runs-on: ubuntu-latest
     timeout-minutes: 20
