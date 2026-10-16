@@ -161,19 +161,27 @@ describe('P5 warehouse predicate against the frozen Golden', () => {
             state: 'undetermined',
             warehouse: 'SOURCE_DEPENDENT',
           })
+          // the split comes from 月恩, traced only under 開倉庫出貨財
+          const mucang = w.bases.find((x) => x.base === '母倉')!
+          expect(mucang.partners.filter((x) => x.presence)).toEqual([
+            { han: '月恩', presence: true, r10: true, r11: false },
+          ])
+          expect(w.traceIds['月恩']).toBe('p4legacy:月恩')
         }
         expect(day.yiEvidence['開倉庫出貨財']!.yi, date).toBe(row.kai_yi === 'true')
         if (row.kai_zhuan_ji_kept === 'true')
           expect(day.headings['開倉庫出貨財'], date).toMatchObject({ ji: true, protectedJi: true })
-        // 0 regression: no propagation line reads from 修倉庫, so every other heading is P4-C's.
-        for (const k of ['headings', 'prePropagationHeadings', 'rawJiHeadings'] as const) {
-          const { 修倉庫: _a, ...rest } = day[k]
-          const { 修倉庫: _b, ...before } = p4c[k]
-          expect(rest, `${date} ${k}`).toEqual(before)
-        }
-        const { 修倉庫: _e, ...otherEvidence } = day.yiEvidence
-        const { 修倉庫: _f, ...p4cEvidence } = p4c.yiEvidence
-        expect(otherEvidence, date).toEqual(p4cEvidence)
+        // 0 regression: no propagation line reads from 修倉庫, so every day-level field other than
+        // the 修倉庫 entries equals P4-C's (completeness, unresolvedJi, scopes included).
+        const drop = (v: unknown) =>
+          v && typeof v === 'object' && !Array.isArray(v) && '修倉庫' in v
+            ? Object.fromEntries(Object.entries(v).filter(([k]) => k !== '修倉庫'))
+            : v
+        const { version: _v, warehouse: _w, ...p5 } = day
+        const { version: _u, ...before } = p4c
+        expect(Object.keys(p5).sort(), date).toEqual(Object.keys(before).sort())
+        for (const [k, v] of Object.entries(p5))
+          expect(drop(v), `${date} ${k}`).toEqual(drop(before[k as keyof typeof before]))
       }
       expect(sourceDependent).toEqual(['2025-10-08'])
     },

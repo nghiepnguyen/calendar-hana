@@ -89,6 +89,12 @@ export function resolveP4Warehouse(p: Presence) {
           : 'agreed_absent',
       ),
     ),
+    partners: [...new Set([...R10[base]!, ...R11[base]!])].map((han) => ({
+      han,
+      presence: p[han],
+      r10: R10[base]!.includes(han),
+      r11: R11[base]!.includes(han),
+    })),
     sources: {
       r10: cp.R10.clauses[base as keyof typeof cp.R10.clauses],
       r11: authority.heading.修倉庫,
@@ -112,21 +118,25 @@ export function resolveP4WarehouseDay(
   operands: P4YiDayOperands = {},
 ) {
   const p4c = resolveP4YiDay(month, pillar, operands)
-  const seen = new Map<string, string>()
+  // Union of every heading's trace: 月恩 is traced only under 開倉庫出貨財 (卷十一 修倉庫 omits it).
+  type Item = { traceId: string; han: string; presence: string }
+  const seen = new Map<string, Item>()
   for (const evidence of Object.values(p4c.yiEvidence))
-    for (const t of evidence.trace as readonly { han: string; presence: string }[]) {
-      if (seen.has(t.han) && seen.get(t.han) !== t.presence)
+    for (const t of evidence.trace as readonly Item[]) {
+      if (seen.has(t.han) && seen.get(t.han)!.presence !== t.presence)
         throw new RangeError(`Conflicting warehouse operand trace: ${t.han}`)
-      seen.set(t.han, t.presence)
+      seen.set(t.han, t)
     }
+  const traced = P5_WAREHOUSE_GODS.map((g) => {
+    const t = seen.get(g)
+    if (!t) throw new RangeError(`Untraced warehouse operand: ${g}`)
+    return t
+  })
   const presence = Object.fromEntries(
-    P5_WAREHOUSE_GODS.map((g) => {
-      const state = seen.get(g)
-      if (!state) throw new RangeError(`Untraced warehouse operand: ${g}`)
-      return [g, state === 'unknown' ? undefined : state === 'present']
-    }),
+    traced.map((t) => [t.han, t.presence === 'unknown' ? undefined : t.presence === 'present']),
   )
-  const warehouse = { ...resolveP4Warehouse(presence), presence }
+  const traceIds = Object.fromEntries(traced.map((t) => [t.han, t.traceId]))
+  const warehouse = { ...resolveP4Warehouse(presence), presence, traceIds }
   const yi = Object.fromEntries(
     Object.entries(p4c.yiEvidence).map(([h, e]) => [h, h === '修倉庫' ? warehouse.yi : e.yi]),
   )
