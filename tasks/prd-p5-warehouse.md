@@ -65,7 +65,7 @@ Danh sách 「與…併」 là ANY, không phải ALL (spec §6).
 
 Hệ quả cần Golden kiểm: partner chung của hai bản là 四相 (mọi base), 時德 (收日/六合/五富), 開日 (母倉/天倉). Tổ hợp lệch: base + chỉ 月恩 (R10 có, R11 không); 六合/五富 + chỉ 開日, 母倉 + chỉ 時德 (R11 có, R10 không). 月德 trong R11 trùng thần trực tiếp nên có mặt thì heading đã có 宜 trực tiếp.
 
-**FR-04.** Thứ tự ghép heading 修倉庫: thần trực tiếp present → 宜 (giữ ANY P4-C, 德合赦願 「自宜修倉庫，不待與收日併」); nếu không, xét mệnh đề đồng hiện theo FR-03 trên mọi base có mặt: có một base `agreed` → 宜; còn lại có base lệch → `undetermined SOURCE_DEPENDENT`; mọi base đều `agreed_absent` hoặc absent và không còn operand unknown → không 宜. Unknown operand phải được ghi trong trace kể cả khi heading đã xác định.
+**FR-04.** Thứ tự ghép heading 修倉庫: thần trực tiếp present → 宜 (giữ ANY P4-C; 卷十 收日按 「若德合赦願則自宜修倉庫又不待與收日併也」); nếu không, xét mệnh đề đồng hiện theo FR-03 trên mọi base có mặt: có một base `agreed` → 宜; còn thần trực tiếp hoặc base nào unknown → unknown (vì còn có thể thành 宜); còn base lệch → `undetermined SOURCE_DEPENDENT`; còn lại → không 宜. Unknown operand phải được ghi trong trace kể cả khi heading đã xác định. (Chốt ở authority `p5-warehouse-v1` task 2.2.)
 
 **FR-05.** Đồng hiện không thể phải có negative fixture và chứng minh bằng phép tính độc lập, không chỉ ghi chú: 收日 + 開日 (Trực khác nhau); 天倉 + 時德 (ghi chú nguồn). Nếu phép tính 720 context tìm thấy đồng hiện mà nguồn bảo không thể → dừng, phân loại `SPEC_BUG`/`GOLDEN_BUG`, không tự sửa.
 

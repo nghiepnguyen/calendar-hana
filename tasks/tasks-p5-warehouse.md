@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **ĐANG LÀM** — task 1.0 baseline xong ([evidence](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md)); next 2.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); next 3.1 Golden. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -43,12 +43,12 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 1.3 Kiểm 103 dòng `undetermined` ngoài P5 không thuộc warehouse; ghi danh sách để chứng minh P5 không đụng. Evidence: 103 dòng `OTHER_STATE_WITH_KNOWN_YI`, 0 dòng 修倉庫; 24 dòng 開倉庫出貨財 (宜 false, 忌 mở) → chuyển 5.2.
   - [x] 1.4 Baseline 開倉庫出貨財 trên 31.755 dòng: 宜/忌 trước–sau propagation, 甲日, `puzhu:22`. Evidence: state cuối only_ji 621 / not_recorded 162 / only_yi 159 / both 76 / neither 53 / undetermined 24; 甲日 110, 106 giữ 專忌, 4 ngày `puzhu:28` 諸事不忌 (卯甲戌, 未甲午) — owner override, 5.2 kiểm lại thứ tự ưu tiên.
 
-- [ ] 2.0 Authority `p5-warehouse-v1`
-  - [ ] 2.1 Chép nguyên văn 卷十 năm entry và lời bàn 收日, 卷十一 heading 修倉庫/開倉庫出貨財; offset code point, SHA-1 raw, locator scan (卷十 `06067686.cn`, 卷十一 `06067687.cn` trang 39–40).
-  - [ ] 2.2 Bảng partner R10/R11 và bảng kết quả D (PRD FR-02/FR-03); status OWNER_ADOPTED_SOURCE_DEPENDENT, ngày 2026-10-16.
-  - [ ] 2.3 Đối chiếu thần trực tiếp hai quyển (天德, 月德, 天德合, 月德合, 天赦, 天願, 三合, 滿日) → ghi khớp.
-  - [ ] 2.4 Chứng minh độc lập đồng hiện không thể (收日+開日, 天倉+時德) trên 720 context; tìm thấy ca → dừng, phân loại.
-  - [ ] 2.5 Validation/lock file, review single-agent và giới hạn.
+- [x] 2.0 Authority `p5-warehouse-v1` — evidence [p5-warehouse-authority-v1](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md); `shared/almanac-data/p5-warehouse-v1.json`, builder `build.py` (Python độc lập, verify bytes), gate `shared/lunar/p4WarehouseAuthority.test.ts`.
+  - [x] 2.1 Chép nguyên văn 卷十 năm entry và lời bàn 收日, 卷十一 heading 修倉庫/開倉庫出貨財; offset code point, SHA-1 raw, locator scan (卷十 `06067686.cn`, 卷十一 `06067687.cn` trang 39–40).
+  - [x] 2.2 Bảng partner R10/R11 và bảng kết quả D (PRD FR-02/FR-03); status OWNER_ADOPTED_SOURCE_DEPENDENT, ngày 2026-10-16.
+  - [x] 2.3 Đối chiếu thần trực tiếp hai quyển (天德, 月德, 天德合, 月德合, 天赦, 天願, 三合, 滿日) → ghi khớp.
+  - [x] 2.4 Chứng minh độc lập đồng hiện không thể (收日+開日, 天倉+時德) trên 720 context; tìm thấy ca → dừng, phân loại.
+  - [x] 2.5 Validation/lock file, review single-agent và giới hạn. Evidence: 11 span khớp offset code point, nguồn khớp manifest; truth table 160 dòng (135 agreed / 5 agreed_absent / 20 source_dependent); 720 context: 收日+開日 0, 天倉+時德 0; thần trực tiếp hai quyển khớp. Thứ tự heading chốt: unknown trước SOURCE_DEPENDENT (PRD FR-04 đã sửa). Giới hạn: single agent, 4 clause base chỉ có raw.
 
 - [ ] 3.0 Golden độc lập, freeze trước code
   - [ ] 3.1 Fixture matrix: base-only, partner-only, từng partner, nhiều partner, mọi tổ hợp lệch, impossible, 德 trực tiếp, unknown mỗi phía, 母倉 ngoài coverage, sửa kho ≠ mở kho.

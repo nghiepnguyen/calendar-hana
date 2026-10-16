@@ -1,0 +1,1724 @@
+{
+  "version": "p5-warehouse-authority-validation-v1",
+  "sourcesMatchManifest": true,
+  "spansUnique": true,
+  "directListMatchesVol10Entries": [
+    "三合",
+    "天德/月德/天德合/月德合",
+    "天赦",
+    "天願",
+    "滿日"
+  ],
+  "truthTable": {
+    "rows": 160,
+    "byVerdict": {
+      "agreed": 135,
+      "agreed_absent": 5,
+      "source_dependent": 20
+    },
+    "table": [
+      {
+        "base": "收日",
+        "partners": [],
+        "r10": false,
+        "r11": false,
+        "d": "agreed_absent"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩"
+        ],
+        "r10": true,
+        "r11": false,
+        "d": "source_dependent"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "收日",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [],
+        "r10": false,
+        "r11": false,
+        "d": "agreed_absent"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "時德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "時德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩"
+        ],
+        "r10": true,
+        "r11": false,
+        "d": "source_dependent"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "母倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [],
+        "r10": false,
+        "r11": false,
+        "d": "agreed_absent"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩"
+        ],
+        "r10": true,
+        "r11": false,
+        "d": "source_dependent"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "六合",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [],
+        "r10": false,
+        "r11": false,
+        "d": "agreed_absent"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "開日"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩"
+        ],
+        "r10": true,
+        "r11": false,
+        "d": "source_dependent"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "五富",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [],
+        "r10": false,
+        "r11": false,
+        "d": "agreed_absent"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "時德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "時德"
+        ],
+        "r10": false,
+        "r11": true,
+        "d": "source_dependent"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩"
+        ],
+        "r10": true,
+        "r11": false,
+        "d": "source_dependent"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      },
+      {
+        "base": "天倉",
+        "partners": [
+          "月恩",
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "r10": true,
+        "r11": true,
+        "d": "agreed"
+      }
+    ]
+  },
+  "impossibleCoPresence": {
+    "contexts": 720,
+    "found": {
+      "收日+開日": 0,
+      "天倉+時德": 0
+    }
+  },
+  "definitionsUsedForProof": {
+    "天倉": {
+      "sourceId": "ws-vol06-787343",
+      "volume": 6,
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "offset": 5549,
+      "length": 15,
+      "quote": "歴例曰天倉者正月起寅逆行十二辰",
+      "sha1": "a9ab67896fc9098e6842036979e84fde4f8aae19"
+    },
+    "時德": {
+      "sourceId": "ws-vol05-787341",
+      "volume": 5,
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "offset": 6594,
+      "length": 31,
+      "quote": "春木生午火夏火生辰土秋金生子水冬水生寅木也四相取天干時徳取地支",
+      "sha1": "1d4000974e3222122e8919fa01102dc3cda352a2"
+    }
+  }
+}
