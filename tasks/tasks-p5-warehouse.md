@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **CHƯA BẮT ĐẦU** — PRD và task list đã viết; owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **ĐANG LÀM** — task 1.0 baseline xong ([evidence](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md)); next 2.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -33,15 +33,15 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
 
 ## Tasks
 
-- [ ] 0.0 Tạo nhánh và commit PRD
+- [x] 0.0 Tạo nhánh và commit PRD
   - [x] 0.1 Nhánh `codex/p5-warehouse` từ `origin/main` (`1c4bb32`); ghi commit/tree bắt đầu. Evidence: bắt đầu tại `1c4bb32b939d8c5734d26e3d58a46077747f1fe1`, tree 4b32d9ab0338.
-  - [ ] 0.2 Commit PRD, task list, PROJECT_CONTEXT; mở PR docs hoặc giữ trên nhánh làm việc theo owner.
+  - [x] 0.2 Commit PRD, task list, PROJECT_CONTEXT; mở PR docs hoặc giữ trên nhánh làm việc theo owner. Evidence: commit `067be05`, [PR #60](https://github.com/nghiepnguyen/calendar-hana/pull/60) (giữ làm PR làm việc).
 
-- [ ] 1.0 Baseline và inventory operand
-  - [ ] 1.1 Từ sweep P4-C, lọc 539 dòng `warehouse_deferred` → ngày, base có mặt, partner có mặt; ghi commit/tree và authority IDs.
-  - [ ] 1.2 Kiểm presence có provenance 協紀 cho 收日, 母倉, 六合, 五富, 天倉, 月恩, 月德, 四相, 時德, 開日 trên 1.095 ngày; liệt kê operand thiếu hoặc unknown. Thiếu authority (vd. 天倉) → dừng ở 2.x, hỏi owner nếu nguồn lệch.
-  - [ ] 1.3 Kiểm 103 dòng `undetermined` ngoài P5 không thuộc warehouse; ghi danh sách để chứng minh P5 không đụng.
-  - [ ] 1.4 Baseline 開倉庫出貨財 trên 31.755 dòng: 宜/忌 trước–sau propagation, 甲日, `puzhu:22`.
+- [x] 1.0 Baseline và inventory operand — evidence [p5-warehouse-baseline-v1](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), generator `shared/lunar/p4WarehouseBaseline.test.ts` (verify bytes).
+  - [x] 1.1 Từ sweep P4-C, lọc 539 dòng `warehouse_deferred` → ngày, base có mặt, partner có mặt; ghi commit/tree và authority IDs. Evidence: 539 dòng, 362 có thần trực tiếp, 177 không (101 có base). Phát hiện: 修倉庫 `yi: undefined` trên cả 1.095 ngày → phạm vi P5 = 1.095 dòng (PRD đã sửa).
+  - [x] 1.2 Kiểm presence có provenance 協紀 cho 收日, 母倉, 六合, 五富, 天倉, 月恩, 月德, 四相, 時德, 開日 trên 1.095 ngày; liệt kê operand thiếu hoặc unknown. Thiếu authority (vd. 天倉) → dừng ở 2.x, hỏi owner nếu nguồn lệch. Evidence: 17 thần known trên 1.095 ngày, 0 unknown; provenance đủ (4D, 卷五 virtues, P3a, 12 Trực, 母倉 P4-C). 天倉 có định nghĩa P3a. Pre-check 收日+開日 = 0, 天倉+時德 = 0.
+  - [x] 1.3 Kiểm 103 dòng `undetermined` ngoài P5 không thuộc warehouse; ghi danh sách để chứng minh P5 không đụng. Evidence: 103 dòng `OTHER_STATE_WITH_KNOWN_YI`, 0 dòng 修倉庫; 24 dòng 開倉庫出貨財 (宜 false, 忌 mở) → chuyển 5.2.
+  - [x] 1.4 Baseline 開倉庫出貨財 trên 31.755 dòng: 宜/忌 trước–sau propagation, 甲日, `puzhu:22`. Evidence: state cuối only_ji 621 / not_recorded 162 / only_yi 159 / both 76 / neither 53 / undetermined 24; 甲日 110, 106 giữ 專忌, 4 ngày `puzhu:28` 諸事不忌 (卯甲戌, 未甲午) — owner override, 5.2 kiểm lại thứ tự ưu tiên.
 
 - [ ] 2.0 Authority `p5-warehouse-v1`
   - [ ] 2.1 Chép nguyên văn 卷十 năm entry và lời bàn 收日, 卷十一 heading 修倉庫/開倉庫出貨財; offset code point, SHA-1 raw, locator scan (卷十 `06067686.cn`, 卷十一 `06067687.cn` trang 39–40).

@@ -36,7 +36,7 @@ Thần trực tiếp (天德, 月德, 天德合, 月德合, 天赦, 天願, 三�
 
 1. Khóa authority predicate 修倉庫 theo D: nguyên văn, locator, offset, checksum cả hai quyển; bảng partner từng cách đọc; kết quả D cho mọi tổ hợp.
 2. Đóng băng Golden độc lập trước implementation, gồm negative fixture cho đồng hiện không thể.
-3. Ghép predicate vào audit ngày; 539 dòng `undetermined` do P5 phải được giải hết thành 宜 / không 宜 / `undetermined SOURCE_DEPENDENT` / unknown do thiếu operand, mỗi dòng có lý do.
+3. Ghép predicate vào audit ngày. 修倉庫 hiện có `yi: undefined` trên **cả 1.095 ngày** (baseline task 1); 539 dòng `undetermined` là phần lộ ra, 556 dòng còn lại có state nhờ 忌 nhưng 宜 vẫn chưa xác định (158 dòng có thần trực tiếp). Mọi dòng 修倉庫 phải được giải thành 宜 / không 宜 / `undetermined SOURCE_DEPENDENT` / unknown do thiếu operand, mỗi dòng có lý do.
 4. Xác minh 開倉庫出貨財 trên dữ liệu thật: ANY phẳng, `puzhu:22`, suppression 德合赦願…, 甲日 專忌, 月煞 (alias 月虛) và 月厭 riêng.
 5. Giữ nguyên runtime production, scoring, manifest và authority P4-B/P4-C đã chốt.
 
@@ -122,7 +122,7 @@ P5 hoàn tất khi **tất cả** đúng:
 
 1. Authority warehouse khóa đủ năm base × hai cách đọc, nguyên văn/offset/checksum/scan; status D ghi rõ OWNER_ADOPTED_SOURCE_DEPENDENT.
 2. Golden độc lập freeze trước code; lock P4-B/P4-C cũ giữ bytes.
-3. 539 dòng P5 đều được giải với lý do; không còn `deferred: 'P5'`. Dòng `SOURCE_DEPENDENT` được đếm và liệt kê riêng, không tính là lỗi và không tính là 宜.
+3. Cả 1.095 dòng 修倉庫 (gồm 539 dòng P5) đều được giải với lý do; không còn `deferred: 'P5'`. Dòng `SOURCE_DEPENDENT` được đếm và liệt kê riêng, không tính là lỗi và không tính là 宜.
 4. Đồng hiện không thể: 0 trường hợp trên 720 context và 1.095 ngày, hoặc dừng và báo.
 5. 開倉庫出貨財: FR-07 qua trên dữ liệu thật; lỗ hổng (nếu có) được phân loại và xử lý theo FR-08.
 6. 0 unresolved operand 凶, 0 regression P4-B/P4-C, mọi mutation bị bắt, CI xanh.
