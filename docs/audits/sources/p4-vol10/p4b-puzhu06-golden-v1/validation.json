@@ -1,0 +1,24 @@
+{
+  "version": "golden-p4b-puzhu06-validation-v1",
+  "engineBaseline": {
+    "compared": [
+      "triggers",
+      "puzhu28",
+      "yi",
+      "ji",
+      "protected_ji",
+      "state"
+    ],
+    "rows": 9075,
+    "mismatches": 0,
+    "examples": []
+  },
+  "prdCounts": {
+    "compared": [
+      "hold",
+      "keptBySourcedException",
+      "lift"
+    ],
+    "match": true
+  }
+}
