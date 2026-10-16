@@ -4,6 +4,7 @@ Ngày: 2026-10-16.
 Trạng thái: PRD đã viết; owner đã chốt Q1–Q4 (§8). Chưa có Golden, chưa có code.
 Quyết định owner (2026-10-16): xử lý puzhu:06 là việc P4-B audit-only riêng, không nằm trong P5. Đóng băng Golden trước, owner quyết cách đọc 「如常例」.
 Quyết định owner (2026-10-16): **Q1 không, Q2 không, Q3 không, Q4 có.** puzhu:06 chỉ gỡ 忌 của remaining-ji có danh sách gỡ riêng (九空, 五虛, 小耗, 五離, 五墓): **77 dòng** trên 2025–2027 (立券交易 28, 開倉庫出貨財 17, 開市 16, 納財 13, 安牀 3). 如常例 có grade 從忌不從宜, 「與德併如常例」 và 月破 không có 德 đều giữ 忌. Status `OWNER_ADOPTED`, không phải canonical.
+Quyết định owner Q4a (2026-10-16): **chặn** — 五墓 không bị puzhu:06 gỡ bằng 德合 (天德合, 月德合), theo 「不取德合者不同行也」. Kết quả sau Q4a: **gỡ 68 dòng** (立券交易 25, 開倉庫出貨財 17, 開市 13, 納財 13, 安牀 0), giữ 645, undetermined 11. Authority `p4b-puzhu06-v2`, Golden `golden-p4b-puzhu06-v2` (freeze `67af7c0`); v1 giữ nguyên làm parent.
 
 ## 1. Introduction / Overview
 
@@ -198,13 +199,13 @@ Việc này hoàn tất khi **tất cả** đúng:
 
 Rủi ro đã nêu: Q4 là chỗ yếu nhất. Nếu bám chữ vào danh sách gỡ riêng của từng entry thì sẽ đọc "không", và puzhu:06 thành vô hiệu.
 
-**Q4a (mở, chặn task 4.2 — phát hiện khi review Golden 3.0).** Lời bàn entry 五墓 kết thúc bằng 「…與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也」 (卷十, offset 18232 của 「不取德合者不同行也」): entry nói rõ 德合 không gỡ 五墓 vì khác hành. Golden v1 (theo Q4 = có) đang gỡ **9 dòng 五墓** chỉ nhờ 天德合: 巳丙戌 2025-05-17, 2026-05-12, 2027-05-07 × 開市, 立券交易, 安牀. Ngày tháng 巳, nên điều kiện gỡ riêng của 五墓 (月德, tháng 午/子) không áp dụng. Bốn thần Q4 còn lại (九空, 五虛, 小耗, 五離) không có câu loại trừ tương tự; 「天赦不得與五虛併」 là ghi chú về đồng hiện, không phải loại trừ.
+**Q4a — owner trả lời 2026-10-16: chặn** (phát hiện khi review Golden 3.0). Lời bàn entry 五墓 kết thúc bằng 「…與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也」 (卷十, offset 18232 của 「不取德合者不同行也」): entry nói rõ 德合 không gỡ 五墓 vì khác hành. Golden v1 (theo Q4 = có) đang gỡ **9 dòng 五墓** chỉ nhờ 天德合: 巳丙戌 2025-05-17, 2026-05-12, 2027-05-07 × 開市, 立券交易, 安牀. Ngày tháng 巳, nên điều kiện gỡ riêng của 五墓 (月德, tháng 午/子) không áp dụng. Bốn thần Q4 còn lại (九空, 五虛, 小耗, 五離) không có câu loại trừ tương tự; 「天赦不得與五虛併」 là ghi chú về đồng hiện, không phải loại trừ.
 
 Câu hỏi: 「不取德合」 của 五墓 có chặn trigger 德合 của puzhu:06 không?
 - **Chặn:** 9 dòng đó chuyển sang keep; còn gỡ 68 dòng.
 - **Không chặn:** giữ 77 dòng như Golden v1.
 
-Nếu owner chọn "chặn", authority và Golden phải tạo version mới và đóng băng lại trước test đỏ. Việc này hợp lệ vì chưa có code puzhu:06.
+Owner chọn "chặn". Authority v2 và Golden v2 được tạo và đóng băng lại trước test đỏ (`c3aedf6`, `67af7c0`). Việc này hợp lệ vì chưa có code puzhu:06.
 
 Câu hỏi đã hỏi owner (giữ nguyên để truy vết):
 
