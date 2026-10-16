@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD puzhu:06](prd-p4b-puzhu06.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: owner chốt **Q1 không, Q2 không, Q3 không, Q4 có** (2026-10-16; PRD §8). Task 1.0 baseline (`6f970cd`), 2.0 authority (`718e195`), 3.0 Golden freeze (`4a7da71`, commit-proof ở commit kế) xong. **Next: 4.2 test đỏ** (chưa có code puzhu:06).
+Trạng thái: owner chốt **Q1 không, Q2 không, Q3 không, Q4 có** (2026-10-16; PRD §8). Task 1.0 baseline (`6f970cd`), 2.0 authority (`718e195`), 3.0 Golden freeze (`4a7da71`, commit-proof ở commit kế) xong. **Chặn trước 4.2: owner trả lời Q4a** (五墓 「不取德合者不同行也」 và 9 dòng gỡ chỉ nhờ 天德合; PRD §8). Chưa có code puzhu:06.
 
 ## Relevant Files
 
@@ -62,6 +62,8 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
   - [ ] 3.3 So với baseline 1.x sau khi viết expected. Phân loại mọi lệch (`GOLDEN_BUG`, `ENGINE_BUG`, `CONVENTION_DIFFERENCE`) và không nới assertion. Evidence: so engine 9.075 dòng: 0 lệch. So PRD: 10 dòng lệch ở lần chạy đầu (巳丙午 2026-06-01, 2027-05-27) → `GOLDEN_BUG` (thiếu quy tắc P4-C 止忌 undetermined + 宜 false → not_avoided), sửa ở derive.py, thêm 2 fixture; không sửa expected bằng tay.
   - [ ] 3.4 Integrity lock (SHA-256); commit freeze; `commit-proof.json` ở commit kế, không amend. Kiểm lock P4-B/P4-C/P5 cũ giữ bytes. Evidence: freeze `4a7da71` (tree `c51a08c`), [commit-proof.json](../docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/commit-proof.json) ở commit kế; `git diff origin/main` chỉ có file mới; full `shared/lunar` 100 file / 7.008 test xanh.
 
+- [ ] 3.5 Owner trả lời Q4a (PRD §8). Nếu "chặn": tạo `p4b-puzhu06-v2` và `golden-p4b-puzhu06-v2`, đóng băng lại, ghi commit-proof mới; v1 giữ nguyên bytes.
+
 - [ ] 4.0 Test đỏ và composer opt-in
   - [ ] 4.1 `graft callers resolveP4YiDay` và các symbol nguồn 忌; chốt entry point `resolveP4Puzhu06Day` bọc `resolveP4YiDay`. Giữ API P4-C (và P5 nếu đã merge, xem PRD §6).
   - [ ] 4.2 Test đỏ từ Golden frozen, commit riêng, chạy đỏ trên stub.
@@ -71,7 +73,8 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
     - lift trước `applyP4Propagation`;
     - chỉ đổi `ji`/`state`, không đổi 宜 (FR-06);
     - trace FR-07;
-    - không chạm 忌 protected, puzhu:27 hay puzhu:28.
+    - không chạm 忌 protected, puzhu:27 hay puzhu:28;
+    - ném `SPEC_GAP` khi một nguồn as_usual có grade mà `gradeAction` khác `only_ji`. Trên baseline 9.075 dòng không có trường hợp nào (kiểm sau freeze), nhưng lớp AN/AD dựa vào điều này.
   - [ ] 4.4 Output version `p4b-puzhu06-day-v1`. Mọi field ngoài năm heading deep-equal P4-C trên 1.095 ngày. Full suite, typecheck và lint sạch; không có runtime import.
 
 - [ ] 5.0 Sweep, mutation, regression

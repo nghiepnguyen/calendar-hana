@@ -63,3 +63,8 @@ The first run matched the engine on every row, but differed from the PRD on 10 r
 - The P4-B 忌 source inventory is an engine measurement (task 1.0), not re-derived from the 卷十 entries here.
 - The P5 Golden is not merged. Its trigger literals are copied, not imported.
 - Single-agent work (Claude); no independent second review.
+
+## Review after freeze (README is outside the lock)
+
+- **Q4a, open.** The 9 lifted 五墓 rows (巳丙戌 2025-05-17 / 2026-05-12 / 2027-05-07 × 開市, 立券交易, 安牀) have only 天德合 as trigger, while the 五墓 commentary says 「不取德合者不同行也」. The question is sent to the owner (PRD §8). This v1 Golden stays as frozen; a "block" answer means a v2 Golden.
+- AN/AD rely on grade action `only_ji` (從忌不從宜). Across `baseline.tsv` and `context.tsv`, as_usual records with a grade but another grade action: 0. Task 4.3 makes the composer throw SPEC_GAP for that case.
