@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "p5-warehouse-golden-index-v1",
+  "version": "golden-p5-warehouse-v1",
+  "date": "2026-10-16",
+  "status": "HASH_LOCKED_PRE_IMPLEMENTATION",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "authority": {
+    "path": "shared/almanac-data/p5-warehouse-v1.json",
+    "sha256": "0e7372fbde81dadea3514261b8fc20943fc9533994beb8e135132a7cd946e8bc",
+    "version": "p5-warehouse-v1"
+  },
+  "blocks": [
+    {
+      "kind": "fixtures",
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/expected.json",
+      "selector": "fixtures",
+      "count": 167,
+      "sha256": "73c6daf40ef8c378f37cac6a7b050c8e45374ce7e27ff29e1ee4afad1e894191"
+    },
+    {
+      "kind": "propagation",
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/expected.json",
+      "selector": "propagation",
+      "count": 16,
+      "sha256": "73c6daf40ef8c378f37cac6a7b050c8e45374ce7e27ff29e1ee4afad1e894191"
+    },
+    {
+      "kind": "context1440",
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv",
+      "format": "TSV",
+      "count": 1440,
+      "sha256": "30f4339e902cc04cd73d3dd8864246808c2b2e6363e4478f10e100755bf7da1e"
+    },
+    {
+      "kind": "dated1095",
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv",
+      "format": "TSV",
+      "count": 1095,
+      "sha256": "e845c12e660b4f405e5d07fa45d50d20ec30281a17fa38ccaa414bf524630f47"
+    }
+  ],
+  "recordCount": 2718,
+  "lock": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/lock.json",
+  "reviewer": "Claude, single agent; no independent second review"
+}

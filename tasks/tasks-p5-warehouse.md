@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); next 3.1 Golden. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); next 4.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -50,11 +50,11 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 2.4 Chứng minh độc lập đồng hiện không thể (收日+開日, 天倉+時德) trên 720 context; tìm thấy ca → dừng, phân loại.
   - [x] 2.5 Validation/lock file, review single-agent và giới hạn. Evidence: 11 span khớp offset code point, nguồn khớp manifest; truth table 160 dòng (135 agreed / 5 agreed_absent / 20 source_dependent); 720 context: 收日+開日 0, 天倉+時德 0; thần trực tiếp hai quyển khớp. Thứ tự heading chốt: unknown trước SOURCE_DEPENDENT (PRD FR-04 đã sửa). Giới hạn: single agent, 4 clause base chỉ có raw.
 
-- [ ] 3.0 Golden độc lập, freeze trước code
-  - [ ] 3.1 Fixture matrix: base-only, partner-only, từng partner, nhiều partner, mọi tổ hợp lệch, impossible, 德 trực tiếp, unknown mỗi phía, 母倉 ngoài coverage, sửa kho ≠ mở kho.
-  - [ ] 3.2 Python reference độc lập (không import resolver), expected 720 context + miền ngày cho 母倉 soil / partner theo mùa.
-  - [ ] 3.3 Expected 開倉庫出貨財 (PRD FR-07).
-  - [ ] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit.
+- [x] 3.0 Golden độc lập, freeze trước code — evidence [p5-warehouse-golden-v1](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md); index `shared/almanac-data/golden-p5-warehouse-v1.json`, generator `derive.py` (Python độc lập, verify bytes), gate `shared/lunar/p4WarehouseGolden.test.ts`.
+  - [x] 3.1 Fixture matrix: base-only, partner-only, từng partner, nhiều partner, mọi tổ hợp lệch, impossible, 德 trực tiếp, unknown mỗi phía, 母倉 ngoài coverage, sửa kho ≠ mở kho. Evidence: 167 fixture (mọi base × tập partner trừ 2 cặp impossible). Owner 2026-10-16: base unknown + mọi partner absent → không 宜.
+  - [x] 3.2 Python reference độc lập (không import resolver), expected 720 context + miền ngày cho 母倉 soil / partner theo mùa. Evidence: 1.440 context (720 × soil) và 1.095 ngày (input từ P4-C frozen `MU_CANG_DATED_1095`, 20 ngày Tiết theo calendar-day). 修倉庫 2025–2027: 宜 588 / không 506 / SOURCE_DEPENDENT 1 (2025-10-08).
+  - [x] 3.3 Expected 開倉庫出貨財 (PRD FR-07). Evidence: 宜 ANY trên 1.440 + 1.095; truth table 16 dòng `requireAll` × 甲日 × puzhu:28; 甲日 110 (106 giữ 專忌, 4 puzhu:28); presence 月煞 91 / 月厭 90 cho 5.2.
+  - [x] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit. Evidence: so baseline engine sau khi viết expected: 0 lệch (82 lệch lần đầu đã phân loại: 天願 歴例→起例 GOLDEN_BUG, ngày Tiết CONVENTION_DIFFERENCE); 1.287 entry/58 lock P4 giữ bytes; commit freeze + `commit-proof.json` ở commit kế.
 
 - [ ] 4.0 Test đỏ và predicate audit-only
   - [ ] 4.1 `graft callers` các symbol ghép 宜/trace P5; chốt entry point, giữ API P4-C.
