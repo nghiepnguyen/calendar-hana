@@ -78,10 +78,14 @@ Số dòng được gỡ theo từng tổ hợp câu trả lời (Q = có nghĩa
 | Q3 + Q4 | 112 |
 | chỉ Q1 | 237 |
 | Q1 + Q2 | 312 |
+| Q1 + Q3 | 272 |
+| Q1 + Q4 | 349 |
+| Q1 + Q2 + Q3 | 347 |
 | Q1 + Q3 + Q4 | 384 |
+| Q1 + Q2 + Q4 | 424 |
 | Q1 + Q2 + Q3 + Q4 (đọc rộng nhất) | 459 |
 
-Q2 chỉ có tác dụng khi Q1 là "có". Bảng đầy đủ 16 tổ hợp và TSV 724 dòng nằm trong ghi chú nhóm session (`p4b-puzhu06/classification.txt`, `candidates.tsv`); task 1.0 sẽ tạo lại chúng trong repo bằng generator có verify bytes.
+Q2 chỉ có tác dụng khi Q1 là "có"; các tổ hợp Q2 không kèm Q1 cho cùng kết quả với tổ hợp bỏ Q2. Bảng trên phủ đủ 16 tổ hợp. Probe pre-PRD không commit; task 1.0 tạo lại TSV 724 dòng trong repo bằng generator có verify bytes.
 
 **Phát hiện cấu trúc.** Theo `p4-vol10-grade-resolution-v2.json → actionEffect`, grade `only_ji` ứng với clause `as_usual` hoặc `still_avoid`. Vậy mọi thần 凶 có cột 等第 mà clause là 如常例 thì grade của ngày đó **là** 「從忌不從宜」:
 
@@ -183,21 +187,25 @@ Việc này hoàn tất khi **tất cả** đúng:
 
 ## 8. Open Questions (cho owner — chặn task 2.0)
 
-**Q1 (chính). 「如常例」 trong entry 凶 có tính puzhu:06 không, khi grade 等第 của ngày là 「從忌不從宜」?**
+Mọi câu hỏi viết theo cùng một chiều: **"có" = puzhu:06 gỡ 忌**, "không" = giữ 忌. Bảng §2 dùng đúng quy ước này.
 
-- **Đọc A:** 如常例 chỉ đọc theo entry. puzhu:06 là một phần của 「常例」 nên được áp; grade 等第 không phải 「從忌不從宜之日」 của puzhu:06. Kết quả: gỡ dòng AN (237) và AD nếu Q2 có.
-- **Đọc B:** grade 等第 `only_ji` chính là 「從忌不從宜」, nên ngày đó là ngoại lệ của puzhu:06 và vẫn ghi 忌. Kết quả: AN và AD giữ 忌; puzhu:06 chỉ còn tác dụng trên AU và QL.
+**Q1 (chính). Khi entry 凶 ghi 「如常例」 và grade 等第 của ngày là 「從忌不從宜」, puzhu:06 có gỡ 忌 không?**
 
-**Q2.** 「與德…併如常例」 (có 德 mà vẫn như thường) có tính là 「遇德猶忌」 không? Câu này chỉ có tác dụng khi Q1 = A.
+- **Có (đọc A):** 如常例 chỉ đọc theo entry. puzhu:06 là một phần của 「常例」 nên được áp; grade 等第 không phải 「從忌不從宜之日」 của puzhu:06. Kết quả: gỡ dòng AN (237), gỡ thêm AD nếu Q2 cũng là "có".
+- **Không (đọc B):** grade 等第 `only_ji` chính là 「從忌不從宜」, nên ngày đó là ngoại lệ của puzhu:06 và vẫn ghi 忌. Kết quả: AN và AD giữ 忌; puzhu:06 chỉ còn tác dụng trên AU và QL.
 
-**Q3.** Với 如常例 không có cột 等第 (月破 khi không có 德), puzhu:06 có áp không?
+**Q2. Khi entry ghi 「與德…併如常例」 (có 德 mà vẫn như thường), puzhu:06 có gỡ 忌 không,** tức là không coi câu đó là 「遇德猶忌」? Câu này chỉ có tác dụng khi Q1 = có.
 
-**Q4.** Với remaining-ji có danh sách gỡ riêng 「與…併則不忌」 không gồm thần puzhu:06 (九空, 五虛, 小耗, 五離, 五墓), puzhu:06 có mở rộng danh sách đó không?
+**Q3. Với 如常例 không có cột 等第 (月破 khi không có 德), puzhu:06 có gỡ 忌 không?**
+
+**Q4. Với remaining-ji có danh sách gỡ riêng 「與…併則不忌」 không gồm thần puzhu:06 (九空, 五虛, 小耗, 五離, 五墓), puzhu:06 có gỡ 忌 không** (tức là mở rộng danh sách đó)? Lưu ý: các heading thương mại của puzhu:06 (進人口 開市 立劵交易 納財 開倉庫出貨財) gần trùng hẳn danh sách 忌 của 九空 「忌進人口修倉庫開市立劵交易納財開倉庫出貨財」, 又為大耗 「忌修倉庫開市立劵交易納財開倉庫出貨財」 và 小耗. Điều này có thể nghiêng về việc puzhu:06 nhắm vào nhóm thần này.
+
+**Ghi chú cho owner (không phải câu hỏi riêng, có thể bác):** 112 dòng 諸事皆忌 được giữ dưới mọi cách đọc. Đây là suy luận của audit: puzhu:06 chỉ nêu 遇德猶忌 và 從忌不從宜, còn 諸事皆忌 được coi là mạnh hơn 從忌不從宜 (下 「不遇諸事皆忌」 xếp dưới 「遇德從忌不從宜」). Nếu owner bác, 112 dòng này chuyển thành câu hỏi riêng.
 
 Ví dụ:
 
-1. **2025-01-22 丑辛卯**, có 月恩. Nguồn 忌 duy nhất là 災煞 丑月: 「辰戌丑未月不與德神併如常例」 (offset 12003). Grade 中 không có 德 là 「不遇從忌不從宜」 (offset 9720). Lớp AN, ảnh hưởng 5 heading. Đọc A: gỡ (only_ji → not_recorded). Đọc B: giữ.
-2. **2025-01-11 丑庚辰**, có 天德 và 月德. Nguồn 忌 là 月煞 丑月平日: 「辰戌丑未月值平日與天德月德天德合月德合併如常例」 (offset 12318), cộng 平日 從月煞論. Grade 下 có 德 là 「遇德從忌不從宜」 (offset 9766). 開倉庫 còn có thêm 又為月虛 「忌修倉庫開倉庫出貨財」. Lớp AD. Đọc B: giữ. Đọc A + Q2 "không phải 猶忌": gỡ 5 heading. Đọc A + Q2 "là 猶忌": giữ.
+1. **2025-01-22 丑辛卯**, có 月恩. Nguồn 忌 duy nhất là 災煞 丑月: 「辰戌丑未月不與德神併如常例」 (offset 12003). Grade 中 không có 德 là 「不遇從忌不從宜」 (offset 9720). Lớp AN, ảnh hưởng 5 heading. Q1 có: gỡ (only_ji → not_recorded). Q1 không: giữ.
+2. **2025-01-11 丑庚辰**, có 天德 và 月德. Nguồn 忌 là 月煞 丑月平日: 「辰戌丑未月值平日與天德月德天德合月德合併如常例」 (offset 12318), cộng 平日 從月煞論. Grade 下 có 德 là 「遇德從忌不從宜」 (offset 9766). 開倉庫 còn có thêm 又為月虛 「忌修倉庫開倉庫出貨財」. Lớp AD. Q1 không: giữ. Q1 có + Q2 có: gỡ 5 heading. Q1 có + Q2 không (coi là 猶忌): giữ.
 3. **2025-01-26 丑乙未**, có 天德合, 月德合 và 四相. Nguồn 忌 là 月破 「與天德月德天德合月德合併…猶忌」, cùng 又為大耗 và 九空 從月破論. Đây là 遇德猶忌, nên giữ dưới mọi cách đọc.
 4. (Q3) **2025-04-11 辰庚戌**, có 月恩. Nguồn 忌 là 月破 không có 德 (như thường), cùng 又為大耗 và 九空 從月破論. Không có 等第, gỡ chỉ khi Q3 = có.
 5. (Q4) **2025-01-15 丑甲申** 立券交易, có 四相. Nguồn 忌 là 五離 「與天德月德天德合月德合天赦三合六合併則不忌」. Danh sách này không có 四相; gỡ chỉ khi Q4 = có. Trạng thái hiện tại both_present, sau gỡ thành only_yi.
