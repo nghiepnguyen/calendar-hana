@@ -32,10 +32,7 @@ function table(path: string) {
     }),
   )
 }
-type Day = ReturnType<typeof resolveP4YiDay> & {
-  version: string
-  puzhu06: Record<string, { action: string; classes: string[] }>
-}
+type Day = ReturnType<typeof resolveP4Puzhu06Day>
 
 function expectDay(
   id: string,
@@ -89,12 +86,7 @@ describe('puzhu:06 composer (audit-only, red from Golden v2)', () => {
     for (const m of B)
       for (let i = 0; i < 60; i++) {
         const pillar = S[i % 10]! + B[i % 12]!
-        expectDay(
-          `${m}-${pillar}`,
-          resolveP4Puzhu06Day(m, pillar) as Day,
-          resolveP4YiDay(m, pillar),
-          rows,
-        )
+        expectDay(`${m}-${pillar}`, resolveP4Puzhu06Day(m, pillar), resolveP4YiDay(m, pillar), rows)
       }
   }, 300_000)
 
@@ -112,7 +104,7 @@ describe('puzhu:06 composer (audit-only, red from Golden v2)', () => {
       }
       expectDay(
         date,
-        resolveP4Puzhu06Day(month, pillar, operands) as Day,
+        resolveP4Puzhu06Day(month, pillar, operands),
         resolveP4YiDay(month, pillar, operands),
         rows,
       )
