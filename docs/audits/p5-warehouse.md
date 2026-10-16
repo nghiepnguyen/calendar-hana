@@ -54,7 +54,12 @@ Status: audit-only, owner decision **D** (2026-10-16), not canonical. No runtime
 - The 17 still `undetermined`:
   - 1 is SOURCE_DEPENDENT (subject 月建).
   - 16 have a known 宜 but an open 忌 scope from P4-B: 月煞 14 (卯/酉 months), 刼煞 1, 閉日+天吏 1. Their bucket is `OTHER_STATE_WITH_KNOWN_YI`; these are the same 卯/酉 days as the 24 開倉庫出貨財 rows from task 1.3.
-- The other 556 修倉庫 rows keep their state, because 忌 already decided them.
+- The other 556 修倉庫 rows keep their state, because 忌 already decided them. In 43 of them only `final_yi` changes (unknown → known). Of the 565 changed rows:
+  - 511 change pre/final state and `final_yi`;
+  - 11 change state only;
+  - 43 change `final_yi` only.
+- Baseline 1.1 predicted that the 158 rows with a direct god would move, for example only_ji → both_present. None did, because P4 suppression or protected 忌 decides their state.
+- 14 rows read 宜 true + 忌 true + `only_ji` with protected 忌. P4-C has the same pattern: 449 rows on other headings, such as pillar 諸事皆忌, where 宜 is recorded but 忌 is protected. This is an existing composition convention, not a P5 change.
 - `undetermined` on all other headings: 103 before, 103 after. Unresolved 宜 operands on 2025–2027: 0.
 
 ## 5.2 — 開倉庫出貨財 (FR-07)
@@ -79,7 +84,7 @@ Checked against the frozen Golden columns on 1,095 dates:
 
 | Id | Class | Finding | Handling |
 |---|---|---|---|
-| F1 | SPEC_GAP (P4-B) | puzhu:06 is not modeled anywhere in P4: 「凡德合赦願月恩四相時德等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇德猶忌及從忌不從宜之日則仍註忌」. On 開倉庫出貨財 alone, 133 rows keep an unprotected 忌 on a puzhu:06 day (only_ji 109, both_present 14, undetermined 10). These are candidates only; the 德猶忌 / 從忌不從宜 status of each 凶 is not classified. | Not fixed in P5. It touches 8 headings, not just warehouse, so it is a separate P4-B task that needs a frozen Golden and an owner decision first (FR-08). |
+| F1 | UNMODELED_RULE (P4-B), impact unclassified | puzhu:06 is not modeled anywhere in P4: 「凡德合赦願月恩四相時德等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇德猶忌及從忌不從宜之日則仍註忌」. On a puzhu:06 day these rows keep an unprotected 忌: 開倉庫出貨財 133 (only_ji 109, both_present 14, undetermined 10), 開市 153, 立券交易 159, 納財 139, 安牀 140. 進人口, 經絡 and 醞釀 are not among the 29 P4 headings. Spot check: 2025-01-26 丑乙未 (月破) is 遇德猶忌, an exception, so its outcome is unchanged. 2025-01-22 丑辛卯 (月恩, 災煞 丑月 「不與德神併如常例」) and 2025-01-11 丑庚辰 (天德月德, 月煞 丑月平日 「與…併如常例」) depend on whether 如常例 includes puzhu:06. | Not fixed in P5. Routing (inside P5 under FR-08, or as a separate P4-B task) is the owner's decision. Fixing it needs a frozen Golden first. |
 | F2 | COVERAGE_LIMIT | The puzhu:22 lift never fires on 2025–2027, so real data cannot show it. | Covered by the abstract 16-row table and the `kai_drop_require_all` mutation. |
 | F3 | SCOPE_OUTSIDE_P5 | 24 開倉庫出貨財 and 16 修倉庫 rows stay `undetermined` because a P4-B 忌 scope is open (月煞 卯/酉, 刼煞, 閉日+天吏). | Recorded; left for P4-B. |
 
