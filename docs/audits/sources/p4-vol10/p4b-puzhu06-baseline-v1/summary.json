@@ -1,0 +1,46 @@
+{
+  "scope": "MEASURED_AUDIT_ONLY_NOT_GOLDEN",
+  "engine": "resolveP4YiDay (P4-C, main), no puzhu:06 layer",
+  "headings": [
+    "開倉庫出貨財",
+    "開市",
+    "立券交易",
+    "納財",
+    "安牀"
+  ],
+  "outOfHeadingScope": [
+    "進人口",
+    "經絡",
+    "醞釀"
+  ],
+  "dated": {
+    "dates": 1095,
+    "triggerDays": 532,
+    "candidates": {
+      "開市": 153,
+      "立券交易": 159,
+      "納財": 139,
+      "安牀": 140,
+      "開倉庫出貨財": 133
+    },
+    "protectedOnTriggerDay": {
+      "安牀": 61,
+      "開倉庫出貨財": 119,
+      "開市": 36,
+      "立券交易": 36,
+      "納財": 36
+    },
+    "dayRuleOnTriggerDay": 9,
+    "neitherRecordedCandidates": 0
+  },
+  "context": {
+    "contexts": 720,
+    "candidates": {
+      "開市": 111,
+      "立券交易": 113,
+      "納財": 102,
+      "安牀": 99,
+      "開倉庫出貨財": 96
+    }
+  }
+}
