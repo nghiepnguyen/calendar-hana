@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD puzhu:06](prd-p4b-puzhu06.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: owner chốt **Q1 không, Q2 không, Q3 không, Q4 có** (2026-10-16; PRD §8). Next: 1.0 baseline. Task 0.0 xong. Baseline pre-PRD đã đo (PRD §2). Chưa có Golden, chưa có code.
+Trạng thái: owner chốt **Q1 không, Q2 không, Q3 không, Q4 có** (2026-10-16; PRD §8). Task 1.0 baseline (`6f970cd`), 2.0 authority (`718e195`), 3.0 Golden freeze (`4a7da71`, commit-proof ở commit kế) xong. **Next: 4.2 test đỏ** (chưa có code puzhu:06).
 
 ## Relevant Files
 
@@ -43,24 +43,24 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
   - [x] 0.2 Commit PRD và task list; giữ trên nhánh làm việc. PROJECT_CONTEXT chưa sửa, vì dòng F1 chỉ có trên nhánh P5.
   - [x] 0.3 Baseline pre-PRD (PRD §2): 724 ứng viên khớp P5 F1; phân loại 254 giữ / 459 tùy owner / 11 undetermined; bảng 16 tổ hợp Q. Probe tạm không commit; TSV nằm trong ghi chú nhóm session.
 
-- [ ] 1.0 Baseline chính thức trong repo
-  - [ ] 1.1 Generator `p4Puzhu06Baseline.test.ts`: 1.095 ngày × 5 heading. Ghi presence chín thần, `ji`/`protectedJi`/state cuối, từng nguồn 忌 kèm clauseEffect, grade 等第, `dePresent`, 又為, remaining-ji effect và puzhuEnd. Ghi commit/tree và authority IDs.
-  - [ ] 1.2 Tạo lại 724 dòng và phân loại lớp (猶忌 / 諸事皆忌 / puzhu27 / AN / AD / AU / QL / 又為 / defer / undetermined); số phải khớp PRD §2. Lệch thì dừng và phân loại (`BASELINE_DRIFT`).
-  - [ ] 1.3 Đếm 忌 protected trên ngày puzhu:06 cho năm heading (百忌 甲日, `only_avoid`, 又為 專忌, lunar/phase/soil) để làm negative set cho FR-05.
-  - [ ] 1.4 Ghi tương tác `puzhu:22`: các ngày mà lift puzhu:06 trên 開市 và 立券交易 có thể kích hoạt propagation sang 開倉庫出貨財.
-  - [ ] 1.5 Xác nhận 進人口, 經絡 và 醞釀 không thuộc 29 heading (`P4_DAY_HEADINGS`).
+- [x] 1.0 Baseline chính thức trong repo — commit `6f970cd`, [README](../docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/README.md)
+  - [ ] 1.1 Generator `p4Puzhu06Baseline.test.ts`: 1.095 ngày × 5 heading. Ghi presence chín thần, `ji`/`protectedJi`/state cuối, từng nguồn 忌 kèm clauseEffect, grade 等第, `dePresent`, 又為, remaining-ji effect và puzhuEnd. Ghi commit/tree và authority IDs. Evidence: `baseline.tsv` 5.475 dòng + `context.tsv` 3.600 dòng, engine trên main `1c4bb32`; presence chín thần lấy từ trace 宜 P4-C (không phụ thuộc P5).
+  - [ ] 1.2 Tạo lại 724 dòng và phân loại lớp (猶忌 / 諸事皆忌 / puzhu27 / AN / AD / AU / QL / 又為 / defer / undetermined); số phải khớp PRD §2. Lệch thì dừng và phân loại (`BASELINE_DRIFT`). Evidence: generator assert 724 ứng viên (133/153/159/139/140). Phân lớp nằm ở Golden (3.2), không ở baseline; Golden validation khớp PRD §2/§8 (77 lift, 11 hold, 254 ngoại lệ).
+  - [ ] 1.3 Đếm 忌 protected trên ngày puzhu:06 cho năm heading (百忌 甲日, `only_avoid`, 又為 專忌, lunar/phase/soil) để làm negative set cho FR-05. Evidence: protected trên ngày puzhu:06: 開倉庫 119, 安牀 61, 開市/立券/納財 36 mỗi heading.
+  - [ ] 1.4 Ghi tương tác `puzhu:22`: các ngày mà lift puzhu:06 trên 開市 và 立券交易 có thể kích hoạt propagation sang 開倉庫出貨財. Evidence: 0 ứng viên `neither_recorded`; lift chỉ ra only_yi/not_recorded/undetermined, nên puzhu:22 (cần 相抵) không bao giờ kích hoạt do puzhu:06.
+  - [ ] 1.5 Xác nhận 進人口, 經絡 và 醞釀 không thuộc 29 heading (`P4_DAY_HEADINGS`). Evidence: assert trong generator và gate authority.
 
-- [ ] 2.0 Câu hỏi owner và authority `p4b-puzhu06-v1` 
+- [x] 2.0 Câu hỏi owner và authority `p4b-puzhu06-v1` — commit `718e195`, [README](../docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v1/README.md)
   - [x] 2.1 Ghi câu trả lời Q1–Q4 kèm ngày; status `OWNER_ADOPTED`, không phải canonical. Evidence: owner 2026-10-16 chốt không/không/không/có, ghi trong PRD §8. Dự kiến gỡ 77 dòng; Golden 3.x phải tái lập con số này độc lập.
-  - [ ] 2.2 Chép nguyên văn puzhu:06; mọi clause 如常例, 猶忌 và 諸事皆忌 của các entry chạm 724 dòng (月破, 月建, 平日, 收日, 閉日, 刼煞, 災煞, 月煞, 月刑, 月害, 月厭, 大時, 天吏); grade 中/次/下; remaining-ji 九空, 五虛, 小耗, 五離, 五墓; puzhu:27. Kèm offset code point, SHA-1 raw và locator scan.
-  - [ ] 2.3 Bảng quyết định lớp nguồn → gỡ/giữ theo Q1–Q4 (PRD FR-02..FR-05); kế thừa 又為 và defer.
-  - [ ] 2.4 Validation và lock file; builder Python độc lập có verify bytes; gate `p4Puzhu06Authority.test.ts`. Review single-agent, ghi giới hạn.
+  - [ ] 2.2 Chép nguyên văn puzhu:06; mọi clause 如常例, 猶忌 và 諸事皆忌 của các entry chạm 724 dòng (月破, 月建, 平日, 收日, 閉日, 刼煞, 災煞, 月煞, 月刑, 月害, 月厭, 大時, 天吏); grade 中/次/下; remaining-ji 九空, 五虛, 小耗, 五離, 五墓; puzhu:27. Kèm offset code point, SHA-1 raw và locator scan. Evidence: 23 span khớp offset code point (gate); puzhu:06 21817, grade và puzhu:27 khớp lock P4 cũ; raw pin bằng SHA-256. Lệch so với kế hoạch: chỉ chép clause đại diện cho từng lớp (月破 猶忌/大耗, 災煞, 月煞/月虛, 九空 defer) cùng năm danh sách gỡ Q4. clauseEffect của các entry khác (月建, 平日, 收日…) lấy từ lock P4-B đã khóa (`xiejibianfangshu-vol10-yiji.json`), không chép lại.
+  - [ ] 2.3 Bảng quyết định lớp nguồn → gỡ/giữ theo Q1–Q4 (PRD FR-02..FR-05); kế thừa 又為 và defer. Evidence: `classes` (9 lớp → keep/lift/hold/untouched), `inherit` (via, 又為大耗→月破, 又為月虛→月煞, defer đọc từ remaining-ji v7), `rowRule`, `stateAfterLift`.
+  - [ ] 2.4 Validation và lock file; builder Python độc lập có verify bytes; gate `p4Puzhu06Authority.test.ts`. Review single-agent, ghi giới hạn. Evidence: `validation.json`, `lock.json` (7 file), gate 3/3 xanh.
 
-- [ ] 3.0 Golden độc lập, đóng băng trước code
-  - [ ] 3.1 Fixture matrix (PRD FR-09): mỗi thần kích hoạt; mỗi lớp nguồn; nhiều nguồn với nguồn chặt nhất thắng; 忌 protected; heading ngoài danh sách; puzhu:28; `puzhu:22`.
-  - [ ] 3.2 Python reference `derive.py` không import resolver hay composer. Đầu vào là các lock đã khóa (clause, grade, remaining-ji, presence). Expected cho 720 context và 1.095 ngày.
-  - [ ] 3.3 So với baseline 1.x sau khi viết expected. Phân loại mọi lệch (`GOLDEN_BUG`, `ENGINE_BUG`, `CONVENTION_DIFFERENCE`) và không nới assertion.
-  - [ ] 3.4 Integrity lock (SHA-256); commit freeze; `commit-proof.json` ở commit kế, không amend. Kiểm lock P4-B/P4-C/P5 cũ giữ bytes.
+- [x] 3.0 Golden độc lập, đóng băng trước code — freeze `4a7da71`, [README](../docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/README.md)
+  - [ ] 3.1 Fixture matrix (PRD FR-09): mỗi thần kích hoạt; mỗi lớp nguồn; nhiều nguồn với nguồn chặt nhất thắng; 忌 protected; heading ngoài danh sách; puzhu:28; `puzhu:22`. Evidence: 95 fixture (lift 22, keep 46, hold 15, untouched 8, SPEC_GAP 4). `puzhu:22` không cần fixture vì lift không tạo `neither_recorded` (1.4).
+  - [ ] 3.2 Python reference `derive.py` không import resolver hay composer. Đầu vào là các lock đã khóa (clause, grade, remaining-ji, presence). Expected cho 720 context và 1.095 ngày. Evidence: stdlib; presence chín thần và puzhu:28 tính lại từ bảng 卷五/卷十 có kiểm nguyên văn; đầu vào frozen: P4-C sweep TSV và inventory nguồn 忌 của baseline 1.0 (giới hạn đã ghi). Dated: lift 77 (37 ngày), keep 636, hold 11.
+  - [ ] 3.3 So với baseline 1.x sau khi viết expected. Phân loại mọi lệch (`GOLDEN_BUG`, `ENGINE_BUG`, `CONVENTION_DIFFERENCE`) và không nới assertion. Evidence: so engine 9.075 dòng: 0 lệch. So PRD: 10 dòng lệch ở lần chạy đầu (巳丙午 2026-06-01, 2027-05-27) → `GOLDEN_BUG` (thiếu quy tắc P4-C 止忌 undetermined + 宜 false → not_avoided), sửa ở derive.py, thêm 2 fixture; không sửa expected bằng tay.
+  - [ ] 3.4 Integrity lock (SHA-256); commit freeze; `commit-proof.json` ở commit kế, không amend. Kiểm lock P4-B/P4-C/P5 cũ giữ bytes. Evidence: freeze `4a7da71` (tree `c51a08c`), [commit-proof.json](../docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/commit-proof.json) ở commit kế; `git diff origin/main` chỉ có file mới; full `shared/lunar` 100 file / 7.008 test xanh.
 
 - [ ] 4.0 Test đỏ và composer opt-in
   - [ ] 4.1 `graft callers resolveP4YiDay` và các symbol nguồn 忌; chốt entry point `resolveP4Puzhu06Day` bọc `resolveP4YiDay`. Giữ API P4-C (và P5 nếu đã merge, xem PRD §6).
