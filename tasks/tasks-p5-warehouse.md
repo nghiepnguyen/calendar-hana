@@ -1,0 +1,74 @@
+# Tasks — P5: warehouse
+
+Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
+Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
+Trạng thái: **CHƯA BẮT ĐẦU** — PRD và task list đã viết; owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+
+## Relevant Files
+
+Tên file mới là đề xuất; chốt tên/contract trước implementation. Artifact, Golden và lock cũ là đầu vào bất biến, không sửa bytes.
+
+- `tasks/prd-p5-warehouse.md` — yêu cầu, quyết định D, acceptance gate.
+- `tasks/tasks-p5-warehouse.md` — checklist và evidence.
+- `PROJECT_CONTEXT.md` — roadmap mục 6.
+- `docs/plans/p4-xieji-vol10-balancing.md` — spec §6 warehouse, §7.1 coverage.
+- `shared/almanac-data/xiejibianfangshu-yiji.json` — 宜/忌 heading 卷十一 (修倉庫, 開倉庫出貨財).
+- `docs/audits/sources/p4-vol10/vol10.raw.txt` — 卷十 raw đã khóa (entry 收日/母倉/六合/五富/天倉).
+- `docs/audits/sources/p4-vol10/yi-comparison-v1/` — xung đột 月恩/月德 đã ghi.
+- `shared/almanac-data/p4-vol10-day-composition-v2.json` — deferral P5 hiện hành; chỉ đọc.
+- `shared/almanac-data/p4-yi-operands-v1.json`, `shared/lunar/p4YiOperands.ts` — presence operand P4-C.
+- `shared/lunar/p4YiDayComposition.ts`, `p4YiDayCore.ts`, `p4YiFullDayCore.ts`, `p4YiPredicates.ts`, `p4YiTrace.ts` — ghép 宜 và trace `deferred: 'P5'`.
+- `shared/lunar/p4YiWarehouse.test.ts`, `docs/audits/sources/p4-vol10/yi-warehouse-v1/` — contract warehouse P4-C.
+- `shared/almanac-data/p5-warehouse-v1.json` — mới: authority D.
+- `shared/almanac-data/golden-p5-warehouse-v1.json`, `docs/audits/sources/p4-vol10/p5-warehouse-*-v1/` — mới: Golden và evidence.
+- `shared/lunar/p4Warehouse.ts` / `p4Warehouse.test.ts` — mới: predicate audit-only.
+- `docs/audits/p5-warehouse.md`, `docs/audits/p5-warehouse-2025-2027.tsv`, `docs/audits/p5-warehouse-summary.json` — mới: báo cáo.
+- `scripts/audit-p4-warehouse-mutations.py` — mới: mutation runner (tên `p4*` để vào path-gate CI).
+- `.github/workflows/ci.yml` — nối mutation gate.
+- `docs/audits/p4-vol10-progress.md` — mục lục.
+
+## Instructions for Completing Tasks
+
+Đổi `- [ ]` thành `- [x]` khi sub-task thực sự xong và có evidence (file/commit/test/report) ghi cạnh checkbox. Task list không cho phép activation, merge hay deploy.
+
+## Tasks
+
+- [ ] 0.0 Tạo nhánh và commit PRD
+  - [x] 0.1 Nhánh `codex/p5-warehouse` từ `origin/main` (`1c4bb32`); ghi commit/tree bắt đầu. Evidence: bắt đầu tại `1c4bb32b939d8c5734d26e3d58a46077747f1fe1`, tree 4b32d9ab0338.
+  - [ ] 0.2 Commit PRD, task list, PROJECT_CONTEXT; mở PR docs hoặc giữ trên nhánh làm việc theo owner.
+
+- [ ] 1.0 Baseline và inventory operand
+  - [ ] 1.1 Từ sweep P4-C, lọc 539 dòng `warehouse_deferred` → ngày, base có mặt, partner có mặt; ghi commit/tree và authority IDs.
+  - [ ] 1.2 Kiểm presence có provenance 協紀 cho 收日, 母倉, 六合, 五富, 天倉, 月恩, 月德, 四相, 時德, 開日 trên 1.095 ngày; liệt kê operand thiếu hoặc unknown. Thiếu authority (vd. 天倉) → dừng ở 2.x, hỏi owner nếu nguồn lệch.
+  - [ ] 1.3 Kiểm 103 dòng `undetermined` ngoài P5 không thuộc warehouse; ghi danh sách để chứng minh P5 không đụng.
+  - [ ] 1.4 Baseline 開倉庫出貨財 trên 31.755 dòng: 宜/忌 trước–sau propagation, 甲日, `puzhu:22`.
+
+- [ ] 2.0 Authority `p5-warehouse-v1`
+  - [ ] 2.1 Chép nguyên văn 卷十 năm entry và lời bàn 收日, 卷十一 heading 修倉庫/開倉庫出貨財; offset code point, SHA-1 raw, locator scan (卷十 `06067686.cn`, 卷十一 `06067687.cn` trang 39–40).
+  - [ ] 2.2 Bảng partner R10/R11 và bảng kết quả D (PRD FR-02/FR-03); status OWNER_ADOPTED_SOURCE_DEPENDENT, ngày 2026-10-16.
+  - [ ] 2.3 Đối chiếu thần trực tiếp hai quyển (天德, 月德, 天德合, 月德合, 天赦, 天願, 三合, 滿日) → ghi khớp.
+  - [ ] 2.4 Chứng minh độc lập đồng hiện không thể (收日+開日, 天倉+時德) trên 720 context; tìm thấy ca → dừng, phân loại.
+  - [ ] 2.5 Validation/lock file, review single-agent và giới hạn.
+
+- [ ] 3.0 Golden độc lập, freeze trước code
+  - [ ] 3.1 Fixture matrix: base-only, partner-only, từng partner, nhiều partner, mọi tổ hợp lệch, impossible, 德 trực tiếp, unknown mỗi phía, 母倉 ngoài coverage, sửa kho ≠ mở kho.
+  - [ ] 3.2 Python reference độc lập (không import resolver), expected 720 context + miền ngày cho 母倉 soil / partner theo mùa.
+  - [ ] 3.3 Expected 開倉庫出貨財 (PRD FR-07).
+  - [ ] 3.4 Review, integrity lock, commit freeze; ghi SHA-256 và commit.
+
+- [ ] 4.0 Test đỏ và predicate audit-only
+  - [ ] 4.1 `graft callers` các symbol ghép 宜/trace P5; chốt entry point, giữ API P4-C.
+  - [ ] 4.2 Test đỏ từ Golden frozen.
+  - [ ] 4.3 `p4Warehouse.ts`: R10, R11, D, trace từng base, SOURCE_DEPENDENT riêng với unknown.
+  - [ ] 4.4 Ghép vào composer qua artifact version mới; bỏ `deferred: 'P5'`; giữ raw/protected 忌, override, `puzhu:28`.
+
+- [ ] 5.0 Sweep, mutation, regression
+  - [ ] 5.1 Sweep 31.755 dòng trước/sau → TSV + summary; 539 dòng P5 phân rã đủ, mỗi dòng có lý do.
+  - [ ] 5.2 Xác minh 開倉庫出貨財 (FR-07); ghi lỗ hổng và phân loại.
+  - [ ] 5.3 Mutation runner tuần tự (PRD FR-13), bytes phục hồi; nối CI.
+  - [ ] 5.4 Regression A04b/P4-B/P4-C, unit, build, typecheck, lint; bundle so build local (thay `builtAt`) không đổi runtime.
+
+- [ ] 6.0 Nghiệm thu
+  - [ ] 6.1 Acceptance gate 8/8 (PRD §7) với evidence.
+  - [ ] 6.2 `graphify update .`; cập nhật audit report, progress, PROJECT_CONTEXT.md.
+  - [ ] 6.3 PR, CI xanh; merge/deploy chỉ khi owner cho phép.
