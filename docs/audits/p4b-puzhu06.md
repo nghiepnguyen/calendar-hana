@@ -123,5 +123,6 @@ Checks: full unit 204 files / 8,033 tests; typecheck (main + functions), lint (o
 - Single-agent work (Claude); no independent second review.
 - Golden v3 was frozen after a composer built against v2 existed (F1). v1 and v2 were frozen before any code.
 - The P4-B 忌 source inventory is an engine measurement (baseline 1.0), not re-derived from the 卷十 entries inside the Golden.
+- No lifted row has an unmodeled 忌 token (`unresolvedJi`): 114 lifts checked (68 dated + 46 context), 0 with tokens; the composer test asserts this. The state-after-lift rule does not itself look at unresolved tokens, so a future input with tokens on a lifted row would fail that assertion instead of being lifted silently.
 - AN/AD rely on grade action `only_ji` (從忌不從宜). The baseline has 0 exceptions, and the composer throws SPEC_GAP for any other grade action.
 - P5 (PR #60) is not merged. The trigger literals are copied from its frozen Golden; this branch does not depend on P5 code. 修倉庫 is not a puzhu:06 heading.

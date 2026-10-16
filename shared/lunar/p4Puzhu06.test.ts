@@ -78,6 +78,8 @@ function expectDay(
     ])
     if (g.action !== 'lift' && !propagated) expect(final, `${id} ${h}`).toEqual(p4c.headings[h])
     else expect(final.yi, `${id} ${h} 宜 unchanged`).toBe(p4c.headings[h]!.yi)
+    // A lift must never turn an unmodeled 忌 token into a known state.
+    if (t.action === 'lift') expect(day.unresolvedJi[h], `${id} ${h} unresolved 忌`).toEqual([])
   }
   // Every day field outside the headings is P4-C's.
   for (const key of Object.keys(p4c).filter(
