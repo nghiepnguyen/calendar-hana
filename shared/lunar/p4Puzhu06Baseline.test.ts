@@ -194,4 +194,47 @@ describe('puzhu:06 engine baseline (audit-only, task 1.0)', () => {
         }
       }
   }, 300_000)
+
+  // Task 5.1 supplement: the P4-C pre/final state of all 29 headings on 720 contexts, so the Golden
+  // can replay propagation where a lift leaves a 相抵 heading (the dated domain uses the P4-C sweep).
+  it('records the P4-C pre/final state of 29 headings on 720 contexts', () => {
+    const cols = ['id', 'month_jian', 'pillar', 'heading']
+    const fields = ['yi', 'ji', 'protected_ji', 'state']
+    const out = [
+      [
+        ...cols,
+        ...fields.map((f) => `pre_${f}`),
+        ...fields.map((f) => `final_${f}`),
+        'final_propagated_from',
+        'final_propagation_blocked',
+      ].join('\t'),
+    ]
+    type H = Heading & { propagatedFrom?: string; propagationBlocked?: string }
+    const vals = (h: H) => [yi(h.yi), String(h.ji), String(h.protectedJi), h.state]
+    for (const m of B)
+      for (let i = 0; i < 60; i++) {
+        const pillar = S[i % 10]! + B[i % 12]!
+        const day = resolveP4YiDay(m, pillar)
+        for (const h of P4_DAY_HEADINGS) {
+          const f = day.headings[h] as H
+          out.push(
+            [
+              `${m}-${pillar}`,
+              m,
+              pillar,
+              h,
+              ...vals(day.prePropagationHeadings[h] as H),
+              ...vals(f),
+              f.propagatedFrom ?? '',
+              f.propagationBlocked ?? '',
+            ].join('\t'),
+          )
+        }
+      }
+    expect(out).toHaveLength(720 * 29 + 1)
+    const path = OUT + 'context-p4c.tsv'
+    const content = out.join('\n') + '\n'
+    if (process.env.P4B_PUZHU06_WRITE) writeFileSync(path, content)
+    else expect(sha256(readFileSync(path, 'utf8')), path).toBe(sha256(content))
+  }, 300_000)
 })
