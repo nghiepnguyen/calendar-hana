@@ -1,0 +1,156 @@
+{
+  "scope": "P4B_PUZHU06_OWNER_ADOPTED (Q1-Q3 no, Q4 yes, Q4a block; authority p4b-puzhu06-v3)",
+  "mutations": [
+    {
+      "mutation": "drop_youji_exception",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_zhushi_exception",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "invert_q1_grade_not_congji",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "invert_q2_with_de_ruchangli",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "invert_q3_ungraded_ruchangli",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "invert_q4_lift_lists",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_q4a_exclusion",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_yueen_sixiang_shide",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "add_sanhe_liuhe_triggers",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "touch_protected_ji",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "touch_out_of_list_heading",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "youwei_ignores_parent",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "defer_ignores_target",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "hold_lifts",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "xiangdi_state_dropped",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts",
+        "shared/lunar/p4Puzhu06Sweep.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "lift_after_propagation",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06.test.ts",
+        "shared/lunar/p4Puzhu06Sweep.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true,
+  "targetHashes": {
+    "shared/lunar/p4Puzhu06.ts": "5cb1d1d2186aea345453e70f3f048543aeca2132626dc0c1c64e0c71c9c08ca8"
+  },
+  "limits": "Audit-only gate; mutations target the composer only, never the authority, Golden or P4-B/P4-C code."
+}
