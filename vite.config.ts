@@ -4,12 +4,15 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { prerenderDays } from './scripts/prerenderDays.ts'
 import { publicLegalPages } from './scripts/publicLegalPages.ts'
-import packageJson from './package.json' with { type: 'json' }
 
 // Định danh bản build: commit SHA của CI (GitHub Actions), chạy máy thì lấy giờ build.
+// Phiên bản hiển thị là ngày build theo giờ Việt Nam (UTC+7): 2026-10-16 → 26.10.16.
 const builtAt = new Date()
 const buildInfo = {
-  version: packageJson.version,
+  version: new Date(builtAt.getTime() + 7 * 3600_000)
+    .toISOString()
+    .slice(2, 10)
+    .replaceAll('-', '.'),
   build:
     process.env.GITHUB_SHA?.slice(0, 7) || builtAt.toISOString().replace(/\D/g, '').slice(0, 14),
   builtAt: builtAt.toISOString(),

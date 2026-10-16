@@ -17,15 +17,16 @@ Cách app biết bản build đang chạy, phát hiện bản mới trên server
 [`vite.config.ts`](../vite.config.ts) tính một lần mỗi lần build:
 
 ```json
-{ "version": "0.0.0", "build": "bf229c7", "builtAt": "2026-10-15T15:30:00.000Z" }
+{ "version": "26.10.15", "build": "bf229c7", "builtAt": "2026-10-15T15:30:00.000Z" }
 ```
 
-- `version`: từ `package.json`.
+- `version`: ngày build theo giờ Việt Nam, dạng `YY.MM.DD` (build ngày 2026-10-16 → `26.10.16`). Nhiều bản trong
+  cùng ngày có cùng `version`; `build` mới phân biệt được.
 - `build`: 7 ký tự đầu của `GITHUB_SHA` (GitHub Actions, job deploy). Build ở máy: `YYYYMMDDHHmmss` (giờ UTC).
 - Cùng object được gắn vào JS (`define: __BUILD_INFO__`) và ghi ra `dist/version.json` (plugin `version-json`,
   chỉ chạy khi build). Không sửa tay.
 
-Settings hiện nhỏ ở cuối trang: `v0.0.0 · bf229c7` (`data-testid="build-version"`).
+Settings hiện nhỏ ở cuối trang: `v26.10.15 · bf229c7` (`data-testid="build-version"`).
 
 ## Cache
 
