@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`); next 5.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **ĐANG LÀM** — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`), 5.0 xong ([báo cáo](../docs/audits/p5-warehouse.md)); next 6.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -62,11 +62,11 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
   - [x] 4.3 `p4Warehouse.ts`: R10, R11, D, trace từng base, SOURCE_DEPENDENT riêng với unknown. Evidence: đọc partner từ authority `p5-warehouse-v1` (SHA-256 pin); Kleene + completion như `derive.py`; `IMPOSSIBLE_CO_PRESENCE` có code và pair; mỗi base trích clause R10 và heading R11, kèm partner (presence, thuộc R10/R11) và traceId của từng thần (月恩 lấy từ trace 開倉庫出貨財). Xanh 5/5: 167 fixture, 1.440 context, 720 context end-to-end (母倉 unknown khi không có ngày), 1.095 ngày.
   - [x] 4.4 Ghép vào composer qua artifact version mới; bỏ `deferred: 'P5'`; giữ raw/protected 忌, override, `puzhu:28`. Evidence: output `p5-warehouse-day-v1` (artifact mới là authority `p5-warehouse-v1`; không cần composition JSON v3). 修倉庫 không còn `deferred`. SOURCE_DEPENDENT: `yi` undefined, state `undetermined`, tag `warehouse: 'SOURCE_DEPENDENT'` (chỉ 2025-10-08). Mọi field cấp ngày ngoài mục 修倉庫 (headings, pre-propagation, raw 忌, completeness, unresolvedJi, scope, yiEvidence…) deep-equal P4-C trên 1.095 ngày. Full suite 8.018 pass; typecheck, lint sạch; module không được runtime import.
 
-- [ ] 5.0 Sweep, mutation, regression
-  - [ ] 5.1 Sweep 31.755 dòng trước/sau → TSV + summary; 539 dòng P5 phân rã đủ, mỗi dòng có lý do.
-  - [ ] 5.2 Xác minh 開倉庫出貨財 (FR-07); ghi lỗ hổng và phân loại.
-  - [ ] 5.3 Mutation runner tuần tự (PRD FR-13), bytes phục hồi; nối CI.
-  - [ ] 5.4 Regression A04b/P4-B/P4-C, unit, build, typecheck, lint; bundle so build local (thay `builtAt`) không đổi runtime.
+- [x] 5.0 Sweep, mutation, regression — [báo cáo](../docs/audits/p5-warehouse.md).
+  - [x] 5.1 Sweep 31.755 dòng trước/sau → TSV + summary; 539 dòng P5 phân rã đủ, mỗi dòng có lý do. Evidence: `shared/lunar/p4WarehouseSweep.test.ts` → `docs/audits/p5-warehouse-2025-2027.tsv` (1.095 dòng 修倉庫) và `p5-warehouse-summary.json`. Chỉ 565 dòng 修倉庫 đổi; heading khác 0 đổi so TSV P4-C. Lý do từ Golden: DIRECT_YI 520 / CO_PRESENCE_AGREED 68 / CO_PRESENCE_ABSENT 173 / NO_OPERAND 333 / SOURCE_DEPENDENT 1. 539 dòng P5 → only_yi 225, both_present 161, only_ji 90, not_recorded 46, undetermined 17 (1 SOURCE_DEPENDENT + 16 宜 đã biết nhưng 忌 P4-B còn mở: 月煞 14, 刼煞 1, 閉日+天吏 1). Undetermined heading khác 103 → 103.
+  - [x] 5.2 Xác minh 開倉庫出貨財 (FR-07); ghi lỗ hổng và phân loại. Evidence: 宜 khớp Golden 1.095/1.095; 甲日 106 giữ 專忌 + 4 puzhu:28; `requireAll` không kích hoạt trên 2025–2027 (18 chặn 甲日) nên kiểm thêm bảng 16 dòng trên `applyP4Propagation`; 月煞 không bị gỡ bởi một cát thần (78 giữ, 11 undetermined, 2 puzhu:28); 月厭 gỡ 18 đều có 德神. **F1 SPEC_GAP:** puzhu:06 (德合赦願月恩四相時德等日不註忌…) chưa mô hình ở P4-B, chạm 8 heading; 133 dòng 開倉庫 ứng viên. Không sửa trong P5 (FR-08), tách việc riêng.
+  - [x] 5.3 Mutation runner tuần tự (PRD FR-13), bytes phục hồi; nối CI. Evidence: `scripts/audit-p4-warehouse-mutations.py` 12/12 bắt bằng assertion, bytes phục hồi ([kết quả](../docs/audits/p5-warehouse-mutation-results.json)); job CI `p5-warehouse-mutations`, gate deploy.
+  - [x] 5.4 Regression A04b/P4-B/P4-C, unit, build, typecheck, lint; bundle so build local (thay `builtAt`) không đổi runtime. Evidence: full unit 200 file / 8.020 test; typecheck, lint sạch; Golden derive verify bytes. Build `origin/main` (`1c4bb32`) và nhánh (`8d8667c`) trong worktree riêng: 1.125 file, sau khi chuẩn hóa `builtAt`/build id/hash chunk thì `index-*.js` và mọi file khác trùng (sw.js chỉ khác revision dẫn xuất).
 
 - [ ] 6.0 Nghiệm thu
   - [ ] 6.1 Acceptance gate 8/8 (PRD §7) với evidence.

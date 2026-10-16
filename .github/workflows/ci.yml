@@ -235,6 +235,28 @@ jobs:
       - name: P4-C yi predicate, provider and composition mutations
         run: python3 scripts/audit-p4-yi-mutations.py --shard=${{ matrix.shard }}/4
 
+  p5-warehouse-mutations:
+    name: P5 warehouse audit mutation gate
+    needs: prepare
+    if: needs.prepare.outputs.reuse-audit != 'true' && needs.prepare.outputs.p4-changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            functions/node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-22-${{ hashFiles('package-lock.json', 'functions/package-lock.json') }}
+      - name: P5 warehouse predicate and 開倉庫出貨財 mutations
+        run: python3 scripts/audit-p4-warehouse-mutations.py
+
   e2e-tests:
     name: Playwright tests (${{ matrix.project }}, ${{ matrix.shard }}/2)
     needs: prepare
@@ -281,7 +303,17 @@ jobs:
 
   deploy:
     name: Deploy to Firebase
-    needs: [prepare, static-analysis, unit-tests, gates, p4-b-mutations, p4-c-mutations, e2e-tests]
+    needs:
+      [
+        prepare,
+        static-analysis,
+        unit-tests,
+        gates,
+        p4-b-mutations,
+        p4-c-mutations,
+        p5-warehouse-mutations,
+        e2e-tests,
+      ]
     if: >-
       always() && !cancelled() &&
       github.ref == 'refs/heads/main' &&
@@ -292,6 +324,7 @@ jobs:
         needs.unit-tests.result == 'success' && needs.gates.result == 'success' &&
         contains(fromJSON('["success","skipped"]'), needs.p4-b-mutations.result) &&
         contains(fromJSON('["success","skipped"]'), needs.p4-c-mutations.result) &&
+        contains(fromJSON('["success","skipped"]'), needs.p5-warehouse-mutations.result) &&
         needs.e2e-tests.result == 'success'))
     runs-on: ubuntu-latest
     timeout-minutes: 20

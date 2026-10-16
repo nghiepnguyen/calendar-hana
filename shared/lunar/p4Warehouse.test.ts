@@ -6,6 +6,7 @@ import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
 import { getP4SoilPresence } from './p4SoilConvention'
+import { applyP4Propagation } from './p4DayComposition'
 import {
   P5_WAREHOUSE_AUTHORITY,
   P5_WAREHOUSE_GODS,
@@ -96,6 +97,34 @@ describe('P5 warehouse predicate against the frozen Golden', () => {
         presence: p[han] === undefined ? 'unknown' : p[han] ? 'present' : 'absent',
       }))
       expect(composeP4YiEvidence('開倉庫出貨財', ops).yi, f.id).toBe(nul(e.kaiCangKuYi))
+    }
+  })
+
+  it('lifts 開倉庫出貨財 only when 開市 and 立券交易 are both 相抵 and 忌 is not 專忌 (puzhu:22)', () => {
+    // No 2025-2027 date fires this lift, so the frozen 16-row table is checked on the propagation
+    // step itself. puzhu:28 acts after propagation and is checked on the dated block.
+    const table = JSON.parse(readFileSync(DIR + 'expected.json', 'utf8')).propagation as {
+      開市_notJi: boolean
+      立券交易_notJi: boolean
+      甲日: boolean
+      expected: { propagatedLift: boolean }
+    }[]
+    expect(table).toHaveLength(16)
+    const state = (lifted: boolean) => ({
+      state: lifted ? ('neither_recorded' as const) : ('only_ji' as const),
+      ji: !lifted,
+      protectedJi: false,
+      yi: false,
+    })
+    for (const r of table) {
+      const out = applyP4Propagation({
+        開市: state(r.開市_notJi),
+        立券交易: state(r.立券交易_notJi),
+        開倉庫出貨財: { state: 'only_ji', ji: true, protectedJi: r.甲日, yi: false },
+      })['開倉庫出貨財']!
+      const id = JSON.stringify(r)
+      expect(Boolean(out.propagatedFrom), id).toBe(r.expected.propagatedLift)
+      expect(out.ji, id).toBe(!r.expected.propagatedLift)
     }
   })
 
