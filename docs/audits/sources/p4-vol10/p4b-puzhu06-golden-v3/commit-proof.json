@@ -1,0 +1,81 @@
+{
+  "version": "golden-p4b-puzhu06-commit-proof-v3",
+  "freezeCommit": "f0454cb63385958363de4df2d52c80d585116a1c",
+  "tree": "e1cd04aba4dfb8bf1a2d884a6d1cd4054e5eb48e",
+  "parent": "a5f95e3a54734cc9c13892944706a7313d96656c",
+  "note": "Written after the freeze commit; not amended. Bytes read from the Git objects. Unlike v1/v2, a composer built against v2 (368ecd8) exists at this freeze; it is fixed only after the v3 red test (see README).",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/derive.py",
+      "sha256": "3400fa088f9226a03a19568a907f776c90ca7f87f7073549ec67223b1395f166"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/expected.json",
+      "sha256": "04b1d9a2ef2d695c7d4e30ec6b6ca4cedb043ee9fd32a6869000d22244c9c888"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/dated.tsv",
+      "sha256": "949ed7d16fcda64d7f4089945c53f8a10e503977759bf7e2f4c8b5fd29975de8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/context.tsv",
+      "sha256": "b84f112c142712f4a2fd442718ec986c73f85dff804c90521efb959bc8de70a0"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/propagation.tsv",
+      "sha256": "c5d272c789d465a0020239abae489eaddc2519095f0184f5cda117a0d9dbc583"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/summary.json",
+      "sha256": "d13aeeff77e3593a81e95e789fff6924ef429f672dc7d41b57322496b95a82db"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/validation.json",
+      "sha256": "6c8202fc7b51be68ba5766c4ef469cffa4e8d6c33244eb5c0421f4d03d8de381"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4b-puzhu06-v3.json",
+      "sha256": "990bd36b46e39c96a61682fef747ab3d15af8c7ca81389f2ba117b1201a1dd6b"
+    },
+    {
+      "path": "shared/almanac-data/p4b-puzhu06-v3.json",
+      "sha256": "2f25d9db3778a77d91deba3d197d43b88316f5a0ea9d17122276f09eb8202f01"
+    },
+    {
+      "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+      "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+      "sha256": "98791ddd2fb9a735ed7b33483da9c28189aa69bac1c8c8ec6421131142968317"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+      "sha256": "00a573a1476f5a741af016596750524b301d0bf504c51cf34d986d901c783e6f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context-p4c.tsv",
+      "sha256": "0b4eac64a4ae53c552f2bdb78ac90f115c60d930ef70cc3a6e1c0a15c52cedd2"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/dated.tsv",
+      "sha256": "d25397903511d138b4f56b7fccd56a9e6438136701b3082f996b255a52f2d92c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/lock.json",
+      "sha256": "ab49a7508ead2b7ce5bf06a04c4b82794125734f4467ff0118ccdf53bae309c0"
+    }
+  ]
+}

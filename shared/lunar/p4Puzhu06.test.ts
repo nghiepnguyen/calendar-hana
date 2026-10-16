@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import golden from '../almanac-data/golden-p4b-puzhu06-v2.json'
+import golden from '../almanac-data/golden-p4b-puzhu06-v3.json'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
@@ -10,9 +10,10 @@ import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4YiDay } from './p4YiDayComposition'
 import { getP4MuCangSoil } from './p4YiOperands'
 
-// puzhu:06 task 4.2: red tests from the frozen Golden v2 (67af7c0); expected values are read from
-// the Golden files only, never from the implementation.
-const DIR = 'docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/'
+// puzhu:06 task 4.2: red tests from the frozen Golden (v2 67af7c0, now v3 f0454cb after the 5.1 sweep
+// found the 相抵 state bug); expected values are read from the Golden files only, never from the
+// implementation.
+const DIR = 'docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/'
 const B = '子丑寅卯辰巳午未申酉戌亥'
 const S = '甲乙丙丁戊己庚辛壬癸'
 const HEADINGS = ['開倉庫出貨財', '開市', '立券交易', '納財', '安牀']
@@ -34,6 +35,24 @@ function table(path: string) {
 }
 type Day = ReturnType<typeof resolveP4Puzhu06Day>
 
+const PROPAGATION = new Map(
+  readFileSync(DIR + 'propagation.tsv', 'utf8')
+    .replace(/\n$/, '')
+    .split('\n')
+    .slice(1)
+    .map((l) => l.split('\t'))
+    .map(([, id, h, , , , , ji, state, from, blocked]) => [
+      `${id}:${h}`,
+      [ji, state, from, blocked],
+    ]),
+)
+const view = (f: {
+  ji: boolean
+  state: string
+  propagatedFrom?: string
+  propagationBlocked?: string
+}) => [String(f.ji), f.state, f.propagatedFrom ?? '', f.propagationBlocked ?? '']
+
 function expectDay(
   id: string,
   day: Day,
@@ -42,15 +61,22 @@ function expectDay(
 ) {
   expect(day.version, id).toBe('p4b-puzhu06-day-v1')
   for (const [h, final] of Object.entries(day.headings)) {
+    const propagated = PROPAGATION.get(`${id}:${h}`)
+    if (propagated) expect(view(final), `${id} ${h} propagation`).toEqual(propagated)
     if (!HEADINGS.includes(h)) {
-      expect(final, `${id} ${h}`).toEqual(p4c.headings[h])
+      if (!propagated) expect(final, `${id} ${h}`).toEqual(p4c.headings[h])
       continue
     }
     const g = rows.get(`${id}:${h}`)!
     const t = day.puzhu06[h]!
     expect([t.action, t.classes.join('+')], `${id} ${h}`).toEqual([g.action, g.classes])
-    expect([String(final.ji), final.state], `${id} ${h}`).toEqual([g.after_ji, g.after_state])
-    if (g.action !== 'lift') expect(final, `${id} ${h}`).toEqual(p4c.headings[h])
+    expect(view(final), `${id} ${h}`).toEqual([
+      g.after_ji,
+      g.after_state,
+      g.after_propagated_from,
+      g.after_propagation_blocked,
+    ])
+    if (g.action !== 'lift' && !propagated) expect(final, `${id} ${h}`).toEqual(p4c.headings[h])
     else expect(final.yi, `${id} ${h} 宜 unchanged`).toBe(p4c.headings[h]!.yi)
   }
   // Every day field outside the headings is P4-C's.
@@ -72,7 +98,7 @@ describe('puzhu:06 composer (audit-only, red from Golden v2)', () => {
     const { fixtures } = JSON.parse(readFileSync(DIR + 'expected.json', 'utf8')) as {
       fixtures: Fixture[]
     }
-    expect(fixtures).toHaveLength(102)
+    expect(fixtures).toHaveLength(105)
     for (const f of fixtures)
       if ('error' in f.expected)
         expect(() => decideP4Puzhu06(f.input), f.id).toThrow(
