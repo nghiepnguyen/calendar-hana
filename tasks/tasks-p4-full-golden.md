@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD](prd-p4-full-golden.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), owner chốt H1-B, H2-A); 3.2 xong ([lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md), owner chốt F1/F4/F5); 3.3 xong ([trạng thái ngày](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)); 3.4 xong ([checks](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json)); 4.0 đóng băng ([README](../docs/audits/sources/p4-vol10/p4-full-golden-v1/README.md)); next 5.0 / 6.0.
+Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), owner chốt H1-B, H2-A); 3.2 xong ([lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md), owner chốt F1/F4/F5); 3.3 xong ([trạng thái ngày](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)); 3.4 xong ([checks](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json)); 4.0 đóng băng ([README](../docs/audits/sources/p4-vol10/p4-full-golden-v1/README.md)); 5.0–7.0 xong ([báo cáo](../docs/audits/p4-full-golden.md); SPEC_BUG 德作建論 chờ owner); next 8.0.
 
 ## Relevant Files
 
@@ -31,7 +31,7 @@ Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/
   - [x] 3.3 Ghép 宜 P4-C (Golden đóng băng), warehouse P5, puzhu:06, propagation
   - [x] 3.4 Self-check: exact Cartesian set, uniqueness, bất biến FR-03
 - [x] 4.0 Freeze: lock, checksum, commit-proof, gate test
-- [ ] 5.0 Oracle chéo với Golden từng phần; phân loại lệch
-- [ ] 6.0 So engine toàn miền; phân loại lệch
-- [ ] 7.0 Mutation runner FR-07
+- [x] 5.0 Oracle chéo với Golden từng phần; phân loại lệch
+- [x] 6.0 So engine toàn miền; phân loại lệch
+- [x] 7.0 Mutation runner FR-07
 - [ ] 8.0 Báo cáo, `ci:local`, owner review, cập nhật PROJECT_CONTEXT
