@@ -1,0 +1,30 @@
+{
+  "version": "p4-adapter-baseline-lock-v1",
+  "scope": "MEASURED_BASELINE_NOT_GOLDEN",
+  "generatedAt": "bae57f3c5db9a40df11371d440cc5f176c657944",
+  "runtimeEquivalentTo": "f00dd5c (git diff f00dd5c..generatedAt on shared/ src/ outside tests is empty)",
+  "flag": "xiejiVol10BalancingEnabled absent (= OFF); default manifest (xiejiVol10Scoring true), no input override",
+  "domain": {
+    "fixture": "shared/lunar/audit-fixtures/mansion-decision-baseline-v1.json (1095 dates)",
+    "outsideP4Domain": [
+      "2024-12-31",
+      "2028-01-01",
+      "2035-06-15"
+    ]
+  },
+  "rows": {
+    "activities": "getAlmanac(date).activityRecommendations, 32 per date; sha256 = JSON of the whole recommendation",
+    "events": "evaluateEventDay for 11 EVENT_OPTIONS × {no hour, hour 9}; sha256 = JSON without datasetVersion/engineVersion"
+  },
+  "determinism": "regenerated identical under default TZ, TZ=UTC and TZ=America/New_York",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/activities.tsv",
+      "sha256": "d71c01627d087382cf24976957fd5fe959784413f31823a31057e2ccb0cb8d0c"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/events.tsv",
+      "sha256": "de7f0b130179b31a9a8d4930e9c9138a4108cdbf7a2d7aa1f909e6300fd008f3"
+    }
+  ]
+}
