@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import authority from '../almanac-data/p4-yi-operands-v1.json'
 import golden from '../almanac-data/golden-p4-yi-operands-v1.json'
 import sourceLock from '../../docs/audits/sources/p4-vol10/yi-freeze-v1/lock.json'
+import { lockedDigests } from './lockAnchor'
 import { evaluateP4YiOperand } from './p4YiOperands'
 
 type PresenceFixture = {
@@ -52,7 +53,13 @@ describe('P4-C 4.2 frozen authority, Golden and raw offsets', () => {
       'ba5544c3e7b0bd540acfff8a673ab22c0c4b78dc8680c18d18cea07523f797d1',
     )
     expect(sourceLock.files).toHaveLength(677)
-    for (const file of sourceLock.files) expect(digest(file.path), file.path).toBe(file.sha256)
+    // Pinned files checked as committed at the lock's anchor (owner rule 2026-10-17, see lockAnchor.ts).
+    const atFreeze = lockedDigests(
+      'docs/audits/sources/p4-vol10/yi-freeze-v1/lock.json',
+      sourceLock.files.map((file) => file.path),
+    )
+    for (const file of sourceLock.files)
+      expect(atFreeze.get(file.path), file.path).toBe(file.sha256)
     expect(digest(golden.authority.path)).toBe(golden.authority.sha256)
     for (const block of golden.blocks) expect(digest(block.path), block.path).toBe(block.sha256)
   })

@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import index from '../almanac-data/golden-p4-full-v1.json'
+import { lockedDigests } from './lockAnchor'
 
 // Roadmap 7: full Golden P4 (resolution layer), derived in Python independently of the engine and frozen
 // before any Golden ↔ engine comparison. Hash checks only; no engine import.
@@ -17,8 +18,15 @@ type Lock = {
 describe('full Golden P4 v1 (frozen, audit-only)', () => {
   const lock = JSON.parse(readFileSync(DIR + 'lock.json', 'utf8')) as Lock
 
+  // Own files on the working tree; runtime/catalog inputs as committed at the lock's anchor (lockAnchor.ts).
   it('matches its lock', () => {
-    for (const f of lock.files) expect(sha256(readFileSync(f.path)), f.path).toBe(f.sha256)
+    const outside = lock.files.filter((f) => !f.path.startsWith(DIR))
+    const atAnchor = lockedDigests(
+      DIR + 'lock.json',
+      outside.map((f) => f.path),
+    )
+    for (const f of lock.files)
+      expect(atAnchor.get(f.path) ?? sha256(readFileSync(f.path)), f.path).toBe(f.sha256)
   })
 
   it('pins every block of the index', () => {
