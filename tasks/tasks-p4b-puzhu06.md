@@ -24,7 +24,7 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
 - `shared/lunar/p4Puzhu06Baseline.test.ts`, `p4Puzhu06Authority.test.ts`, `p4Puzhu06Golden.test.ts`, `p4Puzhu06Sweep.test.ts` — mới: gate.
 - `docs/audits/p4b-puzhu06.md`, `docs/audits/p4b-puzhu06-2025-2027.tsv`, `docs/audits/p4b-puzhu06-summary.json` — mới: báo cáo.
 - `scripts/audit-p4-puzhu06-mutations.py` — mới: mutation runner (tên `p4*` để vào path-gate CI).
-- `.github/workflows/ci.yml` — nối mutation gate (đến PR #61); sau `ac2835e` là `package.json` `ci:p4` (gate local pre-push).
+- `.github/workflows/ci.yml` — nối mutation gate (đến PR #61); sau `ac2835e` là `package.json` `ci:p4` (gate local; từ 2026-10-17 chạy tay, không trong pre-push).
 - `docs/audits/p4-vol10-progress.md`, `PROJECT_CONTEXT.md` — mục lục, dòng F1.
 
 ### Notes

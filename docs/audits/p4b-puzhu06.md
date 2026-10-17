@@ -81,7 +81,7 @@ The 724 candidates (P5 F1: unprotected 忌 on a puzhu:06 day) resolve as:
 
 ## Mutation gate (PRD FR-11)
 
-`scripts/audit-p4-puzhu06-mutations.py` runs sequentially. Every mutation must be caught by an assertion, and the runner restores the original bytes. Results: [p4b-puzhu06-mutation-results.json](p4b-puzhu06-mutation-results.json). On PR #61 it ran as the CI job `p4b-puzhu06-mutations`, path-gated with the other P4 gates. Since `ac2835e` moved checks to the local pre-push gate (`npm run ci:local`), it runs inside `ci:p4` next to P4-B, P4-C and P5.
+`scripts/audit-p4-puzhu06-mutations.py` runs sequentially. Every mutation must be caught by an assertion, and the runner restores the original bytes. Results: [p4b-puzhu06-mutation-results.json](p4b-puzhu06-mutation-results.json). On PR #61 it ran as the CI job `p4b-puzhu06-mutations`, path-gated with the other P4 gates. Since `ac2835e` moved checks to the local machine, it runs inside `ci:p4` next to P4-B, P4-C and P5. Since 2026-10-17 `ci:p4` is a manual command, not part of the pre-push `ci:local`.
 
 Result: **16/16 caught by assertion**, bytes restored (`restored: true`).
 

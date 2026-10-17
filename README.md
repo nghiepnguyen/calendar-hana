@@ -152,7 +152,7 @@ Trước lần deploy functions đầu tiên:
 
 ### Tự động qua GitHub Actions
 
-Kiểm tra chạy ở máy: `npm run ci:local` (lint, typecheck, unit, Emulator, mutation gate, e2e Chrome desktop; mutation P4/P5 chỉ khi diff so với `origin/main` chạm `shared/lunar/p4*` hoặc `scripts/audit-p4-*`). Hook `.githooks/pre-push` (bật bởi `npm install` qua script `prepare`) chạy lệnh này trước mỗi `git push`, lỗi thì chặn push; bỏ qua bằng `git push --no-verify`.
+Kiểm tra chạy ở máy: `npm run ci:local` (lint, typecheck, unit). Chạy tay khi cần: `npm run ci:full` (`ci:local` + Emulator, mutation gate, e2e Chrome desktop) và `npm run ci:p4` (mutation P4/P5, lâu). Hook `.githooks/pre-push` (bật bởi `npm install` qua script `prepare`) chạy lệnh này trước mỗi `git push`, lỗi thì chặn push; bỏ qua bằng `git push --no-verify`.
 
 Workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) không chạy test: push vào `main` là build rồi `firebase deploy --only firestore,hosting,functions`.
 
