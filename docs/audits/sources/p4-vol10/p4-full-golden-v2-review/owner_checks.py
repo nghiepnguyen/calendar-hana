@@ -70,6 +70,44 @@ def check(rows, ctx_facts, key_of, extra_of, domain):
 
 
 DEJ = set()
+P5_CONTEXT = Path('docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv')
+P5_DATED = Path('docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv')
+DIRECT = ['天德', '月德', '天德合', '月德合', '天赦', '天願', '三合', '滿日']
+R10 = {'收日': ['月恩', '四相', '時德'], '母倉': ['月恩', '四相', '開日'], '六合': ['月恩', '四相', '時德'],
+       '五富': ['月恩', '四相', '時德'], '天倉': ['月恩', '四相', '開日']}
+R11 = ['月德', '四相', '時德', '開日']
+
+
+def rule_d(row, drop):
+    """修倉庫 rule D (owner D, p5-warehouse-v1), independent copy; drop = owner (i) on 德作建論 days."""
+    on = lambda g: row[g] == 'present' and not (drop and g in DE_HE)
+    if any(on(g) for g in DIRECT):
+        return 'true'
+    v = [(any(on(p) for p in R10[b]), any(on(p) for p in R11)) for b in R10 if on(b)]
+    if any(a and b for a, b in v):
+        return 'true'
+    return 'unknown' if any(a != b for a, b in v) else 'false'
+
+
+def check_rule_d():
+    """Owner (i) for 修倉庫: rule D without 德合 gods on 德作建論 days, else the frozen P5 verdict."""
+    n = 0
+    dated = {r['date']: r for r in read(G / 'compose/dated.tsv') if r['heading'] == '修倉庫'}
+    for r in read(P5_DATED):
+        drop = f"{r['month_jian']}-{r['pillar']}" in DEJ
+        assert dated[r['date']]['yi_evidence'] == rule_d(r, drop), ('rule D (i)', r['date'])
+        n += drop
+    ctx = {r['id']: r for r in read(G / 'compose/context.tsv') if r['heading'] == '修倉庫'}
+    for cid in DEJ:
+        rows = [r for r in read(P5_CONTEXT) if f"{r['month_jian']}-{r['pillar']}" == cid]
+        vals = {rule_d(r, True) for r in rows}
+        g = ctx[cid]
+        if 'context:date-operand-dependent' not in g['reasons']:
+            assert vals == {g['yi_evidence']}, ('rule D (i) context', cid, vals, g['yi_evidence'])
+    # 「德合與赦願所會之辰」 days (puzhu:28) never fall on a 德作建論 day, so (i) never meets puzhu:28.
+    p28 = {r['id'] for r in read(G / 'ji/context-ji.tsv') if r['puzhu28'] == 'true'}
+    assert not p28 & DEJ, p28 & DEJ
+    return n
 
 
 def main():
@@ -82,6 +120,7 @@ def main():
         'context': check(read(G / 'compose/context.tsv'), ctx_facts, lambda r: r['id'], lambda r: [], 'context'),
     }
     assert out['dated']['E3'] == 57 and out['context']['E3'] == 33, out
+    out['ruleDDeAsJianDates'] = check_rule_d()
     print(json.dumps(out, ensure_ascii=False))
 
 

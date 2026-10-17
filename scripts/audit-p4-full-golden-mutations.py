@@ -80,6 +80,9 @@ MUTATIONS = [
     ('M19', 'Hoàn quyết định (i): 德作建論 chỉ cho A03 / remaining-ji, không cho 宜 / trigger / quy tắc D', 'compose/compose.py',
      "    return [g for g in ctx['de'] if not (de_as_jian(ctx) and g in DE_HE)]",
      "    return list(ctx['de'])"),
+    ('M20', 'Hoàn quyết định (i) ở quy tắc D của 修倉庫 (德合 vẫn làm partner / thần trực tiếp)', 'compose/compose.py',
+     "                v = xiu_cang_ku_d(r, (r['month_jian'], r['pillar']) in dej)",
+     "                v = xiu_cang_ku_d(r, False)"),
 ]
 OUT_OF_SCOPE = ['cap trước resolution', 'event đọc raw thay applied', 'penalty −25 trùng'
                 ' (roadmap 8: score adapter / cap / event)']

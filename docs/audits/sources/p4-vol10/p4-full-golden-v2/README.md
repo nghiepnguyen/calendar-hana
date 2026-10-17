@@ -23,6 +23,13 @@ Trạng thái: **HASH_LOCKED_AFTER_V1_ENGINE_COMPARISON**. v2 đóng băng **sau
 | Chỉ 宜 evidence đổi | 6 dòng (4 修倉庫, 2 安葬; trạng thái không đổi vì 宜 đã bị chặn hoặc 忌 giữ) | — |
 | 修倉庫 theo quy tắc D, true → false | 4 ngày | 9 (context × soil) |
 
-Mọi số liệu khác của v1 vẫn đúng cho v2. Các README con (`presence/`, `ji/`, `compose/`) mô tả cách suy của v1 và vẫn áp dụng, trừ hai thay đổi trên.
+Số liệu context đổi so với v1:
+- Trạng thái: both_present 898 → 894, not_recorded 2.997 → 2.998, only_ji 7.488 → 7.486, only_yi 4.011 → 4.010, undetermined (E5) 4.431 → 4.437. 6 dòng 納畜/牧養/栽種 nay phụ thuộc 母倉 theo soil, vì bỏ 德合 khỏi 宜.
+- `protectedJiHeld` 1.442 → 1.439.
+- So engine: trùng 14.794 → 14.786, không so 4.658 → 4.664.
+
+Miền ngày: mọi số đếm trạng thái không đổi.
+
+Số liệu hiện hành lấy từ `compose/summary.json` và `compose/checks.json` của v2. Các README con (`presence/`, `ji/`, `compose/`) mô tả cách suy và số liệu của v1: cách suy vẫn áp dụng, trừ hai thay đổi trên; số liệu context trong đó là của v1.
 
 `freeze.py` ghim `lock.json` của v1 và index v1 làm parent. `commit-proof.json` được ghi sau commit đóng băng.
