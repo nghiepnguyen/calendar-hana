@@ -2,9 +2,9 @@
  "version": "p4-full-golden-mutations-v1",
  "option": "owner (b), 2026-10-17: mutate the Python derive",
  "control": "unmutated chain passes every stage and reproduces the frozen bytes",
- "mutations": 19,
- "caught": 19,
- "bySelfCheck": 19,
+ "mutations": 20,
+ "caught": 20,
+ "bySelfCheck": 20,
  "byFrozenBytesOnly": [],
  "survived": [],
  "outOfScope": [
@@ -164,6 +164,14 @@
    "by": "self_check",
    "stage": "../p4-full-golden-v2-review/owner_checks.py",
    "error": "AssertionError: ('dated', 'DE_AS_JIAN_ALL', {'date': '2026-06-01', 'month_jian': '巳', 'pillar': '丙午', 'heading': '祭祀', 'yi_evidence': 'true', 'yi_noted': 'true', 'ji': 'false', 'protected': 'false', 'state': 'only_yi', 'reasons': '', 'puzhu06': '', 'propagated': '', 'blocked': '', 'code': 'no_ji;yi:"
+  },
+  {
+   "id": "M20",
+   "mutation": "Hoàn quyết định (i) ở quy tắc D của 修倉庫 (德合 vẫn làm partner / thần trực tiếp)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('rule D (i)', '2025-06-06')"
   }
  ]
 }
