@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD](prd-p4-full-golden.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), chờ owner H1/H2); next 3.2.
+Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), owner chốt H1-B, H2-A); next 3.2.
 
 ## Relevant Files
 

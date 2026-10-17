@@ -6,7 +6,8 @@ Quyết định owner (2026-10-17):
 
 1. **Phạm vi:** mục 7 chỉ gồm lớp resolution (heading/annotation), presence 21 thần và warehouse, kèm mutation của lớp này. Score adapter, cap reallocation, event `very_high`, penalty `product_policy_default_penalty` −25 và các mutation "cap trước resolution" / "event đọc raw" chuyển sang **roadmap 8**, sau khi owner duyệt adapter (spec §7.1: "score adapter có expected riêng sau khi owner duyệt").
 2. **11 dòng hold:** Golden ghi `undetermined` kèm mã lý do; không tự giải. Soạn riêng bộ câu hỏi owner có bằng chứng nguồn và phương án (gồm cả 德願 nếu cùng loại). Không chặn phần Golden còn lại.
-3. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
+3. **Hold (2026-10-17, sau task 2.1):** H1-B — 忌 của phạm vi convention gặp 相抵 của phạm vi khác trên cùng heading thì 忌 sống sót, 宜 không ghi, rồi mới xét lan truyền; H2-A — 天願 ∈ 德願, 未月戊午 phạm vi 閉日 như thường lệ. Cả hai `OWNER_ADOPTED_SOURCE_DEPENDENT` ([câu hỏi](../docs/audits/p4-full-golden-hold-questions.md)). Golden áp hai quyết định; FR-04 chỉ còn cho các hold mới phát hiện.
+4. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
 
 ## 1. Overview
 

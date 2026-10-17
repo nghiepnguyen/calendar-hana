@@ -2,6 +2,8 @@
 
 2026-10-17, nhánh `claude/p4-full-golden`. Audit-only.
 
+**Quyết định owner 2026-10-17: H1-B, H2-A**, nhãn `OWNER_ADOPTED_SOURCE_DEPENDENT`. Golden task 3.2 áp hai quyết định này. Reason code `OWNER_QUESTION_H1/H2` chỉ còn dùng cho lịch sử; mọi dòng đổi trạng thái được liệt kê trước khi đóng băng.
+
 Nguồn: `docs/audits/sources/p4-vol10/vol10.raw.txt`, SHA-1 `355dc6c8fe2d…`; offset tính theo code point Python. Mọi câu trích đã kiểm là chuỗi con đúng tại offset.
 
 Có hai loại số liệu khác nguồn gốc:
