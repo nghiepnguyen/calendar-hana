@@ -1,7 +1,7 @@
 # Tasks — Roadmap 7b: engine cài luật owner
 
 Nguồn yêu cầu: [PRD](prd-p4-owner-rules-engine.md). Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = phép ghép engine (miền ngày 248 lệch, đúng tập attribution; context 227 trên mẫu 1/7); next 3.0.
+Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = phép ghép engine (miền ngày 248 lệch, đúng tập attribution; context 227 trên mẫu 1/7); 3.0 xong: layer khớp Golden v2 toàn miền (ngày 31.755/31.755, context 20.880/20.880 gồm E5) mà không sửa file engine đã khóa (H2-A, (i) remaining-ji cài trong layer; hook trong file khóa bị hoàn tác vì phá lock P4-C); next 5.0.
 
 ## Relevant Files
 
@@ -19,12 +19,12 @@ Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = p
 - [x] 2.0 Test đỏ từ Golden v2
   - [x] 2.1 Loader đọc Golden v2 (dated + context), ghim SHA từ lock v2
   - [x] 2.2 Test so `state`/`ji`/`protected` cho miền ngày và context ngoài E5; stub trả lỗi → đỏ; commit
-- [ ] 3.0 Implementation (opt-in, không đổi hành vi mặc định)
-  - [ ] 3.1 Hook tham số opt-in cho H2-A, (i), F1, E1 ở tầng dưới (mặc định = hành vi hiện tại)
-  - [ ] 3.2 Composer ngày mới: H1-B/F5, E3, sửa phân tầng A04b, scope undetermined theo heading
-  - [ ] 3.3 修倉庫: quy tắc D có (i); puzhu:06 với trigger theo (i)
-  - [ ] 3.4 Context: bất biến E5 trên soil × ngày âm × phase
-  - [ ] 3.5 Trace/reason code
+- [x] 3.0 Implementation (opt-in, không đổi hành vi mặc định)
+  - [x] 3.1 H2-A, (i), F1, E1 trong layer (file engine nằm trong lock P4-C `yi-freeze-v1`, không được sửa)
+  - [x] 3.2 Composer ngày mới: H1-B/F5, E3, sửa phân tầng A04b, scope undetermined theo heading
+  - [x] 3.3 修倉庫: quy tắc D có (i); puzhu:06 với trigger theo (i)
+  - [x] 3.4 Context: bất biến E5 trên soil × ngày âm × phase
+  - [x] 3.5 Trace/reason code
 - [ ] 4.0 Sweep + diff Golden v2 = 0; mọi sweep cũ giữ nguyên bytes
 - [ ] 5.0 Mutation runner (lượt đối chứng sạch, mỗi luật ít nhất một mutation) + `ci:p4`
 - [ ] 6.0 Báo cáo, `ci:local`, `ci:p4` tay, PROJECT_CONTEXT, PR (hỏi trước khi merge)

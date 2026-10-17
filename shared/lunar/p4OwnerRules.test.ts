@@ -68,7 +68,7 @@ function mismatches(rows: Record<string, string>[], key: string, day: (k: string
   return out.sort()
 }
 
-// Fast subset: every date that the v2 engine comparison flagged, plus every 15th date.
+// Fast subset: every date that the v2 engine comparison flagged, plus every 45th date.
 const flagged = new Set(
   tsv(DIFFS)
     .filter((r) => r.domain === 'dated')
@@ -78,25 +78,39 @@ const sample = (rows: Record<string, string>[]) =>
   FULL
     ? rows
     : rows.filter(
-        (r) => flagged.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 15 === 0,
+        (r) => flagged.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 45 === 0,
       )
+
+// Fast context subset: every 40th context (18 of 720), all 29 headings.
+const CONTEXT_SAMPLE = new Set(
+  [...(B.slice(2) + B.slice(0, 2))].flatMap((m, mi) =>
+    Array.from({ length: 60 }, (_, i) => i)
+      .filter((i) => (mi * 60 + i) % 40 === 0)
+      .map((i) => `${m}-${S[i % 10]}${B[i % 12]}`),
+  ),
+)
 
 describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
   const datedRows = golden('compose/dated.tsv')
   const contextRows = golden('compose/context.tsv')
 
-  it('harness: the current engine stitching differs from the Golden on exactly the attributed rows', () => {
-    const rows = sample(datedRows)
-    const got = mismatches(rows, 'date', (k) => {
-      const { month, pillar, operands } = dated(k)
-      return stitchP4EngineDay(month, pillar, operands)
-    })
-    const want = tsv(DIFFS)
-      .filter((r) => r.domain === 'dated')
-      .map((r) => `${r.id}|${r.heading}`)
-      .sort()
-    expect(got).toEqual(want)
-  }, 600_000)
+  // Full domain only (ci:p4): proves operands/normalisation before the owner rules are compared.
+  it.runIf(FULL)(
+    'harness: the current engine stitching differs from the Golden on exactly the attributed rows',
+    () => {
+      const rows = sample(datedRows)
+      const got = mismatches(rows, 'date', (k) => {
+        const { month, pillar, operands } = dated(k)
+        return stitchP4EngineDay(month, pillar, operands)
+      })
+      const want = tsv(DIFFS)
+        .filter((r) => r.domain === 'dated')
+        .map((r) => `${r.id}|${r.heading}`)
+        .sort()
+      expect(got).toEqual(want)
+    },
+    600_000,
+  )
 
   it('dated: every row equals the Golden', () => {
     const rows = sample(datedRows)
@@ -107,8 +121,9 @@ describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
     expect(got.length, got.slice(0, 20).join('\n')).toBe(0)
   }, 600_000)
 
-  it('context: every row the Golden determines (outside E5) equals the Golden', () => {
-    const rows = contextRows.filter((r, i) => r.state !== 'undetermined' && (FULL || i % 7 === 0))
+  // E5 included: rows the Golden leaves undetermined (date-operand dependent) must be undetermined too.
+  it('context: every row equals the Golden, E5 undetermined rows included', () => {
+    const rows = contextRows.filter((r) => FULL || CONTEXT_SAMPLE.has(r.id!))
     const got = mismatches(rows, 'id', (k) => {
       const [month, pillar] = k.split('-') as [string, string]
       return resolveP4OwnerRulesContext(month, pillar)
