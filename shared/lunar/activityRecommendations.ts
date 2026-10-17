@@ -9,6 +9,7 @@ import xiejiReview from '../almanac-data/xieji-activity-mapping-review.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
+import type { P4HeadingInput } from './p4ScoreAdapter'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring } from './xiejiVol10Scoring'
 
@@ -48,6 +49,10 @@ export interface ActivityInput {
   classicalDay?: { monthJianBranch: number; dayStem: number; dayBranch: number }
   /** Overrides `manifest.policies.xiejiVol10Scoring` (tests and migration proof). */
   xiejiVol10Scoring?: boolean
+  /** Overrides `manifest.policies.xiejiVol10BalancingEnabled` (tests and migration proof). */
+  xiejiVol10BalancingEnabled?: boolean
+  /** P4 heading states of the day; read only with balancing ON. */
+  p4Headings?: Readonly<Record<string, P4HeadingInput>>
 }
 
 export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'

@@ -87,6 +87,14 @@ Số liệu Golden v2 (`p4-full-golden-v2/compose/dated.tsv`, 1095 ngày), ngày
 9. **忌 protected:** luật chung cho mọi hàng FR-02, dòng protected không bao giờ thành informational.
 10. **21 thần dormant khi flag ON:** áp resolution như thần catalog khác, theo `activityIds` và tier. Activity giữ baseline (không heading hoặc dính mục 6) không nối thần dormant.
 
+Owner chốt thêm khi soạn Golden điểm (2026-10-18):
+
+11. **諸事皆忌 (53 ngày, 1537 heading-ngày, đều `only_ji`):** −25 chỉ khi sau resolution không còn dòng âm applied trong scope, giống `only_ji` (spec §4.2 "không cộng lại").
+12. **Gỡ hết dòng applied** (vd. `neither_recorded`): status `neutral` (owner 2026-10-10, `classicalNeutral`), không phải `no_evidence`.
+13. **Thần hung bị Trực bao** (informational, `subsumesGods`) không tính là dòng âm khi kiểm −25.
+
+Quy ước Golden (dữ liệu, không cần owner): cả 46 thần catalog đều nguồn 卷十一 nên scope = Trực + mọi thần catalog; dòng `preserve_bad` không bị gỡ (Golden v2: 0 ca 月破 trên heading bị override rơi vào `only_yi`/`neither_recorded`); protected chỉ xuất hiện ở `only_ji`/`both_present` (Golden v2) nên chỉ kiểm bằng ca tổng hợp, khớp `han` catalog với `prot`; cap phân bổ theo thứ tự catalog, penalty −25 xếp cuối pool âm của thần (`source: 'bad_god'`, `evidenceOrigin: 'product_policy'`).
+
 Đã có căn cứ, không hỏi lại: resolution trước cap; −25 product policy không hard warning; `undetermined` giữ baseline; không sinh điểm dương khi chỉ "không kỵ"; giữ `event_fit`.
 
 ## 7. Non-goals
