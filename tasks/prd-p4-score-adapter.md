@@ -1,6 +1,6 @@
 # PRD — Roadmap 8: adapter điểm sau flag `xiejiVol10BalancingEnabled` = OFF
 
-Ngày: 2026-10-17. Trạng thái: **owner trả lời §6 (2026-10-17); chờ duyệt PRD**. Chưa sửa runtime.
+Ngày: 2026-10-17. Trạng thái: **owner trả lời §6 (2026-10-17); đề xuất chốt §6.5–6.10 (2026-10-18), chờ owner duyệt mục 7, 8, 10**. Chưa sửa runtime.
 
 ## 1. Bối cảnh
 
@@ -73,6 +73,19 @@ Ngày: 2026-10-17. Trạng thái: **owner trả lời §6 (2026-10-17); chờ du
 2. **6 chain: P4 thay thế.** Flag ON bỏ `applyVol10Scoring` cho activity có heading; flag OFF giữ nguyên 6 chain. Activity không heading (`grave_repair`, `door_opening`, `waterworks`) giữ baseline.
 3. **Nhiều heading: chặt nhất thắng** (product policy `p4_multi_heading_strictest`, không phải luật sách). Thứ tự đề xuất: `only_ji` > `both_present` > `neither_recorded` > `only_yi`; một heading `undetermined` / `not_recorded` → activity giữ baseline. Penalty −25 tối đa một lần mỗi activity.
 4. **Scope dòng: Trực + thần catalog nguồn 協紀 卷十/十一** của activity. Không đụng 28 Tú, override `preserve_bad`, nguồn khác. 忌 protected luôn giữ.
+
+### Đề xuất chốt bổ sung (2026-10-18)
+
+Mục 5, 6, 9 làm rõ quyết định đã có. Mục 7, 8, 10 là suy luận, chưa có trong spec: **chờ owner duyệt**.
+
+Số liệu Golden v2 (`p4-full-golden-v2/compose/dated.tsv`, 1095 ngày), ngày hai heading lệch trạng thái: `wedding` 142, `construction` 173, `livestock` 112. Trong đó 269 activity-ngày có một heading `not_recorded`; ~90% heading còn lại là `only_yi`; 17 ngày `wedding` heading còn lại là `only_ji`.
+
+5. **Thứ tự multi-heading:** chốt `only_ji` > `both_present` > `neither_recorded` > `only_yi`. Nguyên tắc của `p4_multi_heading_strictest`: ưu tiên giữ dòng âm, rồi mới gỡ dòng dương; không heading nào làm mất cảnh báo mà heading khác giữ. Thứ tự cố định, không phải "điểm thấp nhất" (`both_present` và `neither_recorded` không so được bằng điểm).
+6. **Heading `not_recorded` / `undetermined`:** giữ luật hiện tại, một heading như vậy thì cả activity giữ baseline (gồm 6 chain, không nối 21 thần). Báo cáo roadmap 9 liệt kê 269 activity-ngày này, tách riêng 17 ngày `wedding` mất penalty `only_ji`.
+7. **[Chờ owner duyệt] "Không có dòng âm" cho −25 ở `only_ji`:** đếm dòng âm trong scope (Trực + thần catalog 卷十/十一), sau resolution, trước cap. Dòng âm ngoài scope (28 Tú, `preserve_bad`, nguồn khác) không chặn penalty.
+8. **[Chờ owner duyệt] Dedup penalty:** −25 từ `only_ji` và từ 諸事皆忌 dùng chung một suất, tối đa một lần mỗi activity mỗi ngày. Penalty tiêu cap âm −30 như dòng âm khác.
+9. **忌 protected:** luật chung cho mọi hàng FR-02, dòng protected không bao giờ thành informational.
+10. **[Chờ owner duyệt] 21 thần dormant khi flag ON:** áp resolution như thần catalog khác, theo `activityIds` và tier. Activity giữ baseline (không heading hoặc dính mục 6) không nối thần dormant.
 
 Đã có căn cứ, không hỏi lại: resolution trước cap; −25 product policy không hard warning; `undetermined` giữ baseline; không sinh điểm dương khi chỉ "không kỵ"; giữ `event_fit`.
 
