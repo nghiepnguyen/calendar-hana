@@ -31,7 +31,13 @@ Lớp lệch engine của v2 (theo nguyên nhân):
 - ENGINE_BUG phân tầng A04b (6 dòng 栽種);
 - CONTEXT_DATE_OPERAND_POLICY (E5).
 
-Không còn SPEC_BUG nào mở. Số liệu chi tiết ở [attribution.json](sources/p4-vol10/p4-full-golden-v2-review/engine/attribution.json).
+Không còn SPEC_BUG nào mở.
+
+**Gate local (2026-10-17, HEAD `acd40f9`):** `npm run ci:local` EXIT 0.
+- unit 211 file / 8.056 test; emulator 29; Playwright desktop 110 + dev 10;
+- `ci:p4` qua toàn bộ: P4-B, P4-C (shard 1/1), P5 12/12, puzhu:06 16/16, runner Golden v2 (lượt đối chứng sạch, report verified).
+
+**Runtime:** so với `origin/main`, nhánh chỉ thêm 2 test, 2 index Golden JSON (chỉ test import) và một dòng script `ci:p4`; không chạm `src/` hay module runtime. Bundle vì vậy bất biến, không cần so `builtAt`. Số liệu chi tiết ở [attribution.json](sources/p4-vol10/p4-full-golden-v2-review/engine/attribution.json).
 
 ---
 
