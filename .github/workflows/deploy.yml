@@ -1,0 +1,71 @@
+name: Deploy
+
+# Checks run locally in the pre-push hook (npm run ci:local); this only deploys main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      HAS_CREDENTIALS: ${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}
+    steps:
+      - name: Check credentials
+        if: env.HAS_CREDENTIALS != 'true'
+        run: echo "::warning::Chưa có secret FIREBASE_SERVICE_ACCOUNT, bỏ qua deploy."
+      - uses: actions/checkout@v4
+        if: env.HAS_CREDENTIALS == 'true'
+      - uses: actions/setup-node@v4
+        if: env.HAS_CREDENTIALS == 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            functions/package-lock.json
+      - name: Install dependencies
+        if: env.HAS_CREDENTIALS == 'true'
+        run: |
+          npm install --global npm@11 firebase-tools
+          npm ci
+          npm ci --prefix functions
+      - name: Build web app
+        if: env.HAS_CREDENTIALS == 'true'
+        run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ vars.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_VAPID_KEY: ${{ vars.VITE_FIREBASE_VAPID_KEY }}
+      - name: Write functions/.env
+        if: env.HAS_CREDENTIALS == 'true'
+        run: |
+          {
+            echo "EMAIL_FROM=\"${EMAIL_FROM}\""
+            echo "APP_URL=\"${APP_URL}\""
+          } > functions/.env
+        env:
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          APP_URL: ${{ vars.APP_URL }}
+      - uses: google-github-actions/auth@v2
+        if: env.HAS_CREDENTIALS == 'true'
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+      - name: Deploy
+        if: env.HAS_CREDENTIALS == 'true'
+        run: firebase deploy --only firestore,hosting,functions --project calendar-hana --non-interactive --force

@@ -152,10 +152,9 @@ Trước lần deploy functions đầu tiên:
 
 ### Tự động qua GitHub Actions
 
-Workflow [.github/workflows/ci.yml](.github/workflows/ci.yml):
+Kiểm tra chạy ở máy: `npm run ci:local` (lint, typecheck, unit, Emulator, mutation gate, e2e Chrome desktop; mutation P4/P5 chỉ khi diff so với `origin/main` chạm `shared/lunar/p4*` hoặc `scripts/audit-p4-*`). Hook `.githooks/pre-push` (bật bởi `npm install` qua script `prepare`) chạy lệnh này trước mỗi `git push`, lỗi thì chặn push; bỏ qua bằng `git push --no-verify`.
 
-- Mỗi lần push hoặc mở PR: typecheck, lint, unit test, test Emulator, e2e (Chrome desktop và Pixel 7).
-- Push vào `main` và test qua hết: build rồi `firebase deploy --only firestore,hosting,functions`.
+Workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) không chạy test: push vào `main` là build rồi `firebase deploy --only firestore,hosting,functions`.
 
 Cấu hình trên GitHub (Settings > Secrets and variables > Actions):
 
@@ -165,7 +164,7 @@ Cấu hình trên GitHub (Settings > Secrets and variables > Actions):
 | Variables | `EMAIL_FROM`, `APP_URL` | Giống `functions/.env` |
 | Secret | `FIREBASE_SERVICE_ACCOUNT` | Nội dung file JSON key của service account dùng để deploy |
 
-Chưa có `FIREBASE_SERVICE_ACCOUNT` thì bước deploy được bỏ qua, chỉ chạy test. `RESEND_API_KEY` vẫn nằm trong Secret Manager, không cần đưa lên GitHub.
+Chưa có `FIREBASE_SERVICE_ACCOUNT` thì bước deploy được bỏ qua. `RESEND_API_KEY` vẫn nằm trong Secret Manager, không cần đưa lên GitHub.
 
 Tạo service account ở Google Cloud Console > IAM & Admin > Service Accounts, cấp các role:
 
