@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD](prd-p4-full-golden.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD chốt 2026-10-17; next 1.1.
+Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); next 2.1 / 3.1.
 
 ## Relevant Files
 
@@ -19,10 +19,10 @@ Trạng thái: PRD chốt 2026-10-17; next 1.1.
 
 ## Tasks
 
-- [ ] 1.0 Inventory input
-  - [ ] 1.1 Liệt kê mọi file mỗi derive.py P4 đọc, phân loại theo FR-01
-  - [ ] 1.2 Với mỗi `ENGINE_OUTPUT`: tìm Golden đóng băng thay thế hoặc ghi "suy lại"
-  - [ ] 1.3 Đo gap: phần nào của 720×29 / 1095×29 chưa có expected độc lập
+- [x] 1.0 Inventory input
+  - [x] 1.1 Liệt kê mọi file mỗi derive.py P4 đọc, phân loại theo FR-01
+  - [x] 1.2 Với mỗi `ENGINE_OUTPUT`: tìm Golden đóng băng thay thế hoặc ghi "suy lại"
+  - [x] 1.3 Đo gap: phần nào của 720×29 / 1095×29 chưa có expected độc lập
 - [ ] 2.0 Bộ câu hỏi hold (song song, không chặn)
   - [ ] 2.1 Trích nguồn + phương án cho 月煞 卯/酉 相抵 + 又為月虛, 未月戊午 閉日/天吏, 德願
 - [ ] 3.0 Derive độc lập
