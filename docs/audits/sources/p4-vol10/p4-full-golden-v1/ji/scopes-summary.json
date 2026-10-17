@@ -1,0 +1,55 @@
+{
+ "stage": "3.2b scopes",
+ "ownerDecisions": {
+  "H2-A": "天願 ∈ 德願; 德願 rule removes 天願 from the named group (2026-10-17)"
+ },
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/operands.py": "7e772e08a66e43643b6cc280ab2afa0372f2b61906ec24d0326b1012222a71a3",
+  "shared/almanac-data/xiejibianfangshu-vol10-yiji.json": "925057d78883eee09b915222f561768475f121466230377182894a17e38e1f33",
+  "shared/almanac-data/xiejibianfangshu-yiji.json": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f",
+  "shared/almanac-data/p4-vol10-grade-resolution-v2.json": "c441331ae3424c34fa4cdb1989355d57a78e42fbdde35f72df9283a663141e13",
+  "shared/almanac-data/p4-vol10-heading-annotation.json": "41784e61ab49e8ff0c43bc69e280a4aed0ce7c684d407480165ba291719650f0",
+  "shared/almanac-data/p4-vol10-youwei-scopes.json": "49015480e1156d03d7ba3a002a4b9332d100fceb3034b22e4cf669920f725606",
+  "shared/almanac-data/p4-vol10-deferral-coverage-v3.json": "f49ad86ee5a6724c6e6568be3a0d6ce1b499d324f3975f6f20a2649bacbd5444",
+  "shared/almanac-data/golden-p4-grade-resolution.json": "f48e1679b90460c55cb283c255b2413642b21a5c61c327cf17811e1f05c62e02",
+  "shared/almanac-data/golden-p4-heading-annotation-v2.json": "3adfe4ad3e3365abca47b5953e834877462d7c800be48924419f481c9eb46aa0",
+  "shared/almanac-data/golden-p4-youwei-scopes-v2.json": "967b918f9a5db709cfa94f9220c4043a2ff05ae8f8c8ea09c409049dab33b202"
+ },
+ "subjectScopes": 780,
+ "effects": {
+  "as_usual": 369,
+  "avoid_all": 160,
+  "cancel_both": 104,
+  "only_avoid": 131,
+  "still_avoid": 16
+ },
+ "headingStates": {
+  "lifted": 5196,
+  "neither_recorded": 5261,
+  "not_avoided": 5264,
+  "only_ji": 30041,
+  "stop": 741,
+  "undetermined": 23
+ },
+ "undeterminedScopes": [],
+ "youweiScopes": 420,
+ "goldenExceptions": [
+  {
+   "golden": "golden-p4-heading-annotation-v2.json",
+   "case": "未戊午",
+   "scope": "閉日",
+   "frozen": "undetermined",
+   "now": "as_usual",
+   "reason": "OWNER_DECISION H2-A"
+  },
+  {
+   "golden": "golden-p4-heading-annotation-v2.json",
+   "case": "未戊午",
+   "scope": "天吏",
+   "frozen": "undetermined",
+   "now": "as_usual",
+   "reason": "OWNER_DECISION H2-A"
+  }
+ ],
+ "uncoveredOpenRows": 23
+}

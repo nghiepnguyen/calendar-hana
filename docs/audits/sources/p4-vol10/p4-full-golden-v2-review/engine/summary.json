@@ -1,0 +1,40 @@
+{
+ "version": "p4-full-golden-engine-compare-v1",
+ "freezeCommit": "c574e57",
+ "engineInputs": {
+  "docs/audits/p4-vol10-yi-operands-2025-2027.tsv": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37",
+  "docs/audits/p4b-puzhu06-2025-2027.tsv": "26cae3d8452494bc3bc4cd13e9c22b710d5816630597bf2f3e07a3723aff09b3",
+  "docs/audits/p5-warehouse-2025-2027.tsv": "97b7cce16b30a3d747dbf235091009e7b28b3ade3431464ddbd5aca3a1676a32",
+  "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context-p4c.tsv": "0b4eac64a4ae53c552f2bdb78ac90f115c60d930ef70cc3a6e1c0a15c52cedd2",
+  "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/context.tsv": "b84f112c142712f4a2fd442718ec986c73f85dff804c90521efb959bc8de70a0"
+ },
+ "engineInputsVerifiedBy": [
+  "p4YiSweep.test.ts",
+  "p4Puzhu06Sweep.test.ts",
+  "p4WarehouseSweep.test.ts",
+  "p4Puzhu06Baseline.test.ts"
+ ],
+ "summary": {
+  "dated": {
+   "equal": 31507,
+   "ENGINE_BUG E1": 56,
+   "SPEC_BUG F1": 73,
+   "H1-B/F5 (incl. E3)": 82,
+   "ENGINE_BUG A04b layering": 6,
+   "OWNER DE_AS_JIAN_ALL (i)": 2,
+   "H2-A": 29
+  },
+  "datedUnclassified": 0,
+  "context": {
+   "equal": 14786,
+   "notCompared (E5 / no engine context for 修倉庫)": 4664,
+   "CONTEXT_DATE_OPERAND_POLICY (E5)": 1270,
+   "SPEC_BUG F1": 45,
+   "ENGINE_BUG E1": 39,
+   "H1-B/F5 (incl. E3)": 50,
+   "OWNER DE_AS_JIAN_ALL (i)": 4,
+   "H2-A": 22
+  },
+  "contextUnclassified": 0
+ }
+}

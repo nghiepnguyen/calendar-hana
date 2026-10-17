@@ -1,0 +1,21 @@
+{
+ "stage": "3.2a operands",
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/context.tsv": "2db5e93328ec7950b3c56f0a6d12b727cf82c2ed1aca7d9acef3ab04e7f2aee8",
+  "shared/almanac-data/p4-vol10-context-bridge-v2.json": "a774096ed16b1205a4dc850e42e0e15eca006095de233b2342a6b68c1b4a4a21",
+  "shared/almanac-data/p4-vol10-named-clauses.json": "236c8e9df5202cc2934a14f63b5ba5c29871de744132cc7d77115ab7b9bdb1e4",
+  "shared/almanac-data/golden-p4-context-bridge-v2.json": "7ec441705c7f194f45530460997452f311e849d68809d126c6fa00b7b44bead5",
+  "shared/almanac-data/golden-p4-named-clauses.json": "d7e817e2d51d5834d08d08dfb12dfc8f02d4779ed4389b7ed954af3f086ffc11",
+  "docs/audits/sources/p4-vol10/vol05.raw.txt": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6",
+  "docs/audits/sources/p4-vol10/vol06.raw.txt": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+ },
+ "contexts": 720,
+ "namedDeferralEdges": 195,
+ "subjectsWithoutEdge": 585,
+ "pillarRuleContexts": 59,
+ "deAsJianContexts": 29,
+ "checks": {
+  "goldenContextBridgeV2": 13,
+  "goldenNamedClausePillars": 26
+ }
+}
