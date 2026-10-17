@@ -1,0 +1,59 @@
+{
+ "version": "p4-full-golden-attribution-v1",
+ "method": "For every rule the Golden applies and the engine does not, the revert patch is applied in a temporary",
+ "reach": {
+  "H2-A": {
+   "dated": 13,
+   "context": 10
+  },
+  "H1-B/F5": {
+   "dated": 95,
+   "context": 58
+  },
+  "E3": {
+   "dated": 57,
+   "context": 33
+  },
+  "F1": {
+   "dated": 73,
+   "context": 45
+  },
+  "E1": {
+   "dated": 59,
+   "context": 38
+  },
+  "DE_AS_JIAN_ALL": {
+   "dated": 2,
+   "context": 12
+  }
+ },
+ "diffs": {
+  "dated": {
+   "ENGINE_BUG A04b layering (相抵 + unprotected 地火 judged before later protected 忌)": 6,
+   "ENGINE_BUG E1 (engine drops 「亦不註宜」)": 56,
+   "OWNER DE_AS_JIAN_ALL (i) 德作建論 for every 德 use": 2,
+   "OWNER H1-B/F5": 22,
+   "OWNER H1-B/F5 + ENGINE_BUG E1 (engine drops 「亦不註宜」)": 3,
+   "OWNER H1-B/F5 + OWNER H1-B/F5 (E3)": 57,
+   "OWNER H2-A": 13,
+   "OWNER H2-A (engine whole-day undetermined)": 16,
+   "SPEC_BUG F1 (P4 authority leaves 巳日 出行 unmapped; owner mapped it)": 73
+  },
+  "context": {
+   "CONTEXT_DATE_OPERAND_POLICY (E5)": 1271,
+   "CONTEXT_DATE_OPERAND_POLICY (E5) + other rules": 1,
+   "ENGINE_BUG E1 (engine drops 「亦不註宜」)": 37,
+   "OWNER DE_AS_JIAN_ALL (i) 德作建論 for every 德 use": 4,
+   "OWNER H1-B/F5": 16,
+   "OWNER H1-B/F5 + ENGINE_BUG E1 (engine drops 「亦不註宜」)": 1,
+   "OWNER H1-B/F5 + OWNER H1-B/F5 (E3)": 33,
+   "OWNER H2-A": 10,
+   "OWNER H2-A (engine whole-day undetermined)": 12,
+   "SPEC_BUG F1 (P4 authority leaves 巳日 出行 unmapped; owner mapped it)": 45
+  }
+ },
+ "residual": {
+  "dated": [],
+  "context": []
+ }
+}

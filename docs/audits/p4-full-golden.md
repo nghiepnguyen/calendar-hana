@@ -1,8 +1,41 @@
-# Full Golden P4 v1 — báo cáo (roadmap 7, task 5.0–7.0)
+# Full Golden P4 — báo cáo (roadmap 7, task 5.0–7.0)
 
 2026-10-17, nhánh `claude/p4-full-golden`. Audit-only, không đổi runtime/điểm/manifest/flag.
 
 Golden độc lập suy bằng Python, **đóng băng ở `b70913f`** trước mọi phép so với engine; commit-proof ở `df9210d`. Công cụ review sau đóng băng nằm ở [p4-full-golden-v1-review/](sources/p4-vol10/p4-full-golden-v1-review/), ngoài thư mục đã khóa. Xem thêm: [README Golden](sources/p4-vol10/p4-full-golden-v1/README.md), [PRD](../../tasks/prd-p4-full-golden.md).
+
+## Golden v2 (hiện hành) — quyết định owner (i)
+
+**v2 đóng băng ở `c574e57`**, proof `81024fb`, xem [README v2](sources/p4-vol10/p4-full-golden-v2/README.md). v1 giữ nguyên làm lịch sử; các mục bên dưới mô tả v1.
+
+v2 = v1 cộng hai điểm:
+- 德作建論 áp cho **mọi** chỗ dùng 德: 宜 evidence, trigger puzhu:06, quy tắc D của 修倉庫. Quy tắc D được cài lại và assert tái tạo đúng Golden P5 trên mọi dòng trước khi áp (i).
+- Scope `undetermined` cả phạm vi làm các heading của nó thành `undetermined` (spec §4).
+
+Khác v1: miền ngày **0** dòng đổi trạng thái (chỉ 6 dòng đổi 宜 evidence); context 11 dòng ở 4 context.
+
+Review v2 ([p4-full-golden-v2-review/](sources/p4-vol10/p4-full-golden-v2-review/)):
+
+| Hạng mục | Kết quả |
+|---|---|
+| Oracle chéo P5 (28.800 ô), P4-C `dayOverride` (720) | 0 lệch |
+| So engine, miền ngày | **31.507 / 31.755 trùng**; 248 lệch, chưa phân loại 0 |
+| So engine, context | 14.786 trùng; chưa phân loại 0 |
+| Chứng minh nguyên nhân (đảo từng luật) | Phần dư **0** cả hai miền. Quyết định (i): 2 dòng ngày + 4 dòng context lệch engine; tầm ảnh hưởng 2 dòng ngày / 12 dòng context |
+| Mutation | Lượt đối chứng sạch; **19/19 bị self-check bắt** (thêm M19: hoàn (i)). `owner_checks.py` kiểm thêm (i): không có thần 德合 nào làm 宜 trên ngày 德作建論. Runner trong `ci:p4` trỏ tới v2 |
+
+Lớp lệch engine của v2 (theo nguyên nhân):
+- OWNER H1-B/F5 (gồm E3), H2-A, DE_AS_JIAN_ALL (i);
+- ENGINE_BUG E1;
+- SPEC_BUG F1;
+- ENGINE_BUG phân tầng A04b (6 dòng 栽種);
+- CONTEXT_DATE_OPERAND_POLICY (E5).
+
+Không còn SPEC_BUG nào mở. Số liệu chi tiết ở [attribution.json](sources/p4-vol10/p4-full-golden-v2-review/engine/attribution.json).
+
+---
+
+# Golden v1 (lịch sử)
 
 ## Tóm tắt
 
