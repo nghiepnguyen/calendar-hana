@@ -12,7 +12,7 @@
 | Golden-first | Test đỏ commit `aef0a1e` trước code. Stub là phép ghép engine hiện tại, lệch Golden đúng 248 dòng đã chứng minh nguyên nhân (harness test) |
 | Mutation | Lượt đối chứng sạch; **11/11 bị bắt**; 1 mutation tương đương trên dữ liệu thật, ghi rõ |
 | `ci:local` | EXIT 0 trong khoảng 166 giây; tập con của test mới chạy khoảng 10 giây |
-| `ci:p4` (chạy tay) | Thêm phép so toàn miền (`P4_OWNER_RULES_FULL=1`, khoảng 5,5 phút) và runner mutation (khoảng 3 phút) |
+| `ci:p4` (chạy tay) | Thêm phép so toàn miền (`P4_OWNER_RULES_FULL=1`, khoảng 5,5 phút) và runner mutation (khoảng 3 phút). Đã chạy đủ chuỗi tại `dedd8f4`: **EXIT 0 trong khoảng 39 phút** (P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2 có lượt đối chứng sạch, owner-rules toàn miền 3/3, mutation 11/11) |
 
 ## Thiết kế
 
@@ -39,6 +39,12 @@ Module **ghép từ các lớp fact của engine**, không bọc output ngày đ
 **Tương đương trên dữ liệu thật (1):** (i) ở trigger puzhu:06.
 - Đã đảo luật rồi chạy toàn miền Golden v2: không dòng nào đổi.
 - Mới kiểm **hệ quả**, chưa kiểm riêng **nguyên nhân** (tức vì sao không ngày nào chạm tới luật này).
+
+## Lệch so với PRD
+
+- **FR-03 / task 3.1:** không thêm hook vào engine. Ba file cần hook nằm trong lock đóng băng của P4-C, nên H2-A và (i) cho remaining-ji được cài trong layer. Hành vi mặc định của engine vì thế không bị đụng tới.
+- **FR-04:** không có sweep TSV riêng. Thay vào đó là phép so toàn miền với Golden v2 (0 lệch, cả trace).
+- **FR-05:** 1 mutation tương đương trên dữ liệu thật ((i) ở trigger puzhu:06): đã kiểm hệ quả, chưa kiểm nguyên nhân.
 
 ## Giới hạn
 

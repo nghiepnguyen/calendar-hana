@@ -1,7 +1,7 @@
 # Tasks — Roadmap 7b: engine cài luật owner
 
 Nguồn yêu cầu: [PRD](prd-p4-owner-rules-engine.md). Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = phép ghép engine (miền ngày 248 lệch, đúng tập attribution; context 227 trên mẫu 1/7); 3.0 xong: layer khớp Golden v2 toàn miền (ngày 31.755/31.755, context 20.880/20.880 gồm E5) mà không sửa file engine đã khóa (H2-A, (i) remaining-ji cài trong layer; hook trong file khóa bị hoàn tác vì phá lock P4-C); 5.0 xong: mutation 11/11 (+1 tương đương trên dữ liệu thật), nối `ci:p4`; 4.0: phép so toàn miền thay sweep TSV; next 6.0 ([báo cáo](../docs/audits/p4-owner-rules-engine.md)).
+Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = phép ghép engine (miền ngày 248 lệch, đúng tập attribution; context 227 trên mẫu 1/7); 3.0 xong: layer khớp Golden v2 toàn miền (ngày 31.755/31.755, context 20.880/20.880 gồm E5) mà không sửa file engine đã khóa (H2-A, (i) remaining-ji cài trong layer; hook trong file khóa bị hoàn tác vì phá lock P4-C); 5.0 xong: mutation 11/11 (+1 tương đương trên dữ liệu thật), nối `ci:p4`; 4.0: phép so toàn miền thay sweep TSV; 6.0: báo cáo xong, `ci:local` EXIT 0, `ci:p4` tay EXIT 0 (~39 phút, `dedd8f4`); còn PR, chờ owner ([báo cáo](../docs/audits/p4-owner-rules-engine.md)).
 
 ## Relevant Files
 
