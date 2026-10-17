@@ -75,7 +75,7 @@ Rủi ro: cả H1-A và H1-B đều là **cách đọc**, không có câu nguồ
    - offset 22630: 「凡嵗薄逐陣日所宜事照月厭所忌刪所忌仍從本日」.
 6. Nghĩa của 「德願」 trong cùng quyển:
    - 月煞 tháng 卯/酉 (offset 12204) viết 「與**月德天願**併…不與**德願**併」;
-   - 月刑 tháng 巳 (offset ~12939) viết 「與月德天德合**天願**併…不與**德願**併」.
+   - 月刑 tháng 巳 (offset 12899) viết 「與月德天德合**天願**併…不與**德願**併」.
 
    Cả hai chỗ, 「願」 trong 德願 là 天願.
 
