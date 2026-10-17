@@ -1,0 +1,28 @@
+{
+ "stage": "3.2d dated 忌 facts",
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context_ji.py": "e58a1db60695681f023ca9ec588a5c23e2068335091927572d437cfa9491f145",
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/dated.tsv": "b740570823a65c696c98379a6300d6d9374f1692ee4bc2871cb5a4b5e305b547",
+  "docs/audits/sources/p4-vol10/usno-phase/normalized-response.json": "66118ad3e7e40098fd75d39788583e1677f4992638bf7600cb1b75813e1d7504",
+  "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+  "shared/lunar/audit-fixtures/calendar-golden-v2.1.json": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300",
+  "shared/almanac-data/p4-lunar-day-taboo-v1.json": "90a5be2252982d7e032d810e635332a91189a7e33de5cf423f9137db008d561a",
+  "shared/almanac-data/p4-lunar-phase-authority-v1.json": "463fb300a25c2f9c130c8089fe35347cae40c3630cea126b50c4932b787139fa",
+  "shared/almanac-data/p4-soil-owner-convention-v1.json": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b",
+  "shared/almanac-data/golden-p4-lunar-day-v1.json": "57d23eb89793bb800191158feeb9106ed2470a0f74b5f60c3f30dd50cc9e6f7b",
+  "shared/almanac-data/golden-p4-lunar-phase-v1.json": "f2810b117996bb45784b0566abd7213185b3237d4a967098743674be03aa4fea",
+  "shared/almanac-data/golden-p4-soil-owner-convention-v1.json": "b31d7800de1c2548427fd210ad7b8e87d3e715f5640337a66849f240bab28ff8"
+ },
+ "rows": 31755,
+ "dates": 1095,
+ "phaseDays": 148,
+ "soilDays": 216,
+ "lunarDay12or15": 74,
+ "checks": {
+  "calendarReferenceLunarDays": 58,
+  "goldenPhase": 13,
+  "goldenSoil": 48,
+  "goldenLunarDay": 9,
+  "hko四立": "all 2025–2027 四立 civil dates equal"
+ }
+}

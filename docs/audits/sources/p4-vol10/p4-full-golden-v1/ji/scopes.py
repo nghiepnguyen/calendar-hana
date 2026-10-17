@@ -30,7 +30,7 @@ G_ANNOT = Path('shared/almanac-data/golden-p4-heading-annotation-v2.json')
 G_YOUWEI = Path('shared/almanac-data/golden-p4-youwei-scopes-v2.json')
 
 VARIANTS = str.maketrans({'劵': '券', '壞': '壊', '宫': '宮', '㑹': '會', '產': '産', '啟': '啓', '葢': '蓋',
-                          '醖': '醞', '册': '冊', '徳': '德', '夘': '卯', '廻': '迴'})
+                          '醖': '醞', '册': '冊', '徳': '德', '夘': '卯', '廻': '迴', '逺': '遠'})
 # 卷十一 用事 headings as 卷十 lists combine them (御用六十七事 merged into the compound forms the lists use).
 VOCAB = ('祭祀 祈福 求嗣 上冊進表章 頒詔 覃恩肆赦 施恩封拜 詔命公卿 招賢 舉正直 施恩惠恤孤惸 宣政事 布政事 '
          '行惠愛雪寃枉緩刑獄 慶賜賞賀 宴會 入學 冠帶 行幸遣使 安撫邊境 選將訓兵 出師 上官赴任 臨政親民 結婚姻 '
