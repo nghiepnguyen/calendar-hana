@@ -9,7 +9,12 @@ import xiejiReview from '../almanac-data/xieji-activity-mapping-review.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
-import type { P4HeadingInput } from './p4ScoreAdapter'
+import {
+  applyP4Balancing,
+  P4_DORMANT_GODS,
+  p4ActivityState,
+  type P4HeadingInput,
+} from './p4ScoreAdapter'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring } from './xiejiVol10Scoring'
 
@@ -117,10 +122,14 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         activitiesData.items.filter((item) => item.enabled).map((item) => item.id),
       )
     : []
+  const balancing = input.xiejiVol10BalancingEnabled ?? manifest.policies.xiejiVol10BalancingEnabled
   return activitiesData.items
     .filter((item) => item.enabled)
     .map((activity) => {
       const contributions: Evidence[] = []
+      // Roadmap 8: a baseline activity under balancing ON stays the flag-OFF path without dormant gods.
+      const p4 = balancing ? p4ActivityState(activity.id, input.p4Headings ?? {}) : undefined
+      const p4On = p4 !== undefined && p4.state !== 'baseline'
       const rule = officer?.activityRules.find((rule) => rule.activityId === activity.id)
       const make = (
         source: Evidence['source'],
@@ -172,7 +181,10 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
       ] as const) {
         let used = 0
         for (const god of dataset.items.filter(
-          (god) => new Set(present ?? []).has(god.id) && god.activityIds.includes(activity.id),
+          (god) =>
+            new Set(present ?? []).has(god.id) &&
+            god.activityIds.includes(activity.id) &&
+            !(balancing && !p4On && P4_DORMANT_GODS.has(god.id)),
         )) {
           const weights: Record<string, number> = dataset.weights
           const presence = input.godPresence?.[god.id]
@@ -189,7 +201,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             row.status = 'informational'
             row.scoreDelta = 0
             row.sourcePhrase = `${god.label} trùng với Trực ${officer!.label}, không tính điểm lần nữa`
-          } else {
+          } else if (!p4On) {
             const available = Math.max(0, Math.abs(dataset.capPerActivity) - used)
             row.scoreDelta = Math.sign(row.rawDelta) * Math.min(Math.abs(row.rawDelta), available)
             used += Math.abs(row.scoreDelta)
@@ -223,7 +235,16 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             scoreDelta: 0,
           })),
       )
-      if (vol10Enabled)
+      if (p4On)
+        contributions.splice(
+          0,
+          contributions.length,
+          ...applyP4Balancing(contributions, p4, input.p4Headings ?? {}, {
+            activityId: activity.id,
+            scope: getActivityScope(activity.id) ?? activity.id,
+          }),
+        )
+      else if (vol10Enabled)
         contributions.splice(
           0,
           contributions.length,
