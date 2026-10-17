@@ -1,0 +1,74 @@
+{
+ "schemaVersion": "p4-full-golden-index-v1",
+ "version": "golden-p4-full-v1",
+ "date": "2026-10-17",
+ "status": "HASH_LOCKED_PRE_ENGINE_COMPARISON",
+ "scope": "AUDIT_ONLY",
+ "scoringReady": false,
+ "roadmapItem": 7,
+ "layer": "resolution (heading state, presence, warehouse); score adapter/cap/event are roadmap 8",
+ "ownerDecisions": [
+  "H1-B",
+  "H2-A",
+  "F1",
+  "F4",
+  "F5",
+  "E1",
+  "E3",
+  "E5"
+ ],
+ "reviewer": "Claude, single agent; owner review pending (task 8.0)",
+ "lock": {
+  "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/lock.json"
+ },
+ "blocks": [
+  {
+   "kind": "dated1095",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/dated.tsv",
+   "count": 31755,
+   "sha256": "cf3225050675de9bf95cdff222cbd64c6deea072c5ff189e1fa5c3e5a7efd171"
+  },
+  {
+   "kind": "context720",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/context.tsv",
+   "count": 20880,
+   "sha256": "297820734a333aeb95ebcbbf486439d65a340c3b1d0e992ea0fc5d0c5e844ec2"
+  },
+  {
+   "kind": "presenceDated",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/dated.tsv",
+   "count": 1095,
+   "sha256": "b740570823a65c696c98379a6300d6d9374f1692ee4bc2871cb5a4b5e305b547"
+  },
+  {
+   "kind": "presenceContext",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/context.tsv",
+   "count": 720,
+   "sha256": "2db5e93328ec7950b3c56f0a6d12b727cf82c2ed1aca7d9acef3ab04e7f2aee8"
+  },
+  {
+   "kind": "presenceJie",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/jie.tsv",
+   "count": 108,
+   "sha256": "ca4097b40bbe0022030c11a9c6eadc3cc62faf954a0f6c8d69eaa8a90a37e621"
+  },
+  {
+   "kind": "presenceStructural",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/structural.tsv",
+   "count": 424,
+   "sha256": "2201030a15c9716752ea3340c3defc6ab00a33eab04cf648206697ec991579e5"
+  },
+  {
+   "kind": "h1bChanges",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/h1b-changes.tsv",
+   "count": 153,
+   "sha256": "a10f098d18f33692cdf62c1b342799459b064f497b234231d6c966f741b863f3"
+  },
+  {
+   "kind": "checks",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json",
+   "count": 1,
+   "sha256": "7b5e65859495028aae4af708cef31dc84440df9e48b82f15f1a6977e0076367f"
+  }
+ ]
+}
