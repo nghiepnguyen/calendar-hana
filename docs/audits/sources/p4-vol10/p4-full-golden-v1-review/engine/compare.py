@@ -8,6 +8,7 @@ p4YiSweep / p4Puzhu06Sweep / p4WarehouseSweep / p4Puzhu06Baseline tests (engine 
 - context: P4-C context baseline ← puzhu:06 v3 context (engine-equal, validation 0 mismatches); 修倉庫 has no
   engine context row and is not compared.
 Every difference must map to a registered class; anything else stops the run and is listed for review.
+Labels here are feature-based; attribute.py proves the cause of each class by reverting the rule.
 
     python3 -I docs/audits/sources/p4-vol10/p4-full-golden-v1-review/engine/compare.py [--write]
 """
@@ -83,9 +84,9 @@ def classify(domain, key, row, eng, facts, h1b, xiangdi_heads):
     if (domain, key, h) in h1b or row['propagated']:
         return 'H1-B/F5 (incl. E3)'
     if h == '行幸遣使' and row['pillar'][1] == '巳' and '百忌巳' in facts:
-        return 'F1'
+        return 'SPEC_BUG F1'
     if '|remaining|no_annotation|' in facts or 'no_annotation' in facts:
-        return 'E1'
+        return 'ENGINE_BUG E1'
     if (domain, key) == ('dated', '2025-10-08') and h == '修倉庫':
         return 'E2/E4'
     if domain == 'context' and eng['state'] == 'undetermined' and row['code'].startswith('invariant;'):
@@ -94,8 +95,8 @@ def classify(domain, key, row, eng, facts, h1b, xiangdi_heads):
     xd = any(f[3] in ('neither_recorded', 'no_annotation') for f in fl)
     unprot = any(f[3] in ('only_ji', 'kept') and f[1] != 'youwei_zhuanji' for f in fl)
     if xd and unprot and eng['state'] == 'undetermined':
-        # Engine A04b judges 相抵 + unprotected 忌 before later protected scopes exist: the H1-B pattern.
-        return 'H1-B/F5 (pattern; protected 忌 also present)'
+        # Engine A04b judges 相抵 + unprotected 忌 before later protected scopes exist (layering).
+        return 'ENGINE_BUG A04b layering'
     if key_has_de_as_jian.get((domain, key)) and any(f[1] == 'remaining' and f[3] == 'kept' and f[0] in ('復日', '重日') for f in fl):
         return 'SPEC_BUG: 德作建論 scope on remaining-ji conditions (Golden applies it, engine does not)'
     return None

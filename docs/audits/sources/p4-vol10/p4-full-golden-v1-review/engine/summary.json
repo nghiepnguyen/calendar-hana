@@ -17,10 +17,10 @@
  "summary": {
   "dated": {
    "equal": 31507,
-   "E1": 56,
-   "F1": 73,
+   "ENGINE_BUG E1": 56,
+   "SPEC_BUG F1": 73,
    "H1-B/F5 (incl. E3)": 82,
-   "H1-B/F5 (pattern; protected 忌 also present)": 6,
+   "ENGINE_BUG A04b layering": 6,
    "SPEC_BUG: 德作建論 scope on remaining-ji conditions (Golden applies it, engine does not)": 2,
    "H2-A": 29
   },
@@ -29,8 +29,8 @@
    "equal": 14794,
    "notCompared (E5 / no engine context for 修倉庫)": 4658,
    "CONTEXT_DATE_OPERAND_POLICY (E5)": 1270,
-   "F1": 45,
-   "E1": 39,
+   "SPEC_BUG F1": 45,
+   "ENGINE_BUG E1": 39,
    "H1-B/F5 (incl. E3)": 50,
    "SPEC_BUG: 德作建論 scope on remaining-ji conditions (Golden applies it, engine does not)": 2,
    "H2-A": 22
