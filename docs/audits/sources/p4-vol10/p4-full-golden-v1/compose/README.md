@@ -47,7 +47,12 @@ Mỗi dòng có một code quyết định, ghép từ các id đã sắp xếp 
   - dòng có 百忌 / 諸事皆忌 / 忌 theo ngày được bảo vệ luôn giữ `ji` (3.636 dòng theo ngày);
   - dòng được bảo vệ không bị puzhu:06 hay lan truyền gỡ;
   - mọi dòng có code.
-- **Thứ tự input:** xáo trộn mọi danh sách fact, dict scope và chuỗi fact theo ngày với 3 seed; output trùng từng byte. Kiểm mutation: cài phụ thuộc "fact đầu tiên" vào code thì bị bắt.
+- **Thứ tự input:** với 3 seed, xáo trộn mọi danh sách fact, dict scope, chuỗi fact theo ngày, và cả danh sách `clauses` (卷十) / `conditions` (remaining-ji) của authority. Output trùng từng byte. Hai mutation đều bị bắt: cài "fact đầu tiên" vào code, và cho `clause_for` lấy match theo vị trí.
+- **Precedence theo luật, không theo vị trí:**
+  - clause riêng tháng thắng clause 「*」; assert mỗi loại khớp tối đa một.
+  - remaining-ji khớp nhiều điều kiện thì chỉ được phép khi chúng tương đương (cùng effect / keep / đích), ví dụ 四耗 辰月 có cả 天德 lẫn 三合 (1 ca).
+  - Riêng 九空: defer thắng lift (6 ca). Căn cứ: lift của 九空 chỉ áp 寅申 滿日 / 子午卯酉 開日 (卷十 offset 18309, `liftLists` puzhu:06 v3), không trùng các tháng defer.
+- **Nhiều entry trên một context:** 0 đối tượng 210 context, 1 đối tượng 290, từ 2 trở lên 220. Có 3 context mà các đối tượng cùng có mặt khác effect.
 - **puzhu:06 SPEC_GAP = 0:** derive assert, đúng yêu cầu "stop, never guess" của authority.
 - **Ma trận phủ §7.1** (lớp resolution; adapter/cap/event thuộc roadmap 8):
   - ô 等第 × nhánh 德: mọi ô có clause 德 đều có witness ở cả hai nhánh. 上 và 下下 không chia nhánh (clause vô điều kiện). Phân bố: 次 58/182, 上次 18/42, 中 41/99, 下 38/107, 上 55, 下下 20;

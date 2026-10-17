@@ -100,15 +100,36 @@ def shuffled(seed):
     return (orig_cj, orig_dj, orig_sc), (cj_build, dj_build, sc_build)
 
 
+SHUFFLED_AUTHORITY_KEYS = ('clauses', 'conditions')  # entry clauses (卷十) and remaining-ji conditions
+
+
 def check_order():
     committed = {p: p.read_text(encoding='utf-8') for p in (HERE / 'dated.tsv', HERE / 'context.tsv', HERE / 'h1b-changes.tsv')}
     for seed in (1, 2, 3):
         orig, patched = shuffled(seed)
+        rng = random.Random(seed + 100)
+        real_loads = json.loads
+
+        def loads(s, *a, **k):  # authority lists the derive scans: order must not matter
+            obj = real_loads(s, *a, **k)
+            stack = [obj]
+            while stack:
+                x = stack.pop()
+                if isinstance(x, dict):
+                    for key, v in x.items():
+                        if key in SHUFFLED_AUTHORITY_KEYS and isinstance(v, list):
+                            rng.shuffle(v)
+                        stack.append(v)
+                elif isinstance(x, list):
+                    stack.extend(x)
+            return obj
         cj.build, dj.build, sc.build = patched
+        json.loads = loads
         try:
             fs = cp.files()
         finally:
             cj.build, dj.build, sc.build = orig
+            json.loads = real_loads
         for p, text in committed.items():
             assert fs[p] == text, f'order dependence in {p.name} (seed {seed})'
     return 3
@@ -170,6 +191,18 @@ def coverage(dated, ctx, H):
     cov['propagationDated'] = {'lifted': dict(Counter(r['propagated'] + '>' + r['heading'] for r in dated if r['propagated'])),
                                'blocked': dict(Counter(r['blocked'] + '>' + r['heading'] for r in dated if r['blocked']))}
     cov['ownerRulesDated'] = dict(Counter(x for r in dated for x in r['reasons'].split() if x in ('H1-B', 'puzhu:28', 'all_taboo')))
+    # Several entries on one context (spec 7.1 「nhiều entry khớp / không entry」).
+    scopes = read(ROOT / 'ji/scopes.tsv')
+    per_ctx = {}
+    for r in scopes:
+        if r['kind'] == 'subject':
+            per_ctx.setdefault(r['id'], {})[r['scope']] = r['effect']
+    n_subj = Counter(min(len(per_ctx.get(f'{m}-{p}', {})), 2) for m in op.MONTHS for p in op.PILLARS)
+    cov['subjectsPerContext'] = {'0': n_subj[0], '1': n_subj[1], '2+': n_subj[2]}
+    cov['multiSubjectMixedEffects'] = sum(1 for v in per_ctx.values() if len(v) > 1 and len(set(v.values())) > 1)
+    cj.MATCHES_SEEN.clear()
+    cj.build()
+    cov['remainingConditionMatches'] = {f'{g}:{n}': c for (g, n), c in sorted(cj.MATCHES_SEEN.items()) if n > 1}
     cov['outOfScope'] = ['score adapter, cap reallocation, event very_high, penalty −25: roadmap 8 (owner 2026-10-17)']
     return cov
 
@@ -189,7 +222,8 @@ def files():
     out = {'stage': '3.4 checks', 'inputs': {str(p): sha256(p) for p in [HERE / 'compose.py', HERE / 'dated.tsv',
                                                                           HERE / 'context.tsv']},
            'cartesian': {'dated': '1,095 × 29 exact, unique', 'context': '720 valid can-chi × 29 exact, unique'},
-           'invariants': inv, 'orderInvariance': f'{seeds} shuffled seeds byte-identical', 'puzhu06SpecGap': 0,
+           'invariants': inv,
+           'orderInvariance': f'{seeds} seeds: facts, scope dicts, dated facts and authority clauses/conditions shuffled; byte-identical', 'puzhu06SpecGap': 0,
            'coverage': coverage(dated, ctx, H)}
     return {HERE / 'checks.json': json.dumps(out, ensure_ascii=False, indent=1) + '\n'}
 

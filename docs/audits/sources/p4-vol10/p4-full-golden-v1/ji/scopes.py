@@ -106,6 +106,8 @@ def base_list(entry, month):
 def clause_for(entry, month):
     hits = [c for c in entry['clauses'] if c['effect'] != 'defer' and (c['months'] == '*' or month in c['months'])]
     specific = [c for c in hits if c['months'] != '*']
+    # A month-specific clause overrides the entry's 「*」 clause; at most one of each may match.
+    assert len(specific) <= 1 and len(hits) - len(specific) <= 1, (month, hits)
     return (specific or hits or [None])[0]
 
 

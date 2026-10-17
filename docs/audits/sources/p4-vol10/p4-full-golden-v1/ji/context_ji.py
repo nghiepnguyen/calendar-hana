@@ -31,6 +31,7 @@ COMPOSITION = Path('shared/almanac-data/p4-vol10-day-composition-v2.json')
 PUZHU_END = Path('shared/almanac-data/p4-puzhu-end-v1.json')
 G_REMAINING = Path('shared/almanac-data/golden-p4-remaining-ji-v8.json')
 G_PUZHU_END = Path('shared/almanac-data/golden-p4-puzhu-end-v1.json')
+MATCHES_SEEN = {}  # (entry, number of matching conditions) → evaluations; reported by checks.py
 DATED_TOKENS = {'土王用事後': 'soil', '每月十二日十五日': 'lunar_day', '每月十五日': 'lunar_day', '朔望日': 'phase'}
 
 
@@ -79,7 +80,7 @@ def eval_entry(e, month, pillar, ctx, scope_res):
         de -= set(op.DE_HE)
     de |= {'六合'} if 'luc_hop' in ctx['gods'] else set()
     de |= {'三合'} if 'tam_hop' in ctx['gods'] else set()
-    cond = None
+    matches = []
     for c in e.get('conditions', []):
         if c['months'] != '*' and month not in c['months']:
             continue
@@ -90,8 +91,15 @@ def eval_entry(e, month, pillar, ctx, scope_res):
         if c.get('require') and c['require'] not in ctx['present']:
             continue
         if c['effect'] in ('defer', 'all_taboo') or any(g in de for g in c['withGods']):
-            cond = c
-            break
+            matches.append(c)
+    # Precedence by rule, not list position. Only 九空 can match twice (defer + its 「*」 lift); its lift
+    # covers 寅申 滿日 / 子午卯酉 開日 only (卷十 offset 18309, puzhu:06 v3 liftLists), so defer wins.
+    MATCHES_SEEN[(sc.norm(e['han']), len(matches))] = MATCHES_SEEN.get((sc.norm(e['han']), len(matches)), 0) + 1
+    if len({(c['effect'], c.get('keep'), c.get('target')) for c in matches}) > 1:
+        assert sc.norm(e['han']) == '九空' and sorted(c['effect'] for c in matches) == ['defer', 'lift'], (e['han'], month, pillar)
+        matches = [c for c in matches if c['effect'] == 'defer']
+    # Several equivalent matches (same effect/keep/target, e.g. 四耗 辰月 天德 and 三合) give one outcome.
+    cond = matches[0] if matches else None
     base = lambda h: 'protected' if protected_heading(e, month, h) else 'kept'
     if cond is None:
         return {h: base(h) for h in heads}, None

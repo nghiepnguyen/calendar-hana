@@ -19,7 +19,7 @@
    "puzhu28": 232
   }
  },
- "orderInvariance": "3 shuffled seeds byte-identical",
+ "orderInvariance": "3 seeds: facts, scope dicts, dated facts and authority clauses/conditions shuffled; byte-identical",
  "puzhu06SpecGap": 0,
  "coverage": {
   "gradeByBranch": {
@@ -360,6 +360,16 @@
    "all_taboo": 1537,
    "puzhu:28": 261,
    "H1-B": 95
+  },
+  "subjectsPerContext": {
+   "0": 210,
+   "1": 290,
+   "2+": 220
+  },
+  "multiSubjectMixedEffects": 3,
+  "remainingConditionMatches": {
+   "九空:2": 6,
+   "四耗:2": 1
   },
   "outOfScope": [
    "score adapter, cap reallocation, event very_high, penalty −25: roadmap 8 (owner 2026-10-17)"
