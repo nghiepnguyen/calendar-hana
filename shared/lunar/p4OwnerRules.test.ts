@@ -51,8 +51,35 @@ function dated(date: string) {
   return { month, pillar, operands }
 }
 
+/** Deciding part of a Golden `code` (lift / invariant prefixes dropped); null when the Golden code has no
+ * deciding trace (context rows undetermined by E5). */
+function traceOf(code: string) {
+  const parts = code.split(';').filter((p) => !p.startsWith('invariant') && !p.includes('>'))
+  if (!parts.length || parts[0]!.startsWith('undetermined:context')) return null
+  const head = parts[0]!
+  const primary = head.startsWith('puzhu:28') ? 'puzhu:28' : head.split(':')[0]!
+  const ids = (k: string) =>
+    (
+      parts
+        .find((p) => p.startsWith(k + '='))
+        ?.slice(k.length + 1)
+        .split('+') ?? []
+    ).sort()
+  return { primary, ji: ids('ji'), prot: ids('prot') }
+}
+const cmpTrace = (e: P4OwnerDay[string]) => ({
+  primary: e.trace?.primary,
+  ji: e.trace?.ji ?? [],
+  prot: e.trace?.prot ?? [],
+})
+
 /** Mismatching keys `date|heading` (or `month-pillar|heading`) against the Golden. */
-function mismatches(rows: Record<string, string>[], key: string, day: (k: string) => P4OwnerDay) {
+function mismatches(
+  rows: Record<string, string>[],
+  key: string,
+  day: (k: string) => P4OwnerDay,
+  withTrace = true,
+) {
   const byKey = new Map<string, Record<string, string>[]>()
   for (const r of rows) byKey.set(r[key]!, [...(byKey.get(r[key]!) ?? []), r])
   const out: string[] = []
@@ -63,6 +90,14 @@ function mismatches(rows: Record<string, string>[], key: string, day: (k: string
       if (!e) throw new Error(`no engine row for ${k} ${r.heading}`)
       if (r.state !== e.state || r.ji !== tf(e.ji) || r.protected !== tf(e.protectedJi))
         out.push(`${k}|${r.heading}`)
+      else if (
+        withTrace &&
+        traceOf(r.code!) &&
+        JSON.stringify(traceOf(r.code!)) !== JSON.stringify(cmpTrace(e))
+      )
+        out.push(
+          `${k}|${r.heading}|trace ${JSON.stringify(traceOf(r.code!))} != ${JSON.stringify(cmpTrace(e))}`,
+        )
     }
   }
   return out.sort()
@@ -105,10 +140,15 @@ describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
     'harness: the current engine stitching differs from the Golden on exactly the attributed rows',
     () => {
       const rows = sample(datedRows)
-      const got = mismatches(rows, 'date', (k) => {
-        const { month, pillar, operands } = dated(k)
-        return stitchP4EngineDay(month, pillar, operands)
-      })
+      const got = mismatches(
+        rows,
+        'date',
+        (k) => {
+          const { month, pillar, operands } = dated(k)
+          return stitchP4EngineDay(month, pillar, operands)
+        },
+        false,
+      )
       const want = tsv(DIFFS)
         .filter((r) => r.domain === 'dated')
         .map((r) => `${r.id}|${r.heading}`)
@@ -118,7 +158,7 @@ describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
     600_000,
   )
 
-  it('dated: every row equals the Golden', () => {
+  it('dated: every row equals the Golden (state, 忌, protection and the deciding trace)', () => {
     const rows = sample(datedRows)
     const got = mismatches(rows, 'date', (k) => {
       const { month, pillar, operands } = dated(k)

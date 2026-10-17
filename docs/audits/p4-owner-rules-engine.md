@@ -8,6 +8,7 @@
 |---|---|
 | Khớp Golden v2 (`c574e57`), miền ngày | **31.755 / 31.755** dòng (`state`, `ji`, `protected`) |
 | Khớp Golden v2, context | **20.880 / 20.880**, gồm cả các dòng E5 `undetermined` |
+| Trace | Primary, nguồn 忌 và nguồn bảo vệ khớp cột `code` của Golden trên toàn miền ngày và mọi dòng context bất biến. Alias 招搖 ghi theo entry 厭對, như Golden |
 | Golden-first | Test đỏ commit `aef0a1e` trước code. Stub là phép ghép engine hiện tại, lệch Golden đúng 248 dòng đã chứng minh nguyên nhân (harness test) |
 | Mutation | Lượt đối chứng sạch; **11/11 bị bắt**; 1 mutation tương đương trên dữ liệu thật, ghi rõ |
 | `ci:local` | EXIT 0 trong khoảng 166 giây; tập con của test mới chạy khoảng 10 giây |
@@ -37,7 +38,7 @@ Module **ghép từ các lớp fact của engine**, không bọc output ngày đ
 
 **Tương đương trên dữ liệu thật (1):** (i) ở trigger puzhu:06.
 - Đã đảo luật rồi chạy toàn miền Golden v2: không dòng nào đổi.
-- Lý do: trong 2025–2027 không có ngày 德作建論 nào có heading puzhu:06 mang 忌 không được bảo vệ mà trigger duy nhất là một thần 德合.
+- Mới kiểm **hệ quả**, chưa kiểm riêng **nguyên nhân** (tức vì sao không ngày nào chạm tới luật này).
 
 ## Giới hạn
 

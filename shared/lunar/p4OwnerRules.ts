@@ -32,6 +32,8 @@ export type P4OwnerRow = {
   puzhu06?: string
   propagatedFrom?: string
   propagationBlocked?: string
+  /** Deciding trace, ids as in the Golden `code`: primary rule, 忌 sources, protecting sources. */
+  trace?: { primary: string; ji: string[]; prot: string[] }
 }
 export type P4OwnerDay = Record<string, P4OwnerRow>
 
@@ -125,6 +127,14 @@ type RemainingEntry = {
   aliases?: Record<string, string>
 }
 const UNMAPPED = ['修築園圃', '逺廻']
+// Trace ids follow the Golden: a remaining-ji alias scope (招搖) is reported under its entry (厭對).
+const ALIAS_ENTRY: Record<string, string> = Object.fromEntries(
+  (remainingArt.entries as RemainingEntry[]).flatMap((e) =>
+    Object.keys(e.aliases ?? {}).map((a) => [a, e.han]),
+  ),
+)
+const traceId = (f: Fact) =>
+  f.kind === 'remaining' ? (ALIAS_ENTRY[f.source] ?? f.source) : f.source
 const remHeadings = (s: string) =>
   splitHeadings(UNMAPPED.reduce((t, h) => t.replaceAll(h, ''), s)).map(canonP4Heading)
 
@@ -308,18 +318,22 @@ export function resolveP4OwnerRulesDay(
     if (h && dayChars.includes(r.day))
       facts[norm(h)]?.push({ source: `百忌${r.day}`, kind: 'baiji', state: 'protected' })
   }
-  for (const s of Object.values(day.lunarDayScopes))
+  // Named pillar 諸事皆忌 clauses: every heading, protected (recorded for the trace; allTaboo decides).
+  for (const id of day.pillarAllTaboo)
+    for (const h of P4_DAY_HEADINGS)
+      facts[h]!.push({ source: id, kind: 'pillar_all', state: 'protected' })
+  for (const [token, s] of Object.entries(day.lunarDayScopes))
     if (s.presence === 'present')
-      facts[norm(s.heading)]?.push({ source: 'lunarDay', kind: 'dated', state: 'protected' })
+      facts[norm(s.heading)]?.push({ source: token, kind: 'dated', state: 'protected' })
   if (day.phaseScope.presence === 'present')
     facts[norm(day.phaseScope.heading)]?.push({
-      source: 'phase',
+      source: '朔望日',
       kind: 'dated',
       state: 'protected',
     })
   if (day.soilScope.presence === 'present')
     for (const h of day.soilScope.headings)
-      facts[norm(h)]?.push({ source: 'soil', kind: 'dated', state: 'protected' })
+      facts[norm(h)]?.push({ source: '土王用事後', kind: 'dated', state: 'protected' })
   for (const [kind, scope] of [
     ['lunarDay', Object.values(day.lunarDayScopes)],
     ['phase', [day.phaseScope]],
@@ -364,6 +378,7 @@ export function resolveP4OwnerRulesDay(
         (f) =>
           f.kind === 'zhuanji' ||
           f.kind === 'baiji' ||
+          f.kind === 'pillar_all' ||
           (f.kind === 'dated' && f.state === 'protected'),
       ) ||
       fs.some((f) => f.kind === 'remaining' && (f.state === 'protected' || f.state === 'all_taboo'))
@@ -393,7 +408,50 @@ export function resolveP4OwnerRulesDay(
         protectedJi: prot,
       }
     else row = { state: yiState(yiNoted), ji: false, protectedJi: false }
-    pre[h] = { ...row, yi, yiNoted }
+    const restoredHere = day.puzhuEnd.restoredJiHeadings.map(norm).includes(h)
+    const jiIds = [
+      ...new Set([
+        ...kept.map(traceId),
+        ...fs
+          .filter(
+            (f) =>
+              f.kind !== 'subject' &&
+              ['only_ji', 'kept', 'protected', 'all_taboo'].includes(f.state),
+          )
+          .map(traceId),
+        ...(restoredHere ? ['puzhu:27'] : []),
+      ]),
+    ].sort()
+    const protIds = [
+      ...new Set([
+        ...kept.filter((f) => f.state === 'stop').map(traceId),
+        ...fs
+          .filter(
+            (f) =>
+              f.kind === 'zhuanji' ||
+              f.kind === 'baiji' ||
+              f.kind === 'pillar_all' ||
+              (f.kind === 'dated' && f.state === 'protected') ||
+              (f.kind === 'remaining' && (f.state === 'protected' || f.state === 'all_taboo')),
+          )
+          .map(traceId),
+      ]),
+    ].sort()
+    const primary =
+      row.rule ??
+      (row.state === 'undetermined'
+        ? 'undetermined'
+        : row.state === 'neither_recorded'
+          ? 'xiangdi'
+          : row.ji
+            ? 'ji'
+            : 'no_ji')
+    const trace = {
+      primary,
+      ji: !dayRule && row.state !== 'neither_recorded' ? jiIds : [],
+      prot: !dayRule && row.protectedJi ? protIds : [],
+    }
+    pre[h] = { ...row, yi, yiNoted, trace }
   }
 
   // puzhu:06 (authority v3, owner Q1–Q4a) through the engine's own decision, triggers per owner (i).
@@ -550,8 +608,10 @@ export function resolveP4OwnerRulesContext(month: string, pillar: string): P4Own
   const out: P4OwnerDay = {}
   for (const h of P4_DAY_HEADINGS) {
     const rows = variants.map((v) => v[h]!)
+    // The trace of an invariant row is taken from the variant without any date-only 忌 (soil absent, lunar day
+    // not 12/15, no phase): index 2 of the variant order.
     out[h] = rows.every((r) => key(r) === key(rows[0]!))
-      ? rows[0]!
+      ? rows[2]!
       : {
           state: 'undetermined',
           ji: undefined,

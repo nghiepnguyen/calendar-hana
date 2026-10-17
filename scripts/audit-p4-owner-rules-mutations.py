@@ -2,7 +2,8 @@
 
 Each mutation edits shared/lunar/p4OwnerRules.ts in place, runs the owner-rules test against the frozen
 full Golden v2 (fast subset: every date the engine comparison flagged + a fixed sample, and a context
-sample), and restores the bytes. A clean control run comes first. Never touches the Golden or authority.
+sample), and restores the bytes. A clean control run comes first. Never touches the Golden or authority. A mutation counts as caught only when
+the owner-rules test itself fails ("Golden" in the output), so an import or syntax error reads as not caught.
 
     python3 scripts/audit-p4-owner-rules-mutations.py
 """
@@ -39,7 +40,7 @@ mutations = [
 # rows, P4_OWNER_RULES_FULL=1, 2026-10-17) — no row changes, so no witness exists in 2025–2027.
 EQUIVALENT = [
     ('i_triggers_reverted', '(i) puzhu:06 triggers',
-     'no 德作建論 day has a puzhu:06 heading with unprotected 忌 whose only trigger is a 德合 god'),
+     'observed effect only: reverting it changes no row of the full Golden v2 domain; the cause was not checked separately'),
 ]
 
 
