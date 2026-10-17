@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "p4b-puzhu06-golden-index-v1",
+  "version": "golden-p4b-puzhu06-v2",
+  "parent": {
+    "path": "shared/almanac-data/golden-p4b-puzhu06-v1.json",
+    "sha256": "df4fcfa2a95ece04db29df192fe3c32a1c29c80e8ea97a755a9158c6d4f649a3"
+  },
+  "date": "2026-10-16",
+  "status": "HASH_LOCKED_PRE_IMPLEMENTATION",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "authority": {
+    "path": "shared/almanac-data/p4b-puzhu06-v2.json",
+    "sha256": "c7d65ffbdb3d169e7e289539758660a9e1606668efc1c4a17f752353c018d846",
+    "version": "p4b-puzhu06-v2"
+  },
+  "inputs": [
+    {
+      "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+      "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+      "sha256": "98791ddd2fb9a735ed7b33483da9c28189aa69bac1c8c8ec6421131142968317"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+      "sha256": "00a573a1476f5a741af016596750524b301d0bf504c51cf34d986d901c783e6f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/dated.tsv",
+      "sha256": "b6b6a493e9dd823847c80f69d104e7e2041137eb11a85ccf6ed4ec1b33cc5f24"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "fixtures",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/expected.json",
+      "count": 102,
+      "sha256": "827f1f003a71148f04852edbbdc1665be30d0bad6492292b841e2198258e6739"
+    },
+    {
+      "kind": "dated1095",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/dated.tsv",
+      "format": "TSV",
+      "count": 5475,
+      "sha256": "d25397903511d138b4f56b7fccd56a9e6438136701b3082f996b255a52f2d92c"
+    },
+    {
+      "kind": "context720",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/context.tsv",
+      "format": "TSV",
+      "count": 3600,
+      "sha256": "1c1ba5055671327a88382ab903164162f726b81f57cbe116a7c02b44694265db"
+    }
+  ],
+  "recordCount": 9177,
+  "lock": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/lock.json",
+  "reviewer": "Claude, single agent; no independent second review"
+}

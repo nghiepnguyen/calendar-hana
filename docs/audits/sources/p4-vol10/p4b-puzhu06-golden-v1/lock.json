@@ -1,0 +1,57 @@
+{
+  "version": "golden-p4b-puzhu06-lock-v1",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/derive.py",
+      "sha256": "eae57b2dada6181b2c60a386d19a337358bf835ab7fbb583c38ebb38b8ebf808"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/expected.json",
+      "sha256": "72988cd79297e85b1adbc942eea04f8b08e8be440ebaed61ae5db48d3f9b1b01"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/dated.tsv",
+      "sha256": "b6b6a493e9dd823847c80f69d104e7e2041137eb11a85ccf6ed4ec1b33cc5f24"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/context.tsv",
+      "sha256": "eefd23f05cc8bd6f397016035f8add98c0713d035100d75eb3ac92f1971bcba4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/summary.json",
+      "sha256": "d3a33b2b8d10b7d8146e4924ace31c3dc5ffcb89275047c8df6820d5324a1707"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/validation.json",
+      "sha256": "2a86b2d0de575cff36a4297bbe2d9f8d2badb04d6bf743c04c31f4aa60e4c441"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4b-puzhu06-v1.json",
+      "sha256": "df4fcfa2a95ece04db29df192fe3c32a1c29c80e8ea97a755a9158c6d4f649a3"
+    },
+    {
+      "path": "shared/almanac-data/p4b-puzhu06-v1.json",
+      "sha256": "eb7c16173369a64ba7ded4feb79ff9843c3ebac56e45661eb4481f8efaac498d"
+    },
+    {
+      "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+      "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+      "sha256": "98791ddd2fb9a735ed7b33483da9c28189aa69bac1c8c8ec6421131142968317"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+      "sha256": "00a573a1476f5a741af016596750524b301d0bf504c51cf34d986d901c783e6f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    }
+  ]
+}

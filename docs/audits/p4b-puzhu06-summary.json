@@ -1,0 +1,70 @@
+{
+  "scope": "MEASURED_AUDIT_ONLY_NOT_GOLDEN",
+  "before": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+  "reasonGolden": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/dated.tsv",
+  "authority": "p4b-puzhu06-v3",
+  "decision": {
+    "Q1": "no",
+    "Q2": "no",
+    "Q3": "no",
+    "Q4": "yes",
+    "Q4a": "block"
+  },
+  "counts": {
+    "dates": 1095,
+    "rows": 31755,
+    "changedRows": 70,
+    "lifted": 68,
+    "propagationOnly": 2,
+    "changedProtectedJi": 0
+  },
+  "byAction": {
+    "hold": {
+      "安牀": 1,
+      "立券交易": 1,
+      "納財": 1,
+      "開倉庫出貨財": 7,
+      "開市": 1
+    },
+    "keep": {
+      "安牀": 139,
+      "立券交易": 133,
+      "納財": 125,
+      "開倉庫出貨財": 109,
+      "開市": 139
+    },
+    "lift": {
+      "立券交易": 25,
+      "納財": 13,
+      "開倉庫出貨財": 17,
+      "開市": 13
+    },
+    "untouched": {
+      "安牀": 955,
+      "立券交易": 936,
+      "納財": 956,
+      "開倉庫出貨財": 962,
+      "開市": 942
+    }
+  },
+  "transitions": {
+    "立券交易 both_present>only_yi": 4,
+    "立券交易 only_ji>not_recorded": 19,
+    "立券交易 undetermined>neither_recorded": 2,
+    "納財 both_present>only_yi": 13,
+    "開倉庫出貨財 both_present>only_yi": 14,
+    "開倉庫出貨財 undetermined>neither_recorded": 3,
+    "開市 both_present>only_yi": 10,
+    "開市 only_ji>not_recorded": 3
+  },
+  "liftedDates": 34,
+  "undeterminedAllHeadings": {
+    "before": 642,
+    "after": 637
+  },
+  "limits": [
+    "Reasons come from the frozen Golden v3; the after-state is a measurement, not an oracle.",
+    "進人口, 經絡 and 醞釀 are outside the 29 P4 headings (OUT_OF_HEADING_SCOPE).",
+    "Month Jian uses the calendar-day convention (P4-C 5.6)."
+  ]
+}

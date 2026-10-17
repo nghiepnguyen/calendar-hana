@@ -139,19 +139,24 @@ describe('P5 warehouse predicate against the frozen Golden', () => {
     }
   })
 
-  it('reads every operand from P4-C on 720 contexts; 母倉 without a date stays unknown', () => {
-    const rows = tsv('context.tsv').filter((r) => r.soil === 'absent')
-    expect(rows).toHaveLength(720)
-    for (const row of rows) {
-      const id = row.month_jian! + row.pillar!
-      const day = resolveP4WarehouseDay(row.month_jian!, row.pillar!)
-      const w = day.warehouse
-      for (const g of P5_WAREHOUSE_GODS)
-        expect(w.presence[g], `${id} ${g}`).toBe(g === '母倉' ? undefined : row[g] === 'present')
-      expect(w.unknownOperands, id).toEqual(['母倉'])
-      expect(w.heading, id).toBe(resolveP4Warehouse(w.presence).heading)
-    }
-  })
+  // 720 full P4-C days: ~17 s local, 41.9 s on CI shard 1/4 (run 38995363341), so pin a timeout.
+  it(
+    'reads every operand from P4-C on 720 contexts; 母倉 without a date stays unknown',
+    { timeout: 180_000 },
+    () => {
+      const rows = tsv('context.tsv').filter((r) => r.soil === 'absent')
+      expect(rows).toHaveLength(720)
+      for (const row of rows) {
+        const id = row.month_jian! + row.pillar!
+        const day = resolveP4WarehouseDay(row.month_jian!, row.pillar!)
+        const w = day.warehouse
+        for (const g of P5_WAREHOUSE_GODS)
+          expect(w.presence[g], `${id} ${g}`).toBe(g === '母倉' ? undefined : row[g] === 'present')
+        expect(w.unknownOperands, id).toEqual(['母倉'])
+        expect(w.heading, id).toBe(resolveP4Warehouse(w.presence).heading)
+      }
+    },
+  )
 
   it(
     'resolves 修倉庫 on the 1,095 dates with no other heading changed',

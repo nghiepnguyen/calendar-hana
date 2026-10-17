@@ -1,0 +1,49 @@
+{
+  "version": "golden-p4b-puzhu06-validation-v3",
+  "engineBaseline": {
+    "compared": [
+      "triggers",
+      "puzhu28",
+      "yi",
+      "ji",
+      "protected_ji",
+      "state"
+    ],
+    "rows": 9075,
+    "mismatches": 0,
+    "examples": []
+  },
+  "prdCounts": {
+    "compared": [
+      "hold",
+      "keptBySourcedException",
+      "lift",
+      "q4aRows"
+    ],
+    "match": true
+  },
+  "v2ToV3": {
+    "changedRows": 5,
+    "unexpected": 0,
+    "rows": [
+      "2025-10-21 戌癸亥 開倉庫出貨財 neither_recorded",
+      "2026-08-02 未戊申 立券交易 neither_recorded",
+      "2026-10-16 戌癸亥 開倉庫出貨財 neither_recorded",
+      "2027-07-28 未戊申 立券交易 neither_recorded",
+      "2027-10-11 戌癸亥 開倉庫出貨財 neither_recorded"
+    ],
+    "propagationChanges": 2
+  },
+  "propagationMirror": {
+    "dated": {
+      "days": 1095,
+      "rows": 31755,
+      "mismatches": 0
+    },
+    "context": {
+      "days": 720,
+      "rows": 20880,
+      "mismatches": 0
+    }
+  }
+}
