@@ -16,11 +16,11 @@ import sys
 import tempfile
 from pathlib import Path
 
-G = 'docs/audits/sources/p4-vol10/p4-full-golden-v1'
-REVIEW = 'docs/audits/sources/p4-vol10/p4-full-golden-v1-review'
+G = 'docs/audits/sources/p4-vol10/p4-full-golden-v2'
+REVIEW = 'docs/audits/sources/p4-vol10/p4-full-golden-v2-review'
 REPORT = Path(REVIEW) / 'mutation/report.json'
 STAGES = ['presence/derive.py', 'ji/operands.py', 'ji/scopes.py', 'ji/context_ji.py', 'ji/dated_ji.py',
-          'ji/grades.py', 'compose/compose.py', 'compose/checks.py', '../p4-full-golden-v1-review/owner_checks.py']
+          'ji/grades.py', 'compose/compose.py', 'compose/checks.py', '../p4-full-golden-v2-review/owner_checks.py']
 
 MUTATIONS = [
     ('M01', 'FR-07 bỏ một thần dormant (四窮 vắng mọi ngày)', 'presence/derive.py',
@@ -77,6 +77,9 @@ MUTATIONS = [
     ('M18', 'Chọn clause theo vị trí (bỏ precedence riêng tháng > 「*」)', 'ji/scopes.py',
      "return (specific or hits or [None])[0]",
      "return (hits or [None])[0]"),
+    ('M19', 'Hoàn quyết định (i): 德作建論 chỉ cho A03 / remaining-ji, không cho 宜 / trigger / quy tắc D', 'compose/compose.py',
+     "    return [g for g in ctx['de'] if not (de_as_jian(ctx) and g in DE_HE)]",
+     "    return list(ctx['de'])"),
 ]
 OUT_OF_SCOPE = ['cap trước resolution', 'event đọc raw thay applied', 'penalty −25 trùng'
                 ' (roadmap 8: score adapter / cap / event)']
