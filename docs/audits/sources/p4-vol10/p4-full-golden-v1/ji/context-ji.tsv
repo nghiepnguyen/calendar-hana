@@ -155,7 +155,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 寅-己巳	寅	己巳	開市	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-己巳	寅	己巳	立券交易	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-己巳	寅	己巳	納財	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
-寅-己巳	寅	己巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
+寅-己巳	寅	己巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 寅-己巳	寅	己巳	宴會	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-己巳	寅	己巳	入學	false			平日|subject|as_usual|not_avoided 月刑|subject|as_usual|not_avoided 月害|subject|as_usual|not_avoided
 寅-己巳	寅	己巳	求醫療病	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -503,7 +503,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 寅-辛巳	寅	辛巳	開市	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-辛巳	寅	辛巳	立券交易	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-辛巳	寅	辛巳	納財	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
-寅-辛巳	寅	辛巳	行幸遣使	false		puzhu:08	平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
+寅-辛巳	寅	辛巳	行幸遣使	false		puzhu:08	平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 寅-辛巳	寅	辛巳	宴會	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-辛巳	寅	辛巳	入學	false			平日|subject|cancel_both|not_avoided 月刑|subject|cancel_both|not_avoided 月害|subject|cancel_both|not_avoided
 寅-辛巳	寅	辛巳	求醫療病	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded 遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -851,7 +851,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 寅-癸巳	寅	癸巳	開市	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-癸巳	寅	癸巳	立券交易	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-癸巳	寅	癸巳	納財	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
-寅-癸巳	寅	癸巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
+寅-癸巳	寅	癸巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 寅-癸巳	寅	癸巳	宴會	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-癸巳	寅	癸巳	入學	false			平日|subject|as_usual|not_avoided 月刑|subject|as_usual|not_avoided 月害|subject|as_usual|not_avoided
 寅-癸巳	寅	癸巳	求醫療病	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -1199,7 +1199,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 寅-乙巳	寅	乙巳	開市	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-乙巳	寅	乙巳	立券交易	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-乙巳	寅	乙巳	納財	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
-寅-乙巳	寅	乙巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
+寅-乙巳	寅	乙巳	行幸遣使	false		puzhu:08	平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 寅-乙巳	寅	乙巳	宴會	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji
 寅-乙巳	寅	乙巳	入學	false			平日|subject|as_usual|not_avoided 月刑|subject|as_usual|not_avoided 月害|subject|as_usual|not_avoided
 寅-乙巳	寅	乙巳	求醫療病	false			平日|subject|as_usual|only_ji 月刑|subject|as_usual|only_ji 月害|subject|as_usual|only_ji 遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -1547,7 +1547,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 寅-丁巳	寅	丁巳	開市	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-丁巳	寅	丁巳	立券交易	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-丁巳	寅	丁巳	納財	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
-寅-丁巳	寅	丁巳	行幸遣使	false		puzhu:08	平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
+寅-丁巳	寅	丁巳	行幸遣使	false		puzhu:08	平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 寅-丁巳	寅	丁巳	宴會	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded
 寅-丁巳	寅	丁巳	入學	false			平日|subject|cancel_both|not_avoided 月刑|subject|cancel_both|not_avoided 月害|subject|cancel_both|not_avoided
 寅-丁巳	寅	丁巳	求醫療病	false			平日|subject|cancel_both|neither_recorded 月刑|subject|cancel_both|neither_recorded 月害|subject|cancel_both|neither_recorded 遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -1895,7 +1895,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 卯-己巳	卯	己巳	開市	false			
 卯-己巳	卯	己巳	立券交易	false			
 卯-己巳	卯	己巳	納財	false			
-卯-己巳	卯	己巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected
+卯-己巳	卯	己巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected 百忌巳|baiji|出行|protected
 卯-己巳	卯	己巳	宴會	false			
 卯-己巳	卯	己巳	入學	false			
 卯-己巳	卯	己巳	求醫療病	false			往亡|remaining|raw|protected 滿日|remaining|lift|lifted 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -2243,7 +2243,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 卯-辛巳	卯	辛巳	開市	false			
 卯-辛巳	卯	辛巳	立券交易	false			
 卯-辛巳	卯	辛巳	納財	false			
-卯-辛巳	卯	辛巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected
+卯-辛巳	卯	辛巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected 百忌巳|baiji|出行|protected
 卯-辛巳	卯	辛巳	宴會	false			
 卯-辛巳	卯	辛巳	入學	false			
 卯-辛巳	卯	辛巳	求醫療病	false			往亡|remaining|raw|protected 滿日|remaining|raw|kept 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -2591,7 +2591,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 卯-癸巳	卯	癸巳	開市	false			
 卯-癸巳	卯	癸巳	立券交易	false			
 卯-癸巳	卯	癸巳	納財	false			
-卯-癸巳	卯	癸巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected
+卯-癸巳	卯	癸巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected 百忌巳|baiji|出行|protected
 卯-癸巳	卯	癸巳	宴會	false			
 卯-癸巳	卯	癸巳	入學	false			
 卯-癸巳	卯	癸巳	求醫療病	false			往亡|remaining|raw|protected 滿日|remaining|raw|kept 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -2939,7 +2939,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 卯-乙巳	卯	乙巳	開市	false			
 卯-乙巳	卯	乙巳	立券交易	false			
 卯-乙巳	卯	乙巳	納財	false			
-卯-乙巳	卯	乙巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected
+卯-乙巳	卯	乙巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected 百忌巳|baiji|出行|protected
 卯-乙巳	卯	乙巳	宴會	false			
 卯-乙巳	卯	乙巳	入學	false			
 卯-乙巳	卯	乙巳	求醫療病	false			往亡|remaining|raw|protected 滿日|remaining|raw|kept 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -3287,7 +3287,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 卯-丁巳	卯	丁巳	開市	false			
 卯-丁巳	卯	丁巳	立券交易	false			
 卯-丁巳	卯	丁巳	納財	false			
-卯-丁巳	卯	丁巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected
+卯-丁巳	卯	丁巳	行幸遣使	false		puzhu:08	往亡|remaining|raw|protected 百忌巳|baiji|出行|protected
 卯-丁巳	卯	丁巳	宴會	false			
 卯-丁巳	卯	丁巳	入學	false			
 卯-丁巳	卯	丁巳	求醫療病	false			往亡|remaining|raw|protected 滿日|remaining|lift|lifted 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -3635,7 +3635,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 辰-己巳	辰	己巳	開市	false			刼煞|subject|cancel_both|neither_recorded
 辰-己巳	辰	己巳	立券交易	false			刼煞|subject|cancel_both|neither_recorded
 辰-己巳	辰	己巳	納財	false			刼煞|subject|cancel_both|neither_recorded
-辰-己巳	辰	己巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded
+辰-己巳	辰	己巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 辰-己巳	辰	己巳	宴會	false			刼煞|subject|cancel_both|neither_recorded
 辰-己巳	辰	己巳	入學	false			刼煞|subject|cancel_both|not_avoided
 辰-己巳	辰	己巳	求醫療病	false			刼煞|subject|cancel_both|neither_recorded 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -3983,7 +3983,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 辰-辛巳	辰	辛巳	開市	false			刼煞|subject|cancel_both|neither_recorded
 辰-辛巳	辰	辛巳	立券交易	false			刼煞|subject|cancel_both|neither_recorded
 辰-辛巳	辰	辛巳	納財	false			刼煞|subject|cancel_both|neither_recorded
-辰-辛巳	辰	辛巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded
+辰-辛巳	辰	辛巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 辰-辛巳	辰	辛巳	宴會	false			刼煞|subject|cancel_both|neither_recorded
 辰-辛巳	辰	辛巳	入學	false			刼煞|subject|cancel_both|not_avoided
 辰-辛巳	辰	辛巳	求醫療病	false			刼煞|subject|cancel_both|neither_recorded 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -4331,7 +4331,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 辰-癸巳	辰	癸巳	開市	false			刼煞|subject|cancel_both|neither_recorded
 辰-癸巳	辰	癸巳	立券交易	false			刼煞|subject|cancel_both|neither_recorded
 辰-癸巳	辰	癸巳	納財	false			刼煞|subject|cancel_both|neither_recorded
-辰-癸巳	辰	癸巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded
+辰-癸巳	辰	癸巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 辰-癸巳	辰	癸巳	宴會	false			刼煞|subject|cancel_both|neither_recorded
 辰-癸巳	辰	癸巳	入學	false			刼煞|subject|cancel_both|not_avoided
 辰-癸巳	辰	癸巳	求醫療病	false			刼煞|subject|cancel_both|neither_recorded 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -4679,7 +4679,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 辰-乙巳	辰	乙巳	開市	false			刼煞|subject|cancel_both|neither_recorded
 辰-乙巳	辰	乙巳	立券交易	false			刼煞|subject|cancel_both|neither_recorded
 辰-乙巳	辰	乙巳	納財	false			刼煞|subject|cancel_both|neither_recorded
-辰-乙巳	辰	乙巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded
+辰-乙巳	辰	乙巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 辰-乙巳	辰	乙巳	宴會	false			刼煞|subject|cancel_both|neither_recorded
 辰-乙巳	辰	乙巳	入學	false			刼煞|subject|cancel_both|not_avoided
 辰-乙巳	辰	乙巳	求醫療病	false			刼煞|subject|cancel_both|neither_recorded 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -5027,7 +5027,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 辰-丁巳	辰	丁巳	開市	false			刼煞|subject|only_avoid|lifted
 辰-丁巳	辰	丁巳	立券交易	false			刼煞|subject|only_avoid|lifted
 辰-丁巳	辰	丁巳	納財	false			刼煞|subject|only_avoid|lifted
-辰-丁巳	辰	丁巳	行幸遣使	false		puzhu:08	刼煞|subject|only_avoid|lifted
+辰-丁巳	辰	丁巳	行幸遣使	false		puzhu:08	刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 辰-丁巳	辰	丁巳	宴會	false			刼煞|subject|only_avoid|lifted
 辰-丁巳	辰	丁巳	入學	false			刼煞|subject|only_avoid|not_avoided
 辰-丁巳	辰	丁巳	求醫療病	false			刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -5375,7 +5375,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 巳-己巳	巳	己巳	開市	false			small_meeting|pillar_all|avoid_all|protected
 巳-己巳	巳	己巳	立券交易	false			small_meeting|pillar_all|avoid_all|protected
 巳-己巳	巳	己巳	納財	false			small_meeting|pillar_all|avoid_all|protected
-巳-己巳	巳	己巳	行幸遣使	false		puzhu:08	small_meeting|pillar_all|avoid_all|protected
+巳-己巳	巳	己巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected small_meeting|pillar_all|avoid_all|protected
 巳-己巳	巳	己巳	宴會	false			small_meeting|pillar_all|avoid_all|protected
 巳-己巳	巳	己巳	入學	false			small_meeting|pillar_all|avoid_all|protected
 巳-己巳	巳	己巳	求醫療病	false			月建|subject|only_avoid|lifted small_meeting|pillar_all|avoid_all|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -5723,7 +5723,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 巳-辛巳	巳	辛巳	開市	false			
 巳-辛巳	巳	辛巳	立券交易	false			
 巳-辛巳	巳	辛巳	納財	false			
-巳-辛巳	巳	辛巳	行幸遣使	false		puzhu:08	
+巳-辛巳	巳	辛巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 巳-辛巳	巳	辛巳	宴會	false			
 巳-辛巳	巳	辛巳	入學	false			
 巳-辛巳	巳	辛巳	求醫療病	false			月建|subject|only_avoid|lifted 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -6071,7 +6071,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 巳-癸巳	巳	癸巳	開市	false			
 巳-癸巳	巳	癸巳	立券交易	false			
 巳-癸巳	巳	癸巳	納財	false			
-巳-癸巳	巳	癸巳	行幸遣使	false		puzhu:08	
+巳-癸巳	巳	癸巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 巳-癸巳	巳	癸巳	宴會	false			
 巳-癸巳	巳	癸巳	入學	false			
 巳-癸巳	巳	癸巳	求醫療病	false			月建|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -6419,7 +6419,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 巳-乙巳	巳	乙巳	開市	false			
 巳-乙巳	巳	乙巳	立券交易	false			
 巳-乙巳	巳	乙巳	納財	false			
-巳-乙巳	巳	乙巳	行幸遣使	false		puzhu:08	
+巳-乙巳	巳	乙巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 巳-乙巳	巳	乙巳	宴會	false			
 巳-乙巳	巳	乙巳	入學	false			
 巳-乙巳	巳	乙巳	求醫療病	false			月建|subject|only_avoid|lifted 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -6767,7 +6767,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 巳-丁巳	巳	丁巳	開市	false			
 巳-丁巳	巳	丁巳	立券交易	false			
 巳-丁巳	巳	丁巳	納財	false			
-巳-丁巳	巳	丁巳	行幸遣使	false		puzhu:08	
+巳-丁巳	巳	丁巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 巳-丁巳	巳	丁巳	宴會	false			
 巳-丁巳	巳	丁巳	入學	false			
 巳-丁巳	巳	丁巳	求醫療病	false			月建|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -7115,7 +7115,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 午-己巳	午	己巳	開市	false			閉日|subject|as_usual|only_ji
 午-己巳	午	己巳	立券交易	false			
 午-己巳	午	己巳	納財	false			
-午-己巳	午	己巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji
+午-己巳	午	己巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 午-己巳	午	己巳	宴會	false			閉日|subject|as_usual|only_ji
 午-己巳	午	己巳	入學	false			
 午-己巳	午	己巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -7463,7 +7463,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 午-辛巳	午	辛巳	開市	false			閉日|subject|cancel_both|neither_recorded
 午-辛巳	午	辛巳	立券交易	false			
 午-辛巳	午	辛巳	納財	false			
-午-辛巳	午	辛巳	行幸遣使	false		puzhu:08	閉日|subject|cancel_both|neither_recorded
+午-辛巳	午	辛巳	行幸遣使	false		puzhu:08	閉日|subject|cancel_both|neither_recorded 百忌巳|baiji|出行|protected
 午-辛巳	午	辛巳	宴會	false			閉日|subject|cancel_both|neither_recorded
 午-辛巳	午	辛巳	入學	false			
 午-辛巳	午	辛巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -7811,7 +7811,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 午-癸巳	午	癸巳	開市	false			閉日|subject|as_usual|only_ji
 午-癸巳	午	癸巳	立券交易	false			
 午-癸巳	午	癸巳	納財	false			
-午-癸巳	午	癸巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji
+午-癸巳	午	癸巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 午-癸巳	午	癸巳	宴會	false			閉日|subject|as_usual|only_ji
 午-癸巳	午	癸巳	入學	false			
 午-癸巳	午	癸巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -8159,7 +8159,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 午-乙巳	午	乙巳	開市	false			閉日|subject|as_usual|only_ji
 午-乙巳	午	乙巳	立券交易	false			
 午-乙巳	午	乙巳	納財	false			
-午-乙巳	午	乙巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji
+午-乙巳	午	乙巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 午-乙巳	午	乙巳	宴會	false			閉日|subject|as_usual|only_ji
 午-乙巳	午	乙巳	入學	false			
 午-乙巳	午	乙巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -8507,7 +8507,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 午-丁巳	午	丁巳	開市	false			閉日|subject|as_usual|only_ji
 午-丁巳	午	丁巳	立券交易	false			
 午-丁巳	午	丁巳	納財	false			
-午-丁巳	午	丁巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji
+午-丁巳	午	丁巳	行幸遣使	false		puzhu:08	閉日|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 午-丁巳	午	丁巳	宴會	false			閉日|subject|as_usual|only_ji
 午-丁巳	午	丁巳	入學	false			
 午-丁巳	午	丁巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -8855,7 +8855,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 未-己巳	未	己巳	開市	false			月厭|subject|as_usual|only_ji
 未-己巳	未	己巳	立券交易	false			月厭|subject|as_usual|only_ji
 未-己巳	未	己巳	納財	false			月厭|subject|as_usual|only_ji
-未-己巳	未	己巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji
+未-己巳	未	己巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 未-己巳	未	己巳	宴會	false			月厭|subject|as_usual|only_ji
 未-己巳	未	己巳	入學	false			月厭|subject|as_usual|not_avoided
 未-己巳	未	己巳	求醫療病	false			月厭|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -9203,7 +9203,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 未-辛巳	未	辛巳	開市	false			月厭|subject|as_usual|only_ji
 未-辛巳	未	辛巳	立券交易	false			月厭|subject|as_usual|only_ji
 未-辛巳	未	辛巳	納財	false			月厭|subject|as_usual|only_ji
-未-辛巳	未	辛巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji
+未-辛巳	未	辛巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 未-辛巳	未	辛巳	宴會	false			月厭|subject|as_usual|only_ji
 未-辛巳	未	辛巳	入學	false			月厭|subject|as_usual|not_avoided
 未-辛巳	未	辛巳	求醫療病	false			月厭|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -9551,7 +9551,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 未-癸巳	未	癸巳	開市	false			月厭|subject|as_usual|only_ji
 未-癸巳	未	癸巳	立券交易	false			月厭|subject|as_usual|only_ji
 未-癸巳	未	癸巳	納財	false			月厭|subject|as_usual|only_ji
-未-癸巳	未	癸巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji
+未-癸巳	未	癸巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 未-癸巳	未	癸巳	宴會	false			月厭|subject|as_usual|only_ji
 未-癸巳	未	癸巳	入學	false			月厭|subject|as_usual|not_avoided
 未-癸巳	未	癸巳	求醫療病	false			月厭|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -9899,7 +9899,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 未-乙巳	未	乙巳	開市	false			月厭|subject|as_usual|only_ji
 未-乙巳	未	乙巳	立券交易	false			月厭|subject|as_usual|only_ji
 未-乙巳	未	乙巳	納財	false			月厭|subject|as_usual|only_ji
-未-乙巳	未	乙巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji
+未-乙巳	未	乙巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 未-乙巳	未	乙巳	宴會	false			月厭|subject|as_usual|only_ji
 未-乙巳	未	乙巳	入學	false			月厭|subject|as_usual|not_avoided
 未-乙巳	未	乙巳	求醫療病	false			月厭|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -10247,7 +10247,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 未-丁巳	未	丁巳	開市	false			月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
 未-丁巳	未	丁巳	立券交易	false			月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
 未-丁巳	未	丁巳	納財	false			月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
-未-丁巳	未	丁巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
+未-丁巳	未	丁巳	行幸遣使	false		puzhu:08	月厭|subject|as_usual|only_ji 百忌巳|baiji|出行|protected great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
 未-丁巳	未	丁巳	宴會	false			月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
 未-丁巳	未	丁巳	入學	false			月厭|subject|as_usual|not_avoided great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected
 未-丁巳	未	丁巳	求醫療病	false			月厭|subject|as_usual|only_ji great_meeting|pillar_all|avoid_all|protected yin_error_exceptions|pillar_all|avoid_all|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -10595,7 +10595,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 申-己巳	申	己巳	開市	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-己巳	申	己巳	立券交易	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-己巳	申	己巳	納財	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
-申-己巳	申	己巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
+申-己巳	申	己巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 申-己巳	申	己巳	宴會	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-己巳	申	己巳	入學	false			收日|subject|only_avoid|not_avoided 刼煞|subject|only_avoid|not_avoided
 申-己巳	申	己巳	求醫療病	false			收日|subject|only_avoid|stop 刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -10943,7 +10943,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 申-辛巳	申	辛巳	開市	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-辛巳	申	辛巳	立券交易	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-辛巳	申	辛巳	納財	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
-申-辛巳	申	辛巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
+申-辛巳	申	辛巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 申-辛巳	申	辛巳	宴會	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-辛巳	申	辛巳	入學	false			收日|subject|only_avoid|not_avoided 刼煞|subject|only_avoid|not_avoided
 申-辛巳	申	辛巳	求醫療病	false			收日|subject|only_avoid|stop 刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -11291,7 +11291,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 申-癸巳	申	癸巳	開市	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-癸巳	申	癸巳	立券交易	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-癸巳	申	癸巳	納財	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
-申-癸巳	申	癸巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
+申-癸巳	申	癸巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 申-癸巳	申	癸巳	宴會	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-癸巳	申	癸巳	入學	false			收日|subject|only_avoid|not_avoided 刼煞|subject|only_avoid|not_avoided
 申-癸巳	申	癸巳	求醫療病	false			收日|subject|only_avoid|stop 刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -11639,7 +11639,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 申-乙巳	申	乙巳	開市	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-乙巳	申	乙巳	立券交易	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-乙巳	申	乙巳	納財	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
-申-乙巳	申	乙巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
+申-乙巳	申	乙巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 申-乙巳	申	乙巳	宴會	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-乙巳	申	乙巳	入學	false			收日|subject|only_avoid|not_avoided 刼煞|subject|only_avoid|not_avoided
 申-乙巳	申	乙巳	求醫療病	false			收日|subject|only_avoid|stop 刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -11987,7 +11987,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 申-丁巳	申	丁巳	開市	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-丁巳	申	丁巳	立券交易	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-丁巳	申	丁巳	納財	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
-申-丁巳	申	丁巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
+申-丁巳	申	丁巳	行幸遣使	false		puzhu:08	收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted 百忌巳|baiji|出行|protected
 申-丁巳	申	丁巳	宴會	false			收日|subject|only_avoid|lifted 刼煞|subject|only_avoid|lifted
 申-丁巳	申	丁巳	入學	false			收日|subject|only_avoid|not_avoided 刼煞|subject|only_avoid|not_avoided
 申-丁巳	申	丁巳	求醫療病	false			收日|subject|only_avoid|stop 刼煞|subject|only_avoid|stop 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -12335,7 +12335,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 酉-己巳	酉	己巳	開市	false			
 酉-己巳	酉	己巳	立券交易	false			
 酉-己巳	酉	己巳	納財	false			
-酉-己巳	酉	己巳	行幸遣使	false		puzhu:08	
+酉-己巳	酉	己巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 酉-己巳	酉	己巳	宴會	false			
 酉-己巳	酉	己巳	入學	false			
 酉-己巳	酉	己巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -12683,7 +12683,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 酉-辛巳	酉	辛巳	開市	false			
 酉-辛巳	酉	辛巳	立券交易	false			
 酉-辛巳	酉	辛巳	納財	false			
-酉-辛巳	酉	辛巳	行幸遣使	false		puzhu:08	
+酉-辛巳	酉	辛巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 酉-辛巳	酉	辛巳	宴會	false			
 酉-辛巳	酉	辛巳	入學	false			
 酉-辛巳	酉	辛巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -13031,7 +13031,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 酉-癸巳	酉	癸巳	開市	false			
 酉-癸巳	酉	癸巳	立券交易	false			
 酉-癸巳	酉	癸巳	納財	false			
-酉-癸巳	酉	癸巳	行幸遣使	false		puzhu:08	
+酉-癸巳	酉	癸巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 酉-癸巳	酉	癸巳	宴會	false			
 酉-癸巳	酉	癸巳	入學	false			
 酉-癸巳	酉	癸巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -13379,7 +13379,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 酉-乙巳	酉	乙巳	開市	false			
 酉-乙巳	酉	乙巳	立券交易	false			
 酉-乙巳	酉	乙巳	納財	false			
-酉-乙巳	酉	乙巳	行幸遣使	false		puzhu:08	
+酉-乙巳	酉	乙巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 酉-乙巳	酉	乙巳	宴會	false			
 酉-乙巳	酉	乙巳	入學	false			
 酉-乙巳	酉	乙巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -13727,7 +13727,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 酉-丁巳	酉	丁巳	開市	false			
 酉-丁巳	酉	丁巳	立券交易	false			
 酉-丁巳	酉	丁巳	納財	false			
-酉-丁巳	酉	丁巳	行幸遣使	false		puzhu:08	
+酉-丁巳	酉	丁巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 酉-丁巳	酉	丁巳	宴會	false			
 酉-丁巳	酉	丁巳	入學	false			
 酉-丁巳	酉	丁巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -14075,7 +14075,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 戌-己巳	戌	己巳	開市	false			
 戌-己巳	戌	己巳	立券交易	false			
 戌-己巳	戌	己巳	納財	false			
-戌-己巳	戌	己巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected
+戌-己巳	戌	己巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected 百忌巳|baiji|出行|protected
 戌-己巳	戌	己巳	宴會	false			
 戌-己巳	戌	己巳	入學	false			
 戌-己巳	戌	己巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -14423,7 +14423,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 戌-辛巳	戌	辛巳	開市	false			
 戌-辛巳	戌	辛巳	立券交易	false			
 戌-辛巳	戌	辛巳	納財	false			
-戌-辛巳	戌	辛巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected
+戌-辛巳	戌	辛巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected 百忌巳|baiji|出行|protected
 戌-辛巳	戌	辛巳	宴會	false			
 戌-辛巳	戌	辛巳	入學	false			
 戌-辛巳	戌	辛巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -14771,7 +14771,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 戌-癸巳	戌	癸巳	開市	false			
 戌-癸巳	戌	癸巳	立券交易	false			
 戌-癸巳	戌	癸巳	納財	false			
-戌-癸巳	戌	癸巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected
+戌-癸巳	戌	癸巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected 百忌巳|baiji|出行|protected
 戌-癸巳	戌	癸巳	宴會	false			
 戌-癸巳	戌	癸巳	入學	false			
 戌-癸巳	戌	癸巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -15119,7 +15119,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 戌-乙巳	戌	乙巳	開市	false			
 戌-乙巳	戌	乙巳	立券交易	false			
 戌-乙巳	戌	乙巳	納財	false			
-戌-乙巳	戌	乙巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected
+戌-乙巳	戌	乙巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected 百忌巳|baiji|出行|protected
 戌-乙巳	戌	乙巳	宴會	false			
 戌-乙巳	戌	乙巳	入學	false			
 戌-乙巳	戌	乙巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -15467,7 +15467,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 戌-丁巳	戌	丁巳	開市	false			
 戌-丁巳	戌	丁巳	立券交易	false			
 戌-丁巳	戌	丁巳	納財	false			
-戌-丁巳	戌	丁巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected
+戌-丁巳	戌	丁巳	行幸遣使	false		puzhu:08	天賊|remaining|raw|protected 百忌巳|baiji|出行|protected
 戌-丁巳	戌	丁巳	宴會	false			
 戌-丁巳	戌	丁巳	入學	false			
 戌-丁巳	戌	丁巳	求醫療病	false			遊禍|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -15815,7 +15815,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 亥-己巳	亥	己巳	開市	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-己巳	亥	己巳	立券交易	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-己巳	亥	己巳	納財	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
-亥-己巳	亥	己巳	行幸遣使	false		puzhu:08	月破|subject|still_avoid|only_ji
+亥-己巳	亥	己巳	行幸遣使	false		puzhu:08	月破|subject|still_avoid|only_ji 百忌巳|baiji|出行|protected
 亥-己巳	亥	己巳	宴會	false			月破|subject|still_avoid|only_ji
 亥-己巳	亥	己巳	入學	false			月破|subject|still_avoid|not_avoided
 亥-己巳	亥	己巳	求醫療病	false			月破|subject|still_avoid|not_avoided 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -16163,7 +16163,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 亥-辛巳	亥	辛巳	開市	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-辛巳	亥	辛巳	立券交易	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-辛巳	亥	辛巳	納財	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
-亥-辛巳	亥	辛巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji
+亥-辛巳	亥	辛巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 亥-辛巳	亥	辛巳	宴會	false			月破|subject|as_usual|only_ji
 亥-辛巳	亥	辛巳	入學	false			
 亥-辛巳	亥	辛巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -16511,7 +16511,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 亥-癸巳	亥	癸巳	開市	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-癸巳	亥	癸巳	立券交易	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-癸巳	亥	癸巳	納財	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji
-亥-癸巳	亥	癸巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji
+亥-癸巳	亥	癸巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 亥-癸巳	亥	癸巳	宴會	false			月破|subject|as_usual|only_ji
 亥-癸巳	亥	癸巳	入學	false			
 亥-癸巳	亥	癸巳	求醫療病	false			每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -16859,7 +16859,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 亥-乙巳	亥	乙巳	開市	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-乙巳	亥	乙巳	立券交易	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
 亥-乙巳	亥	乙巳	納財	false			月破|subject|still_avoid|only_ji 大耗|youwei_convention|only_ji|only_ji
-亥-乙巳	亥	乙巳	行幸遣使	false		puzhu:08	月破|subject|still_avoid|only_ji
+亥-乙巳	亥	乙巳	行幸遣使	false		puzhu:08	月破|subject|still_avoid|only_ji 百忌巳|baiji|出行|protected
 亥-乙巳	亥	乙巳	宴會	false			月破|subject|still_avoid|only_ji
 亥-乙巳	亥	乙巳	入學	false			月破|subject|still_avoid|not_avoided
 亥-乙巳	亥	乙巳	求醫療病	false			月破|subject|still_avoid|not_avoided 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -17207,7 +17207,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 亥-丁巳	亥	丁巳	開市	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji 四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
 亥-丁巳	亥	丁巳	立券交易	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji 四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
 亥-丁巳	亥	丁巳	納財	false			月破|subject|as_usual|only_ji 大耗|youwei_convention|only_ji|only_ji 四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
-亥-丁巳	亥	丁巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji 四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
+亥-丁巳	亥	丁巳	行幸遣使	false		puzhu:08	月破|subject|as_usual|only_ji 四廢|remaining|all_taboo|all_taboo 百忌巳|baiji|出行|protected cross_break|pillar_all|avoid_all|protected
 亥-丁巳	亥	丁巳	宴會	false			月破|subject|as_usual|only_ji 四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
 亥-丁巳	亥	丁巳	入學	false			四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected
 亥-丁巳	亥	丁巳	求醫療病	false			四廢|remaining|all_taboo|all_taboo cross_break|pillar_all|avoid_all|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -17555,7 +17555,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 子-己巳	子	己巳	開市	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-己巳	子	己巳	立券交易	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-己巳	子	己巳	納財	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
-子-己巳	子	己巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji
+子-己巳	子	己巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 子-己巳	子	己巳	宴會	false			刼煞|subject|as_usual|only_ji
 子-己巳	子	己巳	入學	false			刼煞|subject|as_usual|not_avoided
 子-己巳	子	己巳	求醫療病	false			刼煞|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -17903,7 +17903,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 子-辛巳	子	辛巳	開市	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-辛巳	子	辛巳	立券交易	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-辛巳	子	辛巳	納財	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
-子-辛巳	子	辛巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji
+子-辛巳	子	辛巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 子-辛巳	子	辛巳	宴會	false			刼煞|subject|as_usual|only_ji
 子-辛巳	子	辛巳	入學	false			刼煞|subject|as_usual|not_avoided
 子-辛巳	子	辛巳	求醫療病	false			刼煞|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -18251,7 +18251,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 子-癸巳	子	癸巳	開市	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-癸巳	子	癸巳	立券交易	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-癸巳	子	癸巳	納財	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
-子-癸巳	子	癸巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji
+子-癸巳	子	癸巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 子-癸巳	子	癸巳	宴會	false			刼煞|subject|as_usual|only_ji
 子-癸巳	子	癸巳	入學	false			刼煞|subject|as_usual|not_avoided
 子-癸巳	子	癸巳	求醫療病	false			刼煞|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -18599,7 +18599,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 子-乙巳	子	乙巳	開市	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-乙巳	子	乙巳	立券交易	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
 子-乙巳	子	乙巳	納財	false			刼煞|subject|as_usual|only_ji 小耗|remaining|raw|protected
-子-乙巳	子	乙巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji
+子-乙巳	子	乙巳	行幸遣使	false		puzhu:08	刼煞|subject|as_usual|only_ji 百忌巳|baiji|出行|protected
 子-乙巳	子	乙巳	宴會	false			刼煞|subject|as_usual|only_ji
 子-乙巳	子	乙巳	入學	false			刼煞|subject|as_usual|not_avoided
 子-乙巳	子	乙巳	求醫療病	false			刼煞|subject|as_usual|only_ji 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -18947,7 +18947,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 子-丁巳	子	丁巳	開市	false			刼煞|subject|cancel_both|neither_recorded 小耗|remaining|raw|protected 四廢|remaining|raw|protected
 子-丁巳	子	丁巳	立券交易	false			刼煞|subject|cancel_both|neither_recorded 小耗|remaining|raw|protected 四廢|remaining|raw|protected
 子-丁巳	子	丁巳	納財	false			刼煞|subject|cancel_both|neither_recorded 小耗|remaining|raw|protected 四廢|remaining|raw|protected
-子-丁巳	子	丁巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 四廢|remaining|raw|protected
+子-丁巳	子	丁巳	行幸遣使	false		puzhu:08	刼煞|subject|cancel_both|neither_recorded 四廢|remaining|raw|protected 百忌巳|baiji|出行|protected
 子-丁巳	子	丁巳	宴會	false			刼煞|subject|cancel_both|neither_recorded 四廢|remaining|raw|protected
 子-丁巳	子	丁巳	入學	false			刼煞|subject|cancel_both|not_avoided
 子-丁巳	子	丁巳	求醫療病	false			刼煞|subject|cancel_both|neither_recorded 四廢|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -19295,7 +19295,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 丑-己巳	丑	己巳	開市	false			
 丑-己巳	丑	己巳	立券交易	false			
 丑-己巳	丑	己巳	納財	false			
-丑-己巳	丑	己巳	行幸遣使	false		puzhu:08	
+丑-己巳	丑	己巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 丑-己巳	丑	己巳	宴會	false			
 丑-己巳	丑	己巳	入學	false			
 丑-己巳	丑	己巳	求醫療病	false			死氣|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -19643,7 +19643,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 丑-辛巳	丑	辛巳	開市	false			
 丑-辛巳	丑	辛巳	立券交易	false			
 丑-辛巳	丑	辛巳	納財	false			
-丑-辛巳	丑	辛巳	行幸遣使	false		puzhu:08	
+丑-辛巳	丑	辛巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 丑-辛巳	丑	辛巳	宴會	false			
 丑-辛巳	丑	辛巳	入學	false			
 丑-辛巳	丑	辛巳	求醫療病	false			死氣|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -19991,7 +19991,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 丑-癸巳	丑	癸巳	開市	false			
 丑-癸巳	丑	癸巳	立券交易	false			
 丑-癸巳	丑	癸巳	納財	false			
-丑-癸巳	丑	癸巳	行幸遣使	false		puzhu:08	
+丑-癸巳	丑	癸巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 丑-癸巳	丑	癸巳	宴會	false			
 丑-癸巳	丑	癸巳	入學	false			
 丑-癸巳	丑	癸巳	求醫療病	false			死氣|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -20339,7 +20339,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 丑-乙巳	丑	乙巳	開市	false			
 丑-乙巳	丑	乙巳	立券交易	false			
 丑-乙巳	丑	乙巳	納財	false			
-丑-乙巳	丑	乙巳	行幸遣使	false		puzhu:08	
+丑-乙巳	丑	乙巳	行幸遣使	false		puzhu:08	百忌巳|baiji|出行|protected
 丑-乙巳	丑	乙巳	宴會	false			
 丑-乙巳	丑	乙巳	入學	false			
 丑-乙巳	丑	乙巳	求醫療病	false			死氣|remaining|only_avoid|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending
@@ -20687,7 +20687,7 @@ id	month_jian	pillar	heading	puzhu28	restored	yi_off	facts
 丑-丁巳	丑	丁巳	開市	false			四廢|remaining|raw|protected
 丑-丁巳	丑	丁巳	立券交易	false			四廢|remaining|raw|protected
 丑-丁巳	丑	丁巳	納財	false			四廢|remaining|raw|protected
-丑-丁巳	丑	丁巳	行幸遣使	false		puzhu:08	四廢|remaining|raw|protected
+丑-丁巳	丑	丁巳	行幸遣使	false		puzhu:08	四廢|remaining|raw|protected 百忌巳|baiji|出行|protected
 丑-丁巳	丑	丁巳	宴會	false			四廢|remaining|raw|protected
 丑-丁巳	丑	丁巳	入學	false			
 丑-丁巳	丑	丁巳	求醫療病	false			死氣|remaining|raw|protected 四廢|remaining|raw|protected 每月十五日|dated|lunar_day|pending 朔望日|dated|phase|pending

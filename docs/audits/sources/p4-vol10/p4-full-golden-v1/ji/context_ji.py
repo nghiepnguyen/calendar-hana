@@ -160,10 +160,11 @@ def build():
             for h in H:
                 if h in res:
                     facts[h].append((sc.norm(e['han']), 'remaining', eff or 'raw', res[h]))
-        # 百忌日 (protected 專忌).
+        # 百忌日 (protected 專忌). Owner F1 (2026-10-17): 巳日「出行」 → 行幸遣使 (卷十一 「行幸遣使…出行同」).
         for b in comp['baiji']['rules']:
-            if b['heading'] and b['day'] in pillar and sc.norm(b['heading']) in facts:
-                facts[sc.norm(b['heading'])].append(('百忌' + b['day'], 'baiji', b.get('part', ''), 'protected'))
+            heading = b['heading'] or ('行幸遣使' if b['day'] == '巳' and b.get('raw') == '出行' else None)
+            if heading and b['day'] in pillar and sc.norm(heading) in facts:
+                facts[sc.norm(heading)].append(('百忌' + b['day'], 'baiji', b.get('part', b.get('raw', '')), 'protected'))
         # Named pillar 諸事皆忌.
         for rid in ctx['pillarRuleIds']:
             if rid in all_taboo_rules:

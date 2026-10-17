@@ -32,6 +32,11 @@ Trạng thái fact:
 - Golden A04a v2 đã khóa ghi `undetermined` cho ngày này. Golden đó **không bị sửa**; derive ghi 2 ngoại lệ có lý do trong `scopes-summary.json` (`goldenExceptions`).
 - **H1-B** là quy tắc ghép ngày nên áp ở task 3.3, kèm danh sách dòng đổi theo alias trước khi đóng băng.
 
+Owner chốt thêm (2026-10-17, sau task 3.2):
+- **F1 — map:** 百忌 巳日「出行」 → 行幸遣使, là 專忌 được bảo vệ. Đã áp ở 3.2c. Phân loại `SPEC_BUG` của authority P4 `day-composition-v2`; artifact đó không bị sửa.
+- **F4 — theo 卷十:** 閉日 không tự sinh 忌 求醫療病. Giữ như hiện hành, nhãn `SOURCE_DEPENDENT`.
+- **F5 — mở H1-B cho cả canonical:** 忌 không bảo vệ (canonical hay convention) gặp 相抵 của scope khác trên cùng heading thì 忌 sống sót, 宜 không ghi, rồi mới xét lan truyền. Áp ở task 3.3, kèm danh sách đủ khoảng 75 dòng context (và số dòng theo ngày) trước khi đóng băng.
+
 ## Ngữ nghĩa lấy từ engine (rủi ro hiểu sai chung)
 
 Mọi quy tắc được viết từ authority JSON và tài liệu audit trước, rồi kiểm bằng Golden đã khóa. Những lần đọc engine:
