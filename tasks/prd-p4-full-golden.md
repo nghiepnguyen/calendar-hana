@@ -10,7 +10,8 @@ Quyết định owner (2026-10-17):
 4. **Finding 3.2 (2026-10-17):** F1 map 百忌 巳日「出行」 vào 行幸遣使 (專忌); F4 閉日 không 忌 求醫療病 (theo 卷十, SOURCE_DEPENDENT); F5 mở H1-B cho cả 忌 canonical không bảo vệ ([README lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md)).
 5. **Luật ghép 3.3 (2026-10-17):** E1 復日/重日 「不忌亦不註宜」 → `neither_recorded`; E3 lan truyền gỡ 忌 còn 相抵 → `neither_recorded`; E5 miền context chỉ xác định khi bất biến trên soil/ngày âm/phase ([compose README](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)).
 6. **Mutation 7.0 (2026-10-17): phương án (b)** — mutate chính derive Python (không làm layer TS mới) để chứng minh self-check/oracle của Golden bắt mutation FR-07; mutation thuộc cap/event/penalty để roadmap 8.
-7. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
+7. **德作建論 (2026-10-17, sau task 6.0): (i)** áp cho mọi chỗ dùng 德, cả 宜 lẫn điều kiện gỡ 忌 → Golden v2.
+8. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
 
 ## 1. Overview
 

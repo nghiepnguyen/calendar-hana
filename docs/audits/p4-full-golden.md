@@ -72,7 +72,9 @@ Hai ENGINE_BUG đều ở các luật đã ghi nhận:
 
 Trên phần đã nghiệm thu (P4-B/P4-C/P5/puzhu:06), ngoài các lớp trên, engine và Golden độc lập cho cùng trạng thái.
 
-### SPEC_BUG mới — phạm vi của 德作建論 (cần owner)
+### SPEC_BUG mới — phạm vi của 德作建論
+
+**Quyết định owner 2026-10-17: (i)** — 德作建論 áp cho **mọi chỗ dùng 德**, cả 宜 lẫn điều kiện gỡ 忌. Việc này cần Golden v2 (đóng băng mới); v1 giữ nguyên. Bản v2 cũng sửa luôn hạn chế ẩn ghi ở mục dưới (scope `undetermined` cả phạm vi).
 
 - **Phạm vi:** 2026-06-01 và 2027-05-27 安葬 (歲薄/逐陣), cùng hai context 巳丙午 và 未己未. Tầm ảnh hưởng đầy đủ đúng 4 dòng.
 - **Golden v1:** derive bỏ 天德/月德/天德合/月德合 khỏi điều kiện gỡ 忌 của 復日 trên ngày 德作建論, nên 復日 giữ 忌. Lựa chọn này **không được đăng ký trước đóng băng**.
