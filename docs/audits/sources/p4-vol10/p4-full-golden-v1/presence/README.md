@@ -14,6 +14,7 @@
 | `shared/lunar/audit-fixtures/calendar-golden-v2.1.json` | Neo day pillar 1900-01-01 甲戌, kiểm 100 record |
 | `good-gods.json`, `bad-gods.json` | Chỉ kiểm stable ID ↔ han |
 | `golden-legacy-gods-month-jian.json` | Oracle tự kiểm 52 ca legacy (Release A) |
+| `yi-dated-inputs-v1/jie-convention.json` | Chỉ oracle, không phải input: gián tiếp từ engine (`yi-propagation-v1` → `yi-baseline-v1`, xem inventory) |
 
 Không đọc TypeScript, resolver, evaluator hay TSV sweep. SHA-256 từng input ghi trong [summary.json](summary.json).
 
@@ -32,10 +33,10 @@ Không đọc TypeScript, resolver, evaluator hay TSV sweep. SHA-256 từng inpu
 - Bảng đủ 12 tháng, giá trị hợp lệ, không trùng lặp.
 - Giá trị trong `excluded` không còn trong bảng (不將 六月戊午).
 - Operand `NONE` cho cùng tập ở mọi tháng; operand `SEASON` cùng tập trong mỗi khối 3 tháng.
-- Han trong catalog khớp. Alias (月虛, 地火, 招搖, 大敗, 咸池, 天獄) có trong ghi chú của đúng stable ID và không phải tên thần catalog khác.
+- Han trong catalog khớp. Alias (月虛, 地火, 招搖, 大敗, 咸池, 天獄) có trong ghi chú của đúng stable ID và không phải han của thần nào trong catalog `good-gods`/`bad-gods`.
 - Mỗi Jie đổi Month Jian đúng tại offset 0.
 - 52/52 ca Golden legacy khớp pillar, Month Jian và presence.
-- 20 ngày Jie khớp từng dòng với `yi-dated-inputs-v1/jie-convention.json` (kiểm ngoài derive, xem commit).
+- 20 ngày Jie (noon ≠ calendar-day) khớp từng dòng với `jie-convention.json`: tập ngày, pillar, hai Month Jian.
 
 ## Độ phủ biên Jie
 
@@ -43,5 +44,6 @@ Trên 36 Jie thật, 4 thần theo can-chi/mùa (四廢 四忌 四窮 五墓) kh
 
 ## Giới hạn
 
+- Alias chỉ dùng cho presence. Trong P4-B, 又為月虛 / 地火 / 咸池 là phạm vi 忌 riêng theo convention (`p4-vol10-youwei-scopes.md`); task 3.2 không được dùng map alias này để gộp scope, nếu không 6 dòng hold 開倉庫 (月煞 卯/酉 相抵 + 月虛) sẽ bị giải ngầm.
 - Bảng `table` trong definitions đã được trích bởi agent, quote kiểm bằng script (`xiejiGodDefinitions.test.ts`), single reviewer. Derive này **không** suy lại bảng từ văn 起例; nếu đọc nguồn sai thì cả Golden lẫn runtime cùng sai. Đối chiếu runtime ở task 6.0 chỉ bắt lệch giữa runtime và definitions.
 - Theo quyết định owner: 五富 dùng 順行 (`alternative` 逆行 không dùng), 往亡 không gồm 氣往亡.

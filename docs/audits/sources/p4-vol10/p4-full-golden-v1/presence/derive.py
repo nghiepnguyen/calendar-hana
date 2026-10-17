@@ -25,6 +25,8 @@ SOLAR_SHA = '1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60'
 CALENDAR = Path('shared/lunar/audit-fixtures/calendar-golden-v2.1.json')
 CATALOG = [Path('shared/almanac-data/good-gods.json'), Path('shared/almanac-data/bad-gods.json')]
 LEGACY = Path('shared/almanac-data/golden-legacy-gods-month-jian.json')
+# Oracle only (indirectly engine-derived via yi-propagation-v1 -> yi-baseline-v1); never an input.
+JIE_CONVENTION = Path('docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.json')
 
 STEMS = '甲乙丙丁戊己庚辛壬癸'
 BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
@@ -142,7 +144,7 @@ def build():
     for alias, g in ALIASES.items():
         assert alias in json.dumps(json.loads(DEFS.read_text(encoding='utf-8'))['items'][every.index(g)]['operand'],
                                    ensure_ascii=False), alias
-        assert alias not in {rules[x][0] for x in every}, (alias, 'alias is itself a catalog god')
+        assert alias not in catalog.values(), (alias, 'alias is itself a catalog god')
 
     context = []
     for month in MONTHS:
@@ -217,10 +219,17 @@ def build():
         assert (r['pillar'], r['month_jian']) == (case['pillar'], case['monthJian']), case
         assert (case['god'] in r['legacy'].split()) == case['present'], case
 
+    jie_rows = json.loads(JIE_CONVENTION.read_text(encoding='utf-8'))['rows']
+    assert sorted(r['date'] for r in jie_rows) == [r['date'] for r in dated if r['noon_month_jian'] != r['month_jian']]
+    for r in jie_rows:
+        d = by_date[r['date']]
+        assert (d['pillar'], d['month_jian'], d['noon_month_jian']) == (
+            r['pillar'], r['calendarDayMonthJian'], r['noonMonthJian']), r
+
     count = lambda rows, key, g: sum(g in r[key].split() for r in rows)
     summary = {
         'version': 'p4-full-golden-v1/presence',
-        'inputs': {str(p): sha256(p) for p in [DEFS, SOLAR, CALENDAR, *CATALOG, LEGACY]},
+        'inputs': {str(p): sha256(p) for p in [DEFS, SOLAR, CALENDAR, *CATALOG, LEGACY, JIE_CONVENTION]},
         'domains': {'context720': len(context), 'dated1095': len(dated), 'jieBoundary': len(boundary),
                     'structuralBoundary': len(structural)},
         'structuralKinds': {g: sorted({r['kind'] for r in structural if r['god'] == g}) for g in DORMANT},
@@ -229,6 +238,7 @@ def build():
         'contextPresent': {g: count(context, 'dormant' if g in DORMANT else 'legacy', g) for g in every},
         'datedPresent': {g: count(dated, 'dormant' if g in DORMANT else 'legacy', g) for g in every},
         'checks': {'calendarRecords': calendar_records, 'legacyGoldenCases': len(legacy_cases),
+                   'jieConventionRows': len(jie_rows),
                    'aliases': ALIASES, 'catalogHanMatches': len(every)},
     }
     return {

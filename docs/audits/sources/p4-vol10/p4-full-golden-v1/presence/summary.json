@@ -6,7 +6,8 @@
   "shared/lunar/audit-fixtures/calendar-golden-v2.1.json": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300",
   "shared/almanac-data/good-gods.json": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32",
   "shared/almanac-data/bad-gods.json": "e48196cac7cce2cb8d33feeb6784a7d66845e8c33f93343c3f7b764746bf25d2",
-  "shared/almanac-data/golden-legacy-gods-month-jian.json": "5641dbf54aa81416f3ff8218899efcd0ee2f61b844f9ab3bdd4a8c96200e5703"
+  "shared/almanac-data/golden-legacy-gods-month-jian.json": "5641dbf54aa81416f3ff8218899efcd0ee2f61b844f9ab3bdd4a8c96200e5703",
+  "docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.json": "7339a90fe56ba873b187eb301240a94854af7377a4afbf2cc9993f712ed90d19"
  },
  "domains": {
   "context720": 720,
@@ -203,6 +204,7 @@
  "checks": {
   "calendarRecords": 100,
   "legacyGoldenCases": 52,
+  "jieConventionRows": 20,
   "aliases": {
    "月虛": "nguyet_sat",
    "地火": "nguyet_yem",
