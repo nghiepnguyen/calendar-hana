@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD P5](prd-p5-warehouse.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16** (merge chờ owner) — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`), 5.0 xong ([báo cáo](../docs/audits/p5-warehouse.md)); next 6.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
+Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16, MERGED & DEPLOYED 2026-10-17** (PR #60 `22dd72f`) — task 1.0 baseline và 2.0 authority xong ([baseline](../docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/README.md), [authority](../docs/audits/sources/p4-vol10/p5-warehouse-authority-v1/README.md)); task 3.0 Golden freeze xong ([golden](../docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/README.md)); task 4.0 xong (`shared/lunar/p4Warehouse.ts`), 5.0 xong ([báo cáo](../docs/audits/p5-warehouse.md)); next 6.1. Owner chốt D (giao 卷十 ∩ 卷十一) ngày 2026-10-16.
 
 ## Relevant Files
 
@@ -71,4 +71,4 @@ Tên file mới là đề xuất; chốt tên/contract trước implementation. 
 - [x] 6.0 Nghiệm thu
   - [x] 6.1 Acceptance gate 8/8 (PRD §7) với evidence. Evidence: [bảng gate](../docs/audits/p5-warehouse.md#acceptance-gate-prd-7-task-61). F1 puzhu:06 = giới hạn đã biết, owner 2026-10-16 tách việc P4-B riêng.
   - [x] 6.2 `graphify update .`; cập nhật audit report, progress, PROJECT_CONTEXT.md.
-  - [ ] 6.3 PR, CI xanh; merge/deploy chỉ khi owner cho phép.
+  - [x] 6.3 PR, CI xanh; merge/deploy chỉ khi owner cho phép. Evidence: PR #60 CI xanh, merge `22dd72f` 2026-10-17 (owner cho phép), [deploy 38995034163](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38995034163) SUCCESS. Sau merge: test 720 context thiếu timeout (41,9 s trên CI shard), sửa ở `a118f62` (vào main qua PR #61).
