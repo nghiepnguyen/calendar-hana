@@ -1,0 +1,216 @@
+{
+ "version": "p4-full-golden-v1/presence",
+ "inputs": {
+  "shared/almanac-data/xieji-god-definitions.json": "5ca0629da282a5d3f0ba7de8ba69d5adafeaa593ff9d2c46a4362bd9801aa19a",
+  "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60",
+  "shared/lunar/audit-fixtures/calendar-golden-v2.1.json": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300",
+  "shared/almanac-data/good-gods.json": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32",
+  "shared/almanac-data/bad-gods.json": "e48196cac7cce2cb8d33feeb6784a7d66845e8c33f93343c3f7b764746bf25d2",
+  "shared/almanac-data/golden-legacy-gods-month-jian.json": "5641dbf54aa81416f3ff8218899efcd0ee2f61b844f9ab3bdd4a8c96200e5703"
+ },
+ "domains": {
+  "context720": 720,
+  "dated1095": 1095,
+  "jieBoundary": 108,
+  "structuralBoundary": 424
+ },
+ "structuralKinds": {
+  "thien_nguyen": [
+   "off",
+   "on"
+  ],
+  "tu_tuong": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "thoi_duc": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "ngu_hop": [
+   "stable"
+  ],
+  "bat_tuong": [
+   "off",
+   "on"
+  ],
+  "thien_thuong": [
+   "off",
+   "on"
+  ],
+  "pho_ho": [
+   "off",
+   "on"
+  ],
+  "tai_sat": [
+   "off",
+   "on"
+  ],
+  "nguyet_sat": [
+   "off",
+   "on"
+  ],
+  "nguyet_hai": [
+   "off",
+   "on"
+  ],
+  "nguyet_yem": [
+   "off",
+   "on"
+  ],
+  "yem_doi": [
+   "off",
+   "on"
+  ],
+  "dai_thoi": [
+   "off",
+   "on"
+  ],
+  "tu_phe": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "tu_ky": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "tu_cung": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "ngu_mo": [
+   "off",
+   "on",
+   "stable"
+  ],
+  "ngu_ly": [
+   "stable"
+  ],
+  "vang_vong": [
+   "off",
+   "on"
+  ],
+  "bat_chuyen": [
+   "stable"
+  ],
+  "quy_ky": [
+   "off",
+   "on"
+  ]
+ },
+ "jieCrossings": 36,
+ "jieDaysNoonDiffers": [
+  "2025-02-03",
+  "2025-03-05",
+  "2025-04-04",
+  "2025-05-05",
+  "2025-06-05",
+  "2025-08-07",
+  "2025-09-07",
+  "2026-01-05",
+  "2026-03-05",
+  "2026-05-05",
+  "2026-06-05",
+  "2026-08-07",
+  "2026-09-07",
+  "2026-10-08",
+  "2026-11-07",
+  "2027-01-05",
+  "2027-07-07",
+  "2027-10-08",
+  "2027-11-07",
+  "2027-12-07"
+ ],
+ "contextPresent": {
+  "thien_nguyen": 12,
+  "tu_tuong": 144,
+  "thoi_duc": 60,
+  "ngu_hop": 120,
+  "bat_tuong": 149,
+  "thien_thuong": 60,
+  "pho_ho": 60,
+  "tai_sat": 60,
+  "nguyet_sat": 60,
+  "nguyet_hai": 60,
+  "nguyet_yem": 60,
+  "yem_doi": 60,
+  "dai_thoi": 60,
+  "tu_phe": 24,
+  "tu_ky": 12,
+  "tu_cung": 12,
+  "ngu_mo": 12,
+  "ngu_ly": 120,
+  "vang_vong": 60,
+  "bat_chuyen": 60,
+  "quy_ky": 60,
+  "thien_xa": 12,
+  "nguyet_an": 72,
+  "dan_nhat": 60,
+  "tam_hop": 120,
+  "thien_hy": 60,
+  "luc_hop": 60,
+  "ngu_phu": 60,
+  "giai_than": 60,
+  "phuc_sinh": 60,
+  "thanh_tam": 60,
+  "ich_hau": 60,
+  "tuc_the": 60,
+  "nguyet_hinh": 60,
+  "thien_lai": 60
+ },
+ "datedPresent": {
+  "thien_nguyen": 16,
+  "tu_tuong": 217,
+  "thoi_duc": 92,
+  "ngu_hop": 182,
+  "bat_tuong": 229,
+  "thien_thuong": 91,
+  "pho_ho": 95,
+  "tai_sat": 93,
+  "nguyet_sat": 91,
+  "nguyet_hai": 90,
+  "nguyet_yem": 90,
+  "yem_doi": 94,
+  "dai_thoi": 91,
+  "tu_phe": 38,
+  "tu_ky": 17,
+  "tu_cung": 18,
+  "ngu_mo": 19,
+  "ngu_ly": 183,
+  "vang_vong": 91,
+  "bat_chuyen": 90,
+  "quy_ky": 92,
+  "thien_xa": 18,
+  "nguyet_an": 108,
+  "dan_nhat": 90,
+  "tam_hop": 181,
+  "thien_hy": 90,
+  "luc_hop": 93,
+  "ngu_phu": 92,
+  "giai_than": 92,
+  "phuc_sinh": 92,
+  "thanh_tam": 90,
+  "ich_hau": 86,
+  "tuc_the": 87,
+  "nguyet_hinh": 92,
+  "thien_lai": 91
+ },
+ "checks": {
+  "calendarRecords": 100,
+  "legacyGoldenCases": 52,
+  "aliases": {
+   "月虛": "nguyet_sat",
+   "地火": "nguyet_yem",
+   "招搖": "yem_doi",
+   "大敗": "dai_thoi",
+   "咸池": "dai_thoi",
+   "天獄": "tai_sat"
+  },
+  "catalogHanMatches": 35
+ }
+}
