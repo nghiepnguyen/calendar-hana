@@ -52,6 +52,12 @@ Mục 8 (adapter điểm, flag OFF) phải dựa trên một lớp resolution kh
   - Ít nhất một mutation cho mỗi luật ở FR-02; tất cả phải bị test bắt.
   - Thêm runner vào `ci:p4`.
 
+## 3b. Quyết định owner sau implementation (2026-10-17)
+
+- **FR-03 (hook):** giữ cách cài trong layer. Ba file engine cần hook nằm trong lock đóng băng của P4-C (`yi-freeze-v1`), nên H2-A và (i) cho remaining-ji được cài trong `p4OwnerRules.ts`. Test toàn miền kiểm phần chạy lại remaining-ji trùng engine trên đủ 720 context. Việc đưa logic vào engine (lock P4-C mới) để tới **mục 10** (activation).
+- **FR-04 (sweep):** thay bằng phép so toàn miền với Golden v2 (0 lệch, gồm trace) cộng `docs/audits/p4-owner-rules-summary.json`, được kiểm bytes trong `ci:p4`.
+- **FR-05 (mutation):** luật trigger puzhu:06 của (i) được tách thành hàm thuần `p4Puzhu06Triggers` và có unit test riêng, nên mọi mutation đều bị bắt.
+
 ## 4. Non-goals
 
 - Score adapter, cap, event, penalty: mục 8. Migration diff: mục 9. Activation: mục 10.

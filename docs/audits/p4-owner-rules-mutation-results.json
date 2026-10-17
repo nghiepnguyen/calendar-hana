@@ -5,8 +5,8 @@
     "shared/lunar/p4OwnerRules.test.ts"
   ],
   "control": "clean",
-  "mutations": 11,
-  "caught": 11,
+  "mutations": 12,
+  "caught": 12,
   "restored": true,
   "results": [
     {
@@ -58,6 +58,12 @@
       "exitCode": 1
     },
     {
+      "mutation": "i_triggers_reverted",
+      "rule": "(i) puzhu:06 triggers",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
       "mutation": "a04b_layering",
       "rule": "A04b layering (later protected 忌 ignored)",
       "caughtByTest": true,
@@ -74,13 +80,6 @@
       "rule": "E5 context",
       "caughtByTest": true,
       "exitCode": 1
-    }
-  ],
-  "equivalentOnRealData": [
-    {
-      "mutation": "i_triggers_reverted",
-      "rule": "(i) puzhu:06 triggers",
-      "evidence": "observed effect only: reverting it changes no row of the full Golden v2 domain; the cause was not checked separately"
     }
   ]
 }

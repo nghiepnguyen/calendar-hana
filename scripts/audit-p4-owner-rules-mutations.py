@@ -31,19 +31,13 @@ mutations = [
     ('i_remaining_reverted', '(i) remaining-ji', 'const remaining = remainingScopes(month, pillar, drop)',
      'const remaining = remainingScopes(month, pillar, false)'),
 
+    ('i_triggers_reverted', '(i) puzhu:06 triggers', 'present.has(g) && !(deAsJianDay && DE_HE.includes(g))',
+     'present.has(g)'),
     ('a04b_layering', 'A04b layering (later protected 忌 ignored)', "(f.kind === 'dated' && f.state === 'protected'),",
      'false,'),
     ('puzhu28_dropped', 'puzhu:28', "    if (dayRule) row =", "    if (false) row ="),
     ('e5_dropped', 'E5 context', 'rows.every((r) => key(r) === key(rows[0]!))', 'true'),
 ]
-# Equivalent on real data: verified once over the whole Golden v2 domain (31,755 dated + 20,880 context
-# rows, P4_OWNER_RULES_FULL=1, 2026-10-17) — no row changes, so no witness exists in 2025–2027.
-EQUIVALENT = [
-    ('i_triggers_reverted', '(i) puzhu:06 triggers',
-     'observed effect only: reverting it changes no row of the full Golden v2 domain; the cause was not checked separately'),
-]
-
-
 def run_test():
     return subprocess.run(['npx', 'vitest', 'run', *TEST], cwd=root, capture_output=True, text=True, timeout=1800)
 
@@ -78,7 +72,6 @@ report = {
     'caught': sum(r['caughtByTest'] for r in results),
     'restored': TARGET.read_bytes() == original,
     'results': results,
-    'equivalentOnRealData': [{'mutation': n, 'rule': r, 'evidence': e} for n, r, e in EQUIVALENT],
 }
 REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
 if not report['restored'] or report['caught'] != len(results):

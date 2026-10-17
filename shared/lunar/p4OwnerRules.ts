@@ -32,6 +32,8 @@ export type P4OwnerRow = {
   puzhu06?: string
   propagatedFrom?: string
   propagationBlocked?: string
+  /** Owner (i) changed this row's puzhu:06 trigger set ('reduced') or removed every trigger ('skipped'). */
+  puzhu06Dropped?: 'reduced' | 'skipped'
   /** Deciding trace, ids as in the Golden `code`: primary rule, 忌 sources, protecting sources. */
   trace?: { primary: string; ji: string[]; prot: string[] }
 }
@@ -141,9 +143,9 @@ const remHeadings = (s: string) =>
 /** Remaining 卷十一 凶 scopes. Owner (i): on 德作建論 days a lift condition takes no 德合 god. The engine
  * output is used as is on other days; on 德作建論 days the condition choice is re-run here with the same
  * rules, and the re-run without the drop must equal the engine (checked). */
-function remainingScopes(month: string, pillar: string, drop: boolean) {
+function remainingScopes(month: string, pillar: string, drop: boolean, check = false) {
   const engine = resolveP4RemainingJi(month, pillar).scopes as Record<string, RemainingScope>
-  if (!drop) return engine
+  if (!drop && !check) return engine
   const ctx = resolveP4Context(month, pillar)
   const B = '子丑寅卯辰巳午未申酉戌亥'
   const S = '甲乙丙丁戊己庚辛壬癸'
@@ -230,7 +232,18 @@ function remainingScopes(month: string, pillar: string, drop: boolean) {
       JSON.stringify([same[k]?.presence, same[k]?.effect, same[k]?.headings])
     )
       throw new Error(`remaining-ji re-run differs from the engine on ${month}${pillar} ${k}`)
-  return run(true)
+  return drop ? run(true) : engine
+}
+
+/** Throws unless the layer's re-run of the remaining-ji condition choice (without the (i) drop) equals the
+ * engine on this context; the full test calls it for all 720 contexts. */
+export function checkP4RemainingRerun(month: string, pillar: string) {
+  remainingScopes(month, pillar, false, true)
+}
+
+/** puzhu:06 triggers present today; owner (i): none of the four 德合 gods on a 德作建論 day. */
+export function p4Puzhu06Triggers(present: ReadonlySet<string>, deAsJianDay: boolean) {
+  return PUZHU06_TRIGGERS.filter((g) => present.has(g) && !(deAsJianDay && DE_HE.includes(g)))
 }
 
 function yiState(yi: boolean | undefined) {
@@ -455,20 +468,26 @@ export function resolveP4OwnerRulesDay(
   }
 
   // puzhu:06 (authority v3, owner Q1–Q4a) through the engine's own decision, triggers per owner (i).
-  const triggers = PUZHU06_TRIGGERS.filter(
-    (g) =>
-      !(drop && DE_HE.includes(g)) &&
+  const presentTriggers = new Set(
+    PUZHU06_TRIGGERS.filter((g) =>
       P4_DAY_HEADINGS.some((h) =>
         ((day.yiEvidence[h]?.trace ?? []) as { han: string; presence: string }[]).some(
           (t) => t.han === g && t.presence === 'present',
         ),
       ),
+    ),
   )
+  const rawTriggers = p4Puzhu06Triggers(presentTriggers, false)
+  const triggers = p4Puzhu06Triggers(presentTriggers, drop)
   const grades = resolveP4Grades(month, pillar).subjects as Record<string, Record<string, unknown>>
   for (const h of PUZHU06_HEADINGS) {
     const d = pre[h]!
-    if (!triggers.length || !d.ji || d.protectedJi || dayRule || d.state === 'undetermined')
+    if (!rawTriggers.length || !d.ji || d.protectedJi || dayRule || d.state === 'undetermined')
       continue
+    // Evidence for the (i) trigger rule: an eligible row whose trigger set (i) reduces or empties.
+    if (triggers.length !== rawTriggers.length)
+      d.puzhu06Dropped = triggers.length ? 'reduced' : 'skipped'
+    if (!triggers.length) continue
     const known = Object.fromEntries(
       P4_DAY_HEADINGS.flatMap((x) => (yiEv[x] === undefined ? [] : [[x, yiEv[x]!]])),
     )

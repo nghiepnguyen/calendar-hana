@@ -1,0 +1,31 @@
+{
+ "version": "p4-owner-rules-summary-v1",
+ "golden": "c574e57",
+ "mismatches": 0,
+ "dated": {
+  "rows": 31755,
+  "state:only_ji": 14495,
+  "traceCompared": 31755,
+  "state:not_recorded": 5880,
+  "state:only_yi": 7534,
+  "state:both_present": 1720,
+  "state:neither_recorded": 2125,
+  "state:undetermined": 1,
+  "puzhu06TriggerChangedBy(i):skipped": 10
+ },
+ "context": {
+  "rows": 20880,
+  "state:only_yi": 4010,
+  "traceCompared": 16443,
+  "state:neither_recorded": 1055,
+  "state:only_ji": 7486,
+  "state:undetermined": 4437,
+  "state:not_recorded": 2998,
+  "state:both_present": 894,
+  "puzhu06TriggerChangedBy(i):skipped": 4,
+  "puzhu06TriggerChangedBy(i):reduced": 5
+ },
+ "remainingRerun": {
+  "contexts": 720
+ }
+}

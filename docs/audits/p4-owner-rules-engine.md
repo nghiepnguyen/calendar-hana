@@ -10,7 +10,7 @@
 | Khớp Golden v2, context | **20.880 / 20.880**, gồm cả các dòng E5 `undetermined` |
 | Trace | Primary, nguồn 忌 và nguồn bảo vệ khớp cột `code` của Golden trên toàn miền ngày và mọi dòng context bất biến. Alias 招搖 ghi theo entry 厭對, như Golden |
 | Golden-first | Test đỏ commit `aef0a1e` trước code. Stub là phép ghép engine hiện tại, lệch Golden đúng 248 dòng đã chứng minh nguyên nhân (harness test) |
-| Mutation | Lượt đối chứng sạch; **11/11 bị bắt**; 1 mutation tương đương trên dữ liệu thật, ghi rõ |
+| Mutation | Lượt đối chứng sạch; **12/12 bị bắt** |
 | `ci:local` | EXIT 0 trong khoảng 166 giây; tập con của test mới chạy khoảng 10 giây |
 | `ci:p4` (chạy tay) | Thêm phép so toàn miền (`P4_OWNER_RULES_FULL=1`, khoảng 5,5 phút) và runner mutation (khoảng 3 phút). Đã chạy đủ chuỗi tại `dedd8f4`: **EXIT 0 trong khoảng 39 phút** (P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2 có lượt đối chứng sạch, owner-rules toàn miền 3/3, mutation 11/11) |
 
@@ -34,17 +34,18 @@ Module **ghép từ các lớp fact của engine**, không bọc output ngày đ
 
 ## Mutation ([runner](../../scripts/audit-p4-owner-rules-mutations.py), [kết quả](p4-owner-rules-mutation-results.json))
 
-**Bị bắt (11):** H1-B/F5, E3, H2-A, F1, E1, (i) ở 宜, (i) ở quy tắc D, (i) ở remaining-ji, phân tầng A04b, puzhu:28, E5.
+**Bị bắt (12/12):** H1-B/F5, E3, H2-A, F1, E1, (i) ở 宜, (i) ở quy tắc D, (i) ở remaining-ji, (i) ở trigger puzhu:06 (bắt bằng unit test của hàm thuần), phân tầng A04b, puzhu:28, E5.
 
-**Tương đương trên dữ liệu thật (1):** (i) ở trigger puzhu:06.
-- Đã đảo luật rồi chạy toàn miền Golden v2: không dòng nào đổi.
-- Mới kiểm **hệ quả**, chưa kiểm riêng **nguyên nhân** (tức vì sao không ngày nào chạm tới luật này).
+## Lệch so với PRD (owner duyệt hướng xử lý 2026-10-17)
 
-## Lệch so với PRD
-
-- **FR-03 / task 3.1:** không thêm hook vào engine. Ba file cần hook nằm trong lock đóng băng của P4-C, nên H2-A và (i) cho remaining-ji được cài trong layer. Hành vi mặc định của engine vì thế không bị đụng tới.
-- **FR-04:** không có sweep TSV riêng. Thay vào đó là phép so toàn miền với Golden v2 (0 lệch, cả trace).
-- **FR-05:** 1 mutation tương đương trên dữ liệu thật ((i) ở trigger puzhu:06): đã kiểm hệ quả, chưa kiểm nguyên nhân.
+- **FR-03 / task 3.1, không hook vào engine:** ba file cần hook nằm trong lock P4-C, nên H2-A và (i) cho remaining-ji được cài trong layer.
+  - Giảm rủi ro: test toàn miền kiểm phần chạy lại remaining-ji (khi không bỏ 德) trùng engine trên **đủ 720 context**, không chỉ ngày 德作建論.
+  - Đưa logic vào engine (cần lock P4-C mới) là việc của mục 10.
+- **FR-04, không có sweep TSV:** thay bằng phép so toàn miền với Golden v2 (0 lệch, gồm trace) cộng [summary.json](p4-owner-rules-summary.json), được kiểm bytes. Nội dung: số dòng theo trạng thái, số trace đã so, và số dòng mà (i) làm đổi trigger.
+- **FR-05, mutation:**
+  - Luật (i) cho trigger puzhu:06 được tách thành hàm thuần `p4Puzhu06Triggers` và có unit test riêng, nên runner đạt **12/12**.
+  - Nguyên nhân đã đếm trực tiếp: (i) làm đổi tập trigger trên **10 dòng ngày** (bỏ hết trigger) và **9 dòng context** (4 bỏ hết, 5 bớt).
+  - Trên toàn miền, việc đảo luật này không đổi trạng thái dòng nào. Lý do: ở các dòng đó, puzhu:06 với trigger 德合 vẫn cho keep/hold.
 
 ## Giới hạn
 

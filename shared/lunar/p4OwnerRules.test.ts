@@ -1,10 +1,12 @@
 import { createHash } from 'node:crypto'
-import { readFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
 import {
+  checkP4RemainingRerun,
+  p4Puzhu06Triggers,
   resolveP4OwnerRulesContext,
   resolveP4OwnerRulesDay,
   stitchP4EngineDay,
@@ -20,6 +22,13 @@ const DIFFS = 'docs/audits/sources/p4-vol10/p4-full-golden-v2-review/engine/diff
 const B = '子丑寅卯辰巳午未申酉戌亥'
 const S = '甲乙丙丁戊己庚辛壬癸'
 const FULL = process.env.P4_OWNER_RULES_FULL === '1'
+const SUMMARY = 'docs/audits/p4-owner-rules-summary.json'
+// Full-run tallies written to / verified against SUMMARY (P4_OWNER_RULES_WRITE=1 rewrites it).
+const stats: Record<string, Record<string, number>> = {}
+const tally = (domain: string, key: string) => {
+  const s = (stats[domain] ??= {})
+  s[key] = (s[key] ?? 0) + 1
+}
 const sha256 = (b: Buffer) => createHash('sha256').update(b).digest('hex')
 const tf = (v: boolean | undefined) => (v === undefined ? 'unknown' : String(v))
 
@@ -79,6 +88,7 @@ function mismatches(
   key: string,
   day: (k: string) => P4OwnerDay,
   withTrace = true,
+  domain = '',
 ) {
   const byKey = new Map<string, Record<string, string>[]>()
   for (const r of rows) byKey.set(r[key]!, [...(byKey.get(r[key]!) ?? []), r])
@@ -88,6 +98,12 @@ function mismatches(
     for (const r of rs) {
       const e = d[r.heading!]
       if (!e) throw new Error(`no engine row for ${k} ${r.heading}`)
+      if (domain) {
+        tally(domain, 'rows')
+        tally(domain, `state:${e.state}`)
+        if (traceOf(r.code!)) tally(domain, 'traceCompared')
+        if (e.puzhu06Dropped) tally(domain, `puzhu06TriggerChangedBy(i):${e.puzhu06Dropped}`)
+      }
       if (r.state !== e.state || r.ji !== tf(e.ji) || r.protected !== tf(e.protectedJi))
         out.push(`${k}|${r.heading}`)
       else if (
@@ -160,20 +176,64 @@ describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
 
   it('dated: every row equals the Golden (state, 忌, protection and the deciding trace)', () => {
     const rows = sample(datedRows)
-    const got = mismatches(rows, 'date', (k) => {
-      const { month, pillar, operands } = dated(k)
-      return resolveP4OwnerRulesDay(month, pillar, operands)
-    })
+    const got = mismatches(
+      rows,
+      'date',
+      (k) => {
+        const { month, pillar, operands } = dated(k)
+        return resolveP4OwnerRulesDay(month, pillar, operands)
+      },
+      true,
+      FULL ? 'dated' : '',
+    )
     expect(got.length, got.slice(0, 20).join('\n')).toBe(0)
   }, 600_000)
 
   // E5 included: rows the Golden leaves undetermined (date-operand dependent) must be undetermined too.
   it('context: every row equals the Golden, E5 undetermined rows included', () => {
     const rows = contextRows.filter((r) => FULL || CONTEXT_SAMPLE.has(r.id!))
-    const got = mismatches(rows, 'id', (k) => {
-      const [month, pillar] = k.split('-') as [string, string]
-      return resolveP4OwnerRulesContext(month, pillar)
-    })
+    const got = mismatches(
+      rows,
+      'id',
+      (k) => {
+        const [month, pillar] = k.split('-') as [string, string]
+        return resolveP4OwnerRulesContext(month, pillar)
+      },
+      true,
+      FULL ? 'context' : '',
+    )
     expect(got.length, got.slice(0, 20).join('\n')).toBe(0)
   }, 600_000)
+  it('(i) puzhu:06 triggers: no 德合 god on a 德作建論 day, all present triggers otherwise', () => {
+    const present = new Set(['月德', '天德合', '四相', '時德'])
+    expect(p4Puzhu06Triggers(present, true)).toEqual(['四相', '時德'])
+    expect(p4Puzhu06Triggers(present, false)).toEqual(['月德', '天德合', '四相', '時德'])
+    expect(p4Puzhu06Triggers(new Set(['月德']), true)).toEqual([])
+  })
+
+  it.runIf(FULL)(
+    'the remaining-ji re-run equals the engine on all 720 contexts',
+    () => {
+      let n = 0
+      for (const m of B)
+        for (let i = 0; i < 60; i++) {
+          checkP4RemainingRerun(m, S[i % 10]! + B[i % 12]!)
+          n += 1
+        }
+      expect(n).toBe(720)
+      stats.remainingRerun = { contexts: n }
+    },
+    600_000,
+  )
+
+  it.runIf(FULL)('summary of the full run matches the committed summary', () => {
+    const text =
+      JSON.stringify(
+        { version: 'p4-owner-rules-summary-v1', golden: 'c574e57', mismatches: 0, ...stats },
+        null,
+        1,
+      ) + '\n'
+    if (process.env.P4_OWNER_RULES_WRITE === '1') writeFileSync(SUMMARY, text)
+    expect(readFileSync(SUMMARY, 'utf8')).toBe(text)
+  })
 })
