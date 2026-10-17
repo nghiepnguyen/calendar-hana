@@ -1,0 +1,317 @@
+{
+ "version": "golden-p4-full-commit-proof-v1",
+ "freezeCommit": "b70913f14fb24c0d279e0f2031de4979b03146c5",
+ "tree": "56587e79026375815fc2d8efaa7a2654b5ca82ac",
+ "parent": "8d9345cbe20a5de4f542cd89700c45d9a4308b21",
+ "note": "Written after the freeze commit from Git objects; not amended. Before freeze the only engine contact was the logged task 2.1 diagnosis and the code reads listed in ji/README.md and compose/README.md; no Golden ↔ engine comparison (task 6.0) has run.",
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.py",
+   "sha256": "52e5a84c1d55c6b9a9dbfb0865472b161be802e4a4a2d15d746ec746d71a8941"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/compose.py",
+   "sha256": "2afafad8ba1a3c0d8a540d69c3053536a945e4f33132903e4ff87fedf5101657"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/freeze.py",
+   "sha256": "1550cb0d9fc85fa70f95caf33e9c8841fdad10e49c4f20bef16c9419041ac9fe"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context_ji.py",
+   "sha256": "9f68155c9ce708a45fb49745b1fe71e1ad9137be2f5ec42f6e2b2d5a86316c5c"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/dated_ji.py",
+   "sha256": "e9e88e436989a5e2faa29d2b290e77cf123e7159dddc5576c96cc5cf948e71c7"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/grades.py",
+   "sha256": "f51e39ae36ff1b7ad36f2ade61b0a83346821365cf85777ec21bb785753555a6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/operands.py",
+   "sha256": "7e772e08a66e43643b6cc280ab2afa0372f2b61906ec24d0326b1012222a71a3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes.py",
+   "sha256": "00f000dfae1098a3be1a6af7756d945d114738fa21d871c4c4fbd04db88436d9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/derive.py",
+   "sha256": "c0f477e8cae70a39727d9d8f1cbcb2fc32ccbb327099069a14f6d51541e8c6e2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json",
+   "sha256": "7b5e65859495028aae4af708cef31dc84440df9e48b82f15f1a6977e0076367f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/context.tsv",
+   "sha256": "297820734a333aeb95ebcbbf486439d65a340c3b1d0e992ea0fc5d0c5e844ec2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/dated.tsv",
+   "sha256": "cf3225050675de9bf95cdff222cbd64c6deea072c5ff189e1fa5c3e5a7efd171"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/h1b-changes.tsv",
+   "sha256": "a10f098d18f33692cdf62c1b342799459b064f497b234231d6c966f741b863f3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/summary.json",
+   "sha256": "9054c88171d669ecefadb2e5b60092c9627213e3f127db229e7acfa9de9ad03d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context-ji-summary.json",
+   "sha256": "e478c14835b2c1f58b3dab28225fd3e3469c218920286531b9c2a39eba1b6a85"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context-ji.tsv",
+   "sha256": "fcad69b828a3c45aaaa5c86737473055111b487855045ee95af02256bcd11f90"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/dated-ji-summary.json",
+   "sha256": "435f75f921ad022d1ef69aba755e1a6af7b58c90d8418459d6c45953779c42ef"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/dated-ji.tsv",
+   "sha256": "f89d4e14a5d0611c6562e779fc2b5818f97488d0fb20e2883558222030c96865"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/grades-summary.json",
+   "sha256": "cf5de19822b1516819c77202b6f8889de8a99f1d950e4304434be477c3d06f31"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/grades.tsv",
+   "sha256": "a49b386e0bbd316c76698a175abbd116e5cebc025d8a76c6dcbe068ff959b40d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/operands-summary.json",
+   "sha256": "e4e802f3ec3857f8197f57a5e83eba2625d91d880a5bb77c141f80fc857e7bed"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/operands.tsv",
+   "sha256": "f19dc69c8bc3f1ac42057bd11f0f16e855b33713b88662516eba85bf7047005b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes-summary.json",
+   "sha256": "a17da4384decc127856db55039397aced965ce356d371cee57e5bdc40cde7036"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes.tsv",
+   "sha256": "b885f1e7b63842fde8a1e6cd868f2a59db2bfc471e3cf228e249f96db4f39f2b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/context.tsv",
+   "sha256": "2db5e93328ec7950b3c56f0a6d12b727cf82c2ed1aca7d9acef3ab04e7f2aee8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/dated.tsv",
+   "sha256": "b740570823a65c696c98379a6300d6d9374f1692ee4bc2871cb5a4b5e305b547"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/jie.tsv",
+   "sha256": "ca4097b40bbe0022030c11a9c6eadc3cc62faf954a0f6c8d69eaa8a90a37e621"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/structural.tsv",
+   "sha256": "2201030a15c9716752ea3340c3defc6ab00a33eab04cf648206697ec991579e5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/summary.json",
+   "sha256": "1c1929e3de095724dcb5200eb197b666440d1c889f8bf94da2ed588e02ee4760"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/context.tsv",
+   "sha256": "b84f112c142712f4a2fd442718ec986c73f85dff804c90521efb959bc8de70a0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/dated.tsv",
+   "sha256": "949ed7d16fcda64d7f4089945c53f8a10e503977759bf7e2f4c8b5fd29975de8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv",
+   "sha256": "30f4339e902cc04cd73d3dd8864246808c2b2e6363e4478f10e100755bf7da1e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv",
+   "sha256": "e845c12e660b4f405e5d07fa45d50d20ec30281a17fa38ccaa414bf524630f47"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/soil-hko/T2025c.txt",
+   "sha256": "7a2803584dcd12a38a13e3710e643369996f59e690d684b9e3705fc5e988ebc2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/soil-hko/T2026c.txt",
+   "sha256": "7b0831acb16a5a72a1ab553205e938b2f658c3837e06440f22c084e1a39832dd"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/soil-hko/T2027c.txt",
+   "sha256": "2c6a406cd2f8c6f1cf11f154737b7c5ae4afb53c87d76b101bd561b482e3b93f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/usno-phase/normalized-response.json",
+   "sha256": "66118ad3e7e40098fd75d39788583e1677f4992638bf7600cb1b75813e1d7504"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+   "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+   "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.json",
+   "sha256": "7339a90fe56ba873b187eb301240a94854af7377a4afbf2cc9993f712ed90d19"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+   "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+  },
+  {
+   "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+   "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+  },
+  {
+   "path": "shared/almanac-data/bad-gods.json",
+   "sha256": "e48196cac7cce2cb8d33feeb6784a7d66845e8c33f93343c3f7b764746bf25d2"
+  },
+  {
+   "path": "shared/almanac-data/golden-legacy-gods-month-jian.json",
+   "sha256": "5641dbf54aa81416f3ff8218899efcd0ee2f61b844f9ab3bdd4a8c96200e5703"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-context-bridge-v2.json",
+   "sha256": "7ec441705c7f194f45530460997452f311e849d68809d126c6fa00b7b44bead5"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-day-composition.json",
+   "sha256": "b85a966a503fca2795f057bfbfc924e0443d95622c7fdd632e6a23decf8b309b"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-grade-resolution.json",
+   "sha256": "f48e1679b90460c55cb283c255b2413642b21a5c61c327cf17811e1f05c62e02"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-heading-annotation-v2.json",
+   "sha256": "3adfe4ad3e3365abca47b5953e834877462d7c800be48924419f481c9eb46aa0"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-lunar-day-v1.json",
+   "sha256": "57d23eb89793bb800191158feeb9106ed2470a0f74b5f60c3f30dd50cc9e6f7b"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-lunar-phase-v1.json",
+   "sha256": "f2810b117996bb45784b0566abd7213185b3237d4a967098743674be03aa4fea"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-named-clauses.json",
+   "sha256": "d7e817e2d51d5834d08d08dfb12dfc8f02d4779ed4389b7ed954af3f086ffc11"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-puzhu-end-v1.json",
+   "sha256": "bea7e83d8789c17600557f344c42df9a08231f739bc3a044d49db71f6d5db8ee"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v8.json",
+   "sha256": "3122b8f04490c1aa17740962557dd6c245ae06a489a1642ec869e59cf71a81bb"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-soil-owner-convention-v1.json",
+   "sha256": "b31d7800de1c2548427fd210ad7b8e87d3e715f5640337a66849f240bab28ff8"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-youwei-scopes-v2.json",
+   "sha256": "967b918f9a5db709cfa94f9220c4043a2ff05ae8f8c8ea09c409049dab33b202"
+  },
+  {
+   "path": "shared/almanac-data/good-gods.json",
+   "sha256": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32"
+  },
+  {
+   "path": "shared/almanac-data/p4-lunar-day-taboo-v1.json",
+   "sha256": "90a5be2252982d7e032d810e635332a91189a7e33de5cf423f9137db008d561a"
+  },
+  {
+   "path": "shared/almanac-data/p4-lunar-phase-authority-v1.json",
+   "sha256": "463fb300a25c2f9c130c8089fe35347cae40c3630cea126b50c4932b787139fa"
+  },
+  {
+   "path": "shared/almanac-data/p4-puzhu-end-v1.json",
+   "sha256": "3cb6aa9edeaf95189612486783a48bbef48f3894beab7ad6a0551b3860671c8a"
+  },
+  {
+   "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+   "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-authority.json",
+   "sha256": "64973dddae8a050c4743e53d1fbf2e9f12f3e2c3e03897f4563371a360a29b02"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-context-bridge-v2.json",
+   "sha256": "a774096ed16b1205a4dc850e42e0e15eca006095de233b2342a6b68c1b4a4a21"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+   "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-deferral-coverage-v3.json",
+   "sha256": "f49ad86ee5a6724c6e6568be3a0d6ce1b499d324f3975f6f20a2649bacbd5444"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-grade-resolution-v2.json",
+   "sha256": "c441331ae3424c34fa4cdb1989355d57a78e42fbdde35f72df9283a663141e13"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-heading-annotation.json",
+   "sha256": "41784e61ab49e8ff0c43bc69e280a4aed0ce7c684d407480165ba291719650f0"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-named-clauses.json",
+   "sha256": "236c8e9df5202cc2934a14f63b5ba5c29871de744132cc7d77115ab7b9bdb1e4"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+   "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-season-days.json",
+   "sha256": "b24fc7a0568431914fa36fb271f982f3d3f697212d22fcc7833a1db7b6948242"
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-youwei-scopes.json",
+   "sha256": "49015480e1156d03d7ba3a002a4b9332d100fceb3034b22e4cf669920f725606"
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v3.json",
+   "sha256": "2f25d9db3778a77d91deba3d197d43b88316f5a0ea9d17122276f09eb8202f01"
+  },
+  {
+   "path": "shared/almanac-data/xieji-god-definitions.json",
+   "sha256": "5ca0629da282a5d3f0ba7de8ba69d5adafeaa593ff9d2c46a4362bd9801aa19a"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "sha256": "925057d78883eee09b915222f561768475f121466230377182894a17e38e1f33"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+  },
+  {
+   "path": "shared/lunar/audit-fixtures/calendar-golden-v2.1.json",
+   "sha256": "e33ca4906b7a48ab5f63b60ba05f7616b9dcc6f440d48ae39b6d05d025358300"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/lock.json",
+   "sha256": "c550addd5e1586cfdf25da8d525fabf43fd1e515831a42c72396f43becbb2dd7"
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-full-v1.json",
+   "sha256": "80e869383e7cd430eadb4c90226f1f45ff21b25b9e62be3fb8b73aadf14b7835"
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "version": "p4-full-golden-mutations-v1",
+ "option": "owner (b), 2026-10-17: mutate the Python derive",
+ "control": "unmutated chain passes every stage and reproduces the frozen bytes",
+ "mutations": 20,
+ "caught": 20,
+ "bySelfCheck": 20,
+ "byFrozenBytesOnly": [],
+ "survived": [],
+ "outOfScope": [
+  "cap trước resolution",
+  "event đọc raw thay applied",
+  "penalty −25 trùng (roadmap 8: score adapter / cap / event)"
+ ],
+ "results": [
+  {
+   "id": "M01",
+   "mutation": "FR-07 bỏ một thần dormant (四窮 vắng mọi ngày)",
+   "target": "presence/derive.py",
+   "by": "self_check",
+   "stage": "presence/derive.py",
+   "error": "StopIteration"
+  },
+  {
+   "id": "M02",
+   "mutation": "FR-07 Month Jian sai tháng (lệch một tiết, proxy cho operand tháng âm)",
+   "target": "presence/derive.py",
+   "by": "self_check",
+   "stage": "presence/derive.py",
+   "error": "AssertionError"
+  },
+  {
+   "id": "M03",
+   "mutation": "FR-07 ANY partner thành ALL (宜 evidence)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "compose/compose.py",
+   "error": "AssertionError: ('dated', '2025-01-03', '立券交易', 'only_yi', 'not_recorded')"
+  },
+  {
+   "id": "M04",
+   "mutation": "FR-07 bỏ ngoại lệ 專忌 (百忌日 không được bảo vệ)",
+   "target": "ji/context_ji.py",
+   "by": "self_check",
+   "stage": "compose/compose.py",
+   "error": "AssertionError: ('puzhu:06 SPEC_GAP: stop, never guess', '寅', '壬申', '安牀', ['SPEC_GAP', 'YOUJI'])"
+  },
+  {
+   "id": "M05",
+   "mutation": "FR-07 unknown thành absent (P5 SOURCE_DEPENDENT → không 宜)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "compose/compose.py",
+   "error": "AssertionError: ('rule D vs P5 Golden', ('卯', '庚午', 'present'))"
+  },
+  {
+   "id": "M06",
+   "mutation": "FR-07 gộp 亦從宜亦從忌 với 不註 (相抵 giữ 忌 + 宜)",
+   "target": "ji/scopes.py",
+   "by": "self_check",
+   "stage": "ji/scopes.py",
+   "error": "AssertionError: ('卯月 相抵 → 不註宜亦不註忌 for every listed heading', '平日', '嫁娶', 'both_present', 'neither_recorded')"
+  },
+  {
+   "id": "M07",
+   "mutation": "FR-07 bỏ nhánh 德 (nhóm 德 có tên luôn rỗng)",
+   "target": "ji/scopes.py",
+   "by": "self_check",
+   "stage": "ji/scopes.py",
+   "error": "AssertionError: ('申月 平日 中 with named 天德 present; 月害 defers to 平日', '平日', 'as_usual', 'only_avoid')"
+  },
+  {
+   "id": "M08",
+   "mutation": "FR-07 duplicate effect (lan truyền chạy hai lượt)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('dated', 'single pass (blocked)', {'date': '2025-07-26', 'month_jian': '未', 'pillar': '丙申', 'heading': '開倉庫出貨財', 'yi_evidence': 'false', 'yi_noted': 'false', 'ji': 'true', 'protected': 'true', 'state': 'only_ji', 'reasons': '', 'puzhu06': '', 'propagated': '', 'blocked': '開市+立券交易', "
+  },
+  {
+   "id": "M09",
+   "mutation": "Lan truyền bỏ qua 忌 được bảo vệ",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "compose/compose.py",
+   "error": "AssertionError: ('dated', '2025-01-09', '開倉庫出貨財', 'only_ji', 'neither_recorded')"
+  },
+  {
+   "id": "M10",
+   "mutation": "Bỏ puzhu:28 (諸事不忌)",
+   "target": "ji/context_ji.py",
+   "by": "self_check",
+   "stage": "ji/context_ji.py",
+   "error": "AssertionError: {'month': '卯', 'pillar': '甲戌', 'rule': 'puzhu:28', 'note': '二月甲戌: 月德甲 + 天願'}"
+  },
+  {
+   "id": "M11",
+   "mutation": "Hoàn H2-A (德願 trở lại undetermined)",
+   "target": "ji/scopes.py",
+   "by": "self_check",
+   "stage": "ji/scopes.py",
+   "error": "AssertionError: ('閉日', 'undetermined')"
+  },
+  {
+   "id": "M12",
+   "mutation": "Hoàn H1-B/F5 (相抵 + 忌 không bảo vệ → undetermined)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "compose/compose.py",
+   "error": "AssertionError: ('dated', '2025-10-21', '開倉庫出貨財', 'neither_recorded', 'undetermined')"
+  },
+  {
+   "id": "M13",
+   "mutation": "Hoàn F1 (巳日 出行 unmapped)",
+   "target": "ji/context_ji.py",
+   "by": "self_check",
+   "stage": "compose/checks.py",
+   "error": "AssertionError: Counter({'百忌甲:開倉庫出貨財': 110, '百忌乙:栽種': 109, '百忌丁:整容剃頭': 109, '百忌未:求醫療病': 92, '百忌申:安牀': 92, '百忌寅:祭祀': 91, '百忌酉:宴會': 91, '百忌亥:嫁娶': 91})"
+  },
+  {
+   "id": "M14",
+   "mutation": "Hoàn E1 (復日/重日 不註 không chặn 宜)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('dated', 'E1', {'date': '2025-01-06', 'month_jian': '丑', 'pillar': '乙亥', 'heading': '安葬', 'yi_evidence': 'true', 'yi_noted': 'true', 'ji': 'false', 'protected': 'false', 'state': 'only_yi', 'reasons': '', 'puzhu06': '', 'propagated': '', 'blocked': '', 'code': 'no_ji;xd=重日;yi:天德合+月德"
+  },
+  {
+   "id": "M15",
+   "mutation": "Hoàn E3 (lan truyền bỏ qua 相抵 còn lại)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('dated', 'E3', {'date': '2025-03-18', 'month_jian': '卯', 'pillar': '丙戌', 'heading': '修倉庫', 'yi_evidence': 'true', 'yi_noted': 'false', 'ji': 'false', 'protected': 'false', 'state': 'not_recorded', 'reasons': 'H1-B', 'puzhu06': '', 'propagated': '興造動土+豎柱上梁', 'blocked': '', 'code': 'p"
+  },
+  {
+   "id": "M16",
+   "mutation": "Bỏ 德作建論 (德 vẫn tính trên ngày 陰陽錯)",
+   "target": "ji/scopes.py",
+   "by": "self_check",
+   "stage": "ji/scopes.py",
+   "error": "AssertionError: ('未月己巳 陰錯: 天德合/月德合 present but 德作建論 and named 德合 exclusion suppress them', '月厭', 'only_avoid', 'as_usual')"
+  },
+  {
+   "id": "M17",
+   "mutation": "Biên Jie theo trưa thay vì calendar-day",
+   "target": "presence/derive.py",
+   "by": "self_check",
+   "stage": "presence/derive.py",
+   "error": "AssertionError"
+  },
+  {
+   "id": "M18",
+   "mutation": "Chọn clause theo vị trí (bỏ precedence riêng tháng > 「*」)",
+   "target": "ji/scopes.py",
+   "by": "self_check",
+   "stage": "compose/checks.py",
+   "error": "AssertionError: ('puzhu:06 SPEC_GAP: stop, never guess', '卯', '丁酉', '安牀', ['AU', 'SPEC_GAP', 'ZHUSHI'])"
+  },
+  {
+   "id": "M19",
+   "mutation": "Hoàn quyết định (i): 德作建論 chỉ cho A03 / remaining-ji, không cho 宜 / trigger / quy tắc D",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('dated', 'DE_AS_JIAN_ALL', {'date': '2026-06-01', 'month_jian': '巳', 'pillar': '丙午', 'heading': '祭祀', 'yi_evidence': 'true', 'yi_noted': 'true', 'ji': 'false', 'protected': 'false', 'state': 'only_yi', 'reasons': '', 'puzhu06': '', 'propagated': '', 'blocked': '', 'code': 'no_ji;yi:"
+  },
+  {
+   "id": "M20",
+   "mutation": "Hoàn quyết định (i) ở quy tắc D của 修倉庫 (德合 vẫn làm partner / thần trực tiếp)",
+   "target": "compose/compose.py",
+   "by": "self_check",
+   "stage": "../p4-full-golden-v2-review/owner_checks.py",
+   "error": "AssertionError: ('rule D (i)', '2025-06-06')"
+  }
+ ]
+}

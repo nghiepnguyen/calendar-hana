@@ -1,0 +1,26 @@
+{
+ "stage": "3.2e grade cross-check",
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes.py": "00f000dfae1098a3be1a6af7756d945d114738fa21d871c4c4fbd04db88436d9",
+  "shared/almanac-data/p4-vol10-authority.json": "64973dddae8a050c4743e53d1fbf2e9f12f3e2c3e03897f4563371a360a29b02"
+ },
+ "rows": 660,
+ "conflicts": 0,
+ "consistency": {
+  "agree": 560,
+  "xiangdi": 100
+ },
+ "grades": {
+  "ci": 240,
+  "shang": 55,
+  "shang_ci": 60,
+  "xia": 145,
+  "xia_xia": 20,
+  "zhong": 140
+ },
+ "branches": {
+  "unconditional": 75,
+  "withDe": 155,
+  "withoutDe": 430
+ }
+}

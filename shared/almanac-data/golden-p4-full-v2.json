@@ -1,0 +1,80 @@
+{
+ "schemaVersion": "p4-full-golden-index-v1",
+ "version": "golden-p4-full-v2",
+ "parent": "golden-p4-full-v1 (b70913f)",
+ "changesFromV1": [
+  "owner (i) 2026-10-17: 德作建論 removes 天德/月德/天德合/月德合 from every 德 use (宜 evidence, puzhu:06 triggers, 修倉庫 rule D, remaining-ji lift conditions)",
+  "whole-scope undetermined marks the scope base headings undetermined (spec §4)"
+ ],
+ "date": "2026-10-17",
+ "status": "HASH_LOCKED_AFTER_V1_ENGINE_COMPARISON",
+ "scope": "AUDIT_ONLY",
+ "scoringReady": false,
+ "roadmapItem": 7,
+ "layer": "resolution (heading state, presence, warehouse); score adapter/cap/event are roadmap 8",
+ "ownerDecisions": [
+  "H1-B",
+  "H2-A",
+  "F1",
+  "F4",
+  "F5",
+  "E1",
+  "E3",
+  "E5",
+  "DE_AS_JIAN_ALL"
+ ],
+ "reviewer": "Claude, single agent; owner review pending (task 8.0)",
+ "lock": {
+  "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json"
+ },
+ "blocks": [
+  {
+   "kind": "dated1095",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/dated.tsv",
+   "count": 31755,
+   "sha256": "c2ca9470573a0de1d7fe86c64e93138fa398d4cbd09c456795a2ec675dc10384"
+  },
+  {
+   "kind": "context720",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/context.tsv",
+   "count": 20880,
+   "sha256": "ef4083fc0cef0d184d68219b0d5343f1b736f7cb9dfd0addf2ccec4a05614689"
+  },
+  {
+   "kind": "presenceDated",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/presence/dated.tsv",
+   "count": 1095,
+   "sha256": "b740570823a65c696c98379a6300d6d9374f1692ee4bc2871cb5a4b5e305b547"
+  },
+  {
+   "kind": "presenceContext",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/presence/context.tsv",
+   "count": 720,
+   "sha256": "2db5e93328ec7950b3c56f0a6d12b727cf82c2ed1aca7d9acef3ab04e7f2aee8"
+  },
+  {
+   "kind": "presenceJie",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/presence/jie.tsv",
+   "count": 108,
+   "sha256": "ca4097b40bbe0022030c11a9c6eadc3cc62faf954a0f6c8d69eaa8a90a37e621"
+  },
+  {
+   "kind": "presenceStructural",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/presence/structural.tsv",
+   "count": 424,
+   "sha256": "2201030a15c9716752ea3340c3defc6ab00a33eab04cf648206697ec991579e5"
+  },
+  {
+   "kind": "h1bChanges",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/h1b-changes.tsv",
+   "count": 153,
+   "sha256": "a10f098d18f33692cdf62c1b342799459b064f497b234231d6c966f741b863f3"
+  },
+  {
+   "kind": "checks",
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/checks.json",
+   "count": 1,
+   "sha256": "535b1e8070ec0f87805195d681bafa00eab89d0ae29e5230e6cc76f6ca8c5f68"
+  }
+ ]
+}

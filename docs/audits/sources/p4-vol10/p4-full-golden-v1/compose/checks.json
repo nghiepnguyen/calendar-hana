@@ -1,0 +1,378 @@
+{
+ "stage": "3.4 checks",
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/compose.py": "2afafad8ba1a3c0d8a540d69c3053536a945e4f33132903e4ff87fedf5101657",
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/dated.tsv": "cf3225050675de9bf95cdff222cbd64c6deea072c5ff189e1fa5c3e5a7efd171",
+  "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/context.tsv": "297820734a333aeb95ebcbbf486439d65a340c3b1d0e992ea0fc5d0c5e844ec2"
+ },
+ "cartesian": {
+  "dated": "1,095 × 29 exact, unique",
+  "context": "720 valid can-chi × 29 exact, unique"
+ },
+ "invariants": {
+  "dated": {
+   "protectedJiHeld": 3636,
+   "puzhu28": 261
+  },
+  "context": {
+   "protectedJiHeld": 1442,
+   "puzhu28": 232
+  }
+ },
+ "orderInvariance": "3 seeds: facts, scope dicts, dated facts and authority clauses/conditions shuffled; byte-identical",
+ "puzhu06SpecGap": 0,
+ "coverage": {
+  "gradeByBranch": {
+   "ci:withDe": 58,
+   "ci:withoutDe": 182,
+   "shang:unconditional": 55,
+   "shang_ci:withDe": 18,
+   "shang_ci:withoutDe": 42,
+   "xia:withDe": 38,
+   "xia:withoutDe": 107,
+   "xia_xia:unconditional": 20,
+   "zhong:withDe": 41,
+   "zhong:withoutDe": 99
+  },
+  "cellBranchWitnesses": {
+   "bi:ci:withDe": 11,
+   "bi:ci:withoutDe": 29,
+   "bi:xia:withDe": 8,
+   "bi:xia:withoutDe": 12,
+   "hai:ci:withDe": 6,
+   "hai:ci:withoutDe": 19,
+   "hai:zhong:withDe": 10,
+   "hai:zhong:withoutDe": 25,
+   "jie:ci:withDe": 4,
+   "jie:ci:withoutDe": 16,
+   "jie:shang:unconditional": 10,
+   "jie:shang_ci:withDe": 4,
+   "jie:shang_ci:withoutDe": 16,
+   "jie:zhong:withDe": 4,
+   "jie:zhong:withoutDe": 6,
+   "li:ci:withDe": 8,
+   "li:ci:withoutDe": 27,
+   "li:xia:withDe": 1,
+   "li:xia:withoutDe": 4,
+   "li:zhong:withDe": 8,
+   "li:zhong:withoutDe": 12,
+   "ping:ci:withDe": 5,
+   "ping:ci:withoutDe": 15,
+   "ping:shang:unconditional": 5,
+   "ping:shang_ci:withDe": 2,
+   "ping:shang_ci:withoutDe": 3,
+   "ping:xia:withDe": 5,
+   "ping:xia:withoutDe": 20,
+   "ping:zhong:withDe": 2,
+   "ping:zhong:withoutDe": 3,
+   "sha:ci:withDe": 2,
+   "sha:ci:withoutDe": 8,
+   "sha:shang_ci:withDe": 2,
+   "sha:shang_ci:withoutDe": 8,
+   "sha:xia:withDe": 12,
+   "sha:xia:withoutDe": 28,
+   "shi:ci:withDe": 3,
+   "shi:ci:withoutDe": 12,
+   "shi:shang:unconditional": 30,
+   "shi:xia:withDe": 1,
+   "shi:xia:withoutDe": 4,
+   "shi:zhong:withDe": 2,
+   "shi:zhong:withoutDe": 8,
+   "shou:ci:withDe": 5,
+   "shou:ci:withoutDe": 20,
+   "shou:shang:unconditional": 10,
+   "shou:xia:withDe": 1,
+   "shou:xia:withoutDe": 4,
+   "shou:zhong:withDe": 6,
+   "shou:zhong:withoutDe": 14,
+   "xing:ci:withDe": 8,
+   "xing:ci:withoutDe": 22,
+   "xing:shang_ci:withDe": 2,
+   "xing:shang_ci:withoutDe": 3,
+   "xing:xia:withDe": 6,
+   "xing:xia:withoutDe": 19,
+   "yan:ci:withDe": 6,
+   "yan:ci:withoutDe": 14,
+   "yan:xia:withDe": 2,
+   "yan:xia:withoutDe": 8,
+   "yan:xia_xia:unconditional": 10,
+   "yan:zhong:withDe": 5,
+   "yan:zhong:withoutDe": 15,
+   "zai:shang_ci:withDe": 8,
+   "zai:shang_ci:withoutDe": 12,
+   "zai:xia:withDe": 2,
+   "zai:xia:withoutDe": 8,
+   "zai:xia_xia:unconditional": 10,
+   "zai:zhong:withDe": 4,
+   "zai:zhong:withoutDe": 16
+  },
+  "cellBranchImpossible": [],
+  "statesDated": {
+   "both_present": 1720,
+   "neither_recorded": 2125,
+   "not_recorded": 5880,
+   "only_ji": 14495,
+   "only_yi": 7534,
+   "undetermined": 1
+  },
+  "statesContext": {
+   "both_present": 898,
+   "neither_recorded": 1055,
+   "not_recorded": 2997,
+   "only_ji": 7488,
+   "only_yi": 4011,
+   "undetermined": 4431
+  },
+  "remainingOutcomes": {
+   "九坎|raw|protected": 60,
+   "九焦|raw|protected": 60,
+   "九空|defer|kept": 130,
+   "九空|defer|no_annotation": 20,
+   "九空|lift|lifted": 40,
+   "九空|raw|kept": 110,
+   "五墓|lift|lifted": 34,
+   "五墓|raw|kept": 170,
+   "五虛|lift|lifted": 124,
+   "五虛|raw|kept": 236,
+   "五離|lift|lifted": 224,
+   "五離|raw|kept": 256,
+   "八專|only_avoid|lifted": 6,
+   "八專|raw|protected": 174,
+   "八風|lift|lifted": 11,
+   "八風|raw|kept": 13,
+   "厭對|lift|lifted": 32,
+   "厭對|raw|kept": 88,
+   "四廢|all_taboo|all_taboo": 232,
+   "四廢|raw|protected": 368,
+   "四忌|raw|protected": 48,
+   "四窮|only_avoid|lifted": 9,
+   "四窮|raw|protected": 99,
+   "四耗|only_avoid|lifted": 35,
+   "四耗|raw|kept": 25,
+   "土符|raw|protected": 360,
+   "地囊|raw|protected": 144,
+   "天狗|raw|protected": 5,
+   "天賊|raw|protected": 180,
+   "小耗|lift|lifted": 65,
+   "小耗|raw|kept": 135,
+   "小耗|raw|protected": 100,
+   "往亡|raw|protected": 240,
+   "復日|no_annotation|no_annotation": 14,
+   "復日|raw|kept": 58,
+   "歸忌|raw|protected": 60,
+   "死氣|only_avoid|lifted": 14,
+   "死氣|only_avoid|protected": 14,
+   "死氣|raw|kept": 36,
+   "死氣|raw|protected": 56,
+   "滿日|defer|kept": 70,
+   "滿日|defer|lifted": 8,
+   "滿日|defer|no_annotation": 12,
+   "滿日|lift|lifted": 36,
+   "滿日|raw|kept": 54,
+   "觸水龍|raw|protected": 36,
+   "遊禍|raw|protected": 180,
+   "重日|no_annotation|no_annotation": 37,
+   "重日|raw|kept": 83
+  },
+  "remainingEntriesWithoutRow": [],
+  "baijiDatedRows": {
+   "百忌丁:整容剃頭": 109,
+   "百忌乙:栽種": 109,
+   "百忌亥:嫁娶": 91,
+   "百忌寅:祭祀": 91,
+   "百忌巳:行幸遣使": 91,
+   "百忌未:求醫療病": 92,
+   "百忌甲:開倉庫出貨財": 110,
+   "百忌申:安牀": 92,
+   "百忌酉:宴會": 91
+  },
+  "dormantDatedDays": {
+   "bat_chuyen": 90,
+   "bat_tuong": 229,
+   "dai_thoi": 91,
+   "ngu_hop": 182,
+   "ngu_ly": 183,
+   "ngu_mo": 19,
+   "nguyet_hai": 90,
+   "nguyet_sat": 91,
+   "nguyet_yem": 90,
+   "pho_ho": 95,
+   "quy_ky": 92,
+   "tai_sat": 93,
+   "thien_nguyen": 16,
+   "thien_thuong": 91,
+   "thoi_duc": 92,
+   "tu_cung": 18,
+   "tu_ky": 17,
+   "tu_phe": 38,
+   "tu_tuong": 217,
+   "vang_vong": 91,
+   "yem_doi": 94
+  },
+  "dormantStructuralKinds": {
+   "thien_nguyen": [
+    "off",
+    "on"
+   ],
+   "tu_tuong": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "thoi_duc": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "ngu_hop": [
+    "stable"
+   ],
+   "bat_tuong": [
+    "off",
+    "on"
+   ],
+   "thien_thuong": [
+    "off",
+    "on"
+   ],
+   "pho_ho": [
+    "off",
+    "on"
+   ],
+   "tai_sat": [
+    "off",
+    "on"
+   ],
+   "nguyet_sat": [
+    "off",
+    "on"
+   ],
+   "nguyet_hai": [
+    "off",
+    "on"
+   ],
+   "nguyet_yem": [
+    "off",
+    "on"
+   ],
+   "yem_doi": [
+    "off",
+    "on"
+   ],
+   "dai_thoi": [
+    "off",
+    "on"
+   ],
+   "tu_phe": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "tu_ky": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "tu_cung": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "ngu_mo": [
+    "off",
+    "on",
+    "stable"
+   ],
+   "ngu_ly": [
+    "stable"
+   ],
+   "vang_vong": [
+    "off",
+    "on"
+   ],
+   "bat_chuyen": [
+    "stable"
+   ],
+   "quy_ky": [
+    "off",
+    "on"
+   ]
+  },
+  "warehouse": {
+   "修倉庫|false|neither_recorded": 14,
+   "修倉庫|false|not_recorded": 46,
+   "修倉庫|false|only_ji": 446,
+   "修倉庫|true|both_present": 161,
+   "修倉庫|true|neither_recorded": 37,
+   "修倉庫|true|not_recorded": 3,
+   "修倉庫|true|only_ji": 162,
+   "修倉庫|true|only_yi": 225,
+   "修倉庫|unknown|undetermined": 1,
+   "開倉庫出貨財|false|neither_recorded": 35,
+   "開倉庫出貨財|false|not_recorded": 162,
+   "開倉庫出貨財|false|only_ji": 444,
+   "開倉庫出貨財|true|both_present": 62,
+   "開倉庫出貨財|true|neither_recorded": 41,
+   "開倉庫出貨財|true|only_ji": 178,
+   "開倉庫出貨財|true|only_yi": 173
+  },
+  "datedUnknownYi": [
+   [
+    "2025-10-08",
+    "修倉庫"
+   ]
+  ],
+  "puzhu06Dated": {
+   "hold:UNDETERMINED": 6,
+   "keep:AD": 75,
+   "keep:AD+YOUJI": 30,
+   "keep:AN": 237,
+   "keep:AN+PUZHU27": 5,
+   "keep:AN+QL": 35,
+   "keep:AU": 35,
+   "keep:PROTECTED+PUZHU27": 10,
+   "keep:QL+ZHUSHI": 12,
+   "keep:QL_EXCLUDED": 9,
+   "keep:YOUJI": 102,
+   "keep:ZHUSHI": 100,
+   "lift:QL": 68
+  },
+  "propagationDated": {
+   "lifted": {
+    "興造動土+豎柱上梁>修倉庫": 15,
+    "開市+立券交易>開倉庫出貨財": 20,
+    "嫁娶>結婚姻": 8,
+    "嫁娶>納采問名": 8,
+    "納財>立券交易": 6
+   },
+   "blocked": {
+    "興造動土+豎柱上梁>修倉庫": 13,
+    "開市+立券交易>開倉庫出貨財": 20,
+    "安牀>般移": 13,
+    "豎柱上梁>修宮室": 36,
+    "豎柱上梁>修倉庫": 36,
+    "豎柱上梁>破屋壊垣": 36,
+    "般移>安牀": 15,
+    "結婚姻>嫁娶": 12
+   }
+  },
+  "ownerRulesDated": {
+   "all_taboo": 1537,
+   "puzhu:28": 261,
+   "H1-B": 95
+  },
+  "subjectsPerContext": {
+   "0": 210,
+   "1": 290,
+   "2+": 220
+  },
+  "multiSubjectMixedEffects": 3,
+  "remainingConditionMatches": {
+   "九空:2": 6,
+   "四耗:2": 1
+  },
+  "outOfScope": [
+   "score adapter, cap reallocation, event very_high, penalty −25: roadmap 8 (owner 2026-10-17)"
+  ]
+ }
+}
