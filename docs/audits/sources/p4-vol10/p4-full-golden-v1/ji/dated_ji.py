@@ -106,7 +106,7 @@ def build():
                 rows.append({'date': r['date'], 'month_jian': r['month_jian'], 'pillar': r['pillar'],
                              'context': f"{r['month_jian']}-{r['pillar']}", 'heading': h, 'lunar_day': lunar_day,
                              'phase': phase, 'soil': 'present' if soil else 'absent',
-                             'facts': ' '.join('|'.join(x) for x in facts)})
+                             'facts': ';'.join('|'.join(x) for x in facts)})
     return rows, H, lis
 
 

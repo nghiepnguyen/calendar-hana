@@ -2,6 +2,8 @@
 
 2026-10-17, nhánh `claude/p4-full-golden`. Audit-only.
 
+> **Đính chính 2026-10-17 (task 3.3):** bảng H1 ghi 修倉庫 `only_ji` "không có câu lan truyền" là sai. puzhu:20 có 修倉庫 trong danh sách đích; trên các ngày này 興造動土/豎柱上梁 đều 相抵, nên 修倉庫 cũng thành `neither_recorded`. Quyết định không đổi. Chi tiết: [compose README](sources/p4-vol10/p4-full-golden-v1/compose/README.md).
+
 **Quyết định owner 2026-10-17: H1-B, H2-A**, nhãn `OWNER_ADOPTED_SOURCE_DEPENDENT`. Golden task 3.2 áp hai quyết định này. Reason code `OWNER_QUESTION_H1/H2` chỉ còn dùng cho lịch sử; mọi dòng đổi trạng thái được liệt kê trước khi đóng băng.
 
 Nguồn: `docs/audits/sources/p4-vol10/vol10.raw.txt`, SHA-1 `355dc6c8fe2d…`; offset tính theo code point Python. Mọi câu trích đã kiểm là chuỗi con đúng tại offset.
