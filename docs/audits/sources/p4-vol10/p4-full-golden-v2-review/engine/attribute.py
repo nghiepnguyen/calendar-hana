@@ -32,11 +32,7 @@ runner = load('runner', Path('scripts/audit-p4-full-golden-mutations.py'))
 cmp_ = load('compare', REVIEW / 'engine/compare.py')
 PATCH = {m[0]: m[2:] for m in runner.MUTATIONS}
 RULES = {
-    # Revert H2-A the way spec §4 wants an undetermined scope: its own headings undetermined (the frozen
-    # derive would drop a whole-scope undetermined silently; none exists after H2-A — latent limit, noted).
-    'H2-A': [PATCH['M11'], ('ji/scopes.py',
-                            "        return {'effect': 'undetermined', 'named': [], 'headings': {}}",
-                            "        return {'effect': 'undetermined', 'named': [], 'headings': {h: 'undetermined' for h in base_list(e, month)}}")],
+    'H2-A': [PATCH['M11']],  # v2 already marks a whole-scope undetermined as its own headings (spec §4)
     'H1-B/F5': [PATCH['M12']],
     'E3': [PATCH['M15']],
     'F1': [PATCH['M13']],
