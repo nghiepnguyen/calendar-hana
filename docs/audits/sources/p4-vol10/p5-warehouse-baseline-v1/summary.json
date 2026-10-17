@@ -1,0 +1,249 @@
+{
+  "version": "p5-warehouse-baseline-v1",
+  "inventoryOnly": "No R10/R11/D verdicts; expected values come from the task 3 Golden.",
+  "p4cSweep": {
+    "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+    "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+  },
+  "dates": 1095,
+  "baselineSha256": "6c2568ceff6b63c63a1a5effa119849dd0c65d3640517489984e19cb91c587c8",
+  "xiuCangKu": {
+    "deferredRows": 539,
+    "deferredBasePartnerCombos": {
+      "- | -": 139,
+      "母倉 | -": 39,
+      "六合 | -": 29,
+      "五富 | -": 27,
+      "- | 四相": 24,
+      "天倉 | -": 21,
+      "- | 時德": 20,
+      "- | 月恩+四相": 15,
+      "- | 開日": 10,
+      "母倉 | 月德": 9,
+      "母倉 | 開日": 9,
+      "六合 | 四相": 9,
+      "- | 月德": 9,
+      "母倉 | 四相": 9,
+      "- | 月恩": 8,
+      "母倉 | 月恩+四相": 8,
+      "- | 四相+開日": 7,
+      "收日+母倉+六合+五富 | -": 7,
+      "天倉 | 開日": 7,
+      "收日+六合+五富 | -": 7,
+      "母倉+天倉 | 開日": 7,
+      "- | 月德+時德": 6,
+      "天倉 | 月恩+月德+四相": 6,
+      "六合+五富 | 時德": 6,
+      "- | 月德+四相": 6,
+      "母倉+五富 | 四相": 5,
+      "收日 | -": 5,
+      "收日 | 時德": 5,
+      "母倉+六合 | 四相": 4,
+      "母倉+六合 | -": 4,
+      "天倉 | 四相": 4,
+      "- | 月恩+月德+四相": 3,
+      "收日+母倉 | 月德": 3,
+      "六合+五富 | -": 3,
+      "- | 月德+時德+開日": 3,
+      "- | 月恩+四相+時德+開日": 3,
+      "收日 | 月德+時德": 3,
+      "母倉 | 月恩+月德+四相": 3,
+      "母倉 | 月恩": 3,
+      "- | 月恩+開日": 3,
+      "- | 月德+開日": 3,
+      "- | 月恩+四相+開日": 3,
+      "- | 月恩+月德+四相+時德": 2,
+      "母倉+天倉 | 月德": 2,
+      "母倉+天倉 | 月恩": 2,
+      "母倉 | 月恩+四相+開日": 2,
+      "母倉 | 月恩+月德+四相+開日": 2,
+      "五富 | 四相": 2,
+      "收日 | 四相": 2,
+      "- | 時德+開日": 2,
+      "母倉+五富 | -": 2,
+      "- | 月恩+月德+四相+開日": 2,
+      "母倉+天倉 | 四相": 2,
+      "六合+五富 | 月德+四相+時德": 2,
+      "六合 | 月德": 1,
+      "天倉 | 月恩+四相+開日": 1,
+      "母倉+六合 | 月德": 1,
+      "母倉+天倉 | 月恩+四相+開日": 1,
+      "收日+母倉 | 月德+四相": 1,
+      "- | 月恩+四相+時德": 1,
+      "母倉+天倉 | -": 1,
+      "母倉 | 月德+時德": 1,
+      "天倉 | 月德": 1,
+      "五富 | 月德": 1,
+      "天倉 | 月恩": 1
+    }
+  },
+  "operandPresence": {
+    "天德": {
+      "absent": 1022,
+      "present": 73
+    },
+    "月德": {
+      "absent": 984,
+      "present": 111
+    },
+    "天德合": {
+      "absent": 1022,
+      "present": 73
+    },
+    "月德合": {
+      "absent": 986,
+      "present": 109
+    },
+    "天赦": {
+      "absent": 1077,
+      "present": 18
+    },
+    "天願": {
+      "absent": 1079,
+      "present": 16
+    },
+    "三合": {
+      "absent": 914,
+      "present": 181
+    },
+    "滿日": {
+      "absent": 1006,
+      "present": 89
+    },
+    "收日": {
+      "absent": 1006,
+      "present": 89
+    },
+    "母倉": {
+      "absent": 877,
+      "present": 218
+    },
+    "六合": {
+      "absent": 1002,
+      "present": 93
+    },
+    "五富": {
+      "absent": 1003,
+      "present": 92
+    },
+    "天倉": {
+      "absent": 1004,
+      "present": 91
+    },
+    "月恩": {
+      "absent": 987,
+      "present": 108
+    },
+    "四相": {
+      "absent": 878,
+      "present": 217
+    },
+    "時德": {
+      "absent": 1003,
+      "present": 92
+    },
+    "開日": {
+      "absent": 1001,
+      "present": 94
+    }
+  },
+  "operandTraceSource": {
+    "天德": {
+      "p4legacy": 1095
+    },
+    "月德": {
+      "p4legacy": 1095
+    },
+    "天德合": {
+      "p4legacy": 1095
+    },
+    "月德合": {
+      "p4legacy": 1095
+    },
+    "天赦": {
+      "p4legacy": 1095
+    },
+    "天願": {
+      "p4legacy": 1095
+    },
+    "三合": {
+      "p4legacy": 1095
+    },
+    "滿日": {
+      "p4legacy": 1095
+    },
+    "收日": {
+      "p4legacy": 1095
+    },
+    "母倉": {
+      "p4yi": 1095
+    },
+    "六合": {
+      "p4legacy": 1095
+    },
+    "五富": {
+      "p4legacy": 1095
+    },
+    "天倉": {
+      "p4legacy": 1095
+    },
+    "月恩": {
+      "p4legacy": 1095
+    },
+    "四相": {
+      "p4legacy": 1095
+    },
+    "時德": {
+      "p4legacy": 1095
+    },
+    "開日": {
+      "p4legacy": 1095
+    }
+  },
+  "kaiCangKu": {
+    "states": {
+      "only_ji": 621,
+      "not_recorded": 162,
+      "only_yi": 159,
+      "both_present": 76,
+      "neither_recorded": 53,
+      "undetermined": 24
+    },
+    "jiaDays": 110,
+    "jiaProtected": 106
+  },
+  "otherUndetermined": {
+    "rows": 103,
+    "byHeadingBucket": {
+      "開倉庫出貨財:OTHER_STATE_WITH_KNOWN_YI": 24,
+      "安葬:OTHER_STATE_WITH_KNOWN_YI": 16,
+      "栽種:OTHER_STATE_WITH_KNOWN_YI": 9,
+      "宴會:OTHER_STATE_WITH_KNOWN_YI": 6,
+      "立券交易:OTHER_STATE_WITH_KNOWN_YI": 9,
+      "納采問名:OTHER_STATE_WITH_KNOWN_YI": 9,
+      "結婚姻:OTHER_STATE_WITH_KNOWN_YI": 9,
+      "乘船渡水:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "修宮室:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "入學:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "嫁娶:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "安牀:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "掃舍宇:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "整容剃頭:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "求嗣:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "求醫療病:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "營建宮室:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "牧養:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "破屋壊垣:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "祈福:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "祭祀:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "納畜:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "納財:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "興造動土:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "般移:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "行幸遣使:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "豎柱上梁:OTHER_STATE_WITH_KNOWN_YI": 1,
+      "開市:OTHER_STATE_WITH_KNOWN_YI": 1
+    },
+    "warehouseHeadings": 24
+  }
+}

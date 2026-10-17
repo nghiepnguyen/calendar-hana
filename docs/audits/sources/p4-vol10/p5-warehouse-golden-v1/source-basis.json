@@ -1,0 +1,157 @@
+{
+  "version": "golden-p5-warehouse-basis-v1",
+  "sources": {
+    "天德": {
+      "volume": 5,
+      "offset": 810,
+      "quote": "正月丁二月坤三月壬四月辛五月乾六月甲七月癸八月艮九月丙十月乙十一月巽十二月庚"
+    },
+    "天德合": {
+      "volume": 5,
+      "offset": 2871,
+      "quote": "正月壬三月丁四月丙六月巳七月戊九月辛十月庚十二月乙是也四仲之月天徳居四維故無合也"
+    },
+    "月德": {
+      "volume": 5,
+      "offset": 2490,
+      "quote": "月徳者正五九月在丙二六十月在甲三七十一月在壬四八十二月在庚"
+    },
+    "月德合": {
+      "volume": 5,
+      "offset": 3138,
+      "quote": "月徳合者正五九月在辛二六十月在巳三七十一月在丁四八十二月在乙"
+    },
+    "天赦": {
+      "volume": 5,
+      "offset": 4075,
+      "quote": "春戊寅夏甲午秋戊申冬甲子"
+    },
+    "天願": {
+      "volume": 5,
+      "offset": 5373,
+      "quote": "起例曰正月乙亥二月甲戌三月乙酉四月丙申五月丁未六月戊午七月己巳八月庚辰九月辛卯十月壬寅十一月癸丑十二月甲子"
+    },
+    "天願按": {
+      "volume": 5,
+      "offset": 5321,
+      "quote": "傳寫謬誤二十四字中誤十三字"
+    },
+    "月恩": {
+      "volume": 5,
+      "offset": 5956,
+      "quote": "正月丙二月丁三月庚四月巳五月戊六月辛七月壬八月癸九月庚十月乙十一月甲十二月辛"
+    },
+    "四相": {
+      "volume": 5,
+      "offset": 6315,
+      "quote": "春丙丁夏戊巳秋壬癸冬甲乙"
+    },
+    "時德": {
+      "volume": 5,
+      "offset": 6594,
+      "quote": "春木生午火夏火生辰土秋金生子水冬水生寅木也四相取天干時徳取地支"
+    },
+    "三合": {
+      "volume": 6,
+      "offset": 879,
+      "quote": "寅午戌火之三合巳酉丑金之三合申子辰水之三合亥夘未木之三合"
+    },
+    "六合": {
+      "volume": 6,
+      "offset": 4568,
+      "quote": "正月在亥逆行十二辰"
+    },
+    "五富": {
+      "volume": 6,
+      "offset": 5191,
+      "quote": "正月起亥順行四孟"
+    },
+    "天倉": {
+      "volume": 6,
+      "offset": 5552,
+      "quote": "天倉者正月起寅逆行十二辰"
+    },
+    "月煞": {
+      "volume": 6,
+      "offset": 3424,
+      "quote": "月虚者正月起丑逆行四季"
+    },
+    "月厭": {
+      "volume": 4,
+      "offset": 8408,
+      "quote": "月厭者正月在戌逆行十二辰"
+    },
+    "puzhu:28": {
+      "volume": 10,
+      "offset": 22651,
+      "quote": "二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌"
+    },
+    "百忌甲日": {
+      "volume": 10,
+      "offset": 21523,
+      "quote": "甲日忌開倉庫出貨財"
+    },
+    "puzhu:22": {
+      "volume": 10,
+      "offset": 22443,
+      "quote": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌"
+    },
+    "母倉": {
+      "volume": 5,
+      "offset": 5617,
+      "quote": "春亥子夏寅卯秋辰戌丑未冬申酉土王後巳午"
+    }
+  },
+  "normalizations": [
+    {
+      "god": "天德合",
+      "month": "六月",
+      "raw": "巳",
+      "read": "己"
+    },
+    {
+      "god": "月德合",
+      "month": "二六十月",
+      "raw": "巳",
+      "read": "己"
+    },
+    {
+      "god": "月恩",
+      "month": "四月",
+      "raw": "巳",
+      "read": "己"
+    },
+    {
+      "god": "四相",
+      "month": "夏",
+      "raw": "巳",
+      "read": "己"
+    },
+    {
+      "god": "*",
+      "raw": "徳 / 夘 / 虚",
+      "read": "德 / 卯 / 虛 (NAMING_ONLY)"
+    }
+  ],
+  "conventions": {
+    "season": "春 = 寅卯辰 … by Month Jian; 協紀 seasons turn at the Jie, as the Jian does.",
+    "天德 trigram months": "坤/乾/艮/巽 are no stem or branch, so no day carries them; 天德合 absent in 四仲 months (quote). Same as the locked 4D Cat Hung table (CAT_HUNG sha256).",
+    "三合": "the other two branches of the Month Jian's trine (曽門經 trines)",
+    "puzhu28": "8 (Month Jian, pillar) days from the quote; 未 甲子 read 甲午 by owner print correction 2026-10-12 (PRINT_CORRECTION sha256).",
+    "母倉 soil": "土王用事 present -> 巳午, else the season set; soil from the frozen P4-C dated rows.",
+    "天願": "協紀 按 rejects the 歴例 list (傳寫謬誤) and adopts 起例; this Golden uses 起例.",
+    "Jie days": "Month Jian per calendar day (P4-C CONVENTION_DIFFERENCE, 20 dates from JIE_DAYS; 母倉 = calendarDayMuCang there)."
+  },
+  "inputs": {
+    "docs/audits/sources/p4-vol10/vol04.raw.txt": "8782423ab87161f9e60c8b2ee23609bbc1c05bd71f9e85804910d09d46bfb922",
+    "docs/audits/sources/p4-vol10/vol05.raw.txt": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6",
+    "docs/audits/sources/p4-vol10/vol06.raw.txt": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6",
+    "docs/audits/sources/p4-vol10/vol10.raw.txt": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+    "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e",
+    "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32",
+    "docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.json": "7339a90fe56ba873b187eb301240a94854af7377a4afbf2cc9993f712ed90d19",
+    "shared/almanac-data/p5-warehouse-v1.json": "0e7372fbde81dadea3514261b8fc20943fc9533994beb8e135132a7cd946e8bc",
+    "shared/almanac-data/p4-vol10-remaining-ji-v7.json": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c",
+    "shared/lunar/catHungAuthority.ts": "b5185681749901b1be2c01583083e3533e3d19bcd8ba4c7a658ef1ba5ef244c4"
+  }
+}
