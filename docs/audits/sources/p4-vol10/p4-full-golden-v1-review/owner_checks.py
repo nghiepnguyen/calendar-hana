@@ -25,7 +25,7 @@ def check(rows, ctx_facts, key_of, extra_of, domain):
     by_day = {}
     for r in rows:
         by_day.setdefault(key_of(r), {})[r['heading']] = r
-    n = {'E1': 0, 'E3': 0, 'singlePass': 0}
+    n = {'E1': 0, 'E3': 0, 'singlePass': 0, 'singlePassBlocked': 0}
     for r in rows:
         fs = ctx_facts[(r['month_jian'] + '-' + r['pillar'], r['heading'])] + extra_of(r)
         if 'context:date-operand-dependent' in r['reasons']:
@@ -46,6 +46,13 @@ def check(rows, ctx_facts, key_of, extra_of, domain):
                 fired = s['state'] == 'neither_recorded' or s['code'].endswith('states=neither_recorded')
                 assert fired and not s['propagated'], (domain, 'single pass', r, s)
             n['singlePass'] += 1
+        if r['blocked']:
+            # Single pass also for blocked lines: the firing headings were 相抵 before propagation.
+            for src in r['blocked'].split('+'):
+                s = by_day[key_of(r)][src]
+                fired = s['state'] == 'neither_recorded' or s['code'].endswith('states=neither_recorded')
+                assert fired and not s['propagated'], (domain, 'single pass (blocked)', r, s)
+            n['singlePassBlocked'] += 1
     return n
 
 
