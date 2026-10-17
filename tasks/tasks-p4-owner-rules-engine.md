@@ -1,7 +1,7 @@
 # Tasks — Roadmap 7b: engine cài luật owner
 
 Nguồn yêu cầu: [PRD](prd-p4-owner-rules-engine.md). Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD nháp 2026-10-17, chờ owner duyệt.
+Trạng thái: PRD owner duyệt 2026-10-17; 2.0 xong: test đỏ trên stub = phép ghép engine (miền ngày 248 lệch, đúng tập attribution; context 227 trên mẫu 1/7); next 3.0.
 
 ## Relevant Files
 
@@ -15,10 +15,10 @@ Trạng thái: PRD nháp 2026-10-17, chờ owner duyệt.
 
 ## Tasks
 
-- [ ] 1.0 Owner duyệt PRD
-- [ ] 2.0 Test đỏ từ Golden v2
-  - [ ] 2.1 Loader đọc Golden v2 (dated + context), ghim SHA từ lock v2
-  - [ ] 2.2 Test so `state`/`ji`/`protected` cho miền ngày và context ngoài E5; stub trả lỗi → đỏ; commit
+- [x] 1.0 Owner duyệt PRD
+- [x] 2.0 Test đỏ từ Golden v2
+  - [x] 2.1 Loader đọc Golden v2 (dated + context), ghim SHA từ lock v2
+  - [x] 2.2 Test so `state`/`ji`/`protected` cho miền ngày và context ngoài E5; stub trả lỗi → đỏ; commit
 - [ ] 3.0 Implementation (opt-in, không đổi hành vi mặc định)
   - [ ] 3.1 Hook tham số opt-in cho H2-A, (i), F1, E1 ở tầng dưới (mặc định = hành vi hiện tại)
   - [ ] 3.2 Composer ngày mới: H1-B/F5, E3, sửa phân tầng A04b, scope undetermined theo heading

@@ -1,0 +1,118 @@
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { describe, expect, it } from 'vitest'
+import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
+import { getAlmanac } from './almanac'
+import { getP4MoonPhase } from './p4LunarPhase'
+import {
+  resolveP4OwnerRulesContext,
+  resolveP4OwnerRulesDay,
+  stitchP4EngineDay,
+  type P4OwnerDay,
+} from './p4OwnerRules'
+import { getP4SoilPresence } from './p4SoilConvention'
+import { getP4MuCangSoil } from './p4YiOperands'
+
+// Roadmap 7b: the owner-rules layer must reproduce the accepted full Golden v2 (c574e57). The Golden is
+// read-only here. The full domain runs with P4_OWNER_RULES_FULL=1 (ci:p4); npm test runs a fixed subset.
+const G = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/'
+const DIFFS = 'docs/audits/sources/p4-vol10/p4-full-golden-v2-review/engine/diffs.tsv'
+const B = '子丑寅卯辰巳午未申酉戌亥'
+const S = '甲乙丙丁戊己庚辛壬癸'
+const FULL = process.env.P4_OWNER_RULES_FULL === '1'
+const sha256 = (b: Buffer) => createHash('sha256').update(b).digest('hex')
+const tf = (v: boolean | undefined) => (v === undefined ? 'unknown' : String(v))
+
+function tsv(path: string) {
+  const [head, ...lines] = readFileSync(path, 'utf8').replace(/\n$/, '').split('\n')
+  const keys = head!.split('\t')
+  return lines.map((l) => Object.fromEntries(l.split('\t').map((v, i) => [keys[i]!, v])))
+}
+
+function golden(file: string) {
+  const lock = JSON.parse(readFileSync(G + 'lock.json', 'utf8')) as {
+    files: { path: string; sha256: string }[]
+  }
+  const pinned = lock.files.find((f) => f.path === G + file)!
+  expect(sha256(readFileSync(G + file)), file).toBe(pinned.sha256)
+  return tsv(G + file)
+}
+
+function dated(date: string) {
+  const a = getAlmanac(date as never)
+  const month = B[a.selectionContext.MONTH_JIAN_BRANCH!]!
+  const pillar = S[a.dayCanChi.can]! + B[a.dayCanChi.chi]!
+  const operands = {
+    lunarDay: a.selectionContext.LUNAR_DAY!,
+    phase: getP4MoonPhase(date),
+    soil: getP4SoilPresence(date),
+    yiInputs: { SOIL_REIGN_STATE: getP4MuCangSoil(date) },
+  }
+  return { month, pillar, operands }
+}
+
+/** Mismatching keys `date|heading` (or `month-pillar|heading`) against the Golden. */
+function mismatches(rows: Record<string, string>[], key: string, day: (k: string) => P4OwnerDay) {
+  const byKey = new Map<string, Record<string, string>[]>()
+  for (const r of rows) byKey.set(r[key]!, [...(byKey.get(r[key]!) ?? []), r])
+  const out: string[] = []
+  for (const [k, rs] of byKey) {
+    const d = day(k)
+    for (const r of rs) {
+      const e = d[r.heading!]
+      if (!e) throw new Error(`no engine row for ${k} ${r.heading}`)
+      if (r.state !== e.state || r.ji !== tf(e.ji) || r.protected !== tf(e.protectedJi))
+        out.push(`${k}|${r.heading}`)
+    }
+  }
+  return out.sort()
+}
+
+// Fast subset: every date that the v2 engine comparison flagged, plus every 15th date.
+const flagged = new Set(
+  tsv(DIFFS)
+    .filter((r) => r.domain === 'dated')
+    .map((r) => r.id),
+)
+const sample = (rows: Record<string, string>[]) =>
+  FULL
+    ? rows
+    : rows.filter(
+        (r) => flagged.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 15 === 0,
+      )
+
+describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
+  const datedRows = golden('compose/dated.tsv')
+  const contextRows = golden('compose/context.tsv')
+
+  it('harness: the current engine stitching differs from the Golden on exactly the attributed rows', () => {
+    const rows = sample(datedRows)
+    const got = mismatches(rows, 'date', (k) => {
+      const { month, pillar, operands } = dated(k)
+      return stitchP4EngineDay(month, pillar, operands)
+    })
+    const want = tsv(DIFFS)
+      .filter((r) => r.domain === 'dated')
+      .map((r) => `${r.id}|${r.heading}`)
+      .sort()
+    expect(got).toEqual(want)
+  }, 600_000)
+
+  it('dated: every row equals the Golden', () => {
+    const rows = sample(datedRows)
+    const got = mismatches(rows, 'date', (k) => {
+      const { month, pillar, operands } = dated(k)
+      return resolveP4OwnerRulesDay(month, pillar, operands)
+    })
+    expect(got.length, got.slice(0, 20).join('\n')).toBe(0)
+  }, 600_000)
+
+  it('context: every row the Golden determines (outside E5) equals the Golden', () => {
+    const rows = contextRows.filter((r, i) => r.state !== 'undetermined' && (FULL || i % 7 === 0))
+    const got = mismatches(rows, 'id', (k) => {
+      const [month, pillar] = k.split('-') as [string, string]
+      return resolveP4OwnerRulesContext(month, pillar)
+    })
+    expect(got.length, got.slice(0, 20).join('\n')).toBe(0)
+  }, 600_000)
+})

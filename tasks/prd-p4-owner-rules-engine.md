@@ -1,6 +1,6 @@
 # PRD — Roadmap 7b: engine audit-only cài luật owner, kiểm bằng Golden v2
 
-Ngày: 2026-10-17. Trạng thái: PRD nháp, chờ owner duyệt trước implementation.
+Ngày: 2026-10-17. Trạng thái: **owner duyệt 2026-10-17**.
 
 ## 1. Bối cảnh
 
