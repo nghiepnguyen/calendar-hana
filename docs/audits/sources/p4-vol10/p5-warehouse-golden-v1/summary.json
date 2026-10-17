@@ -1,0 +1,82 @@
+{
+  "fixtures": {
+    "total": 167,
+    "byCategory": {
+      "base_only": 5,
+      "partner_only": 5,
+      "direct": 10,
+      "single_partner": 23,
+      "multi_partner": 100,
+      "impossible": 2,
+      "multi_base": 3,
+      "unknown": 9,
+      "mucang_out_of_coverage": 4,
+      "separate_headings": 6
+    }
+  },
+  "propagation": 16,
+  "context1440": {
+    "rows": 1440,
+    "xiu_cang_ku": {
+      "no_yi": 657,
+      "source_dependent": 5,
+      "yi": 778
+    },
+    "kai_yi": {
+      "false": 856,
+      "true": 584
+    }
+  },
+  "dated1095": {
+    "rows": 1095,
+    "xiu_cang_ku": {
+      "no_yi": 506,
+      "source_dependent": 1,
+      "yi": 588
+    },
+    "kai_yi": {
+      "false": 641,
+      "true": 454
+    },
+    "kai_zhuan_ji_kept": {
+      "false": 989,
+      "true": 106
+    },
+    "甲日": {
+      "absent": 985,
+      "present": 110
+    },
+    "puzhu28": {
+      "absent": 1086,
+      "present": 9
+    },
+    "月煞": {
+      "absent": 1004,
+      "present": 91
+    },
+    "月厭": {
+      "absent": 1005,
+      "present": 90
+    },
+    "baseVerdicts": {
+      "五富:agreed": 20,
+      "五富:agreed_absent": 71,
+      "五富:source_dependent": 1,
+      "六合:agreed": 23,
+      "六合:agreed_absent": 62,
+      "六合:source_dependent": 8,
+      "天倉:agreed": 34,
+      "天倉:agreed_absent": 48,
+      "天倉:source_dependent": 9,
+      "收日:agreed": 19,
+      "收日:agreed_absent": 66,
+      "收日:source_dependent": 4,
+      "母倉:agreed": 81,
+      "母倉:agreed_absent": 112,
+      "母倉:source_dependent": 25
+    },
+    "sourceDependentDates": [
+      "2025-10-08"
+    ]
+  }
+}

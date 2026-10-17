@@ -1,0 +1,3779 @@
+{
+  "version": "golden-p5-warehouse-expected-v1",
+  "authorityId": "p5-warehouse-v1",
+  "ownerDecisions": [
+    {
+      "id": "D",
+      "decidedOn": "2026-10-16",
+      "text": "co-presence 宜 only when 卷十 and 卷十一 readings agree; split = SOURCE_DEPENDENT"
+    },
+    {
+      "id": "unknown-base",
+      "decidedOn": "2026-10-16",
+      "text": "an unknown base with every partner known absent gives no 宜 (outcome over every completion); unknown only when completions disagree"
+    }
+  ],
+  "semantics": {
+    "presence": "true present, false absent, null unknown",
+    "reading": "Kleene: base AND ANY(partners)",
+    "d": "agreed | agreed_absent | source_dependent | unknown, over every completion of the base and its partners",
+    "xiuCangKu": "yi | no_yi | source_dependent | unknown, over every completion of the 18 operands (FR-04 order)",
+    "kaiCangKuYi": "Kleene ANY(月恩 四相 時德 滿日 五富); 宜 only, 忌 composition is P4-B",
+    "impossible": "收日+開日 or 天倉+時德 both present -> error IMPOSSIBLE_CO_PRESENCE",
+    "propagation.kaiJi": "true = 忌 must stay (百忌 甲日 專忌, puzhu:22 如遇專忌之日則仍註忌); false = puzhu:28 諸事不忌; null = ordinary 忌 composition decides"
+  },
+  "fixtures": [
+    {
+      "id": "base-only:收日",
+      "category": "base_only",
+      "present": [
+        "收日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "base-only:母倉",
+      "category": "base_only",
+      "present": [
+        "母倉"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "base-only:六合",
+      "category": "base_only",
+      "present": [
+        "六合"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "base-only:五富",
+      "category": "base_only",
+      "present": [
+        "五富"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "base-only:天倉",
+      "category": "base_only",
+      "present": [
+        "天倉"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "partner-only:月恩",
+      "category": "partner_only",
+      "present": [
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "partner-only:月德",
+      "category": "partner_only",
+      "present": [
+        "月德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "partner-only:四相",
+      "category": "partner_only",
+      "present": [
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "partner-only:時德",
+      "category": "partner_only",
+      "present": [
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "partner-only:開日",
+      "category": "partner_only",
+      "present": [
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:天德",
+      "category": "direct",
+      "present": [
+        "天德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:月德",
+      "category": "direct",
+      "present": [
+        "月德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:天德合",
+      "category": "direct",
+      "present": [
+        "天德合"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:月德合",
+      "category": "direct",
+      "present": [
+        "月德合"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:天赦",
+      "category": "direct",
+      "present": [
+        "天赦"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:天願",
+      "category": "direct",
+      "present": [
+        "天願"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:三合",
+      "category": "direct",
+      "present": [
+        "三合"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "direct:滿日",
+      "category": "direct",
+      "present": [
+        "滿日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+時德",
+      "category": "single_partner",
+      "present": [
+        "收日",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+四相",
+      "category": "single_partner",
+      "present": [
+        "收日",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "收日",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月德",
+      "category": "single_partner",
+      "present": [
+        "月德",
+        "收日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:收日+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩",
+      "category": "single_partner",
+      "present": [
+        "收日",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+時德",
+      "category": "multi_partner",
+      "present": [
+        "收日",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+四相",
+      "category": "multi_partner",
+      "present": [
+        "收日",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "收日",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+月德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:收日+月恩+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "收日",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+開日",
+      "category": "single_partner",
+      "present": [
+        "母倉",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:母倉+時德",
+      "category": "single_partner",
+      "present": [
+        "母倉",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+四相",
+      "category": "single_partner",
+      "present": [
+        "母倉",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德",
+      "category": "single_partner",
+      "present": [
+        "月德",
+        "母倉"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:母倉+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:母倉+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩",
+      "category": "single_partner",
+      "present": [
+        "母倉",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+時德",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+四相",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "母倉",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:母倉+月恩+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "母倉",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+開日",
+      "category": "single_partner",
+      "present": [
+        "六合",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:六合+時德",
+      "category": "single_partner",
+      "present": [
+        "六合",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+四相",
+      "category": "single_partner",
+      "present": [
+        "六合",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德",
+      "category": "single_partner",
+      "present": [
+        "月德",
+        "六合"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:六合+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:六合+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩",
+      "category": "single_partner",
+      "present": [
+        "六合",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+時德",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+四相",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "六合",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:六合+月恩+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "六合",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+開日",
+      "category": "single_partner",
+      "present": [
+        "五富",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+時德",
+      "category": "single_partner",
+      "present": [
+        "五富",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+四相",
+      "category": "single_partner",
+      "present": [
+        "五富",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德",
+      "category": "single_partner",
+      "present": [
+        "月德",
+        "五富"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩",
+      "category": "single_partner",
+      "present": [
+        "五富",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+時德",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+四相",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "五富",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+四相+時德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:五富+月恩+月德+四相+時德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "五富",
+        "月恩",
+        "四相",
+        "時德",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+開日",
+      "category": "single_partner",
+      "present": [
+        "天倉",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:天倉+四相",
+      "category": "single_partner",
+      "present": [
+        "天倉",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "天倉",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月德",
+      "category": "single_partner",
+      "present": [
+        "月德",
+        "天倉"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:天倉+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "subset:天倉+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩",
+      "category": "single_partner",
+      "present": [
+        "天倉",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+開日",
+      "category": "multi_partner",
+      "present": [
+        "天倉",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+四相",
+      "category": "multi_partner",
+      "present": [
+        "天倉",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "天倉",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+月德",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+月德+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "月恩",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+月德+四相",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "月恩",
+        "四相"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "subset:天倉+月恩+月德+四相+開日",
+      "category": "multi_partner",
+      "present": [
+        "月德",
+        "天倉",
+        "月恩",
+        "四相",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "impossible:收日+開日",
+      "category": "impossible",
+      "present": [
+        "收日",
+        "開日"
+      ],
+      "unknown": [],
+      "expected": {
+        "error": "IMPOSSIBLE_CO_PRESENCE",
+        "pair": "收日+開日"
+      },
+      "note": "source/definition says these never co-occur"
+    },
+    {
+      "id": "impossible:天倉+時德",
+      "category": "impossible",
+      "present": [
+        "天倉",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "error": "IMPOSSIBLE_CO_PRESENCE",
+        "pair": "天倉+時德"
+      },
+      "note": "source/definition says these never co-occur"
+    },
+    {
+      "id": "direct-beats-split:天德+收日+月恩",
+      "category": "direct",
+      "present": [
+        "天德",
+        "收日",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "direct-via-月德:收日+月德",
+      "category": "direct",
+      "present": [
+        "月德",
+        "收日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": false
+      },
+      "note": "月德 is direct; the R11-only split never decides"
+    },
+    {
+      "id": "multi-base:agreed+split",
+      "category": "multi_base",
+      "present": [
+        "收日",
+        "母倉",
+        "時德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          },
+          "母倉": {
+            "base": true,
+            "r10": false,
+            "r11": true,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      },
+      "note": "收日 agreed by 時德; 母倉 split (R11 only)"
+    },
+    {
+      "id": "multi-base:split+split",
+      "category": "multi_base",
+      "present": [
+        "六合",
+        "天倉",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          },
+          "天倉": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "multi-base:absent+absent",
+      "category": "multi_base",
+      "present": [
+        "六合",
+        "五富"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          },
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "unknown:月恩 (R10 side)",
+      "category": "unknown",
+      "present": [
+        "收日"
+      ],
+      "unknown": [
+        "月恩"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": null,
+            "r11": false,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": null
+      }
+    },
+    {
+      "id": "unknown:開日 (R11 side)",
+      "category": "unknown",
+      "present": [
+        "收日"
+      ],
+      "unknown": [
+        "開日"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": false,
+            "r11": null,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "unknown:四相 (both sides)",
+      "category": "unknown",
+      "present": [
+        "六合"
+      ],
+      "unknown": [
+        "四相"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "六合": {
+            "base": true,
+            "r10": null,
+            "r11": null,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": null
+      }
+    },
+    {
+      "id": "unknown:partner with another present",
+      "category": "unknown",
+      "present": [
+        "收日",
+        "時德"
+      ],
+      "unknown": [
+        "月恩",
+        "開日"
+      ],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      },
+      "note": "both readings true"
+    },
+    {
+      "id": "unknown:split side unknown",
+      "category": "unknown",
+      "present": [
+        "收日",
+        "月恩"
+      ],
+      "unknown": [
+        "開日"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": null,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "unknown:direct alone",
+      "category": "unknown",
+      "present": [],
+      "unknown": [
+        "天德"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "unknown:direct with agreed base",
+      "category": "unknown",
+      "present": [
+        "收日",
+        "四相"
+      ],
+      "unknown": [
+        "天德"
+      ],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          }
+        },
+        "kaiCangKuYi": true
+      },
+      "note": "agreed beats unknown"
+    },
+    {
+      "id": "unknown:direct with split base",
+      "category": "unknown",
+      "present": [
+        "收日",
+        "月恩"
+      ],
+      "unknown": [
+        "天赦"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      },
+      "note": "unknown beats split"
+    },
+    {
+      "id": "unknown:base with agreed other base",
+      "category": "unknown",
+      "present": [
+        "收日",
+        "四相"
+      ],
+      "unknown": [
+        "六合"
+      ],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": true,
+            "d": "agreed"
+          },
+          "六合": {
+            "base": null,
+            "r10": null,
+            "r11": null,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "mucang-out:agreed partner",
+      "category": "mucang_out_of_coverage",
+      "present": [
+        "四相"
+      ],
+      "unknown": [
+        "母倉"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "母倉": {
+            "base": null,
+            "r10": null,
+            "r11": null,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": true
+      },
+      "note": "flips: present -> 宜, absent -> no 宜"
+    },
+    {
+      "id": "mucang-out:R10-only partner",
+      "category": "mucang_out_of_coverage",
+      "present": [
+        "月恩"
+      ],
+      "unknown": [
+        "母倉"
+      ],
+      "expected": {
+        "xiuCangKu": "unknown",
+        "bases": {
+          "母倉": {
+            "base": null,
+            "r10": null,
+            "r11": false,
+            "d": "unknown"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "mucang-out:no partner",
+      "category": "mucang_out_of_coverage",
+      "present": [],
+      "unknown": [
+        "母倉"
+      ],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "母倉": {
+            "base": null,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": false
+      },
+      "note": "owner 2026-10-16: no 宜"
+    },
+    {
+      "id": "mucang-out:with direct",
+      "category": "mucang_out_of_coverage",
+      "present": [
+        "滿日"
+      ],
+      "unknown": [
+        "母倉"
+      ],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {
+          "母倉": {
+            "base": null,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "separate:月恩 alone",
+      "category": "separate_headings",
+      "present": [
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "separate:收日+月恩",
+      "category": "separate_headings",
+      "present": [
+        "收日",
+        "月恩"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "source_dependent",
+        "bases": {
+          "收日": {
+            "base": true,
+            "r10": true,
+            "r11": false,
+            "d": "source_dependent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "separate:天德 alone",
+      "category": "separate_headings",
+      "present": [
+        "天德"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": false
+      }
+    },
+    {
+      "id": "separate:五富 alone",
+      "category": "separate_headings",
+      "present": [
+        "五富"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {
+          "五富": {
+            "base": true,
+            "r10": false,
+            "r11": false,
+            "d": "agreed_absent"
+          }
+        },
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "separate:滿日 alone",
+      "category": "separate_headings",
+      "present": [
+        "滿日"
+      ],
+      "unknown": [],
+      "expected": {
+        "xiuCangKu": "yi",
+        "bases": {},
+        "kaiCangKuYi": true
+      }
+    },
+    {
+      "id": "separate:四相 unknown",
+      "category": "separate_headings",
+      "present": [],
+      "unknown": [
+        "四相"
+      ],
+      "expected": {
+        "xiuCangKu": "no_yi",
+        "bases": {},
+        "kaiCangKuYi": null
+      }
+    }
+  ],
+  "propagation": [
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": false,
+      "甲日": false,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": null
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": false,
+      "甲日": false,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": false,
+      "甲日": true,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": true,
+        "kaiJi": true
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": false,
+      "甲日": true,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": true,
+      "甲日": false,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": null
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": true,
+      "甲日": false,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": true,
+      "甲日": true,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": true,
+        "kaiJi": true
+      }
+    },
+    {
+      "開市_notJi": false,
+      "立券交易_notJi": true,
+      "甲日": true,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": false,
+      "甲日": false,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": null
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": false,
+      "甲日": false,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": false,
+      "甲日": true,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": true,
+        "kaiJi": true
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": false,
+      "甲日": true,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": true,
+      "甲日": false,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": true,
+        "zhuanJiKept": false,
+        "kaiJi": null
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": true,
+      "甲日": false,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": true,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": true,
+      "甲日": true,
+      "puzhu28": false,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": true,
+        "kaiJi": true
+      }
+    },
+    {
+      "開市_notJi": true,
+      "立券交易_notJi": true,
+      "甲日": true,
+      "puzhu28": true,
+      "expected": {
+        "propagatedLift": false,
+        "zhuanJiKept": false,
+        "kaiJi": false
+      }
+    }
+  ]
+}

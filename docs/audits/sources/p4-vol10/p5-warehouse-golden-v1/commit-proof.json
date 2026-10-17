@@ -1,0 +1,51 @@
+{
+  "version": "golden-p5-warehouse-commit-proof-v1",
+  "freezeCommit": "fc5c1fbfa0b08304a4d37adc692ad022515253ef",
+  "tree": "a2f61b4f3c9a901f9a722e39e0dc2558b5709f8a",
+  "parent": "5c99dc0e292dc4f3dd143825b71573d4871512cc",
+  "note": "Written after the freeze commit (a commit cannot hold its own SHA); not amended. Bytes read from the Git objects.",
+  "files": [
+    {
+      "path": "shared/almanac-data/golden-p5-warehouse-v1.json",
+      "blob": "30f43139b04df397aa0c92661d8c1136b6fcbe22",
+      "sha256": "5c40f0dd5fff96cfa6e25e6c03d94b591298399d12f8b1443510cb6dad432287",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/lock.json",
+      "blob": "44f32a48405c28e55cf03104f4c7708c82355385",
+      "sha256": "6055cf639f3440051743fe0b7044c28601ec5f9852fd53f3193b647212e3197c",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/derive.py",
+      "blob": "0a3d128d80a19853d2e7b5609710a23cfc776125",
+      "sha256": "bae901ad03c5997d2525cdcb78feca64a70c4efdcb78af9cd1058b021ac7fd91",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/expected.json",
+      "blob": "951c0ddb6ef7ddcccf8d9c3b3a59bbbb7d86581d",
+      "sha256": "73c6daf40ef8c378f37cac6a7b050c8e45374ce7e27ff29e1ee4afad1e894191",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv",
+      "blob": "1cb894d4e3a52fa3da7c88139983b494ec5f68e0",
+      "sha256": "30f4339e902cc04cd73d3dd8864246808c2b2e6363e4478f10e100755bf7da1e",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv",
+      "blob": "6c2cacb2d31de40b5ecd4ac42873cff0f8711fc9",
+      "sha256": "e845c12e660b4f405e5d07fa45d50d20ec30281a17fa38ccaa414bf524630f47",
+      "matchesWorkingTree": true
+    },
+    {
+      "path": "shared/lunar/p4WarehouseGolden.test.ts",
+      "blob": "f5fdf6c7f88f8f91e3f509ee4df65fa5b613347b",
+      "sha256": "b613839607cb9b01cda219bacb40d5b2450b86832d1b0157e8c6e509861822f5",
+      "matchesWorkingTree": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "golden-p5-warehouse-validation-v1",
+  "engineBaseline": {
+    "path": "docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/baseline.tsv",
+    "sha256": "6c2568ceff6b63c63a1a5effa119849dd0c65d3640517489984e19cb91c587c8",
+    "compared": "17 gods + 開倉庫 宜 + 甲日 專忌 on 1,095 dates",
+    "mismatches": 0
+  },
+  "priorLocks": {
+    "entries": 1284,
+    "locks": 57,
+    "drift": [],
+    "skippedSuperseded": [
+      "docs/audits/sources/p4-vol10/yi-propagation-v1/superseded-draft/lock.json"
+    ]
+  }
+}

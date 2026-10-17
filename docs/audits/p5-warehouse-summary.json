@@ -1,0 +1,121 @@
+{
+  "scope": "MEASURED_AUDIT_ONLY_NOT_GOLDEN",
+  "before": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+  "reasonGolden": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv",
+  "counts": {
+    "dates": 1095,
+    "rows": 31755,
+    "changedRows": 565,
+    "changedOtherHeadings": 0,
+    "deferredAfter": 0
+  },
+  "xiuCangKu": {
+    "p5Rows": {
+      "undetermined>both_present": 161,
+      "undetermined>only_yi": 225,
+      "undetermined>only_ji": 90,
+      "undetermined>not_recorded": 46,
+      "undetermined>undetermined": 17
+    },
+    "otherRows": {
+      "only_ji>only_ji": 517,
+      "neither_recorded>neither_recorded": 36,
+      "not_recorded>not_recorded": 3
+    },
+    "transitions": {
+      "NO_OPERAND only_ji>only_ji": 254,
+      "DIRECT_YI undetermined>both_present": 144,
+      "CO_PRESENCE_ABSENT only_ji>only_ji": 104,
+      "CO_PRESENCE_AGREED only_ji>only_ji": 24,
+      "DIRECT_YI undetermined>only_yi": 215,
+      "DIRECT_YI only_ji>only_ji": 135,
+      "CO_PRESENCE_AGREED undetermined>only_yi": 10,
+      "CO_PRESENCE_ABSENT undetermined>only_ji": 42,
+      "NO_OPERAND undetermined>only_ji": 46,
+      "NO_OPERAND undetermined>not_recorded": 30,
+      "DIRECT_YI neither_recorded>neither_recorded": 20,
+      "CO_PRESENCE_ABSENT undetermined>not_recorded": 16,
+      "CO_PRESENCE_AGREED neither_recorded>neither_recorded": 11,
+      "CO_PRESENCE_AGREED undetermined>both_present": 17,
+      "CO_PRESENCE_AGREED undetermined>undetermined": 6,
+      "CO_PRESENCE_ABSENT undetermined>undetermined": 9,
+      "CO_PRESENCE_ABSENT neither_recorded>neither_recorded": 2,
+      "DIRECT_YI not_recorded>not_recorded": 3,
+      "NO_OPERAND neither_recorded>neither_recorded": 3,
+      "SOURCE_DEPENDENT undetermined>undetermined": 1,
+      "DIRECT_YI undetermined>only_ji": 2,
+      "DIRECT_YI undetermined>undetermined": 1
+    },
+    "reasons": {
+      "NO_OPERAND": 333,
+      "DIRECT_YI": 520,
+      "CO_PRESENCE_ABSENT": 173,
+      "CO_PRESENCE_AGREED": 68,
+      "SOURCE_DEPENDENT": 1
+    },
+    "finalStateAfter": {
+      "only_ji": 607,
+      "both_present": 161,
+      "only_yi": 225,
+      "not_recorded": 49,
+      "neither_recorded": 36,
+      "undetermined": 17
+    },
+    "sourceDependent": [
+      "2025-10-08"
+    ],
+    "undeterminedAfter": {
+      "OTHER_STATE_WITH_KNOWN_YI 月煞": 14,
+      "OTHER_STATE_WITH_KNOWN_YI 刼煞": 1,
+      "SOURCE_DEPENDENT 月建": 1,
+      "OTHER_STATE_WITH_KNOWN_YI 閉日+天吏": 1
+    }
+  },
+  "undeterminedOtherHeadings": {
+    "before": 103,
+    "after": 103
+  },
+  "kaiCangKu": {
+    "yiTrue": 454,
+    "jiaDays": 110,
+    "jiaZhuanJiKept": 106,
+    "jiaPuzhu28NotJi": [
+      "2025-03-06 卯甲戌",
+      "2025-07-24 未甲午",
+      "2026-07-19 未甲午",
+      "2027-07-14 未甲午"
+    ],
+    "propagation": {
+      "none": 996,
+      "both only_ji blocked": 18,
+      "both neither_recorded": 43,
+      "one-sided 開市 neither_recorded": 10,
+      "both undetermined": 23,
+      "one-sided 開市 only_ji": 5
+    },
+    "yueSha": {
+      "only_ji": 78,
+      "not_recorded puzhu28": 2,
+      "undetermined": 11
+    },
+    "yueYan": {
+      "raw false only_yi": 1,
+      "raw true only_ji": 72,
+      "raw false not_recorded": 6,
+      "raw false neither_recorded": 11
+    },
+    "yueYanLiftedWithoutDe": [],
+    "puzhu06Candidates": {
+      "only_ji": 109,
+      "both_present": 14,
+      "undetermined": 10
+    }
+  },
+  "limits": [
+    "Reasons come from the frozen P5 Golden; the after-state is a measurement, not an oracle.",
+    "Month Jian uses the calendar-day convention (P4-C 5.6).",
+    "母倉 is OWNER_ADOPTED_SOURCE_DEPENDENT within 2025-2027; outside it 修倉庫 can stay unknown.",
+    "月厭 lifts come from the P4-B 月厭 clause (德神 present on every lifted date); not re-derived here.",
+    "puzhu:06 is not modeled in P4-B (all 8 headings it names); 開倉庫 candidates are counted, not resolved (SPEC_GAP, separate task)."
+  ]
+}

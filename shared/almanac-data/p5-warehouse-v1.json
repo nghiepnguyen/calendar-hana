@@ -1,0 +1,333 @@
+{
+  "version": "p5-warehouse-v1",
+  "authorityId": "p5-warehouse-v1",
+  "status": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "ownerDecision": {
+    "id": "D",
+    "decidedOn": "2026-10-16",
+    "text": "修倉庫 co-presence is 宜 only when both readings give 宜; a split reading is undetermined, SOURCE_DEPENDENT. Not canonical."
+  },
+  "offsetProtocol": "unicode-code-point-zero-based-end-exclusive-v1",
+  "nameNormalization": "卷十一 raw writes 徳; god names compare as 德 (NAMING_ONLY).",
+  "heading": {
+    "修倉庫": {
+      "sourceId": "ws-vol11-787353",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 5052,
+      "length": 41,
+      "quote": "宜天徳月徳天徳合月徳合天赦天願三合滿日又收日母倉六合五富天倉與月徳四相時徳開日併者",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    },
+    "開倉庫出貨財": {
+      "sourceId": "ws-vol11-787353",
+      "volume": 11,
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "offset": 5601,
+      "length": 11,
+      "quote": "宜月恩四相時徳滿日五富",
+      "sha1": "ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50"
+    }
+  },
+  "direct": {
+    "gods": [
+      "天德",
+      "月德",
+      "天德合",
+      "月德合",
+      "天赦",
+      "天願",
+      "三合",
+      "滿日"
+    ],
+    "rule": "ANY present -> 宜 (both volumes agree; 卷十 收日按 「若德合赦願則自宜修倉庫又不待與收日併也」)",
+    "vol10": {
+      "天德/月德/天德合/月德合": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 2165,
+        "length": 3,
+        "quote": "修倉庫",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "天赦": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 2770,
+        "length": 3,
+        "quote": "修倉庫",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "天願": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 3158,
+        "length": 3,
+        "quote": "修倉庫",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "三合": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 4089,
+        "length": 3,
+        "quote": "修倉庫",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "滿日": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 5122,
+        "length": 3,
+        "quote": "修倉庫",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      }
+    }
+  },
+  "coPresence": {
+    "bases": [
+      "收日",
+      "母倉",
+      "六合",
+      "五富",
+      "天倉"
+    ],
+    "connective": "ANY",
+    "R10": {
+      "source": "卷十 per-entry clauses",
+      "partners": {
+        "收日": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "母倉": [
+          "月恩",
+          "四相",
+          "開日"
+        ],
+        "六合": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "五富": [
+          "月恩",
+          "四相",
+          "時德"
+        ],
+        "天倉": [
+          "月恩",
+          "四相",
+          "開日"
+        ]
+      },
+      "clauses": {
+        "收日": {
+          "sourceId": "ws-vol10-787351",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 5919,
+          "length": 12,
+          "quote": "與月恩四相時德併宜修倉庫",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        "母倉": {
+          "sourceId": "ws-vol10-787351",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 2880,
+          "length": 26,
+          "quote": "{{SK anchor|與月恩四相開日併宜修倉庫}}",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        "六合": {
+          "sourceId": "ws-vol10-787351",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6379,
+          "length": 26,
+          "quote": "{{SK anchor|與月恩四相時德併宜修倉庫}}",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        "五富": {
+          "sourceId": "ws-vol10-787351",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6536,
+          "length": 26,
+          "quote": "{{SK anchor|與月恩四相時德併宜修倉庫}}",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        },
+        "天倉": {
+          "sourceId": "ws-vol10-787351",
+          "volume": 10,
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 6626,
+          "length": 26,
+          "quote": "{{SK anchor|與月恩四相開日併宜修倉庫}}",
+          "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+        }
+      }
+    },
+    "R11": {
+      "source": "卷十一 heading 修倉庫",
+      "partners": {
+        "收日": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "母倉": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "六合": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "五富": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ],
+        "天倉": [
+          "月德",
+          "四相",
+          "時德",
+          "開日"
+        ]
+      }
+    },
+    "agreedPartners": {
+      "收日": [
+        "四相",
+        "時德"
+      ],
+      "母倉": [
+        "四相",
+        "開日"
+      ],
+      "六合": [
+        "四相",
+        "時德"
+      ],
+      "五富": [
+        "四相",
+        "時德"
+      ],
+      "天倉": [
+        "四相",
+        "開日"
+      ]
+    },
+    "r10OnlyPartners": {
+      "收日": [
+        "月恩"
+      ],
+      "母倉": [
+        "月恩"
+      ],
+      "六合": [
+        "月恩"
+      ],
+      "五富": [
+        "月恩"
+      ],
+      "天倉": [
+        "月恩"
+      ]
+    },
+    "r11OnlyPartners": {
+      "收日": [
+        "月德",
+        "開日"
+      ],
+      "母倉": [
+        "月德",
+        "時德"
+      ],
+      "六合": [
+        "月德",
+        "開日"
+      ],
+      "五富": [
+        "月德",
+        "開日"
+      ],
+      "天倉": [
+        "月德",
+        "時德"
+      ]
+    },
+    "verdicts": {
+      "agreed": "宜",
+      "agreed_absent": "no 宜 from this base",
+      "source_dependent": "undetermined, SOURCE_DEPENDENT",
+      "unknown": "a reading is unknown when none of its partners is present and one is unknown (or the base is unknown); D is unknown when either reading is unknown. Unknown is not SOURCE_DEPENDENT."
+    },
+    "headingOrder": [
+      "any direct god present -> 宜",
+      "else any base agreed -> 宜",
+      "else any direct god or base verdict unknown -> unknown (it could still become 宜)",
+      "else any base source_dependent -> undetermined SOURCE_DEPENDENT",
+      "else -> no 宜"
+    ],
+    "commentary": {
+      "收日按": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 5934,
+        "length": 57,
+        "quote": "義取諸收無修造義故必與月恩四相時德併而後宜修倉庫若開日則雖宜修造不得與收日併若德合赦願則自宜修倉庫又不待與收日併也",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "母倉義亦如此": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 5994,
+        "length": 20,
+        "quote": "{{SK anchor|母倉義亦如此}}",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      },
+      "天倉注": {
+        "sourceId": "ws-vol10-787351",
+        "volume": 10,
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 6652,
+        "length": 21,
+        "quote": "{{SK notes|時德不得與天倉併}}",
+        "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025"
+      }
+    },
+    "commentaryReading": "母倉義亦如此 follows the 收日 按: a base without 修造 meaning needs a partner. It adds no partner and changes neither reading.",
+    "impossible": {
+      "收日+開日": "different 12 Trực of one day",
+      "天倉+時德": "卷十 note 「時德不得與天倉併」; checked on 720 contexts"
+    }
+  },
+  "warehouseOpening": {
+    "heading": "開倉庫出貨財",
+    "rule": "flat ANY of 月恩 四相 時德 滿日 五富; verification only in P5, no new predicate"
+  },
+  "limits": [
+    "Single-agent reading (Claude); no independent second review.",
+    "Scans locked only for the 卷十 母倉 entry and the 卷十一 修倉庫 heading (yi-mucang-v1); 收日/六合/五富/天倉 clauses are raw-only.",
+    "母倉 presence stays OWNER_ADOPTED_SOURCE_DEPENDENT 2025-2027 (p4-yi-mucang-v2); outside coverage -> unknown."
+  ]
+}

@@ -1,0 +1,109 @@
+# P5 — warehouse audit (修倉庫 co-presence, 開倉庫出貨財)
+
+Status: audit-only, owner decision **D** (2026-10-16), not canonical. No runtime, scoring, manifest or flag change. PRD: [prd-p5-warehouse.md](../../tasks/prd-p5-warehouse.md), tasks: [tasks-p5-warehouse.md](../../tasks/tasks-p5-warehouse.md).
+
+## Chain
+
+| Step | Evidence |
+|---|---|
+| Baseline (1.0) | [p5-warehouse-baseline-v1](sources/p4-vol10/p5-warehouse-baseline-v1/README.md) |
+| Authority (2.0) | [p5-warehouse-authority-v1](sources/p4-vol10/p5-warehouse-authority-v1/README.md), `shared/almanac-data/p5-warehouse-v1.json` |
+| Golden, frozen before code (3.0) | [p5-warehouse-golden-v1](sources/p4-vol10/p5-warehouse-golden-v1/README.md), freeze `fc5c1fb` |
+| Predicate (4.0) | `shared/lunar/p4Warehouse.ts`. Red `0810b96`, then green. |
+| Sweep (5.1/5.2) | [p5-warehouse-2025-2027.tsv](p5-warehouse-2025-2027.tsv), [p5-warehouse-summary.json](p5-warehouse-summary.json); generator `shared/lunar/p4WarehouseSweep.test.ts` |
+| Mutations (5.3) | `scripts/audit-p4-warehouse-mutations.py` → [p5-warehouse-mutation-results.json](p5-warehouse-mutation-results.json); CI job `p5-warehouse-mutations` |
+
+## Predicate
+
+`resolveP4Warehouse` reads the R10 (卷十, 月恩) and R11 (卷十一, 月德) partner lists from the pinned authority:
+
+- Each reading is Kleene `base AND ANY(partners)`.
+- D and the heading are the outcome over every completion of the unknown operands, as in the Golden. Owner, 2026-10-16: an unknown base whose partners are all known absent gives no 宜.
+
+`resolveP4WarehouseDay` wraps the unchanged P4-C day `resolveP4YiDay`:
+
+- 修倉庫 loses `deferred: 'P5'`.
+- SOURCE_DEPENDENT stays `undetermined`, tagged `warehouse: 'SOURCE_DEPENDENT'`.
+- Each base carries its partners, its R10/R11 membership, the source spans and the trace ID of every operand.
+- The owner accepted the wrapper on 2026-10-16: no composition v3 is needed, and the P4-C API keeps its own `deferred` contract.
+
+## 5.1 — 修倉庫 on 1,095 dates (31,755 rows swept)
+
+- Only the 修倉庫 rows changed: 565 of 31,755. Every other row matches the P4-C sweep TSV byte for byte (`changedOtherHeadings` 0). On all 1,095 dates, every day-level field outside 修倉庫 deep-equals the P4-C output.
+- 宜 verdicts (reasons from the frozen Golden):
+
+  | Reason | Rows |
+  |---|---|
+  | DIRECT_YI | 520 |
+  | CO_PRESENCE_AGREED | 68 |
+  | CO_PRESENCE_ABSENT | 173 |
+  | NO_OPERAND | 333 |
+  | SOURCE_DEPENDENT | 1 |
+
+  The SOURCE_DEPENDENT row is 2025-10-08 戌庚戌: 母倉 + 月恩, so R10 gives 宜 and R11 does not.
+- The 539 P5 rows (P4-C `undetermined`) now end as:
+
+  | Final state | Rows |
+  |---|---|
+  | only_yi | 225 |
+  | both_present | 161 |
+  | only_ji | 90 |
+  | not_recorded | 46 |
+  | undetermined | 17 |
+
+- The 17 still `undetermined`:
+  - 1 is SOURCE_DEPENDENT (subject 月建).
+  - 16 have a known 宜 but an open 忌 scope from P4-B: 月煞 14 (卯/酉 months), 刼煞 1, 閉日+天吏 1. Their bucket is `OTHER_STATE_WITH_KNOWN_YI`; these are the same 卯/酉 days as the 24 開倉庫出貨財 rows from task 1.3.
+- The other 556 修倉庫 rows keep their state, because 忌 already decided them. In 43 of them only `final_yi` changes (unknown → known). Of the 565 changed rows:
+  - 511 change pre/final state and `final_yi`;
+  - 11 change state only;
+  - 43 change `final_yi` only.
+- Baseline 1.1 predicted that the 158 rows with a direct god would move, for example only_ji → both_present. None did, because P4 suppression or protected 忌 decides their state.
+- 14 rows read 宜 true + 忌 true + `only_ji` with protected 忌. P4-C has the same pattern: 449 rows on other headings, such as pillar 諸事皆忌, where 宜 is recorded but 忌 is protected. This is an existing composition convention, not a P5 change.
+- `undetermined` on all other headings: 103 before, 103 after. Unresolved 宜 operands on 2025–2027: 0.
+
+## 5.2 — 開倉庫出貨財 (FR-07)
+
+Checked against the frozen Golden columns on 1,095 dates:
+
+- **宜:** equals ANY(月恩 四相 時德 滿日 五富) on every date (454 dates with 宜).
+- **甲日 專忌:**
+  - 110 dates. On 106 the 忌 stays protected through every lift.
+  - The other 4 are puzhu:28 days: 2025-03-06 卯甲戌, and 未甲午 on 2025-07-24, 2026-07-19 and 2027-07-14. There 諸事不忌 wins (owner, 2026-10-16).
+- **puzhu:22 `requireAll`:** no date in 2025–2027 actually fires the lift:
+  - In 18 cases both from-headings are 相抵, but the lift is blocked because 甲日 is 專忌.
+  - In 43 cases 開倉庫 is already `neither_recorded`, and in 23 it is `undetermined`.
+  - 15 dates are one-sided (開市 only), and 5 of those carry an unprotected 忌 that must stay. They do stay.
+  - The 16-row frozen table is checked on `applyP4Propagation` directly.
+- **月煞 (月虛), on 91 dates:** raw 忌 is present on all 91.
+  - Final 忌 is kept on 78, 11 are `undetermined` (open 月煞 scope), and 2 are lifted only by puzhu:28 (卯甲戌, 酉庚辰).
+  - No single 吉神 removes it.
+- **月厭, on 90 dates:** 忌 is kept on 72. P4-B's 月厭 clause lifts it on 18, and 德神 (天德/月德/天德合/月德合) is present on every one of those 18.
+
+### Findings
+
+| Id | Class | Finding | Handling |
+|---|---|---|---|
+| F1 | UNMODELED_RULE (P4-B), impact unclassified | puzhu:06 is not modeled anywhere in P4: 「凡德合赦願月恩四相時德等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇德猶忌及從忌不從宜之日則仍註忌」. On a puzhu:06 day these rows keep an unprotected 忌: 開倉庫出貨財 133 (only_ji 109, both_present 14, undetermined 10), 開市 153, 立券交易 159, 納財 139, 安牀 140. 進人口, 經絡 and 醞釀 are not among the 29 P4 headings. Spot check: 2025-01-26 丑乙未 (月破) is 遇德猶忌, an exception, so its outcome is unchanged. 2025-01-22 丑辛卯 (月恩, 災煞 丑月 「不與德神併如常例」) and 2025-01-11 丑庚辰 (天德月德, 月煞 丑月平日 「與…併如常例」) depend on whether 如常例 includes puzhu:06. | Not fixed in P5. Routing (inside P5 under FR-08, or as a separate P4-B task) is the owner's decision. Fixing it needs a frozen Golden first. |
+| F2 | COVERAGE_LIMIT | The puzhu:22 lift never fires on 2025–2027, so real data cannot show it. | Covered by the abstract 16-row table and the `kai_drop_require_all` mutation. |
+| F3 | SCOPE_OUTSIDE_P5 | 24 開倉庫出貨財 and 16 修倉庫 rows stay `undetermined` because a P4-B 忌 scope is open (月煞 卯/酉, 刼煞, 閉日+天吏). | Recorded; left for P4-B. |
+
+## Acceptance gate (PRD §7, task 6.1)
+
+| # | Gate | Status | Evidence |
+|---|---|---|---|
+| 1 | Authority locked: 5 bases × 2 readings, quotes, offsets, checksums, scans; D recorded as OWNER_ADOPTED_SOURCE_DEPENDENT | PASS | `p5-warehouse-v1`, `5c99dc0`; gate `p4WarehouseAuthority.test.ts` |
+| 2 | Golden frozen before code; P4-B/P4-C locks keep their bytes | PASS | Freeze `fc5c1fb` and commit proof `29d9f00`, both before red `0810b96` and code `da08a65`. 1,287 entries in 58 prior locks are unchanged (`derive.py` validation). |
+| 3 | All 1,095 修倉庫 rows resolved with a reason; no `deferred: 'P5'`; SOURCE_DEPENDENT counted and listed separately | PASS | Sweep reasons from the Golden. `deferredAfter` 0 on the P5 output. SOURCE_DEPENDENT: 1 (2025-10-08). 16 rows have a known 宜 but an open P4-B 忌 scope, each listed with its subject. |
+| 4 | Impossible co-presence: 0 on 720 contexts and 1,095 dates | PASS | Authority and Golden 720 checks. The predicate throws `IMPOSSIBLE_CO_PRESENCE`, and the sweep of 1,095 dates ran without a throw. |
+| 5 | 開倉庫出貨財 FR-07 on real data; gaps classified and handled under FR-08 | PASS, with a known limit | §5.2. F1 (puzhu:06) is moved to a separate P4-B task (owner, 2026-10-16) and stays a known limit of P5. |
+| 6 | 0 unresolved 凶 operands, 0 P4-B/P4-C regressions, every mutation caught, CI green | PASS* | All other rows match the P4-C sweep, which has 0 unresolved 凶. Mutations 12/12. Full unit 8,020. *CI: see PR #60, latest head. |
+| 7 | Runtime, manifest and scoring unchanged | PASS | No runtime import of `p4Warehouse`. Builds of main `1c4bb32` and the branch are equal apart from `builtAt`/build id. |
+| 8 | Report and PROJECT_CONTEXT.md updated | PASS | This report, the task list, `p4-vol10-progress.md` and PROJECT_CONTEXT.md. |
+
+## Limits
+
+- Single-agent work (Claude); no independent second review.
+- F1 (puzhu:06) is unmodeled in P4-B. The owner moved it to a separate task on 2026-10-16, which reads 如常例 and freezes a Golden first.
+- 母倉 is OWNER_ADOPTED_SOURCE_DEPENDENT for 2025–2027. Outside that range 修倉庫 can stay unknown.
+- One corner of FR-04: an unknown base that can only reach SOURCE_DEPENDENT or agreed_absent, next to a known SOURCE_DEPENDENT base, gives SOURCE_DEPENDENT under completion semantics. FR-04 read literally would give unknown. No real or frozen row hits this case.

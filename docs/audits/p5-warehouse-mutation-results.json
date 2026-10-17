@@ -1,0 +1,121 @@
+{
+  "scope": "P5_WAREHOUSE_OWNER_ADOPTED_SOURCE_DEPENDENT",
+  "mutations": [
+    {
+      "mutation": "any_partner_to_all",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_sixiang",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "swap_yueen_yuede",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "d_union",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "d_r10_only",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "d_r11_only",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "source_dependent_to_absent",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_direct_path",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "allow_impossible_pairs",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "mucang_out_of_coverage_absent",
+      "file": "p4Warehouse.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "kai_drop_jia_zhuanji",
+      "file": "p4YiDayCore.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "kai_drop_require_all",
+      "file": "p4DayComposition.ts",
+      "tests": [
+        "shared/lunar/p4Warehouse.test.ts",
+        "shared/lunar/p4WarehouseSweep.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    }
+  ],
+  "restored": true,
+  "targetHashes": {
+    "shared/lunar/p4DayComposition.ts": "dd01594a14cdab6c2f1499f25c46e3103c8883d9e71086c356fbc8db149e5949",
+    "shared/lunar/p4Warehouse.ts": "cbf0593bbb24ca651e0f37f9bf354bd733a448321bf0cfb6417c17b750f9dad3",
+    "shared/lunar/p4YiDayCore.ts": "eccfa76b129c26843f67a649353868de534f58b2cef711ede3a57c6f6768a8c7"
+  },
+  "limits": "Audit-only gate for decision D; puzhu:06 (SPEC_GAP) is outside P5 and has no mutation here."
+}

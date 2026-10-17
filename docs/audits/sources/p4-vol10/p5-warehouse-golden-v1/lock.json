@@ -1,0 +1,77 @@
+{
+  "version": "golden-p5-warehouse-lock-v1",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/derive.py",
+      "sha256": "bae901ad03c5997d2525cdcb78feca64a70c4efdcb78af9cd1058b021ac7fd91"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/expected.json",
+      "sha256": "73c6daf40ef8c378f37cac6a7b050c8e45374ce7e27ff29e1ee4afad1e894191"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv",
+      "sha256": "30f4339e902cc04cd73d3dd8864246808c2b2e6363e4478f10e100755bf7da1e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv",
+      "sha256": "e845c12e660b4f405e5d07fa45d50d20ec30281a17fa38ccaa414bf524630f47"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/source-basis.json",
+      "sha256": "89b7afa519bc2f57449c519ac3fb213db65ee1e304bb00804dec7cb99c0ed07e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/summary.json",
+      "sha256": "e9700ecd98d9984f589f5ffce0312eaf6389e8658cb38d6ef652c86e55cddcde"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/validation.json",
+      "sha256": "b423f5e5749c99acc464fee9d5365a84e3ca598df58ae9c62e409bf34211a30d"
+    },
+    {
+      "path": "shared/almanac-data/golden-p5-warehouse-v1.json",
+      "sha256": "5c40f0dd5fff96cfa6e25e6c03d94b591298399d12f8b1443510cb6dad432287"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol04.raw.txt",
+      "sha256": "8782423ab87161f9e60c8b2ee23609bbc1c05bd71f9e85804910d09d46bfb922"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+      "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+      "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv",
+      "sha256": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/yi-dated-inputs-v1/jie-convention.json",
+      "sha256": "7339a90fe56ba873b187eb301240a94854af7377a4afbf2cc9993f712ed90d19"
+    },
+    {
+      "path": "shared/almanac-data/p5-warehouse-v1.json",
+      "sha256": "0e7372fbde81dadea3514261b8fc20943fc9533994beb8e135132a7cd946e8bc"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+      "sha256": "da9aa906ac6694bca84f498d00f5327081d7ffa955d787d650c98c5de54f691c"
+    },
+    {
+      "path": "shared/lunar/catHungAuthority.ts",
+      "sha256": "b5185681749901b1be2c01583083e3533e3d19bcd8ba4c7a658ef1ba5ef244c4"
+    }
+  ]
+}
