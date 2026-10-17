@@ -112,7 +112,7 @@ Result: **16/16 caught by assertion**, bytes restored (`restored: true`).
 | 2 | Independent Golden frozen before red tests and code (commit proof); old P4-B/P4-C/P5 locks keep their bytes | PASS* | v1 `4a7da71` and v2 `67af7c0` were frozen before any code. *v3 `f0454cb` was frozen after the v2 composer existed (F1), but before the fix, and its red test came first. `git diff origin/main` touches only new files plus `ci.yml` |
 | 3 | 724 candidates resolved with Golden reasons; kept rows cite an exception; undetermined listed | PASS | Sweep: 68 lift / 645 keep / 11 hold. Reasons are read from the Golden v3 `dated.tsv` |
 | 4 | 0 changes outside the five headings, 0 changes of 忌 on protected rows, 0 P4-B/P4-C regressions | PASS | Sweep: 70 changes (68 lifts + 2 Golden propagation annotations). The day-field deep-equal holds against P4-C on 1,095 dates and 720 contexts |
-| 5 | Every mutation caught; CI green | PASS / CI pending | 16/16 locally. CI: on PR |
+| 5 | Every mutation caught; CI green | PASS | 16/16 locally. [CI 38987506933](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38987506933) on [PR #61](https://github.com/nghiepnguyen/calendar-hana/pull/61) (`624ea4d`): every job passes; the new `P4-B puzhu:06 audit mutation gate` takes 5m19s |
 | 6 | Runtime, manifest and scoring unchanged | PASS | Builds of `origin/main` and of this branch: 1,125 files. After normalizing chunk hashes and `builtAt`, only the build id and the sw.js revision derived from it differ. `p4Puzhu06` has no runtime import |
 | 7 | Report, progress and PROJECT_CONTEXT updated | PASS | This report, `p4-vol10-progress.md`, PROJECT_CONTEXT row F1 |
 

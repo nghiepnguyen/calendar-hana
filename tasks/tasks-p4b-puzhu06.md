@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD puzhu:06](prd-p4b-puzhu06.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16** (merge chờ owner). Owner chốt Q1 không, Q2 không, Q3 không, Q4 có, Q4a chặn. Golden hiện hành **v3** (`f0454cb`; v1 `4a7da71`, v2 `67af7c0` giữ nguyên). Kết quả: gỡ 68 / giữ 645 / hold 11. [Báo cáo](../docs/audits/p4b-puzhu06.md). Next: 6.3 PR.
+Trạng thái: **NGHIỆM THU AUDIT-ONLY 2026-10-16** (merge chờ owner). Owner chốt Q1 không, Q2 không, Q3 không, Q4 có, Q4a chặn. Golden hiện hành **v3** (`f0454cb`; v1 `4a7da71`, v2 `67af7c0` giữ nguyên). Kết quả: gỡ 68 / giữ 645 / hold 11. [Báo cáo](../docs/audits/p4b-puzhu06.md). Đã mở [PR #61](https://github.com/nghiepnguyen/calendar-hana/pull/61); [CI 38987506933](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38987506933) xanh trên `624ea4d`. **Merge/deploy chờ owner.**
 
 ## Relevant Files
 
@@ -84,6 +84,6 @@ Tên file mới là đề xuất; chốt tên và contract ở task 2.0. Artifac
   - [x] 5.4 Regression A04b/P4-B/P4-C (và P5 nếu đã merge), unit, build, typecheck main/functions, lint. So bundle với build local cùng SHA (thay `builtAt`): runtime không đổi. Evidence: full unit 204 file / 8.033 test; typecheck (main + functions), oxlint, build đều qua. Build `origin/main` và nhánh mỗi bên 1.125 file; sau khi chuẩn hóa hash chunk/`builtAt` chỉ còn khác build id và revision sw.js.
 
 - [x] 6.0 Nghiệm thu (trừ 6.3)
-  - [x] 6.1 Acceptance gate 7/7 (PRD §7) kèm evidence. Evidence: [bảng gate](../docs/audits/p4b-puzhu06.md#acceptance-gate-prd-7). Gate 2 có ghi chú: v3 đóng băng sau khi đã có composer v2. Gate 5: CI chờ PR.
+  - [x] 6.1 Acceptance gate 7/7 (PRD §7) kèm evidence. Evidence: [bảng gate](../docs/audits/p4b-puzhu06.md#acceptance-gate-prd-7). Gate 2 có ghi chú: v3 đóng băng sau khi đã có composer v2. Gate 5: [CI 38987506933](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38987506933) xanh trên PR #61 (`624ea4d`).
   - [x] 6.2 `graphify update .`; cập nhật báo cáo, `p4-vol10-progress.md` và PROJECT_CONTEXT.md (dòng F1). Evidence: đã chạy graphify update; có dòng progress và PROJECT_CONTEXT F1 (sẽ đụng dòng F1 của PR #60 khi merge).
-  - [ ] 6.3 PR, CI xanh; merge hay deploy chỉ khi owner cho phép.
+  - [ ] 6.3 PR, CI xanh; merge hay deploy chỉ khi owner cho phép. Evidence: [PR #61](https://github.com/nghiepnguyen/calendar-hana/pull/61) mở 2026-10-17. [CI 38987506933](https://github.com/nghiepnguyen/calendar-hana/actions/runs/38987506933) trên `624ea4d`: mọi job pass, gồm 4 shard unit, gates, Playwright 2 shard, P4-B, P4-C 4 shard và `P4-B puzhu:06 audit mutation gate` (5m19s); deploy skipped (nhánh PR). Còn: owner cho phép merge (merge vào main = deploy production).
