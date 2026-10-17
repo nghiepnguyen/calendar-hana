@@ -75,7 +75,9 @@ Ngày 歲薄/逐陣/陰陽錯 (`deAsJian`): 2026-06-01 và 2027-05-27 安葬 (th
 [scripts/audit-p4-full-golden-mutations.py](../../scripts/audit-p4-full-golden-mutations.py) → [report.json](sources/p4-vol10/p4-full-golden-v1-review/mutation/report.json).
 
 - Mỗi mutation sửa một script trong worktree tạm, sinh lại toàn chuỗi derive, ghi lại check nào bắt; worktree được reset sau mỗi lần.
+- Trước mọi mutation, runner chạy một **lượt đối chứng** không mutation: chuỗi phải qua mọi stage và tái tạo đúng bytes đã đóng băng. Lượt này sạch.
 - Kết quả: **18/18 bị self-check bắt**, 0 chỉ bị bắt nhờ bytes đóng băng, 0 lọt.
+- Lần chạy đầu bị loại bỏ: khi đó runner dùng worktree tại HEAD trong lúc `owner_checks.py` chưa được commit, và chưa có lượt đối chứng. Report hiện tại chạy trên `796d46a`.
 
 | Nhóm | Mutation | Bị bắt ở |
 |---|---|---|
