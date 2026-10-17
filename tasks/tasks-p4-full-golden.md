@@ -2,7 +2,7 @@
 
 Nguồn yêu cầu: [PRD](prd-p4-full-golden.md).
 Quy trình: [generate-tasks.md](../docs/templates/generate-tasks.md).
-Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), owner chốt H1-B, H2-A); 3.2 xong ([lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md), owner chốt F1/F4/F5); 3.3 xong ([trạng thái ngày](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)); next 3.4.
+Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/sources/p4-vol10/p4-full-golden-v1/inventory.md)); 3.1 xong ([presence](../docs/audits/sources/p4-vol10/p4-full-golden-v1/presence/README.md)); 2.1 xong ([câu hỏi hold](../docs/audits/p4-full-golden-hold-questions.md), owner chốt H1-B, H2-A); 3.2 xong ([lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md), owner chốt F1/F4/F5); 3.3 xong ([trạng thái ngày](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)); 3.4 xong ([checks](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json)); next 4.0 freeze.
 
 ## Relevant Files
 
@@ -25,11 +25,11 @@ Trạng thái: PRD chốt 2026-10-17; task 1.0 xong ([inventory](../docs/audits/
   - [x] 1.3 Đo gap: phần nào của 720×29 / 1095×29 chưa có expected độc lập
 - [x] 2.0 Bộ câu hỏi hold (song song, không chặn)
   - [x] 2.1 Trích nguồn + phương án cho 月煞 卯/酉 相抵 + 又為月虛, 未月戊午 閉日/天吏, 德願
-- [ ] 3.0 Derive độc lập
+- [x] 3.0 Derive độc lập
   - [x] 3.1 Presence 35 thần từ definitions; fixture exact Jie 21 thần
   - [x] 3.2 忌 P4-B toàn miền (entry, puzhu, soil, ngày âm, 朔弦望, puzhu:28)
   - [x] 3.3 Ghép 宜 P4-C (Golden đóng băng), warehouse P5, puzhu:06, propagation
-  - [ ] 3.4 Self-check: exact Cartesian set, uniqueness, bất biến FR-03
+  - [x] 3.4 Self-check: exact Cartesian set, uniqueness, bất biến FR-03
 - [ ] 4.0 Freeze: lock, checksum, commit-proof, gate test
 - [ ] 5.0 Oracle chéo với Golden từng phần; phân loại lệch
 - [ ] 6.0 So engine toàn miền; phân loại lệch

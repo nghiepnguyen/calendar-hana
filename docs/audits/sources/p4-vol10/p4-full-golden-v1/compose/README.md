@@ -17,6 +17,48 @@ python3 -I docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/compose.py
 | [h1b-changes.tsv](h1b-changes.tsv) | 153 | Mọi dòng do quy tắc H1-B/F5 quyết định: nguồn 忌 không bảo vệ, scope 相抵, trạng thái cuối, lan truyền |
 | [summary.json](summary.json) | — | Số đếm, kết quả đối chiếu oracle |
 
+## Reason code (cột `code`)
+
+Mỗi dòng có một code quyết định, ghép từ các id đã sắp xếp nên không phụ thuộc thứ tự input:
+
+```
+<primary>[;ji=<nguồn 忌>][;prot=<nguồn bảo vệ>][;xd=<nguồn 相抵/不註>];<宜>
+```
+
+- `primary` là một trong: `puzhu:28`, `all_taboo`, `undetermined:<nguồn>`, `H1-B`, `xiangdi`, `ji`, `no_ji`.
+- Phần `<宜>` là một trong:
+  - `yi:<thần có mặt>`;
+  - `yi_absent`;
+  - `yi_unknown:<thần chưa biết>`;
+  - `suppressed:<nguồn chặn>`;
+  - `P5:<phán quyết D>` (riêng 修倉庫).
+- Sau puzhu:06 hoặc lan truyền, code mang tiền tố `puzhu:06-lift:<lớp>>` hoặc `propagated:<heading nguồn>>`.
+- Miền context:
+  - dòng bất biến mang tiền tố `invariant;` và lấy code từ tổ hợp không có 忌 nào theo ngày;
+  - dòng không bất biến mang `undetermined:context-date-operand;states=…`.
+
+## Kiểm task 3.4 ([checks.py](checks.py) → [checks.json](checks.json))
+
+- **Tích Descartes:** 1.095 × 29 và 720 can-chi hợp lệ × 29; khớp đúng tập, không trùng.
+- **Bất biến** (assert trên cả hai miền):
+  - `ji` true chỉ đi với `only_ji` / `both_present` / `undetermined`;
+  - `neither_recorded` không có `ji`;
+  - dòng puzhu:28 không có `ji` (261 dòng theo ngày);
+  - dòng có 百忌 / 諸事皆忌 / 忌 theo ngày được bảo vệ luôn giữ `ji` (3.636 dòng theo ngày);
+  - dòng được bảo vệ không bị puzhu:06 hay lan truyền gỡ;
+  - mọi dòng có code.
+- **Thứ tự input:** xáo trộn mọi danh sách fact, dict scope và chuỗi fact theo ngày với 3 seed; output trùng từng byte. Kiểm mutation: cài phụ thuộc "fact đầu tiên" vào code thì bị bắt.
+- **puzhu:06 SPEC_GAP = 0:** derive assert, đúng yêu cầu "stop, never guess" của authority.
+- **Ma trận phủ §7.1** (lớp resolution; adapter/cap/event thuộc roadmap 8):
+  - ô 等第 × nhánh 德: mọi ô có clause 德 đều có witness ở cả hai nhánh. 上 và 下下 không chia nhánh (clause vô điều kiện). Phân bố: 次 58/182, 上次 18/42, 中 41/99, 下 38/107, 上 55, 下下 20;
+  - đủ 5 trạng thái chú giải trên miền theo ngày;
+  - cả 26 entry remaining-ji có dòng, kèm bảng kết quả điều kiện (`remainingOutcomes`);
+  - 9 quy tắc 百忌, gồm 巳 theo F1, đều được kích hoạt trên ngày thật;
+  - 21 thần dormant đều có ngày thật, kèm witness cấu trúc biên Jie (3.1);
+  - warehouse 修倉庫 × trạng thái khớp báo cáo P5: only_yi 225, both_present 161;
+  - 宜 chưa biết trên miền ngày chỉ còn 2025-10-08 修倉庫;
+  - có bảng lớp puzhu:06 và bảng câu lan truyền gỡ/chặn.
+
 ## Thứ tự ghép
 
 1. **宜 evidence** (卷十一, quy tắc ANY):

@@ -104,7 +104,7 @@ def load_p5():
 def yi_evidence(h, yi_list, month, pillar, soil, ctx, gods, p4c, mucang, p5x):
     """True / False / None (unknown) for heading h; soil None = unknown (context domain)."""
     if h == '修倉庫':
-        return p5x
+        return p5x, ['P5:' + {True: 'yi', False: 'no_yi', None: 'source_dependent'}[p5x]]
     states = []
     for tok in yi_list:
         if tok in ('天德', '月德', '天德合', '月德合', '天赦', '天願', '月恩', '四相', '時德'):
@@ -120,11 +120,14 @@ def yi_evidence(h, yi_list, month, pillar, soil, ctx, gods, p4c, mucang, p5x):
             states.append(vals.pop() if len(vals) == 1 else None)
         else:
             states.append(p4c[(tok, month, pillar)])
-    return True if True in states else None if None in states else False
+    present = sorted(tok for tok, s in zip(yi_list, states) if s is True)
+    unknown = sorted(tok for tok, s in zip(yi_list, states) if s is None)
+    return (True if True in states else None if None in states else False), present or unknown
 
 
-def compose_row(h, facts, yi_ev, yi_off, restored_heads, puzhu28, scope_rec, context_unknown_dated):
-    """Pre-propagation day state for one heading; returns dict with reasons."""
+def compose_row(h, facts, yi_pair, yi_off, restored_heads, puzhu28, scope_rec, context_unknown_dated):
+    """Pre-propagation day state for one heading; returns dict with reasons and a deciding code."""
+    yi_ev, yi_wit = yi_pair
     reasons = []
     subj = [f for f in facts if f[1] == 'subject']
     yw = [f for f in facts if f[1].startswith('youwei')]
@@ -175,8 +178,35 @@ def compose_row(h, facts, yi_ev, yi_off, restored_heads, puzhu28, scope_rec, con
     else:
         ji = False
         state = {True: 'only_yi', False: 'not_recorded', None: 'undetermined'}[yi_noted]
+    # Deciding code: every id sorted, so the code does not depend on input order.
+    ji_ids = sorted({x[0] for x in kept_sub} | {f[0] for f in yw if f[3] == 'only_ji'}
+                    | {f[0] for f in rem if f[3] in ('kept', 'protected', 'all_taboo')}
+                    | {f[0] for f in facts if f[1] in ('baiji', 'pillar_all')}
+                    | {f[0] for f in dated if f[3] == 'protected'} | ({'puzhu:27'} if h in restored_heads else set()))
+    prot_ids = sorted({x[0] for x in kept_sub if x[2] == 'stop'} | {f[0] for f in yw if f[1] == 'youwei_zhuanji'}
+                      | {f[0] for f in rem if f[3] in ('protected', 'all_taboo')}
+                      | {f[0] for f in facts if f[1] in ('baiji', 'pillar_all')} | {f[0] for f in dated if f[3] == 'protected'})
+    xd_ids = sorted({x[0] for x in sub_states if x[3] == 'neither_recorded'} | {f[0] for f in rem if f[3] == 'no_annotation'})
+    und_ids = sorted({x[0] for x in sub_states if x[3] == 'undetermined'}
+                     | {f[0] for f in rem if f[3] in ('undetermined', 'unresolved')}
+                     | ({f[0] for f in facts if f[1] == 'dated'} if context_unknown_dated else set()))
+    sup_ids = sorted(set(yi_off) | ({'xiangdi'} if neither else set()) | ({'puzhu:27'} if h in restored_heads else set())
+                     | {x[0] for x in kept_sub if x[1] in ('as_usual', 'still_avoid', 'avoid_all', 'restored_as_usual')})
+    yi_code = ('suppressed:' + '+'.join(sup_ids) if suppress else
+               {True: 'yi:' + '+'.join(yi_wit), False: 'yi_absent', None: 'yi_unknown:' + '+'.join(yi_wit)}[yi_ev])
+    primary = (reasons[0] if reasons and reasons[0] != 'undetermined' else
+               'undetermined:' + '+'.join(und_ids or ['yi']) if state == 'undetermined' else
+               'xiangdi' if state == 'neither_recorded' else 'ji' if ji else 'no_ji')
+    parts = [primary]
+    if ji_ids and state != 'neither_recorded' and not puzhu28:
+        parts.append('ji=' + '+'.join(ji_ids))
+    if prot and prot_ids and not puzhu28:
+        parts.append('prot=' + '+'.join(prot_ids))
+    if xd_ids:
+        parts.append('xd=' + '+'.join(xd_ids))
+    parts.append(yi_code)
     return {'ji': ji, 'protected': prot, 'state': state, 'yi_ev': yi_ev, 'yi_noted': yi_noted,
-            'neither': neither, 'reasons': reasons, 'sub_states': sub_states}
+            'neither': neither, 'reasons': reasons, 'sub_states': sub_states, 'code': ';'.join(parts)}
 
 
 def puzhu06_classes(h, d, facts, scope_rec, grades, month, auth):
@@ -253,7 +283,8 @@ def propagate(days, lines, neither_of):
                 continue
             # A lift that leaves a 相抵 subject on the heading reads neither_recorded (puzhu:05; v3 stateAfterLift).
             state = 'neither_recorded' if neither_of[h] else {True: 'only_yi', False: 'not_recorded', None: 'undetermined'}[d['yi_noted']]
-            out[h].update(ji=False, state=state, propagated='+'.join(fired))
+            out[h].update(ji=False, state=state, propagated='+'.join(fired),
+                          code=f"propagated:{'+'.join(fired)}>{state};" + d['code'])
     return out
 
 
@@ -301,12 +332,14 @@ def build():
             d['restored'] = {h} if any(f[2] == 'restored_as_usual' for f in d['facts']) else set()
             classes = puzhu06_classes(h, d, d['facts'], scope_rec, grades.get(f'{month}-{pillar}', {}), month, auth)
             actions = {auth['classes'][x]['action'] if x in auth['classes'] else 'specgap' for x in classes}
+            assert 'specgap' not in actions, ('puzhu:06 SPEC_GAP: stop, never guess', month, pillar, h, classes)
             action = ('specgap' if 'specgap' in actions else 'hold' if 'hold' in actions
                       else 'keep' if 'keep' in actions or 'untouched' in actions else 'lift')
             p06[h] = (action, classes)
             if action == 'lift':
                 d.update(ji=False, state='neither_recorded' if d['neither'] else
                          {True: 'only_yi', False: 'not_recorded', None: 'undetermined'}[d['yi_noted']])
+                d['code'] = f"puzhu:06-lift:{'+'.join(classes)}>{d['state']};" + d['code']
         post = propagate(pre, lines, {h: pre[h]['neither'] for h in H})
         return post, p06
 
@@ -342,28 +375,33 @@ def build():
     return out_ctx, out_dated, H
 
 
+BASE_VARIANT = 4  # order: soil (absent, present) × lunar day (12, 15, 1) × phase (no, yes)
+
+
 def merge_variants(variants, H):
     """One context row per heading: the common row if all date-operand variants agree, else undetermined."""
     days, p06 = {}, {}
     for h in H:
-        rows = [cells(v[0][h], v[1].get(h)) for v in variants]
+        rows = [cells(v[0][h], v[1].get(h))[:-1] for v in variants]  # decision columns, not the code
         if all(r == rows[0] for r in rows):
-            days[h], p06[h] = variants[0][0][h], variants[0][1].get(h)
+            base = variants[BASE_VARIANT]  # soil absent, lunar day not 12/15, no phase: no date-only 忌
+            days[h], p06[h] = dict(base[0][h], code='invariant;' + base[0][h]['code']), base[1].get(h)
         else:
             days[h] = {'yi_ev': None, 'yi_noted': None, 'ji': None, 'protected': None, 'state': 'undetermined',
-                       'reasons': ['context:date-operand-dependent']}
+                       'reasons': ['context:date-operand-dependent'],
+                       'code': 'undetermined:context-date-operand;states=' + '+'.join(sorted({r[4] for r in rows}))}
     return days, p06
 
 
 HEAD = ['heading', 'yi_evidence', 'yi_noted', 'ji', 'protected', 'state', 'reasons', 'puzhu06', 'propagated',
-        'blocked']
+        'blocked', 'code']
 
 
 def cells(d, p06):
     tf = lambda v: {True: 'true', False: 'false', None: 'unknown'}[v]
     a = p06 or ('', [])
     return [tf(d['yi_ev']), tf(d['yi_noted']), tf(d['ji']), tf(d['protected']), d['state'], ' '.join(d['reasons']),
-            (a[0] + ':' + '+'.join(a[1])) if a[0] else '', d.get('propagated', ''), d.get('blocked', '')]
+            (a[0] + ':' + '+'.join(a[1])) if a[0] else '', d.get('propagated', ''), d.get('blocked', ''), d['code']]
 
 
 def files():
