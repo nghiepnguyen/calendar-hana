@@ -144,10 +144,10 @@ export function CalendarPage() {
           aria-busy={occurrences === undefined}
           tabIndex={-1}
         >
-          <div ref={contentRef} className={styles.swipeContent}>
+          <div ref={contentRef} className={styles.swipeContent} data-view={view}>
             <View {...viewProps} />
           </div>
-          {pathname === '/' ? <LegalLinks introduction /> : null}
+          {pathname === '/' || view === 'day' ? <LegalLinks introduction /> : null}
         </main>
       </div>
       {compact ? (
