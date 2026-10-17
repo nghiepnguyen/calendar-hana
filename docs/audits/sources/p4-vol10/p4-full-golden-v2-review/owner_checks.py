@@ -21,13 +21,26 @@ def facts(text, sep):
     return [f.split('|') for f in text.split(sep) if f]
 
 
+DE_HE = ('天德', '月德', '天德合', '月德合')
+
+
+def de_as_jian_contexts():
+    ops = read(G / 'ji/operands.tsv')
+    return {r['id'] for r in ops if r['de_as_jian'] or {'yang_no_de_he', 'yin_no_de_he'} & set(r['pillar_rules'].split())}
+
+
 def check(rows, ctx_facts, key_of, extra_of, domain):
     by_day = {}
     for r in rows:
         by_day.setdefault(key_of(r), {})[r['heading']] = r
-    n = {'E1': 0, 'E3': 0, 'singlePass': 0, 'singlePassBlocked': 0}
+    n = {'E1': 0, 'E3': 0, 'singlePass': 0, 'singlePassBlocked': 0, 'deAsJianRows': 0}
     for r in rows:
         fs = ctx_facts[(r['month_jian'] + '-' + r['pillar'], r['heading'])] + extra_of(r)
+        if r['month_jian'] + '-' + r['pillar'] in DEJ:
+            # Owner (i): on 德作建論 days no 德合 god is 宜 evidence (nor a puzhu:06 trigger / rule-D partner).
+            yi = next((p for p in r['code'].split(';') if p.startswith(('yi:', 'yi_unknown:'))), '')
+            assert not any(g in yi.split(':', 1)[-1].split('+') for g in DE_HE), (domain, 'DE_AS_JIAN_ALL', r)
+            n['deAsJianRows'] += 1
         if 'context:date-operand-dependent' in r['reasons']:
             continue
         # E1: 「則不忌亦不註宜」 — a 復日/重日 不註 fact never leaves 宜 noted.
@@ -56,7 +69,11 @@ def check(rows, ctx_facts, key_of, extra_of, domain):
     return n
 
 
+DEJ = set()
+
+
 def main():
+    DEJ.update(de_as_jian_contexts())
     ctx_facts = {(r['id'], r['heading']): facts(r['facts'], ' ') for r in read(G / 'ji/context-ji.tsv')}
     dated_facts = {(r['date'], r['heading']): facts(r['facts'], ';') for r in read(G / 'ji/dated-ji.tsv')}
     out = {
