@@ -26,5 +26,17 @@ export default defineConfig({
     url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
+    // Ảnh chuẩn chụp khi Firebase đã cấu hình (có nút Đăng nhập). Giá trị giả, không bí mật, để
+    // bản build test giống nhau dù máy có .env.local hay không (worktree, clone mới):
+    // biến môi trường được ưu tiên hơn file .env* của Vite.
+    env: {
+      VITE_FIREBASE_API_KEY: 'demo-api-key',
+      VITE_FIREBASE_AUTH_DOMAIN: 'demo-calendar-hana.firebaseapp.com',
+      VITE_FIREBASE_PROJECT_ID: 'demo-calendar-hana',
+      VITE_FIREBASE_STORAGE_BUCKET: 'demo-calendar-hana.appspot.com',
+      VITE_FIREBASE_MESSAGING_SENDER_ID: '0',
+      VITE_FIREBASE_APP_ID: 'demo-app-id',
+      VITE_FIREBASE_VAPID_KEY: '',
+    },
   },
 })
