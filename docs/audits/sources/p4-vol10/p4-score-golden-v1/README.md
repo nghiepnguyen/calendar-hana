@@ -9,4 +9,4 @@
 
 Quy ước đã ghi trong PRD §6: scope = Trực + mọi thần catalog; `preserve_bad` không bị gỡ; protected khớp đúng `han` (thần 百忌日 đã có `preserve_bad`); cap theo thứ tự catalog, penalty xếp cuối pool âm thần, Trực không cap.
 
-Chưa phủ (để roadmap 9 / task sau): §6.13 (thần hung bị Trực bao) không tách được bằng catalog hiện tại — chỉ `nguyet_pha` bị 破日 bao và mọi activity của nó có Trực âm; nối dây almanac → heading state kiểm ở task adapter; event `very_high` (FR-05).
+Chưa phủ (để roadmap 9 / task sau): §6.13 (thần hung bị Trực bao) không tách được bằng catalog hiện tại (chỉ `nguyet_pha` bị 破日 bao, mọi activity của nó có Trực âm) — kiểm bằng unit test `applyP4Balancing` ngoài Golden; nối dây almanac → heading state kiểm ở task adapter; event `very_high` (FR-05).

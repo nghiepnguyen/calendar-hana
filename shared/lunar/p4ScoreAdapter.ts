@@ -83,7 +83,11 @@ export function applyP4Balancing(
     if (row.status !== 'applied' || row.rawDelta === 0) return tagged
     const negative = row.rawDelta < 0
     // 忌 protected (§6.9) and preserve_bad overrides (§6.4) are never lifted.
-    if (negative && (row.hardWarning || prot.has(BAD_HAN.get(row.ruleId) ?? ''))) return tagged
+    if (
+      negative &&
+      (row.hardWarning || (row.source === 'bad_god' && prot.has(BAD_HAN.get(row.ruleId)!)))
+    )
+      return tagged
     const lifted = negative
       ? state === 'only_yi' || state === 'neither_recorded'
       : state === 'only_ji' || state === 'neither_recorded'

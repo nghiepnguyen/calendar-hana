@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { getActivityRecommendations, type ActivityInput } from './activityRecommendations'
 import type { Evidence } from './evidence'
 import { lockedDigests } from './lockAnchor'
-import { p4ActivityState, type P4HeadingInput } from './p4ScoreAdapter'
+import { applyP4Balancing, p4ActivityState, type P4HeadingInput } from './p4ScoreAdapter'
 
 // Roadmap 8 FR-01: score Golden frozen before the adapter (docs/.../p4-score-golden-v1/README.md).
 const DIR = 'docs/audits/sources/p4-vol10/p4-score-golden-v1/'
@@ -84,6 +84,44 @@ describe('roadmap 8 score Golden v1 (flag ON)', () => {
     it(`${c.id} keeps the baseline`, () => {
       expect(run(c, true)).toEqual(run(c, false, c.expected.equalsFlagOffWithout))
     })
+
+  // PRD §6.13: no catalog pair separates it (only 月破 is subsumed, always under a negative Trực).
+  it('a Trực-subsumed bad god does not block the only_ji penalty', () => {
+    const row = (
+      source: Evidence['source'],
+      ruleId: string,
+      rawDelta: number,
+      status: Evidence['status'],
+    ) =>
+      ({
+        source,
+        ruleId,
+        activityId: 'medical',
+        scope: 'medical',
+        label: ruleId,
+        sourcePhrase: ruleId,
+        sourceRef: '',
+        confidence: 'high',
+        status,
+        rawDelta,
+        scoreDelta: status === 'applied' ? rawDelta : 0,
+        polarity: rawDelta < 0 ? 'negative' : 'positive',
+      }) as Evidence
+    const out = applyP4Balancing(
+      [
+        row('truc', 'pha:medical', 25, 'applied'),
+        row('bad_god', 'nguyet_pha', -25, 'informational'),
+      ],
+      { state: 'only_ji', heading: '求醫療病' },
+      { 求醫療病: { state: 'only_ji', prot: [''] } },
+      { activityId: 'medical', scope: 'medical' },
+    )
+    expect(out.map((r) => [r.ruleId, r.status, r.scoreDelta])).toEqual([
+      ['pha:medical', 'informational', 0],
+      ['nguyet_pha', 'informational', 0],
+      ['p4_default_penalty:medical', 'applied', -25],
+    ])
+  })
 
   it('activity states equal the Golden for every P4 date (layer B)', () => {
     const days = new Map<string, Record<string, P4HeadingInput>>()
