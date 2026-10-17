@@ -66,5 +66,5 @@ Mục 7 dựng một Golden độc lập (không gọi resolver/composer/scorer,
 ## 6. Rủi ro
 
 - Suy độc lập toàn bộ 忌 P4-B (26 entry + puzhu + soil + ngày âm) là phần lớn nhất; có thể phát hiện ENGINE_BUG trong module đã merge. Sửa theo quy trình Golden-trước-code, PR riêng nếu đổi module.
-- Test mới trong `shared/lunar/p4*` kéo `ci:p4` chạy mọi mutation khi push (P4-C ~25 phút).
+- Test mới trong `shared/lunar/p4*` kéo `ci:p4` chạy mọi mutation khi push (P4-C ~25 phút). Từ PR #67, `ci:p4` chạy tay, không chạy khi push.
 - Single agent: lỗi suy tay chung giữa Golden và engine có thể lọt nếu cùng hiểu sai nguồn; oracle chéo với Golden cũ giảm nhưng không loại trừ.
