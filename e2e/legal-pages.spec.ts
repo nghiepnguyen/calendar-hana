@@ -168,3 +168,31 @@ test('service worker phục vụ trang pháp lý đầy đủ khi offline', asyn
     await expect(app.getByRole('heading', { level: 1, name: policy.title })).toBeVisible()
   }
 })
+
+test('xem Ngày ở mọi ngày hiện đủ footer chính sách, không bị nội dung đè', async ({ app }) => {
+  for (const path of ['/', '/day/2026-10-20']) {
+    await app.goto(path)
+    const nav = app.getByRole('navigation', { name: 'Chính sách của Lịch Việt' })
+    await expect(nav).toBeVisible()
+    const deferUpdate = app.getByRole('button', { name: 'Để sau', exact: true })
+    // Nội dung tải dần làm khung cuộn cao thêm, toast cập nhật PWA có thể hiện muộn: thử lại.
+    await expect
+      .poll(async () => {
+        if (await deferUpdate.isVisible()) await deferUpdate.click()
+        await app.locator('main').evaluate((m) => (m.scrollTop = m.scrollHeight))
+        return nav.evaluate((n) =>
+          [n.previousElementSibling!, ...n.querySelectorAll('a')]
+            .filter((e) => {
+              const r = e.getBoundingClientRect()
+              const hit = document.elementFromPoint(
+                r.left + Math.min(r.width / 2, 40),
+                r.top + r.height / 2,
+              )
+              return !e.contains(hit)
+            })
+            .map((e) => e.textContent),
+        )
+      }, path)
+      .toEqual([])
+  }
+})
