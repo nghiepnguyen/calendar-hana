@@ -1,0 +1,86 @@
+{
+  "version": "p4-owner-rules-mutations-v1",
+  "target": "shared/lunar/p4OwnerRules.ts",
+  "tests": [
+    "shared/lunar/p4OwnerRules.test.ts"
+  ],
+  "control": "clean",
+  "mutations": 11,
+  "caught": 11,
+  "restored": true,
+  "results": [
+    {
+      "mutation": "h1b_reverted",
+      "rule": "H1-B/F5",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "e3_reverted",
+      "rule": "E3",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "h2a_reverted",
+      "rule": "H2-A",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "f1_reverted",
+      "rule": "F1",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "e1_reverted",
+      "rule": "E1",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "i_yi_reverted",
+      "rule": "(i) 宜",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "i_rule_d_reverted",
+      "rule": "(i) 修倉庫 rule D",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "i_remaining_reverted",
+      "rule": "(i) remaining-ji",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "a04b_layering",
+      "rule": "A04b layering (later protected 忌 ignored)",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "puzhu28_dropped",
+      "rule": "puzhu:28",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "e5_dropped",
+      "rule": "E5 context",
+      "caughtByTest": true,
+      "exitCode": 1
+    }
+  ],
+  "equivalentOnRealData": [
+    {
+      "mutation": "i_triggers_reverted",
+      "rule": "(i) puzhu:06 triggers",
+      "evidence": "no 德作建論 day has a puzhu:06 heading with unprotected 忌 whose only trigger is a 德合 god"
+    }
+  ]
+}

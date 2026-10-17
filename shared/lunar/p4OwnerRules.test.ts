@@ -81,14 +81,20 @@ const sample = (rows: Record<string, string>[]) =>
         (r) => flagged.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 45 === 0,
       )
 
-// Fast context subset: every 40th context (18 of 720), all 29 headings.
-const CONTEXT_SAMPLE = new Set(
+// Fast context subset: every 40th context (18 of 720), all 29 headings, plus the 德作建論 contexts with a
+// 德合 god (owner decision (i) changes rows only there).
+const CONTEXT_SAMPLE = new Set([
   [...(B.slice(2) + B.slice(0, 2))].flatMap((m, mi) =>
     Array.from({ length: 60 }, (_, i) => i)
       .filter((i) => (mi * 60 + i) % 40 === 0)
       .map((i) => `${m}-${S[i % 10]}${B[i % 12]}`),
   ),
-)
+  '午-丙午',
+  '巳-丙午',
+  '未-己巳',
+  '未-己未',
+  '子-壬子',
+])
 
 describe('owner-rules layer vs full Golden v2 (audit-only)', () => {
   const datedRows = golden('compose/dated.tsv')
