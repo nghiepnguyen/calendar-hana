@@ -71,6 +71,14 @@ File câu hỏi H1 viết rằng 修倉庫 thành `only_ji` "vì không có câu
 - Quyết định H1-B không đổi; chỉ hệ quả ghi trong file câu hỏi bị sai.
 - Ngoại lệ: 2 ngày 地火 (栽種, 2025-11-16 và 2026-11-11) vẫn `only_ji`.
 
+## Quyết định owner sau 3.3 (2026-10-17)
+
+- **E1 — theo nguồn:** 復日/重日 「則不忌亦不註宜」 thành `neither_recorded`. 67 dòng theo ngày (đều là 安葬) có kết quả phụ thuộc cách đọc này. Lệch engine dự kiến được ghi là ENGINE_BUG.
+- **E3 — `neither_recorded`:** khi lan truyền gỡ 忌 mà heading còn 相抵 của scope khác. Áp cho 57 dòng theo ngày và 33 dòng context; tất cả đều là dòng H1-B.
+- **E5 — quy ước bất biến cho miền context:** 4.431 dòng context là `undetermined`. Miền theo ngày vẫn là oracle chính.
+- **E2/E4:** mỗi loại chỉ ảnh hưởng 1 dòng theo ngày, chính là 2025-10-08 修倉庫 (P5 SOURCE_DEPENDENT). Không cần quyết định.
+- **Đối chiếu số H1-B:** trước đây báo khoảng 75 dòng context, nay là 58. Chênh 17 dòng là các dòng nay `undetermined` theo E5. Theo ngày có 95 dòng: 27 convention, 68 canonical. Chi tiết ở [h1b-changes.tsv](h1b-changes.tsv).
+
 ## Điểm lệch dự kiến so với engine (phân loại ở task 6.0)
 
 | # | Golden | Engine | Căn cứ |

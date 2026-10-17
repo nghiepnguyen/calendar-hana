@@ -8,7 +8,8 @@ Quyết định owner (2026-10-17):
 2. **11 dòng hold:** Golden ghi `undetermined` kèm mã lý do; không tự giải. Soạn riêng bộ câu hỏi owner có bằng chứng nguồn và phương án (gồm cả 德願 nếu cùng loại). Không chặn phần Golden còn lại.
 3. **Hold (2026-10-17, sau task 2.1):** H1-B — 忌 của phạm vi convention gặp 相抵 của phạm vi khác trên cùng heading thì 忌 sống sót, 宜 không ghi, rồi mới xét lan truyền; H2-A — 天願 ∈ 德願, 未月戊午 phạm vi 閉日 như thường lệ. Cả hai `OWNER_ADOPTED_SOURCE_DEPENDENT` ([câu hỏi](../docs/audits/p4-full-golden-hold-questions.md)). Golden áp hai quyết định; FR-04 chỉ còn cho các hold mới phát hiện.
 4. **Finding 3.2 (2026-10-17):** F1 map 百忌 巳日「出行」 vào 行幸遣使 (專忌); F4 閉日 không 忌 求醫療病 (theo 卷十, SOURCE_DEPENDENT); F5 mở H1-B cho cả 忌 canonical không bảo vệ ([README lớp 忌](../docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/README.md)).
-5. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
+5. **Luật ghép 3.3 (2026-10-17):** E1 復日/重日 「不忌亦不註宜」 → `neither_recorded`; E3 lan truyền gỡ 忌 còn 相抵 → `neither_recorded`; E5 miền context chỉ xác định khi bất biến trên soil/ngày âm/phase ([compose README](../docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/README.md)).
+6. **Reviewer:** single agent + owner review bản tóm tắt và mẫu dòng. Ghi rõ không có reviewer thứ hai (R1).
 
 ## 1. Overview
 
