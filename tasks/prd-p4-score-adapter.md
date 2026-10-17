@@ -1,6 +1,6 @@
 # PRD — Roadmap 8: adapter điểm sau flag `xiejiVol10BalancingEnabled` = OFF
 
-Ngày: 2026-10-17. Trạng thái: **nháp, chờ owner trả lời §6**. Chưa sửa runtime.
+Ngày: 2026-10-17. Trạng thái: **owner trả lời §6 (2026-10-17); chờ duyệt PRD**. Chưa sửa runtime.
 
 ## 1. Bối cảnh
 
@@ -67,12 +67,12 @@ Ngày: 2026-10-17. Trạng thái: **nháp, chờ owner trả lời §6**. Chưa 
 - **FR-07 Mutation:** runner riêng, lượt đối chứng sạch, mỗi hàng FR-02 + cap + penalty dedup + flag OFF đều có mutation bị bắt; thêm vào `ci:p4`.
 - **FR-08 Hiệu năng/bundle:** đo thời gian tính 1095 ngày trước–sau ở flag OFF; resolution P4 chỉ nạp khi flag ON (dynamic import nếu bundle tăng đáng kể).
 
-## 6. Câu hỏi owner (chặn implementation)
+## 6. Quyết định owner (2026-10-17)
 
-1. **Phạm vi 21 thần:** roadmap 8 có nối 21 thần dormant vào sao/điểm sau cùng flag (spec §5, §8 bước 5; roadmap 9 cần cấu hình presence-only) hay chỉ adapter cân bằng?
-2. **Quan hệ với 6 chain `applyVol10Scoring` khi flag ON:** thay thế (P4 resolution phủ cả 6 entry) hay chạy cả hai?
-3. **Activity nhiều heading** (wedding, construction, livestock): gộp trạng thái thế nào?
-4. **"Trong scope" là dòng nào:** dòng nào bị gỡ/suppress — chỉ Trực + thần trong trace 宜/忌 của heading, hay mọi dòng Trực + thần của activity?
+1. **21 thần: có, cùng flag.** Flag ON nối 7 cát + 14 hung dormant vào sao/evidence/điểm; flag OFF giữ 14 legacy theo Month Jian. Chế độ chỉ-presence / chỉ-balancing chỉ là toggle test cho roadmap 9, không là config production.
+2. **6 chain: P4 thay thế.** Flag ON bỏ `applyVol10Scoring` cho activity có heading; flag OFF giữ nguyên 6 chain. Activity không heading (`grave_repair`, `door_opening`, `waterworks`) giữ baseline.
+3. **Nhiều heading: chặt nhất thắng** (product policy `p4_multi_heading_strictest`, không phải luật sách). Thứ tự đề xuất: `only_ji` > `both_present` > `neither_recorded` > `only_yi`; một heading `undetermined` / `not_recorded` → activity giữ baseline. Penalty −25 tối đa một lần mỗi activity.
+4. **Scope dòng: Trực + thần catalog nguồn 協紀 卷十/十一** của activity. Không đụng 28 Tú, override `preserve_bad`, nguồn khác. 忌 protected luôn giữ.
 
 Đã có căn cứ, không hỏi lại: resolution trước cap; −25 product policy không hard warning; `undetermined` giữ baseline; không sinh điểm dương khi chỉ "không kỵ"; giữ `event_fit`.
 
