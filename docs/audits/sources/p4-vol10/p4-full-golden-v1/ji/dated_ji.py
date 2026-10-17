@@ -138,6 +138,24 @@ def self_check(rows, lis):
             if dt.date(y, m, d) != li:
                 hko_diff.append(str(li))
     assert not hko_diff, hko_diff
+    # HKO daily tables (UTC+8): lunar day on every date. A mismatch could only come from a New Moon
+    # between 23:00 and 24:00 Vietnam time; none occurs in 2025–2027.
+    digits = dict(zip('一二三四五六七八九十', range(1, 11)))
+    def hko_day(s):
+        if s.endswith('月'):
+            return 1
+        if s in ('二十', '三十'):
+            return digits[s[0]] * 10
+        return {'初': 0, '十': 10, '廿': 20}[s[0]] + digits[s[1]]
+    n_hko = 0
+    for y in (2025, 2026, 2027):
+        for line in (HKO / f'T{y}c.txt').read_text(encoding='utf-8-sig').splitlines():
+            m = re.match(r'(\d+)年(\d+)月(\d+)日\s+(\S+)', line)
+            if m:
+                d = dt.date(*map(int, m.groups()[:3])).isoformat()
+                assert by_date[d]['lunar_day'] == hko_day(m.group(4)), (d, m.group(4))
+                n_hko += 1
+    assert n_hko == len(by_date)
     return len(cal)
 
 
@@ -156,7 +174,8 @@ def files():
         'soilDays': sum(r['soil'] == 'present' for r in dates.values()),
         'lunarDay12or15': sum(r['lunar_day'] in (12, 15) for r in dates.values()),
         'checks': {'calendarReferenceLunarDays': n_cal, 'goldenPhase': 13, 'goldenSoil': 48, 'goldenLunarDay': 9,
-                   'hko四立': 'all 2025–2027 四立 civil dates equal'},
+                   'hko四立': 'all 2025–2027 四立 civil dates equal',
+                   'hkoLunarDays': 'all 1,095 dates equal'},
     }
     return {HERE / 'dated-ji.tsv': text,
             HERE / 'dated-ji-summary.json': json.dumps(summary, ensure_ascii=False, indent=1) + '\n'}
