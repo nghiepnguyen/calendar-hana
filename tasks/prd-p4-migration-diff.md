@@ -90,6 +90,8 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 
   12. Trace giải thích delta (FR-04): score = clamp(50 + Σ applied delta) ở cả baseline và full; mỗi dòng trong scope đổi status/delta so với flag OFF phải là dòng gỡ, −25, thần dormant, cap (full hoặc flag OFF) hoặc dòng 6 chain; dòng flag OFF biến mất chỉ khi là dòng chain thêm vào.
 
+  **Bước 2 xong** (`08c3afb`): harness [`p4MigrationDiff.test.ts`](../shared/lunar/p4MigrationDiff.test.ts) + [`p4MigrationRollback.test.ts`](../shared/lunar/p4MigrationRollback.test.ts); toàn miền 5/5 (~307 s, `ci:p4`), mẫu ~33 s trong `npm test`; `ci:local` 8.129 test ~180 s.
+
   **Đã đóng băng** (bước 1): [`p4MigrationRules.ts`](../shared/lunar/p4MigrationRules.ts) + test 18 ca tổng hợp, sha256 trong [lock](../docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json). Chạy thử một lần trên full (probe, base = off-recon): 14.894 dòng đổi, **0 vi phạm** cả 12 bất biến (bất biến 3 chưa chạy ở đó).
 
   Vi phạm bất kỳ bất biến nào: dừng và hỏi owner, không sửa bất biến cho khớp dữ liệu (§6.10.2).
@@ -145,7 +147,7 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 8. **Rollback roadmap 9** = output flag OFF + provider đã nạp byte-equal baseline v1 + PR một dòng manifest. Smoke production ON → OFF ở roadmap 10. Không thêm flag vào khóa memo almanac.
 9. **CI:** `ci:p4` thêm ~5–8 phút; `npm test` chạy mẫu 1/10 ngày.
 
-Thứ tự thực hiện (tuần tự, một session): (1) test bất biến + class đóng băng; (2) harness `p4MigrationDiff.test.ts` + test rollback có provider; (3) TSV + summary + `lock.json`; (4) mutation runner vào `ci:p4`; (5) báo cáo + PROJECT_CONTEXT.
+Thứ tự thực hiện (tuần tự, một session): (1) test bất biến + class đóng băng; (2) harness `p4MigrationDiff.test.ts` + test rollback có provider; (3) TSV + summary + `lock.json`, gồm: cột FR-03 (sao thêm/bỏ, operands Month Jian/can-chi/ngày âm từ `selectionContext`), ghi input/flag/commit để tái hiện (FR-02), phản thực tế cap-trước FR-05(a), fixture boundary exact Jie FR-07; (4) mutation runner vào `ci:p4`; (5) báo cáo + PROJECT_CONTEXT.
 
 ## 7. Non-goals
 
