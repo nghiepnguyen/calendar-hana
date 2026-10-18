@@ -9,7 +9,16 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const { default: current } = await importOriginal<{
     default: typeof import('../almanac-data/manifest.json')
   }>()
-  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+  return {
+    default: {
+      ...current,
+      policies: {
+        ...current.policies,
+        xiejiVol10BalancingEnabled: false,
+        legacyGodsMonthJian: false,
+      },
+    },
+  }
 })
 
 // Ba sao licham.vn tính sai, không có trong fixture (xem stars.data.ts).

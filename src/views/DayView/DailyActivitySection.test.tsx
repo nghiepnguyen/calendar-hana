@@ -1,8 +1,14 @@
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { render } from '../../test/render'
 import { DailyActivitySection } from './DailyActivitySection'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('@shared/almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 describe('daily activity modes', () => {
   it('merges empty factors and restores overview when selection clears', async () => {

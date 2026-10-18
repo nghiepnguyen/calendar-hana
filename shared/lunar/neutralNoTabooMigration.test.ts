@@ -6,6 +6,12 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS, getEventProfile, resolveEventActivityRoles } from './eventMapping'
 
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
+
 describe('no taboo means neutral up to high severity (owner, 10/10/2026)', () => {
   it('policy is set to high', () => {
     expect(manifest.policies.noTabooMeansNeutralUpToSeverity).toBe('high')
@@ -16,7 +22,11 @@ describe('no taboo means neutral up to high severity (owner, 10/10/2026)', () =>
     vi.doMock('../almanac-data/manifest.json', () => ({
       default: {
         ...manifest,
-        policies: { ...manifest.policies, noTabooMeansNeutralUpToSeverity: 'low' },
+        policies: {
+          ...manifest.policies,
+          xiejiVol10BalancingEnabled: false,
+          noTabooMeansNeutralUpToSeverity: 'low',
+        },
       },
     }))
     const pre = (await import('./eventEvaluation')).evaluateEventDay

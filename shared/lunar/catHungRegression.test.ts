@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { getAlmanac } from './almanac'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
-import { SOURCE_LOCKED_CAT_HUNG_STAR_NAMES, getSourceLockedCatHungStarsForDate } from './catHungStars'
+import {
+  SOURCE_LOCKED_CAT_HUNG_STAR_NAMES,
+  getSourceLockedCatHungStarsForDate,
+} from './catHungStars'
 import { solarStringToJd } from './julian'
 import { solarTermMonthChi } from './solarTerms'
 
@@ -48,12 +51,15 @@ describe('cat-hung source-locked production regression', () => {
         expect(actual.has(name), `${date} ${name}`).toBe(expected.has(name))
       }
     }
-  })
+    // Roadmap 10: 1095 almanacs with P4 balancing ON (~32 ms/day locally, CI slower).
+  }, 300_000)
 
   it('never emits duplicate source-locked star identities', () => {
     for (const date of datesInRange(2026, 2026)) {
       const stars = getAlmanac(date).stars
-      const locked = [...stars.good, ...stars.bad].filter((star) => LOCKED.has(star.name)).map((star) => star.name)
+      const locked = [...stars.good, ...stars.bad]
+        .filter((star) => LOCKED.has(star.name))
+        .map((star) => star.name)
       expect(new Set(locked).size, date).toBe(locked.length)
     }
   })

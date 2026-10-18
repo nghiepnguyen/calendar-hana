@@ -1,10 +1,16 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getAlmanac } from './almanac'
 import { XIEJI_AUTHORITY_ID } from './activityRecommendations'
 import { getSourceLockedCatHungPresence, getSourceLockedCatHungStars } from './catHungStars'
 import { evaluateEventDay } from './eventEvaluation'
 import type { SolarDateString } from '../types'
 import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 // Mappings the interpretation review left for the owner (xieji-activity-mapping-review.json).
 const PENDING = new Set<string>()

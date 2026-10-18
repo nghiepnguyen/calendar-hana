@@ -1,8 +1,14 @@
 import { readFileSync, writeFileSync } from 'node:fs'
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import fixture from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { P4_DORMANT_GODS } from './p4ScoreAdapter'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 // Roadmap 9b: catalog gods present per P4 date as the engine passes them to scoring (flag OFF, the
 // production manifest), frozen before the 9b adapter code as an input of p4-score-golden-v2 (role

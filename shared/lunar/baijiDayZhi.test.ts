@@ -8,6 +8,12 @@ import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
+
 const TARGET: Record<string, string> = {
   bach_ky_dan: 'worship',
   bach_ky_dau: 'meeting',
