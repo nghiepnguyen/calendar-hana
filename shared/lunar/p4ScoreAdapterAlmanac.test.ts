@@ -138,6 +138,16 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
     ).toBe('')
   }, 600_000)
 
+  it('every dormant star carries a meaning (roadmap 10 A4)', () => {
+    const empty = P4_DATES.flatMap((date) => {
+      const a = getAlmanac(date as never)
+      return [...a.stars.good, ...a.stars.bad]
+        .filter((s) => [...P4_DORMANT_GODS].some((id) => LABEL.get(id) === s.name) && !s.meaning)
+        .map((s) => `${date} ${s.name}`)
+    })
+    expect(empty.slice(0, 10).join('\n')).toBe('')
+  }, 300_000)
+
   it('outside the P4 domain flag ON is the whole flag-OFF output (owner 2026-10-18)', () => {
     const want = tsv('docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/activities.tsv').filter(
       (r) => OUTSIDE.includes(r.date!),

@@ -1,12 +1,18 @@
 import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4YiDay } from './p4YiDayComposition'
 import { getP4MuCangSoil } from './p4YiOperands'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 // P5 task 1 baseline: operand inventory for 修倉庫 / 開倉庫出貨財 on the P4-C sweep inputs.
 // Inventory only, never expected: no R10/R11/D verdict is computed here (Golden comes in task 3).

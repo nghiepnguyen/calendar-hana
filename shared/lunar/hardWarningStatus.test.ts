@@ -15,7 +15,12 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   return {
     default: {
       ...current,
-      policies: { ...current.policies, xiejiVol10Scoring: false, legacyGodsMonthJian: false },
+      policies: {
+        ...current.policies,
+        xiejiVol10BalancingEnabled: false,
+        xiejiVol10Scoring: false,
+        legacyGodsMonthJian: false,
+      },
     },
   }
 })
@@ -50,7 +55,11 @@ describe('hard warning never softens a bad score (golden frozen before the fix)'
     vi.doMock('../almanac-data/manifest.json', () => ({
       default: {
         ...manifest,
-        policies: { ...manifest.policies, hardWarningKeepsWorseScoreStatus: false },
+        policies: {
+          ...manifest.policies,
+          xiejiVol10BalancingEnabled: false,
+          hardWarningKeepsWorseScoreStatus: false,
+        },
       },
     }))
     const pre = {

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import golden from './audit-fixtures/sat-chu-golden-v1.json'
 import { getAlmanac } from './almanac'
 import { solarToLunar } from './lunar'
@@ -7,6 +7,12 @@ import { solarStringToJd } from './julian'
 import { STARS } from './stars.data'
 import { SAT_CHU_AM } from '../personalFengShui/annual/afflictions'
 import type { SolarDateString } from '../types'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 // Calendar table before this audit (Nôm-verse variant), frozen to classify the migration diff.
 const PRE_AUDIT = [5, 0, 7, 3, 8, 10, 1, 11, 6, 9, 2, 4]

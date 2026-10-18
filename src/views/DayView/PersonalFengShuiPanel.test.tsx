@@ -2,13 +2,19 @@ import { screen, within, fireEvent } from '@testing-library/react'
 import { render as renderBase } from '../../test/render'
 import type { ReactElement } from 'react'
 import userEvent from '@testing-library/user-event'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { AuthContext, type AuthContextValue } from '../../auth/authContext'
 import { DayView } from './DayView'
 import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { viewProps } from '../../test/fixtures'
 import { createDefaultSettings } from '../../data/defaultCategories'
 import { sanitizeSettings } from '../../data/exportImport'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('@shared/almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 function props(birthDate: string | null = '1990-07-01') {
   return viewProps({ settings: { ...createDefaultSettings(''), birthDate } })

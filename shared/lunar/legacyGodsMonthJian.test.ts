@@ -11,6 +11,12 @@ import { EVENT_OPTIONS } from './eventMapping'
 import { getDayInfo } from './index'
 import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
 
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
+
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 const LABELS = new Set(
@@ -46,7 +52,14 @@ describe('14 legacy gods on Month Jian (golden frozen before code)', () => {
   it('migration: only the 14 gods move, only on days whose lunar month differs from Month Jian', async () => {
     vi.resetModules()
     vi.doMock('../almanac-data/manifest.json', () => ({
-      default: { ...manifest, policies: { ...manifest.policies, legacyGodsMonthJian: false } },
+      default: {
+        ...manifest,
+        policies: {
+          ...manifest.policies,
+          xiejiVol10BalancingEnabled: false,
+          legacyGodsMonthJian: false,
+        },
+      },
     }))
     const pre = {
       almanac: (await import('./almanac')).getAlmanac,

@@ -13,7 +13,16 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const { default: current } = await importOriginal<{
     default: typeof import('../almanac-data/manifest.json')
   }>()
-  return { default: { ...current, policies: { ...current.policies, xiejiVol10Scoring: false } } }
+  return {
+    default: {
+      ...current,
+      policies: {
+        ...current.policies,
+        xiejiVol10BalancingEnabled: false,
+        xiejiVol10Scoring: false,
+      },
+    },
+  }
 })
 
 const GOD = 'tho_vuong_dung_su'

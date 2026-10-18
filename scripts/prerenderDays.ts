@@ -119,11 +119,14 @@ export function prerenderDays(): Plugin {
       outDir = resolve(config.root, config.build.outDir)
     },
     async closeBundle() {
-      const { module: seo } = await runnerImport<DaySeoModule>(join(root, 'shared/seo/daySeo.ts'), {
-        configFile: false,
-        root,
-        logLevel: 'error',
-      })
+      const { module: seo } = await runnerImport<DaySeoModule>(
+        join(root, 'shared/seo/daySeoPrerender.ts'),
+        {
+          configFile: false,
+          root,
+          logLevel: 'error',
+        },
+      )
       const template = await readFile(join(outDir, 'index.html'), 'utf8')
       const dates = dateRange()
       await mkdir(join(outDir, 'day'), { recursive: true })

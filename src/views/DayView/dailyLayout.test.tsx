@@ -1,11 +1,17 @@
 import { fireEvent, screen, within } from '@testing-library/react'
-import { expect, it } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import { render } from '../../test/render'
 import { createDefaultSettings } from '../../data/defaultCategories'
 import { PersonalFengShuiPanel } from './PersonalFengShuiPanel'
 import { DailyActivitySection } from './DailyActivitySection'
 import { getAlmanac } from '@shared/lunar/almanac'
 import { StarChips } from './StarChips'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('@shared/almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 it('keeps advanced analyses unmounted until individually requested and resets on a new day', () => {
   const settings = { ...createDefaultSettings(''), birthDate: '1990-07-01' }

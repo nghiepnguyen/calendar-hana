@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getAlmanac } from './almanac'
 import { dayCanChi } from './canChi'
 import { solarStringToJd } from './julian'
@@ -9,6 +9,12 @@ import { getOfficer } from './officers'
 import { getStars } from './stars'
 import { getThuTuForDate } from './thuTuAuthority'
 import type { SolarDateString } from '../types'
+
+// Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
 
 const THU_TU = 'Thụ Tử'
 const SAT_CHU = 'Sát Chủ'
@@ -46,7 +52,8 @@ describe('Thụ Tử migration regression', () => {
       for (let month = 1; month <= 12; month++) {
         const days = new Date(year, month, 0).getDate()
         for (let dayOfMonth = 1; dayOfMonth <= days; dayOfMonth++) {
-          const date = `${year}-${String(month).padStart(2, '0')}-${String(dayOfMonth).padStart(2, '0')}` as SolarDateString
+          const date =
+            `${year}-${String(month).padStart(2, '0')}-${String(dayOfMonth).padStart(2, '0')}` as SolarDateString
           const legacy = legacyPresence(date)
           const authority = getThuTuForDate(date).applies
           const bad = getAlmanac(date).stars.bad
@@ -74,7 +81,8 @@ describe('Thụ Tử migration regression', () => {
     for (let month = 1; month <= 12; month++) {
       const days = new Date(2026, month, 0).getDate()
       for (let dayOfMonth = 1; dayOfMonth <= days; dayOfMonth++) {
-        const date = `2026-${String(month).padStart(2, '0')}-${String(dayOfMonth).padStart(2, '0')}` as SolarDateString
+        const date =
+          `2026-${String(month).padStart(2, '0')}-${String(dayOfMonth).padStart(2, '0')}` as SolarDateString
         const badNames = getAlmanac(date).stars.bad.map((star) => star.name)
         const thuTu = badNames.includes(THU_TU)
         const satChu = badNames.includes(SAT_CHU)

@@ -24,6 +24,7 @@ import type { CanChiRelation } from '@shared/lunar/elements'
 import { getAlmanac } from '@shared/lunar/almanac'
 import { presentMansionContent } from '@shared/lunar/mansionContentAuthority'
 import type { SolarDateString } from '@shared/types'
+import { useP4Ready } from '../../p4Provider'
 import { AlmanacExplain, type ExplainItem } from './AlmanacExplain'
 import { Compass } from './Compass'
 import { ELEMENT_ICONS } from './elementIcons'
@@ -164,7 +165,18 @@ export function Tile({
 }
 
 /** Khối "Lịch vạn niên" ở xem Ngày: tiết khí, 28 tú, trực, hướng xuất hành, tuổi xung, sao, giờ. */
-export function AlmanacPanel({ date, isToday }: AlmanacPanelProps) {
+export function AlmanacPanel(props: AlmanacPanelProps) {
+  // Roadmap 10 A1: wait for the P4 provider so the memoized almanac is not the baseline one.
+  return useP4Ready() ? (
+    <AlmanacPanelReady {...props} />
+  ) : (
+    <section className={`glass ${styles.panel}`} aria-label="Lịch vạn niên" aria-busy="true">
+      <p className={styles.scopeNote}>Đang tải dữ liệu lịch…</p>
+    </section>
+  )
+}
+
+function AlmanacPanelReady({ date, isToday }: AlmanacPanelProps) {
   const a = useMemo(() => getAlmanac(date), [date])
   const mansionContent = presentMansionContent(a.mansion.content)
   const [explain, setExplain] = useState<ExplainItem | null>(null)

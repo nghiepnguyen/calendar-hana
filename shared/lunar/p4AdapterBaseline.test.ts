@@ -1,10 +1,19 @@
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import manifest from '../almanac-data/manifest.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
 import { activityRows, BASELINE_DIR as DIR, eventRows } from './p4AdapterBaselineRows'
+
+// Roadmap 10 ships the flag ON; this file pins it OFF (the flag-OFF / rollback state).
+vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
+  const real = ((await importOriginal()) as { default: { policies: object } }).default
+  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+})
+const shipped = JSON.parse(readFileSync('shared/almanac-data/manifest.json', 'utf8')) as {
+  policies: { xiejiVol10BalancingEnabled: boolean }
+}
 
 // Roadmap 8: measured production baseline, frozen before any adapter code (runtime-equal to f00dd5c).
 // With `xiejiVol10BalancingEnabled` OFF every row here must stay byte-equal. Default manifest, no
@@ -12,8 +21,9 @@ import { activityRows, BASELINE_DIR as DIR, eventRows } from './p4AdapterBaselin
 // P4_ADAPTER_BASELINE_WRITE=1 rewrites the files; the lock is written once, by hand, at the freeze.
 
 describe('roadmap 8 flag-OFF baseline (measured, frozen before the adapter)', () => {
-  it('ships with the flag OFF', () => {
+  it('runs with the flag OFF (shipped ON since roadmap 10)', () => {
     expect(manifest.policies.xiejiVol10BalancingEnabled).toBe(false)
+    expect(shipped.policies.xiejiVol10BalancingEnabled).toBe(true)
   })
 
   it('activity and event outputs equal the frozen baseline', () => {

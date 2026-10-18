@@ -17,13 +17,18 @@ import {
   resolveEventActivityRoles,
 } from '@shared/lunar/eventMapping'
 import { evaluateEventDay, type Contribution } from '@shared/lunar/eventEvaluation'
-import { isP4CappedTaboo, P4_CAPPED_TABOO_NOTE } from '@shared/lunar/p4ScoreAdapter'
+import {
+  isP4CappedTaboo,
+  P4_CAPPED_TABOO_NOTE,
+  P4_SCORE_ADAPTER_VERSION,
+} from '@shared/lunar/p4ScoreAdapter'
 import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { formatSolarShort } from '@shared/format'
 import { iconSize } from '../../styles/textSize'
 import styles from './DailyActivitySection.module.css'
 import { MansionEvidenceDetails } from './MansionEvidenceDetails'
 import { getMansionContentEvidence } from '@shared/lunar/mansionContentAuthority'
+import { useP4Ready } from '../../p4Provider'
 
 const STATUS = {
   recommended: { label: 'Thuận lợi', icon: CheckCircle, tone: 'favorable' },
@@ -138,7 +143,22 @@ function FactorGroup({ factors, positive }: { factors: Factor[]; positive: boole
   )
 }
 
-export function DailyActivitySection({ date }: { date: string }) {
+export function DailyActivitySection(props: { date: string }) {
+  // Roadmap 10 A1: wait for the P4 provider so the memoized almanac is not the baseline one.
+  return useP4Ready() ? (
+    <DailyActivitySectionReady {...props} />
+  ) : (
+    <section
+      className={styles.section}
+      aria-label="Mục tiêu và kết luận trong ngày"
+      aria-busy="true"
+    >
+      <p className={styles.note}>Đang tải…</p>
+    </section>
+  )
+}
+
+function DailyActivitySectionReady({ date }: { date: string }) {
   const [selected, setSelected] = useState('')
   const [category, setCategory] = useState('')
   const [showAll, setShowAll] = useState(false)
@@ -171,8 +191,13 @@ export function DailyActivitySection({ date }: { date: string }) {
       ) ?? [],
       primaryId,
     )
+    const activity = rows.find((row) => selected === `activity:${row.activityId}`)
     return {
-      activity: rows.find((row) => selected === `activity:${row.activityId}`),
+      activity,
+      lifted:
+        activity?.contributions.filter(
+          (row) => row.classical?.version === P4_SCORE_ADAPTER_VERSION && row.rawDelta !== 0,
+        ) ?? [],
       recommended: filtered.filter((row) => row.status === 'recommended'),
       avoid: filtered.filter((row) => ['avoid', 'strong_avoid'].includes(row.status)),
       other: filtered.filter((row) => ['neutral', 'no_evidence'].includes(row.status)),
@@ -278,6 +303,19 @@ export function DailyActivitySection({ date }: { date: string }) {
               </ul>
             ) : (
               <p className={styles.empty}>Chưa có bằng chứng cho hoạt động này.</p>
+            )}
+            {/* Roadmap 10 A5 (spec §5): rows the P4 resolution lifted, flag ON only. */}
+            {data.lifted.length > 0 && (
+              <>
+                <p className={styles.note}>Đã gỡ theo Hiệp Kỷ</p>
+                <ul aria-label="Đã gỡ theo Hiệp Kỷ">
+                  {data.lifted.map((row) => (
+                    <li key={`${row.source}:${row.ruleId}`}>
+                      {row.label} ({row.rawDelta < 0 ? 'kỵ đã được gỡ' : 'không ghi tốt'})
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
             <MansionEvidenceDetails
               key={`${date}:${selected}`}

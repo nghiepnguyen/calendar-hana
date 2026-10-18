@@ -40,6 +40,27 @@ const DORMANT_ALIASES: Record<string, string> = {
   nguyet_yem: 'Nguyệt Yếm Đại Hoạ',
   vang_vong: 'Vãng Vong (Thổ Kỵ)',
 }
+// Roadmap 10 A4 (owner 2026-10-18, docs/audits/p4-dormant-meanings-draft.md): the 16 dormant gods with no
+// lunar-table alias; from the locked 協紀 quotes. Shown on star chips and static pages only, no score.
+const DORMANT_MEANINGS: Record<string, string> = {
+  thien_nguyen: 'Ngày lành của tháng theo Hiệp Kỷ.',
+  tu_tuong: 'Ngày can vượng tướng của mùa; tốt cho chuyển nhà, đi xa.',
+  thoi_duc: 'Đức thần của mùa; tốt cho mừng thưởng, yến tiệc, nhận chức.',
+  ngu_hop: 'Ngày lành trong tháng; tốt cho cưới hỏi, gặp gỡ, lập khế ước, giao dịch.',
+  bat_tuong: 'Ngày âm dương bất tương; ngày tốt dùng được cho mọi việc, nhất là cưới hỏi.',
+  thien_thuong: 'Thần kho trời; tốt cho sửa kho, nhận thưởng, thu tài, chăn nuôi.',
+  nguyet_hai: 'Kỵ chiến trận, chăn nuôi, kết thân cưới hỏi, mời thầy chữa bệnh, nhận người làm.',
+  yem_doi: 'Ngày xung Nguyệt Yếm; kỵ cưới gả, đi thuyền qua sông.',
+  dai_thoi: 'Hung thần chỉ có kỵ, không có nghi; kỵ xây nhà, kết thân.',
+  tu_phe: 'Can chi ngày đều ở tử khí của mùa; kỵ hầu hết mọi việc.',
+  tu_ky:
+    'Ngày can dương của mùa ở đầu chi (Giáp Tý xuân, Bính Tý hạ, Canh Tý thu, Nhâm Tý đông); kỵ cưới hỏi, an táng.',
+  tu_cung: 'Không nên đi xa, xuất quân, xuất nhập tiền của.',
+  ngu_mo: 'Ngày mộ của hành vượng trong tháng; kỵ nhiều việc lớn.',
+  ngu_ly: 'Thần chia lìa trong tháng; kỵ cưới hỏi, gặp gỡ, giao dịch, lập khế ước.',
+  bat_chuyen: 'Kỵ xuất quân, cưới gả.',
+  quy_ky: 'Kỵ đi xa, trở về nhà, chuyển nhà (Hiệp Kỷ: không kỵ cưới gả).',
+}
 
 export interface Almanac {
   date: SolarDateString
@@ -82,7 +103,8 @@ const THU_TU_MEANING = 'Trăm sự đều kỵ'
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
-  const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}`
+  // Roadmap 10 A1: an almanac computed before the P4 provider loaded must not be served after it.
+  const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}${p4BalancingReady(date) ? ':p4' : ''}`
   return memoizeSolarTermDerived('almanac', cacheKey, CACHE_LIMIT, () => computeAlmanac(date))
 }
 
@@ -134,7 +156,9 @@ function computeAlmanac(date: SolarDateString): Almanac {
       if (alias) replaceNames.add(alias)
       if (!present[god.id]) continue
       const isGood = goodGodsData.items.includes(god as never)
-      const meaning = alias ? STARS.find((star) => star.name === alias)!.meaning : ''
+      const meaning = alias
+        ? STARS.find((star) => star.name === alias)!.meaning
+        : DORMANT_MEANINGS[god.id]!
       dormantStars.push({ name: god.label, isGood, meaning })
       monthJianPresence[god.id] = present[god.id]!
     }
