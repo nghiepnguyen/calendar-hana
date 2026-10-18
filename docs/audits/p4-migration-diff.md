@@ -79,4 +79,4 @@ Nạp `p4AlmanacHeadings` trước almanac đầu tiên; bật flag + 21 thần 
 
 ## `ci:p4` chạy tay
 
-Đủ chuỗi tại `d46e965` (commit sau chỉ docs): **EXIT 0 trong 3.310 s (~55 phút)**, tree sạch sau khi chạy. Gồm P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2, owner-rules toàn miền 6/6 + mutation 12/12, nối almanac toàn miền 10/10, mutation adapter 21/21, harness roadmap 9 toàn miền 8/8, mutation roadmap 9 14/14. Roadmap 9 thêm ~20 phút (roadmap 8 ~43 phút).
+Đủ chuỗi tại `d46e965` (commit sau chỉ docs): **EXIT 0 trong 3.310 s (~55 phút)**, tree sạch sau khi chạy. Gồm P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2, owner-rules toàn miền 6/6 + mutation 12/12, nối almanac toàn miền 10/10, mutation adapter 21/21, harness roadmap 9 toàn miền 8/8, mutation roadmap 9 14/14. Roadmap 9 thêm ~12 phút so với ~43 phút đo ở roadmap 8.
