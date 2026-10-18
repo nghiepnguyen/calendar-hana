@@ -312,16 +312,21 @@ async function buildFiles() {
       }),
     ),
   )
-  files['activities-full.tsv'] = lines(
-    ACTIVITY_HEADER,
-    rows.map((r) =>
-      activityLine(
-        r,
-        p4ActivityState(r.full.activityId, full.get(r.date)!.input?.p4Headings ?? {}).heading,
-        HEADINGS[r.full.activityId] ?? [],
-      ),
-    ),
-  )
+  // §6.10.4: the full activity TSV exceeds ~5 MB, so one file per domain year + one for outside dates.
+  const part = (date: string) => (inDomain(date) ? date.slice(0, 4) : 'outside')
+  for (const key of new Set(DATES.map(part)))
+    files[`activities-full-${key}.tsv`] = lines(
+      ACTIVITY_HEADER,
+      rows
+        .filter((r) => part(r.date) === key)
+        .map((r) =>
+          activityLine(
+            r,
+            p4ActivityState(r.full.activityId, full.get(r.date)!.input?.p4Headings ?? {}).heading,
+            HEADINGS[r.full.activityId] ?? [],
+          ),
+        ),
+    )
   const fullEvents = await eventDiffs('full')
   files['events-full.tsv'] = lines(EVENT_HEADER, fullEvents.map(eventLine))
   const configs: Record<string, ReturnType<typeof configSummary>> = {}
