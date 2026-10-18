@@ -1,0 +1,322 @@
+{
+  "version": "p4-migration-diff-v1",
+  "rulesVersion": "p4-migration-rules-v1",
+  "dates": 1098,
+  "configs": {
+    "presence": {
+      "activity": {
+        "rows": 35136,
+        "changed": 14484,
+        "score": 14443,
+        "status": 11282,
+        "hardWarning": 0
+      },
+      "event": {
+        "rows": 24156,
+        "score": 13959,
+        "classification": 5166
+      },
+      "transitions": {
+        "recommended→watch": 2518,
+        "no_evidence→watch": 2305,
+        "watch→avoid": 1798,
+        "avoid→strong_avoid": 1424,
+        "neutral→watch": 557,
+        "no_evidence→neutral": 557,
+        "avoid→watch": 525,
+        "no_evidence→avoid": 524,
+        "neutral→recommended": 428,
+        "watch→strong_avoid": 266,
+        "strong_avoid→avoid": 132,
+        "consider→avoid": 118,
+        "consider→strong_avoid": 47,
+        "no_evidence→recommended": 28,
+        "avoid→consider": 27,
+        "recommended→consider": 18,
+        "watch→consider": 6,
+        "strong_avoid→watch": 4
+      },
+      "eventTransitions": {
+        "recommended→not_recommended": 1978,
+        "caution→not_recommended": 1152,
+        "insufficient_evidence→not_recommended": 970,
+        "recommended→caution": 674,
+        "caution→recommended": 280,
+        "insufficient_evidence→caution": 74,
+        "insufficient_evidence→recommended": 38
+      }
+    },
+    "balancing": {
+      "activity": {
+        "rows": 35136,
+        "changed": 8171,
+        "score": 8098,
+        "status": 6995,
+        "hardWarning": 0
+      },
+      "event": {
+        "rows": 24156,
+        "score": 7397,
+        "classification": 3682
+      },
+      "transitions": {
+        "no_evidence→avoid": 2402,
+        "watch→avoid": 1015,
+        "recommended→avoid": 867,
+        "recommended→neutral": 719,
+        "watch→neutral": 458,
+        "consider→avoid": 252,
+        "watch→recommended": 232,
+        "neutral→avoid": 230,
+        "avoid→strong_avoid": 156,
+        "strong_avoid→watch": 137,
+        "recommended→watch": 131,
+        "avoid→watch": 117,
+        "neutral→watch": 101,
+        "watch→strong_avoid": 78,
+        "consider→strong_avoid": 59,
+        "avoid→neutral": 22,
+        "strong_avoid→consider": 11,
+        "avoid→consider": 5,
+        "strong_avoid→avoid": 3
+      },
+      "eventTransitions": {
+        "recommended→caution": 771,
+        "insufficient_evidence→not_recommended": 708,
+        "caution→not_recommended": 702,
+        "recommended→not_recommended": 664,
+        "not_recommended→caution": 510,
+        "not_recommended→recommended": 240,
+        "caution→recommended": 87
+      }
+    },
+    "full": {
+      "activity": {
+        "rows": 35136,
+        "changed": 14894,
+        "score": 14445,
+        "status": 12797,
+        "hardWarning": 0
+      },
+      "event": {
+        "rows": 24156,
+        "score": 13770,
+        "classification": 5009
+      },
+      "transitions": {
+        "watch→avoid": 2871,
+        "avoid→strong_avoid": 1471,
+        "no_evidence→watch": 1263,
+        "recommended→watch": 1185,
+        "no_evidence→avoid": 1182,
+        "no_evidence→neutral": 917,
+        "recommended→neutral": 719,
+        "watch→strong_avoid": 530,
+        "watch→neutral": 457,
+        "neutral→recommended": 403,
+        "avoid→watch": 328,
+        "neutral→watch": 277,
+        "consider→avoid": 263,
+        "watch→recommended": 233,
+        "consider→strong_avoid": 163,
+        "recommended→avoid": 160,
+        "neutral→avoid": 129,
+        "strong_avoid→avoid": 100,
+        "strong_avoid→watch": 49,
+        "no_evidence→recommended": 27,
+        "avoid→neutral": 22,
+        "recommended→consider": 18,
+        "recommended→strong_avoid": 14,
+        "avoid→consider": 8,
+        "watch→consider": 6,
+        "strong_avoid→consider": 2
+      },
+      "eventTransitions": {
+        "recommended→not_recommended": 1120,
+        "recommended→caution": 1012,
+        "caution→not_recommended": 784,
+        "insufficient_evidence→not_recommended": 708,
+        "not_recommended→caution": 486,
+        "caution→recommended": 399,
+        "not_recommended→recommended": 264,
+        "insufficient_evidence→caution": 194,
+        "insufficient_evidence→recommended": 42
+      }
+    },
+    "stars": {
+      "activity": {
+        "rows": 35136,
+        "changed": 0,
+        "score": 0,
+        "status": 0,
+        "hardWarning": 0
+      },
+      "event": {
+        "rows": 24156,
+        "score": 0,
+        "classification": 0
+      },
+      "transitions": {},
+      "eventTransitions": {}
+    },
+    "chainSwap": {
+      "activity": {
+        "rows": 35136,
+        "changed": 3512,
+        "score": 3512,
+        "status": 3218,
+        "hardWarning": 0
+      },
+      "event": {
+        "rows": 24156,
+        "score": 3073,
+        "classification": 1116
+      },
+      "transitions": {
+        "recommended→watch": 950,
+        "avoid→no_evidence": 726,
+        "neutral→watch": 694,
+        "watch→avoid": 142,
+        "strong_avoid→watch": 137,
+        "neutral→avoid": 120,
+        "avoid→watch": 117,
+        "watch→recommended": 115,
+        "watch→neutral": 86,
+        "consider→avoid": 47,
+        "avoid→neutral": 23,
+        "watch→strong_avoid": 14,
+        "avoid→strong_avoid": 12,
+        "consider→strong_avoid": 11,
+        "strong_avoid→consider": 11,
+        "avoid→consider": 5,
+        "avoid→recommended": 5,
+        "strong_avoid→avoid": 3
+      },
+      "eventTransitions": {
+        "recommended→not_recommended": 414,
+        "caution→not_recommended": 252,
+        "recommended→caution": 192,
+        "not_recommended→caution": 136,
+        "not_recommended→insufficient_evidence": 86,
+        "caution→recommended": 24,
+        "not_recommended→recommended": 12
+      }
+    }
+  },
+  "overlapFullBalancing": {
+    "both": 8069,
+    "fullOnly": 6825,
+    "balancingOnly": 102
+  },
+  "full": {
+    "activityStates": {
+      "only_ji": 13966,
+      "baseline": 10142,
+      "only_yi": 7269,
+      "neither_recorded": 2061,
+      "both_present": 1698
+    },
+    "changedByState": {
+      "only_ji": 10006,
+      "only_yi": 2151,
+      "neither_recorded": 1757,
+      "both_present": 980
+    },
+    "classes": {
+      "DORMANT_GOD_ADDED": 10532,
+      "SCHEMA_ONLY": 7294,
+      "STATE_LIFT": 6756,
+      "CHAIN_REPLACED": 6508,
+      "ALIAS_STAR_SWAP": 6217,
+      "DEFAULT_PENALTY": 671,
+      "CHAIN_REPLACED_LIGHTER": 389,
+      "MULTI_HEADING_BASELINE": 269,
+      "CAP_REALLOCATION": 236,
+      "DEFAULT_PENALTY_ALL_TABOO": 94
+    },
+    "absScoreDelta": {
+      "10-19": 9362,
+      "20-29": 2219,
+      "30-39": 1833,
+      ">=40": 741,
+      "1-9": 739
+    },
+    "decomposition": {
+      "capFirstCounterfactualRows": 0,
+      "capReallocationStatusVsBalancing": 98,
+      "chainSwapChangedRows": 3512,
+      "chainSwapRowsAlsoChangedInFull": 2184,
+      "changedWithoutDormantRow": 2645,
+      "changedWithoutDormantExplainedByLiftPenaltyChain": 2645
+    },
+    "neutralOrNoEvidenceToRecommended": 430,
+    "dormantGodsApplied": {
+      "nguyet_yem": 1800,
+      "nguyet_sat": 1778,
+      "tai_sat": 1438,
+      "dai_thoi": 1340,
+      "tu_tuong": 1263,
+      "nguyet_hai": 1043,
+      "tu_phe": 793,
+      "thoi_duc": 509,
+      "ngu_ly": 441,
+      "vang_vong": 323,
+      "ngu_mo": 292,
+      "ngu_hop": 289,
+      "thien_nguyen": 250,
+      "tu_cung": 161,
+      "bat_chuyen": 136,
+      "pho_ho": 109,
+      "quy_ky": 88,
+      "yem_doi": 79,
+      "thien_thuong": 74,
+      "bat_tuong": 49,
+      "tu_ky": 48
+    },
+    "warehouseTransitions": {
+      "warehouse": {
+        "watch→avoid": 153,
+        "avoid→strong_avoid": 67,
+        "no_evidence→avoid": 62,
+        "recommended→watch": 57,
+        "no_evidence→watch": 49,
+        "no_evidence→neutral": 28,
+        "avoid→watch": 22,
+        "watch→strong_avoid": 16,
+        "watch→watch": 13,
+        "recommended→neutral": 11,
+        "watch→neutral": 9,
+        "neutral→neutral": 8,
+        "watch→recommended": 8,
+        "recommended→avoid": 7,
+        "watch→consider": 6,
+        "recommended→recommended": 5,
+        "neutral→watch": 4,
+        "strong_avoid→strong_avoid": 2
+      },
+      "warehouse_opening": {
+        "watch→avoid": 111,
+        "avoid→strong_avoid": 80,
+        "no_evidence→neutral": 80,
+        "no_evidence→avoid": 70,
+        "no_evidence→watch": 56,
+        "neutral→recommended": 50,
+        "recommended→watch": 32,
+        "neutral→neutral": 29,
+        "consider→avoid": 28,
+        "neutral→watch": 20,
+        "recommended→recommended": 19,
+        "consider→consider": 17,
+        "watch→watch": 17,
+        "watch→neutral": 12,
+        "watch→strong_avoid": 10,
+        "consider→strong_avoid": 6,
+        "neutral→avoid": 5,
+        "recommended→neutral": 5,
+        "strong_avoid→strong_avoid": 4,
+        "avoid→consider": 3,
+        "avoid→avoid": 2
+      }
+    }
+  }
+}

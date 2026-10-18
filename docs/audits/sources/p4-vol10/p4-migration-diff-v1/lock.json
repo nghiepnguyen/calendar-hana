@@ -1,0 +1,102 @@
+{
+  "version": "p4-migration-diff-lock-v1",
+  "prd": "tasks/prd-p4-migration-diff.md FR-02/FR-03/FR-05/FR-06/FR-07, owner §6.10",
+  "generatedAt": "0b67ff998a456787f46d7a39929a0166492c9dd2",
+  "treeCleanOutsideOutput": true,
+  "rules": "docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json",
+  "baseline": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/lock.json",
+  "rulesVersion": "p4-migration-rules-v1",
+  "manifestPolicies": {
+    "aiMayChangeScore": false,
+    "mansion28ScoringEnabled": false,
+    "unknownRuleMeansNeutral": false,
+    "unknownRuleMeansNoEvidence": true,
+    "hardVetoFromClassicalJi": false,
+    "requireScopeForScoring": true,
+    "conflictResolutionRequired": true,
+    "noTabooMeansNeutralUpToSeverity": "high",
+    "hardWarningKeepsWorseScoreStatus": true,
+    "xiejiVol10Scoring": true,
+    "xiejiVol10BalancingEnabled": false,
+    "legacyGodsMonthJian": true
+  },
+  "configurations": {
+    "baseline": "real manifest (xiejiVol10BalancingEnabled false), provider not loaded = baseline v1",
+    "presence": "manifest ON + provider; activity input: override false, no p4Headings, 21 dormant kept (owner 6.10.1 a)",
+    "balancing": "manifest ON + provider; activity input without the 21 dormant gods",
+    "full": "manifest ON + provider, input unchanged (roadmap 10 path)",
+    "stars": "manifest ON + provider; p4Headings {} (aid: alias star swap only)",
+    "chainSwap": "balancing with every resolved heading forced to both_present, prot kept (aid: 6-chain removal only)"
+  },
+  "dates": {
+    "p4Domain": 1095,
+    "outside": [
+      "2024-12-31",
+      "2028-01-01",
+      "2035-06-15"
+    ],
+    "jieFixture": 108
+  },
+  "eventHours": [
+    "none",
+    9
+  ],
+  "personalInput": "none",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "node": "v23.7.0",
+  "regenerate": "P4_MIGRATION_FULL=1 P4_MIGRATION_WRITE=1 npx vitest run shared/lunar/p4MigrationDiff.test.ts",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/days.tsv",
+      "sha256": "f03d0b7c736b1c2fb77441a867cc3488893c770a3a62dde00e732e6cee40e5dc"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2025.tsv",
+      "sha256": "bf538c015c9002e2335cf0cb4f65213c15ae2e1ffcd09fa2ae5cac25203e9a3f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2026.tsv",
+      "sha256": "d8cf23678479c488eeb3441f5a0b25d2d76d7cc8c5e1c1a0c9370125f591c9ba"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2027.tsv",
+      "sha256": "1be11025fe6be1947bd153e3a46f8d0d1f69834d379dd626090b03abbb0aeb2b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-outside.tsv",
+      "sha256": "9f5867efc88fc8327f184ddc17db56f6a9570e5767d481d77dae6d961460e4fa"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/events-full.tsv",
+      "sha256": "51a812f55b92214cc6018f86c701967951a2969d52634aecdca3c9d69d85c524"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-presence-changed.tsv",
+      "sha256": "79d566973860eaa3dadd526d1d6a1d4b0d48cf5261db726bdd56c97d58eb8683"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/events-presence-changed.tsv",
+      "sha256": "dd5c5f60224dde8e74bf967dad7bd536b6c322eecb3b3bd298c0c73d0d44d63b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-balancing-changed.tsv",
+      "sha256": "af3db80474e2036756b3b77d8c517e0aa422aa767fe4394c5ccf02e00ae47dd7"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/events-balancing-changed.tsv",
+      "sha256": "53c8c147c0db7dabe5eb84eeefb610aff77646991579b11c52a9e20f6fb0ffa3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/jie-boundary.tsv",
+      "sha256": "c0dbb2ebadd583a54475bd15724a758299a9cd2d5d06eb9a17e8e5b5a26d9ef4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/review.tsv",
+      "sha256": "b14d18705c923f0ad47caef98b8666e9184bc9f93064b1746e36ce34fbb414bd"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/summary.json",
+      "sha256": "1d83cf29d34dd1c0b1e142b3e0822ddf98ad152ac7d0736c9c2deb83fe5e4dd7"
+    }
+  ]
+}
