@@ -6,8 +6,9 @@ import type { Evidence } from './evidence'
 import { lockedDigests } from './lockAnchor'
 import { applyP4Balancing, p4ActivityState, type P4HeadingInput } from './p4ScoreAdapter'
 
-// Roadmap 8 FR-01: score Golden frozen before the adapter (docs/.../p4-score-golden-v1/README.md).
-const DIR = 'docs/audits/sources/p4-vol10/p4-score-golden-v1/'
+// Roadmap 8 FR-01 / roadmap 9b: score Golden v2 frozen before the 9b adapter code; supersedes v1 after the
+// owner policy change of 2026-10-18 (docs/.../p4-score-golden-v2/README.md, tasks/prd-p4-9b.md).
+const DIR = 'docs/audits/sources/p4-vol10/p4-score-golden-v2/'
 const COMPOSE = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/dated.tsv'
 type Case = {
   id: string
@@ -45,12 +46,12 @@ const projectRow = (r: Evidence) => ({
   scoreDelta: r.scoreDelta,
 })
 
-describe('roadmap 8 score Golden v1 (flag ON)', () => {
+describe('P4 score Golden v2 (flag ON)', () => {
   it('lock pins the Golden and its inputs', () => {
     const lock = JSON.parse(readFileSync(DIR + 'lock.json', 'utf8')) as {
       files: { path: string; sha256: string }[]
     }
-    expect(lock.files).toHaveLength(10)
+    expect(lock.files).toHaveLength(14)
     // Own files on the working tree; catalog and Golden v2 inputs as committed at the lock's anchor.
     const atAnchor = lockedDigests(
       DIR + 'lock.json',
