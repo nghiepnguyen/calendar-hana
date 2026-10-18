@@ -1,6 +1,6 @@
 # Roadmap 8 — adapter điểm P4 sau flag `xiejiVol10BalancingEnabled` = OFF
 
-2026-10-18, nhánh `claude/p4-adapter`. Production **không đổi**: flag `false` trong manifest, baseline flag OFF byte-equal. [PRD](../../tasks/prd-p4-score-adapter.md) (quyết định owner §6.1–6.14), [spec](../plans/p4-xieji-vol10-balancing.md) §4.1, §4.2, §5.
+2026-10-18, nhánh `claude/p4-adapter`, **MERGED & DEPLOYED** [PR #69](https://github.com/nghiepnguyen/calendar-hana/pull/69) (`7d7596f`, [deploy 39090860176](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39090860176) SUCCESS). Roadmap 9 (migration diff) xong và deploy `9865eee`: [báo cáo](p4-migration-diff.md). Production **không đổi**: flag `false` trong manifest, baseline flag OFF byte-equal. [PRD](../../tasks/prd-p4-score-adapter.md) (quyết định owner §6.1–6.14), [spec](../plans/p4-xieji-vol10-balancing.md) §4.1, §4.2, §5.
 
 ## Kết quả
 

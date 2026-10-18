@@ -1,6 +1,6 @@
 # Roadmap 9 — migration diff 4 cấu hình + rollback flag `xiejiVol10BalancingEnabled`
 
-2026-10-18, nhánh `claude/p4-migration-diff` (đặt trên `claude/p4-adapter`, PR #69 chưa merge). Production **không đổi**: flag `false`, không sửa runtime. [PRD](../../tasks/prd-p4-migration-diff.md) (owner §6.10), [spec](../plans/p4-xieji-vol10-balancing.md) §7.2, §9 điều kiện 4. **Chờ owner go-live review** — dừng ở đây, chưa sang roadmap 10.
+2026-10-18, nhánh `claude/p4-migration-diff`, **DEPLOYED** `9865eee` (push thẳng main theo owner sau `ci:local` xanh; [deploy 39102682779](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39102682779) SUCCESS; sau roadmap 8 PR #69 `7d7596f`). Production **không đổi**: flag `false` (bundle `index-umK95j49.js` nhúng `!1`), không sửa runtime. [PRD](../../tasks/prd-p4-migration-diff.md) (owner §6.10), [spec](../plans/p4-xieji-vol10-balancing.md) §7.2, §9 điều kiện 4. **Chờ owner go-live review** trước roadmap 10 (activation); deploy này không bật gì.
 
 ## Kết quả
 

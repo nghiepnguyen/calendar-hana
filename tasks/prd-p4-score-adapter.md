@@ -1,6 +1,6 @@
 # PRD — Roadmap 8: adapter điểm sau flag `xiejiVol10BalancingEnabled` = OFF
 
-Ngày: 2026-10-17. Trạng thái: **PRD chốt (2026-10-18)**: owner trả lời §6.1–6.4 (2026-10-17), duyệt §6.5–6.10 (2026-10-18). Chưa sửa runtime.
+Ngày: 2026-10-17. Trạng thái: **XONG, MERGED & DEPLOYED PR #69 `7d7596f` (2026-10-18), flag OFF**. PRD chốt (2026-10-18): owner trả lời §6.1–6.4 (2026-10-17), duyệt §6.5–6.10 (2026-10-18). (Lúc soạn PRD chưa sửa runtime; adapter vào runtime sau flag OFF ở PR #69.)
 
 ## 1. Bối cảnh
 
