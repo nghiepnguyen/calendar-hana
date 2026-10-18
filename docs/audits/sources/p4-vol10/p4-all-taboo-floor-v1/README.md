@@ -2,7 +2,7 @@
 
 Policy sản phẩm owner chốt 2026-10-18 ([báo cáo review](../../../p4-migration-diff.md), nhóm 2 điểm 3, nhóm 3, nhóm 4.2). Một policy, không tạo rule trùng:
 
-- Heading 諸事皆忌 (`all_taboo`), hoặc heading có 忌 đã ghi (`only_ji`/`both_present`) mà không còn dòng âm applied trong scope: tổng âm applied trong scope tối thiểu **−25**; phần thiếu bù bằng một dòng `product_policy_default_penalty`. Tối đa một dòng mỗi activity mỗi ngày. Chỉ làm nặng thêm.
+- Hai trigger: (i) activity 諸事皆忌 → tổng âm applied trong scope tối thiểu **−25**, phần thiếu bù bằng một dòng `product_policy_default_penalty`; (ii) `only_ji`/`both_present` không còn dòng âm applied trong scope → một −25. `only_ji`/`both_present` đã có dòng âm giữ trọng số thật (nhóm 1 (a), 4.1). Tối đa một dòng mỗi activity mỗi ngày. Chỉ làm nặng thêm.
 - **Cùng vòng code — `MULTI_HEADING_JI_WINS_V1`** (nhóm 5 (c)): activity hai heading, một heading `not_recorded`, heading kia `only_ji`/`both_present` → áp state heading kia (sửa PRD roadmap 8 §6.6 chỉ phía 忌); heading kia `only_yi` → giữ baseline; `undetermined` → giữ baseline.
 - Chưa code. Thay PRD roadmap 8 §6.11; cần Golden điểm v2 trước code, adapter, mutation, chạy lại diff roadmap 9.
 

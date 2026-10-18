@@ -97,7 +97,7 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 
 Review nhóm 1–7 xong. Go-live chỉ khi vòng code mới chứng minh đủ ba điều:
 
-1. **Floor 諸事皆忌 / 忌 đã ghi** (`ALL_TABOO_FLOOR_V1`): tổng âm applied trong scope ≥ 25 trên mọi heading-ngày 諸事皆忌 và mọi heading `only_ji`/`both_present` có 忌 đã ghi.
+1. **Floor 諸事皆忌 / 忌 đã ghi** (`ALL_TABOO_FLOOR_V1`), hai trigger: (i) activity 諸事皆忌 → tổng âm applied trong scope ≥ 25 (bù phần thiếu); (ii) `only_ji`/`both_present` **không có** dòng âm applied → một −25. `only_ji`/`both_present` đã có dòng âm giữ trọng số thật (nhóm 1 (a), nhóm 4.1).
 2. **Bảo toàn 忌 multi-heading** (`MULTI_HEADING_JI_WINS_V1`): activity hai heading không mất 忌 mà heading kia ghi.
 3. **UI không che 忌 bị cap về 0:** dòng 忌 quyết định heading (`prot`, 百忌, 土王用事…) có applied 0 vì cap vẫn hiện trên UI là "kỵ vẫn áp dụng" (chuyển từ roadmap 10 vào vòng này).
 
