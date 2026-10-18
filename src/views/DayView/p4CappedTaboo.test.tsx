@@ -41,4 +41,12 @@ describe('a capped 忌 stays visible (roadmap 9b P3)', () => {
     const chip = within(unfavorable).getByText('Bát Chuyên').closest('li')!
     expect(chip).toHaveTextContent(NOTE)
   })
+
+  it('2025-02-17 meeting (neither_recorded) lists what Hiệp Kỷ lifted (roadmap 10 A5)', async () => {
+    render(<DailyActivitySection date="2025-02-17" />)
+    await openAvoided('Gặp gỡ / Hội họp')
+    const lifted = screen.getByRole('list', { name: 'Đã gỡ theo Hiệp Kỷ' })
+    expect(lifted).toHaveTextContent('Nguyệt Hại (kỵ đã được gỡ)')
+    expect(lifted).toHaveTextContent('Thiên Đức (không ghi tốt)')
+  })
 })
