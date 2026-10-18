@@ -22,6 +22,7 @@ EVENT = 'shared/lunar/eventEvaluation.ts'
 FULL = 'UNEXPECTED_REGRESSION'
 OUTSIDE = 'outside the P4 domain'
 SWAP = 'chain-swap changes only'
+DELTA = 'against the frozen roadmap 9 full run'
 JIE = 'exact-Jie fixture'
 # (name, invariant, target test, expected message, [(file, old, new), ...])
 mutations = [
@@ -39,9 +40,25 @@ mutations = [
      [(ADAPTER, '  for (const [source, cap] of [',
        '  out.push(...out.filter((r) => r.policyId === P4_PENALTY_POLICY_ID).map((r) => ({ ...r })))\n'
        '  for (const [source, cap] of [')]),
-    ('penalty_on_only_yi', '6', FULL, 'penalty without only_ji',
-     [(ADAPTER, "if (state === 'only_ji' && !out.some(",
-       "if ((state === 'only_ji' || state === 'only_yi') && !out.some(")]),
+    ('penalty_on_only_yi', '6', FULL, 'penalty without a 忌 state',
+     [(ADAPTER, "const JI_STATES = ['only_ji', 'both_present']",
+       "const JI_STATES = ['only_ji', 'both_present', 'only_yi']")]),
+    # Roadmap 9b: rules v2 invariants 6 (floor), 13, 14, 15.
+    ('floor_overshoots', '6', FULL, 'floor row does not top up to the floor',
+     [(ADAPTER, '          n - P4_ALL_TABOO_FLOOR,', '          n - P4_ALL_TABOO_FLOOR - 1,')]),
+    ('floor_dropped', '14, 15', FULL, 'below the floor',
+     [(ADAPTER, '    if (n < P4_ALL_TABOO_FLOOR)', '    if (false)')]),
+    ('p2_on_only_yi', '13', FULL, 'not_recorded heading left baseline without 忌',
+     [(ADAPTER, 'if (known.length < states.length && !known.some((s) => JI_STATES.includes(s!)))',
+       'if (false)')]),
+    ('p2_dropped', '13', FULL, '忌 heading kept on baseline beside not_recorded',
+     [(ADAPTER, 'if (known.length < states.length && !known.some((s) => JI_STATES.includes(s!)))',
+       'if (known.length < states.length)')]),
+    ('both_present_penalty_dropped', '14', FULL, '忌 state without an applied negative',
+     [(ADAPTER, "    JI_STATES.includes(state) &&\n    !out.some(", "    state === 'only_ji' &&\n    !out.some(")]),
+    ('positive_raised_on_only_ji', '15', DELTA, 'changed against roadmap 9 without a 9b class',
+     [(REC, 'const score = clamp(generalScore + personalModifier)',
+       "const score = clamp(generalScore + personalModifier + (activity.id === 'worship' && balancing ? 1 : 0))")]),
     ('only_ji_lifts_ji', '7', FULL, 'lifted under only_ji',
      [(ADAPTER, "? state === 'only_yi' || state === 'neither_recorded'", "? state !== 'both_present'")]),
     ('dormant_on_absent_days', '8', FULL, 'not present in Golden v2',
@@ -99,7 +116,7 @@ try:
 finally:
     restore()
 report = {
-    'version': 'p4-migration-diff-mutations-v1',
+    'version': 'p4-migration-diff-mutations-v2',
     'control': 'clean',
     'dates': 'sampled (npm test set: every 10th P4 date, 108 exact-Jie dates, 3 outside dates)',
     'mutations': len(results),

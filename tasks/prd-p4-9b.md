@@ -1,6 +1,6 @@
 # PRD — Roadmap 9b: policy sau go-live review (ALL_TABOO_FLOOR_V1, MULTI_HEADING_JI_WINS_V1, UI 忌 bị cap)
 
-Ngày: 2026-10-18. Trạng thái: **PRD chốt 2026-10-18**: owner duyệt §6 theo đề xuất (1 (a), 2 chấp nhận, 3–5 có). Chưa sửa runtime.
+Ngày: 2026-10-18. Trạng thái: **PRD chốt 2026-10-18**: owner duyệt §6 theo đề xuất (1 (a), 2 chấp nhận, 3–5 có); owner chấp nhận 6 ngày `wedding` 35 → 55 (status vẫn watch). **Đã làm trên nhánh `claude/p4-9b`**, [báo cáo](../docs/audits/p4-9b.md).
 
 ## 1. Bối cảnh
 

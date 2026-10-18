@@ -1,9 +1,9 @@
 {
-  "version": "p4-migration-diff-mutations-v1",
+  "version": "p4-migration-diff-mutations-v2",
   "control": "clean",
   "dates": "sampled (npm test set: every 10th P4 date, 108 exact-Jie dates, 3 outside dates)",
-  "mutations": 14,
-  "caught": 14,
+  "mutations": 20,
+  "caught": 20,
   "restored": true,
   "results": [
     {
@@ -58,7 +58,55 @@
       "mutation": "penalty_on_only_yi",
       "invariant": "6",
       "test": "UNEXPECTED_REGRESSION",
-      "expect": "penalty without only_ji",
+      "expect": "penalty without a 忌 state",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "floor_overshoots",
+      "invariant": "6",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "floor row does not top up to the floor",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "floor_dropped",
+      "invariant": "14, 15",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "below the floor",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p2_on_only_yi",
+      "invariant": "13",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "not_recorded heading left baseline without 忌",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p2_dropped",
+      "invariant": "13",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "忌 heading kept on baseline beside not_recorded",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "both_present_penalty_dropped",
+      "invariant": "14",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "忌 state without an applied negative",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "positive_raised_on_only_ji",
+      "invariant": "15",
+      "test": "against the frozen roadmap 9 full run",
+      "expect": "changed against roadmap 9 without a 9b class",
       "caughtByTest": true,
       "exitCode": 1
     },
