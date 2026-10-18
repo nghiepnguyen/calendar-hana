@@ -1,6 +1,7 @@
 """Read-only integrity checks for P4-C task 2.1; never adopts a presence predicate."""
 import argparse
 import hashlib
+import subprocess
 import json
 from pathlib import Path
 
@@ -20,6 +21,23 @@ def require_quote(text, offset, length, quote):
         raise ValueError('Quote outside source bounds')
     if length != len(quote) or text[offset:offset + length] != quote:
         raise ValueError('Quote differs from exact source slice')
+
+
+def lock_anchor(lock_path):
+    """Owner rule 2026-10-17: a lock is a historical proof, checked at the earliest commit on HEAD's history
+    that carries it, so later runtime changes do not break it."""
+    rel = str(lock_path.relative_to(ROOT))
+    out = subprocess.run(['git', 'log', '--reverse', '--format=%H', 'HEAD', '--', rel],
+                         cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+    if not out:
+        raise ValueError(f'lock not in history: {rel}')
+    return out[0]
+
+
+def require_locked_hash(commit, rel_path, expected):
+    blob = subprocess.run(['git', 'show', f'{commit}:{rel_path}'], cwd=ROOT, capture_output=True, check=True).stdout
+    if hashlib.sha256(blob).hexdigest() != expected:
+        raise ValueError(f'Hash mismatch at {commit[:7]}: {rel_path}')
 
 
 def require_hash(path, expected, algorithm='sha256'):
@@ -45,8 +63,9 @@ def self_test():
 
 def verify():
     lock = read_json(COLLECTION / 'lock.json')
+    anchor = lock_anchor(COLLECTION / 'lock.json')
     for file in lock['files']:
-        require_hash(ROOT / file['path'], file['sha256'])
+        require_locked_hash(anchor, file['path'], file['sha256'])
     manifest = read_json(COLLECTION / 'manifest.json')
     source_by_id = {}
     for source in manifest['rawSources']:
@@ -98,9 +117,11 @@ def verify():
         'missingRequiredInput': 'unknown', 'outsideCoverage': 'unknown', 'malformedInput': 'error',
     }
     # Protect the task-1 measurement and evaluated inputs while collecting new source evidence.
-    baseline_lock = read_json(ROOT / 'docs/audits/sources/p4-vol10/yi-baseline-v1/lock.json')
+    baseline_path = ROOT / 'docs/audits/sources/p4-vol10/yi-baseline-v1/lock.json'
+    baseline_lock = read_json(baseline_path)
+    baseline_anchor = lock_anchor(baseline_path)
     for file in baseline_lock['files']:
-        require_hash(ROOT / file['path'], file['sha256'])
+        require_locked_hash(baseline_anchor, file['path'], file['sha256'])
     print(f'Verified {len(lock["files"])} locked files, 5 raw sources, 5 scan PDFs, 11 candidates / {count} occurrences; no predicates adopted')
 
 

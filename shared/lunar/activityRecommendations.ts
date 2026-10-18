@@ -9,6 +9,12 @@ import xiejiReview from '../almanac-data/xieji-activity-mapping-review.json'
 import { getActivityScope } from './activityTaxonomy'
 import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
+import {
+  applyP4Balancing,
+  P4_DORMANT_GODS,
+  p4ActivityState,
+  type P4HeadingInput,
+} from './p4ScoreAdapter'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring } from './xiejiVol10Scoring'
 
@@ -48,6 +54,10 @@ export interface ActivityInput {
   classicalDay?: { monthJianBranch: number; dayStem: number; dayBranch: number }
   /** Overrides `manifest.policies.xiejiVol10Scoring` (tests and migration proof). */
   xiejiVol10Scoring?: boolean
+  /** Overrides `manifest.policies.xiejiVol10BalancingEnabled` (tests and migration proof). */
+  xiejiVol10BalancingEnabled?: boolean
+  /** P4 heading states of the day; read only with balancing ON. */
+  p4Headings?: Readonly<Record<string, P4HeadingInput>>
 }
 
 export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'
@@ -99,6 +109,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     ...(input.presentGoodGods === undefined ? ['Chưa truyền danh sách cát thần theo ngày.'] : []),
     ...(input.presentBadGods === undefined ? ['Chưa truyền danh sách hung thần theo ngày.'] : []),
   ]
+  const balancing = input.xiejiVol10BalancingEnabled ?? manifest.policies.xiejiVol10BalancingEnabled
   const vol10Enabled =
     (input.xiejiVol10Scoring ?? manifest.policies.xiejiVol10Scoring) && input.classicalDay
   const vol10Items = vol10Enabled
@@ -106,7 +117,12 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         {
           ...input.classicalDay!,
           officerId: input.officerId,
-          presentGods: new Set(Object.keys(input.godPresence ?? {})),
+          // Chains now only score baseline activities, which must equal flag OFF: no dormant gods.
+          presentGods: new Set(
+            Object.keys(input.godPresence ?? {}).filter(
+              (id) => !(balancing && P4_DORMANT_GODS.has(id)),
+            ),
+          ),
           unknownGods: new Set(),
         },
         activitiesData.items.filter((item) => item.enabled).map((item) => item.id),
@@ -116,6 +132,9 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     .filter((item) => item.enabled)
     .map((activity) => {
       const contributions: Evidence[] = []
+      // Roadmap 8: a baseline activity under balancing ON stays the flag-OFF path without dormant gods.
+      const p4 = balancing ? p4ActivityState(activity.id, input.p4Headings ?? {}) : undefined
+      const p4On = p4 !== undefined && p4.state !== 'baseline'
       const rule = officer?.activityRules.find((rule) => rule.activityId === activity.id)
       const make = (
         source: Evidence['source'],
@@ -167,7 +186,10 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
       ] as const) {
         let used = 0
         for (const god of dataset.items.filter(
-          (god) => new Set(present ?? []).has(god.id) && god.activityIds.includes(activity.id),
+          (god) =>
+            new Set(present ?? []).has(god.id) &&
+            god.activityIds.includes(activity.id) &&
+            !(balancing && !p4On && P4_DORMANT_GODS.has(god.id)),
         )) {
           const weights: Record<string, number> = dataset.weights
           const presence = input.godPresence?.[god.id]
@@ -184,7 +206,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             row.status = 'informational'
             row.scoreDelta = 0
             row.sourcePhrase = `${god.label} trùng với Trực ${officer!.label}, không tính điểm lần nữa`
-          } else {
+          } else if (!p4On) {
             const available = Math.max(0, Math.abs(dataset.capPerActivity) - used)
             row.scoreDelta = Math.sign(row.rawDelta) * Math.min(Math.abs(row.rawDelta), available)
             used += Math.abs(row.scoreDelta)
@@ -218,7 +240,16 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             scoreDelta: 0,
           })),
       )
-      if (vol10Enabled)
+      if (p4On)
+        contributions.splice(
+          0,
+          contributions.length,
+          ...applyP4Balancing(contributions, p4, input.p4Headings ?? {}, {
+            activityId: activity.id,
+            scope: getActivityScope(activity.id) ?? activity.id,
+          }),
+        )
+      else if (vol10Enabled)
         contributions.splice(
           0,
           contributions.length,

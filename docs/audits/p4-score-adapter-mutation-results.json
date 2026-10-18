@@ -1,0 +1,198 @@
+{
+  "version": "p4-score-adapter-mutations-v1",
+  "control": "clean",
+  "mutations": 21,
+  "caught": 21,
+  "restored": true,
+  "results": [
+    {
+      "mutation": "only_yi_keeps_ji",
+      "rule": "FR-02 從宜不從忌",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "only_ji_keeps_yi",
+      "rule": "FR-02 從忌不從宜",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "both_present_as_neither",
+      "rule": "FR-02 亦從宜亦從忌 ≠ 不註",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "protected_lifted",
+      "rule": "§6.9 忌 protected",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "preserve_bad_lifted",
+      "rule": "§6.4 preserve_bad",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "order_both_neither_swapped",
+      "rule": "§6.5 strictest order",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "not_recorded_heading_ignored",
+      "rule": "§6.6 baseline on any not_recorded",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_dropped",
+      "rule": "FR-02 −25",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_magnitude",
+      "rule": "FR-02 −25",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_blocked_by_subsumed",
+      "rule": "§6.13",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_per_heading",
+      "rule": "FR-07 penalty dedup (one −25 per activity)",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "dormant_god_dropped",
+      "rule": "spec §7.1 drop one dormant god",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "cap_before_resolution",
+      "rule": "FR-04",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "six_chains_kept_on",
+      "rule": "§6.2 P4 replaces the chains",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "dormant_on_baseline_activity",
+      "rule": "§6.10",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "alias_star_kept",
+      "rule": "§6.1 stars",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "domain_guard_removed",
+      "rule": "goal 4 (owner 2026-10-18)",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "resolver_error_thrown",
+      "rule": "goal 5",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "all_taboo_not_passed",
+      "rule": "§6.11 諸事皆忌",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "event_reads_raw_negative",
+      "rule": "FR-05",
+      "tests": [
+        "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "flag_default_on",
+      "rule": "goal 2 flag OFF",
+      "tests": [
+        "shared/lunar/p4AdapterBaseline.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    }
+  ]
+}
