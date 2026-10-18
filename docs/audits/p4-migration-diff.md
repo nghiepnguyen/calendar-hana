@@ -15,7 +15,7 @@
 | Cap-trước (FR-05 a) | Phản thực tế "cap trước, gỡ sau": **0 dòng** khác |
 | Mutation (FR-10) | [Runner](../../scripts/audit-p4-migration-mutations.py), [kết quả](p4-migration-diff-mutation-results.json): đối chứng sạch, **14/14** bị bắt, mỗi mutation chỉ tính khi test đích có đúng thông điệp bất biến |
 | `ci:local` | 8.132 test, ~182 s (harness mẫu ~59 s, rollback ~22 s) |
-| `ci:p4` (chạy tay) | _xem mục cuối_ |
+| `ci:p4` (chạy tay) | **EXIT 0, ~55 phút** (3.310 s), tại `d46e965` (+ docs) |
 
 ## Bốn cấu hình (1098 ngày; trong miền 1095 ngày = 35.040 / 24.090 dòng, số dòng đổi như nhau vì ngoài miền = baseline)
 
@@ -78,3 +78,5 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 Nạp `p4AlmanacHeadings` trước almanac đầu tiên; bật flag + 21 thần + P5; UI dòng giải thích và nhãn "điểm trừ mặc định của ứng dụng"; `meaning` rỗng của 16 thần; smoke production ON rồi ON → OFF (rollback) trên desktop Chrome / Pixel 7 / Safari; bundle SHA.
 
 ## `ci:p4` chạy tay
+
+Đủ chuỗi tại `d46e965` (commit sau chỉ docs): **EXIT 0 trong 3.310 s (~55 phút)**, tree sạch sau khi chạy. Gồm P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2, owner-rules toàn miền 6/6 + mutation 12/12, nối almanac toàn miền 10/10, mutation adapter 21/21, harness roadmap 9 toàn miền 8/8, mutation roadmap 9 14/14. Roadmap 9 thêm ~20 phút (roadmap 8 ~43 phút).
