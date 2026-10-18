@@ -59,6 +59,15 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 
 `CHAIN_REPLACED_LIGHTER` = 389 là dòng nhẹ đi **chỉ** vì bỏ chain (không có `STATE_LIFT`): avoid → watch 242, strong_avoid → avoid 100, strong_avoid → watch 47. PRD §6.7 đếm 409 + 100 là mọi dòng nhẹ đi bất kể nguyên nhân.
 
+### Kết quả review (theo nhóm)
+
+**Nhóm 1 — recommended → strong_avoid (14 dòng)**, chỉ 2 context:
+
+- **Mẫu A — 寅月 ngày 巳, Trực Bình (12 dòng):** 2025-02-17, 2026-02-12, 2027-02-07 (丁巳), 2027-03-03 (辛巳) × `pray_blessing` / `pray_children` / `medical`, 65 → 5. Heading `only_ji`, `ji=遊禍; prot=遊禍; xd=平日+月刑+月害; suppressed:xiangdi` (Golden v2). 遊禍 không có trong catalog; điểm âm đến từ Trực Bình −15, Nguyệt Hình −15 (baseline: informational do chain 平日), Nguyệt Hại −15 (dormant); Thiên Đức / Nguyệt Đức Hợp +15 và Tứ Tướng thành informational. **Owner chốt (a), 2026-10-18:** đúng 從忌不從宜 = ghi đủ 忌; mọi dòng âm trong scope giữ trọng số, không giới hạn về −25 (PRD §6.7 giữ nguyên). `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **Mẫu B — 卯月 戊寅, Trực Bế (2 dòng):** 2025-03-10, 2026-03-05 × `moving`, 65 → 15. Heading `only_ji`, `ji=歸忌; prot=歸忌; xd=閉日`. Trực Bế −20 (baseline: informational do chain 閉日), Quy Kỵ −15 (dormant); Thiên Xá +15 thành informational. Chưa chốt.
+
+Nhóm 2–7: chưa review.
+
 ## Quy ước (không phải regression)
 
 - Month Jian theo ngày dân sự (CLOSED ở P4-C): 20 ngày trong fixture Jie lệch quy ước noon của Golden; 23 ngày Jie có 9h trước instant nhưng event 9h vẫn dùng Month Jian mới.
