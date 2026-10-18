@@ -11,6 +11,8 @@ import { extractMansionEvidence, type MansionText } from './mansionEvidence'
 import type { Evidence } from './evidence'
 import {
   applyP4Balancing,
+  isP4CappedTaboo,
+  P4_CAPPED_TABOO_NOTE,
   P4_DORMANT_GODS,
   p4ActivityState,
   type P4HeadingInput,
@@ -305,7 +307,13 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         status,
         contributions,
         warnings: [...warnings],
-        evidence: [...new Set(applied.map((row) => row.label))],
+        evidence: [
+          ...new Set(
+            applied.map((row) =>
+              isP4CappedTaboo(row) ? `${row.label} (${P4_CAPPED_TABOO_NOTE})` : row.label,
+            ),
+          ),
+        ],
         generalScore,
         personalModifier,
         positiveMagnitude,

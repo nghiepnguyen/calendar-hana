@@ -17,6 +17,7 @@ import {
   resolveEventActivityRoles,
 } from '@shared/lunar/eventMapping'
 import { evaluateEventDay, type Contribution } from '@shared/lunar/eventEvaluation'
+import { isP4CappedTaboo, P4_CAPPED_TABOO_NOTE } from '@shared/lunar/p4ScoreAdapter'
 import { findNextGoodEventDate } from '@shared/lunar/eventRecommendations'
 import { formatSolarShort } from '@shared/format'
 import { iconSize } from '../../styles/textSize'
@@ -65,6 +66,8 @@ interface Factor {
   name: string
   delta: number
   hardWarning: boolean
+  /** Roadmap 9b P3: every row of the factor is a 忌 the god cap pushed to 0; it still applies. */
+  capped: boolean
   /** Activities other than the primary one; empty when the factor concerns only the primary. */
   extraActivities: string[]
 }
@@ -78,16 +81,18 @@ function mergeFactors(rows: Contribution[], primaryId: string): Factor[] {
       name: row.label,
       delta: 0,
       hardWarning: false,
+      capped: true,
       extraActivities: [],
       activities: new Set<string>(),
     }
     group.delta += row.appliedDelta
     group.hardWarning ||= Boolean(row.hardWarning)
+    group.capped &&= isP4CappedTaboo(row)
     group.activities.add(row.activityId)
     groups.set(key, group)
   }
   return [...groups.values()]
-    .filter((group) => group.delta !== 0)
+    .filter((group) => group.delta !== 0 || group.capped)
     .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
     .map(({ activities, ...group }) => ({
       ...group,
@@ -122,6 +127,7 @@ function FactorGroup({ factors, positive }: { factors: Factor[]; positive: boole
               {factor.extraActivities.length > 0 && (
                 <span className={styles.chipMeta}>{factor.extraActivities.join(', ')}</span>
               )}
+              {factor.capped && <span className={styles.chipMeta}>{P4_CAPPED_TABOO_NOTE}</span>}
             </li>
           ))}
         </ul>
@@ -161,7 +167,7 @@ export function DailyActivitySection({ date }: { date: string }) {
         ?.activityId ?? ''
     const factors = mergeFactors(
       evaluation?.contributions.filter(
-        (row) => row.status === 'applied' && row.appliedDelta !== 0,
+        (row) => row.status === 'applied' && (row.appliedDelta !== 0 || isP4CappedTaboo(row)),
       ) ?? [],
       primaryId,
     )
@@ -183,7 +189,7 @@ export function DailyActivitySection({ date }: { date: string }) {
           : [],
       evaluation,
       favorable: factors.filter((factor) => factor.delta > 0),
-      unfavorable: factors.filter((factor) => factor.delta < 0),
+      unfavorable: factors.filter((factor) => factor.delta < 0 || factor.capped),
       mansionIndex: almanac.mansion.index,
       unmappedMansion: getMansionContentEvidence(almanac.mansion.content).filter(
         (row) => !row.activityId,
