@@ -87,7 +87,9 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 
 **Policy `ALL_TABOO_FLOOR_V1`** gộp nhóm 2 điểm 3 + nhóm 3 (25 `both_present`) + nhóm 4.2: một vòng code/Golden/diff, không rule trùng. Tập acceptance 128 + 25 + 8 event: [p4-all-taboo-floor-v1](sources/p4-vol10/p4-all-taboo-floor-v1/README.md).
 
-Nhóm 5–7: chưa review.
+**Nhóm 5 — multi-heading giữ baseline §6.6 (269).** 243 dòng heading còn lại `only_yi` (construction 113, livestock 109, wedding 21); 26 dòng `wedding` heading còn lại ghi 忌 (結婚姻 五離 / 滿日 / 月建; 嫁娶 百忌亥 / 往亡) bị mất 忌 — 8 ngày 五離 và 2025-12-07 往亡 hiện `no_evidence`. **Owner chọn (c), 2026-10-18:** `MULTI_HEADING_JI_WINS_V1` — chỉ phía 忌: heading còn lại `only_ji`/`both_present` thì áp state đó; `only_yi` giữ baseline; `undetermined` giữ baseline. Gộp vòng code với `ALL_TABOO_FLOOR_V1`; 26 dòng vào acceptance.
+
+Nhóm 6–7: chưa review.
 
 ## Quy ước (không phải regression)
 
