@@ -90,6 +90,8 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 
   12. Trace giải thích delta (FR-04): score = clamp(50 + Σ applied delta) ở cả baseline và full; mỗi dòng trong scope đổi status/delta so với flag OFF phải là dòng gỡ, −25, thần dormant, cap (full hoặc flag OFF) hoặc dòng 6 chain; dòng flag OFF biến mất chỉ khi là dòng chain thêm vào.
 
+  **Bước 3 xong**: [p4-migration-diff-v1](../docs/audits/sources/p4-vol10/p4-migration-diff-v1/lock.json) sinh bằng `P4_MIGRATION_FULL=1 P4_MIGRATION_WRITE=1` (commit sinh ghi trong lock): `days.tsv` (operands, sao thêm/bỏ), `activities-full-{2025,2026,2027,outside}.tsv` (tách năm vì > 5 MB), `events-full.tsv` (+ `event_fit`), dòng đổi của presence-only/balancing-only, `jie-boundary.tsv` (36 Jie × ±1 = 108 ngày; 20 ngày Month Jian lệch quy ước noon, khớp P4-C), `review.tsv` (gói §6.10.5), `summary.json`. Số khớp probe §3; phản thực tế cap-trước **0 dòng**; 2.645 dòng đổi không có thần dormant đều có nhãn gỡ/−25/chain. `npm test` kiểm ngày mẫu, `ci:p4` kiểm bytes toàn bộ.
+
   **Bước 2 xong** (`08c3afb`): harness [`p4MigrationDiff.test.ts`](../shared/lunar/p4MigrationDiff.test.ts) + [`p4MigrationRollback.test.ts`](../shared/lunar/p4MigrationRollback.test.ts); toàn miền 5/5 (~307 s, `ci:p4`), mẫu ~33 s trong `npm test`; `ci:local` 8.129 test ~180 s.
 
   **Đã đóng băng** (bước 1): [`p4MigrationRules.ts`](../shared/lunar/p4MigrationRules.ts) + test 18 ca tổng hợp, sha256 trong [lock](../docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json). Chạy thử một lần trên full (probe, base = off-recon): 14.894 dòng đổi, **0 vi phạm** cả 12 bất biến (bất biến 3 chưa chạy ở đó).
