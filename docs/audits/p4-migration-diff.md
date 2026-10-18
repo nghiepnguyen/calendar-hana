@@ -79,7 +79,15 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 - **6 event `buy_property`** recommended dù `moving` là `only_ji` (event không `very_high`, điểm event = trung bình profile): **OK**, giữ `event_fit` hiện hành. Backlog riêng nếu muốn siết event-fit.
 - **Kiểm sau khi code:** chạy lại diff; 8 event `buy_property` có `moving` `both_present` phải tự điều chỉnh theo activity, không thêm rule event.
 
-Nhóm 4–7: chưa review.
+**Nhóm 4 — `CHAIN_REPLACED_LIGHTER` (389).** Owner chốt 2026-10-18:
+
+- **4.1 — 261 dòng (không 諸事皆忌):** chain 卷十 `yue_sha` / `yue_yan` −25 (`ADDED_PENALTY`, vì 月煞/月厭 còn dormant) thay bằng chính thần Nguyệt Sát / Nguyệt Yếm −15; nhẹ 10 điểm, cùng hệ quả nhóm 1 (a). **OK.**
+- **4.2 — 128 dòng 諸事皆忌:** không chốt riêng; vào acceptance của policy `ALL_TABOO_FLOOR_V1`.
+- **4.3 — 3 dòng `both_present`** nhẹ đi do Tứ Tướng +10 (cùng mẫu 405 `only_yi`). **OK.**
+
+**Policy `ALL_TABOO_FLOOR_V1`** gộp nhóm 2 điểm 3 + nhóm 3 (25 `both_present`) + nhóm 4.2: một vòng code/Golden/diff, không rule trùng. Tập acceptance 128 + 25 + 8 event: [p4-all-taboo-floor-v1](sources/p4-vol10/p4-all-taboo-floor-v1/README.md).
+
+Nhóm 5–7: chưa review.
 
 ## Quy ước (không phải regression)
 
