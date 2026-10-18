@@ -24,6 +24,7 @@ import { iconSize } from '../../styles/textSize'
 import styles from './DailyActivitySection.module.css'
 import { MansionEvidenceDetails } from './MansionEvidenceDetails'
 import { getMansionContentEvidence } from '@shared/lunar/mansionContentAuthority'
+import { useP4Ready } from '../../p4Provider'
 
 const STATUS = {
   recommended: { label: 'Thuận lợi', icon: CheckCircle, tone: 'favorable' },
@@ -138,7 +139,22 @@ function FactorGroup({ factors, positive }: { factors: Factor[]; positive: boole
   )
 }
 
-export function DailyActivitySection({ date }: { date: string }) {
+export function DailyActivitySection(props: { date: string }) {
+  // Roadmap 10 A1: wait for the P4 provider so the memoized almanac is not the baseline one.
+  return useP4Ready() ? (
+    <DailyActivitySectionReady {...props} />
+  ) : (
+    <section
+      className={styles.section}
+      aria-label="Mục tiêu và kết luận trong ngày"
+      aria-busy="true"
+    >
+      <p className={styles.note}>Đang tải…</p>
+    </section>
+  )
+}
+
+function DailyActivitySectionReady({ date }: { date: string }) {
   const [selected, setSelected] = useState('')
   const [category, setCategory] = useState('')
   const [showAll, setShowAll] = useState(false)

@@ -82,7 +82,8 @@ const THU_TU_MEANING = 'Trăm sự đều kỵ'
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
-  const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}`
+  // Roadmap 10 A1: an almanac computed before the P4 provider loaded must not be served after it.
+  const cacheKey = `${manifest.datasetVersion}:${ENGINE_VERSION}:${date}${p4BalancingReady(date) ? ':p4' : ''}`
   return memoizeSolarTermDerived('almanac', cacheKey, CACHE_LIMIT, () => computeAlmanac(date))
 }
 

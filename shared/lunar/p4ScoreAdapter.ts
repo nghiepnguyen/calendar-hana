@@ -56,6 +56,8 @@ let headingsProvider:
 export function setP4HeadingsProvider(fn: typeof headingsProvider) {
   headingsProvider = fn
 }
+/** Roadmap 10 A1: true once `p4AlmanacHeadings` has registered itself. */
+export const p4ProviderLoaded = () => headingsProvider !== undefined
 /** P4 operands (moon phase, soil) are frozen for these civil dates only. */
 export const P4_DOMAIN = ['2025-01-01', '2027-12-31'] as const
 /** Spec §5 forbids a dormant-gods-only release: balancing runs only once the provider is loaded.
