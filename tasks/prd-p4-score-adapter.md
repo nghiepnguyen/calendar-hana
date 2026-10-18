@@ -1,6 +1,6 @@
 # PRD — Roadmap 8: adapter điểm sau flag `xiejiVol10BalancingEnabled` = OFF
 
-Ngày: 2026-10-17. Trạng thái: **PRD chốt (2026-10-18)**: owner trả lời §6.1–6.4 (2026-10-17), duyệt §6.5–6.10 (2026-10-18). Chưa sửa runtime.
+Ngày: 2026-10-17. Trạng thái: **XONG, MERGED & DEPLOYED PR #69 `7d7596f` (2026-10-18), flag OFF**. PRD chốt (2026-10-18): owner trả lời §6.1–6.4 (2026-10-17), duyệt §6.5–6.10 (2026-10-18). (Lúc soạn PRD chưa sửa runtime; adapter vào runtime sau flag OFF ở PR #69.)
 
 ## 1. Bối cảnh
 
@@ -81,7 +81,7 @@ Owner duyệt cả 6 mục (2026-10-18). Mục 7, 8, 10 là product policy, khô
 Số liệu Golden v2 (`p4-full-golden-v2/compose/dated.tsv`, 1095 ngày), ngày hai heading lệch trạng thái: `wedding` 142, `construction` 173, `livestock` 112. Trong đó 269 activity-ngày có một heading `not_recorded`; ~90% heading còn lại là `only_yi`; 17 ngày `wedding` heading còn lại là `only_ji`.
 
 5. **Thứ tự multi-heading:** chốt `only_ji` > `both_present` > `neither_recorded` > `only_yi`. Nguyên tắc của `p4_multi_heading_strictest`: ưu tiên giữ dòng âm, rồi mới gỡ dòng dương; không heading nào làm mất cảnh báo mà heading khác giữ. Thứ tự cố định, không phải "điểm thấp nhất" (`both_present` và `neither_recorded` không so được bằng điểm).
-6. **Heading `not_recorded` / `undetermined`:** giữ luật hiện tại, một heading như vậy thì cả activity giữ baseline (gồm 6 chain, không nối 21 thần). Báo cáo roadmap 9 liệt kê 269 activity-ngày này, tách riêng 17 ngày `wedding` mất penalty `only_ji`.
+6. **Heading `not_recorded` / `undetermined`:** _(phía 忌 thay bởi roadmap 9b `MULTI_HEADING_JI_WINS_V1`, [PRD 9b](prd-p4-9b.md))_ giữ luật hiện tại, một heading như vậy thì cả activity giữ baseline (gồm 6 chain, không nối 21 thần). Báo cáo roadmap 9 liệt kê 269 activity-ngày này, tách riêng 17 ngày `wedding` mất penalty `only_ji`.
 7. **"Không có dòng âm" cho −25 ở `only_ji`:** đếm dòng âm trong scope (Trực + thần catalog 卷十/十一), sau resolution, trước cap. Dòng âm ngoài scope (28 Tú, `preserve_bad`, nguồn khác) không chặn penalty.
 8. **Dedup penalty:** −25 từ `only_ji` và từ 諸事皆忌 dùng chung một suất, tối đa một lần mỗi activity mỗi ngày. Penalty tiêu cap âm −30 như dòng âm khác.
 9. **忌 protected:** luật chung cho mọi hàng FR-02, dòng protected không bao giờ thành informational.
@@ -89,7 +89,7 @@ Số liệu Golden v2 (`p4-full-golden-v2/compose/dated.tsv`, 1095 ngày), ngày
 
 Owner chốt thêm khi soạn Golden điểm (2026-10-18):
 
-11. **諸事皆忌 (53 ngày, 1537 heading-ngày, đều `only_ji`):** −25 chỉ khi sau resolution không còn dòng âm applied trong scope, giống `only_ji` (spec §4.2 "không cộng lại").
+11. **諸事皆忌 (53 ngày, 1537 heading-ngày, đều `only_ji`):** _(thay bởi roadmap 9b `ALL_TABOO_FLOOR_V1`: sàn −25, và −25 mở rộng sang `both_present`, [PRD 9b](prd-p4-9b.md))_ −25 chỉ khi sau resolution không còn dòng âm applied trong scope, giống `only_ji` (spec §4.2 "không cộng lại").
 12. **Gỡ hết dòng applied** (vd. `neither_recorded`): status `neutral` (owner 2026-10-10, `classicalNeutral`), không phải `no_evidence`.
 13. **Thần hung bị Trực bao** (informational, `subsumesGods`) không tính là dòng âm khi kiểm −25.
 

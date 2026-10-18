@@ -12,7 +12,7 @@ import {
   type ActivityDiffRow,
   type MigrationClass,
   type Rec,
-} from './p4MigrationRules'
+} from './p4MigrationRulesV2'
 import { P4_DORMANT_GODS, P4_PENALTY_POLICY_ID, P4_SCORE_ADAPTER_VERSION } from './p4ScoreAdapter'
 
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -243,9 +243,13 @@ export function fullSummary(
       noDormantChanged++
       if (
         cs.some((c) =>
-          ['STATE_LIFT', 'DEFAULT_PENALTY', 'DEFAULT_PENALTY_ALL_TABOO', 'CHAIN_REPLACED'].includes(
-            c,
-          ),
+          [
+            'STATE_LIFT',
+            'DEFAULT_PENALTY',
+            'DEFAULT_PENALTY_ALL_TABOO',
+            'ALL_TABOO_FLOOR',
+            'CHAIN_REPLACED',
+          ].includes(c),
         )
       )
         noDormantExplained++

@@ -20,10 +20,11 @@ import {
 import {
   activityViolations,
   classifyActivityRow,
+  delta9bViolations,
   eventViolations,
   type ActivityDiffRow,
   type MigrationClass,
-} from './p4MigrationRules'
+} from './p4MigrationRulesV2'
 import {
   ACTIVITY_HEADER,
   activityLine,
@@ -41,11 +42,13 @@ import {
   reviewLines,
   type EventDiff,
 } from './p4MigrationReport'
-import { P4_MIGRATION_RULES_VERSION } from './p4MigrationRules'
+import { P4_MIGRATION_RULES_VERSION } from './p4MigrationRulesV2'
 import { P4_DOMAIN, P4_DORMANT_GODS, p4ActivityState } from './p4ScoreAdapter'
 import { solarTermsForYear } from './solarTerms'
 
-// Roadmap 9 harness (tasks/prd-p4-migration-diff.md §2, FR-02; owner §6.10). Test-only: no runtime
+// Roadmap 9 harness (tasks/prd-p4-migration-diff.md §2, FR-02; owner §6.10), v2 for roadmap 9b
+// (tasks/prd-p4-9b.md §5: rules v2, Golden score v2, output p4-migration-diff-v2; v1 output is frozen and
+// read back as the roadmap 9 full run for invariant 15). Test-only: no runtime
 // change. Each configuration is its own module graph (vi.resetModules), because the almanac memo key
 // has no flag. `baseline` is the real manifest (OFF) without the provider, i.e. baseline v1; every
 // other configuration runs the almanac with the manifest mocked ON and the provider loaded, and
@@ -53,7 +56,8 @@ import { solarTermsForYear } from './solarTerms'
 // npm test: every 10th P4 date + the 3 outside dates; ci:p4 (P4_MIGRATION_FULL=1): all 1098.
 const FULL = process.env.P4_MIGRATION_FULL === '1'
 const WRITE = process.env.P4_MIGRATION_WRITE === '1'
-const OUT = 'docs/audits/sources/p4-vol10/p4-migration-diff-v1/'
+const OUT = 'docs/audits/sources/p4-vol10/p4-migration-diff-v2/'
+const V1 = 'docs/audits/sources/p4-vol10/p4-migration-diff-v1/'
 const inDomain = (date: string) => date >= P4_DOMAIN[0] && date <= P4_DOMAIN[1]
 const shiftDate = (date: string, days: number) =>
   new Date(Date.parse(date + 'T00:00:00Z') + days * 86_400_000).toISOString().slice(0, 10)
@@ -187,7 +191,7 @@ const goldenDormant = new Map(
   [...goldenPresence].map(([date, r]) => [date, new Set(r.dormant!.split(' ').filter(Boolean))]),
 )
 const goldenState = new Map(
-  tsv(GOLDEN + 'p4-score-golden-v1/activity-states.tsv').map((r) => [
+  tsv(GOLDEN + 'p4-score-golden-v2/activity-states.tsv').map((r) => [
     `${r.date}|${r.activity}`,
     r.state!,
   ]),
@@ -205,10 +209,12 @@ async function diffRows(config: Config) {
     const headings = day.input?.p4Headings ?? {}
     day.recs.forEach((full, k) => {
       const hs = HEADINGS[full.activityId] ?? []
+      const p4 = p4ActivityState(full.activityId, headings)
       rows.push({
         date,
         inDomain: inDomain(date),
-        state: p4ActivityState(full.activityId, headings).state,
+        state: p4.state,
+        ...(p4.allTaboo && { allTaboo: true }),
         headingStates: hs.map((h) => headings[h]?.state ?? 'missing'),
         prot: new Set(hs.flatMap((h) => headings[h]?.prot ?? [])),
         base: base.get(date)!.recs[k]!,
@@ -364,7 +370,7 @@ async function buildFiles() {
     ),
   )
   const summary = {
-    version: 'p4-migration-diff-v1',
+    version: 'p4-migration-diff-v2',
     rulesVersion: P4_MIGRATION_RULES_VERSION,
     dates: DATES.length,
     configs,
@@ -384,7 +390,7 @@ const DATED = (name: string) =>
 const sha256 = (text: string | Buffer) => createHash('sha256').update(text).digest('hex')
 const git = (...args: string[]) => execFileSync('git', args).toString().trim()
 
-describe(`roadmap 9 migration diff harness (${FULL ? 'all' : 'sampled'} dates)`, () => {
+describe(`roadmap 9b migration diff harness (${FULL ? 'all' : 'sampled'} dates)`, () => {
   it('baseline = baseline v1 sha256 on every activity and event row', async () => {
     const base = await run('baseline')
     const acts = baselineLines('activities.tsv')
@@ -437,8 +443,60 @@ describe(`roadmap 9 migration diff harness (${FULL ? 'all' : 'sampled'} dates)`,
       'DEFAULT_PENALTY',
       'DORMANT_GOD_ADDED',
       'CHAIN_REPLACED',
+      'ALL_TABOO_FLOOR',
+      ...(FULL ? (['MULTI_HEADING_JI_WINS'] as const) : []),
     ] as const)
       expect(classes.get(c), c).toBeGreaterThan(0)
+  }, 1_800_000)
+
+  it('9b: against the frozen roadmap 9 full run, every change carries a 9b class (invariant 15)', async () => {
+    const previous = new Map(
+      ['2025', '2026', '2027', 'outside'].flatMap((k) =>
+        tsv(`${V1}activities-full-${k}.tsv`).map((r) => [`${r.date}|${r.activity}`, r]),
+      ),
+    )
+    const rows = await diffRows('full')
+    const violations: string[] = []
+    const changed = new Map<string, Set<string>>()
+    for (const r of rows) {
+      const p = previous.get(`${r.date}|${r.full.activityId}`)!
+      const prev = {
+        score: Number(p.score_after),
+        status: p.status_after!,
+        hardWarning: p.hard_warning === 'true',
+      }
+      if (
+        prev.score !== r.full.score ||
+        prev.status !== r.full.status ||
+        prev.hardWarning !== r.full.hardWarning
+      ) {
+        if (!changed.has(r.date)) changed.set(r.date, new Set())
+        changed.get(r.date)!.add(r.full.activityId)
+      }
+      for (const v of delta9bViolations({
+        previous: prev,
+        full: r.full,
+        state: r.state,
+        classes: classifyActivityRow(r).classes,
+      }))
+        violations.push(`${r.date} ${r.full.activityId} ${v}`)
+    }
+    // Event logic is unchanged in 9b: a changed event needs a 9b-changed activity of its profile.
+    const prevEvents = new Map(
+      tsv(`${V1}events-full.tsv`).map((e) => [`${e.date}|${e.event}|${e.hour}`, e]),
+    )
+    const full = await run('full')
+    for (const date of DATES)
+      for (const [key, e] of full.get(date)!.events) {
+        const p = prevEvents.get(`${date}|${key}`)!
+        for (const v of eventViolations({
+          changed: String(e.score ?? '') !== p.score_after || e.classification !== p.class_after,
+          profileActivities: resolveEventActivities(key.split('|')[0]!),
+          changedActivities: changed.get(date) ?? new Set(),
+        }))
+          violations.push(`${date} ${key} 9b ${v}`)
+      }
+    expect(violations.slice(0, 20).join('\n')).toBe('')
   }, 1_800_000)
 
   it('stars-only equals baseline on score/status/hard warning and event results (spec §5 guard)', async () => {
@@ -483,9 +541,11 @@ describe(`roadmap 9 migration diff harness (${FULL ? 'all' : 'sampled'} dates)`,
     for (const date of DATES)
       swap.get(date)!.recs.forEach((r, k) => {
         const b = base.get(date)!.recs[k]!
+        // 9b P1 (ii): forcing both_present also fires the −25 where no negative is left.
         if (
           conclusion(b, r) &&
-          !b.contributions.some((c) => c.classical?.version === 'xieji-vol10-scoring-v1')
+          !b.contributions.some((c) => c.classical?.version === 'xieji-vol10-scoring-v1') &&
+          !r.contributions.some((c) => c.policyId === 'product_policy_default_penalty')
         )
           diff.push(`${date} ${r.activityId}`)
       })
@@ -536,11 +596,12 @@ describe(`roadmap 9 migration diff harness (${FULL ? 'all' : 'sampled'} dates)`,
       mkdirSync(OUT, { recursive: true })
       for (const [name, text] of Object.entries(files)) writeFileSync(OUT + name, text)
       const lock = {
-        version: 'p4-migration-diff-lock-v1',
-        prd: 'tasks/prd-p4-migration-diff.md FR-02/FR-03/FR-05/FR-06/FR-07, owner §6.10',
+        version: 'p4-migration-diff-lock-v2',
+        prd: 'tasks/prd-p4-9b.md §5 (roadmap 9b); tasks/prd-p4-migration-diff.md FR-02/FR-03/FR-05/FR-06/FR-07, owner §6.10',
         generatedAt: git('rev-parse', 'HEAD'),
         treeCleanOutsideOutput: git('status', '--porcelain', '--', '.', `:!${OUT}`) === '',
-        rules: 'docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json',
+        rules: 'docs/audits/sources/p4-vol10/p4-migration-rules-v2/lock.json',
+        previous: 'docs/audits/sources/p4-vol10/p4-migration-diff-v1/lock.json',
         baseline: 'docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/lock.json',
         rulesVersion: P4_MIGRATION_RULES_VERSION,
         manifestPolicies: manifest.policies,

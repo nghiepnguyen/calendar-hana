@@ -22,6 +22,8 @@ MANIFEST = 'shared/almanac-data/manifest.json'
 GOLDEN = 'shared/lunar/p4ScoreAdapter.test.ts'
 WIRING = 'shared/lunar/p4ScoreAdapterAlmanac.test.ts'
 BASELINE = 'shared/lunar/p4AdapterBaseline.test.ts'
+UI = 'src/views/DayView/p4CappedTaboo.test.tsx'
+DAILY = 'src/views/DayView/DailyActivitySection.tsx'
 # (name, PRD rule, tests, [(file, old, new), ...])
 mutations = [
     ('only_yi_keeps_ji', 'FR-02 從宜不從忌', [GOLDEN],
@@ -40,18 +42,18 @@ mutations = [
     ('order_both_neither_swapped', '§6.5 strictest order', [GOLDEN],
      [(ADAPTER, "const ORDER = ['only_ji', 'both_present', 'neither_recorded', 'only_yi']",
        "const ORDER = ['only_ji', 'neither_recorded', 'both_present', 'only_yi']")]),
-    ('not_recorded_heading_ignored', '§6.6 baseline on any not_recorded', [GOLDEN],
-     [(ADAPTER, 'states.some((s) => s === undefined || !ORDER.includes(s))',
-       'states.every((s) => s === undefined || !ORDER.includes(s))')]),
+    ('not_recorded_heading_ignored', '§6.6 / 9b P2: not_recorded beside only_yi keeps the baseline', [GOLDEN],
+     [(ADAPTER, 'if (known.length < states.length && !known.some((s) => JI_STATES.includes(s!)))',
+       'if (false)')]),
     ('penalty_dropped', 'FR-02 −25', [GOLDEN],
-     [(ADAPTER, "if (state === 'only_ji' && !out.some(", "if (false && !out.some(")]),
+     [(ADAPTER, "    JI_STATES.includes(state) &&\n    !out.some(", "    false &&\n    !out.some(")]),
     ('penalty_magnitude', 'FR-02 −25', [GOLDEN],
      [(ADAPTER, 'P4_DEFAULT_PENALTY = -25', 'P4_DEFAULT_PENALTY = -24')]),
     ('penalty_blocked_by_subsumed', '§6.13', [GOLDEN],
      [(ADAPTER, "r.status === 'applied' && (r.preCapDelta ?? 0) < 0", 'r.rawDelta < 0')]),
     ('penalty_per_heading', 'FR-07 penalty dedup (one −25 per activity)', [GOLDEN],
-     [(ADAPTER, "  if (state === 'only_ji' && !out.some((r) => r.status === 'applied' && (r.preCapDelta ?? 0) < 0))\n",
-       "  for (const _h of (HEADINGS[opts.activityId] ?? []).filter((h) => headings[h]?.state === 'only_ji'))\n"
+     [(ADAPTER, "  if (\n    JI_STATES.includes(state) &&\n    !out.some((r) => r.status === 'applied' && (r.preCapDelta ?? 0) < 0)\n  )\n",
+       "  for (const _h of (HEADINGS[opts.activityId] ?? []).filter((h) => JI_STATES.includes(headings[h]?.state ?? '')))\n"
        "  if (!out.some((r) => r.evidenceOrigin !== 'product_policy' && r.status === 'applied' && (r.preCapDelta ?? 0) < 0))\n")]),
     ('dormant_god_dropped', 'spec §7.1 drop one dormant god', [WIRING],
      [(ADAPTER, "  'thien_nguyen',\n", '')]),
@@ -74,6 +76,27 @@ mutations = [
     ('event_reads_raw_negative', 'FR-05', [WIRING],
      [(EVENT, 'primary.hardWarning || primary.negativeMagnitude > 0',
        'primary.hardWarning || primary.contributions.some((row) => row.rawDelta < 0)')]),
+    # Roadmap 9b (tasks/prd-p4-9b.md §5.4).
+    ('floor_magnitude', '9b P1 (i) floor 25', [GOLDEN],
+     [(ADAPTER, 'P4_ALL_TABOO_FLOOR = 25', 'P4_ALL_TABOO_FLOOR = 24')]),
+    ('floor_on_plain_only_ji', '9b P1 (i) only on 諸事皆忌 (owner 1 (a), 4.1)', [GOLDEN],
+     [(ADAPTER, 'if (p4.allTaboo) {', "if (p4.allTaboo || state === 'only_ji') {")]),
+    ('both_present_penalty_dropped', '9b P1 (ii) both_present', [GOLDEN],
+     [(ADAPTER, "    JI_STATES.includes(state) &&\n    !out.some(", "    state === 'only_ji' &&\n    !out.some(")]),
+    ('p2_dropped', '9b P2 not_recorded yields to 忌', [GOLDEN],
+     [(ADAPTER, 'if (known.length < states.length && !known.some((s) => JI_STATES.includes(s!)))',
+       'if (known.length < states.length)')]),
+    ('undetermined_as_not_recorded', '9b P2 undetermined keeps the baseline', [GOLDEN],
+     [(ADAPTER, "(s !== 'not_recorded' && !ORDER.includes(s))",
+       "(s !== 'not_recorded' && s !== 'undetermined' && !ORDER.includes(s))"),
+      (ADAPTER, "const known = states.filter((s) => s !== 'not_recorded')",
+       "const known = states.filter((s) => s !== 'not_recorded' && s !== 'undetermined')")]),
+    ('all_taboo_missed_beside_not_recorded', '9b P1 (i) + P2', [GOLDEN],
+     [(ADAPTER, "hs.some((h) => headings[h]!.rule === 'all_taboo')", "hs.every((h) => headings[h]!.rule === 'all_taboo')")]),
+    ('ui_event_capped_hidden', '9b P3 event view', [UI],
+     [(DAILY, '(row.appliedDelta !== 0 || isP4CappedTaboo(row))', 'row.appliedDelta !== 0')]),
+    ('ui_activity_capped_unmarked', '9b P3 activity detail', [UI],
+     [(REC, 'isP4CappedTaboo(row) ? `${row.label} (${P4_CAPPED_TABOO_NOTE})` : row.label', 'row.label')]),
     ('flag_default_on', 'goal 2 flag OFF', [BASELINE],
      [(MANIFEST, '"xiejiVol10BalancingEnabled": false', '"xiejiVol10BalancingEnabled": true')]),
 ]
@@ -89,7 +112,7 @@ original = {f: (root / f).read_bytes() for f in files}
 restore = lambda: [(root / f).write_bytes(b) for f, b in original.items()]  # noqa: E731
 results = []
 try:
-    control = run_test([GOLDEN, WIRING, BASELINE])
+    control = run_test([GOLDEN, WIRING, BASELINE, UI])
     if control.returncode != 0:
         raise RuntimeError('control run failed:\n' + control.stdout[-2000:])
     for name, rule, tests, edits in mutations:
@@ -105,14 +128,17 @@ try:
         finally:
             restore()
         out = r.stdout + r.stderr
-        caught = r.returncode != 0 and ' failed' in out and 'roadmap 8' in out
+        # Caught only when a target suite itself fails, not on a transform/syntax crash.
+        caught = (r.returncode != 0 and ' failed' in out
+                  and any(f'FAIL  {t}' in out for t in tests)
+                  and 'Transform failed' not in out and 'SyntaxError' not in out)
         results.append({'mutation': name, 'rule': rule, 'tests': tests, 'caughtByTest': caught,
                         'exitCode': r.returncode})
         print(json.dumps(results[-1], ensure_ascii=False), flush=True)
 finally:
     restore()
 report = {
-    'version': 'p4-score-adapter-mutations-v1',
+    'version': 'p4-score-adapter-mutations-v2',
     'control': 'clean',
     'mutations': len(results),
     'caught': sum(r['caughtByTest'] for r in results),

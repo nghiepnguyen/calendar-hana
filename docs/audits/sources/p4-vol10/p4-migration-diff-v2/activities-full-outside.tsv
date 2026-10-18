@@ -1,0 +1,97 @@
+date	activity	state	deciding_heading	headings	prot	score_before	score_after	status_before	status_after	hard_warning	classes	cap_good	cap_bad	cap_first_diff	source_ids	rows
+2024-12-31	worship	baseline		祭祀=missing		60	60	neutral	neutral	false		10	0	0		
+2024-12-31	pray_blessing	baseline		祈福=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	pray_children	baseline		求嗣=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	wedding	baseline		結婚姻=missing 嫁娶=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	engagement	baseline		納采問名=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	moving	baseline		般移=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	bed_installation	baseline		安牀=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	opening	baseline		開市=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	business	baseline		開市=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	contract	baseline		立券交易=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	transaction	baseline		立券交易=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	finance	baseline		納財=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	travel	baseline		行幸遣使=missing		25	25	avoid	avoid	true		0	25	0		
+2024-12-31	meeting	baseline		宴會=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	study	baseline		入學=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2024-12-31	medical	baseline		求醫療病=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	cleaning	baseline		掃舍宇=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2024-12-31	cut_hair	baseline		整容剃頭=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	groundbreaking	baseline		興造動土=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	construction	baseline		營建宮室=missing 興造動土=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	renovation	baseline		修宮室=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	beam_raising	baseline		豎柱上梁=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	warehouse	baseline		修倉庫=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	warehouse_opening	baseline		開倉庫出貨財=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	planting	baseline		栽種=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	livestock	baseline		牧養=missing 納畜=missing		45	45	watch	watch	false		10	15	0		
+2024-12-31	burial	baseline		安葬=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	demolition	baseline		破屋壞垣=missing		35	35	watch	watch	false		0	15	0		
+2024-12-31	water_travel	baseline		乘船渡水=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2024-12-31	grave_repair	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2024-12-31	door_opening	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2024-12-31	waterworks	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	worship	baseline		祭祀=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	pray_blessing	baseline		祈福=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	pray_children	baseline		求嗣=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	wedding	baseline		結婚姻=missing 嫁娶=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	engagement	baseline		納采問名=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	moving	baseline		般移=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	bed_installation	baseline		安牀=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	opening	baseline		開市=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	business	baseline		開市=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	contract	baseline		立券交易=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	transaction	baseline		立券交易=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	finance	baseline		納財=missing		65	65	recommended	recommended	false		0	0	0		
+2028-01-01	travel	baseline		行幸遣使=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	meeting	baseline		宴會=missing		25	25	avoid	avoid	true		0	10	0		
+2028-01-01	study	baseline		入學=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	medical	baseline		求醫療病=missing		45	45	watch	watch	false		10	0	0		
+2028-01-01	cleaning	baseline		掃舍宇=missing		60	60	neutral	neutral	false		10	0	0		
+2028-01-01	cut_hair	baseline		整容剃頭=missing		60	60	neutral	neutral	false		10	0	0		
+2028-01-01	groundbreaking	baseline		興造動土=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	construction	baseline		營建宮室=missing 興造動土=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	renovation	baseline		修宮室=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	beam_raising	baseline		豎柱上梁=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	warehouse	baseline		修倉庫=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	warehouse_opening	baseline		開倉庫出貨財=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	planting	baseline		栽種=missing		40	40	consider	consider	true		0	10	0		
+2028-01-01	livestock	baseline		牧養=missing 納畜=missing		65	65	recommended	recommended	false		0	0	0		
+2028-01-01	burial	baseline		安葬=missing		35	35	watch	watch	false		0	0	0		
+2028-01-01	demolition	baseline		破屋壞垣=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	water_travel	baseline		乘船渡水=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	grave_repair	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	door_opening	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2028-01-01	waterworks	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	worship	baseline		祭祀=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	pray_blessing	baseline		祈福=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	pray_children	baseline		求嗣=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	wedding	baseline		結婚姻=missing 嫁娶=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	engagement	baseline		納采問名=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	moving	baseline		般移=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	bed_installation	baseline		安牀=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	opening	baseline		開市=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	business	baseline		開市=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	contract	baseline		立券交易=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	transaction	baseline		立券交易=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	finance	baseline		納財=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	travel	baseline		行幸遣使=missing		65	65	recommended	recommended	false		0	0	0		
+2035-06-15	meeting	baseline		宴會=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	study	baseline		入學=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	medical	baseline		求醫療病=missing		60	60	consider	consider	true		0	10	0		
+2035-06-15	cleaning	baseline		掃舍宇=missing		75	75	recommended	recommended	false		0	0	0		
+2035-06-15	cut_hair	baseline		整容剃頭=missing		60	60	consider	consider	true		0	10	0		
+2035-06-15	groundbreaking	baseline		興造動土=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	construction	baseline		營建宮室=missing 興造動土=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	renovation	baseline		修宮室=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	beam_raising	baseline		豎柱上梁=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	warehouse	baseline		修倉庫=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	warehouse_opening	baseline		開倉庫出貨財=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	planting	baseline		栽種=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	livestock	baseline		牧養=missing 納畜=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	burial	baseline		安葬=missing		60	60	neutral	neutral	false		10	0	0		
+2035-06-15	demolition	baseline		破屋壞垣=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	water_travel	baseline		乘船渡水=missing		50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	grave_repair	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	door_opening	baseline				50	50	no_evidence	no_evidence	false		0	0	0		
+2035-06-15	waterworks	baseline				50	50	no_evidence	no_evidence	false		0	0	0		

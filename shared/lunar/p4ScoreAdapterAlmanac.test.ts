@@ -55,8 +55,8 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
     expect(diff.slice(0, 10).join('\n')).toBe('')
   }, 300_000)
 
-  it('heading states from the resolver give the Golden v1 activity states', () => {
-    const want = tsv('docs/audits/sources/p4-vol10/p4-score-golden-v1/activity-states.tsv').filter(
+  it('heading states from the resolver give the Golden v2 activity states', () => {
+    const want = tsv('docs/audits/sources/p4-vol10/p4-score-golden-v2/activity-states.tsv').filter(
       (r) => SAMPLED.has(r.date!),
     )
     const byDate = new Map<string, ReturnType<typeof getP4DayHeadings>>()
@@ -89,7 +89,7 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
 
   it('baseline activities and out-of-domain dates keep the flag-OFF score and status', () => {
     const states = new Map(
-      tsv('docs/audits/sources/p4-vol10/p4-score-golden-v1/activity-states.tsv').map((r) => [
+      tsv('docs/audits/sources/p4-vol10/p4-score-golden-v2/activity-states.tsv').map((r) => [
         `${r.date}|${r.activity}`,
         r.state!,
       ]),
@@ -98,6 +98,28 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
       (r) => {
         if (!SAMPLED.has(r.date!)) return false
         if ((states.get(`${r.date}|${r.activity}`) ?? 'baseline') !== 'baseline') return false
+        const got = getAlmanac(r.date as never).activityRecommendations.find(
+          (x) => x.activityId === r.activity,
+        )!
+        return (
+          String(got.score) !== r.score ||
+          got.status !== r.status ||
+          String(got.hardWarning) !== r.hard_warning
+        )
+      },
+    )
+    expect(
+      diff
+        .slice(0, 10)
+        .map((r) => Object.values(r).join(' '))
+        .join('\n'),
+    ).toBe('')
+  }, 600_000)
+
+  it('every activity score, status and hard warning equals the Golden v2 layer C (roadmap 9b)', () => {
+    const diff = tsv('docs/audits/sources/p4-vol10/p4-score-golden-v2/activity-scores.tsv').filter(
+      (r) => {
+        if (!SAMPLED.has(r.date!)) return false
         const got = getAlmanac(r.date as never).activityRecommendations.find(
           (x) => x.activityId === r.activity,
         )!

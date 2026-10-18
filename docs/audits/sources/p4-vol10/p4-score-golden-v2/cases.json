@@ -1,0 +1,2278 @@
+{
+ "version": "p4-score-golden-v2",
+ "cases": [
+  {
+   "id": "A01",
+   "intent": "only_yi: 宜 kept, 忌 lifted",
+   "activityId": "opening",
+   "officerId": "man",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_yi"
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 75,
+    "status": "recommended",
+    "positiveMagnitude": 25,
+    "negativeMagnitude": 0,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "man:opening",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A02",
+   "intent": "only_yi: protected 忌 kept (dormant 四廢)",
+   "activityId": "opening",
+   "officerId": "man",
+   "goodGods": [],
+   "badGods": [
+    "kiep_sat",
+    "tu_phe"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_yi",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 50,
+    "status": "watch",
+    "positiveMagnitude": 15,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "man:opening",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tu_phe",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A03",
+   "intent": "only_yi: preserve_bad 月破 kept with hard warning",
+   "activityId": "opening",
+   "officerId": "man",
+   "goodGods": [],
+   "badGods": [
+    "nguyet_pha"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_yi"
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 40,
+    "status": "consider",
+    "positiveMagnitude": 15,
+    "negativeMagnitude": 25,
+    "hardWarning": true,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "man:opening",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "nguyet_pha",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": true,
+      "scoreDelta": -25,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A04",
+   "intent": "both_present: nothing lifted; dormant 天願 in the good cap",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_nguyen",
+    "dan_nhat",
+    "ngu_phu"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 70,
+    "status": "consider",
+    "positiveMagnitude": 50,
+    "negativeMagnitude": 30,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "applied",
+      "rawDelta": 25,
+      "preCapDelta": 25,
+      "hardWarning": false,
+      "scoreDelta": 25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_nguyen",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "ngu_phu",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 5,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tai_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A05",
+   "intent": "only_ji: 宜 suppressed, 忌 kept, no penalty",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 35,
+    "status": "watch",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A06",
+   "intent": "only_ji: no negative row left → −25 product policy",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:opening",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:開市",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A07",
+   "intent": "only_ji: a negative Trực row blocks the penalty",
+   "activityId": "opening",
+   "officerId": "be",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "be:opening",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "scoreDelta": -25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A08",
+   "intent": "neither_recorded: every row lifted → neutral at 50",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "neither_recorded"
+    }
+   },
+   "expected": {
+    "state": "neither_recorded",
+    "score": 50,
+    "status": "neutral",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 0,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A09",
+   "intent": "neither_recorded: protected 忌 still applies",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tu_phe"
+   ],
+   "headings": {
+    "開市": {
+     "state": "neither_recorded",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "neither_recorded",
+    "score": 35,
+    "status": "watch",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tu_phe",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A10",
+   "intent": "cap reallocation: lifted rows free the bad cap for a protected row",
+   "activityId": "opening",
+   "officerId": "man",
+   "goodGods": [],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat",
+    "tu_phe"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_yi",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 50,
+    "status": "watch",
+    "positiveMagnitude": 15,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "man:opening",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tai_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tu_phe",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A11",
+   "intent": "both_present: bad cap full (−15, −15, 0)",
+   "activityId": "opening",
+   "officerId": "man",
+   "goodGods": [],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat",
+    "nguyet_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 35,
+    "status": "watch",
+    "positiveMagnitude": 15,
+    "negativeMagnitude": 30,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "man:opening",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tai_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "nguyet_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A12",
+   "intent": "only_yi: negative Trực lifted",
+   "activityId": "opening",
+   "officerId": "be",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_yi"
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 60,
+    "status": "neutral",
+    "positiveMagnitude": 10,
+    "negativeMagnitude": 0,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "be:opening",
+      "status": "informational",
+      "rawDelta": -25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A13",
+   "intent": "both_present: consider when both sides ≥ 30",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat",
+    "ngu_phu"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 65,
+    "status": "consider",
+    "positiveMagnitude": 45,
+    "negativeMagnitude": 30,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "applied",
+      "rawDelta": 25,
+      "preCapDelta": 25,
+      "hardWarning": false,
+      "scoreDelta": 25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "ngu_phu",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tai_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A14",
+   "intent": "neither_recorded: preserve_bad row kept → avoid with hard warning",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "nguyet_pha"
+   ],
+   "headings": {
+    "開市": {
+     "state": "neither_recorded"
+    }
+   },
+   "expected": {
+    "state": "neither_recorded",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": true,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "nguyet_pha",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": true,
+      "scoreDelta": -25,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A15",
+   "intent": "multi-heading: only_yi + both_present → both_present",
+   "activityId": "wedding",
+   "officerId": "thanh",
+   "goodGods": [
+    "thien_duc",
+    "nguyet_an"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "結婚姻": {
+     "state": "only_yi"
+    },
+    "嫁娶": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 80,
+    "status": "watch",
+    "positiveMagnitude": 45,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thanh:wedding",
+      "status": "applied",
+      "rawDelta": 20,
+      "preCapDelta": 20,
+      "hardWarning": false,
+      "scoreDelta": 20,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "nguyet_an",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A16",
+   "intent": "multi-heading: only_ji + only_yi → only_ji",
+   "activityId": "wedding",
+   "officerId": "thanh",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "結婚姻": {
+     "state": "only_ji"
+    },
+    "嫁娶": {
+     "state": "only_yi"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 35,
+    "status": "watch",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thanh:wedding",
+      "status": "informational",
+      "rawDelta": 20,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A17",
+   "intent": "multi-heading: neither + only_ji → only_ji, penalty once",
+   "activityId": "wedding",
+   "officerId": "thanh",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "結婚姻": {
+     "state": "neither_recorded"
+    },
+    "嫁娶": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thanh:wedding",
+      "status": "informational",
+      "rawDelta": 20,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:wedding",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:嫁娶",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A18",
+   "intent": "multi-heading: both_present + neither → both_present",
+   "activityId": "livestock",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc",
+    "nguyet_an"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "牧養": {
+     "state": "both_present"
+    },
+    "納畜": {
+     "state": "neither_recorded"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 75,
+    "status": "watch",
+    "positiveMagnitude": 40,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:livestock",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "nguyet_an",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A19",
+   "intent": "multi-heading: neither + only_yi → neither_recorded",
+   "activityId": "livestock",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "牧養": {
+     "state": "only_yi"
+    },
+    "納畜": {
+     "state": "neither_recorded"
+    }
+   },
+   "expected": {
+    "state": "neither_recorded",
+    "score": 50,
+    "status": "neutral",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 0,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:livestock",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A20",
+   "intent": "multi-heading: two only_ji headings, one penalty",
+   "activityId": "construction",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "營建宮室": {
+     "state": "only_ji"
+    },
+    "興造動土": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:construction",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:construction",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:營建宮室",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A21",
+   "intent": "諸事皆忌 with a protected 忌 left (−15) → floor tops up −10 (P1 i; v1: no penalty)",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "tu_phe"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_ji",
+     "rule": "all_taboo",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tu_phe",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:opening",
+      "status": "applied",
+      "rawDelta": -10,
+      "preCapDelta": -10,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:開市:all_taboo_floor_v1",
+      "balancingEligible": false,
+      "scoreDelta": -10
+     }
+    ]
+   }
+  },
+  {
+   "id": "A22",
+   "intent": "諸事皆忌 with no negative row → −25 (all_taboo clause)",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji",
+     "rule": "all_taboo",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "informational",
+      "rawDelta": 25,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:opening",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:開市:all_taboo",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A23",
+   "intent": "both_present: 月破 subsumed by 破日 keeps its hard warning",
+   "activityId": "wedding",
+   "officerId": "pha",
+   "goodGods": [],
+   "badGods": [
+    "nguyet_pha"
+   ],
+   "headings": {
+    "結婚姻": {
+     "state": "both_present"
+    },
+    "嫁娶": {
+     "state": "both_present"
+    }
+   },
+   "classicalDay": {
+    "monthJianBranch": 0,
+    "dayStem": 6,
+    "dayBranch": 6
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": true,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "pha:wedding",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "scoreDelta": -25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "nguyet_pha",
+      "status": "informational",
+      "rawDelta": -25,
+      "preCapDelta": 0,
+      "hardWarning": true,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A24",
+   "intent": "6 chains replaced: 收日 chain lifts this pair when OFF; ON reads only_ji",
+   "activityId": "opening",
+   "officerId": "thu",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_ji"
+    }
+   },
+   "classicalDay": {
+    "monthJianBranch": 2,
+    "dayStem": 1,
+    "dayBranch": 11
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 20,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 30,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thu:opening",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A25",
+   "intent": "protected on one heading of two (土王用事後, no override) under only_yi",
+   "activityId": "construction",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tho_vuong_dung_su"
+   ],
+   "headings": {
+    "營建宮室": {
+     "state": "only_yi",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_yi",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "expected": {
+    "state": "only_yi",
+    "score": 65,
+    "status": "watch",
+    "positiveMagnitude": 30,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:construction",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "informational",
+      "rawDelta": -15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tho_vuong_dung_su",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A26",
+   "intent": "P1 i: 諸事皆忌, only a Trực −15 → floor −10 (Trực counts)",
+   "activityId": "opening",
+   "officerId": "binh",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji",
+     "rule": "all_taboo"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "binh:opening",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:opening",
+      "status": "applied",
+      "rawDelta": -10,
+      "preCapDelta": -10,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:開市:all_taboo_floor_v1",
+      "balancingEligible": false,
+      "scoreDelta": -10
+     }
+    ]
+   }
+  },
+  {
+   "id": "A27",
+   "intent": "P1 i: 諸事皆忌, Trực −15 + 刼煞 −15 = 30 → no floor row",
+   "activityId": "opening",
+   "officerId": "thu",
+   "goodGods": [],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "only_ji",
+     "rule": "all_taboo"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 20,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 30,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thu:opening",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A28",
+   "intent": "P1 i: 諸事皆忌, Trực −25 exactly at the floor → no floor row",
+   "activityId": "opening",
+   "officerId": "be",
+   "goodGods": [],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji",
+     "rule": "all_taboo"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "be:opening",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "scoreDelta": -25,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A29",
+   "intent": "P1 i: plain only_ji with −15 keeps real weight (no floor; owner 1 (a), 4.1)",
+   "activityId": "opening",
+   "officerId": "binh",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 35,
+    "status": "watch",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "binh:opening",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "informational",
+      "rawDelta": 10,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A30",
+   "intent": "P1 ii: both_present with no negative row → −25",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 60,
+    "status": "watch",
+    "positiveMagnitude": 35,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "applied",
+      "rawDelta": 25,
+      "preCapDelta": 25,
+      "hardWarning": false,
+      "scoreDelta": 25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:opening",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:開市",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A31",
+   "intent": "P1 ii: both_present, a negative Trực blocks the −25",
+   "activityId": "opening",
+   "officerId": "binh",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [],
+   "headings": {
+    "開市": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 45,
+    "status": "watch",
+    "positiveMagnitude": 10,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "binh:opening",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A32",
+   "intent": "P1 ii: both_present, protected 忌 −15 blocks the −25",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "tu_phe"
+   ],
+   "headings": {
+    "開市": {
+     "state": "both_present",
+     "prot": [
+      "四廢"
+     ]
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 70,
+    "status": "watch",
+    "positiveMagnitude": 35,
+    "negativeMagnitude": 15,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "khai:opening",
+      "status": "applied",
+      "rawDelta": 25,
+      "preCapDelta": 25,
+      "hardWarning": false,
+      "scoreDelta": 25,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "dan_nhat",
+      "status": "applied",
+      "rawDelta": 10,
+      "preCapDelta": 10,
+      "hardWarning": false,
+      "scoreDelta": 10,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "tu_phe",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     }
+    ]
+   }
+  },
+  {
+   "id": "A33",
+   "intent": "P2: only_ji + not_recorded → only_ji, then −25",
+   "activityId": "wedding",
+   "officerId": "thanh",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "結婚姻": {
+     "state": "only_ji"
+    },
+    "嫁娶": {
+     "state": "not_recorded"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thanh:wedding",
+      "status": "informational",
+      "rawDelta": 20,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:wedding",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:結婚姻",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A34",
+   "intent": "P2: not_recorded + both_present → both_present, then −25",
+   "activityId": "wedding",
+   "officerId": "thanh",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "結婚姻": {
+     "state": "not_recorded"
+    },
+    "嫁娶": {
+     "state": "both_present"
+    }
+   },
+   "expected": {
+    "state": "both_present",
+    "score": 60,
+    "status": "watch",
+    "positiveMagnitude": 35,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "thanh:wedding",
+      "status": "applied",
+      "rawDelta": 20,
+      "preCapDelta": 20,
+      "hardWarning": false,
+      "scoreDelta": 20,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "applied",
+      "rawDelta": 15,
+      "preCapDelta": 15,
+      "hardWarning": false,
+      "scoreDelta": 15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:wedding",
+      "status": "applied",
+      "rawDelta": -25,
+      "preCapDelta": -25,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:嫁娶",
+      "balancingEligible": false,
+      "scoreDelta": -25
+     }
+    ]
+   }
+  },
+  {
+   "id": "A35",
+   "intent": "P2 + P1 i: 諸事皆忌 heading + not_recorded, Trực −15 → only_ji, floor −10",
+   "activityId": "wedding",
+   "officerId": "kien",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "結婚姻": {
+     "state": "only_ji",
+     "rule": "all_taboo"
+    },
+    "嫁娶": {
+     "state": "not_recorded"
+    }
+   },
+   "expected": {
+    "state": "only_ji",
+    "score": 25,
+    "status": "avoid",
+    "positiveMagnitude": 0,
+    "negativeMagnitude": 25,
+    "hardWarning": false,
+    "rows": [
+     {
+      "source": "truc",
+      "ruleId": "kien:wedding",
+      "status": "applied",
+      "rawDelta": -15,
+      "preCapDelta": -15,
+      "hardWarning": false,
+      "scoreDelta": -15,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "good_god",
+      "ruleId": "thien_duc",
+      "status": "informational",
+      "rawDelta": 15,
+      "preCapDelta": 0,
+      "hardWarning": false,
+      "scoreDelta": 0,
+      "evidenceOrigin": "canonical"
+     },
+     {
+      "source": "bad_god",
+      "ruleId": "p4_default_penalty:wedding",
+      "status": "applied",
+      "rawDelta": -10,
+      "preCapDelta": -10,
+      "hardWarning": false,
+      "evidenceOrigin": "product_policy",
+      "policyId": "product_policy_default_penalty",
+      "sourceClauseId": "p4:結婚姻:all_taboo_floor_v1",
+      "balancingEligible": false,
+      "scoreDelta": -10
+     }
+    ]
+   }
+  },
+  {
+   "id": "B01",
+   "intent": "multi-heading: not_recorded + only_yi → baseline, dormant dropped",
+   "activityId": "wedding",
+   "officerId": "man",
+   "goodGods": [
+    "thien_duc",
+    "thien_nguyen"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat"
+   ],
+   "headings": {
+    "結婚姻": {
+     "state": "not_recorded"
+    },
+    "嫁娶": {
+     "state": "only_yi"
+    }
+   },
+   "classicalDay": {
+    "monthJianBranch": 0,
+    "dayStem": 2,
+    "dayBranch": 2
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": [
+     "tai_sat",
+     "thien_nguyen"
+    ]
+   }
+  },
+  {
+   "id": "B02",
+   "intent": "multi-heading: undetermined + only_ji → baseline",
+   "activityId": "construction",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "營建宮室": {
+     "state": "undetermined"
+    },
+    "興造動土": {
+     "state": "only_ji"
+    }
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": []
+   }
+  },
+  {
+   "id": "B03",
+   "intent": "no heading activity → baseline, dormant dropped",
+   "activityId": "grave_repair",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_nguyen"
+   ],
+   "badGods": [
+    "tai_sat"
+   ],
+   "headings": {},
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": [
+     "tai_sat",
+     "thien_nguyen"
+    ]
+   }
+  },
+  {
+   "id": "B04",
+   "intent": "outside the P4 domain (no heading state) → baseline",
+   "activityId": "opening",
+   "officerId": "khai",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat",
+    "tai_sat"
+   ],
+   "headings": {},
+   "classicalDay": {
+    "monthJianBranch": 3,
+    "dayStem": 3,
+    "dayBranch": 1
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": [
+     "tai_sat"
+    ]
+   }
+  },
+  {
+   "id": "B05",
+   "intent": "single heading undetermined → baseline keeps the 收日 chain (same day as A24)",
+   "activityId": "opening",
+   "officerId": "thu",
+   "goodGods": [
+    "dan_nhat"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "開市": {
+     "state": "undetermined"
+    }
+   },
+   "classicalDay": {
+    "monthJianBranch": 2,
+    "dayStem": 1,
+    "dayBranch": 11
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": []
+   }
+  },
+  {
+   "id": "B06",
+   "intent": "P2: not_recorded + neither_recorded → baseline (only 忌 states win)",
+   "activityId": "wedding",
+   "officerId": "man",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [
+    "kiep_sat"
+   ],
+   "headings": {
+    "結婚姻": {
+     "state": "not_recorded"
+    },
+    "嫁娶": {
+     "state": "neither_recorded"
+    }
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": []
+   }
+  },
+  {
+   "id": "B07",
+   "intent": "P2: undetermined + not_recorded → baseline",
+   "activityId": "livestock",
+   "officerId": "khai",
+   "goodGods": [
+    "thien_duc"
+   ],
+   "badGods": [],
+   "headings": {
+    "牧養": {
+     "state": "undetermined"
+    },
+    "納畜": {
+     "state": "not_recorded"
+    }
+   },
+   "expected": {
+    "state": "baseline",
+    "equalsFlagOffWithout": []
+   }
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 # Roadmap 9 — migration diff 4 cấu hình + rollback flag `xiejiVol10BalancingEnabled`
 
-2026-10-18, nhánh `claude/p4-migration-diff` (đặt trên `claude/p4-adapter`, PR #69 chưa merge). Production **không đổi**: flag `false`, không sửa runtime. [PRD](../../tasks/prd-p4-migration-diff.md) (owner §6.10), [spec](../plans/p4-xieji-vol10-balancing.md) §7.2, §9 điều kiện 4. **Chờ owner go-live review** — dừng ở đây, chưa sang roadmap 10.
+2026-10-18, nhánh `claude/p4-migration-diff`, **DEPLOYED** `9865eee` (push thẳng main theo owner sau `ci:local` xanh; [deploy 39102682779](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39102682779) SUCCESS; sau roadmap 8 PR #69 `7d7596f`). Production **không đổi**: flag `false` (bundle `index-umK95j49.js` nhúng `!1`), không sửa runtime. [PRD](../../tasks/prd-p4-migration-diff.md) (owner §6.10), [spec](../plans/p4-xieji-vol10-balancing.md) §7.2, §9 điều kiện 4. **Chờ owner go-live review** trước roadmap 10 (activation); deploy này không bật gì.
 
 ## Kết quả
 
@@ -58,6 +58,52 @@ Full ∩ balancing-only 8.069; chỉ full 6.825; chỉ balancing-only 102 → kh
 top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗi class × trạng thái · cap đổi status so với balancing-only (98) · `CHAIN_REPLACED_LIGHTER` (389) · multi-heading giữ baseline §6.6 (269; 17 wedding mất −25 `only_ji`) · event insufficient_evidence → recommended (42).
 
 `CHAIN_REPLACED_LIGHTER` = 389 là dòng nhẹ đi **chỉ** vì bỏ chain (không có `STATE_LIFT`): avoid → watch 242, strong_avoid → avoid 100, strong_avoid → watch 47. PRD §6.7 đếm 409 + 100 là mọi dòng nhẹ đi bất kể nguyên nhân.
+
+### Kết quả review (theo nhóm)
+
+**Nhóm 1 — recommended → strong_avoid (14 dòng)**, chỉ 2 context:
+
+- **Mẫu A — 寅月 ngày 巳, Trực Bình (12 dòng):** 2025-02-17, 2026-02-12, 2027-02-07 (丁巳), 2027-03-03 (辛巳) × `pray_blessing` / `pray_children` / `medical`, 65 → 5. Heading `only_ji`, `ji=遊禍; prot=遊禍; xd=平日+月刑+月害; suppressed:xiangdi` (Golden v2). 遊禍 không có trong catalog; điểm âm đến từ Trực Bình −15, Nguyệt Hình −15 (baseline: informational do chain 平日), Nguyệt Hại −15 (dormant); Thiên Đức / Nguyệt Đức Hợp +15 và Tứ Tướng thành informational. **Owner chốt (a), 2026-10-18:** đúng 從忌不從宜 = ghi đủ 忌; mọi dòng âm trong scope giữ trọng số, không giới hạn về −25 (PRD §6.7 giữ nguyên). `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **Mẫu B — 卯月 戊寅, Trực Bế (2 dòng):** 2025-03-10, 2026-03-05 × `moving`, 65 → 15. Heading `only_ji`, `ji=歸忌; prot=歸忌; xd=閉日`. Trực Bế −20 (baseline: informational do chain 閉日), Quy Kỵ −15 (dormant); Thiên Xá +15 thành informational. **Owner OK, 2026-10-18:** Trực lấy lại trọng số khi P4 thay 6 chain (§6.2). `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+
+**Nhóm 2 — top 50 |Δscore|:** 16 context, tất cả `only_ji`; 12 dòng trùng nhóm 1. Mẫu chung: 德/cát thần thành informational, dòng âm trong scope giữ trọng số (đã chốt ở nhóm 1), thêm hung thần dormant.
+
+- **Điểm 1 — 忌 không bảo vệ thắng qua 等第:** 2025-07-15 (未 乙酉) và 2025-07-27 (未 丁酉) × `contract` / `transaction`, 75 → 20. 災煞 cấp 中, không 德 → `only_ji` (Golden v2 `ji/grades.tsv`, `未-乙酉`); Trực Mãn +15, Dân Nhật +10 thành informational; Tai Sát −15, Ngũ Ly −15 (dormant). Toàn miền 8.989/14.495 heading-ngày `only_ji` đi đường 等第 không `prot`. **Owner OK, 2026-10-18:** luật sách đã khóa ở P4-B / Golden v2, không cần policy mới. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **Điểm 2 — thần dormant chen cap:** 戌 辛酉 `meeting` (2025-10-19, 2026-10-14, 2027-10-09), 65 → 5. Nguyệt Hại, Ngũ Ly (dormant, đứng trước trong catalog) dùng hết cap −30; 百忌酉 (忌 quyết định heading, `prot`) applied 0, hard warning giữ. Điểm không phụ thuộc thần nào ăn cap. **Owner chọn (a), 2026-10-18:** giữ cap theo thứ tự catalog (§6.10.6); giải thích "kỵ vẫn áp dụng" trên UI xử lý ở roadmap 10. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **Điểm 3 — 諸事皆忌 có dòng âm nhẹ hơn khi không có:** 寅 庚申 `medical` (2025-02-20, 2026-02-15, 2027-02-10), 95 → 35 watch: Tứ Phế −15 applied nên không có −25 (§6.11). Trên heading-ngày 諸事皆忌: có −25 265 dòng (avoid); không −25: strong_avoid 539, avoid 400, watch 276, consider 4. **Owner chọn (b), 2026-10-18:** 諸事皆忌 có sàn — tổng âm applied trong scope tối thiểu −25, phần thiếu bù bằng dòng `product_policy_default_penalty`. Thay §6.11; chỉ làm nặng thêm. **Mở lại roadmap 8–9 một phần** (PRD, Golden điểm v2, adapter, mutation, chạy lại diff) — gộp làm sau khi review xong nhóm 3–7.
+
+**Nhóm 3 — lên tốt từ không bằng chứng** (activity neutral/no_evidence → recommended 430; event insufficient_evidence → recommended 42). Owner chốt 2026-10-18:
+
+- **405 dòng `only_yi` + cát thần dormant** (vd. 2025-01-05 `worship` 60 → 70, Golden `yi:四相+聖心`): **OK**, giữ nguyên; khóa làm ca regression trong Golden điểm v2. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **25 dòng `both_present`** có 忌 ngoài catalog nên không có dòng âm (死氣 13 `planting`, 遊禍, 地囊, 九焦, 土符, 朔望日; vd. 2025-01-15 `pray_blessing` 60 → 70, `ji=遊禍; prot=遊禍; yi:四相+福生`): **(b)** — sàn −25 `product_policy_default_penalty` khi heading có 忌 đã ghi nhưng không còn dòng âm applied trong scope. Gộp đợt code với sàn 諸事皆忌 (nhóm 2 điểm 3).
+- **6 event `buy_property`** recommended dù `moving` là `only_ji` (event không `very_high`, điểm event = trung bình profile): **OK**, giữ `event_fit` hiện hành. Backlog riêng nếu muốn siết event-fit.
+- **Kiểm sau khi code:** chạy lại diff; 8 event `buy_property` có `moving` `both_present` phải tự điều chỉnh theo activity, không thêm rule event.
+
+**Nhóm 4 — `CHAIN_REPLACED_LIGHTER` (389).** Owner chốt 2026-10-18:
+
+- **4.1 — 261 dòng (không 諸事皆忌):** chain 卷十 `yue_sha` / `yue_yan` −25 (`ADDED_PENALTY`, vì 月煞/月厭 còn dormant) thay bằng chính thần Nguyệt Sát / Nguyệt Yếm −15; nhẹ 10 điểm, cùng hệ quả nhóm 1 (a). **OK.**
+- **4.2 — 128 dòng 諸事皆忌:** không chốt riêng; vào acceptance của policy `ALL_TABOO_FLOOR_V1`.
+- **4.3 — 3 dòng `both_present`** nhẹ đi do Tứ Tướng +10 (cùng mẫu 405 `only_yi`). **OK.**
+
+**Policy `ALL_TABOO_FLOOR_V1`** gộp nhóm 2 điểm 3 + nhóm 3 (25 `both_present`) + nhóm 4.2: một vòng code/Golden/diff, không rule trùng. Tập acceptance 128 + 25 + 8 event: [p4-all-taboo-floor-v1](sources/p4-vol10/p4-all-taboo-floor-v1/README.md).
+
+**Nhóm 5 — multi-heading giữ baseline §6.6 (269).** 243 dòng heading còn lại `only_yi` (construction 113, livestock 109, wedding 21); 26 dòng `wedding` heading còn lại ghi 忌 (結婚姻 五離 / 滿日 / 月建; 嫁娶 百忌亥 / 往亡) bị mất 忌 — 8 ngày 五離 và 2025-12-07 往亡 hiện `no_evidence`. **Owner chọn (c), 2026-10-18:** `MULTI_HEADING_JI_WINS_V1` — chỉ phía 忌: heading còn lại `only_ji`/`both_present` thì áp state đó; `only_yi` giữ baseline; `undetermined` giữ baseline. Gộp vòng code với `ALL_TABOO_FLOOR_V1`; 26 dòng vào acceptance.
+
+**Nhóm 6 — cap đổi status so với balancing-only (98):** thần dormant lấp cap (âm −30 / dương +25); 百忌 / 土王用事 applied 0 khi hung dormant đứng trước. Không cơ chế mới (nhóm 1, 2 điểm 2 (a), 3.1, 4). **Owner OK, 2026-10-18.**
+
+**Nhóm 7 — mẫu theo class (51):** **owner đóng, 2026-10-18**; bộ mẫu mới từ diff chạy lại được xem cùng kết quả acceptance.
+
+### Điều kiện go-live (owner, 2026-10-18)
+
+> Thực hiện ở roadmap 9b: [báo cáo](p4-9b.md); diff v2 (`p4-migration-diff-v2`, luật v2) thay diff v1 làm số liệu hiện hành.
+
+Review nhóm 1–7 xong. Go-live chỉ khi vòng code mới chứng minh đủ ba điều:
+
+1. **Floor 諸事皆忌 / 忌 đã ghi** (`ALL_TABOO_FLOOR_V1`), hai trigger: (i) activity 諸事皆忌 → tổng âm applied trong scope ≥ 25 (bù phần thiếu); (ii) `only_ji`/`both_present` **không có** dòng âm applied → một −25. `only_ji`/`both_present` đã có dòng âm giữ trọng số thật (nhóm 1 (a), nhóm 4.1).
+2. **Bảo toàn 忌 multi-heading** (`MULTI_HEADING_JI_WINS_V1`): activity hai heading không mất 忌 mà heading kia ghi.
+3. **UI không che 忌 bị cap về 0:** dòng 忌 quyết định heading (`prot`, 百忌, 土王用事…) có applied 0 vì cap vẫn hiện trên UI là "kỵ vẫn áp dụng" (chuyển từ roadmap 10 vào vòng này).
+
+Bằng chứng: Golden điểm v2 đóng băng trước code (acceptance 187 dòng + 405 `only_yi` regression), mutation từng nhánh, diff roadmap 9 chạy lại (v2), test UI.
 
 ## Quy ước (không phải regression)
 

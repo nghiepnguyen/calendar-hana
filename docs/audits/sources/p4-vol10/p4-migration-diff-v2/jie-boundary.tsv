@@ -1,0 +1,109 @@
+jie	instant_utc	date	offset	month_jian	golden_month_jian	noon_month_jian	dormant	golden_dormant	noon_dormant	hour9_before_instant	events_hour_differs
+Tiểu hàn	2025-01-05T02:32:46.355Z	2025-01-04	-1	子	子	子	dai_thoi ngu_ly	dai_thoi ngu_ly			1
+Tiểu hàn	2025-01-05T02:32:46.355Z	2025-01-05	0	丑	丑	丑	tu_tuong	tu_tuong		true	1
+Tiểu hàn	2025-01-05T02:32:46.355Z	2025-01-06	1	丑	丑	丑	nguyet_yem tu_tuong	tu_tuong nguyet_yem			1
+Lập xuân	2025-02-03T14:10:28.123Z	2025-02-02	-1	丑	丑	丑	ngu_hop thoi_duc	thoi_duc ngu_hop			1
+Lập xuân	2025-02-03T14:10:28.123Z	2025-02-03	0	寅	寅	丑	dai_thoi ngu_hop	ngu_hop dai_thoi	ngu_hop thien_thuong tai_sat	true	1
+Lập xuân	2025-02-03T14:10:28.123Z	2025-02-04	1	寅	寅	寅	yem_doi	yem_doi			1
+Kinh trập	2025-03-05T08:07:16.178Z	2025-03-04	-1	寅	寅	寅	ngu_ly pho_ho	pho_ho ngu_ly			1
+Kinh trập	2025-03-05T08:07:16.178Z	2025-03-05	0	卯	卯	寅	ngu_ly nguyet_yem tai_sat	tai_sat nguyet_yem ngu_ly	ngu_ly	true	1
+Kinh trập	2025-03-05T08:07:16.178Z	2025-03-06	1	卯	卯	卯	nguyet_sat thien_nguyen	thien_nguyen nguyet_sat			1
+Thanh minh	2025-04-04T12:48:33.766Z	2025-04-03	-1	卯	卯	卯	ngu_hop pho_ho quy_ky	ngu_hop pho_ho quy_ky			1
+Thanh minh	2025-04-04T12:48:33.766Z	2025-04-04	0	辰	辰	卯	ngu_hop nguyet_hai	ngu_hop nguyet_hai	ngu_hop yem_doi	true	1
+Thanh minh	2025-04-04T12:48:33.766Z	2025-04-05	1	辰	辰	辰					1
+Lập hạ	2025-05-05T05:57:11.436Z	2025-05-04	-1	辰	辰	辰	dai_thoi ngu_ly pho_ho	pho_ho dai_thoi ngu_ly			1
+Lập hạ	2025-05-05T05:57:11.436Z	2025-05-05	0	巳	巳	辰	bat_tuong	bat_tuong	bat_tuong	true	1
+Lập hạ	2025-05-05T05:57:11.436Z	2025-05-06	1	巳	巳	巳	bat_tuong thien_thuong vang_vong	bat_tuong thien_thuong vang_vong			1
+Mang chủng	2025-06-05T09:56:31.173Z	2025-06-04	-1	巳	巳	巳	nguyet_sat thoi_duc	thoi_duc nguyet_sat			1
+Mang chủng	2025-06-05T09:56:31.173Z	2025-06-05	0	午	午	巳				true	1
+Mang chủng	2025-06-05T09:56:31.173Z	2025-06-06	1	午	午	午	nguyet_yem	nguyet_yem			1
+Tiểu thử	2025-07-06T20:04:59.098Z	2025-07-06	-1	午	午	午	tai_sat tu_ky yem_doi	tai_sat yem_doi tu_ky			1
+Tiểu thử	2025-07-06T20:04:59.098Z	2025-07-07	0	未	未	未				false	1
+Tiểu thử	2025-07-06T20:04:59.098Z	2025-07-08	1	未	未	未	ngu_hop tu_tuong	tu_tuong ngu_hop			1
+Lập thu	2025-08-07T05:51:34.715Z	2025-08-06	-1	未	未	未	bat_chuyen	bat_chuyen			1
+Lập thu	2025-08-07T05:51:34.715Z	2025-08-07	0	申	申	未	bat_tuong ngu_ly thien_thuong	bat_tuong thien_thuong ngu_ly	tu_tuong bat_tuong ngu_ly	true	1
+Lập thu	2025-08-07T05:51:34.715Z	2025-08-08	1	申	申	申	dai_thoi ngu_ly vang_vong	dai_thoi ngu_ly vang_vong			1
+Bạch lộ	2025-09-07T08:51:56.685Z	2025-09-06	-1	申	申	申	ngu_hop	ngu_hop			1
+Bạch lộ	2025-09-07T08:51:56.685Z	2025-09-07	0	酉	酉	申	ngu_hop nguyet_yem tai_sat	ngu_hop tai_sat nguyet_yem	ngu_hop	true	1
+Bạch lộ	2025-09-07T08:51:56.685Z	2025-09-08	1	酉	酉	酉	nguyet_sat thien_nguyen	thien_nguyen nguyet_sat			1
+Hàn lộ	2025-10-08T00:41:12.109Z	2025-10-07	-1	酉	酉	酉	ngu_ly yem_doi	yem_doi ngu_ly			1
+Hàn lộ	2025-10-08T00:41:12.109Z	2025-10-08	0	戌	戌	戌				false	1
+Hàn lộ	2025-10-08T00:41:12.109Z	2025-10-09	1	戌	戌	戌	tu_cung	tu_cung			1
+Lập đông	2025-11-07T04:04:02.745Z	2025-11-06	-1	戌	戌	戌	dai_thoi ngu_hop	ngu_hop dai_thoi			1
+Lập đông	2025-11-07T04:04:02.745Z	2025-11-07	0	亥	亥	亥	bat_tuong	bat_tuong		true	1
+Lập đông	2025-11-07T04:04:02.745Z	2025-11-08	1	亥	亥	亥	bat_tuong thien_thuong	bat_tuong thien_thuong			1
+Đại tuyết	2025-12-06T21:04:34.936Z	2025-12-06	-1	亥	亥	亥	ngu_ly tai_sat	tai_sat ngu_ly			1
+Đại tuyết	2025-12-06T21:04:34.936Z	2025-12-07	0	子	子	子	vang_vong	vang_vong		false	1
+Đại tuyết	2025-12-06T21:04:34.936Z	2025-12-08	1	子	子	子					1
+Tiểu hàn	2026-01-05T08:23:09.456Z	2026-01-04	-1	子	子	子	ngu_hop quy_ky thoi_duc	thoi_duc ngu_hop quy_ky			1
+Tiểu hàn	2026-01-05T08:23:09.456Z	2026-01-05	0	丑	丑	子	bat_tuong ngu_hop tai_sat thien_thuong	ngu_hop bat_tuong thien_thuong tai_sat	ngu_hop bat_tuong	true	1
+Tiểu hàn	2026-01-05T08:23:09.456Z	2026-01-06	1	丑	丑	丑	bat_tuong nguyet_sat	bat_tuong nguyet_sat			1
+Lập xuân	2026-02-03T20:02:07.951Z	2026-02-03	-1	丑	丑	丑	ngu_ly	ngu_ly			1
+Lập xuân	2026-02-03T20:02:07.951Z	2026-02-04	0	寅	寅	寅	ngu_ly	ngu_ly		false	1
+Lập xuân	2026-02-03T20:02:07.951Z	2026-02-05	1	寅	寅	寅	nguyet_yem	nguyet_yem			1
+Kinh trập	2026-03-05T13:58:59.119Z	2026-03-04	-1	寅	寅	寅	bat_tuong nguyet_sat quy_ky tu_tuong	tu_tuong bat_tuong nguyet_sat quy_ky			1
+Kinh trập	2026-03-05T13:58:59.119Z	2026-03-05	0	卯	卯	寅	ngu_hop pho_ho quy_ky	ngu_hop pho_ho quy_ky	ngu_hop thien_thuong vang_vong	true	1
+Kinh trập	2026-03-05T13:58:59.119Z	2026-03-06	1	卯	卯	卯	ngu_hop yem_doi	ngu_hop yem_doi			1
+Thanh minh	2026-04-04T18:39:59.173Z	2026-04-04	-1	卯	卯	卯	ngu_ly	ngu_ly			1
+Thanh minh	2026-04-04T18:39:59.173Z	2026-04-05	0	辰	辰	辰	bat_tuong dai_thoi ngu_ly pho_ho	bat_tuong pho_ho dai_thoi ngu_ly		false	1
+Thanh minh	2026-04-04T18:39:59.173Z	2026-04-06	1	辰	辰	辰					1
+Lập hạ	2026-05-05T11:48:43.666Z	2026-05-04	-1	辰	辰	辰	ngu_hop yem_doi	ngu_hop yem_doi			1
+Lập hạ	2026-05-05T11:48:43.666Z	2026-05-05	0	巳	巳	辰	ngu_hop pho_ho tai_sat tu_tuong	tu_tuong ngu_hop pho_ho tai_sat	ngu_hop nguyet_hai	true	1
+Lập hạ	2026-05-05T11:48:43.666Z	2026-05-06	1	巳	巳	巳	nguyet_sat thoi_duc	thoi_duc nguyet_sat			1
+Mang chủng	2026-06-05T15:48:21.890Z	2026-06-04	-1	巳	巳	巳	ngu_ly tu_tuong	tu_tuong ngu_ly			1
+Mang chủng	2026-06-05T15:48:21.890Z	2026-06-05	0	午	午	巳	pho_ho thien_thuong	thien_thuong pho_ho		true	1
+Mang chủng	2026-06-05T15:48:21.890Z	2026-06-06	1	午	午	午					1
+Tiểu thử	2026-07-07T01:56:57.375Z	2026-07-06	-1	午	午	午					1
+Tiểu thử	2026-07-07T01:56:57.375Z	2026-07-07	0	未	未	未	bat_tuong vang_vong	bat_tuong vang_vong		false	1
+Tiểu thử	2026-07-07T01:56:57.375Z	2026-07-08	1	未	未	未	bat_tuong	bat_tuong			1
+Lập thu	2026-08-07T11:42:44.521Z	2026-08-06	-1	未	未	未	dai_thoi nguyet_hai quy_ky tu_phe	nguyet_hai dai_thoi tu_phe quy_ky			1
+Lập thu	2026-08-07T11:42:44.521Z	2026-08-07	0	申	申	未	bat_chuyen quy_ky tu_tuong	tu_tuong bat_chuyen quy_ky	bat_chuyen	true	1
+Lập thu	2026-08-07T11:42:44.521Z	2026-08-08	1	申	申	申	bat_chuyen ngu_hop tu_phe	ngu_hop tu_phe bat_chuyen			1
+Bạch lộ	2026-09-07T14:41:17.219Z	2026-09-06	-1	申	申	申	bat_tuong nguyet_sat tu_tuong	tu_tuong bat_tuong nguyet_sat			1
+Bạch lộ	2026-09-07T14:41:17.219Z	2026-09-07	0	酉	酉	申	bat_tuong ngu_ly	bat_tuong ngu_ly	bat_tuong thien_thuong ngu_ly	true	1
+Bạch lộ	2026-09-07T14:41:17.219Z	2026-09-08	1	酉	酉	酉	ngu_ly yem_doi	yem_doi ngu_ly			1
+Hàn lộ	2026-10-08T06:29:17.499Z	2026-10-07	-1	酉	酉	酉	bat_chuyen ngu_hop quy_ky tu_phe	ngu_hop tu_phe bat_chuyen quy_ky			1
+Hàn lộ	2026-10-08T06:29:17.499Z	2026-10-08	0	戌	戌	酉	dai_thoi ngu_hop tu_phe	ngu_hop dai_thoi tu_phe	ngu_hop tai_sat nguyet_yem tu_phe	true	1
+Hàn lộ	2026-10-08T06:29:17.499Z	2026-10-09	1	戌	戌	戌	vang_vong	vang_vong			1
+Lập đông	2026-11-07T09:52:04.338Z	2026-11-06	-1	戌	戌	戌	ngu_ly yem_doi	yem_doi ngu_ly			1
+Lập đông	2026-11-07T09:52:04.338Z	2026-11-07	0	亥	亥	戌	ngu_ly tai_sat tu_tuong	tu_tuong tai_sat ngu_ly	nguyet_hai ngu_ly	true	1
+Lập đông	2026-11-07T09:52:04.338Z	2026-11-08	1	亥	亥	亥	nguyet_sat	nguyet_sat			1
+Đại tuyết	2026-12-07T02:52:31.469Z	2026-12-06	-1	亥	亥	亥	bat_chuyen ngu_hop thoi_duc tu_tuong	tu_tuong thoi_duc ngu_hop bat_chuyen			1
+Đại tuyết	2026-12-07T02:52:31.469Z	2026-12-07	0	子	子	子	ngu_hop tu_tuong	tu_tuong ngu_hop		true	1
+Đại tuyết	2026-12-07T02:52:31.469Z	2026-12-08	1	子	子	子	thien_thuong	thien_thuong			1
+Tiểu hàn	2027-01-05T14:09:57.913Z	2027-01-04	-1	子	子	子	nguyet_hai nguyet_sat	nguyet_sat nguyet_hai			1
+Tiểu hàn	2027-01-05T14:09:57.913Z	2027-01-05	0	丑	丑	子	ngu_ly tu_tuong	tu_tuong ngu_ly	tu_tuong ngu_ly	true	1
+Tiểu hàn	2027-01-05T14:09:57.913Z	2027-01-06	1	丑	丑	丑	ngu_ly tu_tuong	tu_tuong ngu_ly			1
+Lập xuân	2027-02-04T01:46:18.251Z	2027-02-03	-1	丑	丑	丑	bat_chuyen vang_vong	vang_vong bat_chuyen			1
+Lập xuân	2027-02-04T01:46:18.251Z	2027-02-04	0	寅	寅	寅	bat_chuyen ngu_hop thien_thuong vang_vong	ngu_hop thien_thuong vang_vong bat_chuyen		false	1
+Lập xuân	2027-02-04T01:46:18.251Z	2027-02-05	1	寅	寅	寅	dai_thoi ngu_hop	ngu_hop dai_thoi			1
+Kinh trập	2027-03-05T19:39:31.619Z	2027-03-05	-1	寅	寅	寅					1
+Kinh trập	2027-03-05T19:39:31.619Z	2027-03-06	0	卯	卯	卯	ngu_ly	ngu_ly		false	1
+Kinh trập	2027-03-05T19:39:31.619Z	2027-03-07	1	卯	卯	卯	ngu_ly nguyet_yem tai_sat	tai_sat nguyet_yem ngu_ly			1
+Thanh minh	2027-04-05T00:17:29.282Z	2027-04-04	-1	卯	卯	卯	bat_chuyen thien_thuong	thien_thuong bat_chuyen			1
+Thanh minh	2027-04-05T00:17:29.282Z	2027-04-05	0	辰	辰	辰	bat_chuyen ngu_hop yem_doi	ngu_hop yem_doi bat_chuyen		false	1
+Thanh minh	2027-04-05T00:17:29.282Z	2027-04-06	1	辰	辰	辰	ngu_hop nguyet_hai	ngu_hop nguyet_hai			1
+Lập hạ	2027-05-05T17:25:11.267Z	2027-05-05	-1	辰	辰	辰	ngu_ly nguyet_yem vang_vong	nguyet_yem ngu_ly vang_vong			1
+Lập hạ	2027-05-05T17:25:11.267Z	2027-05-06	0	巳	巳	巳	bat_tuong ngu_ly	bat_tuong ngu_ly		false	1
+Lập hạ	2027-05-05T17:25:11.267Z	2027-05-07	1	巳	巳	巳	bat_tuong ngu_mo	bat_tuong ngu_mo			1
+Mang chủng	2027-06-05T21:25:48.204Z	2027-06-05	-1	巳	巳	巳	ngu_hop pho_ho tai_sat	ngu_hop pho_ho tai_sat			1
+Mang chủng	2027-06-05T21:25:48.204Z	2027-06-06	0	午	午	午	thoi_duc	thoi_duc		false	1
+Mang chủng	2027-06-05T21:25:48.204Z	2027-06-07	1	午	午	午					1
+Tiểu thử	2027-07-07T07:37:03.694Z	2027-07-06	-1	午	午	午	bat_tuong ngu_mo pho_ho thien_thuong	bat_tuong thien_thuong pho_ho ngu_mo			1
+Tiểu thử	2027-07-07T07:37:03.694Z	2027-07-07	0	未	未	午	tu_cung yem_doi	yem_doi tu_cung	tu_cung	true	1
+Tiểu thử	2027-07-07T07:37:03.694Z	2027-07-08	1	未	未	未	dai_thoi nguyet_hai quy_ky tu_tuong	tu_tuong nguyet_hai dai_thoi quy_ky			1
+Lập thu	2027-08-07T17:26:46.103Z	2027-08-07	-1	未	未	未	thien_nguyen tu_tuong vang_vong	thien_nguyen tu_tuong vang_vong			1
+Lập thu	2027-08-07T17:26:46.103Z	2027-08-08	0	申	申	申	bat_chuyen nguyet_sat	nguyet_sat bat_chuyen		false	1
+Lập thu	2027-08-07T17:26:46.103Z	2027-08-09	1	申	申	申	bat_chuyen ngu_ly thien_thuong	thien_thuong ngu_ly bat_chuyen			1
+Bạch lộ	2027-09-07T20:28:26.512Z	2027-09-07	-1	申	申	申	quy_ky	quy_ky			1
+Bạch lộ	2027-09-07T20:28:26.512Z	2027-09-08	0	酉	酉	酉	ngu_hop quy_ky	ngu_hop quy_ky		false	1
+Bạch lộ	2027-09-07T20:28:26.512Z	2027-09-09	1	酉	酉	酉	ngu_hop nguyet_yem tai_sat	ngu_hop tai_sat nguyet_yem			1
+Hàn lộ	2027-10-08T12:17:04.456Z	2027-10-07	-1	酉	酉	酉	bat_chuyen thien_thuong	thien_thuong bat_chuyen			1
+Hàn lộ	2027-10-08T12:17:04.456Z	2027-10-08	0	戌	戌	酉	bat_chuyen ngu_ly yem_doi	yem_doi ngu_ly bat_chuyen	ngu_ly bat_chuyen	true	1
+Hàn lộ	2027-10-08T12:17:04.456Z	2027-10-09	1	戌	戌	戌	ngu_ly nguyet_hai	nguyet_hai ngu_ly			1
+Lập đông	2027-11-07T15:38:33.690Z	2027-11-06	-1	戌	戌	戌	nguyet_sat	nguyet_sat			1
+Lập đông	2027-11-07T15:38:33.690Z	2027-11-07	0	亥	亥	戌	bat_tuong ngu_hop thoi_duc	thoi_duc ngu_hop bat_tuong	ngu_hop nguyet_yem	true	1
+Lập đông	2027-11-07T15:38:33.690Z	2027-11-08	1	亥	亥	亥	bat_tuong ngu_hop	ngu_hop bat_tuong			1
+Đại tuyết	2027-12-07T08:37:40.470Z	2027-12-06	-1	亥	亥	亥	bat_chuyen vang_vong yem_doi	yem_doi vang_vong bat_chuyen			1
+Đại tuyết	2027-12-07T08:37:40.470Z	2027-12-07	0	子	子	亥	bat_chuyen ngu_ly	ngu_ly bat_chuyen	nguyet_hai ngu_ly bat_chuyen	true	1
+Đại tuyết	2027-12-07T08:37:40.470Z	2027-12-08	1	子	子	子	dai_thoi ngu_ly	dai_thoi ngu_ly			1

@@ -10,6 +10,14 @@ export type P4ActivityState = { state: string; heading?: string; allTaboo?: bool
 export const P4_SCORE_ADAPTER_VERSION = 'p4-score-adapter-v1'
 export const P4_DEFAULT_PENALTY = -25
 export const P4_PENALTY_POLICY_ID = 'product_policy_default_penalty'
+/** Roadmap 9b ALL_TABOO_FLOOR_V1 (tasks/prd-p4-9b.md §2 P1): applied negatives on 諸事皆忌 reach this. */
+export const P4_ALL_TABOO_FLOOR = 25
+export const P4_ALL_TABOO_FLOOR_CLAUSE = 'all_taboo_floor_v1'
+/** Roadmap 9b P3: a 忌 the god cap pushed to 0 still applies and stays visible (owner 2026-10-18). */
+export const P4_CAPPED_TABOO_NOTE = 'kỵ vẫn áp dụng, đã đạt mức trừ tối đa'
+/** `preCapDelta` exists only with balancing ON, so flag-OFF rows never match. */
+export const isP4CappedTaboo = (row: Evidence) =>
+  row.status === 'applied' && (row.preCapDelta ?? 0) < 0 && row.scoreDelta === 0
 /** Spec §5: the 21 catalog gods that score only with balancing ON. */
 export const P4_DORMANT_GODS: ReadonlySet<string> = new Set([
   'thien_nguyen',
@@ -61,9 +69,12 @@ export const getP4Headings = (date: string, day: P4DayOperands) =>
 const HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
 // PRD §6.5 `p4_multi_heading_strictest`: keep negatives first, then drop positives.
 const ORDER = ['only_ji', 'both_present', 'neither_recorded', 'only_yi']
+/** States that record 忌: they get the −25 when no negative is left (9b P1 ii) and outrank not_recorded (P2). */
+const JI_STATES = ['only_ji', 'both_present']
 const BAD_HAN = new Map(badGodsData.items.map((god) => [god.id, god.han]))
 
-/** Activity state from its 卷十一 headings; any heading not_recorded/undetermined/unknown keeps the baseline. */
+/** Activity state from its 卷十一 headings. Any heading undetermined/unknown keeps the baseline; a
+ * not_recorded heading does too unless another heading records 忌 (9b MULTI_HEADING_JI_WINS_V1). */
 export function p4ActivityState(
   activityId: string,
   headings: Readonly<Record<string, P4HeadingInput>>,
@@ -71,8 +82,12 @@ export function p4ActivityState(
   const hs = HEADINGS[activityId]
   if (!hs?.length) return { state: 'baseline' }
   const states = hs.map((h) => headings[h]?.state)
-  if (states.some((s) => s === undefined || !ORDER.includes(s))) return { state: 'baseline' }
-  const best = Math.min(...states.map((s) => ORDER.indexOf(s!)))
+  if (states.some((s) => s === undefined || (s !== 'not_recorded' && !ORDER.includes(s))))
+    return { state: 'baseline' }
+  const known = states.filter((s) => s !== 'not_recorded')
+  if (known.length < states.length && !known.some((s) => JI_STATES.includes(s!)))
+    return { state: 'baseline' }
+  const best = Math.min(...known.map((s) => ORDER.indexOf(s!)))
   const state = ORDER[best]!
   return {
     state,
@@ -83,9 +98,36 @@ export function p4ActivityState(
   }
 }
 
+const penaltyRow = (
+  opts: { activityId: string; scope: string },
+  amount: number,
+  phrase: string,
+  clauseId: string,
+  ref: string,
+): Evidence => ({
+  source: 'bad_god',
+  ruleId: `p4_default_penalty:${opts.activityId}`,
+  activityId: opts.activityId,
+  scope: opts.scope,
+  label: 'Điểm trừ mặc định của ứng dụng',
+  sourcePhrase: `${phrase}: điểm trừ mặc định của ứng dụng, không phải quy tắc của sách`,
+  sourceRef: ref,
+  confidence: 'high',
+  status: 'applied',
+  rawDelta: amount,
+  preCapDelta: amount,
+  scoreDelta: amount,
+  polarity: 'negative',
+  evidenceOrigin: 'product_policy',
+  policyId: P4_PENALTY_POLICY_ID,
+  sourceClauseId: clauseId,
+  balancingEligible: false,
+})
+
 /**
- * Rows of one activity (god rows uncapped) in, resolved rows out (spec §4.1 steps 4–5, PRD FR-02/FR-04):
- * lift by state, one −25 when only_ji leaves no applied negative, then one cap allocation per god source.
+ * Rows of one activity (god rows uncapped) in, resolved rows out (spec §4.1 steps 4–5, PRD FR-02/FR-04,
+ * PRD 9b §2): lift by state, one −25 when a 忌 state leaves no applied negative, one cap allocation per
+ * god source, then on 諸事皆忌 top the applied negatives up to −25.
  */
 export function applyP4Balancing(
   rows: readonly Evidence[],
@@ -129,27 +171,20 @@ export function applyP4Balancing(
       },
     }
   })
-  // §6.7/§6.8/§6.11/§6.13: only applied negatives (not Trực-subsumed gods) block the penalty.
-  if (state === 'only_ji' && !out.some((r) => r.status === 'applied' && (r.preCapDelta ?? 0) < 0))
-    out.push({
-      source: 'bad_god',
-      ruleId: `p4_default_penalty:${opts.activityId}`,
-      activityId: opts.activityId,
-      scope: opts.scope,
-      label: 'Điểm trừ mặc định của ứng dụng',
-      sourcePhrase: `${heading} 從忌不從宜${p4.allTaboo ? ' (諸事皆忌)' : ''}: điểm trừ mặc định của ứng dụng, không phải quy tắc của sách`,
-      sourceRef: `tasks/prd-p4-score-adapter.md#${P4_PENALTY_POLICY_ID}`,
-      confidence: 'high',
-      status: 'applied',
-      rawDelta: P4_DEFAULT_PENALTY,
-      preCapDelta: P4_DEFAULT_PENALTY,
-      scoreDelta: P4_DEFAULT_PENALTY,
-      polarity: 'negative',
-      evidenceOrigin: 'product_policy',
-      policyId: P4_PENALTY_POLICY_ID,
-      sourceClauseId: `p4:${heading}${p4.allTaboo ? ':all_taboo' : ''}`,
-      balancingEligible: false,
-    })
+  // §6.7/§6.8/§6.13, 9b P1 (ii): only applied negatives (not Trực-subsumed gods) block the penalty.
+  if (
+    JI_STATES.includes(state) &&
+    !out.some((r) => r.status === 'applied' && (r.preCapDelta ?? 0) < 0)
+  )
+    out.push(
+      penaltyRow(
+        opts,
+        P4_DEFAULT_PENALTY,
+        `${heading} ${state === 'only_ji' ? '從忌不從宜' : '亦從宜亦從忌'}${p4.allTaboo ? ' (諸事皆忌)' : ''}`,
+        `p4:${heading}${p4.allTaboo ? ':all_taboo' : ''}`,
+        `tasks/prd-p4-score-adapter.md#${P4_PENALTY_POLICY_ID}`,
+      ),
+    )
   for (const [source, cap] of [
     ['good_god', goodGodsData.capPerActivity],
     ['bad_god', badGodsData.capPerActivity],
@@ -161,6 +196,23 @@ export function applyP4Balancing(
       row.scoreDelta = take && (row.preCapDelta! < 0 ? -take : take) // no -0 in output
       used += take
     }
+  }
+  // 9b P1 (i) ALL_TABOO_FLOOR_V1: applied negatives in scope, after cap (Trực uncapped), reach −25;
+  // the top-up always fits the −30 god cap since less than 25 of it is used.
+  if (p4.allTaboo) {
+    const n = out
+      .filter((r) => inScope(r) && r.status === 'applied')
+      .reduce((sum, r) => sum + Math.max(0, -r.scoreDelta), 0)
+    if (n < P4_ALL_TABOO_FLOOR)
+      out.push(
+        penaltyRow(
+          opts,
+          n - P4_ALL_TABOO_FLOOR,
+          `${heading} 諸事皆忌: bù tới mức trừ tối thiểu ${P4_ALL_TABOO_FLOOR} điểm`,
+          `p4:${heading}:${P4_ALL_TABOO_FLOOR_CLAUSE}`,
+          `tasks/prd-p4-9b.md#${P4_ALL_TABOO_FLOOR_CLAUSE}`,
+        ),
+      )
   }
   return out
 }

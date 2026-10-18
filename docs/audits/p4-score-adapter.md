@@ -1,6 +1,6 @@
 # Roadmap 8 — adapter điểm P4 sau flag `xiejiVol10BalancingEnabled` = OFF
 
-2026-10-18, nhánh `claude/p4-adapter`. Production **không đổi**: flag `false` trong manifest, baseline flag OFF byte-equal. [PRD](../../tasks/prd-p4-score-adapter.md) (quyết định owner §6.1–6.14), [spec](../plans/p4-xieji-vol10-balancing.md) §4.1, §4.2, §5.
+2026-10-18, nhánh `claude/p4-adapter`, **MERGED & DEPLOYED** [PR #69](https://github.com/nghiepnguyen/calendar-hana/pull/69) (`7d7596f`, [deploy 39090860176](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39090860176) SUCCESS). Roadmap 9 (migration diff) xong và deploy `9865eee`: [báo cáo](p4-migration-diff.md). Production **không đổi**: flag `false` trong manifest, baseline flag OFF byte-equal. [PRD](../../tasks/prd-p4-score-adapter.md) (quyết định owner §6.1–6.14), [spec](../plans/p4-xieji-vol10-balancing.md) §4.1, §4.2, §5.
 
 ## Kết quả
 
@@ -17,6 +17,8 @@
 | Thời gian (FR-08) | Flag OFF: test baseline 21,0 s (trước ~22 s), không gọi resolver. Flag ON: resolver ~32 ms/ngày |
 | Unit | 8.104 pass (216 file); lint, typecheck sạch |
 | `ci:p4` (chạy tay) | Đủ chuỗi tại `4d3d1bf` (+ docs): **EXIT 0 trong khoảng 43 phút** — P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2 (đối chứng sạch), owner-rules toàn miền 6/6 + mutation 12/12, nối almanac toàn miền 10/10, mutation adapter 21/21 |
+
+> **Roadmap 9b (2026-10-18)** thay §6.6 phía 忌 và §6.11 bằng `MULTI_HEADING_JI_WINS_V1` / `ALL_TABOO_FLOOR_V1`, Golden điểm v1 → v2: [báo cáo 9b](p4-9b.md).
 
 ## Thiết kế
 

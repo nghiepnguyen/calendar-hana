@@ -1,0 +1,17 @@
+{
+ "version": "p4-migration-rules-lock-v2",
+ "scope": "ROADMAP_9B_REGRESSION_RULES_FROZEN_BEFORE_TSV",
+ "prd": "tasks/prd-p4-9b.md §5, owner 2026-10-18; v1 rules (p4-migration-rules-v1) unchanged",
+ "rule": "Frozen before the diff v2 TSV. A violation stops the migration for owner review; these files are never edited to fit the data. A rule change needs owner approval and a new lock version.",
+ "changes": "Invariant 6: the -25 on only_ji or both_present with no applied negative; floor row only on 諸事皆忌, exactly the missing part to -25. New 13 (MULTI_HEADING_JI_WINS_V1), 14 (忌 state shows a negative; 諸事皆忌 reaches the floor), 15 (against roadmap 9 full, changed rows carry a 9b class and never rise without a heading change). Classes ALL_TABOO_FLOOR, MULTI_HEADING_JI_WINS.",
+ "files": [
+  {
+   "path": "shared/lunar/p4MigrationRulesV2.ts",
+   "sha256": "aab9cde9442cf38f134ac9c29cac52c6897d6f5b20d16446da9dee9794aa44b1"
+  },
+  {
+   "path": "shared/lunar/p4MigrationRulesV2.test.ts",
+   "sha256": "9ae3bd8f92cbd3bf8898f70018d015030cd327643a7877504c788af9f6fd4048"
+  }
+ ]
+}

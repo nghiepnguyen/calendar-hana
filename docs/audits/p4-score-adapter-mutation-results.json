@@ -1,8 +1,8 @@
 {
-  "version": "p4-score-adapter-mutations-v1",
+  "version": "p4-score-adapter-mutations-v2",
   "control": "clean",
-  "mutations": 21,
-  "caught": 21,
+  "mutations": 29,
+  "caught": 29,
   "restored": true,
   "results": [
     {
@@ -61,7 +61,7 @@
     },
     {
       "mutation": "not_recorded_heading_ignored",
-      "rule": "§6.6 baseline on any not_recorded",
+      "rule": "§6.6 / 9b P2: not_recorded beside only_yi keeps the baseline",
       "tests": [
         "shared/lunar/p4ScoreAdapter.test.ts"
       ],
@@ -181,6 +181,78 @@
       "rule": "FR-05",
       "tests": [
         "shared/lunar/p4ScoreAdapterAlmanac.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "floor_magnitude",
+      "rule": "9b P1 (i) floor 25",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "floor_on_plain_only_ji",
+      "rule": "9b P1 (i) only on 諸事皆忌 (owner 1 (a), 4.1)",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "both_present_penalty_dropped",
+      "rule": "9b P1 (ii) both_present",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p2_dropped",
+      "rule": "9b P2 not_recorded yields to 忌",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "undetermined_as_not_recorded",
+      "rule": "9b P2 undetermined keeps the baseline",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "all_taboo_missed_beside_not_recorded",
+      "rule": "9b P1 (i) + P2",
+      "tests": [
+        "shared/lunar/p4ScoreAdapter.test.ts"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ui_event_capped_hidden",
+      "rule": "9b P3 event view",
+      "tests": [
+        "src/views/DayView/p4CappedTaboo.test.tsx"
+      ],
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "ui_activity_capped_unmarked",
+      "rule": "9b P3 activity detail",
+      "tests": [
+        "src/views/DayView/p4CappedTaboo.test.tsx"
       ],
       "caughtByTest": true,
       "exitCode": 1

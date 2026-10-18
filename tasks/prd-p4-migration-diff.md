@@ -1,10 +1,10 @@
 # PRD — Roadmap 9: migration diff 4 cấu hình + rollback flag `xiejiVol10BalancingEnabled`
 
-Ngày: 2026-10-18. Trạng thái: **PRD chốt (2026-10-18)**: owner chấp nhận đề xuất cho §6.1–6.9 (§6.10). Chưa viết code, chưa sửa runtime.
+Ngày: 2026-10-18. Trạng thái: **XONG, DEPLOYED `9865eee` (2026-10-18)**: owner chấp nhận đề xuất cho §6.1–6.9 (§6.10); bước 1–5 xong ([báo cáo](../docs/audits/p4-migration-diff.md)); không sửa runtime, flag vẫn OFF. Chờ owner go-live review trước roadmap 10.
 
 ## 1. Bối cảnh
 
-- Roadmap 8 (nhánh `claude/p4-adapter`, PR #69 chưa merge): adapter điểm sau flag OFF. [PRD](prd-p4-score-adapter.md) §6.1–6.14, [báo cáo](../docs/audits/p4-score-adapter.md). Baseline flag OFF: [p4-adapter-baseline-v1](../docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/lock.json).
+- Roadmap 8 (nhánh `claude/p4-adapter`, PR #69, merge `7d7596f` 2026-10-18): adapter điểm sau flag OFF. [PRD](prd-p4-score-adapter.md) §6.1–6.14, [báo cáo](../docs/audits/p4-score-adapter.md). Baseline flag OFF: [p4-adapter-baseline-v1](../docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/lock.json).
 - Spec: [p4-xieji-vol10-balancing.md](../docs/plans/p4-xieji-vol10-balancing.md) §7.2 (migration), §8 bước 6, §9 điều kiện 4 (diff report phân loại đầy đủ + rollback flag là gate go-live).
 - PROJECT_CONTEXT §5 hàng 9: TSV 4 cấu hình (baseline / presence-only / balancing-only / full) trên 1095 ngày × 32 activity × 11 event; 0 `UNEXPECTED_REGRESSION`; rollback bằng flag đã kiểm. Cần owner: **go-live review**.
 - Roadmap 9 **không bật flag** (roadmap 10) và không đổi điểm production.
