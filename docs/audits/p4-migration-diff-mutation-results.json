@@ -1,0 +1,122 @@
+{
+  "version": "p4-migration-diff-mutations-v1",
+  "control": "clean",
+  "dates": "sampled (npm test set: every 10th P4 date, 108 exact-Jie dates, 3 outside dates)",
+  "mutations": 14,
+  "caught": 14,
+  "restored": true,
+  "results": [
+    {
+      "mutation": "baseline_activity_scores_dormant",
+      "invariant": "1",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "baseline activity changed",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "hard_warning_dropped_on",
+      "invariant": "2",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "hard warning changed",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "domain_guard_removed",
+      "invariant": "3",
+      "test": "outside the P4 domain",
+      "expect": "outside",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "lift_untagged",
+      "invariant": "4, 12",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "changed without a reason",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "no_evidence_reads_recommended",
+      "invariant": "5, 11",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "good result without an applied positive",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_twice",
+      "invariant": "6",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "penalty more than once",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "penalty_on_only_yi",
+      "invariant": "6",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "penalty without only_ji",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "only_ji_lifts_ji",
+      "invariant": "7",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "lifted under only_ji",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "dormant_on_absent_days",
+      "invariant": "8",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "not present in Golden v2",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "order_only_yi_first",
+      "invariant": "9",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "≠ Golden",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "event_changed_by_star_only",
+      "invariant": "10",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "event changed without a changed profile activity",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "score_off_replay",
+      "invariant": "12",
+      "test": "UNEXPECTED_REGRESSION",
+      "expect": "score ≠ replay",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "both_present_lifts",
+      "invariant": "chain-swap",
+      "test": "chain-swap changes only",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "dormant_on_lunar_month",
+      "invariant": "FR-07",
+      "test": "exact-Jie fixture",
+      "expect": "dormant",
+      "caughtByTest": true,
+      "exitCode": 1
+    }
+  ]
+}
