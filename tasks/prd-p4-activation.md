@@ -1,6 +1,6 @@
 # PRD — Roadmap 10: activation P4 (flag `xiejiVol10BalancingEnabled` ON)
 
-Ngày: 2026-10-18. Trạng thái: **DRAFT, chờ owner trả lời §5**. Chưa sửa code.
+Ngày: 2026-10-18. Trạng thái: **PRD chốt 2026-10-18**: owner duyệt §5 theo đề xuất (1 PR-1 trước, 2 nạp provider không chặn + DayView chờ, 3 soạn nghĩa 16 thần để duyệt, 4 thêm mục "Đã gỡ theo Hiệp Kỷ", 5 diễn tập rollback local). Đang làm PR-1.
 
 ## 1. Bối cảnh
 
