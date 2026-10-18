@@ -89,7 +89,19 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 
 **Nhóm 5 — multi-heading giữ baseline §6.6 (269).** 243 dòng heading còn lại `only_yi` (construction 113, livestock 109, wedding 21); 26 dòng `wedding` heading còn lại ghi 忌 (結婚姻 五離 / 滿日 / 月建; 嫁娶 百忌亥 / 往亡) bị mất 忌 — 8 ngày 五離 và 2025-12-07 往亡 hiện `no_evidence`. **Owner chọn (c), 2026-10-18:** `MULTI_HEADING_JI_WINS_V1` — chỉ phía 忌: heading còn lại `only_ji`/`both_present` thì áp state đó; `only_yi` giữ baseline; `undetermined` giữ baseline. Gộp vòng code với `ALL_TABOO_FLOOR_V1`; 26 dòng vào acceptance.
 
-Nhóm 6–7: chưa review.
+**Nhóm 6 — cap đổi status so với balancing-only (98):** thần dormant lấp cap (âm −30 / dương +25); 百忌 / 土王用事 applied 0 khi hung dormant đứng trước. Không cơ chế mới (nhóm 1, 2 điểm 2 (a), 3.1, 4). **Owner OK, 2026-10-18.**
+
+**Nhóm 7 — mẫu theo class (51):** **owner đóng, 2026-10-18**; bộ mẫu mới từ diff chạy lại được xem cùng kết quả acceptance.
+
+### Điều kiện go-live (owner, 2026-10-18)
+
+Review nhóm 1–7 xong. Go-live chỉ khi vòng code mới chứng minh đủ ba điều:
+
+1. **Floor 諸事皆忌 / 忌 đã ghi** (`ALL_TABOO_FLOOR_V1`): tổng âm applied trong scope ≥ 25 trên mọi heading-ngày 諸事皆忌 và mọi heading `only_ji`/`both_present` có 忌 đã ghi.
+2. **Bảo toàn 忌 multi-heading** (`MULTI_HEADING_JI_WINS_V1`): activity hai heading không mất 忌 mà heading kia ghi.
+3. **UI không che 忌 bị cap về 0:** dòng 忌 quyết định heading (`prot`, 百忌, 土王用事…) có applied 0 vì cap vẫn hiện trên UI là "kỵ vẫn áp dụng" (chuyển từ roadmap 10 vào vòng này).
+
+Bằng chứng: Golden điểm v2 đóng băng trước code (acceptance 187 dòng + 405 `only_yi` regression), mutation từng nhánh, diff roadmap 9 chạy lại (v2), test UI.
 
 ## Quy ước (không phải regression)
 
