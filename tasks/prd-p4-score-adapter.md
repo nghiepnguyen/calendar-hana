@@ -93,6 +93,8 @@ Owner chốt thêm khi soạn Golden điểm (2026-10-18):
 12. **Gỡ hết dòng applied** (vd. `neither_recorded`): status `neutral` (owner 2026-10-10, `classicalNeutral`), không phải `no_evidence`.
 13. **Thần hung bị Trực bao** (informational, `subsumesGods`) không tính là dòng âm khi kiểm −25.
 
+14. **Goal 4, ngoài 2025–2027:** flag ON bằng toàn bộ output flag OFF — không thêm 21 thần, không thay sao alias (owner 2026-10-18).
+
 Quy ước Golden (dữ liệu, không cần owner): cả 46 thần catalog đều nguồn 卷十一 nên scope = Trực + mọi thần catalog; dòng `preserve_bad` không bị gỡ (Golden v2: 0 ca 月破 trên heading bị override rơi vào `only_yi`/`neither_recorded`); protected chỉ xuất hiện ở `only_ji`/`both_present` (Golden v2) nên chỉ kiểm bằng ca tổng hợp, khớp `han` catalog với `prot`; cap phân bổ theo thứ tự catalog, penalty −25 xếp cuối pool âm của thần (`source: 'bad_god'`, `evidenceOrigin: 'product_policy'`).
 
 Đã có căn cứ, không hỏi lại: resolution trước cap; −25 product policy không hard warning; `undetermined` giữ baseline; không sinh điểm dương khi chỉ "không kỵ"; giữ `event_fit`.

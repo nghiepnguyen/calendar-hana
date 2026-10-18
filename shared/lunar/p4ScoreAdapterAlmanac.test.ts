@@ -4,11 +4,11 @@ import { describe, expect, it, vi } from 'vitest'
 import fixture from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
-import { EVENT_OPTIONS } from './eventMapping'
+import { EVENT_OPTIONS, getEventProfile, resolveEventActivityRoles } from './eventMapping'
 import goodGods from '../almanac-data/good-gods.json'
 import badGods from '../almanac-data/bad-gods.json'
 import { getP4DayHeadings } from './p4AlmanacHeadings'
-import { P4_DORMANT_GODS, p4ActivityState } from './p4ScoreAdapter'
+import { P4_DORMANT_GODS, P4_SCORE_ADAPTER_VERSION, p4ActivityState } from './p4ScoreAdapter'
 
 // Roadmap 8 wiring with the flag ON in production config (manifest mocked; production keeps it false).
 vi.mock('../almanac-data/manifest.json', async (load) => {
@@ -146,6 +146,41 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
       expect(
         getP4DayHeadings(date, { monthJianBranch: 0, dayStem: 0, dayBranch: 0, lunarDay: 1 }),
       ).toEqual({})
+  })
+
+  // FR-05 / spec §7.1: very_high event_fit reads the primary activity's final applied evidence.
+  // Witnesses found by a full-domain scan with the flag ON.
+  it.each([
+    ['applied negative left → fail', '2025-01-01', 'buy_property', 'fail', { neg: true }],
+    ['negative only lifted → pass', '2025-01-03', 'buy_property', 'pass', { lifted: true }],
+    ['hard warning → fail', '2025-01-01', 'open_business', 'fail', { hard: true }],
+    ['−25 product policy → fail', '2025-02-19', 'buy_property', 'fail', { penalty: true }],
+  ] as const)('FR-05 %s', (_, date, event, want, shape) => {
+    expect(getEventProfile(event)!.severity).toBe('very_high')
+    const primaryId = resolveEventActivityRoles(event, {}).find(
+      (r) => r.role === 'primary',
+    )!.activityId
+    const p = getAlmanac(date as never).activityRecommendations.find(
+      (r) => r.activityId === primaryId,
+    )!
+    const lifted = p.contributions.some(
+      (r) =>
+        r.status === 'informational' &&
+        r.rawDelta < 0 &&
+        r.classical?.verdict === 'not_avoided' &&
+        r.classical.version === P4_SCORE_ADAPTER_VERSION,
+    )
+    // Every witness goes through the adapter (non-baseline state), not the flag-OFF path.
+    expect(p.contributions.some((r) => r.evidenceOrigin !== undefined)).toBe(true)
+    if ('neg' in shape) expect(p.negativeMagnitude > 0 && !p.hardWarning).toBe(true)
+    if ('lifted' in shape)
+      expect([lifted, p.negativeMagnitude, p.hardWarning]).toEqual([true, 0, false])
+    if ('hard' in shape) expect(p.hardWarning).toBe(true)
+    if ('penalty' in shape)
+      expect(p.contributions.some((r) => r.evidenceOrigin === 'product_policy')).toBe(true)
+    const e = evaluateEventDay(date, event, {})
+    const fit = [...(e.mustHave ?? []), ...(e.criteria ?? [])].find((c) => c.id === 'event_fit')
+    expect(fit?.status).toBe(want)
   })
 
   it('event evaluation does not throw on sampled dates (smoke only; FR-05 witnesses open)', () => {
