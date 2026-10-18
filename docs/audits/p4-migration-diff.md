@@ -72,7 +72,14 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 - **Điểm 2 — thần dormant chen cap:** 戌 辛酉 `meeting` (2025-10-19, 2026-10-14, 2027-10-09), 65 → 5. Nguyệt Hại, Ngũ Ly (dormant, đứng trước trong catalog) dùng hết cap −30; 百忌酉 (忌 quyết định heading, `prot`) applied 0, hard warning giữ. Điểm không phụ thuộc thần nào ăn cap. **Owner chọn (a), 2026-10-18:** giữ cap theo thứ tự catalog (§6.10.6); giải thích "kỵ vẫn áp dụng" trên UI xử lý ở roadmap 10. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
 - **Điểm 3 — 諸事皆忌 có dòng âm nhẹ hơn khi không có:** 寅 庚申 `medical` (2025-02-20, 2026-02-15, 2027-02-10), 95 → 35 watch: Tứ Phế −15 applied nên không có −25 (§6.11). Trên heading-ngày 諸事皆忌: có −25 265 dòng (avoid); không −25: strong_avoid 539, avoid 400, watch 276, consider 4. **Owner chọn (b), 2026-10-18:** 諸事皆忌 có sàn — tổng âm applied trong scope tối thiểu −25, phần thiếu bù bằng dòng `product_policy_default_penalty`. Thay §6.11; chỉ làm nặng thêm. **Mở lại roadmap 8–9 một phần** (PRD, Golden điểm v2, adapter, mutation, chạy lại diff) — gộp làm sau khi review xong nhóm 3–7.
 
-Nhóm 3–7: chưa review.
+**Nhóm 3 — lên tốt từ không bằng chứng** (activity neutral/no_evidence → recommended 430; event insufficient_evidence → recommended 42). Owner chốt 2026-10-18:
+
+- **405 dòng `only_yi` + cát thần dormant** (vd. 2025-01-05 `worship` 60 → 70, Golden `yi:四相+聖心`): **OK**, giữ nguyên; khóa làm ca regression trong Golden điểm v2. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **25 dòng `both_present`** có 忌 ngoài catalog nên không có dòng âm (死氣 13 `planting`, 遊禍, 地囊, 九焦, 土符, 朔望日; vd. 2025-01-15 `pray_blessing` 60 → 70, `ji=遊禍; prot=遊禍; yi:四相+福生`): **(b)** — sàn −25 `product_policy_default_penalty` khi heading có 忌 đã ghi nhưng không còn dòng âm applied trong scope. Gộp đợt code với sàn 諸事皆忌 (nhóm 2 điểm 3).
+- **6 event `buy_property`** recommended dù `moving` là `only_ji` (event không `very_high`, điểm event = trung bình profile): **OK**, giữ `event_fit` hiện hành. Backlog riêng nếu muốn siết event-fit.
+- **Kiểm sau khi code:** chạy lại diff; 8 event `buy_property` có `moving` `both_present` phải tự điều chỉnh theo activity, không thêm rule event.
+
+Nhóm 4–7: chưa review.
 
 ## Quy ước (không phải regression)
 
