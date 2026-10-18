@@ -109,6 +109,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     ...(input.presentGoodGods === undefined ? ['Chưa truyền danh sách cát thần theo ngày.'] : []),
     ...(input.presentBadGods === undefined ? ['Chưa truyền danh sách hung thần theo ngày.'] : []),
   ]
+  const balancing = input.xiejiVol10BalancingEnabled ?? manifest.policies.xiejiVol10BalancingEnabled
   const vol10Enabled =
     (input.xiejiVol10Scoring ?? manifest.policies.xiejiVol10Scoring) && input.classicalDay
   const vol10Items = vol10Enabled
@@ -116,13 +117,17 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
         {
           ...input.classicalDay!,
           officerId: input.officerId,
-          presentGods: new Set(Object.keys(input.godPresence ?? {})),
+          // Chains now only score baseline activities, which must equal flag OFF: no dormant gods.
+          presentGods: new Set(
+            Object.keys(input.godPresence ?? {}).filter(
+              (id) => !(balancing && P4_DORMANT_GODS.has(id)),
+            ),
+          ),
           unknownGods: new Set(),
         },
         activitiesData.items.filter((item) => item.enabled).map((item) => item.id),
       )
     : []
-  const balancing = input.xiejiVol10BalancingEnabled ?? manifest.policies.xiejiVol10BalancingEnabled
   return activitiesData.items
     .filter((item) => item.enabled)
     .map((activity) => {

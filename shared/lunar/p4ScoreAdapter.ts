@@ -35,6 +35,23 @@ export const P4_DORMANT_GODS: ReadonlySet<string> = new Set([
   'quy_ky',
 ])
 
+export type P4DayOperands = {
+  monthJianBranch: number
+  dayStem: number
+  dayBranch: number
+  lunarDay: number
+}
+let headingsProvider:
+  ((date: string, day: P4DayOperands) => Record<string, P4HeadingInput>) | undefined
+/** FR-08: the P4 resolver (~400 kB) is not in the main bundle; `p4AlmanacHeadings` registers itself
+ * on import. Roadmap 10 must load it before the first almanac with the flag ON. */
+export function setP4HeadingsProvider(fn: typeof headingsProvider) {
+  headingsProvider = fn
+}
+/** Heading states of a day; `{}` (every activity on baseline) until a provider is registered. */
+export const getP4Headings = (date: string, day: P4DayOperands) =>
+  headingsProvider?.(date, day) ?? {}
+
 const HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
 // PRD §6.5 `p4_multi_heading_strictest`: keep negatives first, then drop positives.
 const ORDER = ['only_ji', 'both_present', 'neither_recorded', 'only_yi']

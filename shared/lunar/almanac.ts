@@ -30,6 +30,16 @@ import goodGodsData from '../almanac-data/good-gods.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import { ENGINE_VERSION } from './evidence'
 import { getActivityRecommendations, type ActivityRecommendation } from './activityRecommendations'
+import { getP4Headings, P4_DORMANT_GODS } from './p4ScoreAdapter'
+
+// Lunar day-table names proven equal to a dormant god (docs/audits/dormant-legacy-gods.md finding 3).
+const DORMANT_ALIASES: Record<string, string> = {
+  pho_ho: 'Phổ Hộ (Hội Hộ)',
+  tai_sat: 'Phi Ma Sát (Tai Sát)',
+  nguyet_sat: 'Nguyệt Hư (Nguyệt Sát)',
+  nguyet_yem: 'Nguyệt Yếm Đại Hoạ',
+  vang_vong: 'Vãng Vong (Thổ Kỵ)',
+}
 
 export interface Almanac {
   date: SolarDateString
@@ -112,8 +122,23 @@ function computeAlmanac(date: SolarDateString): Almanac {
   // lunar month (docs/audits/dormant-legacy-gods.md). Replace their lunar-month stars.
   const monthJianStars: Star[] = []
   const monthJianPresence: Record<string, { operand: string; equals: number }[]> = {}
+  const balancing = manifest.policies.xiejiVol10BalancingEnabled
+  const present = getXiejiGodPresence(solarTermMonthChi(jd), day.can, day.chi)
+  // Roadmap 8, flag ON only: the 21 dormant gods on Month Jian, after legacy stars in catalog order;
+  // their lunar-table alias stars are replaced like the legacy 14.
+  const dormantStars: Star[] = []
+  if (balancing)
+    for (const god of [...goodGodsData.items, ...badGodsData.items]) {
+      if (!P4_DORMANT_GODS.has(god.id)) continue
+      const alias = DORMANT_ALIASES[god.id]
+      if (alias) replaceNames.add(alias)
+      if (!present[god.id]) continue
+      const isGood = goodGodsData.items.includes(god as never)
+      const meaning = alias ? STARS.find((star) => star.name === alias)!.meaning : ''
+      dormantStars.push({ name: god.label, isGood, meaning })
+      monthJianPresence[god.id] = present[god.id]!
+    }
   if (manifest.policies.legacyGodsMonthJian) {
-    const present = getXiejiGodPresence(solarTermMonthChi(jd), day.can, day.chi)
     for (const god of [...goodGodsData.items, ...badGodsData.items]) {
       if (!LEGACY_LUNAR_GOD_IDS.includes(god.id)) continue
       replaceNames.add(god.label)
@@ -134,6 +159,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
         ...monthJianStars.filter((star) => star.isGood),
       ]),
       ...lockedStars.good,
+      ...dormantStars.filter((star) => star.isGood),
     ],
     bad: [
       ...inTableOrder([
@@ -142,6 +168,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
       ]),
       ...lockedStars.bad,
       ...authorityBadStars,
+      ...dormantStars.filter((star) => !star.isGood),
     ],
   }
 
@@ -204,6 +231,16 @@ function computeAlmanac(date: SolarDateString): Almanac {
       presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
       godPresence,
       classicalDay: { monthJianBranch, dayStem: day.can, dayBranch: day.chi },
+      ...(balancing
+        ? {
+            p4Headings: getP4Headings(date, {
+              monthJianBranch,
+              dayStem: day.can,
+              dayBranch: day.chi,
+              lunarDay: lunar.day,
+            }),
+          }
+        : {}),
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
     hours: getAllHours(jd, day.chi),
     auditedGodIds: Object.keys(godPresence),
