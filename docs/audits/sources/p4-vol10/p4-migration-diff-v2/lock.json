@@ -1,0 +1,103 @@
+{
+  "version": "p4-migration-diff-lock-v2",
+  "prd": "tasks/prd-p4-9b.md §5 (roadmap 9b); tasks/prd-p4-migration-diff.md FR-02/FR-03/FR-05/FR-06/FR-07, owner §6.10",
+  "generatedAt": "09b5f71e13c76e1e9a76d27f23c10c24db469a48",
+  "treeCleanOutsideOutput": true,
+  "rules": "docs/audits/sources/p4-vol10/p4-migration-rules-v2/lock.json",
+  "previous": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/lock.json",
+  "baseline": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/lock.json",
+  "rulesVersion": "p4-migration-rules-v2",
+  "manifestPolicies": {
+    "aiMayChangeScore": false,
+    "mansion28ScoringEnabled": false,
+    "unknownRuleMeansNeutral": false,
+    "unknownRuleMeansNoEvidence": true,
+    "hardVetoFromClassicalJi": false,
+    "requireScopeForScoring": true,
+    "conflictResolutionRequired": true,
+    "noTabooMeansNeutralUpToSeverity": "high",
+    "hardWarningKeepsWorseScoreStatus": true,
+    "xiejiVol10Scoring": true,
+    "xiejiVol10BalancingEnabled": false,
+    "legacyGodsMonthJian": true
+  },
+  "configurations": {
+    "baseline": "real manifest (xiejiVol10BalancingEnabled false), provider not loaded = baseline v1",
+    "presence": "manifest ON + provider; activity input: override false, no p4Headings, 21 dormant kept (owner 6.10.1 a)",
+    "balancing": "manifest ON + provider; activity input without the 21 dormant gods",
+    "full": "manifest ON + provider, input unchanged (roadmap 10 path)",
+    "stars": "manifest ON + provider; p4Headings {} (aid: alias star swap only)",
+    "chainSwap": "balancing with every resolved heading forced to both_present, prot kept (aid: 6-chain removal only)"
+  },
+  "dates": {
+    "p4Domain": 1095,
+    "outside": [
+      "2024-12-31",
+      "2028-01-01",
+      "2035-06-15"
+    ],
+    "jieFixture": 108
+  },
+  "eventHours": [
+    "none",
+    9
+  ],
+  "personalInput": "none",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "node": "v23.7.0",
+  "regenerate": "P4_MIGRATION_FULL=1 P4_MIGRATION_WRITE=1 npx vitest run shared/lunar/p4MigrationDiff.test.ts",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/days.tsv",
+      "sha256": "f03d0b7c736b1c2fb77441a867cc3488893c770a3a62dde00e732e6cee40e5dc"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2025.tsv",
+      "sha256": "a47915e0bb5283acdbd518c946f28c2e19eba4693dd05e889d06aeaf0579c967"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2026.tsv",
+      "sha256": "94f4288f4e35b88bd1e433d1b58cbb942450b1604dcfb541b8c2f8b443ed59f3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2027.tsv",
+      "sha256": "6756bcb05f3196126cd3fc0df156a22f658b73490bf5ba3376533c15f16b2c35"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-outside.tsv",
+      "sha256": "9f5867efc88fc8327f184ddc17db56f6a9570e5767d481d77dae6d961460e4fa"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/events-full.tsv",
+      "sha256": "e8966c651e2e9a24c28f7fc9dcd42a1dbbe3594359485c52564bfbe64e3290a4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-presence-changed.tsv",
+      "sha256": "79d566973860eaa3dadd526d1d6a1d4b0d48cf5261db726bdd56c97d58eb8683"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/events-presence-changed.tsv",
+      "sha256": "dd5c5f60224dde8e74bf967dad7bd536b6c322eecb3b3bd298c0c73d0d44d63b"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-balancing-changed.tsv",
+      "sha256": "dd0fcd6e5443da4b247fe5654b4d575cf1f92acfc4a0db9ef1988d0a42fee871"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/events-balancing-changed.tsv",
+      "sha256": "1d3f6a37cd134a8152c032f89b2cc3db3f6fa5bf354c7ce6cec0ef8904b4fe10"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/jie-boundary.tsv",
+      "sha256": "c0dbb2ebadd583a54475bd15724a758299a9cd2d5d06eb9a17e8e5b5a26d9ef4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/review.tsv",
+      "sha256": "cfacad36624023fd0b636fa88fa637a16874e5578fdfa51b252ab9b727284fa8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/summary.json",
+      "sha256": "7a0b10c437cba8b5323e6a91f1595be725e72b026ebb3e85d04e48831cc6fa01"
+    }
+  ]
+}
