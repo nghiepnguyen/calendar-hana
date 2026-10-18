@@ -128,7 +128,10 @@ try:
         finally:
             restore()
         out = r.stdout + r.stderr
-        caught = r.returncode != 0 and ' failed' in out
+        # Caught only when a target suite itself fails, not on a transform/syntax crash.
+        caught = (r.returncode != 0 and ' failed' in out
+                  and any(f'FAIL  {t}' in out for t in tests)
+                  and 'Transform failed' not in out and 'SyntaxError' not in out)
         results.append({'mutation': name, 'rule': rule, 'tests': tests, 'caughtByTest': caught,
                         'exitCode': r.returncode})
         print(json.dumps(results[-1], ensure_ascii=False), flush=True)

@@ -18,6 +18,8 @@
 | Unit | 8.104 pass (216 file); lint, typecheck sạch |
 | `ci:p4` (chạy tay) | Đủ chuỗi tại `4d3d1bf` (+ docs): **EXIT 0 trong khoảng 43 phút** — P4-B, P4-C, P5 12/12, puzhu:06 16/16, Golden v2 (đối chứng sạch), owner-rules toàn miền 6/6 + mutation 12/12, nối almanac toàn miền 10/10, mutation adapter 21/21 |
 
+> **Roadmap 9b (2026-10-18)** thay §6.6 phía 忌 và §6.11 bằng `MULTI_HEADING_JI_WINS_V1` / `ALL_TABOO_FLOOR_V1`, Golden điểm v1 → v2: [báo cáo 9b](p4-9b.md).
+
 ## Thiết kế
 
 - **Flag.** `manifest.policies.xiejiVol10BalancingEnabled: false`; `ActivityInput.xiejiVol10BalancingEnabled` ghi đè (test). Field `Evidence` mới (`preCapDelta`, `evidenceOrigin`, `policyId`, `sourceClauseId`, `balancingEligible`) chỉ xuất hiện khi ON.
