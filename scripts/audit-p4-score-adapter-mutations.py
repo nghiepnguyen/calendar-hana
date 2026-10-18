@@ -97,8 +97,9 @@ mutations = [
      [(DAILY, '(row.appliedDelta !== 0 || isP4CappedTaboo(row))', 'row.appliedDelta !== 0')]),
     ('ui_activity_capped_unmarked', '9b P3 activity detail', [UI],
      [(REC, 'isP4CappedTaboo(row) ? `${row.label} (${P4_CAPPED_TABOO_NOTE})` : row.label', 'row.label')]),
-    ('flag_default_on', 'goal 2 flag OFF', [BASELINE],
-     [(MANIFEST, '"xiejiVol10BalancingEnabled": false', '"xiejiVol10BalancingEnabled": true')]),
+    # Roadmap 10 ships the flag ON; the baseline test pins OFF and asserts the shipped value.
+    ('flag_shipped_off', 'roadmap 10 activation', [BASELINE],
+     [(MANIFEST, '"xiejiVol10BalancingEnabled": true', '"xiejiVol10BalancingEnabled": false')]),
 ]
 
 
