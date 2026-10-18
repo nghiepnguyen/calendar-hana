@@ -88,6 +88,10 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
   6. −25 tối đa một lần mỗi activity-ngày, chỉ ở `only_ji`, chỉ khi không còn âm applied trong scope (thần bị Trực bao không tính) — R8 (mutation); harness roadmap 9 kiểm toàn miền (§6.10.2).
   7. Dòng informational do adapter gỡ khớp bảng FR-02 PRD 8 theo trạng thái; 忌 protected và `preserve_bad` không bao giờ bị gỡ — R8 (mutation); harness roadmap 9 kiểm toàn miền (§6.10.2).
 
+  12. Trace giải thích delta (FR-04): score = clamp(50 + Σ applied delta) ở cả baseline và full; mỗi dòng trong scope đổi status/delta so với flag OFF phải là dòng gỡ, −25, thần dormant, cap (full hoặc flag OFF) hoặc dòng 6 chain; dòng flag OFF biến mất chỉ khi là dòng chain thêm vào.
+
+  **Đã đóng băng** (bước 1): [`p4MigrationRules.ts`](../shared/lunar/p4MigrationRules.ts) + test 18 ca tổng hợp, sha256 trong [lock](../docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json). Chạy thử một lần trên full (probe, base = off-recon): 14.894 dòng đổi, **0 vi phạm** cả 12 bất biến (bất biến 3 chưa chạy ở đó).
+
   Vi phạm bất kỳ bất biến nào: dừng và hỏi owner, không sửa bất biến cho khớp dữ liệu (§6.10.2).
   8. Thần dormant applied ⇒ có presence trong Golden v2 ngày đó (`p4-full-golden-v2`), đúng Month Jian — R8 (presence 1095/1095).
   9. Trạng thái activity = Golden điểm v1 lớp B (31.842 dòng) — R8.

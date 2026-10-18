@@ -5,6 +5,7 @@
  * the rules are never edited to fit the data (§6.10.2).
  */
 import badGodsData from '../almanac-data/bad-gods.json'
+import manifest from '../almanac-data/manifest.json'
 import type { ActivityRecommendation } from './activityRecommendations'
 import type { Evidence } from './evidence'
 import { P4_DORMANT_GODS, P4_PENALTY_POLICY_ID, P4_SCORE_ADAPTER_VERSION } from './p4ScoreAdapter'
@@ -43,9 +44,11 @@ export interface ActivityDiffRow {
   state: string
   /** Heading states of the activity in the full run, in catalog order (empty: no heading). */
   headingStates: readonly string[]
-  /** 忌 protected `han` tokens of the activity's headings (`P4HeadingInput.prot`). */
+  /** 忌 protected `han` tokens: union of `P4HeadingInput.prot` over **all** the activity's headings
+   * (as the adapter builds it), not only the deciding heading. */
   prot: ReadonlySet<string>
-  /** Flag OFF (baseline v1 equal on score/status/hard warning). */
+  /** Real manifest-OFF run (not the ON almanac with an OFF override, whose `warnings` already carry
+   * the alias swap); its per-row sha256 must equal baseline v1. */
   base: Rec
   full: Rec
   /** Balancing-only run of the same row; enables CAP_REALLOCATION (b). */
@@ -63,6 +66,13 @@ const RESOLVED = new Set(['only_ji', 'both_present', 'neither_recorded', 'only_y
 
 const conclusionChanged = (a: Rec, b: Rec) =>
   a.score !== b.score || a.status !== b.status || a.hardWarning !== b.hardWarning
+const isChain = (row: Evidence) => row.classical?.version === VOL10_SCORING_VERSION
+const replay = (rec: Rec) => {
+  const applied = rec.contributions.filter((c) => c.status === 'applied')
+  const pos = applied.reduce((sum, c) => sum + Math.max(0, c.scoreDelta), 0)
+  const neg = applied.reduce((sum, c) => sum - Math.min(0, c.scoreDelta), 0)
+  return Math.max(0, Math.min(100, manifest.baseScore + pos - neg))
+}
 const isLift = (row: Evidence) => row.classical?.version === P4_SCORE_ADAPTER_VERSION
 const isPenalty = (row: Evidence) => row.policyId === P4_PENALTY_POLICY_ID
 const nonDormantGodSum = (rec: Rec) =>
@@ -97,9 +107,7 @@ export function classifyActivityRow(row: ActivityDiffRow): {
     )
   )
     classes.push('DORMANT_GOD_ADDED')
-  const chain =
-    state !== 'baseline' &&
-    base.contributions.some((c) => c.classical?.version === VOL10_SCORING_VERSION)
+  const chain = state !== 'baseline' && base.contributions.some(isChain)
   if (chain) classes.push('CHAIN_REPLACED')
   if (row.balancing && nonDormantGodSum(full) < nonDormantGodSum(row.balancing))
     classes.push('CAP_REALLOCATION')
@@ -177,6 +185,27 @@ export function activityViolations(row: ActivityDiffRow): string[] {
     out.push(`9 state ${state} ≠ Golden ${row.goldenState}`)
   if (base.status === 'no_evidence' && full.status === 'recommended' && !positive)
     out.push('11 no_evidence → recommended without an applied positive')
+  // 12 (PRD FR-04): the trace explains the delta. Score replays from applied rows (no personal input),
+  // and every in-scope row whose status/delta differs from flag OFF carries its reason.
+  if (replay(base) !== base.score || replay(full) !== full.score) out.push('12 score ≠ replay')
+  const key = (c: Evidence) => `${c.source}|${c.ruleId}`
+  const baseRows = new Map(
+    base.contributions.filter((c) => IN_SCOPE.has(c.source)).map((c) => [key(c), c]),
+  )
+  for (const c of full.contributions.filter((c) => IN_SCOPE.has(c.source))) {
+    const b = baseRows.get(key(c))
+    baseRows.delete(key(c))
+    if (b && b.status === c.status && b.scoreDelta === c.scoreDelta) continue
+    const explained =
+      isLift(c) ||
+      isPenalty(c) ||
+      P4_DORMANT_GODS.has(c.ruleId) ||
+      (c.preCapDelta !== undefined && c.preCapDelta !== c.scoreDelta) ||
+      (b !== undefined && (isChain(b) || b.rawDelta !== b.scoreDelta))
+    if (!explained) out.push(`12 ${key(c)} changed without a reason`)
+  }
+  for (const b of baseRows.values())
+    if (!isChain(b)) out.push(`12 ${key(b)} dropped without a reason`)
   return out
 }
 

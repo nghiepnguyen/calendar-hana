@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import type { Evidence } from './evidence'
 import { P4_PENALTY_POLICY_ID, P4_SCORE_ADAPTER_VERSION } from './p4ScoreAdapter'
@@ -71,7 +73,21 @@ const chainRow = ev({
   classical: { version: VOL10_SCORING_VERSION, entry: '嫁娶', verdict: '', quote: '' },
 })
 
+const LOCK = 'docs/audits/sources/p4-vol10/p4-migration-rules-v1/lock.json'
+
 describe(`roadmap 9 migration rules (${P4_MIGRATION_RULES_VERSION})`, () => {
+  it('rules and witnesses equal the frozen lock (owner §6.10.2: never edited to fit the data)', () => {
+    const lock = JSON.parse(readFileSync(LOCK, 'utf8')) as {
+      files: { path: string; sha256: string }[]
+    }
+    expect(lock.files.map((f) => f.path)).toEqual([
+      'shared/lunar/p4MigrationRules.ts',
+      'shared/lunar/p4MigrationRules.test.ts',
+    ])
+    for (const f of lock.files)
+      expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(f.sha256)
+  })
+
   it('an unchanged clean row has no violation and no conclusion class', () => {
     expect(activityViolations(row())).toEqual([])
     expect(classifyActivityRow(row())).toEqual({ changed: false, classes: [] })
@@ -161,7 +177,9 @@ describe(`roadmap 9 migration rules (${P4_MIGRATION_RULES_VERSION})`, () => {
   })
 
   it('4 every changed row has a conclusion class', () => {
-    expect(violation(row({ full: rec({ score: 40, status: 'watch' }) }))).toEqual(['4'])
+    const pha = [ev({ source: 'truc', ruleId: 't', scoreDelta: -10 })]
+    const base = rec({ score: 40, status: 'watch', contributions: pha })
+    expect(violation(row({ base, full: { ...base, status: 'avoid' } }))).toEqual(['4'])
   })
 
   it('5 recommended or score above 50 needs an applied positive; consider is not covered', () => {
@@ -169,8 +187,8 @@ describe(`roadmap 9 migration rules (${P4_MIGRATION_RULES_VERSION})`, () => {
       violation(
         row({
           state: 'baseline',
-          base: rec({ score: 60, status: 'recommended' }),
-          full: rec({ score: 60, status: 'recommended' }),
+          base: rec({ status: 'recommended' }),
+          full: rec({ status: 'recommended' }),
         }),
       ),
     ).toEqual(['5'])
@@ -178,8 +196,16 @@ describe(`roadmap 9 migration rules (${P4_MIGRATION_RULES_VERSION})`, () => {
       violation(
         row({
           state: 'baseline',
-          base: rec({ score: 40, status: 'consider' }),
-          full: rec({ score: 40, status: 'consider' }),
+          base: rec({
+            score: 40,
+            status: 'consider',
+            contributions: [ev({ source: 'truc', ruleId: 't', scoreDelta: -10 })],
+          }),
+          full: rec({
+            score: 40,
+            status: 'consider',
+            contributions: [ev({ source: 'truc', ruleId: 't', scoreDelta: -10 })],
+          }),
         }),
       ),
     ).toEqual([])
@@ -266,6 +292,62 @@ describe(`roadmap 9 migration rules (${P4_MIGRATION_RULES_VERSION})`, () => {
     expect(
       eventViolations({ changed: false, profileActivities: ['travel'], changedActivities }),
     ).toEqual([])
+  })
+
+  it('12 the trace explains the delta: replay and per-row reasons', () => {
+    const truc = (d: number, o: Partial<Evidence> = {}) =>
+      ev({ source: 'truc', ruleId: 't', scoreDelta: d, ...o })
+    const god = (d: number, o: Partial<Evidence> = {}) =>
+      ev({ source: 'good_god', ruleId: 'thien_duc', scoreDelta: d, ...o })
+    const base = rec({ score: 70, status: 'recommended', contributions: [truc(10), god(10)] })
+    expect(violation(row({ state: 'both_present', base, full: base }))).toEqual([])
+    expect(violation(row({ state: 'both_present', base, full: { ...base, score: 65 } }))).toContain(
+      '12',
+    )
+    // A silently zeroed in-scope row is caught even when another class landed on the row.
+    const zeroed = rec({
+      score: 50,
+      status: 'watch',
+      contributions: [
+        truc(10),
+        god(0),
+        ev({ source: 'bad_god', ruleId: 'nguyet_hai', scoreDelta: -10 }),
+      ],
+    })
+    expect(violation(row({ state: 'both_present', base, full: zeroed }))).toEqual(['12'])
+    // Explained: lift tag, a cap in full, a cap or a chain in flag OFF.
+    const lift = rec({
+      score: 60,
+      contributions: [truc(10), lifted({ source: 'good_god', ruleId: 'thien_duc' }, 10)],
+    })
+    expect(violation(row({ state: 'only_ji', base, full: lift }))).not.toContain('12')
+    const capped = rec({ score: 65, contributions: [truc(10), god(5, { preCapDelta: 10 })] })
+    expect(violation(row({ state: 'both_present', base, full: capped }))).not.toContain('12')
+    const baseChain = rec({
+      score: 70,
+      status: 'recommended',
+      contributions: [truc(10, { classical: chainRow.classical }), god(10)],
+    })
+    const noChain = rec({ score: 70, status: 'recommended', contributions: [truc(10), god(10)] })
+    expect(
+      violation(
+        row({ state: 'both_present', base: { ...baseChain, score: 70 }, full: { ...noChain } }),
+      ),
+    ).not.toContain('12')
+    // A flag-OFF row may vanish only if a 6-chain added it.
+    const withChain = rec({
+      score: 45,
+      status: 'watch',
+      contributions: [truc(10), god(10), chainRow],
+    })
+    expect(violation(row({ state: 'both_present', base: withChain, full: base }))).not.toContain(
+      '12',
+    )
+    expect(
+      violation(
+        row({ state: 'both_present', base, full: rec({ score: 60, contributions: [truc(10)] }) }),
+      ),
+    ).toContain('12')
   })
 
   it('11 no_evidence → recommended needs an applied positive', () => {

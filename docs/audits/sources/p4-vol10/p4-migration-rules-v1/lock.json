@@ -1,0 +1,17 @@
+{
+  "version": "p4-migration-rules-lock-v1",
+  "scope": "ROADMAP_9_REGRESSION_RULES_FROZEN_BEFORE_TSV",
+  "prd": "tasks/prd-p4-migration-diff.md FR-01, FR-04, owner §6.10",
+  "rule": "Frozen before any migration TSV exists. A violation stops the migration for owner review; these files are never edited to fit the data (§6.10.2). A rule change needs owner approval and a new lock version.",
+  "preTsvCheck": "All 12 invariants run once on the full config, 1095 dates × 32 activities, base = ON almanac with OFF override (off-recon), uncommitted probe: 14894 changed rows, 0 violations. Invariant 3 (outside the domain) not exercised there; the roadmap 9 harness must use a real manifest-OFF base.",
+  "files": [
+    {
+      "path": "shared/lunar/p4MigrationRules.ts",
+      "sha256": "4b3eb92c7622fe62df53ec3c432ada7aad09a30d6cd2a9f5d0c9b90b6a2a1df6"
+    },
+    {
+      "path": "shared/lunar/p4MigrationRules.test.ts",
+      "sha256": "88fb693dbc62bacb3d4477f0492db3aaa391108eec9ae9dd136006933e6809e9"
+    }
+  ]
+}
