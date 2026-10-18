@@ -69,7 +69,8 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 **Nhóm 2 — top 50 |Δscore|:** 16 context, tất cả `only_ji`; 12 dòng trùng nhóm 1. Mẫu chung: 德/cát thần thành informational, dòng âm trong scope giữ trọng số (đã chốt ở nhóm 1), thêm hung thần dormant.
 
 - **Điểm 1 — 忌 không bảo vệ thắng qua 等第:** 2025-07-15 (未 乙酉) và 2025-07-27 (未 丁酉) × `contract` / `transaction`, 75 → 20. 災煞 cấp 中, không 德 → `only_ji` (Golden v2 `ji/grades.tsv`, `未-乙酉`); Trực Mãn +15, Dân Nhật +10 thành informational; Tai Sát −15, Ngũ Ly −15 (dormant). Toàn miền 8.989/14.495 heading-ngày `only_ji` đi đường 等第 không `prot`. **Owner OK, 2026-10-18:** luật sách đã khóa ở P4-B / Golden v2, không cần policy mới. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
-- Điểm 2 (thần dormant chen cap) và điểm 3 (諸事皆忌 gỡ Trực Phá): chưa chốt.
+- **Điểm 2 — thần dormant chen cap:** 戌 辛酉 `meeting` (2025-10-19, 2026-10-14, 2027-10-09), 65 → 5. Nguyệt Hại, Ngũ Ly (dormant, đứng trước trong catalog) dùng hết cap −30; 百忌酉 (忌 quyết định heading, `prot`) applied 0, hard warning giữ. Điểm không phụ thuộc thần nào ăn cap. **Owner chọn (a), 2026-10-18:** giữ cap theo thứ tự catalog (§6.10.6); giải thích "kỵ vẫn áp dụng" trên UI xử lý ở roadmap 10. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- **Điểm 3 — 諸事皆忌 có dòng âm nhẹ hơn khi không có:** 寅 庚申 `medical` (2025-02-20, 2026-02-15, 2027-02-10), 95 → 35 watch: Tứ Phế −15 applied nên không có −25 (§6.11). Trên heading-ngày 諸事皆忌: có −25 265 dòng (avoid); không −25: strong_avoid 539, avoid 400, watch 276, consider 4. **Owner chọn (b), 2026-10-18:** 諸事皆忌 có sàn — tổng âm applied trong scope tối thiểu −25, phần thiếu bù bằng dòng `product_policy_default_penalty`. Thay §6.11; chỉ làm nặng thêm. **Mở lại roadmap 8–9 một phần** (PRD, Golden điểm v2, adapter, mutation, chạy lại diff) — gộp làm sau khi review xong nhóm 3–7.
 
 Nhóm 3–7: chưa review.
 
