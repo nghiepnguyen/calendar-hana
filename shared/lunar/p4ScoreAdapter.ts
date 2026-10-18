@@ -48,6 +48,8 @@ let headingsProvider:
 export function setP4HeadingsProvider(fn: typeof headingsProvider) {
   headingsProvider = fn
 }
+/** Spec §5 forbids a dormant-gods-only release: balancing runs only once the provider is loaded. */
+export const p4BalancingReady = () => headingsProvider !== undefined
 /** Heading states of a day; `{}` (every activity on baseline) until a provider is registered. */
 export const getP4Headings = (date: string, day: P4DayOperands) =>
   headingsProvider?.(date, day) ?? {}

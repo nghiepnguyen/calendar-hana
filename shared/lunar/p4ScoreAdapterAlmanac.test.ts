@@ -130,7 +130,7 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
       ).toEqual({})
   })
 
-  it('event evaluation runs on every date (FR-05 consumes applied evidence)', () => {
+  it('event evaluation does not throw on sampled dates (smoke only; FR-05 witnesses open)', () => {
     for (const date of DATES)
       for (const [id] of EVENT_OPTIONS)
         expect(evaluateEventDay(date, id, {}).classification).toBeTruthy()

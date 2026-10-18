@@ -30,7 +30,7 @@ import goodGodsData from '../almanac-data/good-gods.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import { ENGINE_VERSION } from './evidence'
 import { getActivityRecommendations, type ActivityRecommendation } from './activityRecommendations'
-import { getP4Headings, P4_DORMANT_GODS } from './p4ScoreAdapter'
+import { getP4Headings, P4_DORMANT_GODS, p4BalancingReady } from './p4ScoreAdapter'
 
 // Lunar day-table names proven equal to a dormant god (docs/audits/dormant-legacy-gods.md finding 3).
 const DORMANT_ALIASES: Record<string, string> = {
@@ -122,7 +122,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
   // lunar month (docs/audits/dormant-legacy-gods.md). Replace their lunar-month stars.
   const monthJianStars: Star[] = []
   const monthJianPresence: Record<string, { operand: string; equals: number }[]> = {}
-  const balancing = manifest.policies.xiejiVol10BalancingEnabled
+  const balancing = manifest.policies.xiejiVol10BalancingEnabled && p4BalancingReady()
   const present = getXiejiGodPresence(solarTermMonthChi(jd), day.can, day.chi)
   // Roadmap 8, flag ON only: the 21 dormant gods on Month Jian, after legacy stars in catalog order;
   // their lunar-table alias stars are replaced like the legacy 14.
@@ -231,6 +231,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
       presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
       godPresence,
       classicalDay: { monthJianBranch, dayStem: day.can, dayBranch: day.chi },
+      xiejiVol10BalancingEnabled: balancing,
       ...(balancing
         ? {
             p4Headings: getP4Headings(date, {

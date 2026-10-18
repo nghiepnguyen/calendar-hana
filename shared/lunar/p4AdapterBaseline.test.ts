@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import manifest from '../almanac-data/manifest.json'
 import fixture from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { evaluateEventDay } from './eventEvaluation'
@@ -40,6 +41,10 @@ function eventRows() {
 }
 
 describe('roadmap 8 flag-OFF baseline (measured, frozen before the adapter)', () => {
+  it('ships with the flag OFF', () => {
+    expect(manifest.policies.xiejiVol10BalancingEnabled).toBe(false)
+  })
+
   it('activity and event outputs equal the frozen baseline', () => {
     const files = { 'activities.tsv': activityRows(), 'events.tsv': eventRows() }
     if (process.env.P4_ADAPTER_BASELINE_WRITE === '1') {
