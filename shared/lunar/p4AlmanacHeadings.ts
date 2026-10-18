@@ -1,11 +1,14 @@
 import { getP4MoonPhase } from './p4LunarPhase'
 import { resolveP4OwnerRulesDay } from './p4OwnerRules'
-import { setP4HeadingsProvider, type P4DayOperands, type P4HeadingInput } from './p4ScoreAdapter'
+import {
+  P4_DOMAIN,
+  setP4HeadingsProvider,
+  type P4DayOperands,
+  type P4HeadingInput,
+} from './p4ScoreAdapter'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { getP4MuCangSoil } from './p4YiSoil'
 
-// Roadmap 8: P4 operands (moon phase, soil) are frozen for these civil dates only (PRD goal 4).
-const P4_DOMAIN = ['2025-01-01', '2027-12-31'] as const
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 

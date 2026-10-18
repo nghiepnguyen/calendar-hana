@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import fixture from './audit-fixtures/mansion-decision-baseline-v1.json'
@@ -114,6 +115,23 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
         .join('\n'),
     ).toBe('')
   }, 600_000)
+
+  it('outside the P4 domain flag ON is the whole flag-OFF output (owner 2026-10-18)', () => {
+    const want = tsv('docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/activities.tsv').filter(
+      (r) => OUTSIDE.includes(r.date!),
+    )
+    expect(want).toHaveLength(OUTSIDE.length * 32)
+    for (const r of want) {
+      const a = getAlmanac(r.date as never)
+      const got = a.activityRecommendations.find((x) => x.activityId === r.activity)!
+      expect(createHash('sha256').update(JSON.stringify(got)).digest('hex'), r.date).toBe(r.sha256)
+      const names = new Set([...a.stars.good, ...a.stars.bad].map((s) => s.name))
+      expect(
+        [...P4_DORMANT_GODS].filter((id) => names.has(LABEL.get(id)!)),
+        r.date,
+      ).toEqual([])
+    }
+  })
 
   it('a resolution failure keeps every activity on baseline instead of throwing', () => {
     expect(

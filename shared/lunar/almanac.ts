@@ -122,7 +122,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
   // lunar month (docs/audits/dormant-legacy-gods.md). Replace their lunar-month stars.
   const monthJianStars: Star[] = []
   const monthJianPresence: Record<string, { operand: string; equals: number }[]> = {}
-  const balancing = manifest.policies.xiejiVol10BalancingEnabled && p4BalancingReady()
+  const balancing = manifest.policies.xiejiVol10BalancingEnabled && p4BalancingReady(date)
   const present = getXiejiGodPresence(solarTermMonthChi(jd), day.can, day.chi)
   // Roadmap 8, flag ON only: the 21 dormant gods on Month Jian, after legacy stars in catalog order;
   // their lunar-table alias stars are replaced like the legacy 14.

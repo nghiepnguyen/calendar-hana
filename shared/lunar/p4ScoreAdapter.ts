@@ -48,8 +48,12 @@ let headingsProvider:
 export function setP4HeadingsProvider(fn: typeof headingsProvider) {
   headingsProvider = fn
 }
-/** Spec §5 forbids a dormant-gods-only release: balancing runs only once the provider is loaded. */
-export const p4BalancingReady = () => headingsProvider !== undefined
+/** P4 operands (moon phase, soil) are frozen for these civil dates only. */
+export const P4_DOMAIN = ['2025-01-01', '2027-12-31'] as const
+/** Spec §5 forbids a dormant-gods-only release: balancing runs only once the provider is loaded.
+ * Outside the P4 domain flag ON is the whole flag-OFF output, stars included (owner 2026-10-18). */
+export const p4BalancingReady = (date: string) =>
+  headingsProvider !== undefined && date >= P4_DOMAIN[0] && date <= P4_DOMAIN[1]
 /** Heading states of a day; `{}` (every activity on baseline) until a provider is registered. */
 export const getP4Headings = (date: string, day: P4DayOperands) =>
   headingsProvider?.(date, day) ?? {}
