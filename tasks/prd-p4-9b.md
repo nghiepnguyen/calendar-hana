@@ -1,6 +1,6 @@
 # PRD — Roadmap 9b: policy sau go-live review (ALL_TABOO_FLOOR_V1, MULTI_HEADING_JI_WINS_V1, UI 忌 bị cap)
 
-Ngày: 2026-10-18. Trạng thái: **DRAFT, chờ owner duyệt §6**. Chưa sửa runtime, chưa tạo Golden.
+Ngày: 2026-10-18. Trạng thái: **PRD chốt 2026-10-18**: owner duyệt §6 theo đề xuất (1 (a), 2 chấp nhận, 3–5 có). Chưa sửa runtime.
 
 ## 1. Bối cảnh
 
@@ -73,6 +73,8 @@ Ngày: 2026-10-18. Trạng thái: **DRAFT, chờ owner duyệt §6**. Chưa sử
 3. **Dòng bù P1 (i) biến thiên** (−10, −15…): giữ `policyId: product_policy_default_penalty`, nhãn "Điểm trừ mặc định của ứng dụng", `sourceClauseId` `p4:<heading>:all_taboo_floor_v1`? (Đề xuất: có.)
 4. **Golden lớp C dùng file presence đóng băng từ engine** cho thần không dormant (§4)? Không dùng thì lớp C chỉ kiểm bất biến, không điểm chính xác. (Đề xuất: có.)
 5. **Chú thích UI** "kỵ vẫn áp dụng, đã đạt mức trừ tối đa", chỉ khi flag ON? (Đề xuất: có.)
+
+Owner 2026-10-18: **1 (a)** áp P1 (ii) cả 462 dòng; **2** chấp nhận 8 event `buy_property` không đổi (acceptance ghi "không đổi, có lý do"); **3** có; **4** có; **5** có.
 
 ## 7. Non-goals
 

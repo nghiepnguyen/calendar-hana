@@ -12,7 +12,7 @@ Policy sản phẩm owner chốt 2026-10-18 ([báo cáo review](../../../p4-migr
 |---|---|---|
 | `group4_all_taboo` | 128 | Tổng âm applied ≥ 25; không dòng nào còn watch chỉ vì bỏ chain |
 | `group3_both_present` | 25 | Có dòng −25 product policy; không còn recommended |
-| `group3_event_moving_both_present` | 8 | Event `buy_property` tự điều chỉnh theo `moving`, không thêm rule event |
+| `group3_event_moving_both_present` | 8 | **Không đổi, có lý do** (owner 2026-10-18, PRD 9b §3/§6.2): `moving` `both_present` đã có âm applied −15 nên P1 (ii) không kích hoạt; không thêm rule event |
 | `group5_multi_heading_ji` | 26 | `wedding` theo heading ghi 忌: 8 ngày 五離 và 2025-12-07 往亡 không còn `no_evidence`; 6 ngày 百忌亥 giữ hard warning |
 
 Cột `full_v1` = output trước policy (đối chứng), không phải expected.
