@@ -66,7 +66,12 @@ top 50 |Δscore| (50) · recommended → strong_avoid (14) · mẫu 3 dòng mỗ
 - **Mẫu A — 寅月 ngày 巳, Trực Bình (12 dòng):** 2025-02-17, 2026-02-12, 2027-02-07 (丁巳), 2027-03-03 (辛巳) × `pray_blessing` / `pray_children` / `medical`, 65 → 5. Heading `only_ji`, `ji=遊禍; prot=遊禍; xd=平日+月刑+月害; suppressed:xiangdi` (Golden v2). 遊禍 không có trong catalog; điểm âm đến từ Trực Bình −15, Nguyệt Hình −15 (baseline: informational do chain 平日), Nguyệt Hại −15 (dormant); Thiên Đức / Nguyệt Đức Hợp +15 và Tứ Tướng thành informational. **Owner chốt (a), 2026-10-18:** đúng 從忌不從宜 = ghi đủ 忌; mọi dòng âm trong scope giữ trọng số, không giới hạn về −25 (PRD §6.7 giữ nguyên). `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
 - **Mẫu B — 卯月 戊寅, Trực Bế (2 dòng):** 2025-03-10, 2026-03-05 × `moving`, 65 → 15. Heading `only_ji`, `ji=歸忌; prot=歸忌; xd=閉日`. Trực Bế −20 (baseline: informational do chain 閉日), Quy Kỵ −15 (dormant); Thiên Xá +15 thành informational. **Owner OK, 2026-10-18:** Trực lấy lại trọng số khi P4 thay 6 chain (§6.2). `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
 
-Nhóm 2–7: chưa review.
+**Nhóm 2 — top 50 |Δscore|:** 16 context, tất cả `only_ji`; 12 dòng trùng nhóm 1. Mẫu chung: 德/cát thần thành informational, dòng âm trong scope giữ trọng số (đã chốt ở nhóm 1), thêm hung thần dormant.
+
+- **Điểm 1 — 忌 không bảo vệ thắng qua 等第:** 2025-07-15 (未 乙酉) và 2025-07-27 (未 丁酉) × `contract` / `transaction`, 75 → 20. 災煞 cấp 中, không 德 → `only_ji` (Golden v2 `ji/grades.tsv`, `未-乙酉`); Trực Mãn +15, Dân Nhật +10 thành informational; Tai Sát −15, Ngũ Ly −15 (dormant). Toàn miền 8.989/14.495 heading-ngày `only_ji` đi đường 等第 không `prot`. **Owner OK, 2026-10-18:** luật sách đã khóa ở P4-B / Golden v2, không cần policy mới. `EXPECTED_AUTHORITY_MIGRATION_CHANGE`.
+- Điểm 2 (thần dormant chen cap) và điểm 3 (諸事皆忌 gỡ Trực Phá): chưa chốt.
+
+Nhóm 3–7: chưa review.
 
 ## Quy ước (không phải regression)
 
