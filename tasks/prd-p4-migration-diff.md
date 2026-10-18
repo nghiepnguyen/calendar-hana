@@ -41,7 +41,9 @@ Cấu hình chẩn đoán phụ (chỉ để phân rã, không vào bảng 4 c�
 
 Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượt vitest, ~60 s/lượt), so với baseline v1. Số chính thức sẽ do harness đã commit sinh lại. Miền: 1095 ngày × 32 activity = **35.040** dòng activity; 1095 × 11 event × {không giờ, 9h} = **24.090** dòng event. "Đổi" = score, status hoặc `hardWarning` khác baseline.
 
-**Kiểm harness:** `off-recon` = baseline 35.040/35.040 dòng activity và 24.090/24.090 dòng event. `stars-only` = baseline về điểm/status (0 đổi), event 0 đổi.
+**Kiểm harness:** `off-recon` = baseline về score/status/hard warning 35.040/35.040 dòng activity và score/classification 24.090/24.090 dòng event; sha khác 13.440 dòng vì `warnings` sao alias, nên **không** byte-equal. `stars-only` = baseline về điểm/status (0 đổi), event 0 đổi.
+
+**Phân bố status:** baseline (off-recon) no_evidence 12.458, recommended 7.623, watch 6.915, avoid 3.818, neutral 2.645, consider 822, strong_avoid 759 → full no_evidence 9.069, avoid 6.694, recommended 6.190, watch 5.920, neutral 3.951, strong_avoid 2.786, consider 430.
 
 | Cấu hình | Activity đổi | score | status | hard warning | Event score đổi | Event classification đổi |
 |---|---|---|---|---|---|---|
@@ -65,6 +67,7 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 - **Transition status full (≥ 400):** watch → avoid 2.871; avoid → strong_avoid 1.471; no_evidence → watch 1.263; recommended → watch 1.185; no_evidence → avoid 1.182; no_evidence → neutral 917; recommended → neutral 719; watch → strong_avoid 530; watch → neutral 457; neutral → recommended 403.
 - **Event full:** recommended → not_recommended 1.120; recommended → caution 1.012; caution → not_recommended 784; insufficient_evidence → not_recommended 708; not_recommended → caution 486; caution → recommended 399; not_recommended → recommended 264; insufficient_evidence → caution 194; insufficient_evidence → recommended 42. 81 cặp có/không giờ đổi khác nhau.
 - **Chỉ đổi `warnings` (thay sao alias):** `stars-only` 13.440 dòng trên 420 ngày (cả 32 activity mỗi ngày); full 13.511 dòng đổi sha mà không đổi score/status/hard warning, 3.411 trong số đó ở activity `baseline`. Sha toàn recommendation không dùng được làm tiêu chí "đổi": mọi dòng qua adapter có thêm field `Evidence` mới (balancing-only và full đều 28.405 dòng khác sha).
+- **Rollback (đo):** manifest thật (OFF) **+ provider `p4AlmanacHeadings` đã import** (trạng thái production sau roadmap 10 khi đổi flag về `false`) = baseline v1 byte-equal, activity + event, 1098 ngày (bản sao test baseline thêm một dòng import, 2/2 xanh).
 - **Rollback:** memo almanac chỉ trong bộ nhớ (`shared/astronomy/solarTerms/cache.ts`, `Map` theo module), không lưu qua phiên. Flag là JSON lúc build; đổi flag = build/deploy mới.
 
 ## 4. Goals
@@ -76,18 +79,18 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 
 ## 5. Functional requirements
 
-- **FR-01 Bất biến trước dữ liệu.** Danh sách bất biến `UNEXPECTED_REGRESSION` (dưới) + class đóng băng (commit riêng, test đỏ/khung) **trước** khi sinh TSV full, cùng tinh thần Golden trước code. Bất biến đề xuất:
-  1. Activity `baseline` (không heading, dính §6.6, ngoài miền): score/status/hard warning = baseline v1 (đo: 0 lệch).
-  2. `hardWarning` không đổi ở mọi dòng (đo: 0).
-  3. Ngoài 2025–2027 (2024-12-31, 2028-01-01, 2035-06-15): full = toàn bộ output flag OFF.
-  4. Mỗi dòng đổi có ≥ 1 nhãn §FR-04 (đo: 0 dòng không nhãn).
-  5. Status `recommended`/`consider` hoặc score > 50 ⇒ có dòng dương applied.
-  6. −25 tối đa một lần mỗi activity-ngày, chỉ ở `only_ji`, chỉ khi không còn âm applied trong scope (thần bị Trực bao không tính).
-  7. Dòng informational do adapter gỡ khớp bảng FR-02 PRD 8 theo trạng thái; 忌 protected và `preserve_bad` không bao giờ bị gỡ.
-  8. Thần dormant applied ⇒ có presence trong Golden v2 ngày đó (`p4-full-golden-v2`), đúng Month Jian.
-  9. Trạng thái activity = Golden điểm v1 lớp B (31.842 dòng).
-  10. Event đổi ⇒ ít nhất một activity của role event đó đổi applied rows; hard warning vẫn fail; `very_high` đọc applied negative cuối.
-  11. Không dòng nào `no_evidence` → `recommended` trừ khi có dòng dương applied mới (chờ §6.3).
+- **FR-01 Bất biến trước dữ liệu.** Danh sách bất biến `UNEXPECTED_REGRESSION` (dưới) + class đóng băng (commit riêng, test đỏ/khung) **trước** khi sinh TSV full, cùng tinh thần Golden trước code. Bất biến đề xuất, kèm kết quả probe trên full ("R8" = đã kiểm ở roadmap 8, chưa chạy lại trong harness này):
+  1. Activity `baseline` (không heading, dính §6.6, ngoài miền): score/status/hard warning = baseline v1 — **đo: 0 lệch** (10.046 dòng).
+  2. `hardWarning` không đổi ở mọi dòng — **đo: 0**.
+  3. Ngoài 2025–2027 (2024-12-31, 2028-01-01, 2035-06-15): full = toàn bộ output flag OFF — R8 (test almanac).
+  4. Mỗi dòng đổi có ≥ 1 nhãn §FR-04 — **đo: 0 dòng không nhãn**.
+  5. Status `recommended` hoặc score > 50 ⇒ có dòng dương applied — **đo: 0 vi phạm** (cả baseline). `consider` **không** thuộc bất biến: là status nhóm tránh (`ActivityAvoidance`), baseline có 295 dòng `consider` không có dòng dương, full 180.
+  6. −25 tối đa một lần mỗi activity-ngày, chỉ ở `only_ji`, chỉ khi không còn âm applied trong scope (thần bị Trực bao không tính) — R8 (mutation), chưa đo toàn miền.
+  7. Dòng informational do adapter gỡ khớp bảng FR-02 PRD 8 theo trạng thái; 忌 protected và `preserve_bad` không bao giờ bị gỡ — R8 (mutation), chưa đo toàn miền.
+  8. Thần dormant applied ⇒ có presence trong Golden v2 ngày đó (`p4-full-golden-v2`), đúng Month Jian — R8 (presence 1095/1095).
+  9. Trạng thái activity = Golden điểm v1 lớp B (31.842 dòng) — R8.
+  10. Event đổi (score hoặc classification) ⇒ ít nhất một activity trong profile event đó đổi cùng ngày — **đo: 13.874 dòng event đổi, 0 vi phạm**. Hard warning vẫn fail; `very_high` đọc applied negative cuối — R8 (FR-05, 4 ngày).
+  11. Không dòng nào `no_evidence` → `recommended` mà không có dòng dương applied — **đo: 0 vi phạm** (27 dòng chuyển đều có dương applied; câu hỏi §6.3 là về chính sách, không phải bất biến).
 - **FR-02 Harness** `shared/lunar/p4MigrationDiff.test.ts` (tên đề xuất): cấu hình qua env, một cấu hình mỗi tiến trình; ghi đủ input + flag + commit để tái hiện; không input personal (như baseline v1). Chạy đủ miền chỉ trong `ci:p4` (~5–8 phút cho 7 lượt); `npm test` chỉ mẫu (mỗi ngày thứ 10) để giữ `ci:local` ~3 phút.
 - **FR-03 TSV** `docs/audits/sources/p4-vol10/p4-migration-diff-v1/` (đề xuất): activity full gồm date, operands (Month Jian, can-chi, ngày âm), sao thêm/bỏ, heading/state/rule/`prot`, cấp/德 nếu có trong trace, dòng gỡ, raw/preCap/applied delta, cap dùng, score/status trước–sau, nhãn class, source ID; event full gồm score/classification trước–sau, `event_fit`, activity role liên quan. 3 cấu hình kia: summary + (tùy §6.4) TSV rút gọn. `lock.json` sha256 như baseline v1.
 - **FR-04 Class đổi (một dòng nhiều nhãn, gán từ trace của chính dòng full, không từ phép trừ cấu hình):**
@@ -107,7 +110,7 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 - **FR-05 Phân rã "resolution trước cap".** Báo cáo tách: (a) phản thực tế cap-trước (kỳ vọng 0, kèm lý do cấu trúc §3), (b) dormant chen cap, (c) bỏ 6 chain (`chain-swap`), (d) gỡ theo trạng thái, (e) −25. Mỗi phần: số dòng, transition status, top ca. Riêng tập "đổi ở activity-ngày không có thần dormant" (2.645 trong probe) phải được giải thích hết bằng (c)–(e).
 - **FR-06 Báo cáo** `docs/audits/p4-migration-diff.md`: transition matrix activity + event mỗi cấu hình, ma trận chồng lấn cấu hình, phân rã FR-05, lát cắt warehouse/P5, 21 thần (theo thần), multi-heading §6.6, top ca |Δscore| lớn nhất cho owner review. Không lấy tổng recommended tăng/giảm làm bằng chứng đúng nguồn (spec §7.2).
 - **FR-07 Boundary exact Jie** (spec §7.2): fixture riêng, độc lập sweep: mọi ngày chứa Jie 2025–2027 và ngày trước/sau, event có/không giờ; kiểm presence 21 thần đổi đúng ngày đổi Month Jian. Gồm 3 ngày Jie lệch quy ước noon đã biết từ P4-C.
-- **FR-08 Rollback.** (a) Test: chạy full (manifest ON) rồi tiến trình mới với manifest thật (OFF) → baseline v1 byte-equal (test baseline có sẵn). (b) Build: build ON và build OFF; bundle OFF trùng SHA-256 build trước activation (trừ `builtAt`/`build`). (c) Rollback = PR một dòng đổi manifest về `false`, giữ `legacyGodsMonthJian` và 6 chain; không sửa Golden/authority. (d) Ghi giới hạn: PWA cũ chạy tới khi update detection (PR #57) nạp bundle mới; memo chỉ trong bộ nhớ nên reload là sạch.
+- **FR-08 Rollback.** Trạng thái cần chứng minh là trạng thái production sau rollback: provider `p4AlmanacHeadings` **đã nạp** (roadmap 10 nạp trước almanac đầu tiên) và manifest `false`. (a) Test commit trong roadmap 9: manifest thật + `import './p4AlmanacHeadings'` → baseline v1 byte-equal, activity + event, 1098 ngày (probe §3 đã xanh). Test baseline v1 hiện có không import provider nên chỉ chứng minh lại roadmap 8. (b) Gate là **output bằng nhau**, không phải bundle: sau rollback một dòng, bundle vẫn chứa loader/UI của roadmap 10 nên không trùng SHA build trước activation; kiểm bundle chỉ là "bundle deploy = build local cùng commit". (c) Rollback = PR một dòng đổi manifest về `false`, giữ `legacyGodsMonthJian` và 6 chain; không sửa Golden/authority. (d) Ghi giới hạn: PWA cũ chạy tới khi update detection (PR #57) nạp bundle mới; memo chỉ trong bộ nhớ nên reload là sạch.
 - **FR-09 Không đụng:** Golden/authority/baseline đóng băng; suite production P2/R5 không pin về flag cũ, không sửa expected theo output mới (spec §7.2); runtime production không đổi; mutation runner chạy tuần tự.
 - **FR-10 Mutation harness** (nhỏ): bất biến FR-01 phải bắt được ít nhất: bỏ một nhãn class, −25 hai lần, gỡ 忌 protected, thần dormant ngoài Golden v2 presence, activity baseline đổi điểm, `hardWarning` mất. Runner riêng, lượt đối chứng sạch, vào `ci:p4`.
 
@@ -120,7 +123,7 @@ Mọi số dưới đây đo bằng harness §2 chạy một lần (5 + 3 lượ
 5. **Ca biên độ lớn.** 741 dòng |Δscore| ≥ 40, tối đa 60 (vd. 2027-03-03 medical/pray_blessing/pray_children 65 → 5). Owner muốn review danh sách top N nào (đề xuất top 50 theo |Δscore| + mọi recommended → strong_avoid 14 dòng) trước go-live?
 6. **Dormant chen cap (506 dòng, 98 đổi status so với balancing-only).** Giữ thứ tự cap theo catalog (quy ước PRD 8) là `EXPECTED`?
 7. **Chain bị thay làm mất cảnh báo cũ:** chain-swap cho avoid → no_evidence 726 dòng (trước khi tính gỡ/−25/thần dormant). Trong full còn 409 dòng `avoid`/`strong_avoid` ra khỏi nhóm tránh (avoid → watch 328, → neutral 22, → consider 8; strong_avoid → watch 49, → consider 2) và 100 strong_avoid → avoid; owner duyệt nguyên tắc "đổi theo nguồn P4 thay 6 chain" (§6.2 PRD 8) là `EXPECTED` cho cả hướng nhẹ đi?
-8. **Định nghĩa "rollback đã kiểm".** FR-08 (a)+(b)+(c) đủ, hay cần thêm smoke production thật (deploy ON rồi OFF) — vốn thuộc roadmap 10? Có thêm flag vào khóa memo almanac (phòng vệ, sửa runtime) không — đề xuất **không**, vì flag chỉ đổi lúc build.
+8. **Định nghĩa "rollback đã kiểm".** FR-08: output flag OFF + provider đã nạp = baseline v1 byte-equal (đã đo xanh) + rollback là PR một dòng manifest. Đủ cho roadmap 9, hay cần thêm smoke production thật (deploy ON rồi OFF) — vốn thuộc roadmap 10? Có thêm flag vào khóa memo almanac (phòng vệ, sửa runtime) không — đề xuất **không**, vì flag chỉ đổi lúc build.
 9. **Thời gian `ci:p4`.** Thêm ~5–8 phút (7 lượt đủ miền) + mutation harness. Chấp nhận? `npm test` chỉ chạy mẫu 1/10 ngày.
 
 ## 7. Non-goals
