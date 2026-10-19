@@ -48,7 +48,7 @@ Sau ghim: 6 file 29/29 pass.
 | | | `pray_children` | recommended → neutral 37, avoid → strong_avoid 3, neutral → neutral 3 | 43 |
 
 - P4 ON trong 2025–2027: 58 dòng = đúng 32 + 26 ngày `not_recorded` đo trước code; 59 ngày P4 đã gỡ (`only_ji`/`neither_recorded`) không đổi (FR-8).
-- **Cần owner xác nhận (hệ quả của D1):** bỏ điểm tốt mà giữ điểm xấu làm điểm tụt, nên có dòng chuyển `avoid`/`watch → strong_avoid` (vd. 50 + 20 − 35 = 35 `watch` → 50 − 35 = 15 `strong_avoid`). Production phục vụ mọi năm và D3 áp mọi năm, nên ngoài 2025–2027 năm nào cũng có ca này; 2024 + 2028 chỉ là mẫu: `pray_blessing` 5 (avoid 4 + watch 1), `pray_children` 1. Trong 2025–2027 với P4 ON thì không có ca nào; với trạng thái rollback P4 OFF thì thêm 11 (pray_blessing 8, pray_children 3).
+- **Owner chấp nhận 2026-10-19 (hệ quả của D1):** bỏ điểm tốt mà giữ điểm xấu làm điểm tụt, nên có dòng chuyển `avoid`/`watch → strong_avoid` (vd. 50 + 20 − 35 = 35 `watch` → 50 − 35 = 15 `strong_avoid`). Production phục vụ mọi năm và D3 áp mọi năm, nên ngoài 2025–2027 năm nào cũng có ca này; 2024 + 2028 chỉ là mẫu: `pray_blessing` 5 (avoid 4 + watch 1), `pray_children` 1. Trong 2025–2027 với P4 ON thì không có ca nào; với trạng thái rollback P4 OFF thì thêm 11 (pray_blessing 8, pray_children 3).
 - `neutral → neutral`: điểm/dòng đổi (dòng dương → informational) nhưng status không đổi.
 
 ## Kiểm khác
