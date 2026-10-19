@@ -19,6 +19,7 @@ import {
 } from './p4ScoreAdapter'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring } from './xiejiVol10Scoring'
+import { applyTiangouYinNoYi } from './p1TiangouYin'
 
 export type ActivityStatus =
   'recommended' | 'neutral' | 'avoid' | 'watch' | 'strong_avoid' | 'consider' | 'no_evidence'
@@ -260,6 +261,12 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
             scope: getActivityScope(activity.id) ?? activity.id,
             badGodCap: badGodsData.capPerActivity,
           }),
+        )
+      if (manifest.policies.tiangouYinNoYi)
+        contributions.splice(
+          0,
+          contributions.length,
+          ...applyTiangouYinNoYi(contributions, activity.id, input.classicalDay?.dayBranch),
         )
       const applied = contributions.filter((row) => row.status === 'applied')
       const positiveMagnitude = applied.reduce((sum, row) => sum + Math.max(0, row.scoreDelta), 0)
