@@ -19,8 +19,10 @@
     "emulators": "firebase emulators:start --only auth,firestore",
     "build:functions": "npm --prefix functions run build",
     "test:e2e": "playwright test",
-    "ci:local": "npm run lint && npm run typecheck && npm test",
-    "ci:full": "npm run ci:local && npm run test:emulator && python3 scripts/audit-annual-directions-mutations.py && python3 scripts/audit-mansion-content-mutations.py && playwright test --project=desktop --update-snapshots=none && playwright test --config playwright.dev.config.ts --project=desktop --update-snapshots=none",
+    "check": "npm run lint && npm run typecheck",
+    "test:changed": "vitest run --changed origin/main --passWithNoTests",
+    "ci:local": "npm run ci:full",
+    "ci:full": "npm run check && npm test && npm run test:emulator && python3 scripts/audit-annual-directions-mutations.py && python3 scripts/audit-mansion-content-mutations.py && playwright test --project=desktop --update-snapshots=none && playwright test --config playwright.dev.config.ts --project=desktop --update-snapshots=none",
     "ci:p4": "python3 scripts/audit-p4-remaining-ji-mutations.py && python3 scripts/audit-p4-yi-mutations.py --shard=1/1 && python3 scripts/audit-p4-warehouse-mutations.py && python3 scripts/audit-p4-puzhu06-mutations.py && python3 scripts/audit-p4-full-golden-mutations.py && P4_OWNER_RULES_FULL=1 vitest run shared/lunar/p4OwnerRules.test.ts && python3 scripts/audit-p4-owner-rules-mutations.py && P4_SCORE_ADAPTER_FULL=1 vitest run shared/lunar/p4ScoreAdapterAlmanac.test.ts && python3 scripts/audit-p4-score-adapter-mutations.py && P4_MIGRATION_FULL=1 vitest run shared/lunar/p4MigrationDiff.test.ts && python3 scripts/audit-p4-migration-mutations.py",
     "prepare": "git config core.hooksPath .githooks || true"
   },
