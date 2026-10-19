@@ -161,7 +161,7 @@ test('Phase 1 — immutable Golden V1 and exhaustive Core invariants', () => {
       getNapAm(cc).name,
       napNames[Math.floor(sexagenaryIndex(cc) / 2)],
     )
-    const all = getAllHours(jd, cc.chi),
+    const all = getAllHours(jd, cc.chi, l.month),
       good = all.filter((h) => h.isGood),
       bad = all.filter((h) => !h.isGood)
     check(

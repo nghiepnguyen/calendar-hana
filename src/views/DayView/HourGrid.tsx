@@ -25,6 +25,7 @@ export function HourGrid({ hours, isToday }: HourGridProps) {
             h.canChi.name,
             h.god,
             h.isGood ? 'giờ tốt' : 'giờ xấu',
+            h.isSatChu ? 'giờ Sát Chủ, kỵ cất nhà, cưới gả' : null,
             isNow ? 'bây giờ' : null,
           ]
             .filter(Boolean)
@@ -56,6 +57,11 @@ export function HourGrid({ hours, isToday }: HourGridProps) {
               <span className={styles.hourSub} aria-hidden="true">
                 {h.god}
               </span>
+              {h.isSatChu ? (
+                <span className={`${styles.hourSub} ${styles.hourSatChu}`} aria-hidden="true">
+                  Sát Chủ
+                </span>
+              ) : null}
               {isNow ? (
                 <span className={styles.nowBadge} aria-hidden="true">
                   Bây giờ
@@ -72,6 +78,9 @@ export function HourGrid({ hours, isToday }: HourGridProps) {
         </span>
         <span>
           <Moon size={iconSize(13)} weight="light" /> Giờ hắc đạo
+        </span>
+        <span>
+          <span className={styles.hourSatChu}>Sát Chủ</span> kỵ cất nhà, cưới gả
         </span>
       </p>
     </>

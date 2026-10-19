@@ -59,7 +59,8 @@ describe('getBadDays', () => {
 describe('getAllHours', () => {
   it('ngày mẫu 25/9/2026 (Nhâm Dần): đủ 12 giờ, Thanh Long ở giờ Tý', () => {
     const jd = solarStringToJd('2026-09-25')
-    const hours = getAllHours(jd, 2)
+    // Rằm tháng 8 âm: giờ Sát Chủ là Tỵ.
+    const hours = getAllHours(jd, 2, 8)
     expect(hours.map((h) => h.name)).toEqual([...CHI])
     expect(hours.map((h) => h.god)).toEqual([
       'Thanh Long',
@@ -78,12 +79,13 @@ describe('getAllHours', () => {
     // Ngày Nhâm: giờ Tý là Canh Tý.
     expect(hours[0].canChi.name).toBe('Canh Tý')
     expect(hours[11].canChi.name).toBe('Tân Hợi')
+    expect(hours.filter((h) => h.isSatChu).map((h) => h.name)).toEqual(['Tỵ'])
   })
 
   it.each([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])(
     'ngày có Chi %i: 6 giờ tốt trùng với getAuspiciousHours',
     (dayChi) => {
-      const good = getAllHours(2461309, dayChi).filter((h) => h.isGood)
+      const good = getAllHours(2461309, dayChi, 1).filter((h) => h.isGood)
       expect(good).toHaveLength(6)
       expect(good.map((h) => h.name)).toEqual(getAuspiciousHours(dayChi).map((h) => h.name))
     },

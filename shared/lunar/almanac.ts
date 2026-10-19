@@ -100,6 +100,13 @@ const inTableOrder = (stars: Star[]) =>
   [...stars].sort((a, b) => STAR_RANK.get(a.name)! - STAR_RANK.get(b.name)!)
 const THU_TU_NAME = 'Thụ Tử'
 const THU_TU_MEANING = 'Trăm sự đều kỵ'
+// Ngọc Hạp Chánh Tông tr. 130–133. Policy `satChuNgocHapStars` false = output before these stars.
+const SAT_CHU_NGOC_HAP_STARS = [
+  'Bốn Mùa Sát Chủ',
+  'Sát Chủ Trong Bốn Mùa',
+  'Ngày Sát Sư',
+  'Tháng Sát Sư',
+]
 
 /** Cached per almanac dataset, engine, solar-term authority and clock version. */
 export function getAlmanac(date: SolarDateString): Almanac {
@@ -132,6 +139,8 @@ function computeAlmanac(date: SolarDateString): Almanac {
   // they fall on no day: the 協紀 月表 lists 天德 on no day page of those months (issue #19).
   const replaceNames = new Set<string>(ALWAYS_SOURCE_LOCKED)
   replaceNames.add(THU_TU_NAME)
+  if (!manifest.policies.satChuNgocHapStars)
+    for (const name of SAT_CHU_NGOC_HAP_STARS) replaceNames.add(name)
   const tianDeDirect = /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]$/.test(
     getCatHungAuthorityByMonthJian(solarTermMonthChi(jd)).tianDe,
   )
@@ -267,7 +276,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
           }
         : {}),
     }).map((row) => ({ ...row, warnings: [...row.warnings, ...gods.warnings] })),
-    hours: getAllHours(jd, day.chi),
+    hours: getAllHours(jd, day.chi, lunar.month),
     auditedGodIds: Object.keys(godPresence),
     // Trigram 天德 tokens (坤/乾/艮/巽) fall on no day: the 協紀 月表 lists no 天德 day in those
     // months, and 天德合 is absent there (卷五: 四仲之月天徳居四維故無合也).
