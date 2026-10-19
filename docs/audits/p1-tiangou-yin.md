@@ -48,8 +48,15 @@ Sau ghim: 6 file 29/29 pass.
 | | | `pray_children` | recommended → neutral 37, avoid → strong_avoid 3, neutral → neutral 3 | 43 |
 
 - P4 ON trong 2025–2027: 58 dòng = đúng 32 + 26 ngày `not_recorded` đo trước code; 59 ngày P4 đã gỡ (`only_ji`/`neither_recorded`) không đổi (FR-8).
-- **Lưu ý cho owner:** `avoid`/`watch → strong_avoid` (2024/2028, và P4 OFF) là hệ quả của D1. Bỏ điểm tốt mà giữ điểm xấu làm điểm tụt (vd. 50 + 20 − 35 = 35 watch → 50 − 35 = 15 strong_avoid). Trong cấu hình ship 2025–2027 không có ca này.
+- **Cần owner xác nhận (hệ quả của D1):** bỏ điểm tốt mà giữ điểm xấu làm điểm tụt, nên có dòng chuyển `avoid`/`watch → strong_avoid` (vd. 50 + 20 − 35 = 35 `watch` → 50 − 35 = 15 `strong_avoid`). Production phục vụ mọi năm và D3 áp mọi năm, nên ngoài 2025–2027 năm nào cũng có ca này; 2024 + 2028 chỉ là mẫu: `pray_blessing` 5 (avoid 4 + watch 1), `pray_children` 1. Trong 2025–2027 với P4 ON thì không có ca nào; với trạng thái rollback P4 OFF thì thêm 11 (pray_blessing 8, pray_children 3).
 - `neutral → neutral`: điểm/dòng đổi (dòng dương → informational) nhưng status không đổi.
+
+## Kiểm khác
+
+- `personalModifier`: không caller production nào truyền (`getAlmanac` dùng 0), nên status kiểm qua almanac là status người dùng thấy.
+- Full sweep sau ghim: `P4_MIGRATION_FULL=1` `p4MigrationDiff` 9/9, `P4_SCORE_ADAPTER_FULL=1` `p4ScoreAdapterAlmanac` 12/12.
+- Anchor mutation `audit-p4-migration-mutations.py` 20/20, `audit-p4-score-adapter-mutations.py` 32/32 vẫn khớp đúng một chỗ sau khi sửa manifest/`activityRecommendations.ts`.
+- Smoke (spec tạm, không commit): production **trước** deploy 4/4 (desktop Chrome + Firefox; 2024-01-27 và 2025-01-21 Cầu phúc "Nên làm", không có "Đã gỡ theo Hiệp Kỷ"); build local nhánh **sau** 4/4 ("Bình thường", "Đã gỡ theo Hiệp Kỷ" có "(không ghi tốt)", 2024-01-27 có "Thiên Đức (không ghi tốt)").
 
 ## Còn lại
 
