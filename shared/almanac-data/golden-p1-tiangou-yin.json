@@ -1,0 +1,831 @@
+{
+ "version": "golden-p1-tiangou-yin-v1",
+ "status": "FROZEN_BEFORE_CODE",
+ "frozenAt": "2026-10-19",
+ "source": {
+  "text": "凡天狗寅日忌祭祀不註宜求福祈嗣",
+  "offset": 21876,
+  "file": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+  "sha1": "355dc6c8fe2d815c2fdec51b25228836cfea6025",
+  "work": "欽定協紀辨方書 (四庫全書本) 卷十 鋪註條例, Wikisource action=raw"
+ },
+ "marker": {
+  "classicalVersion": "p1-tiangou-yin-v1",
+  "entry": "puzhu:07",
+  "verdict": "no_annotation"
+ },
+ "policy": "tiangouYinNoYi",
+ "derivation": "Day branch from 2000-01-07 = 甲子 (date arithmetic mod 12), not from the engine. p4State from the frozen Full Golden v2 dated.tsv (2025–2027 only). Owner D1–D3 + FR-1..FR-8 (2026-10-19): on a 寅 day pray_blessing/pray_children keep no applied positive row; rows P1 lifts are informational with rawDelta > 0 and carry the marker; on P4-lifted days (only_ji/neither_recorded) P1 marks nothing (FR-8); worship and non-寅 days carry no marker; with the policy false no row carries it. Score and status follow the existing formula on the remaining rows (FR-3), checked by the test.",
+ "cases": [
+  {
+   "date": "2024-01-03",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-01-03",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-01-03",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-04-20",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-04-20",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-04-20",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-05-20",
+   "dayBranch": "申",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-05-20",
+   "dayBranch": "申",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-05-20",
+   "dayBranch": "申",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-08-06",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-08-06",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-08-06",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2024-11-22",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-11-22",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2024-11-22",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-01-09",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-01-09",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-01-09",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-01-21",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-01-21",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-01-21",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-02-14",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-02-14",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-02-14",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-03-08",
+   "dayBranch": "子",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-03-08",
+   "dayBranch": "子",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-03-08",
+   "dayBranch": "子",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-06-14",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-06-14",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-06-14",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2025-09-30",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-09-30",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2025-09-30",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-01-16",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-01-16",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-01-16",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-01-28",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-01-28",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-01-28",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-05-16",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-05-16",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-05-16",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-07-14",
+   "dayBranch": "丑",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-07-14",
+   "dayBranch": "丑",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-07-14",
+   "dayBranch": "丑",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-08-08",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-08-08",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-08-08",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2026-12-30",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-12-30",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2026-12-30",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2027-04-17",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-04-17",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-04-17",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2027-05-23",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-05-23",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-05-23",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2027-09-08",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-09-08",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "neither_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-09-08",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2027-12-01",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-12-01",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "only_ji",
+   "appliedPositiveRows": 0,
+   "p1Rows": "none_p4_lifted",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-12-01",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2027-12-13",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-12-13",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": "not_recorded",
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2027-12-13",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-03-06",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-03-06",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-03-06",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-06-22",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-06-22",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-06-22",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-09-03",
+   "dayBranch": "卯",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-09-03",
+   "dayBranch": "卯",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-09-03",
+   "dayBranch": "卯",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2028-10-08",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-10-08",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2028-10-08",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2035-01-17",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-01-17",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-01-17",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2035-05-05",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-05-05",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-05-05",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2035-08-21",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-08-21",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-08-21",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  },
+  {
+   "date": "2035-12-07",
+   "dayBranch": "寅",
+   "activityId": "pray_blessing",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-12-07",
+   "dayBranch": "寅",
+   "activityId": "pray_children",
+   "p4State": null,
+   "appliedPositiveRows": 0,
+   "p1Rows": "only_lifted_positives",
+   "statusNotRecommended": true
+  },
+  {
+   "date": "2035-12-07",
+   "dayBranch": "寅",
+   "activityId": "worship",
+   "p4State": null,
+   "appliedPositiveRows": null,
+   "p1Rows": "none",
+   "statusNotRecommended": false
+  }
+ ]
+}

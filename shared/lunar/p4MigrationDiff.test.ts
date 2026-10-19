@@ -138,13 +138,13 @@ async function compute(config: Config) {
   vi.doUnmock('../almanac-data/manifest.json')
   vi.doUnmock('./activityRecommendations')
   const captured: { input?: ActivityInput } = {}
+  // P1 (tasks/prd-p1-tiangou-yin.md) postdates this frozen diff: every configuration pins it off.
+  vi.doMock('../almanac-data/manifest.json', async (load) => {
+    const real = ((await load()) as { default: { policies: object } }).default
+    const p4 = config !== 'baseline' ? { xiejiVol10BalancingEnabled: true } : {}
+    return { default: { ...real, policies: { ...real.policies, ...p4, tiangouYinNoYi: false } } }
+  })
   if (config !== 'baseline') {
-    vi.doMock('../almanac-data/manifest.json', async (load) => {
-      const real = ((await load()) as { default: { policies: object } }).default
-      return {
-        default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: true } },
-      }
-    })
     vi.doMock('./activityRecommendations', async (load) => {
       const real = (await load()) as typeof import('./activityRecommendations')
       return {

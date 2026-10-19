@@ -11,7 +11,12 @@ import { p4BalancingReady } from './p4ScoreAdapter'
 // Roadmap 10 ships the flag ON; this file pins it OFF = the one-line rollback PR.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
-  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+  return {
+    default: {
+      ...real,
+      policies: { ...real.policies, xiejiVol10BalancingEnabled: false, tiangouYinNoYi: false },
+    },
+  }
 })
 const shipped = JSON.parse(readFileSync('shared/almanac-data/manifest.json', 'utf8')) as {
   policies: { xiejiVol10BalancingEnabled: boolean }
