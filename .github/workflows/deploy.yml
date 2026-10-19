@@ -1,6 +1,7 @@
 name: Deploy
 
-# Checks run locally in the pre-push hook (npm run ci:local); this only deploys main.
+# Pre-push runs `npm run check`; heavy suites (`ci:full`, `ci:p4`) run by hand.
+# Here: lint, build (tsc -b; functions predeploy runs tsc), deploy main.
 on:
   push:
     branches: [main]
@@ -41,6 +42,9 @@ jobs:
           npm install --global npm@11 firebase-tools
           npm ci
           npm ci --prefix functions
+      - name: Lint
+        if: env.HAS_CREDENTIALS == 'true'
+        run: npm run lint
       - name: Build web app
         if: env.HAS_CREDENTIALS == 'true'
         run: npm run build
