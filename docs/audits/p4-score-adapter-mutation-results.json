@@ -258,8 +258,8 @@
       "exitCode": 1
     },
     {
-      "mutation": "flag_default_on",
-      "rule": "goal 2 flag OFF",
+      "mutation": "flag_shipped_off",
+      "rule": "roadmap 10 activation",
       "tests": [
         "shared/lunar/p4AdapterBaseline.test.ts"
       ],

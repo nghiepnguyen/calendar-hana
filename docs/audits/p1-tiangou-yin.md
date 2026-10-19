@@ -58,6 +58,13 @@ Sau ghim: 6 file 29/29 pass.
 - Anchor mutation `audit-p4-migration-mutations.py` 20/20, `audit-p4-score-adapter-mutations.py` 32/32 vẫn khớp đúng một chỗ sau khi sửa manifest/`activityRecommendations.ts`.
 - Smoke (spec tạm, không commit): production **trước** deploy 4/4 (desktop Chrome + Firefox; 2024-01-27 và 2025-01-21 Cầu phúc "Nên làm", không có "Đã gỡ theo Hiệp Kỷ"); build local nhánh **sau** 4/4 ("Bình thường", "Đã gỡ theo Hiệp Kỷ" có "(không ghi tốt)", 2024-01-27 có "Thiên Đức (không ghi tốt)").
 
+## Gate local
+
+| Gate | Kết quả |
+|---|---|
+| `ci:full` | EXIT 0, 6m52s: unit 8.183 (225 file), emulator 29, Playwright desktop 110 (visual snapshot qua) + legal 10 |
+| `ci:p4` | EXIT 0, 1h20m39s, chạy đủ 11 bước lần đầu sau activation (gồm harness diff toàn miền + migration 20/20 mà roadmap 10 không chạy lại). P4-B 28, P4-C, P5 12, puzhu:06 16, Full Golden, owner-rules toàn miền + 12, adapter toàn miền + 29 (`flag_shipped_off` thay `flag_default_on`), migration diff toàn miền 9/9 + 20; 0 mutation sống sót |
+
 ## Còn lại
 
-`ci:full`, `ci:p4` → PR → owner cho phép merge → deploy → bundle SHA → smoke (ngày làm chứng 2024-01-27, 2025-01-21) → `PROJECT_CONTEXT.md`.
+PR → owner cho phép merge → deploy → bundle SHA → smoke (ngày làm chứng 2024-01-27, 2025-01-21) → `PROJECT_CONTEXT.md`.
