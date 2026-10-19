@@ -65,6 +65,8 @@ Sau ghim: 6 file 29/29 pass.
 | `ci:full` | EXIT 0, 6m52s: unit 8.183 (225 file), emulator 29, Playwright desktop 110 (visual snapshot qua) + legal 10 |
 | `ci:p4` | EXIT 0, 1h20m39s, chạy đủ 11 bước lần đầu sau activation (gồm harness diff toàn miền + migration 20/20 mà roadmap 10 không chạy lại). P4-B 28, P4-C, P5 12, puzhu:06 16, Full Golden, owner-rules toàn miền + 12, adapter toàn miền + 29 (`flag_shipped_off` thay `flag_default_on`), migration diff toàn miền 9/9 + 20; 0 mutation sống sót |
 
-## Còn lại
+## Release
 
-PR → owner cho phép merge → deploy → bundle SHA → smoke (ngày làm chứng 2024-01-27, 2025-01-21) → `PROJECT_CONTEXT.md`.
+- [PR #76](https://github.com/nghiepnguyen/calendar-hana/pull/76) merge `5913c98` (owner cho phép 2026-10-19, sau PR #75 `4f98f9b`); [deploy 39280489041](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39280489041) SUCCESS (queue chậm do sự cố GitHub Actions; run của #75 bị huỷ do `concurrency: deploy`, `5913c98` đã chứa nó).
+- Bundle `/assets/index-CNs6AFJY.js` SHA-256 `38194102abf7f27f09bb208f6a0e4c060a2ba7e0047e0063608455975e548830`, nhúng `tiangouYinNoYi:!0`, `xiejiVol10BalancingEnabled:!0`, `p1-tiangou-yin-v1`; `/version.json` build `5913c98`. Chưa so byte với build local.
+- Smoke production **sau** 8/8 (desktop Chrome, Pixel 7, Safari desktop, Firefox): 2024-01-27 và 2025-01-21 Cầu phúc "Bình thường", "Đã gỡ theo Hiệp Kỷ" có "(không ghi tốt)", 2024-01-27 có "Thiên Đức (không ghi tốt)". iPhone thật chưa chạy (R3).
