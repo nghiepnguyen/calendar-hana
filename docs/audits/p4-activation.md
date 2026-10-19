@@ -26,3 +26,25 @@
 ## Còn lại (sau merge)
 
 Deploy → kiểm bundle SHA và `xiejiVol10BalancingEnabled:!0` → smoke desktop Chrome, Pixel 7, Safari desktop (ngày làm chứng: 2025-10-19 meeting cap 百忌酉, 2025-02-17 meeting "Đã gỡ", 2025-02-20 Cưới hỏi Bát Chuyên, ngày 百忌亥, 諸事皆忌) → cập nhật PROJECT_CONTEXT. iPhone/Firefox chưa chạy (R3).
+
+## Smoke R3 (sau release)
+
+**Firefox — 2026-10-19:** production build `284eb8e` (`src`/`shared` không đổi từ `7826f0c`), bundle `/assets/index-DbFAG4Ga.js` SHA-256 `2233c6aff6c08fe8b342df586ddb8178cfad85aa3bf7341892012f69d3aa8ba4`, nhúng `xiejiVol10BalancingEnabled:!0`. Chạy lại 4 test smoke ON của roadmap 10 (spec tạm `e2e/zz-p4-smoke.spec.ts` + config `baseURL` production, đã xoá) bằng Playwright 1.63.0, project `firefox` (`firefox-1543`) và `desktop` làm đối chứng: **8/8 pass** (Firefox 4/4, Chrome 4/4).
+
+| Test | Kỳ vọng ON |
+|---|---|
+| 2025-10-19 Gặp gỡ / Hội họp | "Ngày Dậu (Bách Kỵ) (kỵ vẫn áp dụng, đã đạt mức trừ tối đa)" |
+| 2025-02-17 Gặp gỡ / Hội họp | danh sách "Đã gỡ theo Hiệp Kỷ" có "Nguyệt Hại (kỵ đã được gỡ)" |
+| 2025-02-20 Cưới hỏi | "Yếu tố bất lợi" có "kỵ vẫn áp dụng, đã đạt mức trừ tối đa" |
+| 2025-10-19 Sao xấu | "xem thêm" rồi có "Nguyệt Hại" |
+
+**iPhone thật — chưa chạy (owner tự chạy).** Checklist trên Safari iOS, <https://lich.thanhnghiep.top>:
+
+1. Cài đặt → Thông tin ngày sinh: 1/7/1990 → Lưu thông tin, thấy "Đã lưu thông tin ngày sinh."
+2. `/day/2025-10-19` → Mục tiêu và kết luận trong ngày → mở hết nhóm/"Xem thêm" → Gặp gỡ / Hội họp: thấy "Ngày Dậu (Bách Kỵ) (kỵ vẫn áp dụng, đã đạt mức trừ tối đa)".
+3. `/day/2025-02-17` → Gặp gỡ / Hội họp: mục "Đã gỡ theo Hiệp Kỷ" có "Nguyệt Hại (kỵ đã được gỡ)".
+4. `/day/2025-02-20` → Cưới hỏi: "Yếu tố bất lợi" có "kỵ vẫn áp dụng, đã đạt mức trừ tối đa".
+5. `/day/2025-10-19` → Lịch vạn niên → Sao xấu → "xem thêm": có "Nguyệt Hại".
+6. PWA (Home Screen): Chia sẻ → Thêm vào MH chính → mở từ icon; khi có deploy mới, mở lại app → toast "Có phiên bản mới" → "Cập nhật ngay" → `/version.json` `build` mới (xem `docs/pwa-update-strategy.md`).
+
+Ghi kết quả (model iPhone, iOS, ngày, pass/fail từng bước) vào mục này.
