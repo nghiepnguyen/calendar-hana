@@ -123,11 +123,23 @@ export interface DayHour extends AuspiciousHour {
   canChi: CanChi
   /** true = giờ hoàng đạo (tốt). */
   isGood: boolean
+  /** Giờ Sát Chủ của tháng âm: kỵ cất nhà, cưới gả. Độc lập với hoàng đạo/hắc đạo. */
+  isSatChu: boolean
 }
 
-/** Đủ 12 giờ của ngày jd theo thứ tự Tý..Hợi, kèm Can Chi giờ và giờ tốt/xấu. */
-export function getAllHours(jd: number, dayChi: number): DayHour[] {
-  return getHourGods(dayChi).map((h) => ({ ...h, canChi: hourCanChi(jd, h.chi) }))
+/**
+ * Chi giờ Sát Chủ theo tháng âm 1..12, Ngọc Hạp Chánh Tông tr. 129: "Chánh, Thất, giai qui Hổ /
+ * Nhị, Bát, tốc thị Xà…". Tháng nhuận dùng tháng thường cùng số.
+ */
+export const SAT_CHU_HOUR = Object.freeze([2, 5, 8, 4, 9, 3, 2, 5, 8, 4, 9, 3])
+
+/** Đủ 12 giờ của ngày jd theo thứ tự Tý..Hợi, kèm Can Chi giờ, giờ tốt/xấu và giờ Sát Chủ. */
+export function getAllHours(jd: number, dayChi: number, lunarMonth: number): DayHour[] {
+  return getHourGods(dayChi).map((h) => ({
+    ...h,
+    canChi: hourCanChi(jd, h.chi),
+    isSatChu: SAT_CHU_HOUR[lunarMonth - 1] === h.chi,
+  }))
 }
 
 export interface BadDay {

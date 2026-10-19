@@ -138,11 +138,17 @@ async function compute(config: Config) {
   vi.doUnmock('../almanac-data/manifest.json')
   vi.doUnmock('./activityRecommendations')
   const captured: { input?: ActivityInput } = {}
-  // P1 (tasks/prd-p1-tiangou-yin.md) postdates this frozen diff: every configuration pins it off.
+  // P1 (tasks/prd-p1-tiangou-yin.md) and satChuNgocHapStars postdate this frozen diff: every
+  // configuration pins them off.
   vi.doMock('../almanac-data/manifest.json', async (load) => {
     const real = ((await load()) as { default: { policies: object } }).default
     const p4 = config !== 'baseline' ? { xiejiVol10BalancingEnabled: true } : {}
-    return { default: { ...real, policies: { ...real.policies, ...p4, tiangouYinNoYi: false } } }
+    return {
+      default: {
+        ...real,
+        policies: { ...real.policies, ...p4, tiangouYinNoYi: false, satChuNgocHapStars: false },
+      },
+    }
   })
   if (config !== 'baseline') {
     vi.doMock('./activityRecommendations', async (load) => {

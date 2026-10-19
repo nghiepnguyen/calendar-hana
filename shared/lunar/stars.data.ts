@@ -2057,7 +2057,7 @@ export const STARS: readonly StarDefinition[] = [
   {
     name: 'Sát Chủ',
     isGood: false,
-    meaning: 'Xấu cho mọi công việc.',
+    meaning: 'Đại kỵ cất nhà, cưới gả, an táng; hạn chế việc trọng đại.',
     // Folk table, Hán-văn verse "thất Trư, bát Ngưu": month 7 Hợi, month 8 Sửu.
     // Same as SAT_CHU_AM; see audit-fixtures/sat-chu-golden-v1.json for witnesses and the Nôm variant.
     rule: {
@@ -2074,6 +2074,95 @@ export const STARS: readonly StarDefinition[] = [
         { chi: [9] },
         { chi: [2] },
         { chi: [4] },
+      ],
+    },
+  },
+  {
+    name: 'Bốn Mùa Sát Chủ',
+    isGood: false,
+    meaning: 'Kỵ cất nhà, cưới gả.',
+    // Ngọc Hạp Chánh Tông tr. 130: "Chánh, Ngũ, Cửu, Tý nhựt / Nhị, Bát, Thập, Mẹo nhựt…".
+    rule: {
+      byMonth: [
+        { chi: [0] },
+        { chi: [3] },
+        { chi: [6] },
+        { chi: [9] },
+        { chi: [0] },
+        { chi: [9] },
+        { chi: [6] },
+        { chi: [3] },
+        { chi: [0] },
+        { chi: [3] },
+        { chi: [6] },
+        { chi: [9] },
+      ],
+    },
+  },
+  {
+    name: 'Sát Chủ Trong Bốn Mùa',
+    isGood: false,
+    meaning: 'Kỵ cưới gả.',
+    // Ngọc Hạp Chánh Tông tr. 130: Xuân Ngọ, Hạ Tý, Thu Mùi, Đông Mẹo. Mùa theo tháng âm 1–3, 4–6,
+    // 7–9, 10–12 như các sao khác trong bảng.
+    rule: {
+      byMonth: [
+        { chi: [6] },
+        { chi: [6] },
+        { chi: [6] },
+        { chi: [0] },
+        { chi: [0] },
+        { chi: [0] },
+        { chi: [7] },
+        { chi: [7] },
+        { chi: [7] },
+        { chi: [3] },
+        { chi: [3] },
+        { chi: [3] },
+      ],
+    },
+  },
+  {
+    name: 'Ngày Sát Sư',
+    isGood: false,
+    meaning: 'Kỵ riêng cho thầy cúng, không kỵ cho chủ nhà.',
+    // Ngọc Hạp Chánh Tông tr. 132–133: "Nhức Xạ, nhị Thử, tam Dương phòng / Tứ Thố, ngũ Trư…".
+    rule: {
+      byMonth: [
+        { chi: [5] },
+        { chi: [0] },
+        { chi: [7] },
+        { chi: [3] },
+        { chi: [11] },
+        { chi: [10] },
+        { chi: [6] },
+        { chi: [8] },
+        { chi: [1] },
+        { chi: [9] },
+        { chi: [2] },
+        { chi: [4] },
+      ],
+    },
+  },
+  {
+    name: 'Tháng Sát Sư',
+    isGood: false,
+    meaning: 'Kỵ riêng cho thầy cúng, không kỵ cho chủ nhà.',
+    // Ngọc Hạp Chánh Tông tr. 133 (theo Lưu-thị): "Tháng Giêng, Mười-Một, Chuột kêu…".
+    rule: {
+      byMonth: [
+        { chi: [0] },
+        { chi: [1] },
+        { chi: [7] },
+        { chi: [3] },
+        { chi: [9] },
+        { chi: [7] },
+        { chi: [7] },
+        { chi: [9] },
+        { chi: [6] },
+        { chi: [9] },
+        { chi: [0] },
+        { chi: [9] },
       ],
     },
   },

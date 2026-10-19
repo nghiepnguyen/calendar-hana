@@ -145,7 +145,7 @@ export function assessPersonalDay(
     : tones.includes('favorable')
       ? 'favorable'
       : 'neutral'
-  const hours = getAllHours(jd, day.chi).map((hour) => {
+  const hours = getAllHours(jd, day.chi, viewedLunar.month).map((hour) => {
     const branch = branchRelation(hour.chi, profile.chi)
     const stem = stemRelation(hour.canChi.can, profile.can)
     const exclusions = [

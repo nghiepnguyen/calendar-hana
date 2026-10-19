@@ -16,6 +16,8 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
         ...current.policies,
         xiejiVol10BalancingEnabled: false,
         legacyGodsMonthJian: false,
+        // Ngọc Hạp Chánh Tông stars are not in the licham.vn fixture (satChuAuthority.test.ts).
+        satChuNgocHapStars: false,
       },
     },
   }

@@ -5,8 +5,10 @@ import { solarToLunar } from './lunar'
 import { dayCanChi } from './canChi'
 import { solarStringToJd } from './julian'
 import { STARS } from './stars.data'
+import { getAllHours, SAT_CHU_HOUR } from './auspicious'
 import { SAT_CHU_AM } from '../personalFengShui/annual/afflictions'
 import type { SolarDateString } from '../types'
+import manifest from '../almanac-data/manifest.json'
 
 // Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
@@ -51,4 +53,39 @@ describe('Sát Chủ (ngày) folk table, independent golden', () => {
         }
     expect(changed).toBeGreaterThan(0)
   }, 60000)
+})
+
+// Ngọc Hạp Chánh Tông tr. 129–133, chép tay từ bản scan; mỗi bảng khớp cả thơ lẫn phần giải nghĩa.
+describe('Sát Chủ / Sát Sư variants, Ngọc Hạp Chánh Tông', () => {
+  const byMonth = (name: string) =>
+    STARS.find((s) => s.name === name)!.rule.byMonth!.map((row) => row!.chi)
+  it.each([
+    ['Bốn Mùa Sát Chủ', [0, 3, 6, 9, 0, 9, 6, 3, 0, 3, 6, 9]],
+    ['Sát Chủ Trong Bốn Mùa', [6, 6, 6, 0, 0, 0, 7, 7, 7, 3, 3, 3]],
+    ['Ngày Sát Sư', [5, 0, 7, 3, 11, 10, 6, 8, 1, 9, 2, 4]],
+    ['Tháng Sát Sư', [0, 1, 7, 3, 9, 7, 7, 9, 6, 9, 0, 9]],
+  ])('%s', (name, chi) => {
+    expect(byMonth(name)).toEqual(chi.map((c) => [c]))
+  })
+  it('Giờ Sát Chủ: one hour per lunar month', () => {
+    expect([...SAT_CHU_HOUR]).toEqual([2, 5, 8, 4, 9, 3, 2, 5, 8, 4, 9, 3])
+    for (let month = 1; month <= 12; month++) {
+      const hits = getAllHours(2461309, 0, month).filter((h) => h.isSatChu)
+      expect(hits.map((h) => h.chi)).toEqual([SAT_CHU_HOUR[month - 1]])
+    }
+  })
+  it('Sát Chủ meaning follows the book (cất nhà, cưới gả), not "mọi công việc"', () => {
+    expect(STARS.find((s) => s.name === 'Sát Chủ')!.meaning).toBe(
+      'Đại kỵ cất nhà, cưới gả, an táng; hạn chế việc trọng đại.',
+    )
+  })
+})
+
+describe('policy satChuNgocHapStars', () => {
+  it('ships ON; this file pins only the P4 flag, so the stars appear', () => {
+    expect(manifest.policies.satChuNgocHapStars).toBe(true)
+    // 2025-01-28: lunar 12/29, day Dậu -> Bốn Mùa Sát Chủ and Tháng Sát Sư.
+    const bad = getAlmanac('2025-01-28').stars.bad.map((s) => s.name)
+    expect(bad).toEqual(expect.arrayContaining(['Bốn Mùa Sát Chủ', 'Tháng Sát Sư']))
+  })
 })

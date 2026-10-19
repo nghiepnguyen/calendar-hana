@@ -973,6 +973,11 @@
   color: var(--almanac-good);
 }
 
+.hourSatChu {
+  color: var(--semantic-negative);
+  font-weight: 600;
+}
+
 /* ---------- Hộp giải thích ---------- */
 
 .explain {
