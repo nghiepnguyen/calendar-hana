@@ -13,7 +13,12 @@ import { P4_DORMANT_GODS, P4_SCORE_ADAPTER_VERSION, p4ActivityState } from './p4
 // Roadmap 8 wiring with the flag ON in production config (manifest mocked; production keeps it false).
 vi.mock('../almanac-data/manifest.json', async (load) => {
   const real = ((await load()) as { default: { policies: object } }).default
-  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: true } } }
+  return {
+    default: {
+      ...real,
+      policies: { ...real.policies, xiejiVol10BalancingEnabled: true, tiangouYinNoYi: false },
+    },
+  }
 })
 
 const tsv = (path: string) => {

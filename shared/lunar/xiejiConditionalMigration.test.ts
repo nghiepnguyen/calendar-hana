@@ -20,7 +20,12 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   return {
     default: {
       ...current,
-      policies: { ...current.policies, xiejiVol10Scoring: false, legacyGodsMonthJian: false },
+      policies: {
+        ...current.policies,
+        xiejiVol10Scoring: false,
+        legacyGodsMonthJian: false,
+        tiangouYinNoYi: false,
+      },
     },
   }
 })

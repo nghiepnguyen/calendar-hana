@@ -14,7 +14,12 @@ import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
 // Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
-  return { default: { ...real, policies: { ...real.policies, xiejiVol10BalancingEnabled: false } } }
+  return {
+    default: {
+      ...real,
+      policies: { ...real.policies, xiejiVol10BalancingEnabled: false, tiangouYinNoYi: false },
+    },
+  }
 })
 
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
