@@ -24,7 +24,7 @@
 
 ## 4. Yêu cầu
 
-FR-4, FR-5, FR-7, FR-8 là **đề xuất của agent**, chờ owner duyệt; FR-1–FR-3, FR-6 suy từ D1–D3.
+FR-4, FR-5, FR-7, FR-8 do agent đề xuất, **owner duyệt 2026-10-19**; FR-1–FR-3, FR-6 suy từ D1–D3.
 
 
 | # | Yêu cầu |
