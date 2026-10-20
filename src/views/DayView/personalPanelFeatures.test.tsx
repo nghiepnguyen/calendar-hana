@@ -48,6 +48,12 @@ describe('personal panel features', () => {
     ).not.toBeInTheDocument()
   })
 
+  it('names the Sát Chủ hour among the personal hours (lunar month 8: Tỵ)', () => {
+    at('10:00')
+    render(<PersonalFengShuiPanel date="2026-09-23" settings={settings()} />)
+    expect(screen.getByText(/Giờ Sát Chủ hôm nay: Tỵ/)).toHaveTextContent('kỵ cất nhà, cưới gả')
+  })
+
   it('uses the saved gender for the annual view', () => {
     at('10:00')
     render(

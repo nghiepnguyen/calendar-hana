@@ -100,8 +100,9 @@ const inTableOrder = (stars: Star[]) =>
   [...stars].sort((a, b) => STAR_RANK.get(a.name)! - STAR_RANK.get(b.name)!)
 const THU_TU_NAME = 'Thụ Tử'
 const THU_TU_MEANING = 'Trăm sự đều kỵ'
-// Ngọc Hạp Chánh Tông tr. 130–133. Policy `satChuNgocHapStars` false = output before these stars.
+// Ngọc Hạp Chánh Tông tr. 128–133. Policy `satChuNgocHapStars` false = output before these stars.
 const SAT_CHU_NGOC_HAP_STARS = [
+  'Tháng Sát Chủ',
   'Bốn Mùa Sát Chủ',
   'Sát Chủ Trong Bốn Mùa',
   'Ngày Sát Sư',

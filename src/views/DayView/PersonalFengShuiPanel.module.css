@@ -1219,6 +1219,12 @@
   font-weight: var(--fw-700);
 }
 
+.satChuTag {
+  color: var(--semantic-negative);
+  font-size: var(--day-meta);
+  font-weight: var(--fw-600);
+}
+
 .nowNote {
   display: inline-flex;
   align-items: center;
