@@ -2078,6 +2078,28 @@ export const STARS: readonly StarDefinition[] = [
     },
   },
   {
+    name: 'Tháng Sát Chủ',
+    isGood: false,
+    meaning: 'Kỵ cất nhà, cưới gả.',
+    // Ngọc Hạp Chánh Tông tr. 128 (theo Lưu-thị): "Một, Chuột đào lỗ đã an…". Same as SAT_CHU_DUONG.
+    rule: {
+      byMonth: [
+        { chi: [0] },
+        { chi: [1] },
+        { chi: [1] },
+        { chi: [10] },
+        { chi: [4] },
+        { chi: [4] },
+        { chi: [1] },
+        { chi: [4] },
+        { chi: [1] },
+        { chi: [4] },
+        { chi: [7] },
+        { chi: [4] },
+      ],
+    },
+  },
+  {
     name: 'Bốn Mùa Sát Chủ',
     isGood: false,
     meaning: 'Kỵ cất nhà, cưới gả.',

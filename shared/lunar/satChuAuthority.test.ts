@@ -6,7 +6,7 @@ import { dayCanChi } from './canChi'
 import { solarStringToJd } from './julian'
 import { STARS } from './stars.data'
 import { getAllHours, SAT_CHU_HOUR } from './auspicious'
-import { SAT_CHU_AM } from '../personalFengShui/annual/afflictions'
+import { SAT_CHU_AM, SAT_CHU_DUONG } from '../personalFengShui/annual/afflictions'
 import type { SolarDateString } from '../types'
 import manifest from '../almanac-data/manifest.json'
 
@@ -60,12 +60,16 @@ describe('Sát Chủ / Sát Sư variants, Ngọc Hạp Chánh Tông', () => {
   const byMonth = (name: string) =>
     STARS.find((s) => s.name === name)!.rule.byMonth!.map((row) => row!.chi)
   it.each([
+    ['Tháng Sát Chủ', [0, 1, 1, 10, 4, 4, 1, 4, 1, 4, 7, 4]],
     ['Bốn Mùa Sát Chủ', [0, 3, 6, 9, 0, 9, 6, 3, 0, 3, 6, 9]],
     ['Sát Chủ Trong Bốn Mùa', [6, 6, 6, 0, 0, 0, 7, 7, 7, 3, 3, 3]],
     ['Ngày Sát Sư', [5, 0, 7, 3, 11, 10, 6, 8, 1, 9, 2, 4]],
     ['Tháng Sát Sư', [0, 1, 7, 3, 9, 7, 7, 9, 6, 9, 0, 9]],
   ])('%s', (name, chi) => {
     expect(byMonth(name)).toEqual(chi.map((c) => [c]))
+  })
+  it('Tháng Sát Chủ uses the personal-panel table (Sát Chủ Dương)', () => {
+    expect(byMonth('Tháng Sát Chủ')).toEqual(SAT_CHU_DUONG.map((c) => [c]))
   })
   it('Giờ Sát Chủ: one hour per lunar month', () => {
     expect([...SAT_CHU_HOUR]).toEqual([2, 5, 8, 4, 9, 3, 2, 5, 8, 4, 9, 3])

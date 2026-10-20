@@ -241,6 +241,7 @@ export function PersonalFengShuiPanel({
   const ready = result.status === 'ready'
   const nowChi = date === today ? hourChiOf(Math.floor(minutes / 60)) : null
   const nowHour = ready && nowChi !== null ? result.hours.find((h) => h.chi === nowChi) : undefined
+  const satChuHour = ready ? result.hours.find((h) => h.isSatChu) : undefined
   const tenGodReady = useMemo(
     () =>
       createRuleRegistry(rules).getReadiness('interpretation', [
@@ -414,6 +415,12 @@ export function PersonalFengShuiPanel({
                                 <ZodiacIcon chi={hour.chi} small />
                               </span>
                               <span className={styles.hourRange}>{hourRange(hour)}</span>
+                              {hour.isSatChu ? (
+                                <span className={styles.satChuTag}>
+                                  Sát Chủ
+                                  <span className="visually-hidden">, kỵ cất nhà, cưới gả</span>
+                                </span>
+                              ) : null}
                             </li>
                           ))}
                         </ul>
@@ -428,6 +435,13 @@ export function PersonalFengShuiPanel({
                 <p className={styles.emptyHours}>
                   <SealWarning size={iconSize(14)} weight="fill" aria-hidden="true" />
                   Không có giờ phù hợp trong phạm vi đang xét, không nới điều kiện chọn giờ.
+                </p>
+              ) : null}
+              {satChuHour ? (
+                <p className={styles.nowNote}>
+                  <SealWarning size={iconSize(14)} weight="fill" aria-hidden="true" />
+                  Giờ Sát Chủ hôm nay: {satChuHour.name} ({hourRange(satChuHour)}), kỵ cất nhà, cưới
+                  gả.
                 </p>
               ) : null}
               {nowHour?.group === 'excluded' ? (
