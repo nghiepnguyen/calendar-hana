@@ -38,7 +38,7 @@
   ],
   "operands": ["LUNAR_MONTH", "DAY_BRANCH"],
   "monthBasis": "LUNAR_MONTH",
-  "leapMonthSemantics": "BASE_MONTH — owner decision 2026-10-20: a leap month uses the table of its base month (nhuận 4 → tháng 4); no witness states a rule. Applies to every Sát Chủ / Sát Sư table and Giờ Sát Chủ",
+  "leapMonthSemantics": "UNRESOLVED — product uses the base month; no witness states a rule",
   "globalScoreAllowed": false,
   "inferenceFromThuTuForbidden": true,
   "rows": [

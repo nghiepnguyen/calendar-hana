@@ -94,7 +94,9 @@ describe('policy satChuNgocHapStars', () => {
   })
 })
 
-// Owner decision 2026-10-20 (golden leapMonthSemantics BASE_MONTH): a leap month uses its base month.
+// Owner decision 2026-10-20: a leap month uses its base month (nhuận 4 → tháng 4). The golden's
+// leapMonthSemantics still reads UNRESOLVED: its bytes are hash-locked by yi-freeze-v1, so the
+// decision lives here, in stars.ts and in PROJECT_CONTEXT S2.
 describe('leap month uses the base-month tables', () => {
   it('every day of nhuận 6/2025 (2025-07-25..2025-08-22)', () => {
     expect(getLeapMonth(2025)).toBe(6)
