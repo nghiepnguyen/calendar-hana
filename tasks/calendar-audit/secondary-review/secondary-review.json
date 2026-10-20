@@ -1,0 +1,2426 @@
+{
+  "reviewer": "independent-secondary-agent",
+  "reviewedAt": "2026-10-20",
+  "scope": {
+    "mansion": 115,
+    "yongshi": 29
+  },
+  "certification": {
+    "current": "SINGLE_REVIEWED",
+    "recommendation": [
+      "SECONDARY_REVIEW_COMPLETE",
+      "RESOLUTION_REQUIRED",
+      "EVIDENCE_REQUIRED"
+    ]
+  },
+  "method": {
+    "claims": "Mansion: shared/almanac-data/mansion-content-yuxia-1880-v1.json resolved by resolveMansionActivityMapping (shared/lunar/ruleActivityMapping.ts). 用事: activityEntries in shared/almanac-data/xiejibianfangshu-yiji.json + labels in shared/almanac-data/activities.json.",
+    "independence": "Reviewer #1 artifacts (docs/verification/activity-interpretation-review.md, docs/audits/xieji-activity-mapping-review.md, xieji-activity-mapping-review.json, clauseNotes, golden-v2) used only to locate scope; never cited as evidence.",
+    "mansionSource": "Each of 28 scan pages downloaded independently and every verse transcribed visually before comparison. Glyph variants (莊/庄, 克/剋, 蠶/蚕) count as verbatim with a note; any other character difference is a quote DISAGREE.",
+    "yongshiSource": "Wikisource 卷十一 raw fetched independently (2026-10-20); headings, list membership and 「X同」 notes parsed from it.",
+    "aggregation": "Per item: any dimension DISAGREE -> DISAGREE; else any UNCERTAIN -> UNCERTAIN; else AGREE.",
+    "tierRule": "One tier per item = strongest source actually consulted.",
+    "omissions": "Operative phrases on the scan that production did not extract are recorded in notes only; counts stay 115/29."
+  },
+  "counts": {
+    "mansion": {
+      "AGREE": 107,
+      "DISAGREE": 5,
+      "UNCERTAIN": 3
+    },
+    "yongshi": {
+      "AGREE": 28,
+      "UNCERTAIN": 1
+    }
+  },
+  "tiers": {
+    "tier1": 144
+  },
+  "scanTranscriptions": [
+    {
+      "scanPage": "n45",
+      "pdfPage": 46,
+      "sha1": "e5bf3be3ce65300b6ba319853f166ab5e1c243fe",
+      "heading": "角木蛟吉",
+      "deity": "鄧禹",
+      "verse": "角星造作主榮昌，外進田財及女郎，嫁娶婚姻生貴子，文人及第見君王，惟有葬埋不可用，三年之後主瘟[疾?]，起工修築墳墓地，堂前立見主人亡"
+    },
+    {
+      "scanPage": "n46",
+      "pdfPage": 47,
+      "sha1": "dc5e0cd56a74a78f3b5b1ef1127d81933fc64dca",
+      "heading": "亢金龍凶",
+      "deity": "吳漢",
+      "verse": "亢星造作長房當，十日之中主有[殃?]，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪"
+    },
+    {
+      "scanPage": "n47",
+      "pdfPage": 48,
+      "sha1": "b3ef706932a3ad5b55951172480ad11fc7a69845",
+      "heading": "氐土貉凶",
+      "deity": "賈復",
+      "verse": "氐星造作主災凶，費盡田園倉庫空，埋葬不可用此日，懸繩弔頸禍重重，若是婚姻離別散，夜招浪子入房中，行船必定遭沉沒，更生聾啞子孫窮"
+    },
+    {
+      "scanPage": "n48",
+      "pdfPage": 49,
+      "sha1": "52ba83d00b8e6e2d423c7d94f1a349e1e9dfef60",
+      "heading": "房日兔吉",
+      "deity": "耿弇",
+      "verse": "房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂"
+    },
+    {
+      "scanPage": "n49",
+      "pdfPage": 50,
+      "sha1": "a43fe2c07151c9cd41c833b4dff656133e648c48",
+      "heading": "心月狐凶",
+      "deity": "寇恂",
+      "verse": "心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終"
+    },
+    {
+      "scanPage": "n50",
+      "pdfPage": 51,
+      "sha1": "e2116bd4ca2144415456d6b3a9b96167700f60c6",
+      "heading": "尾火虎吉",
+      "deity": "岑彭",
+      "verse": "尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名"
+    },
+    {
+      "scanPage": "n51",
+      "pdfPage": 52,
+      "sha1": "2bc1e7becfb585281854583e2dcc91b07d491da2",
+      "heading": "箕水豹吉",
+      "deity": "馮異",
+      "verse": "箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康"
+    },
+    {
+      "scanPage": "n52",
+      "pdfPage": 53,
+      "sha1": "6320cf96f62359a29bdfd087070623ffb52e4954",
+      "heading": "斗木獬吉",
+      "deity": "朱祐",
+      "verse": "斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災"
+    },
+    {
+      "scanPage": "n53",
+      "pdfPage": 54,
+      "sha1": "466281f2856fb60fb4bfa7fd727480c6487447f5",
+      "heading": "牛金牛凶",
+      "deity": "祭遵",
+      "verse": "牛星造作主災危，九横三災不可推，家宅不安人口退，田蚕不利主人衰，嫁娶婚姻皆自損，金銀財谷漸無之，若是開門并放水，牛猪羊馬亦傷悲"
+    },
+    {
+      "scanPage": "n54",
+      "pdfPage": 55,
+      "sha1": "a8782175e5eb873a3c903fa265c1487557ce2311",
+      "heading": "女土蝠凶",
+      "deity": "景丹",
+      "verse": "女星造作損婆娘，兄弟相嫌似虎狼，埋葬生災逢鬼怪，顛邪疾病更瘟[?]，為事遭官財失散，瀉痢留連不可當，開門放水逢此日，全家散財主離鄉"
+    },
+    {
+      "scanPage": "n55",
+      "pdfPage": 56,
+      "sha1": "5c30dc2657f7399c8da2dbfe5ee8014dfe4c5cb5",
+      "heading": "虛日鼠凶",
+      "deity": "蓋延",
+      "verse": "虛星造作主災殃，男女孤眠不一雙，內亂風聲無禮節，兒孫媳婦伴人床，開門放水招災禍，虎咬蛇傷又卒亡，三三五五連年病，家破人亡不可當"
+    },
+    {
+      "scanPage": "n56",
+      "pdfPage": 57,
+      "sha1": "53026f43acf499c16702dbe270498557c83b16bc",
+      "heading": "危月燕凶",
+      "deity": "堅鐔",
+      "verse": "危星不可造高堂，自吊遭刑見血光，三歲孩兒遭水厄，後生出外不還鄉，埋葬若還逢此日，週年百日臥高床，開門放水遭刑杖，三年五載一悲傷"
+    },
+    {
+      "scanPage": "n57",
+      "pdfPage": 58,
+      "sha1": "f847450d159fd7385f48b6249539e16a8edb5583",
+      "heading": "室火猪吉",
+      "deity": "耿純",
+      "verse": "室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休"
+    },
+    {
+      "scanPage": "n58",
+      "pdfPage": 59,
+      "sha1": "340156124b7808b485477739f461ae92facf5676",
+      "heading": "壁水貐吉",
+      "deity": "臧宮",
+      "verse": "壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭"
+    },
+    {
+      "scanPage": "n59",
+      "pdfPage": 60,
+      "sha1": "c425483246015f993290d6e30382622805640821",
+      "heading": "奎木狼凶",
+      "deity": "馬武",
+      "verse": "奎星造作得禎祥，家下榮和大吉昌，若是埋葬陰卒死，當年定主兩三喪，看看軍令刑傷到，重重官事主瘟[?]，開門放水招災禍，三年兩次損兒郎"
+    },
+    {
+      "scanPage": "n60",
+      "pdfPage": 61,
+      "sha1": "63fd42be5bf55cb01f7f84b039a04cad55304ca0",
+      "heading": "婁金狗吉",
+      "deity": "劉隆",
+      "verse": "婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧"
+    },
+    {
+      "scanPage": "n61",
+      "pdfPage": 62,
+      "sha1": "98f975c38e35998e64b308429afddea02a7a01e9",
+      "heading": "胃土雉吉",
+      "deity": "烏成",
+      "verse": "胃星造作事如何，富貴榮華喜氣多，埋葬進臨官祿位，三災九禍不逢他，婚姻遇此家富貴，夫婦齊眉永保和，從此門庭生吉慶，兒孫代代拜金坡"
+    },
+    {
+      "scanPage": "n62",
+      "pdfPage": 63,
+      "sha1": "d900c3fe521c2faa08b271bd58d968f3c08edd7a",
+      "heading": "昴日雞凶",
+      "deity": "王良",
+      "verse": "昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁"
+    },
+    {
+      "scanPage": "n63",
+      "pdfPage": 64,
+      "sha1": "27c960118b307e9c665e14187c15f671b87dc252",
+      "heading": "畢月烏吉",
+      "deity": "陳俊",
+      "verse": "畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)"
+    },
+    {
+      "scanPage": "n64",
+      "pdfPage": 65,
+      "sha1": "9b413229ae9eee6e6bd13794d19662596191d0e6",
+      "heading": "參水猿吉",
+      "deity": "杜茂",
+      "verse": "參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花"
+    },
+    {
+      "scanPage": "n65",
+      "pdfPage": 66,
+      "sha1": "57ed30f124d57f07ac463c98865b1933f695db69",
+      "heading": "觜火猴凶",
+      "deity": "傅俊",
+      "verse": "觜星造作有徒刑，三年必定主伶仃，埋葬卒死多因此，取定寅年使殺人，三喪不止皆由此，一人藥毒二人身，家門田地皆退敗，倉庫金銀化作塵"
+    },
+    {
+      "scanPage": "n66",
+      "pdfPage": 67,
+      "sha1": "cd8e2216fe1255d63fdfe9a39d1d1def495b57c0",
+      "heading": "井木犴吉",
+      "deity": "姚期",
+      "verse": "井星造作旺蚕田，金榜題名第一先，埋葬須防驚卒死，狂顛風疾入黃泉，開門放水招財帛，牛馬猪羊旺莫言，寡婦田塘來入宅，兒孫興旺有餘錢"
+    },
+    {
+      "scanPage": "n67",
+      "pdfPage": 68,
+      "sha1": "291f37bb65a720873d8eb24bf57de6636f2c0fb8",
+      "heading": "鬼金羊凶",
+      "deity": "王霸",
+      "verse": "鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪"
+    },
+    {
+      "scanPage": "n68",
+      "pdfPage": 69,
+      "sha1": "9a26c582e0da914c92832d905815768f9b74015a",
+      "heading": "柳土獐凶",
+      "deity": "任光",
+      "verse": "柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)"
+    },
+    {
+      "scanPage": "n69",
+      "pdfPage": 70,
+      "sha1": "f845faa7b86df355717444a13ab3c24e3d8d80fe",
+      "heading": "星日馬凶",
+      "deity": "李忠",
+      "verse": "星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷"
+    },
+    {
+      "scanPage": "n70",
+      "pdfPage": 71,
+      "sha1": "6ccb4ae514c07337c024a8b92e542a8032d04e44",
+      "heading": "張月鹿吉",
+      "deity": "萬脩",
+      "verse": "張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然"
+    },
+    {
+      "scanPage": "n71",
+      "pdfPage": 72,
+      "sha1": "61fd97b82eb55d524f9a5c8657dddde896c39d7c",
+      "heading": "翼火蛇凶",
+      "deity": "邳彤",
+      "verse": "翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎"
+    },
+    {
+      "scanPage": "n72",
+      "pdfPage": 73,
+      "sha1": "3900fd235711300672792be12095323ba121544c",
+      "heading": "軫水蚓吉",
+      "deity": "劉直",
+      "verse": "軫星臨水造龍宮，代代為官受勅封，富貴榮華增福壽，庫滿倉盈自昌隆，埋葬文星來照助，宅舍安寧不見凶，更有為官沾帝寵，婚姻龍子出龍宮"
+    }
+  ],
+  "results": [
+    {
+      "id": "角-1",
+      "category": "mansion",
+      "current_mapping": "「角星造作主榮昌」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n45.jpg (sha1 e5bf3be3ce65300b6ba319853f166ab5e1c243fe)",
+      "evidence": "Scan n45 (角木蛟吉): toàn bài đọc được = 「角星造作主榮昌，外進田財及女郎，嫁娶婚姻生貴子，文人及第見君王，惟有葬埋不可用，三年之後主瘟[疾?]，起工修築墳墓地，堂前立見主人亡」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「角星造作主榮昌」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "角-2",
+      "category": "mansion",
+      "current_mapping": "「嫁娶婚姻生貴子」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n45.jpg (sha1 e5bf3be3ce65300b6ba319853f166ab5e1c243fe)",
+      "evidence": "Scan n45 (角木蛟吉): toàn bài đọc được = 「角星造作主榮昌，外進田財及女郎，嫁娶婚姻生貴子，文人及第見君王，惟有葬埋不可用，三年之後主瘟[疾?]，起工修築墳墓地，堂前立見主人亡」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「嫁娶婚姻生貴子」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "角-3",
+      "category": "mansion",
+      "current_mapping": "「惟有葬埋不可用」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n45.jpg (sha1 e5bf3be3ce65300b6ba319853f166ab5e1c243fe)",
+      "evidence": "Scan n45 (角木蛟吉): toàn bài đọc được = 「角星造作主榮昌，外進田財及女郎，嫁娶婚姻生貴子，文人及第見君王，惟有葬埋不可用，三年之後主瘟[疾?]，起工修築墳墓地，堂前立見主人亡」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「惟有葬埋不可用」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "角-4",
+      "category": "mansion",
+      "current_mapping": "「起工修築墳墓地」 · negative · scope=funeral_grave_repair · activity=grave_repair · exact_catalog_pair",
+      "secondary_interpretation": "grave_repair · negative — 修築墳墓/修墳/墳堂修築 = xây, sửa mộ phần",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n45.jpg (sha1 e5bf3be3ce65300b6ba319853f166ab5e1c243fe)",
+      "evidence": "Scan n45 (角木蛟吉): toàn bài đọc được = 「角星造作主榮昌，外進田財及女郎，嫁娶婚姻生貴子，文人及第見君王，惟有葬埋不可用，三年之後主瘟[疾?]，起工修築墳墓地，堂前立見主人亡」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「堂前立見主人亡」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "亢-1",
+      "category": "mansion",
+      "current_mapping": "「亢星造作長房當」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n46.jpg (sha1 dc5e0cd56a74a78f3b5b1ef1127d81933fc64dca)",
+      "evidence": "Scan n46 (亢金龍凶): toàn bài đọc được = 「亢星造作長房當，十日之中主有[殃?]，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「十日之中主有殃 (chữ cuối đọc chưa chắc; cả bài nêu hung)」.",
+      "notes": "Câu 4 「投軍定是虎狼傷」 (tòng quân) là việc không có trong catalog; không trích, không tính.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "亢-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬定是虎狼傷」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative, nhưng quote đúng phải là 「埋葬若還逢此日」 (cực tính ở câu sau 「當時災禍主重喪」)",
+      "status": "DISAGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n46.jpg (sha1 dc5e0cd56a74a78f3b5b1ef1127d81933fc64dca)",
+      "evidence": "Scan n46 (亢金龍凶): toàn bài đọc được = 「亢星造作長房當，十日之中主有[殃?]，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪」. Quote KHÔNG có nguyên văn trên scan. Scan: 「投軍定是虎狼傷」 (câu 4, nói về tòng quân) và 「埋葬若還逢此日，當時災禍主重喪」 (câu 7-8). Quote production ghép 埋葬 với hậu quả của 投軍.",
+      "notes": "Chạy resolver production trên quote đã sửa (thử trong scratch): vẫn exact_catalog_pair, interpretation_reviewed, reviewTerm 埋葬 — sửa quote không đổi hành vi.",
+      "dimensions": {
+        "quote": "DISAGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "亢-3",
+      "category": "mansion",
+      "current_mapping": "「嫁娶婚姻用此日」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n46.jpg (sha1 dc5e0cd56a74a78f3b5b1ef1127d81933fc64dca)",
+      "evidence": "Scan n46 (亢金龍凶): toàn bài đọc được = 「亢星造作長房當，十日之中主有[殃?]，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「兒孫新婦守空房」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "氐-1",
+      "category": "mansion",
+      "current_mapping": "「氐星造作主災凶」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n47.jpg (sha1 b3ef706932a3ad5b55951172480ad11fc7a69845)",
+      "evidence": "Scan n47 (氐土貉凶): toàn bài đọc được = 「氐星造作主災凶，費盡田園倉庫空，埋葬不可用此日，懸繩弔頸禍重重，若是婚姻離別散，夜招浪子入房中，行船必定遭沉沒，更生聾啞子孫窮」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「氐星造作主災凶」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "氐-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬不可用此日」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n47.jpg (sha1 b3ef706932a3ad5b55951172480ad11fc7a69845)",
+      "evidence": "Scan n47 (氐土貉凶): toàn bài đọc được = 「氐星造作主災凶，費盡田園倉庫空，埋葬不可用此日，懸繩弔頸禍重重，若是婚姻離別散，夜招浪子入房中，行船必定遭沉沒，更生聾啞子孫窮」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬不可用此日」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "氐-3",
+      "category": "mansion",
+      "current_mapping": "「若是婚姻離別散」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n47.jpg (sha1 b3ef706932a3ad5b55951172480ad11fc7a69845)",
+      "evidence": "Scan n47 (氐土貉凶): toàn bài đọc được = 「氐星造作主災凶，費盡田園倉庫空，埋葬不可用此日，懸繩弔頸禍重重，若是婚姻離別散，夜招浪子入房中，行船必定遭沉沒，更生聾啞子孫窮」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「若是婚姻離別散」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "氐-4",
+      "category": "mansion",
+      "current_mapping": "「行船必定遭沉沒」 · negative · scope=travel_water · activity=water_travel · exact_catalog_pair",
+      "secondary_interpretation": "water_travel · negative — 行船 = đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n47.jpg (sha1 b3ef706932a3ad5b55951172480ad11fc7a69845)",
+      "evidence": "Scan n47 (氐土貉凶): toàn bài đọc được = 「氐星造作主災凶，費盡田園倉庫空，埋葬不可用此日，懸繩弔頸禍重重，若是婚姻離別散，夜招浪子入房中，行船必定遭沉沒，更生聾啞子孫窮」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「行船必定遭沉沒」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "房-1",
+      "category": "mansion",
+      "current_mapping": "「房星造作田園進」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n48.jpg (sha1 52ba83d00b8e6e2d423c7d94f1a349e1e9dfef60)",
+      "evidence": "Scan n48 (房日兔吉): toàn bài đọc được = 「房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「房星造作田園進」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "房-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬若然逢此日」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive (「高官進職拜君王」); quote cần sửa thành 「埋葬若然用此日」",
+      "status": "DISAGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n48.jpg (sha1 52ba83d00b8e6e2d423c7d94f1a349e1e9dfef60)",
+      "evidence": "Scan n48 (房日兔吉): toàn bài đọc được = 「房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂」. Quote KHÔNG có nguyên văn trên scan. Cực tính positive mang bởi câu 「高官進職拜君王」. Quote lệch một chữ không phải dị thể: scan 「埋葬若然用此日」, production 「埋葬若然逢此日」 (用≠逢).",
+      "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 埋葬 — không đổi hành vi.",
+      "dimensions": {
+        "quote": "DISAGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "房-3",
+      "category": "mansion",
+      "current_mapping": "「嫁娶嫦娥歸月殿」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n48.jpg (sha1 52ba83d00b8e6e2d423c7d94f1a349e1e9dfef60)",
+      "evidence": "Scan n48 (房日兔吉): toàn bài đọc được = 「房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「嫁娶嫦娥歸月殿」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "心-1",
+      "category": "mansion",
+      "current_mapping": "「心星造作大為凶」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n49.jpg (sha1 a43fe2c07151c9cd41c833b4dff656133e648c48)",
+      "evidence": "Scan n49 (心月狐凶): toàn bài đọc được = 「心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「心星造作大為凶」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "心-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬若還逢此日」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative, quote đúng 「埋葬卒暴死相從」",
+      "status": "DISAGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n49.jpg (sha1 a43fe2c07151c9cd41c833b4dff656133e648c48)",
+      "evidence": "Scan n49 (心月狐凶): toàn bài đọc được = 「心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終」. Quote KHÔNG có nguyên văn trên scan. Câu chôn cất của Tâm là 「埋葬卒暴死相從」; 「埋葬若還逢此日」 là câu của 危/翼, không có ở trang 心.",
+      "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 埋葬 — không đổi hành vi.",
+      "dimensions": {
+        "quote": "DISAGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "心-3",
+      "category": "mansion",
+      "current_mapping": "「婚姻若是逢此日」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n49.jpg (sha1 a43fe2c07151c9cd41c833b4dff656133e648c48)",
+      "evidence": "Scan n49 (心月狐凶): toàn bài đọc được = 「心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「子死兒亡泪滿胸」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "尾-1",
+      "category": "mansion",
+      "current_mapping": "「尾星造作得天恩」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n50.jpg (sha1 e2116bd4ca2144415456d6b3a9b96167700f60c6)",
+      "evidence": "Scan n50 (尾火虎吉): toàn bài đọc được = 「尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「尾星造作得天恩」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "尾-2",
+      "category": "mansion",
+      "current_mapping": "「和合婚姻貴子孫」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n50.jpg (sha1 e2116bd4ca2144415456d6b3a9b96167700f60c6)",
+      "evidence": "Scan n50 (尾火虎吉): toàn bài đọc được = 「尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「和合婚姻貴子孫」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "尾-3",
+      "category": "mansion",
+      "current_mapping": "「埋葬若能依此日」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n50.jpg (sha1 e2116bd4ca2144415456d6b3a9b96167700f60c6)",
+      "evidence": "Scan n50 (尾火虎吉): toàn bài đọc được = 「尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「男清女正子孫興」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "尾-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招田宅」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n50.jpg (sha1 e2116bd4ca2144415456d6b3a9b96167700f60c6)",
+      "evidence": "Scan n50 (尾火虎吉): toàn bài đọc được = 「尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招田宅」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "尾-5",
+      "category": "mansion",
+      "current_mapping": "「開門放水招田宅」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n50.jpg (sha1 e2116bd4ca2144415456d6b3a9b96167700f60c6)",
+      "evidence": "Scan n50 (尾火虎吉): toàn bài đọc được = 「尾星造作得天恩，富貴榮華福壽寧，招財進寶進田地，和合婚姻貴子孫，埋葬若能依此日，男清女正子孫興，開門放水招田宅，代代公侯遠播名」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招田宅」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "箕-1",
+      "category": "mansion",
+      "current_mapping": "「箕星造作主高強」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n51.jpg (sha1 2bc1e7becfb585281854583e2dcc91b07d491da2)",
+      "evidence": "Scan n51 (箕水豹吉): toàn bài đọc được = 「箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「箕星造作主高強」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "箕-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬修墳大吉利」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n51.jpg (sha1 2bc1e7becfb585281854583e2dcc91b07d491da2)",
+      "evidence": "Scan n51 (箕水豹吉): toàn bài đọc được = 「箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬修墳大吉利」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "箕-3",
+      "category": "mansion",
+      "current_mapping": "「埋葬修墳大吉利」 · positive · scope=funeral_grave_repair · activity=grave_repair · exact_catalog_pair",
+      "secondary_interpretation": "grave_repair · positive — 修築墳墓/修墳/墳堂修築 = xây, sửa mộ phần",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n51.jpg (sha1 2bc1e7becfb585281854583e2dcc91b07d491da2)",
+      "evidence": "Scan n51 (箕水豹吉): toàn bài đọc được = 「箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬修墳大吉利」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "箕-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財谷」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n51.jpg (sha1 2bc1e7becfb585281854583e2dcc91b07d491da2)",
+      "evidence": "Scan n51 (箕水豹吉): toàn bài đọc được = 「箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財谷」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "箕-5",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財谷」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n51.jpg (sha1 2bc1e7becfb585281854583e2dcc91b07d491da2)",
+      "evidence": "Scan n51 (箕水豹吉): toàn bài đọc được = 「箕星造作主高強，歲歲年年大吉昌，埋葬修墳大吉利，田蚕牛馬遍山岡，開門放水招財谷，箧滿金銀谷滿倉，福蔭高官加祿位，六親豐祿足安康」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財谷」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "斗-1",
+      "category": "mansion",
+      "current_mapping": "「斗星造作主招財」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n52.jpg (sha1 6320cf96f62359a29bdfd087070623ffb52e4954)",
+      "evidence": "Scan n52 (斗木獬吉): toàn bài đọc được = 「斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「斗星造作主招財」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "斗-2",
+      "category": "mansion",
+      "current_mapping": "「墳墓修築富貴家」 · positive · scope=funeral_grave_repair · activity=grave_repair · exact_catalog_pair",
+      "secondary_interpretation": "grave_repair · positive, quote đúng 「墳堂修築富貴來」 (墳堂 = nhà mộ/phần mộ)",
+      "status": "DISAGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n52.jpg (sha1 6320cf96f62359a29bdfd087070623ffb52e4954)",
+      "evidence": "Scan n52 (斗木獬吉): toàn bài đọc được = 「斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災」. Quote KHÔNG có nguyên văn trên scan. Quote lệch hai chữ: scan 「墳堂修築富貴來」, production 「墳墓修築富貴家」 (堂≠墓, 來≠家). reviewTerm 墳墓修築 của production chỉ khớp nhờ quote chép sai.",
+      "notes": "Resolver trên quote đã sửa: 墳堂修築 không khớp term nào của funeral_grave_repair (修築墳墓/墳墓修築/修墳) → interpretation_pending. Sửa quote SẼ đổi review status; cần thêm term 墳堂修築 hoặc quyết định khác.",
+      "dimensions": {
+        "quote": "DISAGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "斗-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招牛馬」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n52.jpg (sha1 6320cf96f62359a29bdfd087070623ffb52e4954)",
+      "evidence": "Scan n52 (斗木獬吉): toàn bài đọc được = 「斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招牛馬」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "斗-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招牛馬」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n52.jpg (sha1 6320cf96f62359a29bdfd087070623ffb52e4954)",
+      "evidence": "Scan n52 (斗木獬吉): toàn bài đọc được = 「斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招牛馬」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "牛-1",
+      "category": "mansion",
+      "current_mapping": "「牛星造作主災危」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n53.jpg (sha1 466281f2856fb60fb4bfa7fd727480c6487447f5)",
+      "evidence": "Scan n53 (牛金牛凶): toàn bài đọc được = 「牛星造作主災危，九横三災不可推，家宅不安人口退，田蚕不利主人衰，嫁娶婚姻皆自損，金銀財谷漸無之，若是開門并放水，牛猪羊馬亦傷悲」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「牛星造作主災危」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "牛-2",
+      "category": "mansion",
+      "current_mapping": "「嫁娶婚姻皆自損」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n53.jpg (sha1 466281f2856fb60fb4bfa7fd727480c6487447f5)",
+      "evidence": "Scan n53 (牛金牛凶): toàn bài đọc được = 「牛星造作主災危，九横三災不可推，家宅不安人口退，田蚕不利主人衰，嫁娶婚姻皆自損，金銀財谷漸無之，若是開門并放水，牛猪羊馬亦傷悲」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「嫁娶婚姻皆自損」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "牛-3",
+      "category": "mansion",
+      "current_mapping": "「若是開門并放水」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n53.jpg (sha1 466281f2856fb60fb4bfa7fd727480c6487447f5)",
+      "evidence": "Scan n53 (牛金牛凶): toàn bài đọc được = 「牛星造作主災危，九横三災不可推，家宅不安人口退，田蚕不利主人衰，嫁娶婚姻皆自損，金銀財谷漸無之，若是開門并放水，牛猪羊馬亦傷悲」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「牛猪羊馬亦傷悲」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "牛-4",
+      "category": "mansion",
+      "current_mapping": "「若是開門并放水」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n53.jpg (sha1 466281f2856fb60fb4bfa7fd727480c6487447f5)",
+      "evidence": "Scan n53 (牛金牛凶): toàn bài đọc được = 「牛星造作主災危，九横三災不可推，家宅不安人口退，田蚕不利主人衰，嫁娶婚姻皆自損，金銀財谷漸無之，若是開門并放水，牛猪羊馬亦傷悲」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「牛猪羊馬亦傷悲」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "女-1",
+      "category": "mansion",
+      "current_mapping": "「女星造作損婆娘」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n54.jpg (sha1 a8782175e5eb873a3c903fa265c1487557ce2311)",
+      "evidence": "Scan n54 (女土蝠凶): toàn bài đọc được = 「女星造作損婆娘，兄弟相嫌似虎狼，埋葬生災逢鬼怪，顛邪疾病更瘟[?]，為事遭官財失散，瀉痢留連不可當，開門放水逢此日，全家散財主離鄉」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「女星造作損婆娘」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "女-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬生災逢鬼怪」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n54.jpg (sha1 a8782175e5eb873a3c903fa265c1487557ce2311)",
+      "evidence": "Scan n54 (女土蝠凶): toàn bài đọc được = 「女星造作損婆娘，兄弟相嫌似虎狼，埋葬生災逢鬼怪，顛邪疾病更瘟[?]，為事遭官財失散，瀉痢留連不可當，開門放水逢此日，全家散財主離鄉」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬生災逢鬼怪」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "女-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水逢此日」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n54.jpg (sha1 a8782175e5eb873a3c903fa265c1487557ce2311)",
+      "evidence": "Scan n54 (女土蝠凶): toàn bài đọc được = 「女星造作損婆娘，兄弟相嫌似虎狼，埋葬生災逢鬼怪，顛邪疾病更瘟[?]，為事遭官財失散，瀉痢留連不可當，開門放水逢此日，全家散財主離鄉」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「全家散財主離鄉」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "女-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水逢此日」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n54.jpg (sha1 a8782175e5eb873a3c903fa265c1487557ce2311)",
+      "evidence": "Scan n54 (女土蝠凶): toàn bài đọc được = 「女星造作損婆娘，兄弟相嫌似虎狼，埋葬生災逢鬼怪，顛邪疾病更瘟[?]，為事遭官財失散，瀉痢留連不可當，開門放水逢此日，全家散財主離鄉」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「全家散財主離鄉」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "虛-1",
+      "category": "mansion",
+      "current_mapping": "「虛星造作主災殃」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n55.jpg (sha1 5c30dc2657f7399c8da2dbfe5ee8014dfe4c5cb5)",
+      "evidence": "Scan n55 (虛日鼠凶): toàn bài đọc được = 「虛星造作主災殃，男女孤眠不一雙，內亂風聲無禮節，兒孫媳婦伴人床，開門放水招災禍，虎咬蛇傷又卒亡，三三五五連年病，家破人亡不可當」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「虛星造作主災殃」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "虛-2",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n55.jpg (sha1 5c30dc2657f7399c8da2dbfe5ee8014dfe4c5cb5)",
+      "evidence": "Scan n55 (虛日鼠凶): toàn bài đọc được = 「虛星造作主災殃，男女孤眠不一雙，內亂風聲無禮節，兒孫媳婦伴人床，開門放水招災禍，虎咬蛇傷又卒亡，三三五五連年病，家破人亡不可當」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "虛-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n55.jpg (sha1 5c30dc2657f7399c8da2dbfe5ee8014dfe4c5cb5)",
+      "evidence": "Scan n55 (虛日鼠凶): toàn bài đọc được = 「虛星造作主災殃，男女孤眠不一雙，內亂風聲無禮節，兒孫媳婦伴人床，開門放水招災禍，虎咬蛇傷又卒亡，三三五五連年病，家破人亡不可當」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "危-1",
+      "category": "mansion",
+      "current_mapping": "「危星不可造高堂」 · negative · scope=construction_high_hall · activity=(gap) · unmapped",
+      "secondary_interpretation": "(gap) · negative — 造高堂/架高堂 = dựng nhà cao (cao đường)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n56.jpg (sha1 53026f43acf499c16702dbe270498557c83b16bc)",
+      "evidence": "Scan n56 (危月燕凶): toàn bài đọc được = 「危星不可造高堂，自吊遭刑見血光，三歲孩兒遭水厄，後生出外不還鄉，埋葬若還逢此日，週年百日臥高床，開門放水遭刑杖，三年五載一悲傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「危星不可造高堂」.",
+      "notes": "Gap thận trọng; xem 張-1 về độ nhất quán 造X.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "危-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬若還逢此日」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n56.jpg (sha1 53026f43acf499c16702dbe270498557c83b16bc)",
+      "evidence": "Scan n56 (危月燕凶): toàn bài đọc được = 「危星不可造高堂，自吊遭刑見血光，三歲孩兒遭水厄，後生出外不還鄉，埋葬若還逢此日，週年百日臥高床，開門放水遭刑杖，三年五載一悲傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「週年百日臥高床」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "危-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水遭刑杖」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n56.jpg (sha1 53026f43acf499c16702dbe270498557c83b16bc)",
+      "evidence": "Scan n56 (危月燕凶): toàn bài đọc được = 「危星不可造高堂，自吊遭刑見血光，三歲孩兒遭水厄，後生出外不還鄉，埋葬若還逢此日，週年百日臥高床，開門放水遭刑杖，三年五載一悲傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水遭刑杖」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "危-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水遭刑杖」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n56.jpg (sha1 53026f43acf499c16702dbe270498557c83b16bc)",
+      "evidence": "Scan n56 (危月燕凶): toàn bài đọc được = 「危星不可造高堂，自吊遭刑見血光，三歲孩兒遭水厄，後生出外不還鄉，埋葬若還逢此日，週年百日臥高床，開門放水遭刑杖，三年五載一悲傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水遭刑杖」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "室-1",
+      "category": "mansion",
+      "current_mapping": "「室星修造進田牛」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n57.jpg (sha1 f847450d159fd7385f48b6249539e16a8edb5583)",
+      "evidence": "Scan n57 (室火猪吉): toàn bài đọc được = 「室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「室星修造進田牛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "室-2",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n57.jpg (sha1 f847450d159fd7385f48b6249539e16a8edb5583)",
+      "evidence": "Scan n57 (室火猪吉): toàn bài đọc được = 「室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "室-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n57.jpg (sha1 f847450d159fd7385f48b6249539e16a8edb5583)",
+      "evidence": "Scan n57 (室火猪吉): toàn bài đọc được = 「室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "室-4",
+      "category": "mansion",
+      "current_mapping": "「和合婚姻生貴兒」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n57.jpg (sha1 f847450d159fd7385f48b6249539e16a8edb5583)",
+      "evidence": "Scan n57 (室火猪吉): toàn bài đọc được = 「室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「和合婚姻生貴兒」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "室-5",
+      "category": "mansion",
+      "current_mapping": "「埋葬若能依此日」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n57.jpg (sha1 f847450d159fd7385f48b6249539e16a8edb5583)",
+      "evidence": "Scan n57 (室火猪吉): toàn bài đọc được = 「室星修造進田牛，兒孫代代近王侯，富貴榮華天上至，壽如彭祖八千秋，開門放水招財帛，和合婚姻生貴兒，埋葬若能依此日，門庭興旺福無休」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「門庭興旺福無休」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "壁-1",
+      "category": "mansion",
+      "current_mapping": "「壁星造作進莊田」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+      "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote có nguyên văn trên scan (sau chuẩn hoá dị thể). Cực tính positive mang bởi câu 「壁星造作進莊田」.",
+      "notes": "Dị thể: scan 「進庄田」, production 「進莊田」 (莊/庄). Theo chính sách dị thể: AGREE kèm ghi chú.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "壁-2",
+      "category": "mansion",
+      "current_mapping": "「婚姻自有人口進」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive, quote đúng 「婚姻吉利生貴子」",
+      "status": "DISAGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+      "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote KHÔNG có nguyên văn trên scan. Quote ghép từ hai câu: 「奴婢自來人口進」 (câu 3) và 「婚姻吉利生貴子」 (câu 7).",
+      "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 婚姻 — không đổi hành vi.",
+      "dimensions": {
+        "quote": "DISAGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "壁-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水出英賢」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+      "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水出英賢」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "壁-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水出英賢」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+      "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水出英賢」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "壁-5",
+      "category": "mansion",
+      "current_mapping": "「埋葬招財官品進」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+      "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬招財官品進」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "奎-1",
+      "category": "mansion",
+      "current_mapping": "「奎星造作得禎祥」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n59.jpg (sha1 c425483246015f993290d6e30382622805640821)",
+      "evidence": "Scan n59 (奎木狼凶): toàn bài đọc được = 「奎星造作得禎祥，家下榮和大吉昌，若是埋葬陰卒死，當年定主兩三喪，看看軍令刑傷到，重重官事主瘟[?]，開門放水招災禍，三年兩次損兒郎」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「奎星造作得禎祥」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "奎-2",
+      "category": "mansion",
+      "current_mapping": "「若是埋葬陰卒死」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n59.jpg (sha1 c425483246015f993290d6e30382622805640821)",
+      "evidence": "Scan n59 (奎木狼凶): toàn bài đọc được = 「奎星造作得禎祥，家下榮和大吉昌，若是埋葬陰卒死，當年定主兩三喪，看看軍令刑傷到，重重官事主瘟[?]，開門放水招災禍，三年兩次損兒郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「若是埋葬陰卒死」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "奎-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n59.jpg (sha1 c425483246015f993290d6e30382622805640821)",
+      "evidence": "Scan n59 (奎木狼凶): toàn bài đọc được = 「奎星造作得禎祥，家下榮和大吉昌，若是埋葬陰卒死，當年定主兩三喪，看看軍令刑傷到，重重官事主瘟[?]，開門放水招災禍，三年兩次損兒郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "奎-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n59.jpg (sha1 c425483246015f993290d6e30382622805640821)",
+      "evidence": "Scan n59 (奎木狼凶): toàn bài đọc được = 「奎星造作得禎祥，家下榮和大吉昌，若是埋葬陰卒死，當年定主兩三喪，看看軍令刑傷到，重重官事主瘟[?]，開門放水招災禍，三年兩次損兒郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "婁-1",
+      "category": "mansion",
+      "current_mapping": "「婁星竪柱起門庭」 · positive · scope=construction_columns · activity=(gap) · unmapped",
+      "secondary_interpretation": "ứng viên beam_raising (豎柱上梁) hoặc giữ gap; cần owner quyết",
+      "status": "UNCERTAIN",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n60.jpg (sha1 63fd42be5bf55cb01f7f84b039a04cad55304ca0)",
+      "evidence": "Scan n60 (婁金狗吉): toàn bài đọc được = 「婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婁星竪柱起門庭」. Quote và cực tính đúng trên scan. Nhưng lý do gap của production (\"Dựng cột chưa có exact activity ID\") bị chính catalog phản chứng một phần: beam_raising được gắn heading 協紀 卷十一 「豎柱上梁」, chứa nguyên 竪柱 (竪=豎). 竪柱 một mình chỉ là nửa đầu của nghi thức 豎柱上梁, nên cũng chưa chắc gán beam_raising là đúng.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "UNCERTAIN"
+      }
+    },
+    {
+      "id": "婁-2",
+      "category": "mansion",
+      "current_mapping": "「婚姻進益生貴子」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n60.jpg (sha1 63fd42be5bf55cb01f7f84b039a04cad55304ca0)",
+      "evidence": "Scan n60 (婁金狗吉): toàn bài đọc được = 「婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婚姻進益生貴子」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "婁-3",
+      "category": "mansion",
+      "current_mapping": "「放水開門皆吉利」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n60.jpg (sha1 63fd42be5bf55cb01f7f84b039a04cad55304ca0)",
+      "evidence": "Scan n60 (婁金狗吉): toàn bài đọc được = 「婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「放水開門皆吉利」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "婁-4",
+      "category": "mansion",
+      "current_mapping": "「放水開門皆吉利」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n60.jpg (sha1 63fd42be5bf55cb01f7f84b039a04cad55304ca0)",
+      "evidence": "Scan n60 (婁金狗吉): toàn bài đọc được = 「婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「放水開門皆吉利」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "胃-1",
+      "category": "mansion",
+      "current_mapping": "「胃星造作事如何」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n61.jpg (sha1 98f975c38e35998e64b308429afddea02a7a01e9)",
+      "evidence": "Scan n61 (胃土雉吉): toàn bài đọc được = 「胃星造作事如何，富貴榮華喜氣多，埋葬進臨官祿位，三災九禍不逢他，婚姻遇此家富貴，夫婦齊眉永保和，從此門庭生吉慶，兒孫代代拜金坡」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「富貴榮華喜氣多」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "胃-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬進臨官祿位」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n61.jpg (sha1 98f975c38e35998e64b308429afddea02a7a01e9)",
+      "evidence": "Scan n61 (胃土雉吉): toàn bài đọc được = 「胃星造作事如何，富貴榮華喜氣多，埋葬進臨官祿位，三災九禍不逢他，婚姻遇此家富貴，夫婦齊眉永保和，從此門庭生吉慶，兒孫代代拜金坡」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬進臨官祿位」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "胃-3",
+      "category": "mansion",
+      "current_mapping": "「婚姻遇此家富貴」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n61.jpg (sha1 98f975c38e35998e64b308429afddea02a7a01e9)",
+      "evidence": "Scan n61 (胃土雉吉): toàn bài đọc được = 「胃星造作事如何，富貴榮華喜氣多，埋葬進臨官祿位，三災九禍不逢他，婚姻遇此家富貴，夫婦齊眉永保和，從此門庭生吉慶，兒孫代代拜金坡」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婚姻遇此家富貴」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "昴-1",
+      "category": "mansion",
+      "current_mapping": "「昴星造作進田牛」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n62.jpg (sha1 d900c3fe521c2faa08b271bd58d968f3c08edd7a)",
+      "evidence": "Scan n62 (昴日雞凶): toàn bài đọc được = 「昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「昴星造作進田牛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "昴-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬官災不得休」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n62.jpg (sha1 d900c3fe521c2faa08b271bd58d968f3c08edd7a)",
+      "evidence": "Scan n62 (昴日雞凶): toàn bài đọc được = 「昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬官災不得休」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "昴-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n62.jpg (sha1 d900c3fe521c2faa08b271bd58d968f3c08edd7a)",
+      "evidence": "Scan n62 (昴日雞凶): toàn bài đọc được = 「昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "昴-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招災禍」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n62.jpg (sha1 d900c3fe521c2faa08b271bd58d968f3c08edd7a)",
+      "evidence": "Scan n62 (昴日雞凶): toàn bài đọc được = 「昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招災禍」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "昴-5",
+      "category": "mansion",
+      "current_mapping": "「婚姻不可逢此日」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n62.jpg (sha1 d900c3fe521c2faa08b271bd58d968f3c08edd7a)",
+      "evidence": "Scan n62 (昴日雞凶): toàn bài đọc được = 「昴星造作進田牛，埋葬官災不得休，重喪二日三人死，賣盡田園不記增，開門放水招災禍，三歲孩兒白了頭，婚姻不可逢此日，死別生離寔可愁」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「婚姻不可逢此日」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "畢-1",
+      "category": "mansion",
+      "current_mapping": "「畢星造作主光前」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n63.jpg (sha1 27c960118b307e9c665e14187c15f671b87dc252)",
+      "evidence": "Scan n63 (畢月烏吉): toàn bài đọc được = 「畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「畢星造作主光前」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "畢-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬此日添官職」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n63.jpg (sha1 27c960118b307e9c665e14187c15f671b87dc252)",
+      "evidence": "Scan n63 (畢月烏吉): toàn bài đọc được = 「畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬此日添官職」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "畢-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水多吉慶」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n63.jpg (sha1 27c960118b307e9c665e14187c15f671b87dc252)",
+      "evidence": "Scan n63 (畢月烏吉): toàn bài đọc được = 「畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水多吉慶」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "畢-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水多吉慶」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n63.jpg (sha1 27c960118b307e9c665e14187c15f671b87dc252)",
+      "evidence": "Scan n63 (畢月烏吉): toàn bài đọc được = 「畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水多吉慶」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "畢-5",
+      "category": "mansion",
+      "current_mapping": "「婚姻若能逢此日」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n63.jpg (sha1 27c960118b307e9c665e14187c15f671b87dc252)",
+      "evidence": "Scan n63 (畢月烏吉): toàn bài đọc được = 「畢星造作主光前，買得田園有粟錢，埋葬此日添官職，田蚕大熟永豐年，開門放水多吉慶，合家人口得安然，婚姻若能逢此日，生得孩[兒?]見福壽全 (last line char count uncertain)」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「生得孩[兒]見福壽全」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "觜-1",
+      "category": "mansion",
+      "current_mapping": "「觜星造作有徒刑」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n65.jpg (sha1 57ed30f124d57f07ac463c98865b1933f695db69)",
+      "evidence": "Scan n65 (觜火猴凶): toàn bài đọc được = 「觜星造作有徒刑，三年必定主伶仃，埋葬卒死多因此，取定寅年使殺人，三喪不止皆由此，一人藥毒二人身，家門田地皆退敗，倉庫金銀化作塵」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「觜星造作有徒刑」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "觜-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬卒死多因此」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n65.jpg (sha1 57ed30f124d57f07ac463c98865b1933f695db69)",
+      "evidence": "Scan n65 (觜火猴凶): toàn bài đọc được = 「觜星造作有徒刑，三年必定主伶仃，埋葬卒死多因此，取定寅年使殺人，三喪不止皆由此，一人藥毒二人身，家門田地皆退敗，倉庫金銀化作塵」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬卒死多因此」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "參-1",
+      "category": "mansion",
+      "current_mapping": "「參星造作旺人家」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n64.jpg (sha1 9b413229ae9eee6e6bd13794d19662596191d0e6)",
+      "evidence": "Scan n64 (參水猿吉): toàn bài đọc được = 「參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「參星造作旺人家」.",
+      "notes": "Câu 3 「只因造作田財旺」 lặp lại 造作 cát.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "參-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬招疾喪黃沙」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n64.jpg (sha1 9b413229ae9eee6e6bd13794d19662596191d0e6)",
+      "evidence": "Scan n64 (參水猿吉): toàn bài đọc được = 「參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬招疾喪黃沙」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "參-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水加官職」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n64.jpg (sha1 9b413229ae9eee6e6bd13794d19662596191d0e6)",
+      "evidence": "Scan n64 (參水猿吉): toàn bài đọc được = 「參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水加官職」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "參-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水加官職」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n64.jpg (sha1 9b413229ae9eee6e6bd13794d19662596191d0e6)",
+      "evidence": "Scan n64 (參水猿吉): toàn bài đọc được = 「參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水加官職」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "參-5",
+      "category": "mansion",
+      "current_mapping": "「婚姻許定遭刑克」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n64.jpg (sha1 9b413229ae9eee6e6bd13794d19662596191d0e6)",
+      "evidence": "Scan n64 (參水猿吉): toàn bài đọc được = 「參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花」. Quote có nguyên văn trên scan (sau chuẩn hoá dị thể). Cực tính negative mang bởi câu 「婚姻許定遭刑克」.",
+      "notes": "Dị thể: scan chữ cuối dạng 剋/尅, production 「克」. Theo chính sách dị thể: AGREE kèm ghi chú.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "井-1",
+      "category": "mansion",
+      "current_mapping": "「井星造作旺蠶田」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · positive — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n66.jpg (sha1 cd8e2216fe1255d63fdfe9a39d1d1def495b57c0)",
+      "evidence": "Scan n66 (井木犴吉): toàn bài đọc được = 「井星造作旺蚕田，金榜題名第一先，埋葬須防驚卒死，狂顛風疾入黃泉，開門放水招財帛，牛馬猪羊旺莫言，寡婦田塘來入宅，兒孫興旺有餘錢」. Quote có nguyên văn trên scan (sau chuẩn hoá dị thể). Cực tính positive mang bởi câu 「井星造作旺蠶田」.",
+      "notes": "Dị thể: scan 「旺蚕田」, production 「旺蠶田」 (蠶/蚕). Theo chính sách dị thể: AGREE kèm ghi chú.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "井-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬須防驚卒死」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n66.jpg (sha1 cd8e2216fe1255d63fdfe9a39d1d1def495b57c0)",
+      "evidence": "Scan n66 (井木犴吉): toàn bài đọc được = 「井星造作旺蚕田，金榜題名第一先，埋葬須防驚卒死，狂顛風疾入黃泉，開門放水招財帛，牛馬猪羊旺莫言，寡婦田塘來入宅，兒孫興旺有餘錢」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「埋葬須防驚卒死」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "井-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n66.jpg (sha1 cd8e2216fe1255d63fdfe9a39d1d1def495b57c0)",
+      "evidence": "Scan n66 (井木犴吉): toàn bài đọc được = 「井星造作旺蚕田，金榜題名第一先，埋葬須防驚卒死，狂顛風疾入黃泉，開門放水招財帛，牛馬猪羊旺莫言，寡婦田塘來入宅，兒孫興旺有餘錢」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "井-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n66.jpg (sha1 cd8e2216fe1255d63fdfe9a39d1d1def495b57c0)",
+      "evidence": "Scan n66 (井木犴吉): toàn bài đọc được = 「井星造作旺蚕田，金榜題名第一先，埋葬須防驚卒死，狂顛風疾入黃泉，開門放水招財帛，牛馬猪羊旺莫言，寡婦田塘來入宅，兒孫興旺有餘錢」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-1",
+      "category": "mansion",
+      "current_mapping": "「鬼星起造卒人亡」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「鬼星起造卒人亡」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬此日官祿至」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬此日官祿至」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水須傷死」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水須傷死」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水須傷死」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水須傷死」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-5",
+      "category": "mansion",
+      "current_mapping": "「嫁娶夫妻不久長」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「嫁娶夫妻不久長」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "鬼-6",
+      "category": "mansion",
+      "current_mapping": "「修土築牆傷產女」 · negative · scope=construction_wall · activity=(gap) · unmapped",
+      "secondary_interpretation": "(gap) · negative — 修土築牆 = đắp đất, đắp tường",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n67.jpg (sha1 291f37bb65a720873d8eb24bf57de6636f2c0fb8)",
+      "evidence": "Scan n67 (鬼金羊凶): toàn bài đọc được = 「鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女泪汪汪」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「修土築牆傷產女」.",
+      "notes": "修土 có thể đọc là đào đắp đất; production không gộp vào groundbreaking (興造動土) — cách giữ gap thận trọng, không khẳng định điều sai.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "柳-1",
+      "category": "mansion",
+      "current_mapping": "「柳星造作主遭官」 · negative · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction · negative — 造作/修造/起造 = khởi công tạo tác, xây dựng nói chung",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n68.jpg (sha1 9a26c582e0da914c92832d905815768f9b74015a)",
+      "evidence": "Scan n68 (柳土獐凶): toàn bài đọc được = 「柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「柳星造作主遭官」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "柳-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬瘟疫多疾病」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative (câu mở 埋葬 + 瘟…病: hung), nguyên văn chưa xác nhận",
+      "status": "UNCERTAIN",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n68.jpg (sha1 9a26c582e0da914c92832d905815768f9b74015a)",
+      "evidence": "Scan n68 (柳土獐凶): toàn bài đọc được = 「柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)」. Quote chưa xác nhận được (chữ khó đọc). Câu 3 trang 柳 đọc được 「埋葬瘟_多__」 (đã cắt cột ở độ phân giải gốc): chữ 4 có bộ 疒, nét trong giống 旦 (疸) hơn 殳 (疫); chữ 6-7 trông như 「病死」 chứ không phải 「疾病」. Mực nhoè. Không đủ rõ để xác nhận hay bác bỏ nguyên văn.",
+      "notes": "",
+      "dimensions": {
+        "quote": "UNCERTAIN",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "柳-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招聾瞎」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n68.jpg (sha1 9a26c582e0da914c92832d905815768f9b74015a)",
+      "evidence": "Scan n68 (柳土獐凶): toàn bài đọc được = 「柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招聾瞎」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "柳-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招聾瞎」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n68.jpg (sha1 9a26c582e0da914c92832d905815768f9b74015a)",
+      "evidence": "Scan n68 (柳土獐凶): toàn bài đọc được = 「柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水招聾瞎」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "星-1",
+      "category": "mansion",
+      "current_mapping": "「星宿日好造新房」 · positive · scope=construction_new_room · activity=(gap) · unmapped",
+      "secondary_interpretation": "(gap) · positive — 造新房 = làm nhà/phòng mới",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n69.jpg (sha1 f845faa7b86df355717444a13ab3c24e3d8d80fe)",
+      "evidence": "Scan n69 (星日馬凶): toàn bài đọc được = 「星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「星宿日好造新房」.",
+      "notes": "Gap thận trọng; xem 張-1.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "星-2",
+      "category": "mansion",
+      "current_mapping": "「不可葬埋并放水」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n69.jpg (sha1 f845faa7b86df355717444a13ab3c24e3d8d80fe)",
+      "evidence": "Scan n69 (星日馬凶): toàn bài đọc được = 「星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「不可葬埋并放水」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "星-3",
+      "category": "mansion",
+      "current_mapping": "「不可葬埋并放水」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n69.jpg (sha1 f845faa7b86df355717444a13ab3c24e3d8d80fe)",
+      "evidence": "Scan n69 (星日馬凶): toàn bài đọc được = 「星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「不可葬埋并放水」.",
+      "notes": "Câu cuối 「放水開溝天命傷」 cũng xác nhận 放水 hung.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "星-4",
+      "category": "mansion",
+      "current_mapping": "「自要歸休別嫁郎」 · negative · scope=relationship_wedding · activity=(gap) · not_operative",
+      "secondary_interpretation": "not_operative (hậu quả, không phải việc) — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n69.jpg (sha1 f845faa7b86df355717444a13ab3c24e3d8d80fe)",
+      "evidence": "Scan n69 (星日馬凶): toàn bài đọc được = 「星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷」. Quote có nguyên văn trên scan.",
+      "notes": "Đọc đủ đoạn: 「不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎」. 自要歸休別嫁郎 là hậu quả (vợ bỏ đi lấy chồng khác), không phải lời dặn về cưới gả trong ngày → not_operative đúng.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "張-1",
+      "category": "mansion",
+      "current_mapping": "「張星日好造龍軒」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+      "secondary_interpretation": "construction (nếu 龍軒 = sảnh) hoặc gap hẹp như 高堂/龍宮; nhất quán chưa được chứng minh",
+      "status": "UNCERTAIN",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+      "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「張星日好造龍軒」. 軒 vừa là hiên/lầu vừa là xe; 龍軒 có thể là sảnh lớn hoặc xe rồng. Production xếp 造龍軒 vào xây dựng chung, trong khi các cụm cùng kiểu 造高堂 (危), 架高堂 (翼), 造新房 (星), 造龍宮 (軫) lại giữ gap hẹp. Câu sau 「年年便見進庄田」 không giải quyết được.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "UNCERTAIN"
+      }
+    },
+    {
+      "id": "張-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬不久陞官職」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+      "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬不久陞官職」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "張-3",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · positive — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+      "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "張-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水招財帛」 · positive · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · positive — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+      "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「開門放水招財帛」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "張-5",
+      "category": "mansion",
+      "current_mapping": "「婚姻和合福綿綿」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+      "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婚姻和合福綿綿」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "翼-1",
+      "category": "mansion",
+      "current_mapping": "「翼星不利架高堂」 · negative · scope=construction_high_hall · activity=(gap) · unmapped",
+      "secondary_interpretation": "(gap) · negative — 造高堂/架高堂 = dựng nhà cao (cao đường)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n71.jpg (sha1 61fd97b82eb55d524f9a5c8657dddde896c39d7c)",
+      "evidence": "Scan n71 (翼火蛇凶): toàn bài đọc được = 「翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「翼星不利架高堂」.",
+      "notes": "Gap thận trọng; xem 張-1.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "翼-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬若還逢此日」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · negative — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n71.jpg (sha1 61fd97b82eb55d524f9a5c8657dddde896c39d7c)",
+      "evidence": "Scan n71 (翼火蛇凶): toàn bài đọc được = 「翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「子孫必定走他鄉」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "翼-3",
+      "category": "mansion",
+      "current_mapping": "「婚姻此日不宜利」 · negative · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · negative — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n71.jpg (sha1 61fd97b82eb55d524f9a5c8657dddde896c39d7c)",
+      "evidence": "Scan n71 (翼火蛇凶): toàn bài đọc được = 「翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「婚姻此日不宜利」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "翼-4",
+      "category": "mansion",
+      "current_mapping": "「開門放水家須破」 · negative · scope=door_opening · activity=door_opening · exact_catalog_pair",
+      "secondary_interpretation": "door_opening · negative — 開門 trong cụm 開門放水 của bài ca xây cất = làm/trổ cửa công trình; không phải 開市 (khai trương)",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n71.jpg (sha1 61fd97b82eb55d524f9a5c8657dddde896c39d7c)",
+      "evidence": "Scan n71 (翼火蛇凶): toàn bài đọc được = 「翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水家須破」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "翼-5",
+      "category": "mansion",
+      "current_mapping": "「開門放水家須破」 · negative · scope=waterworks · activity=waterworks · exact_catalog_pair",
+      "secondary_interpretation": "waterworks · negative — 放水 = tháo/dẫn nước, đường thoát nước của nhà/mộ; không phải đi thuyền",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n71.jpg (sha1 61fd97b82eb55d524f9a5c8657dddde896c39d7c)",
+      "evidence": "Scan n71 (翼火蛇凶): toàn bài đọc được = 「翼星不利架高堂，三年二載見瘟[?]，埋葬若還逢此日，子孫必定走他鄉，婚姻此日不宜利，歸家定是不相當，開門放水家須破，少女貪花戀外郎」. Quote có nguyên văn trên scan. Cực tính negative mang bởi câu 「開門放水家須破」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "軫-1",
+      "category": "mansion",
+      "current_mapping": "「軫星臨水造龍宮」 · positive · scope=construction_waterside · activity=(gap) · unmapped",
+      "secondary_interpretation": "(gap) · positive — 臨水造 = xây cất sát nước",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n72.jpg (sha1 3900fd235711300672792be12095323ba121544c)",
+      "evidence": "Scan n72 (軫水蚓吉): toàn bài đọc được = 「軫星臨水造龍宮，代代為官受勅封，富貴榮華增福壽，庫滿倉盈自昌隆，埋葬文星來照助，宅舍安寧不見凶，更有為官沾帝寵，婚姻龍子出龍宮」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「軫星臨水造龍宮」.",
+      "notes": "Gap thận trọng; 臨水 thu hẹp phạm vi. Xem 張-1.",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "軫-2",
+      "category": "mansion",
+      "current_mapping": "「埋葬文星來照助」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+      "secondary_interpretation": "burial · positive — 埋葬/葬埋 = chôn cất",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n72.jpg (sha1 3900fd235711300672792be12095323ba121544c)",
+      "evidence": "Scan n72 (軫水蚓吉): toàn bài đọc được = 「軫星臨水造龍宮，代代為官受勅封，富貴榮華增福壽，庫滿倉盈自昌隆，埋葬文星來照助，宅舍安寧不見凶，更有為官沾帝寵，婚姻龍子出龍宮」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「埋葬文星來照助」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "軫-3",
+      "category": "mansion",
+      "current_mapping": "「婚姻龍子出龍宮」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+      "secondary_interpretation": "wedding · positive — 嫁娶/婚姻 = cưới gả, hôn nhân",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n72.jpg (sha1 3900fd235711300672792be12095323ba121544c)",
+      "evidence": "Scan n72 (軫水蚓吉): toàn bài đọc được = 「軫星臨水造龍宮，代代為官受勅封，富貴榮華增福壽，庫滿倉盈自昌隆，埋葬文星來照助，宅舍安寧不見凶，更有為官沾帝寵，婚姻龍子出龍宮」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婚姻龍子出龍宮」.",
+      "notes": "",
+      "dimensions": {
+        "quote": "AGREE",
+        "polarity": "AGREE",
+        "scope": "AGREE"
+      }
+    },
+    {
+      "id": "worship",
+      "category": "yongshi",
+      "current_mapping": "worship (\"Cúng tế\") ← 祭祀",
+      "secondary_interpretation": "祭祀 ↔ \"Cúng tế\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「祭祀」 có trong thân 卷十一, danh sách 御用/民用/通書. Cùng thuật ngữ 祭祀.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "pray_blessing",
+      "category": "yongshi",
+      "current_mapping": "pray_blessing (\"Cầu phúc\") ← 祈福",
+      "secondary_interpretation": "祈福 ↔ \"Cầu phúc\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「祈福」 có trong thân 卷十一, danh sách 御用/通書. Cùng thuật ngữ 祈福.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "pray_children",
+      "category": "yongshi",
+      "current_mapping": "pray_children (\"Cầu tự\") ← 求嗣",
+      "secondary_interpretation": "求嗣 ↔ \"Cầu tự\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「求嗣」 có trong thân 卷十一, danh sách 御用/通書. Cùng thuật ngữ 求嗣.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "wedding",
+      "category": "yongshi",
+      "current_mapping": "wedding (\"Cưới hỏi\") ← 結婚姻 + 嫁娶",
+      "secondary_interpretation": "結婚姻 + 嫁娶 ↔ \"Cưới hỏi\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「結婚姻」 có trong thân 卷十一, danh sách 御用/民用/通書; heading 「嫁娶」 có trong thân 卷十一, danh sách 御用/民用/通書. 結婚姻 (định kết hôn) và 嫁娶 (cưới gả) đều thuộc hôn nhân; thứ tự 結婚姻→納采問名→嫁娶 cho thấy 結婚姻 là bước nghị hôn trước lễ hỏi. Nhãn \"Cưới hỏi\" bao được cả hai.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "engagement",
+      "category": "yongshi",
+      "current_mapping": "engagement (\"Ăn hỏi / Nạp thái\") ← 納采問名",
+      "secondary_interpretation": "納采問名 ↔ \"Ăn hỏi / Nạp thái\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「納采問名」 có trong thân 卷十一, danh sách 御用/通書. 納采問名 = lễ nạp thái, vấn danh = ăn hỏi.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "moving",
+      "category": "yongshi",
+      "current_mapping": "moving (\"Nhập trạch / Chuyển nhà\") ← 般移",
+      "secondary_interpretation": "般移 ↔ \"Nhập trạch / Chuyển nhà\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「般移」 có trong thân 卷十一, danh sách 御用, chú 「移徙同」. 般移 có chú 「移徙同」 = dời chỗ ở. \"Nhập trạch\" (入宅) không phải heading của 卷十一; nhãn ghép vẫn cùng hướng.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "bed_installation",
+      "category": "yongshi",
+      "current_mapping": "bed_installation (\"An giường\") ← 安牀",
+      "secondary_interpretation": "安牀 ↔ \"An giường\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「安牀」 có trong thân 卷十一, danh sách 御用/民用/通書. Cùng thuật ngữ 安牀.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "opening",
+      "category": "yongshi",
+      "current_mapping": "opening (\"Khai trương\") ← 開市",
+      "secondary_interpretation": "開市 ↔ \"Khai trương\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「開市」 có trong thân 卷十一, danh sách 御用/民用/通書. 開市 = mở chợ/mở hàng = khai trương.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "contract",
+      "category": "yongshi",
+      "current_mapping": "contract (\"Ký kết / Lập khế ước\") ← 立券交易",
+      "secondary_interpretation": "立券交易 ↔ \"Ký kết / Lập khế ước\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「立券交易」 có trong thân 卷十一, danh sách 御用/民用/通書. Ba danh sách đều tách 立券 và 交易, còn thân bài dùng một heading 「立劵交易」 (劵 là dạng viết của 券). 立券 = làm văn tự/khế ước.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "transaction",
+      "category": "yongshi",
+      "current_mapping": "transaction (\"Giao dịch\") ← 立券交易",
+      "secondary_interpretation": "立券交易 ↔ \"Giao dịch\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「立券交易」 có trong thân 卷十一, danh sách 御用/民用/通書. Cùng heading 立券交易; 交易 = giao dịch.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "finance",
+      "category": "yongshi",
+      "current_mapping": "finance (\"Nạp tài / Cầu tài\") ← 納財",
+      "secondary_interpretation": "納財 ↔ \"Nạp tài / Cầu tài\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「納財」 có trong thân 卷十一, danh sách 御用/民用/通書. 納 (nhận vào) + 財 (của cải): việc thu tiền, nhập của. Phần \"Nạp tài\" của nhãn dịch sát chữ; \"Cầu tài\" (求財) là từ khác, không phải heading 卷十一, nhưng không trái nghĩa.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "travel",
+      "category": "yongshi",
+      "current_mapping": "travel (\"Xuất hành\") ← 行幸遣使",
+      "secondary_interpretation": "行幸遣使 ↔ \"Xuất hành\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「行幸遣使」 có trong thân 卷十一, danh sách 御用, chú 「出行同」. 行幸遣使 là việc của vua (ngự giá, sai sứ); chú nhỏ 「出行同」 ngay dưới heading cho thấy 出行 của dân dụng/thông thư theo cùng 宜忌. \"Xuất hành\" = 出行.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "meeting",
+      "category": "yongshi",
+      "current_mapping": "meeting (\"Gặp gỡ / Hội họp\") ← 宴會",
+      "secondary_interpretation": "宴會 ↔ \"Gặp gỡ / Hội họp\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「宴會」 có trong thân 卷十一, danh sách 御用, chú 「㑹親友同」. Heading 宴會 có chú 「會親友同」 (㑹=會). Nhãn \"Hội họp\" rộng hơn yến hội/gặp thân hữu.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "study",
+      "category": "yongshi",
+      "current_mapping": "study (\"Nhập học / Học tập\") ← 入學",
+      "secondary_interpretation": "入學 ↔ \"Nhập học / Học tập\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「入學」 có trong thân 卷十一, danh sách 御用/民用/通書. Cùng thuật ngữ 入學.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "medical",
+      "category": "yongshi",
+      "current_mapping": "medical (\"Cầu y / Chữa bệnh\") ← 求醫療病",
+      "secondary_interpretation": "求醫療病 ↔ \"Cầu y / Chữa bệnh\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「求醫療病」 có trong thân 卷十一, danh sách 御用/通書. 求醫療病 (dân dụng: 療病) = cầu y chữa bệnh.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "cleaning",
+      "category": "yongshi",
+      "current_mapping": "cleaning (\"Dọn dẹp / Tảo xá\") ← 掃舍宇",
+      "secondary_interpretation": "掃舍宇 ↔ \"Dọn dẹp / Tảo xá\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「掃舍宇」 có trong thân 卷十一, danh sách 御用/民用/通書. 掃舍宇 = quét dọn nhà cửa.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "cut_hair",
+      "category": "yongshi",
+      "current_mapping": "cut_hair (\"Cắt tóc\") ← 整容剃頭",
+      "secondary_interpretation": "整容剃頭 ↔ \"Cắt tóc\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「整容剃頭」 có trong thân 卷十一, danh sách 御用. 整容剃頭 (dân dụng: 剃頭) = sửa dung, cạo/cắt tóc.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "groundbreaking",
+      "category": "yongshi",
+      "current_mapping": "groundbreaking (\"Động thổ\") ← 興造動土",
+      "secondary_interpretation": "興造動土 ↔ \"Động thổ\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「興造動土」 có trong thân 卷十一, danh sách 御用, chú 「修造同」. Heading 興造動土 chứa 動土 = động thổ; chú 「修造同」.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "construction",
+      "category": "yongshi",
+      "current_mapping": "construction (\"Xây dựng\") ← 營建宮室 + 興造動土",
+      "secondary_interpretation": "營建宮室 + 興造動土 ↔ \"Xây dựng\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「營建宮室」 có trong thân 卷十一, danh sách 御用; heading 「興造動土」 có trong thân 卷十一, danh sách 御用, chú 「修造同」. 營建宮室 (dựng nhà, chỉ ở 御用) + 興造動土 (khởi công xây cất) = xây dựng.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "renovation",
+      "category": "yongshi",
+      "current_mapping": "renovation (\"Sửa chữa\") ← 修宮室",
+      "secondary_interpretation": "Hoặc 修宮室 (production) hoặc 興造動土 qua 「修造同」; nguồn không phân định",
+      "status": "UNCERTAIN",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「修宮室」 có trong thân 卷十一, danh sách 御用. Heading 修宮室 chỉ có trong danh sách 御用 (sửa cung thất). Trong 民用/通書, việc sửa chữa nhà thường gọi là 修造, và nguồn ghi 修造 dưới heading 興造動土 (「修造同」). Vì vậy \"Sửa chữa\" có hai cách đọc đều có căn cứ: 修宮室 (theo chữ) hoặc 興造動土 (theo 修造). Hai heading có 宜 khác nhau, nên lựa chọn ảnh hưởng kết quả.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "beam_raising",
+      "category": "yongshi",
+      "current_mapping": "beam_raising (\"Thượng lương\") ← 豎柱上梁",
+      "secondary_interpretation": "豎柱上梁 ↔ \"Thượng lương\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「豎柱上梁」 có trong thân 卷十一, danh sách 御用/民用/通書. 豎柱上梁 = dựng cột, gác đòn dông = thượng lương.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "warehouse",
+      "category": "yongshi",
+      "current_mapping": "warehouse (\"Sửa kho\") ← 修倉庫",
+      "secondary_interpretation": "修倉庫 ↔ \"Sửa kho\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「修倉庫」 có trong thân 卷十一, danh sách 通書. 修倉庫 = sửa kho (nhãn \"Sửa kho\" khớp).",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "warehouse_opening",
+      "category": "yongshi",
+      "current_mapping": "warehouse_opening (\"Mở kho xuất hàng\") ← 開倉庫出貨財",
+      "secondary_interpretation": "開倉庫出貨財 ↔ \"Mở kho xuất hàng\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「開倉庫出貨財」 có trong thân 卷十一, danh sách 通書. Thân bài gộp 開倉庫出貨財 (thông thư liệt kê 開倉庫, 出貨財 riêng) = mở kho xuất hàng.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "planting",
+      "category": "yongshi",
+      "current_mapping": "planting (\"Trồng trọt\") ← 栽種",
+      "secondary_interpretation": "栽種 ↔ \"Trồng trọt\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「栽種」 có trong thân 卷十一, danh sách 御用/民用/通書. Cùng thuật ngữ 栽種.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "livestock",
+      "category": "yongshi",
+      "current_mapping": "livestock (\"Chăn nuôi / Nạp súc\") ← 牧養 + 納畜",
+      "secondary_interpretation": "牧養 + 納畜 ↔ \"Chăn nuôi / Nạp súc\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「牧養」 có trong thân 卷十一, danh sách 御用/民用/通書; heading 「納畜」 có trong thân 卷十一, danh sách 御用/通書. 牧養 (chăn nuôi) + 納畜 (nhập gia súc).",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "burial",
+      "category": "yongshi",
+      "current_mapping": "burial (\"An táng\") ← 安葬",
+      "secondary_interpretation": "安葬 ↔ \"An táng\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「安葬」 có trong thân 卷十一, danh sách 民用/通書. Cùng thuật ngữ 安葬. (Dòng 宜/忌 của 安葬 trên Wikisource dính liền, không ảnh hưởng heading.)",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "demolition",
+      "category": "yongshi",
+      "current_mapping": "demolition (\"Phá dỡ\") ← 破屋壞垣",
+      "secondary_interpretation": "破屋壞垣 ↔ \"Phá dỡ\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「破屋壞垣」 có trong thân 卷十一, danh sách 民用/通書. 破屋壞垣 = phá nhà, đổ tường.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "water_travel",
+      "category": "yongshi",
+      "current_mapping": "water_travel (\"Đi thuyền / Đường thủy\") ← 乘船渡水",
+      "secondary_interpretation": "乘船渡水 ↔ \"Đi thuyền / Đường thủy\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「乘船渡水」 có trong thân 卷十一, danh sách 通書. 乘船渡水; dòng kết 「遠迴乘船渡水無宜日除所忌之外無日不宜也」 — chỉ có 忌.",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    },
+    {
+      "id": "business",
+      "category": "yongshi",
+      "current_mapping": "business (\"Mở hàng\") ← 開市",
+      "secondary_interpretation": "開市 ↔ \"Mở hàng\"",
+      "status": "AGREE",
+      "source_tier": 1,
+      "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+      "evidence": "heading 「開市」 có trong thân 卷十一, danh sách 御用/民用/通書. 開市 cũng đúng nghĩa \"Mở hàng\"; trùng heading với opening (hai activity cùng một nguồn 宜忌).",
+      "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+    }
+  ]
+}

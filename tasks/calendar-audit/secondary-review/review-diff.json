@@ -1,0 +1,152 @@
+{
+  "mansion": {
+    "disagree": [
+      {
+        "id": "亢-2",
+        "category": "mansion",
+        "current_mapping": "「埋葬定是虎狼傷」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+        "secondary_interpretation": "burial · negative, nhưng quote đúng phải là 「埋葬若還逢此日」 (cực tính ở câu sau 「當時災禍主重喪」)",
+        "status": "DISAGREE",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n46.jpg (sha1 dc5e0cd56a74a78f3b5b1ef1127d81933fc64dca)",
+        "evidence": "Scan n46 (亢金龍凶): toàn bài đọc được = 「亢星造作長房當，十日之中主有[殃?]，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪」. Quote KHÔNG có nguyên văn trên scan. Scan: 「投軍定是虎狼傷」 (câu 4, nói về tòng quân) và 「埋葬若還逢此日，當時災禍主重喪」 (câu 7-8). Quote production ghép 埋葬 với hậu quả của 投軍.",
+        "notes": "Chạy resolver production trên quote đã sửa (thử trong scratch): vẫn exact_catalog_pair, interpretation_reviewed, reviewTerm 埋葬 — sửa quote không đổi hành vi.",
+        "dimensions": {
+          "quote": "DISAGREE",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      },
+      {
+        "id": "房-2",
+        "category": "mansion",
+        "current_mapping": "「埋葬若然逢此日」 · positive · scope=funeral_burial · activity=burial · exact_catalog_pair",
+        "secondary_interpretation": "burial · positive (「高官進職拜君王」); quote cần sửa thành 「埋葬若然用此日」",
+        "status": "DISAGREE",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n48.jpg (sha1 52ba83d00b8e6e2d423c7d94f1a349e1e9dfef60)",
+        "evidence": "Scan n48 (房日兔吉): toàn bài đọc được = 「房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂」. Quote KHÔNG có nguyên văn trên scan. Cực tính positive mang bởi câu 「高官進職拜君王」. Quote lệch một chữ không phải dị thể: scan 「埋葬若然用此日」, production 「埋葬若然逢此日」 (用≠逢).",
+        "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 埋葬 — không đổi hành vi.",
+        "dimensions": {
+          "quote": "DISAGREE",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      },
+      {
+        "id": "心-2",
+        "category": "mansion",
+        "current_mapping": "「埋葬若還逢此日」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+        "secondary_interpretation": "burial · negative, quote đúng 「埋葬卒暴死相從」",
+        "status": "DISAGREE",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n49.jpg (sha1 a43fe2c07151c9cd41c833b4dff656133e648c48)",
+        "evidence": "Scan n49 (心月狐凶): toàn bài đọc được = 「心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終」. Quote KHÔNG có nguyên văn trên scan. Câu chôn cất của Tâm là 「埋葬卒暴死相從」; 「埋葬若還逢此日」 là câu của 危/翼, không có ở trang 心.",
+        "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 埋葬 — không đổi hành vi.",
+        "dimensions": {
+          "quote": "DISAGREE",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      },
+      {
+        "id": "斗-2",
+        "category": "mansion",
+        "current_mapping": "「墳墓修築富貴家」 · positive · scope=funeral_grave_repair · activity=grave_repair · exact_catalog_pair",
+        "secondary_interpretation": "grave_repair · positive, quote đúng 「墳堂修築富貴來」 (墳堂 = nhà mộ/phần mộ)",
+        "status": "DISAGREE",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n52.jpg (sha1 6320cf96f62359a29bdfd087070623ffb52e4954)",
+        "evidence": "Scan n52 (斗木獬吉): toàn bài đọc được = 「斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災」. Quote KHÔNG có nguyên văn trên scan. Quote lệch hai chữ: scan 「墳堂修築富貴來」, production 「墳墓修築富貴家」 (堂≠墓, 來≠家). reviewTerm 墳墓修築 của production chỉ khớp nhờ quote chép sai.",
+        "notes": "Resolver trên quote đã sửa: 墳堂修築 không khớp term nào của funeral_grave_repair (修築墳墓/墳墓修築/修墳) → interpretation_pending. Sửa quote SẼ đổi review status; cần thêm term 墳堂修築 hoặc quyết định khác.",
+        "dimensions": {
+          "quote": "DISAGREE",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      },
+      {
+        "id": "壁-2",
+        "category": "mansion",
+        "current_mapping": "「婚姻自有人口進」 · positive · scope=relationship_wedding · activity=wedding · exact_catalog_pair",
+        "secondary_interpretation": "wedding · positive, quote đúng 「婚姻吉利生貴子」",
+        "status": "DISAGREE",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n58.jpg (sha1 340156124b7808b485477739f461ae92facf5676)",
+        "evidence": "Scan n58 (壁水貐吉): toàn bài đọc được = 「壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭」. Quote KHÔNG có nguyên văn trên scan. Quote ghép từ hai câu: 「奴婢自來人口進」 (câu 3) và 「婚姻吉利生貴子」 (câu 7).",
+        "notes": "Resolver trên quote đã sửa: interpretation_reviewed, reviewTerm 婚姻 — không đổi hành vi.",
+        "dimensions": {
+          "quote": "DISAGREE",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      }
+    ],
+    "uncertain": [
+      {
+        "id": "婁-1",
+        "category": "mansion",
+        "current_mapping": "「婁星竪柱起門庭」 · positive · scope=construction_columns · activity=(gap) · unmapped",
+        "secondary_interpretation": "ứng viên beam_raising (豎柱上梁) hoặc giữ gap; cần owner quyết",
+        "status": "UNCERTAIN",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n60.jpg (sha1 63fd42be5bf55cb01f7f84b039a04cad55304ca0)",
+        "evidence": "Scan n60 (婁金狗吉): toàn bài đọc được = 「婁星竪柱起門庭，財旺家和事事興，外進錢財百日進，一家兄弟播聲名，婚姻進益生貴子，玉帛金銀箱滿盈，放水開門皆吉利，男榮女貴壽康寧」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「婁星竪柱起門庭」. Quote và cực tính đúng trên scan. Nhưng lý do gap của production (\"Dựng cột chưa có exact activity ID\") bị chính catalog phản chứng một phần: beam_raising được gắn heading 協紀 卷十一 「豎柱上梁」, chứa nguyên 竪柱 (竪=豎). 竪柱 một mình chỉ là nửa đầu của nghi thức 豎柱上梁, nên cũng chưa chắc gán beam_raising là đúng.",
+        "notes": "",
+        "dimensions": {
+          "quote": "AGREE",
+          "polarity": "AGREE",
+          "scope": "UNCERTAIN"
+        }
+      },
+      {
+        "id": "柳-2",
+        "category": "mansion",
+        "current_mapping": "「埋葬瘟疫多疾病」 · negative · scope=funeral_burial · activity=burial · exact_catalog_pair",
+        "secondary_interpretation": "burial · negative (câu mở 埋葬 + 瘟…病: hung), nguyên văn chưa xác nhận",
+        "status": "UNCERTAIN",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n68.jpg (sha1 9a26c582e0da914c92832d905815768f9b74015a)",
+        "evidence": "Scan n68 (柳土獐凶): toàn bài đọc được = 「柳星造作主遭官，晝夜偷閑不暫安，埋葬瘟[疒-radical char, illegible]多[病?][死?]，田園退盡守冬寒，開門放水招聾瞎，腰駝背屈似弓彎，更有棒刑宜謹慎，婦人隨客走盤桓 (line 3 chars 4,6,7 not confidently legible; line 4/8 tentative)」. Quote chưa xác nhận được (chữ khó đọc). Câu 3 trang 柳 đọc được 「埋葬瘟_多__」 (đã cắt cột ở độ phân giải gốc): chữ 4 có bộ 疒, nét trong giống 旦 (疸) hơn 殳 (疫); chữ 6-7 trông như 「病死」 chứ không phải 「疾病」. Mực nhoè. Không đủ rõ để xác nhận hay bác bỏ nguyên văn.",
+        "notes": "",
+        "dimensions": {
+          "quote": "UNCERTAIN",
+          "polarity": "AGREE",
+          "scope": "AGREE"
+        }
+      },
+      {
+        "id": "張-1",
+        "category": "mansion",
+        "current_mapping": "「張星日好造龍軒」 · positive · scope=construction_general · activity=construction · exact_catalog_pair",
+        "secondary_interpretation": "construction (nếu 龍軒 = sảnh) hoặc gap hẹp như 高堂/龍宮; nhất quán chưa được chứng minh",
+        "status": "UNCERTAIN",
+        "source_tier": 1,
+        "source": "繪圖增廣玉匣記 (光緒六年 1880, 掃葉山房) 二十八宿值日吉凶歌, archive.org item 20241205_20241205_0310, page/n70.jpg (sha1 6ccb4ae514c07337c024a8b92e542a8032d04e44)",
+        "evidence": "Scan n70 (張月鹿吉): toàn bài đọc được = 「張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蚕大利倉庫滿，百般利意自安然」. Quote có nguyên văn trên scan. Cực tính positive mang bởi câu 「張星日好造龍軒」. 軒 vừa là hiên/lầu vừa là xe; 龍軒 có thể là sảnh lớn hoặc xe rồng. Production xếp 造龍軒 vào xây dựng chung, trong khi các cụm cùng kiểu 造高堂 (危), 架高堂 (翼), 造新房 (星), 造龍宮 (軫) lại giữ gap hẹp. Câu sau 「年年便見進庄田」 không giải quyết được.",
+        "notes": "",
+        "dimensions": {
+          "quote": "AGREE",
+          "polarity": "AGREE",
+          "scope": "UNCERTAIN"
+        }
+      }
+    ]
+  },
+  "yongshi": {
+    "disagree": [],
+    "uncertain": [
+      {
+        "id": "renovation",
+        "category": "yongshi",
+        "current_mapping": "renovation (\"Sửa chữa\") ← 修宮室",
+        "secondary_interpretation": "Hoặc 修宮室 (production) hoặc 興造動土 qua 「修造同」; nguồn không phân định",
+        "status": "UNCERTAIN",
+        "source_tier": 1,
+        "source": "欽定協紀辨方書 (四庫全書本) 卷十一 用事, zh.wikisource action=raw (SHA-1 ce4ed7f23ff94a74cd0e1c4f89ae4d22e6df8f50); trang tự ghi chưa đối chiếu bản scan 四庫",
+        "evidence": "heading 「修宮室」 có trong thân 卷十一, danh sách 御用. Heading 修宮室 chỉ có trong danh sách 御用 (sửa cung thất). Trong 民用/通書, việc sửa chữa nhà thường gọi là 修造, và nguồn ghi 修造 dưới heading 興造動土 (「修造同」). Vì vậy \"Sửa chữa\" có hai cách đọc đều có căn cứ: 修宮室 (theo chữ) hoặc 興造動土 (theo 修造). Hai heading có 宜 khác nhau, nên lựa chọn ảnh hưởng kết quả.",
+        "notes": "Bằng chứng là bản chép Wikisource chưa hiệu đính với scan 四庫; heading và chú 「X同」 chưa đối chiếu ảnh gốc."
+      }
+    ]
+  }
+}

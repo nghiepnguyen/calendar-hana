@@ -7,7 +7,7 @@
     "造龍軒": "building a fine hall (龍軒 is a laudatory epithet), praised as construction in general",
     "嫁娶/婚姻": "marriage",
     "埋葬/葬埋": "burial",
-    "修築墳墓/墳墓修築/修墳": "building or repairing a tomb",
+    "修築墳墓/墳墓修築/墳堂修築/修墳": "building or repairing a tomb",
     "行船": "travelling by boat",
     "開門": "opening/making a gate or door of a building, not opening a business",
     "放水": "releasing/drawing water (drainage, channels), not boat travel",
@@ -22,7 +22,12 @@
     "參": "參星造作旺人家，文星照耀大光華，只因造作田財旺，埋葬招疾喪黃沙，開門放水加官職，房房子孫見田加，婚姻許定遭刑剋，男女朝開暮落花",
     "鬼": "鬼星起造卒人亡，堂前不見主人郎，埋葬此日官祿至，兒孫代代近君王，開門放水須傷死，嫁娶夫妻不久長，修土築牆傷產女，手扶雙女淚汪汪",
     "星": "星宿日好造新房，進職加官近帝王，不可葬埋并放水，凶星臨位女人亡，生離死別無心戀，自要歸休別嫁郎，孔子九曲珠難度，放水開溝天命傷",
-    "張": "張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蠶大利倉庫滿，百般利意自安然"
+    "張": "張星日好造龍軒，年年便見進庄田，埋葬不久陞官職，代代為官近帝前，開門放水招財帛，婚姻和合福綿綿，田蠶大利倉庫滿，百般利意自安然",
+    "亢": "亢星造作長房當，十日之中主有□，田地消磨官失職，投軍定是虎狼傷，嫁娶婚姻用此日，兒孫新婦守空房，埋葬若還逢此日，當時災禍主重喪",
+    "房": "房星造作田園進，血財牛馬遍山岡，更招外處田庄宅，榮華富貴福壽康，埋葬若然用此日，高官進職拜君王，嫁娶嫦娥歸月殿，三年抱子至朝堂",
+    "心": "心星造作大為凶，更遭刑訟獄囚中，忤逆官非田宅退，埋葬卒暴死相從，婚姻若是逢此日，子死兒亡泪滿胸，三年之內連遭禍，事事教君没始終",
+    "斗": "斗星造作主招財，文武官員位鼎台，田宅錢財千萬進，墳堂修築富貴來，開門放水招牛馬，旺蚕男女主和諧，遇此吉星來照護，時支福慶永無災",
+    "壁": "壁星造作進庄田，絲蚕大熟福滔天，奴婢自來人口進，開門放水出英賢，埋葬招財官品進，家中諸事樂陶然，婚姻吉利生貴子，早播名聲着祖鞭"
   },
   "items": [
     {
@@ -72,7 +77,7 @@
     },
     {
       "id": "亢-2",
-      "quote": "埋葬定是虎狼傷",
+      "quote": "埋葬若還逢此日",
       "activityId": "burial",
       "scope": "funeral_burial",
       "status": "exact_catalog_pair",
@@ -135,7 +140,7 @@
     },
     {
       "id": "房-2",
-      "quote": "埋葬若然逢此日",
+      "quote": "埋葬若然用此日",
       "activityId": "burial",
       "scope": "funeral_burial",
       "status": "exact_catalog_pair",
@@ -162,7 +167,7 @@
     },
     {
       "id": "心-2",
-      "quote": "埋葬若還逢此日",
+      "quote": "埋葬卒暴死相從",
       "activityId": "burial",
       "scope": "funeral_burial",
       "status": "exact_catalog_pair",
@@ -279,12 +284,12 @@
     },
     {
       "id": "斗-2",
-      "quote": "墳墓修築富貴家",
+      "quote": "墳堂修築富貴來",
       "activityId": "grave_repair",
       "scope": "funeral_grave_repair",
       "status": "exact_catalog_pair",
       "reviewStatus": "interpretation_reviewed",
-      "reviewTerm": "墳墓修築"
+      "reviewTerm": "墳堂修築"
     },
     {
       "id": "斗-3",
@@ -495,7 +500,7 @@
     },
     {
       "id": "壁-2",
-      "quote": "婚姻自有人口進",
+      "quote": "婚姻吉利生貴子",
       "activityId": "wedding",
       "scope": "relationship_wedding",
       "status": "exact_catalog_pair",

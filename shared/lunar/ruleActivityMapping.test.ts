@@ -131,6 +131,18 @@ describe('explicit mansion activity mapping, separate from source review', () =>
       expect(resolveMansionActivityMapping(c).reviewNote).toEqual(expect.any(String))
     }
   })
+  it('reviews 斗-2 from the verse as printed (墳堂修築富貴來), not the old misreading', () => {
+    const verses = interpretation.verses as Record<string, string>
+    const c = getMansionContent(7).clauses.find((x) => x.id === '斗-2')!
+    expect(c.quote).toBe('墳堂修築富貴來')
+    expect(verses['斗']).toContain(c.quote)
+    expect(resolveMansionActivityMapping(c)).toMatchObject({
+      activityId: 'grave_repair',
+      status: 'exact_catalog_pair',
+      reviewStatus: 'interpretation_reviewed',
+      reviewTerm: '墳堂修築',
+    })
+  })
   it('rejects a tampered operative pair before returning evidence', () => {
     const row = getMansionContent(5)
     const c = row.clauses.find((x) => x.scope === 'door_opening')!

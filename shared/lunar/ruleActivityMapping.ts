@@ -52,7 +52,8 @@ const mappings: Record<
   },
   funeral_grave_repair: {
     activityId: 'grave_repair',
-    terms: ['修築墳墓', '墳墓修築', '修墳'],
+    // 墳堂修築 (斗, scan n52): 墳 = grave; same 修築 as 角's 修築墳墓 (secondary-review resolution 2026-10-20).
+    terms: ['修築墳墓', '墳墓修築', '墳堂修築', '修墳'],
     reason: 'Sửa xây mộ riêng với an táng và sửa chữa nhà ở.',
   },
   travel_water: {

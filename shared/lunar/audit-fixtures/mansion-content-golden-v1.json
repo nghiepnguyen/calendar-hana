@@ -1,6 +1,6 @@
 {
   "authorityId": "mansion-content-yuxia-1880-v1",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "source": {
     "work": "繪圖增廣玉匣記",
     "edition": "光緒六年仲夏校鐫，掃葉山房藏板 (1880)",
@@ -121,7 +121,7 @@
         },
         {
           "id": "亢-2",
-          "quote": "埋葬定是虎狼傷",
+          "quote": "埋葬若還逢此日",
           "translation": "Chôn cất",
           "polarity": "negative",
           "activityId": "burial",
@@ -262,7 +262,7 @@
         },
         {
           "id": "房-2",
-          "quote": "埋葬若然逢此日",
+          "quote": "埋葬若然用此日",
           "translation": "Chôn cất (đoạn nêu thuận lợi)",
           "polarity": "positive",
           "activityId": "burial",
@@ -324,7 +324,7 @@
         },
         {
           "id": "心-2",
-          "quote": "埋葬若還逢此日",
+          "quote": "埋葬卒暴死相從",
           "translation": "Chôn cất (đoạn nêu bất lợi)",
           "polarity": "negative",
           "activityId": "burial",
@@ -578,7 +578,7 @@
         },
         {
           "id": "斗-2",
-          "quote": "墳墓修築富貴家",
+          "quote": "墳堂修築富貴來",
           "translation": "Sửa xây mộ",
           "polarity": "positive",
           "activityId": "grave_repair",
@@ -1052,7 +1052,7 @@
         },
         {
           "id": "壁-2",
-          "quote": "婚姻自有人口進",
+          "quote": "婚姻吉利生貴子",
           "translation": "Cưới hỏi",
           "polarity": "positive",
           "activityId": "wedding",

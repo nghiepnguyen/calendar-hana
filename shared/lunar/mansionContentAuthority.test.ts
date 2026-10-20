@@ -104,6 +104,15 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
     expect(page(21)).toMatch(/page\/n66\.jpg$/)
     expect(getMansionContent(0).clauses.find((c) => c.id === '角-3')!.quote).toBe('惟有葬埋不可用')
   })
+  it('keeps quotes corrected by the secondary review against the scan (2026-10-20)', () => {
+    const quote = (index: number, id: string) =>
+      getMansionContent(index).clauses.find((c) => c.id === id)!.quote
+    expect(quote(1, '亢-2')).toBe('埋葬若還逢此日')
+    expect(quote(3, '房-2')).toBe('埋葬若然用此日')
+    expect(quote(4, '心-2')).toBe('埋葬卒暴死相從')
+    expect(quote(7, '斗-2')).toBe('墳堂修築富貴來')
+    expect(quote(13, '壁-2')).toBe('婚姻吉利生貴子')
+  })
   it('rejects invalid indices and a clause with a missing/wrong operand', () => {
     for (const index of [-1, 28, NaN, 1.5]) expect(() => getMansionContent(index)).toThrow()
     const row = getMansionContent(0)

@@ -1,0 +1,6503 @@
+{
+ "activity": [
+  {
+   "id": "activity:2025-01-10|burial",
+   "date": "2025-01-10",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "52fb30a3f53f9bedeb99f628c915a7846a30f2c41f423c8f6c5425918c9cf225",
+   "new_hash": "39776a9915cb62ceb393216a096d5c69711a015fc0e6cde14e2068a85ae21c70",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-01-12|burial",
+   "date": "2025-01-12",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "63c56f2cfe35fb8956b61ce495468c3e192976870973a26ad20f0395616dadfc",
+   "new_hash": "1a3e9fb12c1ec324afd292c59e32dba1bb767192c3a9e9c84cf25ab6da67053c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-01-13|burial",
+   "date": "2025-01-13",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cf7ac890956505bb72d90cd03b76bc0a5f5bf9123265bb7fecd2beaf79ec52f2",
+   "new_hash": "6175b95941eb145ddfa84be0b4028f93c73d59aacbe532091f4000c4d91d9267",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-01-16|grave_repair",
+   "date": "2025-01-16",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "923ac5a647f5cb3a04fdc1d9e9abad951d1c020785f4f31a2ab567f845a7c8a6",
+   "new_hash": "6cc9ad27db81f003383b7bc9244bf53be28c410d70441ecd84baec12f613a467",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-01-22|wedding",
+   "date": "2025-01-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "320953724a5fcf278b7a2509774821fccc34d18dd378e02d94eb8808d3067186",
+   "new_hash": "67460f7f94b452e976a2f4421298ff3a55c8cce7bb6db716809883f171b0509b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-02-07|burial",
+   "date": "2025-02-07",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "56832aa711fe768ef16c8c3532bb590b4a403c78e781633451d10affaeefeace",
+   "new_hash": "413d863bf2d1ba79a8ede6ee1e6ea5505df71213beac5bea6466ec69f9f3ca50",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-02-09|burial",
+   "date": "2025-02-09",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4625c395ae7cde8b59797aaaca61f82d048231a39eba69ec7e17064e9ebc564d",
+   "new_hash": "6566b6d5c3afb487ef61ae5b1aa03dc3f1b8a828934c231298f759eb9ba35916",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-02-10|burial",
+   "date": "2025-02-10",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c01f348a0894ca4916fb5a49a8fc8cc0c6ba4da2bb88fa5ffdbb66a3c49312d6",
+   "new_hash": "42e1cb1184c85575de7d64559d0b9da992e3c2e8019e691bb8eb9923942249a6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-02-13|grave_repair",
+   "date": "2025-02-13",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "260985c8c5b07dcea1a6202ce491de5f1ecefb7388aa91c1478a8ed39f7afb08",
+   "new_hash": "a04988a4425d9bd14317a19877f0ae40f5e856b4f0f9fbc8469bf1d469889d1f",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-02-19|wedding",
+   "date": "2025-02-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "be3bd7c46bed1e862626194a82de1da1f75891462b505e817d569b07a637a3e0",
+   "new_hash": "b1c7f588321c34215a5d45ba14efbe87279bd6d065b9f504dd73d1b83f78aecb",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-03-07|burial",
+   "date": "2025-03-07",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "88aa02c99beece8c4ed3736c3978710c9f3b2d98dfe6a8361a065c511a36e00e",
+   "new_hash": "03d0656df8db718cccd4c9276409460cd607fdd490aa24d848800a597d75c9a5",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-03-09|burial",
+   "date": "2025-03-09",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e5e46b073432441664b5728ca33829cf9adf76aa68bdcc388e547974035d572f",
+   "new_hash": "26fc8a50c18f7e66812530a93ee8bd8597b2a71e020eee109c60a87130fc165f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-03-10|burial",
+   "date": "2025-03-10",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9fc1eb90842602170a00f2e38ae00743c8d04d74ceb1a39a2b6d90a1c91623e4",
+   "new_hash": "86b548494aa962610b9b81d8935683906700258f41d06397d59a85565231c338",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-03-13|grave_repair",
+   "date": "2025-03-13",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f52615ad7b610236c2fb51ba824c6a430d51d65f8f1fc0410ed7f9b629b2ff39",
+   "new_hash": "025dc66efdd92a0903d2c10108ca4d92ea7eb5c73eb1b9c9488cf87836281d20",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-03-19|wedding",
+   "date": "2025-03-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c57c6755a7cc17fae64b909b12972927be28d4cc6de645f9c1d96b1b21d2d997",
+   "new_hash": "3c11a6fead137e36199337e274d97c7230f3cc01ca80e8a2672cbbf4047a3e62",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-04-04|burial",
+   "date": "2025-04-04",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6223bb65f00edd40ba19689c34728fde69322efe7824cba2dce1bfbbaae4931b",
+   "new_hash": "6bcb41b40806b4277a291bc9281e3827c74d177d8583aa7430be28f576d7d76f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-04-06|burial",
+   "date": "2025-04-06",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a52eff705fe5c7d21fbfe10f0eaee97600c6516f4f75583549cf3701d98d7287",
+   "new_hash": "558d92665ee95ae904ccd48b369a1e42b112b78681e6ddea65d092911574f2ca",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-04-07|burial",
+   "date": "2025-04-07",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e56a72616fb203b5faf36801fd6b194d6e8c39037cc6024fcc658adcb217f92b",
+   "new_hash": "053cc679b599ae68f05f530a4c37174b1ff3cf47f614f2ccb8ed41b2c5f3f57f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-04-10|grave_repair",
+   "date": "2025-04-10",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "d0902381762a504b01abe9059dbcd0579e3ff38e083515afa1bd8a44f52ead88",
+   "new_hash": "66d897aec9a310c44b65859f1f68d75f6a5bd05905f55caaaac7cfc41d253a3b",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-04-16|wedding",
+   "date": "2025-04-16",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c506753bc0b34638a8130febcc86dec1a574f8f902e0d2216bad24547c3016a4",
+   "new_hash": "452038e4b4ac28c89a5c2201d3af75f4fa902790fab69cfbd3300a7eeb1a25fa",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-02|burial",
+   "date": "2025-05-02",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f7fcb547e8960cfdd6273f60bb09913b9eabf862f38eba71277f772d7649d0ad",
+   "new_hash": "d56c58ef69e694d1f1548a66660e8c7bc4abcb4599d5c604f69f647294fbd655",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-04|burial",
+   "date": "2025-05-04",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cb8a16ecf8d81d57af5c1bed26b230941e70041c4251bbcfc2020b13c1fa2b0b",
+   "new_hash": "33a9ab2109e44502c168bedbee72b5c3174c2aec093ba0cdcf3412e72f526ce0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-05|burial",
+   "date": "2025-05-05",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "bd7915a33ea20b11cf1394788964115dbbe74c957fcc0c01aec9cd519fe47274",
+   "new_hash": "681b33ce3760feaed4bb2efcc91eea4363d5200ecb37ebde051207d1aff1537d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-08|grave_repair",
+   "date": "2025-05-08",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c4563ab7196fcac8f0a4a7ea8d92c21b5902030717e505b0a406364677d18570",
+   "new_hash": "f9e33c86662f0cdccf8ca249e019e2e44a97d82d3d415ccc9f34c6e958193713",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-14|wedding",
+   "date": "2025-05-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5f4698f3638616b8bf5803e02e049ba915518a4eefd947da613d6a4aa4aa6300",
+   "new_hash": "ee69ef6b6d0a674dbff02e498304d97b7f6bed66f3cc50d3e6362d8b40750bce",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-05-30|burial",
+   "date": "2025-05-30",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e8965faaa9d9f1dd6d5d12dbc34339540b68291be917a276a833b23c4c75f4d5",
+   "new_hash": "cd01f7e794dd8e371986c733a86bfa780c99d3d73a0547b8e8c111506a5098f6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-01|burial",
+   "date": "2025-06-01",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "07c56b4efaafccef81968e5c35da051ee596799084604bbc095799710e09ea02",
+   "new_hash": "8caeedb1df26b9a8fed39af085a3cb768fa9e67d0323c9170cdfd775677ae6ed",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-02|burial",
+   "date": "2025-06-02",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c2321ce08e617d84b87ea14de8bded9f2cdf9bdcaa9a06d6df0ca3d491de1518",
+   "new_hash": "c26c2e525cf02dd6305f05a525c6ef36c3446afb60a70084d55dcabe501564fe",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-05|grave_repair",
+   "date": "2025-06-05",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7cf1d4f71e5397c6a6aadee7e04a07c095abde78f3c7cf8c26801bb8fe5c6b86",
+   "new_hash": "1c7599b43758d5a09a6deb48a5b88647838acf3b91b261e58c7ec80bdab919d3",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-11|wedding",
+   "date": "2025-06-11",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c37a25d668fdb5d18b5ab81f16f8f691427aa295c324150cac39083d92135fee",
+   "new_hash": "d320567d8fc3a7a7451ff907ae93886d961fdbb9e69d648980482b6bafc02abd",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-27|burial",
+   "date": "2025-06-27",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2a54a2061865d6189754556c1eeb88310b171898e532c085f152f7bbec897088",
+   "new_hash": "f1c8e373cd237e31b166490f18276bde1fa7fc4b20139b96fd8247ec217a4ea1",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-29|burial",
+   "date": "2025-06-29",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f1d3d28b20cbf550d762e334045afe1c97be0bb7cd3433a8a0dd8ced3d253d0d",
+   "new_hash": "910839b4ea4a1e3129d68f5d43d32365bcd650d2c5af1487d6db24f6bb555805",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-06-30|burial",
+   "date": "2025-06-30",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "338ace9e6b0611188d3fdd814ed2d9b6d7a7a843ce97b41373c96b02359861d7",
+   "new_hash": "ad6260e565fa2a85ed716ea347f1cf24d0b2f5e08e44d8a16ec390406d5074bb",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-03|grave_repair",
+   "date": "2025-07-03",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3a9962160559fbe7217088f9f2cb78f383f3e18cb017d09107568ed35d69cde9",
+   "new_hash": "23ee6f807ab2e112a6ffa35d9dae28c85bafcd018deb69bc519e65046cdf5f7c",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-09|wedding",
+   "date": "2025-07-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1e6811166bc03c0d4490e3a1dca48b37e46ab2fde179ccdc0e316254d836ebb5",
+   "new_hash": "a82e0a2d539ea9a8a254173745393fd0b8750a9c53398f5eb8867cab328bc84d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-25|burial",
+   "date": "2025-07-25",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "97ccf4d814610629c3c199511d11ec0a291eea45d34a045c05229773f3d49f40",
+   "new_hash": "1b94f031b9283fada7316ca9c110316c6c829c5027dc2c57dd0c01a7331bee36",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-27|burial",
+   "date": "2025-07-27",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4b78e216571b18467b98989936bbdfc3ac2c9a39356ad9c681454e7a6676ac49",
+   "new_hash": "a58de4f352cc0111bd6dae9b45c42d4cb13bcece56452c3a874ce34481a7c43f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-28|burial",
+   "date": "2025-07-28",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c2da19fcbc4b6403f3fdd35b83ff6f6dce002f4cd578abf60f71d66c506950d0",
+   "new_hash": "c8ad2c8be26b5f4b4e8efe791f33164aa42ae2bfa77718872869d9600cc2603a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-07-31|grave_repair",
+   "date": "2025-07-31",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "dbc9cb9ab593011f815b34392764503a475ec8cea967a50463aa31b114ff6f2b",
+   "new_hash": "790cde8df810d92c865192b06f2663d5dc8067465378a688b4af531a8d6d3855",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-08-06|wedding",
+   "date": "2025-08-06",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b9e9fd651658e4a0f6c00c413095632b6e5ce8703539322d81af55a31e36f8c2",
+   "new_hash": "aba52b36b932568a78f6f2a8e890897c373515881f35a1c3331e8ec28c1e9f86",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-08-22|burial",
+   "date": "2025-08-22",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a6418067b941509f885b895a096ce84b66d1fce849c59870b5baebd8118c507f",
+   "new_hash": "5f6d396e6d515f29d3a17196964bd5019627fc14e2ccf32255877ee4e9cf39c8",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-08-24|burial",
+   "date": "2025-08-24",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f6bfb26ec6d0eaad42f6a0714bc0b0fa5df64b8893ff08de3df861d19697f9fd",
+   "new_hash": "12445beca611fefbabfd5c2a44074d3b11e87610a6a453e6591befe203dd1828",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-08-25|burial",
+   "date": "2025-08-25",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4ef93faa068513ee3f943f8f6f86f753fafcbc8378d1ece11a899d90dee6f9be",
+   "new_hash": "aa9a639c3ff8d377f45ebb9496112ad5443192dc5b0f39f7a14a23ce8c7c96d1",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-08-28|grave_repair",
+   "date": "2025-08-28",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9a0a2517c0bd7219cc61ff2f5f5fe355d212899133dfce23e70378f2627188a7",
+   "new_hash": "879c805be632e800ee6cc07e7caf37e5032c47a7d096cced4270f1da252c4205",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-09-03|wedding",
+   "date": "2025-09-03",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "fda215b4b84c4b586e93b114476b9dde0c39b04b1aa21418040c21b5691c074f",
+   "new_hash": "445d770641aa071d0f7ad4f92fda4e49b60138a372d15c80b5159867c8be0f25",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-09-19|burial",
+   "date": "2025-09-19",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5dddfa50b7305e017d8829518d8613c28617d31d3025d00a8d4cf489dab01da5",
+   "new_hash": "6ff157c2acc45d491ecdb8928f2f33260762cc8724afc9b58a7d044fa56c91a6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-09-21|burial",
+   "date": "2025-09-21",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c29c87d8d73345ecd7594b6509c56e7995ecaf256e43f56ee366d1569283652f",
+   "new_hash": "0e439ffc482d55f266b3f141b6fecf38288f1db0545a8e99e3e370b1a6c9e24c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-09-22|burial",
+   "date": "2025-09-22",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9da846059a94c426223f28fecf3d0d52c1cba250ea0bcf23a93387fb0e205f03",
+   "new_hash": "8d48c5ff4d95f73d63f055fec6dbb6befca2c442b9f66500f0031c5555c3d8c4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-09-25|grave_repair",
+   "date": "2025-09-25",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c8c1c041594b9b8023c67ff446791609e8bf020d1734005354086e6bff4f4b87",
+   "new_hash": "230a3a991d08ca9afd7c2a7d133d4467674206e205126549ad7bce168063cfd7",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-01|wedding",
+   "date": "2025-10-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8bde7534c6381c050d45c965a874cfdabb89f6c5898c46eacafee971536e9ecd",
+   "new_hash": "544db700cb30f379aeebfe5a3fbe869a2d5786fe00399e8c1d9c8a7b93e6aa98",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-17|burial",
+   "date": "2025-10-17",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3ce7805430b5b7a47a46f39c278f6163275044333f216b5acaa370a5176ba0c3",
+   "new_hash": "16897dd2014ad3a6e7886fcd42b5b9165fd6bf1ef99752995375f1f03447c421",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-19|burial",
+   "date": "2025-10-19",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1d1d092966e11ec7d1026dddf9cb94dec724a818d85cb0010331c63c4e55af4d",
+   "new_hash": "d0fb0df660d77f5cb73ebe3cc75bd4aea0fb24d017bdd42740521742eab38869",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-20|burial",
+   "date": "2025-10-20",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8c4f8d38ec18878dd3ed328133d57f6959cc910c387bc1891452a147e3020abf",
+   "new_hash": "b8eb68e7b2db892818eb25a8a9f931c5a73374e21622a3daaba640fd373af68f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-23|grave_repair",
+   "date": "2025-10-23",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "aecf75970974a3409e9e17532721678b7482c8d47a94bd2e39351182eb457d0d",
+   "new_hash": "a8eb0efa37bc59d8196f15289275e1df681b56de02c58db5c73d456b6abc72f7",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-10-29|wedding",
+   "date": "2025-10-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5136d9b3ec66d30f656223b5f989353539816562295cdfab599220b594a2996c",
+   "new_hash": "6f3f1bfed4182bac215b6dbe6e0131a705ca34812db1b499de7847ffe5fdb332",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-11-14|burial",
+   "date": "2025-11-14",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "74c4bfd6cca5abeaf092d251d1efb20a67fee362655dd43361877e9892ff0ce8",
+   "new_hash": "8ca588af8e8fc7feb5cffb1c86606367ad8bd9667a8b8dcf96df876942c88f89",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-11-16|burial",
+   "date": "2025-11-16",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2c004b819ae2fcfc7b28a44e8afc9595656196be8e54e7f9f6585a2ddec190c0",
+   "new_hash": "8a41bb3fefd8637e0baef2b3d797773dd0cbb8d667ae017e414a477a2cef340b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-11-17|burial",
+   "date": "2025-11-17",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "26b298a1d38db2819ee37e0724306c0a7110c87e37549dfb5dfe7959f7fcfb37",
+   "new_hash": "3a033464d4d5517b8f3e960a5772ef3e5e47af1c9fc5103b606d4564df462843",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-11-20|grave_repair",
+   "date": "2025-11-20",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "0039d02a9020e29db56814c7e430fb786d2ccccc8f3f4ce8e668a14890a20ca1",
+   "new_hash": "8bdf3e9b3b01b1e239161531dda5106f54b948f95f3e9aef95a42f8941dce82a",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-11-26|wedding",
+   "date": "2025-11-26",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "310ccc95ea076c7cc448e1263c9ef67fba4a5f2830ebce33f934797803faab41",
+   "new_hash": "57d7992f7290a14661ffa8ab1c5d54fc5f822fb0f4b60338a663925dce99107a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-12-12|burial",
+   "date": "2025-12-12",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "12ca91e0f577d55b9a320971954af6783390b9b8015aa238afcdb3c778056401",
+   "new_hash": "d00abc838023c01c6d3a476502e6e666703ae027beaee84c12b18ebeb65eb514",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-12-14|burial",
+   "date": "2025-12-14",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "315fc6345d8289e0234cf6a8b46d6781bbad9379c6359495ad02113efce8fc36",
+   "new_hash": "4dfdd450e67a3e984c88af531ea1afd4026694811bd916a42eff0f6197fd3889",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-12-15|burial",
+   "date": "2025-12-15",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c3cb2e52069525fc2bc6a70c6d2af3163a628af505eeb752d8f167644c7a49ab",
+   "new_hash": "5f3f7d5317173e6e82045c741b36bee14f34b4ef82dcbc32e4aff1abfb006434",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-12-18|grave_repair",
+   "date": "2025-12-18",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b8410b847c26b7cc5826772bbbed9f9efd1cadd0c0c45f1380d6c166ae79922e",
+   "new_hash": "24c30d85e2602af5577f266875d1d41c9dd63006b9e6f697e5ab3f8c9ef2a4ba",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2025-12-24|wedding",
+   "date": "2025-12-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cec55cce16f54f657194b199dfa85bac6b81411c9340a83c76c0b728146c66b3",
+   "new_hash": "a64a42f81e9c0a3b8c5af41718f25d69244509b162ba08add50a45cd9701686f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-01-09|burial",
+   "date": "2026-01-09",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1603956d7723557bd7ba279a9498ef2ef4ed6194e6abdf70b8f9652e30c19696",
+   "new_hash": "8a93347b3dec0802f772ba3b1502b1f81326bf0613a23772d1dd9dea7a97add2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-01-11|burial",
+   "date": "2026-01-11",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5bcebb96ad958e1e99f12c930d0b87b51df18c49199780891ee63633941588f0",
+   "new_hash": "72f165ebb7e0a1e4f1b0d03a83a68fa1b5d259fc25da49ac9a5588d45199e824",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-01-12|burial",
+   "date": "2026-01-12",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "34f22a54ebe302ecfbec287585ae7b0019741cbe3a1a858eee6e8559206bedb6",
+   "new_hash": "e12572221fb0e637b2979b82b1ee509478f8f419cd499e91d5b0dbe796e28b02",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-01-15|grave_repair",
+   "date": "2026-01-15",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "566016c7f6ab24eb3c9e23cd2074867a746d5fa7e9bc34f705c4c1f26e77c19c",
+   "new_hash": "2e38d456c137c1d83a4f7aac07bf649cca655f45ae4c8fa5c8a5ca25d56713ae",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-01-21|wedding",
+   "date": "2026-01-21",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c55df3bacb4729e377ad18f7bf18a028019d0ebc5d2d6c2fe4a27a3d23d4013c",
+   "new_hash": "c6239b6caf3c8622c90480831c1dc0456e7c2259370be8417c82248e3c1fa3e6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-02-06|burial",
+   "date": "2026-02-06",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ad7d21e44c0f326876e76a3143f81f2d473f3cecf1ee72e49e4e93862eef2c17",
+   "new_hash": "f889347da14e6fe0ec478fb18344149532c207f3a2e245737b5722478f6603e3",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-02-08|burial",
+   "date": "2026-02-08",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a3119081a14232c73b6ecddd0ee7e2c42def9e9f070b8efd6600c35918483d54",
+   "new_hash": "84d9d3aaade29ac5b0b4bd82ee7cf38d1b918ced5b868837acf841c2ac12216c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-02-09|burial",
+   "date": "2026-02-09",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6bc833129d6be6696b671097e9691ff66933893ece8b6a873a940aefc7b46adb",
+   "new_hash": "dc8768a0222b9023e5bb4bebd5a2f4853c037b92f1fc8894fd6e667b212c05ca",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-02-12|grave_repair",
+   "date": "2026-02-12",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9adc81bac2b53f1d5b7c1f8069b6c875b07202cf1838c0c46f08e4cb08e1dff1",
+   "new_hash": "5086e81c7099ed49c10842399526d06db88e72f05e7a7e4bd38ccce5ce9f895b",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-02-18|wedding",
+   "date": "2026-02-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a29e6d2efead530d27b09d71a1667a859fafa9b197a7c0ad61ffb069b8b1049a",
+   "new_hash": "44810156874404ec3061f8e036e4f31eb39bb6bf1dac2554eca427afa5912261",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-03-06|burial",
+   "date": "2026-03-06",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c58e22e2044e39d002a89f30bb94f7673e460e4f867f474bbcb62abcea851d02",
+   "new_hash": "060ea3b2644b43f2024f546a5e536dd3e32bc85cdef44d5c09d17620fb5ab2b3",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-03-08|burial",
+   "date": "2026-03-08",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "031728b7b6d99229255e732f1d0f2daa6832ab6e2384c0b744bf96c79aa9c0d1",
+   "new_hash": "abcf2ab3d3fdd507f839a21ea75aae6c2eb1ac94fe3c9935450b4225ee74d149",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-03-09|burial",
+   "date": "2026-03-09",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f76c60b6b188d8f073e29762404fc10d4087bf74f7bb4d15c111c72487962a9d",
+   "new_hash": "eb44c0619f639239680cc302377fc319b4ba4a786eb90c0e1868198666f8e702",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-03-12|grave_repair",
+   "date": "2026-03-12",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "49c9d1e37ca1e88d2103d9b3865f84f335ef0b0c6866205260dcab0ce5e0604e",
+   "new_hash": "65d6845057520eb2161f10b62bca14073f3bee640d48459cc0105d68b02c5f2e",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-03-18|wedding",
+   "date": "2026-03-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ca71aae99b0361f284e847fe6f008dd3ce3fc2cf0cb50e00740e29ed1d267e5d",
+   "new_hash": "5bffa15c6e69e021fd014818ce4186265e9f74a124b78321c0d7457451a703c5",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-04-03|burial",
+   "date": "2026-04-03",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e05cead4b63f01a46a1327463c290812a88559075a05df7ecaa5dcdeef6d0663",
+   "new_hash": "a2fbf65fcfaa75f2c9b1b22c7a711585a2427a6ba70ee09ca58b1fa28b50bb93",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-04-05|burial",
+   "date": "2026-04-05",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "835c007f3638bf503b53ab70ec010e00de0d55d204804ab272de813131b6e247",
+   "new_hash": "7b76ff12f8b691f0f85450cb38b0246b6b5695a598b5d8de6f02029613f7cb22",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-04-06|burial",
+   "date": "2026-04-06",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "897c0664d69607a8c16d835ef31a28b559c62ee989b9c143074aa1e8f43399e9",
+   "new_hash": "77d91dd379230af6ceb32b5742627c0591f78638d92a4d4cc8ce19a98496bb6f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-04-09|grave_repair",
+   "date": "2026-04-09",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6b8ae840150ff25b4b7aa795ecb5fb02bb46102f112d4578212a2e8a43b4afa2",
+   "new_hash": "7c84d4b75216e0343577a227c498fd140005d00bf885407140452110cf2a383b",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-04-15|wedding",
+   "date": "2026-04-15",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e671889dde3f1ae8fc2811435026b63032fb0eff928e51d9adb9589650d2a3e1",
+   "new_hash": "d084e428f101210fc1d0be0f34f8359a4e77111d940a42279d0f59bd775229a6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-01|burial",
+   "date": "2026-05-01",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a32ac924108df0407bcd040b317bd7494e47bae1c98348c592469c4c19d92d1b",
+   "new_hash": "6b33d50651017a190424448d0cbb3d89674131a98eedfd8148d09b13bdfa8840",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-03|burial",
+   "date": "2026-05-03",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6205d87f19188db520f1058639bf673bdb8a5d045583b952ce0112164367b1d7",
+   "new_hash": "b234f4cb70f8a37c6d0d51232eb68d7dbb30736758faf74faee29edf69bc052d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-04|burial",
+   "date": "2026-05-04",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c1512a36a955e52b7e52f7c49df96799e838972eb0899515ec16ea89d3f7c81b",
+   "new_hash": "f08b77d7263f74563754de9483637bce546b87338fb56bde299e08efe4ea5bfb",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-07|grave_repair",
+   "date": "2026-05-07",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f6cebfc3221e549bf901f076080b4b3835ce353d43e7819fd94ed7bd1f73f294",
+   "new_hash": "5068d08f65b08021ce42ce4a05208374225c6974d206e59dff34f53932140e2c",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-13|wedding",
+   "date": "2026-05-13",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6664b3ac5bd8417910466afac14d4e8cf463e5285b6f2e19725adbe885ea526b",
+   "new_hash": "9d269e0ce881f2f4a46451aa5da0274d575046d39eb7979ffce01a3cc27e0b81",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-29|burial",
+   "date": "2026-05-29",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "608a54510dde513685138d5751404c2dde41674d0d3596a044333071962b5133",
+   "new_hash": "5051f2c6de6558a29a2f195f2e2dfde49b6d6e90131f2e324b6c6d28950bcde2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-05-31|burial",
+   "date": "2026-05-31",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a0a7e71c613953b9ec0bddc6ecad104649b4a360328b24af65bab5fcce7e8543",
+   "new_hash": "3457cdedce79f50e3eadf08ff196e1f6df4ed9ec7a8f8fed3bf805ba9df1475e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-01|burial",
+   "date": "2026-06-01",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "eb2da0d1996f3d4fa251981d74b761121049b4b184a9ba6e2d507bc4ba5032c0",
+   "new_hash": "65550eb33d9a7d4b80538ba94160544be1d6fa5c4406bb6cdb5f836a412542fa",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-04|grave_repair",
+   "date": "2026-06-04",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "36b6fe00a859b45ea2668699ff315312c948585cb76b04ec5e045cf9c2f46326",
+   "new_hash": "ecf5f6dd8d5ca81baa5fab250daab2d454eca316a90875d16f1c7203074cd56a",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-10|wedding",
+   "date": "2026-06-10",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f1b6f993b26df4da2cb0c4eb93cb6294a0b412689caa2e06b1a597e1939bf69c",
+   "new_hash": "30ac45fa75097571b4feae7fab498708017fcebbc94d1f59e8b45fa39fbc4ab2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-26|burial",
+   "date": "2026-06-26",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "82b09d5d44ea3e0031d59cefb15c3dd01a96617d196c4e9bd58adadf3fcca49a",
+   "new_hash": "bf5e109c87889caed58e905f8a8617e5bbc47e6b8783153ff05ffed108a16780",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-28|burial",
+   "date": "2026-06-28",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9bc6f120a721fd6c16ee36256715b0a639591c8bb95df4a781504a98cffad095",
+   "new_hash": "92b7b43771fb5899e0ec2be4e1cb91d8ab130b8ecf9160509470c94e9baad76a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-06-29|burial",
+   "date": "2026-06-29",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "97400b76ecd10ffbde7e868ab62a805b3eb749d97b4b0b180aed211711da45ab",
+   "new_hash": "c15461c3d8a2349894a7acc8b6694c4a8ddb89207cea8ae276c0e1e023f78b95",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-02|grave_repair",
+   "date": "2026-07-02",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b4488aa465da152bd699e208f66d86fa984dbfd00d5668f6165b7891a740e757",
+   "new_hash": "25ce2ed38c55cf238b373dc81db59ac0394e13ede6b9cfe98af4c8c11a35943a",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-08|wedding",
+   "date": "2026-07-08",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ceb3c9240c569deea01142a5f88563a2970c126ff0e601b5ea21b107284ebc02",
+   "new_hash": "c89ac2d3d60fc16ecee6dc77fa1e2cb909cc3b709a3a0f72b2dc383b8c2b77d7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-24|burial",
+   "date": "2026-07-24",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "fa6142b1316583e7a84e4fc501da942202d787837711182bb3d428a56b435198",
+   "new_hash": "d2f15ca826a175ac89e0ec25b62628559ed02c3faf32664be371738af79d73a0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-26|burial",
+   "date": "2026-07-26",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "630b2d130e9823a1ffccfd7482390da1324b423c68f78b15324823ab7a8246e7",
+   "new_hash": "60c670339b7834f6ace765a76c38061269021ce0c5a82c7e5b811b8feace3a81",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-27|burial",
+   "date": "2026-07-27",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b145a1a0d530b3c1564d3f4c7b09c1b1042fd8e77efa901bffc6c57b643c963b",
+   "new_hash": "4073ad4dcf0636b9c01a0165ffd2e431c8f39ebdb3b10c2f4acae2d3ea2849ee",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-07-30|grave_repair",
+   "date": "2026-07-30",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8c89d2c86fcb18063617698c7e2c51183d244e4e956719d1ed1c478c93197217",
+   "new_hash": "e0385776f475f5c677ef24090b837089ae7fd14a0c0496ae414ab2b45bc3ac26",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-08-05|wedding",
+   "date": "2026-08-05",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "96056507fad532fb52b3c98bc6d7b36c468b6b8506b7da8b2f6faece47a91638",
+   "new_hash": "bac3bdb41bdf2551b74339e5364fe1abbdd8f61e40b758fc55554dc519c96797",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-08-21|burial",
+   "date": "2026-08-21",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "fba08babcd91916e257b9f13640002fab5c52bb995c58acd669573f496105069",
+   "new_hash": "ed1d0e99464a1e0109d149f3ef077d59cc44e60db7ebfd9941f1347749d8e109",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-08-23|burial",
+   "date": "2026-08-23",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "fc25c3b5c1e15319acca2ebbe188c476febfb9c8e60fb874f238ea4bc87484cb",
+   "new_hash": "6591df5707e39d2a6f59c1ceddad3d0d8d640b5bb254dda75655604cba6e6e6f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-08-24|burial",
+   "date": "2026-08-24",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e39ffba5bacd2b8123558814d9b3b920064e16d205a15c2db3ab7f7191f5feb5",
+   "new_hash": "9310b2173ea5028a930ed171f7e003b76125e91bf5e2330b39f80f37b25bb8f5",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-08-27|grave_repair",
+   "date": "2026-08-27",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a8ced091935cb9bc0120126c894b1373e460fd93f2b56a709da05a5a97637742",
+   "new_hash": "cee8a30bd2c1b482b5b7d6f13f140e9a2b1abfad21b25bebe6275a1f50543494",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-02|wedding",
+   "date": "2026-09-02",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b1865b5c43d495d2810af5cab11cb6ff216df9bf7b0ec367f5dc36a25da42a48",
+   "new_hash": "d84c565092f7661f49b9025350be798e3c5bad264e21d4fe6fdbc5dff04ce3a5",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-18|burial",
+   "date": "2026-09-18",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4192dba2a0cbf6fa3fb6ffbdb59a0bfa97f5f12d88b6d72b908831535cb35ebf",
+   "new_hash": "3aacb687ca267a3ce5ce6dfb3e8bcef8aea907477c50b8bb2e37bd8f12bd9efe",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-20|burial",
+   "date": "2026-09-20",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1f224163a42f785f269e01031b3915bfafd92ce72ee85cbee321a72b0e2e9369",
+   "new_hash": "3eb75e373ba9fc46130343bf87ebe7532db85e776467fc6f959cd683415badb0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-21|burial",
+   "date": "2026-09-21",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cb028bdab9e2e01db7458db801869feb006dee941371f9875d4ff090c1d6d492",
+   "new_hash": "d5f45b3a8e42a089b2ed9e5b5d722b451ecc84171dbc6d3475b3f1740d38e485",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-24|grave_repair",
+   "date": "2026-09-24",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e8a61b245cdf487b15417771a63a6080ee7233eed92f600ff7cb79a99142edfb",
+   "new_hash": "3ffe9a913ed25999441a16e62beed22f21b1410d455bd6e84d9e4cf8d7bb6b6c",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-09-30|wedding",
+   "date": "2026-09-30",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "961c9fc8f0dacc0b7d89b2b6ff662051ef4b0a9d4e40bb2a903de3ab912042c0",
+   "new_hash": "96b78a895bfae1bc60893dd2afeecae28fa1c5d37002939bb58c5b3e325c87b9",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-10-16|burial",
+   "date": "2026-10-16",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1dc62c4488297b016083011556eaa98e7df886a4420196e47e2c8e5cf610e80e",
+   "new_hash": "0d14cc2c54388562ef6bc7661ac8e38b6e519dc28d5c84863f33e0fc4010a8e7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-10-18|burial",
+   "date": "2026-10-18",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1beebb259d4128f567e75a2fb3703098bcf4521b7d0f828393cb2da0b1ee7c89",
+   "new_hash": "633bd9df609905ca51c8679cf9a451604ddf18918f2bc04f54688064376a70e1",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-10-19|burial",
+   "date": "2026-10-19",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e348fb7e492095b45ad01f5e606d2af8d2e1dfe543e2f6300784f05ea24872f9",
+   "new_hash": "46e290f7b514ecc8bbe1a5dd01b3887e02a60189e151fbc3384228adde62d769",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-10-22|grave_repair",
+   "date": "2026-10-22",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "d3f4659a816331ad6143b1798944052975c0a1af46e3f46e856cb42cc4de449d",
+   "new_hash": "6a70a4fc43f13d1fb4c43c489fb6b4226cfdb1f1d16e714f36d647de73bbcbb6",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-10-28|wedding",
+   "date": "2026-10-28",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "62b3151e814b30a3af01e30da522175dce0d67df614b7175b5cf8352941a0947",
+   "new_hash": "90061e00f181404f2e9183eaaacf37afef73c631bb6a6f01eaa98124d03b6904",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-11-13|burial",
+   "date": "2026-11-13",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6086ae0466bec3d47b829adb8bf82770b7c2bfdecff98d14a66cd5f1771cc439",
+   "new_hash": "42433b399e5788e47d3de98d61463de9050dfcdc7eeeccb92b3594e7f60f45c2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-11-15|burial",
+   "date": "2026-11-15",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "af7b60b80b17dded6688ee354ef23a16c7961dc11129f3946ef0bbc5b4df7f71",
+   "new_hash": "0508c057a3d181dfae26b957df865e51c62f096d140bbf7c4eb732523cfd7248",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-11-16|burial",
+   "date": "2026-11-16",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5c087fa4233cbd1f6e8f61d0fc99a94c52e7c5526a14fa0f7a072ddcf09e220b",
+   "new_hash": "996fd81c10656013edceaddd54473c8831f590c37d6874577a62233933256d62",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-11-19|grave_repair",
+   "date": "2026-11-19",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a98ddcc5b2e849879fde9a73d5993adcfcd3e4c1da58d56b11f68ef58f586cb9",
+   "new_hash": "17d5474a275ac03f9115f5870a0e6aacbbda934797c57e29af1d3dc341e0355f",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-11-25|wedding",
+   "date": "2026-11-25",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "efb247ef77bfb3e67524c2989d09f56801d1dd9647131d39d7e12298a5401482",
+   "new_hash": "dd055e8e4dc0395941162b9a526626eba2ad909743ccf1be8f90d4e56acda821",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-12-11|burial",
+   "date": "2026-12-11",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e31981874c499ddfc8369ff6d7a607725041095c6bdc5f1c8fb970fa7530edcb",
+   "new_hash": "a8527e3ae9d2489e7093b618646c3e5deb920cc10bd4e992941c4e5a6573b617",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-12-13|burial",
+   "date": "2026-12-13",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f2621a8af58dbee335585060ba3312db07a995dbd278ea7bf93e1e8b0054c413",
+   "new_hash": "9b30c548a5c8278488f1782e0d2bbbf5ed4c8dd476b16f8a3c7a7ecb344b8e48",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-12-14|burial",
+   "date": "2026-12-14",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c6edae474f55562843609c162720ff1f750acdde96d75c340ee03f0e82fe6892",
+   "new_hash": "1e043f6c9844ad01243f16d78dc788519404e56abdbc04d59a767f56ed90d852",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-12-17|grave_repair",
+   "date": "2026-12-17",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "d42462567338ac359f12701ec7e7b1a8d718a0518b9c8c82e64cca6190b19b7e",
+   "new_hash": "28e134571d529ba3031d279cb2925f04186a0e7fefbfb70b7ea52cfaa2583ba9",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2026-12-23|wedding",
+   "date": "2026-12-23",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2e75f86e9a3a7267763d4f966f7142e993094afd6d4d8f91f969c7756d01ed64",
+   "new_hash": "1e79baa6ad5904fe315c56c8cd266e5d32ccf215ca770e0bdad7796c9ad804ce",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-01-08|burial",
+   "date": "2027-01-08",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2d2bc62173ca4f54ff1db543522625ce064238a0be224b6e50451a839115234a",
+   "new_hash": "9387cfe1358f28470939f3bc859e7429b0fe029b1f66eb0de118b76a73dc0197",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-01-10|burial",
+   "date": "2027-01-10",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3e0354ee6c7c0c7b7f94556b5ddfa7695c108a3161239cd4ef2e667894390870",
+   "new_hash": "4df31cb4a616f6a0d383bd0336831a6f0c783f13e19505542f43479c1c03ad4a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-01-11|burial",
+   "date": "2027-01-11",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "300ed846381aaa5f76e17d8b31d94a199afb5ef407450c5458404cd41580eac6",
+   "new_hash": "c11d088eb5555a69281badf3a8ea8cd0eb20a709676569657d579adb61d062c3",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-01-14|grave_repair",
+   "date": "2027-01-14",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c69e10afb19ef195495c0a796ef1e90bc5f1b0533404dfbe0362ecbbc8e10c19",
+   "new_hash": "6cd8109679a97a975d7e8e16098002304e3062a38a35bda28fc4973e59084899",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-01-20|wedding",
+   "date": "2027-01-20",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c3f756fc8a4bac2dc2d90897670deb2a91b34e3f8f6f28153d1526c1698abe74",
+   "new_hash": "ba347e22d572f82216c8e0f013aede3a1d5b2d06b56e36f2977bc42c384f5d50",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-02-05|burial",
+   "date": "2027-02-05",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5508c0c4313cc86902d259582cc10763918f77296584e58abcff07ec9056ca08",
+   "new_hash": "fb6f62181510a7b3272a72f6ff2c9c54fa9cb14b96edd984f83828a6009ee6eb",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-02-07|burial",
+   "date": "2027-02-07",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3e6fa55b10238233f8faa320c4bcb117314efe121b080c93f8e03e71bc863cf3",
+   "new_hash": "7800701e4a77d8829fd3cfa6ad76ba6eb25ab6037044e799dc58b1325db9ed6c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-02-08|burial",
+   "date": "2027-02-08",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "51d8af5e1e4fa34bd0e710d9832a510156c8d4c799e3ce35f5db153dc7b2b2c4",
+   "new_hash": "7a6e9156d45ad68de5cf40eaba4e8f30be5a459df1e62fef4b8defd820e0b27b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-02-11|grave_repair",
+   "date": "2027-02-11",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3f66b2723d06e926bb151f14dd078ab9ed5a81f23f512b58bdd2f36ec5dabf8d",
+   "new_hash": "39e8a14a90f98cb2542d66f5da917f65e9436817e70fd1bc88ed51677032618e",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-02-17|wedding",
+   "date": "2027-02-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "011472d9b32f52b1cc3ed03b454342f35c2903e76e60dc76c683a8bb4b587313",
+   "new_hash": "7fd98293c27acf3af99604dd47428ba91bab97bc65c5562232cd91f7b923b3c3",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-03-05|burial",
+   "date": "2027-03-05",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "69478136f19c863902b262114540c7bddf14fa13858e8b4f095e67f0e8ac148e",
+   "new_hash": "a92032ff556db569c3eba5741c1b437e65ae4274a454f574cb241bdd81872807",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-03-07|burial",
+   "date": "2027-03-07",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ed3c4980cd7895f5840057f11570255c4a14d0067c6b8894852f26e6c7dedd6c",
+   "new_hash": "0c53e4f297916b6664eceeefdd5cbcc203f7cf65aa6b44b633f4507a301fa19e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-03-08|burial",
+   "date": "2027-03-08",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "998e386283e08696e726212270f60a3b53e71253eb3e88087614d082b436c1bb",
+   "new_hash": "e66e1beca4179c15ced6192593088ff77c11680a54b332f72f01026c4f9931e8",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-03-11|grave_repair",
+   "date": "2027-03-11",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a9aa3191d30f49792ca188d986e743b5f971e6169849dab5c9567184d3ce4d55",
+   "new_hash": "c213bdfe002b44d1cec9f2c4edad9bad92d312b5171730b6e205c6653bbc7c78",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-03-17|wedding",
+   "date": "2027-03-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9976f5899c275731f6be6daf823b56a6ba94c45140fba0443e796ccacd38101b",
+   "new_hash": "92d30ada87cad7b7fa00d7565bb3392faca958ba842be237bb7a9d9bde629699",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-02|burial",
+   "date": "2027-04-02",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a12fb39b3beb5b03e330173dd7345d2975e3d160d95caf8832d37345f53c8b56",
+   "new_hash": "7907ddeec72189df6a069d95604732ec111f735d782051fa3b29ecbb298e7546",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-04|burial",
+   "date": "2027-04-04",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e5e46b073432441664b5728ca33829cf9adf76aa68bdcc388e547974035d572f",
+   "new_hash": "26fc8a50c18f7e66812530a93ee8bd8597b2a71e020eee109c60a87130fc165f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-05|burial",
+   "date": "2027-04-05",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6b1756d7a32f5ea4a3ae9783540b94142e276cd3354160070f0c20247a441ead",
+   "new_hash": "f577d42fe237ef45e3a1315c003d76519fa73d1b323ec619dab5724e6d53cbf7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-08|grave_repair",
+   "date": "2027-04-08",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1f4aafc4e4107ab374b3abc4615f031b46d815c38fae33a5ec3f0d991210bd10",
+   "new_hash": "e0d775d131de7ba55c626bd5d8535de8962c8860818ede605162be4194893887",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-14|wedding",
+   "date": "2027-04-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "466fdd4f8216ec5445b451f47098efac09bbb900a198440c7d54a004f8379ee4",
+   "new_hash": "c752fdc7fef88a9841cdfa16b7dc9bdf528dcdb40af38f5d46c7c5484d48d633",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-04-30|burial",
+   "date": "2027-04-30",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c88318c7c92becc8e8e005696c06bee44dcc5193d6ec69359b355ff89e16f711",
+   "new_hash": "06fe7f28e1c14ac7f711dd33427211ce9c7b2d77f9a48e818866c33d19946433",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-02|burial",
+   "date": "2027-05-02",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "0759a75b87c71e08792da23f856736a6d4864bcdedd6e63a305100d5bf3418d9",
+   "new_hash": "265da88991be41c8e672e0fcb3f2f35edae24e93129f51584a7b764498a3c22e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-03|burial",
+   "date": "2027-05-03",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5ec66694954fc9bc34c1aa9a323bea67f97ce116bd79839d7c086382c63a9fce",
+   "new_hash": "17b9865dc88e1e61fde48a2a52ec12a2392a914297339ae97d40ccb941ec95f2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-06|grave_repair",
+   "date": "2027-05-06",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "36b6fe00a859b45ea2668699ff315312c948585cb76b04ec5e045cf9c2f46326",
+   "new_hash": "ecf5f6dd8d5ca81baa5fab250daab2d454eca316a90875d16f1c7203074cd56a",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-12|wedding",
+   "date": "2027-05-12",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ff4854ef1db7f5e10f202e3ebc6f7b5d426251ad671a95c0f8d83a4602a98c7f",
+   "new_hash": "00edc2b392938ddc7454df58056f74be8576c5f41641fe2023aa91a9a6ce6cbd",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-28|burial",
+   "date": "2027-05-28",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "374ffee9d01d1a41fde0bebd81831c4bda04824b392248044de9a379630bc7c4",
+   "new_hash": "e459b90dceda7f2f9f656cc6d415000d0c61a29855b7ca10196f519a6c78789f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-30|burial",
+   "date": "2027-05-30",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "0ad345c9f49f96c5a78471eec48a5fe1a29e3e84007674de8094bc65d853fa67",
+   "new_hash": "63207e218f0fc94207357429278129da516a38ebd2e95a643f77d22a655ad1c0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-05-31|burial",
+   "date": "2027-05-31",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8d02c22625abfbad88415a1c88b4ecd4795b5826bcfbbc4849dbcfe22eeab331",
+   "new_hash": "c0db12e0db07102ed95d32137ba409aa6f0d76c5406c38ef66e0083cc1ba8b21",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-06-03|grave_repair",
+   "date": "2027-06-03",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "428134442020c82590fa12ed8857ef626d41ad214a6073bb0a04c3fe53221669",
+   "new_hash": "f1624d1a7c07d4d88ce6732924ef7f8111f3275085ca42f9d0edf60f7a99f605",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-06-09|wedding",
+   "date": "2027-06-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cc212e9db990ad88ac168750f429d108de20270367e2d4f652462dfe0459d3bb",
+   "new_hash": "d8e2605d649411f953dd0c7d76a3167d65efe766e7d794103e62b28a7cf13676",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-06-25|burial",
+   "date": "2027-06-25",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "78cd59676fe341d3b63024ba66d940fe61aebc5dcb9a31cb0d49bf73dfd4995b",
+   "new_hash": "b22ecc7c10cb787a0d0605306b16419f89fe4a6a83561013bc3c0974e027db1c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-06-27|burial",
+   "date": "2027-06-27",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1000698ddc4f468dbe50e6b1bc32ff49df4e1192cc431ebbf418bd50bff8d79f",
+   "new_hash": "ca9fc814d82e5016e553da2768887991091dc2772e23daaef087a8eee9a4057c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-06-28|burial",
+   "date": "2027-06-28",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "52efe853ac0879fb0b671f615e3ad8a0d9b58529b09e4d8700e50b181894f44f",
+   "new_hash": "2087233aa7925d5fd68970c8d029a1de56a805f8c46eec6196668a8d04d62384",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-01|grave_repair",
+   "date": "2027-07-01",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6d6066de0a38e1be95a946c56ea7c5056843213ae3290032f0fc5fdd63423858",
+   "new_hash": "4d83b340f0850dd8e1978709f17835f990c7dd9ef4de7fc2d7b0c7dc4b1bcc4d",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-07|wedding",
+   "date": "2027-07-07",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "0f3897bd69b3f27c6d356f8d7a64d1aa7727741391eed99aba56516ecab7936c",
+   "new_hash": "f08752002fd59b48eca8da18443a91e5c88526bddcab933901a287e9df30b096",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-23|burial",
+   "date": "2027-07-23",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "11bc6300ea638088019d101bae8b87949eaee74890a4ff175bd51c4a600b4ab9",
+   "new_hash": "ddb1b67a2e45bdd5d414e98cf9e93a491f5862082ec92690a27e0b4461b4ca58",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-25|burial",
+   "date": "2027-07-25",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4970ac7b0c4f21bf77133581229151a882b3270abf9e482eed5a63b1f9c08f98",
+   "new_hash": "f646c464fed63df5c7a19624f600c6af257e8394e390564f477ec9cdffa98bd4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-26|burial",
+   "date": "2027-07-26",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "919ff65a92621dd564d0bacb7377d0dc4ab0d0b01d8b03fc1fdfd5587460a1db",
+   "new_hash": "9f16c470707034d01d8adeec4222adf043ac27e9f8ce6807b82bc5c23e75c460",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-07-29|grave_repair",
+   "date": "2027-07-29",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1df7e424a93fe58d273cf253ee3e24f4f505b0472c3ed6baf005843fd3ac9f3e",
+   "new_hash": "42a99f01ec3b080e41df8ee33311ba850a87fedbca45ee608129c1088f5c4172",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-08-04|wedding",
+   "date": "2027-08-04",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3ce3cc6ee60a138aaec3317b90b3e0c737b8a2b9be7cfce3f671393ce67911a3",
+   "new_hash": "2340545982d88d2afb46e04d301aab8dc0545a8f61a57bd86201debce4ca5a24",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-08-20|burial",
+   "date": "2027-08-20",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cc681d09510f78bad34621df9a2a8a6edb6a7d988d845f8b8c1e9e60ad281c07",
+   "new_hash": "e1bbb1f18fb36e8ba71ed70b2aa7916543a84711777c2fcc821d25170a43cfe2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-08-22|burial",
+   "date": "2027-08-22",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4142cbc97101e97addb624717d8fb204a66ffc0d7bafa12050086ae0aa8bbbfa",
+   "new_hash": "a56e55e4cecd07acc3653a50d5210dee71e17421efda209550d8e856aa0f9e97",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-08-23|burial",
+   "date": "2027-08-23",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c3a48af0ed8abf32b80f830193ce8543bc1911c2d9681cdef545bdaaf54ffd32",
+   "new_hash": "9fab4f2a7c6c2dc611b7c6ab98d9bd4dc37be3693d1b8e33c10e3172c15b9ae7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-08-26|grave_repair",
+   "date": "2027-08-26",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7cd8ab2481d8e74a0d360c45986b8a78d85adafea4bb85b83f427dcf461b70fd",
+   "new_hash": "891391c107bec4a80f29d77e7f3732bd2caa9cc2727a66dfe9cb6793a9defae3",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-01|wedding",
+   "date": "2027-09-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8ee17894a217d37efad77586060b4929ff707eda520cdadaa023ba8d48866629",
+   "new_hash": "a8c5959ecc5dedefc16d14c5e1bc25f8462a27296ddf413ebcc6bbd33994778b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-17|burial",
+   "date": "2027-09-17",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "57d2d9f160b4d2829a28520bc095e2df77dfcd9693de23f16537427b95022515",
+   "new_hash": "369d08be776c8d1e2d64f29032ed542255cfa8eba24feaf04453e749c6b9c43c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-19|burial",
+   "date": "2027-09-19",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5cdc21c927a9acb56e831bf5efba3d55998678713568d0445614993b9d3d939d",
+   "new_hash": "8a42072afe5e6992c0fe5b0e4de176e0a92d738de8c35cb45558cebcae11e81c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-20|burial",
+   "date": "2027-09-20",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ea4d438415b30801ad68903d86cd33bbf35976a171b062e6762434fd5615130f",
+   "new_hash": "fc74ff015ec9537a58e5029a87cf023812b957f631eabf987e5164679a917029",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-23|grave_repair",
+   "date": "2027-09-23",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2e20f698f0045eca0b325fae80a6f9c6916080da235bc6187f41d79e4aa714a7",
+   "new_hash": "982f5bba3923c36657d91cec235eb2a1685e4886996035e3303c071cbbdf54ad",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-09-29|wedding",
+   "date": "2027-09-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8d5040851fe6db116243ff728f62d1468913bc95536584c8b5d1f07c48cd83ad",
+   "new_hash": "2beedda8c7b7b27f3d0df90749e4e10b7ceb53345ed545b0b8a46ffa40ef1868",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-10-15|burial",
+   "date": "2027-10-15",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5e82e869f856d3f96fbe15edcc31a8d4e8b7b9baac6ba2f7b290412e36e6a3de",
+   "new_hash": "58d58f3daf826aac6d51c0d9825b600d238f50c72c73b6f9237d73960ab882b0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-10-17|burial",
+   "date": "2027-10-17",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "bc5d4d1bab57b5db4e59418884341428dc1dc83ffd7b7fe5e7957afadd13564f",
+   "new_hash": "155ccd24c434499ab3b0862b75470996479f91b84b4ae546849dbb01a0a99e07",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-10-18|burial",
+   "date": "2027-10-18",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6ca646c304cc8bd9a3eccc4c2901542853149a9e02219d604fce4d3b7e9fbefc",
+   "new_hash": "79980d98502679e02d282314ea481e41b173b7db52910d494e164a916a4e1d49",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-10-21|grave_repair",
+   "date": "2027-10-21",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1fda78c34aa7ec424a85a85d78bc4d30abd01d1f0a3a2609d70958ec0b754001",
+   "new_hash": "998806b7a8874bf07de2d57ee73a5d471e7830ed78c21ae4ce96021ce130581b",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-10-27|wedding",
+   "date": "2027-10-27",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8c5b33caaa86f89a861b38e7fcf1c4ad94884e2a5a641b56b469be4e8d78b60b",
+   "new_hash": "b224d01ea7aab6869daaf0cfd92a50272f79e002fef46f734995fc5c46ec243b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-11-12|burial",
+   "date": "2027-11-12",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "00463f118cc709c79394640443c31528b7a57810f1dedb0864e7b496d79b3b42",
+   "new_hash": "2e3806905fbd9d7e9b50ea82bdc2872fd7b5c9ae7d8ebcb5869b83fdc6375866",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-11-14|burial",
+   "date": "2027-11-14",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b71c3047072b28cd56ee54b910ff178bb91a9837ce4e942d345b97b49ea9a621",
+   "new_hash": "c77d0dc466c1c3522f612ef9592bc79c675a847eff14410b3d3131de8ce7004e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-11-15|burial",
+   "date": "2027-11-15",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "68b704ad97d8beecad8373a9a8b42306f8ca954496fd90ec89cb435315c5e195",
+   "new_hash": "e80eb633dd8c918c128f854436dd0d8e4d3696fb9bb73e7cf4b254358d99c8ef",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-11-18|grave_repair",
+   "date": "2027-11-18",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "43ba31081f8099ebb187c24b1e5a7155f0637e5280f69e21bc428c2b57cf1cd1",
+   "new_hash": "04dedcc447f70b8b501829cd8d568cd91cd120d7b08ef2e7b9cefcb9ebb33171",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-11-24|wedding",
+   "date": "2027-11-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5257b7e9e2a70acda253819f0b5761b156610e88e6d353d7c93cd6872d3d8605",
+   "new_hash": "fb8b0fcce28f974caf847b8882fbd486a4efa86bed3a47ba2488cd723204d2c6",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-12-10|burial",
+   "date": "2027-12-10",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "59bdc181320167bb08bf258f72e8263a3a375c71c50284f2e4a6296cc9cf9372",
+   "new_hash": "828064be12498a5367f3d4c51dfe9508b9e0244b1a6bcaca54958cda74772ed9",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-12-12|burial",
+   "date": "2027-12-12",
+   "mansion": "房",
+   "activity": "burial",
+   "clause": "房-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f64569c3a8826273d4d9575ded0fd4b507bea475d41a9c4dd7b67a0f6068c25f",
+   "new_hash": "0813989763064a66f1e9a7dbbdde183788e344eea1f22f257158c27fb61cdd06",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若然逢此日",
+     "new": "埋葬若然用此日"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-12-13|burial",
+   "date": "2027-12-13",
+   "mansion": "心",
+   "activity": "burial",
+   "clause": "心-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "4fb2a1c654997843533cdc3f98b5c94237a20af4e8cdffc72df2fe527e246aa9",
+   "new_hash": "9040149004bd1ee51e953211c8489e83f151475915240d964972ba1f5bb6c59b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬若還逢此日",
+     "new": "埋葬卒暴死相從"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-12-16|grave_repair",
+   "date": "2027-12-16",
+   "mansion": "斗",
+   "activity": "grave_repair",
+   "clause": "斗-2",
+   "changed_fields": [
+    "contributions[].activityMapping.reviewTerm",
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9599d13b80e9d077c9c46b9ea0032e3a828271de69c1a89ed1c681d927a23304",
+   "new_hash": "8a4ce8305efe129cc26b0863c78a86acab75f914e3361815451d0616ec949393",
+   "values": {
+    "contributions[].activityMapping.reviewTerm": {
+     "old": "墳墓修築",
+     "new": "墳堂修築"
+    },
+    "contributions[].sourceQuote": {
+     "old": "墳墓修築富貴家",
+     "new": "墳堂修築富貴來"
+    }
+   }
+  },
+  {
+   "id": "activity:2027-12-22|wedding",
+   "date": "2027-12-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "02dfb6f5811004e46c6657e1fb487c969c867ac8a5a036fb47002e2ace507e0d",
+   "new_hash": "9f3830a545e582fb13ac6e43dc3359c4338192d9697365b65037f4e601a4c687",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "activity:2035-06-15|burial",
+   "date": "2035-06-15",
+   "mansion": "亢",
+   "activity": "burial",
+   "clause": "亢-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "776b29274da151e15135f208f5d2bd37c356c9be3165db76a6378db93cb916da",
+   "new_hash": "9b0ed6e64fe78f52bcaea1c6bcfba0e6b1cd56cdcd44ab0226a1f5d062d01d06",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "埋葬定是虎狼傷",
+     "new": "埋葬若還逢此日"
+    }
+   }
+  }
+ ],
+ "event": [
+  {
+   "id": "event:2025-01-22|wedding|",
+   "date": "2025-01-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e0b34f7afbf49bdb5d5a7dbc5c46a9642b94da7af38aa291863cdabfe615d137",
+   "new_hash": "b4d8a3101efbd5b9b22719f104834996748b8c1c18ff879518c9db3c5aea4b1e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-01-22|wedding|9",
+   "date": "2025-01-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "65bec940c39d6581951830cbaccc8087033ac6cdd4f58bbb65d0a9c7b6434bbd",
+   "new_hash": "f8902a4a4bb0dd62d33ab413ccba1d8c87cc9e515c59bec549d6dc2ab302e533",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-02-19|wedding|",
+   "date": "2025-02-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ba8790a0a42d253c887e5e21f421509bb65cb07d6fd592750375bc298a1849fd",
+   "new_hash": "3d04261381cb8dc70a0c07afae0c2bba4108d49d39401383c637b3a500f90e04",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-02-19|wedding|9",
+   "date": "2025-02-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5fb4cecc119c9a6a4571f20815b39a2fa29ae5b69f86cbd492c0bd1965bba0b8",
+   "new_hash": "c67b194e90cd0448d9aed99ac5bda826e986d67a1c208c55e1fc2c330213cc58",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-03-19|wedding|",
+   "date": "2025-03-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8f3005d92d59ea1e5803896f764127cdc408221928258ce88d81cd4c26a7e7c8",
+   "new_hash": "5805ba012b88f8b2a0c9cdae065070a8d6e8a26d6b72ff817c011ac057f30664",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-03-19|wedding|9",
+   "date": "2025-03-19",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c5627bd77b8f0e58eafa7e99e7b484b6466f7faeb19c6ea2a9c30062276f43f9",
+   "new_hash": "e12f2b520264c8f0d0e44bc61c7c2bf0dd37c0de2231b8430622c58ff254b5b4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-04-16|wedding|",
+   "date": "2025-04-16",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "6529fb4e29f704972e5072848506c1f5ad4ad390782c9d11b505710248debe9e",
+   "new_hash": "2b380902eccebd5ee0e1cd29a8f9677f88ecc7d84a413a10104bf89ad4a6ed36",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-04-16|wedding|9",
+   "date": "2025-04-16",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "66983db2fc91fb133e2066726288ab038348935270ab7158d6716cedd57f397b",
+   "new_hash": "1fccde4605b4eb6d451776fa9b5167ba0243b7ba20dc8ccd912bb99995f30ae1",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-05-14|wedding|",
+   "date": "2025-05-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "21ad2573ce9b61128e14fad9ba00d2d7d1044ba4ef4f58ca2394030c28739002",
+   "new_hash": "fb44a611ca4a19fd601e749d4f33d99aa5efee048eba12de2a99b2b0537bde58",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-05-14|wedding|9",
+   "date": "2025-05-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "706ea62e261640c89d2cc96da54c30a9cf735504297463d23244ab2fd5a4f716",
+   "new_hash": "b5bb3c088a5debede35db90f46784bd648ea370187f6adbf14893b3f5697b9dd",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-06-11|wedding|",
+   "date": "2025-06-11",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9b5448d4e8badcc8b151955a115f89cfb4990d79bb4d27ba85325679a81d4fcd",
+   "new_hash": "ebb59253cc42097640805d0e8bd782eaeb3f86d052c773d050dd727479e5556c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-06-11|wedding|9",
+   "date": "2025-06-11",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7a7ee49776549e07ed002e243470db5b2ba1d221ef97b3ffe8166bb7107698db",
+   "new_hash": "6f81bb35569a7377204496c590355c3de97fc0ed1805d6204a60207ac19e576f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-07-09|wedding|",
+   "date": "2025-07-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3cad722c544ee66cd073793616bf3550e49b955169e7e736422c5165108797fa",
+   "new_hash": "9782e8ee5247cab02ab89b88491559bb107ef4f1e10c81e1373c47ea2b55bf27",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-07-09|wedding|9",
+   "date": "2025-07-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "abd9341f5a68ffea626a149742a2496083616178e8fcbbb52132bbad9ace45a5",
+   "new_hash": "8a084a8684fd6b28d4f11355022105d94ef22182f34901cc5cdf101dd611422a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-08-06|wedding|",
+   "date": "2025-08-06",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "35a508a0dd8e84c69dbaeb27308a8ec68a4cbc7bd50fe363312b0678c9e8459d",
+   "new_hash": "fee9759346c743cc2a532eaf8e934c82682c4c2cfdf1dee663569b7b5c7b9be1",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-08-06|wedding|9",
+   "date": "2025-08-06",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ef75b93892a20784d695aec5a55d0f8e27a862db099fde326936409f2dc7e351",
+   "new_hash": "f53a727c7dd4e97bb1c38b951453813c94c20dd9211d4d594a24a5cc90af17bc",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-09-03|wedding|",
+   "date": "2025-09-03",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c5eb1c5c0d8c7724177ff1f177d085d9774dff54a11ac3cc2282f79ef072cd28",
+   "new_hash": "c762e39eab316b797e27d696ad5e5d7d4ced39f2c90c05a0d4585f797cbf320c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-09-03|wedding|9",
+   "date": "2025-09-03",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "240cc97635aece4470e0ee719f5ad1280e2478465d01f0d8bdb45434a34bb97c",
+   "new_hash": "2af90b977f3b42f5286571e64b0dc802a44d7327e87b66df5eea133cc8abd929",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-10-01|wedding|",
+   "date": "2025-10-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "60cfa8338c5ab73bb281c02a6e7149a30a6750989e443596481cae5d08c481ab",
+   "new_hash": "c9628d266dc1e43de12515e8b98f3a25380f49d1dd49bc4aac24cade221c4273",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-10-01|wedding|9",
+   "date": "2025-10-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "547e1290cc6b6f64ac5709b581d09f27161a3270a5438fc47d0c6c6b179c013a",
+   "new_hash": "ceb77c4f4ca42d6fde887149d678e05ece04b21e34fcc9b16b060dfe323343d3",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-10-29|wedding|",
+   "date": "2025-10-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7466d26bb1f0d268870c406a79913dba858a241c5d445b26cfa1d220e956080d",
+   "new_hash": "60390cb8d7d8df52be6fc2a5bae800c5800d8d9bda5bf7a33f90826844d0e78c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-10-29|wedding|9",
+   "date": "2025-10-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3ea94d89200ea14d9e8c0bf582f6feae16e6ae6cf491938d5de924d4a4288be1",
+   "new_hash": "9ada074b6c362b86c87a74550d764a9ee7c036b7c5f2ce737d8b7160ec9d1ada",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-11-26|wedding|",
+   "date": "2025-11-26",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a4d151e5f03fabe45e4df420dd0ba1eb1c3ee90256bd7247597e9e7925f7a1c7",
+   "new_hash": "55d73363ba95fd9fbfee8b7769dff4b81cc483b4aa3087a22c22811d634fa5a9",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-11-26|wedding|9",
+   "date": "2025-11-26",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f091a4d2340dd0aeb0794bc82ae84b82f4d519b2a666038e9cb344cb6cc7a1d2",
+   "new_hash": "764de98f85326d8f595a2c3974cdd537cf4a16bdacdfd69b164ab579c98588f4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-12-24|wedding|",
+   "date": "2025-12-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "711a12c1b10868f0e8d7b6cdcffc985c7a18afb08be5b5873089977d59cad33f",
+   "new_hash": "6344e58c5f71b84db11b56cb9255b6d7e6d98bc66ef7f8e22f84162a5339d740",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2025-12-24|wedding|9",
+   "date": "2025-12-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "419cb27428b91bb0f245303b54a9c0a395b4d4e6e1b53929bac850a5a3d25e88",
+   "new_hash": "63ee0f3198f7ed0178d31261ad2a964a873fc2e78c442ba57dab480c1698f807",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-01-21|wedding|",
+   "date": "2026-01-21",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "f8a79c6d20b9a926ac40af0ffd391c3c3389c429ab9711cad8b8ee7bfcbc589a",
+   "new_hash": "ffcb58afd2e6dac595a5d4a7c1a9e85e4a0d6eaf2acf165b2afbf85938301afa",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-01-21|wedding|9",
+   "date": "2026-01-21",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2b64bfd5ea1ae205d0426f78a23620875b36e594091619363f2482cd2d75c3d1",
+   "new_hash": "815995cc86b5fde4b1006aec4591ce3a08e6761eaf91d81c0de9bcc1dfca191d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-02-18|wedding|",
+   "date": "2026-02-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "bdf25d29f101047b4353c519a6d47dbb5a57ced4fa757b7afe1144b13123fd6c",
+   "new_hash": "d9c7ead8dc58dc0f9ed024663661984b70b70879abb76b607b2483d4abbd32f4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-02-18|wedding|9",
+   "date": "2026-02-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "dd39211389efffd3205c2355b4841d7274eb85ca96845c2f98b09f93bce0688d",
+   "new_hash": "20d5064ed79e45f06caf6281d65c63853b37df62726d9c13c882cb7fe03c9e8e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-03-18|wedding|",
+   "date": "2026-03-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a248473db5b0fab6c10c711b7ec8f161ae46d05d332bc77df442ac39744fe63e",
+   "new_hash": "6c06485c15233391d812bcfe6d0acd25b1df0888067f6863bf0d006de83ec965",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-03-18|wedding|9",
+   "date": "2026-03-18",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "55a120be9689ec9f479f3231093bad5813d2bf047fc23be205e9225b8093be35",
+   "new_hash": "81b2fadd683239d059ca5c493d5a13d53a802e3a49e3f8f14b53d9d144d713ea",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-04-15|wedding|",
+   "date": "2026-04-15",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1a377b7e6443299508ec3cdd528bc437bde9c80a841a1e9b67e30df1913c01ee",
+   "new_hash": "4e0b4bf0aa2688287487492df2de76c18e30ca484904742f6519ba7fd94ea30f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-04-15|wedding|9",
+   "date": "2026-04-15",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b1ed710e8c9753432805f849249828152a01e0c3db09835c8a920a45551a65fd",
+   "new_hash": "8e13aaa0779915223869e11d7fa0d3c5e35cb8951e458219f2de7eec800fed1d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-05-13|wedding|",
+   "date": "2026-05-13",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1bd061d4fdc103faadc9369143883e3dfa375557e92d702f803a448e0742b255",
+   "new_hash": "8e67b337225c98168ee72513615374ecb9fec601f4938440ec3f3158e8bddda9",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-05-13|wedding|9",
+   "date": "2026-05-13",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "57af440a2ed2780d68d8872dd72eb43eb1a5300030adfde8315ae73c3bd93288",
+   "new_hash": "86aa0a4c3be7dc5e2c042bc15060ca33ae691f59b95a3d49a483e52b97cb0686",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-06-10|wedding|",
+   "date": "2026-06-10",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3154ff24fb7f56a7e2614e96283408cdc3428c532649be76999dabc6a0d073f2",
+   "new_hash": "015e6f82fa5d7a9f7ef4df11f76461f105152f114014f9664c9f28f85374a922",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-06-10|wedding|9",
+   "date": "2026-06-10",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5a9c4833678a6ba25e8e733c7f87b06543801f4edd72c5c904b9f1c75cc7a04c",
+   "new_hash": "6fbfe577ad8d169252410b4733fe21d61333bc6726969399065057b75c377f9f",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-07-08|wedding|",
+   "date": "2026-07-08",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "de13144b0cd8ad8094323616307181d1b571c344086d7224d4dacdd2d47ba074",
+   "new_hash": "7a5eb589ddd5ad2bdc639c74e1a60b0ff6da985f8163194d90b2a7a0e91f3824",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-07-08|wedding|9",
+   "date": "2026-07-08",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5cf7cc065fa6e10dbe1e9ecffb2499e94407748881c7abd4b8b1bea906e997d6",
+   "new_hash": "cd7d450737dcb09b912154988ada9e7a7204919c908e7efa2e99363dcd235245",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-08-05|wedding|",
+   "date": "2026-08-05",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "cb861444bb9d7ebbc8c1ef07e2f4f39cf5e233b7ce9ae5f8146ee22a1ed08e07",
+   "new_hash": "46fd70cbebbddc1525e864928701fb1af150ceb0e791abb1052ee5c46aeab590",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-08-05|wedding|9",
+   "date": "2026-08-05",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "72bcc825fe658e7186b8c7483364290d64ebbf797170cb63388f11955189fa83",
+   "new_hash": "40c9f2dc5efce823b1ff87413345520919fd9fbac48ad8c2fcebb46f39d9b611",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-09-02|wedding|",
+   "date": "2026-09-02",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "990ac1fea04c1b863863c52cb6574a9f94633244e8b4423334a2ddd74c5ce54b",
+   "new_hash": "d275eb9b003a7d6de5cb5e0808fa9c4cecda65e75be93b71aeede4d180428aff",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-09-02|wedding|9",
+   "date": "2026-09-02",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "bb3223a6e72885e9e0b539eda7e3e5ee4560a14ac9f568599b5583de51f5311f",
+   "new_hash": "cfe0b26b5bf3a26b4480203fd389dacf1f57e714f398cfc3078246b2297c7e1a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-09-30|wedding|",
+   "date": "2026-09-30",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c8ee2b34b772eee80546413c30d1241e84b0a94f7464707bf63b374c04144e9f",
+   "new_hash": "55551d79219484e69cde65fe5f5fe4a42ffac39a19f8741131c1ac7d51e0e6ad",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-09-30|wedding|9",
+   "date": "2026-09-30",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "32dec0057b636568af40c3000768868ee7162c42b132da634f9bd95051282ec4",
+   "new_hash": "eb5f097d7814f7e3bbb38b6ad24a3d394a0f4bafb61549a8ad64039cddbe25c7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-10-28|wedding|",
+   "date": "2026-10-28",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e26a7ea01a05a1188fe6a3d57819572b4d470c75c646555dc050e7b3762629bc",
+   "new_hash": "b9fd23d5cb32a4e250e4023f83e029ae37ba61948bcedbb4cbced6ca448999c7",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-10-28|wedding|9",
+   "date": "2026-10-28",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e1cd69bfae4eac70e3b2c9acd08f85f8216a85104737059b380972a8ce023865",
+   "new_hash": "440b77d5e4dabc5ff1a706064bf25974f2e196da04be5343513177eb15597cd4",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-11-25|wedding|",
+   "date": "2026-11-25",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "28f430c82d884df5ecfeb89a63cd4f78c2a61d27909cd41f4fb98f7819378908",
+   "new_hash": "4d8acd5fc50ee34f6da7df6c497388cf9e8ada360b8c56e7c66879f41c03c131",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-11-25|wedding|9",
+   "date": "2026-11-25",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7e0871686e00ae72dbc2cc0844e7f27c10c924de7b86907eb7a466627f492a73",
+   "new_hash": "abaa82231738f7a0c4f32a619b7ca1680410a7323ba2e424e8037cd7e7971e73",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-12-23|wedding|",
+   "date": "2026-12-23",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "718ac1c10764861b05a43865df57313c3932f88d477d5f19f9f822c79813574b",
+   "new_hash": "19e33f2b0ca7f788b83292b30951ce2c190d9682222ba6be5e29ecbe66a571bc",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2026-12-23|wedding|9",
+   "date": "2026-12-23",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "9b0430da38dc4ab2dcb54a15c3a282a7bd1d92b08ba5d19b16932fae5a40a7e2",
+   "new_hash": "7541b876e85281a1448959847819db28f77b3a46bfac66104f0886c989e85f19",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-01-20|wedding|",
+   "date": "2027-01-20",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "a66550129e4ad4c863bb7a41f18f1e327120f22b3a95b7bced52ea5ca132b88b",
+   "new_hash": "fd6c18a9f6a5b792a6b3672e9fdec247c7b38eb16d3d9ee9bad13dd85bc6badf",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-01-20|wedding|9",
+   "date": "2027-01-20",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "66a872c1234c1f3d85d146a6104eea1c564d3059e948263bde10c4c098940dc1",
+   "new_hash": "a3412bdb8e2c02bad8b04c15b58b35a281b80df07d5049a37575fdc64a6e6e8a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-02-17|wedding|",
+   "date": "2027-02-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "350ea75da7f67399bc01d9becb1f9309e049f02eb0d70f073db4bafe8d655d79",
+   "new_hash": "09eb18fc523354420ff717e5e0eea80dda5aaeb1cc3b74031df34c7f45776f3a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-02-17|wedding|9",
+   "date": "2027-02-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "002155e50082fb91f095f3e03578128abf8b3bb786a21e65f2982d3445b8e040",
+   "new_hash": "3203fd31a5169fab88bdee05d1c19db7dab9dde52f4ff7760a1816724f92542d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-03-17|wedding|",
+   "date": "2027-03-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "1f6d920691163039431957d414c39def5131193092a46e4d36bdb17a91d7057c",
+   "new_hash": "1e8ff8245faba6ec11c6b8aecc32700df9475beb3e56ec0868fe0f28fe3b0a45",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-03-17|wedding|9",
+   "date": "2027-03-17",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e1798a3265332be7d7805d7c1ac2721612e99ee0a8618ae73cdb4bd8c46dd2d2",
+   "new_hash": "2a2b633635e66ba1f4c9c7efa80049089e02db5edfa774f514feae3004cb1430",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-04-14|wedding|",
+   "date": "2027-04-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "39f4d3bcedd0ae505250cb13fed5b3f1d207e32f9779856bd2f426c24c234f2b",
+   "new_hash": "70b7802170414ae8d39232ba137f1decf5c7ffb43c4b27c0347e72b16c6a6568",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-04-14|wedding|9",
+   "date": "2027-04-14",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8642bef944ccb614d37fe3cbac1f538c0f4f6219a0566ab9817fd9e1df5e7c17",
+   "new_hash": "8c390d6fb78e63859c73a5836662c75f870b6d9575c96a4941229f7d74132425",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-05-12|wedding|",
+   "date": "2027-05-12",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "2d72251360cbab7461a6aaf252a37ce648d2062807bbb294db960680b50d3621",
+   "new_hash": "f3e9a7221d1ac15499cdd916fbe04e0ff379ad7a979f340d2c5e99d8b48875ab",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-05-12|wedding|9",
+   "date": "2027-05-12",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "ea95c69027fc0e6cc7a122dd19859fde2a3deeded537e5406aff70831d890152",
+   "new_hash": "31cce34c3ada64fd2577146897dc95b7daca3b69d1ca534f8c6d7d1ea83699d0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-06-09|wedding|",
+   "date": "2027-06-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7b360d7adfda6c2fe99c15aaca35b2c640a56b3a52118d55d667a764c3cdcfbc",
+   "new_hash": "82e2d93157795b9af1544c204eaf2a03804b9920f4b73979fffc75a0ec2f53a2",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-06-09|wedding|9",
+   "date": "2027-06-09",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "5f5f3138449e63a655079fc962da1eace0b02d36e14c714f56bd3be945d2646c",
+   "new_hash": "acdb1187a848c370e8b6701e4ccae606017cde9e05e119e5ad6e70ea365a317d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-07-07|wedding|",
+   "date": "2027-07-07",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "969bf676e9b0b538d2ddcb6de3cc977e517655d324a106020f9f62be27de52c7",
+   "new_hash": "7e3251d0d2929b69559125d2e376c7cd6aed39bd5bb55e89b4aa8cea8437bf36",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-07-07|wedding|9",
+   "date": "2027-07-07",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "fd1a617ac6c33b4e37836a1887f9323801b5389fce58aa4780a7399c457671af",
+   "new_hash": "11b6044f419f33207769eb59db66de79f87fad0a0d48cdcb82799675a3119cef",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-08-04|wedding|",
+   "date": "2027-08-04",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "c89d7e24cdde1e2d1dddf33cce298acbf51742d654a58ca0d142599f2512b553",
+   "new_hash": "626416b337f8bca8b90e0aefb53e2abc241bc87914cb805bbe61f96eb1a63faf",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-08-04|wedding|9",
+   "date": "2027-08-04",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "27cf47e37583f90afc52352ede2e4237e433b769a97b7c0652476463f4f821b5",
+   "new_hash": "b5b0e195802459e5c22f0be19b3cdf876ec84f9902331e9d00c78c5568986df5",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-09-01|wedding|",
+   "date": "2027-09-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "06729cac6c8ab02b84c196c4501f453ff6cb34dfbba2ea2d15e7b8abf5fe4a2b",
+   "new_hash": "ac8ac6f7648e96c1fcb66ab5bd2532d7bbd4587872392a83f1e3d0d0fdac765a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-09-01|wedding|9",
+   "date": "2027-09-01",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e320aab212d53b042661c25db62df8bd9c7be67d8c1dbb697ba0dd234caf470b",
+   "new_hash": "d9f90190ca937c6872309b91f94278b9e3847aa3053c194987c64ff29c111721",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-09-29|wedding|",
+   "date": "2027-09-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b98f354414431180f2959aa8d0ee1c2fe0e61389cb50af9b6ede79d9e554a47e",
+   "new_hash": "52b7870a7a697d6486e6663c013077b87ea8c79aa3137439651e99cea3fef07e",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-09-29|wedding|9",
+   "date": "2027-09-29",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "7062b59c83d872c5f1e97a28fc30439a5d11b1a7ac65ca592fd214ac71fef5aa",
+   "new_hash": "c2c924a277f55f60c6cfd7d1c8f823a374c06c47ae80764b1b3769e71e86daf9",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-10-27|wedding|",
+   "date": "2027-10-27",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "45c259ce59382e67647319a4407e5d2e8e35955d3286e95f8b944b31904ee47d",
+   "new_hash": "a8047108167c8be5677956f8024e1aa4bd305b69d6f60c9c1f1da6d77080cd2b",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-10-27|wedding|9",
+   "date": "2027-10-27",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "e52d5958494148065eb324755186e81cb6b9b829525413ccbe7950a084a909a6",
+   "new_hash": "a181bf0cdfea49af060846354e0e6c20ce6960ea9bae792de49531f7fc08a48a",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-11-24|wedding|",
+   "date": "2027-11-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "8871d5fcba95e3f8fa13585833857114159113b48b51c6a1e22f2d7cf9c6a4c4",
+   "new_hash": "4b9f9b12d3971c5aff51f06d2c0b116d4e2fe82b6a0eb7191552d304f03529c0",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-11-24|wedding|9",
+   "date": "2027-11-24",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "3a31510142fb10602acb67d592a220ce1d75407f1e3ec817cb57a36ece17332c",
+   "new_hash": "8cd62dc06adda4c335914c1bcce3885eb67985fdcd2067746ca2ce50d07c673d",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-12-22|wedding|",
+   "date": "2027-12-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "d67e7fa900cc8ab6deaf6e55cea2cf7888986b65068a296d780d485796f031b2",
+   "new_hash": "0d7ca313ce415a011c6ef5d8a1b2b6e94d7643d15ed87437eab53e738525c445",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  },
+  {
+   "id": "event:2027-12-22|wedding|9",
+   "date": "2027-12-22",
+   "mansion": "壁",
+   "activity": "wedding",
+   "clause": "壁-2",
+   "changed_fields": [
+    "contributions[].sourceQuote"
+   ],
+   "changed_tsv_columns": [
+    "sha256"
+   ],
+   "behavior_changed": false,
+   "provenance_changed": true,
+   "old_hash": "b1b21899358a4f1da5bf0877a0b81cd3f44d71748355ccb4fcc7b790b87f7962",
+   "new_hash": "9774e6b7b125ff0629bcd037df2772693033aa2138fe3c55dbbf8433f56f4a7c",
+   "values": {
+    "contributions[].sourceQuote": {
+     "old": "婚姻自有人口進",
+     "new": "婚姻吉利生貴子"
+    }
+   }
+  }
+ ]
+}
