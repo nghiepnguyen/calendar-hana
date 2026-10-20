@@ -43,6 +43,25 @@ describe('mansion evidence explainability', () => {
     expect(screen.getByText(/không suy ra riêng cho nạp thái/)).toBeInTheDocument()
     expect(screen.queryByText(/chưa được thẩm định/)).not.toBeInTheDocument()
   })
+  it('shows a partially legible excerpt as printed, with a note and no reconstruction', () => {
+    const liu = getMansionContentEvidence(getMansionContent(23)).find(
+      (r) => r.activityMapping?.clauseId === '柳-2',
+    )!
+    render(<MansionEvidenceDetails evidence={[liu]} mansionIndex={23} />)
+    fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
+    expect(screen.getByText('埋葬瘟□多□□')).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'Một số chữ trên bản scan không đọc rõ (□). Ý nghĩa “Chôn cất — bất lợi theo đoạn nguồn” vẫn xác định được.',
+      ),
+    ).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/疫多疾病|瘟癀|病死/)
+  })
+  it('adds no transcription note for excerpts read in full', () => {
+    render(<MansionEvidenceDetails evidence={rows} mansionIndex={22} />)
+    fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
+    expect(screen.queryByText(/không đọc rõ/)).not.toBeInTheDocument()
+  })
   it('shows opposite source excerpts without choosing a winner and preserves exceptions', () => {
     const base = rows.find((r) => r.activityId === 'wedding')!
     const opposing = {

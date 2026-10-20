@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-21",
+  "certification": "DOUBLE_REVIEWED (semantic mapping)",
+  "state": [
+    "SECONDARY_REVIEW_COMPLETE",
+    "DISAGREEMENTS_RESOLVED",
+    "ONTOLOGY_DECISIONS_RESOLVED",
+    "EVIDENCE_CONFIDENCE_MODELED",
+    "DOUBLE_REVIEWED (semantic mapping)"
+  ],
+  "scope": {
+    "mansionClauses": 115,
+    "yongshiMappings": 29
+  },
+  "qualifiers": [
+    "115 Mansion clauses and 29 用事 mappings were independently reviewed twice for semantic mapping.",
+    "The two reviewers were independent AI-agent review passes; no human textual expert review has been completed.",
+    "Mansion transcription includes normalized, character-identified and partial primary-source readings; no clause is certified as a diplomatically exact transcription.",
+    "用事 review is based on the Wikisource digital transcription and has not been fully proofread against the 四庫 scan."
+  ],
+  "doesNotMean": [
+    "diplomatic transcription verified",
+    "expert reviewed",
+    "human reviewed",
+    "all glyph variants verified",
+    "textually certified"
+  ],
+  "mansionTranscription": {
+    "EXACT": 0,
+    "NORMALIZED": 3,
+    "IDENTIFIED": 111,
+    "PARTIAL": 1,
+    "UNCERTAIN": 0
+  },
+  "mansionSemantic": {
+    "VERIFIED": 115
+  },
+  "mansionBasis": "scan_read (all 115)",
+  "yongshi": {
+    "basis": "digital_transcription",
+    "note": "not fully proofread against the 四庫 scan; no evidenceConfidence metadata in its schema yet (limitation)"
+  },
+  "mapping": {
+    "exact_catalog_pair": 111,
+    "unmapped (intentional gaps)": [
+      "婁-1",
+      "鬼-6",
+      "軫-1"
+    ],
+    "not_operative": [
+      "星-4"
+    ],
+    "reviewed": "115/115"
+  },
+  "modeledStates": {
+    "柳-2": "semantic VERIFIED / transcription PARTIAL — modeled evidence state, not a mapping blocker"
+  },
+  "remainingMappingBlockers": [],
+  "history": [
+    "2be48a7 source corrections",
+    "ed59e09 construction ontology",
+    "evidence-confidence modeling (mansion content 1.0.4, baseline revision 3)"
+  ]
+}

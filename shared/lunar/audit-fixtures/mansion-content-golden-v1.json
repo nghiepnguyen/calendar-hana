@@ -1,6 +1,6 @@
 {
   "authorityId": "mansion-content-yuxia-1880-v1",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "source": {
     "work": "繪圖增廣玉匣記",
     "edition": "光緒六年仲夏校鐫，掃葉山房藏板 (1880)",
@@ -12,7 +12,13 @@
       73
     ],
     "pdfSha1": "c8f9ccbb73f7bb0e05c6c1880d61ac9f62dae6b1",
-    "transcription": "Visual reading of page images; short operative excerpts, not OCR or complete verses."
+    "transcription": "Visual reading of page images; short operative excerpts, not OCR or complete verses.",
+    "evidenceConfidence": {
+      "appliesTo": "clauses of this dataset (mansion-content-yuxia-1880-v1 1.0.4) without their own evidenceConfidence; not a default for any other dataset or source",
+      "default": { "semantic": "VERIFIED", "transcription": "IDENTIFIED", "basis": "scan_read" },
+      "positions": "1-based character positions in quote",
+      "basis": "Secondary review 2026-10-20/21 read every quote on the scan: lexical characters identified; printed glyph variants not verified except the declared exceptions"
+    }
   },
   "items": [
     {
@@ -1048,6 +1054,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 6, "sourceCharacter": "庄", "storedCharacter": "莊"}]},
           "scoreDelta": 0
         },
         {
@@ -1669,6 +1676,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 7, "sourceCharacter": "尅", "storedCharacter": "克"}]},
           "scoreDelta": 0
         }
       ],
@@ -1697,6 +1705,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 6, "sourceCharacter": "蚕", "storedCharacter": "蠶"}]},
           "scoreDelta": 0
         },
         {
@@ -1893,7 +1902,7 @@
         },
         {
           "id": "柳-2",
-          "quote": "埋葬瘟疫多疾病",
+          "quote": "埋葬瘟□多□□",
           "translation": "Chôn cất",
           "polarity": "negative",
           "activityId": "burial",
@@ -1906,6 +1915,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "PARTIAL", "basis": "scan_read", "uncertainPositions": [4, 6, 7]},
           "scoreDelta": 0
         },
         {

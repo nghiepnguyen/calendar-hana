@@ -44,6 +44,12 @@ export function MansionEvidenceDetails({
           {row.sourcePhrase} — {POLARITY[row.polarity]}
         </p>
         {row.sourceQuote && <blockquote lang="zh-Hant">{row.sourceQuote}</blockquote>}
+        {row.evidenceConfidence?.transcription === 'PARTIAL' && (
+          <p>
+            Một số chữ trên bản scan không đọc rõ (□). Ý nghĩa “{row.sourcePhrase} —{' '}
+            {POLARITY[row.polarity].toLowerCase()}” vẫn xác định được.
+          </p>
+        )}
         <p>Phạm vi: {ACTIVITY_LABELS[row.activityId] ?? row.sourcePhrase}.</p>
         {row.activityMapping?.reviewStatus === 'interpretation_pending' && (
           <p>

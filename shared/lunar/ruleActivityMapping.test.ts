@@ -163,6 +163,16 @@ describe('explicit mansion activity mapping, separate from source review', () =>
         resolveMansionActivityMapping(clause('construction', 'construction_general', quote)),
       ).toMatchObject({ reviewStatus: 'interpretation_pending' })
   })
+  it('resolves 柳-2 from its legible characters only (埋葬瘟□多□□ → burial via 埋葬)', () => {
+    const c = getMansionContent(23).clauses.find((x) => x.id === '柳-2')!
+    expect(c.quote).toBe('埋葬瘟□多□□')
+    expect(resolveMansionActivityMapping(c)).toMatchObject({
+      activityId: 'burial',
+      status: 'exact_catalog_pair',
+      reviewStatus: 'interpretation_reviewed',
+      reviewTerm: '埋葬',
+    })
+  })
   it('rejects a tampered operative pair before returning evidence', () => {
     const row = getMansionContent(5)
     const c = row.clauses.find((x) => x.scope === 'door_opening')!

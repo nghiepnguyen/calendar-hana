@@ -1,6 +1,18 @@
 import type { RuleActivityMapping } from './ruleActivityMapping'
 
 export const ENGINE_VERSION = '1.2.0'
+/** How reliably a source excerpt was read, separate from how its term was interpreted.
+ * Positions are 1-based character indices into the excerpt. There is no global default: a dataset
+ * may declare one for its own excerpts (e.g. mansion content `source.evidenceConfidence`). */
+export interface EvidenceConfidence {
+  semantic: 'VERIFIED' | 'PROBABLE' | 'UNCERTAIN'
+  transcription: 'EXACT' | 'NORMALIZED' | 'IDENTIFIED' | 'PARTIAL' | 'UNCERTAIN'
+  basis: 'scan_read' | 'digital_transcription'
+  /** PARTIAL: positions shown as □ because the scan is unreadable there. */
+  uncertainPositions?: number[]
+  /** NORMALIZED: printed character on the scan → character stored in the excerpt. */
+  normalizations?: { position: number; sourceCharacter: string; storedCharacter: string }[]
+}
 export type EvidenceStatus =
   'applied' | 'informational' | 'conflict' | 'no_evidence' | 'not_audited'
 export interface Evidence {
@@ -13,6 +25,8 @@ export interface Evidence {
   sourceRef: string
   /** Original source excerpt and explicit operands, when a content authority supplies them. */
   sourceQuote?: string
+  /** Only when the excerpt departs from its dataset default (sparse). */
+  evidenceConfidence?: EvidenceConfidence
   /** Product interpretation review, independent from source confidence and scoring. */
   activityMapping?: RuleActivityMapping & { authorityId: string; clauseId: string }
   conditions?: readonly { operand: string; equals: number }[]
