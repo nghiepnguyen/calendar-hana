@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from 'vitest'
 import golden from './audit-fixtures/sat-chu-golden-v1.json'
 import { getAlmanac } from './almanac'
-import { solarToLunar } from './lunar'
+import { getLeapMonth, solarToLunar } from './lunar'
 import { dayCanChi } from './canChi'
 import { solarStringToJd } from './julian'
 import { STARS } from './stars.data'
 import { getAllHours, SAT_CHU_HOUR } from './auspicious'
-import { SAT_CHU_AM, SAT_CHU_DUONG } from '../personalFengShui/annual/afflictions'
+import { evaluateSatChu, SAT_CHU_AM, SAT_CHU_DUONG } from '../personalFengShui/annual/afflictions'
 import type { SolarDateString } from '../types'
 import manifest from '../almanac-data/manifest.json'
 
@@ -91,5 +91,41 @@ describe('policy satChuNgocHapStars', () => {
     // 2025-01-28: lunar 12/29, day Dậu -> Bốn Mùa Sát Chủ and Tháng Sát Sư.
     const bad = getAlmanac('2025-01-28').stars.bad.map((s) => s.name)
     expect(bad).toEqual(expect.arrayContaining(['Bốn Mùa Sát Chủ', 'Tháng Sát Sư']))
+  })
+})
+
+// Owner decision 2026-10-20 (golden leapMonthSemantics BASE_MONTH): a leap month uses its base month.
+describe('leap month uses the base-month tables', () => {
+  it('every day of nhuận 6/2025 (2025-07-25..2025-08-22)', () => {
+    expect(getLeapMonth(2025)).toBe(6)
+    const names = [
+      'Sát Chủ',
+      'Tháng Sát Chủ',
+      'Bốn Mùa Sát Chủ',
+      'Sát Chủ Trong Bốn Mùa',
+      'Ngày Sát Sư',
+      'Tháng Sát Sư',
+    ]
+    let leapDays = 0
+    for (let t = Date.UTC(2025, 6, 25); t <= Date.UTC(2025, 7, 22); t += 864e5) {
+      const date = new Date(t).toISOString().slice(0, 10) as SolarDateString
+      const [y, m, d] = date.split('-').map(Number)
+      const lunar = solarToLunar(d, m, y)
+      expect(lunar, date).toMatchObject({ month: 6, isLeap: true })
+      leapDays++
+      const chi = dayCanChi(solarStringToJd(date)).chi
+      const almanac = getAlmanac(date)
+      const bad = almanac.stars.bad.map((s) => s.name)
+      for (const name of names) {
+        const row = STARS.find((s) => s.name === name)!.rule.byMonth![5]!
+        expect(bad.includes(name), `${date} ${name}`).toBe(row.chi!.includes(chi))
+      }
+      expect(almanac.hours.filter((h) => h.isSatChu).map((h) => h.chi)).toEqual([SAT_CHU_HOUR[5]])
+      expect(evaluateSatChu(lunar.month, chi)).toMatchObject({
+        amBranch: SAT_CHU_AM[5],
+        duongBranch: SAT_CHU_DUONG[5],
+      })
+    }
+    expect(leapDays).toBe(29)
   })
 })
