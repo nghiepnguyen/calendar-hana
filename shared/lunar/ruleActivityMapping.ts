@@ -36,7 +36,8 @@ const mappings: Record<
 > = {
   construction_general: {
     activityId: 'construction',
-    terms: ['造作', '修造', '起造', '造龍軒'],
+    // 造高堂/架高堂/造新房: owner ontology decision 2026-10-20 (C partial); 臨水造 and 竪柱 stay gaps.
+    terms: ['造作', '修造', '起造', '造龍軒', '造高堂', '架高堂', '造新房'],
     reason:
       'Giữ diễn giải xây dựng chung hiện tại; không mở rộng sang động thổ hoặc việc xây dựng hẹp.',
   },
@@ -77,16 +78,6 @@ const mappings: Record<
     activityId: '',
     terms: ['竪柱'],
     reason: 'Dựng cột chưa có exact activity ID; không mở rộng thành xây dựng chung.',
-  },
-  construction_high_hall: {
-    activityId: '',
-    terms: ['造高堂', '架高堂'],
-    reason: 'Dựng cao đường chưa có exact activity ID; giữ phạm vi hẹp.',
-  },
-  construction_new_room: {
-    activityId: '',
-    terms: ['造新房'],
-    reason: 'Xây phòng/nhà mới chưa có exact activity ID; giữ phạm vi hẹp.',
   },
   construction_wall: {
     activityId: '',

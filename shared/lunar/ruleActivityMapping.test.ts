@@ -43,20 +43,17 @@ describe('explicit mansion activity mapping, separate from source review', () =>
       })
     },
   )
-  it.each([
-    'construction_columns',
-    'construction_high_hall',
-    'construction_new_room',
-    'construction_wall',
-    'construction_waterside',
-  ])('retains an explicit catalog gap for %s', (scope) => {
-    expect(resolveMansionActivityMapping(clause('', scope))).toMatchObject({
-      activityId: '',
-      status: 'unmapped',
-      reviewStatus: 'interpretation_pending',
-      reason: expect.any(String),
-    })
-  })
+  it.each(['construction_columns', 'construction_wall', 'construction_waterside'])(
+    'retains an explicit catalog gap for %s',
+    (scope) => {
+      expect(resolveMansionActivityMapping(clause('', scope))).toMatchObject({
+        activityId: '',
+        status: 'unmapped',
+        reviewStatus: 'interpretation_pending',
+        reason: expect.any(String),
+      })
+    },
+  )
   it('rejects broadening, crossed pairs and invented mappings even when catalog-compatible', () => {
     for (const [id, scope] of [
       ['opening', 'door_opening'],
@@ -142,6 +139,29 @@ describe('explicit mansion activity mapping, separate from source review', () =>
       reviewStatus: 'interpretation_reviewed',
       reviewTerm: '墳堂修築',
     })
+  })
+  it('maps the owner-approved construction phrases and keeps the two intentional gaps (2026-10-20)', () => {
+    const mapping = (index: number, id: string) =>
+      resolveMansionActivityMapping(getMansionContent(index).clauses.find((x) => x.id === id)!)
+    for (const [index, id, term] of [
+      [11, '危-1', '造高堂'],
+      [26, '翼-1', '架高堂'],
+      [24, '星-1', '造新房'],
+      [25, '張-1', '造龍軒'],
+    ] as const)
+      expect(mapping(index, id)).toMatchObject({
+        activityId: 'construction',
+        status: 'exact_catalog_pair',
+        reviewStatus: 'interpretation_reviewed',
+        reviewTerm: term,
+      })
+    expect(mapping(27, '軫-1')).toMatchObject({ activityId: '', status: 'unmapped' })
+    expect(mapping(15, '婁-1')).toMatchObject({ activityId: '', status: 'unmapped' })
+    // The new terms are exact compounds: neither gap phrase is reviewed as general construction.
+    for (const quote of ['軫星臨水造龍宮', '婁星竪柱起門庭'])
+      expect(
+        resolveMansionActivityMapping(clause('construction', 'construction_general', quote)),
+      ).toMatchObject({ reviewStatus: 'interpretation_pending' })
   })
   it('rejects a tampered operative pair before returning evidence', () => {
     const row = getMansionContent(5)

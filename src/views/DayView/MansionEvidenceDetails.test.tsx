@@ -76,14 +76,15 @@ describe('mansion evidence explainability', () => {
     expect(screen.queryByText(/Các nguồn đã thống nhất/)).not.toBeInTheDocument()
   })
   it('integrates with the event selector and retains the existing verdict', () => {
-    // 2026-10-11 is Tinh: its scan link comes from the unmapped new-room clause, not from wedding.
-    render(<DailyActivitySection date="2026-10-11" />)
+    // 2026-10-14 is Chẩn: no clause maps to opening, so its scan link comes from the unmapped
+    // waterside clause (軫-1, intentional gap). Tinh's new-room clause is construction since 2026-10-20.
+    render(<DailyActivitySection date="2026-10-14" />)
     fireEvent.change(screen.getByRole('combobox', { name: 'Nhóm mục tiêu' }), {
-      target: { value: 'relationship' },
+      target: { value: 'work' },
     })
     for (const summary of screen.queryAllByText(/^(Cần cân nhắc|Hoạt động khác) \(/))
       fireEvent.click(summary)
-    fireEvent.click(screen.getByRole('button', { name: 'Cưới hỏi' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Khai trương' }))
     const verdict = screen.getByRole('region', { name: 'Kết luận mục tiêu' }).textContent
     fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
     expect(screen.getByRole('region', { name: 'Kết luận mục tiêu' }).textContent).toBe(verdict)

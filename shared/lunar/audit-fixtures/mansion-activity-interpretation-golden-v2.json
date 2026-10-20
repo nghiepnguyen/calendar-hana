@@ -12,8 +12,8 @@
     "開門": "opening/making a gate or door of a building, not opening a business",
     "放水": "releasing/drawing water (drainage, channels), not boat travel",
     "竪柱": "raising columns",
-    "造高堂/架高堂": "erecting a high hall",
-    "造新房": "building a new room/house",
+    "造高堂/架高堂": "erecting a (main) hall of a house — construction in general (owner decision 2026-10-20; 高堂 = 房屋的正室廳堂, 重編國語辭典)",
+    "造新房": "building a new house/room — construction in general (owner decision 2026-10-20)",
     "築牆": "building a (rammed-earth) wall",
     "臨水造": "building beside water"
   },
@@ -411,9 +411,9 @@
     {
       "id": "危-1",
       "quote": "危星不可造高堂",
-      "activityId": "",
-      "scope": "construction_high_hall",
-      "status": "unmapped",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
       "reviewStatus": "interpretation_reviewed",
       "reviewTerm": "造高堂"
     },
@@ -915,9 +915,9 @@
     {
       "id": "星-1",
       "quote": "星宿日好造新房",
-      "activityId": "",
-      "scope": "construction_new_room",
-      "status": "unmapped",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
       "reviewStatus": "interpretation_reviewed",
       "reviewTerm": "造新房"
     },
@@ -995,9 +995,9 @@
     {
       "id": "翼-1",
       "quote": "翼星不利架高堂",
-      "activityId": "",
-      "scope": "construction_high_hall",
-      "status": "unmapped",
+      "activityId": "construction",
+      "scope": "construction_general",
+      "status": "exact_catalog_pair",
       "reviewStatus": "interpretation_reviewed",
       "reviewTerm": "架高堂"
     },

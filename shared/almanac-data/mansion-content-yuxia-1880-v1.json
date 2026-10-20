@@ -1,6 +1,6 @@
 {
   "authorityId": "mansion-content-yuxia-1880-v1",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "source": {
     "work": "繪圖增廣玉匣記",
     "edition": "光緒六年仲夏校鐫，掃葉山房藏板 (1880)",
@@ -863,8 +863,8 @@
           "quote": "危星不可造高堂",
           "translation": "Dựng nhà cao",
           "polarity": "negative",
-          "activityId": "",
-          "scope": "construction_high_hall",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",
@@ -1958,8 +1958,8 @@
           "quote": "星宿日好造新房",
           "translation": "Dựng phòng mới",
           "polarity": "positive",
-          "activityId": "",
-          "scope": "construction_new_room",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",
@@ -2133,8 +2133,8 @@
           "quote": "翼星不利架高堂",
           "translation": "Dựng nhà cao",
           "polarity": "negative",
-          "activityId": "",
-          "scope": "construction_high_hall",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",
