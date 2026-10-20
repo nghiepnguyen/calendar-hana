@@ -3,9 +3,7 @@
 // Mỗi sao có một quy tắc: điều kiện theo từng tháng âm (`byMonth`, 12 phần tử cho tháng 1..12)
 // hoặc điều kiện không phụ thuộc tháng (`always`). Một điều kiện khớp khi ngày thoả ít nhất một
 // danh sách trong đó (Can, Chi, Can Chi, trực, sao 28 tú, ngày âm). Tháng nhuận dùng quy tắc của
-// tháng thường cùng số (quyết định owner 2026-10-20, không có nguồn nêu quy tắc; nhuận 4 → tháng 4).
-// Ngày Can Chi chạy liên tục theo chu kỳ 60, tháng nhuận không làm gián đoạn. Bảng dữ liệu nằm
-// trong stars.data.ts.
+// tháng thường cùng số. Bảng dữ liệu nằm trong stars.data.ts.
 
 import { STARS } from './stars.data'
 
