@@ -60,7 +60,7 @@ Notes on coverage and reading:
 | 巳-丙戌 | 安葬 | 復日 + 天德合 | 五墓 | 忌 | none | 忌 | CONFIRMS_H1B |
 | 巳-丙辰 | 安葬 | 復日 + 天德合 | 月煞, 閉日 | 忌 | none | 忌 | CONFIRMS_H1B |
 | 未-己丑 | 安葬 | 復日 + 天德合/月德合 | 月刑, 月破 | 忌 | none | 忌 | CONFIRMS_H1B |
-| 戌-癸亥 | 安葬 | 劫煞 | 重日 | 忌 | none | 忌 | CONFIRMS_H1B |
+| 戌-癸亥 | 安葬 | 劫煞 | 重日 | 忌 | none | 忌, plus 開倉庫出貨財 (Golden-unnoted) | SOURCE_AMBIGUOUS |
 | 辰-己巳 / 辛巳 / 癸巳 / 乙巳 | 安葬 | 劫煞 | 重日 | 忌 | none | 忌, plus Golden-unnoted 劫煞 headings | PRESENCE_MISMATCH |
 | 戌-乙亥 / 丁亥 / 己亥 | 安葬 | 劫煞 | 重日 | 忌 | none | 忌, plus Golden-unnoted 劫煞 headings | PRESENCE_MISMATCH |
 | 未-壬申 / 丙申 / 戊申 / 庚申 | 宴會 (會親友) | 劫煞 | 五離 | 忌 | none | 忌, plus Golden-unnoted 劫煞 headings | PRESENCE_MISMATCH |
@@ -68,7 +68,11 @@ Notes on coverage and reading:
 | 亥-辛酉 | 開市, 立券交易, 開倉庫出貨財 | 災煞 | 四耗, 五離 | 忌 | none | 忌 | SOURCE_AMBIGUOUS |
 | 亥-己丑 | 栽種 | 月厭 | 地火 (又為) | 忌 | none | 忌 | SOURCE_AMBIGUOUS |
 
-Tally of dated rows: CONFIRMS_H1B 14, PRESENCE_MISMATCH 14, SOURCE_AMBIGUOUS 5, CONTRADICTS_H1B 0.
+Tally of dated rows: CONFIRMS_H1B 11, PRESENCE_MISMATCH 14, SOURCE_AMBIGUOUS 8, CONTRADICTS_H1B 0.
+
+戌-癸亥 was first marked CONFIRMS after reading and then moved to SOURCE_AMBIGUOUS on review. It prints one Golden-unnoted heading, 開倉庫出貨財, which is the same pattern as 丑-戊寅. 劫煞's list holds both 開倉庫 and 安葬, so whatever printed 開倉庫 could also have printed 安葬.
+
+The deciding characters were re-checked on full-resolution crops of the original JPGs: 安葬 present on the 7 CONFIRMS pages, and absent on the 3 new lift-premise pages.
 
 ### H1-α — 又為 sub-scope vs parent
 
@@ -87,11 +91,11 @@ The 月虛 / 月煞 rows all end `neither_recorded` under both readings and were
 - The premise that the lift really removes 重日/復日's own 安葬 is verified on 6 pages where 重日/復日 + 德 is the only 安葬 source. None of them prints 安葬:
   - 寅-乙亥, 午-丁未, 亥-壬寅 (reused);
   - 申-己巳, 酉-乙巳, 未-己卯 (new). These carry the same 德 types as the target pages: 天願/六合, 月德合, 天德合 + 月德合.
-- **SOURCE_WITNESSED (HIGH) for this sub-class.**
+- **SOURCE_WITNESSED (MEDIUM-HIGH) for this sub-class.** The rating is capped because there was a single AI reviewer, though the deciding characters were re-checked at full resolution.
 
 **劫煞 / 災煞 / 月厭 相抵 sub-class.**
 
-- One clean confirmation: 戌-癸亥. No probe heading is printed, and 安葬 is printed.
+- No clean confirmation. On 戌-癸亥 no probe heading is printed and 安葬 is printed, but 開倉庫出貨財 is an unattributed print (see above).
 - The 災煞 pages (申-庚午, 亥-辛酉) honour 相抵 for most headings but also print 冠帶, 結婚姻, 納采問名, 嫁娶 and 進人口, which are in 災煞's list. That mechanism is unexplained, and it could equally account for the target headings.
 - The 劫煞 辰/戌/未 pages are premise mismatches; see H1-γ.
 - **SOURCE_DEPENDENT.**
@@ -119,9 +123,11 @@ Classified PRESENCE_MISMATCH, subtype "相抵 effect not applied as modelled". T
 ### H1-δ — propagation
 
 - No distinguishing row involves propagation.
-- **PROPAGATION_MISMATCH (1 observation):** 戌-癸亥 prints 開倉庫出貨財 while 開市 and 立券交易 are absent. Golden v2 gets `neither_recorded` there by puzhu:22 propagation, through H1-B on 五虛.
+- 戌-癸亥 prints 開倉庫出貨財 while 開市 and 立券交易 are absent. Golden v2 gets `neither_recorded` there by puzhu:22 propagation, through H1-B on 五虛.
+  - Two explanations fit the same page: puzhu:22 propagation not applied, or 劫煞 not fully neutralised.
+  - So this is an unattributed print, not a PROPAGATION_MISMATCH.
 - 申-庚午 is consistent: 開倉庫 is absent there.
-- **NOT_TESTED as a rule.** The single observation is recorded for the owner.
+- **NOT_TESTED.**
 
 ### Contradictions
 
@@ -130,8 +136,10 @@ Classified PRESENCE_MISMATCH, subtype "相抵 effect not applied as modelled". T
    - Dates: 2025-04-06, 04-30, 07-26, 11-02; 2026-04-25, 07-21, 08-02, 10-28; 2027-04-20, 05-02, 07-16, 07-28, 10-23, 11-04.
    - The rule comes from the earlier owner-approved 相抵 → 不註 reading (鋪註 05, heading annotation), not from H1-B.
    - Not witnessed: the same wording in other `cancel_both` clauses (子午卯酉 劫煞 執日, 閉日, 天吏 and others). I have not extended the finding to them.
-2. **H1-δ:** 戌-癸亥 開倉庫出貨財 (above).
-3. **Unexplained 忌 on 相抵 days:** 冠帶, 結婚姻, 納采問名, 嫁娶 and 進人口 on 申-庚午, 亥-辛酉 and 亥-己丑.
+2. **Unattributed prints on pages that otherwise match the premise:**
+   - 戌-癸亥: 開倉庫出貨財.
+   - 丑-戊寅: 安葬.
+   - 申-庚午, 亥-辛酉 and 亥-己丑: 冠帶, 結婚姻, 納采問名, 嫁娶 and 進人口.
 
 No witness contradicts H1-B itself.
 
@@ -150,7 +158,7 @@ The stop condition is met because a source mismatch changes the premise (contrad
 
 ### Runtime impact
 
-None from this audit. Production, Golden v2 and the P4 locks are unchanged. Acting on contradiction 1 or 2 would change scores, which requires:
+None from this audit. Production, Golden v2 and the P4 locks are unchanged. Acting on contradiction 1 would change scores, which requires:
 
 - an owner decision;
 - Golden v3;
@@ -165,6 +173,7 @@ None from this audit. Production, Golden v2 and the P4 locks are unchanged. Acti
 
 - page bytes and locator;
 - 建除 officer against Month Jian and day branch;
+- freeze artifacts byte-locked (both build scripts and both JSONs);
 - the freeze set recomputed from Golden v2;
 - the classification tally;
 - 安葬 on CONFIRMS pages and its absence on lift-premise pages, reused pages included.

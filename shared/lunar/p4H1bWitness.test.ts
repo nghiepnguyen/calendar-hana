@@ -44,6 +44,11 @@ describe('H1-B 月表 witness lock (audit only)', () => {
 
 describe('H1-B prediction freeze', () => {
   const changes = tsv('h1b-changes.tsv')
+
+  it('keeps the freeze artifacts byte-identical', () => {
+    expect(lock.freeze).toHaveLength(4)
+    for (const f of lock.freeze) expect(sha256(f.path), f.path).toBe(f.sha256)
+  })
   const dated = new Map(tsv('dated.tsv').map((r) => [`${r.date}|${r.heading}`, r]))
 
   it('matches the Golden v2 H1-B rows', () => {
@@ -75,7 +80,7 @@ describe('H1-B prediction freeze', () => {
       expect(page, t.context).toBeDefined()
       tally[page!.classification] = (tally[page!.classification] ?? 0) + t.dates.length
     }
-    expect(tally).toEqual({ CONFIRMS_H1B: 14, PRESENCE_MISMATCH: 14, SOURCE_AMBIGUOUS: 5 })
+    expect(tally).toEqual({ CONFIRMS_H1B: 11, PRESENCE_MISMATCH: 14, SOURCE_AMBIGUOUS: 8 })
   })
 })
 
@@ -85,7 +90,7 @@ describe('H1-B transcription consistency', () => {
   it('prints 安葬 on every 安葬 page classified CONFIRMS_H1B', () => {
     for (const page of lock.pages.filter((p) => p.classification === 'CONFIRMS_H1B')) {
       expect(printed(page.jiLine), ctxOf(page)).toBe(true)
-      expect(page.goldenDiff.printedButUnnoted.filter((h) => h !== '開倉庫出貨財')).toEqual([])
+      expect(page.goldenDiff.printedButUnnoted).toEqual([])
     }
   })
 

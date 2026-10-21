@@ -2,7 +2,7 @@
  "version": "h1b-yuebiao-witness-lock-v1",
  "date": "2026-10-21",
  "source": "欽定協紀辨方書 月表 卷二十–三十一, 四庫全書 (Internet Archive 06067692.cn–06067697.cn); leaf map as yuebiao-witness-lock-v2",
- "review": "Visual reading by eye, single AI reviewer, not OCR. Read from downsampled copies of the original JPGs; hashes are of the original bytes. volume null = 卷 number not visible on the leaf; month fixed by the printed 建除 officer (checked against Month Jian and day branch in the test).",
+ "review": "Visual reading by eye, single AI reviewer, not OCR. Read from downsampled copies of the original JPGs; hashes are of the original bytes. volume null = 卷 number not visible on the leaf; month fixed by the printed 建除 officer (checked against Month Jian and day branch in the test). Deciding characters re-checked on full-resolution crops of the original JPGs (2026-10-21): 安葬 present on the 7 德-lift CONFIRMS pages; 安葬 absent from the 忌 column of 申-己巳, 酉-乙巳, 未-己卯.",
  "reused": {
   "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
   "liftPremise": [
@@ -710,9 +710,9 @@
    ],
    "yiLine": "祭祀沐浴掃舍宇",
    "jiLine": "上冊受封上表章嫁娶求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
-   "classification": "CONFIRMS_H1B",
+   "classification": "SOURCE_AMBIGUOUS",
    "gate": "H1-beta",
-   "note": "No 劫煞 probe heading printed (premise matches Golden v2); 重日 忌 安葬 printed. Separate H1-delta finding: 開倉庫出貨財 printed while 開市/立券交易 are not (puzhu:22 propagation not reflected) = PROPAGATION_MISMATCH.",
+   "note": "No 劫煞 probe heading printed, and 重日 忌 安葬 is printed; but 開倉庫出貨財 (Golden v2: unnoted, 五虛 under H1-B then puzhu:22 propagation) is also printed. A partly unneutralised 劫煞 (whose list holds both 開倉庫 and 安葬) or a missed puzhu:22 propagation give the same page: unattributed print, so 安葬 is not deciding.",
    "goldenDiff": {
     "printedButUnnoted": [
      "開倉庫出貨財"
@@ -1120,5 +1120,27 @@
    "入學": "入學"
   },
   "note": "卷十一 heading → 月表 (通書選擇六十事) term, only where unambiguous; 會親友 for 宴會 and 移徙 for 般移 are aliases assumed here. 行幸遣使/興造動土/營建宮室/修宮室/整容剃頭 are not compared."
- }
+ },
+ "freeze": [
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/build_predictions.py",
+   "sha256": "a4f11c0a6c190c23c5a02b0b0d05e90c88527e49073f9ca5f0ed301dc08551eb",
+   "commit": "372bdad"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/predictions.json",
+   "sha256": "9403164e9b8bfa29bb80914a864c50bf42c893ae0e89e5574bee88b10ad34fa3",
+   "commit": "372bdad"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/build_premise.py",
+   "sha256": "7f01f4d64906be339f16e89f60e9922082bfecafd7f38cf1d336f81d3cf69bf6",
+   "commit": "da73631"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/premise-predictions.json",
+   "sha256": "9b5712de2d584cba89da0f3f8f9f723437d739aed764b39b350d0ac2c3494f69",
+   "commit": "da73631"
+  }
+ ]
 }
