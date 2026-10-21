@@ -2,7 +2,7 @@
  "version": "jiesha-overlap-impact-lock-v1",
  "date": "2026-10-21",
  "run": "JIESHA_IMPACT_FULL=1 npx vitest run shared/lunar/p4JieshaOverlapImpact.test.ts (3/3 pass, 499 s); python3 -I docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/build_impact.py",
- "note": "Audit-only sweep 1900-01-01..2100-12-31; the 24,471 days with day branch 寅巳申亥 were run through baseline, A and B. The harness is hashed exactly as run.",
+ "note": "Audit-only sweep 1900-01-01..2100-12-31; the 24,471 days with day branch 寅巳申亥 were run through baseline, A and B. The harness is hashed exactly as run. After the run only the invariance test changed (it now also compares the 11 events); the sweep code path is unchanged, so raw.json was not regenerated.",
  "files": [
   {
    "path": "docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/raw.json",
@@ -18,7 +18,7 @@
   },
   {
    "path": "shared/lunar/p4JieshaOverlapImpact.test.ts",
-   "sha256": "08879b91aec84a97e951ff25abd817310fd1b104725cb74a9cfd85909b965d88"
+   "sha256": "75b9f9a53352e11c4b4fdb8ddb6a99a59ba3edd76c861fce3c2daf54e49b99ad"
   }
  ]
 }

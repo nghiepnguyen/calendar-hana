@@ -50,7 +50,10 @@ The usable 丑 pages are 丑-甲寅, 丑-戊寅 and 丑-壬寅. 丑-丙寅 stays
 - 丑-戊寅 is excluded from 鳴吠對 by 「戊寅不用」, so 安葬 keeps 忌, and the page agrees.
 - Remaining 丑 mismatches: none.
 
-**Status: SOURCE_WITNESSED**, on 3 pages.
+**Status: PARTIALLY_SOURCE_WITNESSED.**
+
+- The chain itself is direct text, and the 67/67 presence check is independent of the 丑 misses.
+- Scenario B, however, was written after those misses were seen, so 3/3 is an in-sample fit, not independent confirmation.
 
 ## J3 — witness fit on the locked 劫煞 set
 
@@ -70,7 +73,18 @@ These are distinguishing clusters (headings) on the 16 locked pages, using the f
 - 12 are CONSISTENT_WITH_CANDIDATE, because the heading has no 月表 term;
 - 2 are AMBIGUOUS: 未-戊申 立券交易, on 2 dates.
 
-On 未-戊申 the page prints 忌. The candidate restores 劫煞's 忌, and the engine's puzhu:06 (trigger 四相) then lifts it to `not_recorded`. Production leaves it unnoted as well, so neither reading matches. This is a puzhu:06 question, not a 劫煞 one.
+These 146 rows come from the same 16 pages that shaped OVERLAP, so the counts are in-sample.
+
+**Trace of 未-戊申 立券交易** (`resolveP4OwnerRulesDay`, candidate mode):
+
+- The page prints 忌.
+- Under the candidate, 納財 has 宜, so it drops. The engine's 鋪註 pair 納財 → 開市/立券交易 then lifts the whole 立券交易 row to `not_recorded`. That includes 五離's independent 忌.
+- Production lifts the same row through puzhu:06 (QL).
+- Neither reading matches the page. The open question is propagation scope: may a 鋪註 相抵 pair lift another god's 忌? That is a 劫煞-independent question (H1-δ).
+
+**The 26 `neither_recorded → not_recorded` rows** are the same mechanism: the engine's 鋪註 propagation from a partner that dropped (嫁娶 ← 結婚姻, 安牀 ← 般移, 開市 ← 立券交易, 納畜 ← 牧養, …). puzhu:06 is not involved. On those rows it reports `hold:UNDETERMINED`, because the wrapper leaves the 劫煞 scope labelled `cancel_both`.
+
+**Design decision for any migration:** what effect label the restored 劫煞 scope should carry. It determines how puzhu:06 classifies those rows.
 
 **Contradictions in the target scope:** none against OVERLAP itself.
 
@@ -158,7 +172,7 @@ The seven criteria:
 | 1 | Production `cancel_both` contradicted | yes |
 | 2 | OVERLAP explains materially better | yes (42/42 vs 2/42) |
 | 3 | 丑 explained | yes (Scenario B, 3/3) |
-| 4 | No known witness contradicts the candidate in scope | yes; 未-戊申 立券交易 is a puzhu:06 interaction that production also misses |
+| 4 | No known witness contradicts the candidate in scope | yes; 未-戊申 立券交易 is a 鋪註 propagation-scope question that production also misses |
 | 5 | Exact runtime predicate source-backed | **P4 layer only.** The 卷十 layer as measured is OVERLAP without pairs, not the source rule |
 | 6 | Impact measured | yes for P4; only an upper bound for the 卷十 layer |
 | 7 | Uncertainty documented | yes; no out-of-sample 劫煞 witness is possible |
@@ -176,11 +190,14 @@ The seven criteria:
 6. Run `ci:p4`.
 7. Model the 鳴吠對 → 啟攢 → 安葬 chain explicitly.
 8. Either design 鋪註-pair handling for 卷十 scoring or limit the migration to P4.
+9. If the 卷十 layer changes: add a successor to `golden-xieji-vol10-scoring.json` and re-pin the 卷十 scoring migration tests.
+10. Decide the effect label of the restored 劫煞 scope, because it drives puzhu:06's classification.
 
 ## Safety
 
 - The harness wraps `p4YiDayComposition`, `p4Warehouse`, `p4HeadingAnnotation` and `xiejiVol10Resolution` only inside the test file.
-- With the candidate off, output equals the unmocked production graph on the sampled dates (invariance test).
+- With the candidate off, activity recommendations and the 11 event evaluations equal the unmocked production graph on 5 dates, including dates outside 2025–2027 (invariance test).
+- `git diff f1e5c54..HEAD -- shared/lunar ':!shared/lunar/*.test.ts' shared/almanac-data` is empty, and the Golden v2 files are unchanged.
 - The Golden v2 bytes are checked against their lock.
 - No production file, JSON, flag or adapter revision changed.
 

@@ -316,10 +316,12 @@ describe('劫煞 OVERLAP audit variant', () => {
     async () => {
       const dates = ['2025-04-30', '2025-11-02', '2026-01-28', '1950-05-03', '2099-10-20']
       const wrapped = await graph(true)
-      const off = dates.map((d) => sha(wrapped.almanac(d).activityRecommendations))
+      const out = (g: Awaited<ReturnType<typeof graph>>) =>
+        dates.map((d) => sha([g.almanac(d).activityRecommendations, g.events(d)]))
+      const off = out(wrapped)
       // Last: doUnmock removes the wrappers for the rest of this file.
       const plain = await graph(false)
-      expect(dates.map((d) => sha(plain.almanac(d).activityRecommendations))).toEqual(off)
+      expect(out(plain)).toEqual(off)
       // Golden v2 bytes stay frozen.
       for (const f of goldenLock.files)
         expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(
