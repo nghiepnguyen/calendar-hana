@@ -1,0 +1,220 @@
+{
+  "phase": "evidence-confidence implementation",
+  "date": "2026-10-21",
+  "ownerDecisions": {
+    "model": "two dimensions + basis; transcription adds IDENTIFIED (option 1)",
+    "柳-2": "option B",
+    "normalized": "壁-1, 參-5, 井-1 declared",
+    "certification": "semantic mapping"
+  },
+  "model": {
+    "semantic": [
+      "VERIFIED",
+      "PROBABLE",
+      "UNCERTAIN"
+    ],
+    "transcription": [
+      "EXACT",
+      "NORMALIZED",
+      "IDENTIFIED",
+      "PARTIAL",
+      "UNCERTAIN"
+    ],
+    "basis": [
+      "scan_read",
+      "digital_transcription"
+    ],
+    "positions": "1-based character positions in the quote",
+    "globalDefault": "none"
+  },
+  "datasetDefault": {
+    "where": "shared/almanac-data/mansion-content-yuxia-1880-v1.json → source.evidenceConfidence",
+    "value": {
+      "semantic": "VERIFIED",
+      "transcription": "IDENTIFIED",
+      "basis": "scan_read"
+    },
+    "appliesTo": "clauses of this dataset (mansion-content-yuxia-1880-v1 1.0.4) without their own evidenceConfidence; not a default for any other dataset or source",
+    "serializedIntoEvidence": false
+  },
+  "exceptions": {
+    "壁-1": {
+      "semantic": "VERIFIED",
+      "transcription": "NORMALIZED",
+      "basis": "scan_read",
+      "normalizations": [
+        {
+          "position": 6,
+          "sourceCharacter": "庄",
+          "storedCharacter": "莊"
+        }
+      ]
+    },
+    "參-5": {
+      "semantic": "VERIFIED",
+      "transcription": "NORMALIZED",
+      "basis": "scan_read",
+      "normalizations": [
+        {
+          "position": 7,
+          "sourceCharacter": "尅",
+          "storedCharacter": "克"
+        }
+      ]
+    },
+    "井-1": {
+      "semantic": "VERIFIED",
+      "transcription": "NORMALIZED",
+      "basis": "scan_read",
+      "normalizations": [
+        {
+          "position": 6,
+          "sourceCharacter": "蚕",
+          "storedCharacter": "蠶"
+        }
+      ]
+    },
+    "柳-2": {
+      "semantic": "VERIFIED",
+      "transcription": "PARTIAL",
+      "basis": "scan_read",
+      "uncertainPositions": [
+        4,
+        6,
+        7
+      ]
+    }
+  },
+  "productionChanges": {
+    "shared/lunar/evidence.ts": "EvidenceConfidence type (no global default; 1-based positions); optional Evidence.evidenceConfidence (sparse)",
+    "shared/lunar/mansionContentAuthority.ts": "clause type gains optional evidenceConfidence; evidence copies it only when the clause has it; one cast where JSON literals widen enum fields",
+    "shared/almanac-data/mansion-content-yuxia-1880-v1.json": "source.evidenceConfidence (dataset default + scope + 1-based convention); 柳-2 quote 埋葬瘟疫多疾病 → 埋葬瘟□多□□; evidenceConfidence on 柳-2, 壁-1, 參-5, 井-1; version 1.0.3 → 1.0.4",
+    "shared/almanac-data/manifest.json": "content version 1.0.4",
+    "shared/lunar/audit-fixtures/mansion-content-golden-v1.json": "mirrors the dataset",
+    "shared/lunar/audit-fixtures/mansion-activity-interpretation-golden-v2.json": "柳-2 quote only (activity/scope/status/reviewTerm 埋葬 unchanged)",
+    "src/views/DayView/MansionEvidenceDetails.tsx": "PARTIAL note under the quote: \"Một số chữ trên bản scan không đọc rõ (□). Ý nghĩa “{sourcePhrase} — {polarity}” vẫn xác định được.\"",
+    "resolver": "unchanged: 埋葬 is found in the legible positions 1–2"
+  },
+  "notIncluded": [
+    "probable reconstruction (research note only)",
+    "NORMALIZED UI disclosure (follow-up; metadata is complete)",
+    "用事 metadata (different schema; basis digital_transcription recorded in certification)"
+  ],
+  "tests": {
+    "shared/lunar/mansionContentAuthority.test.ts": "dataset default + scope + 1-based convention; exactly 4 exception clauses; 柳-2 quote/metadata and □ positions = [4,6,7]; 壁-1/參-5/井-1 position/sourceCharacter/storedCharacter against the quote; Evidence carries metadata only for the 4",
+    "shared/lunar/ruleActivityMapping.test.ts": "柳-2 埋葬瘟□多□□ → burial via reviewTerm 埋葬",
+    "src/views/DayView/MansionEvidenceDetails.test.tsx": "PARTIAL note shown, quote with □, no reconstruction/old quote in the page; no note for fully read excerpts",
+    "mutation": [
+      "uncertainPositions [4,6] → 2 tests fail",
+      "sourceCharacter 尅 → 剋 → 2 tests fail",
+      "UI note condition disabled → 1 test fails"
+    ]
+  },
+  "gates": {
+    "A_cardinality": "PASS",
+    "B_identity": "PASS",
+    "C_behavioral_equivalence": "PASS",
+    "D_liu_quote_only_liu2": "PASS",
+    "E_normalization_only_壁1_參5_井1": "PASS",
+    "F_no_semantic_mapping_change": "PASS",
+    "G_liu2_resolves_via_埋葬": "PASS",
+    "H_reconstruction_excluded": "PASS",
+    "I_default_not_serialized": "PASS",
+    "reproducible": "PASS"
+  },
+  "method": "Per row: TSV columns other than sha256 equal; every record key except contributions deep-equal; contributions matched by ruleId (same ids, same order); exactly one contribution differs, belongs to an exception clause of that day's mansion, and differs only by an added evidenceConfidence (plus sourceQuote 埋葬瘟疫多疾病 → 埋葬瘟□多□□ for 柳-2); activityMapping identical. Changed rows must equal the pre-registered set (rows holding an exception-clause contribution).",
+  "counts": {
+    "activity": {
+      "old": 35136,
+      "new": 35136,
+      "changed": 159,
+      "byMansionActivity": {
+        "井 construction": 40,
+        "參 wedding": 40,
+        "壁 construction": 39,
+        "柳 burial": 40
+      }
+    },
+    "event": {
+      "old": 24156,
+      "new": 24156,
+      "changed": 80,
+      "byMansionActivity": {
+        "參 wedding": 80
+      }
+    }
+  },
+  "perClauseRows": {
+    "參-5": {
+      "activity": 40,
+      "event": 80
+    },
+    "井-1": {
+      "activity": 40
+    },
+    "柳-2": {
+      "activity": 40
+    },
+    "壁-1": {
+      "activity": 39
+    }
+  },
+  "overlap": "none (the four clauses belong to four different mansions)",
+  "changedFields": [
+    "evidenceConfidence (井-1)",
+    "evidenceConfidence (參-5)",
+    "evidenceConfidence (壁-1)",
+    "evidenceConfidence (柳-2)",
+    "sourceQuote (柳-2)"
+  ],
+  "behavioralChanges": "0/239",
+  "unexpected": 0,
+  "hits": {
+    "reconstructionInNewRecords": 0,
+    "oldQuoteInNewRecords": 0,
+    "identifiedSerialized": 0,
+    "reconstructionOrOldQuoteInSharedSrc": []
+  },
+  "reproducibility": {
+    "activities.tsv": {
+      "old_equals_locked": true,
+      "new_run1_equals_run2": true,
+      "locked_sha256": "aca253b12a7859fd1c7ef61f70962f16c5d0337b962b292f4ad815a914b04722",
+      "candidate_sha256": "1cf4dda47af3237beeb66520e8b8a3a9052646d2a754d61914f81d18b134c2e8"
+    },
+    "events.tsv": {
+      "old_equals_locked": true,
+      "new_run1_equals_run2": true,
+      "locked_sha256": "d8e18a541a767c518bba2d8cc6eb8d40d3037e44e82877a332473dbf70176882",
+      "candidate_sha256": "4e53ea018b7012d5b24be27c642fa444480db74a5e30cb39059d260f613e67b3"
+    },
+    "activities.records": {
+      "new_run1_equals_run2": true
+    },
+    "events.records": {
+      "new_run1_equals_run2": true
+    }
+  },
+  "transcriptionDistribution": {
+    "EXACT": 0,
+    "NORMALIZED": 3,
+    "IDENTIFIED": 111,
+    "PARTIAL": 1,
+    "UNCERTAIN": 0
+  },
+  "semanticDistribution": {
+    "VERIFIED": 115
+  },
+  "postMigration": {
+    "regeneratedWith": "P4_ADAPTER_BASELINE_WRITE=1 npx vitest run shared/lunar/p4AdapterBaseline.test.ts; activities.tsv = 1cf4dda4…, events.tsv = 4e53ea01… (both equal the candidate)",
+    "lock": "p4-adapter-baseline-v1/lock.json: files[].sha256 updated; revisions[2] (revision 3) appended; revisions[0] and [1] byte-identical to HEAD; other top-level fields unchanged",
+    "p4TargetedTests": "p4AdapterBaseline, p4MigrationDiff, p4MigrationRollback, p4ScoreAdapterAlmanac: 4 files / 25 tests passed",
+    "npmTest": "225 files passed, 1 skipped; 8199 tests passed, 6 skipped, 0 failed (+4 new tests)",
+    "lintTypecheck": "npm run check: pass",
+    "build": "npm run build: pass, no tracked file changed; dist contains neither 埋葬瘟癀多病死 nor 埋葬瘟疫多疾病",
+    "ciP4ReadOnly": "P4_MIGRATION_FULL 9/9; P4_SCORE_ADAPTER_FULL 12/12; P4_OWNER_RULES_FULL 6/6; score-golden-v2 golden.py exit 0",
+    "playwright": "e2e/mansion-content.spec.ts desktop: 2 passed (no e2e date falls on 柳/壁/參/井)",
+    "mutationScripts": "NOT RUN (mutate tracked audit result artifacts)",
+    "historicalLocks": "p4-score-golden-v2 and migration-diff v1/v2 locks unchanged"
+  }
+}

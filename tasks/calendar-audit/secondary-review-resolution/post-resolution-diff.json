@@ -1,0 +1,48 @@
+{
+  "disagree": [],
+  "uncertain_open": [
+    {
+      "id": "柳-2",
+      "previous_status": "UNCERTAIN",
+      "resolution_status": "NEEDS_PRIMARY_EVIDENCE",
+      "production_change": false,
+      "change_type": "none",
+      "before": "「埋葬瘟疫多疾病」 · negative · burial",
+      "after": "không đổi",
+      "evidence": "Scan n68 dòng 3 chỉ đọc chắc 「埋葬瘟_多__」. Chữ 4 có bộ 疒 (nét trong giống 旦 hơn 殳), chữ 6-7 trông như 「病死」. Phần chắc chắn (埋葬 + 瘟 + 多) đủ cho burial · hung; mapping không phụ thuộc chữ chưa đọc được.",
+      "notes": "SEMANTICALLY_RESOLVED / TRANSCRIPTION_UNCERTAIN. Quote production 「埋葬瘟疫多疾病」 KHÔNG được xác nhận và có thể sai ở chữ 4, 6, 7; không sửa vì không có chữ đọc chắc để thay. Cần ảnh rõ hơn của cùng bản in 1880 (bản in khác là văn bản khác, không thay được).",
+      "semantic_confidence": "high",
+      "transcription_confidence": "low",
+      "flags": [
+        "SEMANTICALLY_RESOLVED",
+        "TRANSCRIPTION_UNCERTAIN"
+      ]
+    },
+    {
+      "id": "張-1",
+      "previous_status": "UNCERTAIN",
+      "resolution_status": "NEEDS_ONTOLOGY_DECISION",
+      "production_change": false,
+      "change_type": "none",
+      "before": "「張星日好造龍軒」 · positive · construction_general → construction",
+      "after": "không đổi",
+      "evidence": "Vấn đề ở quy tắc chung, không riêng 張-1. Trong bộ ca, 造/架 + tân ngữ công trình được xử lý hai kiểu: 造龍軒 (張, n70) → construction chung; 造高堂 (危, n56), 架高堂 (翼, n71), 造新房 (星, n69), 臨水造龍宮 (軫, n72) → gap hẹp. 軒 có hai nghĩa (hiên/lầu, hoặc xe); câu sau 「年年便見進庄田」 không phân định. Chưa có quy tắc nói khi nào \"造 + công trình\" là xây dựng chung.",
+      "notes": "Khuyến nghị (không sửa production): owner chọn một quy tắc cho 造/架 + công trình. (a) Mọi 造X với X là nhà/sảnh → construction (đổi 危-1, 翼-1, 星-1, có thể 軫-1); (b) chỉ 造作/修造/起造 là chung, 造X → gap (đổi 張-1 sang gap); (c) giữ nguyên và ghi rõ ngoại lệ 龍軒. Sau đó áp đồng loạt.",
+      "semantic_confidence": "medium",
+      "transcription_confidence": "high"
+    },
+    {
+      "id": "renovation",
+      "previous_status": "UNCERTAIN",
+      "resolution_status": "NEEDS_ONTOLOGY_DECISION",
+      "production_change": false,
+      "change_type": "none",
+      "before": "renovation (\"Sửa chữa\") ← 修宮室",
+      "after": "không đổi",
+      "evidence": "卷十一 tách bốn việc: 營建宮室 (dựng nhà, 御用), 修宮室 (sửa nhà/cung thất, 御用), 興造動土 (khởi công + động thổ, 御用; chú 「修造同」 gom 修造 của 民用/通書 vào đây), 破土 (đào đất việc táng). 修造 trong lịch dân gian là \"tu tạo\" = sửa và làm công trình nói chung, nên KHÔNG đồng nghĩa với 修宮室. \"Sửa chữa\" của catalog có thể là: (1) sửa nhà ở đơn thuần → 修宮室; (2) tu tạo theo lịch dân dụng → 興造動土 qua 修造. 宜 hai heading khác nhau (修宮室: 月恩四相時德三合福德開日; 興造動土 thêm 天德月德… và 天赦天願).",
+      "notes": "Lệch khỏi gợi ý fallback của task (NEEDS_PRIMARY_EVIDENCE): đối chiếu scan 四庫 chỉ xác nhận chữ, không quyết được \"Sửa chữa\" bao gồm gì, nên xếp NEEDS_ONTOLOGY_DECISION. Việc đối chiếu chú 「修造同」 với scan 四庫 vẫn còn mở; maintainer có thể đổi sang NEEDS_PRIMARY_EVIDENCE.",
+      "semantic_confidence": "medium",
+      "transcription_confidence": "medium (Wikisource chưa hiệu đính)"
+    }
+  ]
+}

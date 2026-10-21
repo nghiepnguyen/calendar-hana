@@ -1,10 +1,15 @@
 import data from '../almanac-data/mansion-content-yuxia-1880-v1.json'
-import type { Evidence } from './evidence'
+import type { Evidence, EvidenceConfidence } from './evidence'
 import { resolveMansionActivityMapping } from './ruleActivityMapping'
 
 export const MANSION_CONTENT_AUTHORITY_ID = 'mansion-content-yuxia-1880-v1'
-type MansionClause = Omit<(typeof data.items)[number]['clauses'][number], 'exceptions'> & {
+type MansionClause = Omit<
+  (typeof data.items)[number]['clauses'][number],
+  'exceptions' | 'evidenceConfidence'
+> & {
   exceptions: string[]
+  /** Exceptions to `source.evidenceConfidence.default` (this dataset only). */
+  evidenceConfidence?: EvidenceConfidence
 }
 export type MansionContent = Omit<(typeof data.items)[number], 'clauses'> & {
   clauses: MansionClause[]
@@ -24,7 +29,7 @@ export function getMansionContent(index: number): MansionContent {
     authorityId: data.authorityId,
     version: data.version,
     source: data.source,
-  })
+  }) as MansionContent // JSON literals widen enum fields to string; values are locked by tests.
 }
 
 /** Operative excerpts only. General blessings and unmentioned activities never become permissions. */
@@ -54,6 +59,7 @@ export function getMansionContentEvidence(content: MansionContent): Evidence[] {
         polarity: clause.polarity as Evidence['polarity'],
         sourcePhrase: clause.translation,
         sourceQuote: clause.quote,
+        ...(clause.evidenceConfidence ? { evidenceConfidence: clause.evidenceConfidence } : {}),
         sourceRef: `https://archive.org/download/20241205_20241205_0310/page/n${content.pdfPage - 1}.jpg`,
         conditions: clause.conditions,
         exceptions: clause.exceptions,

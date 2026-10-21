@@ -1,6 +1,6 @@
 {
   "authorityId": "mansion-content-yuxia-1880-v1",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "source": {
     "work": "繪圖增廣玉匣記",
     "edition": "光緒六年仲夏校鐫，掃葉山房藏板 (1880)",
@@ -12,7 +12,13 @@
       73
     ],
     "pdfSha1": "c8f9ccbb73f7bb0e05c6c1880d61ac9f62dae6b1",
-    "transcription": "Visual reading of page images; short operative excerpts, not OCR or complete verses."
+    "transcription": "Visual reading of page images; short operative excerpts, not OCR or complete verses.",
+    "evidenceConfidence": {
+      "appliesTo": "clauses of this dataset (mansion-content-yuxia-1880-v1 1.0.4) without their own evidenceConfidence; not a default for any other dataset or source",
+      "default": { "semantic": "VERIFIED", "transcription": "IDENTIFIED", "basis": "scan_read" },
+      "positions": "1-based character positions in quote",
+      "basis": "Secondary review 2026-10-20/21 read every quote on the scan: lexical characters identified; printed glyph variants not verified except the declared exceptions"
+    }
   },
   "items": [
     {
@@ -121,7 +127,7 @@
         },
         {
           "id": "亢-2",
-          "quote": "埋葬定是虎狼傷",
+          "quote": "埋葬若還逢此日",
           "translation": "Chôn cất",
           "polarity": "negative",
           "activityId": "burial",
@@ -262,7 +268,7 @@
         },
         {
           "id": "房-2",
-          "quote": "埋葬若然逢此日",
+          "quote": "埋葬若然用此日",
           "translation": "Chôn cất (đoạn nêu thuận lợi)",
           "polarity": "positive",
           "activityId": "burial",
@@ -324,7 +330,7 @@
         },
         {
           "id": "心-2",
-          "quote": "埋葬若還逢此日",
+          "quote": "埋葬卒暴死相從",
           "translation": "Chôn cất (đoạn nêu bất lợi)",
           "polarity": "negative",
           "activityId": "burial",
@@ -578,7 +584,7 @@
         },
         {
           "id": "斗-2",
-          "quote": "墳墓修築富貴家",
+          "quote": "墳堂修築富貴來",
           "translation": "Sửa xây mộ",
           "polarity": "positive",
           "activityId": "grave_repair",
@@ -863,8 +869,8 @@
           "quote": "危星不可造高堂",
           "translation": "Dựng nhà cao",
           "polarity": "negative",
-          "activityId": "",
-          "scope": "construction_high_hall",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",
@@ -1048,11 +1054,12 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 6, "sourceCharacter": "庄", "storedCharacter": "莊"}]},
           "scoreDelta": 0
         },
         {
           "id": "壁-2",
-          "quote": "婚姻自有人口進",
+          "quote": "婚姻吉利生貴子",
           "translation": "Cưới hỏi",
           "polarity": "positive",
           "activityId": "wedding",
@@ -1669,6 +1676,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 7, "sourceCharacter": "尅", "storedCharacter": "克"}]},
           "scoreDelta": 0
         }
       ],
@@ -1697,6 +1705,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "NORMALIZED", "basis": "scan_read", "normalizations": [{"position": 6, "sourceCharacter": "蚕", "storedCharacter": "蠶"}]},
           "scoreDelta": 0
         },
         {
@@ -1893,7 +1902,7 @@
         },
         {
           "id": "柳-2",
-          "quote": "埋葬瘟疫多疾病",
+          "quote": "埋葬瘟□多□□",
           "translation": "Chôn cất",
           "polarity": "negative",
           "activityId": "burial",
@@ -1906,6 +1915,7 @@
           ],
           "exceptions": [],
           "confidence": "PRIMARY",
+          "evidenceConfidence": {"semantic": "VERIFIED", "transcription": "PARTIAL", "basis": "scan_read", "uncertainPositions": [4, 6, 7]},
           "scoreDelta": 0
         },
         {
@@ -1958,8 +1968,8 @@
           "quote": "星宿日好造新房",
           "translation": "Dựng phòng mới",
           "polarity": "positive",
-          "activityId": "",
-          "scope": "construction_new_room",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",
@@ -2133,8 +2143,8 @@
           "quote": "翼星不利架高堂",
           "translation": "Dựng nhà cao",
           "polarity": "negative",
-          "activityId": "",
-          "scope": "construction_high_hall",
+          "activityId": "construction",
+          "scope": "construction_general",
           "conditions": [
             {
               "operand": "MANSION_INDEX",

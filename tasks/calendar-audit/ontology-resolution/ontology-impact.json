@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-20",
+  "phase": "ontology-resolution research (no production change)",
+  "measurement": {
+    "method": "Temporary vitest file (deleted after use) with the mansion dataset rewritten in memory per variant; rows from p4AdapterBaselineRows activityRows/eventRows over 1098 dates. Run under the production config (shipped manifest + P4 provider) and under the flag-OFF baseline-v1 mock; flag-OFF variant A reproduced the locked baseline v1 byte-for-byte.",
+    "limits": [
+      "Only TSV columns (score, status, hard_warning / score, classification) and the row sha256 were compared, not every record leaf. A full-leaf comparison is a gate for the implementation phase.",
+      "In variants B and C the moved quotes resolve as interpretation_pending because their terms are not terms of the target scope; a real implementation adds terms/reviewTerm and keeps golden v2 all-reviewed.",
+      "Renovation figures are an estimate: they assume a remapped renovation scores exactly like groundbreaking (B) or construction (C)."
+    ],
+    "raw": {
+      "B:activities.tsv": {
+        "rows": 35136,
+        "changed": 39,
+        "behavioral": 0,
+        "byMansionActivity": {
+          "張 construction": 39
+        },
+        "behavioralSample": []
+      },
+      "C:activities.tsv": {
+        "rows": 35136,
+        "changed": 156,
+        "behavioral": 0,
+        "byMansionActivity": {
+          "星 construction": 39,
+          "翼 construction": 39,
+          "軫 construction": 39,
+          "危 construction": 39
+        },
+        "behavioralSample": []
+      },
+      "B:events.tsv": {
+        "rows": 24156,
+        "changed": 0,
+        "behavioral": 0,
+        "byMansionActivity": {},
+        "behavioralSample": []
+      },
+      "C:events.tsv": {
+        "rows": 24156,
+        "changed": 0,
+        "behavioral": 0,
+        "byMansionActivity": {},
+        "behavioralSample": []
+      },
+      "flagOFF-B:activities.tsv": {
+        "rows": 35136,
+        "changed": 39,
+        "behavioral": 0,
+        "byMansionActivity": {
+          "張 construction": 39
+        }
+      },
+      "flagOFF-C:activities.tsv": {
+        "rows": 35136,
+        "changed": 156,
+        "behavioral": 0,
+        "byMansionActivity": {
+          "星 construction": 39,
+          "翼 construction": 39,
+          "軫 construction": 39,
+          "危 construction": 39
+        }
+      },
+      "flagOFF-B:events.tsv": {
+        "rows": 24156,
+        "changed": 0,
+        "behavioral": 0,
+        "byMansionActivity": {}
+      },
+      "flagOFF-C:events.tsv": {
+        "rows": 24156,
+        "changed": 0,
+        "behavioral": 0,
+        "byMansionActivity": {}
+      }
+    }
+  },
+  "decisions": {
+    "張-1": {
+      "options": {
+        "A": {
+          "clauses": [],
+          "activityRowsChanged": 0,
+          "behavioral": 0,
+          "kind": "NONE"
+        },
+        "B": {
+          "clauses": [
+            "張-1"
+          ],
+          "activityRowsChanged": {
+            "flagOFF": 39,
+            "production": 39
+          },
+          "behavioral": 0,
+          "eventRowsChanged": 0,
+          "kind": "PROVENANCE CHANGE"
+        },
+        "C": {
+          "clauses": [
+            "危-1",
+            "翼-1",
+            "星-1",
+            "軫-1"
+          ],
+          "activityRowsChanged": {
+            "flagOFF": 156,
+            "production": 156
+          },
+          "behavioral": 0,
+          "eventRowsChanged": 0,
+          "kind": "PROVENANCE CHANGE"
+        }
+      },
+      "affects": {
+        "sourceMappings": "mansion-content-yuxia-1880-v1.json clause scope/activityId (source lock) or resolver scope handling",
+        "resolverTerms": "ruleActivityMapping.ts construction_general terms (B: remove 造龍軒; C: add 造高堂/架高堂/造新房/臨水造 or move scopes)",
+        "goldenFixtures": "mansion-activity-interpretation-golden-v2.json (activityId/scope/status/reviewTerm, glossary); mansion-content-golden-v1.json if dataset scopes change",
+        "p4Rows": "p4-adapter-baseline-v1 hash migration (B 39 / C 156 rows, provenance-only by TSV comparison)",
+        "scoring": "none (mansion rows scoreDelta 0, informational; mansion28ScoringEnabled false)",
+        "ui": "DailyActivitySection: construction evidence rows and the \"unmapped\" list on affected mansion days",
+        "seo": "none: presentMansionContent summarizes every non-not_operative clause by sourcePhrase regardless of activityId",
+        "tests": "ruleActivityMapping.test.ts (golden v2 equality), mansionContentAuthority tests if dataset changes, P4 baseline tests"
+      },
+      "recommended": "C (owner may exclude 軫-1; 婁-1 recorded as reasoned exception)"
+    },
+    "renovation": {
+      "options": {
+        "A": {
+          "kind": "NONE",
+          "behavioral": 0,
+          "note": "optional label/description clarification is a UI copy change"
+        },
+        "B": {
+          "kind": "BEHAVIORAL MIGRATION REQUIRED",
+          "estimate": {
+            "datesDiffer": 187,
+            "statusChanges": 73,
+            "of": 1095,
+            "config": "production (flag ON)",
+            "assumption": "renovation == groundbreaking"
+          },
+          "flagOFF": {
+            "datesDiffer": 313,
+            "statusChanges": 160,
+            "of": 1098
+          }
+        },
+        "C": {
+          "kind": "BEHAVIORAL MIGRATION REQUIRED",
+          "estimate": {
+            "datesDiffer": 287,
+            "statusChanges": 117,
+            "of": 1095,
+            "config": "production (flag ON)",
+            "assumption": "renovation == construction"
+          },
+          "flagOFF": {
+            "datesDiffer": 313,
+            "statusChanges": 160,
+            "of": 1098
+          }
+        }
+      },
+      "affects": {
+        "sourceMappings": "xiejibianfangshu-yiji.json activityEntries.renovation",
+        "derivedRules": "truc.json (6 renovation rules, sourceRef 修宮室), good-gods.json, bad-gods.json activityIds",
+        "frozenArtifacts": [
+          "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/activities.tsv",
+          "p4-migration-diff-v1/*, p4-migration-diff-v2/* (activities-full, presence/balancing-changed, review.tsv)",
+          "p4-score-golden-v1/activity-states.tsv, p4-score-golden-v2/activity-states.tsv + activity-scores.tsv",
+          "yi-baseline-v1/*, yi-composition-expected-v1/source-basis.json, yi-fude-v1/*",
+          "shared/almanac-data/p4-yi-operands-v1.json, golden-tu-vuong-dung-su.json, xieji-activity-mapping-review.json"
+        ],
+        "scoring": "B/C change renovation score/status (P4 and flag-OFF paths)",
+        "ui": "renovation recommendations per day",
+        "seo": "day pages that list activity verdicts",
+        "tests": "P4 baseline/golden suites; datasetValidation; activityTaxonomy"
+      },
+      "recommended": "A"
+    }
+  },
+  "crossOntology": {
+    "constructionVsGroundbreaking": {
+      "flagOFF": "0/1098 dates differ",
+      "flagON": "100/1095 differ: 60 only_ji 營建宮室 decides construction; 40 construction baseline vs groundbreaking only_yi"
+    },
+    "beamRaisingVsGroundbreaking": {
+      "flagOFF": "264/1098",
+      "reason": "豎柱上梁 忌 lacks soil gods"
+    },
+    "renovationVsConstruction": {
+      "flagOFF": "313/1098",
+      "flagON": "287/1095"
+    },
+    "fude": "福德 (修宮室 宜) missing from catalog; tracked by P4 yi-operands task 2.3",
+    "lou1": "婁-1 stays RESOLVED/keep gap; under the construction-slot rule it is an explicit exception (竪柱 = part of the 豎柱上梁 rite)"
+  }
+}

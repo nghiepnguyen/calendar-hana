@@ -55,6 +55,58 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
     expect(view.shouldDo).not.toContain('Mọi việc')
     expect(view.shouldAvoid).not.toContain('Không kỵ')
   })
+  it('models evidence confidence sparsely: dataset default, PARTIAL 柳-2, declared NORMALIZED variants', () => {
+    const declared = getMansionContent(0).source.evidenceConfidence
+    expect(declared.default).toEqual({
+      semantic: 'VERIFIED',
+      transcription: 'IDENTIFIED',
+      basis: 'scan_read',
+    })
+    expect(declared.positions).toBe('1-based character positions in quote')
+    expect(declared.appliesTo).toMatch(/not a default for any other dataset/)
+    const clause = (index: number, id: string) =>
+      getMansionContent(index).clauses.find((c) => c.id === id)!
+    const exceptions = golden.items
+      .flatMap((m) => getMansionContent(m.index).clauses)
+      .filter((c) => c.evidenceConfidence)
+      .map((c) => c.id)
+    expect(exceptions.sort()).toEqual(['井-1', '參-5', '壁-1', '柳-2'].sort())
+    const liu = clause(23, '柳-2')
+    expect(liu.quote).toBe('埋葬瘟□多□□')
+    expect(liu.evidenceConfidence).toEqual({
+      semantic: 'VERIFIED',
+      transcription: 'PARTIAL',
+      basis: 'scan_read',
+      uncertainPositions: [4, 6, 7],
+    })
+    // 1-based: every □ is declared uncertain and nothing else is.
+    expect([...liu.quote].flatMap((ch, i) => (ch === '□' ? [i + 1] : []))).toEqual([4, 6, 7])
+    for (const [index, id, position, sourceCharacter, storedCharacter] of [
+      [13, '壁-1', 6, '庄', '莊'],
+      [20, '參-5', 7, '尅', '克'],
+      [21, '井-1', 6, '蚕', '蠶'],
+    ] as const) {
+      const c = clause(index, id)
+      expect(c.evidenceConfidence).toEqual({
+        semantic: 'VERIFIED',
+        transcription: 'NORMALIZED',
+        basis: 'scan_read',
+        normalizations: [{ position, sourceCharacter, storedCharacter }],
+      })
+      expect([...c.quote][position - 1]).toBe(storedCharacter)
+      expect(c.quote).not.toContain(sourceCharacter)
+    }
+    // Evidence carries metadata only for the exceptions; the dataset default is never serialized.
+    const evidence = golden.items.flatMap((m) =>
+      getMansionContentEvidence(getMansionContent(m.index)),
+    )
+    expect(
+      evidence
+        .filter((r) => r.evidenceConfidence)
+        .map((r) => r.activityMapping!.clauseId)
+        .sort(),
+    ).toEqual(['井-1', '參-5', '壁-1', '柳-2'].sort())
+  })
   it('keeps unmentioned activities unknown and narrowly scoped excerpts separate', () => {
     const all = golden.items.flatMap((r) => getMansionContentEvidence(getMansionContent(r.index)))
     expect(all.filter((r) => r.activityId === 'water_travel').map((r) => r.ruleId)).toEqual([
@@ -103,6 +155,15 @@ describe('1880 Ngọc Hạp content authority, independent visual golden', () =>
     expect(page(20)).toMatch(/page\/n64\.jpg$/)
     expect(page(21)).toMatch(/page\/n66\.jpg$/)
     expect(getMansionContent(0).clauses.find((c) => c.id === '角-3')!.quote).toBe('惟有葬埋不可用')
+  })
+  it('keeps quotes corrected by the secondary review against the scan (2026-10-20)', () => {
+    const quote = (index: number, id: string) =>
+      getMansionContent(index).clauses.find((c) => c.id === id)!.quote
+    expect(quote(1, '亢-2')).toBe('埋葬若還逢此日')
+    expect(quote(3, '房-2')).toBe('埋葬若然用此日')
+    expect(quote(4, '心-2')).toBe('埋葬卒暴死相從')
+    expect(quote(7, '斗-2')).toBe('墳堂修築富貴來')
+    expect(quote(13, '壁-2')).toBe('婚姻吉利生貴子')
   })
   it('rejects invalid indices and a clause with a missing/wrong operand', () => {
     for (const index of [-1, 28, NaN, 1.5]) expect(() => getMansionContent(index)).toThrow()

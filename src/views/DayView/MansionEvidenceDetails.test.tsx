@@ -43,6 +43,25 @@ describe('mansion evidence explainability', () => {
     expect(screen.getByText(/không suy ra riêng cho nạp thái/)).toBeInTheDocument()
     expect(screen.queryByText(/chưa được thẩm định/)).not.toBeInTheDocument()
   })
+  it('shows a partially legible excerpt as printed, with a note and no reconstruction', () => {
+    const liu = getMansionContentEvidence(getMansionContent(23)).find(
+      (r) => r.activityMapping?.clauseId === '柳-2',
+    )!
+    render(<MansionEvidenceDetails evidence={[liu]} mansionIndex={23} />)
+    fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
+    expect(screen.getByText('埋葬瘟□多□□')).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'Một số chữ trên bản scan không đọc rõ (□). Ý nghĩa “Chôn cất — bất lợi theo đoạn nguồn” vẫn xác định được.',
+      ),
+    ).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/疫多疾病|瘟癀|病死/)
+  })
+  it('adds no transcription note for excerpts read in full', () => {
+    render(<MansionEvidenceDetails evidence={rows} mansionIndex={22} />)
+    fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
+    expect(screen.queryByText(/không đọc rõ/)).not.toBeInTheDocument()
+  })
   it('shows opposite source excerpts without choosing a winner and preserves exceptions', () => {
     const base = rows.find((r) => r.activityId === 'wedding')!
     const opposing = {
@@ -76,14 +95,15 @@ describe('mansion evidence explainability', () => {
     expect(screen.queryByText(/Các nguồn đã thống nhất/)).not.toBeInTheDocument()
   })
   it('integrates with the event selector and retains the existing verdict', () => {
-    // 2026-10-11 is Tinh: its scan link comes from the unmapped new-room clause, not from wedding.
-    render(<DailyActivitySection date="2026-10-11" />)
+    // 2026-10-14 is Chẩn: no clause maps to opening, so its scan link comes from the unmapped
+    // waterside clause (軫-1, intentional gap). Tinh's new-room clause is construction since 2026-10-20.
+    render(<DailyActivitySection date="2026-10-14" />)
     fireEvent.change(screen.getByRole('combobox', { name: 'Nhóm mục tiêu' }), {
-      target: { value: 'relationship' },
+      target: { value: 'work' },
     })
     for (const summary of screen.queryAllByText(/^(Cần cân nhắc|Hoạt động khác) \(/))
       fireEvent.click(summary)
-    fireEvent.click(screen.getByRole('button', { name: 'Cưới hỏi' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Khai trương' }))
     const verdict = screen.getByRole('region', { name: 'Kết luận mục tiêu' }).textContent
     fireEvent.click(screen.getByText('Thông tin Tú (tham khảo)'))
     expect(screen.getByRole('region', { name: 'Kết luận mục tiêu' }).textContent).toBe(verdict)

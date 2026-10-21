@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-20 (giờ VN). Main `94f5319` đã deploy. Roadmap P4 (1–10) xong, P4 ON trên production. Không có mục roadmap đang làm; việc tiếp theo chọn từ §5 "Việc độc lập" khi owner yêu cầu.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-21 (giờ VN). Main `94f5319` đã deploy. Roadmap P4 (1–10) xong, P4 ON trên production. Audit 28 Tú đã ĐÓNG trên nhánh `claude/secondary-review-p4-source-correction` (HEAD `49bfc00`, chưa push/merge; xem §3 "28 Tú — audit"). Không có mục roadmap đang làm; việc tiếp theo chọn từ §5 "Việc độc lập" khi owner yêu cầu.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence, chuỗi SHA/bundle/deploy cũ): [`docs/project-context/history.md`](docs/project-context/history.md). "history §N" trỏ về phần N trong file đó; bản đầy đủ của file này trước khi thu gọn là history §42.
 > **Quy tắc cập nhật:** sửa tại chỗ. Mục production chỉ giữ bản hiện hành và bản liền trước; chuỗi cũ hơn, evidence release và smoke chi tiết ghi vào `docs/audits/` hoặc history. Không thêm "phần N+1".
@@ -69,8 +69,8 @@ Rollback (flag về false trên nhánh riêng → PR → deploy → smoke; khôn
 | 5 Thụ Tử | CLOSED & DEPLOYED | 六壬大全 卷十九, `thu-tu-authority-v1`, `MONTH_JIAN`; `docs/audits/thu-tu-sat-chu-provenance.md` |
 | 5 Sát Chủ / Sát Sư | **SOURCE_DEPENDENT**, DEPLOYED (PR #8, #78, #80) | Tháng âm; tháng nhuận dùng bảng tháng gốc (S2). Sát Chủ 7 Hợi / 8 Sửu thống nhất calendar ↔ personal (PR #8); ý nghĩa "Đại kỵ cất nhà, cưới gả, an táng; hạn chế việc trọng đại." Ngọc Hạp Chánh Tông tr. 128–133: Tháng Sát Chủ, Bốn Mùa Sát Chủ, Sát Chủ Trong Bốn Mùa (mùa = tháng âm 1–3/4–6/7–9/10–12), Ngày/Tháng Sát Sư (kỵ riêng thầy cúng), giờ Sát Chủ (`HourGrid` + "Giờ phù hợp với bạn"). Bảng ghim trong `shared/lunar/satChuAuthority.test.ts`; `docs/audits/sat-chu-ngoc-hap-chanh-tong-witness.md` |
 | 6 Thái Tuế/Tuế Phá/Tam Sát | CLOSED & DEPLOYED | `annual-directions-authority-v1`, boundary 立春 exact instant; `docs/audits/tai-tue-tue-pha-tam-sat-provenance.md` |
-| 7 28 Tú 宜/忌 | CLOSED & DEPLOYED | 玉匣記 1880, `mansion-content-yuxia-1880-v1`, 115 clauses; `docs/audits/28-mansion-content-provenance.md` |
-| Activity taxonomy/mapping/diagnostics/explainability | DEPLOYED | Mansion mapping 115/115, 用事 29/29 (single reviewer); `docs/audits/xieji-activity-mapping-review.md` |
+| 7 28 Tú 宜/忌 | CLOSED; content **1.0.4** trên nhánh audit (main còn 1.0.1) | 玉匣記 1880, `mansion-content-yuxia-1880-v1`, 115 clauses; `docs/audits/28-mansion-content-provenance.md` (lịch sử); hiện hành: §3 "28 Tú — audit" |
+| Activity taxonomy/mapping/diagnostics/explainability | DEPLOYED; audit 28 Tú đóng | Mansion 115 + 用事 29: **DOUBLE_REVIEWED (semantic mapping)** — hai lượt AI-agent độc lập, chưa có chuyên gia văn bản người (§3 "28 Tú — audit"); review lượt 1: `docs/audits/xieji-activity-mapping-review.md` |
 | Trực/thần + 卷十 diagnostics | DEPLOYED | `docs/audits/truc-than-context-audit.md`, `xieji-vol10-resolution.md`, `xieji-monthly-sha-presence.md` |
 | Thiên Đức legacy tháng quẻ | RESOLVED, bỏ theo 月表 (PR #21) | `docs/audits/tiande-yuebiao.md` |
 | 百忌日 甲日/乙日 | DEPLOYED (PR #26) | `docs/audits/baiji-giap-at.md` |
@@ -89,6 +89,22 @@ Rollback (flag về false trên nhánh riêng → PR → deploy → smoke; khôn
 | CI | Local từ 2026-10-19 (§7); GitHub chỉ deploy | Shard unit trên Actions (PR #52/#53) đã thay bằng `check`/`test:changed`/`ci:full`/`ci:p4` chạy ở máy (PR #74) |
 | PWA update (`/version.json`, toast "Có phiên bản mới") | DEPLOYED (PR #57, #58) | `docs/pwa-update-strategy.md`; version hiển thị = ngày build `YY.MM.DD` giờ VN. Chưa kiểm tay trên iPhone Home Screen |
 | Personal (feng-shui, Bazi, daily) | Code có sẵn, chưa có phase audit riêng | Personal annual afflictions giữ convention cũ, chưa chứng nhận |
+
+### 28 Tú — audit (đóng 2026-10-21, nhánh `claude/secondary-review-p4-source-correction`, chưa push)
+
+Commit: `2be48a7` (sửa nguồn + migration P4), `ed59e09` (ontology xây dựng), `49bfc00` (evidence confidence). Content `mansion-content-yuxia-1880-v1` **1.0.4** (manifest khớp).
+
+- **Chứng nhận:** `DOUBLE_REVIEWED (semantic mapping)` — 115 clause 28 Tú và 29 mapping 用事 được rà soát ngữ nghĩa độc lập hai lượt. **Cả hai lượt do AI agent thực hiện; chưa có chuyên gia văn bản người.** Không chứng nhận bản chép ngoại giao (diplomatic transcription). Trạng thái: SECONDARY_REVIEW_COMPLETE, DISAGREEMENTS_RESOLVED, ONTOLOGY_DECISIONS_RESOLVED, EVIDENCE_CONFIDENCE_MODELED. Mapping blocker còn lại: **không có**.
+- **Mapping:** 111 `exact_catalog_pair`, 3 `unmapped` (gap có chủ ý, không phải blocker), 1 `not_operative` (星-4); 115/115 `interpretation_reviewed`. Gap: 婁-1 竪柱 (PARTIAL_RITUAL — phần đầu của 豎柱上梁/beam_raising), 軫-1 臨水造龍宮 (INSUFFICIENT_SEMANTIC_EVIDENCE), 鬼-6 修土築牆 (`construction_wall`: đắp đất làm tường, không phải động thổ; owner 2026-10-10 không tạo ID xây dựng hẹp).
+- **Ontology (owner):** construction ← 張-1 造龍軒, 危-1 造高堂, 翼-1 架高堂, 星-1 造新房. renovation ← 修宮室, hợp đồng "sửa/cải tạo nhà hoặc công trình đang có"; không map sang 修造/興造動土.
+- **Sửa nguồn (secondary review, 5 DISAGREE):** 亢-2, 房-2, 心-2, 斗-2, 壁-2 chép sai quote, đã sửa theo scan; 斗-2 dùng term mới 墳堂修築 → `funeral_grave_repair` (resolver xác nhận).
+- **Evidence confidence:** semantic VERIFIED/PROBABLE/UNCERTAIN; transcription EXACT/NORMALIZED/IDENTIFIED/PARTIAL/UNCERTAIN; basis scan_read/digital_transcription; vị trí ký tự tính từ 1. **Không có default toàn cục**; chỉ dataset 28 Tú 1.0.4 khai báo default VERIFIED/IDENTIFIED/scan_read (`source.evidenceConfidence`). Phân bố 28 Tú: semantic VERIFIED 115; transcription EXACT 0, NORMALIZED 3, IDENTIFIED 111, PARTIAL 1, UNCERTAIN 0 (IDENTIFIED = nhận đúng chữ, chưa xác minh dị thể in). Ngoại lệ: 壁-1 vị trí 6 庄→莊, 參-5 vị trí 7 尅→克, 井-1 vị trí 6 蚕→蠶 (NORMALIZED); 柳-2 PARTIAL, quote `埋葬瘟□多□□`, uncertainPositions [4, 6, 7] — không còn là blocker vì kết luận burial/hung dựa vào chữ đọc chắc 埋葬.
+- **用事:** 29 mapping đã rà soát ngữ nghĩa hai lượt; basis digital_transcription (Wikisource), chưa hiệu đính đủ với scan 四庫; schema evidenceConfidence chưa áp dụng cho 用事 (giới hạn provenance, không phải blocker).
+- **Migration P4 (`p4-adapter-baseline-v1/lock.json` `revisions[]`, owner duyệt):** rev 1 SOURCE_TRANSCRIPTION_CORRECTION (5 quote + resolver 斗-2; 196 activity + 78 event, 0 thay đổi hành vi); rev 2 ONTOLOGY_NORMALIZATION (117 activity, 0 event, 0 hành vi); rev 3 EVIDENCE_CONFIDENCE_MODELING (159 activity, 80 event, 0 hành vi). Revision cũ giữ nguyên; lock `p4-score-golden-v2` giữ hash input lịch sử `d71c0162…`.
+- **Bài học quy trình:** hash baseline P4 bao gồm nội dung provenance/evidence (vd. `sourceQuote`), nên sửa nguồn/evidence có thể đổi hash mà không đổi hành vi. Migration sau phải tách hành vi / provenance-nội dung / hash dẫn xuất, so toàn bộ leaf của record; hash đổi ≠ lịch đổi hành vi.
+- **Kiểm chứng gần nhất (49bfc00):** `npm test` 8199 pass / 0 fail / 6 skipped; P4 targeted 25/25; P4 read-only (migration/adapter/owner FULL, golden.py) PASS; lint, typecheck, build PASS; Playwright `mansion-content.spec.ts` PASS. Mutation scripts không chạy ở phase evidence confidence.
+- **Artifact:** `tasks/calendar-audit/{secondary-review, secondary-review-resolution, p4-baseline-source-correction, ontology-resolution, ontology-resolution-implementation, evidence-confidence-policy}/`. Artifact cũ ghi trạng thái đúng tại thời điểm đó; trạng thái **hiện hành** xem `evidence-confidence-policy/certification-final.*`, `evidence-confidence-policy/implementation.*`, `ontology-resolution-implementation/implementation.*`. Không sửa artifact lịch sử cho khớp hiện tại.
+- **Follow-up không chặn:** ghi chú UI cho NORMALIZED; evidenceConfidence cho 用事; review văn bản bởi chuyên gia người nếu cần chứng nhận transcription mạnh hơn.
 
 ## 4. Runtime pipeline
 
@@ -147,7 +163,7 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 |---|---|---|
 | S1 | 土王用事 SOURCE_DEPENDENT (đếm ngày hay thời khắc 立, biên 「後」, 時憲書/定氣, 德 có 止忌 như 土府 không) | **OPEN.** Tìm nguồn; không đổi khi chưa có. Đã thử archive.org (chỉ 《大清時憲書箋釋》 chép tay, OCR không dùng được), ctext (cấm truy cập tự động), scan 時憲書 Tohoku (225 canvas, chưa khóa mốc 土王). Evidence: `docs/audits/p4-vol10-remaining-operands-research.md` |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
-| R1 | Review mapping single reviewer (agent): mansion 115/115, 用事 29/29 | Cần chuyên gia thứ hai nếu muốn nâng chứng nhận |
+| R1 | Review mapping lượt hai: mansion 115/115, 用事 29/29 | **XONG** (nhánh audit, chưa merge): `DOUBLE_REVIEWED (semantic mapping)`, hai lượt AI-agent, chưa có chuyên gia người; §3 "28 Tú — audit" |
 | R2 | Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích) | Đổi policy cả 11 event → phase riêng nếu muốn |
 | R3 | Coverage thiết bị: iPhone thật chưa chạy cho các release đổi điểm | Firefox P4 ON 4/4 (2026-10-19). iPhone: owner chạy theo checklist `docs/audits/p4-activation.md` § Smoke R3 (gồm luồng PWA update) |
 | R4 | 百忌日 còn 6 ngày không có activity (庚 經絡, 辛 醖釀, 壬 開渠, 卯 穿井, 丑 冠帶, 午 苫蓋) | Không tự map; chỉ làm nếu thêm activity |
@@ -162,7 +178,7 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 ```text
 Roadmap P4: 4 ─► 5 ─► 6 ─► 7 ─► 7b ─► 8 ─► 9 ─► 9b ─► 10 (tất cả XONG)
 P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
-S1, S2, R1–R4, E1, P2: độc lập
+S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
 ```
 
 ## 6. Quy tắc cho agent
@@ -171,7 +187,7 @@ S1, S2, R1–R4, E1, P2: độc lập
 - Làm trên nhánh, không commit thẳng `main`. Merge/push `main` = deploy production: luôn hỏi owner; owner tự merge PR.
 - Chỉ nói "gate xanh" khi lệnh local đã chạy EXIT 0; chỉ nói "deployed" khi job Deploy SUCCESS và `/version.json` `build` khớp commit.
 - Source conflict → phân loại, không tự chọn. Golden độc lập không bao giờ sửa theo production.
-- Không sửa bytes file nằm trong lock/prior-hashes (`docs/audits/sources/**/lock.json`, `prior-hashes.json`); ghi quyết định mới ở test/docs.
+- Không sửa bytes file nằm trong lock/prior-hashes (`docs/audits/sources/**/lock.json`, `prior-hashes.json`); ghi quyết định mới ở test/docs. Ngoại lệ đã được owner duyệt: `p4-adapter-baseline-v1/lock.json` cập nhật qua migration có kiểm soát (gate so toàn bộ record, writer chuẩn, chỉ nối thêm `revisions[]`, giữ revision cũ).
 - Tách calendar-level và personal; mỗi rule có provenance khác là authority record riêng.
 - Không global auspiciousness score; giữ mansion scoring OFF; giữ exact Jie boundary khi Month Jian là operand.
 - Đổi điểm → owner quyết, Golden trước code, migration diff giải thích từng thay đổi. Hành vi mới đổi output → policy manifest riêng (ship true), test lịch sử ghim false (như `tiangouYinNoYi`, `satChuNgocHapStars`).
@@ -231,4 +247,4 @@ REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/l
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `94f5319` đã deploy; P4 ON (activation PR #71), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4` chạy tay), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Không có mục roadmap đang làm; việc tiếp theo từ §5 "Việc độc lập" (S1, S2, R1–R4, E1) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest riêng; mutation runner chạy tuần tự. Lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn).
+> Đọc PROJECT_CONTEXT.md. Main `94f5319` đã deploy; P4 ON (activation PR #71), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4` chạy tay), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Audit 28 Tú đã đóng trên nhánh `claude/secondary-review-p4-source-correction` (`2be48a7`, `ed59e09`, `49bfc00`, chưa push; content 1.0.4, `DOUBLE_REVIEWED (semantic mapping)` bởi hai lượt AI-agent, chưa có chuyên gia người). Không có mục roadmap đang làm; việc tiếp theo từ §5 "Việc độc lập" (S1, S2, R2–R4, E1) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest riêng; mutation runner chạy tuần tự. Lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn).

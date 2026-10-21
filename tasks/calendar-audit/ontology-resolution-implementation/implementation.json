@@ -1,0 +1,210 @@
+{
+  "phase": "ontology-resolution implementation",
+  "date": "2026-10-20",
+  "ownerDecisions": {
+    "construction": {
+      "option": "C — PARTIAL",
+      "add": {
+        "危-1": "造高堂",
+        "翼-1": "架高堂",
+        "星-1": "造新房"
+      },
+      "keep": {
+        "張-1": "造龍軒 → construction"
+      },
+      "intentionalGaps": {
+        "軫-1": [
+          "INTENTIONAL_GAP",
+          "INSUFFICIENT_SEMANTIC_EVIDENCE",
+          "臨水造龍宮"
+        ],
+        "婁-1": [
+          "INTENTIONAL_GAP",
+          "PARTIAL_RITUAL",
+          "竪柱 (part of 豎柱上梁 / beam_raising)"
+        ]
+      }
+    },
+    "renovation": {
+      "option": "A",
+      "mapping": "renovation → 修宮室 (unchanged)",
+      "contract": "Repair or renovate an existing house/building. Historical source mapping: 修宮室.",
+      "documentedIn": "tasks/calendar-audit/ontology-resolution/ (no production metadata field exists for activity descriptions; none added)",
+      "behavior": "unchanged (no file of renovation rules touched)"
+    }
+  },
+  "productionChanges": {
+    "shared/lunar/ruleActivityMapping.ts": "construction_general.terms += 造高堂, 架高堂, 造新房 (exact compounds; no single-character tokens); scopes construction_high_hall and construction_new_room removed (no clause uses them any more). construction_general.reason unchanged.",
+    "shared/almanac-data/mansion-content-yuxia-1880-v1.json": "危-1, 翼-1, 星-1: activityId \"\" → \"construction\", scope → construction_general; quote, translation, polarity unchanged; version 1.0.2 → 1.0.3",
+    "shared/almanac-data/manifest.json": "mansion content version 1.0.3",
+    "shared/lunar/audit-fixtures/mansion-content-golden-v1.json": "same three clauses and version (Phase 7 golden mirrors the dataset)",
+    "shared/lunar/audit-fixtures/mansion-activity-interpretation-golden-v2.json": "three items: activityId construction, scope construction_general, status exact_catalog_pair (reviewTerm unchanged); glossary entries 造高堂/架高堂, 造新房 updated"
+  },
+  "implementationIncident": {
+    "firstCandidate": {
+      "activityRowsChanged": 1020,
+      "cause": "construction_general.reason was accidentally rewritten in ruleActivityMapping.ts; activityMapping.reason changed on 903 construction rows of every 造作-type clause, on top of the 117 expected rows",
+      "decision": "candidate rejected (never accepted, never written to the baseline, not part of baseline revision history)"
+    },
+    "correction": "reason text restored verbatim (it remains true: narrow columns/waterside/wall stay excluded)",
+    "secondCandidate": "candidate regenerated twice (byte-identical)",
+    "finalAcceptedDiff": 117
+  },
+  "uiFixtureRationale": {
+    "requirement": "A scan/source link appears in the selected target's mansion section because an intentionally unmapped mansion clause provides the evidence path, while the event verdict stays unchanged when the mansion details are opened.",
+    "before": "Tinh 2026-10-11 + Cưới hỏi: wedding had no operative mansion evidence (星-4 not_operative); the link came from unmapped 星-1.",
+    "after": "Chẩn 2026-10-14 + Khai trương: no mansion clause maps to opening; the only path to a link is the unmapped intentional gap 軫-1.",
+    "sameRequirement": true,
+    "mutationEvidence": "temporarily mapping 軫-1 to construction makes the test fail; restored afterwards"
+  },
+  "implementationNote": "A first candidate also rewrote construction_general.reason; that changed activityMapping.reason on 903 further construction rows (every 造作 clause). The reason text was restored verbatim (still true: narrow columns/waterside/wall stay excluded) and the candidate regenerated. Only the regenerated run is evidence.",
+  "tests": {
+    "shared/lunar/ruleActivityMapping.test.ts": [
+      "explicit-gap list: construction_high_hall and construction_new_room removed (owner decision; they are no longer gaps)",
+      "new: 危-1/翼-1/星-1/張-1 resolve to construction with their reviewTerm; 軫-1 and 婁-1 stay unmapped; 臨水造龍宮 and 竪柱 quotes stay pending under construction_general"
+    ],
+    "src/views/DayView/MansionEvidenceDetails.test.tsx": [
+      "\"integrates with the event selector\" relied on Tinh (2026-10-11) having an unmapped new-room clause; 星-1 is now construction, so Tinh has no unmapped clause and the scan link it asserted disappears (expected display effect). Fixture moved to Chẩn (2026-10-14) with the \"Khai trương\" target: opening has no mansion clause, so the link still comes only from an unmapped clause (軫-1, intentional gap). Verdict assertion unchanged."
+    ],
+    "mutation": [
+      "dropping 造高堂 from the terms: 2 tests fail",
+      "adding the generic token 造: 1 test fails (guard)",
+      "mapping 軫-1 to construction: the UI test fails (it depends on the intentional gap)"
+    ]
+  },
+  "gates": {
+    "A_cardinality": "PASS",
+    "B_identity": "PASS",
+    "C_behavioral_equivalence": "PASS",
+    "D_scope_only_危翼星_construction": "PASS",
+    "E_expected_counts": "PASS",
+    "F_gaps_not_mapped_軫婁": "PASS",
+    "S_no_existing_sourceQuote_change": "PASS",
+    "reproducible": "PASS"
+  },
+  "method": "Per changed row: (1) TSV columns other than sha256 equal; (2) every record key except contributions deep-equal; (3) the old contributions list survives unchanged and in order inside the new list; (4) exactly one added contribution, a mansion evidence row: source mansion, status informational, scoreDelta 0, rawDelta 0, activityId construction, ruleId clause in {危-1, 翼-1, 星-1} matching the day's mansion, reviewTerm = the approved term, exact_catalog_pair/interpretation_reviewed.",
+  "counts": {
+    "activity": {
+      "old": 35136,
+      "new": 35136,
+      "changed": 117,
+      "byMansionActivity": {
+        "危 construction": 39,
+        "星 construction": 39,
+        "翼 construction": 39
+      }
+    },
+    "event": {
+      "old": 24156,
+      "new": 24156,
+      "changed": 0
+    }
+  },
+  "facts": {
+    "changedRecords": 117,
+    "activityRowsChanged": 117,
+    "eventRowsChanged": 0,
+    "changedFields": "one added contribution per row (a mansion evidence row); no existing field of any record changed",
+    "addedContributionFields": [
+      "contributions[+]. activityId",
+      "contributions[+]. activityMapping.activityId",
+      "contributions[+]. activityMapping.authorityId",
+      "contributions[+]. activityMapping.clauseId",
+      "contributions[+]. activityMapping.reason",
+      "contributions[+]. activityMapping.reviewStatus",
+      "contributions[+]. activityMapping.reviewTerm",
+      "contributions[+]. activityMapping.status",
+      "contributions[+]. activityMapping.version",
+      "contributions[+]. conditions[].equals",
+      "contributions[+]. conditions[].operand",
+      "contributions[+]. confidence",
+      "contributions[+]. exceptions",
+      "contributions[+]. label",
+      "contributions[+]. polarity",
+      "contributions[+]. rawDelta",
+      "contributions[+]. ruleId",
+      "contributions[+]. scope",
+      "contributions[+]. scoreDelta",
+      "contributions[+]. source",
+      "contributions[+]. sourcePhrase",
+      "contributions[+]. sourceQuote",
+      "contributions[+]. sourceRef",
+      "contributions[+]. status"
+    ],
+    "existingSourceQuoteChanges": 0,
+    "behavioralChanges": "0/117",
+    "provenanceOnly": "117/117",
+    "unexpected": 0
+  },
+  "classification": {
+    "behavior": "TSV score, status, hard_warning (activities) / score, classification (events); every record key other than contributions; the old contributions list (must survive unchanged, in order)",
+    "provenance": "the added mansion evidence contribution (source mansion, status informational, scoreDelta 0, rawDelta 0)",
+    "derivedHash": "TSV sha256 column"
+  },
+  "reproducibility": {
+    "activities.tsv": {
+      "old_equals_locked": true,
+      "new_run1_equals_run2": true,
+      "locked_sha256": "c1a08d320ffe99a1b9eea17d6c8df580bdfb5401f08d14cc6375ec330a6253ae",
+      "candidate_sha256": "aca253b12a7859fd1c7ef61f70962f16c5d0337b962b292f4ad815a914b04722"
+    },
+    "events.tsv": {
+      "old_equals_locked": true,
+      "new_run1_equals_run2": true,
+      "locked_sha256": "d8e18a541a767c518bba2d8cc6eb8d40d3037e44e82877a332473dbf70176882",
+      "candidate_sha256": "d8e18a541a767c518bba2d8cc6eb8d40d3037e44e82877a332473dbf70176882"
+    },
+    "activities.records": {
+      "new_run1_equals_run2": true
+    },
+    "events.records": {
+      "new_run1_equals_run2": true
+    }
+  },
+  "baselineMigration": {
+    "files": {
+      "activities.tsv": "regenerated (hash changes)",
+      "events.tsv": "unchanged (regenerated byte-equal)",
+      "lock.json": "files[activities].sha256 updated; revisions[1] appended; revisions[0] untouched"
+    },
+    "dependentLocks": "p4-migration-diff-v1/v2 locks unchanged (path reference only; verified by FULL run); p4-score-golden-v2/lock.json unchanged (historical input hash d71c0162… kept, per owner provenance principle; outputs re-checked with golden.py)"
+  },
+  "certification": {
+    "state": [
+      "SECONDARY_REVIEW_COMPLETE",
+      "DISAGREEMENTS_RESOLVED",
+      "ONTOLOGY_DECISIONS_RESOLVED",
+      "TRANSCRIPTION_UNCERTAINTY_REMAINS"
+    ],
+    "items": {
+      "張-1": "RESOLVED (construction ontology decided)",
+      "危-1": "NORMALIZED → construction",
+      "翼-1": "NORMALIZED → construction",
+      "星-1": "NORMALIZED → construction",
+      "軫-1": "INTENTIONAL_GAP / INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "婁-1": "INTENTIONAL_GAP / PARTIAL_RITUAL",
+      "renovation": "ONTOLOGY_RESOLVED (修宮室)",
+      "柳-2": "SEMANTICALLY_RESOLVED / TRANSCRIPTION_UNCERTAIN / NEEDS_PRIMARY_EVIDENCE"
+    },
+    "remaining": [
+      "柳-2"
+    ],
+    "doubleReviewed": "not claimed"
+  },
+  "userVisible": "Day view of 危 and 翼 days: construction shows mansion evidence \"Xây dựng — bất lợi\" (informational); 星 days: \"Xây dựng — thuận lợi\". The three phrases leave the \"chưa có mục tương ứng\" list. SEO/mansion dialog unchanged (presentMansionContent summarizes every clause by sourcePhrase).",
+  "postMigration": {
+    "regeneratedWith": "P4_ADAPTER_BASELINE_WRITE=1 npx vitest run shared/lunar/p4AdapterBaseline.test.ts; activities.tsv = candidate aca253b1…; events.tsv byte-equal (unchanged)",
+    "p4TargetedTests": "p4AdapterBaseline, p4MigrationDiff, p4MigrationRollback, p4ScoreAdapterAlmanac: 4 files / 25 tests passed",
+    "npmTest": "225 files passed, 1 skipped; 8195 tests passed, 6 skipped, 0 failed (8196 before: -2 removed gap cases, +1 new test)",
+    "lintTypecheck": "npm run check: pass",
+    "build": "npm run build: pass, no tracked file changed",
+    "ciP4ReadOnly": "P4_MIGRATION_FULL p4MigrationDiff 9/9 (migration-diff-v2 files equal their lock); P4_SCORE_ADAPTER_FULL 12/12; P4_OWNER_RULES_FULL 6/6; score-golden-v2 golden.py exit 0",
+    "mutationScripts": "NOT RUN (mutate tracked audit result artifacts)",
+    "historicalLocks": "p4-score-golden-v2/lock.json unchanged (input sha d71c0162… is the 1.0.1 baseline it was frozen on; outputs still match); migration-diff v1/v2 locks unchanged",
+    "prettier": "ruleActivityMapping.test.ts reformatted with prettier --write (HEAD version was clean); the three changed source/test files pass prettier --check; tests rerun 20/20",
+    "playwright": "affected dates (危 2025-03-17, 2026-09-28; 翼 2025-12-09, 2026-09-15): mansion-content, swipe, xieji-vol10-activation, user-stories specs, desktop, --update-snapshots=none: 22 passed, 6 skipped",
+    "mappingTally": "115 clauses: 111 exact_catalog_pair, 3 unmapped (婁-1, 鬼-6, 軫-1), 1 not_operative; 115/115 interpretation_reviewed",
+    "renovationRowsChanged": 0,
+    "historicalArtifacts": "secondary-review-resolution/ (commit 2be48a7) still lists 張-1 and renovation as open: historical; current certification is in this artifact. PROJECT_CONTEXT.md mansion figures (6 unmapped, content 1.0.1) are stale: follow-up, not changed here."
+  }
+}
