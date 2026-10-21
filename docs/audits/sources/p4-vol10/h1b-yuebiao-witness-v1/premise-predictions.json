@@ -1,0 +1,198 @@
+{
+ "version": "h1b-yuebiao-premise-v1",
+ "liftPremise": [
+  {
+   "context": "寅-乙亥",
+   "operand": "重日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "yuebiao-witness-lock-v2 (reused)",
+   "yuebiao": {
+    "item": "06067692.cn",
+    "leaf": "n17",
+    "url": "https://archive.org/download/06067692.cn/page/n17_w1200.jpg"
+   }
+  },
+  {
+   "context": "午-丁未",
+   "operand": "復日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "yuebiao-witness-lock-v2 (reused)",
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n49",
+    "url": "https://archive.org/download/06067694.cn/page/n49_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-壬寅",
+   "operand": "復日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "yuebiao-witness-lock-v2 (reused)",
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n111",
+    "url": "https://archive.org/download/06067696.cn/page/n111_w1200.jpg"
+   }
+  },
+  {
+   "context": "申-己巳",
+   "operand": "重日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "new",
+   "yuebiao": {
+    "item": "06067695.cn",
+    "leaf": "n11",
+    "url": "https://archive.org/download/06067695.cn/page/n11_w1200.jpg"
+   }
+  },
+  {
+   "context": "酉-乙巳",
+   "operand": "重日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "new",
+   "yuebiao": {
+    "item": "06067695.cn",
+    "leaf": "n114",
+    "url": "https://archive.org/download/06067695.cn/page/n114_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-己卯",
+   "operand": "復日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "new",
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n88",
+    "url": "https://archive.org/download/06067694.cn/page/n88_w1200.jpg"
+   }
+  },
+  {
+   "context": "辰-戊寅",
+   "operand": "復日",
+   "heading": "安葬",
+   "goldenState": "neither_recorded",
+   "predictLiftApplied": "安葬 absent from 忌 line",
+   "ifPrinted": "lift premise mismatch: the seven 德-lift H1-B pages become NOT_DISTINGUISHING",
+   "source": "new",
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n20",
+    "url": "https://archive.org/download/06067693.cn/page/n20_w1200.jpg"
+   }
+  }
+ ],
+ "jieshaClass": [
+  {
+   "context": "丑-甲寅",
+   "premiseProbe": [
+    "安牀",
+    "安葬",
+    "宴會",
+    "牧養",
+    "立券交易",
+    "納畜",
+    "納財",
+    "般移",
+    "豎柱上梁",
+    "開市"
+   ],
+   "predict": "under Golden v2 these headings are on neither line",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n123",
+    "url": "https://archive.org/download/06067697.cn/page/n123_w1200.jpg"
+   }
+  },
+  {
+   "context": "丑-丙寅",
+   "premiseProbe": [
+    "嫁娶",
+    "安牀",
+    "安葬",
+    "宴會",
+    "牧養",
+    "立券交易",
+    "納畜",
+    "納財",
+    "納采問名",
+    "結婚姻",
+    "般移",
+    "豎柱上梁",
+    "開市"
+   ],
+   "predict": "under Golden v2 these headings are on neither line",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n75",
+    "url": "https://archive.org/download/06067697.cn/page/n75_w1200.jpg"
+   }
+  },
+  {
+   "context": "丑-戊寅",
+   "premiseProbe": [
+    "嫁娶",
+    "安牀",
+    "安葬",
+    "宴會",
+    "牧養",
+    "立券交易",
+    "納畜",
+    "納財",
+    "納采問名",
+    "結婚姻",
+    "般移",
+    "豎柱上梁",
+    "開市"
+   ],
+   "predict": "under Golden v2 these headings are on neither line",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n87",
+    "url": "https://archive.org/download/06067697.cn/page/n87_w1200.jpg"
+   }
+  },
+  {
+   "context": "丑-壬寅",
+   "premiseProbe": [
+    "嫁娶",
+    "安牀",
+    "安葬",
+    "宴會",
+    "牧養",
+    "立券交易",
+    "納畜",
+    "納財",
+    "納采問名",
+    "結婚姻",
+    "般移",
+    "豎柱上梁",
+    "開市"
+   ],
+   "predict": "under Golden v2 these headings are on neither line",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n111",
+    "url": "https://archive.org/download/06067697.cn/page/n111_w1200.jpg"
+   }
+  }
+ ]
+}
