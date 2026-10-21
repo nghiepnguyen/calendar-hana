@@ -18,7 +18,12 @@ The project rule is: one 卷十 clause wording ⇒ effect `cancel_both` ⇒ no �
 | P4 heading state | `shared/lunar/p4HeadingAnnotation.ts:131` (`cancel_both` → `neither_recorded`); owner approval "相抵 → 不註 (鋪註 05)" in [p4-vol10-heading-annotation.md](p4-vol10-heading-annotation.md) | owner decision; 鋪註 05 qualifies only the 「不註宜亦不註忌」 case, it does not define which headings fall into it |
 | Golden v2 output | `p4-full-golden-v2/compose` (`xiangdi;xd=刼煞`) | follows the project rule |
 
-The repository history starts at `3800d99` (2026-10-16), because earlier history is squashed. The original introduction of `cancel_both` predates that; `docs/project-context/history.md` holds the narrative.
+The repository history starts at `3800d99` (2026-10-16), because earlier history is squashed. `docs/project-context/history.md` holds the narrative:
+
+- **§18, 卷十 resolution:** the diagnostics branch encoded 「凡所忌者則不註宜所宜者亦不註忌」 as `cancel_both`, yielding verdict `no_annotation`. This was agent work with a single reviewer, and the score did not change.
+- **§21–22, owner, 2026-10-10:** the owner approved the verdict → score table, in which `no_annotation` drops both the negative and the positive delta. The owner approved what `no_annotation` *does*, not the reading that this 劫煞 clause produces `no_annotation` for every heading.
+- **PR #31/#32:** activated the flag `xiejiVol10Scoring`. From then on, 劫煞 in 辰戌丑未 months without 德 adds no penalty in **every year**, not only 2025–2027.
+- **P4, later:** added the owner approval "相抵 → 不註 (鋪註 05)" for heading annotation.
 
 ## Source text
 
@@ -81,18 +86,22 @@ OVERLAP was written after the 16 frozen pages had been read. Only the holdout is
 
 ## X2 — 劫煞 operational semantics
 
-**Status for 劫煞, 辰戌丑未 without 德: CONTRADICTED_BY_WITNESS for CANCEL_BOTH; OVERLAP SOURCE_WITNESSED in-sample (MEDIUM).**
+**Status for 劫煞, 辰戌丑未 without 德:**
 
-Frozen OVERLAP function against the 16 locked pages, distinguishing headings only:
+- **Current production rule (CANCEL_BOTH): CONTRADICTED_BY_WITNESS.** The rule was fixed before any page was read.
+- **OVERLAP as replacement: PARTIALLY_SOURCE_WITNESSED.** It is the literal text, and it fits in-sample, but no out-of-sample 劫煞 test was possible.
 
-| Month | Witnesses | Production predicts | 月表 | OVERLAP | CANCEL_BOTH | Consistent with production? |
-|---|---:|---|---|---:|---:|---|
-| 辰 | 4 | all 劫煞 headings unnoted | 劫煞 headings without 宜 printed | 35/35 | 0/35 | no |
-| 戌 | 4 | same | same | 24/24 | 0/24 | no |
-| 未 | 4 | same | same | 19/19 | 0/19 | no |
-| 丑 | 4 | same | mostly unnoted (many 宜) | 1/4 | 3/4 | mostly yes |
+Frozen OVERLAP function against the 16 locked pages, distinguishing items only. Headings are not independent: the 鋪註 pairs link them into clusters, and one 宜 decision can flip a whole cluster. The clusters are {祈福, 求嗣}, {結婚姻, 納采問名, 嫁娶, 般移, 安牀}, {興造動土, 豎柱上梁, 修宮室, 修倉庫, 破屋壊垣}, {開市, 立券交易, 納財, 開倉庫出貨財}, {牧養, 納畜}; every other heading is its own cluster.
 
-- The three 丑 misses are 安葬 on pages listing 鳴吠對, which is not modelled as 宜 安葬. The same cause explains the 巳-癸卯 holdout miss.
+| Month | Pages | Production predicts | 月表 | OVERLAP headings | CANCEL_BOTH headings | OVERLAP clusters | CANCEL_BOTH clusters | Matches production? |
+|---|---:|---|---|---:|---:|---:|---:|---|
+| 辰 | 4 | all 劫煞 headings unnoted | 劫煞 headings without 宜 printed | 35/35 | 0/35 | 15/15 | 0/15 | no |
+| 戌 | 4 | same | same | 24/24 | 0/24 | 12/12 | 0/12 | no |
+| 未 | 4 | same | same | 19/19 | 0/19 | 12/12 | 0/12 | no |
+| 丑, excluding 丑-丙寅 | 3 | same | mostly unnoted (many 宜) | 1/3 | 2/3 | 1/3 | 2/3 | mostly yes |
+
+- 丑-丙寅 prints 月德, which is a 德 presence mismatch with Golden (月德 in 丑 month falls on 庚). It is excluded from the no-德 tally.
+- The two remaining 丑 misses are 安葬 on pages listing 鳴吠對, which is not modelled as 宜 安葬. The same cause explains the 巳-癸卯 holdout miss.
 - The 辰/戌/未 vs 丑 contrast is not a different rule. On the 丑 pages 時德/月德/四相/鳴吠對 give 宜 to almost every heading, so OVERLAP and CANCEL_BOTH coincide there.
 - Caveat: this is in-sample (OVERLAP was formed after reading these pages). There is no unread 劫煞 no-德 context in 辰戌丑未 left to test it on: all 16 are witnessed.
 
@@ -103,13 +112,13 @@ Frozen OVERLAP function against the 16 locked pages, distinguishing headings onl
 - **劫煞 + 德** (辰-丁巳, 戌-辛亥, 未-甲申, 丑-庚寅): `only_avoid`, i.e. 止忌 軍事/療病. All 4 holdout pages match Golden v2 on every compared heading.
 - **劫煞 子午卯酉 執日 + 月德/月德合** (午-辛亥, 卯-甲申, 酉-庚寅): `cancel_both` with 德. These match Golden, but every heading has 宜, so the two readings coincide and the pages are not distinguishing.
 - **子-丁巳:** Golden `as_usual` under the 德作建論 override; it matches.
-- **Clauses that fire with 德:**
-  - 月刑 辰-壬辰: CANCEL_BOTH 4/4, OVERLAP 0/4.
-  - 天吏/閉日 戌-辛酉: CANCEL_BOTH 4/4, OVERLAP 0/4. Here 鋪註 puzhu:06 (德合) also explains the result.
+- **Clauses that fire with 德:** 月刑 辰-壬辰 and 天吏/閉日 戌-辛酉. On both pages the frozen scores favour CANCEL_BOTH (one cluster each), but the pages are classified **NOT_DISTINGUISHING**:
+  - The missing cluster, 開市/立券交易/納財/開倉庫出貨財, is exactly what 鋪註 puzhu:06 withholds on its trigger days.
+  - The repo's trigger set in `p4b-puzhu06-v3.json` includes 天德 and 月德 (辰-壬辰) and 天德合 and 月德合 (戌-辛酉).
 - **Clauses without 德:**
-  - 災煞: OVERLAP 4/5.
-  - 月煞: OVERLAP 6/6.
-- "With 德 → CANCEL_BOTH, without → OVERLAP" coincides with the clause wording (「不宜不忌」 vs 「忌則不宜宜則不忌」) on these 2 + 3 pages. That is observed, not established, and no global 德 rule follows.
+  - 災煞: OVERLAP 2 of 3 clusters.
+  - 月煞: OVERLAP 4 of 4 clusters.
+- So there is no witnessed "with 德 → CANCEL_BOTH" pattern, and no global 德 rule follows.
 - Anomaly: 丑-丙寅 prints 月德, but 月德 in 丑 month should fall on 庚. Golden treats the day as without 德. Not used.
 
 ## X4 — global applicability
@@ -118,16 +127,16 @@ Frozen OVERLAP function against the 16 locked pages, distinguishing headings onl
 
 Scores from the holdout, with predictions frozen in `5c35a9e` before the pages were fetched; distinguishing headings only:
 
-| Subject (clause) | Pages | OVERLAP | CANCEL_BOTH |
-|---|---|---:|---:|
-| 災煞 寅申巳亥, no 德 | 寅-戊子, 巳-癸卯 | 4/5 | 1/5 |
-| 月煞 卯酉, no 德願 (按 「否則不宜不忌」) | 卯-戊戌, 酉-甲辰 | 6/6 | 0/6 |
-| 月刑, with 德 | 辰-壬辰 | 0/4 | 4/4 |
-| 天吏/閉日, with 德合 | 戌-辛酉 | 0/4 | 4/4 |
+| Subject (clause) | Pages | OVERLAP headings | CANCEL_BOTH headings | OVERLAP clusters | CANCEL_BOTH clusters | Classification |
+|---|---|---:|---:|---:|---:|---|
+| 災煞 寅申巳亥, no 德 | 寅-戊子, 巳-癸卯 | 4/5 | 1/5 | 2/3 | 1/3 | 寅-戊子 supports OVERLAP; 巳-癸卯 supports CANCEL_BOTH (candidate cause: unmodelled 鳴吠對) |
+| 月煞 卯酉, no 德願 (按 「否則不宜不忌」) | 卯-戊戌, 酉-甲辰 | 6/6 | 0/6 | 4/4 | 0/4 | both support OVERLAP |
+| 月刑, with 德 | 辰-壬辰 | 0/4 | 4/4 | 0/1 | 1/1 | NOT_DISTINGUISHING (puzhu:06 trigger 天德/月德) |
+| 天吏/閉日, with 德合 | 戌-辛酉 | 0/4 | 4/4 | 0/1 | 1/1 | NOT_DISTINGUISHING (puzhu:06 trigger 德合) |
 
 - The 劫煞 result does not transfer.
-- 災煞 and 月煞 each have their own witnesses, but only 2 pages per clause.
-- 月刑 and 天吏 support CANCEL_BOTH.
+- 災煞 and 月煞 each have their own witnesses, but only a few clusters each.
+- 月刑 and 天吏 with 德 are UNRESOLVED.
 - 月煞's 按 says 「不宜不忌」, yet its pages follow OVERLAP, so the wording alone does not predict behavior either.
 - 重日, 復日 and other `cancel_both` clauses were not tested.
 
@@ -155,12 +164,22 @@ same condition
 → then the 鋪註 「凡吉凶相抵不註忌X亦不註忌Y」 pairs
 ```
 
-- Scope: 劫煞 only.
-- 災煞 寅申巳亥 and 月煞 卯酉 are separate candidates on 2 pages each.
-- 月刑 and 天吏/閉日 with 德 should stay `cancel_both`.
-- Open precondition: 宜 evidence must cover 鳴吠對 (宜 安葬), or 安葬 is over-noted on 鳴吠對 days.
+- Status: a candidate only, PARTIALLY_SOURCE_WITNESSED. Scope: 劫煞 only.
+- 災煞 寅申巳亥 and 月煞 卯酉 are separate candidates with a few clusters each.
+- 月刑 and 天吏/閉日 with 德 stay unresolved. Keep them as they are.
+- Open precondition: 宜 evidence must cover 鳴吠對 (宜 安葬), or 安葬 is over-noted on 鳴吠對 days. Two of the three 丑 misses and the 巳-癸卯 miss depend on this.
 
 ## Migration impact (dry run, annotation only)
+
+**Largest exposure, not measured here:** since PR #31/#32 the deployed 卷十 scoring (`xiejiVol10Resolution`, flag `xiejiVol10Scoring`) has treated 劫煞 in 辰戌丑未 months without 德 as `no_annotation`, i.e. no penalty, in every year.
+
+Three counts appear across the two audits. They measure different things:
+
+| Count | Meaning |
+|---|---|
+| 235 dated rows (124 without 宜) | H1-B review: every `neither_recorded` row on the 劫煞 dates, an upper bound |
+| 102 dated rows on 15 dates | freeze category A: the 月表 prints 忌, Golden says unnoted, and no other modelled 忌 exists, on mapped headings only |
+| 113 dated rows on 18 dates | dry run: OVERLAP applied to all headings, including those without a 月表 term and the 丑 dates; over-predicts 安葬 on 鳴吠對 days |
 
 [`dryrun.json`](sources/p4-vol10/xiangdi-cancel-both-v1/dryrun.json) applies the frozen OVERLAP function to Golden v2. Every change is `neither_recorded` → `only_ji`:
 
@@ -189,12 +208,14 @@ Top 劫煞 headings: 般移 12, 豎柱上梁 12, 祈福 9, 求嗣 9, 結婚姻 9
 
 ## Non-inferences
 
-- The 劫煞 contradiction does not automatically invalidate other 相抵 clauses; 月刑 and 天吏 follow CANCEL_BOTH.
+- The 劫煞 contradiction does not automatically invalidate other 相抵 clauses; 月刑 and 天吏 with 德 remain unresolved.
 - A printed 忌 on the 月表 does not identify 劫煞 as the cause if another operand can explain it.
 - Golden v2 is project evidence, not historical authority.
 - 相抵 must not be translated directly to `cancel_both`, or to OVERLAP, without each clause's own evidence.
 - 德 behavior must not be globalised.
 - In-sample fit (16 劫煞 pages) is not out-of-sample confirmation.
+- Heading tallies are not independent tests; clusters are the unit.
+- Pages on puzhu:06 trigger days cannot separate CANCEL_BOTH from OVERLAP for the puzhu:06 headings.
 
 ## Artifacts and tests
 

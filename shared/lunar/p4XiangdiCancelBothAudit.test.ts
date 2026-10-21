@@ -105,6 +105,16 @@ describe('holdout (predictions frozen in 5c35a9e before the pages were fetched)'
     })
   })
 
+  it('classifies the holdout pages separately from the frozen scores', () => {
+    // 月刑 / 天吏 pages fall on puzhu:06 trigger days (天德/月德/德合), so they cannot separate the readings.
+    const classes: Record<string, string[]> = {}
+    for (const p of lock.pages) (classes[p.classification] ??= []).push(ctxOf(p))
+    expect(classes.SUPPORTS_OVERLAP).toEqual(['寅-戊子', '卯-戊戌', '酉-甲辰'])
+    expect(classes.SUPPORTS_CANCEL_BOTH).toEqual(['巳-癸卯'])
+    expect(classes.NOT_DISTINGUISHING).toEqual(['辰-壬辰', '戌-辛酉'])
+    expect(classes.CONTROL_MATCHES_GOLDEN).toHaveLength(8)
+  })
+
   it('agrees with Golden v2 on every compared heading of the 8 劫煞 control pages', () => {
     for (const t of holdout.controls)
       for (const h of t.headings) {

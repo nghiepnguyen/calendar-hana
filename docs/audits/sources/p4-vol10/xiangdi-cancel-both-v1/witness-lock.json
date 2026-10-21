@@ -27,7 +27,9 @@
     "天火"
    ],
    "yiLine": "祭祀入學沐浴",
-   "jiLine": "冠帶結婚姻納采問名嫁娶進人口求醫療病經絡醞釀伐木畋獵取魚破土安葬啟攢"
+   "jiLine": "冠帶結婚姻納采問名嫁娶進人口求醫療病經絡醞釀伐木畋獵取魚破土安葬啟攢",
+   "classification": "SUPPORTS_OVERLAP",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067693-n112.jpg",
@@ -51,7 +53,9 @@
     "元武"
    ],
    "yiLine": "祭祀入學",
-   "jiLine": "求醫療病經絡醞釀穿井伐木畋獵取魚"
+   "jiLine": "求醫療病經絡醞釀穿井伐木畋獵取魚",
+   "classification": "SUPPORTS_CANCEL_BOTH",
+   "note": "Candidate explanation: 鳴吠對 (宜 安葬) on the page is not modelled as 宜."
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067692-n107.jpg",
@@ -71,7 +75,9 @@
     "天牢"
    ],
    "yiLine": "取魚",
-   "jiLine": "祈福求嗣上冊受封上表章襲爵受封出行上官赴任臨政親民解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養"
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封出行上官赴任臨政親民解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養",
+   "classification": "SUPPORTS_OVERLAP",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067695-n113.jpg",
@@ -94,7 +100,9 @@
     "天刑"
    ],
    "yiLine": "",
-   "jiLine": "祈福求嗣襲爵受封出行上官赴任臨政親民解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣"
+   "jiLine": "祈福求嗣襲爵受封出行上官赴任臨政親民解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣",
+   "classification": "SUPPORTS_OVERLAP",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067693-n34.jpg",
@@ -117,7 +125,9 @@
     "月刑"
    ],
    "yiLine": "祭祀",
-   "jiLine": "求醫療病築隄防修造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木畋獵取魚栽種破土"
+   "jiLine": "求醫療病築隄防修造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木畋獵取魚栽種破土",
+   "classification": "NOT_DISTINGUISHING",
+   "note": "天德/月德 are puzhu:06 triggers in p4b-puzhu06-v3.json; puzhu:06 withholds 忌 for 開市/立券交易/納財/開倉庫出貨財, the very cluster OVERLAP missed."
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067696-n63.jpg",
@@ -142,7 +152,9 @@
     "五離"
    ],
    "yiLine": "祭祀沐浴剃頭整手足甲裁衣補垣塞穴掃舍宇",
-   "jiLine": "會親友求醫療病療目針刺醞釀畋獵取魚"
+   "jiLine": "會親友求醫療病療目針刺醞釀畋獵取魚",
+   "classification": "NOT_DISTINGUISHING",
+   "note": "天德合/月德合 are puzhu:06 triggers; same confound as 辰-壬辰."
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067694-n53.jpg",
@@ -164,7 +176,9 @@
     "朱雀"
    ],
    "yiLine": "祭祀沐浴捕捉",
-   "jiLine": "嫁娶求醫療病修倉庫醞釀開市立券交易納財開倉庫出貨財畋獵取魚"
+   "jiLine": "嫁娶求醫療病修倉庫醞釀開市立券交易納財開倉庫出貨財畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067692-n93.jpg",
@@ -188,7 +202,9 @@
     "白虎"
    ],
    "yiLine": "祭祀沐浴掃舍宇捕捉",
-   "jiLine": "安牀求醫療病修倉庫開市立券交易納財開倉庫出貨財畋獵取魚"
+   "jiLine": "安牀求醫療病修倉庫開市立券交易納財開倉庫出貨財畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067695-n99.jpg",
@@ -210,7 +226,9 @@
     "歸忌"
    ],
    "yiLine": "沐浴捕捉",
-   "jiLine": "祭祀移徙遠迴求醫療病修倉庫經絡開市立券交易納財開倉庫出貨財畋獵取魚"
+   "jiLine": "祭祀移徙遠迴求醫療病修倉庫經絡開市立券交易納財開倉庫出貨財畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067697-n59.jpg",
@@ -233,7 +251,9 @@
     "元武"
    ],
    "yiLine": "祭祀捕捉",
-   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢"
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067693-n59.jpg",
@@ -260,7 +280,9 @@
     "重日"
    ],
    "yiLine": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴整手足甲裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財掃舍宇栽種牧養納畜",
-   "jiLine": "出行剃頭求醫療病畋獵取魚"
+   "jiLine": "出行剃頭求醫療病畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067696-n53.jpg",
@@ -288,7 +310,9 @@
     "重日"
    ],
    "yiLine": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民移徙解除沐浴剃頭整手足甲裁衣豎柱上梁經絡掃舍宇牧養納畜",
-   "jiLine": "結婚姻納采問名嫁娶進人口求醫療病築隄防修造動土修倉庫醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣畋獵取魚栽種破土安葬"
+   "jiLine": "結婚姻納采問名嫁娶進人口求醫療病築隄防修造動土修倉庫醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣畋獵取魚栽種破土安葬",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067694-n93.jpg",
@@ -317,7 +341,9 @@
     "五離"
    ],
    "yiLine": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁掃舍宇栽種牧養納畜破土安葬",
-   "jiLine": "出行安牀求醫療病修倉庫開倉庫出貨財畋獵取魚"
+   "jiLine": "出行安牀求醫療病修倉庫開倉庫出貨財畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   },
   {
    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067697-n99.jpg",
@@ -344,7 +370,9 @@
     "五虛"
    ],
    "yiLine": "上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁立券交易納財掃舍宇栽種牧養納畜破土安葬啟攢",
-   "jiLine": "祭祀出行求醫療病修倉庫經絡開倉庫出貨財畋獵取魚"
+   "jiLine": "祭祀出行求醫療病修倉庫經絡開倉庫出貨財畋獵取魚",
+   "classification": "CONTROL_MATCHES_GOLDEN",
+   "note": ""
   }
  ],
  "freeze": [
