@@ -1,0 +1,3526 @@
+{
+ "version": "xiangdi-cancel-both-holdout-v1",
+ "note": "Frozen before these 14 pages were fetched. OVERLAP was formed after reading the 16 frozen pages; these pages are its first out-of-sample test. Printed = heading on the 忌 line.",
+ "puzhuPairs": [
+  [
+   [
+    "祈福"
+   ],
+   [
+    "求嗣"
+   ]
+  ],
+  [
+   [
+    "結婚姻"
+   ],
+   [
+    "納采問名",
+    "嫁娶"
+   ]
+  ],
+  [
+   [
+    "嫁娶"
+   ],
+   [
+    "結婚姻",
+    "納采問名",
+    "般移",
+    "安牀"
+   ]
+  ],
+  [
+   [
+    "般移"
+   ],
+   [
+    "安牀"
+   ]
+  ],
+  [
+   [
+    "安牀"
+   ],
+   [
+    "般移"
+   ]
+  ],
+  [
+   [
+    "興造動土"
+   ],
+   [
+    "豎柱上梁",
+    "修宮室",
+    "修倉庫",
+    "破屋壊垣"
+   ]
+  ],
+  [
+   [
+    "開市"
+   ],
+   [
+    "立券交易"
+   ]
+  ],
+  [
+   [
+    "納財"
+   ],
+   [
+    "開市",
+    "立券交易"
+   ]
+  ],
+  [
+   [
+    "立券交易"
+   ],
+   [
+    "開市",
+    "納財"
+   ]
+  ],
+  [
+   [
+    "開市",
+    "立券交易"
+   ],
+   [
+    "開倉庫出貨財"
+   ]
+  ],
+  [
+   [
+    "牧養"
+   ],
+   [
+    "納畜"
+   ]
+  ],
+  [
+   [
+    "納畜"
+   ],
+   [
+    "牧養"
+   ]
+  ]
+ ],
+ "cancelTest": [
+  {
+   "context": "寅-戊子",
+   "subject": "災煞",
+   "yuebiao": {
+    "item": "06067692.cn",
+    "leaf": "n30",
+    "url": "https://archive.org/download/06067692.cn/page/n30_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  },
+  {
+   "context": "巳-癸卯",
+   "subject": "災煞",
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n112",
+    "url": "https://archive.org/download/06067693.cn/page/n112_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  },
+  {
+   "context": "卯-戊戌",
+   "subject": "月煞",
+   "yuebiao": {
+    "item": "06067692.cn",
+    "leaf": "n107",
+    "url": "https://archive.org/download/06067692.cn/page/n107_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  },
+  {
+   "context": "酉-甲辰",
+   "subject": "月煞",
+   "yuebiao": {
+    "item": "06067695.cn",
+    "leaf": "n113",
+    "url": "https://archive.org/download/06067695.cn/page/n113_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  },
+  {
+   "context": "辰-壬辰",
+   "subject": "月刑",
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n34",
+    "url": "https://archive.org/download/06067693.cn/page/n34_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  },
+  {
+   "context": "戌-辛酉",
+   "subject": "天吏",
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n63",
+    "url": "https://archive.org/download/06067696.cn/page/n63_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ]
+  }
+ ],
+ "controls": [
+  {
+   "context": "午-辛亥",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n53",
+    "url": "https://archive.org/download/06067694.cn/page/n53_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 子午卯酉 執日 + 月德/月德合: readings coincide (all 宜)"
+  },
+  {
+   "context": "卯-甲申",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067692.cn",
+    "leaf": "n93",
+    "url": "https://archive.org/download/06067692.cn/page/n93_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開市",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 子午卯酉 執日 + 月德/月德合: readings coincide (all 宜)"
+  },
+  {
+   "context": "酉-庚寅",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067695.cn",
+    "leaf": "n99",
+    "url": "https://archive.org/download/06067695.cn/page/n99_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 子午卯酉 執日 + 月德/月德合: readings coincide (all 宜)"
+  },
+  {
+   "context": "子-丁巳",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n59",
+    "url": "https://archive.org/download/06067697.cn/page/n59_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開市",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": true,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "Golden as_usual (德作建論 named override)"
+  },
+  {
+   "context": "辰-丁巳",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n59",
+    "url": "https://archive.org/download/06067693.cn/page/n59_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "neither_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 + 德 (only_avoid)"
+  },
+  {
+   "context": "戌-辛亥",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n53",
+    "url": "https://archive.org/download/06067696.cn/page/n53_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "納財",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "only_ji",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 + 德 (only_avoid)"
+  },
+  {
+   "context": "未-甲申",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n93",
+    "url": "https://archive.org/download/06067694.cn/page/n93_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開市",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "only_ji",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 + 德 (only_avoid)"
+  },
+  {
+   "context": "丑-庚寅",
+   "subject": "刼煞",
+   "yuebiao": {
+    "item": "06067697.cn",
+    "leaf": "n99",
+    "url": "https://archive.org/download/06067697.cn/page/n99_w1200.jpg"
+   },
+   "headings": [
+    {
+     "heading": "祭祀",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "祈福",
+     "goldenState": "not_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求嗣",
+     "goldenState": "not_recorded",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "結婚姻",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "嫁娶",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納采問名",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "般移",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安牀",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "開市",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "立券交易",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納財",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "行幸遣使",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "宴會",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "入學",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "求醫療病",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "掃舍宇",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "整容剃頭",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "興造動土",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "營建宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "修宮室",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "豎柱上梁",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "修倉庫",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "開倉庫出貨財",
+     "goldenState": "both_present",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": true,
+     "overlap": true
+    },
+    {
+     "heading": "栽種",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "牧養",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "納畜",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "安葬",
+     "goldenState": "only_yi",
+     "yiEvidence": "true",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    },
+    {
+     "heading": "破屋壊垣",
+     "goldenState": "undetermined",
+     "yiEvidence": "unknown",
+     "xiangdiSubject": false,
+     "cancelBoth": null,
+     "overlap": null
+    },
+    {
+     "heading": "乘船渡水",
+     "goldenState": "not_recorded",
+     "yiEvidence": "false",
+     "xiangdiSubject": false,
+     "cancelBoth": false,
+     "overlap": false
+    }
+   ],
+   "role": "劫煞 + 德 (only_avoid)"
+  }
+ ]
+}
