@@ -1,0 +1,627 @@
+{
+ "version": "jiesha-overlap-impact-v1",
+ "baselinePolicy": "production: 卷十 刼煞 辰戌丑未 without 天德/月德/天德合/月德合 = cancel_both (P4 neither_recorded; 卷十 scoring no_annotation)",
+ "candidatePolicy": {
+  "A": "OVERLAP: in that scope a 劫煞 heading whose 宜 evidence is false keeps 忌; true/unknown unchanged; existing 鋪註 propagation and puzhu:06 run as in production",
+  "B": "A + 鳴吠對 (corrected 立成, 11 days) 宜啟攢 → 鋪註 「凡吉凶相抵有宜啟攢不註忌安葬」: 安葬 stays unnoted"
+ },
+ "supportedRange": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "scannedDays": 24471,
+ "full": {
+  "A": {
+   "affectedDates": 1636,
+   "affectedContexts": 16,
+   "affectedRows": {
+    "annotation": 15656,
+    "vol10VerdictRows": 15507,
+    "annotatedActivityRows": 15531,
+    "rawDeltaActivityRows": 15463,
+    "rawDeltaContributionRows": 15487,
+    "effectiveScoreRows": 15457,
+    "visibleActivityRows": 15457,
+    "eventScoreRows": 5352,
+    "p4HeadingRows": 149
+   },
+   "annotationChanges": {
+    "no_annotation→avoid (卷十 verdict)": 15507,
+    "neither_recorded→only_ji": 123,
+    "neither_recorded→not_recorded": 26
+   },
+   "headings": {
+    "安牀": 16,
+    "嫁娶": 12,
+    "納采問名": 12,
+    "結婚姻": 12,
+    "般移": 12,
+    "豎柱上梁": 12,
+    "納畜": 9,
+    "開市": 9,
+    "求嗣": 9,
+    "祈福": 9,
+    "宴會": 8,
+    "安葬": 6,
+    "立券交易": 5,
+    "營建宮室": 3,
+    "破屋壊垣": 3,
+    "牧養": 3,
+    "納財": 3,
+    "修宮室": 2,
+    "興造動土": 2,
+    "修倉庫": 1,
+    "栽種": 1
+   },
+   "scoreChanges": {
+    "rawDeltaActivityRows": 15463,
+    "effectiveScoreRows": 15457,
+    "magnitude": {
+     "-30": 12,
+     "-15": 15445
+    },
+    "noEffectReasons": {
+     "activity_state_unchanged (another heading already decides the activity)": 64,
+     "score_unchanged_after_cap_or_aggregation": 6,
+     "no_contribution_row_changed (no applied 劫煞/chain row to restore)": 4
+    }
+   },
+   "ratingChanges": {
+    "neutral→watch": 12478,
+    "watch→avoid": 2149,
+    "consider→avoid": 818,
+    "neutral→avoid": 12
+   },
+   "visibleChanges": {
+    "activityStatusOrHardWarningRows": 15457,
+    "eventClassification": {
+     "caution→not_recommended": 3314
+    },
+    "eventScoreRows": 5352
+   },
+   "topActivities": {
+    "bed_installation": 1631,
+    "construction": 1618,
+    "wedding": 1422,
+    "burial": 1309,
+    "engagement": 1034,
+    "moving": 1034,
+    "beam_raising": 1034,
+    "groundbreaking": 1024,
+    "renovation": 1024,
+    "meeting": 925
+   },
+   "unresolvedCases": {
+    "p4 heading 宜 unknown": 0,
+    "卷十 activity 宜 unknown": 1762
+   }
+  },
+  "B": {
+   "affectedDates": 1636,
+   "affectedContexts": 16,
+   "affectedRows": {
+    "annotation": 15354,
+    "vol10VerdictRows": 15208,
+    "annotatedActivityRows": 15232,
+    "rawDeltaActivityRows": 15164,
+    "rawDeltaContributionRows": 15188,
+    "effectiveScoreRows": 15158,
+    "visibleActivityRows": 15158,
+    "eventScoreRows": 5352,
+    "p4HeadingRows": 146
+   },
+   "annotationChanges": {
+    "no_annotation→avoid (卷十 verdict)": 15208,
+    "neither_recorded→only_ji": 120,
+    "neither_recorded→not_recorded": 26
+   },
+   "headings": {
+    "安牀": 16,
+    "嫁娶": 12,
+    "納采問名": 12,
+    "結婚姻": 12,
+    "般移": 12,
+    "豎柱上梁": 12,
+    "納畜": 9,
+    "開市": 9,
+    "求嗣": 9,
+    "祈福": 9,
+    "宴會": 8,
+    "立券交易": 5,
+    "安葬": 3,
+    "營建宮室": 3,
+    "破屋壊垣": 3,
+    "牧養": 3,
+    "納財": 3,
+    "修宮室": 2,
+    "興造動土": 2,
+    "修倉庫": 1,
+    "栽種": 1
+   },
+   "scoreChanges": {
+    "rawDeltaActivityRows": 15164,
+    "effectiveScoreRows": 15158,
+    "magnitude": {
+     "-30": 12,
+     "-15": 15146
+    },
+    "noEffectReasons": {
+     "activity_state_unchanged (another heading already decides the activity)": 64,
+     "score_unchanged_after_cap_or_aggregation": 6,
+     "no_contribution_row_changed (no applied 劫煞/chain row to restore)": 4
+    }
+   },
+   "ratingChanges": {
+    "neutral→watch": 12179,
+    "watch→avoid": 2149,
+    "consider→avoid": 818,
+    "neutral→avoid": 12
+   },
+   "visibleChanges": {
+    "activityStatusOrHardWarningRows": 15158,
+    "eventClassification": {
+     "caution→not_recommended": 3314
+    },
+    "eventScoreRows": 5352
+   },
+   "topActivities": {
+    "bed_installation": 1631,
+    "construction": 1618,
+    "wedding": 1422,
+    "engagement": 1034,
+    "moving": 1034,
+    "beam_raising": 1034,
+    "groundbreaking": 1024,
+    "renovation": 1024,
+    "burial": 1010,
+    "meeting": 925
+   },
+   "unresolvedCases": {
+    "p4 heading 宜 unknown": 0,
+    "卷十 activity 宜 unknown": 1762
+   }
+  }
+ },
+ "witnessWindow": {
+  "A": {
+   "affectedDates": 21,
+   "affectedContexts": 10,
+   "affectedRows": {
+    "annotation": 338,
+    "p4HeadingRows": 149,
+    "vol10VerdictRows": 189,
+    "annotatedActivityRows": 213,
+    "rawDeltaActivityRows": 145,
+    "rawDeltaContributionRows": 169,
+    "effectiveScoreRows": 139,
+    "visibleActivityRows": 139,
+    "eventScoreRows": 68
+   },
+   "annotationChanges": {
+    "no_annotation→avoid (卷十 verdict)": 189,
+    "neither_recorded→only_ji": 123,
+    "neither_recorded→not_recorded": 26
+   },
+   "headings": {
+    "安牀": 16,
+    "嫁娶": 12,
+    "納采問名": 12,
+    "結婚姻": 12,
+    "般移": 12,
+    "豎柱上梁": 12,
+    "納畜": 9,
+    "開市": 9,
+    "求嗣": 9,
+    "祈福": 9,
+    "宴會": 8,
+    "安葬": 6,
+    "立券交易": 5,
+    "營建宮室": 3,
+    "破屋壊垣": 3,
+    "牧養": 3,
+    "納財": 3,
+    "修宮室": 2,
+    "興造動土": 2,
+    "修倉庫": 1,
+    "栽種": 1
+   },
+   "scoreChanges": {
+    "rawDeltaActivityRows": 145,
+    "effectiveScoreRows": 139,
+    "magnitude": {
+     "-30": 12,
+     "-15": 127
+    },
+    "noEffectReasons": {
+     "activity_state_unchanged (another heading already decides the activity)": 64,
+     "score_unchanged_after_cap_or_aggregation": 6,
+     "no_contribution_row_changed (no applied 劫煞/chain row to restore)": 4
+    }
+   },
+   "ratingChanges": {
+    "neutral→watch": 127,
+    "neutral→avoid": 12
+   },
+   "visibleChanges": {
+    "activityStatusOrHardWarningRows": 139,
+    "eventClassification": {
+     "caution→not_recommended": 50
+    },
+    "eventScoreRows": 68
+   },
+   "topActivities": {
+    "bed_installation": 16,
+    "wedding": 12,
+    "engagement": 12,
+    "moving": 12,
+    "beam_raising": 12,
+    "opening": 9,
+    "business": 9,
+    "pray_blessing": 9,
+    "pray_children": 9,
+    "meeting": 8
+   },
+   "unresolvedCases": {
+    "p4 heading 宜 unknown": 0,
+    "卷十 activity 宜 unknown": 18
+   },
+   "witnessClass": {
+    "SUPPORTED_BY_WITNESS": 132,
+    "CONSISTENT_WITH_CANDIDATE": 12,
+    "AMBIGUOUS": 5
+   },
+   "witnessNonSupported": [
+    {
+     "date": "2025-01-09",
+     "context": "丑-戊寅",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-01-09",
+     "context": "丑-戊寅",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-02-02",
+     "context": "丑-壬寅",
+     "heading": "安葬",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "AMBIGUOUS"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "修倉庫",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "修宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "興造動土",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2026-01-28",
+     "context": "丑-壬寅",
+     "heading": "安葬",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "AMBIGUOUS"
+    },
+    {
+     "date": "2026-08-02",
+     "context": "未-戊申",
+     "heading": "立券交易",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "AMBIGUOUS"
+    },
+    {
+     "date": "2027-01-23",
+     "context": "丑-壬寅",
+     "heading": "安葬",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "AMBIGUOUS"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "修宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "栽種",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "興造動土",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-28",
+     "context": "未-戊申",
+     "heading": "立券交易",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "AMBIGUOUS"
+    }
+   ]
+  },
+  "B": {
+   "affectedDates": 21,
+   "affectedContexts": 10,
+   "affectedRows": {
+    "annotation": 332,
+    "p4HeadingRows": 146,
+    "vol10VerdictRows": 186,
+    "annotatedActivityRows": 210,
+    "rawDeltaActivityRows": 142,
+    "rawDeltaContributionRows": 166,
+    "effectiveScoreRows": 136,
+    "visibleActivityRows": 136,
+    "eventScoreRows": 68
+   },
+   "annotationChanges": {
+    "no_annotation→avoid (卷十 verdict)": 186,
+    "neither_recorded→only_ji": 120,
+    "neither_recorded→not_recorded": 26
+   },
+   "headings": {
+    "安牀": 16,
+    "嫁娶": 12,
+    "納采問名": 12,
+    "結婚姻": 12,
+    "般移": 12,
+    "豎柱上梁": 12,
+    "納畜": 9,
+    "開市": 9,
+    "求嗣": 9,
+    "祈福": 9,
+    "宴會": 8,
+    "立券交易": 5,
+    "安葬": 3,
+    "營建宮室": 3,
+    "破屋壊垣": 3,
+    "牧養": 3,
+    "納財": 3,
+    "修宮室": 2,
+    "興造動土": 2,
+    "修倉庫": 1,
+    "栽種": 1
+   },
+   "scoreChanges": {
+    "rawDeltaActivityRows": 142,
+    "effectiveScoreRows": 136,
+    "magnitude": {
+     "-30": 12,
+     "-15": 124
+    },
+    "noEffectReasons": {
+     "activity_state_unchanged (another heading already decides the activity)": 64,
+     "score_unchanged_after_cap_or_aggregation": 6,
+     "no_contribution_row_changed (no applied 劫煞/chain row to restore)": 4
+    }
+   },
+   "ratingChanges": {
+    "neutral→watch": 124,
+    "neutral→avoid": 12
+   },
+   "visibleChanges": {
+    "activityStatusOrHardWarningRows": 136,
+    "eventClassification": {
+     "caution→not_recommended": 50
+    },
+    "eventScoreRows": 68
+   },
+   "topActivities": {
+    "bed_installation": 16,
+    "wedding": 12,
+    "engagement": 12,
+    "moving": 12,
+    "beam_raising": 12,
+    "opening": 9,
+    "business": 9,
+    "pray_blessing": 9,
+    "pray_children": 9,
+    "meeting": 8
+   },
+   "unresolvedCases": {
+    "p4 heading 宜 unknown": 0,
+    "卷十 activity 宜 unknown": 18
+   },
+   "witnessClass": {
+    "SUPPORTED_BY_WITNESS": 132,
+    "CONSISTENT_WITH_CANDIDATE": 12,
+    "AMBIGUOUS": 2
+   },
+   "witnessNonSupported": [
+    {
+     "date": "2025-01-09",
+     "context": "丑-戊寅",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-01-09",
+     "context": "丑-戊寅",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "修倉庫",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "修宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2025-04-06",
+     "context": "辰-乙巳",
+     "heading": "興造動土",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2026-08-02",
+     "context": "未-戊申",
+     "heading": "立券交易",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "AMBIGUOUS"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "修宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "栽種",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "營建宮室",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "破屋壊垣",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-16",
+     "context": "未-丙申",
+     "heading": "興造動土",
+     "from": "neither_recorded",
+     "to": "only_ji",
+     "class": "CONSISTENT_WITH_CANDIDATE"
+    },
+    {
+     "date": "2027-07-28",
+     "context": "未-戊申",
+     "heading": "立券交易",
+     "from": "neither_recorded",
+     "to": "not_recorded",
+     "class": "AMBIGUOUS"
+    }
+   ]
+  }
+ },
+ "vol10LayerPairsCheck": {
+  "A": {
+   "notSupported": 2085,
+   "unknownInModel": 2653,
+   "supported": 10580
+  },
+  "B": {
+   "notSupported": 2085,
+   "unknownInModel": 2653,
+   "supported": 10284
+  }
+ }
+}
