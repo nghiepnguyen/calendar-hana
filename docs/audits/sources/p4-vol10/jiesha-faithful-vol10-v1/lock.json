@@ -2,7 +2,7 @@
  "version": "jiesha-faithful-vol10-lock-v1",
  "date": "2026-10-21",
  "run": "JIESHA_FAITHFUL_FULL=1 npx vitest run shared/lunar/p4JieshaFaithfulVol10.test.ts (3/3 pass, 761 s); python3 -I docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/build_faithful.py",
- "note": "Audit-only three-way sweep 1900-01-01..2100-12-31 (24,471 days with day branch 寅巳申亥 scanned, 1,636 in scope). Harness hashed exactly as run.",
+ "note": "Audit-only three-way sweep 1900-01-01..2100-12-31 (24,471 days with day branch 寅巳申亥 scanned, 1,636 in scope). Harness hashed exactly as run. Follow-up: sensitivity.json (engine rows per context, p4JieshaFaithfulSensitivity.test.ts) and status.json (build_status.py) added without re-running the sweep.",
  "files": [
   {
    "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/raw.json",
@@ -23,6 +23,22 @@
   {
    "path": "shared/lunar/p4JieshaFaithfulVol10.test.ts",
    "sha256": "c1762c46251218a499dae2d054bd21fb805e17b84cd8d1ef2d1ae5dd81798259"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/sensitivity.json",
+   "sha256": "958fb40c3b1c3222bd69e44261b5656796eb86a8ccd819978c4655740b5b6993"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/status.json",
+   "sha256": "0b32958b9413d25c2cb9162cb8ebb6a2fb28d5e3c5bfe3928930cc13bfb67ed9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/build_status.py",
+   "sha256": "32e844ea7cc73fcc1be467e64034414e68869ce60ecfe60003f66235fd7e7e04"
+  },
+  {
+   "path": "shared/lunar/p4JieshaFaithfulSensitivity.test.ts",
+   "sha256": "d4cd75e333839bf6b588b518bad9a561314af8541836c8cf24b8b435f57e7f93"
   }
  ]
 }

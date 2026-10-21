@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import fullres from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/fullres-check.json'
 import faithful from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/faithful.json'
 import lock from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/lock.json'
+import status from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/status.json'
 
 // Audit only: freezes the faithful 卷十 劫煞 simulator artifact (docs/audits/p4-jiesha-faithful-vol10.md).
 describe('faithful 卷十 劫煞 artifact', () => {
@@ -39,5 +40,8 @@ describe('faithful 卷十 劫煞 artifact', () => {
     expect(faithful.verdictTable.varyingAcrossDates).toEqual([])
     expect(fullres.summary).toEqual({ cells: 87, matches: 87, uncertain: 0, pages: 14 })
     expect(faithful.witnessWindow.contradictions).toHaveLength(15)
+    // No cell depends on the restored-scope label or on cross-god (F1) propagation.
+    expect(status.cells).toEqual({ 'CONFIRMED:blank': 210, 'CONFIRMED:avoid': 174 })
+    expect(status.xuGuiHai開倉庫.puzhu06).toBe('lift:QL')
   })
 })

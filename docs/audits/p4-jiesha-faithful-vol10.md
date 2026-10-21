@@ -52,6 +52,8 @@ Within that scope, for each 劫煞 heading:
 
 鋪註 05 was added after the first full run. That run's calibration showed 19 求醫療病 rows printed on every page while the candidate left them blank.
 
+**This is in-sample.** The text is direct, but the only witnesses are those 19 rows. `medical` is now the largest single activity (1,636 rows), and the +5…+30 score anomaly comes from this addition.
+
 **Faithful 卷十 verdict** for an activity: `avoid` if 劫煞's 忌 survives on any of its headings in the P4 engine (state `only_ji` or `both_present` with 刼煞 in the trace); otherwise blank.
 
 Unknown operands outside 2025–2027 are moon phase, soil and 母倉. Each is enumerated over its possible values (母倉 through valid 2025 stand-in inputs; the stand-ins are verified to flip 宜 on 辰-巳 days).
@@ -93,7 +95,12 @@ The engine says yes: it lifts the whole row. The witness-window rows where this 
 
 No source sentence decides the question. These rows stay unresolved in the P4 layer.
 
-**F1 does not affect the 卷十 劫煞 verdict**, which only asks whether 劫煞's own 忌 survives. A pair lifting 劫煞's own 忌 from its trigger is the same-scope case the 鋪註 text states.
+**F1 does not reach the 卷十 劫煞 verdict. This was checked, not assumed** ([`sensitivity.json`](sources/p4-vol10/jiesha-faithful-vol10-v1/sensitivity.json): engine rows for all 16 contexts, one representative date each).
+
+- All 31 propagations there are triggered by a 劫煞-listed heading that has 宜. That is 劫煞's own 相抵, so it is same-god.
+- No 劫煞 verdict depends on a trigger unnoted by another god.
+
+F1 stays open for the P4 heading rows only.
 
 ## The 2,085 "not supported" upper-bound rows
 
@@ -130,7 +137,17 @@ Production is the reference. Changes are against production; 24,471 days were sc
 | Visible activity changes | — | 15,158 | 17,239 |
 | Event classification changes (caution→not_recommended) | — | 3,314 | 2,408 |
 
-Faithful status split: CONFIRMED 17,949 avoid and 21,315 blank; SOURCE_DEPENDENT 0; UNRESOLVED 0. "CONFIRMED" means the verdict is invariant over every unknown operand under the modelled sources. It is not out-of-sample confirmation.
+Faithful status split: CONFIRMED 17,949 avoid and 21,315 blank; SOURCE_DEPENDENT 0; UNRESOLVED 0.
+
+"CONFIRMED" means: decided under the current OWNER_ADOPTED inputs (puzhu:06 Q1–Q4a, P5 rule D, 母倉, H1-B, soil convention) and invariant over every unknown date operand. It is not out-of-sample confirmation.
+
+[`status.json`](sources/p4-vol10/jiesha-faithful-vol10-v1/status.json) re-tags all 384 cells:
+
+- **Label dependence:** relabelling the restored 劫煞 scope as `as_usual` makes puzhu:06 throw a SPEC_GAP (grade action `both_present`), and `only_avoid` would trip its protected-source guard. The engine has no valid label, which is a design decision for any migration.
+  - Under the current `cancel_both` label, puzhu:06 touches 12 rows in the 16 contexts. Propagation lifts all 12 afterwards, so no verdict depends on the label.
+  - 0 LABEL_DEPENDENT cells.
+- **F1 dependence:** 0 cells (see F1).
+- **Re-split by cell status:** all 17,949 annotation rows, 17,242 score rows, 17,239 rating rows and 2,408 event changes are CONFIRMED.
 
 **Why faithful exceeds the "upper bound":**
 
@@ -178,7 +195,7 @@ Every comparable heading on the 16 locked 劫煞 pages, against the faithful P4 
 - **The 15 contradictions:**
   - 10 are F1 propagation rows: 戌-乙亥 / 戌-丁亥 開倉庫出貨財, and 未-戊申 結婚姻, 納采問名 and 立券交易.
   - 2 are the 未-戊申 納財 宜 mismatch.
-  - 3 are 戌-癸亥 開倉庫出貨財. The engine removes 五虛's 忌 there without propagation, and that print is still unattributed from the 相抵 audit.
+  - 3 are 戌-癸亥 開倉庫出貨財. The engine row reads `puzhu06: lift:QL`: owner decision Q4 lets puzhu:06 (trigger 四相) lift 五虛's 忌, yet the page prints 開倉庫. **That is a witness against an owner-adopted decision (puzhu:06 Q4), listed under owner items.**
   - None concerns whether 劫煞's own 忌 survives.
 - **Distinguishing clusters:** 42/42 (from the 相抵 audit).
 - **Status:** in-sample. All 16 contexts were read before the rule was formulated.
@@ -211,8 +228,8 @@ Each was re-read from crops of the original locked bytes at about 1.7× the earl
 
 | Gate | Status |
 |---|---|
-| F1 cross-god propagation | SOURCE_DEPENDENT (P4 layer only; does not touch the 卷十 verdict) |
-| F2 relevant 鋪註 coverage | PARTIAL. Inventoried and simulated, but the puzhu:17 不將 exception reading and the 未-戊申 納財 宜 mismatch are open |
+| F1 cross-god propagation | SOURCE_DEPENDENT for P4 heading rows; checked to reach 0 卷十 verdict cells |
+| F2 relevant 鋪註 coverage | PARTIAL. Inventoried and simulated, but these are open: the puzhu:17 不將 exception, the puzhu:06 Q4 witness (戌-癸亥), the 未-戊申 納財 宜 mismatch, and the restored-scope label |
 | F3 2,085 rows explained | YES, 100% |
 | F4 2,653 rows resolved | YES, 2,653/2,653 CONFIRMED |
 | F5 full-resolution witnesses | PASSED, 87/87 |
@@ -223,6 +240,16 @@ Each was re-read from crops of the original locked bytes at about 1.7× the earl
 
 - For the **卷十 layer outside 2025–2027** on its own, the evidence and the measured impact are sufficient. What remains is architecture work (build Option C) and the standing caveats: in-sample witnesses only, and a single AI reviewer.
 - The **P4 layer** stays blocked by F1, the puzhu:17 exception and the medical adapter interaction.
+
+## Owner items
+
+1. **F1 cross-god propagation (P4 layer):** the evidence is mixed.
+2. **puzhu:17 不將 exception reading:** does it block propagation from 嫁娶?
+3. **puzhu:06 Q4 vs 戌-癸亥 開倉庫:** a witness against the adopted decision.
+4. **未-戊申 納財 宜 evidence:** the page prints 納財 忌.
+5. **Restored-scope label:** the engine has no valid label (SPEC_GAP).
+6. **P4 adapter medical interaction:** 21 rows where the score rises while the status tightens.
+7. **Repository weight:** the audit branches commit about 29 MB of `raw.json` and about 20 MB of scans to a public repo. It could be reduced, e.g. by gzipping `raw.json` or keeping only the summaries plus hashes. Not changed.
 
 ## Successor artifacts if migration is approved (none created)
 
