@@ -1,0 +1,53 @@
+{
+  "version": "s1-tuwang-research-lock-v1",
+  "status": "RESEARCH_EVIDENCE_ONLY_NOT_AUTHORITY",
+  "retrieved": "2026-10-21",
+  "note": "Wikisource transcriptions pinned by oldid (action=raw). Quotes checked against the saved bytes. Not used as runtime input.",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/s1-tuwang/tuibu-jieli-shang.raw.txt",
+      "title": "推步捷例 上 (南相吉, Joseon, header y=1861)",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=2393440&action=raw",
+      "revid": 2393440,
+      "sha256": "76193ffabee048634b74caad369d4d26aa89a0b7af18a56ba44e1946e3dd2216",
+      "quotes": [
+        "自四立節前一辰，逆數至十八日，爲土王用事。",
+        "寄旺四時共日七十二日。",
+        "土王後巳午母倉日，添註納財，牧養，納畜。",
+        "道光戊申，立秋値庚，時刻在戌正，而淸置末伏於其日，鄕置末伏於次庚，以爲相左。"
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/s1-tuwang/mingshi-035.raw.txt",
+      "title": "明史 卷35 曆志 (大統曆)",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=2594649&action=raw",
+      "revid": 2594649,
+      "sha256": "510c32d3c10bfb18e1b9d732e59cc067a9bbc60c78b92c36c90051875241a66d",
+      "quotes": [
+        "土王策三萬零四百三十六分八十七秒五十微。",
+        "推土王用事　置穀雨、大暑、霜降、大寒恆氣日，減土王策，如不及減，加紀法減之，即各得土王用事日。"
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/s1-tuwang/gujin-lvlikao-skqs-036.raw.txt",
+      "title": "古今律厯考 (四庫全書本) 卷36",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=771682&action=raw",
+      "revid": 771682,
+      "sha256": "4d9f4d94191def9180f651b6b3e8afe82ab3112132a9dbda6d59ba4edcc6ae3f",
+      "quotes": [
+        "得毎季土王十八日二十六刻二十一分二十五秒以減正氣三十日四十三刻六十八分七十五秒餘一十二日一十七刻四十七分五十秒為土王策以加四季節各大小餘分秒内滿紀去之得土王用事日辰"
+      ]
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/s1-tuwang/songshi-skqs-068.raw.txt",
+      "title": "宋史 (四庫全書本) 卷68 律曆志",
+      "url": "https://zh.wikisource.org/w/index.php?oldid=757353&action=raw",
+      "revid": 757353,
+      "sha256": "3dfde0e9cfbebc261d44c7ad730cb69417777427e2cd5fb3b1cd6322ff266a6c",
+      "quotes": [
+        "以土王筞加四季之節大小餘秒命從甲子算外即其月土王用事日",
+        "乾元以土王筞減四季中氣大小餘儀天以土王率加四季大小餘"
+      ]
+    }
+  ]
+}
