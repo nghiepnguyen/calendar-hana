@@ -1,0 +1,24 @@
+{
+ "version": "weishen-nacai-puzhu21-v1",
+ "page": {
+  "context": "未-戊申",
+  "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+  "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+  "volume": "卷二十五",
+  "officer": "除",
+  "jiShen": ["四相", "陽德", "相日", "吉期", "不將", "益後", "除神", "司命"],
+  "xiongShen": ["劫煞", "天賊", "五虛", "五離"],
+  "yiLine": "祭祀沐浴掃舍宇",
+  "jiLineColumns": ["忌上冊受封上表章會親友出行結婚姻納采", "問名安牀求醫療病修倉庫立券交易納財", "開倉庫出貨財破土安葬啟攢"]
+ },
+ "readAfter": "718f06c (prediction freeze)",
+ "method": "Reused H1-B bytes (not duplicated); 吉神 block and all three 忌 columns re-read by eye from crops of the stored JPG (highest resolution stored, archive.org n117_w1200). No OCR.",
+ "cells": {
+  "四相 (吉神)": {"printed": true, "confidence": "high"},
+  "納財 (宜 line)": {"printed": false, "confidence": "high"},
+  "納財": {"printed": true, "confidence": "high", "segmentation": "column 2 ends 「立券交易納財」; column 3 starts 「開倉庫出貨財」, so 納財 is its own heading, not part of 開倉庫出貨財"},
+  "開市": {"printed": false, "confidence": "high", "segmentation": "no 開 before 立券交易 (修倉庫立券交易); the only 開 is 開倉庫出貨財 at the top of column 3"},
+  "立券交易": {"printed": true, "confidence": "high"},
+  "開倉庫出貨財": {"printed": true, "confidence": "high", "note": "explained by 五虛 / 天賊 under every reading; not deciding"}
+ }
+}

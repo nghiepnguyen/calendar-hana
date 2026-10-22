@@ -27,7 +27,6 @@ const S = vi.hoisted(() => ({
   n: null as null | 'B',
   nc: [] as string[],
 }))
-const CL2 = ['百忌亥', '厭對', '八專', '四忌', '四窮']
 const SOIL_MONTHS = '辰戌丑未'
 // 卷五 立成 as corrected (「今圖依起例改正」): 三子 四寅 四卯; matches 67/67 locked 月表 pages.
 const MINGFEI_DUI = new Set('丙子 庚子 壬子 甲寅 丙寅 庚寅 壬寅 乙卯 丁卯 辛卯 癸卯'.split(' '))
@@ -405,6 +404,70 @@ describe('未-戊申 納財 / puzhu:21 audit', () => {
         JSON.stringify({ dates: dates.length, ...out }, null, 1) + '\n',
       )
       expect(Object.keys(out)).toHaveLength(2)
+    },
+  )
+
+  it.skipIf(!process.env.NACAI_FULL)(
+    'sensitivity: N-B against N-A on every 未-戊申 scope date (activities, ratings, events)',
+    { timeout: 3_600_000 },
+    async () => {
+      const dates = (scopeDates as Record<string, string[]>)['未-戊申']!
+      // One module graph per side: getAlmanac caches by date.
+      const sideAll = async (v: (typeof VARIANTS)[number]) => {
+        const { F, run } = await setup()
+        await import('./p4AlmanacHeadings') // registers the production provider, as the app does
+        const { getAlmanac } = await import('./almanac')
+        const { evaluateEventDay } = await import('./eventEvaluation')
+        const { EVENT_OPTIONS } = await import('./eventMapping')
+        return Object.fromEntries(
+          dates.map((date) => [
+            date,
+            run(v, () => {
+              const f = F(date, '未', '戊申')
+              S.fv = Object.fromEntries(
+                Object.entries(f.activities).map(([a, x]) => [a, x.verdict]),
+              )
+              S.mode = 'F'
+              S.date = date
+              try {
+                const al = getAlmanac(date as never)
+                return {
+                  acts: Object.fromEntries(
+                    al.activityRecommendations.map((r) => [r.activityId, [r.score, r.status]]),
+                  ),
+                  events: EVENT_OPTIONS.map(([id]) => [
+                    id,
+                    evaluateEventDay(date, id, {}).classification,
+                  ]),
+                }
+              } finally {
+                S.mode = null
+                S.fv = {}
+              }
+            }),
+          ]),
+        )
+      }
+      const A = await sideAll(null)
+      const B = await sideAll('B')
+      const side = (v: (typeof VARIANTS)[number], date: string) => (v ? B : A)[date]!
+      const rows: unknown[] = []
+      for (const date of dates) {
+        const a = side(null, date)
+        const b = side('B', date)
+        for (const [id, x] of Object.entries(a.acts)) {
+          const y = b.acts[id]!
+          if (x[0] !== y[0] || x[1] !== y[1]) rows.push({ date, activity: id, from: x, to: y })
+        }
+        a.events.forEach(([id, c], k) => {
+          if (c !== b.events[k]![1]) rows.push({ date, event: id, from: c, to: b.events[k]![1] })
+        })
+      }
+      writeFileSync(
+        `${DIR}/sensitivity.json`,
+        JSON.stringify({ dates: dates.length, rows }, null, 1) + '\n',
+      )
+      expect(rows.length).toBeGreaterThan(0)
     },
   )
 })

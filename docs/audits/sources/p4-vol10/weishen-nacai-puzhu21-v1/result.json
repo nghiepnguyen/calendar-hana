@@ -1,0 +1,101 @@
+{
+ "version": "weishen-nacai-puzhu21-v1",
+ "witnessScore": {
+  "N-A": {
+   "supports": 1,
+   "contradicts": [
+    "納財",
+    "立券交易"
+   ]
+  },
+  "N-C": {
+   "supports": 2,
+   "contradicts": [
+    "納財"
+   ]
+  },
+  "N-B": {
+   "supports": 2,
+   "contradicts": [
+    "開市"
+   ]
+  },
+  "N-B6": {
+   "supports": 2,
+   "contradicts": [
+    "納財"
+   ]
+  }
+ },
+ "tables": {
+  "cells": [
+   384,
+   384,
+   384
+  ],
+  "faithfulToP17A": {
+   "未-壬申:engagement": [
+    "blank",
+    "avoid"
+   ],
+   "未-壬申:moving": [
+    "blank",
+    "avoid"
+   ],
+   "未-壬申:wedding": [
+    "blank",
+    "avoid"
+   ]
+  },
+  "p17AToSourceReading": {},
+  "p17AToPageLiteralNB": {
+   "未-戊申:opening": [
+    "blank",
+    "avoid"
+   ],
+   "未-戊申:contract": [
+    "blank",
+    "avoid"
+   ],
+   "未-戊申:transaction": [
+    "blank",
+    "avoid"
+   ],
+   "未-戊申:finance": [
+    "blank",
+    "avoid"
+   ],
+   "未-戊申:business": [
+    "blank",
+    "avoid"
+   ]
+  },
+  "avoidCounts": {
+   "faithful": 174,
+   "P17-A": 177,
+   "N-B": 182
+  },
+  "varyingAcrossDates": []
+ },
+ "sensitivityNB": {
+  "dates": 108,
+  "activityRows": 328,
+  "byActivity": {
+   "opening": 108,
+   "business": 108,
+   "finance": 108,
+   "contract": 2,
+   "transaction": 2
+  },
+  "scoreDelta": {
+   "-15": 328
+  },
+  "ratings": {
+   "neutral→watch": 324,
+   "watch→avoid": 4
+  },
+  "events": {
+   "open_business:caution→not_recommended": 108
+  }
+ }
+}
