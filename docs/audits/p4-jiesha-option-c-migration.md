@@ -2,7 +2,16 @@
 
 2026-10-22, branch `claude/jiesha-option-c-migration`, parent `681c692`. Owner approval covers Option C, using the approved runtime projection (Option 1).
 
-Nothing has been pushed, merged or deployed.
+**Released 2026-10-22:** [PR #87](https://github.com/nghiepnguyen/calendar-hana/pull/87), merge `85736fd`, [Deploy #30](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39806855626) SUCCESS. `/version.json` reports build `85736fd`; the bundle is `index-DFKQlWND.js`, SHA-256 `2ea886f5…143b`.
+
+- `faithful-v1` is the production default.
+- Golden v2 is active.
+- `legacy-cancel-both` is kept for regression and rollback.
+- P4 Golden v2 and astronomy/JPL are unchanged.
+- G1 and G2 are open debt that does not block the release.
+- Roadmap status: **DONE**.
+
+Before the merge, `ci:p4` passed (13 steps) and `ci:full` passed.
 
 Artifacts are in `sources/p4-vol10/jiesha-option-c-migration-v1/`. The approved candidate (`chou-bingyin-yuede-v1/candidate-final.json`, SHA-256 `b24f6f68…1946`) is unchanged.
 
