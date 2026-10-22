@@ -1,0 +1,24 @@
+{
+ "version": "option-c-final-gate-v1",
+ "question": "丑-丙寅 printed 月德: D-A (calculated, no 月德) vs D-B (printed 月德 honoured)",
+ "dates": 99,
+ "cellsDiffering": [
+  "丑-丙寅:construction:avoid→blank",
+  "丑-丙寅:warehouse:avoid→blank"
+ ],
+ "verdictRows": 198,
+ "activityRows": 198,
+ "scoreDelta": {
+  "15": 198
+ },
+ "ratings": {
+  "construction:avoid→watch": 61,
+  "warehouse:avoid→watch": 61,
+  "construction:watch→neutral": 38,
+  "warehouse:watch→neutral": 38
+ },
+ "events": 0,
+ "classification": "VALUE_AFFECTING_SCOPE_UNCERTAINTY",
+ "gate": "FAIL: STOP (no candidate authority generated)",
+ "pageWitness": "Cannot decide: 營建宮室 (construction) has no 月表 term; 修倉庫 (warehouse) is printed under both readings (天賊 與德合併猶忌)."
+}

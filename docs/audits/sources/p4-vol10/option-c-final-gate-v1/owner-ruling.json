@@ -1,0 +1,11 @@
+{
+ "version": "option-c-final-gate-v1",
+ "ruling": "OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS",
+ "date": "2026-10-22",
+ "scope": "LOCAL: 未-戊申 納財 only. Not a general policy that source prose outranks 月表.",
+ "context": "未-戊申",
+ "decision": "Retain the source-derived P17-A table: 四相 gives 宜 納財 (卷十 四相 entry, 卷十一 納財 list); 劫煞 「宜則不忌」 applies; puzhu:06 independently withholds 忌 納財 on a 四相 day.",
+ "witnessStatus": "The disputed 納財 cell is NOT SOURCE_WITNESSED. Page 06067694-n117 prints 納財 on the 忌 line (contradiction kept permanently in provenance); no tested coherent rule reproduces {納財 noted 忌, 開市 unnoted}.",
+ "cellsKept": ["未-戊申:finance", "未-戊申:contract", "未-戊申:transaction", "未-戊申:opening", "未-戊申:business"],
+ "evidence": "docs/audits/p4-weishen-nacai-puzhu21.md (3e1c784), weishen-nacai-puzhu21-v1/result.json"
+}
