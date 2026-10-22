@@ -8,6 +8,7 @@ import { evaluateEventDay } from './eventEvaluation'
 import { EVENT_OPTIONS } from './eventMapping'
 
 // Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+// Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const { default: current } = await importOriginal<{
     default: typeof import('../almanac-data/manifest.json')
@@ -19,6 +20,7 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
         ...current.policies,
         xiejiVol10BalancingEnabled: false,
         legacyGodsMonthJian: false,
+        xiejiVol10JieshaPolicy: 'legacy-cancel-both',
       },
     },
   }

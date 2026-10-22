@@ -1,0 +1,157 @@
+{
+ "version": "chou-bingyin-yuede-v1",
+ "source": {
+  "text": "歴例曰月徳者正五九月在丙二六十月在甲三七十一月在壬四八十二月在庚",
+  "location": "卷五 義例三 月徳 (docs/audits/sources/p4-vol10/vol05.raw.txt)",
+  "derivation": "曹震圭曰…以三合五行陽干為徳假令寅午戌三合為火以丙為徳 (巳酉丑 金局 → 庚)",
+  "companion": "厯例曰寅午戌月壬亥卯未月庚申子辰月丙巳酉丑月甲 (月空 = 月德之衝)",
+  "monthBasis": "月建 (正月 = 寅). The 月表 is organised by 月建 month; a generic month-pillar page cannot express a lunar-month basis.",
+  "mapping": {
+   "寅": "丙",
+   "卯": "甲",
+   "辰": "壬",
+   "巳": "庚",
+   "午": "丙",
+   "未": "甲",
+   "申": "壬",
+   "酉": "庚",
+   "戌": "丙",
+   "亥": "甲",
+   "子": "壬",
+   "丑": "庚"
+  }
+ },
+ "project": {
+  "files": [
+   "shared/lunar/groupB.ts (month-virtue, targets 丙甲壬庚… row = (index + 10) % 12, 寅 → 0)",
+   "shared/lunar/catHungAuthority.ts (row month 12 / 丑 / 小寒: yueDe 庚)"
+  ],
+  "kind": "direct transcription of 歴例, 月建 basis; no index offset"
+ },
+ "n75": {
+  "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n75.jpg",
+  "sha256": "a86985f79083e16e7548be80d553e75e213410af89426576528cf0198b45d809",
+  "cropLocator": "x 1180–1700, y 340–1100 of the 2332×3176 stored JPG (吉神 block); crop not stored",
+  "heading": "丙寅鑪中火義除日",
+  "jiShen": "天恩 月德 相日 | 吉期 不將 玉宇 | 五合 金匱 鳴吠對",
+  "xiongShen": "劫煞 天賊 五虛",
+  "reading": "月德 (two glyphs, followed directly by 相日; not 月德合 / 天德 / 天德合)",
+  "monthIdentity": "丑 month: 除日 on a 寅 day requires 建丑; 劫煞 on 寅 (巳酉丑 months); 不將 十二月 list has 丙寅",
+  "alignment": "one day per page; no adjacent row",
+  "confidence": "high"
+ },
+ "consistency": {
+  "pagesChecked": 67,
+  "godsChecked": [
+   "天德",
+   "天德合",
+   "月德",
+   "月德合"
+  ],
+  "mismatches": [
+   "丑-丙寅: 月德 printed, 歴例 expects 庚"
+  ],
+  "chouPages": {
+   "丑-丙寅": {
+    "stem": "丙",
+    "月德": true,
+    "D-A": false,
+    "D-B": true
+   },
+   "丑-壬寅": {
+    "stem": "壬",
+    "月德": false,
+    "D-A": false,
+    "D-B": false
+   },
+   "丑-庚寅": {
+    "stem": "庚",
+    "月德": true,
+    "D-A": true,
+    "D-B": false,
+    "note": "also 天德 (丑 天德 庚)"
+   },
+   "丑-戊寅": {
+    "stem": "戊",
+    "月德": false,
+    "D-A": false,
+    "D-B": false
+   },
+   "丑-甲子": {
+    "stem": "甲",
+    "月德": false,
+    "D-A": false,
+    "D-B": false,
+    "note": "月空 printed (丑 月空 甲 = 庚之衝)"
+   },
+   "丑-甲寅": {
+    "stem": "甲",
+    "月德": false,
+    "D-A": false,
+    "D-B": false,
+    "note": "月空 printed"
+   }
+  },
+  "positiveMatches": {
+   "月德": {
+    "expectedPrinted": 10,
+    "expectedNotPrinted": 0,
+    "printedNotExpected": 1,
+    "printedNotExpectedPages": [
+     "丑-丙寅"
+    ],
+    "expectedPrintedPages": [
+     "丑-庚寅",
+     "午-丙戌",
+     "卯-甲申",
+     "子-壬辰",
+     "寅-丙辰",
+     "未-甲午",
+     "未-甲子",
+     "未-甲申",
+     "辰-壬辰",
+     "酉-庚寅"
+    ]
+   },
+   "月空": {
+    "expectedPrinted": 4,
+    "expectedNotPrinted": 0,
+    "printedNotExpected": 0,
+    "expectedPrintedPages": [
+     "丑-甲子",
+     "丑-甲寅",
+     "未-庚申",
+     "酉-甲辰"
+    ],
+    "table": "厯例 寅午戌月壬 亥卯未月庚 申子辰月丙 巳酉丑月甲"
+   }
+  },
+  "fullResolutionRereads": {
+   "丑-庚寅": {
+    "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067697-n99.jpg",
+    "heading": "庚寅松柏木制除日",
+    "jiShen": "天德 月德 時德 | 相日 吉期 不將 | 玉宇 五合 金匱 | 鳴吠對",
+    "confirms": "月德 on 庚",
+    "confidence": "high"
+   },
+   "丑-甲子": {
+    "path": "docs/audits/sources/p4-vol10/yuebiao/06067697-n73.jpg",
+    "heading": "甲子海中金義開日",
+    "jiShen": "月空 天恩 天赦 | 天願 四相 官日 | 六合 續世",
+    "confirms": "月空 on 甲",
+    "confidence": "high"
+   },
+   "丑-甲寅": {
+    "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n123.jpg",
+    "heading": "甲寅大溪水專除日",
+    "jiShen": "月空 四相 時德 | 相日 吉期 玉宇 | 五合 金匱 鳴吠對",
+    "confirms": "月空 on 甲",
+    "confidence": "high"
+   },
+   "method": "crops of the 吉神 block (x 900–2000, y 250–1400) of the stored JPGs; crops not stored; no OCR"
+  }
+ },
+ "classification": "WITNESS_PRINTING_ERROR",
+ "classificationNote": "Nearest given label. The 四庫全書 scans are a hand-copied manuscript, so this is a copying or compilation slip in this witness, not a printing error in the literal sense; the page alone cannot say which. Non-inference: no cause is claimed for the slip.",
+ "decision": "D-A"
+}

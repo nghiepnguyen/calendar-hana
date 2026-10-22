@@ -1,0 +1,4075 @@
+{
+ "version": "jiesha-option-c-coverage-v1",
+ "authority": "xieji-vol10-jiesha-faithful-v1",
+ "auditCells": 384,
+ "summary": {
+  "APPLIED": {
+   "total": 352,
+   "avoid": 171,
+   "blank": 181,
+   "noAuditCell": 0
+  },
+  "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION": {
+   "total": 32,
+   "avoid": 6,
+   "blank": 26,
+   "noAuditCell": 0
+  },
+  "EXCLUDED_PENDING_GLYPH_AUDIT": {
+   "total": 16,
+   "avoid": 0,
+   "blank": 0,
+   "noAuditCell": 16
+  }
+ },
+ "rows": [
+  {
+   "context": "丑丙寅",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "bed_installation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "wedding",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "bed_installation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "wedding",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "bed_installation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "wedding",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "bed_installation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌己亥",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌己亥",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌己亥",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "bed_installation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "warehouse",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "business",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "contract",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未丙申",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "finance",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "livestock",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "planting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "transaction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未丙申",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "warehouse_opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未丙申",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "business",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "contract",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未壬申",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "finance",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "livestock",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "planting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "transaction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未壬申",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "warehouse_opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未壬申",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "burial",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "business",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "contract",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未庚申",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "finance",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "livestock",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "planting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "transaction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未庚申",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "warehouse_opening",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未庚申",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "beam_raising",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未戊申",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "engagement",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "groundbreaking",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "moving",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "pray_blessing",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "pray_children",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "renovation",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "未戊申",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "未戊申",
+   "activity": "wedding",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰己巳",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰己巳",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰己巳",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "meeting",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "beam_raising",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "豎柱上梁"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "bed_installation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安牀"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "burial",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "安葬"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "business",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "construction",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "營建宮室",
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "contract",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "cut_hair",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "整容剃頭"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "engagement",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納采問名"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "finance",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "納財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "groundbreaking",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "興造動土"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "livestock",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "牧養",
+    "納畜"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "medical",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求醫療病"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "meeting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "宴會"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "moving",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "般移"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開市"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "planting",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "栽種"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "pray_blessing",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "祈福"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "pray_children",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "求嗣"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "renovation",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修宮室"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "transaction",
+   "auditVerdict": "blank",
+   "runtimeStatus": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "productionHeadings": [
+    "立券交易"
+   ],
+   "reason": "劫煞 lists 立劵交易; resolveVol10 NORM has no 劵→券, so the activity reads not_listed and the audit cells are never consulted"
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "travel",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "行幸遣使"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "warehouse",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "修倉庫"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "warehouse_opening",
+   "auditVerdict": "blank",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "開倉庫出貨財"
+   ],
+   "reason": null
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "wedding",
+   "auditVerdict": "avoid",
+   "runtimeStatus": "APPLIED",
+   "productionHeadings": [
+    "結婚姻",
+    "嫁娶"
+   ],
+   "reason": null
+  },
+  {
+   "context": "丑丙寅",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "丑壬寅",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "丑戊寅",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "丑甲寅",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "戌丁亥",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "戌乙亥",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "戌己亥",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "戌癸亥",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "未丙申",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "未壬申",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "未庚申",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "未戊申",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "辰乙巳",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "辰己巳",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "辰癸巳",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  },
+  {
+   "context": "辰辛巳",
+   "activity": "demolition",
+   "auditVerdict": null,
+   "runtimeStatus": "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "productionHeadings": [
+    "破屋壊垣"
+   ],
+   "reason": "resolveVol10 lists it (NORM 壞→壊) but the approved simulator never matched 破屋壞垣, so the audit matrix has no demolition cells; legacy cancel_both behaviour is kept until a glyph audit approves cells"
+  }
+ ]
+}

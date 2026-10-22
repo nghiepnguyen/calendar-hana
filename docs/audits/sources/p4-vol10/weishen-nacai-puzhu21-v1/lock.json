@@ -1,0 +1,15 @@
+{
+ "version": "weishen-nacai-puzhu21-v1",
+ "freezeCommit": "718f06c",
+ "note": "The harness gained the sensitivity test after 718f06c; the freeze test body is unchanged.",
+ "files": {
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/predictions.json": "1d0bc455972f58c580d6460a158aedfeaadb5b0bbb990c7540c7d6c354e9b4fb",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/freeze.json": "4202900e71b5a5dce18ec443003e9781ca5a96454122bfc5fe611fad152d3824",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/full.json": "9a62bcb06e1785d180727e72c1ac44eb6bda32fd74a66c6c5685a21917ad3f6f",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/sensitivity.json": "c8586d4222aaf60a7fc23dd19fcb049cef44d39d373959abf738f878917cc995",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/witness.json": "8197a858a4ebd05992e5a3b87587ab0696f03569a904dc992f557b4048cbde62",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/result.json": "333c7bd4c0d7dfe35584d19df22d46f4cac4797f7dfee6412db2263900fbbecf",
+  "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/build_result.py": "4f43fe1b6d0b7ba17e529543c32e1f08f6d611c83eced778f0c66337dfc33b8c",
+  "shared/lunar/p4WeishenNacaiAudit.test.ts": "67d3d6a11773bec24425d1f392724e98b2d4a36db7623c6ed02ffdb85a351b9c"
+ }
+}

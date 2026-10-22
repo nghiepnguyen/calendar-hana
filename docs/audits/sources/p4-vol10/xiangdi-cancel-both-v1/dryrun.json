@@ -1,0 +1,2376 @@
+{
+ "version": "xiangdi-cancel-both-dryrun-v1",
+ "note": "Run: python3 -I docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/build_dryrun.py",
+ "subjects": {
+  "刼煞": {
+   "dated": {
+    "rows": 113,
+    "ids": 18,
+    "headings": {
+     "般移": 12,
+     "豎柱上梁": 12,
+     "祈福": 9,
+     "求嗣": 9,
+     "結婚姻": 9,
+     "納采問名": 9,
+     "安牀": 9,
+     "嫁娶": 8,
+     "宴會": 8,
+     "安葬": 6,
+     "營建宮室": 3,
+     "開市": 3,
+     "納財": 3,
+     "牧養": 3,
+     "納畜": 3,
+     "興造動土": 2,
+     "修宮室": 2,
+     "破屋壊垣": 2,
+     "栽種": 1
+    },
+    "changes": [
+     {
+      "id": "2025-01-09",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-01-09",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-02-02",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-06",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-04-30",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-07-26",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-02",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-01-28",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-04-25",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-07-21",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-08-02",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-10-28",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-01-23",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-20",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-02",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "栽種",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-16",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-07-28",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-23",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-04",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   },
+   "context": {
+    "rows": 82,
+    "ids": 15,
+    "headings": {
+     "豎柱上梁": 10,
+     "般移": 9,
+     "祈福": 7,
+     "求嗣": 7,
+     "結婚姻": 7,
+     "納采問名": 7,
+     "安牀": 7,
+     "宴會": 6,
+     "嫁娶": 5,
+     "安葬": 5,
+     "開市": 3,
+     "納財": 3,
+     "牧養": 3,
+     "納畜": 3
+    },
+    "changes": [
+     {
+      "id": "辰-己巳",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-己巳",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-辛巳",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-癸巳",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "辰-乙巳",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-壬申",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-壬申",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-壬申",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-壬申",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-壬申",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-丙申",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-戊申",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "開市",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "納財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "牧養",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "未-庚申",
+      "heading": "納畜",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-乙亥",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-丁亥",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "般移",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "安牀",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "宴會",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "戌-己亥",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "丑-丙寅",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "丑-戊寅",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "丑-壬寅",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "丑-甲寅",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   }
+  },
+  "災煞": {
+   "dated": {
+    "rows": 42,
+    "ids": 14,
+    "headings": {
+     "營建宮室": 12,
+     "整容剃頭": 10,
+     "嫁娶": 6,
+     "安葬": 5,
+     "結婚姻": 3,
+     "納采問名": 3,
+     "開倉庫出貨財": 3
+    },
+    "changes": [
+     {
+      "id": "2025-02-24",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-02-24",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-05-10",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-05-10",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-06-03",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-06-03",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-06-03",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-08-29",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-08-29",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-08-29",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-08-29",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-08-29",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-24",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-24",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-11-24",
+      "heading": "開倉庫出貨財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-02-19",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-02-19",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-05-05",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-05-05",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-05-29",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-05-29",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-05-29",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-08-24",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-08-24",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-08-24",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-08-24",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-11-19",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-11-19",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-11-19",
+      "heading": "開倉庫出貨財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-02-14",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-02-14",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-24",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-24",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-05-24",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-08-19",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-08-19",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-08-19",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-08-19",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-08-19",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-14",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-14",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-11-14",
+      "heading": "開倉庫出貨財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   },
+   "context": {
+    "rows": 19,
+    "ids": 10,
+    "headings": {
+     "嫁娶": 6,
+     "安葬": 5,
+     "結婚姻": 3,
+     "納采問名": 3,
+     "開倉庫出貨財": 2
+    },
+    "changes": [
+     {
+      "id": "寅-戊子",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "寅-戊子",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "寅-戊子",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "寅-戊子",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "寅-庚子",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "巳-丁卯",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "巳-己卯",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "巳-癸卯",
+      "heading": "安葬",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-庚午",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-庚午",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-庚午",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-丙午",
+      "heading": "結婚姻",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-丙午",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "申-丙午",
+      "heading": "納采問名",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "亥-癸酉",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "亥-癸酉",
+      "heading": "開倉庫出貨財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "亥-丁酉",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "亥-丁酉",
+      "heading": "開倉庫出貨財",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "亥-辛酉",
+      "heading": "嫁娶",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   }
+  },
+  "月煞": {
+   "dated": {
+    "rows": 96,
+    "ids": 14,
+    "headings": {
+     "整容剃頭": 14,
+     "營建宮室": 14,
+     "祈福": 8,
+     "求嗣": 8,
+     "行幸遣使": 8,
+     "求醫療病": 8,
+     "興造動土": 8,
+     "修宮室": 8,
+     "豎柱上梁": 8,
+     "破屋壊垣": 8,
+     "栽種": 4
+    },
+    "changes": [
+     {
+      "id": "2025-03-18",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-18",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "栽種",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-03-30",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-09-20",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-09-20",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2025-10-02",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-13",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-13",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "栽種",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-03-25",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-15",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-15",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2026-09-27",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-08",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-08",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "栽種",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-03-20",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "栽種",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-04-01",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-10",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-10",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-09-22",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "求醫療病",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "整容剃頭",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "興造動土",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "營建宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "修宮室",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "2027-10-04",
+      "heading": "破屋壊垣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   },
+   "context": {
+    "rows": 24,
+    "ids": 6,
+    "headings": {
+     "祈福": 6,
+     "求嗣": 6,
+     "行幸遣使": 6,
+     "豎柱上梁": 6
+    },
+    "changes": [
+     {
+      "id": "卯-戊戌",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-戊戌",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-戊戌",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-戊戌",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-庚戌",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-庚戌",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-庚戌",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-庚戌",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-壬戌",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-壬戌",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-壬戌",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "卯-壬戌",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-戊辰",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-戊辰",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-戊辰",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-戊辰",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-甲辰",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-甲辰",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-甲辰",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-甲辰",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-丙辰",
+      "heading": "祈福",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-丙辰",
+      "heading": "求嗣",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-丙辰",
+      "heading": "行幸遣使",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     },
+     {
+      "id": "酉-丙辰",
+      "heading": "豎柱上梁",
+      "from": "neither_recorded",
+      "to": "only_ji"
+     }
+    ]
+   }
+  }
+ }
+}

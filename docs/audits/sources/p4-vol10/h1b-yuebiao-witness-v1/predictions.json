@@ -1,0 +1,864 @@
+{
+ "version": "h1b-yuebiao-predictions-v1",
+ "golden": "p4-full-golden-v2 (c574e57), compose/h1b-changes.tsv",
+ "counts": {
+  "h1bRows": {
+   "dated": 95,
+   "context": 58
+  },
+  "h1bContexts": 32,
+  "distinguishingRows": {
+   "dated": 33,
+   "context": 23
+  },
+  "distinguishingTargets": 24,
+  "distinguishingPages": 22,
+  "nonDistinguishingRows": 97
+ },
+ "nonDistinguishing": "Rows ending neither_recorded (via puzhu:20/22 propagation or 相抵) read the same under both hypotheses; not counted as confirmation.",
+ "targets": [
+  {
+   "context": "亥-乙巳",
+   "monthJian": "亥",
+   "pillar": "乙巳",
+   "heading": "安葬",
+   "dates": [
+    "2025-12-02",
+    "2026-11-27",
+    "2027-11-22"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "重日",
+   "survivingJi": "月破:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n114",
+    "url": "https://archive.org/download/06067696.cn/page/n114_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-己丑",
+   "monthJian": "亥",
+   "pillar": "己丑",
+   "heading": "栽種",
+   "dates": [
+    "2025-11-16",
+    "2026-11-11"
+   ],
+   "contextRow": false,
+   "xiangdiOperand": "月厭",
+   "survivingJi": "地火:youwei_convention",
+   "gate": "H1-alpha",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "安葬",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "納畜",
+     "行幸遣使",
+     "豎柱上梁"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n98",
+    "url": "https://archive.org/download/06067696.cn/page/n98_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-己巳",
+   "monthJian": "亥",
+   "pillar": "己巳",
+   "heading": "安葬",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "重日",
+   "survivingJi": "月破:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n78",
+    "url": "https://archive.org/download/06067696.cn/page/n78_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-辛酉",
+   "monthJian": "亥",
+   "pillar": "辛酉",
+   "heading": "立券交易",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "災煞",
+   "survivingJi": "五離:remaining 四耗:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n130",
+    "url": "https://archive.org/download/06067696.cn/page/n130_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-辛酉",
+   "monthJian": "亥",
+   "pillar": "辛酉",
+   "heading": "開倉庫出貨財",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "災煞",
+   "survivingJi": "四耗:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n130",
+    "url": "https://archive.org/download/06067696.cn/page/n130_w1200.jpg"
+   }
+  },
+  {
+   "context": "亥-辛酉",
+   "monthJian": "亥",
+   "pillar": "辛酉",
+   "heading": "開市",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "災煞",
+   "survivingJi": "四耗:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n130",
+    "url": "https://archive.org/download/06067696.cn/page/n130_w1200.jpg"
+   }
+  },
+  {
+   "context": "巳-丙戌",
+   "monthJian": "巳",
+   "pillar": "丙戌",
+   "heading": "安葬",
+   "dates": [
+    "2025-05-17",
+    "2026-05-12",
+    "2027-05-07"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "復日",
+   "survivingJi": "五墓:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n95",
+    "url": "https://archive.org/download/06067693.cn/page/n95_w1200.jpg"
+   }
+  },
+  {
+   "context": "巳-丙辰",
+   "monthJian": "巳",
+   "pillar": "丙辰",
+   "heading": "安葬",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "復日",
+   "survivingJi": "月煞:subject 閉日:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n125",
+    "url": "https://archive.org/download/06067693.cn/page/n125_w1200.jpg"
+   }
+  },
+  {
+   "context": "巳-乙亥",
+   "monthJian": "巳",
+   "pillar": "乙亥",
+   "heading": "安葬",
+   "dates": [
+    "2025-05-06"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "重日",
+   "survivingJi": "月破:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n84",
+    "url": "https://archive.org/download/06067693.cn/page/n84_w1200.jpg"
+   }
+  },
+  {
+   "context": "巳-辛亥",
+   "monthJian": "巳",
+   "pillar": "辛亥",
+   "heading": "安葬",
+   "dates": [
+    "2027-06-01"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "重日",
+   "survivingJi": "月破:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n120",
+    "url": "https://archive.org/download/06067693.cn/page/n120_w1200.jpg"
+   }
+  },
+  {
+   "context": "戌-丁亥",
+   "monthJian": "戌",
+   "pillar": "丁亥",
+   "heading": "安葬",
+   "dates": [
+    "2027-11-04"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n29",
+    "url": "https://archive.org/download/06067696.cn/page/n29_w1200.jpg"
+   }
+  },
+  {
+   "context": "戌-乙亥",
+   "monthJian": "戌",
+   "pillar": "乙亥",
+   "heading": "安葬",
+   "dates": [
+    "2025-11-02",
+    "2026-10-28",
+    "2027-10-23"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n17",
+    "url": "https://archive.org/download/06067696.cn/page/n17_w1200.jpg"
+   }
+  },
+  {
+   "context": "戌-己亥",
+   "monthJian": "戌",
+   "pillar": "己亥",
+   "heading": "安葬",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n41",
+    "url": "https://archive.org/download/06067696.cn/page/n41_w1200.jpg"
+   }
+  },
+  {
+   "context": "戌-癸亥",
+   "monthJian": "戌",
+   "pillar": "癸亥",
+   "heading": "安葬",
+   "dates": [
+    "2025-10-21",
+    "2026-10-16",
+    "2027-10-11"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067696.cn",
+    "leaf": "n65",
+    "url": "https://archive.org/download/06067696.cn/page/n65_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-丙申",
+   "monthJian": "未",
+   "pillar": "丙申",
+   "heading": "宴會",
+   "dates": [
+    "2025-07-26",
+    "2026-07-21",
+    "2027-07-16"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "五離:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "納畜",
+     "納財",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n105",
+    "url": "https://archive.org/download/06067694.cn/page/n105_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-壬申",
+   "monthJian": "未",
+   "pillar": "壬申",
+   "heading": "宴會",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "五離:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "納畜",
+     "納財",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n81",
+    "url": "https://archive.org/download/06067694.cn/page/n81_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-己丑",
+   "monthJian": "未",
+   "pillar": "己丑",
+   "heading": "安葬",
+   "dates": [
+    "2025-07-19",
+    "2026-07-14",
+    "2027-07-09"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "復日",
+   "survivingJi": "月刑:subject 月破:subject",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n98",
+    "url": "https://archive.org/download/06067694.cn/page/n98_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-庚申",
+   "monthJian": "未",
+   "pillar": "庚申",
+   "heading": "宴會",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "五離:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "納畜",
+     "納財",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n129",
+    "url": "https://archive.org/download/06067694.cn/page/n129_w1200.jpg"
+   }
+  },
+  {
+   "context": "未-戊申",
+   "monthJian": "未",
+   "pillar": "戊申",
+   "heading": "宴會",
+   "dates": [
+    "2026-08-02",
+    "2027-07-28"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "五離:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安葬",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "納畜",
+     "納財",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067694.cn",
+    "leaf": "n117",
+    "url": "https://archive.org/download/06067694.cn/page/n117_w1200.jpg"
+   }
+  },
+  {
+   "context": "申-庚午",
+   "monthJian": "申",
+   "pillar": "庚午",
+   "heading": "安葬",
+   "dates": [
+    "2025-08-29",
+    "2026-08-24",
+    "2027-08-19"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "災煞",
+   "survivingJi": "復日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "行幸遣使",
+     "豎柱上梁",
+     "開倉庫出貨財",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067695.cn",
+    "leaf": "n12",
+    "url": "https://archive.org/download/06067695.cn/page/n12_w1200.jpg"
+   }
+  },
+  {
+   "context": "辰-乙巳",
+   "monthJian": "辰",
+   "pillar": "乙巳",
+   "heading": "安葬",
+   "dates": [
+    "2025-04-06"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n47",
+    "url": "https://archive.org/download/06067693.cn/page/n47_w1200.jpg"
+   }
+  },
+  {
+   "context": "辰-己巳",
+   "monthJian": "辰",
+   "pillar": "己巳",
+   "heading": "安葬",
+   "dates": [
+    "2025-04-30",
+    "2026-04-25",
+    "2027-04-20"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n11",
+    "url": "https://archive.org/download/06067693.cn/page/n11_w1200.jpg"
+   }
+  },
+  {
+   "context": "辰-癸巳",
+   "monthJian": "辰",
+   "pillar": "癸巳",
+   "heading": "安葬",
+   "dates": [],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n35",
+    "url": "https://archive.org/download/06067693.cn/page/n35_w1200.jpg"
+   }
+  },
+  {
+   "context": "辰-辛巳",
+   "monthJian": "辰",
+   "pillar": "辛巳",
+   "heading": "安葬",
+   "dates": [
+    "2027-05-02"
+   ],
+   "contextRow": true,
+   "xiangdiOperand": "刼煞",
+   "survivingJi": "重日:remaining",
+   "gate": "H1-beta",
+   "predictH1B": "heading printed on 忌 line, not on 宜 line",
+   "predictWholeHeadingXiangdi": "heading on neither 忌 nor 宜 line",
+   "propagation": "none (final only_ji has no propagation target)",
+   "distinguishing": true,
+   "premiseProbe": {
+    "xiangdiOnlyHeadings": [
+     "嫁娶",
+     "安牀",
+     "宴會",
+     "求嗣",
+     "牧養",
+     "祈福",
+     "立券交易",
+     "納畜",
+     "納財",
+     "納采問名",
+     "結婚姻",
+     "般移",
+     "豎柱上梁",
+     "開市"
+    ],
+    "predict": "under Golden v2 these headings are on neither line"
+   },
+   "yuebiao": {
+    "item": "06067693.cn",
+    "leaf": "n23",
+    "url": "https://archive.org/download/06067693.cn/page/n23_w1200.jpg"
+   }
+  }
+ ]
+}

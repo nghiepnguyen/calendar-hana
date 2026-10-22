@@ -1,0 +1,691 @@
+{
+ "version": "puzhu17-bujiang-v1",
+ "table": {
+  "contexts": 16,
+  "cells": 384,
+  "varyingAcrossDates": [],
+  "representativeDatesAgreeWithFullRange": true,
+  "diffVsP17_0": {
+   "P17-A": {
+    "未-壬申:wedding": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:engagement": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:moving": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ]
+   },
+   "P17-B": {
+    "未-壬申:wedding": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:engagement": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:moving": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ]
+   },
+   "P17-C": {
+    "未-壬申:wedding": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:engagement": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-壬申:moving": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ],
+    "未-戊申:wedding": [
+     "CONFIRMED:blank",
+     "CONFIRMED:avoid"
+    ]
+   }
+  }
+ },
+ "pageCheckP17A": {
+  "丑-丙寅": {
+   "date": "1904-02-02",
+   "compared": 21,
+   "contradictions": []
+  },
+  "丑-壬寅": {
+   "date": "2025-02-02",
+   "compared": 21,
+   "contradictions": []
+  },
+  "丑-戊寅": {
+   "date": "2025-01-09",
+   "compared": 24,
+   "contradictions": []
+  },
+  "丑-甲寅": {
+   "date": "1902-01-31",
+   "compared": 21,
+   "contradictions": []
+  },
+  "戌-丁亥": {
+   "date": "2027-11-04",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-乙亥": {
+   "date": "2025-11-02",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-己亥": {
+   "date": "1903-11-07",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-癸亥": {
+   "date": "2025-10-21",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": null,
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "未-丙申": {
+   "date": "2025-07-26",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-壬申": {
+   "date": "1904-08-06",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-庚申": {
+   "date": "1902-08-05",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-戊申": {
+   "date": "2026-08-02",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "立券交易",
+     "printed": true,
+     "state": "not_recorded",
+     "ji": [
+      "五離",
+      "刼煞"
+     ],
+     "propagatedFrom": "納財",
+     "jieshaInTrace": true
+    },
+    {
+     "heading": "納財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [],
+     "propagatedFrom": null,
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "辰-乙巳": {
+   "date": "2025-04-06",
+   "compared": 24,
+   "contradictions": []
+  },
+  "辰-己巳": {
+   "date": "2025-04-30",
+   "compared": 21,
+   "contradictions": []
+  },
+  "辰-癸巳": {
+   "date": "1903-05-05",
+   "compared": 21,
+   "contradictions": []
+  },
+  "辰-辛巳": {
+   "date": "2027-05-02",
+   "compared": 21,
+   "contradictions": []
+  }
+ },
+ "witness": {
+  "distinguishingPages": [
+   "未-壬申",
+   "未-戊申"
+  ],
+  "score": {
+   "P17-0": {
+    "supports": 2,
+    "contradicts": 5,
+    "cells": [
+     [
+      "未-壬申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-壬申",
+      "結婚姻",
+      false,
+      true
+     ],
+     [
+      "未-壬申",
+      "納采問名",
+      false,
+      true
+     ],
+     [
+      "未-壬申",
+      "移徙",
+      false,
+      true
+     ],
+     [
+      "未-戊申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-戊申",
+      "結婚姻",
+      false,
+      true
+     ],
+     [
+      "未-戊申",
+      "納采問名",
+      false,
+      true
+     ]
+    ]
+   },
+   "P17-A": {
+    "supports": 7,
+    "contradicts": 0,
+    "cells": [
+     [
+      "未-壬申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-壬申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "納采問名",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "移徙",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-戊申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "納采問名",
+      true,
+      true
+     ]
+    ]
+   },
+   "P17-B": {
+    "supports": 7,
+    "contradicts": 0,
+    "cells": [
+     [
+      "未-壬申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-壬申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "納采問名",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "移徙",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "嫁娶",
+      false,
+      false
+     ],
+     [
+      "未-戊申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "納采問名",
+      true,
+      true
+     ]
+    ]
+   },
+   "P17-C": {
+    "supports": 5,
+    "contradicts": 2,
+    "cells": [
+     [
+      "未-壬申",
+      "嫁娶",
+      true,
+      false
+     ],
+     [
+      "未-壬申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "納采問名",
+      true,
+      true
+     ],
+     [
+      "未-壬申",
+      "移徙",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "嫁娶",
+      true,
+      false
+     ],
+     [
+      "未-戊申",
+      "結婚姻",
+      true,
+      true
+     ],
+     [
+      "未-戊申",
+      "納采問名",
+      true,
+      true
+     ]
+    ]
+   }
+  }
+ },
+ "p4": {
+  "bujiangContexts": 149,
+  "observableChanges": {
+   "P17-A": [
+    [
+     "未-壬申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-壬申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-戊申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-戊申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ]
+   ],
+   "P17-B": [
+    [
+     "未-壬申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-壬申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-戊申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-戊申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ]
+   ],
+   "P17-C": [
+    [
+     "寅-己卯",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "寅-庚寅",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "卯-乙丑",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "卯-丁丑",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "辰-乙亥",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "辰-己亥",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "巳-甲戌",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "巳-戊戌",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "午-甲申",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "午-戊申",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "未-壬申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-壬申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-癸未",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "未-乙未",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "未-戊申",
+     "納采問名",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "未-戊申",
+     "結婚姻",
+     "neither_recorded",
+     "only_ji"
+    ],
+    [
+     "申-甲申",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "申-乙酉",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "酉-辛未",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "酉-癸未",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "戌-癸巳",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "亥-壬辰",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "子-庚寅",
+     "嫁娶",
+     "only_yi",
+     "not_recorded"
+    ],
+    [
+     "丑-丁丑",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "丑-己丑",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ],
+    [
+     "丑-辛丑",
+     "嫁娶",
+     "both_present",
+     "only_ji"
+    ]
+   ]
+  },
+  "clause2PreconditionContexts": [
+   "寅-乙亥",
+   "寅-丁亥",
+   "寅-己亥",
+   "寅-丁未",
+   "寅-辛亥",
+   "寅-癸亥",
+   "卯-甲子",
+   "卯-乙亥",
+   "卯-丁亥",
+   "卯-己亥",
+   "卯-丁未",
+   "卯-辛亥",
+   "卯-甲寅",
+   "卯-己未",
+   "卯-癸亥",
+   "辰-甲子",
+   "辰-乙亥",
+   "辰-丁亥",
+   "辰-己亥",
+   "辰-丁未",
+   "辰-庚申",
+   "巳-乙亥",
+   "巳-丙子",
+   "巳-丁丑",
+   "巳-丁亥",
+   "巳-己丑",
+   "巳-辛亥",
+   "巳-癸丑",
+   "巳-庚申",
+   "午-乙亥",
+   "午-丙子",
+   "午-辛亥",
+   "午-甲寅",
+   "午-己未",
+   "午-癸亥",
+   "未-乙亥",
+   "未-丁亥",
+   "未-己亥",
+   "未-辛亥",
+   "未-甲寅",
+   "未-癸亥",
+   "申-丁亥",
+   "申-庚子",
+   "申-丁未",
+   "申-癸丑",
+   "申-癸亥",
+   "酉-乙亥",
+   "酉-庚子",
+   "酉-癸丑",
+   "酉-庚申",
+   "戌-辛亥",
+   "戌-甲寅",
+   "亥-辛未",
+   "亥-乙亥",
+   "亥-癸未",
+   "亥-己亥",
+   "亥-丁未",
+   "亥-甲寅",
+   "亥-己未",
+   "亥-庚申",
+   "子-壬午",
+   "子-丁亥",
+   "子-丁未",
+   "子-庚申",
+   "丑-己巳",
+   "丑-乙亥",
+   "丑-辛巳",
+   "丑-癸巳",
+   "丑-壬子",
+   "丑-丁巳",
+   "丑-庚申"
+  ]
+ }
+}

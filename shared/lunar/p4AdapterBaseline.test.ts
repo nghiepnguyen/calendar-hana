@@ -7,6 +7,7 @@ import { evaluateEventDay } from './eventEvaluation'
 import { activityRows, BASELINE_DIR as DIR, eventRows } from './p4AdapterBaselineRows'
 
 // Roadmap 10 ships the flag ON; this file pins it OFF (the flag-OFF / rollback state).
+// Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
   return {
@@ -17,6 +18,7 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
         xiejiVol10BalancingEnabled: false,
         tiangouYinNoYi: false,
         satChuNgocHapStars: false,
+        xiejiVol10JieshaPolicy: 'legacy-cancel-both',
       },
     },
   }

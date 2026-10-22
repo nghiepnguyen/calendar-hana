@@ -5,6 +5,10 @@ import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring, VOL10_SCORED_ENTRIES } from './xiejiVol10Scoring'
 import { getActivityRecommendations } from './activityRecommendations'
 
+// Golden v1 is frozen against the pre-2026-10-22 resolver: pinned to legacy-cancel-both. The
+// faithful-v1 successor is golden-xieji-vol10-scoring-v2.json (xiejiVol10ScoringV2.test.ts).
+const POLICY = { jieshaPolicy: 'legacy-cancel-both' } as const
+
 const B = (c: string) => '子丑寅卯辰巳午未申酉戌亥'.indexOf(c)
 const S = (c: string) => '甲乙丙丁戊己庚辛壬癸'.indexOf(c)
 const OFFICERS = [
@@ -63,6 +67,7 @@ describe('協紀 卷十 scoring policy — frozen hand-derived golden', () => {
           unknownGods: new Set(),
         },
         [c.activity],
+        POLICY,
       )
       const verdicts = Object.fromEntries(
         items.filter((i) => VOL10_SCORED_ENTRIES.has(i.entry)).map((i) => [i.entry, i.verdict]),
@@ -133,9 +138,11 @@ describe('owner decision 2026-10-10: 不註宜忌 / 不忌 lifting every rule re
     classicalDay: { monthJianBranch: B('辰'), dayStem: S('乙'), dayBranch: B('巳') },
   }
   const wedding = (on: boolean) =>
-    getActivityRecommendations({ ...input, xiejiVol10Scoring: on }).find(
-      (r) => r.activityId === 'wedding',
-    )!
+    getActivityRecommendations({
+      ...input,
+      xiejiVol10Scoring: on,
+      xiejiVol10JieshaPolicy: POLICY.jieshaPolicy,
+    }).find((r) => r.activityId === 'wedding')!
   it('flag on: neutral at the base score, not no_evidence', () => {
     expect(wedding(true)).toMatchObject({ status: 'neutral', score: 50, negativeMagnitude: 0 })
   })

@@ -1,0 +1,3652 @@
+{
+ "丑-丙寅": {
+  "date": "1904-02-02",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "blank",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "blank",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "安牀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "般移",
+    "puzhu06": "hold:UNDETERMINED"
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "百忌寅"
+    ]
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "牧養"
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "結婚姻": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "立券交易",
+    "puzhu06": "hold:UNDETERMINED"
+   }
+  }
+ },
+ "丑-壬寅": {
+  "date": "2025-02-02",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "blank",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "blank",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "結婚姻"
+   },
+   "安牀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "般移",
+    "puzhu06": "hold:UNDETERMINED"
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "百忌寅"
+    ]
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "牧養"
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "結婚姻": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "立券交易",
+    "puzhu06": "hold:UNDETERMINED"
+   }
+  }
+ },
+ "丑-戊寅": {
+  "date": "2025-01-09",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "blank",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "blank",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "結婚姻"
+   },
+   "安牀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "般移",
+    "puzhu06": "hold:UNDETERMINED"
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "興造動土+豎柱上梁"
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "百忌寅"
+    ]
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "牧養"
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "結婚姻": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "興造動土": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "立券交易",
+    "puzhu06": "hold:UNDETERMINED"
+   }
+  }
+ },
+ "丑-甲寅": {
+  "date": "1902-01-31",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "avoid",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "blank",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "八風"
+    ]
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "八專",
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "般移",
+    "puzhu06": "hold:UNDETERMINED"
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "百忌寅"
+    ]
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "牧養"
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "天賊",
+     "百忌甲"
+    ]
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "八專"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "八專"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "立券交易",
+    "puzhu06": "hold:UNDETERMINED"
+   }
+  }
+ },
+ "戌-丁亥": {
+  "date": "2027-11-04",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "八風"
+    ]
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌亥"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌丁"
+    ]
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "戌-乙亥": {
+  "date": "2025-11-02",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌亥"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符",
+     "百忌乙"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "戌-己亥": {
+  "date": "1903-11-07",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌亥"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "戌-癸亥": {
+  "date": "2025-10-21",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "avoid",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "blank",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "blank",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌亥"
+    ]
+   },
+   "安牀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "般移",
+    "puzhu06": "hold:UNDETERMINED"
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞",
+     "朔望日"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "puzhu06": "lift:QL"
+   },
+   "納采問名": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "結婚姻": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後",
+     "土符"
+    ]
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "未-丙申": {
+  "date": "2025-07-26",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "avoid",
+   "contract": "avoid",
+   "transaction": "avoid",
+   "finance": "avoid",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "avoid",
+   "planting": "avoid",
+   "livestock": "avoid",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "avoid"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌申"
+    ]
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "納畜": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "納財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   }
+  }
+ },
+ "未-壬申": {
+  "date": "1904-08-06",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "blank",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "avoid",
+   "opening": "avoid",
+   "contract": "avoid",
+   "transaction": "avoid",
+   "finance": "avoid",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "avoid",
+   "planting": "avoid",
+   "livestock": "avoid",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "avoid"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌申"
+    ]
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "納畜": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "納財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ],
+    "propagatedFrom": "嫁娶"
+   },
+   "結婚姻": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ],
+    "propagatedFrom": "嫁娶"
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "嫁娶"
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   }
+  }
+ },
+ "未-庚申": {
+  "date": "1902-08-05",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "avoid",
+   "contract": "avoid",
+   "transaction": "avoid",
+   "finance": "avoid",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "avoid",
+   "planting": "avoid",
+   "livestock": "avoid",
+   "burial": "blank",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "avoid"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "八專",
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌申"
+    ]
+   },
+   "安葬": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ]
+   },
+   "納畜": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "納財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "八專",
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五離",
+     "八專",
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   }
+  }
+ },
+ "未-戊申": {
+  "date": "2026-08-02",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "blank",
+   "pray_children": "blank",
+   "wedding": "blank",
+   "engagement": "blank",
+   "moving": "blank",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "blank",
+   "construction": "avoid",
+   "renovation": "blank",
+   "beam_raising": "blank",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後",
+     "天賊"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "百忌申"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五離"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "祭祀": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "五離",
+     "刼煞"
+    ],
+    "propagatedFrom": "納財",
+    "puzhu06": "hold:QL+UNDETERMINED"
+   },
+   "納畜": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "牧養"
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "五虛",
+     "天賊"
+    ]
+   },
+   "納采問名": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五離"
+    ],
+    "propagatedFrom": "嫁娶"
+   },
+   "結婚姻": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五離"
+    ],
+    "propagatedFrom": "嫁娶"
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "天賊"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開市": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ],
+    "propagatedFrom": "納財",
+    "puzhu06": "hold:UNDETERMINED"
+   }
+  }
+ },
+ "辰-乙巳": {
+  "date": "2025-04-06",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌乙"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌巳"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "辰-己巳": {
+  "date": "2025-04-30",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌巳"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "辰-癸巳": {
+  "date": "1903-05-05",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "avoid",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌巳"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ },
+ "辰-辛巳": {
+  "date": "2027-05-02",
+  "verdicts": {
+   "worship": "not_listed",
+   "pray_blessing": "avoid",
+   "pray_children": "avoid",
+   "wedding": "avoid",
+   "engagement": "avoid",
+   "moving": "avoid",
+   "bed_installation": "avoid",
+   "opening": "blank",
+   "contract": "blank",
+   "transaction": "blank",
+   "finance": "blank",
+   "travel": "blank",
+   "meeting": "blank",
+   "study": "not_listed",
+   "medical": "avoid",
+   "cleaning": "not_listed",
+   "cut_hair": "blank",
+   "groundbreaking": "avoid",
+   "construction": "avoid",
+   "renovation": "avoid",
+   "beam_raising": "avoid",
+   "warehouse": "avoid",
+   "warehouse_opening": "blank",
+   "planting": "blank",
+   "livestock": "blank",
+   "burial": "avoid",
+   "demolition": "not_listed",
+   "water_travel": "not_listed",
+   "business": "blank"
+  },
+  "rows": {
+   "乘船渡水": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "修倉庫": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "五虛",
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "修宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "入學": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "嫁娶": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安牀": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "安葬": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "重日"
+    ]
+   },
+   "宴會": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "掃舍宇": {
+    "state": "only_yi",
+    "yi": true,
+    "ji": []
+   },
+   "整容剃頭": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "栽種": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "土王用事後"
+    ]
+   },
+   "求嗣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "求醫療病": {
+    "state": "both_present",
+    "yi": true,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "營建宮室": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "牧養": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "破屋壊垣": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "祈福": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "祭祀": {
+    "state": "not_recorded",
+    "yi": false,
+    "ji": []
+   },
+   "立券交易": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納畜": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "納財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   },
+   "開倉庫出貨財": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": [
+     "五虛"
+    ],
+    "propagatedFrom": "開市+立券交易"
+   },
+   "納采問名": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "結婚姻": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "興造動土": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞",
+     "土王用事後"
+    ]
+   },
+   "般移": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "行幸遣使": {
+    "state": "only_ji",
+    "yi": true,
+    "ji": [
+     "百忌巳"
+    ]
+   },
+   "豎柱上梁": {
+    "state": "only_ji",
+    "yi": false,
+    "ji": [
+     "刼煞"
+    ]
+   },
+   "開市": {
+    "state": "neither_recorded",
+    "yi": true,
+    "ji": []
+   }
+  }
+ }
+}

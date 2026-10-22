@@ -1,0 +1,26 @@
+{
+ "version": "jiesha-faithful-status-v1",
+ "note": "CONFIRMED = decided under the current OWNER_ADOPTED inputs (puzhu:06 Q1–Q4a, P5 rule D, 母倉, H1-B, soil convention) and invariant to unknown date operands; not out-of-sample confirmation.",
+ "cells": {
+  "CONFIRMED:blank": 210,
+  "CONFIRMED:avoid": 174
+ },
+ "dependentCells": {},
+ "fullRangeByStatus": {
+  "CONFIRMED": {
+   "annotation": 17949,
+   "effectiveScore": 17242,
+   "rating": 17239,
+   "eventClassification (date-level attribution)": 2408
+  }
+ },
+ "xuGuiHai開倉庫": {
+  "date": "2025-10-21",
+  "state": "neither_recorded",
+  "yi": true,
+  "ji": [
+   "五虛"
+  ],
+  "puzhu06": "lift:QL"
+ }
+}

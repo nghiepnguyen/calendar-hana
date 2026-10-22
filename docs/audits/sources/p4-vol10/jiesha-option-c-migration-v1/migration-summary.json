@@ -1,0 +1,119 @@
+{
+ "version": "jiesha-option-c-migration-v1",
+ "coverage": {
+  "APPLIED": {
+   "total": 352,
+   "avoid": 171,
+   "blank": 181,
+   "noAuditCell": 0
+  },
+  "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION": {
+   "total": 32,
+   "avoid": 6,
+   "blank": 26,
+   "noAuditCell": 0
+  },
+  "EXCLUDED_PENDING_GLYPH_AUDIT": {
+   "total": 16,
+   "avoid": 0,
+   "blank": 0,
+   "noAuditCell": 16
+  }
+ },
+ "impact": {
+  "datesRun": 2710,
+  "scopeDates": 1636,
+  "affectedDates": 1615,
+  "rowsOutsideScope": 0,
+  "verdictChanges": 17631,
+  "verdictChangesWithoutScoreEffect2025_2027": 211,
+  "rawScoreChanges": 17420,
+  "effectiveScoreChanges": 17420,
+  "scoreDelta": {
+   "-15": 17420
+  },
+  "ratingChanges": {
+   "neutral→watch": 11764,
+   "watch→avoid": 3223,
+   "recommended→watch": 1615,
+   "consider→avoid": 818
+  },
+  "visibleActivityChanges": 17420,
+  "cellOfChangedRows": {
+   "avoid": 17420
+  },
+  "byActivity": {
+   "beam_raising": 1022,
+   "bed_installation": 1128,
+   "burial": 1007,
+   "business": 312,
+   "construction": 1615,
+   "engagement": 1022,
+   "finance": 312,
+   "groundbreaking": 1022,
+   "livestock": 312,
+   "medical": 1615,
+   "meeting": 917,
+   "moving": 1022,
+   "opening": 312,
+   "planting": 312,
+   "pray_blessing": 710,
+   "pray_children": 710,
+   "renovation": 1022,
+   "warehouse": 1518,
+   "warehouse_opening": 312,
+   "wedding": 1218
+  },
+  "activityRowsIn2025_2027": 0,
+  "eventScoreChanges": 5220,
+  "eventRows": 5220,
+  "eventClassificationChanges": {
+   "move_house:caution→not_recommended": 1022,
+   "wedding:caution→not_recommended": 818,
+   "groundbreaking:caution→not_recommended": 424,
+   "open_business:caution→not_recommended": 312
+  }
+ },
+ "reconciliation": {
+  "approvedCandidateSimulator": "exact: xiejiVol10JieshaMigration.test.ts compares production with a legacy runtime + candidate-table wrapper on every date run (0 mismatches)",
+  "d79b08eSimulator": {
+   "activities": {
+    "identical": 17108,
+    "productionOnly 未-壬申 (P17-A, approved authority)": 312,
+    "simulatorOnly2025_2027 (P4 candidate; P4 not migrated)": 134
+   },
+   "events": {
+    "identical": 4908,
+    "productionOnly 未-壬申 (P17-A, approved authority)": 312,
+    "simulatorOnly2025_2027 (P4 candidate; P4 not migrated)": 58
+   },
+   "residualActivities": [],
+   "residualEvents": [],
+   "glyphActivities": {
+    "demolition": {
+     "simulatorOutside2025_2027": 0,
+     "productionOutside2025_2027": 0,
+     "simulator2025_2027": 0,
+     "production2025_2027": 0
+    },
+    "contract": {
+     "simulatorOutside2025_2027": 0,
+     "productionOutside2025_2027": 0,
+     "simulator2025_2027": 5,
+     "production2025_2027": 0
+    },
+    "transaction": {
+     "simulatorOutside2025_2027": 0,
+     "productionOutside2025_2027": 0,
+     "simulator2025_2027": 5,
+     "production2025_2027": 0
+    }
+   }
+  }
+ },
+ "inputs": {
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/migration-rows.json": "e600cd82ac286a34b849ca50fa151115ac30a0f634ff6bbd57548867842a5146",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/coverage.json": "d47f7df8aee8e72e80476264db398585b253d9424c2965ca769b8b81c241d1ae",
+  "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/raw.json": "2bac01c1e6b22c0c747b4c17c85284117724d8c19bbd2450ae33a3c321a8947c"
+ }
+}

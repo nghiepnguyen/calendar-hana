@@ -1,0 +1,1146 @@
+{
+ "version": "h1b-yuebiao-witness-lock-v1",
+ "date": "2026-10-21",
+ "source": "欽定協紀辨方書 月表 卷二十–三十一, 四庫全書 (Internet Archive 06067692.cn–06067697.cn); leaf map as yuebiao-witness-lock-v2",
+ "review": "Visual reading by eye, single AI reviewer, not OCR. Read from downsampled copies of the original JPGs; hashes are of the original bytes. volume null = 卷 number not visible on the leaf; month fixed by the printed 建除 officer (checked against Month Jian and day branch in the test). Deciding characters re-checked on full-resolution crops of the original JPGs (2026-10-21): 安葬 present on the 7 德-lift CONFIRMS pages; 安葬 absent from the 忌 column of 申-己巳, 酉-乙巳, 未-己卯.",
+ "reused": {
+  "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+  "liftPremise": [
+   "寅-乙亥",
+   "午-丁未",
+   "亥-壬寅"
+  ],
+  "note": "Read by the earlier reviewer (2026-10-12); their 忌 lines omit 安葬. Their predictions in premise-predictions.json are post hoc."
+ },
+ "noWitness": [
+  {
+   "context": "辰-戊寅",
+   "url": "https://archive.org/download/06067693.cn/page/n20_w1200.jpg",
+   "reason": "archive.org HTTP 502 on 2026-10-21 (two attempts)"
+  }
+ ],
+ "pages": [
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n11.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n11_w1200.jpg",
+   "sha256": "b069638864543bd1c79c513a9ad800c78793d11a268e75f19af91affeb3d068d",
+   "volume": "卷二十二",
+   "monthJian": "辰",
+   "pillar": "己巳",
+   "officer": "除",
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "Opened once as a fetch test before the prediction freeze (372bdad).",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "嫁娶",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n23.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n23_w1200.jpg",
+   "sha256": "89c6ab6a15569ed23c3081e6befe307764ba37e79a71a3dc8c658ad4137be826",
+   "volume": "卷二十二",
+   "monthJian": "辰",
+   "pillar": "辛巳",
+   "officer": "除",
+   "jiShen": [
+    "天恩",
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄醞釀修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "會親友 not printed (天恩 on the day).",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "嫁娶",
+     "般移",
+     "安牀",
+     "豎柱上梁"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n35.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n35_w1200.jpg",
+   "sha256": "57aec402505a2455e87d969aebdec66065d0554b4fc82a1b1084f87945a56871",
+   "volume": "卷二十二",
+   "monthJian": "辰",
+   "pillar": "癸巳",
+   "officer": "除",
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "嫁娶",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n47.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n47_w1200.jpg",
+   "sha256": "a3050acad6389747180d1dcf254c6d54f2ce74a242b209097dbb767afea12e41",
+   "volume": "卷二十二",
+   "monthJian": "辰",
+   "pillar": "乙巳",
+   "officer": "除",
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "嫁娶",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n84.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n84_w1200.jpg",
+   "sha256": "af24fdb22e07a7ef9bb28662f58f0855ea05cc231985675da4953fbb4dc0214d",
+   "volume": "卷二十三",
+   "monthJian": "巳",
+   "pillar": "乙亥",
+   "officer": "破",
+   "jiShen": [
+    "月德合",
+    "驛馬",
+    "天后",
+    "天倉",
+    "不將",
+    "金堂",
+    "寶光"
+   ],
+   "xiongShen": [
+    "月破",
+    "大耗",
+    "往亡",
+    "重日"
+   ],
+   "yiLine": "祭祀解除沐浴破屋壞垣",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻伐木捕捉畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "重日 + 月德合 (lift); 月破 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n95.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n95_w1200.jpg",
+   "sha256": "f65cd92dbe70801cd027bc3cd26a0bedf26c509c9fb864354b2d098ca923b53e",
+   "volume": "卷二十三",
+   "monthJian": "巳",
+   "pillar": "丙戌",
+   "officer": "執",
+   "jiShen": [
+    "天德合",
+    "不將",
+    "玉宇",
+    "解神",
+    "金匱"
+   ],
+   "xiongShen": [
+    "小耗",
+    "天賊",
+    "五墓",
+    "復日"
+   ],
+   "yiLine": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友沐浴剃頭整手足甲裁衣捕捉",
+   "jiLine": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除求醫療病修造動土豎柱上梁修倉庫開市立券交易開倉庫出貨財修置產室畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "復日 + 天德合 (lift); 五墓 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n120.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n120_w1200.jpg",
+   "sha256": "71980c5714fd3ed7877a7ad1fa87afa52a32c189247dded3f9105bd96860d645",
+   "volume": "卷二十三",
+   "monthJian": "巳",
+   "pillar": "辛亥",
+   "officer": "破",
+   "jiShen": [
+    "天德",
+    "天恩",
+    "驛馬",
+    "天后",
+    "天倉",
+    "金堂",
+    "寶光"
+   ],
+   "xiongShen": [
+    "月破",
+    "大耗",
+    "往亡",
+    "重日"
+   ],
+   "yiLine": "祭祀解除沐浴破屋壞垣",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻伐木捕捉畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "重日 + 天德 (lift); 月破 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n125.jpg",
+   "url": "https://archive.org/download/06067693.cn/page/n125_w1200.jpg",
+   "sha256": "5c4e530235d4a7e4bf1ba5a1f549d3a75e8fe5d0232bd6946d41e74ac245269c",
+   "volume": "卷二十三",
+   "monthJian": "巳",
+   "pillar": "丙辰",
+   "officer": "閉",
+   "jiShen": [
+    "天德合",
+    "時德",
+    "陽德",
+    "福生",
+    "司命"
+   ],
+   "xiongShen": [
+    "月煞",
+    "月虛",
+    "血支",
+    "五虛",
+    "復日"
+   ],
+   "yiLine": "祭祀",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病療目針刺裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "復日 + 天德合 (lift); 月煞/閉日 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n81.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n81_w1200.jpg",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "壬申",
+   "officer": "除",
+   "jiShen": [
+    "陽德",
+    "相日",
+    "吉期",
+    "不將",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "會親友 (宴會) printed; so are 劫煞-only headings Golden leaves unnoted.",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "般移",
+     "開市",
+     "立券交易",
+     "納財",
+     "豎柱上梁",
+     "牧養",
+     "納畜"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n98.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n98_w1200.jpg",
+   "sha256": "c7af0209c44dc6825f20a5e720c8d45fb85b84d263a48a03ce5e62ae66fd28c9",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "己丑",
+   "officer": "破",
+   "jiShen": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "xiongShen": [
+    "月破",
+    "大耗",
+    "月刑",
+    "四擊",
+    "九空",
+    "復日",
+    "朱雀"
+   ],
+   "yiLine": "祭祀",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣伐木畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "復日 + 天德合/月德合 (lift); 月刑/月破 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n105.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n105_w1200.jpg",
+   "sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "丙申",
+   "officer": "除",
+   "jiShen": [
+    "陽德",
+    "相日",
+    "吉期",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "嫁娶",
+     "般移",
+     "開市",
+     "立券交易",
+     "納財",
+     "豎柱上梁",
+     "牧養",
+     "納畜"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n117_w1200.jpg",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "戊申",
+   "officer": "除",
+   "jiShen": [
+    "四相",
+    "陽德",
+    "相日",
+    "吉期",
+    "不將",
+    "益後",
+    "除神",
+    "司命"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友出行結婚姻納采問名安牀求醫療病修倉庫立券交易納財開倉庫出貨財破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "立券交易",
+     "納財",
+     "安葬"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n129.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n129_w1200.jpg",
+   "sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "庚申",
+   "officer": "除",
+   "jiShen": [
+    "月空",
+    "陽德",
+    "相日",
+    "吉期",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離",
+    "八專"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "般移",
+     "開市",
+     "立券交易",
+     "納財",
+     "豎柱上梁",
+     "牧養",
+     "納畜"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067695-n12.jpg",
+   "url": "https://archive.org/download/06067695.cn/page/n12_w1200.jpg",
+   "sha256": "143d1a2fb85ff3d7de04c38cfa90cfd1c056192b3ee144efbd3c1596c492548a",
+   "volume": null,
+   "monthJian": "申",
+   "pillar": "庚午",
+   "officer": "開",
+   "jiShen": [
+    "天馬",
+    "時陽",
+    "生氣",
+    "玉宇",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "復日",
+    "白虎"
+   ],
+   "yiLine": "祭祀入學",
+   "jiLine": "冠帶結婚姻納采問名嫁娶進人口求醫療病苫蓋經絡醞釀伐木畋獵取魚破土安葬啟攢",
+   "classification": "SOURCE_AMBIGUOUS",
+   "gate": "H1-beta",
+   "note": "災煞 相抵 mostly applied, but 冠帶/結婚姻/納采問名/嫁娶/進人口 (in 災煞 list) also print, unexplained; 安葬 could come from the same unexplained path.",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "嫁娶"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n17.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n17_w1200.jpg",
+   "sha256": "c6d60edbc6b81be3e137ffe8efdc3b31cfd8794c545d974a91321bafe0c28535",
+   "volume": "卷二十八",
+   "monthJian": "戌",
+   "pillar": "乙亥",
+   "officer": "除",
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁",
+     "開倉庫出貨財"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n29.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n29_w1200.jpg",
+   "sha256": "5bcc7fb774552451ea82f7385fd6d1a2efa3e01941580e299aba8efffe951a56",
+   "volume": "卷二十八",
+   "monthJian": "戌",
+   "pillar": "丁亥",
+   "officer": "除",
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "八風",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣取魚乘船渡水栽種破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "八風 listed; 取魚乘船渡水 printed.",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁",
+     "開倉庫出貨財"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n41.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n41_w1200.jpg",
+   "sha256": "4a3509593e18675813353025dab5e757d1e9ba25bcdb49aee9c63e757beaa01b",
+   "volume": "卷二十八",
+   "monthJian": "戌",
+   "pillar": "己亥",
+   "officer": "除",
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "classification": "PRESENCE_MISMATCH",
+   "gate": "H1-beta",
+   "note": "",
+   "subtype": "相抵 effect not applied as modelled: 劫煞 headings Golden v2 leaves unnoted are printed on the 忌 line",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "祈福",
+     "求嗣",
+     "結婚姻",
+     "納采問名",
+     "般移",
+     "安牀",
+     "宴會",
+     "豎柱上梁",
+     "開倉庫出貨財"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n65.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n65_w1200.jpg",
+   "sha256": "90f0124dfe3cf288e6270dd599bae2c173093cb408d49d1cd87154563d3cb8fe",
+   "volume": "卷二十八",
+   "monthJian": "戌",
+   "pillar": "癸亥",
+   "officer": "除",
+   "jiShen": [
+    "四相",
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章嫁娶求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "classification": "SOURCE_AMBIGUOUS",
+   "gate": "H1-beta",
+   "note": "No 劫煞 probe heading printed, and 重日 忌 安葬 is printed; but 開倉庫出貨財 (Golden v2: unnoted, 五虛 under H1-B then puzhu:22 propagation) is also printed. A partly unneutralised 劫煞 (whose list holds both 開倉庫 and 安葬) or a missed puzhu:22 propagation give the same page: unattributed print, so 安葬 is not deciding.",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "開倉庫出貨財"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n78.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n78_w1200.jpg",
+   "sha256": "92c2b47c662111d34d8550984b6635ccf45bfc724471995aac8fe1bc360b51d2",
+   "volume": "卷二十九",
+   "monthJian": "亥",
+   "pillar": "己巳",
+   "officer": "破",
+   "jiShen": [
+    "月德合",
+    "驛馬",
+    "天后",
+    "天倉",
+    "不將",
+    "敬安"
+   ],
+   "xiongShen": [
+    "月破",
+    "大耗",
+    "重日",
+    "勾陳"
+   ],
+   "yiLine": "祭祀解除求醫療病破屋壞垣",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀剃頭整手足甲裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻伐木畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "重日 + 月德合 (lift); 月破 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n114.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n114_w1200.jpg",
+   "sha256": "8c4a976cb54e001b7bd206f52554ae98d4b953ef0c886c879b7fdb24de4fcf4d",
+   "volume": "卷二十九",
+   "monthJian": "亥",
+   "pillar": "乙巳",
+   "officer": "破",
+   "jiShen": [
+    "天德",
+    "月恩",
+    "四相",
+    "驛馬",
+    "天后",
+    "天倉",
+    "敬安"
+   ],
+   "xiongShen": [
+    "月破",
+    "大耗",
+    "重日",
+    "勾陳"
+   ],
+   "yiLine": "祭祀解除求醫療病破屋壞垣",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀剃頭整手足甲裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻伐木畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "classification": "CONFIRMS_H1B",
+   "gate": "H1-beta",
+   "note": "重日 + 天德 (lift); 月破 忌 安葬 printed.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n130.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n130_w1200.jpg",
+   "sha256": "5d94ec051470515aa8a8c1a09d2d3f0fd9b702ba90429a69084addc65d1408e6",
+   "volume": "卷二十九",
+   "monthJian": "亥",
+   "pillar": "辛酉",
+   "officer": "開",
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "四耗",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口求醫療病修倉庫經絡醞釀開市立券交易納財開倉庫出貨財伐木畋獵取魚",
+   "classification": "SOURCE_AMBIGUOUS",
+   "gate": "H1-beta",
+   "note": "開市/立券交易/開倉庫出貨財 printed, but 嫁娶 (Golden: 災煞-only, unnoted) also prints; same unexplained pattern as 申-庚午.",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "嫁娶"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n98.jpg",
+   "url": "https://archive.org/download/06067696.cn/page/n98_w1200.jpg",
+   "sha256": "70260734ed5fe7d2a5be246d6b0193d6d9e7439594d6dca44e6ee3a08e4a3bd8",
+   "volume": "卷二十九",
+   "monthJian": "亥",
+   "pillar": "己丑",
+   "officer": "滿",
+   "jiShen": [
+    "月德合",
+    "守日",
+    "天巫",
+    "福德",
+    "玉宇",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "月厭",
+    "地火",
+    "九空",
+    "大煞",
+    "歸忌",
+    "孤辰?"
+   ],
+   "yiLine": "祭祀",
+   "jiLine": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶移徙遠迴求醫療病伐木畋獵取魚栽種",
+   "classification": "SOURCE_AMBIGUOUS",
+   "gate": "H1-alpha",
+   "note": "栽種 printed (地火), but 嫁娶/結婚姻/納采問名 (Golden: 月厭 相抵, unnoted) also print and 月厭 own list contains 栽種. 孤辰?: last 凶神 character uncertain.",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "結婚姻",
+     "納采問名",
+     "嫁娶"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067695-n11.jpg",
+   "url": "https://archive.org/download/06067695.cn/page/n11_w1200.jpg",
+   "sha256": "b5cad5226bcb17985df6ef0bd9134463b92ebe72d30b8431c3abfcdbf7ab8b51",
+   "volume": "卷二十六",
+   "monthJian": "申",
+   "pillar": "己巳",
+   "officer": "收",
+   "jiShen": [
+    "天願",
+    "六合",
+    "五富",
+    "要安",
+    "寶光"
+   ],
+   "xiongShen": [
+    "河魁",
+    "劫煞",
+    "重日"
+   ],
+   "yiLine": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財捕捉栽種牧養納畜",
+   "jiLine": "出行求醫療病",
+   "classification": "LIFT_PREMISE_HOLDS",
+   "gate": "H1-gamma",
+   "note": "重日 + 天願/六合: 安葬 absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067695-n114.jpg",
+   "url": "https://archive.org/download/06067695.cn/page/n114_w1200.jpg",
+   "sha256": "4563988f44fb91fc62fdc97a3c7f7c618500ed3c12ec6be820d670e59b990751",
+   "volume": "卷二十七",
+   "monthJian": "酉",
+   "pillar": "乙巳",
+   "officer": "成",
+   "jiShen": [
+    "月德合",
+    "三合",
+    "臨日",
+    "天喜",
+    "天醫",
+    "普護"
+   ],
+   "xiongShen": [
+    "重日",
+    "朱雀"
+   ],
+   "yiLine": null,
+   "jiLine": "出行畋獵取魚栽種",
+   "classification": "LIFT_PREMISE_HOLDS",
+   "gate": "H1-gamma",
+   "note": "重日 + 月德合: 安葬 absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n88.jpg",
+   "url": "https://archive.org/download/06067694.cn/page/n88_w1200.jpg",
+   "sha256": "6fab459d3ce376055d4059369e7155318fdfa5cc0e418298e9d8addfc0db47a8",
+   "volume": "卷二十五",
+   "monthJian": "未",
+   "pillar": "己卯",
+   "officer": "成",
+   "jiShen": [
+    "天德合",
+    "月德合",
+    "天恩",
+    "母倉",
+    "四相",
+    "三合",
+    "臨日",
+    "天喜",
+    "天醫",
+    "敬安",
+    "五合",
+    "寶光"
+   ],
+   "xiongShen": [
+    "大煞",
+    "復日"
+   ],
+   "yiLine": null,
+   "jiLine": "穿井畋獵取魚",
+   "classification": "LIFT_PREMISE_HOLDS",
+   "gate": "H1-gamma",
+   "note": "復日 + 天德合/月德合, no 鳴吠: 安葬 absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n123.jpg",
+   "url": "https://archive.org/download/06067697.cn/page/n123_w1200.jpg",
+   "sha256": "11d6479bd0749437cb2ef7ebf55dda757fdb29e2df164bb3ee52bf865697fabd",
+   "volume": null,
+   "monthJian": "丑",
+   "pillar": "甲寅",
+   "officer": "除",
+   "jiShen": [
+    "月空",
+    "四相",
+    "時德",
+    "相日",
+    "吉期",
+    "玉宇",
+    "五合",
+    "金匱",
+    "鳴吠對"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "八風",
+    "八專"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祭祀出行結婚姻納采問名嫁娶求醫療病修倉庫開倉庫出貨財取魚乘船渡水",
+   "classification": "PREMISE_MATCHES",
+   "gate": "jiesha-class",
+   "note": "All probe headings absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n75.jpg",
+   "url": "https://archive.org/download/06067697.cn/page/n75_w1200.jpg",
+   "sha256": "a86985f79083e16e7548be80d553e75e213410af89426576528cf0198b45d809",
+   "volume": null,
+   "monthJian": "丑",
+   "pillar": "丙寅",
+   "officer": "除",
+   "jiShen": [
+    "天恩",
+    "月德",
+    "相日",
+    "吉期",
+    "不將",
+    "玉宇",
+    "五合",
+    "金匱",
+    "鳴吠對"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財",
+   "classification": "PREMISE_MATCHES",
+   "gate": "jiesha-class",
+   "note": "All probe headings absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n87.jpg",
+   "url": "https://archive.org/download/06067697.cn/page/n87_w1200.jpg",
+   "sha256": "30a9eb3e28218b5e53c100d351f768619b6debb9d680bd19a25aa9cde1f245f8",
+   "volume": null,
+   "monthJian": "丑",
+   "pillar": "戊寅",
+   "officer": "除",
+   "jiShen": [
+    "時德",
+    "相日",
+    "吉期",
+    "玉堂",
+    "五合",
+    "金匱"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財破土安葬啟攢",
+   "classification": "PARTIAL_PREMISE_MISMATCH",
+   "gate": "jiesha-class",
+   "note": "Probe heading 安葬 printed; others absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [
+     "安葬"
+    ],
+    "notedJiNotPrinted": []
+   }
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n111.jpg",
+   "url": "https://archive.org/download/06067697.cn/page/n111_w1200.jpg",
+   "sha256": "54a15c51a43d551753a4d87c945cafec8edc72a83b10cbe764a173c47ee78833",
+   "volume": null,
+   "monthJian": "丑",
+   "pillar": "壬寅",
+   "officer": "除",
+   "jiShen": [
+    "時德",
+    "相日",
+    "吉期",
+    "玉宇",
+    "五合",
+    "金匱",
+    "鳴吠對"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財開渠",
+   "classification": "PREMISE_MATCHES",
+   "gate": "jiesha-class",
+   "note": "All probe headings absent.",
+   "goldenDiff": {
+    "printedButUnnoted": [],
+    "notedJiNotPrinted": []
+   }
+  }
+ ],
+ "headingTerms": {
+  "map": {
+   "祭祀": "祭祀",
+   "祈福": "祈福",
+   "求嗣": "求嗣",
+   "結婚姻": "結婚姻",
+   "納采問名": "納采問名",
+   "嫁娶": "嫁娶",
+   "般移": "移徙",
+   "安牀": "安牀",
+   "宴會": "會親友",
+   "開市": "開市",
+   "立券交易": "立券交易",
+   "納財": "納財",
+   "求醫療病": "求醫療病",
+   "掃舍宇": "掃舍宇",
+   "豎柱上梁": "豎柱上梁",
+   "修倉庫": "修倉庫",
+   "開倉庫出貨財": "開倉庫出貨財",
+   "栽種": "栽種",
+   "牧養": "牧養",
+   "納畜": "納畜",
+   "安葬": "安葬",
+   "破屋壊垣": "破屋壞垣",
+   "乘船渡水": "乘船渡水",
+   "入學": "入學"
+  },
+  "note": "卷十一 heading → 月表 (通書選擇六十事) term, only where unambiguous; 會親友 for 宴會 and 移徙 for 般移 are aliases assumed here. 行幸遣使/興造動土/營建宮室/修宮室/整容剃頭 are not compared."
+ },
+ "freeze": [
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/build_predictions.py",
+   "sha256": "a4f11c0a6c190c23c5a02b0b0d05e90c88527e49073f9ca5f0ed301dc08551eb",
+   "commit": "372bdad"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/predictions.json",
+   "sha256": "9403164e9b8bfa29bb80914a864c50bf42c893ae0e89e5574bee88b10ad34fa3",
+   "commit": "372bdad"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/build_premise.py",
+   "sha256": "7f01f4d64906be339f16e89f60e9922082bfecafd7f38cf1d336f81d3cf69bf6",
+   "commit": "da73631"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/premise-predictions.json",
+   "sha256": "9b5712de2d584cba89da0f3f8f9f723437d739aed764b39b350d0ac2c3494f69",
+   "commit": "da73631"
+  }
+ ]
+}

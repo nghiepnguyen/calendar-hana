@@ -17,6 +17,7 @@ import {
   p4ActivityState,
   type P4HeadingInput,
 } from './p4ScoreAdapter'
+import type { Vol10JieshaPolicy } from './xiejiVol10JieshaAuthority'
 import { resolveVol10 } from './xiejiVol10Resolution'
 import { applyVol10Scoring } from './xiejiVol10Scoring'
 import { applyTiangouYinNoYi } from './p1TiangouYin'
@@ -59,6 +60,8 @@ export interface ActivityInput {
   xiejiVol10Scoring?: boolean
   /** Overrides `manifest.policies.xiejiVol10BalancingEnabled` (tests and migration proof). */
   xiejiVol10BalancingEnabled?: boolean
+  /** Overrides `manifest.policies.xiejiVol10JieshaPolicy` (tests and migration proof). */
+  xiejiVol10JieshaPolicy?: Vol10JieshaPolicy
   /** P4 heading states of the day; read only with balancing ON. */
   p4Headings?: Readonly<Record<string, P4HeadingInput>>
 }
@@ -129,6 +132,10 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
           unknownGods: new Set(),
         },
         activitiesData.items.filter((item) => item.enabled).map((item) => item.id),
+        {
+          jieshaPolicy: (input.xiejiVol10JieshaPolicy ??
+            manifest.policies.xiejiVol10JieshaPolicy) as Vol10JieshaPolicy,
+        },
       )
     : []
   return activitiesData.items
