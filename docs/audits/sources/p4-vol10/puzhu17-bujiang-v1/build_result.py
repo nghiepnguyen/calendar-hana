@@ -41,10 +41,32 @@ distinguishing = sorted({c for c, x in freeze['witness'].items()
 p4 = {v: [[c, h, ch['from'][0], ch['to'][0]] for c, x in freeze['p4']['contexts'].items()
           for h, ch in x['diff'].get(v, {}).items() if ch['from'][0] != ch['to'][0]] for v in V[1:]}
 
+# Page check of all 16 table contexts (six have no 2025–2027 date, so the faithful calibration never
+# compared them): faithful engine rows (sensitivity.json) with the P17-A marriage rows overlaid.
+sens = json.loads((HERE.parent / 'jiesha-faithful-vol10-v1' / 'sensitivity.json').read_text(encoding='utf-8'))
+h1b = json.loads((HERE.parent / 'h1b-yuebiao-witness-v1' / 'lock.json').read_text(encoding='utf-8'))
+TERMS, PAGES = h1b['headingTerms']['map'], {p['monthJian'] + '-' + p['pillar']: p for p in h1b['pages']}
+page_check = {}
+for ctx, s in sens.items():
+    rows = {h: dict(r) for h, r in s['rows'].items()}
+    for h, r in freeze['table'][ctx]['P17-A']['rows'].items():
+        rows[h] = {**rows.get(h, {}), 'state': r['state'], 'ji': r['ji'], 'propagatedFrom': r.get('propagatedFrom')}
+    compared, contra = 0, []
+    for h, r in rows.items():
+        if h not in TERMS or r['state'] == 'undetermined' or '土王用事後' in (r.get('ji') or []):
+            continue
+        compared += 1
+        printed = TERMS[h] in PAGES[ctx]['jiLine']
+        if printed != (r['state'] in ('only_ji', 'both_present')):
+            contra.append({'heading': h, 'printed': printed, 'state': r['state'], 'ji': r.get('ji'),
+                           'propagatedFrom': r.get('propagatedFrom'), 'jieshaInTrace': '刼煞' in (r.get('ji') or [])})
+    page_check[ctx] = {'date': s['date'], 'compared': compared, 'contradictions': contra}
+
 result = {
     'version': 'puzhu17-bujiang-v1',
     'table': {'contexts': len(full), 'cells': len(table['P17-0']), 'varyingAcrossDates': varying,
               'representativeDatesAgreeWithFullRange': rep_agrees, 'diffVsP17_0': table_diff},
+    'pageCheckP17A': page_check,
     'witness': {'distinguishingPages': distinguishing, 'score': score},
     'p4': {'bujiangContexts': freeze['p4']['bujiangContexts'], 'observableChanges': p4,
            'clause2PreconditionContexts': freeze['p4']['clause2']},

@@ -42,9 +42,9 @@ Supporting source facts:
 | Layer | What it says or does |
 |---|---|
 | SOURCE TEXT | as quoted above |
-| OWNER INTERPRETATION | `p4-vol10-day-composition-v2.json` line `puzhu:17`, `exceptionsNote`: 「不將 / 亥日厭對八專四忌四窮 concern 嫁娶 itself, not the 相抵 trigger; 亥日 is protected by 百忌」. No owner decision record exists beyond this note. |
+| OWNER INTERPRETATION | `p4-vol10-day-composition-v2.json` line `puzhu:17`, `exceptionsNote`: 「不將 / 亥日厭對八專四忌四窮 concern 嫁娶 itself, not the 相抵 trigger; 亥日 is protected by 百忌」. Owner plan `docs/plans/p4-xieji-vol10-balancing.md:67` and `docs/audits/p4-vol10-remaining-ji.md:10`: 「不將 không miễn các kỵ khác của hôn lễ」 (不將 does not lift the other marriage 忌). This statement points to P17-A; the `exceptionsNote` and the engine do not implement it. No other owner decision exists. |
 | ENGINE BEHAVIOR | `p4OwnerRules.ts:541–570`: one pass. A line fires when a `from` heading is `neither_recorded`; the target's 忌 is removed unless it is protected. The pass never reads 不將, so the engine propagates from 嫁娶 even when 不將 is 嫁娶's only 宜. The second sub-clause is not implemented either: the engine never fires when 嫁娶 keeps 忌. |
-| Tests / Golden | No test or Golden row targets the 不將 exception. `p4HeadingAnnotation.test.ts:129` lists `puzhu:17` only as an inventory id. Golden v2 holds the engine behaviour (P17-0). |
+| Tests / Golden | `p4FullDayComposition.test.ts:18` checks that 不將 does not override 八專/百忌 on 嫁娶 itself (寅-甲寅). That holds under every reading here, and no test covers propagation. No Golden row targets the 不將 exception. `p4HeadingAnnotation.test.ts:129` lists `puzhu:17` only as an inventory id. Golden v2 holds the engine behaviour (P17-0). |
 | Faithful simulator | Reuses the engine unchanged, so the table embeds P17-0. |
 
 The note and the engine disagree. The note says the 不將 case is "not the 相抵 trigger". If so, a 嫁娶 that is unnoted *because of* 不將 should not trigger propagation. The engine fires anyway, because in its terms 不將's 宜 against 劫煞's 忌 *is* a 相抵 (`neither_recorded`).
@@ -156,6 +156,38 @@ Mechanical recompute: all 384 cells on every one of the 1,636 scope dates under 
 
 The second sub-clause has no 384-cell effect. Its precondition (嫁娶 has 宜 yet keeps 忌 from 亥日 / 厭對 / 八專 / 四忌 / 四窮) holds in none of the enumerated runs for the 16 contexts. In 戌-亥, 丑-甲寅 and 未-庚申, 嫁娶 has no 宜 at all.
 
+## 7b. Page check of all 16 table contexts (added after review)
+
+Six table contexts have no 2025–2027 date: 丑-丙寅, 丑-甲寅, 戌-己亥, 未-壬申, 未-庚申, 辰-癸巳. The faithful study's calibration therefore never compared them with their 月表 page, which is how the 未-壬申 cells went unnoticed.
+
+This check covers all 16 locked H1-B pages:
+
+- engine rows from `sensitivity.json`, with the P17-A marriage rows overlaid;
+- the calibration's exclusions: dated 土王 and `undetermined`;
+- results in `result.json` `pageCheckP17A`.
+
+Of 342 comparable headings, 336 match and 6 contradict:
+
+| Context | Heading | Page | Engine | 劫煞 in trace | Table effect |
+|---|---|---|---|---|---|
+| 戌-丁亥, 戌-乙亥, 戌-己亥 | 開倉庫出貨財 | printed | `neither_recorded`, 五虛 removed by propagation from 開市+立券交易 | no; cancelled by its own 宜 before propagation | none: warehouse_opening is blank under any reading. These are F1 rows (cross-god). 戌-己亥 is out of window, so it is new F1 evidence against removal. |
+| 戌-癸亥 | 開倉庫出貨財 | printed | puzhu:06 Q4 `lift:QL` | no | none (the known puzhu:06 Q4 item) |
+| 未-戊申 | 納財 | printed | `neither_recorded` (宜 present, 劫煞 cancelled) | no | **finance cell contradicted** (table blank; page notes 忌) |
+| 未-戊申 | 立券交易 | printed | `not_recorded`, 五離 + 劫煞 removed by puzhu:21 from 納財 | **yes** | **contract / transaction cells depend on 納財** |
+
+The 未-戊申 納財 宜 mismatch, which the faithful study listed as P4 only, does reach the table:
+
+- 納財 is itself a 劫煞 heading, so the finance cell is directly at stake.
+- Its `neither_recorded` state triggers puzhu:21. That removes 劫煞 from 立券交易, which affects the contract and transaction cells, and from 開市, which affects opening and business.
+- The page does not fit a simple fix. It prints 納財 and 立券交易 but not 開市. "納財 has no 宜" would make 開市 printed as well.
+- This is a 宜-premise question, not a 鋪註 reading, and it is outside this audit's scope. It stays an open table blocker for up to 5 cells of 未-戊申: finance, contract, transaction, opening and business.
+
+丑-丙寅:
+
+- The page prints 月德, while the 歴例 table puts 丑月's 月德 on 庚. The faithful, 相抵 and impact studies all excluded this context for that reason.
+- Its 21 comparable headings all match the table's output, so the printed output gives no reason to change a cell.
+- The premise is still unresolved. If 月德 is real, the day is outside the scoped branch. That leaves an uncertainty about scope, not about output; it affects the 24 cells of 丑-丙寅.
+
 ## 8. Findings
 
 **P17-1, lexical/grammatical meaning: SOURCE_SUPPORTED (P17-A ≡ P17-B for every observable output here).**
@@ -173,7 +205,7 @@ The second sub-clause has no 384-cell effect. Its precondition (嫁娶 has 宜 y
 - P17-0 is contradicted on 5 cells; P17-C on 2.
 - In-sample: these are the only 不將 contexts in the 劫煞 domain, and both pages were seen before (§4).
 
-**P17-4, 384-cell impact: AFFECTS_TABLE, 3 cells.** 未-壬申 wedding, engagement and moving go blank → avoid under the supported reading. All three stay CONFIRMED. The current faithful table (`jiesha-faithful-vol10-v1`, P17-0) is wrong in those 3 cells. Under A that is +3 avoid cells, giving 177 avoid and 207 blank.
+**P17-4, 384-cell impact: AFFECTS_TABLE, 3 cells.** 未-壬申 wedding, engagement and moving go blank → avoid under the supported reading. All three stay CONFIRMED. The current faithful table (`jiesha-faithful-vol10-v1`, P17-0) is wrong in those 3 cells. Under A that is +3 avoid cells, giving 177 avoid and 207 blank. The 16-page check in §7b found one further table-reaching item that is not about puzhu:17: 未-戊申 納財.
 
 **P17-5, P4 impact.**
 
@@ -186,39 +218,41 @@ The second sub-clause has no 384-cell effect. Its precondition (嫁娶 has 宜 y
 
 ## 9. F2 re-evaluated
 
-**F2_TABLE = COMPLETE**, conditional on the Option C table being regenerated with puzhu:17 = P17-A, which gives 3 corrected cells.
+**F2_TABLE = PARTIAL.**
 
-Remaining 鋪註 issues that could reach a table cell:
+The puzhu:17 part is resolved. The Option C table must be regenerated with P17-A, which corrects 3 cells. One 鋪註-reachable uncertainty can still change cells: the 未-戊申 納財 宜 premise, which feeds puzhu:21.
 
 | Issue | Can it change a cell? |
 |---|---|
-| puzhu:17 不將 exception | resolved; +3 cells |
-| puzhu:17 second sub-clause | no, the precondition is never met in the 16 contexts |
-| F1 cross-god propagation | no (faithful study: all 31 table propagations are same-god). The 未-壬申 propagations that A removes were cross-god for 五離 but same-god for 劫煞. |
-| puzhu:06 Q4 (戌-癸亥) | no cell (faithful study: no puzhu:06 row decides a verdict) |
-| 未-戊申 納財 宜 | P4 heading only |
-| restored-scope label | no cell depends on the label (faithful study) |
+| puzhu:17 不將 exception | resolved (P17-A/B); +3 avoid cells in 未-壬申 |
+| puzhu:17 second sub-clause | no; its precondition never holds in the 16 contexts |
+| **未-戊申 納財 宜 → puzhu:21** | **yes.** finance directly; contract and transaction, plus opening and business, through 21. Up to 5 cells. Page contradicts finance and the 立券交易 heading (§7b). |
+| 丑-丙寅 printed 月德 | scope premise only; page output matches all 21 comparable headings |
+| F1 cross-god propagation | no. Every table-relevant propagation removes 劫煞 from a heading whose trigger lost 劫煞 to its own 宜. The 戌 開倉庫 rows lose 五虛, not 劫煞. |
+| puzhu:06 Q4 (戌-癸亥) | no; 劫煞 is already cancelled on 開倉庫出貨財 |
+| restored-scope label | no cell depends on it (faithful study) |
 | medical adapter anomaly | score adapter, P4 window only |
 
-The remaining risk is the in-sample nature of the evidence: every 劫煞 context has now been read, so no out-of-sample witness can exist. That is an evidence-quality caveat, not a source uncertainty about any cell.
+The evidence is in-sample. Every 劫煞 context has now been read, so no out-of-sample witness can exist.
 
 **F2_P4 = PARTIAL.** Open items:
 
-- the puzhu:17 second sub-clause (71 contexts);
+- the puzhu:17 second sub-clause (precondition in 71 contexts);
 - puzhu:06 Q4 against 戌-癸亥;
 - 未-戊申 納財 宜;
 - the restored-scope label SPEC_GAP;
-- F1, now without the 4 未-戊申 rows;
-- the P4 engine still implements P17-0, so the 4 rows above need an engine change before P4 can move.
+- F1. It loses the 4 未-戊申 marriage rows, which puzhu:17 now explains, and gains 戌-己亥 開倉庫出貨財 (out of window).
+- The engine still implements P17-0. Moving P4 to P17-A changes Golden v2 rows on 2026-08-02 and 2027-07-28.
 
 ## 10. Readiness by layer
 
-**VOL10_OPTION_C: MIGRATION_READY.** This applies to a regenerated table with P17-A, not the current `jiesha-faithful-vol10-v1` table:
+**VOL10_OPTION_C: MORE_EVIDENCE_REQUIRED.**
 
-- 384 cells; 3 differ from the earlier table.
-- Every cell CONFIRMED.
-- No remaining source uncertainty can change a cell.
-- Caveats: the evidence is in-sample, and the generator must apply P17-A, which means an audit-side engine variant or a P4 engine change; that is a design decision for the owner.
+- puzhu:17 no longer blocks: the corrected table is `full.json` under P17-A, with 177 avoid and 207 blank, all CONFIRMED.
+- One blocker can still change cells: 未-戊申 納財 宜, up to 5 cells.
+- 丑-丙寅's scope premise should be settled at the same time. It does not change printed output.
+- Generating the migration table means applying P17-A on the audit/generator side without changing P4 production. Changing the engine would move Golden v2 on the two 未-戊申 dates.
+- The table to migrate is not the `jiesha-faithful-vol10-v1` lock.
 
 **P4 2025–2027: MORE_EVIDENCE_REQUIRED.** See the F2_P4 items.
 

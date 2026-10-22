@@ -54,6 +54,152 @@
    }
   }
  },
+ "pageCheckP17A": {
+  "丑-丙寅": {
+   "date": "1904-02-02",
+   "compared": 21,
+   "contradictions": []
+  },
+  "丑-壬寅": {
+   "date": "2025-02-02",
+   "compared": 21,
+   "contradictions": []
+  },
+  "丑-戊寅": {
+   "date": "2025-01-09",
+   "compared": 24,
+   "contradictions": []
+  },
+  "丑-甲寅": {
+   "date": "1902-01-31",
+   "compared": 21,
+   "contradictions": []
+  },
+  "戌-丁亥": {
+   "date": "2027-11-04",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-乙亥": {
+   "date": "2025-11-02",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-己亥": {
+   "date": "1903-11-07",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": "開市+立券交易",
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "戌-癸亥": {
+   "date": "2025-10-21",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "開倉庫出貨財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [
+      "五虛"
+     ],
+     "propagatedFrom": null,
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "未-丙申": {
+   "date": "2025-07-26",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-壬申": {
+   "date": "1904-08-06",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-庚申": {
+   "date": "1902-08-05",
+   "compared": 21,
+   "contradictions": []
+  },
+  "未-戊申": {
+   "date": "2026-08-02",
+   "compared": 21,
+   "contradictions": [
+    {
+     "heading": "立券交易",
+     "printed": true,
+     "state": "not_recorded",
+     "ji": [
+      "五離",
+      "刼煞"
+     ],
+     "propagatedFrom": "納財",
+     "jieshaInTrace": true
+    },
+    {
+     "heading": "納財",
+     "printed": true,
+     "state": "neither_recorded",
+     "ji": [],
+     "propagatedFrom": null,
+     "jieshaInTrace": false
+    }
+   ]
+  },
+  "辰-乙巳": {
+   "date": "2025-04-06",
+   "compared": 24,
+   "contradictions": []
+  },
+  "辰-己巳": {
+   "date": "2025-04-30",
+   "compared": 21,
+   "contradictions": []
+  },
+  "辰-癸巳": {
+   "date": "1903-05-05",
+   "compared": 21,
+   "contradictions": []
+  },
+  "辰-辛巳": {
+   "date": "2027-05-02",
+   "compared": 21,
+   "contradictions": []
+  }
+ },
  "witness": {
   "distinguishingPages": [
    "未-壬申",

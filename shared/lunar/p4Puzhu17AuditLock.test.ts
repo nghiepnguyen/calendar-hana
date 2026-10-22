@@ -49,6 +49,27 @@ describe('puzhu:17 不將 audit lock', () => {
     expect(result.p4.clause2PreconditionContexts).toHaveLength(71)
   })
 
+  it('16-page check under P17-A: only the 戌 開倉庫 and 未-戊申 納財/立券交易 rows contradict', () => {
+    const pc = result.pageCheckP17A as Record<
+      string,
+      { compared: number; contradictions: { heading: string }[] }
+    >
+    expect(Object.values(pc).reduce((n, x) => n + x.compared, 0)).toBe(342)
+    const bad = Object.entries(pc).flatMap(([c, x]) =>
+      x.contradictions.map((d) => `${c}:${d.heading}`),
+    )
+    expect(bad.sort()).toEqual(
+      [
+        '戌-丁亥:開倉庫出貨財',
+        '戌-乙亥:開倉庫出貨財',
+        '戌-己亥:開倉庫出貨財',
+        '戌-癸亥:開倉庫出貨財',
+        '未-戊申:立券交易',
+        '未-戊申:納財',
+      ].sort(),
+    )
+  })
+
   it('不將 presence: the 歴例 table agrees with every locked 月表 吉神 line', () => {
     const pages = [...h1b.pages, ...xiangdi.pages, ...v2.pages] as {
       monthJian: string
