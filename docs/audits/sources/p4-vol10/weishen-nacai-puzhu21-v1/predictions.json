@@ -1,0 +1,26 @@
+{
+ "version": "weishen-nacai-puzhu21-v1",
+ "context": "未-戊申 (page 06067694-n117, H1-B lock)",
+ "limitation": "Not blind: n117 was transcribed in the H1-B audit and its 納財 / 立券交易 / 移徙 cells were re-read in the puzhu:17 audit (a85ab0f). This freeze fixes the cell-level predictions of each reading before the re-read for this audit.",
+ "base": "puzhu:17 = P17-A (a85ab0f). Engine rows from freeze.json.",
+ "interpretations": {
+  "N-A": "engine as is: 納財 宜 (四相, 卷十 四相 entry + 卷十一 納財 宜 list) → 相抵 with 劫煞 (「宜則不忌」) → neither_recorded → puzhu:21 removes every 忌 on 開市 and 立券交易 (劫煞; 五離 on 立券交易 too).",
+  "N-C": "納財 宜 as N-A; puzhu:21 read narrowly: it withholds only the 忌 that the trigger's 相抵 cancelled (劫煞); an independent god's 忌 (五離 on 立券交易) survives. Same 劫煞 cells as N-A.",
+  "N-B": "page literal: 納財 has no 宜 on 未-戊申 → 納財 keeps 劫煞; puzhu:21 does not fire; 開市 / 立券交易 keep 劫煞 (puzhu:06 held, as the engine's owner classes leave 四相 UNDETERMINED).",
+  "N-B6": "N-B plus puzhu:06 read as source text (四相 day: 不註忌 開市 立劵交易 納財 開倉庫出貨財 unless 遇德猶忌 / 從忌不從宜): lifts 納財 and 開市 too. Same printed 納財 / 開市 as N-A."
+ },
+ "pageCells": {
+  "納財":   {"N-A": false, "N-C": false, "N-B": true,  "N-B6": false},
+  "開市":   {"N-A": false, "N-C": false, "N-B": true,  "N-B6": false},
+  "立券交易": {"N-A": false, "N-C": true,  "N-B": true,  "N-B6": true}
+ },
+ "tableCells": {
+  "N-A":  {"finance": "blank", "contract": "blank", "transaction": "blank", "opening": "blank", "business": "blank"},
+  "N-C":  {"finance": "blank", "contract": "blank", "transaction": "blank", "opening": "blank", "business": "blank"},
+  "N-B":  {"finance": "avoid", "contract": "avoid", "transaction": "avoid", "opening": "avoid", "business": "avoid"},
+  "N-B6": {"finance": "blank", "contract": "avoid?", "transaction": "avoid?", "opening": "blank", "business": "blank"}
+ },
+ "notes": {
+  "N-B6": "立券交易 keeps 五離 and possibly 劫煞 under N-B6 (puzhu:06 vs 五離 lift not modelled); not engine-computed. N-B6 is listed only because puzhu:06's text names 四相 and 納財."
+ }
+}
