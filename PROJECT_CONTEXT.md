@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-21 (giờ VN). Main `ac25ce6` đã deploy (PR #84, audit 28 Tú). Roadmap P4 (1–10) xong, P4 ON trên production. Audit 28 Tú ĐÓNG & DEPLOYED (xem §3 "28 Tú — audit"). Không có mục roadmap đang làm; việc tiếp theo chọn từ §5 "Việc độc lập" khi owner yêu cầu.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-22 (giờ VN). Main `85736fd` đã deploy (PR #87, **卷十 劫煞 Option C v1**). Roadmap P4 (1–10) xong, P4 ON trên production. Migration 卷十 劫煞 (Option C v1) **DONE & DEPLOYED** (xem §3 "卷十 劫煞 — Option C v1"). Audit 28 Tú ĐÓNG & DEPLOYED. Không có mục roadmap đang làm; việc tiếp theo chọn từ §5 "Việc độc lập" khi owner yêu cầu.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > Lịch sử chi tiết (phase, PR, số đo, release evidence, chuỗi SHA/bundle/deploy cũ): [`docs/project-context/history.md`](docs/project-context/history.md). "history §N" trỏ về phần N trong file đó; bản đầy đủ của file này trước khi thu gọn là history §42.
 > **Quy tắc cập nhật:** sửa tại chỗ. Mục production chỉ giữ bản hiện hành và bản liền trước; chuỗi cũ hơn, evidence release và smoke chi tiết ghi vào `docs/audits/` hoặc history. Không thêm "phần N+1".
@@ -26,9 +26,9 @@
 
 | Hạng mục | Giá trị |
 |---|---|
-| Main đã deploy | `ac25ce6` ([PR #84](https://github.com/nghiepnguyen/calendar-hana/pull/84) audit 28 Tú: sửa 5 quote, ontology xây dựng, evidence confidence; content 1.0.4; 2026-10-21). Chỉ đổi hiển thị/evidence, không đổi điểm/status. Runtime trước đó `ca3c983` ([PR #80](https://github.com/nghiepnguyen/calendar-hana/pull/80) Tháng Sát Chủ + giờ Sát Chủ cá nhân). Output điểm/status đổi gần nhất: `5913c98` (PR #76 P1) |
-| Bundle | `/assets/index-CRGNGEqY.js`, SHA-256 `fce1aaea29c4f878fd75a31f3558c59393a1d4194eab45c8c06ac664982a8474` (build `ac25ce6`, kiểm 2026-10-21; chưa so byte với build local). Trước đó `index-BOXM4O_Y.js` `b591b41d…` (`ca3c983`). Cách so byte với build local: `GITHUB_SHA=<sha> npm run build`, thay `builtAt` local bằng giá trị `/version.json` → `index-*.js` trùng production ngoài tham chiếu hash chunk; build local cần `VITE_FIREBASE_*` của bundle production (config public) |
-| Deploy gần nhất | [deploy 39518653568](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39518653568) `ac25ce6` SUCCESS 2026-10-21; `/version.json` build `ac25ce6`. Smoke production 2026-10-21 PASS (desktop: 柳 10/10/2026 quote `埋葬瘟□多□□` + ghi chú chữ khó đọc, hộp thoại Sao Liễu, 星 11/10/2026 Xây dựng có 造新房, `mansion-content.spec.ts`; console sạch). Trước đó [deploy 39348730720](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39348730720) `94f5319` SUCCESS 2026-10-20 |
+| Main đã deploy | `85736fd` ([PR #87](https://github.com/nghiepnguyen/calendar-hana/pull/87) 卷十 劫煞 Option C v1, merge 2026-10-22). **Đổi điểm/status** (1900–2100: 17.420 activity −15, 2.576 event đổi phân loại; 0 thay đổi 2025–2027). Trước đó `f1e5c54` ([PR #86](https://github.com/nghiepnguyen/calendar-hana/pull/86) S1 土王 audit, chỉ docs) và `ac25ce6` (PR #84 audit 28 Tú, chỉ hiển thị/evidence). Output điểm/status đổi trước đó: `5913c98` (PR #76 P1) |
+| Bundle | `/assets/index-DFKQlWND.js`, SHA-256 `2ea886f55e75f71eacee098b218dc84c002dd70a2d79c2860707c14cb521143b` (build `85736fd`, kiểm 2026-10-22; chưa so byte với build local). Trước đó `index-CRGNGEqY.js` `fce1aaea…` (`ac25ce6`; bundle của `f1e5c54` không ghi lại). Cách so byte với build local: `GITHUB_SHA=<sha> npm run build`, thay `builtAt` local bằng giá trị `/version.json` → `index-*.js` trùng production ngoài tham chiếu hash chunk; build local cần `VITE_FIREBASE_*` của bundle production (config public) |
+| Deploy gần nhất | [Deploy #30 / 39806855626](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39806855626) `85736fd` SUCCESS 2026-10-22; `/version.json` `{"version":"26.10.22","build":"85736fd"}`. Smoke production sau deploy: owner xác nhận deploy PASS; smoke Playwright theo §7 chưa ghi lại. Trước đó [deploy 39522624941](https://github.com/nghiepnguyen/calendar-hana/actions/runs/39522624941) `f1e5c54` SUCCESS 2026-10-21 |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
 
@@ -43,6 +43,7 @@
 | `unknownRuleMeansNoEvidence` | true | UNKNOWN không suy thành tốt/xấu |
 | `hardVetoFromClassicalJi` | false | 忌 cổ điển không tự thành veto |
 | `legacyGodsMonthJian` | **true** (PR #45) | 14 thần legacy (Thiên Xá, Nguyệt Ân, Dân Nhật, Tam Hợp, Thiên Hỷ, Lục Hợp, Ngũ Phú, Giải Thần, Phúc Sinh, Thánh Tâm, Ích Hậu, Tục Thế, Nguyệt Hình, Thiên Lại) đọc theo Month Jian thay vì tháng âm; sao hiển thị và điểm cùng đổi |
+| `xiejiVol10JieshaPolicy` | **`faithful-v1`** (PR #87, 2026-10-22) | 卷十 劫煞 辰戌丑未 không 德 (`cancel_both`): verdict theo authority `xieji-vol10-jiesha-authority-v1.json` (384 ô audit; runtime 352 ô APPLIED, demolition EXCLUDED_PENDING_GLYPH_AUDIT, contract/transaction UNREACHABLE). `legacy-cancel-both` = output trước PR #87 |
 | `xiejiVol10BalancingEnabled` | **true** (PR #71, 2026-10-18) | P4: cân bằng 宜/忌 卷十一 + 21 thần dormant + P5 + 9b (`ALL_TABOO_FLOOR_V1`, `MULTI_HEADING_JI_WINS_V1`) + −25 product policy; chỉ chạy khi flag ON **và** provider `p4AlmanacHeadings` đã nạp **và** ngày trong 2025–2027. OFF = baseline v1 byte-equal |
 | `tiangouYinNoYi` | **true** (PR #76, 2026-10-19) | P1: ngày Dần, `pray_blessing`/`pray_children` mọi dòng dương applied → informational (`p1-tiangou-yin-v1`, puzhu:07); mọi năm, độc lập flag P4. `false` = output trước P1 |
 | `satChuNgocHapStars` | **true** (PR #78, #80, 2026-10-20) | Sao ngày Tháng Sát Chủ (Lưu-thị, = `SAT_CHU_DUONG`), Bốn Mùa Sát Chủ, Sát Chủ Trong Bốn Mùa, Ngày Sát Sư, Tháng Sát Sư (Ngọc Hạp Chánh Tông tr. 128–133; không mapping chấm điểm). `false` = output trước PR #78 (giờ Sát Chủ `DayHour.isSatChu` không theo flag, chỉ hiển thị) |
@@ -55,6 +56,7 @@ Rollback (flag về false trên nhánh riêng → PR → deploy → smoke; khôn
 - `xiejiVol10BalancingEnabled`: PR một dòng manifest, giữ 6 chain và `legacyGodsMonthJian`; proof `shared/lunar/p4MigrationRollback.test.ts`, `docs/audits/p4-migration-diff.md`.
 - `tiangouYinNoYi`: PR một dòng manifest, độc lập flag P4; test lịch sử ghim `false`, proof `shared/lunar/p1TiangouYinMigration.test.ts`.
 - `satChuNgocHapStars`: PR một dòng manifest; baseline/rollback/migration-diff/almanac legacy ghim `false`.
+- `xiejiVol10JieshaPolicy`: PR một dòng manifest về `legacy-cancel-both`; authority, Golden v2 và test giữ nguyên; 9 test lịch sử đã ghim `legacy-cancel-both`; proof `shared/lunar/xiejiVol10JieshaMigration.test.ts` (legacy vs faithful-v1 toàn miền), `docs/audits/p4-jiesha-option-c-migration.md`.
 
 ## 3. Trạng thái theo phase
 
@@ -84,7 +86,8 @@ Rollback (flag về false trên nhánh riêng → PR → deploy → smoke; khôn
 | P3b — presence evaluator | DONE (PR #44) | `shared/lunar/xiejiGodPresence.ts` (`xieji-god-presence-v1`), `xieji-god-tables.json`; `docs/audits/xieji-god-presence-2025-2027.tsv` |
 | Release A — 14 thần legacy theo Month Jian | DEPLOYED (PR #45) | Flag `legacyGodsMonthJian`; Golden `golden-legacy-gods-month-jian.json` (đóng băng `70ed321`); `docs/audits/dormant-legacy-gods.md` |
 | 月破 子午未申 仍忌 | DEPLOYED (PR #49) | `yuePoStillAvoidPolicy.ts`, `yuePoStillAvoidMigration.test.ts`; 11/1095 ngày đổi điểm `medical`/`demolition`; `docs/audits/yue-po-still-avoid-release.md` |
-| 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`, Golden `shared/almanac-data/golden-xieji-vol10-scoring.json` |
+| 卷十 scoring | **ON** (PR #31/#32) | `docs/audits/xieji-vol10-scoring-migration.md`, `xieji-vol10-activation.md`; Golden hiện hành `golden-xieji-vol10-scoring-v2.json` (PR #87); v1 `golden-xieji-vol10-scoring.json` giữ nguyên byte, test ghim `legacy-cancel-both` |
+| 卷十 劫煞 Option C v1 | **DONE & DEPLOYED** (PR #87, `85736fd`, 2026-10-22) | §3 "卷十 劫煞 — Option C v1"; [báo cáo](docs/audits/p4-jiesha-option-c-migration.md) |
 | P4 — cân bằng 卷十 | **ON** (PR #71, 2026-10-18) | Roadmap §5; soil `p4-soil-owner-convention-v1` OWNER_ADOPTED_SOURCE_DEPENDENT, canonical S1 PARTIALLY RESOLVED (còn mở onset khi 四立 rơi sớm trong ngày). [progress](docs/audits/p4-vol10-progress.md), [P4-B](docs/audits/p4-vol10-remaining-ji.md), [activation](docs/audits/p4-activation.md) |
 | CI | Local từ 2026-10-19 (§7); GitHub chỉ deploy | Shard unit trên Actions (PR #52/#53) đã thay bằng `check`/`test:changed`/`ci:full`/`ci:p4` chạy ở máy (PR #74) |
 | PWA update (`/version.json`, toast "Có phiên bản mới") | DEPLOYED (PR #57, #58) | `docs/pwa-update-strategy.md`; version hiển thị = ngày build `YY.MM.DD` giờ VN. Chưa kiểm tay trên iPhone Home Screen |
@@ -106,6 +109,21 @@ Commit: `2be48a7` (sửa nguồn + migration P4), `ed59e09` (ontology xây dựn
 - **Artifact:** `tasks/calendar-audit/{secondary-review, secondary-review-resolution, p4-baseline-source-correction, ontology-resolution, ontology-resolution-implementation, evidence-confidence-policy}/`. Artifact cũ ghi trạng thái đúng tại thời điểm đó; trạng thái **hiện hành** xem `evidence-confidence-policy/certification-final.*`, `evidence-confidence-policy/implementation.*`, `ontology-resolution-implementation/implementation.*`. Không sửa artifact lịch sử cho khớp hiện tại.
 - **Follow-up không chặn:** ghi chú UI cho NORMALIZED; evidenceConfidence cho 用事; review văn bản bởi chuyên gia người nếu cần chứng nhận transcription mạnh hơn.
 
+### 卷十 劫煞 — Option C v1 (DONE & DEPLOYED 2026-10-22, PR #87 `85736fd`)
+
+Commit: `fe40968` (authority + runtime + policy), `db905d8` (Golden v2, migration diff, gate), `e85451f` (docs). Báo cáo: [`docs/audits/p4-jiesha-option-c-migration.md`](docs/audits/p4-jiesha-option-c-migration.md).
+
+- **Vấn đề:** 協紀 卷十 劫煞 tháng 辰戌丑未 không 德 「凡所忌者則不註宜所宜者亦不註忌」. Resolver cũ đọc là `cancel_both` (bỏ chú mọi heading 劫煞); 月表 phản bác (39/39 cụm). Đọc trung thực: heading có 宜 không chú, heading không 宜 giữ 忌 劫煞, sau cặp 鋪註.
+- **Chuỗi audit** (history §43): H1-B → 相抵 → impact OVERLAP → simulator trung thực (鳴吠對 → 啟攢, 鋪註05) → puzhu:17 P17-A (未-壬申 +3 ô) → 未-戊申 納財 (owner: nguồn thắng 1 ô 月表 tự mâu thuẫn, **cục bộ**, ô không SOURCE_WITNESSED) → 丑-丙寅 月德 (歴例 十二月 庚 → D-A; n75 = WITNESS_PRINTING_ERROR).
+- **Authority audit:** `docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json` (SHA-256 `b24f6f68…1946`): 16 context × 24 activity = 384 ô, 177 avoid / 207 blank, CONFIRMED, cố định theo (Month Jian + trụ ngày, activity) suốt 1900–2100.
+- **Production projection v1:** `shared/almanac-data/xieji-vol10-jiesha-authority-v1.json` (`xieji-vol10-jiesha-faithful-v1`) + `shared/lunar/xiejiVol10JieshaAuthority.ts`. Chỉ phủ phần authority mà chuẩn hoá heading hiện tại của `resolveVol10` chạm tới: **352 ô APPLIED** (22 activity; 171 avoid / 181 blank); contract/transaction **UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION** (32 ô giữ làm provenance; 劫煞 ghi 立劵交易, `NORM` không có 劵→券); demolition **EXCLUDED_PENDING_GLYPH_AUDIT** (resolver đọc 破屋壞垣 → 破屋壊垣 nhưng audit không có ô; giữ `cancel_both`, gắn `authorityExclusion`). **Không** nói cả 384 ô đều chạy ở runtime.
+- **Predicate:** depth 0, entry `jie_sha`, Month Jian 辰戌丑未, 德 chắc chắn vắng (`withVirtues === false`) → nhánh `otherwise` = `cancel_both`, policy `faithful-v1`. Key `${monthJian}${pillar}` (vd. `丑丙寅`). Lỗi to: context lạ, thiếu ô APPLIED, chạm activity UNREACHABLE; authority hỏng → lỗi khi import. Không đổi: `cancel_both` chung, 災煞/月煞/月刑/重日/復日, 德, chuẩn hoá heading, P4, adapter medical, scope label; `classicalResolution.version` vẫn `xieji-vol10-v2`.
+- **Tác động thật 1900–2100** (2.710 ngày chạy): 1.615 ngày; 17.631 verdict → avoid (211 trên 21 ngày 2025–2027 không đổi điểm vì P4 chấm); 17.420 activity −15 (neutral→watch 11.764, watch→avoid 3.223, recommended→watch 1.615, consider→avoid 818); 0 activity 2025–2027; event: move_house 1.022, wedding 818, groundbreaking 424, open_business 312 (caution→not_recommended); 0 ngoài scope.
+- **Đối chiếu simulator:** bằng đúng simulator dựng từ candidate trên mọi ngày; so simulator `d79b08e`: chỉ khác ở P17-A 未-壬申 (312) và hàng 2025–2027 do P4 candidate của simulator (134 activity, 58 event), dư 0.
+- **Golden:** `golden-xieji-vol10-scoring-v2.json` (46 case, kế nhiệm); v1 giữ byte (`c3d8b0d7…`). P4 Golden v2, astronomy/JPL không đổi.
+- **Gate:** 14 mutation (`scripts/audit-vol10-jiesha-mutations.py`, trong `ci:p4`); `ci:p4` và `ci:full` PASS trước merge.
+- **Nợ kỹ thuật/nguồn (không chặn release):** G1 壞/壊, G2 劵/券 (§5).
+
 ## 4. Runtime pipeline
 
 ```text
@@ -119,6 +137,7 @@ computeAlmanac
   giờ: getAllHours(jd, dayChi, lunarMonth) — hoàng/hắc đạo + isSatChu
 → classicalDay + activity contributions
 → getActivityRecommendations
+→ resolveVol10 (policy `xiejiVol10JieshaPolicy`: 劫煞 辰戌丑未 không 德 → ô authority faithful-v1)
 → applyVol10Scoring — khi xiejiVol10BalancingEnabled ON: applyP4Balancing thay 6 chain cho activity có heading P4 (cần provider `p4AlmanacHeadings` đã nạp, 2025–2027)
 → cap/status hoạt động
 → evaluateEventDay (criteria + score/classification + diagnostics)
@@ -138,7 +157,7 @@ Lưu ý UI: ô "Sao tốt & sao xấu" (`StarChips`) chỉ hiện 5 sao đầu m
 
 ## 5. Vấn đề mở và việc tiếp theo
 
-Roadmap P4 1–10 xong (activation PR #71, owner cho phép 2026-10-18). Không có mục roadmap mới. Mục cần owner quyết thì dừng và hỏi, không tự chọn.
+Roadmap P4 1–10 xong (activation PR #71, owner cho phép 2026-10-18). Migration 卷十 劫煞 Option C v1 xong (PR #87, 2026-10-22). Không có mục roadmap mới. Mục cần owner quyết thì dừng và hỏi, không tự chọn.
 
 ### Roadmap (đã xong)
 
@@ -154,6 +173,7 @@ Roadmap P4 1–10 xong (activation PR #71, owner cho phép 2026-10-18). Không c
 | 9 | Migration diff + rollback | XONG, `9865eee`; TSV 4 cấu hình (baseline / presence-only / balancing-only / full), 0 `UNEXPECTED_REGRESSION`; [PRD](tasks/prd-p4-migration-diff.md), [báo cáo](docs/audits/p4-migration-diff.md) |
 | 9b | Policy sau go-live review (`ALL_TABOO_FLOOR_V1`, `MULTI_HEADING_JI_WINS_V1`, UI 忌 bị cap) | XONG, [PR #70](https://github.com/nghiepnguyen/calendar-hana/pull/70) `98e8ca5`; [PRD](tasks/prd-p4-9b.md), [báo cáo](docs/audits/p4-9b.md) |
 | 10 | Activation (flag ON + 21 thần + P5) | XONG, [PR #71](https://github.com/nghiepnguyen/calendar-hana/pull/71) `7826f0c`; [PRD](tasks/prd-p4-activation.md), [báo cáo](docs/audits/p4-activation.md) |
+| — | 卷十 劫煞 Option C v1 (相抵 → faithful authority) | **XONG & DEPLOYED**, [PR #87](https://github.com/nghiepnguyen/calendar-hana/pull/87) `85736fd`; §3 "卷十 劫煞 — Option C v1" |
 
 Evidence từng mục (số đo, mutation, quyết định owner): history §42 và các báo cáo trên.
 
@@ -162,8 +182,11 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 | # | Vấn đề | Trạng thái / việc tiếp theo |
 |---|---|---|
 | S1 | 土王用事 SOURCE_DEPENDENT (đếm ngày hay thời khắc 立, biên 「後」, 時憲書/定氣, 德 có 止忌 như 土府 không) | **PARTIALLY RESOLVED** (2026-10-21, [final review](docs/audits/p4-vol10-remaining-operands-research.md#s1--土王用事-final-review)). Chốt: 18 ngày trước 四立, 後 = nhãn khoảng, 土府 ≠ 土王, 德 không gỡ (卷十 「與徳合赦願併猶忌…以下並同」), JPL giữ. Còn mở: ngày onset khi 四立 rơi 00:00–06:17 (212/812 ca 1899–2101; 大統 dùng 土王策 18,2621 ngày 恆氣, 協紀/推步捷例 đếm ngày dân sự). Không đổi runtime. Trước đó đã thử archive.org (chỉ 《大清時憲書箋釋》 chép tay, OCR không dùng được), ctext (cấm truy cập tự động), scan 時憲書 Tohoku (225 canvas, chưa khóa mốc 土王). Evidence: `docs/audits/p4-vol10-remaining-operands-research.md` |
-| H1-B | Ghép 忌 sống sót với 相抵 (owner 2026-10-17) | **PARTIALLY_SOURCE_WITNESSED**, audit-only (nhánh `claude/h1b-yuebiao-witness`, chưa merge; [review](docs/audits/p4-h1b-yuebiao-witness.md)). 月表 xác nhận lớp 重日/復日 + 德 (7 trang, 0 mâu thuẫn). **Chờ owner:** 11 trang 月表 劫煞 tháng 辰/戌/未 không 德 vẫn in 忌 các heading mà Golden v2/production để `neither_recorded` (tới 235 dòng ngày, 14 ngày 2025–2027) — tiền đề 相抵 → 不註, không phải H1-B. Không đổi runtime |
-| X相抵 | 相抵 / `cancel_both` (tách khỏi H1-B) | Audit evidence-only (nhánh `claude/xiangdi-cancel-both-audit`, chưa merge; [audit](docs/audits/p4-xiangdi-cancel-both-audit.md)). **劫煞 辰戌丑未 không 德: `cancel_both` bị 月表 phản bác** (辰/戌/未 39/39 cụm). Đọc chữ 「凡所忌者則不註宜所宜者亦不註忌」 = chỉ bỏ heading có 宜 + cặp 鋪註: PARTIALLY_SOURCE_WITNESSED (in-sample). 災煞/月煞 ứng viên riêng; 月刑/天吏 có 德 UNRESOLVED (lẫn puzhu:06). Ảnh hưởng mọi năm qua 卷十 scoring. **Impact study** (nhánh `claude/jiesha-overlap-impact`; [báo cáo](docs/audits/p4-jiesha-overlap-impact.md)): 鳴吠對 宜 啟攢 (không 宜 安葬) + 鋪註 「有宜啟攢不註忌安葬」 giải thích 丑 (3/3); OVERLAP 42/42 cụm vs production 2/42. 1900–2100: tối đa 15.158 activity −15, 3.314 event caution→not_recommended (cận trên — tầng 卷十 không có cặp 鋪註); 2025–2027: 136 activity, 50 event. J5 MORE_EVIDENCE_REQUIRED (tầng 卷十). **Simulator trung thực** (nhánh `claude/jiesha-faithful-vol10-sim`; [báo cáo](docs/audits/p4-jiesha-faithful-vol10.md)): verdict 卷十 劫煞 = hàm của (context, activity), 384 ô; 1900–2100: 17.242 activity đổi điểm (CONFIRMED, 0 unresolved), thêm 鋪註05 (求醫療病 遇徳猶忌); F1 (lan truyền xuyên thần) SOURCE_DEPENDENT chỉ tầng P4; đề xuất kiến trúc C (bảng authority sinh từ engine P4). **puzhu:17 不將** (nhánh `claude/puzhu17-bujiang-audit`; [audit](docs/audits/p4-puzhu17-bujiang.md)): ngoại lệ là điều kiện trên nguồn 宜 — 嫁娶 chỉ có 宜 từ 不將 thì không lan truyền; 月表 未-壬申/未-戊申 7/7 ô ủng hộ, engine hiện tại (P17-0) sai 5; bảng 384 ô đổi 3 ô (未-壬申 wedding/engagement/moving → avoid); kiểm 16 trang: 未-戊申 納財 宜 (qua puzhu:21) còn có thể đổi tới 5 ô → F2_TABLE PARTIAL, VOL10_OPTION_C và P4 đều MORE_EVIDENCE_REQUIRED. **未-戊申 納財 / puzhu:21** (nhánh `claude/weishen-nacai-puzhu21-audit`; [audit](docs/audits/p4-weishen-nacai-puzhu21.md)): nguồn (四相 宜 納財, mệnh đề 劫煞, puzhu:06) đều cho 納財 không chú 忌 → bảng = bảng P17-A, 0 ô đổi; trang n117 tự mâu thuẫn (in 納財 nhưng bỏ 開市), mọi cách đọc đều sai ≥1 ô → **dừng chờ owner**: nguồn có thắng 1 ô 月表 hay không (nếu theo trang: 5 ô, 108 ngày, 328 activity −15). **Owner chọn nguồn** cho 未-戊申 納財 (phán quyết cục bộ). **Gate cuối** (nhánh `claude/option-c-final-gate`; [audit](docs/audits/p4-option-c-final-gate.md)): 丑-丙寅 in 月德 làm đổi 2 ô (construction, warehouse) × 99 ngày, 198 activity +15 → F2_TABLE PARTIAL, Option C chưa sẵn sàng; chờ owner chọn D-A (384 ô) hay D-B (360 ô). **Audit nguồn 月德** (nhánh `claude/chou-bingyin-yuede-source-audit`; [audit](docs/audits/p4-chou-bingyin-yuede.md)): 歴例 「四八十二月在庚」, project chép đúng; 月德 10 trang khớp, 0 thiếu, 1 thừa (n75); 月空 4/0/0; 丑-庚寅 in 月德 (đọc lại full-res) → 月德 trên n75 丙寅 là lỗi chép (WITNESS_PRINTING_ERROR) → D-A. F2_TABLE COMPLETE, **VOL10_OPTION_C MIGRATION_READY**; candidate audit-only 384 ô / 177 avoid. P4 vẫn MORE_EVIDENCE_REQUIRED. Owner duyệt. **Option C v1 (projection)** (nhánh `claude/jiesha-option-c-migration`, chưa push; [báo cáo](docs/audits/p4-jiesha-option-c-migration.md)): authority `shared/almanac-data/xieji-vol10-jiesha-authority-v1.json`, policy manifest `xiejiVol10JieshaPolicy: faithful-v1` (legacy `legacy-cancel-both` vẫn chọn được); 352 ô APPLIED, demolition EXCLUDED_PENDING_GLYPH_AUDIT (G1 壞/壊), contract/transaction UNREACHABLE (G2 劵/券); 1900–2100: 17.420 activity −15, 0 thay đổi 2025–2027, 2.576 event đổi phân loại; golden v2 kế nhiệm, v1 giữ nguyên byte. **Chờ owner review trước khi push.** **Chờ owner**, không đổi runtime |
+| H1-B | Ghép 忌 sống sót với 相抵 (owner 2026-10-17) | **PARTIALLY_SOURCE_WITNESSED**, audit-only ([review](docs/audits/p4-h1b-yuebiao-witness.md)). 月表 xác nhận lớp 重日/復日 + 德 (7 trang, 0 mâu thuẫn). Phần 劫煞 辰戌丑未 không 德 (tiền đề 相抵 → 不註) đã giải quyết ở tầng 卷十 bằng Option C v1 (PR #87). Tầng P4 (2025–2027) vẫn `cancel_both` cho 劫煞 — xem P4-劫 |
+| X相抵 | 相抵 / `cancel_both` của 劫煞 辰戌丑未 không 德 | **XONG & DEPLOYED ở tầng 卷十** (Option C v1, PR #87, §3). Chuỗi audit và số đo: history §43. Còn mở: 災煞/月煞 (ứng viên 相抵 riêng), 月刑/天吏 có 德 UNRESOLVED (lẫn puzhu:06) — chưa audit, không đổi runtime |
+| P4-劫 | Tầng P4 (2025–2027) cho 劫煞 辰戌丑未 không 德 | **MORE_EVIDENCE_REQUIRED**, không đổi runtime. Engine P4 vẫn `cancel_both` + P17-0. Blocker riêng của P4: F1 (lan truyền xuyên thần, vd. 五離/五虛), mệnh đề con thứ hai của puzhu:17 (亥日/厭對/八專/四忌/四窮; điều kiện xảy ra ở 71 context), puzhu:06 Q4 vs 戌-癸亥 và lớp 四相 (UNDETERMINED), nhãn scope SPEC_GAP, bất thường adapter medical. Chuyển P4 sang P17-A sẽ đổi Golden v2 ở 2026-08-02, 2027-07-28. Báo cáo: [faithful](docs/audits/p4-jiesha-faithful-vol10.md), [puzhu:17](docs/audits/p4-puzhu17-bujiang.md), [納財](docs/audits/p4-weishen-nacai-puzhu21.md) |
+| G1 | Nợ chữ 壞/壊: production 破屋壊垣 vs 破屋壞垣 của nguồn/P4 có phải cùng heading cho authority không | **OPEN** (tách từ PR #87). Nếu có: audit + owner duyệt 15 ô demolition (engine giữ 劫煞 忌 ở 15/16 context) trước Option C v2. Hiện demolition `EXCLUDED_PENDING_GLYPH_AUDIT`, giữ `cancel_both` |
+| G2 | Nợ chữ 劵/券: lớp chuẩn hoá 卷十 có nên đổi 劵 → 券 không | **OPEN** (tách từ PR #87). Phải audit toàn repo vì `NORM` ảnh hưởng mọi entry, không chỉ 劫煞; hiện contract/transaction `UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION` (32 ô audit không dùng). Mutation gate chặn thêm 劵→券 khi chưa có revision authority |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
 | R1 | Review mapping lượt hai: mansion 115/115, 用事 29/29 | **XONG** (PR #84): `DOUBLE_REVIEWED (semantic mapping)`, hai lượt AI-agent, chưa có chuyên gia người; §3 "28 Tú — audit" |
 | R2 | Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích) | Đổi policy cả 11 event → phase riêng nếu muốn |
@@ -181,6 +204,8 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 Roadmap P4: 4 ─► 5 ─► 6 ─► 7 ─► 7b ─► 8 ─► 9 ─► 9b ─► 10 (tất cả XONG)
 P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
 S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
+Option C v1 (XONG) ─► G1 / G2 ─► Option C v2 (nếu owner duyệt ô mới)
+P4-劫: độc lập với tầng 卷十; cần F1, puzhu:17 mệnh đề 2, puzhu:06 Q4 trước khi đổi engine P4
 ```
 
 ## 6. Quy tắc cho agent
@@ -192,7 +217,9 @@ S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
 - Không sửa bytes file nằm trong lock/prior-hashes (`docs/audits/sources/**/lock.json`, `prior-hashes.json`); ghi quyết định mới ở test/docs. Ngoại lệ đã được owner duyệt: `p4-adapter-baseline-v1/lock.json` cập nhật qua migration có kiểm soát (gate so toàn bộ record, writer chuẩn, chỉ nối thêm `revisions[]`, giữ revision cũ).
 - Tách calendar-level và personal; mỗi rule có provenance khác là authority record riêng.
 - Không global auspiciousness score; giữ mansion scoring OFF; giữ exact Jie boundary khi Month Jian là operand.
-- Đổi điểm → owner quyết, Golden trước code, migration diff giải thích từng thay đổi. Hành vi mới đổi output → policy manifest riêng (ship true), test lịch sử ghim false (như `tiangouYinNoYi`, `satChuNgocHapStars`).
+- Đổi điểm → owner quyết, Golden trước code, migration diff giải thích từng thay đổi. Hành vi mới đổi output → policy manifest riêng (ship true / giá trị mới), test lịch sử ghim giá trị cũ (như `tiangouYinNoYi`, `satChuNgocHapStars`, `xiejiVol10JieshaPolicy`).
+- Phán quyết owner kiểu `OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS` (未-戊申 納財) là **cục bộ**: không suy ra quy tắc chung "nguồn văn luôn thắng 月表".
+- Authority runtime phải khai rõ phạm vi phủ (APPLIED / EXCLUDED / UNREACHABLE); không fallback im lặng.
 
 ## 7. Quy trình, CI, tooling
 
@@ -203,9 +230,9 @@ S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
 1. `npm run check` = lint → typecheck (app + functions), fail-fast. Hook `.githooks/pre-push` (`core.hooksPath`, đặt bởi `prepare`) chỉ chạy tầng này; FAIL → chặn push, bypass `--no-verify`.
 2. `npm run test:changed` (tay) = `vitest run --changed origin/main`: test phụ thuộc file đổi; đổi `package.json`/config Vitest/setup → chạy hết; không thấy dữ liệu đọc qua `fs` (Golden TSV/JSON).
 3. `npm run ci:full` (tay; `ci:local` là alias) = check → toàn bộ unit → emulator → 2 mutation gate (annual, mansion) → Playwright desktop (webServer tự `npm run build`, visual snapshot) + legal pages Vite dev; không gọi `ci:p4`.
-4. `npm run ci:p4` (tay, luôn chạy đủ) = mutation P4-B, P4-C (~25 phút), P5, puzhu:06, Full Golden, owner-rules, score adapter (almanac toàn miền + mutation 21), migration diff roadmap 9 (harness toàn miền + mutation 14); 11 bước ~1h20m.
+4. `npm run ci:p4` (tay, luôn chạy đủ) = mutation P4-B, P4-C (~25 phút), P5, puzhu:06, Full Golden, owner-rules, score adapter (almanac toàn miền + mutation 21), migration diff roadmap 9 (harness toàn miền + mutation 14), migration 卷十 劫煞 Option C v1 (`JIESHA_MIGRATION_FULL=1`, ~3 phút) + mutation 14 (`audit-vol10-jiesha-mutations.py`); 13 bước.
 
-Đổi `shared/`, `e2e/` → chạy `ci:full` trước merge; đổi `shared/lunar/p4*`/`scripts/audit-p4-*` → thêm `ci:p4`. GitHub chỉ còn `.github/workflows/deploy.yml`: push `main` → lint → build → `firebase deploy --only firestore,hosting,functions --project calendar-hana`, không test lại. Mobile Safari/iPhone/Firefox không thuộc gate. Deploy tay (`npx firebase deploy --only hosting --project calendar-hana`) chỉ khi Actions hỏng và owner đồng ý.
+Đổi `shared/`, `e2e/` → chạy `ci:full` trước merge; đổi `shared/lunar/p4*`/`scripts/audit-p4-*`, `xiejiVol10*`, authority 卷十 → thêm `ci:p4`. GitHub chỉ còn `.github/workflows/deploy.yml`: push `main` → lint → build → `firebase deploy --only firestore,hosting,functions --project calendar-hana`, không test lại. Mobile Safari/iPhone/Firefox không thuộc gate. Deploy tay (`npx firebase deploy --only hosting --project calendar-hana`) chỉ khi Actions hỏng và owner đồng ý.
 
 ```sh
 npm run typecheck
@@ -222,6 +249,8 @@ python3 scripts/audit-p4-puzhu06-mutations.py  # puzhu:06, 16 mutation, ~3 phút
 python3 scripts/audit-p4-score-adapter-mutations.py  # roadmap 8, 21 mutation, ~2 phút; toàn miền: P4_SCORE_ADAPTER_FULL=1 npx vitest run shared/lunar/p4ScoreAdapterAlmanac.test.ts
 P4_MIGRATION_FULL=1 npx vitest run shared/lunar/p4MigrationDiff.test.ts  # roadmap 9 harness toàn miền ~5 phút; thêm P4_MIGRATION_WRITE=1 để sinh lại p4-migration-diff-v1 (cây sạch)
 python3 scripts/audit-p4-migration-mutations.py  # roadmap 9, 14 mutation tuần tự, ~15 phút
+JIESHA_MIGRATION_FULL=1 npx vitest run shared/lunar/xiejiVol10JieshaMigration.test.ts  # 卷十 劫煞 Option C v1: legacy vs faithful-v1 vs simulator, 2.710 ngày
+python3 scripts/audit-vol10-jiesha-mutations.py  # Option C v1, 14 mutation tuần tự
 # puzhu:06: baseline/sweep verify bytes; P4B_PUZHU06_WRITE=1 ghi lại; Golden: python3 -I docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/derive.py
 # Quét P4-B 1095 ngày (ghi TSV + summary)
 P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4LunarPhase.test.ts
@@ -242,11 +271,11 @@ REPORT_FILE=docs/audits/xieji-god-presence-2025-2027.tsv npx vitest run shared/l
 - Tài liệu cũ ở root đã chuyển vào `docs/` (PR #34); map cũ → mới `docs/legacy-paths.json`, index `docs/README.md`. Artifact đóng băng vẫn trích path root (khoá SHA-256).
 - **Không** chạy `npx prettier --write` theo glob rộng; chỉ format file đã sửa.
 - Không đưa credentials/secret hoặc email cá nhân vào repo (repo public).
-- Giữ test production bất biến chạy manifest thật (`baijiProductionInvariants.test.ts`, Golden P2 `baijiTyHoi.test.ts`); không ghim chúng về flag cũ để che regression. Test migration lịch sử ghim trạng thái cũ bằng mock manifest/catalog (`xiejiVol10Scoring: false`, `legacyGodsMonthJian: false`, `tiangouYinNoYi: false`, `satChuNgocHapStars: false`, mapping event cũ qua `legacyEventMapping.ts`). Release đổi output mới phải ghim lại các test lịch sử theo cách này, không sửa Golden.
+- Giữ test production bất biến chạy manifest thật (`baijiProductionInvariants.test.ts`, Golden P2 `baijiTyHoi.test.ts`); không ghim chúng về flag cũ để che regression. Test migration lịch sử ghim trạng thái cũ bằng mock manifest/catalog (`xiejiVol10Scoring: false`, `legacyGodsMonthJian: false`, `tiangouYinNoYi: false`, `satChuNgocHapStars: false`, `xiejiVol10JieshaPolicy: 'legacy-cancel-both'`, mapping event cũ qua `legacyEventMapping.ts`). Lưu ý: setup test nạp provider P4 trước, nên `vi.mock` module trong graph đó (vd. `xiejiVol10Resolution`) không có tác dụng; ghim qua manifest hoặc `vi.resetModules` + `vi.doMock` + import động. Release đổi output mới phải ghim lại các test lịch sử theo cách này, không sửa Golden.
 - Nguồn 協紀 dạng text: Wikisource raw `https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷NN&action=raw` (NN = 03…11); SHA-1 prefix ghi trong `xieji-god-definitions.json` và các audit doc.
 - Nguồn ngoài repo: scan 玉匣記 1880 `archive.org/download/20241205_20241205_0310/page/nN.jpg` (N = pdfPage − 1); 月表 四庫全書 archive.org `06067692.cn`–`06067697.cn` (2 quyển/item; trang ngày = n6+i ở quyển đầu, n73+i ở quyển sau, i = chỉ số lục thập hoa giáp từ 甲子; witness khoá ở `docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json`); scan 卷九–卷十 `06067686.cn` (鋪註條例 n222–n229). Cách trích ảnh: history §24.
 - _Ngọc Hạp Chánh Tông_: `~/Downloads/Ngoc hap chanh tong.pdf` (SHA-1 `95c29e2f…`, bản ghi trong golden) và `~/Downloads/Ngọc Hạp Chánh Tông.pdf` (SHA-1 `ded5d57c…`, scan ncphuc1977, 69 trang PDF mỗi trang 2 trang sách; sách tr. 128–133 = PDF tr. 66–68). Máy không có poppler: render trang bằng PDFKit qua script Swift. Spec user ở `~/Downloads/`.
 
 ## 8. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `ac25ce6` đã deploy (PR #84, audit 28 Tú); P4 ON (activation PR #71), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4` chạy tay), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Audit 28 Tú đóng & deploy (content 1.0.4, `DOUBLE_REVIEWED (semantic mapping)` bởi hai lượt AI-agent, chưa có chuyên gia người; mapping blocker: không). Không có mục roadmap đang làm; việc tiếp theo từ §5 "Việc độc lập" (S1, S2, R2–R4, E1) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest riêng; mutation runner chạy tuần tự. Lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn).
+> Đọc PROJECT_CONTEXT.md. Main `85736fd` đã deploy (PR #87, 卷十 劫煞 Option C v1: policy `xiejiVol10JieshaPolicy: faithful-v1`, authority 352 ô APPLIED, nợ chữ G1 壞/壊 và G2 劵/券 mở); P4 ON (activation PR #71), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4` chạy tay), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain; 劫煞 辰戌丑未 không 德 theo authority faithful-v1), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Audit 28 Tú đóng & deploy (content 1.0.4, `DOUBLE_REVIEWED (semantic mapping)` bởi hai lượt AI-agent, chưa có chuyên gia người; mapping blocker: không). Không có mục roadmap đang làm; việc tiếp theo từ §5 "Việc độc lập" (S1, S2, R2–R4, E1, G1, G2, P4-劫) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest riêng; mutation runner chạy tuần tự. Lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn).
