@@ -51,6 +51,22 @@ describe('丑-丙寅 月德 audit lock', () => {
     expect(seen.size).toBe(67)
     expect(miss).toEqual(['丑-丙寅'])
     expect(check.decision).toBe('D-A')
+    const pm = check.consistency.positiveMatches
+    expect([
+      pm['月德'].expectedPrinted,
+      pm['月德'].expectedNotPrinted,
+      pm['月德'].printedNotExpected,
+    ]).toEqual([10, 0, 1])
+    expect([
+      pm['月空'].expectedPrinted,
+      pm['月空'].expectedNotPrinted,
+      pm['月空'].printedNotExpected,
+    ]).toEqual([4, 0, 0])
+    for (const k of ['丑-庚寅', '丑-甲子', '丑-甲寅'] as const) {
+      const r = check.consistency.fullResolutionRereads[k]
+      expect(sha(r.path).length, k).toBe(64)
+      expect(r.confidence).toBe('high')
+    }
   })
 
   it('candidate: 16 × 24 = 384 cells, 177 avoid; faithful table + exactly the 3 P17-A cells', () => {

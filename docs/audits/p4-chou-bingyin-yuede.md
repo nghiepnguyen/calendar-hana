@@ -57,7 +57,18 @@ What the text says:
 
 ## YD4: internal 月表 consistency (CONSISTENT except one cell)
 
-All 67 locked pages were checked against the 歴例 tables for 天德, 天德合, 月德 and 月德合. 66/67 match on all four; the only miss is the 月德 on 丑-丙寅.
+Counted as positive matches across all 67 locked pages. Pages with no 德 day agree with any mapping, so they are not counted as support.
+
+| God (歴例 table) | Expected and printed | Expected, not printed | Printed, not expected |
+|---|---|---|---|
+| 月德 (丙甲壬庚) | 10 (丑-庚寅, 午-丙戌, 卯-甲申, 子-壬辰, 寅-丙辰, 未-甲午, 未-甲子, 未-甲申, 辰-壬辰, 酉-庚寅) | 0 | **1 (丑-丙寅)** |
+| 月空 (壬庚丙甲) | 4 (丑-甲子, 丑-甲寅, 未-庚申, 酉-甲辰) | 0 | 0 |
+
+The three 丑 witnesses that D-A rests on were re-read at full resolution, from crops of the 吉神 block of the stored JPGs (no OCR, high confidence):
+
+- 丑-庚寅 (n99): 天德 月德 時德 | 相日 吉期 不將 | 玉宇 五合 金匱 | 鳴吠對;
+- 丑-甲子 (n73): 月空 天恩 天赦 | 天願 四相 官日 | 六合 續世;
+- 丑-甲寅 (n123): 月空 四相 時德 | 相日 吉期 玉宇 | 五合 金匱 鳴吠對.
 
 | 丑 page | Stem | 月德 printed | D-A expects | D-B expects |
 |---|---|---|---|---|
@@ -77,11 +88,17 @@ Answers to the consistency questions:
 
 ## YD5: independent corroboration (NOT PURSUED)
 
-No other edition or scan was fetched. The primary rule, the project's transcription and the edition's own 丑-month pages (庚寅 月德, 甲 月空) all agree. A second edition would only explain how this one cell arose; it could not change the reading.
+No other edition or scan was fetched, although it was listed as priority 1. The reason: the conflict is between one cell and three independent lines of evidence that all agree on 庚:
+
+- the primary rule (歴例, with 曹震圭's 三合 derivation);
+- the companion 月空 table;
+- the same witness's own 丑 pages (庚寅 月德; 甲 月空), and 月德 10/0/1 and 月空 4/0/0 across the edition.
+
+A second edition could only explain how the n75 cell arose, not reverse that weight.
 
 ## Classification and decision
 
-**Classification: WITNESS_PRINTING_ERROR.** This is a one-cell anomaly in this edition's 月表. It could be a printing or a compilation slip; the page alone cannot tell which. 丙 is the 月德 of 正月 (寅月).
+**Classification: WITNESS_PRINTING_ERROR**, the nearest of the given labels. The 四庫全書 scans are a hand-copied manuscript, so this is a copying or compilation slip in this witness, not a printing error in the literal sense. The page alone cannot say which kind of slip. Non-inference: no cause is claimed.
 
 **Decision: D-A.** 月德 is absent on 丑-丙寅. The n75 print stays in provenance permanently.
 
