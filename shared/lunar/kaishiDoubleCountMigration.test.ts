@@ -5,11 +5,21 @@ import { EVENT_OPTIONS } from './eventMapping'
 import { legacyOpenBusinessMapping } from './legacyEventMapping'
 
 // Captured before the 14 legacy gods moved to Month Jian (legacyGodsMonthJian, legacyGodsMonthJian.test.ts).
+// Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const { default: current } = await importOriginal<{
     default: typeof import('../almanac-data/manifest.json')
   }>()
-  return { default: { ...current, policies: { ...current.policies, legacyGodsMonthJian: false } } }
+  return {
+    default: {
+      ...current,
+      policies: {
+        ...current.policies,
+        legacyGodsMonthJian: false,
+        xiejiVol10JieshaPolicy: 'legacy-cancel-both',
+      },
+    },
+  }
 })
 
 // opening (Khai trương) and business (Mở hàng) both map the 協紀 開市 heading, so listing

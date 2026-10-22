@@ -12,12 +12,18 @@ import { getDayInfo } from './index'
 import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
 
 // Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
+// Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
   return {
     default: {
       ...real,
-      policies: { ...real.policies, xiejiVol10BalancingEnabled: false, tiangouYinNoYi: false },
+      policies: {
+        ...real.policies,
+        xiejiVol10BalancingEnabled: false,
+        tiangouYinNoYi: false,
+        xiejiVol10JieshaPolicy: 'legacy-cancel-both',
+      },
     },
   }
 })

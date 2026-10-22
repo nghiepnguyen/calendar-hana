@@ -138,15 +138,21 @@ async function compute(config: Config) {
   vi.doUnmock('../almanac-data/manifest.json')
   vi.doUnmock('./activityRecommendations')
   const captured: { input?: ActivityInput } = {}
-  // P1 (tasks/prd-p1-tiangou-yin.md) and satChuNgocHapStars postdate this frozen diff: every
-  // configuration pins them off.
+  // P1 (tasks/prd-p1-tiangou-yin.md), satChuNgocHapStars and the 卷十 劫煞 faithful-v1 migration
+  // postdate this frozen diff: every configuration pins them off (legacy-cancel-both).
   vi.doMock('../almanac-data/manifest.json', async (load) => {
     const real = ((await load()) as { default: { policies: object } }).default
     const p4 = config !== 'baseline' ? { xiejiVol10BalancingEnabled: true } : {}
     return {
       default: {
         ...real,
-        policies: { ...real.policies, ...p4, tiangouYinNoYi: false, satChuNgocHapStars: false },
+        policies: {
+          ...real.policies,
+          ...p4,
+          tiangouYinNoYi: false,
+          satChuNgocHapStars: false,
+          xiejiVol10JieshaPolicy: 'legacy-cancel-both',
+        },
       },
     }
   })

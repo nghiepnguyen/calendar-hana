@@ -9,6 +9,7 @@ import { activityRows, BASELINE_DIR, eventRows } from './p4AdapterBaselineRows'
 import { p4BalancingReady } from './p4ScoreAdapter'
 
 // Roadmap 10 ships the flag ON; this file pins it OFF = the one-line rollback PR.
+// Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
   return {
@@ -19,6 +20,7 @@ vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
         xiejiVol10BalancingEnabled: false,
         tiangouYinNoYi: false,
         satChuNgocHapStars: false,
+        xiejiVol10JieshaPolicy: 'legacy-cancel-both',
       },
     },
   }

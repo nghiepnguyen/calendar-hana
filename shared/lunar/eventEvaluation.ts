@@ -11,6 +11,7 @@ import {
 } from './eventMapping'
 import { ENGINE_VERSION, type Evidence } from './evidence'
 import { analyzeEvidenceConflicts, type ConflictAnalysis } from './evidenceConflicts'
+import type { Vol10JieshaPolicy } from './xiejiVol10JieshaAuthority'
 import { resolveVol10, type Vol10Resolution } from './xiejiVol10Resolution'
 import { isVol10ChainRow } from './xiejiVol10Scoring'
 import trucData from '../almanac-data/truc.json'
@@ -262,6 +263,7 @@ export function evaluateEventDay(
           unknownGods: new Set(day.unknownGodIds),
         },
         [...new Set(roles.map((role) => role.activityId))],
+        { jieshaPolicy: manifest.policies.xiejiVol10JieshaPolicy as Vol10JieshaPolicy },
       ).map((item) => {
         // Product rules standing for the same 凶 (and, after 從X論, the deciding one's).
         const productDelta = unique

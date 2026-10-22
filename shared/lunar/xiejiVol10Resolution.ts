@@ -2,6 +2,11 @@ import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { isMonthlyShaPresent, type MonthlyShaId } from './xiejiMonthlySha'
 import { getVol10VirtuesPresent, VOL10_VIRTUES } from './xiejiVirtues'
+import {
+  getVol10JieshaRuntime,
+  VOL10_JIESHA_AUTHORITY_ID,
+  type Vol10JieshaPolicy,
+} from './xiejiVol10JieshaAuthority'
 import { LEGACY_STILL_AVOID_BASE_ONLY, YUE_PO_STILL_AVOID } from './yuePoStillAvoidPolicy'
 
 /** 協紀辨方書 卷十 宜忌 for source-locked 凶 entries: six present in production and 月厭/月刑/
@@ -35,6 +40,10 @@ export interface Vol10Resolution {
   quote: string
   /** Entry whose rule decided the outcome after a 從X論 deferral. */
   via?: string
+  /** Versioned authority consulted for the verdict (劫煞 辰戌丑未 without 德, faithful-v1). */
+  authority?: string
+  /** Why the authority left the legacy verdict in place (explicit v1 exclusion). */
+  authorityExclusion?: string
 }
 
 type Clause = {
@@ -135,13 +144,15 @@ function withVirtues(names: string[], day: Vol10Day): boolean | null {
 
 type Resolved = {
   via?: string
+  /** 劫煞 辰戌丑未 without 德 under the faithful policy: per-activity verdict from the authority. */
+  jieshaAuthority?: boolean
   effect: Vol10Effect
   avoided: Set<string> | 'all' | null
   reason: string
   quote: string
 }
 
-function resolveEntry(entry: Entry, day: Vol10Day, depth = 0): Resolved {
+function resolveEntry(entry: Entry, day: Vol10Day, policy: Vol10JieshaPolicy, depth = 0): Resolved {
   const month = BRANCHES[day.monthJianBranch]
   const pillar = STEMS[day.dayStem] + BRANCHES[day.dayBranch]
   const base = [
@@ -198,7 +209,7 @@ function resolveEntry(entry: Entry, day: Vol10Day, depth = 0): Resolved {
   if (clause.effect === 'defer') {
     const target = ENTRY_BY_HAN.get(normalize(clause.to!))
     if (target && depth === 0) {
-      const r = resolveEntry(target, day, 1)
+      const r = resolveEntry(target, day, policy, 1)
       return {
         ...r,
         via: target.id,
@@ -222,15 +233,30 @@ function resolveEntry(entry: Entry, day: Vol10Day, depth = 0): Resolved {
       reason: `cần biết có ${clause.with.join('/')} hay không`,
       quote: clause.quote,
     }
-  return ok ? apply(clause.effect, clause) : apply(clause.otherwise ?? 'as_usual', clause)
+  if (ok) return apply(clause.effect, clause)
+  const r = apply(clause.otherwise ?? 'as_usual', clause)
+  // Only 劫煞's own items, never another entry's 從刼煞論 deferral (depth 1).
+  return depth === 0 &&
+    entry.id === 'jie_sha' &&
+    '辰戌丑未'.includes(month) &&
+    r.effect === 'cancel_both' &&
+    policy === 'faithful-v1'
+    ? { ...r, jieshaAuthority: true }
+    : r
 }
 
-/** Per present 凶 entry and catalog activity: what 卷十 concludes for that activity. */
-export function resolveVol10(day: Vol10Day, activityIds: readonly string[]): Vol10Resolution[] {
+/** Per present 凶 entry and catalog activity: what 卷十 concludes for that activity. Production callers
+ * pass `manifest.policies.xiejiVol10JieshaPolicy`; the default is the shipped policy. */
+export function resolveVol10(
+  day: Vol10Day,
+  activityIds: readonly string[],
+  options: { jieshaPolicy?: Vol10JieshaPolicy } = {},
+): Vol10Resolution[] {
+  const policy = options.jieshaPolicy ?? 'faithful-v1'
   const out: Vol10Resolution[] = []
   for (const entry of ENTRIES) {
     if (!present(entry, day)) continue
-    const r = resolveEntry(entry, day)
+    const r = resolveEntry(entry, day, policy)
     const listed = new Set([
       ...splitHeadings(entry.avoid),
       ...entry.extraAvoid.flatMap((x) => splitHeadings(x.avoid)),
@@ -248,15 +274,28 @@ export function resolveVol10(day: Vol10Day, activityIds: readonly string[]): Vol
               : r.effect === 'cancel_both'
                 ? 'no_annotation'
                 : 'not_avoided'
+      const runtime =
+        r.jieshaAuthority && verdict === 'no_annotation'
+          ? getVol10JieshaRuntime(
+              BRANCHES[day.monthJianBranch]!,
+              STEMS[day.dayStem]! + BRANCHES[day.dayBranch]!,
+              activityId,
+            )
+          : undefined
+      const kept = runtime?.status === 'APPLIED' && runtime.cell === 'avoid'
       out.push({
         entry: entry.id,
         han: entry.han,
         activityId,
-        verdict,
+        verdict: kept ? 'avoid' : verdict,
         effect: r.effect,
-        reason: r.reason,
+        reason: kept ? `${r.reason}; 劫煞 忌 kept on a heading without 宜 (鋪註)` : r.reason,
         quote: r.quote,
         ...(r.via ? { via: r.via } : {}),
+        ...(runtime ? { authority: VOL10_JIESHA_AUTHORITY_ID } : {}),
+        ...(runtime?.status === 'EXCLUDED_PENDING_GLYPH_AUDIT'
+          ? { authorityExclusion: `${runtime.status}: ${runtime.reason}` }
+          : {}),
       })
     }
   }

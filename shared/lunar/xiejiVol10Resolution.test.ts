@@ -53,14 +53,20 @@ describe('協紀 卷十 resolution, hand-derived cases', () => {
     expect(verdict(d, 'jie_sha', 'construction')).toBe('not_avoided')
     expect(verdict(d, 'jie_sha', 'medical')).toBe('avoid')
   })
-  it('刼煞 in 巳 month depends on 月德/天德合; 辰 month without 德 annotates nothing', () => {
+  it('刼煞 in 巳 month depends on 月德/天德合; 辰 month without 德: cancel_both (legacy) / authority', () => {
     expect(
       verdict(day('巳', '庚寅', 'chap', ['kiep_sat', 'nguyet_duc']), 'jie_sha', 'wedding'),
     ).toBe('not_avoided')
     expect(verdict(day('巳', '甲寅', 'chap', ['kiep_sat']), 'jie_sha', 'wedding')).toBe('avoid')
-    expect(verdict(day('辰', '乙巳', 'chap', ['kiep_sat']), 'jie_sha', 'wedding')).toBe(
-      'no_annotation',
-    )
+    // Hand-derived before the 卷十 劫煞 faithful-v1 migration: legacy cancel_both, pinned explicitly.
+    const chen = day('辰', '乙巳', 'chap', ['kiep_sat'])
+    const jie = (policy: 'legacy-cancel-both' | 'faithful-v1') =>
+      resolveVol10(chen, ['wedding'], { jieshaPolicy: policy }).find((r) => r.entry === 'jie_sha')
+    expect(jie('legacy-cancel-both')?.verdict).toBe('no_annotation')
+    expect(jie('faithful-v1')).toMatchObject({
+      verdict: 'avoid',
+      authority: 'xieji-vol10-jiesha-faithful-v1',
+    })
   })
   it('月破: 卯酉 months all taboo; elsewhere 德 spares only listed minor matters', () => {
     expect(verdict(day('卯', '乙酉', 'pha', ['nguyet_pha']), 'yue_po', 'worship')).toBe('avoid')
