@@ -1,0 +1,20 @@
+{
+ "version": "jiesha-option-c-migration-v1",
+ "approvedCandidate": {
+  "path": "docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json",
+  "sha256": "b24f6f68e6b662fc04b5ec56ab6f2da8981273291ef3bf4e05a028b2f48d326a"
+ },
+ "unchanged": {
+  "shared/almanac-data/golden-xieji-vol10-scoring.json": "c3d8b0d78cf9242d0a8b7e9134a239b1f2e1656efd977586e38a3e43baca0118"
+ },
+ "files": {
+  "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3",
+  "shared/almanac-data/golden-xieji-vol10-scoring-v2.json": "77d8400479bec725a203a67331cd773c06a51d0d11aa576076d62a23e0bbfafd",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/build_authority.py": "128525fe6f367c8c90a30fd971772cc5767e65f22e7b8775f0b1a244de350a2c",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/build_migration.py": "21faf239b03a3e8aca73d0c3b01080cd39922883626ef44d85c1f13b0eb1ca8e",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/coverage.json": "d47f7df8aee8e72e80476264db398585b253d9424c2965ca769b8b81c241d1ae",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/migration-rows.json": "e600cd82ac286a34b849ca50fa151115ac30a0f634ff6bbd57548867842a5146",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/migration-summary.json": "a90c5240fee210f3e4a17924542894bf0be03d333758c921ab18b02a79e2dd26",
+  "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/mutation-results.json": "2c139c686125b1e03332410edcb5cc0bc56ab2e0c9730366e4fa4cd81255ba96"
+ }
+}

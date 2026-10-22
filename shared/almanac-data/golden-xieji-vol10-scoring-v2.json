@@ -1,0 +1,1415 @@
+{
+  "version": "xieji-vol10-scoring-golden-v2",
+  "status": "FROZEN 2026-10-22 before the faithful-v1 default switch; hand-derived from the approved authority projection, never regenerate from production",
+  "policy": "docs/plans/xieji-vol10-scoring.md (Owner decisions 2026-10-10)",
+  "weights": "Product rows use truc.json weights and bad-gods.json major = -15 as given; added penalty -25.",
+  "cases": [
+    {
+      "id": "jie-yin-wedding",
+      "month": "寅",
+      "pillar": "乙亥",
+      "officer": "thu",
+      "gods": ["kiep_sat"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:wedding",
+          "delta": -15
+        },
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "not_avoided",
+          "jie_sha": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          },
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "刼煞 寅申月…止忌安撫邊境選將訓兵出師求醫療病餘皆不忌; 收日 寅申巳亥 從刼煞論"
+    },
+    {
+      "id": "jie-yin-medical",
+      "month": "寅",
+      "pillar": "乙亥",
+      "officer": "thu",
+      "gods": ["kiep_sat"],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:medical",
+          "delta": -15
+        },
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "avoid",
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:medical",
+            "scoreDelta": -15,
+            "status": "applied"
+          },
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "求醫療病 stays in the 止忌 list"
+    },
+    {
+      "id": "jie-yin-finance",
+      "month": "寅",
+      "pillar": "乙亥",
+      "officer": "thu",
+      "gods": ["kiep_sat"],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:finance",
+          "delta": 15
+        },
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "not_listed",
+          "jie_sha": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:finance",
+            "scoreDelta": 15,
+            "status": "applied"
+          },
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "not_avoided drops the negative, keeps the positive",
+      "correction": "GOLDEN_BUG 2026-10-10: first hand derivation said shou_ri not_avoided; 納財 is in 收日 止不忌, not its 忌, so not_listed (same reading as jie-yin-demolition and shou-zi-de-finance). Expected rows unchanged."
+    },
+    {
+      "id": "jie-yin-demolition",
+      "month": "寅",
+      "pillar": "乙亥",
+      "officer": "thu",
+      "gods": ["kiep_sat"],
+      "activity": "demolition",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "not_listed",
+          "jie_sha": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "破屋壞垣 is in 刼煞 忌 but not in 收日 忌 (收日 止不忌 lists it)"
+    },
+    {
+      "id": "jie-chen-no-de",
+      "month": "辰",
+      "pillar": "乙巳",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "faithful-v1: 辰乙巳 wedding = avoid (結婚姻/嫁娶 without 宜 keep 劫煞 忌); was no_annotation under cancel_both"
+    },
+    {
+      "id": "jie-chen-de-wedding",
+      "month": "辰",
+      "pillar": "丁巳",
+      "officer": "tru",
+      "gods": ["kiep_sat", "thien_duc_hop", "nguyet_duc_hop"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "與天德月德天德合月德合併止忌…; 丁 = 天德合/月德合 in 辰 month"
+    },
+    {
+      "id": "jie-chen-de-medical",
+      "month": "辰",
+      "pillar": "丁巳",
+      "officer": "tru",
+      "gods": ["kiep_sat", "thien_duc_hop", "nguyet_duc_hop"],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "tru:medical",
+          "delta": 20
+        },
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "tru:medical",
+            "scoreDelta": 20,
+            "status": "applied"
+          },
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "medical stays taboo; Trực Trừ row is not a 卷十 chain row"
+    },
+    {
+      "id": "jie-si-finance-flip",
+      "month": "巳",
+      "pillar": "甲寅",
+      "officer": "thu",
+      "gods": ["kiep_sat"],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:finance",
+          "delta": 15
+        },
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "avoid",
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:finance",
+            "scoreDelta": -15,
+            "status": "applied"
+          },
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "巳亥月 needs 月德/天德合 (庚/丙); 甲 → 如常例, 納財 in 刼煞 忌; positive turns negative"
+    },
+    {
+      "id": "po-mao-medical-flip",
+      "month": "卯",
+      "pillar": "乙酉",
+      "officer": "pha",
+      "gods": ["nguyet_pha"],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "pha:medical",
+          "delta": 25
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_po": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "pha:medical",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "卯酉月值災煞又值月厭雖與德合併仍諸事皆忌"
+    },
+    {
+      "id": "po-mao-worship-add",
+      "month": "卯",
+      "pillar": "乙酉",
+      "officer": "pha",
+      "gods": ["nguyet_pha"],
+      "activity": "worship",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "yue_po": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_po:worship",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "諸事皆忌 with no product penalty → −25"
+    },
+    {
+      "id": "po-yin-de-wedding",
+      "month": "寅",
+      "pillar": "丙申",
+      "officer": "pha",
+      "gods": ["nguyet_pha", "nguyet_duc"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "pha:wedding",
+          "delta": -25
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_po": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "pha:wedding",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "與德合併猶忌…; 結婚姻 not spared"
+    },
+    {
+      "id": "po-yin-de-medical",
+      "month": "寅",
+      "pillar": "丙申",
+      "officer": "pha",
+      "gods": ["nguyet_pha", "nguyet_duc"],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "pha:medical",
+          "delta": 25
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_po": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "pha:medical",
+            "scoreDelta": 25,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "求醫療病 is not in 月破 忌"
+    },
+    {
+      "id": "po-zi-no-de-cleaning",
+      "month": "子",
+      "pillar": "甲午",
+      "officer": "pha",
+      "gods": ["nguyet_pha"],
+      "activity": "cleaning",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "yue_po": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_po:cleaning",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "子午月值災煞…不與德合併諸事皆忌 (月德 壬, 月德合 丁)"
+    },
+    {
+      "id": "po-zi-no-de-medical",
+      "month": "子",
+      "pillar": "甲午",
+      "officer": "pha",
+      "gods": ["nguyet_pha"],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "pha:medical",
+          "delta": 25
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_po": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "pha:medical",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "same day, positive turns negative"
+    },
+    {
+      "id": "jian-yin-plain-travel",
+      "month": "寅",
+      "pillar": "甲寅",
+      "officer": "kien",
+      "gods": [],
+      "activity": "travel",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:travel",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:travel",
+            "scoreDelta": 15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "行幸遣使 is not in 月建 忌; no 德/赦/恩/相 on 甲寅"
+    },
+    {
+      "id": "jian-yin-plain-wedding",
+      "month": "寅",
+      "pillar": "甲寅",
+      "officer": "kien",
+      "gods": [],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:wedding",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "如常例"
+    },
+    {
+      "id": "jian-yin-de-wedding",
+      "month": "寅",
+      "pillar": "丙寅",
+      "officer": "kien",
+      "gods": ["nguyet_duc"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "與天德月德…併止忌營建宮室…餘皆不忌"
+    },
+    {
+      "id": "jian-yin-de-construction",
+      "month": "寅",
+      "pillar": "丙寅",
+      "officer": "kien",
+      "gods": ["nguyet_duc"],
+      "activity": "construction",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:construction",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:construction",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "營建宮室 stays in the 止忌 list"
+    },
+    {
+      "id": "jian-wei-yangcuo",
+      "month": "未",
+      "pillar": "己未",
+      "officer": "kien",
+      "gods": ["thien_duc_hop", "nguyet_duc_hop"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:wedding",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "未月己未日為陽錯不作德合論"
+    },
+    {
+      "id": "jian-mao-xiaohui-travel",
+      "month": "卯",
+      "pillar": "己卯",
+      "officer": "kien",
+      "gods": ["nguyet_duc_hop"],
+      "activity": "travel",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:travel",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:travel",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "二月己卯為隂陽小會諸事皆忌"
+    },
+    {
+      "id": "jian-mao-xiaohui-worship",
+      "month": "卯",
+      "pillar": "己卯",
+      "officer": "kien",
+      "gods": ["nguyet_duc_hop"],
+      "activity": "worship",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_jian:worship",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "諸事皆忌, no product row"
+    },
+    {
+      "id": "jian-zi-tianshe-travel",
+      "month": "子",
+      "pillar": "甲子",
+      "officer": "kien",
+      "gods": [],
+      "activity": "travel",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:travel",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:travel",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "子月 從月厭; 厭建會與天赦併如常例 (甲子 = 冬天赦); 行幸遣使 in 月厭 忌"
+    },
+    {
+      "id": "jian-zi-no-tianshe-worship",
+      "month": "子",
+      "pillar": "庚子",
+      "officer": "kien",
+      "gods": [],
+      "activity": "worship",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_yan:worship",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "不與天赦併諸事皆忌"
+    },
+    {
+      "id": "jian-chen-de-travel",
+      "month": "辰",
+      "pillar": "壬辰",
+      "officer": "kien",
+      "gods": ["thien_duc", "nguyet_duc"],
+      "activity": "travel",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:travel",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:travel",
+            "scoreDelta": 15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "辰月 從月刑; 月刑 with 德 → 不註宜忌, but 行幸遣使 is not in 月建 忌"
+    },
+    {
+      "id": "jian-chen-de-wedding",
+      "month": "辰",
+      "pillar": "壬辰",
+      "officer": "kien",
+      "gods": ["thien_duc", "nguyet_duc"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "kien:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "yue_jian": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "kien:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "月刑 辰月值建日與天德月德…併凡所忌者則不註宜所宜者亦不註忌"
+    },
+    {
+      "id": "ping-hai-wedding",
+      "month": "亥",
+      "pillar": "甲寅",
+      "officer": "binh",
+      "gods": [],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "binh:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "not_avoided"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "binh:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "亥月又值時德六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌"
+    },
+    {
+      "id": "ping-hai-medical",
+      "month": "亥",
+      "pillar": "甲寅",
+      "officer": "binh",
+      "gods": [],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "binh:medical",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "binh:medical",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "medical stays taboo"
+    },
+    {
+      "id": "ping-chen-yuesha-cuthair",
+      "month": "辰",
+      "pillar": "乙未",
+      "officer": "binh",
+      "gods": [],
+      "activity": "cut_hair",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "binh:cut_hair",
+          "delta": 0
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "binh:cut_hair",
+            "scoreDelta": 0,
+            "status": "applied"
+          }
+        ],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_sha:cut_hair",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "從月煞論; 月煞 不與德合併諸事皆忌; weight-0 row is not a penalty → add −25"
+    },
+    {
+      "id": "ping-chen-yuesha-de-worship",
+      "month": "辰",
+      "pillar": "丁未",
+      "officer": "binh",
+      "gods": ["thien_duc_hop", "nguyet_duc_hop"],
+      "activity": "worship",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "not_listed"
+        },
+        "rows": [],
+        "added": []
+      },
+      "derivation": "月煞 with 德合 如常例 (刼煞 list); 祭祀 not avoided"
+    },
+    {
+      "id": "ping-mao-de",
+      "month": "卯",
+      "pillar": "甲午",
+      "officer": "binh",
+      "gods": ["nguyet_duc"],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "binh:finance",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "binh:finance",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "夘酉月與月德併凡所忌者則不註宜所宜者亦不註忌"
+    },
+    {
+      "id": "ping-yin-xing-de",
+      "month": "寅",
+      "pillar": "丁巳",
+      "officer": "binh",
+      "gods": ["thien_duc"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "binh:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "ping_ri": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "binh:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "寅月 從月刑; 月刑 寅月值平日…與天德…併凡所忌者則不註宜…"
+    },
+    {
+      "id": "shou-zi-de-wedding",
+      "month": "子",
+      "pillar": "丁酉",
+      "officer": "thu",
+      "gods": ["nguyet_duc_hop"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:wedding",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "子午月與月德合併凡所忌者則不註宜所宜者亦不註忌"
+    },
+    {
+      "id": "shou-zi-de-finance",
+      "month": "子",
+      "pillar": "丁酉",
+      "officer": "thu",
+      "gods": ["nguyet_duc_hop"],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:finance",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:finance",
+            "scoreDelta": 15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "納財 is 收日's own 宜 (止不忌), not in its 忌 → not_listed, kept"
+    },
+    {
+      "id": "shou-mao-xing-finance",
+      "month": "卯",
+      "pillar": "丙子",
+      "officer": "thu",
+      "gods": [],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "thu:finance",
+          "delta": 15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "avoid"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "thu:finance",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "卯月 從月刑; 月刑 卯月值收日…不與德合併諸事皆忌 (月德 甲, 月德合 己; 天德 坤 falls on no day)"
+    },
+    {
+      "id": "shou-mao-xing-worship",
+      "month": "卯",
+      "pillar": "丙子",
+      "officer": "thu",
+      "gods": [],
+      "activity": "worship",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "shou_ri": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_xing:worship",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "諸事皆忌, no product row"
+    },
+    {
+      "id": "bi-zi-de",
+      "month": "子",
+      "pillar": "丁亥",
+      "officer": "be",
+      "gods": ["nguyet_duc_hop"],
+      "activity": "opening",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "be:opening",
+          "delta": -25
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "bi_ri": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "be:opening",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "子午夘酉月…與…月德合…併凡所忌者則不註宜所宜者亦不註忌"
+    },
+    {
+      "id": "bi-zi-plain-medical",
+      "month": "子",
+      "pillar": "乙亥",
+      "officer": "be",
+      "gods": [],
+      "activity": "medical",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "be:medical",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "bi_ri": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "be:medical",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "閉日 忌 has 求醫療目 (療目), not 求醫療病"
+    },
+    {
+      "id": "bi-yin-yuesha-finance",
+      "month": "寅",
+      "pillar": "乙丑",
+      "officer": "be",
+      "gods": [],
+      "activity": "finance",
+      "rows": [],
+      "expect": {
+        "verdicts": {
+          "bi_ri": "avoid"
+        },
+        "rows": [],
+        "added": [
+          {
+            "source": "truc",
+            "ruleId": "xieji10:yue_sha:finance",
+            "scoreDelta": -25,
+            "status": "applied"
+          }
+        ]
+      },
+      "derivation": "寅申巳亥月 從月煞論; 月煞 不與德合併諸事皆忌"
+    },
+    {
+      "id": "bi-wei-tianyuan",
+      "month": "未",
+      "pillar": "戊午",
+      "officer": "be",
+      "gods": [],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "truc",
+          "ruleId": "be:wedding",
+          "delta": -20
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "bi_ri": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "truc",
+            "ruleId": "be:wedding",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "與…天赦天願併…不註; 未月 天願 = 戊午 (卷五 按 起例)"
+    },
+    {
+      "id": "jie-wei-renshen-engagement-p17a",
+      "month": "未",
+      "pillar": "壬申",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "engagement",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "puzhu:17 P17-A: 嫁娶 宜 only from 不將, no propagation; 納采問名 keeps 劫煞 忌"
+    },
+    {
+      "id": "jie-wei-renshen-wedding-p17a",
+      "month": "未",
+      "pillar": "壬申",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "puzhu:17 P17-A: 結婚姻 keeps 劫煞 忌"
+    },
+    {
+      "id": "jie-chou-bingyin-construction-da",
+      "month": "丑",
+      "pillar": "丙寅",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "construction",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "avoid"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "D-A: 丑月 月德 庚, so 丙寅 has no 德; 營建宮室 keeps 劫煞 忌"
+    },
+    {
+      "id": "jie-chou-bingyin-wedding",
+      "month": "丑",
+      "pillar": "丙寅",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "wedding",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "faithful-v1 blank: 結婚姻 has 宜, 嫁娶 propagated by puzhu:16"
+    },
+    {
+      "id": "jie-wei-wushen-finance-ruling",
+      "month": "未",
+      "pillar": "戊申",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "finance",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "owner ruling (local): 四相 宜 納財, 宜則不忌; n117 prints 納財 (contradiction kept in provenance)"
+    },
+    {
+      "id": "jie-chen-demolition-excluded",
+      "month": "辰",
+      "pillar": "乙巳",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "demolition",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "no_annotation"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": 0,
+            "status": "informational"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "EXCLUDED_PENDING_GLYPH_AUDIT (G1): legacy cancel_both kept"
+    },
+    {
+      "id": "jie-chen-contract-unreachable",
+      "month": "辰",
+      "pillar": "乙巳",
+      "officer": "tru",
+      "gods": ["kiep_sat"],
+      "activity": "contract",
+      "rows": [
+        {
+          "source": "bad_god",
+          "ruleId": "kiep_sat",
+          "delta": -15
+        }
+      ],
+      "expect": {
+        "verdicts": {
+          "jie_sha": "not_listed"
+        },
+        "rows": [
+          {
+            "source": "bad_god",
+            "ruleId": "kiep_sat",
+            "scoreDelta": -15,
+            "status": "applied"
+          }
+        ],
+        "added": []
+      },
+      "derivation": "UNREACHABLE (G2): 劫煞 lists 立劵交易, activity heading 立券交易; not_listed leaves the product row alone"
+    }
+  ],
+  "supersedes": "golden-xieji-vol10-scoring.json (xieji-vol10-scoring-golden-v1, pinned to legacy-cancel-both)",
+  "provenance": {
+    "sourceAuthority": "docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json (sha256 b24f6f68e6b662fc04b5ec56ab6f2da8981273291ef3bf4e05a028b2f48d326a; 384 cells, 177 avoid)",
+    "runtimeMigration": "approved projection faithful-v1 (shared/almanac-data/xieji-vol10-jiesha-authority-v1.json runtimeCoverage)",
+    "demolition": "EXCLUDED_PENDING_GLYPH_AUDIT (G1 壞/壊): legacy cancel_both kept",
+    "contractTransaction": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION (G2 劵/券): resolveVol10 lists them not_listed",
+    "normalization": "unchanged"
+  }
+}
