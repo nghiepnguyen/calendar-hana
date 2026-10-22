@@ -1,0 +1,34 @@
+{
+ "version": "puzhu17-bujiang-v1",
+ "note": "Reused H1-B pages (bytes not duplicated; path + SHA-256 from h1b-yuebiao-witness-v1/lock.json). Both pages were transcribed in the H1-B audit before this freeze, so the freeze is not blind. Deciding cells re-read from the stored JPG (the highest resolution stored, archive.org n*_w1200) after commit 616698a; OCR not used.",
+ "pages": [
+  {
+   "context": "未-壬申",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n81.jpg",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "volume": "卷二十五",
+   "officer": "除",
+   "jiShen": ["陽德", "相日", "吉期", "不將", "益後", "除神", "司命", "鳴吠"],
+   "xiongShen": ["劫煞", "天賊", "五虛", "五離"],
+   "bujiangPrinted": true,
+   "jiLineFirstTwoColumns": "忌上冊受封上表章會親友冠帶出行結婚姻 | 納采問名進人口移徙安牀求醫療病裁衣",
+   "cells": {"嫁娶": false, "結婚姻": true, "納采問名": true, "移徙": true},
+   "alsoPrinted": ["冠帶", "進人口"],
+   "reading": "納采問名 is followed directly by 進人口: 嫁娶, which sits between them in the 卷十一 order, is omitted."
+  },
+  {
+   "context": "未-戊申",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "volume": "卷二十五",
+   "officer": "除",
+   "jiShen": ["四相", "陽德", "相日", "吉期", "不將", "益後", "除神", "司命"],
+   "xiongShen": ["劫煞", "天賊", "五虛", "五離"],
+   "bujiangPrinted": true,
+   "jiLineFirstTwoColumns": "忌上冊受封上表章會親友出行結婚姻納采 | 問名安牀求醫療病修倉庫立券交易納財",
+   "cells": {"嫁娶": false, "結婚姻": true, "納采問名": true},
+   "notDeciding": {"移徙": false},
+   "reading": "問名 is followed directly by 安牀: no 嫁娶, 進人口 or 移徙."
+  }
+ ]
+}
