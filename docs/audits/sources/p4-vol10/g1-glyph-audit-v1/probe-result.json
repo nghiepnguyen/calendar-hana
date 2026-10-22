@@ -1,0 +1,68 @@
+{
+  "probe": "probe-score-adapter.test.ts.txt",
+  "baseline": "origin/main 8b63ba0",
+  "run": "2026-10-23, vitest 5.0.1, node v23.7.0; production flag xiejiVol10BalancingEnabled=true (manifest.json)",
+  "splitHeadings('破屋壞垣')": ["破屋壊垣"],
+  "canonP4Heading('破屋壞垣')": "破屋壞垣",
+  "P4_HEADINGS": {
+    "破屋壊垣": true,
+    "破屋壞垣": false
+  },
+  "domain": ["2025-01-01", "2027-12-31"],
+  "days": 1095,
+  "demolitionP4State": {
+    "production": {
+      "baseline": 1095
+    },
+    "canonicalRowState": {
+      "only_ji": 552,
+      "not_recorded": 451,
+      "neither_recorded": 54,
+      "only_yi": 28,
+      "both_present": 10
+    },
+    "ifKeyFolded": {
+      "only_ji": 552,
+      "baseline": 451,
+      "neither_recorded": 54,
+      "only_yi": 28,
+      "both_present": 10
+    },
+    "daysThatWouldChangeState": 644
+  },
+  "corroboration": "p4-migration-diff-v2/activities-full-*.tsv: every demolition row (1098 incl. 3 outside) reads state=baseline, headings=破屋壞垣=missing; no other activity in the 2025–2027 files has a =missing heading",
+  "scoreDelta": {
+    "method": "getAlmanac(date).activityRecommendations[demolition] with real provider vs provider that adds 破屋壞垣 = canonical 破屋壊垣 row",
+    "days": 1095,
+    "scoreChanged": 320,
+    "lower": 223,
+    "higher": 97,
+    "deltaCounts": {
+      "-50": 3,
+      "-30": 2,
+      "-25": 71,
+      "-15": 129,
+      "-10": 2,
+      "-5": 16,
+      "10": 71,
+      "15": 12,
+      "20": 4,
+      "25": 10
+    },
+    "statusChanged": 337,
+    "statusTransitions": {
+      "no_evidence->avoid": 71,
+      "watch->avoid": 64,
+      "avoid->watch": 53,
+      "no_evidence->watch": 51,
+      "no_evidence->neutral": 33,
+      "strong_avoid->avoid": 26,
+      "strong_avoid->watch": 10,
+      "watch->neutral": 8,
+      "neutral->watch": 8,
+      "avoid->strong_avoid": 8,
+      "recommended->avoid": 3,
+      "neutral->avoid": 2
+    }
+  }
+}

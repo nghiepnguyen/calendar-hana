@@ -1,0 +1,56 @@
+{
+  "forms": {
+    "壊": "U+58CA 破屋壊垣",
+    "壞": "U+58DE 破屋壞垣"
+  },
+  "distinctFiles": 121,
+  "totals": {
+    "壊": 15534,
+    "壞": 3525,
+    "lines": 17621
+  },
+  "byClass": {
+    "alias/normalization": {
+      "files": 25,
+      "壊": 1316,
+      "壞": 1178,
+      "lines": 1149
+    },
+    "authority/golden": {
+      "files": 44,
+      "壊": 8667,
+      "壞": 72,
+      "lines": 8737
+    },
+    "canonical activity": {
+      "files": 2,
+      "壊": 0,
+      "壞": 4,
+      "lines": 4
+    },
+    "documentation": {
+      "files": 13,
+      "壊": 5,
+      "壞": 12,
+      "lines": 16
+    },
+    "fixture/test/snapshot": {
+      "files": 38,
+      "壊": 5539,
+      "壞": 2213,
+      "lines": 7662
+    },
+    "runtime": {
+      "files": 2,
+      "壊": 1,
+      "壞": 3,
+      "lines": 4
+    },
+    "source/raw evidence": {
+      "files": 6,
+      "壊": 6,
+      "壞": 43,
+      "lines": 49
+    }
+  }
+}
