@@ -1,0 +1,51 @@
+// G1 probe (audit only; kept as .txt so no test runner or tsc picks it up).
+// Run: copy to a scratch dir as g1probe.test.ts, replace REPO with the absolute repo path, then
+//   npx vitest run --config <scratch>/vitest.probe.config.mjs --silent=false
+// with vitest.probe.config.mjs = export default { root: REPO, test: { include: ['<scratch>/g1probe.test.ts'], environment: 'node', testTimeout: 600000 } }
+// Uses only production code: getAlmanac drives the real P4 headings provider; the provider is wrapped to
+// capture the heading map handed to p4ActivityState. Nothing is written.
+import { test } from 'vitest'
+import { getP4DayHeadings } from 'REPO/shared/lunar/p4AlmanacHeadings'
+import { p4ActivityState, setP4HeadingsProvider } from 'REPO/shared/lunar/p4ScoreAdapter'
+import { splitHeadings } from 'REPO/shared/lunar/xiejiVol10Resolution'
+import { canonP4Heading, P4_HEADINGS } from 'REPO/shared/lunar/p4HeadingAnnotation'
+import { getAlmanac } from 'REPO/shared/lunar/almanac'
+test('g1 probe', () => {
+  console.log('split', splitHeadings('破屋壞垣'), 'canonOnly', canonP4Heading('破屋壞垣'))
+  console.log('P4_HEADINGS 壊', P4_HEADINGS.includes('破屋壊垣'), '壞', P4_HEADINGS.includes('破屋壞垣'))
+  let last: Record<string, any> = {}
+  setP4HeadingsProvider((d, o) => (last = getP4DayHeadings(d, o)))
+  const tally: Record<string, number> = {}
+  for (let t = Date.UTC(2025, 0, 1); t <= Date.UTC(2027, 11, 31); t += 864e5) {
+    const date = new Date(t).toISOString().slice(0, 10)
+    last = {}
+    getAlmanac(date as any)
+    const prod = p4ActivityState('demolition', last).state
+    const alt = p4ActivityState('demolition', { ...last, 破屋壞垣: last['破屋壊垣'] }).state
+    const k = 'prod=' + prod + ' canonicalRow=' + (last['破屋壊垣']?.state ?? 'absent') + ' ifFolded=' + alt
+    tally[k] = (tally[k] ?? 0) + 1
+  }
+  console.log(JSON.stringify(tally, null, 1))
+})
+
+// --- Score probe (separate file; writes only to SCRATCH): run once as is and once with G1_FOLD=1, then diff
+// the two JSON files (demolition score, status). Add `import { test } from 'vitest'` at the top.
+
+import { writeFileSync } from 'node:fs'
+import { getP4DayHeadings } from 'REPO/shared/lunar/p4AlmanacHeadings'
+import { setP4HeadingsProvider } from 'REPO/shared/lunar/p4ScoreAdapter'
+import { getAlmanac } from 'REPO/shared/lunar/almanac'
+test('g1 score probe', () => {
+  const fold = process.env.G1_FOLD === '1'
+  setP4HeadingsProvider((d, o) => {
+    const h = getP4DayHeadings(d, o)
+    return fold && h['破屋壊垣'] ? { ...h, 破屋壞垣: h['破屋壊垣'] } : h
+  })
+  const out: Record<string, [number, string]> = {}
+  for (let t = Date.UTC(2025, 0, 1); t <= Date.UTC(2027, 11, 31); t += 864e5) {
+    const date = new Date(t).toISOString().slice(0, 10)
+    const r = getAlmanac(date as any).activityRecommendations.find((x: any) => x.activityId === 'demolition')!
+    out[date] = [r.score, r.status]
+  }
+  writeFileSync('SCRATCH/g1-' + (fold ? 'fold' : 'prod') + '.json', JSON.stringify(out))
+})
