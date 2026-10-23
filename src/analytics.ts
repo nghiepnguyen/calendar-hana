@@ -8,8 +8,10 @@
 import type { PostHog } from 'posthog-js'
 
 const MEASUREMENT_ID = 'G-Z41N9B2YFE'
-const POSTHOG_KEY = 'phc_xeu6phPrrMAJYpURvcx7rcizNehSqQ4GNyB845q8Mj4Z'
-const POSTHOG_HOST = 'https://us.i.posthog.com'
+const POSTHOG_KEY: string =
+  import.meta.env.VITE_POSTHOG_PROJECT_TOKEN || 'phc_xeu6phPrrMAJYpURvcx7rcizNehSqQ4GNyB845q8Mj4Z'
+// Proxy riêng trên tên miền của app để trình chặn quảng cáo không chặn PostHog.
+const POSTHOG_HOST: string = import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com'
 
 type Gtag = (...args: unknown[]) => void
 

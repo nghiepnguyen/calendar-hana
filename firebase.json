@@ -117,7 +117,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://apis.google.com https://www.googletagmanager.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://us.i.posthog.com https://us-assets.i.posthog.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'self' https://*.firebaseapp.com https://accounts.google.com; worker-src 'self' blob:"
+            "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://apis.google.com https://www.googletagmanager.com https://us-assets.i.posthog.com https://e.lich.thanhnghiep.top; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://us.i.posthog.com https://us-assets.i.posthog.com https://e.lich.thanhnghiep.top https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'self' https://*.firebaseapp.com https://accounts.google.com; worker-src 'self' blob:"
           }
         ]
       }
