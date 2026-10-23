@@ -152,7 +152,7 @@ Trước lần deploy functions đầu tiên:
 
 ### Tự động qua GitHub Actions
 
-Kiểm tra chạy ở máy, 3 mức: `npm run check` (lint, typecheck; hook `.githooks/pre-push` chạy lệnh này trước mỗi `git push`, bật bởi `npm install` qua script `prepare`, lỗi thì chặn push, bỏ qua bằng `git push --no-verify`); `npm run test:changed` (Vitest chỉ chạy test liên quan file đổi so với `origin/main`); `npm run ci:full` (check + toàn bộ unit, Emulator, mutation gate, e2e Chrome desktop; `ci:local` là alias) khi đổi logic lịch, thiên văn, dữ liệu, test infra hay trước release lớn. `npm run ci:p4` (mutation P4/P5, lâu) vẫn chạy tay khi đổi `shared/lunar/p4*`/`scripts/audit-p4-*`. GitHub Actions chỉ lint, build, deploy.
+Kiểm tra chạy ở máy, 3 mức: `npm run check` (lint, typecheck; hook `.githooks/pre-push` chạy lệnh này trước mỗi `git push`, bật bởi `npm install` qua script `prepare`, lỗi thì chặn push, bỏ qua bằng `git push --no-verify`); `npm run test:changed` (Vitest chỉ chạy test liên quan file đổi so với `origin/main`); `npm run ci:full` (check + toàn bộ unit, Emulator, mutation gate, e2e Chrome desktop; `ci:local` là alias) khi đổi logic lịch, thiên văn, dữ liệu, test infra hay trước release lớn. `npm run ci:p4` (mutation P4/P5, lâu) vẫn chạy tay khi đổi `shared/lunar/p4*`/`scripts/audit-p4-*`. `npm run ci:p4:fast` (check + test P4 chế độ thường, không mutation/full mode/puzhu17 audit, ~3 phút) chỉ dùng khi đang code P4, không phải cổng merge/release; trước merge vẫn chạy các cổng trên, đổi authority/Golden/migration thì nó không đủ. GitHub Actions chỉ lint, build, deploy.
 
 Workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) không chạy test: push vào `main` là build rồi `firebase deploy --only firestore,hosting,functions`.
 
