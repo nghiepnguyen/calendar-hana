@@ -54,7 +54,7 @@ try:
 finally:
  for path, content in originals.items():
   path.write_bytes(content)
-report = {'scope': 'P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT', 'mutations': results, 'restored': all(p.read_bytes() == b for p,b in originals.items()), 'targetHashes': {str(p.relative_to(root)): hashlib.sha256(b).hexdigest() for p,b in originals.items()}, 'limits': 'Audit-only operand and composition gate under named owner convention; canonical soil witness and roadmap 5/full Golden/scoring remain open.'}
+report = {'scope': 'P4_B_OWNER_ADOPTED_SOURCE_DEPENDENT', 'mutations': results, 'restored': all(p.read_bytes() == b for p,b in originals.items()), 'targetHashes': {str(p.relative_to(root)): hashlib.sha256(b).hexdigest() for p,b in sorted(originals.items())}, 'limits': 'Audit-only operand and composition gate under named owner convention; canonical soil witness and roadmap 5/full Golden/scoring remain open.'}
 (root/'docs/audits/p4-vol10-remaining-ji-mutation-results.json').write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps(report))
 if not all(r['caughtByAssertion'] for r in results):
