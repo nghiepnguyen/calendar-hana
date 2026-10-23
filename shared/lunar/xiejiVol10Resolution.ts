@@ -104,6 +104,16 @@ export function splitHeadings(text: string): string[] {
   return out
 }
 
+/** 卷十 writes 立劵交易, 卷十一 and the activity map 立券交易 (p4-vol10-day-composition.json). */
+export const canonP4Heading = (h: string) => h.replace(/劵/g, '券')
+/** G1-b: canonical P4 key of one source heading (破屋壞垣 → 破屋壊垣); source strings stay as written.
+ * Lives here, not in the lazy P4 chunk, so the main-bundle score adapter can use it. */
+export function canonicalP4HeadingKey(heading: string): string {
+  const headings = splitHeadings(heading)
+  if (headings.length !== 1) throw new RangeError(`Expected one P4 heading: ${heading}`)
+  return canonP4Heading(headings[0]!)
+}
+
 const ACTIVITY_HEADINGS = vol11.activityEntries as Record<string, string[]>
 const ENTRIES = (vol10.entries as Entry[]).map((e) => {
   // 忌同X: the entry shares another entry's 忌 and 止不忌 lists.

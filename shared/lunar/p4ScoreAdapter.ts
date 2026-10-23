@@ -3,8 +3,13 @@ import badGodsData from '../almanac-data/bad-gods.json'
 import goodGodsData from '../almanac-data/good-gods.json'
 import xieji from '../almanac-data/xiejibianfangshu-yiji.json'
 import type { Evidence } from './evidence'
+import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 
 export type P4HeadingInput = { state: string; rule?: string; prot?: readonly string[] }
+/** G1-b: how an activity's 卷十一 headings key into the day's P4 heading map (`manifest.policies.p4ScoreHeadingLookup`).
+ * `source-key-v1` (shipped, Stage 1) reads the source spelling, so 破屋壞垣 never matches the canonical
+ * 破屋壊垣; `canonical-v1` reads `canonicalP4HeadingKey`. */
+export type P4ScoreHeadingLookup = 'source-key-v1' | 'canonical-v1'
 export type P4ActivityState = { state: string; heading?: string; allTaboo?: boolean }
 
 export const P4_SCORE_ADAPTER_VERSION = 'p4-score-adapter-v1'
@@ -69,6 +74,26 @@ export const getP4Headings = (date: string, day: P4DayOperands) =>
   headingsProvider?.(date, day) ?? {}
 
 const HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
+const HEADING_KEYS = new Map(
+  Object.values(HEADINGS).flatMap((hs) =>
+    (hs ?? []).map((h) => [h, canonicalP4HeadingKey(h)] as const),
+  ),
+)
+/** The day's headings as the activity sees them. Under `canonical-v1` rows stay under the source spelling,
+ * so deciding headings and clause ids keep it. */
+const headingView = (
+  activityId: string,
+  headings: Readonly<Record<string, P4HeadingInput>>,
+  lookup: P4ScoreHeadingLookup,
+): Readonly<Record<string, P4HeadingInput>> =>
+  lookup === 'canonical-v1'
+    ? Object.fromEntries(
+        (HEADINGS[activityId] ?? []).flatMap((h) => {
+          const row = headings[HEADING_KEYS.get(h)!]
+          return row ? [[h, row]] : []
+        }),
+      )
+    : headings
 // PRD §6.5 `p4_multi_heading_strictest`: keep negatives first, then drop positives.
 const ORDER = ['only_ji', 'both_present', 'neither_recorded', 'only_yi']
 /** States that record 忌: they get the −25 when no negative is left (9b P1 ii) and outrank not_recorded (P2). */
@@ -79,8 +104,10 @@ const BAD_HAN = new Map(badGodsData.items.map((god) => [god.id, god.han]))
  * not_recorded heading does too unless another heading records 忌 (9b MULTI_HEADING_JI_WINS_V1). */
 export function p4ActivityState(
   activityId: string,
-  headings: Readonly<Record<string, P4HeadingInput>>,
+  dayHeadings: Readonly<Record<string, P4HeadingInput>>,
+  lookup: P4ScoreHeadingLookup = 'source-key-v1',
 ): P4ActivityState {
+  const headings = headingView(activityId, dayHeadings, lookup)
   const hs = HEADINGS[activityId]
   if (!hs?.length) return { state: 'baseline' }
   const states = hs.map((h) => headings[h]?.state)
@@ -134,9 +161,10 @@ const penaltyRow = (
 export function applyP4Balancing(
   rows: readonly Evidence[],
   p4: P4ActivityState,
-  headings: Readonly<Record<string, P4HeadingInput>>,
-  opts: { activityId: string; scope: string },
+  dayHeadings: Readonly<Record<string, P4HeadingInput>>,
+  opts: { activityId: string; scope: string; headingLookup?: P4ScoreHeadingLookup },
 ): Evidence[] {
+  const headings = headingView(opts.activityId, dayHeadings, opts.headingLookup ?? 'source-key-v1')
   const { state, heading } = p4
   const prot = new Set((HEADINGS[opts.activityId] ?? []).flatMap((h) => headings[h]?.prot ?? []))
   const inScope = (row: Evidence) => ['truc', 'good_god', 'bad_god'].includes(row.source)

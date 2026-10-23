@@ -16,6 +16,7 @@ import {
   P4_DORMANT_GODS,
   p4ActivityState,
   type P4HeadingInput,
+  type P4ScoreHeadingLookup,
 } from './p4ScoreAdapter'
 import type { Vol10JieshaPolicy } from './xiejiVol10JieshaAuthority'
 import { resolveVol10 } from './xiejiVol10Resolution'
@@ -64,6 +65,8 @@ export interface ActivityInput {
   xiejiVol10JieshaPolicy?: Vol10JieshaPolicy
   /** P4 heading states of the day; read only with balancing ON. */
   p4Headings?: Readonly<Record<string, P4HeadingInput>>
+  /** Overrides `manifest.policies.p4ScoreHeadingLookup` (G1-b; tests and migration proof). */
+  p4ScoreHeadingLookup?: P4ScoreHeadingLookup
 }
 
 export const XIEJI_AUTHORITY_ID = 'xiejibianfangshu-vol11'
@@ -116,6 +119,8 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     ...(input.presentBadGods === undefined ? ['Chưa truyền danh sách hung thần theo ngày.'] : []),
   ]
   const balancing = input.xiejiVol10BalancingEnabled ?? manifest.policies.xiejiVol10BalancingEnabled
+  const headingLookup = (input.p4ScoreHeadingLookup ??
+    manifest.policies.p4ScoreHeadingLookup) as P4ScoreHeadingLookup
   const vol10Enabled =
     (input.xiejiVol10Scoring ?? manifest.policies.xiejiVol10Scoring) && input.classicalDay
   const vol10Items = vol10Enabled
@@ -143,7 +148,9 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
     .map((activity) => {
       const contributions: Evidence[] = []
       // Roadmap 8: a baseline activity under balancing ON stays the flag-OFF path without dormant gods.
-      const p4 = balancing ? p4ActivityState(activity.id, input.p4Headings ?? {}) : undefined
+      const p4 = balancing
+        ? p4ActivityState(activity.id, input.p4Headings ?? {}, headingLookup)
+        : undefined
       const p4On = p4 !== undefined && p4.state !== 'baseline'
       const rule = officer?.activityRules.find((rule) => rule.activityId === activity.id)
       const make = (
@@ -257,6 +264,7 @@ export function getActivityRecommendations(input: ActivityInput): ActivityRecomm
           ...applyP4Balancing(contributions, p4, input.p4Headings ?? {}, {
             activityId: activity.id,
             scope: getActivityScope(activity.id) ?? activity.id,
+            headingLookup,
           }),
         )
       else if (vol10Enabled)

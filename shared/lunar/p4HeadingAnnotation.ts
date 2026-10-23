@@ -6,8 +6,10 @@ import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import { classifyP4Annotation } from './p4Annotation'
 import { resolveP4Context } from './p4ContextBridge'
 import { evaluateP4Clause, presentP4De } from './p4GradeResolution'
-import { splitHeadings } from './xiejiVol10Resolution'
+import { canonP4Heading, splitHeadings } from './xiejiVol10Resolution'
 import { YUE_PO_STILL_AVOID } from './yuePoStillAvoidPolicy'
+
+export { canonP4Heading }
 
 /** Source audit only (A04a): per 卷十 subject scope, the annotation state of each heading.
  * Scopes are never merged here; not imported by the production pipeline. */
@@ -37,8 +39,6 @@ const LISTS = new Map<string, Lists>([
   }),
   ...art.entryLists.map((e) => [e.entry, { extraAvoid: [], ...e } as Lists] as const),
 ])
-/** 卷十 writes 立劵交易, 卷十一 and the activity map 立券交易 (p4-vol10-day-composition.json). */
-export const canonP4Heading = (h: string) => h.replace(/劵/g, '券')
 const split = (text: string | undefined) =>
   new Set(text ? splitHeadings(text).map(canonP4Heading) : [])
 export const P4_HEADINGS: readonly string[] = [
