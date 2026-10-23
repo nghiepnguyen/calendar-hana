@@ -20,6 +20,7 @@
     "build:functions": "npm --prefix functions run build",
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck",
+    "check:fast": "npm run check",
     "test:changed": "vitest run --changed origin/main --passWithNoTests",
     "ci:local": "npm run ci:full",
     "ci:full": "npm run check && npm test && npm run test:emulator && python3 scripts/audit-annual-directions-mutations.py && python3 scripts/audit-mansion-content-mutations.py && playwright test --project=desktop --update-snapshots=none && playwright test --config playwright.dev.config.ts --project=desktop --update-snapshots=none",
