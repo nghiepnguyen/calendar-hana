@@ -26,6 +26,7 @@
     "ci:local": "npm run ci:full",
     "ci:full": "npm run check && npm test && npm run check:audit-clean && npm run test:emulator && python3 scripts/audit-annual-directions-mutations.py && python3 scripts/audit-mansion-content-mutations.py && playwright test --project=desktop --update-snapshots=none && playwright test --config playwright.dev.config.ts --project=desktop --update-snapshots=none",
     "ci:p4": "python3 scripts/audit-p4-remaining-ji-mutations.py && python3 scripts/audit-p4-yi-mutations.py --shard=1/1 && python3 scripts/audit-p4-warehouse-mutations.py && python3 scripts/audit-p4-puzhu06-mutations.py && python3 scripts/audit-p4-full-golden-mutations.py && P4_OWNER_RULES_FULL=1 vitest run shared/lunar/p4OwnerRules.test.ts && python3 scripts/audit-p4-owner-rules-mutations.py && P4_SCORE_ADAPTER_FULL=1 vitest run shared/lunar/p4ScoreAdapterAlmanac.test.ts && python3 scripts/audit-p4-score-adapter-mutations.py && P4_MIGRATION_FULL=1 vitest run shared/lunar/p4MigrationDiff.test.ts && python3 scripts/audit-p4-migration-mutations.py && JIESHA_MIGRATION_FULL=1 vitest run shared/lunar/xiejiVol10JieshaMigration.test.ts && python3 scripts/audit-vol10-jiesha-mutations.py",
+    "ci:p4:fast": "npm run check:fast && vitest run --config vitest.p4fast.config.ts && npm run check:audit-clean",
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {
