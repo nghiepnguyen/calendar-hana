@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import base from './vitest.config.ts'
 
-// P4 dev loop only (npm run ci:p4:fast): never a merge/release gate. Every file here also runs in `npm test`
+// P4 dev loop only (npm run ci:p4:fast): never a merge/release gate. Every file here also runs in `vitest run`
 // (ci:full); shared/lunar/p4FastSelection.test.ts checks the selection and documents each exclusion.
 // Full/write/report modes stay off even if set in the shell, so this run is always normal mode.
 for (const k of Object.keys(process.env))
@@ -19,7 +19,7 @@ export default defineConfig({
       'shared/lunar/xiejiVirtues.test.ts',
       'shared/lunar/xiejiMonthlySha.test.ts',
     ],
-    // Frozen puzhu17 freeze derivation, ~600 s; still runs in `npm test` (ci:full).
+    // Frozen puzhu17 freeze derivation, ~600 s; still runs in the full `vitest run` (ci:full).
     exclude: [...(base.test?.exclude ?? []), 'shared/lunar/p4Puzhu17Audit.test.ts'],
   },
 })
