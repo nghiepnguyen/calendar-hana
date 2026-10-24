@@ -1,0 +1,42 @@
+{
+ "proof": "ROLLBACK_PROOF",
+ "mechanism": "manifest.policies.p4ScoreHeadingLookup flipped in-process (vi.mock); no data file written",
+ "manifestShipped": {
+  "p4ScoreHeadingLookup": "canonical-v1"
+ },
+ "configuration": "Score Golden v2/v3 gate configuration (tiangouYinNoYi, satChuNgocHapStars off)",
+ "sourceDataSha256": {
+  "shared/almanac-data/xiejibianfangshu-yiji.json": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+ },
+ "steps": [
+  {
+   "step": "forward",
+   "p4ScoreHeadingLookup": "canonical-v1",
+   "golden": "v3",
+   "dates": 1095,
+   "mismatches": 0
+  },
+  {
+   "step": "rollback",
+   "p4ScoreHeadingLookup": "source-key-v1",
+   "golden": "v2",
+   "dates": 1095,
+   "mismatches": 0
+  },
+  {
+   "step": "re-enable",
+   "p4ScoreHeadingLookup": "canonical-v1",
+   "golden": "v3",
+   "dates": 1095,
+   "mismatches": 0
+  }
+ ],
+ "witnessesOnRollback": {
+  "2025-02-02": "35 watch",
+  "2026-01-28": "35 watch",
+  "2027-01-23": "35 watch",
+  "2026-08-02": "35 watch",
+  "2027-07-28": "35 watch"
+ },
+ "result": "PASS"
+}

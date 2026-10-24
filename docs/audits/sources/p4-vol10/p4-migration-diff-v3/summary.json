@@ -1,0 +1,32 @@
+{
+ "version": "p4-migration-diff-v3",
+ "spec": "docs/audits/p4-g1b-score-lookup.md §6",
+ "before": "source-key-v1",
+ "after": "canonical-v1",
+ "domain": [
+  "2025-01-01",
+  "2027-12-31"
+ ],
+ "domainDaysEvaluated": 1095,
+ "outsideControls": [
+  "2024-12-31",
+  "2028-01-01",
+  "2035-06-15"
+ ],
+ "activityEvaluations": 35136,
+ "changedEvaluations": 644,
+ "unchangedEvaluations": 34492,
+ "changedDemolitionDays": 353,
+ "evidenceOnlyDemolitionRows": 291,
+ "scoreChanges": 320,
+ "scoreLower": 223,
+ "statusChanges": 337,
+ "hardWarningChanges": 0,
+ "otherActivityChanges": 0,
+ "outsideDomainChanges": 0,
+ "expectedG1bChanges": 644,
+ "unexpectedRegressions": 0,
+ "sourceHeadingsNew": [
+  "破屋壞垣"
+ ]
+}

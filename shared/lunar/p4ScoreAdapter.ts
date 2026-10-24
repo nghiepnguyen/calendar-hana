@@ -7,8 +7,8 @@ import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 
 export type P4HeadingInput = { state: string; rule?: string; prot?: readonly string[] }
 /** G1-b: how an activity's 卷十一 headings key into the day's P4 heading map (`manifest.policies.p4ScoreHeadingLookup`).
- * `source-key-v1` (shipped, Stage 1) reads the source spelling, so 破屋壞垣 never matches the canonical
- * 破屋壊垣; `canonical-v1` reads `canonicalP4HeadingKey`. */
+ * `source-key-v1` (Stage 1, now the rollback value) reads the source spelling, so 破屋壞垣 never matches the
+ * canonical 破屋壊垣; `canonical-v1` (shipped, Stage 2) reads `canonicalP4HeadingKey`. */
 export type P4ScoreHeadingLookup = 'source-key-v1' | 'canonical-v1'
 export type P4ActivityState = { state: string; heading?: string; allTaboo?: boolean }
 
@@ -105,7 +105,7 @@ const BAD_HAN = new Map(badGodsData.items.map((god) => [god.id, god.han]))
 export function p4ActivityState(
   activityId: string,
   dayHeadings: Readonly<Record<string, P4HeadingInput>>,
-  lookup: P4ScoreHeadingLookup = 'source-key-v1',
+  lookup: P4ScoreHeadingLookup = 'canonical-v1',
 ): P4ActivityState {
   const headings = headingView(activityId, dayHeadings, lookup)
   const hs = HEADINGS[activityId]
@@ -164,7 +164,7 @@ export function applyP4Balancing(
   dayHeadings: Readonly<Record<string, P4HeadingInput>>,
   opts: { activityId: string; scope: string; headingLookup?: P4ScoreHeadingLookup },
 ): Evidence[] {
-  const headings = headingView(opts.activityId, dayHeadings, opts.headingLookup ?? 'source-key-v1')
+  const headings = headingView(opts.activityId, dayHeadings, opts.headingLookup ?? 'canonical-v1')
   const { state, heading } = p4
   const prot = new Set((HEADINGS[opts.activityId] ?? []).flatMap((h) => headings[h]?.prot ?? []))
   const inScope = (row: Evidence) => ['truc', 'good_god', 'bad_god'].includes(row.source)

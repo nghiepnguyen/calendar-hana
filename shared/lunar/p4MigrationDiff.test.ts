@@ -43,8 +43,14 @@ import {
   type EventDiff,
 } from './p4MigrationReport'
 import { P4_MIGRATION_RULES_VERSION } from './p4MigrationRulesV2'
-import { P4_DOMAIN, P4_DORMANT_GODS, p4ActivityState } from './p4ScoreAdapter'
+import {
+  P4_DOMAIN,
+  P4_DORMANT_GODS,
+  p4ActivityState,
+  type P4ScoreHeadingLookup,
+} from './p4ScoreAdapter'
 import { solarTermsForYear } from './solarTerms'
+import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 
 // Roadmap 9 harness (tasks/prd-p4-migration-diff.md §2, FR-02; owner §6.10), v2 for roadmap 9b
 // (tasks/prd-p4-9b.md §5: rules v2, Golden score v2, output p4-migration-diff-v2; v1 output is frozen and
@@ -79,6 +85,9 @@ const DATES = [
 const SAMPLED = new Set(DATES)
 const HEADINGS = xieji.activityEntries as Record<string, string[] | undefined>
 const RESOLVED = ['only_ji', 'both_present', 'neither_recorded', 'only_yi']
+// G1-b Stage 2 ships canonical-v1; this frozen v2 diff is the source-key-v1 rollback evidence.
+const LOOKUP = 'source-key-v1' as P4ScoreHeadingLookup
+const headingKey = (h: string) => (LOOKUP === 'canonical-v1' ? canonicalP4HeadingKey(h) : h)
 
 type Config = 'baseline' | 'presence' | 'balancing' | 'full' | 'stars' | 'chainSwap'
 type EventOut = ReturnType<typeof eventOutput>
@@ -152,6 +161,7 @@ async function compute(config: Config) {
           tiangouYinNoYi: false,
           satChuNgocHapStars: false,
           xiejiVol10JieshaPolicy: 'legacy-cancel-both',
+          p4ScoreHeadingLookup: LOOKUP,
         },
       },
     }
@@ -221,13 +231,13 @@ async function diffRows(config: Config) {
     const headings = day.input?.p4Headings ?? {}
     day.recs.forEach((full, k) => {
       const hs = HEADINGS[full.activityId] ?? []
-      const p4 = p4ActivityState(full.activityId, headings)
+      const p4 = p4ActivityState(full.activityId, headings, LOOKUP)
       rows.push({
         date,
         inDomain: inDomain(date),
         state: p4.state,
         ...(p4.allTaboo && { allTaboo: true }),
-        headingStates: hs.map((h) => headings[h]?.state ?? 'missing'),
+        headingStates: hs.map((h) => headings[headingKey(h)]?.state ?? 'missing'),
         prot: new Set(hs.flatMap((h) => headings[h]?.prot ?? [])),
         base: base.get(date)!.recs[k]!,
         full,
@@ -340,7 +350,8 @@ async function buildFiles() {
         .map((r) =>
           activityLine(
             r,
-            p4ActivityState(r.full.activityId, full.get(r.date)!.input?.p4Headings ?? {}).heading,
+            p4ActivityState(r.full.activityId, full.get(r.date)!.input?.p4Headings ?? {}, LOOKUP)
+              .heading,
             HEADINGS[r.full.activityId] ?? [],
           ),
         ),
