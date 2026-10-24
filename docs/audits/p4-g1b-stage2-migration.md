@@ -143,6 +143,35 @@ On rollback, the five witnesses return to `35 watch`.
 - **No missing lookups.** An unknown activity stays `baseline`. No heading activity reads a missing key on any domain day under `canonical-v1`.
 - **The scoring algorithm is unchanged.** `canonical-v1` on canonical keys gives the same state and rows as `source-key-v1` on source keys, for every P4 state, with `prot` and `all_taboo`.
 
+- **Events.** No `EVENT_OPTIONS` type resolves to `demolition`, either as an activity or as a role, so event outputs cannot move.
+- **Manifest alone controls production.** The only runtime caller of `p4ActivityState` and `applyP4Balancing` is `getActivityRecommendations`, and it passes the manifest-derived lookup (`activityRecommendations.ts:122,152,267`). Checked with `graft callers`.
+
+### Production-configuration equivalence (scratch probe, not committed)
+
+The probe hashed the full `activityRecommendations` JSON for 1,098 dates in a throwaway worktree, using the real manifest each time.
+
+| Tree | Lookup | sha256 |
+|---|---|---|
+| `1ed3828` (pre-migration production) | shipped `source-key-v1` | `b844ee12…` |
+| HEAD | forced `source-key-v1` (rollback) | `b844ee12…` |
+| `1ed3828` | forced `canonical-v1` | `b36226c5…` |
+| HEAD | shipped `canonical-v1` | `b36226c5…` |
+
+Two conclusions follow:
+- Rollback is byte-equal to pre-migration production in the **full** production configuration, not only in the Golden configuration.
+- Stage 2 changes nothing except which lookup value is selected.
+
+### Build (spec §4 acceptance)
+
+`vite build` was run on `1ed3828` and on HEAD.
+
+| Chunk | `1ed3828` | HEAD |
+|---|---|---|
+| `index` | 1,277,974 B | 1,277,971 B (Δ −3 B) |
+| `p4AlmanacHeadings` (P4 resolver) | 407,874 B | 407,874 B, still its own chunk |
+
+The full `npm run build` in a fresh worktree stopped at `tsc -b` only because `functions/node_modules` was not installed there. In the main checkout, `npm run check` (lint plus `tsc -b`, including functions) passes.
+
 ## Pinned to `source-key-v1` (v2 = rollback evidence)
 
 - `p4ScoreAdapter.test.ts`: the cases `run` and the layer B `p4ActivityState` call.

@@ -7,6 +7,7 @@ import type { ActivityRecommendation } from './activityRecommendations'
 import { getP4DayHeadings } from './p4AlmanacHeadings'
 import { getAlmanac } from './almanac'
 import { OUTSIDE_P4_DOMAIN, P4_DOMAIN_DATES } from './p4AdapterBaselineRows'
+import { EVENT_OPTIONS, resolveEventActivities, resolveEventActivityRoles } from './eventMapping'
 import { capFirstDiff } from './p4MigrationReport'
 import {
   applyP4Balancing,
@@ -380,6 +381,15 @@ describe('G1-b Stage 2 isolation', () => {
     expect([...byKey].filter(([, s]) => s.size > 1)).toEqual([])
     expect(sources).not.toContain(CANONICAL) // no source heading already spelled canonically
     expect(canonicalP4HeadingKey('立券交易')).toBe('立券交易') // G2 keys untouched
+  })
+
+  it('events: no event type resolves to demolition, so event outputs cannot move', () => {
+    const roles = EVENT_OPTIONS.flatMap(([id]) => [
+      ...resolveEventActivities(id),
+      ...resolveEventActivityRoles(id).map((r) => r.activityId),
+    ])
+    expect(roles.length).toBeGreaterThan(0)
+    expect(roles).not.toContain('demolition')
   })
 
   it('sourceRaw: the activity map keeps the source spelling', () => {
