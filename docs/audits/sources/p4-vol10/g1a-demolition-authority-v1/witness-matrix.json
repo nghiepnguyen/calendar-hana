@@ -1,0 +1,700 @@
+{
+ "summary": {
+  "version": "g1a-demolition-witness-v1",
+  "fold": {
+   "壞": "壊"
+  },
+  "glyphCounts": {
+   "vol10.raw.txt": {
+    "破屋壞垣": 15,
+    "破屋壊垣": 3
+   },
+   "yi-sources-v1/vol11.raw.txt": {
+    "破屋壞垣": 0,
+    "破屋壊垣": 3
+   },
+   "vol06.raw.txt": {
+    "破屋壞垣": 1,
+    "破屋壊垣": 0
+   },
+   "s1-tuwang/tuibu-jieli-shang.raw.txt": {
+    "破屋壞垣": 5,
+    "破屋壊垣": 0
+   }
+  },
+  "yuebiaoPages": {
+   "contexts": 16,
+   "printed": [
+    "戌-丁亥",
+    "戌-乙亥",
+    "戌-己亥",
+    "戌-癸亥",
+    "未-丙申",
+    "未-壬申",
+    "未-庚申",
+    "辰-乙巳",
+    "辰-己巳",
+    "辰-癸巳",
+    "辰-辛巳"
+   ],
+   "notPrinted": [
+    "丑-丙寅",
+    "丑-壬寅",
+    "丑-戊寅",
+    "丑-甲寅",
+    "未-戊申"
+   ],
+   "printedGlyphs": [
+    "破屋壞垣"
+   ]
+  },
+  "distinctNormalized": [
+   "破屋壊垣"
+  ],
+  "files": [
+   {
+    "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+    "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+   },
+   {
+    "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+    "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+   },
+   {
+    "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+    "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+   },
+   {
+    "path": "docs/audits/sources/p4-vol10/s1-tuwang/tuibu-jieli-shang.raw.txt",
+    "sha256": "76193ffabee048634b74caad369d4d26aa89a0b7af18a56ba44e1946e3dd2216"
+   },
+   {
+    "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+    "sha256": "9849e97b6d1659a2c2f475035b82432e2e17adfef3c755238d3afd990258ac13"
+   }
+  ]
+ },
+ "text": [
+  {
+   "source": "vol10.raw.txt",
+   "line": 189,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "破日",
+   "context_line": 188,
+   "snippet": "宜求醫療病破屋壞垣",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 270,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月建",
+   "context_line": 269,
+   "snippet": "倉庫開倉庫出貨財修置產室破屋壞垣伐木栽種破土",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 271,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月建",
+   "context_line": 269,
+   "snippet": "碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 272,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月建",
+   "context_line": 269,
+   "snippet": "碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 277,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "與天德月德天德合月德合併",
+   "context_line": 277,
+   "snippet": "浴求醫療病掃舍宇平治道塗破屋壞垣捕捉畋獵取魚",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 278,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "與天德月德天德合月德合併",
+   "context_line": 277,
+   "snippet": "肆赦等事仍忌解除求醫療病破屋壞垣不與德合併諸",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 281,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "平日",
+   "context_line": 280,
+   "snippet": "穴掃舍宇修飾垣墻平治道塗破屋壞垣伐木捕捉畋獵",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 286,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "收日",
+   "context_line": 285,
+   "snippet": "穴掃舍宇修飾垣墻平治道塗破屋壞垣伐木補捉畋獵",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 299,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "刼煞",
+   "context_line": 298,
+   "snippet": "井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 301,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "刼煞",
+   "context_line": 298,
+   "snippet": "忌同月破乂忌解除求醫療病破屋壞垣但三合緩於月",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 313,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月刑",
+   "context_line": 312,
+   "snippet": "井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 320,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月厭",
+   "context_line": 319,
+   "snippet": "補垣塞穴修飾垣墻平治道塗破屋壞垣伐木栽種牧養",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 362,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "四廢",
+   "context_line": 361,
+   "snippet": "頭整手足甲掃舍宇平治道塗破屋壞垣伐木捕捉畋獵",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 392,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "與德合併猶忌",
+   "context_line": 389,
+   "snippet": "碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 435,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "無禄日",
+   "context_line": 434,
+   "snippet": "甲掃舍宇修飾垣墻平治道塗破屋壞垣伐木餘事不註",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 443,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "與徳合赦願併猶忌",
+   "context_line": 440,
+   "snippet": "穴掃舍宇修飾垣牆平治道塗破屋壊垣伐木餘事皆忌",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 449,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "土王用事",
+   "context_line": 448,
+   "snippet": "碓磑補垣修飾垣墻平治道塗破屋壊垣栽種破土",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol10.raw.txt",
+   "line": 506,
+   "work": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "凡丁日忌剃頭亦不註宜整容",
+   "context_line": 496,
+   "snippet": "補垣塞穴修飾垣牆平治道塗破屋壊垣如遇徳猶忌之",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "yi-sources-v1/vol11.raw.txt",
+   "line": 46,
+   "work": "協紀辨方書 卷十一 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "納畜",
+   "context_line": 35,
+   "snippet": "平治道塗　　破屋壊垣　　伐木",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "yi-sources-v1/vol11.raw.txt",
+   "line": 67,
+   "work": "協紀辨方書 卷十一 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "啓攢",
+   "context_line": 49,
+   "snippet": "破屋壊垣　　伐木",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "yi-sources-v1/vol11.raw.txt",
+   "line": 263,
+   "work": "協紀辨方書 卷十一 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壊垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "破屋壊垣",
+   "context_line": 263,
+   "snippet": "{{SK anchor|破屋壊垣}}",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "vol06.raw.txt",
+   "line": 660,
+   "work": "協紀辨方書 卷六 (Wikisource 四庫 transcription)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "月忌日",
+   "context_line": 659,
+   "snippet": "垣掃舍宇修飾垣墻平治道塗破屋壞垣餘事不註○齊",
+   "provenance": "primary/classical authority (modern transcription)",
+   "independence": "same work"
+  },
+  {
+   "source": "s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "line": 978,
+   "work": "推步捷例 上 (南相吉, Joseon 1861; Wikisource, RESEARCH_EVIDENCE_ONLY)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "塡實ㆍ祿空<sub>從節</sub>",
+   "context_line": 955,
+   "snippet": "{{*|只忌御書。}}，破屋壞垣，破土安葬。",
+   "provenance": "derivative compilation",
+   "independence": "later compilation of the same Qing rules"
+  },
+  {
+   "source": "s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "line": 999,
+   "work": "推步捷例 上 (南相吉, Joseon 1861; Wikisource, RESEARCH_EVIDENCE_ONLY)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "四離、四絶、上朔、晦日",
+   "context_line": 999,
+   "snippet": "宇，修飾垣墻，平治道塗，破屋壞垣，伐木。{{",
+   "provenance": "derivative compilation",
+   "independence": "later compilation of the same Qing rules"
+  },
+  {
+   "source": "s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "line": 1003,
+   "work": "推步捷例 上 (南相吉, Joseon 1861; Wikisource, RESEARCH_EVIDENCE_ONLY)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "祿空",
+   "context_line": 1003,
+   "snippet": "宇，修飾垣墻，平治道塗，破屋壞垣，伐木。",
+   "provenance": "derivative compilation",
+   "independence": "later compilation of the same Qing rules"
+  },
+  {
+   "source": "s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "line": 1005,
+   "work": "推步捷例 上 (南相吉, Joseon 1861; Wikisource, RESEARCH_EVIDENCE_ONLY)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "土王用事",
+   "context_line": 1005,
+   "snippet": "飾垣墻，平治道塗，栽種，破屋壞垣，破土，作厠",
+   "provenance": "derivative compilation",
+   "independence": "later compilation of the same Qing rules"
+  },
+  {
+   "source": "s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "line": 1011,
+   "work": "推步捷例 上 (南相吉, Joseon 1861; Wikisource, RESEARCH_EVIDENCE_ONLY)",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "canonical_candidate": "破屋壊垣",
+   "context": "啓攢",
+   "context_line": 980,
+   "snippet": "飾垣墻，平治道塗，栽種，破屋壞垣，破土安葬，",
+   "provenance": "derivative compilation",
+   "independence": "later compilation of the same Qing rules"
+  }
+ ],
+ "yuebiao": [
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "辰-己巳",
+   "page": "06067693-n11.jpg",
+   "page_sha256": "b069638864543bd1c79c513a9ad800c78793d11a268e75f19af91affeb3d068d",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "辰-辛巳",
+   "page": "06067693-n23.jpg",
+   "page_sha256": "89c6ab6a15569ed23c3081e6befe307764ba37e79a71a3dc8c658ad4137be826",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "辰-癸巳",
+   "page": "06067693-n35.jpg",
+   "page_sha256": "57aec402505a2455e87d969aebdec66065d0554b4fc82a1b1084f87945a56871",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "辰-乙巳",
+   "page": "06067693-n47.jpg",
+   "page_sha256": "a3050acad6389747180d1dcf254c6d54f2ce74a242b209097dbb767afea12e41",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "未-壬申",
+   "page": "06067694-n81.jpg",
+   "page_sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "未-丙申",
+   "page": "06067694-n105.jpg",
+   "page_sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "未-戊申",
+   "page": "06067694-n117.jpg",
+   "page_sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "source_raw": "",
+   "normalized_comparison": "",
+   "printed_on_ji_line": false,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "未-庚申",
+   "page": "06067694-n129.jpg",
+   "page_sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離",
+    "八專"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "戌-乙亥",
+   "page": "06067696-n17.jpg",
+   "page_sha256": "c6d60edbc6b81be3e137ffe8efdc3b31cfd8794c545d974a91321bafe0c28535",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "戌-丁亥",
+   "page": "06067696-n29.jpg",
+   "page_sha256": "5bcc7fb774552451ea82f7385fd6d1a2efa3e01941580e299aba8efffe951a56",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "八風",
+    "土符",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "戌-己亥",
+   "page": "06067696-n41.jpg",
+   "page_sha256": "4a3509593e18675813353025dab5e757d1e9ba25bcdb49aee9c63e757beaa01b",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "戌-癸亥",
+   "page": "06067696-n65.jpg",
+   "page_sha256": "90f0124dfe3cf288e6270dd599bae2c173093cb408d49d1cd87154563d3cb8fe",
+   "source_raw": "破屋壞垣",
+   "normalized_comparison": "破屋壊垣",
+   "printed_on_ji_line": true,
+   "xiong_shen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "丑-甲寅",
+   "page": "06067697-n123.jpg",
+   "page_sha256": "11d6479bd0749437cb2ef7ebf55dda757fdb29e2df164bb3ee52bf865697fabd",
+   "source_raw": "",
+   "normalized_comparison": "",
+   "printed_on_ji_line": false,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "八風",
+    "八專"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "丑-丙寅",
+   "page": "06067697-n75.jpg",
+   "page_sha256": "a86985f79083e16e7548be80d553e75e213410af89426576528cf0198b45d809",
+   "source_raw": "",
+   "normalized_comparison": "",
+   "printed_on_ji_line": false,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "丑-戊寅",
+   "page": "06067697-n87.jpg",
+   "page_sha256": "30a9eb3e28218b5e53c100d351f768619b6debb9d680bd19a25aa9cde1f245f8",
+   "source_raw": "",
+   "normalized_comparison": "",
+   "printed_on_ji_line": false,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  },
+  {
+   "source": "h1b-yuebiao-witness-v1/lock.json",
+   "context": "丑-壬寅",
+   "page": "06067697-n111.jpg",
+   "page_sha256": "54a15c51a43d551753a4d87c945cafec8edc72a83b10cbe764a173c47ee78833",
+   "source_raw": "",
+   "normalized_comparison": "",
+   "printed_on_ji_line": false,
+   "xiong_shen": [
+    "劫煞",
+    "天賊",
+    "五虛"
+   ],
+   "provenance": "協紀辨方書 月表 卷二十–三十一 scans (SHA-locked), project visual transcription",
+   "independence": "same work; undated month+pillar table, cannot carry 土王用事"
+  }
+ ]
+}
