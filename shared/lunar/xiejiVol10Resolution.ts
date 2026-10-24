@@ -90,16 +90,19 @@ function HEADINGS(): string[] {
 }
 
 const normalize = (text: string) => [...text].map((c) => NORM[c] ?? c).join('')
+// VOCAB normalized once, same order, raw entry kept: spellings that normalize together (破屋壞垣/破屋壊垣)
+// stay separate and the first raw match still picks the alias.
+const NORMALIZED_VOCAB = VOCAB.map((raw) => ({ raw, normalized: normalize(raw) }))
 
 /** Splits an unseparated 用事 list into headings; throws on any character it cannot place. */
 export function splitHeadings(text: string): string[] {
   const s = normalize(text)
   const out: string[] = []
   for (let i = 0; i < s.length;) {
-    const hit = VOCAB.find((v) => s.startsWith(normalize(v), i))
+    const hit = NORMALIZED_VOCAB.find((v) => s.startsWith(v.normalized, i))
     if (!hit) throw new Error(`Unrecognised 用事 text at ${i}: ${s.slice(i, i + 6)}`)
-    out.push(...(ALIASES[hit] ?? [normalize(hit)]))
-    i += normalize(hit).length
+    out.push(...(ALIASES[hit.raw] ?? [hit.normalized]))
+    i += hit.normalized.length
   }
   return out
 }
