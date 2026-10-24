@@ -29,6 +29,7 @@ const run = (c: Case, on: boolean, drop: string[] = []) =>
     presentBadGods: c.badGods.filter((g) => !drop.includes(g)),
     ...(c.classicalDay ? { classicalDay: c.classicalDay } : {}),
     xiejiVol10BalancingEnabled: on,
+    p4ScoreHeadingLookup: 'source-key-v1', // G1-b Stage 2: Golden v2 is the source-key-v1 rollback evidence
     ...(on ? { p4Headings: c.headings } : {}),
   }).find((r) => r.activityId === c.activityId)!
 
@@ -145,7 +146,7 @@ describe('P4 score Golden v2 (flag ON)', () => {
     const diff = want.filter((line) => {
       const [date, activity, state, heading, taboo] = line.split('\t')
       const hs = days.get(date!) ?? {}
-      const got = p4ActivityState(activity!, hs)
+      const got = p4ActivityState(activity!, hs, 'source-key-v1')
       return (
         got.state !== state ||
         (got.heading ?? '') !== heading ||

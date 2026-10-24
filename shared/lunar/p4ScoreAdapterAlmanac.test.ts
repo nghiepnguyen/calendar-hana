@@ -21,6 +21,8 @@ vi.mock('../almanac-data/manifest.json', async (load) => {
         xiejiVol10BalancingEnabled: true,
         tiangouYinNoYi: false,
         satChuNgocHapStars: false,
+        // G1-b Stage 2 ships canonical-v1; Golden v2 is the source-key-v1 rollback evidence.
+        p4ScoreHeadingLookup: 'source-key-v1',
       },
     },
   }
@@ -82,7 +84,7 @@ describe('roadmap 8 almanac wiring (flag ON)', () => {
         })
         byDate.set(r.date!, hs)
       }
-      const got = p4ActivityState(r.activity!, hs)
+      const got = p4ActivityState(r.activity!, hs, 'source-key-v1')
       return (
         got.state !== r.state ||
         (got.heading ?? '') !== r.deciding_heading ||

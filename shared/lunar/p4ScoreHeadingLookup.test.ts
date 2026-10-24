@@ -15,7 +15,7 @@ import {
 } from './p4ScoreAdapter'
 import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 
-// G1-b Stage 1 (docs/audits/p4-g1b-score-lookup.md): the policy exists, production ships source-key-v1.
+// G1-b (docs/audits/p4-g1b-score-lookup.md): Stage 1 added the policy; Stage 2 ships canonical-v1.
 const policy = vi.hoisted(() => ({ lookup: 'source-key-v1', balancing: true }))
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default
@@ -99,8 +99,10 @@ describe('canonicalP4HeadingKey', () => {
 describe('p4ScoreAdapter heading lookup', () => {
   const day: Headings = { [CANON]: { state: 'only_ji' } }
 
-  it('source-key-v1 (default) keeps demolition on baseline', () => {
-    expect(p4ActivityState('demolition', day)).toEqual({ state: 'baseline' })
+  it('source-key-v1 (rollback) keeps demolition on baseline; the default is canonical-v1', () => {
+    expect(p4ActivityState('demolition', day)).toEqual(
+      p4ActivityState('demolition', day, 'canonical-v1'),
+    )
     expect(p4ActivityState('demolition', day, 'source-key-v1')).toEqual({ state: 'baseline' })
   })
 
@@ -147,11 +149,11 @@ describe('p4ScoreAdapter heading lookup', () => {
 })
 
 describe('getAlmanac under the lookup policy', () => {
-  it('the shipped manifest is source-key-v1', () => {
+  it('the shipped manifest is canonical-v1 (G1-b Stage 2)', () => {
     const shipped = JSON.parse(readFileSync('shared/almanac-data/manifest.json', 'utf8')) as {
       policies: Record<string, unknown>
     }
-    expect(shipped.policies.p4ScoreHeadingLookup).toBe('source-key-v1')
+    expect(shipped.policies.p4ScoreHeadingLookup).toBe('canonical-v1')
     expect(shipped.policies.xiejiVol10BalancingEnabled).toBe(true)
   })
 

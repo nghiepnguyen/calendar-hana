@@ -1,0 +1,24 @@
+{
+ "version": "p4-migration-diff-v3-lock",
+ "spec": "docs/audits/p4-g1b-score-lookup.md §5–§6 (frozen, PR #98)",
+ "baseCommit": "1ed3828705b0be0d8428348b9a338c06c5051215",
+ "producer": "shared/lunar/p4MigrationDiffV3.test.ts",
+ "generation": "P4_MIGRATION_V3_FULL=1 P4_MIGRATION_V3_WRITE=1 npx vitest run shared/lunar/p4MigrationDiffV3.test.ts",
+ "before": "source-key-v1",
+ "after": "canonical-v1",
+ "configuration": "production manifest; only p4ScoreHeadingLookup mocked (rollback proof: Score Golden gate configuration)",
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/activities-changed.tsv",
+   "sha256": "8fa91886a5fce9bad9b083bb533b4df6a426b8328d3ed5e3d47fb80338271560"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/summary.json",
+   "sha256": "0c24aee1754f6d985e55777115f9e56fe302f773efe4bdeeb91574bfc89d5175"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/rollback.json",
+   "sha256": "421e829a4f71ba5c39733e43255dea749a360fbf13ecf871e0269e24318349f4"
+  }
+ ]
+}
