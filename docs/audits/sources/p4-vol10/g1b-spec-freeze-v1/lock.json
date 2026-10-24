@@ -1,0 +1,35 @@
+{
+ "version": "g1b-spec-freeze-lock-v1",
+ "date": "2026-10-24",
+ "base": "5f2397dc3f75530259a11228452b7dc2dfd7ec0b",
+ "status": "SPEC_FROZEN_STAGE_2_NOT_IMPLEMENTED",
+ "spec": "docs/audits/p4-g1b-score-lookup.md",
+ "decision": "STAGE_2_READY_FOR_IMPLEMENTATION; production remains source-key-v1",
+ "historical": {
+  "commit": "9aa9cf7ab9c43bff197cfba4e3ff3f35a1a8e968",
+  "branch": "claude/p4-g1b-audit (never merged)",
+  "files": [
+   {"path": "docs/audits/p4-g1b-score-lookup.md", "sha256": "8ac9392728de6f88d95bbbc0ee6289236a1c2c2d029a73e25feb42bdef021a9b"},
+   {"path": "docs/audits/sources/p4-vol10/g1b-score-lookup-v1/impact-rows.tsv", "sha256": "d4fb847ab1f891d0f9c05e71786ec365b8590a3cb07d6dfbe1ae4a51e3b926b3"},
+   {"path": "docs/audits/sources/p4-vol10/g1b-score-lookup-v1/probe-result.json", "sha256": "e3e1e60f85f5f2171657c766a881e028e049d7271d5cd17141d670ece816f402"},
+   {"path": "docs/audits/sources/p4-vol10/g1b-score-lookup-v1/probe.test.ts", "sha256": "d2ada74ade6f0597a90ac41d38c2e7383d7b0a0dce62012edb70bd5bf153fe8b"},
+   {"path": "docs/audits/sources/p4-vol10/g1b-score-lookup-v1/oracle_fold.py", "sha256": "b80e47494f49318d852718eb5f2296320e5b7822118caa9391f2085ccc8a07c3"}
+  ]
+ },
+ "authority": {
+  "g1a": {"pr": 97, "mergeCommit": "5f2397dc3f75530259a11228452b7dc2dfd7ec0b",
+   "report": {"path": "docs/audits/p4-g1a-demolition-authority.md", "sha256": "754f502aa5cd78eec6ec25697424651fff3898a5bbf6c0c12f66f2649d8a5b4d"},
+   "lock": {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/lock.json", "sha256": "01bd688bae072a110d5c98972de9e9e2f12f77ecb4fae142194c4de447d9a9dd"},
+   "overlap": {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/overlap.json", "sha256": "ad5b0ce0806b66873e0caed7d162544651b9b78adaba023d4e8dcc284387722f"}},
+  "ownerAcceptance": {"date": "2026-10-24", "record": "docs/audits/p4-g1a-demolition-authority.md §11",
+   "decision": "ACCEPT baseline/35 watch -> only_ji/20 avoid on 2025-02-02, 2026-01-28, 2027-01-23, 2026-08-02, 2027-07-28; current soil-window convention (立 day excluded) accepted, not reopened"}
+ },
+ "stage1": {"pr": 90, "commit": "45c9eea7c2a8d6a55aa27cde8e64fcf779e1d1da"},
+ "productionAtFreeze": [
+  {"path": "shared/almanac-data/manifest.json", "p4ScoreHeadingLookup": "source-key-v1", "sha256": "e1f1be326d44fe9265e055445d7be6dad42c8be480a281ff07e4597d0ef40d7b"},
+  {"path": "shared/lunar/p4ScoreAdapter.ts", "sha256": "b10d369184df0438608a545c607a88a68e9664c678112ad9fee0518917e4d3b4"},
+  {"path": "shared/lunar/xiejiVol10Resolution.ts", "sha256": "2d79c58f64fa9c8e62fdb6c110d3447c8c11fbfb9f64e4ff29b5a77a5fba3b27"}
+ ],
+ "envelope": {"recomputedOn": "5f2397dc3f75530259a11228452b7dc2dfd7ec0b", "method": "throwaway getAlmanac probe, both policies, mocked manifest, not committed",
+  "demolitionDays": 1095, "scoreChanged": 320, "lower": 223, "higher": 97, "statusChanged": 337, "eitherChanged": 353, "hardWarningChanged": 0, "otherActivitiesChanged": 0, "outsideDatesChanged": 0}
+}
