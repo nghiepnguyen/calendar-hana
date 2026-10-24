@@ -1,0 +1,97 @@
+{
+ "version": "p4-score-golden-lock-v3",
+ "scope": "G1B_STAGE2_CANONICAL_V1",
+ "supersedes": "p4-score-golden-lock-v2 as forward evidence; v2 files kept unchanged as source-key-v1 rollback evidence",
+ "spec": "docs/audits/p4-g1b-score-lookup.md §4.3 (frozen, PR #98)",
+ "authority": "G1-a SAME_ACTIVITY_ALIAS_CONFIRMED (docs/audits/p4-g1a-demolition-authority.md, PR #97)",
+ "baseCommit": "1ed3828705b0be0d8428348b9a338c06c5051215",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-score-golden-v3/golden.py --write",
+ "headingLookup": "canonical-v1",
+ "fold": {
+  "破屋壞垣": "破屋壊垣"
+ },
+ "noEngineInput": "golden.py v3 runs the frozen v2 reference adapter (sha-asserted) and reads no TS scorer, adapter or canonicalP4HeadingKey output; the fold is written in golden.py.",
+ "authoringCrossCheck": "with the fold emptied, v3 reproduces p4-score-golden-v2 activity-states.tsv and activity-scores.tsv byte for byte; with the fold, exactly 353 activity-scores rows differ from v2, all demolition (score 320: 223 lower / 97 higher; status 337; hard warning 0).",
+ "inputNote": "p4-adapter-baseline-v1/activities.tsv was re-pinned after the v2 lock anchor; v2 golden.py still reproduces its outputs byte for byte from the current file, so v3 pins the current sha.",
+ "coverage": {
+  "states": "1095 P4 dates + 3 outside dates x 29 heading activities",
+  "scores": "1095 P4 dates x 32 activities"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/golden.py",
+   "sha256": "071ffae33bc90767ca226854fa2aa4538806492f146c7573bfc8d69553fb22ac",
+   "role": "derive_script"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-states.tsv",
+   "sha256": "d8ee584695d87c21fd79b35b11d97d31dd3641511973fa81b270e74212caf6e0",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-scores.tsv",
+   "sha256": "73349e9ba79d537b60ebca0b0e4c8c2f1db8f0fd5ad465c2049d1083fe36f7a5",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v2/golden.py",
+   "sha256": "ccfcd3a7f93582c9cd5a6cccdb9e1cfce89cd4e4bd4157bfcc072929c1cd1a2a",
+   "role": "frozen_reference_adapter"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v2/presence-input.tsv",
+   "sha256": "aae60ad08148f800a1eeed86fc890258edd6de49379f3fada122162be6ac9122",
+   "role": "frozen_engine_presence_input"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/dated.tsv",
+   "sha256": "c2ca9470573a0de1d7fe86c64e93138fa398d4cbd09c456795a2ec675dc10384",
+   "role": "frozen_golden_input"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/presence/dated.tsv",
+   "sha256": "b740570823a65c696c98379a6300d6d9374f1692ee4bc2871cb5a4b5e305b547",
+   "role": "frozen_golden_input"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v1/activities.tsv",
+   "sha256": "1cf4dda47af3237beeb66520e8b8a3a9052646d2a754d61914f81d18b134c2e8",
+   "role": "frozen_baseline_input"
+  },
+  {
+   "path": "shared/almanac-data/good-gods.json",
+   "sha256": "371ad96b67ea793b23556b285714c5323d06d22e39569157a55dec768b3b5a32",
+   "role": "product_catalog_input"
+  },
+  {
+   "path": "shared/almanac-data/bad-gods.json",
+   "sha256": "e48196cac7cce2cb8d33feeb6784a7d66845e8c33f93343c3f7b764746bf25d2",
+   "role": "product_catalog_input"
+  },
+  {
+   "path": "shared/almanac-data/truc.json",
+   "sha256": "c778f6f053850a9af2cd1897937ecd05a6ea4a9d746411777f78a50b66d2cc77",
+   "role": "product_catalog_input"
+  },
+  {
+   "path": "shared/almanac-data/overrides.json",
+   "sha256": "5e669226f25e6d6d45843db7d52aa3a35d3583eaedf55216735353142738a660",
+   "role": "product_catalog_input"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f",
+   "role": "product_catalog_input"
+  },
+  {
+   "path": "shared/almanac-data/activities.json",
+   "sha256": "857828c253621a2ee94da9cb0d427ccba0395bb241d1919bfe02ec45508817d5",
+   "role": "product_catalog_input"
+  }
+ ],
+ "manifestAsserted": {
+  "baseScore": 50,
+  "hardVetoFromClassicalJi": false,
+  "hardWarningKeepsWorseScoreStatus": true
+ }
+}
