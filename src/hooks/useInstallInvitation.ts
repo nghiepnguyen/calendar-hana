@@ -4,6 +4,8 @@ import { useMediaQuery } from './useMediaQuery'
 
 const KEY = 'lichviet:install-invitation:v1'
 const WEEK = 7 * 86400_000
+// setTimeout stores delays as a signed 32-bit int (~24.8 days); longer ones fire at once.
+const MAX_TIMEOUT_MS = 2_147_483_647
 // Navigation start includes time waiting for authentication/repository initialization.
 const SESSION_START = performance.timeOrigin > 0 ? performance.timeOrigin : Date.now()
 function recent(value: string | null): boolean {
@@ -58,7 +60,13 @@ export function useInstallInvitation(startedAt = SESSION_START) {
       attributes: true,
       attributeFilter: ['aria-modal'],
     })
-    const timer = window.setTimeout(check, Math.max(0, 120_000 - (Date.now() - startedAt)))
+    let timer = 0
+    // A wait past the timer limit is re-armed in chunks; only the final timer calls check().
+    const arm = () => {
+      const wait = Math.max(0, 120_000 - (Date.now() - startedAt))
+      timer = window.setTimeout(wait > MAX_TIMEOUT_MS ? arm : check, Math.min(wait, MAX_TIMEOUT_MS))
+    }
+    arm()
     check()
     document.addEventListener('visibilitychange', check)
     document.addEventListener('focusin', check)
