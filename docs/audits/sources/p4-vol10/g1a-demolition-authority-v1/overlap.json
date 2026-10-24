@@ -1,0 +1,1276 @@
+{
+ "overlap": [
+  {
+   "date": "2025-02-02",
+   "context": "丑-壬寅",
+   "lunarDay": 5,
+   "soil": {
+    "inWindow": true,
+    "li": "2025-02-03",
+    "daysAfterOnset": 17,
+    "daysBeforeEve": 0
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2026-01-28",
+   "context": "丑-壬寅",
+   "lunarDay": 10,
+   "soil": {
+    "inWindow": true,
+    "li": "2026-02-04",
+    "daysAfterOnset": 11,
+    "daysBeforeEve": 6
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2027-01-23",
+   "context": "丑-壬寅",
+   "lunarDay": 16,
+   "soil": {
+    "inWindow": true,
+    "li": "2027-02-04",
+    "daysAfterOnset": 6,
+    "daysBeforeEve": 11
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "lunarDay": 20,
+   "soil": {
+    "inWindow": true,
+    "li": "2026-08-07",
+    "daysAfterOnset": 13,
+    "daysBeforeEve": 4
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "lunarDay": 25,
+   "soil": {
+    "inWindow": true,
+    "li": "2027-08-08",
+    "daysAfterOnset": 7,
+    "daysBeforeEve": 10
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  }
+ ],
+ "conflictContextDays2025to2027": [
+  {
+   "date": "2025-02-02",
+   "context": "丑-壬寅",
+   "lunarDay": 5,
+   "soil": {
+    "inWindow": true,
+    "li": "2025-02-03",
+    "daysAfterOnset": 17,
+    "daysBeforeEve": 0
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2026-01-28",
+   "context": "丑-壬寅",
+   "lunarDay": 10,
+   "soil": {
+    "inWindow": true,
+    "li": "2026-02-04",
+    "daysAfterOnset": 11,
+    "daysBeforeEve": 6
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "lunarDay": 20,
+   "soil": {
+    "inWindow": true,
+    "li": "2026-08-07",
+    "daysAfterOnset": 13,
+    "daysBeforeEve": 4
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2027-01-23",
+   "context": "丑-壬寅",
+   "lunarDay": 16,
+   "soil": {
+    "inWindow": true,
+    "li": "2027-02-04",
+    "daysAfterOnset": 6,
+    "daysBeforeEve": 11
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":1},{\"operand\":\"DAY_BRANCH\",\"equals\":2}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "lunarDay": 25,
+   "soil": {
+    "inWindow": true,
+    "li": "2027-08-08",
+    "daysAfterOnset": 7,
+    "daysBeforeEve": 10
+   },
+   "p4": {
+    "營建宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修宮室": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "修倉庫": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後",
+      "天賊"
+     ]
+    },
+    "破屋壊垣": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    },
+    "栽種": {
+     "state": "only_ji",
+     "prot": [
+      "土王用事後"
+     ]
+    }
+   },
+   "activityState": {
+    "sourceKey": {
+     "state": "baseline"
+    },
+    "canonical": {
+     "state": "only_ji",
+     "heading": "破屋壞垣"
+    }
+   },
+   "sourceKey": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "canonical": {
+    "score": 20,
+    "status": "avoid",
+    "hardWarning": false,
+    "sourceRefs": [
+     "shared/almanac-data/bad-gods.json#kiep_sat",
+     "shared/almanac-data/bad-gods.json#tho_vuong_dung_su"
+    ],
+    "contributionCount": 3
+   },
+   "contributionsAdded": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\",\"preCapDelta\":0,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Kiếp Sát\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[],\"preCapDelta\":-15,\"evidenceOrigin\":\"canonical\"}"
+   ],
+   "contributionsRemoved": [
+    "{\"source\":\"truc\",\"ruleId\":\"tru:demolition\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Trực Trừ\",\"sourcePhrase\":\"Trực Trừ\",\"sourceRef\":\"shared/almanac-data/truc.json#tru:demolition\",\"confidence\":\"high\",\"status\":\"no_evidence\",\"rawDelta\":0,\"scoreDelta\":0,\"polarity\":\"neutral\"}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"kiep_sat\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Kiếp Sát\",\"sourcePhrase\":\"Theo 協紀 卷十 (刼煞): 凡所忌者則不註宜所宜者亦不註忌\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#kiep_sat\",\"confidence\":\"high\",\"status\":\"informational\",\"rawDelta\":-15,\"scoreDelta\":0,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:kiep_sat\"},\"conditions\":[{\"operand\":\"MONTH_JIAN_BRANCH\",\"equals\":7},{\"operand\":\"DAY_BRANCH\",\"equals\":8}],\"exceptions\":[],\"classical\":{\"version\":\"xieji-vol10-scoring-v1\",\"entry\":\"jie_sha\",\"verdict\":\"no_annotation\",\"quote\":\"辰戌丑未月值除日相日與天德月德天德合月德合併止忌…餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌\"}}",
+    "{\"source\":\"bad_god\",\"ruleId\":\"tho_vuong_dung_su\",\"activityId\":\"demolition\",\"scope\":\"construction_demolition\",\"label\":\"Thổ Vương Dụng Sự\",\"sourcePhrase\":\"Thổ Vương Dụng Sự\",\"sourceRef\":\"shared/almanac-data/bad-gods.json#tho_vuong_dung_su\",\"confidence\":\"high\",\"status\":\"applied\",\"rawDelta\":-15,\"scoreDelta\":-15,\"polarity\":\"negative\",\"activityMapping\":{\"version\":\"xieji-activity-mapping-v1\",\"activityId\":\"demolition\",\"status\":\"exact_catalog_pair\",\"reviewStatus\":\"interpretation_reviewed\",\"reason\":\"協紀 卷十一 用事 破屋壞垣 → demolition; cách hiểu đã thẩm định.\",\"reviewTerm\":\"破屋壞垣\",\"reviewNote\":\"Phá nhà, đổ tường.\",\"authorityId\":\"xiejibianfangshu-vol11\",\"clauseId\":\"破屋壞垣:bad_god:tho_vuong_dung_su\"},\"conditions\":[{\"operand\":\"THO_VUONG_DUNG_SU\",\"equals\":1}],\"exceptions\":[]}"
+   ],
+   "differs": true,
+   "canonicalSummary": {
+    "score": 20,
+    "status": "avoid",
+    "kiepSat": "applied:-15",
+    "thoVuongDungSu": "applied:-15"
+   },
+   "soilSiblings": {
+    "groundbreaking": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "construction": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "renovation": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "warehouse": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    },
+    "planting": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "applied:-15",
+     "thoVuongDungSu": "applied:-15"
+    }
+   }
+  }
+ ]
+}

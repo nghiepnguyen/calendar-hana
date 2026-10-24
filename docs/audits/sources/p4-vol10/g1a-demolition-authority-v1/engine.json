@@ -1,0 +1,1048 @@
+{
+ "sourceRaw": "破屋壞垣",
+ "canonicalCandidate": "破屋壊垣",
+ "demolitionKeys": {
+  "legacy": [],
+  "corrected": [
+   "破屋壊垣"
+  ]
+ },
+ "contexts": {
+  "丑-丙寅": {
+   "repDate": "1904-02-02",
+   "repDateInSoilWindow": true,
+   "conflict": true,
+   "soilAbsent": {
+    "verdict": "blank",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    },
+    "興造動土": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067697-n75.jpg",
+    "sha256": "a86985f79083e16e7548be80d553e75e213410af89426576528cf0198b45d809",
+    "printedSourceRaw": false,
+    "printedNormalized": false,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": false,
+    "agreesSoilAbsent": true
+   }
+  },
+  "丑-壬寅": {
+   "repDate": "2025-02-02",
+   "repDateInSoilWindow": true,
+   "conflict": true,
+   "soilAbsent": {
+    "verdict": "blank",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    },
+    "興造動土": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067697-n111.jpg",
+    "sha256": "54a15c51a43d551753a4d87c945cafec8edc72a83b10cbe764a173c47ee78833",
+    "printedSourceRaw": false,
+    "printedNormalized": false,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": false,
+    "agreesSoilAbsent": true
+   }
+  },
+  "丑-戊寅": {
+   "repDate": "2025-01-09",
+   "repDateInSoilWindow": false,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "blank",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    },
+    "興造動土": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067697-n87.jpg",
+    "sha256": "30a9eb3e28218b5e53c100d351f768619b6debb9d680bd19a25aa9cde1f245f8",
+    "printedSourceRaw": false,
+    "printedNormalized": false,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": false,
+    "agreesSoilAbsent": true
+   }
+  },
+  "丑-甲寅": {
+   "repDate": "1902-01-31",
+   "repDateInSoilWindow": true,
+   "conflict": true,
+   "soilAbsent": {
+    "verdict": "blank",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    },
+    "興造動土": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067697-n123.jpg",
+    "sha256": "11d6479bd0749437cb2ef7ebf55dda757fdb29e2df164bb3ee52bf865697fabd",
+    "printedSourceRaw": false,
+    "printedNormalized": false,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": false,
+    "agreesSoilAbsent": true
+   }
+  },
+  "戌-丁亥": {
+   "repDate": "2027-11-04",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067696-n29.jpg",
+    "sha256": "5bcc7fb774552451ea82f7385fd6d1a2efa3e01941580e299aba8efffe951a56",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "戌-乙亥": {
+   "repDate": "2025-11-02",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067696-n17.jpg",
+    "sha256": "c6d60edbc6b81be3e137ffe8efdc3b31cfd8794c545d974a91321bafe0c28535",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "戌-己亥": {
+   "repDate": "1903-11-07",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067696-n41.jpg",
+    "sha256": "4a3509593e18675813353025dab5e757d1e9ba25bcdb49aee9c63e757beaa01b",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "戌-癸亥": {
+   "repDate": "2025-10-21",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後",
+      "土符"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067696-n65.jpg",
+    "sha256": "90f0124dfe3cf288e6270dd599bae2c173093cb408d49d1cd87154563d3cb8fe",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "未-丙申": {
+   "repDate": "2025-07-26",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067694-n105.jpg",
+    "sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "未-壬申": {
+   "repDate": "1904-08-06",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067694-n81.jpg",
+    "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "未-庚申": {
+   "repDate": "1902-08-05",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067694-n129.jpg",
+    "sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "未-戊申": {
+   "repDate": "2026-08-02",
+   "repDateInSoilWindow": true,
+   "conflict": true,
+   "soilAbsent": {
+    "verdict": "blank",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    },
+    "興造動土": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": true,
+     "ji": [
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "neither_recorded",
+     "yi": true,
+     "ji": []
+    }
+   },
+   "witness": {
+    "page": "06067694-n117.jpg",
+    "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+    "printedSourceRaw": false,
+    "printedNormalized": false,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": false,
+    "agreesSoilAbsent": true
+   }
+  },
+  "辰-乙巳": {
+   "repDate": "2025-04-06",
+   "repDateInSoilWindow": false,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067693-n47.jpg",
+    "sha256": "a3050acad6389747180d1dcf254c6d54f2ce74a242b209097dbb767afea12e41",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "辰-己巳": {
+   "repDate": "2025-04-30",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067693-n11.jpg",
+    "sha256": "b069638864543bd1c79c513a9ad800c78793d11a268e75f19af91affeb3d068d",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "辰-癸巳": {
+   "repDate": "1903-05-05",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067693-n35.jpg",
+    "sha256": "57aec402505a2455e87d969aebdec66065d0554b4fc82a1b1084f87945a56871",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  },
+  "辰-辛巳": {
+   "repDate": "2027-05-02",
+   "repDateInSoilWindow": true,
+   "conflict": false,
+   "soilAbsent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "soilPresent": {
+    "verdict": "avoid",
+    "legacyVerdict": "not_listed",
+    "破屋壊垣": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "興造動土": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    },
+    "豎柱上梁": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ]
+    }
+   },
+   "witness": {
+    "page": "06067693-n23.jpg",
+    "sha256": "89c6ab6a15569ed23c3081e6befe307764ba37e79a71a3dc8c658ad4137be826",
+    "printedSourceRaw": true,
+    "printedNormalized": true,
+    "printedOtherGlyph": false,
+    "predictedPrintedSoilAbsent": true,
+    "agreesSoilAbsent": true
+   }
+  }
+ }
+}
