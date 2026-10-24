@@ -3,7 +3,7 @@
  "date": "2026-10-24",
  "base": "00558ba9a44e0152dc631390c6a87f14061e4c81",
  "status": "AUDIT_ONLY_NOT_AUTHORITY",
- "decision": "SAME_ACTIVITY_ALIAS_CONFIRMED; Stage 2 G1-a gate READY_FOR_REVIEW (owner acknowledgement of the 5 days still pending, G1-b criterion 4)",
+ "decision": "SAME_ACTIVITY_ALIAS_CONFIRMED; G1-a authority gate PASSED; owner accepted the 5 overlap days 2026-10-24 (G1-b criterion 4 acknowledgement); Stage 2 not implemented",
  "priorEvidence": [
   {"path": "docs/audits/p4-g1-glyph-audit.md", "commit": "ef5e278", "sha256": "caa8bdda5276540df73f8bc7dcbb2beaa9a70d87a7de567a1c30e10c3e47ebdc"},
   {"path": "docs/audits/p4-g1b-score-lookup.md", "commit": "9aa9cf7", "branch": "claude/p4-g1b-audit (unmerged)", "sha256": "8ac9392728de6f88d95bbbc0ee6289236a1c2c2d029a73e25feb42bdef021a9b"},

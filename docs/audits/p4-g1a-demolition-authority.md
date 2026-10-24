@@ -17,8 +17,9 @@ Both tests compare against the committed JSON. `G1A_WRITE=1` rewrites it. Plain 
 ## Decision
 
 - **G1 classification:** `SAME_ACTIVITY_ALIAS_CONFIRMED`.
-- **Stage 2 G1-a gate:** `READY_FOR_REVIEW`.
-- **Still required:** the owner's acknowledgement of the 5 overlap days. That is G1-b acceptance criterion 4, and this audit cannot grant it.
+- **G1-a authority gate:** `PASSED`. Stage 2 authority prerequisites from G1-a are `SATISFIED`.
+- **Owner acceptance (2026-10-24):** all five overlap days accepted (§11). This satisfies the owner-acknowledgement part of G1-b acceptance criterion 4.
+- **Not implemented here:** Stage 2. Production stays on `source-key-v1`.
 
 ## 1. Evidence inventory
 
@@ -106,9 +107,9 @@ Built by `witness-matrix.json`. Glyph counts per source:
 
 | Source | Work | Provenance | 壞 | 壊 |
 |---|---|---|---|---|
-| `vol10.raw.txt` | 協紀辨方書 卷十 | primary authority, Wikisource 四庫 transcription | 15 | 3 (`:443`, `:449`, `:506`) |
-| `vol11.raw.txt` | 協紀辨方書 卷十一 | primary authority, transcription | 0 | 3 (`:46`, `:67`, `:263`) |
-| `vol06.raw.txt` | 協紀辨方書 卷六 | primary authority, transcription | 1 | 0 |
+| `vol10.raw.txt` | 協紀辨方書 卷十 | primary authority, transcription-derived (Wikisource 四庫) | 15 | 3 (`:443`, `:449`, `:506`) |
+| `vol11.raw.txt` | 協紀辨方書 卷十一 | primary authority, transcription-derived (Wikisource 四庫) | 0 | 3 (`:46`, `:67`, `:263`) |
+| `vol06.raw.txt` | 協紀辨方書 卷六 | primary authority, transcription-derived (Wikisource 四庫) | 1 | 0 |
 | `tuibu-jieli-shang.raw.txt` | 推步捷例 上 (Joseon 1861) | derivative compilation, `RESEARCH_EVIDENCE_ONLY` | 5 | 0 |
 | h1b 月表 pages (16 contexts) | 協紀辨方書 月表 scans | scan-locked, project visual transcription | 11 pages | 0 |
 
@@ -126,7 +127,7 @@ Built by `witness-matrix.json`. Glyph counts per source:
 - One list is printed in both glyphs: 土府/土符 at `vol10:271/392` (壞) and 土王用事 at `vol10:449` (壊), glossed 義同土府.
 - 卷十一 uses only 壊, both in the activity list and in the heading.
 
-**Limit.** 卷十 and 卷十一 were not re-read from scan. Only the 月表 is scan-locked.
+**Limit.** The 卷六 / 卷十 / 卷十一 evidence is **transcription-derived**. The original scans were not re-read during G1-a, so this audit claims no scan verification for them. Only the 月表 pages are scan-locked (h1b). This limit does not block G1-a or Stage 2.
 
 ## 5. 土王用事後
 
@@ -266,10 +267,27 @@ alias:              破屋壞垣 → 破屋壊垣
 - [x] No authority or Golden data rewritten (`git diff` on tracked files is empty)
 - [x] Production remains `source-key-v1`
 
-**Result: `READY_FOR_REVIEW`.**
+- [x] Owner accepted the 5 overlap days (§11)
 
-**Still owed before Stage 2:**
-- The owner's explicit acknowledgement of the 5 days (G1-b criterion 4).
-- Merging or pinning the G1-b spec, which is only on `9aa9cf7`.
+**Result: G1-a authority gate `PASSED`; Stage 2 authority prerequisites from G1-a `SATISFIED`.** Stage 2 is not implemented here.
 
-**Separate from Stage 2.** Option C v2 for the 劫煞 demolition cell is its own track, and it needs a dated-cell design.
+**Still owed before Stage 2 (outside G1-a):** freeze or pin the G1-b spec, which exists only on unmerged `9aa9cf7`. It is handled separately after this audit merges.
+
+**`NON_BLOCKING_FOLLOW_UP`.** In five contexts (丑-甲寅, 丑-丙寅, 丑-壬寅, 丑-戊寅, 未-戊申) the 劫煞 demolition cell is date-dependent through 土王用事. A future Option C v2 authority representation may need to model this. It does not block Stage 2 and is not solved here.
+
+## 11. Owner acceptance (2026-10-24)
+
+The owner reviewed this audit and explicitly accepts all five G1-b overlap-day changes:
+
+| Date | source-key-v1 | canonical-v1 | Decision |
+|---|---|---|---|
+| 2025-02-02 | baseline / 35 watch | only_ji / 20 avoid | ACCEPT |
+| 2026-01-28 | baseline / 35 watch | only_ji / 20 avoid | ACCEPT |
+| 2027-01-23 | baseline / 35 watch | only_ji / 20 avoid | ACCEPT |
+| 2026-08-02 | baseline / 35 watch | only_ji / 20 avoid | ACCEPT |
+| 2027-07-28 | baseline / 35 watch | only_ji / 20 avoid | ACCEPT |
+
+- This satisfies the owner-acknowledgement part of G1-b acceptance criterion 4.
+- **2025-02-02:** the owner accepts the **current** soil-window convention (`p4-soil-owner-convention-v1`): the date is inside the 土王用事 window and the 立 day itself is excluded. This is acceptance of the existing convention, not a new calendar algorithm. The soil boundary is not to be reopened or redesigned in G1-a or Stage 2.
+- Accepted alongside: `SAME_ACTIVITY_ALIAS_CONFIRMED`, canonical candidate 破屋壊垣, alias 破屋壞垣 → 破屋壊垣. `sourceRaw` keeps the literal transcription everywhere; canonicalization never rewrites provenance text. 土王用事後 is a date-period avoidance on demolition, not part of the activity identity.
+- Unchanged by this acceptance: production lookup (`source-key-v1`), scoring, authority v1 (demolition stays `EXCLUDED_PENDING_GLYPH_AUDIT`), every Golden.
