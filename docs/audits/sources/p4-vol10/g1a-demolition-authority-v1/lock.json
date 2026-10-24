@@ -1,0 +1,28 @@
+{
+ "version": "g1a-demolition-authority-lock-v1",
+ "date": "2026-10-24",
+ "base": "00558ba9a44e0152dc631390c6a87f14061e4c81",
+ "status": "AUDIT_ONLY_NOT_AUTHORITY",
+ "decision": "SAME_ACTIVITY_ALIAS_CONFIRMED; Stage 2 G1-a gate READY_FOR_REVIEW (owner acknowledgement of the 5 days still pending, G1-b criterion 4)",
+ "priorEvidence": [
+  {"path": "docs/audits/p4-g1-glyph-audit.md", "commit": "ef5e278", "sha256": "caa8bdda5276540df73f8bc7dcbb2beaa9a70d87a7de567a1c30e10c3e47ebdc"},
+  {"path": "docs/audits/p4-g1b-score-lookup.md", "commit": "9aa9cf7", "branch": "claude/p4-g1b-audit (unmerged)", "sha256": "8ac9392728de6f88d95bbbc0ee6289236a1c2c2d029a73e25feb42bdef021a9b"},
+  {"path": "docs/audits/sources/p4-vol10/g1b-score-lookup-v1/impact-rows.tsv", "commit": "9aa9cf7", "sha256": "d4fb847ab1f891d0f9c05e71786ec365b8590a3cb07d6dfbe1ae4a51e3b926b3"}
+ ],
+ "inputs": [
+  {"path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json", "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"},
+  {"path": "shared/almanac-data/p4-soil-owner-convention-v1.json", "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"},
+  {"path": "shared/almanac-data/p4-vol10-day-composition-v2.json", "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"},
+  {"path": "shared/almanac-data/xiejibianfangshu-yiji.json", "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"},
+  {"path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json", "sha256": "925057d78883eee09b915222f561768475f121466230377182894a17e38e1f33"},
+  {"path": "shared/almanac-data/manifest.json", "sha256": "e1f1be326d44fe9265e055445d7be6dad42c8be480a281ff07e4597d0ef40d7b"},
+  {"path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/sensitivity.json", "sha256": "958fb40c3b1c3222bd69e44261b5656796eb86a8ccd819978c4655740b5b6993"},
+  {"path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json", "sha256": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"}
+ ],
+ "outputs": [
+  {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json", "producer": "shared/lunar/p4G1aDemolitionEngine.test.ts", "sha256": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"},
+  {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/full.json", "producer": "G1A_FULL=1 shared/lunar/p4G1aDemolitionEngine.test.ts", "sha256": "e1d923a00ece6717903f41279fcef0e328175234c712495067d0481d670fbcf0"},
+  {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/overlap.json", "producer": "shared/lunar/p4G1aDemolitionOverlap.test.ts", "sha256": "ad5b0ce0806b66873e0caed7d162544651b9b78adaba023d4e8dcc284387722f"},
+  {"path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/witness-matrix.json", "producer": "build_witness.py", "sha256": "4553950790b2f1e3e867e9a8e2893bbdc4199a6e579901ec7ee26ec7a97ae4f6"}
+ ]
+}
