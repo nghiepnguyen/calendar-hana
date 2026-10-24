@@ -1,0 +1,213 @@
+set	date	activity	p4_old	p4_new	score_old	score_new	status_old	status_new	hard_old	hard_new	vol10_old	vol10_new
+domain	2025-07-14	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+domain	2025-07-14	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+domain	2025-08-03	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+domain	2025-08-03	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+domain	2025-08-22	contract	baseline	baseline	35	50	watch	neutral	false	false		binh:contract:informational:not_avoided
+domain	2025-08-22	transaction	baseline	baseline	35	50	watch	neutral	false	false		binh:transaction:informational:not_avoided
+domain	2025-11-11	contract	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+domain	2025-11-11	transaction	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+domain	2026-05-03	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+domain	2026-05-03	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+domain	2026-07-09	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+domain	2026-07-09	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+domain	2026-07-29	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+domain	2026-07-29	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+domain	2026-08-17	contract	baseline	baseline	35	50	watch	neutral	false	false		binh:contract:informational:not_avoided
+domain	2026-08-17	transaction	baseline	baseline	35	50	watch	neutral	false	false		binh:transaction:informational:not_avoided
+domain	2027-04-28	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+domain	2027-04-28	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+domain	2027-07-24	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+domain	2027-07-24	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+domain	2027-08-12	contract	baseline	baseline	35	50	watch	neutral	false	false		binh:contract:informational:not_avoided
+domain	2027-08-12	transaction	baseline	baseline	35	50	watch	neutral	false	false		binh:transaction:informational:not_avoided
+domain	2027-09-05	contract	baseline	baseline	35	50	watch	neutral	false	false		binh:contract:informational:not_avoided
+domain	2027-09-05	transaction	baseline	baseline	35	50	watch	neutral	false	false		binh:transaction:informational:not_avoided
+outsideControls	2024-12-31	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideControls	2024-12-31	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideControls	2028-01-01	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideControls	2028-01-01	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-01-06	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+outsideSample2028	2028-01-06	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:not_avoided
+outsideSample2028	2028-01-11	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-01-11	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-01-14	contract	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-01-14	transaction	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-01-18	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-01-18	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-01-26	contract	baseline	baseline	20	50	avoid	neutral	false	false		nguyet_hinh:informational:no_annotation thu:contract:informational:no_annotation
+outsideSample2028	2028-01-26	transaction	baseline	baseline	20	50	avoid	neutral	false	false		nguyet_hinh:informational:no_annotation thu:transaction:informational:no_annotation
+outsideSample2028	2028-01-30	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-01-30	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-02-05	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-02-05	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-02-08	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-02-08	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-02-14	contract	baseline	baseline	20	20	avoid	avoid	false	false		binh:contract:applied:avoid nguyet_hinh:applied:avoid
+outsideSample2028	2028-02-14	transaction	baseline	baseline	20	20	avoid	avoid	false	false		binh:transaction:applied:avoid nguyet_hinh:applied:avoid
+outsideSample2028	2028-02-17	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-02-17	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-02-20	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-02-20	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-02-22	contract	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:contract:applied:avoid
+outsideSample2028	2028-02-22	transaction	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:transaction:applied:avoid
+outsideSample2028	2028-02-26	contract	baseline	baseline	20	50	avoid	neutral	false	false		binh:contract:informational:no_annotation nguyet_hinh:informational:no_annotation
+outsideSample2028	2028-02-26	transaction	baseline	baseline	20	50	avoid	neutral	false	false		binh:transaction:informational:no_annotation nguyet_hinh:informational:no_annotation
+outsideSample2028	2028-02-29	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-02-29	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-03-03	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-03-03	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-03-10	contract	baseline	baseline	30	45	watch	watch	false	false		binh:contract:informational:no_annotation
+outsideSample2028	2028-03-10	transaction	baseline	baseline	30	45	watch	watch	false	false		binh:transaction:informational:no_annotation
+outsideSample2028	2028-03-12	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-03-12	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-03-22	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-03-22	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-03-24	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-03-24	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-04-03	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-04-03	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-04-07	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-04-07	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-04-10	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-04-10	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-04-14	contract	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-04-14	transaction	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-04-19	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-04-19	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-04-22	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+outsideSample2028	2028-04-22	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+outsideSample2028	2028-04-26	contract	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-04-26	transaction	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-05-01	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-05-01	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-05-04	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-05-04	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-05-05	contract	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-05-05	transaction	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-05-11	contract	baseline	baseline	40	70	watch	recommended	false	false		binh:contract:informational:not_avoided nguyet_hinh:informational:not_avoided
+outsideSample2028	2028-05-11	transaction	baseline	baseline	40	70	watch	recommended	false	false		binh:transaction:informational:not_avoided nguyet_hinh:informational:not_avoided
+outsideSample2028	2028-05-14	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-05-14	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-05-17	contract	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-05-17	transaction	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-05-23	contract	baseline	baseline	40	70	watch	recommended	false	false		binh:contract:informational:no_annotation nguyet_hinh:informational:no_annotation
+outsideSample2028	2028-05-23	transaction	baseline	baseline	40	70	watch	recommended	false	false		binh:transaction:informational:no_annotation nguyet_hinh:informational:no_annotation
+outsideSample2028	2028-05-26	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-05-26	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-05-29	contract	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-05-29	transaction	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-05-31	contract	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:contract:applied:avoid
+outsideSample2028	2028-05-31	transaction	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:transaction:applied:avoid
+outsideSample2028	2028-06-04	contract	baseline	baseline	40	70	watch	recommended	false	false		binh:contract:informational:not_avoided nguyet_hinh:informational:not_avoided
+outsideSample2028	2028-06-04	transaction	baseline	baseline	40	70	watch	recommended	false	false		binh:transaction:informational:not_avoided nguyet_hinh:informational:not_avoided
+outsideSample2028	2028-06-05	contract	baseline	baseline	30	45	watch	watch	false	false		binh:contract:informational:no_annotation
+outsideSample2028	2028-06-05	transaction	baseline	baseline	30	45	watch	watch	false	false		binh:transaction:informational:no_annotation
+outsideSample2028	2028-06-07	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-06-07	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-06-11	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-06-11	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-06-17	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-06-17	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-06-19	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-06-19	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-06-20	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-06-20	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-06-23	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-06-23	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-06-29	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-06-29	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-07-01	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-07-01	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-07-05	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:no_annotation
+outsideSample2028	2028-07-05	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:no_annotation
+outsideSample2028	2028-07-06	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-07-06	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-07-10	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-07-10	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-07-18	contract	baseline	baseline	35	50	watch	neutral	false	false		thu:contract:informational:not_avoided
+outsideSample2028	2028-07-18	transaction	baseline	baseline	35	50	watch	neutral	false	false		thu:transaction:informational:not_avoided
+outsideSample2028	2028-07-22	contract	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-07-22	transaction	baseline	baseline	35	50	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-07-30	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-07-30	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-08-03	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-08-03	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-08-12	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-08-12	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-08-18	contract	baseline	baseline	35	35	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-08-18	transaction	baseline	baseline	35	35	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-08-21	contract	baseline	baseline	10	10	strong_avoid	strong_avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-08-21	transaction	baseline	baseline	10	10	strong_avoid	strong_avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-08-24	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-08-24	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-08-26	contract	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:contract:applied:avoid
+outsideSample2028	2028-08-26	transaction	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:transaction:applied:avoid
+outsideSample2028	2028-08-30	contract	baseline	baseline	35	50	watch	neutral	false	false		binh:contract:informational:not_avoided
+outsideSample2028	2028-08-30	transaction	baseline	baseline	35	50	watch	neutral	false	false		binh:transaction:informational:not_avoided
+outsideSample2028	2028-09-05	contract	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-09-05	transaction	baseline	baseline	40	70	watch	recommended	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-09-09	contract	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-09-09	transaction	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-09-12	contract	baseline	baseline	30	45	watch	watch	false	false		binh:contract:informational:no_annotation
+outsideSample2028	2028-09-12	transaction	baseline	baseline	30	45	watch	watch	false	false		binh:transaction:informational:no_annotation
+outsideSample2028	2028-09-14	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-09-14	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-09-18	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-09-18	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-09-24	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-09-24	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-09-26	contract	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-09-26	transaction	baseline	baseline	35	35	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-09-30	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-09-30	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-10-03	contract	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-10-03	transaction	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-10-06	contract	baseline	baseline	30	30	watch	watch	false	false		binh:contract:applied:avoid
+outsideSample2028	2028-10-06	transaction	baseline	baseline	30	30	watch	watch	false	false		binh:transaction:applied:avoid
+outsideSample2028	2028-10-10	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-10-10	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-10-13	contract	baseline	baseline	20	50	avoid	neutral	false	false		nguyet_hinh:informational:no_annotation thu:contract:informational:no_annotation
+outsideSample2028	2028-10-13	transaction	baseline	baseline	20	50	avoid	neutral	false	false		nguyet_hinh:informational:no_annotation thu:transaction:informational:no_annotation
+outsideSample2028	2028-10-17	contract	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-10-17	transaction	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-10-22	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-10-22	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-10-25	contract	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-10-25	transaction	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-10-29	contract	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-10-29	transaction	baseline	baseline	45	60	watch	neutral	false	false		kiep_sat:informational:no_annotation
+outsideSample2028	2028-11-03	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-11-03	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-11-06	contract	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-11-06	transaction	baseline	baseline	20	20	avoid	avoid	false	false		nguyet_hinh:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-11-07	contract	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-11-07	transaction	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-11-13	contract	baseline	baseline	55	70	watch	recommended	false	false		binh:contract:informational:not_avoided
+outsideSample2028	2028-11-13	transaction	baseline	baseline	55	70	watch	recommended	false	false		binh:transaction:informational:not_avoided
+outsideSample2028	2028-11-16	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-11-16	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-11-19	contract	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:contract:applied:avoid
+outsideSample2028	2028-11-19	transaction	baseline	baseline	20	20	avoid	avoid	false	false		kiep_sat:applied:avoid thu:transaction:applied:avoid
+outsideSample2028	2028-11-21	contract	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:contract:applied:avoid
+outsideSample2028	2028-11-21	transaction	baseline	baseline	50	25	no_evidence	avoid	false	false		xieji10:yue_sha:transaction:applied:avoid
+outsideSample2028	2028-11-22	contract	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-11-22	transaction	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-11-25	contract	baseline	baseline	55	70	watch	recommended	false	false		binh:contract:informational:not_avoided
+outsideSample2028	2028-11-25	transaction	baseline	baseline	55	70	watch	recommended	false	false		binh:transaction:informational:not_avoided
+outsideSample2028	2028-12-01	contract	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:contract:informational:not_avoided
+outsideSample2028	2028-12-01	transaction	baseline	baseline	20	50	avoid	neutral	false	false		kiep_sat:informational:not_avoided thu:transaction:informational:not_avoided
+outsideSample2028	2028-12-04	contract	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-12-04	transaction	baseline	baseline	35	35	watch	watch	false	false		nguyet_hinh:applied:avoid
+outsideSample2028	2028-12-08	contract	baseline	baseline	15	15	strong_avoid	strong_avoid	false	false		binh:contract:applied:avoid nguyet_hinh:applied:avoid
+outsideSample2028	2028-12-08	transaction	baseline	baseline	15	15	strong_avoid	strong_avoid	false	false		binh:transaction:applied:avoid nguyet_hinh:applied:avoid
+outsideSample2028	2028-12-10	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-12-10	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-12-14	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-12-14	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid
+outsideSample2028	2028-12-22	contract	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-12-22	transaction	baseline	baseline	45	45	watch	watch	false	false		kiep_sat:applied:avoid
+outsideSample2028	2028-12-23	contract	baseline	baseline	25	25	avoid	avoid	false	false		pha:contract:applied:avoid
+outsideSample2028	2028-12-23	transaction	baseline	baseline	25	25	avoid	avoid	false	false		pha:transaction:applied:avoid
+outsideSample2028	2028-12-26	contract	baseline	baseline	35	35	watch	watch	false	false		thu:contract:applied:avoid
+outsideSample2028	2028-12-26	transaction	baseline	baseline	35	35	watch	watch	false	false		thu:transaction:applied:avoid

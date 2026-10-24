@@ -1,0 +1,32 @@
+{
+ "version": "g2-stage1-blast-radius-v1",
+ "candidate": "xiejibianfangshu-vol10-yiji.json headingAliases += {\"立劵交易\": [\"立券交易\"]}; xieji-vol10-jiesha-authority-v1.json runtimeCoverage contract/transaction → APPLIED (throwaway worktree, not committed)",
+ "aliasWithoutAuthority": "headingAliases entry alone: getVol10JieshaRuntime throws \"contract is UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION but was reached\" from getAlmanac (71 failing tests)",
+ "suite": "vitest run (excl. p4Puzhu17Audit, p4G2Stage1Audit): 14 files / 20 tests fail, 8334 pass",
+ "failingTests": [
+  "shared/lunar/legacyGodsMonthJian.test.ts > 14 legacy gods on Month Jian (golden frozen before code) > migration: only the 14 gods move, only on days whose lunar month differs from Month Jian",
+  "shared/lunar/p4AdapterBaseline.test.ts > roadmap 8 flag-OFF baseline (measured, frozen before the adapter) > activity and event outputs equal the frozen baseline",
+  "shared/lunar/p4ChouBingyinYuedeAuditLock.test.ts > 丑-丙寅 月德 audit lock > Golden v2 lock is untouched",
+  "shared/lunar/p4JieshaFaithfulVol10.test.ts > faithful simulator safety > leaves production output untouched when no mode is set",
+  "shared/lunar/p4JieshaOverlapImpact.test.ts > 劫煞 OVERLAP audit variant > leaves production output untouched when the candidate is off",
+  "shared/lunar/p4MigrationDiff.test.ts > roadmap 9b migration diff harness (sampled dates) > baseline = baseline v1 sha256 on every activity and event row",
+  "shared/lunar/p4MigrationDiff.test.ts > roadmap 9b migration diff harness (sampled dates) > migration files equal the lock (write: P4_MIGRATION_FULL=1 P4_MIGRATION_WRITE=1)",
+  "shared/lunar/p4MigrationRollback.test.ts > roadmap 9 rollback: flag OFF with the provider loaded = baseline v1 > activity and event outputs equal the frozen baseline",
+  "shared/lunar/p4OptionCFinalGateLock.test.ts > Option C final gate lock > Golden v2 lock is untouched",
+  "shared/lunar/p4ScoreAdapterAlmanac.test.ts > roadmap 8 almanac wiring (flag ON) > outside the P4 domain flag ON is the whole flag-OFF output (owner 2026-10-18)",
+  "shared/lunar/sameHeadingDuplicateMigration.test.ts > events no longer count a same-heading supporting activity > changes only sign_contract and groundbreaking, and only recommended → caution",
+  "shared/lunar/xiejiVol10Activation.test.ts > 卷十 production activation > buy_property recommended → caution",
+  "shared/lunar/xiejiVol10Activation.test.ts > 卷十 production activation > buy_vehicle recommended → caution",
+  "shared/lunar/xiejiVol10JieshaAuthority.test.ts > 卷十 劫煞 faithful authority v1 > carries the corrections: 未-壬申 P17-A, 丑-丙寅 D-A, 未-戊申 owner ruling",
+  "shared/lunar/xiejiVol10JieshaAuthority.test.ts > 卷十 劫煞 faithful authority v1 > coverage manifest maps every audit cell (and the excluded demolition contexts)",
+  "shared/lunar/xiejiVol10JieshaAuthority.test.ts > 卷十 劫煞 faithful authority v1 > coverage states match the real resolveVol10 listing (no 劵→券, 壞→壊 kept)",
+  "shared/lunar/xiejiVol10JieshaAuthority.test.ts > 卷十 劫煞 faithful authority v1 > fails loudly on an unknown context, uncovered activity or reached UNREACHABLE cell",
+  "shared/lunar/xiejiVol10JieshaMigrationLock.test.ts > 卷十 劫煞 Option C v1 migration lock > P4 Golden v2 is byte-identical",
+  "shared/lunar/xiejiVol10JieshaMigrationLock.test.ts > 卷十 劫煞 Option C v1 migration lock > pins the artifacts, the approved candidate and the old Golden bytes",
+  "shared/lunar/xiejiVol10ScoringV2.test.ts > 協紀 卷十 scoring policy — golden v2 (faithful-v1) > jie-chen-contract-unreachable"
+ ],
+ "fullModeExtra": {
+  "p4ScoreGoldenV3 (P4_SCORE_ADAPTER_FULL=1)": "layer C fails on exactly the 24 domain contract/transaction rows (12 dates)",
+  "p4MigrationDiffV3 domain gate (P4_MIGRATION_V3_FULL=1)": "passes (G1-b set unchanged)"
+ }
+}
