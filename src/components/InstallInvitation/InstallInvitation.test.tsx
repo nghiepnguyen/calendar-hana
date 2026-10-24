@@ -215,3 +215,35 @@ it.each([
   expect(screen.getAllByRole('listitem')).toHaveLength(count)
   expect(screen.getByRole('button', { name: 'Quay lại' })).toBeVisible()
 })
+
+// setTimeout keeps delays in a signed 32-bit int; a longer delay fires at once (Node warns).
+const MAX_TIMEOUT_MS = 2_147_483_647
+const region = () => screen.queryByRole('region', { name: /Cài Lịch Việt/ })
+const timerDelays = (spy: { mock: { calls: unknown[][] } }) => spy.mock.calls.map((c) => c[1] as number)
+
+it('shows at once when the two minutes have already passed', () => {
+  render(<InstallInvitation startedAt={Date.now() - 120_000} />)
+  expect(region()).toBeVisible()
+})
+it.each([
+  ['exactly the timer limit', 0],
+  ['one past the timer limit', 1],
+  ['weeks past the timer limit (clock behind the session start)', 40 * 86400_000],
+])('waits the full two minutes when the wait is %s', (_, extra) => {
+  const wait = MAX_TIMEOUT_MS + extra
+  const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
+  render(<InstallInvitation startedAt={Date.now() + wait - 120_000} />)
+  advance(wait - 1)
+  expect(region()).toBeNull()
+  advance(1)
+  expect(region()).toBeVisible()
+  for (const delay of timerDelays(setTimeoutSpy))
+    expect(Number.isFinite(delay) && delay >= 0 && delay <= MAX_TIMEOUT_MS, String(delay)).toBe(true)
+})
+it('clears its pending timer on unmount', () => {
+  const view = render(<InstallInvitation startedAt={Date.now() + 40 * 86400_000} />)
+  advance(MAX_TIMEOUT_MS)
+  expect(vi.getTimerCount()).toBeGreaterThan(0)
+  view.unmount()
+  expect(vi.getTimerCount()).toBe(0)
+})
