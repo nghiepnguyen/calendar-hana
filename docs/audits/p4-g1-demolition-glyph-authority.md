@@ -116,7 +116,7 @@ This is about naming only. It is consistent with the source finding but is not i
  → vol10 JSON entries[jie_sha].avoid 破屋壞垣     activityEntries.demolition = [破屋壞垣]
  → NORM 壞→壊 (Resolution.ts:68) → splitHeadings (:98) → listed ∋ 破屋壊垣
  → ACTIVITY_HEADINGS.map(normalize) 破屋壊垣 → match ✔ → cancel_both → no_annotation
- → authority guard (Resolution.ts:290 → Authority.ts:71) → EXCLUDED_PENDING_GLYPH_AUDIT
+ → authority guard (Resolution.ts:291 → Authority.ts:71) → EXCLUDED_PENDING_GLYPH_AUDIT
  → legacy verdict + authorityExclusion → Kiếp Sát informational
 P4: canonicalP4HeadingKey (:114) 破屋壊垣, canonical-v1 (G1-b, shipped)
 ```
