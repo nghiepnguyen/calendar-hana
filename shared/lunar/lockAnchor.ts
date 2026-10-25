@@ -55,3 +55,18 @@ export function lockFileDigests(lockPath: string, paths: readonly string[]) {
     ]),
   )
 }
+
+/** True when `path` was committed with content `sha256` somewhere on HEAD's history. For a lock whose
+ * outside file was committed after the lock itself, so neither anchor holds it. */
+export function committedWithDigest(path: string, sha256: string) {
+  const commits = git(['log', '--format=%H', 'HEAD', '--', path])
+    .toString()
+    .split('\n')
+    .filter(Boolean)
+  return commits.some(
+    (c) =>
+      createHash('sha256')
+        .update(git(['show', `${c}:${path}`]))
+        .digest('hex') === sha256,
+  )
+}
