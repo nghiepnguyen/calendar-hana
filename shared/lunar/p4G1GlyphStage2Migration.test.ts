@@ -392,6 +392,33 @@ describe('G1 glyph Stage 2 migration (劫煞 authority v3, R3)', () => {
         const ctx = BR[sc.MONTH_JIAN_BRANCH!]! + ST[a.dayCanChi.can]! + BR[a.dayCanChi.chi]!
         return { ctx, score: r.score, status: r.status, hw: r.hardWarning, v: verdicts(r) }
       }
+      // Two-mode comparisons (canonical-v1 vs source-key-v1) per authority, G1-b day definition: a day
+      // changes when demolition's score, status or hard warning differs.
+      const modes = async (canon: Model, sk: Model) => {
+        const a = await load(canon)
+        const ca = P4_DOMAIN_DATES.map((d) => row(a, d))
+        const b = await load(sk)
+        const sb = P4_DOMAIN_DATES.map((d) => row(b, d))
+        let days = 0
+        let score = 0
+        let status = 0
+        let hw = 0
+        ca.forEach((x, i) => {
+          const y = sb[i]!
+          if (x.score !== y.score || x.status !== y.status || x.hw !== y.hw) days++
+          score += x.score !== y.score ? 1 : 0
+          status += x.status !== y.status ? 1 : 0
+          hw += x.hw !== y.hw ? 1 : 0
+        })
+        return {
+          changedDemolitionDays: days,
+          scoreChanges: score,
+          statusChanges: status,
+          hardWarningChanges: hw,
+        }
+      }
+      const historical = await modes('rollback', 'rollback-sk')
+      const crossVersion = await modes('forward', 'forward-sk')
       const v2 = await load('rollback-sk')
       const before = P4_DOMAIN_DATES.map((d) => row(v2, d))
       const v3 = await load('forward-sk')
@@ -419,6 +446,20 @@ describe('G1 glyph Stage 2 migration (劫煞 authority v3, R3)', () => {
             question:
               'G1-b rollback configuration (p4ScoreHeadingLookup source-key-v1) on authority v3 vs v2, 2025–2027',
             production: 'not affected: production runs canonical-v1 (summary.json domain delta 0)',
+            ruling:
+              'owner 2026-10-25: G1-b history is pinned to authority v2; the v3 figures are a cross-version counterfactual and never redefine it',
+            historicalG1b: {
+              authority: V2_ID,
+              comparison: 'canonical-v1 vs source-key-v1',
+              ...historical,
+            },
+            crossVersion: {
+              authority: V3_ID,
+              comparison: 'canonical-v1 vs source-key-v1',
+              ...crossVersion,
+            },
+            rollbackOrder:
+              'authority v3 → roll back G1 glyph to authority v2 → roll back G1-b canonical-v1 → source-key-v1; rolling back G1-b alone on v3 does not reproduce pre-G1-b output',
             days: P4_DOMAIN_DATES.length,
             changed: rows.length,
             hardWarningChanges: other,
@@ -740,9 +781,26 @@ describe('G1 glyph Stage 2 migration (劫煞 authority v3, R3)', () => {
     const g = JSON.parse(readFileSync(OUT + 'g1b-counterfactual.json', 'utf8')) as {
       changed: number
       hardWarningChanges: number
+      historicalG1b: Record<string, unknown>
+      crossVersion: Record<string, unknown>
       rows: { date: string; context: string; kiepAfter: string }[]
     }
     expect([g.changed, g.hardWarningChanges]).toEqual([15, 0])
+    // Historical G1-b (authority v2) vs cross-version counterfactual (authority v3), recorded separately.
+    expect(g.historicalG1b).toMatchObject({
+      authority: V2_ID,
+      changedDemolitionDays: 353,
+      scoreChanges: 320,
+      statusChanges: 337,
+      hardWarningChanges: 0,
+    })
+    expect(g.crossVersion).toMatchObject({
+      authority: V3_ID,
+      changedDemolitionDays: 342,
+      scoreChanges: 309,
+      statusChanges: 326,
+      hardWarningChanges: 0,
+    })
     expect(g.rows.every((r) => r.kiepAfter === 'kiep_sat:applied:avoid')).toBe(true)
     const scope = JSON.parse(
       readFileSync('docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json', 'utf8'),

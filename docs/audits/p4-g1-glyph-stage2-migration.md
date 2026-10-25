@@ -36,7 +36,7 @@ These are re-pinned in `lock.json` `inputs`.
 
 `claude/g1-glyph-stage2` branches from `348e879` (the Stage 1 audit and Stage 2 spec commits), which sits on `f3c68c6`. It was **not** branched directly from `origin/main`.
 
-## 3. Owner ruling (2026-10-25)
+## 3. Owner rulings (2026-10-25)
 
 R3 is approved:
 - 11 A/B-grade contexts are APPLIED;
@@ -44,6 +44,7 @@ R3 is approved:
 - the blast radius is frozen;
 - `datasetVersion` 1.2.1;
 - R2 / 土王用事 is deferred to [G1-SOIL](p4-g1-demolition-soil-authority-item.md).
+- **Second ruling:** the historical G1-b gate is pinned to authority v2 (§12, §12a), and Stage 2 may proceed to PR review. No merge or deploy yet.
 
 ## 4. Authority v3
 
@@ -191,13 +192,42 @@ Unchanged and verified, consistent with the 0 domain delta. `p4-adapter-baseline
 - 353 − 342 = 11 is only the net effect on the G1-b two-mode comparison. The per-day measurement above is the exact delta.
 - The sampled `npm test` run (every 10th date) did not hit those days. Only the full gate did.
 
-**Resolution (owner decision required; see the final report).**
+**Owner ruling (2026-10-25): historical G1-b pin to authority v2 APPROVED.** The 342 is a valid cross-version counterfactual, not a regression and not a replacement for G1-b history. This finding does not block Stage 2.
+
+**Machine-readable gates** (`g1b-counterfactual.json`, computed with `G1GS2_G1B=1` in `ci:p4`, frozen in the Stage 2 test). All use one day definition: a day changes when demolition's score, status or hard warning differs.
+
+| Comparison | Authority | Changed days | Score | Status | Hard warning |
+|---|---|---|---|---|---|
+| **Historical G1-b**: canonical-v1 vs source-key-v1 | `faithful-v2` (id asserted) | **353** | **320** | **337** | **0** |
+| **Cross-version counterfactual**: canonical-v1 vs source-key-v1 | `faithful-v3` | 342 | 309 | 326 | 0 |
+| source-key-v1 on v3 vs v2 (the attributable rows) | – | 15 | 15 (all −15) | 15 | 0 |
+
+- The historical row is computed independently of `p4MigrationDiffV3.test.ts`, which also asserts 353 / 320 / 337 / 0 under its v2 pin.
+- A future authority that moves the cross-version figures must be investigated, never silently re-frozen.
+
+**Resolution.**
 - The 353 / 320 / 337 / 0 envelope is G1-b history, measured under authority v2.
 - The file's graph is now pinned to authority v2 (`g1GlyphRollback.ts`, id asserted), following G2's `c82b681`. Its Golden-anchored pre-G2 proof stays on v1 (id asserted).
 - The full gate passes 11/11 with **353 / 320 / 337 / 0** and the 5 witnesses.
 - No expected value or G1-b artifact changed.
 
 **Consequence for rollback.** Rolling back G1-b alone (`source-key-v1`) on top of authority v3 is no longer byte-identical to pre-G1-b output on those 15 days. The supported rollback order is G1 glyph first (authority v2), then G1-b. This is recorded in §20.
+
+## 12a. Migration independence (owner ruling)
+
+| Layer | Migration | Authority anchor | Production lookup | Frozen envelope |
+|---|---|---|---|---|
+| **G1-b** | heading lookup `source-key-v1 → canonical-v1` | `faithful-v2` | – | 353 / 320 / 337 / 0 (Migration Diff v3) |
+| **G1 glyph Stage 2** | authority / access `faithful-v2 → faithful-v3` | – | `canonical-v1` | domain 0; outside 1,119 demolition days, all −15, 464 neutral→watch, 655 watch→avoid |
+
+Neither layer rewrites the other's artifacts.
+
+**Rollback order (frozen):**
+1. authority v3;
+2. roll back G1 glyph to authority v2;
+3. roll back G1-b, `canonical-v1 → source-key-v1`.
+
+Rolling back G1-b alone while keeping authority v3 does **not** reproduce pre-G1-b behaviour: it differs on the 15 rows above.
 
 ## 13. G2 protection
 
@@ -304,7 +334,7 @@ The G2-era mutants are kept and retargeted. `exclusion_reason_removed` (v2 text)
 | `test:p4:heading-lookup-full` | PASS (12) |
 | G2 Stage 2 regression (pinned) | PASS |
 | mutation suite | 29/29, and a second run reproduced byte for byte |
-| G1-b counterfactual (`G1GS2_G1B=1`) | PASS: 15 rows frozen |
+| G1-b historical (v2) and cross-version (v3) gates (`G1GS2_G1B=1`) | PASS: 353 / 320 / 337 / 0 and 342 / 309 / 326 / 0; 15 rows frozen |
 | G2 forward dump vs frozen G2 sha | PASS: `f21ea1a4…` equal |
 | `ci:p4:full` | PASS (final run, exit 0; the locked mutation reports were reproduced byte for byte, audit-clean) |
 | `npm test` | PASS: 257 files, 8,487 tests |

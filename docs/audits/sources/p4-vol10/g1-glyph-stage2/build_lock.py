@@ -11,7 +11,7 @@ OUT = Path('docs/audits/sources/p4-vol10/g1-glyph-stage2')
 FILES = ['build_authority_v3.py', 'build_scoring_golden_v4.py', 'build_access_matrix.py', 'compare.py',
          'authority-v2-v3.json', 'golden-diff.json', 'production-access-matrix.json', 'summary.json',
          'activity-diff.tsv', 'event-diff.json', 'rollback.json', 'authority-stamp.json', 'mutation-results.json',
-         'jiesha-mutation-results.json']
+         'jiesha-mutation-results.json', 'g1b-counterfactual.json']
 OUTPUTS = ['shared/almanac-data/xieji-vol10-jiesha-authority-v3.json',
            'shared/almanac-data/golden-xieji-vol10-scoring-v4.json']
 INPUTS = ['shared/almanac-data/xieji-vol10-jiesha-authority-v1.json',

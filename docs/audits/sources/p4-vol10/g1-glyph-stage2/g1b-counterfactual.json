@@ -2,6 +2,24 @@
  "version": "g1-glyph-stage2-g1b-counterfactual-v1",
  "question": "G1-b rollback configuration (p4ScoreHeadingLookup source-key-v1) on authority v3 vs v2, 2025–2027",
  "production": "not affected: production runs canonical-v1 (summary.json domain delta 0)",
+ "ruling": "owner 2026-10-25: G1-b history is pinned to authority v2; the v3 figures are a cross-version counterfactual and never redefine it",
+ "historicalG1b": {
+  "authority": "xieji-vol10-jiesha-faithful-v2",
+  "comparison": "canonical-v1 vs source-key-v1",
+  "changedDemolitionDays": 353,
+  "scoreChanges": 320,
+  "statusChanges": 337,
+  "hardWarningChanges": 0
+ },
+ "crossVersion": {
+  "authority": "xieji-vol10-jiesha-faithful-v3",
+  "comparison": "canonical-v1 vs source-key-v1",
+  "changedDemolitionDays": 342,
+  "scoreChanges": 309,
+  "statusChanges": 326,
+  "hardWarningChanges": 0
+ },
+ "rollbackOrder": "authority v3 → roll back G1 glyph to authority v2 → roll back G1-b canonical-v1 → source-key-v1; rolling back G1-b alone on v3 does not reproduce pre-G1-b output",
  "days": 1095,
  "changed": 15,
  "hardWarningChanges": 0,
