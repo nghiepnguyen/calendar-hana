@@ -1,0 +1,327 @@
+{
+ "version": "g2-stage1-impact-v2",
+ "full": true,
+ "currentProduction": {
+  "providerKeys": [
+   "立券交易"
+  ],
+  "p4StatesDomain": {
+   "contract": [
+    [
+     "baseline",
+     153
+    ],
+    [
+     "both_present",
+     51
+    ],
+    [
+     "neither_recorded",
+     92
+    ],
+    [
+     "only_ji",
+     511
+    ],
+    [
+     "only_yi",
+     288
+    ]
+   ],
+   "transaction": [
+    [
+     "baseline",
+     153
+    ],
+    [
+     "both_present",
+     51
+    ],
+    [
+     "neither_recorded",
+     92
+    ],
+    [
+     "only_ji",
+     511
+    ],
+    [
+     "only_yi",
+     288
+    ]
+   ]
+  },
+  "vol10VerdictsSeen": {
+   "contract": [
+    "binh:contract:applied:avoid",
+    "binh:contract:informational:no_annotation",
+    "binh:contract:informational:not_avoided",
+    "dai_thoi:informational:not_avoided",
+    "dan_nhat:informational:avoid",
+    "dan_nhat:informational:no_annotation",
+    "kiep_sat:informational:no_annotation",
+    "kiep_sat:informational:not_avoided",
+    "luc_hop:informational:avoid",
+    "luc_hop:informational:no_annotation",
+    "man:contract:informational:avoid",
+    "man:contract:informational:no_annotation",
+    "ngu_hop:informational:avoid",
+    "ngu_hop:informational:no_annotation",
+    "ngu_ly:informational:no_annotation",
+    "ngu_ly:informational:not_avoided",
+    "ngu_mo:informational:not_avoided",
+    "ngu_phu:informational:avoid",
+    "ngu_phu:informational:no_annotation",
+    "nguyet_hai:informational:no_annotation",
+    "nguyet_hai:informational:not_avoided",
+    "nguyet_hinh:applied:avoid",
+    "nguyet_hinh:informational:no_annotation",
+    "nguyet_hinh:informational:not_avoided",
+    "nguyet_sat:informational:no_annotation",
+    "nguyet_sat:informational:not_avoided",
+    "nguyet_yem:informational:no_annotation",
+    "nguyet_yem:informational:not_avoided",
+    "pha:contract:applied:avoid",
+    "tai_sat:informational:no_annotation",
+    "tai_sat:informational:not_avoided",
+    "tam_hop:informational:avoid",
+    "tam_hop:informational:no_annotation",
+    "thien_lai:informational:no_annotation",
+    "thien_lai:informational:not_avoided",
+    "thien_nguyen:informational:avoid",
+    "thu:contract:applied:avoid",
+    "thu:contract:informational:no_annotation",
+    "thu:contract:informational:not_avoided",
+    "tu_cung:informational:not_avoided",
+    "xieji10:yue_jian:contract:applied:avoid",
+    "xieji10:yue_sha:contract:applied:avoid",
+    "xieji10:yue_yan:contract:applied:avoid"
+   ],
+   "transaction": [
+    "binh:transaction:applied:avoid",
+    "binh:transaction:informational:no_annotation",
+    "binh:transaction:informational:not_avoided",
+    "dai_thoi:informational:not_avoided",
+    "dan_nhat:informational:avoid",
+    "dan_nhat:informational:no_annotation",
+    "kiep_sat:informational:no_annotation",
+    "kiep_sat:informational:not_avoided",
+    "luc_hop:informational:avoid",
+    "luc_hop:informational:no_annotation",
+    "man:transaction:informational:avoid",
+    "man:transaction:informational:no_annotation",
+    "ngu_hop:informational:avoid",
+    "ngu_hop:informational:no_annotation",
+    "ngu_ly:informational:no_annotation",
+    "ngu_ly:informational:not_avoided",
+    "ngu_mo:informational:not_avoided",
+    "ngu_phu:informational:avoid",
+    "ngu_phu:informational:no_annotation",
+    "nguyet_hai:informational:no_annotation",
+    "nguyet_hai:informational:not_avoided",
+    "nguyet_hinh:applied:avoid",
+    "nguyet_hinh:informational:no_annotation",
+    "nguyet_hinh:informational:not_avoided",
+    "nguyet_sat:informational:no_annotation",
+    "nguyet_sat:informational:not_avoided",
+    "nguyet_yem:informational:no_annotation",
+    "nguyet_yem:informational:not_avoided",
+    "pha:transaction:applied:avoid",
+    "tai_sat:informational:no_annotation",
+    "tai_sat:informational:not_avoided",
+    "tam_hop:informational:avoid",
+    "tam_hop:informational:no_annotation",
+    "thien_lai:informational:no_annotation",
+    "thien_lai:informational:not_avoided",
+    "thien_nguyen:informational:avoid",
+    "thu:transaction:applied:avoid",
+    "thu:transaction:informational:no_annotation",
+    "thu:transaction:informational:not_avoided",
+    "tu_cung:informational:not_avoided",
+    "xieji10:yue_jian:transaction:applied:avoid",
+    "xieji10:yue_sha:transaction:applied:avoid",
+    "xieji10:yue_yan:transaction:applied:avoid"
+   ]
+  }
+ },
+ "impact": {
+  "domain": {
+   "vol10Text": {
+    "days": 1095,
+    "evidenceOrStateChanged": 24,
+    "scoreChanged": 24,
+    "scoreLower": 0,
+    "scoreHigher": 24,
+    "statusChanged": 24,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 24,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 4330,
+    "eventScoreChanged": 108,
+    "eventClassificationChanged": 72,
+    "eventEvidenceOnly": 4222,
+    "statusTransitions": {
+     "watch>neutral": 22,
+     "avoid>neutral": 2
+    }
+   },
+   "aliasTable": {
+    "days": 1095,
+    "evidenceOrStateChanged": 24,
+    "scoreChanged": 24,
+    "scoreLower": 0,
+    "scoreHigher": 24,
+    "statusChanged": 24,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 24,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 4330,
+    "eventScoreChanged": 108,
+    "eventClassificationChanged": 72,
+    "eventEvidenceOnly": 4222,
+    "statusTransitions": {
+     "watch>neutral": 22,
+     "avoid>neutral": 2
+    }
+   },
+   "dependsOnWeishenCell": {
+    "days": 1095,
+    "evidenceOrStateChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 20,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 20,
+    "statusTransitions": {}
+   }
+  },
+  "outsideControls": {
+   "vol10Text": {
+    "days": 3,
+    "evidenceOrStateChanged": 4,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 20,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 20,
+    "statusTransitions": {}
+   },
+   "aliasTable": {
+    "days": 3,
+    "evidenceOrStateChanged": 4,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 20,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 20,
+    "statusTransitions": {}
+   },
+   "dependsOnWeishenCell": {
+    "days": 3,
+    "evidenceOrStateChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 0,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 0,
+    "statusTransitions": {}
+   }
+  },
+  "outsideSample2028": {
+   "vol10Text": {
+    "days": 365,
+    "evidenceOrStateChanged": 184,
+    "scoreChanged": 70,
+    "scoreLower": 8,
+    "scoreHigher": 62,
+    "statusChanged": 64,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 70,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 1460,
+    "eventScoreChanged": 315,
+    "eventClassificationChanged": 219,
+    "eventEvidenceOnly": 1145,
+    "statusTransitions": {
+     "watch>neutral": 24,
+     "avoid>neutral": 10,
+     "watch>recommended": 22,
+     "no_evidence>avoid": 8
+    }
+   },
+   "aliasTable": {
+    "days": 365,
+    "evidenceOrStateChanged": 184,
+    "scoreChanged": 70,
+    "scoreLower": 8,
+    "scoreHigher": 62,
+    "statusChanged": 64,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 70,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 1460,
+    "eventScoreChanged": 315,
+    "eventClassificationChanged": 219,
+    "eventEvidenceOnly": 1145,
+    "statusTransitions": {
+     "watch>neutral": 24,
+     "avoid>neutral": 10,
+     "watch>recommended": 22,
+     "no_evidence>avoid": 8
+    }
+   },
+   "dependsOnWeishenCell": {
+    "days": 365,
+    "evidenceOrStateChanged": 2,
+    "scoreChanged": 2,
+    "scoreLower": 2,
+    "scoreHigher": 0,
+    "statusChanged": 2,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 2,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 10,
+    "eventScoreChanged": 9,
+    "eventClassificationChanged": 6,
+    "eventEvidenceOnly": 1,
+    "statusTransitions": {
+     "neutral>watch": 2
+    }
+   }
+  }
+ },
+ "candidateMechanismsAgree": true
+}

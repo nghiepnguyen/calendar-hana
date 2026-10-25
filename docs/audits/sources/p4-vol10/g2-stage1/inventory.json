@@ -1,0 +1,1590 @@
+{
+ "version": "g2-stage1-inventory-v1",
+ "byLayer": {
+  "documentation / audit": {
+   "files": 66,
+   "立劵交易": 80,
+   "立券交易": 5223,
+   "other劵": 36
+  },
+  "derived / audit fixture": {
+   "files": 103,
+   "立劵交易": 48,
+   "立券交易": 41859,
+   "other劵": 44
+  },
+  "source transcription": {
+   "files": 5,
+   "立劵交易": 34,
+   "立券交易": 2,
+   "other劵": 2
+  },
+  "test / gate": {
+   "files": 19,
+   "立劵交易": 10,
+   "立券交易": 28,
+   "other劵": 3
+  },
+  "repository source data": {
+   "files": 24,
+   "立劵交易": 170,
+   "立券交易": 40,
+   "other劵": 7
+  },
+  "runtime code": {
+   "files": 4,
+   "立劵交易": 2,
+   "立券交易": 3,
+   "other劵": 2
+  }
+ },
+ "files": [
+  {
+   "path": "PROJECT_CONTEXT.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 6
+  },
+  {
+   "path": "docs/audits/baiji-giap-at.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-dormant-meanings-draft.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-full-golden-hold-questions.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-full-golden-review.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-g1-glyph-audit.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 2
+  },
+  {
+   "path": "docs/audits/p4-g1a-demolition-authority.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/p4-g1b-score-lookup.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 3
+  },
+  {
+   "path": "docs/audits/p4-g1b-stage2-migration.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-h1b-yuebiao-witness.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-jiesha-faithful-vol10.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-jiesha-option-c-migration.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 8
+  },
+  {
+   "path": "docs/audits/p4-jiesha-overlap-impact.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 6,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-puzhu17-bujiang.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 6,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-vol10-day-composition.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 2,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/p4-vol10-heading-annotation.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/p4-vol10-readiness.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/p4-vol10-remaining-ji-2025-2027.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1113,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-vol10-transcription.md",
+   "layer": "documentation / audit",
+   "立劵交易": 5,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1131,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-vol10-yi-operands-summary.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-weishen-nacai-puzhu21.md",
+   "layer": "documentation / audit",
+   "立劵交易": 5,
+   "立券交易": 13,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4-xiangdi-cancel-both-audit.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4b-puzhu06-2025-2027.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1133,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4b-puzhu06-summary.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p4b-puzhu06.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/p5-warehouse.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 20,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/predictions.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 10,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/premise-predictions.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/build_faithful.py",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/build_status.py",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/faithful.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 17,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/raw.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 4813,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/sensitivity.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 27,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/build_authority.py",
+   "layer": "documentation / audit",
+   "立劵交易": 2,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/coverage.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 32,
+   "立券交易": 32,
+   "other劵": 32
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/build_impact.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/impact.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 8,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/raw.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 105,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-all-taboo-floor-v1/acceptance.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 36,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1-review/engine/compare.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1-review/engine/diffs.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 50,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1-review/mutation/report.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/checks.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 764,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/dated.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1155,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/compose/h1b-changes.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 51,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context-ji-summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/context-ji.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 720,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/dated-ji.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v1/ji/scopes.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 765,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2-review/engine/compare.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2-review/engine/diffs.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 50,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2-review/mutation/report.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/checks.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 764,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/dated.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1155,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/h1b-changes.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 51,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/context-ji-summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/context-ji.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 720,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/dated-ji.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/scopes.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/scopes.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 765,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2025.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1716,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2026.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1732,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-2027.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1744,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v1/activities-full-outside.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 6,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2025.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1730,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2026.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1744,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-2027.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1764,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v2/activities-full-outside.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 6,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v1/activity-states.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1884,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v2/activity-scores.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 94,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v2/activity-states.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1884,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-scores.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 94,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-states.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1884,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/golden.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v1/README.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v1/build.py",
+   "layer": "documentation / audit",
+   "立劵交易": 3,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v1/validation.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v2/build.py",
+   "layer": "documentation / audit",
+   "立劵交易": 3,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v2/validation.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v3/README.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v3/build.py",
+   "layer": "documentation / audit",
+   "立劵交易": 3,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-authority-v3/validation.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context-p4c.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 731,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 720,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 720,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/dated.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/derive.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v1/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 10,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 720,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/dated.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/derive.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 10,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v2/validation.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/context.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 732,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/dated.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1115,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/derive.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 2
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/propagation.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 13,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/validation.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/baseline.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 18,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-baseline-v1/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/derive.py",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 16,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/source-basis.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/result.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/witness.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "layer": "source transcription",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+   "layer": "source transcription",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+   "layer": "source transcription",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+   "layer": "source transcription",
+   "立劵交易": 32,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/freeze.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 54,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/predictions.json",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/result.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/witness.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 5,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/build_holdout.py",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/freeze.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 48,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/holdout-predictions.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 18,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 8,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/baseline.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2208,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-baseline-v1/summary.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-chushen-v1/entry.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/README.md",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 6,
+   "立券交易": 78,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-composition-expected-v1/source-basis.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 2,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-expected-v1/source-basis.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 2,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-fude-v1/entry.json",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-integration-v1/test-results.json",
+   "layer": "documentation / audit",
+   "立劵交易": 12,
+   "立券交易": 66,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/evidence.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 38,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/superseded-draft/evidence.tsv",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1095,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-propagation-v1/superseded-draft/expected.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 38,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-red-any-v1/regression-results.json",
+   "layer": "documentation / audit",
+   "立劵交易": 12,
+   "立券交易": 66,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-red-heading-v1/README.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-red-heading-v1/test-results.json",
+   "layer": "documentation / audit",
+   "立劵交易": 12,
+   "立券交易": 66,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/candidate-index.json",
+   "layer": "documentation / audit",
+   "立劵交易": 6,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+   "layer": "source transcription",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-tianwu-v1/entry.json",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/audits/xieji-activity-mapping-review.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "docs/plans/p4-xieji-vol10-balancing.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "docs/project-context/history.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 2
+  },
+  {
+   "path": "docs/verification/activity-taxonomy.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "docs/verification/mapping-scoring.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "scripts/audit-vol10-jiesha-mutations.py",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/almanac-data/golden-baiji-giap-at.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-day-composition.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v3.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v4.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v5.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v6.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v7.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-p4-remaining-ji-v8.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v2.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-authority.json",
+   "layer": "repository source data",
+   "立劵交易": 5,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+   "layer": "repository source data",
+   "立劵交易": 6,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-day-composition.json",
+   "layer": "repository source data",
+   "立劵交易": 6,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-deferral-coverage-v2.json",
+   "layer": "repository source data",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-deferral-coverage.json",
+   "layer": "derived / audit fixture",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-god-classes.json",
+   "layer": "repository source data",
+   "立劵交易": 4,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-heading-annotation.json",
+   "layer": "repository source data",
+   "立劵交易": 9,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v2.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v3.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v4.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v5.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v6.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji-v7.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-remaining-ji.json",
+   "layer": "repository source data",
+   "立劵交易": 15,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-vol10-youwei-scopes.json",
+   "layer": "repository source data",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4-yi-operands-v1.json",
+   "layer": "repository source data",
+   "立劵交易": 2,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v1.json",
+   "layer": "repository source data",
+   "立劵交易": 4,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v2.json",
+   "layer": "repository source data",
+   "立劵交易": 4,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v3.json",
+   "layer": "repository source data",
+   "立劵交易": 4,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/truc.json",
+   "layer": "repository source data",
+   "立劵交易": 0,
+   "立券交易": 8,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/xieji-activity-mapping-review.json",
+   "layer": "repository source data",
+   "立劵交易": 1,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/xieji-god-definitions.json",
+   "layer": "repository source data",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 2
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "layer": "repository source data",
+   "立劵交易": 4,
+   "立券交易": 2,
+   "other劵": 2
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "layer": "repository source data",
+   "立劵交易": 14,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "layer": "repository source data",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 1
+  },
+  {
+   "path": "shared/lunar/legacyEventMapping.ts",
+   "layer": "runtime code",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4ChouBingyinDeGate.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4DayComposition.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 1,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4G1aDemolitionEngine.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/lunar/p4MigrationDiffV3.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4OwnerRules.ts",
+   "layer": "runtime code",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu06.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu06Baseline.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 3,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu06Golden.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu06GoldenV2.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu06GoldenV3.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Puzhu17AuditLock.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4ScoreHeadingLookup.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4Warehouse.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 4,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4WarehouseSweep.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4WeishenNacaiAudit.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 2,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/p4WeishenNacaiAuditLock.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 5,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/sameHeadingDuplicateMigration.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "shared/lunar/xiejiVol10JieshaAuthority.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 3,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "shared/lunar/xiejiVol10JieshaAuthority.ts",
+   "layer": "runtime code",
+   "立劵交易": 0,
+   "立券交易": 0,
+   "other劵": 1
+  },
+  {
+   "path": "shared/lunar/xiejiVol10Resolution.ts",
+   "layer": "runtime code",
+   "立劵交易": 2,
+   "立券交易": 1,
+   "other劵": 1
+  },
+  {
+   "path": "shared/lunar/xiejiVol10SplitHeadingsEquivalence.test.ts",
+   "layer": "test / gate",
+   "立劵交易": 1,
+   "立券交易": 0,
+   "other劵": 0
+  },
+  {
+   "path": "tasks/calendar-audit/secondary-review/secondary-review.json",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 7,
+   "other劵": 1
+  },
+  {
+   "path": "tasks/prd-p4-score-adapter.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "tasks/prd-p4b-puzhu06.md",
+   "layer": "documentation / audit",
+   "立劵交易": 4,
+   "立券交易": 7,
+   "other劵": 0
+  },
+  {
+   "path": "tasks/prd-p5-warehouse.md",
+   "layer": "documentation / audit",
+   "立劵交易": 1,
+   "立券交易": 1,
+   "other劵": 0
+  },
+  {
+   "path": "tasks/tasks-p4b-puzhu06.md",
+   "layer": "documentation / audit",
+   "立劵交易": 0,
+   "立券交易": 1,
+   "other劵": 0
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "version": "g2-stage1-lock-v1",
+ "date": "2026-10-24",
+ "base": "394acbbb59c916084119c5fa7786936174f184d9",
+ "status": "AUDIT_ONLY_NOT_AUTHORITY",
+ "decision": "SAME_ACTIVITY_ALIAS_CONFIRMED; Stage 2 = headingAliases 立劵交易→[立券交易] + 劫煞 authority v2 (contract/transaction APPLIED, approved cells incl. 未-戊申 blank); envelope I1; owner gates (a) authority v2 (c) scope beyond P4 domain and events",
+ "reproduce": {
+  "evidence": "python3 -I docs/audits/sources/p4-vol10/g2-stage1/build_evidence.py",
+  "impact": "G2_FULL=1 npx vitest run shared/lunar/p4G2Stage1Audit.test.ts",
+  "range": "G2_RANGE=1 npx vitest run shared/lunar/p4G2Stage1Audit.test.ts -t 'supported range'",
+  "bound": "python3 -I docs/audits/sources/p4-vol10/g2-stage1/bound.py",
+  "rangeEvents": "G2_RANGE=1 G2_EVENTS_FULL=1 npx vitest run shared/lunar/p4G2Stage1Audit.test.ts -t 'supported range'"
+ },
+ "inputs": [
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "sha256": "925057d78883eee09b915222f561768475f121466230377182894a17e38e1f33"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/manifest.json",
+   "sha256": "b2b6a0847dd63daa01590ec1d7ea2639f4e2f88f68cbb7e2f10ff64e38ae3059"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10Resolution.ts",
+   "sha256": "2d79c58f64fa9c8e62fdb6c110d3447c8c11fbfb9f64e4ff29b5a77a5fba3b27"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10JieshaAuthority.ts",
+   "sha256": "28708077c577f34b00977a7c59a1955be196b493a8811c5aba031ebe7af87e47"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+   "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+   "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/06067687.cn.pdf",
+   "sha256": "472a6066a1be0dd8d3c8163812dbfdb2c933688b6428a65fcaeeb798806afdd4"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "sha256": "9849e97b6d1659a2c2f475035b82432e2e17adfef3c755238d3afd990258ac13"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-states.tsv",
+   "sha256": "d8ee584695d87c21fd79b35b11d97d31dd3641511973fa81b270e74212caf6e0"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/inventory.json",
+   "sha256": "183f55ec1524882a94c51be8c32ea95332500308e95789819a4c7a1f594f2c36"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/source-evidence.json",
+   "sha256": "d5929188bfb0361c678aabb5f8a8099f16037ccadcf54002c631de343e152e30"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.json",
+   "sha256": "7400a38fa64ab38b068654b5a46306c69c4333f1ed65fe987a0959ea02c05409"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.tsv",
+   "sha256": "b99de42b65e6ffce313095c9f7efc55f2a13682ee5519413ef52da8b6a45a955"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/range-impact.json",
+   "sha256": "eea3c9b4642bad9387054377c1a4d5e28353e97b0b16457cf59d307542454c69"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/blast-radius.json",
+   "sha256": "e0219087088bc02240eea07c3fad218f0fe4d079754582c2b721c9c7e325741a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/scan-06067687-p42-heading.png",
+   "sha256": "ce13825c76b894c21c99ab0a72c9c57bcaafe1757c87c6416c86fa4251295a1d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/scan-06067687-p37-dong.png",
+   "sha256": "aa605dfff280fbfab69f120c4153cee650a818460c108a18931c791b2284a212"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/bound.py",
+   "sha256": "b412791ff1f10f71d6cda10a75359c33e3bf4208e48e4c3856ee47a9074ed471"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/build_evidence.py",
+   "sha256": "531974420e7f40b9e9c5496f6b06543cc46afbd19456e900301f4f619128aab4"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/range-impact-events.json",
+   "sha256": "2a380550ffd963b90c0a5267b9ae19b94cdf4242e267a3fc695d18228b1e6f78"
+  }
+ ],
+ "ruling": "2026-10-25 owner: 未-戊申 contract/transaction BLANK; blank semantics I1 (active authority when reachable; legacy unmatched output not authority; no compatibility setting); n117 discrepancy deferred → docs/audits/p4-weishen-lijuan-authority-item.md"
+}
