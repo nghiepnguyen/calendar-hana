@@ -1,0 +1,31 @@
+{
+ "version": "p4-adapter-baseline-lock-v2",
+ "scope": "MEASURED_BASELINE_NOT_GOLDEN",
+ "supersedes": "p4-adapter-baseline-lock-v1 as forward evidence; v1 kept unchanged as pre-G2 rollback evidence",
+ "migration": "G2 Stage 2 (docs/audits/p4-g2-stage2-migration.md): 卷十 headingAliases 立劵交易 → [立券交易] + 劫煞 authority v2",
+ "flag": "same as v1: xiejiVol10BalancingEnabled OFF, tiangouYinNoYi / satChuNgocHapStars OFF, legacy-cancel-both; provider loaded (src/test/setup.ts)",
+ "rows": "same as v1 (p4AdapterBaselineRows.ts)",
+ "regenerate": "P4_ADAPTER_BASELINE_V2_WRITE=1 npx vitest run shared/lunar/p4AdapterBaselineV2.test.ts",
+ "diffFromV1": {
+  "activityRowsChanged": 554,
+  "activityDatesChanged": 277,
+  "eventRowsChanged": 4350,
+  "eventsChanged": {
+   "buy_property": 870,
+   "buy_vehicle": 870,
+   "property_handover": 870,
+   "receive_vehicle": 870,
+   "sign_contract": 870
+  }
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v2/activities.tsv",
+   "sha256": "16cae273ce754190c18e54a6b688f626c6071f5d125015e79002eec085080ccd"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v2/events.tsv",
+   "sha256": "c4cc8be663ec46d4812e4944b51ec33be0f9de3a4781918566e721f02a762496"
+  }
+ ]
+}

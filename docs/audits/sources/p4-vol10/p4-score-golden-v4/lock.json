@@ -1,0 +1,79 @@
+{
+ "version": "p4-score-golden-lock-v4",
+ "scope": "G2_STAGE2_VOL10_ALIAS_AUTHORITY_V2",
+ "supersedes": "p4-score-golden-lock-v3 as forward evidence; v3 files kept unchanged as pre-G2 rollback evidence",
+ "spec": "docs/audits/p4-g2-vol10-heading-match.md §13 (frozen, PR #100)",
+ "migration": "docs/audits/p4-g2-stage2-migration.md",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-score-golden-v4/golden.py --write",
+ "headingLookup": "canonical-v1",
+ "method": "v3 golden.py (sha-asserted, frozen v2 reference adapter + G1-a fold) with the layer-C baseline input swapped to p4-adapter-baseline-v2; layer B asserted byte-equal to v3 and reused",
+ "independentConstraint": "rows differing from v3 = the frozen Stage 1 domain rows of g2-stage1/candidate-impact.tsv (measured before Stage 2 code), same old/new score and status, state baseline, hard warning false",
+ "diffFromV3": {
+  "rows": 24,
+  "dates": 12,
+  "activities": [
+   "contract",
+   "transaction"
+  ],
+  "scoreLower": 0,
+  "scoreHigher": 24,
+  "statusChanged": 24,
+  "hardWarningChanged": 0,
+  "layerBChanged": 0,
+  "changedDates": [
+   "2025-07-14",
+   "2025-08-03",
+   "2025-08-22",
+   "2025-11-11",
+   "2026-05-03",
+   "2026-07-09",
+   "2026-07-29",
+   "2026-08-17",
+   "2027-04-28",
+   "2027-07-24",
+   "2027-08-12",
+   "2027-09-05"
+  ]
+ },
+ "coverage": {
+  "states": "v3 activity-states.tsv (1095 P4 dates + 3 outside x 29)",
+  "scores": "1095 P4 dates x 32 activities"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/golden.py",
+   "sha256": "fd422cb11b92b51de4ae48fe611c37a96d704b32e12825cc9d6a474aa258ba69",
+   "role": "derive_script"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/activity-scores.tsv",
+   "sha256": "a1a1d1b34ad3172852c889f8415dec1f4518f1c557ed81033dc262d6651d9595",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/golden.py",
+   "sha256": "071ffae33bc90767ca226854fa2aa4538806492f146c7573bfc8d69553fb22ac",
+   "role": "frozen_generator"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/activity-states.tsv",
+   "sha256": "d8ee584695d87c21fd79b35b11d97d31dd3641511973fa81b270e74212caf6e0",
+   "role": "expected_output_reused"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/lock.json",
+   "sha256": "d2b9718d87556cafd8ba0fa3289349496f20299181a4c2f6bc4ea1436cf9211c",
+   "role": "frozen_parent_lock"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v2/activities.tsv",
+   "sha256": "16cae273ce754190c18e54a6b688f626c6071f5d125015e79002eec085080ccd",
+   "role": "baseline_input"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.tsv",
+   "sha256": "b99de42b65e6ffce313095c9f7efc55f2a13682ee5519413ef52da8b6a45a955",
+   "role": "frozen_independent_constraint"
+  }
+ ]
+}

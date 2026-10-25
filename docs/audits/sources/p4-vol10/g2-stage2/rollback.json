@@ -1,0 +1,23 @@
+{
+ "version": "g2-stage2-rollback-v1",
+ "phases": {
+  "forward": "shipped: alias + authority v2",
+  "rollback": "alias removed + authority v1 (g2Rollback.ts), same process as re-enable",
+  "reEnable": "alias + authority v2 again, after rollback in one process",
+  "preG2Main": "origin/main 58faf3a (pre-G2) in a worktree, same harness"
+ },
+ "dumpSha256": {
+  "preG2Main": "8c3833ca4c6be9ebe0131a03417acb416188fc0b18f5f851ed17dac5752e02e0",
+  "stage2Rollback": "8c3833ca4c6be9ebe0131a03417acb416188fc0b18f5f851ed17dac5752e02e0",
+  "stage2Forward": "f21ea1a4a836db8f35188b1d00faf712ccb43c19a00185a3d5914c84c0a62b06",
+  "stage2ReEnable": "f21ea1a4a836db8f35188b1d00faf712ccb43c19a00185a3d5914c84c0a62b06",
+  "independentText": "f21ea1a4a836db8f35188b1d00faf712ccb43c19a00185a3d5914c84c0a62b06"
+ },
+ "rollbackEqualsPreG2Main": true,
+ "reEnableEqualsForward": true,
+ "independentTextEqualsForward": true,
+ "migrationRows": {
+  "activityConclusion": 13880,
+  "eventChanged": 293600
+ }
+}
