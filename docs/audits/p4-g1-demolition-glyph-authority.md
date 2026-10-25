@@ -4,6 +4,12 @@
 
 Artifacts are in [`sources/p4-vol10/g1-glyph-stage1/`](sources/p4-vol10/g1-glyph-stage1/), all hash-locked in `lock.json` (21 artifacts, 13 pinned inputs). The test is `shared/lunar/p4G1GlyphStage1Audit.test.ts` and runs in `npm test`. Full-range dumps run behind `G1GS1_DUMP` (see `lock.json` `reproduce`).
 
+## Owner ruling (2026-10-25)
+
+- **R3 APPROVED.** The 11 A/B-grade contexts are APPROVED. The R3 blast radius is APPROVED (§12, fit column). `datasetVersion` stays 1.2.1.
+- R2 / extended 土王用事 authority is NOT APPROVED and is deferred to [G1-SOIL](p4-g1-demolition-soil-authority-item.md).
+- Stage 2 specification: [p4-g1-glyph-stage2-spec.md](p4-g1-glyph-stage2-spec.md).
+
 ## Final Stage 1 decision
 
 **`SAME_HEADING_AUTHORITY_PARTIAL`**
