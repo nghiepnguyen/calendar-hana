@@ -1,0 +1,84 @@
+{
+ "version": "g1-glyph-stage2-authority-diff-v1",
+ "from": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+  "version": "xieji-vol10-jiesha-faithful-v2",
+  "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+ },
+ "to": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+  "version": "xieji-vol10-jiesha-faithful-v3"
+ },
+ "coverageChanged": {
+  "demolition": [
+   "EXCLUDED_PENDING_GLYPH_AUDIT",
+   "APPLIED_BY_CONTEXT"
+  ]
+ },
+ "demolitionContexts": {
+  "APPLIED": [
+   "戌丁亥",
+   "戌乙亥",
+   "戌己亥",
+   "戌癸亥",
+   "未丙申",
+   "未壬申",
+   "未庚申",
+   "辰乙巳",
+   "辰己巳",
+   "辰癸巳",
+   "辰辛巳"
+  ],
+  "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY": [
+   "丑丙寅",
+   "丑壬寅",
+   "丑戊寅",
+   "丑甲寅",
+   "未戊申"
+  ]
+ },
+ "grades": {
+  "戌丁亥": "B",
+  "戌乙亥": "B",
+  "戌己亥": "B",
+  "戌癸亥": "B",
+  "未丙申": "A",
+  "未壬申": "A",
+  "未庚申": "A",
+  "辰乙巳": "A",
+  "辰己巳": "A",
+  "辰癸巳": "A",
+  "辰辛巳": "A"
+ },
+ "cellsAdded": {
+  "戌丁亥": "avoid",
+  "戌乙亥": "avoid",
+  "戌己亥": "avoid",
+  "戌癸亥": "avoid",
+  "未丙申": "avoid",
+  "未壬申": "avoid",
+  "未庚申": "avoid",
+  "辰乙巳": "avoid",
+  "辰己巳": "avoid",
+  "辰癸巳": "avoid",
+  "辰辛巳": "avoid"
+ },
+ "cellsChanged": 0,
+ "otherCoverageChanged": 0,
+ "counts": {
+  "v2": {
+   "contexts": 16,
+   "activities": 24,
+   "cells": 384,
+   "avoid": 177,
+   "blank": 207
+  },
+  "v3": {
+   "contexts": 16,
+   "activities": 25,
+   "cells": 395,
+   "avoid": 188,
+   "blank": 207
+  }
+ }
+}

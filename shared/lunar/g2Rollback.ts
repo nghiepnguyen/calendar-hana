@@ -20,4 +20,5 @@ export async function reloadUnderG2Pins() {
   const { vi } = await import('vitest')
   vi.resetModules()
   await import('./p4AlmanacHeadings')
+  await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v1')
 }

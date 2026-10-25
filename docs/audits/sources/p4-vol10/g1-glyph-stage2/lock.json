@@ -1,0 +1,132 @@
+{
+ "version": "g1-glyph-stage2-lock-v1",
+ "status": "PRODUCTION_MIGRATION_EVIDENCE",
+ "base": {
+  "production": "f3c68c611f21da4ea9493720c6434b45fa601644",
+  "ancestry": "348e8792bf677aae54a258e4aa902a076159ff16 (Stage 1 audit + Stage 2 spec)"
+ },
+ "migration": "劫煞 authority v3 (R3): demolition APPLIED in 11 contexts, 5 EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+ "reproduce": {
+  "authority": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage2/build_authority_v3.py",
+  "scoringGoldenV4": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage2/build_scoring_golden_v4.py",
+  "accessMatrix": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage2/build_access_matrix.py",
+  "dumps": "G1GS2_DUMP=forward | rollback,forward  G1GS2_OUT=<dir>/{fwd,rb} npx vitest run shared/lunar/p4G1GlyphStage2Migration.test.ts; pre: G1GS2_DUMP=pre on an f3c68c6 worktree with that test file + g1GlyphRollback.ts → <dir>/pre; Stage 1 dumps per g1-glyph-stage1/lock.json",
+  "diff": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage2/compare.py <dir> <stage1-dir>",
+  "authorityStamp": "G1GS2_STAMP=1 npx vitest run shared/lunar/p4G1GlyphStage2Migration.test.ts -t \"authority stamp gate\" (G1GS2_WRITE=1 rewrites)",
+  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py (writes jiesha-mutation-results.json); G1GS2_WRITE=1 npx vitest run shared/lunar/p4G1GlyphStage2Migration.test.ts (mutation-results.json)"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/build_authority_v3.py",
+   "sha256": "c7195a4dbdcc6023eed21ef79fdb7d513e21a4b5c4a87bce80dc9d9ae2632b2b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/build_scoring_golden_v4.py",
+   "sha256": "15e39f18a9cc7776b79ac3cbf7e39d87e375d14625b40ebaee74a837a6a5a683"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/build_access_matrix.py",
+   "sha256": "1885381750941a4d7f748a257475067ce3c23ab262e9429af6577e57badf0828"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/compare.py",
+   "sha256": "f57a88e937389910c054f40cce477ac173ed6542a09d369464b5ab8216ee2622"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/authority-v2-v3.json",
+   "sha256": "938377b8be4a4c7514c7ca56d78a24b9fb2aaeb9ef3d9fbbb2876ad139f3a80a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/golden-diff.json",
+   "sha256": "5a42d9b1af57e032569ade6644462b56b5c48ab0e6a2ddf4b1ebaaa85a0edbff"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/production-access-matrix.json",
+   "sha256": "1f73340a8d06bf23f3e222acceff9abf9823495b0b495185faa8a8aeb5878fae"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/summary.json",
+   "sha256": "3f6984d6695d6cb5f8c653f7118d470f4106791b9ef10fb9a58f2166d05f08b8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/activity-diff.tsv",
+   "sha256": "b6b7ba4c8d33ac998ae6b4b7b53aaef3151a3ad7ffe1b98827f1f8996b381ea5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/event-diff.json",
+   "sha256": "8e896ada4981dea925d3ab1e6896cac892731a2dcc4448a3b5a8b6eb74c6e771"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/rollback.json",
+   "sha256": "8eff947d33be86a08e0ac5f127db00a44026f5c173d27f290dab34eb9b8cd98d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/authority-stamp.json",
+   "sha256": "4f398da0d960728ea33a9f5777dd9da4270303897783eabc7362af4ca587f5b2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/mutation-results.json",
+   "sha256": "4c83787b4afa1dbaec9ab1a921b048d9551b8b15b5e2f332a0473415b9954387"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/jiesha-mutation-results.json",
+   "sha256": "ab3a476e9b817122e1d5764bf9209f5212434a2e1280d22143d8c99f8c86f3f5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/g1b-counterfactual.json",
+   "sha256": "1ca50f6e28e04aaf832fd125fc1599f3763adb9c068a510fa4d29148c8f52f92"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+   "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v4.json",
+   "sha256": "9d69d74f14a673e1698ca6b4e81e9881a2dc7189ba0c9626c13bc87e60dc53da"
+  }
+ ],
+ "inputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v3.json",
+   "sha256": "cb18c3c2df864350ac5bccc707f76913d3e9d02bc98d83faf2a58e9c67944e78"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/authority-candidate.json",
+   "sha256": "cff81025df1795d7904c6d67420479450e30f055f50c4a33bfdd7588f140f72a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/candidate-impact.tsv",
+   "sha256": "13070165539f16402e263a1d5e21774e2610c98ac950685446a45c4a3e9a269e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/lock.json",
+   "sha256": "253dd0e18802ba4e2dd863f3c1b9b3c05292b13de3d2e81dd1f71a208b0df4ac"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/lock.json",
+   "sha256": "0a897bdd49a549313cd1ff2a6cc50b687e76f644b9e0f9d6837ea2a944ddf61b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/summary.json",
+   "sha256": "0c24aee1754f6d985e55777115f9e56fe302f773efe4bdeeb91574bfc89d5175"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/lock.json",
+   "sha256": "2b3527708803facbf804793ed1c3ac6120ae1753ccc4aea19b0f1d6bd9cb4ec3"
+  },
+  {
+   "path": "docs/audits/p4-g1-glyph-stage2-spec.md",
+   "sha256": "ad8f447ee840c38fcb3eaa6eacd60edab2757c2afe741ef43e47718e4dbe3954"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "version": "g1-glyph-stage2-summary-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none",
+ "before": "shipped f3c68c6 (authority v2)",
+ "after": "G1 glyph Stage 2 (authority v3, R3)",
+ "migration": {
+  "domain": {
+   "days": 1095,
+   "demolitionChangedDays": 0,
+   "conclusionChanged": 0,
+   "scoreChanged": 0,
+   "scoreLower": 0,
+   "scoreHigher": 0,
+   "statusChanged": 0,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "excludedContextRowsChanged": 0,
+   "eventEvaluations": 24090,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 462,
+   "statusTransitions": {},
+   "scoreDeltas": {},
+   "verdictTransitions": {},
+   "changedByContext": {}
+  },
+  "outside": {
+   "days": 72319,
+   "demolitionChangedDays": 1119,
+   "conclusionChanged": 1119,
+   "scoreChanged": 1119,
+   "scoreLower": 1119,
+   "scoreHigher": 0,
+   "statusChanged": 1119,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "excludedContextRowsChanged": 0,
+   "eventEvaluations": 1591018,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 35530,
+   "statusTransitions": {
+    "neutral→watch": 464,
+    "watch→avoid": 655
+   },
+   "scoreDeltas": {
+    "-15": 1119
+   },
+   "verdictTransitions": {
+    "kiep_sat:informational:no_annotation→kiep_sat:applied:avoid": 1119
+   },
+   "changedByContext": {
+    "戌-丁亥": 103,
+    "戌-乙亥": 99,
+    "戌-己亥": 101,
+    "戌-癸亥": 97,
+    "未-丙申": 102,
+    "未-壬申": 104,
+    "未-庚申": 106,
+    "辰-乙巳": 99,
+    "辰-己巳": 100,
+    "辰-癸巳": 103,
+    "辰-辛巳": 105
+   }
+  }
+ },
+ "checks": {
+  "domainEnvelopeFrozen": true,
+  "outsideEnvelopeFrozen": true,
+  "excludedContextsUnchanged": true,
+  "eventSemanticZero": true,
+  "rowsEqualStage1FitRows": true,
+  "predictionFromPreAndV3CellsEqualsMeasured": true,
+  "g1aScopeOfAppliedContextsEqualsMeasured": true,
+  "changedContextsSubsetOfApplied": true,
+  "forwardEqualsStage1FitModel": true
+ },
+ "candidateDifferences": 0,
+ "independent": {
+  "measured": 1119,
+  "predictedFromPreAndV3Cells": 1119,
+  "g1aScopeAppliedOutside": 1119,
+  "stage1FitRows": 1119
+ },
+ "unexpected": 0
+}

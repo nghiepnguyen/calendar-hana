@@ -4,6 +4,7 @@ import { isMonthlyShaPresent, type MonthlyShaId } from './xiejiMonthlySha'
 import { getVol10VirtuesPresent, VOL10_VIRTUES } from './xiejiVirtues'
 import {
   getVol10JieshaRuntime,
+  vol10JieshaCell,
   VOL10_JIESHA_AUTHORITY_ID,
   type Vol10JieshaPolicy,
 } from './xiejiVol10JieshaAuthority'
@@ -295,7 +296,7 @@ export function resolveVol10(
               activityId,
             )
           : undefined
-      const kept = runtime?.status === 'APPLIED' && runtime.cell === 'avoid'
+      const kept = runtime?.status === 'APPLIED' && vol10JieshaCell(runtime) === 'avoid'
       out.push({
         entry: entry.id,
         han: entry.han,
@@ -306,7 +307,7 @@ export function resolveVol10(
         quote: r.quote,
         ...(r.via ? { via: r.via } : {}),
         ...(runtime ? { authority: VOL10_JIESHA_AUTHORITY_ID } : {}),
-        ...(runtime?.status === 'EXCLUDED_PENDING_GLYPH_AUDIT'
+        ...(runtime && runtime.status !== 'APPLIED'
           ? { authorityExclusion: `${runtime.status}: ${runtime.reason}` }
           : {}),
       })

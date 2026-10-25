@@ -65,8 +65,19 @@ describe('協紀 卷十 resolution, hand-derived cases', () => {
     expect(jie('legacy-cancel-both')?.verdict).toBe('no_annotation')
     expect(jie('faithful-v1')).toMatchObject({
       verdict: 'avoid',
-      authority: 'xieji-vol10-jiesha-faithful-v2', // G2 Stage 2: authority v2 (cells unchanged)
+      authority: 'xieji-vol10-jiesha-faithful-v3', // G1 glyph Stage 2: authority v3 (wedding cell unchanged)
     })
+    // G1 glyph Stage 2 (R3): demolition APPLIED at 辰乙巳 (avoid); 丑壬寅 excluded, legacy verdict kept.
+    const demo = (d: ReturnType<typeof day>) =>
+      resolveVol10(d, ['demolition']).find((r) => r.entry === 'jie_sha')!
+    expect(demo(chen)).toMatchObject({
+      verdict: 'avoid',
+      authority: 'xieji-vol10-jiesha-faithful-v3',
+    })
+    expect(demo(chen).authorityExclusion).toBeUndefined()
+    const chou = demo(day('丑', '壬寅', 'tru', ['kiep_sat']))
+    expect(chou.verdict).toBe('no_annotation')
+    expect(chou.authorityExclusion).toMatch(/^EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY: /)
   })
   it('月破: 卯酉 months all taboo; elsewhere 德 spares only listed minor matters', () => {
     expect(verdict(day('卯', '乙酉', 'pha', ['nguyet_pha']), 'yue_po', 'worship')).toBe('avoid')

@@ -1,0 +1,107 @@
+{
+ "version": "g1-glyph-stage1-heading-provenance-v1",
+ "chain": [
+  {
+   "layer": "primary source",
+   "where": "卷十 劫煞 忌 list, vol10.raw.txt:299",
+   "form": "破屋壞垣"
+  },
+  {
+   "layer": "primary source (activity vocabulary)",
+   "where": "卷十一 heading, vol11.raw.txt:263",
+   "form": "破屋壊垣"
+  },
+  {
+   "layer": "source JSON",
+   "where": "xiejibianfangshu-vol10-yiji.json entries[jie_sha].avoid",
+   "form": "破屋壞垣"
+  },
+  {
+   "layer": "activity map",
+   "where": "xiejibianfangshu-yiji.json:32 activityEntries.demolition",
+   "form": "破屋壞垣"
+  },
+  {
+   "layer": "NORM",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:68",
+   "form": "壞 → 壊"
+  },
+  {
+   "layer": "splitHeadings (listed / avoided sets)",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:98",
+   "form": "破屋壊垣"
+  },
+  {
+   "layer": "resolveVol10 activity headings (ACTIVITY_HEADINGS.map(normalize))",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:278",
+   "form": "破屋壊垣"
+  },
+  {
+   "layer": "match",
+   "where": "listed.has(破屋壊垣) = true; cancel_both → verdict no_annotation",
+   "form": "reachable"
+  },
+  {
+   "layer": "authority guard",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:291 → shared/lunar/xiejiVol10JieshaAuthority.ts:71",
+   "form": "EXCLUDED_PENDING_GLYPH_AUDIT"
+  },
+  {
+   "layer": "output",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:310 authorityExclusion set; verdict stays legacy no_annotation (Kiếp Sát informational)",
+   "form": "legacy"
+  },
+  {
+   "layer": "P4 canonical lookup",
+   "where": "shared/lunar/xiejiVol10Resolution.ts:114 canonicalP4HeadingKey; p4ScoreAdapter canonical-v1 (G1-b, shipped)",
+   "form": "破屋壊垣"
+  }
+ ],
+ "answers": {
+  "1 primary source spelling": "卷十 劫煞 list 破屋壞垣; 卷十一 heading 破屋壊垣; 月表 scans 破屋壞垣",
+  "2 raw transcription": "as the source (no rewrite)",
+  "3 runtime source data": "破屋壞垣 (vol10 JSON avoid list and activity map)",
+  "4 demolition maps to": "破屋壞垣 (single heading)",
+  "5 P4 canonical lookup": "破屋壊垣 (canonical-v1)",
+  "6 resolveVol10 receives": "raw avoid text + activity heading 破屋壞垣",
+  "7 NORM produces": "破屋壊垣 on both sides",
+  "8 matching succeeds today": true,
+  "9 where it stops": "getVol10JieshaRuntime: demolition coverage EXCLUDED_PENDING_GLYPH_AUDIT → legacy verdict kept",
+  "10 why excluded": "authority v1/v2 have no demolition cells: the approved simulator harnesses keyed the activity side without splitHeadings (G1 §Root cause, G1-a §3), so the approved matrix never contained demolition; identity is now settled, cells are not approved"
+ },
+ "headingIdentity": "SAME_HEADING (G1-a SAME_ACTIVITY_ALIAS_CONFIRMED, owner 2026-10-24)",
+ "g1VsG2": {
+  "source glyph": [
+   "破屋壞垣 / 破屋壊垣 (both in source)",
+   "立劵交易 (卷十) / 立券交易 (卷十一)"
+  ],
+  "runtime glyph": [
+   "破屋壞垣 in data",
+   "立劵交易 in data"
+  ],
+  "activity heading": [
+   "破屋壞垣",
+   "立券交易"
+  ],
+  "normalization": [
+   "NORM 壞→壊 (character fold, since before G1)",
+   "headingAliases 立劵交易 → [立券交易] (whole-heading alias, G2 Stage 2)"
+  ],
+  "resolver reachability": [
+   "reachable before and after G1 (NORM)",
+   "unreachable before G2, reachable after alias"
+  ],
+  "authority coverage": [
+   "EXCLUDED_PENDING_GLYPH_AUDIT, no cells",
+   "cells existed (approved matrix) → APPLIED in v2"
+  ],
+  "production effect": [
+   "none yet (legacy verdict kept)",
+   "G2 Stage 2 envelope (shipped)"
+  ],
+  "remaining problem": [
+   "missing / unrepresentable authority cells",
+   "none (未-戊申 audit separate)"
+  ]
+ }
+}

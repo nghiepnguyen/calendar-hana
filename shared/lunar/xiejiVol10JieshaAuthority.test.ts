@@ -4,12 +4,13 @@ import { describe, expect, it } from 'vitest'
 import activitiesData from '../almanac-data/activities.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import goodGodsData from '../almanac-data/good-gods.json'
-import authority from '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
+import authority from '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+import authorityV2 from '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
 import authorityV1 from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import manifest from '../almanac-data/manifest.json'
 import { getSourceLockedCatHungPresence } from './catHungStars'
-import { getVol10JieshaRuntime } from './xiejiVol10JieshaAuthority'
+import { getVol10JieshaRuntime, vol10JieshaCell } from './xiejiVol10JieshaAuthority'
 import { resolveVol10, splitHeadings } from './xiejiVol10Resolution'
 
 // The faithful-v1 projection is passed explicitly; the legacy policy has its own migration test.
@@ -18,8 +19,13 @@ const FAITHFUL = { jieshaPolicy: 'faithful-v1' } as const
 const MANIFEST = 'docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/coverage.json'
 const COVERAGE = authority.runtimeCoverage.activities as Record<
   string,
-  { status: string; reason?: string }
+  {
+    status: string
+    reason?: string
+    contexts?: Record<string, { status: string; grade?: unknown }>
+  }
 >
+const DEMOLITION_EXCLUDED = ['丑丙寅', '丑壬寅', '丑戊寅', '丑甲寅', '未戊申']
 const CELLS = authority.cells as Record<string, Record<string, string>>
 const CANDIDATE = 'docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json'
 const APPROVED = 'b24f6f68e6b662fc04b5ec56ab6f2da8981273291ef3bf4e05a028b2f48d326a'
@@ -46,8 +52,8 @@ function day(m: number, i: number) {
   }
 }
 
-// Shipped: authority v2 (G2 Stage 2, contract / transaction APPLIED). v1 stays frozen (coverage manifest below).
-describe('卷十 劫煞 faithful authority v2', () => {
+// Shipped: authority v3 (G1 glyph Stage 2, R3: demolition per context). v1 / v2 stay frozen (rollback evidence).
+describe('卷十 劫煞 faithful authority v3', () => {
   it('shipped policy is faithful-v1 and is the resolver default; legacy stays selectable', () => {
     expect(manifest.policies.xiejiVol10JieshaPolicy).toBe('faithful-v1')
     const d = day(4, 41) // 辰 乙巳
@@ -58,20 +64,38 @@ describe('卷十 劫煞 faithful authority v2', () => {
     ).toEqual([])
   })
 
-  it('is the approved candidate, cell for cell (16 × 24 = 384, 177 avoid, 207 blank)', () => {
+  it('is the approved candidate cell for cell, plus the 11 R3 demolition cells (395, 188 avoid, 207 blank)', () => {
     const raw = readFileSync(CANDIDATE)
     expect(createHash('sha256').update(raw).digest('hex')).toBe(APPROVED)
     const cand = JSON.parse(raw.toString()) as { cells: Record<string, Record<string, string>> }
-    expect(authority.cells).toEqual(cand.cells)
+    const withoutDemolition = Object.fromEntries(
+      Object.entries(CELLS).map(([k, { demolition: _d, ...rest }]) => [k, rest]),
+    )
+    expect(withoutDemolition).toEqual(cand.cells)
+    expect(authorityV2.cells).toEqual(cand.cells)
     expect(authorityV1.cells).toEqual(cand.cells)
     expect(authority.counts).toEqual({
       contexts: 16,
-      activities: 24,
-      cells: 384,
-      avoid: 177,
+      activities: 25,
+      cells: 395,
+      avoid: 188,
       blank: 207,
     })
     expect(authority.provenance.approvedCandidate.sha256).toBe(APPROVED)
+    // R3: demolition = 11 APPLIED (avoid; A ×7, B ×4, all approvals true) + 5 excluded with no cell.
+    const ctx = COVERAGE.demolition!.contexts!
+    const applied = Object.keys(ctx).filter((k) => ctx[k]!.status === 'APPLIED')
+    const excluded = Object.keys(ctx).filter(
+      (k) => ctx[k]!.status === 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY',
+    )
+    expect([COVERAGE.demolition!.status, applied.length, excluded.sort()]).toEqual([
+      'APPLIED_BY_CONTEXT',
+      11,
+      [...DEMOLITION_EXCLUDED].sort(),
+    ])
+    expect(applied.map((k) => ctx[k]!.grade).sort()).toEqual([...'AAAAAAABBBB'])
+    for (const k of applied) expect(CELLS[k]!.demolition, k).toBe('avoid')
+    for (const k of excluded) expect('demolition' in CELLS[k]!, k).toBe(false)
   })
 
   it('fails loudly on an unknown context, uncovered activity or reached UNREACHABLE cell', () => {
@@ -79,9 +103,15 @@ describe('卷十 劫煞 faithful authority v2', () => {
       status: 'APPLIED',
       cell: 'avoid',
     })
-    expect(getVol10JieshaRuntime('辰', '乙巳', 'demolition').status).toBe(
-      'EXCLUDED_PENDING_GLYPH_AUDIT',
-    )
+    expect(getVol10JieshaRuntime('辰', '乙巳', 'demolition')).toEqual({
+      status: 'APPLIED',
+      cell: 'avoid',
+    })
+    const ex = getVol10JieshaRuntime('丑', '壬寅', 'demolition')
+    expect(ex).toMatchObject({ status: 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY' })
+    expect(ex).not.toHaveProperty('cell')
+    // Separate path: reading a cell for an excluded context throws, never blank / avoid / fallback.
+    expect(() => vol10JieshaCell(ex)).toThrow(/EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY/)
     expect(() => getVol10JieshaRuntime('子', '甲子', 'wedding')).toThrow(/no context/)
     expect(() => getVol10JieshaRuntime('辰', '乙巳', 'worship')).toThrow(/no coverage/)
     // v2: contract is APPLIED (the UNREACHABLE guard is pinned in p4G2Stage2Migration.test.ts, alias-v1).
@@ -101,9 +131,10 @@ describe('卷十 劫煞 faithful authority v2', () => {
       Object.keys(COVERAGE)
         .filter((a) => COVERAGE[a]!.status === s)
         .sort()
-    expect(listed).toEqual([...by('APPLIED'), ...by('EXCLUDED_PENDING_GLYPH_AUDIT')].sort())
+    expect(listed).toEqual([...by('APPLIED'), ...by('APPLIED_BY_CONTEXT')].sort())
     expect(by('UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION')).toEqual([])
-    expect(by('EXCLUDED_PENDING_GLYPH_AUDIT')).toEqual(['demolition'])
+    expect(by('EXCLUDED_PENDING_GLYPH_AUDIT')).toEqual([])
+    expect(by('APPLIED_BY_CONTEXT')).toEqual(['demolition'])
     // G2: 卷十 立劵交易 reaches 立券交易 through the headingAliases entry, not a NORM fold.
     for (const a of ['contract', 'transaction'])
       expect(items.find((x) => x.entry === 'jie_sha' && x.activityId === a)!.verdict).toBe(
@@ -180,10 +211,10 @@ describe('卷十 劫煞 faithful authority v2', () => {
           expect(item.effect).toBe('cancel_both')
           const key = BR[m]! + ST[i % 10]! + BR[i % 12]!
           ;(reached.get(key) ?? reached.set(key, new Set()).get(key)!).add(item.activityId)
-          if (item.activityId === 'demolition') {
-            // Deliberate v1 exclusion: legacy verdict, marked, never a missing-cell fallback.
+          if (item.activityId === 'demolition' && DEMOLITION_EXCLUDED.includes(key)) {
+            // R3 context exclusion: legacy verdict, marked, never a missing-cell fallback.
             expect(item.verdict).toBe('no_annotation')
-            expect(item.authorityExclusion).toMatch(/^EXCLUDED_PENDING_GLYPH_AUDIT: /)
+            expect(item.authorityExclusion).toMatch(/^EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY: /)
             continue
           }
           expect(item.authorityExclusion).toBeUndefined()
