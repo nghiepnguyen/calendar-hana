@@ -7,6 +7,8 @@ Opened 2026-10-25, split out of G2 Stage 1 by owner ruling. **Status: OPEN, defe
 - `未-戊申 × contract/transaction` stays **BLANK**, preserving current authority. It remains production authority until this item is resolved.
 - The n117 discrepancy is classified `OUT_OF_SCOPE_AUTHORITY_DISCREPANCY`, not a G2 alias migration change. It is deferred to this audit.
 - The G2 identity decision is unchanged: `SAME_ACTIVITY_ALIAS_CONFIRMED` ([G2 spec](p4-g2-vol10-heading-match.md)).
+- **Blank semantics (owner, 2026-10-25, I1):** once G2 makes the cell reachable, `BLANK` is active authority and removes 劫煞's penalty. The old unmatched output is not authority.
+- **About the 五離 finding (§4):** the preliminary evidence that n117's print comes from 五離 makes it less likely that the blank and the page contradict each other. It does **not** change the cell. If this audit finds a different 劫煞-specific value, that becomes its own authority migration with its own impact analysis.
 
 ## Questions and what the repository already records
 
@@ -66,7 +68,7 @@ The heading is printed in 券 form, and no 開 precedes it. The h1b lock lists �
 |---|---|---|
 | P4 domain 2025–2027 | **0**. The in-domain 未-戊申 days 2026-08-02 and 2027-07-28 use the P4 path. | 20 evaluations, evidence only (0 score, 0 classification) |
 | 2028 | **2** (2028-07-22, contract and transaction): blank gives 50 neutral, 忌 keeps 35 watch | 10 evaluations (9 score, 6 classification) |
-| 1900–2100, outside the domain | **212** (106 dates × 2). Blank gives a higher score than 忌 on every one. | none in the 1-in-30 event sample |
+| 1900–2100, outside the domain | **212** (106 dates × 2). Blank gives a higher score than 忌 on every one. | 1,060 (954 score, 636 classification), events on every day |
 
 ## Evidence kept for this item
 

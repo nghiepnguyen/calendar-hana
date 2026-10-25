@@ -83,6 +83,9 @@ function mockModel(model: Model) {
 }
 
 const FULL = process.env.G2_FULL === '1'
+// G2_EVENTS_FULL=1 with G2_RANGE=1: events on every day too (range-impact-events.json).
+const EVENTS_FULL = process.env.G2_EVENTS_FULL === '1'
+const RANGE_FILE = EVENTS_FULL ? 'range-impact-events.json' : 'range-impact.json'
 const WRITE = process.env.G2_WRITE === '1'
 const OUT = 'docs/audits/sources/p4-vol10/g2-stage1/'
 const G2 = ['contract', 'transaction']
@@ -376,7 +379,7 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
       const totals: Record<string, ReturnType<typeof compare>['counts']> = {}
       const byYear: Record<string, number> = {}
       all.forEach((d, i) => {
-        const ev = i % 30 === 0
+        const ev = EVENTS_FULL || i % 30 === 0
         const cd = day(cand, d, ev)
         const c = compare({ [d]: day(cur, d, ev) }, { [d]: cd }, [d]).counts
         const set = DOMAIN.includes(d) ? 'domain' : 'outside'
@@ -400,7 +403,7 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
             version: 'g2-stage1-range-v2',
             range: ['1900-01-01', '2100-12-31'],
             days: all.length,
-            eventSampling: 'every 30th day',
+            eventSampling: EVENTS_FULL ? 'every day' : 'every 30th day',
             totals,
             conclusionChangedDaysByYear: byYear,
             dependsOnWeishenCell: dep,
@@ -408,8 +411,8 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
           null,
           1,
         ) + '\n'
-      if (WRITE) writeFileSync(OUT + 'range-impact.json', out)
-      expect(out).toBe(readFileSync(OUT + 'range-impact.json', 'utf8'))
+      if (WRITE) writeFileSync(OUT + RANGE_FILE, out)
+      expect(out).toBe(readFileSync(OUT + RANGE_FILE, 'utf8'))
     },
   )
 })
