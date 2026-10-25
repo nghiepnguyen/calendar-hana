@@ -385,16 +385,40 @@ describe('G2 Stage 2 migration (立劵交易 → 立券交易, 劫煞 authority 
     }
     for (const f of lock.files)
       expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(f.sha256)
+    type Counts = Record<'domain' | 'outside', Record<string, unknown>>
     const s = JSON.parse(readFileSync(OUT + 'summary.json', 'utf8')) as {
-      migration: Record<'domain' | 'outside', Record<string, unknown>>
+      migration: Counts
+      dependsOnWeishenCell: Counts
+      eventChangedTotal: number
+      domainRowsEqualFrozenStage1: boolean
+      independentTextModel: { rowsDifferingFromForward: number }
       unexpected: number
     }
     const frozen = JSON.parse(
       readFileSync('docs/audits/sources/p4-vol10/g2-stage1/range-impact-events.json', 'utf8'),
-    ) as { totals: Record<'domain' | 'outside', Record<string, unknown>> }
-    for (const set of ['domain', 'outside'] as const)
+    ) as { totals: Counts; dependsOnWeishenCell: Counts }
+    for (const set of ['domain', 'outside'] as const) {
       for (const [k, v] of Object.entries(frozen.totals[set]))
         expect(s.migration[set][k], `${set} ${k}`).toEqual(v)
+      // Stage 1 never accumulated transitions for the dependency counts.
+      for (const [k, v] of Object.entries(frozen.dependsOnWeishenCell[set]))
+        if (k !== 'statusTransitions')
+          expect(s.dependsOnWeishenCell[set][k], `未戊申 ${set} ${k}`).toBe(v)
+    }
+    expect(s.eventChangedTotal).toBe(4_330 + 289_270)
+    expect(s.domainRowsEqualFrozenStage1).toBe(true)
+    expect(s.independentTextModel.rowsDifferingFromForward).toBe(0)
     expect(s.unexpected).toBe(0)
+    // Rollback = pre-G2 main and re-enable = forward, as whole-range dump bytes.
+    const r = JSON.parse(readFileSync(OUT + 'rollback.json', 'utf8')) as {
+      dumpSha256: Record<string, string>
+    } & Record<string, unknown>
+    expect([
+      r.rollbackEqualsPreG2Main,
+      r.reEnableEqualsForward,
+      r.independentTextEqualsForward,
+    ]).toEqual([true, true, true])
+    expect(r.dumpSha256.stage2Rollback).toBe(r.dumpSha256.preG2Main)
+    expect(r.dumpSha256.stage2ReEnable).toBe(r.dumpSha256.stage2Forward)
   })
 })
