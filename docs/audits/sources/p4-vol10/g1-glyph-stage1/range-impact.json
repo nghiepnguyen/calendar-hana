@@ -1,0 +1,139 @@
+{
+ "version": "g1-glyph-stage1-range-impact-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none",
+ "base": "forward (shipped production)",
+ "candidates": {
+  "fit": {
+   "domain": {
+    "days": 1095,
+    "demolitionChangedDays": 0,
+    "conclusionChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "evidenceOnly": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "g2ActivityChanged": 0,
+    "statusTransitions": {},
+    "scoreDeltas": {},
+    "verdictTransitions": {}
+   },
+   "outside": {
+    "days": 72319,
+    "demolitionChangedDays": 1119,
+    "conclusionChanged": 1119,
+    "scoreChanged": 1119,
+    "scoreLower": 1119,
+    "scoreHigher": 0,
+    "statusChanged": 1119,
+    "hardWarningChanged": 0,
+    "evidenceOnly": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "g2ActivityChanged": 0,
+    "statusTransitions": {
+     "neutral→watch": 464,
+     "watch→avoid": 655
+    },
+    "scoreDeltas": {
+     "-15": 1119
+    },
+    "verdictTransitions": {
+     "kiep_sat:informational:no_annotation→kiep_sat:applied:avoid": 1119
+    }
+   }
+  },
+  "faithful": {
+   "domain": {
+    "days": 1095,
+    "demolitionChangedDays": 0,
+    "conclusionChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "evidenceOnly": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "g2ActivityChanged": 0,
+    "statusTransitions": {},
+    "scoreDeltas": {},
+    "verdictTransitions": {}
+   },
+   "outside": {
+    "days": 72319,
+    "demolitionChangedDays": 1417,
+    "conclusionChanged": 1417,
+    "scoreChanged": 1417,
+    "scoreLower": 1417,
+    "scoreHigher": 0,
+    "statusChanged": 1417,
+    "hardWarningChanged": 0,
+    "evidenceOnly": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "g2ActivityChanged": 0,
+    "statusTransitions": {
+     "neutral→watch": 464,
+     "watch→avoid": 953
+    },
+    "scoreDeltas": {
+     "-15": 1417
+    },
+    "verdictTransitions": {
+     "kiep_sat:informational:no_annotation→kiep_sat:applied:avoid": 1417
+    }
+   }
+  }
+ },
+ "faithfulVsFit": {
+  "domain": {
+   "days": 1095,
+   "demolitionChangedDays": 0,
+   "conclusionChanged": 0,
+   "scoreChanged": 0,
+   "scoreLower": 0,
+   "scoreHigher": 0,
+   "statusChanged": 0,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "statusTransitions": {},
+   "scoreDeltas": {},
+   "verdictTransitions": {}
+  },
+  "outside": {
+   "days": 72319,
+   "demolitionChangedDays": 298,
+   "conclusionChanged": 298,
+   "scoreChanged": 298,
+   "scoreLower": 298,
+   "scoreHigher": 0,
+   "statusChanged": 298,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "statusTransitions": {
+    "watch→avoid": 298
+   },
+   "scoreDeltas": {
+    "-15": 298
+   },
+   "verdictTransitions": {
+    "kiep_sat:informational:no_annotation→kiep_sat:applied:avoid": 298
+   }
+  }
+ }
+}

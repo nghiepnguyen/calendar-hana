@@ -1,0 +1,220 @@
+{
+ "version": "g1-glyph-stage1-independent-v1",
+ "scopeDatesProduction": 1636,
+ "scopeEqualsPuzhu17ScopeDates": true,
+ "soilSplitEqualsG1aEngineFull": true,
+ "perContext": {
+  "丑-丙寅": {
+   "inWindow": 61,
+   "outOfWindow": 38
+  },
+  "丑-壬寅": {
+   "inWindow": 61,
+   "outOfWindow": 40
+  },
+  "丑-戊寅": {
+   "inWindow": 59,
+   "outOfWindow": 36
+  },
+  "丑-甲寅": {
+   "inWindow": 60,
+   "outOfWindow": 39
+  },
+  "戌-丁亥": {
+   "inWindow": 62,
+   "outOfWindow": 42
+  },
+  "戌-乙亥": {
+   "inWindow": 61,
+   "outOfWindow": 41
+  },
+  "戌-己亥": {
+   "inWindow": 62,
+   "outOfWindow": 39
+  },
+  "戌-癸亥": {
+   "inWindow": 58,
+   "outOfWindow": 42
+  },
+  "未-丙申": {
+   "inWindow": 58,
+   "outOfWindow": 47
+  },
+  "未-壬申": {
+   "inWindow": 60,
+   "outOfWindow": 44
+  },
+  "未-庚申": {
+   "inWindow": 62,
+   "outOfWindow": 44
+  },
+  "未-戊申": {
+   "inWindow": 62,
+   "outOfWindow": 46
+  },
+  "辰-乙巳": {
+   "inWindow": 58,
+   "outOfWindow": 42
+  },
+  "辰-己巳": {
+   "inWindow": 61,
+   "outOfWindow": 42
+  },
+  "辰-癸巳": {
+   "inWindow": 62,
+   "outOfWindow": 41
+  },
+  "辰-辛巳": {
+   "inWindow": 62,
+   "outOfWindow": 44
+  }
+ },
+ "noAnnotation辰戌丑未OutsideScope": 0,
+ "p4HandledScopeDates": [
+  {
+   "date": "2025-02-02",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2025-04-30",
+   "context": "辰-己巳",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2025-07-26",
+   "context": "未-丙申",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2025-10-21",
+   "context": "戌-癸亥",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2025-11-02",
+   "context": "戌-乙亥",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-01-28",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-04-25",
+   "context": "辰-己巳",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-07-21",
+   "context": "未-丙申",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-10-16",
+   "context": "戌-癸亥",
+   "soil": false,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2026-10-28",
+   "context": "戌-乙亥",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-01-23",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-04-20",
+   "context": "辰-己巳",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-05-02",
+   "context": "辰-辛巳",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-10-11",
+   "context": "戌-癸亥",
+   "soil": false,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-10-23",
+   "context": "戌-乙亥",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  },
+  {
+   "date": "2027-11-04",
+   "context": "戌-丁亥",
+   "soil": true,
+   "p4State": "only_ji",
+   "vol10KiepSat": "-"
+  }
+ ],
+ "p4HandledAllInDomain": true,
+ "note": "production reaches the vol10 authority branch on scope dates minus P4-handled ones; inside 2025–2027 demolition is decided by the P4 adapter whenever its state is not baseline, so the candidate cell cannot move the score there (measured domain envelope = 0)",
+ "predictedChangedDaysEqualMeasured": {
+  "fit": true,
+  "faithful": true
+ },
+ "predictedChangedDays": {
+  "fit": 1119,
+  "faithful": 1417
+ },
+ "measuredChangedDays": {
+  "fit": 1119,
+  "faithful": 1417
+ },
+ "method": [
+  "production resolveVol10 + candidate authority via vi.doMock (dump models fit / inwindow)",
+  "prediction from the forward dump (kiep_sat no_annotation days) + frozen cells only",
+  "G1-a corrected faithful engine (separate code path) per-context in/out-window counts"
+ ]
+}

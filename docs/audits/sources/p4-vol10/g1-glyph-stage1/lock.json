@@ -1,0 +1,152 @@
+{
+ "version": "g1-glyph-stage1-lock-v1",
+ "status": "AUDIT_ONLY_NOT_PRODUCTION",
+ "base": "origin/main f3c68c611f21da4ea9493720c6434b45fa601644 (PR #102 merged)",
+ "reproduce": {
+  "candidate": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage1/build_candidate.py",
+  "evidence": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage1/build_evidence.py",
+  "dumps": "for m in forward fit inwindow: G1GS1_DUMP=$m G1GS1_OUT=<dir>/$m npx vitest run shared/lunar/p4G1GlyphStage1Audit.test.ts",
+  "diff": "python3 -I docs/audits/sources/p4-vol10/g1-glyph-stage1/compare.py <dir>",
+  "mutations": "G1GS1_WRITE=1 npx vitest run shared/lunar/p4G1GlyphStage1Audit.test.ts (rewrites mutation-results.json)"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/build_candidate.py",
+   "sha256": "c237bf3641f944178121a3d7e2c21682a08bbf5adec8f36b190ba22232add7d3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/build_evidence.py",
+   "sha256": "f287226cbd233e7950f1217b445358054d45ed22bbb93427027a360dd1cdeb87"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/compare.py",
+   "sha256": "40a89ff378e90cd11f5a9ed4f4e10ac70757b715ec2a1c31e4f37b67dd5c3142"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/pins.json",
+   "sha256": "5e82043b6e0798b91232ac32f02371258d4bcae16936e37a4f0764df17fbf763"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/authority-candidate.json",
+   "sha256": "cff81025df1795d7904c6d67420479450e30f055f50c4a33bfdd7588f140f72a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/candidate-authority-fit.json",
+   "sha256": "7e6259a153c2c5db8aeaa028da9301f34720c948fcc7bc765949bffdd0346821"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/candidate-authority-inwindow.json",
+   "sha256": "9cc2291bedd6702a8e8e3cc24b21cdbeb463660c4866ba3c16e7f8fdbba019c3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/inventory.json",
+   "sha256": "a3a6132a4ff295e91ae1c0fbe37e389985db5ab8deda6d5d7d71fa01dce8ed4f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/source-evidence.json",
+   "sha256": "b79367e38fdd2f9c4cd333c09ea35c84952bc59df4396613427a67dce0599dab"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/glyph-analysis.json",
+   "sha256": "17c87851b97ec320db94c0f51a12f78700cc9bb0f8c9c538b61503e7d71c23da"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/heading-provenance.json",
+   "sha256": "19c93a20d457ddf8014f1fe3400ca7e5e165eb5a3c597a8baf503f17901aed21"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/collision-analysis.json",
+   "sha256": "6bb7b6a80fc4ab31418efd23120c2e798a4d725cfe7ca27970d9c5b808112cda"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/production-access-matrix.json",
+   "sha256": "5aacffdab07f2a5b32f16c9c48203d49adb17d2317834b686d9a123ba999c46a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/production-access-matrix.tsv",
+   "sha256": "59648cf99a10f9a3dd7c3f5a76151513a4dc535f306b28142cbd79fd6263edde"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/range-impact.json",
+   "sha256": "4d09607c16684d349d0b04cdf8fe9483606de6964e3a8154114843ee357f8ab9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/range-impact-events.json",
+   "sha256": "43b2a2c66c33bf7f74adaa519439e9a6433a71e760180b8eec6392943c2ba545"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/candidate-impact.tsv",
+   "sha256": "13070165539f16402e263a1d5e21774e2610c98ac950685446a45c4a3e9a269e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/independent-verification.json",
+   "sha256": "6bf13bc64b79639032fdfad2023a9c5acfc34133ebd10831fea961fdaccbc383"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/witnesses.json",
+   "sha256": "9720382c3499839be1aba3bd071270858253a3874fe2b07a6c06df6fd7232c67"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/mutation-results.json",
+   "sha256": "d16949b3fb75345c9de538d6c2e42124deba542669c7c07c2f232c2b3181bf76"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/crop-06067694-n81-pwuhuaiyuan.jpg",
+   "sha256": "9d5d90c69aefaac96493b5c33712c012fab93eab61fe1e4355195dd95096a948"
+  }
+ ],
+ "inputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "sha256": "dc7b0a11a7354a0780d705f9c5fbc79a67fef57717f80ef5436997dbe5dd96e0"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+  },
+  {
+   "path": "shared/almanac-data/manifest.json",
+   "sha256": "b2b6a0847dd63daa01590ec1d7ea2639f4e2f88f68cbb7e2f10ff64e38ae3059"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+   "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+   "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json",
+   "sha256": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/full.json",
+   "sha256": "e1d923a00ece6717903f41279fcef0e328175234c712495067d0481d670fbcf0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json",
+   "sha256": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/summary.json",
+   "sha256": "0c24aee1754f6d985e55777115f9e56fe302f773efe4bdeeb91574bfc89d5175"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/lock.json",
+   "sha256": "2b3527708803facbf804793ed1c3ac6120ae1753ccc4aea19b0f1d6bd9cb4ec3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n81.jpg",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50"
+  }
+ ]
+}

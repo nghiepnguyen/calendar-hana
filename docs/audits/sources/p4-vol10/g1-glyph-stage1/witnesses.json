@@ -1,0 +1,203 @@
+{
+ "version": "g1-glyph-stage1-witnesses-v1",
+ "rule": "computed after the full envelope; first date ≥ 2028-01-01 and last ≤ 2024-12-31 per category",
+ "domain": "no witness exists: the 2025–2027 envelope is empty for both candidates",
+ "avoidToBlank": "impossible current→candidate: current production leaves demolition at legacy no_annotation",
+ "scoreHigher / scoreOnly / evidenceOnly": "none in the envelope (every change is −15 with a status change)",
+ "witnesses": {
+  "fit neutral→watch (11 avoid contexts)": [
+   {
+    "candidate": "fit",
+    "date": "2024-07-07",
+    "context": "未-壬申",
+    "soil": false,
+    "before": {
+     "score": 50,
+     "status": "neutral",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   },
+   {
+    "candidate": "fit",
+    "date": "2028-04-14",
+    "context": "辰-己巳",
+    "soil": false,
+    "before": {
+     "score": 50,
+     "status": "neutral",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   }
+  ],
+  "fit watch→avoid (11 avoid contexts)": [
+   {
+    "candidate": "fit",
+    "date": "2024-10-26",
+    "context": "戌-癸亥",
+    "soil": true,
+    "before": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   },
+   {
+    "candidate": "fit",
+    "date": "2028-04-26",
+    "context": "辰-辛巳",
+    "soil": true,
+    "before": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   }
+  ],
+  "faithful only: in-window, date-dependent context": [
+   {
+    "candidate": "faithful",
+    "date": "2023-01-20",
+    "context": "丑-戊寅",
+    "soil": true,
+    "before": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   },
+   {
+    "candidate": "faithful",
+    "date": "2028-01-18",
+    "context": "丑-壬寅",
+    "soil": true,
+    "before": {
+     "score": 35,
+     "status": "watch",
+     "kiepSat": "kiep_sat:informational:no_annotation"
+    },
+    "after": {
+     "score": 20,
+     "status": "avoid",
+     "kiepSat": "kiep_sat:applied:avoid"
+    }
+   }
+  ]
+ },
+ "controls": [
+  {
+   "date": "2028-01-01",
+   "context": "子-乙酉",
+   "why": "first 2028+ day without 劫煞 on demolition",
+   "forward": [
+    "50",
+    "no_evidence"
+   ],
+   "fit": [
+    "50",
+    "no_evidence"
+   ],
+   "faithful": [
+    "50",
+    "no_evidence"
+   ],
+   "unchanged": true
+  },
+  {
+   "date": "2028-01-06",
+   "context": "丑-庚寅",
+   "why": "first 2028+ 劫煞 day outside the no-德 authority branch (verdict not_avoided)",
+   "forward": [
+    "50",
+    "neutral"
+   ],
+   "fit": [
+    "50",
+    "neutral"
+   ],
+   "faithful": [
+    "50",
+    "neutral"
+   ],
+   "unchanged": true
+  },
+  {
+   "date": "2029-01-12",
+   "context": "丑-壬寅",
+   "why": "first 2028+ out-of-window day in a date-dependent context: blank in both candidates",
+   "forward": [
+    "50",
+    "neutral"
+   ],
+   "fit": [
+    "50",
+    "neutral"
+   ],
+   "faithful": [
+    "50",
+    "neutral"
+   ],
+   "unchanged": true
+  },
+  {
+   "date": "2025-04-06",
+   "context": "辰-乙巳",
+   "why": "P4 domain scope day (辰-乙巳, avoid cell): P4 state neither_recorded decides, cell inert",
+   "forward": [
+    "50",
+    "neutral"
+   ],
+   "fit": [
+    "50",
+    "neutral"
+   ],
+   "faithful": [
+    "50",
+    "neutral"
+   ],
+   "unchanged": true
+  },
+  {
+   "date": "2025-04-30",
+   "context": "辰-己巳",
+   "why": "P4 domain scope day in window (辰-己巳): P4 only_ji decides, no vol10 劫煞 row",
+   "forward": [
+    "20",
+    "avoid"
+   ],
+   "fit": [
+    "20",
+    "avoid"
+   ],
+   "faithful": [
+    "20",
+    "avoid"
+   ],
+   "unchanged": true
+  }
+ ]
+}
