@@ -1,0 +1,199 @@
+{
+ "version": "g1-glyph-stage2-g1b-counterfactual-v1",
+ "question": "G1-b rollback configuration (p4ScoreHeadingLookup source-key-v1) on authority v3 vs v2, 2025–2027",
+ "production": "not affected: production runs canonical-v1 (summary.json domain delta 0)",
+ "days": 1095,
+ "changed": 15,
+ "hardWarningChanges": 0,
+ "contexts": {
+  "戌丁亥": 1,
+  "戌乙亥": 3,
+  "戌癸亥": 3,
+  "未丙申": 3,
+  "辰乙巳": 1,
+  "辰己巳": 3,
+  "辰辛巳": 1
+ },
+ "rows": [
+  {
+   "date": "2025-04-06",
+   "context": "辰乙巳",
+   "before": "50 neutral",
+   "after": "35 watch",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2025-04-30",
+   "context": "辰己巳",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2025-07-26",
+   "context": "未丙申",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2025-10-21",
+   "context": "戌癸亥",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2025-11-02",
+   "context": "戌乙亥",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2026-04-25",
+   "context": "辰己巳",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2026-07-21",
+   "context": "未丙申",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "context": "戌癸亥",
+   "before": "50 neutral",
+   "after": "35 watch",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2026-10-28",
+   "context": "戌乙亥",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-04-20",
+   "context": "辰己巳",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-05-02",
+   "context": "辰辛巳",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-07-16",
+   "context": "未丙申",
+   "before": "50 neutral",
+   "after": "35 watch",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-10-11",
+   "context": "戌癸亥",
+   "before": "50 neutral",
+   "after": "35 watch",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-10-23",
+   "context": "戌乙亥",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  },
+  {
+   "date": "2027-11-04",
+   "context": "戌丁亥",
+   "before": "35 watch",
+   "after": "20 avoid",
+   "kiepBefore": "kiep_sat:informational:no_annotation",
+   "kiepAfter": "kiep_sat:applied:avoid",
+   "hardWarning": [
+    false,
+    false
+   ]
+  }
+ ]
+}

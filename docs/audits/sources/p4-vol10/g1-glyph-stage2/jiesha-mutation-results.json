@@ -1,8 +1,8 @@
 {
   "version": "vol10-jiesha-mutations-v3",
   "control": "clean",
-  "mutations": 27,
-  "caught": 27,
+  "mutations": 29,
+  "caught": 29,
   "restored": true,
   "results": [
     {
@@ -106,6 +106,20 @@
     {
       "mutation": "v2_loaded_instead_of_v3",
       "test": "fails loudly",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "norm_fold_removed",
+      "test": "reachability",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "excluded_context_fully_promoted",
+      "test": "production access matrix",
       "expect": "AssertionError",
       "caughtByTest": true,
       "exitCode": 1

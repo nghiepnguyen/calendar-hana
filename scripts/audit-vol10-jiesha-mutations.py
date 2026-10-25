@@ -66,9 +66,15 @@ mutations = [
        "  return (runtime as { cell?: 'avoid' | 'blank' }).cell ?? 'blank'")]),
     ('v2_loaded_instead_of_v3', AUTH_TEST, LOUD, 'AssertionError',
      [(AUTH, "xieji-vol10-jiesha-authority-v3.json'", "xieji-vol10-jiesha-authority-v2.json'")]),
-    # NORM 壞→壊 folds both sides alike (劫煞 list and activity map both read 破屋壞垣), so removing it is an
-    # equivalent mutant for 劫煞 reach. The bypasses that matter: resolver reach without the authority, and a
-    # demolition alias (the R3 pin: demolition reaches 劫煞 through no alias).
+    # NORM 壞→壊 is not what lets demolition reach 劫煞 (both sides read 破屋壞垣), but it is load-bearing for the
+    # P4 canonical key (canonicalP4HeadingKey, G1-b canonical-v1); the reachability test pins it.
+    ('norm_fold_removed', STAGE2_TEST, 'reachability', 'AssertionError',
+     [(RES, "  壞: '壊',\n", '')]),
+    # A self-consistent promotion of an excluded context (status, cell, approvals, counts) passes validate():
+    # the pinned 395 + 5 access set catches it.
+    ('excluded_context_fully_promoted', STAGE2_TEST, 'production access matrix', 'AssertionError',
+     [(DATA, lambda a: promote(a, '丑壬寅'), None)]),
+    # Bypasses of context coverage: resolver reach without the authority, and a demolition alias.
     ('authority_skipped_for_demolition', AUTH_TEST, SCAN, 'AssertionError',
      [(RES, "        r.jieshaAuthority && verdict === 'no_annotation'",
        "        r.jieshaAuthority && verdict === 'no_annotation' && activityId !== 'demolition'")]),
@@ -112,6 +118,18 @@ def cell(a, key, value):
         row.pop('demolition')
     else:
         row['demolition'] = value
+    return a
+
+
+def promote(a, key):
+    e = a['runtimeCoverage']['activities']['demolition']['contexts'][key]
+    for k in ('reason', 'debt'):
+        e.pop(k)
+    e.update(status='APPLIED', cell='avoid', grade='A', identityApproved=True, authorityApproved=True,
+             productionApproved=True)
+    a['cells'][key]['demolition'] = 'avoid'
+    a['counts']['cells'] += 1
+    a['counts']['avoid'] += 1
     return a
 
 

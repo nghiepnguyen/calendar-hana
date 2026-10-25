@@ -24,6 +24,8 @@ type Model =
   | 'forward'
   | 'rollback'
   | 'pre'
+  | 'rollback-sk'
+  | 'forward-sk'
   | 'm-excluded-avoid'
   | 'm-excluded-blank'
   | 'm-excluded-applied'
@@ -32,6 +34,7 @@ type Model =
   | 'm-applied-unapproved'
   | 'm-context-missing'
 const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const MANIFEST = '../almanac-data/manifest.json'
 const OUT = 'docs/audits/sources/p4-vol10/g1-glyph-stage2/'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
 const V3_ID = 'xieji-vol10-jiesha-faithful-v3'
@@ -50,8 +53,17 @@ type Auth = {
 
 function mockModel(model: Model) {
   vi.doUnmock(AUTH)
-  if (model === 'forward' || model === 'pre') return
-  if (model === 'rollback')
+  vi.doUnmock(MANIFEST)
+  // G1-b counterfactual: the source-key-v1 lookup (G1-b rollback configuration) on each authority.
+  if (model.endsWith('-sk'))
+    vi.doMock(MANIFEST, async (orig) => {
+      const real = (await orig<{ default: { policies: object } }>()).default
+      return {
+        default: { ...real, policies: { ...real.policies, p4ScoreHeadingLookup: 'source-key-v1' } },
+      }
+    })
+  if (model === 'forward' || model === 'pre' || model === 'forward-sk') return
+  if (model === 'rollback' || model === 'rollback-sk')
     return vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV2())
   vi.doMock(AUTH, async (load) => {
     const a = structuredClone(((await load()) as { default: Auth }).default)
@@ -73,7 +85,7 @@ async function load(model: Model) {
   if (!model.startsWith('m-'))
     await (
       await import('./g1GlyphRollback')
-    ).assertJieshaAuthority(model === 'forward' ? V3_ID : V2_ID)
+    ).assertJieshaAuthority(model === 'forward' || model === 'forward-sk' ? V3_ID : V2_ID)
   ;(await import('../astronomy/solarTerms/cache')).solarTermCacheStore('almanac').clear()
   await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')
@@ -225,6 +237,7 @@ function classify(pre: Ev, post: Ev): Kind {
 }
 
 const DUMP = process.env.G1GS2_DUMP
+const G1B = process.env.G1GS2_G1B === '1'
 const STAMP = process.env.G1GS2_STAMP === '1'
 const jieDay = (monthJianBranch: number, dayStem: number, dayBranch: number) => ({
   monthJianBranch,
@@ -362,6 +375,65 @@ describe('G1 glyph Stage 2 migration (劫煞 authority v3, R3)', () => {
         ) + '\n'
       if (process.env.G1GS2_WRITE === '1') writeFileSync(OUT + 'authority-stamp.json', out)
       expect(out).toBe(readFileSync(OUT + 'authority-stamp.json', 'utf8'))
+    },
+  )
+
+  it.skipIf(!G1B)(
+    'G1-b counterfactual: source-key-v1 on authority v3 vs v2, every 2025–2027 day (G1GS2_G1B)',
+    { timeout: 3_600_000 },
+    async () => {
+      const { P4_DOMAIN_DATES } = await import('./p4AdapterBaselineRows')
+      const row = (e: Engine, d: string) => {
+        const a = e.getAlmanac(d as never)
+        const sc = a.selectionContext
+        const r = (a.activityRecommendations as unknown as Rec[]).find(
+          (x) => x.activityId === 'demolition',
+        )!
+        const ctx = BR[sc.MONTH_JIAN_BRANCH!]! + ST[a.dayCanChi.can]! + BR[a.dayCanChi.chi]!
+        return { ctx, score: r.score, status: r.status, hw: r.hardWarning, v: verdicts(r) }
+      }
+      const v2 = await load('rollback-sk')
+      const before = P4_DOMAIN_DATES.map((d) => row(v2, d))
+      const v3 = await load('forward-sk')
+      const rows: Record<string, unknown>[] = []
+      let other = 0
+      P4_DOMAIN_DATES.forEach((d, i) => {
+        const b = row(v3, d)
+        const a = before[i]!
+        if (JSON.stringify(a) === JSON.stringify(b)) return
+        rows.push({
+          date: d,
+          context: a.ctx,
+          before: `${a.score} ${a.status}`,
+          after: `${b.score} ${b.status}`,
+          kiepBefore: a.v.split(' ').find((x) => x.startsWith('kiep_sat:')) ?? '-',
+          kiepAfter: b.v.split(' ').find((x) => x.startsWith('kiep_sat:')) ?? '-',
+          hardWarning: [a.hw, b.hw],
+        })
+        if (a.hw !== b.hw) other++
+      })
+      const out =
+        JSON.stringify(
+          {
+            version: 'g1-glyph-stage2-g1b-counterfactual-v1',
+            question:
+              'G1-b rollback configuration (p4ScoreHeadingLookup source-key-v1) on authority v3 vs v2, 2025–2027',
+            production: 'not affected: production runs canonical-v1 (summary.json domain delta 0)',
+            days: P4_DOMAIN_DATES.length,
+            changed: rows.length,
+            hardWarningChanges: other,
+            contexts: Object.fromEntries(
+              [...new Set(rows.map((r) => r.context as string))]
+                .sort()
+                .map((c) => [c, rows.filter((r) => r.context === c).length]),
+            ),
+            rows,
+          },
+          null,
+          1,
+        ) + '\n'
+      if (process.env.G1GS2_WRITE === '1') writeFileSync(OUT + 'g1b-counterfactual.json', out)
+      expect(out).toBe(readFileSync(OUT + 'g1b-counterfactual.json', 'utf8'))
     },
   )
 
@@ -662,7 +734,24 @@ describe('G1 glyph Stage 2 migration (劫煞 authority v3, R3)', () => {
       caught: number
       restored: boolean
     }
-    expect([m.caught, m.mutations, m.restored]).toEqual([27, 27, true])
+    expect([m.caught, m.restored]).toEqual([m.mutations, true])
+    // G1-b counterfactual (owner decision): source-key-v1 on v3 vs v2 = the 15 domain scope dates of the
+    // APPLIED contexts, all −15, no hard warning. Production (canonical-v1) is not affected.
+    const g = JSON.parse(readFileSync(OUT + 'g1b-counterfactual.json', 'utf8')) as {
+      changed: number
+      hardWarningChanges: number
+      rows: { date: string; context: string; kiepAfter: string }[]
+    }
+    expect([g.changed, g.hardWarningChanges]).toEqual([15, 0])
+    expect(g.rows.every((r) => r.kiepAfter === 'kiep_sat:applied:avoid')).toBe(true)
+    const scope = JSON.parse(
+      readFileSync('docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json', 'utf8'),
+    ) as Record<string, string[]>
+    const applied = Object.entries(scope)
+      .filter(([k]) => !EXCLUDED.includes(k.replace('-', '')))
+      .flatMap(([, ds]) => ds.filter((d) => d >= '2025-01-01' && d <= '2027-12-31'))
+      .sort()
+    expect(g.rows.map((r) => r.date)).toEqual(applied)
   })
 
   it('committed Stage 2 artifacts equal their lock', () => {
