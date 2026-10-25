@@ -9,7 +9,8 @@
   "scoringGoldenV3": "python3 -I docs/audits/sources/p4-vol10/g2-stage2/build_scoring_golden_v3.py",
   "dumps": "G2S2_DUMP=forward | rollback,forward | text | weishen  G2S2_OUT=<dir>/{fwd,rb,text,weishen} npx vitest run shared/lunar/p4G2Stage2Migration.test.ts; pre-G2: G2S2_DUMP=forward on a 58faf3a worktree with the same test file + g2Rollback.ts → <dir>/pre",
   "diff": "python3 -I docs/audits/sources/p4-vol10/g2-stage2/compare.py <dir>",
-  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py (writes mutation-results.json; not locked, it fails unless every mutation is caught)"
+  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py (writes mutation-results.json; not locked, it fails unless every mutation is caught)",
+  "authorityStamp": "G2S2_STAMP=1 npx vitest run shared/lunar/p4G2Stage2Migration.test.ts -t \"authority stamp gate\" (G2S2_WRITE=1 rewrites authority-stamp.json)"
  },
  "files": [
   {
@@ -43,6 +44,10 @@
   {
    "path": "docs/audits/sources/p4-vol10/g2-stage2/rollback.json",
    "sha256": "cf68ce53623a11bad350d443cdfae3f3972126b08d4f0f2a24c06f79901adebc"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/authority-stamp.json",
+   "sha256": "668ae7be01b0eb7f7247be9aac09e4cf490af044f17ad1455e012ec10846c976"
   }
  ],
  "inputsAtFreeze": [
@@ -76,7 +81,7 @@
   },
   {
    "path": "shared/lunar/p4G2Stage2Migration.test.ts",
-   "sha256": "51dc29f65c6835d010781779d76acc602d6a362ab9f5e22fe049e59c13af528f"
+   "sha256": "60da11453feee8a0c46fbd392d502a391f4fe7923d990b2ecdddd83fb8b8f9bc"
   },
   {
    "path": "shared/lunar/g2Rollback.ts",

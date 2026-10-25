@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { closeSync, mkdirSync, openSync, readFileSync, writeSync } from 'node:fs'
+import { closeSync, mkdirSync, openSync, readFileSync, writeFileSync, writeSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 
 // G2 Stage 2 (docs/audits/p4-g2-stage2-migration.md): 卷十 headingAliases 立劵交易 → [立券交易] + 劫煞 authority v2.
@@ -183,6 +183,36 @@ function dumpDay(e: Engine, date: string): string[] {
 
 const OUT = 'docs/audits/sources/p4-vol10/g2-stage2/'
 const DUMP = process.env.G2S2_DUMP
+const STAMP = process.env.G2S2_STAMP === '1'
+
+type Ev = { classicalResolution?: { items?: { authority?: string }[] } } & Record<string, unknown>
+/** The one field normalized: classicalResolution.items[].authority (v2 → v1). Any other occurrence of
+ * the v2 id would survive and fail the check below, so nothing else can be hidden. */
+function normalizeStamp(ev: Ev) {
+  const c = structuredClone(ev)
+  for (const it of c.classicalResolution?.items ?? [])
+    if (it.authority === V2_ID) it.authority = V1_ID
+  const out = JSON.stringify(c)
+  if (out.includes(V2_ID))
+    throw new Error('authority v2 id outside classicalResolution.items[].authority')
+  return out
+}
+/** The same output with the authority field removed outright (second, independent equality). */
+function withoutStamp(ev: Ev) {
+  const c = structuredClone(ev)
+  for (const it of c.classicalResolution?.items ?? []) delete it.authority
+  return JSON.stringify(c)
+}
+type Kind = 'unchanged' | 'stampOnly' | 'semantic'
+/** pre-G2 (v1 stamp) vs Stage 2 (v2 stamp): canonical serialized equality, no field subset. */
+function classify(pre: Ev, post: Ev): Kind {
+  const raw = JSON.stringify(pre) !== JSON.stringify(post)
+  const semantic = JSON.stringify(pre) !== normalizeStamp(post)
+  if (!raw && semantic) throw new Error('normalization created a difference')
+  if (raw && !semantic && withoutStamp(pre) !== withoutStamp(post))
+    throw new Error('stamp-only row differs once the stamp is removed')
+  return !raw ? 'unchanged' : semantic ? 'semantic' : 'stampOnly'
+}
 
 describe('G2 Stage 2 migration (立劵交易 → 立券交易, 劫煞 authority v2)', () => {
   it.skipIf(!DUMP)(
@@ -202,7 +232,175 @@ describe('G2 Stage 2 migration (立劵交易 → 立券交易, 劫煞 authority 
     },
   )
 
+  it.skipIf(!STAMP)(
+    'authority stamp gate: every event, every day 1900–2100, raw = semantic + stamp-only (G2S2_STAMP)',
+    { timeout: 36_000_000 },
+    async () => {
+      const pre = await load('rollback') // = pre-G2 main, raw (rollback.json)
+      const post = await load('forward')
+      const { resolveEventActivities } = await import('./eventMapping')
+      const g2Profile = (id: string) => resolveEventActivities(id).some((a) => G2.includes(a))
+      const scope = new Map(
+        Object.entries(
+          JSON.parse(
+            readFileSync(
+              'docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json',
+              'utf8',
+            ),
+          ) as Record<string, string[]>,
+        ).flatMap(([ctx, ds]) => ds.map((d) => [d, ctx] as const)),
+      )
+      const zero = () => ({
+        evaluations: 0,
+        rawChanged: 0,
+        semanticChanged: 0,
+        semanticScore: 0,
+        semanticClassification: 0,
+        semanticEvidenceOnly: 0,
+        authorityStampOnly: 0,
+        intersection: 0,
+        unclassifiedRawChanges: 0,
+      })
+      const t = { domain: zero(), outside: zero() }
+      const stampByEvent: Record<string, number> = {}
+      const stampDates = new Set<string>()
+      let stampOutsideScope = 0
+      let stampOnG2Profile = 0
+      for (const d of days('1900-01-01', '2100-12-31')) {
+        const c = t[d >= '2025-01-01' && d <= '2027-12-31' ? 'domain' : 'outside']
+        for (const [id] of post.EVENT_OPTIONS)
+          for (const h of post.EVENT_HOURS) {
+            const a = pre.eventOutput(pre.evaluateEventDay, d, id, h) as Ev
+            const b = post.eventOutput(post.evaluateEventDay, d, id, h) as Ev
+            const k = classify(a, b)
+            const raw = JSON.stringify(a) !== JSON.stringify(b)
+            const sem = k === 'semantic'
+            const stamp = k === 'stampOnly'
+            c.evaluations++
+            c.rawChanged += raw ? 1 : 0
+            c.intersection += sem && stamp ? 1 : 0
+            c.unclassifiedRawChanges += raw && !sem && !stamp ? 1 : 0
+            if (sem) {
+              c.semanticChanged++
+              const [x, y] = [a, b] as unknown as { score: unknown; classification: unknown }[]
+              if (x!.score !== y!.score) c.semanticScore++
+              if (x!.classification !== y!.classification) c.semanticClassification++
+              if (x!.score === y!.score && x!.classification === y!.classification)
+                c.semanticEvidenceOnly++
+            }
+            if (stamp) {
+              c.authorityStampOnly++
+              stampByEvent[id] = (stampByEvent[id] ?? 0) + 1
+              stampDates.add(d)
+              if (!scope.has(d)) stampOutsideScope++
+              if (g2Profile(id)) stampOnG2Profile++
+              if (!JSON.stringify(a).includes(V1_ID))
+                throw new Error(`stamp-only without a v1 stamp: ${d} ${id}`)
+            }
+          }
+      }
+      const out =
+        JSON.stringify(
+          {
+            version: 'g2-stage2-authority-stamp-v1',
+            range: ['1900-01-01', '2100-12-31'],
+            sampling: 'none: every day × 11 events × {no hour, hour 9}',
+            pre: 'rollback graph (alias removed + authority v1) = pre-G2 main byte for byte (rollback.json)',
+            post: 'shipped Stage 2 (alias + authority v2)',
+            normalized:
+              'classicalResolution.items[].authority only, v2 → v1; the v2 id anywhere else throws',
+            equality:
+              'JSON.stringify of the whole event output (canonical serialized equality); stamp-only rows are also equal with the authority field deleted on both sides',
+            counts: t,
+            total: {
+              rawChanged: t.domain.rawChanged + t.outside.rawChanged,
+              semanticChanged: t.domain.semanticChanged + t.outside.semanticChanged,
+              authorityStampOnly: t.domain.authorityStampOnly + t.outside.authorityStampOnly,
+            },
+            stampOnly: {
+              byEvent: Object.fromEntries(Object.entries(stampByEvent).sort()),
+              dates: stampDates.size,
+              datesOutsideJieshaAuthorityScope: stampOutsideScope,
+              onContractTransactionProfileEvents: stampOnG2Profile,
+            },
+          },
+          null,
+          1,
+        ) + '\n'
+      if (process.env.G2S2_WRITE === '1') writeFileSync(OUT + 'authority-stamp.json', out)
+      expect(out).toBe(readFileSync(OUT + 'authority-stamp.json', 'utf8'))
+    },
+  )
+
   if (DUMP) return
+
+  it('stamp normalizer: only the authority field; real changes stay semantic', () => {
+    const pre = {
+      score: 50,
+      classification: 'caution',
+      contributions: [{ ruleId: 'kiep_sat', status: 'applied', scoreDelta: -15 }],
+      classicalResolution: {
+        items: [{ entry: 'jie_sha', activityId: 'wedding', verdict: 'avoid', authority: V1_ID }],
+      },
+    }
+    const post = (f: (x: typeof pre) => void = () => {}) => {
+      const x = structuredClone(pre)
+      x.classicalResolution.items[0]!.authority = V2_ID
+      f(x)
+      return x
+    }
+    expect(classify(pre, structuredClone(pre))).toBe('unchanged')
+    expect(classify(pre, post())).toBe('stampOnly')
+    expect(
+      classify(
+        pre,
+        post((x) => void (x.score = 35)),
+      ),
+    ).toBe('semantic')
+    expect(
+      classify(
+        pre,
+        post((x) => void (x.classification = 'not_recommended')),
+      ),
+    ).toBe('semantic')
+    expect(
+      classify(
+        pre,
+        post((x) => void (x.classicalResolution.items[0]!.verdict = 'no_annotation')),
+      ),
+    ).toBe('semantic')
+    expect(
+      classify(
+        pre,
+        post((x) => void (x.contributions[0]!.status = 'informational')),
+      ),
+    ).toBe('semantic')
+    // A stamp added or dropped is not a version bump: semantic.
+    expect(
+      classify(
+        {
+          ...pre,
+          classicalResolution: {
+            items: [{ ...pre.classicalResolution.items[0]!, authority: undefined as never }],
+          },
+        },
+        post(),
+      ),
+    ).toBe('semantic')
+    // Any other field carrying the v2 id is never normalized.
+    expect(() =>
+      classify(
+        pre,
+        post((x) => Object.assign(x, { note: V2_ID })),
+      ),
+    ).toThrow(/outside/)
+    expect(() =>
+      classify(
+        pre,
+        post((x) => void (x.classicalResolution.items[0]!.verdict = V2_ID)),
+      ),
+    ).toThrow(/outside/)
+  })
 
   it('alias: exactly one new 卷十 headingAliases entry, source text untouched', async () => {
     const vol10 = JSON.parse(
@@ -420,5 +618,54 @@ describe('G2 Stage 2 migration (立劵交易 → 立券交易, 劫煞 authority 
     ]).toEqual([true, true, true])
     expect(r.dumpSha256.stage2Rollback).toBe(r.dumpSha256.preG2Main)
     expect(r.dumpSha256.stage2ReEnable).toBe(r.dumpSha256.stage2Forward)
+    // Authority stamp gate (authority-stamp.json, G2S2_STAMP=1): raw = semantic ∪ stamp-only, disjoint.
+    const a = JSON.parse(readFileSync(OUT + 'authority-stamp.json', 'utf8')) as {
+      counts: Record<'domain' | 'outside', Record<string, number>>
+      total: Record<string, number>
+      stampOnly: {
+        dates: number
+        datesOutsideJieshaAuthorityScope: number
+        onContractTransactionProfileEvents: number
+      }
+    }
+    const sum = s as unknown as { authorityStampOnly: Record<'domain' | 'outside', number> }
+    for (const [set, raw, sem, stamp] of [
+      ['domain', 4_582, 4_330, 252],
+      ['outside', 308_650, 289_270, 19_380],
+    ] as const) {
+      const c = a.counts[set]
+      expect([c.rawChanged, c.semanticChanged, c.authorityStampOnly], set).toEqual([
+        raw,
+        sem,
+        stamp,
+      ])
+      expect(c.rawChanged).toBe(c.semanticChanged + c.authorityStampOnly)
+      expect([c.intersection, c.unclassifiedRawChanges], set).toEqual([0, 0])
+      expect(
+        [c.semanticChanged, c.semanticScore, c.semanticClassification, c.semanticEvidenceOnly],
+        set,
+      ).toEqual(
+        (
+          [
+            'eventChanged',
+            'eventScoreChanged',
+            'eventClassificationChanged',
+            'eventEvidenceOnly',
+          ] as const
+        ).map((k) => s.migration[set][k]),
+      )
+      expect(c.authorityStampOnly).toBe(sum.authorityStampOnly[set])
+    }
+    expect(a.total).toEqual({
+      rawChanged: 313_232,
+      semanticChanged: 293_600,
+      authorityStampOnly: 19_632,
+    })
+    // 1,636 劫煞 authority scope dates × 6 events outside the contract / transaction profile × 2 hours.
+    expect(a.stampOnly).toMatchObject({
+      dates: 1_636,
+      datesOutsideJieshaAuthorityScope: 0,
+      onContractTransactionProfileEvents: 0,
+    })
   })
 })

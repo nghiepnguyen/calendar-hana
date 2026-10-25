@@ -78,17 +78,49 @@ It controls nothing else:
 
 A bump would invalidate nothing that is not already invalidated, and would change every event stamp and the pinned `eventEvaluation.test.ts` value.
 
-## 4. Authority id stamp (reviewer-visible decision)
+## 4. Authority id stamp: semantic, stamp-only and raw event changes (reviewer-visible decision)
 
-`resolveVol10` stamps `authority: VOL10_JIESHA_AUTHORITY_ID` on every reached 劫煞 item, and events expose those items in `classicalResolution`. So v2's new id changes the raw event JSON on every evaluation that reaches the authority, for any activity, even where nothing else differs.
+Authority v2 has a new id, `xieji-vol10-jiesha-faithful-v2`, and that id is stamped into event output. Three concepts are kept and frozen separately. They come from `authority-stamp.json`, which the gate `G2S2_STAMP=1` produces by comparing every event evaluation, every day from 1900 to 2100, pre-G2 against Stage 2.
 
-**Stage 1 measured with the id held at v1.** Its candidate mock spread `...real` and so kept `version`. The frozen 4,330 / 289,270 counts therefore mean "behaviour with the authority id fixed".
+| Set | Raw changed | = Semantic | + Authority-stamp-only | Overlap | Unclassified |
+|---|---|---|---|---|---|
+| P4 domain | **4,582** | 4,330 (108 score, 72 classification, 4,222 evidence only) | **252** | 0 | 0 |
+| Outside | **308,650** | 289,270 (62,352 / 44,942 / 226,918) | **19,380** | 0 | 0 |
+| **1900–2100** | **313,232** | **293,600** | **19,632** = 252 + 19,380 | 0 | 0 |
 
-**The Stage 2 harness compares with the id normalized** (v2 → v1), exactly as `eventOutput` strips `datasetVersion` / `engineVersion` so that a version bump alone is not a diff.
-- Evaluations that differ **only** by the id are counted separately as `authorityStampOnly`: **252 domain, 19,380 outside**.
-- Raw changed evaluations = 293,600 + 19,632 = 313,232.
-- Activity records carry no stamp; the harness throws if one appears.
-- `eventOutput`, `recSha` and every baseline are untouched.
+**Why Stage 1's frozen envelope stays valid.**
+- Stage 1 measured the candidate with the authority id held at v1: its mock spread `...real`, so `version` stayed v1.
+- Its 293,600 are therefore semantic migration changes. Stage 1 did not predict raw serialization changes, and this report does not claim it did.
+- Authority v2 then adds the 19,632 provenance-only serialization changes on top.
+- The semantic counts are unchanged, and the gate asserts them against Stage 1 field by field.
+
+**What may be counted as stamp-only.** The gate compares pre-G2 output (the rollback graph, which is pre-G2 main byte for byte, §9) with Stage 2 output, both as `JSON.stringify` of the whole event evaluation. Two checks must hold for a stamp-only row:
+- **One field is normalized.** Only `classicalResolution.items[].authority` is touched, mapping v2 to v1. If the v2 id appears anywhere else, the normalizer throws. A row is `authorityStampOnly` only when the raw text differs but the normalized text is **byte-equal**, which is canonical serialized equality, not a field subset.
+- **The stamp is removed.** With the `authority` field deleted on both sides, every one of the 19,632 rows is also byte-equal. So score, classification, evidence, contributions, conflicts and every other field are identical.
+
+Two consequences:
+- A row whose stamp appears or disappears is semantic, not stamp-only.
+- `p4G2Stage2Migration.test.ts`, test "stamp normalizer", shows that a change in score, classification, a 卷十 verdict (evidence) or a contribution status stays semantic when it comes with the stamp, and that the v2 id in any other field throws.
+
+**Why only 19,632 evaluations, not all of them.** The runtime path:
+1. `resolveVol10` (`xiejiVol10Resolution.ts`) sets `jieshaAuthority` only for 劫煞's own item, in a 辰戌丑未 month, on the `cancel_both` (no-德) branch, under the `faithful-v1` policy (`:251–257`).
+2. It consults the authority and stamps `authority: VOL10_JIESHA_AUTHORITY_ID` only when that item's verdict for the activity would be `no_annotation`, meaning the activity is listed. A `not_listed` activity gets no stamp.
+3. `evaluateEventDay` copies those items into `classicalResolution.items` for the event's role activities (`eventEvaluation.ts:254`). Activity records do not carry the item: `xiejiVol10Scoring.ts` `note()` drops it, and the dump harness asserts that.
+
+So a stamp exists only on the **1,636** days whose Month Jian and pillar fall in the 16 authority contexts (`puzhu17-bujiang-v1/scope-dates.json`; 21 of them are in the domain).
+- On those days, the five contract/transaction-profile events also change semantically: their items gain or change contract/transaction verdicts. Those rows are in the 293,600.
+- The other six events change by stamp only: `cut_hair`, `groundbreaking`, `move_house`, `open_business`, `start_journey`, `wedding`. Each has 3,272 such rows, which is 1,636 × 2 hours.
+- 1,636 × 6 × 2 = **19,632**, and 21 × 12 = **252**.
+- The gate asserts that every stamp-only row falls on an authority-scope date (0 outside), on no contract/transaction-profile event, and carries a v1 stamp before.
+
+**Comparison with `datasetVersion`.**
+- **Where it is stripped.** `eventOutput` (`p4AdapterBaselineRows.ts:20–31`) drops `datasetVersion` and `engineVersion` before every baseline row sha and every Stage 1/2 event comparison, "so a version bump alone is not a diff".
+- **Why it is metadata.** It names the dataset release and decides no score, classification or evidence.
+- **Why the authority id compares the same way.** It names the authority table version. The cells it applies are what decide behaviour, and they are compared in full.
+- **The difference.** The authority stamp sits inside the evidence items and appears only where the authority is consulted. `datasetVersion` is a top-level field on every evaluation.
+- **Scope of the normalization.** It is used only in the Stage 2 diff harness. `eventOutput` and the baselines are not broadened, and no generic metadata filter was added.
+
+**Rollback stays raw.** The `rollback.json` dumps carry raw hashes. Pre-G2 main = rollback (`8c3833ca…`) and forward = re-enable (`f21ea1a4…`) are whole-file byte equalities, with no normalization (§9).
 
 ## 5. Frozen envelope: exhaustive, every day 1900-01-01 … 2100-12-31
 
@@ -248,6 +280,7 @@ All on this branch. `ci:p4:full` ran at `c82b681`. The only later commit, `f9c17
 | Command | Result | Time |
 |---|---|---|
 | Stage 1 reproduction (§1), on current main | PASS | 64 s / 145 s / 409 s |
+| `G2S2_STAMP=1` authority stamp gate (every event, every day, pre-G2 vs Stage 2) | **PASS**: 313,232 = 293,600 + 19,632; overlap 0, unclassified 0; `authority-stamp.json` byte-equal | 290 s |
 | `npm run ci:p4:full` | **PASS**. Remaining-ji 12/12, yi, warehouse 12, puzhu06 16, full-golden control clean and report verified, owner rules, owner-rule mutations 29. Score adapter + Golden v3 + **v4 full** 20/20. Golden v3 / v4 / authority v2 / scoring v3 generators verified. Score-adapter mutations. Migration diff 9b full. **Diff v3 full 11/11**. Migration mutations 20. Option C full 2/2 (`migration-rows.json` byte-equal). **vol10 劫煞 mutations 16/16**. Heading lookup full 12/12 | 1,047 s |
 | `npm test` | **PASS**: 8,416 passed, 15 skipped, 0 failed | 92 s |
 | `npm run typecheck` (incl. `functions/`) | PASS | 6 s |
