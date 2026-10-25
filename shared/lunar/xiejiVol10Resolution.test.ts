@@ -65,7 +65,7 @@ describe('協紀 卷十 resolution, hand-derived cases', () => {
     expect(jie('legacy-cancel-both')?.verdict).toBe('no_annotation')
     expect(jie('faithful-v1')).toMatchObject({
       verdict: 'avoid',
-      authority: 'xieji-vol10-jiesha-faithful-v1',
+      authority: 'xieji-vol10-jiesha-faithful-v2', // G2 Stage 2: authority v2 (cells unchanged)
     })
   })
   it('月破: 卯酉 months all taboo; elsewhere 德 spares only listed minor matters', () => {

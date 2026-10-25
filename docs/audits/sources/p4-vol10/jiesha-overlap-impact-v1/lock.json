@@ -18,7 +18,17 @@
   },
   {
    "path": "shared/lunar/p4JieshaOverlapImpact.test.ts",
-   "sha256": "75b9f9a53352e11c4b4fdb8ddb6a99a59ba3edd76c861fce3c2daf54e49b99ad"
+   "sha256": "e4a228f567a6bd0cbf0d5518828736055b1d1f8dade80a26d32462e1cfc9df0b"
+  }
+ ],
+ "revisions": [
+  {
+   "date": "2026-10-25",
+   "kind": "G2_STAGE2_LOCK_CHECK",
+   "path": "shared/lunar/p4JieshaOverlapImpact.test.ts",
+   "previousSha256": "75b9f9a53352e11c4b4fdb8ddb6a99a59ba3edd76c861fce3c2daf54e49b99ad",
+   "reason": "G2 Stage 2 adds one headingAliases entry (立劵交易 → [立券交易]) to shared/almanac-data/xiejibianfangshu-vol10-yiji.json, an input pinned by p4-full-golden-v2/lock.json. The invariance test now checks that lock with lockFileDigests (inputs outside the Golden directory as committed at its anchor, owner rule 2026-10-17, as p4FullGoldenV2.test.ts does); the unused readFileSync import is dropped.",
+   "behavioralChange": "none: the simulator and sweep code paths are unchanged; raw.json not regenerated"
   }
  ]
 }

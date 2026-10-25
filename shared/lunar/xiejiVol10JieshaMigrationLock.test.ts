@@ -4,6 +4,9 @@ import { describe, expect, it } from 'vitest'
 import p4Golden from '../../docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
 import lock from '../../docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/lock.json'
 import summary from '../../docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/migration-summary.json'
+import { lockFileDigests } from './lockAnchor'
+
+const GOLDEN_LOCK = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
 
 // Audit lock of the 卷十 劫煞 Option C v1 production projection (docs/audits/p4-jiesha-option-c-migration.md).
 const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('hex')
@@ -16,8 +19,13 @@ describe('卷十 劫煞 Option C v1 migration lock', () => {
   })
 
   it('P4 Golden v2 is byte-identical', () => {
-    for (const f of p4Golden.files as { path: string; sha256: string }[])
-      expect(sha(f.path), f.path).toBe(f.sha256)
+    // Inputs outside the Golden directory as committed at its anchor (G2 Stage 2 adds a 卷十 alias).
+    const files = p4Golden.files as { path: string; sha256: string }[]
+    const got = lockFileDigests(
+      GOLDEN_LOCK,
+      files.map((f) => f.path),
+    )
+    for (const f of files) expect(got.get(f.path), f.path).toBe(f.sha256)
   })
 
   it('actual impact 1900–2100: in scope only, -15 per changed activity, no 2025–2027 activity change', () => {

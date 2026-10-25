@@ -28,58 +28,57 @@ const fixEntry = (e: Record<string, unknown>) =>
         : fix(v),
     ]),
   )
+// G2 Stage 2 shipped the alias and authority v2; every model starts from the pre-G2 rollback (g2Rollback.ts):
+// alias removed, authority v1 served at the v2 path. The frozen Stage 1 artifacts reproduce from that base.
+const VOL10 = '../almanac-data/xiejibianfangshu-vol10-yiji.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
 function mockModel(model: Model) {
-  vi.doUnmock('../almanac-data/xiejibianfangshu-vol10-yiji.json')
-  vi.doUnmock('../almanac-data/xiejibianfangshu-yiji.json')
-  vi.doUnmock('../almanac-data/xieji-vol10-jiesha-authority-v1.json')
+  vi.doUnmock(VOL10)
+  vi.doUnmock(AUTH)
   // Both candidates reach contract / transaction in 卷十 劫煞; authority v1 marks them UNREACHABLE and throws.
   // Modelled in memory as APPLIED with their approved v1 cells (authority v1 on disk is unchanged).
-  if (model !== 'current')
-    vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v1.json', async (load) => {
-      const real = (
-        (await load()) as {
-          default: {
-            runtimeCoverage: { activities: Record<string, unknown> }
-            cells: Record<string, Record<string, string>>
-            counts: { avoid: number; blank: number }
-          }
-        }
-      ).default
-      const avoid = model === 'weishen-avoid'
-      return {
-        default: {
-          ...real,
-          ...(avoid && {
-            cells: {
-              ...real.cells,
-              未戊申: { ...real.cells['未戊申'], contract: 'avoid', transaction: 'avoid' },
-            },
-            counts: { ...real.counts, avoid: real.counts.avoid + 2, blank: real.counts.blank - 2 },
-          }),
-          runtimeCoverage: {
-            ...real.runtimeCoverage,
-            activities: {
-              ...real.runtimeCoverage.activities,
-              contract: { status: 'APPLIED' },
-              transaction: { status: 'APPLIED' },
-            },
+  vi.doMock(AUTH, async () => {
+    const real = (await import('./g2Rollback')).jieshaAuthorityV1().default as unknown as {
+      runtimeCoverage: { activities: Record<string, unknown> }
+      cells: Record<string, Record<string, string>>
+      counts: { avoid: number; blank: number }
+    }
+    if (model === 'current') return { default: real }
+    const avoid = model === 'weishen-avoid'
+    return {
+      default: {
+        ...real,
+        ...(avoid && {
+          cells: {
+            ...real.cells,
+            未戊申: { ...real.cells['未戊申'], contract: 'avoid', transaction: 'avoid' },
+          },
+          counts: { ...real.counts, avoid: real.counts.avoid + 2, blank: real.counts.blank - 2 },
+        }),
+        runtimeCoverage: {
+          ...real.runtimeCoverage,
+          activities: {
+            ...real.runtimeCoverage.activities,
+            contract: { status: 'APPLIED' },
+            transaction: { status: 'APPLIED' },
           },
         },
-      }
-    })
-  if (model === 'vol10-text' || model === 'weishen-avoid')
-    vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) => {
-      const real = ((await load()) as { default: { entries: Record<string, unknown>[] } }).default
+      },
+    }
+  })
+  vi.doMock(VOL10, async (load) => {
+    const real = (await import('./g2Rollback')).withoutG2Alias(await load()).default as unknown as {
+      entries: Record<string, unknown>[]
+      headingAliases: Record<string, string[]>
+    }
+    if (model === 'vol10-text' || model === 'weishen-avoid')
       return { default: { ...real, entries: real.entries.map(fixEntry) } }
-    })
-  if (model === 'alias-table')
-    vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) => {
-      const real = ((await load()) as { default: { headingAliases: Record<string, string[]> } })
-        .default
+    if (model === 'alias-table')
       return {
         default: { ...real, headingAliases: { ...real.headingAliases, 立劵交易: ['立券交易'] } },
       }
-    })
+    return { default: real }
+  })
 }
 
 const FULL = process.env.G2_FULL === '1'

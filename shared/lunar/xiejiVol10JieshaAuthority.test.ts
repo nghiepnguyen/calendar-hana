@@ -4,7 +4,8 @@ import { describe, expect, it } from 'vitest'
 import activitiesData from '../almanac-data/activities.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import goodGodsData from '../almanac-data/good-gods.json'
-import authority from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
+import authority from '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
+import authorityV1 from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import manifest from '../almanac-data/manifest.json'
 import { getSourceLockedCatHungPresence } from './catHungStars'
@@ -45,7 +46,8 @@ function day(m: number, i: number) {
   }
 }
 
-describe('卷十 劫煞 faithful authority v1', () => {
+// Shipped: authority v2 (G2 Stage 2, contract / transaction APPLIED). v1 stays frozen (coverage manifest below).
+describe('卷十 劫煞 faithful authority v2', () => {
   it('shipped policy is faithful-v1 and is the resolver default; legacy stays selectable', () => {
     expect(manifest.policies.xiejiVol10JieshaPolicy).toBe('faithful-v1')
     const d = day(4, 41) // 辰 乙巳
@@ -61,6 +63,7 @@ describe('卷十 劫煞 faithful authority v1', () => {
     expect(createHash('sha256').update(raw).digest('hex')).toBe(APPROVED)
     const cand = JSON.parse(raw.toString()) as { cells: Record<string, Record<string, string>> }
     expect(authority.cells).toEqual(cand.cells)
+    expect(authorityV1.cells).toEqual(cand.cells)
     expect(authority.counts).toEqual({
       contexts: 16,
       activities: 24,
@@ -81,7 +84,11 @@ describe('卷十 劫煞 faithful authority v1', () => {
     )
     expect(() => getVol10JieshaRuntime('子', '甲子', 'wedding')).toThrow(/no context/)
     expect(() => getVol10JieshaRuntime('辰', '乙巳', 'worship')).toThrow(/no coverage/)
-    expect(() => getVol10JieshaRuntime('辰', '乙巳', 'contract')).toThrow(/UNREACHABLE.*reached/)
+    // v2: contract is APPLIED (the UNREACHABLE guard is pinned in p4G2Stage2Migration.test.ts, alias-v1).
+    expect(getVol10JieshaRuntime('辰', '乙巳', 'contract')).toEqual({
+      status: 'APPLIED',
+      cell: 'blank',
+    })
   })
 
   it('coverage states match the real resolveVol10 listing (no 劵→券, 壞→壊 kept)', () => {
@@ -95,17 +102,24 @@ describe('卷十 劫煞 faithful authority v1', () => {
         .filter((a) => COVERAGE[a]!.status === s)
         .sort()
     expect(listed).toEqual([...by('APPLIED'), ...by('EXCLUDED_PENDING_GLYPH_AUDIT')].sort())
-    expect(by('UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION')).toEqual(['contract', 'transaction'])
+    expect(by('UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION')).toEqual([])
     expect(by('EXCLUDED_PENDING_GLYPH_AUDIT')).toEqual(['demolition'])
+    // G2: 卷十 立劵交易 reaches 立券交易 through the headingAliases entry, not a NORM fold.
     for (const a of ['contract', 'transaction'])
       expect(items.find((x) => x.entry === 'jie_sha' && x.activityId === a)!.verdict).toBe(
-        'not_listed',
+        'no_annotation',
       )
-    expect(splitHeadings('立劵交易')).toEqual(['立劵交易'])
+    expect(splitHeadings('立劵交易')).toEqual(['立券交易'])
     expect(splitHeadings('破屋壞垣')).toEqual(['破屋壊垣'])
   })
 
+  // Frozen Option C v1 artifact: computed from authority v1 (G2 Stage 2 does not regenerate it).
   it('coverage manifest maps every audit cell (and the excluded demolition contexts)', () => {
+    const CELLS = authorityV1.cells as Record<string, Record<string, string>>
+    const COVERAGE = authorityV1.runtimeCoverage.activities as Record<
+      string,
+      { status: string; reason?: string }
+    >
     const rows = [
       ...Object.entries(CELLS).flatMap(([ctx, row]) =>
         Object.entries(row).map(([activity, audit]) => ({
@@ -136,7 +150,7 @@ describe('卷十 劫煞 faithful authority v1', () => {
     }
     const manifest = {
       version: 'jiesha-option-c-coverage-v1',
-      authority: authority.version,
+      authority: authorityV1.version,
       auditCells: 384,
       summary,
       rows,
@@ -213,7 +227,9 @@ describe('卷十 劫煞 faithful authority v1', () => {
     expect(v('丑', '丙寅', 'warehouse')).toBe('avoid')
     for (const a of ['finance', 'opening', 'business'])
       expect(v('未', '戊申', a)).toBe('no_annotation')
-    // UNREACHABLE: 立劵交易 is not 立券交易 under the current normalization (G2).
-    for (const a of ['contract', 'transaction']) expect(v('未', '戊申', a)).toBe('not_listed')
+    // G2 Stage 2, owner ruling 2026-10-25: 未-戊申 contract / transaction stay blank, applied as I1
+    // (no_annotation: 劫煞's penalty is lifted). The n117 audit stays open (p4-weishen-lijuan-authority-item.md).
+    for (const a of ['contract', 'transaction']) expect(v('未', '戊申', a)).toBe('no_annotation')
+    for (const a of ['contract', 'transaction']) expect(v('未', '壬申', a)).toBe('avoid')
   })
 })

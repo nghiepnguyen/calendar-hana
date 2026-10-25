@@ -1,0 +1,121 @@
+{
+  "version": "vol10-jiesha-mutations-v2",
+  "control": "clean",
+  "mutations": 16,
+  "caught": 16,
+  "restored": true,
+  "results": [
+    {
+      "mutation": "revert_default_to_cancel_both",
+      "test": "shipped policy is faithful-v1",
+      "expect": "faithful-v1",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "resolver_default_legacy",
+      "test": "shipped policy is faithful-v1",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "branch_never_flagged",
+      "test": "every real Month Jian",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "demolition_applied_without_revision",
+      "test": "every real Month Jian",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "demolition_silent_fallback",
+      "test": "every real Month Jian",
+      "expect": "authorityExclusion",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "jian_quan_normalized",
+      "test": "alias:",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "g2_alias_removed",
+      "test": "coverage states match",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "g2_authority_v1_restored",
+      "test": "coverage states match",
+      "expect": "contract is UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION but was reached",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "unreachable_reached_silently",
+      "test": "authority v2 applies",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "applied_cell_changed",
+      "test": "is the approved candidate",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p17a_cell_removed",
+      "test": "carries the corrections",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "exclusion_reason_removed",
+      "test": null,
+      "expect": "invalid xieji-vol10-jiesha-faithful-v2",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "other_god_outside_scope",
+      "test": "every real Month Jian",
+      "expect": "no context",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "applied_with_de",
+      "test": "never applies in 子午卯酉",
+      "expect": "no context",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "chou_bingyin_de_scope",
+      "test": "every real Month Jian",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "generic_cancel_both_changed",
+      "test": "jie-chen-demolition-excluded",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    }
+  ]
+}

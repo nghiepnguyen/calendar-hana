@@ -22,7 +22,7 @@
   },
   {
    "path": "shared/lunar/p4JieshaFaithfulVol10.test.ts",
-   "sha256": "c1762c46251218a499dae2d054bd21fb805e17b84cd8d1ef2d1ae5dd81798259"
+   "sha256": "79bb7ee6eba1de46eeb17c1956324017eb6a7a35480298f1a08de240a34dbc4e"
   },
   {
    "path": "docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/sensitivity.json",
@@ -39,6 +39,16 @@
   {
    "path": "shared/lunar/p4JieshaFaithfulSensitivity.test.ts",
    "sha256": "d4cd75e333839bf6b588b518bad9a561314af8541836c8cf24b8b435f57e7f93"
+  }
+ ],
+ "revisions": [
+  {
+   "date": "2026-10-25",
+   "kind": "G2_STAGE2_LOCK_CHECK",
+   "path": "shared/lunar/p4JieshaFaithfulVol10.test.ts",
+   "previousSha256": "c1762c46251218a499dae2d054bd21fb805e17b84cd8d1ef2d1ae5dd81798259",
+   "reason": "G2 Stage 2 adds one headingAliases entry (立劵交易 → [立券交易]) to shared/almanac-data/xiejibianfangshu-vol10-yiji.json, an input pinned by p4-full-golden-v2/lock.json. The invariance test now checks that lock with lockFileDigests (inputs outside the Golden directory as committed at its anchor, owner rule 2026-10-17, as p4FullGoldenV2.test.ts does); the unused readFileSync import is dropped.",
+   "behavioralChange": "none: the simulator and sweep code paths are unchanged; raw.json not regenerated"
   }
  ]
 }
