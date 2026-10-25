@@ -261,6 +261,7 @@ export function evaluateEventDay(
           officerId: trucData.calculation.order[day.officer.index],
           presentGods: new Set(day.auditedGodIds),
           unknownGods: new Set(day.unknownGodIds),
+          civilDate: date,
         },
         [...new Set(roles.map((role) => role.activityId))],
         { jieshaPolicy: manifest.policies.xiejiVol10JieshaPolicy as Vol10JieshaPolicy },

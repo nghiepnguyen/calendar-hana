@@ -29,6 +29,8 @@ export interface Vol10Day {
   presentGods: ReadonlySet<string>
   /** Gods whose presence cannot be decided for this day (unaudited or untranscribed tokens). */
   unknownGods: ReadonlySet<string>
+  /** Civil date (YYYY-MM-DD); required where the 劫煞 authority is date-dependent (authority v4). */
+  civilDate?: string
 }
 
 export interface Vol10Resolution {
@@ -294,6 +296,7 @@ export function resolveVol10(
               BRANCHES[day.monthJianBranch]!,
               STEMS[day.dayStem]! + BRANCHES[day.dayBranch]!,
               activityId,
+              day.civilDate,
             )
           : undefined
       const kept = runtime?.status === 'APPLIED' && vol10JieshaCell(runtime) === 'avoid'
