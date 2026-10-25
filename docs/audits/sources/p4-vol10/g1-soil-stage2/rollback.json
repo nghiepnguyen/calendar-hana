@@ -1,0 +1,13 @@
+{
+ "version": "g1-soil-stage2-rollback-v1",
+ "rollback": "authority v3 imported in place of v4 (g1GlyphRollback.ts at the v4 path); the calendar-rule service is only consulted for APPLIED_DATE_DEPENDENT contexts, which v3 does not have",
+ "comparison": "raw dump bytes, no normalization",
+ "dumpSha256": {
+  "preG1SoilMain": "b8fb040dc9a402474875abd33d413f0961f4d83334db75392f450751954b90d9",
+  "stage2Forward": "39a081322e2c0cc30c08691dc0aa6b99efb490c7db15efe85b54cc710966c2f9",
+  "stage2Rollback": "b8fb040dc9a402474875abd33d413f0961f4d83334db75392f450751954b90d9",
+  "stage2ReEnable": "39a081322e2c0cc30c08691dc0aa6b99efb490c7db15efe85b54cc710966c2f9"
+ },
+ "rollbackEqualsPreG1SoilMain": true,
+ "reEnableEqualsForward": true
+}

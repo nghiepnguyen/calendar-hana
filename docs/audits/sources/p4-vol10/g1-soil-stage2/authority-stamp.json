@@ -1,0 +1,59 @@
+{
+ "version": "g1-soil-stage2-authority-stamp-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none: every day × every event × {no hour, hour 9}",
+ "pre": "rollback graph (authority v3 at the imported path) = shipped d5c005f (rollback.json)",
+ "post": "shipped G1-SOIL Stage 2 (authority v4, R2)",
+ "normalized": "classicalResolution.items[].authority only, v4 → v3; the v4 id anywhere else throws",
+ "equality": "JSON.stringify of the whole event output (canonical serialized equality); stamp-only rows are also equal with the authority field deleted on both sides",
+ "counts": {
+  "domain": {
+   "evaluations": 24090,
+   "rawChanged": 462,
+   "semanticChanged": 0,
+   "semanticScore": 0,
+   "semanticClassification": 0,
+   "semanticEvidenceOnly": 0,
+   "authorityStampOnly": 462,
+   "intersection": 0,
+   "unclassifiedRawChanges": 0
+  },
+  "outside": {
+   "evaluations": 1591018,
+   "rawChanged": 35530,
+   "semanticChanged": 0,
+   "semanticScore": 0,
+   "semanticClassification": 0,
+   "semanticEvidenceOnly": 0,
+   "authorityStampOnly": 35530,
+   "intersection": 0,
+   "unclassifiedRawChanges": 0
+  }
+ },
+ "total": {
+  "rawChanged": 35992,
+  "semanticChanged": 0,
+  "authorityStampOnly": 35992
+ },
+ "stampOnly": {
+  "byEvent": {
+   "buy_property": 3272,
+   "buy_vehicle": 3272,
+   "cut_hair": 3272,
+   "groundbreaking": 3272,
+   "move_house": 3272,
+   "open_business": 3272,
+   "property_handover": 3272,
+   "receive_vehicle": 3272,
+   "sign_contract": 3272,
+   "start_journey": 3272,
+   "wedding": 3272
+  },
+  "dates": 1636,
+  "datesOutsideJieshaAuthorityScope": 0,
+  "onContractTransactionProfileEvents": 16360
+ }
+}

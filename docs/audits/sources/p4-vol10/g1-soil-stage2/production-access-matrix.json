@@ -1,0 +1,2578 @@
+{
+ "version": "g1-soil-stage2-production-access-v1",
+ "authority": "xieji-vol10-jiesha-faithful-v4",
+ "authoritySha256": "3d0827279b7ce825e3ce2420ad6805af5f8786ccb388d2696965cd37ac3f89f6",
+ "rule": "APPLIED / APPLIED_DATE_DEPENDENT ⇔ identity ∧ authority ∧ production; a date-dependent context has no static cell and needs a civil date",
+ "transition": {
+  "demolition": "APPLIED ×11 + EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY ×5 (v3) → APPLIED ×11 + APPLIED_DATE_DEPENDENT ×5 (v4)"
+ },
+ "summary": {
+  "beam_raising": {
+   "APPLIED": 16
+  },
+  "bed_installation": {
+   "APPLIED": 16
+  },
+  "burial": {
+   "APPLIED": 16
+  },
+  "business": {
+   "APPLIED": 16
+  },
+  "construction": {
+   "APPLIED": 16
+  },
+  "contract": {
+   "APPLIED": 16
+  },
+  "cut_hair": {
+   "APPLIED": 16
+  },
+  "demolition": {
+   "APPLIED_DATE_DEPENDENT": 5,
+   "APPLIED": 11
+  },
+  "engagement": {
+   "APPLIED": 16
+  },
+  "finance": {
+   "APPLIED": 16
+  },
+  "groundbreaking": {
+   "APPLIED": 16
+  },
+  "livestock": {
+   "APPLIED": 16
+  },
+  "medical": {
+   "APPLIED": 16
+  },
+  "meeting": {
+   "APPLIED": 16
+  },
+  "moving": {
+   "APPLIED": 16
+  },
+  "opening": {
+   "APPLIED": 16
+  },
+  "planting": {
+   "APPLIED": 16
+  },
+  "pray_blessing": {
+   "APPLIED": 16
+  },
+  "pray_children": {
+   "APPLIED": 16
+  },
+  "renovation": {
+   "APPLIED": 16
+  },
+  "transaction": {
+   "APPLIED": 16
+  },
+  "travel": {
+   "APPLIED": 16
+  },
+  "warehouse": {
+   "APPLIED": 16
+  },
+  "warehouse_opening": {
+   "APPLIED": 16
+  },
+  "wedding": {
+   "APPLIED": 16
+  }
+ },
+ "rows": [
+  {
+   "activity": "beam_raising",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "beam_raising",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "bed_installation",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "burial",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "burial",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "business",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "business",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "business",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "business",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "business",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "construction",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "construction",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "contract",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "contract",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "contract",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "contract",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "contract",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "cut_hair",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "demolition",
+   "context": "丑丙寅",
+   "access": "APPLIED_DATE_DEPENDENT",
+   "cell": null,
+   "selector": "tho-vuong-dung-su-rule-v1",
+   "cells": {
+    "inside": "avoid",
+    "outside": "blank"
+   },
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "丑壬寅",
+   "access": "APPLIED_DATE_DEPENDENT",
+   "cell": null,
+   "selector": "tho-vuong-dung-su-rule-v1",
+   "cells": {
+    "inside": "avoid",
+    "outside": "blank"
+   },
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "丑戊寅",
+   "access": "APPLIED_DATE_DEPENDENT",
+   "cell": null,
+   "selector": "tho-vuong-dung-su-rule-v1",
+   "cells": {
+    "inside": "avoid",
+    "outside": "blank"
+   },
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "丑甲寅",
+   "access": "APPLIED_DATE_DEPENDENT",
+   "cell": null,
+   "selector": "tho-vuong-dung-su-rule-v1",
+   "cells": {
+    "inside": "avoid",
+    "outside": "blank"
+   },
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "未戊申",
+   "access": "APPLIED_DATE_DEPENDENT",
+   "cell": null,
+   "selector": "tho-vuong-dung-su-rule-v1",
+   "cells": {
+    "inside": "avoid",
+    "outside": "blank"
+   },
+   "grade": "B",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "demolition",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid",
+   "grade": "A",
+   "identityApproved": true,
+   "authorityApproved": true,
+   "productionApproved": true
+  },
+  {
+   "activity": "engagement",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "engagement",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "engagement",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "finance",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "finance",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "finance",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "finance",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "finance",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "groundbreaking",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "livestock",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "livestock",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "livestock",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "livestock",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "livestock",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "medical",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "medical",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "meeting",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "meeting",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "moving",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "moving",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "opening",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "opening",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "opening",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "opening",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "opening",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "planting",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "planting",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "planting",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "planting",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_blessing",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "pray_children",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "pray_children",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "renovation",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "renovation",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "transaction",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "transaction",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "transaction",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "transaction",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "transaction",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "travel",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "warehouse_opening",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "wedding",
+   "context": "丑丙寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "wedding",
+   "context": "丑壬寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "wedding",
+   "context": "丑戊寅",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "wedding",
+   "context": "丑甲寅",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "戌丁亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "戌乙亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "戌己亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "戌癸亥",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "未丙申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "未壬申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "未庚申",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "未戊申",
+   "access": "APPLIED",
+   "cell": "blank"
+  },
+  {
+   "activity": "wedding",
+   "context": "辰乙巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "辰己巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "辰癸巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  },
+  {
+   "activity": "wedding",
+   "context": "辰辛巳",
+   "access": "APPLIED",
+   "cell": "avoid"
+  }
+ ]
+}
