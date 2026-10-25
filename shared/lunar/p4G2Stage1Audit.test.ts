@@ -29,9 +29,9 @@ const fixEntry = (e: Record<string, unknown>) =>
     ]),
   )
 // G2 Stage 2 shipped the alias and authority v2; every model starts from the pre-G2 rollback (g2Rollback.ts):
-// alias removed, authority v1 served at the v2 path. The frozen Stage 1 artifacts reproduce from that base.
+// alias removed, authority v1 served at the path production imports (v3 since G1 glyph Stage 2). The frozen Stage 1 artifacts reproduce from that base.
 const VOL10 = '../almanac-data/xiejibianfangshu-vol10-yiji.json'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
 function mockModel(model: Model) {
   vi.doUnmock(VOL10)
   vi.doUnmock(AUTH)
@@ -119,6 +119,7 @@ type Rec = {
 async function load(model: Model) {
   vi.resetModules()
   mockModel(model)
+  await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v1')
   ;(await import('../astronomy/solarTerms/cache')).solarTermCacheStore('almanac').clear()
   await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')

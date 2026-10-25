@@ -4,7 +4,8 @@ import { describe, expect, it, vi } from 'vitest'
 
 // G2 Stage 2 (docs/audits/p4-g2-stage2-migration.md): 卷十 headingAliases 立劵交易 → [立券交易] + 劫煞 authority v2.
 // Each model gets its own module graph (vi.doMock + vi.resetModules), as in p4G2Stage1Audit.test.ts:
-//   forward    shipped Stage 2 files.
+//   forward    G2 Stage 2 state: alias + authority v2 (pinned at the v3 path since G1 glyph Stage 2).
+//   G1 glyph Stage 2 shipped authority v3; these frozen G2 proofs stay on v2 (g1GlyphRollback.ts).
 //   rollback   alias removed + authority v1 (g2Rollback.ts) = pre-G2 production.
 //   text       independent mechanism: no alias, the 卷十 avoid lists themselves read 立券交易; authority v2.
 //   weishen    text with the 未-戊申 contract/transaction cells set to avoid (dependency measurement only).
@@ -13,7 +14,7 @@ import { describe, expect, it, vi } from 'vitest'
 // (activities + events, every day, no sampling) that g2-stage2/compare.py turns into the committed diff.
 type Model = 'forward' | 'rollback' | 'text' | 'weishen' | 'alias-v1'
 const VOL10 = '../almanac-data/xiejibianfangshu-vol10-yiji.json'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
 const V1_ID = 'xieji-vol10-jiesha-faithful-v1'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
 const G2 = ['contract', 'transaction']
@@ -21,6 +22,8 @@ const G2 = ['contract', 'transaction']
 function mockModel(model: Model) {
   vi.doUnmock(VOL10)
   vi.doUnmock(AUTH)
+  if (model === 'forward' || model === 'text')
+    vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV2())
   if (model === 'forward') return
   if (model === 'rollback' || model === 'alias-v1')
     vi.doMock(AUTH, async () => (await import('./g2Rollback')).jieshaAuthorityV1())
@@ -47,9 +50,9 @@ function mockModel(model: Model) {
       }
     })
   if (model === 'weishen')
-    vi.doMock(AUTH, async (load) => {
+    vi.doMock(AUTH, async () => {
       const real = (
-        (await load()) as {
+        (await import('./g1GlyphRollback')).jieshaAuthorityV2() as unknown as {
           default: {
             cells: Record<string, Record<string, string>>
             counts: { avoid: number; blank: number }
@@ -72,6 +75,9 @@ function mockModel(model: Model) {
 async function load(model: Model) {
   vi.resetModules()
   mockModel(model)
+  await (
+    await import('./g1GlyphRollback')
+  ).assertJieshaAuthority(model === 'rollback' || model === 'alias-v1' ? V1_ID : V2_ID)
   ;(await import('../astronomy/solarTerms/cache')).solarTermCacheStore('almanac').clear()
   await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')

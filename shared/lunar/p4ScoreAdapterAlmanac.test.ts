@@ -14,7 +14,7 @@ import { P4_DORMANT_GODS, P4_SCORE_ADAPTER_VERSION, p4ActivityState } from './p4
 vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
   (await import('./g2Rollback')).withoutG2Alias(await load()),
 )
-vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', async () =>
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', async () =>
   (await import('./g2Rollback')).jieshaAuthorityV1(),
 )
 await vi.hoisted(async () => (await import('./g2Rollback')).reloadUnderG2Pins())

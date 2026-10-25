@@ -466,7 +466,8 @@ async function preG2Graph(): Promise<Graph> {
   vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
     withoutG2Alias(await load()),
   )
-  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', () => jieshaAuthorityV1())
+  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', () => jieshaAuthorityV1())
+  await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v1')
   const { getP4DayHeadings } = await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')
   const { solarTermCacheStore } = await import('../astronomy/solarTerms/cache')

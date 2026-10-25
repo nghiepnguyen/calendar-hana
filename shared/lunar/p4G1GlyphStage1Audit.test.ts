@@ -4,7 +4,8 @@ import { describe, expect, it, vi } from 'vitest'
 
 // G1 glyph Stage 1 (docs/audits/p4-g1-demolition-glyph-authority.md): AUDIT ONLY, production files untouched.
 // Each model gets its own module graph (vi.doMock + vi.resetModules), as in p4G2Stage2Migration.test.ts:
-//   forward    shipped production (authority v2, demolition EXCLUDED_PENDING_GLYPH_AUDIT).
+//   forward    pre-G1-glyph production (authority v2, demolition EXCLUDED_PENDING_GLYPH_AUDIT); since G1 glyph
+//              Stage 2 ships v3 this is the v2 rollback pin (g1GlyphRollback.ts), so Stage 1 evidence stays frozen.
 //   fit        v2 + demolition APPLIED, soil-absent cell (g1-glyph-stage1/candidate-authority-fit.json).
 //   inwindow   v2 + demolition APPLIED, soil-present cell, avoid 16/16 (candidate-authority-inwindow.json).
 //   m-*        malformed authorities: production must fail loudly, never apply an unapproved cell.
@@ -13,7 +14,7 @@ import { describe, expect, it, vi } from 'vitest'
 // day (no sampling) that g1-glyph-stage1/compare.py turns into the committed envelope.
 type Model =
   'forward' | 'fit' | 'inwindow' | 'm-applied-no-cells' | 'm-cells-while-excluded' | 'm-no-coverage'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
 const DIR = 'docs/audits/sources/p4-vol10/g1-glyph-stage1/'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
 const FIT_ID = 'xieji-vol10-jiesha-faithful-v3-candidate-g1'
@@ -29,13 +30,16 @@ type Auth = {
 
 function mockModel(model: Model) {
   vi.doUnmock(AUTH)
-  if (model === 'forward') return
+  if (model === 'forward')
+    return vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV2())
   if (model === 'fit' || model === 'inwindow')
     return vi.doMock(AUTH, () => ({
       default: read(`${DIR}candidate-authority-${model}.json`),
     }))
-  vi.doMock(AUTH, async (load) => {
-    const a = structuredClone(((await load()) as { default: Auth }).default)
+  vi.doMock(AUTH, async () => {
+    const a = structuredClone(
+      (await import('./g1GlyphRollback')).jieshaAuthorityV2().default as unknown as Auth,
+    )
     const cov = a.runtimeCoverage.activities
     if (model === 'm-applied-no-cells') cov.demolition = { status: 'APPLIED' }
     if (model === 'm-cells-while-excluded') {
@@ -53,6 +57,10 @@ function mockModel(model: Model) {
 async function load(model: Model) {
   vi.resetModules()
   mockModel(model)
+  if (!model.startsWith('m-'))
+    await (
+      await import('./g1GlyphRollback')
+    ).assertJieshaAuthority(model === 'fit' ? FIT_ID : model === 'inwindow' ? IN_ID : V2_ID)
   ;(await import('../astronomy/solarTerms/cache')).solarTermCacheStore('almanac').clear()
   await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')
