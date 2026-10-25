@@ -1,0 +1,81 @@
+{
+ "version": "g1-soil-stage1-production-access-candidate-v1",
+ "status": "AUDIT_ONLY_NOT_PRODUCTION",
+ "from": {
+  "authority": "xieji-vol10-jiesha-faithful-v3",
+  "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+ },
+ "proposedState": "APPLIED_DATE_DEPENDENT",
+ "selector": {
+  "id": "tho-vuong-dung-su",
+  "ruleVersion": "tho-vuong-dung-su-rule-v1 (soil-rule.json)",
+  "cells": {
+   "inside": "avoid",
+   "outside": "blank"
+  },
+  "input": "civil date (required) → calendar-rule service → inside | outside; unknown / unsupported throws"
+ },
+ "rows": [
+  {
+   "context": "丑甲寅",
+   "current": "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+   "candidate": "APPLIED_DATE_DEPENDENT",
+   "cellInside": "avoid",
+   "cellOutside": "blank",
+   "staticCell": null,
+   "identityApproved": true,
+   "authorityApproved": "pending owner (calendar adoption)",
+   "productionApproved": false
+  },
+  {
+   "context": "丑丙寅",
+   "current": "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+   "candidate": "APPLIED_DATE_DEPENDENT",
+   "cellInside": "avoid",
+   "cellOutside": "blank",
+   "staticCell": null,
+   "identityApproved": true,
+   "authorityApproved": "pending owner (calendar adoption)",
+   "productionApproved": false
+  },
+  {
+   "context": "丑壬寅",
+   "current": "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+   "candidate": "APPLIED_DATE_DEPENDENT",
+   "cellInside": "avoid",
+   "cellOutside": "blank",
+   "staticCell": null,
+   "identityApproved": true,
+   "authorityApproved": "pending owner (calendar adoption)",
+   "productionApproved": false
+  },
+  {
+   "context": "丑戊寅",
+   "current": "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+   "candidate": "APPLIED_DATE_DEPENDENT",
+   "cellInside": "avoid",
+   "cellOutside": "blank",
+   "staticCell": null,
+   "identityApproved": true,
+   "authorityApproved": "pending owner (calendar adoption)",
+   "productionApproved": false
+  },
+  {
+   "context": "未戊申",
+   "current": "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY",
+   "candidate": "APPLIED_DATE_DEPENDENT",
+   "cellInside": "avoid",
+   "cellOutside": "blank",
+   "staticCell": null,
+   "identityApproved": true,
+   "authorityApproved": "pending owner (calendar adoption)",
+   "productionApproved": false
+  }
+ ],
+ "unchanged": "11 demolition contexts APPLIED (static avoid); all other activities APPLIED 16/16",
+ "invariants": [
+  "a date-dependent context has no static cell",
+  "the selector is a declared id, not code",
+  "no civil dates in the authority file"
+ ]
+}

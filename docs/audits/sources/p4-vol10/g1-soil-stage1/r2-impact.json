@@ -1,0 +1,136 @@
+{
+ "version": "g1-soil-stage1-r2-impact-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none",
+ "base": "shipped d5c005f (authority v3)",
+ "calendar": "production thoVuongDungSu (D-line flag); = soil-calendar.json on every day",
+ "R2": {
+  "domain": {
+   "days": 1095,
+   "demolitionChangedDays": 0,
+   "conclusionChanged": 0,
+   "scoreChanged": 0,
+   "scoreLower": 0,
+   "scoreHigher": 0,
+   "statusChanged": 0,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "insideSoil": 0,
+   "outsideSoil": 0,
+   "eventEvaluations": 24090,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 352,
+   "statusTransitions": {},
+   "scoreDeltas": {},
+   "verdictTransitions": {},
+   "byContext": {}
+  },
+  "outside": {
+   "days": 72319,
+   "demolitionChangedDays": 298,
+   "conclusionChanged": 298,
+   "scoreChanged": 298,
+   "scoreLower": 298,
+   "scoreHigher": 0,
+   "statusChanged": 298,
+   "hardWarningChanged": 0,
+   "evidenceOnly": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "g2ActivityChanged": 0,
+   "insideSoil": 298,
+   "outsideSoil": 0,
+   "eventEvaluations": 1591018,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 20966,
+   "statusTransitions": {
+    "watch→avoid": 298
+   },
+   "scoreDeltas": {
+    "-15": 298
+   },
+   "verdictTransitions": {
+    "kiep_sat:informational:no_annotation→kiep_sat:applied:avoid": 298
+   },
+   "byContext": {
+    "丑-丙寅": 61,
+    "丑-壬寅": 58,
+    "丑-戊寅": 59,
+    "丑-甲寅": 60,
+    "未-戊申": 60
+   }
+  }
+ },
+ "stake": {
+  "occurrences": 502,
+  "inside": 303,
+  "outside": 199,
+  "insideInP4Domain": 5,
+  "staticBlankWrong": 303,
+  "staticAvoidWrong": 199,
+  "staticBlankWrongObservable": 298,
+  "currentlyExcludedByV3": 502,
+  "p4HandledOccurrences": [
+   {
+    "date": "2025-02-02",
+    "context": "丑-壬寅",
+    "soil": true,
+    "p4": "only_ji"
+   },
+   {
+    "date": "2026-01-28",
+    "context": "丑-壬寅",
+    "soil": true,
+    "p4": "only_ji"
+   },
+   {
+    "date": "2026-08-02",
+    "context": "未-戊申",
+    "soil": true,
+    "p4": "only_ji"
+   },
+   {
+    "date": "2027-01-23",
+    "context": "丑-壬寅",
+    "soil": true,
+    "p4": "only_ji"
+   },
+   {
+    "date": "2027-07-28",
+    "context": "未-戊申",
+    "soil": true,
+    "p4": "only_ji"
+   }
+  ],
+  "explanation": "static blank is wrong on every inside occurrence (303); it is observable only where the vol10 path decides demolition: the 5 inside occurrences in 2025–2027 are P4-handled (state only_ji, 土王用事後 protected), so 303 − 5 = 298 change output"
+ },
+ "independent": {
+  "version": "g1-soil-stage1-independent-v1",
+  "calendarsAgreeOnEveryDay": true,
+  "soilDaysAllInJiYue": true,
+  "predictedFromV3PlusIndependentCalendarEqualsMeasured": true,
+  "measuredR2ChangedDays": 298,
+  "predicted": 298,
+  "g1aEngineInside": 303,
+  "g1aEngineOutside": 199,
+  "occurrencesMatchG1a": true,
+  "r2ChangesOnlyInExcludedContexts": true
+ },
+ "dumpSha256": {
+  "forward": "b8fb040dc9a402474875abd33d413f0961f4d83334db75392f450751954b90d9",
+  "avoid5": "d63001c9df3a28ec075ecb906d4e8822de2b7726deb6574655bb4cf96f8fc51a",
+  "blank5": "f342b03c31771021b2d5bbc2523f40a4df365dccf3e558774e228de01f6e9858"
+ }
+}
