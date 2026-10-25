@@ -14,7 +14,8 @@
   "diff": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/compare.py <dir>",
   "authorityStamp": "G1SOIL2_STAMP=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t \"authority stamp gate\"",
   "counterfactual3": "G1SOIL2_G1B=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t \"counterfactual #3\"",
-  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py; G1SOIL2_WRITE=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts"
+  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py; G1SOIL2_WRITE=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts",
+  "overlapImpactClassification": "JIESHA_IMPACT_FULL=1 on f3c68c6 / d5c005f worktrees and this branch → <dir>/{f3c68c6,d5c005f,v4}.json (restore the locked raw.json after each run); python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/classify_overlap_impact.py <dir>"
  },
  "files": [
   {
@@ -76,6 +77,14 @@
   {
    "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/g1b-counterfactual-3.json",
    "sha256": "6f3de61bd33bd10566832a70ef5f8b607040feba699310be1c54747557c3ef54"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/classify_overlap_impact.py",
+   "sha256": "52d8e5ff0a7fbbaab70d1f39ca362c28b20e1fe9345f82fc3fd22e43d746b417"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/overlap-impact-classification.json",
+   "sha256": "56fd44b38c43cf1382b9b992f30bbafa7fc43a1ca05acd78550ce07ee43cacb7"
   }
  ],
  "outputs": [

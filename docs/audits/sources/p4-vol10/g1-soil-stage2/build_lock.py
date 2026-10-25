@@ -11,7 +11,8 @@ OUT = Path('docs/audits/sources/p4-vol10/g1-soil-stage2')
 FILES = ['build_authority_v4.py', 'build_scoring_golden_v5.py', 'build_access_matrix.py', 'compare.py',
          'authority-v3-v4.json', 'golden-diff.json', 'production-access-matrix.json', 'summary.json',
          'activity-diff.tsv', 'event-diff.json', 'rollback.json', 'authority-stamp.json', 'mutation-results.json',
-         'jiesha-mutation-results.json', 'g1b-counterfactual-3.json']
+         'jiesha-mutation-results.json', 'g1b-counterfactual-3.json',
+         'classify_overlap_impact.py', 'overlap-impact-classification.json']
 OUTPUTS = ['shared/almanac-data/xieji-vol10-jiesha-authority-v4.json',
            'shared/almanac-data/golden-xieji-vol10-scoring-v5.json', 'shared/lunar/thoVuongDungSuRule.ts']
 INPUTS = ['shared/almanac-data/xieji-vol10-jiesha-authority-v1.json',
@@ -46,6 +47,7 @@ lock = {
         'authorityStamp': 'G1SOIL2_STAMP=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t "authority stamp gate"',
         'counterfactual3': 'G1SOIL2_G1B=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t "counterfactual #3"',
         'mutations': 'python3 scripts/audit-vol10-jiesha-mutations.py; G1SOIL2_WRITE=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts',
+        'overlapImpactClassification': 'JIESHA_IMPACT_FULL=1 on f3c68c6 / d5c005f worktrees and this branch → <dir>/{f3c68c6,d5c005f,v4}.json (restore the locked raw.json after each run); python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/classify_overlap_impact.py <dir>',
     },
     'files': [{'path': str(OUT / f), 'sha256': sha(OUT / f)} for f in FILES],
     'outputs': [{'path': p, 'sha256': sha(p)} for p in OUTPUTS],

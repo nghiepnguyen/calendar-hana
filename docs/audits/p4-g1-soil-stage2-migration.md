@@ -249,6 +249,18 @@ All four already drift from their locked bytes on shipped `d5c005f`. That drift 
 
 The locked files were restored and not regenerated (`check:audit-clean` passes). Refreshing these stale suites is a separate follow-up.
 
+**Field-by-field classification of `jiesha-overlap-impact-v1/raw.json`** (`overlap-impact-classification.json`, `classify_overlap_impact.py`). The artifact was regenerated at `f3c68c6`, `d5c005f` and this branch, and the locked → v4 difference is decomposed into steps:
+
+| Step | Changed dates | What changed |
+|---|---|---|
+| locked → `f3c68c6` (pre-existing, older than both G1 migrations) | 1,636 | activities, events and vol10 logs across many activities, including contract / transaction. Not G1-SOIL. |
+| `f3c68c6` → `d5c005f` (G1 glyph v3) | 1,134 | only demolition vol10-log entries (1,119 output-visible + 15 P4-handled domain days) |
+| **`d5c005f` → v4 (G1-SOIL)** | **303** | **only demolition vol10-log entries**: 909 = 303 × 3 logs (top, A, B). 0 activity fields (score, status, hardWarning, p4State, changedRows, annotated), 0 event fields, no contract / transaction entries. |
+
+- The 303 dates equal the inside-window occurrences of the 5 contexts.
+- **303 vs 298.** The harness logs `resolveVol10` decisions, which run before the P4 adapter. On the 5 domain dates (2025-02-02, 2026-01-28, 2026-08-02, 2027-01-23, 2027-07-28) the P4 adapter decides the score, so production output stays unchanged while the vol10-log entry moves. Those 5 are the P4-masked dates.
+- **Policy.** The locked artifact stays as its historical state, from before G1 glyph. It is not regenerated. The classification is the successor evidence.
+
 **Not run:**
 - `PUZHU17_FULL`: that test rewrites the approved `puzhu17-bujiang-v1/freeze.json` whenever it runs, which is why it is excluded from `npm test`.
 - `G1A_FULL`: its own engine; no production calls.
