@@ -4,7 +4,8 @@ import { describe, expect, it, vi } from 'vitest'
 
 // G1-SOIL Stage 1 (docs/audits/p4-g1-soil-authority.md): AUDIT ONLY, production files untouched.
 // Models (own module graph each, vi.doMock at the authority path production imports):
-//   forward   shipped production (authority v3: 5 demolition contexts EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY).
+//   forward   pre-G1-SOIL production (authority v3: 5 demolition contexts EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY),
+//             pinned at the v4 path since G1-SOIL Stage 2.
 //   avoid5    v3 with the 5 contexts APPLIED, cell avoid (g1-soil-stage1/candidate-authority-avoid5.json).
 //   blank5    v3 with the 5 contexts APPLIED, cell blank (R1 static-blank counterfactual).
 //   *-sk      the same with p4ScoreHeadingLookup source-key-v1 (G1-b counterfactual #3, 2025–2027 only).
@@ -12,7 +13,7 @@ import { describe, expect, it, vi } from 'vitest'
 // npm test: focused checks. G1SOIL_DUMP=<models> G1SOIL_OUT: per-row dump of every day 1900–2100 (no sampling),
 // the G1 glyph Stage 2 row format. G1SOIL_G1B=1: counterfactual #3.
 type Model = 'forward' | 'avoid5' | 'blank5' | 'forward-sk' | 'avoid5-sk'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
 const MANIFEST = '../almanac-data/manifest.json'
 const DIR = 'docs/audits/sources/p4-vol10/g1-soil-stage1/'
 const V3_ID = 'xieji-vol10-jiesha-faithful-v3'
@@ -30,6 +31,9 @@ function mockModel(model: Model) {
       }
     })
   const base = model.replace('-sk', '')
+  // G1-SOIL Stage 2 shipped authority v4: this frozen Stage 1 evidence pins forward to v3.
+  if (base === 'forward')
+    vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV3())
   if (base === 'avoid5' || base === 'blank5')
     vi.doMock(AUTH, () => ({
       default: JSON.parse(readFileSync(`${DIR}candidate-authority-${base}.json`, 'utf8')),
@@ -277,7 +281,7 @@ describe('G1-SOIL Stage 1 audit (5 excluded demolition contexts × 土王用事)
 
   if (DUMP) return
 
-  it('baseline: production is authority v3 with the 5 demolition contexts excluded', async () => {
+  it('baseline: the pre-G1-SOIL graph is authority v3 with the 5 demolition contexts excluded', async () => {
     const e = await load('forward')
     expect(e.A.VOL10_JIESHA_AUTHORITY_ID).toBe(V3_ID)
     for (const k of EXCLUDED)
@@ -328,7 +332,7 @@ describe('G1-SOIL Stage 1 audit (5 excluded demolition contexts × 土王用事)
       ])
     }
     const src = readFileSync('shared/lunar/xiejiVol10JieshaAuthority.ts', 'utf8')
-    expect(src).not.toMatch(/candidate|soil/)
+    expect(src).not.toMatch(/candidate|g1-soil-stage1/)
   })
 
   it('frozen audit envelope: R2 vs v3 domain 0, outside 298 (−15, watch→avoid); stake 303 / 199 / 298', () => {

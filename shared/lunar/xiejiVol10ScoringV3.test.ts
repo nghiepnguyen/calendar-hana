@@ -13,7 +13,7 @@ const rollback = () =>
   (graph ??= (async () => {
     vi.resetModules()
     const { jieshaAuthorityV2, assertJieshaAuthority, V2_ID } = await import('./g1GlyphRollback')
-    vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', () => jieshaAuthorityV2())
+    vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', () => jieshaAuthorityV2())
     await assertJieshaAuthority(V2_ID)
     const { resolveVol10 } = await import('./xiejiVol10Resolution')
     const { applyVol10Scoring, VOL10_SCORED_ENTRIES } = await import('./xiejiVol10Scoring')

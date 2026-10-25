@@ -14,7 +14,7 @@ import { describe, expect, it, vi } from 'vitest'
 // (activities + events, every day, no sampling) that g2-stage2/compare.py turns into the committed diff.
 type Model = 'forward' | 'rollback' | 'text' | 'weishen' | 'alias-v1'
 const VOL10 = '../almanac-data/xiejibianfangshu-vol10-yiji.json'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
 const V1_ID = 'xieji-vol10-jiesha-faithful-v1'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
 const G2 = ['contract', 'transaction']
