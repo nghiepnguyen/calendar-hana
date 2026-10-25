@@ -178,6 +178,10 @@ def main(dumps):
         'measuredR2ChangedDays': len(changed_r2), 'predicted': len(predicted),
         'g1aEngineInside': g1a_inside, 'g1aEngineOutside': g1a_outside,
         'occurrencesMatchG1a': (occ['inside'], occ['outside']) == (g1a_inside, g1a_outside),
+        # Mechanism 3 on dates, without the dump: G1-a-tied scope dates of the 5 contexts ∩ the independent
+        # calendar's inside days, minus 2025–2027 (P4-handled).
+        'g1aScopeInsideOutsideDomainEqualsMeasured': {d for c in EXCLUDED for d in SCOPE[c]
+                                                      if d in INSIDE and part(d) == 'outside'} == changed_r2,
         'r2ChangesOnlyInExcludedContexts': set(tot['R2']['outside']['byContext']) <= EXCLUDED
         and not tot['R2']['domain']['byContext'],
     }

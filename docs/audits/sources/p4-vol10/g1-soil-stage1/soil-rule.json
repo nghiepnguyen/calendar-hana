@@ -6,6 +6,7 @@
   "卷一 「土於四立之前各旺一十八日」: 18 days before each 四立 (rule)",
   "推步捷例 「自四立節前一辰，逆數至十八日」: counting starts at 「四立節前一辰」",
   "卷六 「四絶者四立前一辰也…故先一日為絶也」: 「前一辰」 = the civil day before 四立 (協紀-internal gloss)",
+  "推步 「寄旺四時共日七十二日」 and 卷一 「合之亦為七十二日」 require 4 × 18 = 72, ruling out the exclusive reading of 「逆數至十八日」 ([立−19, 立−1], 19 days): the entry day is counted",
   "⇒ day 1 = date(L) − 1, day 18 = date(L) − 18; the 立 day starts the next element (卷一 各旺七十二日)"
  ],
  "grade": "B (rule derivation from 協紀 卷一 + 卷六 gloss, corroborated by 推步捷例); not A (no dated 時憲書 witness)",
@@ -25,7 +26,7 @@
  },
  "conventions": {
   "定氣 vs 恆氣": "定氣 (Qing 時憲 basis, project-wide); 恆氣 is Ming 大統, not adopted",
-  "timezone": "UTC+7 project convention; UTC+8 alternative flips 0 of the 502 five-context occurrences (66 window days differ overall)",
+  "timezone": "UTC+7 project convention; UTC+8 alternative flips 0 of the 502 five-context occurrences (66 window days differ overall). Only the soil calendar was varied: Month Jian and the day pillar rest on the same project-wide UTC+7 convention, which is outside G1-SOIL and not reopened",
   "instant 2-hour reading of 前一辰": "rejected by 卷六 gloss; would flip 2 occurrences (1939-01-17, 2042-01-16)"
  },
  "equivalence": "identical to shared/lunar/thoVuongDungSu.ts (owner 2026-10-10) and p4-soil-owner-convention-v1 (owner 2026-10-13, coverage 2025–2027), shown on every window 1900–2100 (calendar parity test)",

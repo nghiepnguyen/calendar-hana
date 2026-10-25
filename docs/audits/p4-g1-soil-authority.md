@@ -79,6 +79,7 @@ Derivation:
 - 卷一 gives 18 days before 四立.
 - 推步 counts back 18 days from 「四立節前一辰」.
 - 卷六 glosses 「四立前一辰」 as 「先一日」, the civil day before 四立 (the day god 四絶, 卷十 :442).
+- 推步 「寄旺四時共日七十二日」 and 卷一 「合之亦為七十二日」 require 4 × 18 = 72 days. That rules out reading 「逆數至十八日」 as excluding its starting day, which would give [立−19, 立−1], 19 days. The entry day counts.
 - So day 1 = date(L) − 1 and day 18 = date(L) − 18. The 立 day starts the next element (卷一 「各旺七十二日」).
 
 **Grade B.** This is a rule derivation inside 協紀, corroborated by 推步. It is not A, because no dated 時憲書 witness exists.
@@ -107,6 +108,7 @@ Sensitivity (`soil-sensitivity.json`):
 - UTC+8 for the 立 date shifts 66 window days in 201 years, but flips **0** of the 502 occurrences of the 5 contexts.
 - The rejected 2-hour reading of 「前一辰」 flips 2 (1939-01-17 and 2042-01-16, both 丑-甲寅).
 - 恆氣 (Ming) and the modern solar-longitude rule are not adopted.
+- Only the soil calendar was varied. Month Jian and the day pillar rest on the same project-wide UTC+7 convention, which is outside G1-SOIL and not reopened.
 
 ## 8. Independent calendar generation
 
@@ -211,6 +213,18 @@ Schema validation:
 ## 15. Activity envelope
 
 See §11. Two exhaustive dumps were compared: forward (v3) and avoid5, plus blank5 for R1. 73,414 days, no sampling.
+
+## 15a. Independent verification
+
+All three mechanisms agree **on dates**:
+
+| # | Mechanism | Result |
+|---|---|---|
+| 1 | production resolver with the audit avoid5 authority, composed per day by the production calendar | 298 changed dates |
+| 2 | prediction from the v3 forward dump plus the **independent** JPL-row calendar plus the 5 contexts (vol10 `no_annotation`, P4 baseline, inside) | the same 298 dates |
+| 3 | G1-a-tied scope dates of the 5 contexts (`scope-dates.json`, matched to the G1-a engine in Stage 1) ∩ the independent calendar's inside days, minus 2025–2027. Reads no dump. | the same 298 dates; per-context in/out counts also equal G1-a `full.json` (303 / 199) |
+
+The two calendar derivations agree on all 73,414 days.
 
 ## 16. Event envelope (`event-impact.json`)
 
