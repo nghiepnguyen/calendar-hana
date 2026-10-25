@@ -1,4 +1,4 @@
-import authority from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
+import authority from '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
 
 /**
  * 協紀 卷十 劫煞, 辰戌丑未 months without 德: 「不與德神併凡所忌者則不註宜所宜者亦不註忌」. The old
@@ -7,7 +7,9 @@ import authority from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
  * fixed table per Month Jian + day pillar and activity (docs/audits/p4-chou-bingyin-yuede.md).
  *
  * `faithful-v1` is that matrix projected through the current resolveVol10 heading normalization, with
- * explicit v1 exclusions (`runtimeCoverage`); it does not resolve glyph debt G1 (壞/壊) or G2 (劵/券).
+ * explicit exclusions (`runtimeCoverage`). Authority v2 (G2 Stage 2) applies contract / transaction, which
+ * the 卷十 headingAliases entry 立劵交易 → 立券交易 makes reachable; v1 stays frozen as rollback evidence.
+ * Glyph debt G1 (壞/壊, demolition) stays excluded.
  * The policy lives in `manifest.policies.xiejiVol10JieshaPolicy` (shipped: faithful-v1); production
  * callers pass it to resolveVol10, and historical tests pin `legacy-cancel-both` explicitly.
  */
