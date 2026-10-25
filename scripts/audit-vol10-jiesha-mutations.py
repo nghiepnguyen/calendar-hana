@@ -73,6 +73,13 @@ mutations = [
      [(DATA, lambda a: ctx(a, '辰乙巳', productionApproved=False), None)]),
     ('applied_context_cell_value_changed', AUTH_TEST, None, 'invalid xieji-vol10-jiesha-faithful-v4',
      [(DATA, lambda a: cell(a, '辰乙巳', 'blank'), None)]),
+    # The v3 exclusion branch is the rollback path (v4 → v3): kept, killed by the v3-pinned G1 glyph test.
+    ('context_coverage_bypassed_blank', STAGE2_TEST, 'excluded contexts', 'AssertionError',
+     [(AUTH, "      return { status: ctx.status, reason: ctx.reason! }",
+       "      return { status: 'APPLIED', cell: 'blank' }")]),
+    ('context_coverage_bypassed_avoid', STAGE2_TEST, 'excluded contexts', 'AssertionError',
+     [(AUTH, "      return { status: ctx.status, reason: ctx.reason! }",
+       "      return { status: 'APPLIED', cell: 'avoid' }")]),
     ('cell_guard_falls_back', AUTH_TEST, LOUD, 'AssertionError',
      [(AUTH, "  if (runtime.status !== 'APPLIED')\n    throw new Error(`${authority.version}: authority cell requested for ${runtime.status}`)\n  return runtime.cell",
        "  return (runtime as { cell?: 'avoid' | 'blank' }).cell ?? 'blank'")]),

@@ -1,8 +1,8 @@
 {
   "version": "vol10-jiesha-mutations-v4",
   "control": "clean",
-  "mutations": 34,
-  "caught": 34,
+  "mutations": 36,
+  "caught": 36,
   "restored": true,
   "results": [
     {
@@ -128,6 +128,20 @@
       "mutation": "applied_context_cell_value_changed",
       "test": null,
       "expect": "invalid xieji-vol10-jiesha-faithful-v4",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "context_coverage_bypassed_blank",
+      "test": "excluded contexts",
+      "expect": "AssertionError",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "context_coverage_bypassed_avoid",
+      "test": "excluded contexts",
+      "expect": "AssertionError",
       "caughtByTest": true,
       "exitCode": 1
     },

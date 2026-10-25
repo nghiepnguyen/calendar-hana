@@ -162,7 +162,7 @@ Also:
 
 ## 11. Fail-loud and mutations
 
-**`scripts/audit-vol10-jiesha-mutations.py`: 34 of 34 killed**, all files restored, and a second run reproduced byte for byte (`jiesha-mutation-results.json`). New mutants:
+**`scripts/audit-vol10-jiesha-mutations.py`: 36 of 36 killed**, all files restored, and a second run reproduced byte for byte (`jiesha-mutation-results.json`). New mutants:
 
 | Mutant | What it checks |
 |---|---|
@@ -179,7 +179,13 @@ Also:
 | `date_dependent_fully_promoted` | a self-consistent static promotion, caught by the pinned access set |
 | `v3_loaded_instead_of_v4` | wrong authority loaded |
 
-The G1 glyph, G2 and earlier mutants are kept and retargeted. The v1, v2 and v3 reports stay frozen.
+**Kept and retargeted:**
+- the G1 glyph, G2 and earlier runtime mutants;
+- `context_coverage_bypassed_blank` and `_avoid`. The v3 exclusion branch is still the rollback path (v4 → v3); these two now run against the v3-pinned G1 glyph test (`excluded contexts`).
+
+**Superseded:** the v3 `excluded_context_*` data mutants are replaced by the date-dependent ones above. v3 exclusion validation stays covered by the G1 glyph in-test `m-*` models on v3 content.
+
+The v1, v2 and v3 reports stay frozen.
 
 **In-test models** (`mutation-results.json`): 6 malformed v4 authorities, each rejected on import with `invalid xieji-vol10-jiesha-faithful-v4`.
 
@@ -217,7 +223,36 @@ The wrong-path guards remain. One Stage 1 assertion was narrowed: the check that
 | build | PASS |
 | `ci:p4:full` | **PASS** (exit 0; mutation suites 12 / 16 / 12 / 29 / 20 / 34; locked reports reproduced, audit-clean) |
 
-**Not run:** Playwright and the emulator. No UI code changed; the date only flows through existing call sites.
+**Env-gated suites outside `ci:p4`**, run once on this branch against the new missing-date throw. All pass (0 throws).
+
+| Flag | Tests | Result |
+|---|---|---|
+| `GATE_FULL` | 1 | pass |
+| `JIESHA_FAITHFUL_FULL` | 3 | pass |
+| `JIESHA_IMPACT_FULL` | 3 | pass |
+| `NACAI_FULL` | 3 | pass |
+| `P1_MIGRATION_FULL` | 2 | pass |
+| `G2_FULL` / `G2_EVENTS_FULL` | 1 | pass (pinned v1) |
+| `G2S2_STAMP` | 9 | pass (pinned v2) |
+
+These harnesses reach production through `getAlmanac` / `evaluateEventDay`, which pass the date.
+
+**Finding.** Four of them rewrite their own audit outputs when run in full mode:
+- `jiesha-faithful-vol10-v1/raw.json`
+- `jiesha-overlap-impact-v1/raw.json`
+- `option-c-final-gate-v1/de-sensitivity.json`
+- `weishen-nacai-puzhu21-v1/sensitivity.json`
+
+All four already drift from their locked bytes on shipped `d5c005f`. That drift is pre-existing, from earlier migrations, in suites not in CI. Comparing the regenerated outputs:
+- **Three** are byte-identical between this branch and `d5c005f`.
+- **`jiesha-overlap-impact-v1/raw.json`** differs on exactly **303 dates**, the inside-window occurrences of the 5 contexts. That is the approved R2 change. The per-key breakdown inside that harness was not completed; the production-wide dump bounds it to demolition (0 other-activity and 0 event semantic changes).
+
+The locked files were restored and not regenerated (`check:audit-clean` passes). Refreshing these stale suites is a separate follow-up.
+
+**Not run:**
+- `PUZHU17_FULL`: that test rewrites the approved `puzhu17-bujiang-v1/freeze.json` whenever it runs, which is why it is excluded from `npm test`.
+- `G1A_FULL`: its own engine; no production calls.
+- Playwright and the emulator: no UI code changed, and the date only flows through existing call sites.
 
 ## 14. Limitations and open items
 

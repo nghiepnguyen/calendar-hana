@@ -2,7 +2,12 @@
 
 Opened 2026-10-25 by owner ruling on G1 glyph Stage 1 ([report](p4-g1-demolition-glyph-authority.md), [Stage 2 spec](p4-g1-glyph-stage2-spec.md)).
 
-**Status: OPEN, deferred.** Nothing is decided here.
+**Status: RESOLVED by G1-SOIL Stage 2, pending owner review and merge.**
+- Stage 1: [p4-g1-soil-authority.md](p4-g1-soil-authority.md).
+- Owner ruling and spec: [p4-g1-soil-stage2-spec.md](p4-g1-soil-stage2-spec.md).
+- Migration: [p4-g1-soil-stage2-migration.md](p4-g1-soil-stage2-migration.md).
+
+In authority v4 the 5 contexts are `APPLIED_DATE_DEPENDENT`, with selector `tho-vuong-dung-su-rule-v1`: inside 土王用事 avoid, outside blank. The text below is the original item, kept as opened.
 
 ## Scope
 
@@ -14,7 +19,7 @@ Opened 2026-10-25 by owner ruling on G1 glyph Stage 1 ([report](p4-g1-demolition
 
 The mechanism is puzhu:20 (相抵). Demolition is unnoted when 興造動土 and 豎柱上梁 are both unnoted. Inside 土王用事, 興造動土 carries 土王用事後, so the lift is blocked and 劫煞's 忌 is kept. Source: G1-a `engine.json`, owner-accepted 2026-10-24.
 
-## Production state until this item is resolved
+## Production state until this item is resolved (authority v3, superseded by v4 on merge)
 
 - R3: the 5 contexts are `EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY` in 劫煞 authority v3.
 - They have no static cell. Their output stays the legacy verdict (`no_annotation`, Kiếp Sát informational).
