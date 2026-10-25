@@ -1,0 +1,23 @@
+{
+ "version": "g1-glyph-stage1-glyph-analysis-v1",
+ "general": {
+  "壞": "U+58DE, traditional / 康熙 form",
+  "壊": "U+58CA, Japanese shinjitai form (simplified 坏)",
+  "nfkcUnifies": false,
+  "conclusion": "CHARACTER_VARIANT_CONFIRMED (general orthographic variant; not used alone as authority)"
+ },
+ "sourcePipeline": {
+  "卷十": "mixed: 壞 15, 壊 3; same lists printed in both glyphs (vol10:271/392 壞 vs vol10:449 壊, 義同土府)",
+  "卷十一": "壊 only (activity list :46/:67, heading :263)",
+  "月表 scans": "壞 (11 of 16 context pages print it; visual crop n81 = 壞)",
+  "推步/卷六": "壞 only",
+  "otherWordsWithEitherGlyph": 0,
+  "conclusion": "SOURCE_ORTHOGRAPHY_VARIANT_CONFIRMED: inside this transcription the two glyphs alternate within one compound, never elsewhere"
+ },
+ "repository": {
+  "NORM": "shared/lunar/xiejiVol10Resolution.ts:68 壞: '壊' — a source-matching fold (with 宫/宮, 產/産 …), not a semantic claim",
+  "activityMap": "xiejibianfangshu-yiji.json activityEntries.demolition = ['破屋壞垣'] (project normalization note: 'Raw 宜/忌 god lists per activity, variant characters normalized (徳→德, 刼→劫, 劵→券, 虚→虛, 壊→壞).')",
+  "conclusion": "REPOSITORY_NORMALIZATION in two opposite directions (activity-map data 壊→壞, runtime NORM 壞→壊 at match/key time); naming only, consistent with, not the basis of, the source finding"
+ },
+ "decision": "CHARACTER_VARIANT_CONFIRMED + SOURCE_ORTHOGRAPHY_VARIANT_CONFIRMED"
+}

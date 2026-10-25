@@ -1,0 +1,40 @@
+{
+ "version": "g1-glyph-stage1-collision-v1",
+ "fold": "壞 → 壊 only (the single NORM pair at issue)",
+ "vol11VocabularyHeadings": 29,
+ "headingsContaining壞": [
+  "破屋壞垣"
+ ],
+ "headingsContaining壊": [],
+ "normalizedCollisions": {},
+ "vol10ListsContaining": {
+  "壞": 5,
+  "壊": 0,
+  "allInsideCompound": true
+ },
+ "rawSources": {
+  "vol10.raw.txt": {
+   "壞": 15,
+   "壊": 3,
+   "insideCompound": 18
+  },
+  "vol11.raw.txt": {
+   "壞": 0,
+   "壊": 3,
+   "insideCompound": 3
+  },
+  "vol06.raw.txt": {
+   "壞": 1,
+   "壊": 0,
+   "insideCompound": 1
+  },
+  "tuibu-jieli-shang.raw.txt": {
+   "壞": 5,
+   "壊": 0,
+   "insideCompound": 5
+  }
+ },
+ "semanticCollisions": 0,
+ "unrelatedActivitiesAffected": 0,
+ "conclusion": "current NORM collapses only 破屋壞垣/破屋壊垣 (one heading); no unexpected merge"
+}

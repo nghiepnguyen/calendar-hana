@@ -1,0 +1,179 @@
+{
+ "version": "g1-glyph-stage1-inventory-v1",
+ "files": [
+  {
+   "path": "docs/audits/p4-g1-glyph-audit.md",
+   "role": "G1 glyph audit: SAME_ACTIVITY_ALIAS, harness root cause, G1-b finding",
+   "authorityLevel": "project audit (owner ruling given in G1-a §11)",
+   "sha256": "caa8bdda5276540df73f8bc7dcbb2beaa9a70d87a7de567a1c30e10c3e47ebdc"
+  },
+  {
+   "path": "docs/audits/p4-g1a-demolition-authority.md",
+   "role": "G1-a: SAME_ACTIVITY_ALIAS_CONFIRMED, corrected engine, 土王用事 date dependence",
+   "authorityLevel": "owner-accepted 2026-10-24",
+   "sha256": "754f502aa5cd78eec6ec25697424651fff3898a5bbf6c0c12f66f2649d8a5b4d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-audit-v1/inventory-summary.json",
+   "role": "G1 glyph inventory (121 files)",
+   "authorityLevel": "audit artifact",
+   "sha256": "9c1be1a164f1f4ce7dbce8f2b42408f0d69df2492023610be5485f0b360758cc"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json",
+   "role": "corrected faithful engine, 16 contexts × soil absent/present",
+   "authorityLevel": "owner-accepted audit artifact",
+   "sha256": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/full.json",
+   "role": "demolition verdict on all 1,636 scope dates by 土王用事 window",
+   "authorityLevel": "owner-accepted audit artifact",
+   "sha256": "e1d923a00ece6717903f41279fcef0e328175234c712495067d0481d670fbcf0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/witness-matrix.json",
+   "role": "every source occurrence and 月表 page, raw / normalized / canonical",
+   "authorityLevel": "audit artifact",
+   "sha256": "4553950790b2f1e3e867e9a8e2893bbdc4199a6e579901ec7ee26ec7a97ae4f6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/lock.json",
+   "role": "G1-a lock",
+   "authorityLevel": "lock",
+   "sha256": "01bd688bae072a110d5c98972de9e9e2f12f77ecb4fae142194c4de447d9a9dd"
+  },
+  {
+   "path": "docs/audits/p4-g1b-stage2-migration.md",
+   "role": "G1-b Stage 2: canonical-v1 shipped",
+   "authorityLevel": "production migration record",
+   "sha256": "77682d86d5166ceadf08de4a373a1a7d7ff89c31520a91d1403b819959ed6fc9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-migration-diff-v3/summary.json",
+   "role": "G1-b Migration Diff v3: 353 / 320 / 337 / 0",
+   "authorityLevel": "frozen production migration evidence",
+   "sha256": "0c24aee1754f6d985e55777115f9e56fe302f773efe4bdeeb91574bfc89d5175"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/activity-scores.tsv",
+   "role": "Score Golden v4 (canonical-v1)",
+   "authorityLevel": "frozen Golden",
+   "sha256": "a1a1d1b34ad3172852c889f8415dec1f4518f1c557ed81033dc262d6651d9595"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v3/lock.json",
+   "role": "Score Golden v3 (pre-G1-b rollback)",
+   "authorityLevel": "frozen Golden",
+   "sha256": "d2b9718d87556cafd8ba0fa3289349496f20299181a4c2f6bc4ea1436cf9211c"
+  },
+  {
+   "path": "docs/audits/p4-g2-vol10-heading-match.md",
+   "role": "G2 Stage 1",
+   "authorityLevel": "owner-approved spec",
+   "sha256": "69335ea89587dea7f4d029ccd8b7f146a4273a5dd6c024169d91f238d682148a"
+  },
+  {
+   "path": "docs/audits/p4-g2-stage2-migration.md",
+   "role": "G2 Stage 2 (PR #102)",
+   "authorityLevel": "production migration record",
+   "sha256": "243ce03830baa763c4e31d546ff598196f1171ded0c6bdc55029ee87c37138ce"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/authority-v1-v2.json",
+   "role": "authority v1 → v2 diff",
+   "authorityLevel": "frozen production migration evidence",
+   "sha256": "ad0497c52783665a158c6e32631148cd29793add4c36044f3e4840be9ef36494"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "role": "劫煞 authority faithful-v1 (rollback)",
+   "authorityLevel": "frozen authority",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+   "role": "劫煞 authority faithful-v2 (production)",
+   "authorityLevel": "production authority",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json",
+   "role": "approved 16 × 24 candidate matrix (b24f6f68…)",
+   "authorityLevel": "owner-approved 2026-10-22",
+   "sha256": "b24f6f68e6b662fc04b5ec56ab6f2da8981273291ef3bf4e05a028b2f48d326a"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "role": "卷十 宜忌 runtime source data (劫煞 avoid 破屋壞垣)",
+   "authorityLevel": "runtime data",
+   "sha256": "dc7b0a11a7354a0780d705f9c5fbc79a67fef57717f80ef5436997dbe5dd96e0"
+  },
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-yiji.json",
+   "role": "卷十一 activity map (demolition → 破屋壞垣)",
+   "authorityLevel": "runtime data",
+   "sha256": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10Resolution.ts",
+   "role": "NORM, splitHeadings, canonicalP4HeadingKey, resolveVol10",
+   "authorityLevel": "runtime code",
+   "sha256": "2d79c58f64fa9c8e62fdb6c110d3447c8c11fbfb9f64e4ff29b5a77a5fba3b27"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10JieshaAuthority.ts",
+   "role": "authority validate() + getVol10JieshaRuntime",
+   "authorityLevel": "runtime code",
+   "sha256": "73510ec7aad144f9a080d35c4f060fc04ade1528b70612c8a91c2c0c4154ead2"
+  },
+  {
+   "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+   "role": "土王用事 window convention, coverage 2025–2027",
+   "authorityLevel": "owner-adopted 2026-10-13",
+   "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+   "role": "協紀辨方書 卷十 (Wikisource 四庫 transcription)",
+   "authorityLevel": "primary source, transcription",
+   "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw.txt",
+   "role": "協紀辨方書 卷十一 (Wikisource 四庫 transcription)",
+   "authorityLevel": "primary source, transcription",
+   "sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/vol06.raw.txt",
+   "role": "協紀辨方書 卷六 (transcription)",
+   "authorityLevel": "primary source, transcription",
+   "sha256": "8c2ddb8056411ccde87b32b7f6be22ac841c6e84cb29579f082504869e4ceea6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/s1-tuwang/tuibu-jieli-shang.raw.txt",
+   "role": "推步捷例 上 (1861)",
+   "authorityLevel": "derivative compilation, research evidence only",
+   "sha256": "76193ffabee048634b74caad369d4d26aa89a0b7af18a56ba44e1946e3dd2216"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "role": "月表 page transcriptions, scans sha-locked",
+   "authorityLevel": "scan-locked witness",
+   "sha256": "9849e97b6d1659a2c2f475035b82432e2e17adfef3c755238d3afd990258ac13"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json",
+   "role": "1,636 劫煞 authority scope dates by context",
+   "authorityLevel": "audit artifact",
+   "sha256": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"
+  }
+ ],
+ "settled": {
+  "characterAndHeading": "SAME_ACTIVITY_ALIAS_CONFIRMED (G1-a §8, owner 2026-10-24) — not re-decided here",
+  "canonical": "破屋壊垣; alias 破屋壞垣 → 破屋壊垣 at match / key time; raw text untouched",
+  "g1b": "canonical-v1 shipped (353 / 320 / 337 / 0) — frozen history",
+  "g2": "立劵交易 → [立券交易], authority faithful-v2, 未-戊申 contract/transaction blank (I1) — frozen"
+ }
+}
