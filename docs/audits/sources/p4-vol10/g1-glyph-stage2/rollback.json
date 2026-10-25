@@ -1,0 +1,14 @@
+{
+ "version": "g1-glyph-stage2-rollback-v1",
+ "rollback": "authority v2 imported in place of v3 (g1GlyphRollback.ts at the v3 path); nothing else differs",
+ "comparison": "raw dump bytes, no normalization",
+ "dumpSha256": {
+  "preG1GlyphMain": "d1b6adcdc7fa8d92ccc52b60555c9b623afe2d183a22fa0cafe3f9f66507d5e5",
+  "stage2Forward": "985090ebf1b74a3060a4ddde8041ad81b8552fc0370087d4cde23f6835dec3f2",
+  "stage2Rollback": "d1b6adcdc7fa8d92ccc52b60555c9b623afe2d183a22fa0cafe3f9f66507d5e5",
+  "stage2ReEnable": "985090ebf1b74a3060a4ddde8041ad81b8552fc0370087d4cde23f6835dec3f2",
+  "stage1FitModel": "e4882611119fadc46502fcc56e4dc322101cdaa35486fb52ccf7a795d3f169d0"
+ },
+ "rollbackEqualsPreG1GlyphMain": true,
+ "reEnableEqualsForward": true
+}

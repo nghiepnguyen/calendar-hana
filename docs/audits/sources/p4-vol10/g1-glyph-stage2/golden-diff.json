@@ -1,0 +1,76 @@
+{
+ "version": "g1-glyph-stage2-golden-diff-v1",
+ "lineage": "卷十 Scoring Golden (golden-xieji-vol10-scoring*); P4 Score Golden v4 unchanged",
+ "from": {
+  "path": "shared/almanac-data/golden-xieji-vol10-scoring-v3.json",
+  "version": "xieji-vol10-scoring-golden-v3",
+  "sha256": "cb18c3c2df864350ac5bccc707f76913d3e9d02bc98d83faf2a58e9c67944e78",
+  "cases": 47
+ },
+ "to": {
+  "path": "shared/almanac-data/golden-xieji-vol10-scoring-v4.json",
+  "version": "xieji-vol10-scoring-golden-v4",
+  "cases": 48
+ },
+ "inputs": {
+  "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+ },
+ "selection": "demolition × kiep_sat only × 辰戌丑未 context in authority v3 coverage",
+ "rederived": [
+  {
+   "id": "jie-chen-demolition-excluded",
+   "newId": "jie-chen-demolition-applied",
+   "expectBefore": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   },
+   "expectAfter": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  }
+ ],
+ "added": [
+  {
+   "id": "jie-chou-renyin-demolition-excluded",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  }
+ ],
+ "removed": [],
+ "affectedRule": "kiep_sat (劫煞 jie_sha verdict)",
+ "affectedActivity": "demolition",
+ "unrelatedCasesChanged": 0
+}
