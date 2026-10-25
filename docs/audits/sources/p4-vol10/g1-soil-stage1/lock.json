@@ -1,0 +1,134 @@
+{
+ "version": "g1-soil-stage1-lock-v1",
+ "status": "AUDIT_ONLY_NOT_PRODUCTION",
+ "base": "origin/main d5c005fe59f6dea642d23d815b3d1a0dca070528 (PR #103 merged and deployed)",
+ "reproduce": {
+  "calendar": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage1/build_soil_calendar.py",
+  "candidates": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage1/build_candidate.py",
+  "evidence": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage1/build_evidence.py",
+  "dumps": "for m in forward avoid5 blank5: G1SOIL_DUMP=$m G1SOIL_OUT=<dir>/$m npx vitest run shared/lunar/p4G1SoilStage1Audit.test.ts",
+  "diff": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage1/compare.py <dir>",
+  "g1bCounterfactual3": "G1SOIL_G1B=1 npx vitest run shared/lunar/p4G1SoilStage1Audit.test.ts -t \"counterfactual #3\"",
+  "baselineDump": "G1GS2_DUMP=forward npx vitest run shared/lunar/p4G1GlyphStage2Migration.test.ts → sha = g1-glyph-stage2 rollback.json stage2Forward"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/build_soil_calendar.py",
+   "sha256": "608e42b8782224d847147a9c029552fdd6c68b403b3fcb03ea664eafaff275ae"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/build_candidate.py",
+   "sha256": "7fd27c9abd71637c096f0681efabb7e0a8a2b56b08d52b99d6f4061b54878252"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/build_evidence.py",
+   "sha256": "1f22248222120ff20c895f2effb60bb8599c447bced8f03f8a49a377eb3751a2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/compare.py",
+   "sha256": "072b0c05605de87cdf8ba4a218491eb212806d12a5f42b8c6d278f0c8771c892"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-calendar.json",
+   "sha256": "08a27a188948cf3b9dc459023b900e262545f72527274a42fe624cb6f0bf07c8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-boundaries.tsv",
+   "sha256": "cf96aa1ead79daef07d42bda325bcca8cb3752f48143ff024b908828ee9b60d5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-sensitivity.json",
+   "sha256": "0e39317056f309c7d3b1fb612a71ef00621798ebce583f6ecf377f059db99df1"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-rule.json",
+   "sha256": "7bc0e8fe90facf1bd7c3b53882dca724f832480810e4e5e4f15769e9a12f26e3"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/source-evidence.json",
+   "sha256": "bc0fa453838305e25e2c3ce96cef43a1752df9e1ae1e6da766085b601dfe4197"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/inventory.json",
+   "sha256": "dc8b83d2669d2d89f68ade0231146651c2bf84153e2d1afbb6d56bea4f909f00"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/candidate-authority-avoid5.json",
+   "sha256": "4477fab7aaa800d90d42f3245d103af4a1e03a8014a2ba8feee62af65894fdf6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/candidate-authority-blank5.json",
+   "sha256": "c5e40ebdf12f34900ccce9f85c15569c7168f9f0acf1aef078fab8ffb1e35332"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/authority-candidate.json",
+   "sha256": "ecc1ee18553ce71b991ef580c4e7b3c080bbf97f78195d3e2ae12064beff85d0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/production-access-matrix.json",
+   "sha256": "50f1b5481e45e485989fccc00c576c3386c4327560c11efc24e807bebf288aea"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/r2-impact.json",
+   "sha256": "8935112b0bc3463ff5c3fd0e950fd8e90b8943e63d504afdfa383ba03d89e0c7"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/r2-impact.tsv",
+   "sha256": "6ef21ee691bb3eaecb909b23e47a3479a92ff51ff1fb4e05ad9c260b132bb75f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/event-impact.json",
+   "sha256": "870e8494b1d226b855e54986d6881949f004b0c44709732eb55554498a90d9c5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/counterfactuals.json",
+   "sha256": "12414b58bce4fb639e8310f5325b3d90cdb136e21e4eb1d571f4df6d94da2e92"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/witnesses.json",
+   "sha256": "8b8cef7576e78e3fd095c67a3790d3a1186612ebec981ac2a1d253c52fe66f9f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/g1b-counterfactual-3.json",
+   "sha256": "cc5003b35d55c8be551814ef82b2d00b9bfe308a5a85386e655b6a171542598b"
+  }
+ ],
+ "inputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+   "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+  },
+  {
+   "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+   "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+  },
+  {
+   "path": "shared/lunar/thoVuongDungSu.ts",
+   "sha256": "c65d9bcab01bddfeffe769f8d5dd9d49635fd0531cb5a999eb00bc33253b5ae0"
+  },
+  {
+   "path": "shared/lunar/lunar.ts",
+   "sha256": "ed6296171e015ee865061197f848dbf9855a1a7e7f095df4d9aa72bb99a04e9a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json",
+   "sha256": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/full.json",
+   "sha256": "e1d923a00ece6717903f41279fcef0e328175234c712495067d0481d670fbcf0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json",
+   "sha256": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/lock.json",
+   "sha256": "642b46241d38cd5a33f88dd7d21620f4db85b0a8f9ec08c4f601ecc62d5ff82c"
+  },
+  {
+   "path": "shared/almanac-data/manifest.json",
+   "sha256": "b2b6a0847dd63daa01590ec1d7ea2639f4e2f88f68cbb7e2f10ff64e38ae3059"
+  }
+ ]
+}

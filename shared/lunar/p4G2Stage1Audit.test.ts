@@ -31,7 +31,7 @@ const fixEntry = (e: Record<string, unknown>) =>
 // G2 Stage 2 shipped the alias and authority v2; every model starts from the pre-G2 rollback (g2Rollback.ts):
 // alias removed, authority v1 served at the path production imports (v3 since G1 glyph Stage 2). The frozen Stage 1 artifacts reproduce from that base.
 const VOL10 = '../almanac-data/xiejibianfangshu-vol10-yiji.json'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
 function mockModel(model: Model) {
   vi.doUnmock(VOL10)
   vi.doUnmock(AUTH)

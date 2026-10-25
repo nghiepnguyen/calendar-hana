@@ -1,0 +1,181 @@
+{
+ "version": "g1-soil-stage1-authority-candidate-v1",
+ "status": "AUDIT_CANDIDATE_NOT_PRODUCTION",
+ "inputs": {
+  "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe",
+  "docs/audits/sources/p4-vol10/g1-glyph-stage1/authority-candidate.json": "cff81025df1795d7904c6d67420479450e30f055f50c4a33bfdd7588f140f72a",
+  "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"
+ },
+ "contexts": {
+  "丑甲寅": {
+   "outside": {
+    "cell": "blank",
+    "grade": "A",
+    "why": "puzhu:20 相抵 lift: 興造動土 and 豎柱上梁 both unnoted (each has 宜) → demolition unnoted",
+    "engine": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    }
+   },
+   "inside": {
+    "cell": "avoid",
+    "grade": {
+     "rule": "B",
+     "calendar2025_2027": "B (p4-soil-owner-convention-v1, owner-adopted)",
+     "calendarOutside": "B if the owner adopts the source-derived rule (soil-rule.json) as authority outside 2025–2027; C until then"
+    },
+    "why": "興造動土 carries 土王用事後 (卷十一 :265 list) → puzhu:20 lift blocked → 劫煞 忌 kept; demolition also carries 土王用事後 directly",
+    "engine": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    }
+   },
+   "witnessPage": "06067697-n123.jpg",
+   "pageDiscriminatesOutside": true
+  },
+  "丑丙寅": {
+   "outside": {
+    "cell": "blank",
+    "grade": "B",
+    "why": "puzhu:20 相抵 lift: 興造動土 and 豎柱上梁 both unnoted (each has 宜) → demolition unnoted",
+    "engine": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    }
+   },
+   "inside": {
+    "cell": "avoid",
+    "grade": {
+     "rule": "B",
+     "calendar2025_2027": "B (p4-soil-owner-convention-v1, owner-adopted)",
+     "calendarOutside": "B if the owner adopts the source-derived rule (soil-rule.json) as authority outside 2025–2027; C until then"
+    },
+    "why": "興造動土 carries 土王用事後 (卷十一 :265 list) → puzhu:20 lift blocked → 劫煞 忌 kept; demolition also carries 土王用事後 directly",
+    "engine": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    }
+   },
+   "witnessPage": "06067697-n75.jpg",
+   "pageDiscriminatesOutside": false
+  },
+  "丑壬寅": {
+   "outside": {
+    "cell": "blank",
+    "grade": "A",
+    "why": "puzhu:20 相抵 lift: 興造動土 and 豎柱上梁 both unnoted (each has 宜) → demolition unnoted",
+    "engine": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    }
+   },
+   "inside": {
+    "cell": "avoid",
+    "grade": {
+     "rule": "B",
+     "calendar2025_2027": "B (p4-soil-owner-convention-v1, owner-adopted)",
+     "calendarOutside": "B if the owner adopts the source-derived rule (soil-rule.json) as authority outside 2025–2027; C until then"
+    },
+    "why": "興造動土 carries 土王用事後 (卷十一 :265 list) → puzhu:20 lift blocked → 劫煞 忌 kept; demolition also carries 土王用事後 directly",
+    "engine": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    }
+   },
+   "witnessPage": "06067697-n111.jpg",
+   "pageDiscriminatesOutside": true
+  },
+  "丑戊寅": {
+   "outside": {
+    "cell": "blank",
+    "grade": "A",
+    "why": "puzhu:20 相抵 lift: 興造動土 and 豎柱上梁 both unnoted (each has 宜) → demolition unnoted",
+    "engine": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    }
+   },
+   "inside": {
+    "cell": "avoid",
+    "grade": {
+     "rule": "B",
+     "calendar2025_2027": "B (p4-soil-owner-convention-v1, owner-adopted)",
+     "calendarOutside": "B if the owner adopts the source-derived rule (soil-rule.json) as authority outside 2025–2027; C until then"
+    },
+    "why": "興造動土 carries 土王用事後 (卷十一 :265 list) → puzhu:20 lift blocked → 劫煞 忌 kept; demolition also carries 土王用事後 directly",
+    "engine": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    }
+   },
+   "witnessPage": "06067697-n87.jpg",
+   "pageDiscriminatesOutside": true
+  },
+  "未戊申": {
+   "outside": {
+    "cell": "blank",
+    "grade": "B",
+    "why": "puzhu:20 相抵 lift: 興造動土 and 豎柱上梁 both unnoted (each has 宜) → demolition unnoted",
+    "engine": {
+     "state": "not_recorded",
+     "yi": false,
+     "ji": [
+      "刼煞"
+     ],
+     "propagatedFrom": "興造動土+豎柱上梁"
+    }
+   },
+   "inside": {
+    "cell": "avoid",
+    "grade": {
+     "rule": "B",
+     "calendar2025_2027": "B (p4-soil-owner-convention-v1, owner-adopted)",
+     "calendarOutside": "B if the owner adopts the source-derived rule (soil-rule.json) as authority outside 2025–2027; C until then"
+    },
+    "why": "興造動土 carries 土王用事後 (卷十一 :265 list) → puzhu:20 lift blocked → 劫煞 忌 kept; demolition also carries 土王用事後 directly",
+    "engine": {
+     "state": "only_ji",
+     "yi": false,
+     "ji": [
+      "刼煞",
+      "土王用事後"
+     ]
+    }
+   },
+   "witnessPage": "06067694-n117.jpg",
+   "pageDiscriminatesOutside": false
+  }
+ }
+}

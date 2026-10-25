@@ -21,7 +21,7 @@ async function graph(side: Side) {
   vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
     withoutG2Alias(await load()),
   )
-  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', () => jieshaAuthorityV1())
+  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', () => jieshaAuthorityV1())
   await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v1')
   vi.doMock('../almanac-data/manifest.json', async (orig) => {
     const real = (await orig<{ default: { policies: object } }>()).default

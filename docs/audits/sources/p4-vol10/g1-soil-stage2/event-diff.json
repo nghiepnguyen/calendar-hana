@@ -1,0 +1,22 @@
+{
+ "version": "g1-soil-stage2-event-diff-v1",
+ "source": "dump nsha (v4 id normalized to v3) vs rsha; authoritative full-JSON gate: authority-stamp.json",
+ "counts": {
+  "domain": {
+   "eventEvaluations": 24090,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 462
+  },
+  "outside": {
+   "eventEvaluations": 1591018,
+   "eventSemanticChanged": 0,
+   "eventScore": 0,
+   "eventClassification": 0,
+   "eventEvidenceOnly": 0,
+   "eventStampOnly": 35530
+  }
+ }
+}

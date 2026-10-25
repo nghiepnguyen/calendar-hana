@@ -264,7 +264,7 @@ function computeAlmanac(date: SolarDateString): Almanac {
       presentGoodGods: [...gods.presentGoodGods, ...dayGods.presentGoodGods],
       presentBadGods: [...gods.presentBadGods, ...dayGods.presentBadGods],
       godPresence,
-      classicalDay: { monthJianBranch, dayStem: day.can, dayBranch: day.chi },
+      classicalDay: { monthJianBranch, dayStem: day.can, dayBranch: day.chi, civilDate: date },
       xiejiVol10BalancingEnabled: balancing,
       ...(balancing
         ? {

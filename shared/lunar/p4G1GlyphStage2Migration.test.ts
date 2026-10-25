@@ -13,7 +13,7 @@ import { describe, expect, it, vi } from 'vitest'
 // G1 glyph Stage 2 (docs/audits/p4-g1-glyph-stage2-spec.md, owner ruling R3): 劫煞 authority v3, demolition
 // APPLIED in 11 contexts, 5 date-dependent contexts EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY (no cell).
 // Each model gets its own module graph (vi.doMock + vi.resetModules), as in p4G2Stage2Migration.test.ts:
-//   forward    shipped Stage 2 files (authority v3).
+//   forward    G1 glyph Stage 2 state: authority v3 (pinned at the v4 path since G1-SOIL Stage 2).
 //   rollback   authority v2 at the path production imports (g1GlyphRollback.ts) = shipped f3c68c6.
 //   pre        no mock, authority v2 expected: only for a dump on an f3c68c6 worktree (pre-G1-glyph main).
 //   m-*        malformed authority v3: must fail on import, never apply or invent a cell.
@@ -33,7 +33,7 @@ type Model =
   | 'm-applied-no-cell'
   | 'm-applied-unapproved'
   | 'm-context-missing'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
 const MANIFEST = '../almanac-data/manifest.json'
 const OUT = 'docs/audits/sources/p4-vol10/g1-glyph-stage2/'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
@@ -62,11 +62,16 @@ function mockModel(model: Model) {
         default: { ...real, policies: { ...real.policies, p4ScoreHeadingLookup: 'source-key-v1' } },
       }
     })
-  if (model === 'forward' || model === 'pre' || model === 'forward-sk') return
+  if (model === 'pre') return
+  // G1-SOIL Stage 2 shipped authority v4: this frozen G1 glyph evidence pins its forward graph to v3.
+  if (model === 'forward' || model === 'forward-sk')
+    return vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV3())
   if (model === 'rollback' || model === 'rollback-sk')
     return vi.doMock(AUTH, async () => (await import('./g1GlyphRollback')).jieshaAuthorityV2())
-  vi.doMock(AUTH, async (load) => {
-    const a = structuredClone(((await load()) as { default: Auth }).default)
+  vi.doMock(AUTH, async () => {
+    const a = structuredClone(
+      (await import('./g1GlyphRollback')).jieshaAuthorityV3().default as unknown as Auth,
+    )
     const ctx = a.runtimeCoverage.activities.demolition!.contexts!
     if (model === 'm-excluded-avoid') a.cells['丑壬寅']!.demolition = 'avoid'
     if (model === 'm-excluded-blank') a.cells['丑壬寅']!.demolition = 'blank'

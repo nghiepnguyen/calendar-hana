@@ -1,0 +1,224 @@
+{
+ "version": "g1-soil-stage2-golden-diff-v1",
+ "lineage": "卷十 Scoring Golden (golden-xieji-vol10-scoring*); P4 Score Golden v4 unchanged",
+ "from": {
+  "path": "shared/almanac-data/golden-xieji-vol10-scoring-v4.json",
+  "version": "xieji-vol10-scoring-golden-v4",
+  "sha256": "9d69d74f14a673e1698ca6b4e81e9881a2dc7189ba0c9626c13bc87e60dc53da",
+  "cases": 48
+ },
+ "to": {
+  "path": "shared/almanac-data/golden-xieji-vol10-scoring-v5.json",
+  "version": "xieji-vol10-scoring-golden-v5",
+  "cases": 58
+ },
+ "inputs": {
+  "shared/almanac-data/xieji-vol10-jiesha-authority-v4.json": "3d0827279b7ce825e3ce2420ad6805af5f8786ccb388d2696965cd37ac3f89f6",
+  "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-calendar.json": "08a27a188948cf3b9dc459023b900e262545f72527274a42fe624cb6f0bf07c8",
+  "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"
+ },
+ "removed": [
+  "jie-chou-renyin-demolition-excluded"
+ ],
+ "added": [
+  {
+   "id": "jie-chou-jiayin-demolition-inside",
+   "date": "2028-01-30",
+   "soilState": "inside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-jiayin-demolition-outside",
+   "date": "2031-01-14",
+   "soilState": "outside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-bingyin-demolition-inside",
+   "date": "2030-01-31",
+   "soilState": "inside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-bingyin-demolition-outside",
+   "date": "2033-01-15",
+   "soilState": "outside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-renyin-demolition-inside",
+   "date": "2028-01-18",
+   "soilState": "inside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-renyin-demolition-outside",
+   "date": "2029-01-12",
+   "soilState": "outside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-wuyin-demolition-inside",
+   "date": "2032-02-02",
+   "soilState": "inside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-wuyin-demolition-outside",
+   "date": "2036-01-12",
+   "soilState": "outside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-wei-wushen-demolition-inside",
+   "date": "2028-07-22",
+   "soilState": "inside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "avoid"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": -15,
+      "status": "applied"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-wei-wushen-demolition-outside",
+   "date": "2029-07-17",
+   "soilState": "outside",
+   "expect": {
+    "verdicts": {
+     "jie_sha": "no_annotation"
+    },
+    "rows": [
+     {
+      "source": "bad_god",
+      "ruleId": "kiep_sat",
+      "scoreDelta": 0,
+      "status": "informational"
+     }
+    ],
+    "added": []
+   }
+  },
+  {
+   "id": "jie-chou-renyin-demolition-no-date",
+   "date": null,
+   "soilState": null,
+   "expect": {
+    "throws": "needs a civil date"
+   }
+  }
+ ],
+ "unrelatedCasesChanged": 0
+}

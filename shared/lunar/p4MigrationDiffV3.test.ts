@@ -47,7 +47,7 @@ vi.mock('../almanac-data/manifest.json', async (load) => {
 // G1 glyph Stage 2 shipped 劫煞 authority v3; the frozen G1-b envelope (353 / 320 / 337 / 0) is measured under
 // authority v2, so this file's graph is pinned to it (g1GlyphRollback.ts). Under v3 the counterfactual
 // source-key-v1 side moves on 11 domain days (docs/audits/p4-g1-glyph-stage2-migration.md §12).
-vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', async () =>
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', async () =>
   (await import('./g1GlyphRollback')).jieshaAuthorityV2(),
 )
 await vi.hoisted(async () => {
@@ -479,7 +479,7 @@ async function preG2Graph(): Promise<Graph> {
   vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
     withoutG2Alias(await load()),
   )
-  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', () => jieshaAuthorityV1())
+  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', () => jieshaAuthorityV1())
   await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v1')
   const { getP4DayHeadings } = await import('./p4AlmanacHeadings')
   const { getAlmanac } = await import('./almanac')

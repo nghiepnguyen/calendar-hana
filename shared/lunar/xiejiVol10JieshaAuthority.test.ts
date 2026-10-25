@@ -4,7 +4,8 @@ import { describe, expect, it } from 'vitest'
 import activitiesData from '../almanac-data/activities.json'
 import badGodsData from '../almanac-data/bad-gods.json'
 import goodGodsData from '../almanac-data/good-gods.json'
-import authority from '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+import authority from '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
+import authorityV3 from '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
 import authorityV2 from '../almanac-data/xieji-vol10-jiesha-authority-v2.json'
 import authorityV1 from '../almanac-data/xieji-vol10-jiesha-authority-v1.json'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
@@ -26,6 +27,14 @@ const COVERAGE = authority.runtimeCoverage.activities as Record<
   }
 >
 const DEMOLITION_EXCLUDED = ['丑丙寅', '丑壬寅', '丑戊寅', '丑甲寅', '未戊申']
+// Real dates of the 5 date-dependent contexts (卷十 Scoring Golden v5): one inside and one outside 土王用事.
+const SOIL_DATES: Record<string, { inside: string; outside: string }> = {
+  丑甲寅: { inside: '2028-01-30', outside: '2031-01-14' },
+  丑丙寅: { inside: '2030-01-31', outside: '2033-01-15' },
+  丑壬寅: { inside: '2028-01-18', outside: '2029-01-12' },
+  丑戊寅: { inside: '2032-02-02', outside: '2036-01-12' },
+  未戊申: { inside: '2028-07-22', outside: '2029-07-17' },
+}
 const CELLS = authority.cells as Record<string, Record<string, string>>
 const CANDIDATE = 'docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/candidate-final.json'
 const APPROVED = 'b24f6f68e6b662fc04b5ec56ab6f2da8981273291ef3bf4e05a028b2f48d326a'
@@ -53,7 +62,7 @@ function day(m: number, i: number) {
 }
 
 // Shipped: authority v3 (G1 glyph Stage 2, R3: demolition per context). v1 / v2 stay frozen (rollback evidence).
-describe('卷十 劫煞 faithful authority v3', () => {
+describe('卷十 劫煞 faithful authority v4', () => {
   it('shipped policy is faithful-v1 and is the resolver default; legacy stays selectable', () => {
     expect(manifest.policies.xiejiVol10JieshaPolicy).toBe('faithful-v1')
     const d = day(4, 41) // 辰 乙巳
@@ -73,6 +82,7 @@ describe('卷十 劫煞 faithful authority v3', () => {
     )
     expect(withoutDemolition).toEqual(cand.cells)
     expect(authorityV2.cells).toEqual(cand.cells)
+    expect(authorityV3.cells).toEqual(authority.cells)
     expect(authorityV1.cells).toEqual(cand.cells)
     expect(authority.counts).toEqual({
       contexts: 16,
@@ -82,12 +92,19 @@ describe('卷十 劫煞 faithful authority v3', () => {
       blank: 207,
     })
     expect(authority.provenance.approvedCandidate.sha256).toBe(APPROVED)
-    // R3: demolition = 11 APPLIED (avoid; A ×7, B ×4, all approvals true) + 5 excluded with no cell.
-    const ctx = COVERAGE.demolition!.contexts!
+    // R2 (v4): demolition = 11 static APPLIED (avoid; A ×7, B ×4) + 5 APPLIED_DATE_DEPENDENT with no static cell.
+    const ctx = COVERAGE.demolition!.contexts! as Record<
+      string,
+      { status: string; grade?: unknown; selector?: string; cells?: Record<string, string> }
+    >
     const applied = Object.keys(ctx).filter((k) => ctx[k]!.status === 'APPLIED')
-    const excluded = Object.keys(ctx).filter(
-      (k) => ctx[k]!.status === 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY',
-    )
+    const excluded = Object.keys(ctx).filter((k) => ctx[k]!.status === 'APPLIED_DATE_DEPENDENT')
+    for (const k of excluded)
+      expect([ctx[k]!.selector, ctx[k]!.cells, ctx[k]!.grade], k).toEqual([
+        'tho-vuong-dung-su-rule-v1',
+        { inside: 'avoid', outside: 'blank' },
+        'B',
+      ])
     expect([COVERAGE.demolition!.status, applied.length, excluded.sort()]).toEqual([
       'APPLIED_BY_CONTEXT',
       11,
@@ -107,11 +124,25 @@ describe('卷十 劫煞 faithful authority v3', () => {
       status: 'APPLIED',
       cell: 'avoid',
     })
-    const ex = getVol10JieshaRuntime('丑', '壬寅', 'demolition')
-    expect(ex).toMatchObject({ status: 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY' })
-    expect(ex).not.toHaveProperty('cell')
-    // Separate path: reading a cell for an excluded context throws, never blank / avoid / fallback.
-    expect(() => vol10JieshaCell(ex)).toThrow(/EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY/)
+    // Date-dependent: no date or an unsupported date throws; the selector picks the cell from the date.
+    expect(() => getVol10JieshaRuntime('丑', '壬寅', 'demolition')).toThrow(/needs a civil date/)
+    expect(() => getVol10JieshaRuntime('丑', '壬寅', 'demolition', '2101-01-12')).toThrow(
+      /1900–2100/,
+    )
+    expect(() => getVol10JieshaRuntime('丑', '壬寅', 'demolition', '2028-02-30')).toThrow(/invalid/)
+    const inside = getVol10JieshaRuntime('丑', '壬寅', 'demolition', '2028-01-18')
+    const outside = getVol10JieshaRuntime('丑', '壬寅', 'demolition', '2029-01-12')
+    expect(inside).toEqual({
+      status: 'APPLIED',
+      cell: 'avoid',
+      selector: 'tho-vuong-dung-su-rule-v1',
+      soilState: 'inside',
+    })
+    expect(outside).toMatchObject({ status: 'APPLIED', cell: 'blank', soilState: 'outside' })
+    expect([vol10JieshaCell(inside), vol10JieshaCell(outside)]).toEqual(['avoid', 'blank'])
+    expect(() =>
+      vol10JieshaCell({ status: 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY', reason: 'x' }),
+    ).toThrow(/EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY/)
     expect(() => getVol10JieshaRuntime('子', '甲子', 'wedding')).toThrow(/no context/)
     expect(() => getVol10JieshaRuntime('辰', '乙巳', 'worship')).toThrow(/no coverage/)
     // v2: contract is APPLIED (the UNREACHABLE guard is pinned in p4G2Stage2Migration.test.ts, alias-v1).
@@ -205,16 +236,26 @@ describe('卷十 劫煞 faithful authority v3', () => {
     const reached = new Map<string, Set<string>>()
     for (let m = 0; m < 12; m++)
       for (let i = 0; i < 60; i++)
-        for (const item of resolveVol10(day(m, i), ACTIVITIES, FAITHFUL)) {
+        for (const item of resolveVol10(
+          // The 5 date-dependent contexts need a civil date: a real outside date (cell blank).
+          {
+            ...day(m, i),
+            civilDate: SOIL_DATES[BR[m]! + ST[i % 10]! + BR[i % 12]!]?.outside,
+          },
+          ACTIVITIES,
+          FAITHFUL,
+        )) {
           if (!item.authority) continue
           expect(item.entry).toBe('jie_sha')
           expect(item.effect).toBe('cancel_both')
           const key = BR[m]! + ST[i % 10]! + BR[i % 12]!
           ;(reached.get(key) ?? reached.set(key, new Set()).get(key)!).add(item.activityId)
           if (item.activityId === 'demolition' && DEMOLITION_EXCLUDED.includes(key)) {
-            // R3 context exclusion: legacy verdict, marked, never a missing-cell fallback.
-            expect(item.verdict).toBe('no_annotation')
-            expect(item.authorityExclusion).toMatch(/^EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY: /)
+            // R2: outside 土王用事 the date-dependent cell is blank; no exclusion remains.
+            expect([item.verdict, item.authorityExclusion], key).toEqual([
+              'no_annotation',
+              undefined,
+            ])
             continue
           }
           expect(item.authorityExclusion).toBeUndefined()

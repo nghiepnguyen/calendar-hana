@@ -1,0 +1,107 @@
+{
+ "version": "g1-soil-stage1-inventory-v1",
+ "files": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+   "role": "production 劫煞 authority (R3)",
+   "level": "production",
+   "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+  },
+  {
+   "path": "docs/audits/p4-g1-demolition-soil-authority-item.md",
+   "role": "G1-SOIL open item",
+   "level": "owner-opened 2026-10-25",
+   "sha256": "c31db0ae0ba3a1c8e7607a6cff01365113dfe76b8bab54fe1772d7ad73baded4"
+  },
+  {
+   "path": "docs/audits/p4-g1-glyph-stage2-migration.md",
+   "role": "G1 glyph Stage 2 record",
+   "level": "production migration record",
+   "sha256": "211d17866625af5fa6e5ab817026fe8ae9f9199fe01b5874439f8a3eff7ef438"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/lock.json",
+   "role": "G1 glyph Stage 2 lock",
+   "level": "lock",
+   "sha256": "642b46241d38cd5a33f88dd7d21620f4db85b0a8f9ec08c4f601ecc62d5ff82c"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/g1b-counterfactual.json",
+   "role": "G1-b historical + v3 counterfactual",
+   "level": "frozen",
+   "sha256": "1ca50f6e28e04aaf832fd125fc1599f3763adb9c068a510fa4d29148c8f52f92"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/engine.json",
+   "role": "G1-a corrected engine (soil absent/present)",
+   "level": "owner-accepted",
+   "sha256": "b72dc3d46361e66786b684d94cb10d3491145e4ddf21965dae63fda10d9b401e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1a-demolition-authority-v1/full.json",
+   "role": "G1-a per-context in/out window counts",
+   "level": "owner-accepted",
+   "sha256": "e1d923a00ece6717903f41279fcef0e328175234c712495067d0481d670fbcf0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage1/authority-candidate.json",
+   "role": "Stage 1 cells and grades",
+   "level": "audit",
+   "sha256": "cff81025df1795d7904c6d67420479450e30f055f50c4a33bfdd7588f140f72a"
+  },
+  {
+   "path": "docs/audits/tu-vuong-dung-su.md",
+   "role": "土王用事 definition lock (product)",
+   "level": "owner 2026-10-10",
+   "sha256": "abd1d1b6c94ed971277562bdaa0c8c9bddb9ae9c6f02a301492667d96bb8f6ab"
+  },
+  {
+   "path": "docs/audits/p4-vol10-soil-convention-gate.md",
+   "role": "P4-B soil gate",
+   "level": "owner 2026-10-13",
+   "sha256": "bd2a9fcc688e67f4be19e475a14780921d6e33291f204865df46a6f9c441a0af"
+  },
+  {
+   "path": "shared/almanac-data/p4-soil-owner-convention-v1.json",
+   "role": "P4 soil authority (2025–2027)",
+   "level": "OWNER_ADOPTED_SOURCE_DEPENDENT",
+   "sha256": "d02cde645d6ffa6197857f8e9cdc1668bafc859539d3371462392f3362bbc85b"
+  },
+  {
+   "path": "shared/almanac-data/golden-tu-vuong-dung-su.json",
+   "role": "product soil Golden (HKO 四立)",
+   "level": "frozen Golden",
+   "sha256": "54b986e97860a5a75915af0fd1196b3ee9023f7797b09f6c0b03e5ace5403976"
+  },
+  {
+   "path": "shared/lunar/thoVuongDungSu.ts",
+   "role": "production soil calendar",
+   "level": "runtime",
+   "sha256": "c65d9bcab01bddfeffe769f8d5dd9d49635fd0531cb5a999eb00bc33253b5ae0"
+  },
+  {
+   "path": "shared/lunar/p4SoilConvention.ts",
+   "role": "P4 soil presence (unknown outside 2025–2027)",
+   "level": "runtime",
+   "sha256": "02a28d26da53f1156e15c8eaea9f19d43d6110e5458770bdea1e440fd7e0eb08"
+  },
+  {
+   "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+   "role": "astronomy authority (JPL)",
+   "level": "REVIEWED_FROZEN",
+   "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/s1-tuwang/lock.json",
+   "role": "secondary 土王 sources lock",
+   "level": "RESEARCH_EVIDENCE_ONLY",
+   "sha256": "cd7b63ce2d53e1444806b84fc58ddf9026002d91c2f430cedb265d65b21dfb7d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/scope-dates.json",
+   "role": "1,636 劫煞 scope dates",
+   "level": "audit",
+   "sha256": "21d23a3166d5b820bbb7378680a2d74b5cd3c6d1f58824e7c239eb23eee96b04"
+  }
+ ]
+}

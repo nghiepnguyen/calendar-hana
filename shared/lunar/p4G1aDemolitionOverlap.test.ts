@@ -17,6 +17,17 @@ import { thoVuongDungSuPeriods } from './thoVuongDungSu'
 // changed: the manifest is mocked per call, as in p4ScoreHeadingLookup.test.ts. Covers the five G1-b §8
 // overlap days and every 2025–2027 day in the four witness-conflict contexts.
 // npm test: compare with overlap.json; G1A_WRITE=1 rewrites it.
+// G1-SOIL Stage 2 shipped 劫煞 authority v4, which applies demolition on these 5 in-window days under the
+// source-key-v1 counterfactual; this frozen G1-a evidence predates it, so the graph is pinned to authority v3.
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', async () =>
+  (await import('./g1GlyphRollback')).jieshaAuthorityV3(),
+)
+await vi.hoisted(async () => {
+  const { vi } = await import('vitest')
+  vi.resetModules()
+  await import('./p4AlmanacHeadings')
+  await (await import('./g1GlyphRollback')).assertJieshaAuthority('xieji-vol10-jiesha-faithful-v3')
+})
 const policy = vi.hoisted(() => ({ lookup: 'source-key-v1' }))
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {
   const real = ((await importOriginal()) as { default: { policies: object } }).default

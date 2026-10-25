@@ -1,0 +1,150 @@
+{
+ "version": "g1-soil-stage2-lock-v1",
+ "status": "PRODUCTION_MIGRATION_EVIDENCE",
+ "base": {
+  "production": "d5c005fe59f6dea642d23d815b3d1a0dca070528",
+  "ancestry": "744a4ba (G1-SOIL Stage 1 audit ce05ba4 + Stage 2 spec)"
+ },
+ "migration": "劫煞 authority v4 (R2): 5 demolition contexts APPLIED_DATE_DEPENDENT, selector tho-vuong-dung-su-rule-v1",
+ "reproduce": {
+  "authority": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/build_authority_v4.py",
+  "scoringGoldenV5": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/build_scoring_golden_v5.py",
+  "accessMatrix": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/build_access_matrix.py",
+  "dumps": "G1SOIL2_DUMP=forward | rollback,forward  G1SOIL2_OUT=<dir>/{fwd,rb} npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts; pre: G1SOIL2_DUMP=pre on a d5c005f worktree with that test file + g1GlyphRollback.ts + thoVuongDungSuRule.ts → <dir>/pre",
+  "diff": "python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/compare.py <dir>",
+  "authorityStamp": "G1SOIL2_STAMP=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t \"authority stamp gate\"",
+  "counterfactual3": "G1SOIL2_G1B=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts -t \"counterfactual #3\"",
+  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py; G1SOIL2_WRITE=1 npx vitest run shared/lunar/p4G1SoilStage2Migration.test.ts",
+  "overlapImpactClassification": "JIESHA_IMPACT_FULL=1 on f3c68c6 / d5c005f worktrees and this branch → <dir>/{f3c68c6,d5c005f,v4}.json (restore the locked raw.json after each run); python3 -I docs/audits/sources/p4-vol10/g1-soil-stage2/classify_overlap_impact.py <dir>"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/build_authority_v4.py",
+   "sha256": "cbbd14b09c49701b1856844edad75879582f596486694e2b6ad323160376ef70"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/build_scoring_golden_v5.py",
+   "sha256": "92f9e03bffe3cf8f34ebd2730bfb66a437c1ee6f66e821da5beed607449e0b14"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/build_access_matrix.py",
+   "sha256": "e43fdeba395d2f350fadd5e393e6e482b03373e022f3250dd6436fd5625774c9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/compare.py",
+   "sha256": "63ea08fa6659b74980c3259589fd89e6365e570db8c6da81d532703d43633aee"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/authority-v3-v4.json",
+   "sha256": "38f9efa5dc2b7416e24bbb6711c190281e1abb0d4f92707f7afc00d8b0bee8dd"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/golden-diff.json",
+   "sha256": "e13f47896db80d8472d3ca8ea2586d633d81d5b5730728ed7f98d250584f4ae1"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/production-access-matrix.json",
+   "sha256": "8b0479a448dfa65d575a9cad646b5ed811124b54dc08085c6ce908d0b883d3f4"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/summary.json",
+   "sha256": "48c580ed9fb07bd2d34da22b6987fb667eb4b75f672621e2ac9473b625ed6914"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/activity-diff.tsv",
+   "sha256": "6ef21ee691bb3eaecb909b23e47a3479a92ff51ff1fb4e05ad9c260b132bb75f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/event-diff.json",
+   "sha256": "b65bee055c2d2c60ae013b6b8a7bf4e41ccd888b56cdea14564f8c44b124d08d"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/rollback.json",
+   "sha256": "132e2294ebeb79fb028a5db433060b2dc951819ca071352afbe657ea64f310e1"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/authority-stamp.json",
+   "sha256": "846c31101b698a583c2df4391ced5a8f1e773206017d755b517e1918cf85997e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/mutation-results.json",
+   "sha256": "fb30eaabf47cf4f9de4440036ea4b1d58786905df594b2bd5d55181e15973100"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/jiesha-mutation-results.json",
+   "sha256": "e4443076ccf5eafb66695dcbf44348daa2b1f25337a0fa6ae4a978f72752cfaf"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/g1b-counterfactual-3.json",
+   "sha256": "6f3de61bd33bd10566832a70ef5f8b607040feba699310be1c54747557c3ef54"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/classify_overlap_impact.py",
+   "sha256": "52d8e5ff0a7fbbaab70d1f39ca362c28b20e1fe9345f82fc3fd22e43d746b417"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage2/overlap-impact-classification.json",
+   "sha256": "56fd44b38c43cf1382b9b992f30bbafa7fc43a1ca05acd78550ce07ee43cacb7"
+  }
+ ],
+ "outputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v4.json",
+   "sha256": "3d0827279b7ce825e3ce2420ad6805af5f8786ccb388d2696965cd37ac3f89f6"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v5.json",
+   "sha256": "fb5b7879f27cb239a212c5cea9ff550d8a5a7df7728504a1ac58ab4e2c6dc656"
+  },
+  {
+   "path": "shared/lunar/thoVuongDungSuRule.ts",
+   "sha256": "ab6191264c4c68fa92a972834714e724e109dc2d8b7872966c10b8dd470c113e"
+  }
+ ],
+ "inputs": [
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+   "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v4.json",
+   "sha256": "9d69d74f14a673e1698ca6b4e81e9881a2dc7189ba0c9626c13bc87e60dc53da"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/lock.json",
+   "sha256": "b7769e00ee610d4bcd164a25bf164c2501062e584bb8b36e6e0cd77397fa082f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/r2-impact.tsv",
+   "sha256": "6ef21ee691bb3eaecb909b23e47a3479a92ff51ff1fb4e05ad9c260b132bb75f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-soil-stage1/soil-calendar.json",
+   "sha256": "08a27a188948cf3b9dc459023b900e262545f72527274a42fe624cb6f0bf07c8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g1-glyph-stage2/lock.json",
+   "sha256": "642b46241d38cd5a33f88dd7d21620f4db85b0a8f9ec08c4f601ecc62d5ff82c"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/lock.json",
+   "sha256": "0a897bdd49a549313cd1ff2a6cc50b687e76f644b9e0f9d6837ea2a944ddf61b"
+  },
+  {
+   "path": "golden-v4/astronomy/solar-terms-jpl-de440s-clock-v1.json",
+   "sha256": "1db7a155f147210cac9db6580e3893dd3603c3d08ac3bea61815af193e9c6a60"
+  },
+  {
+   "path": "docs/audits/p4-g1-soil-stage2-spec.md",
+   "sha256": "3aa4b0689a53c4191eff64e2fcb060182dbff53f4504e6cf7bb16766040a5ebe"
+  }
+ ]
+}

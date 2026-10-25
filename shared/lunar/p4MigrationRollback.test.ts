@@ -12,7 +12,7 @@ import { p4BalancingReady } from './p4ScoreAdapter'
 vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
   (await import('./g2Rollback')).withoutG2Alias(await load()),
 )
-vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v3.json', async () =>
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v4.json', async () =>
   (await import('./g2Rollback')).jieshaAuthorityV1(),
 )
 await vi.hoisted(async () => (await import('./g2Rollback')).reloadUnderG2Pins())

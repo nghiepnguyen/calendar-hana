@@ -1,0 +1,56 @@
+{
+ "occurrences": 502,
+ "inside": 303,
+ "outside": 199,
+ "perContext": {
+  "丑-甲寅": {
+   "inside": 60,
+   "outside": 39
+  },
+  "丑-丙寅": {
+   "inside": 61,
+   "outside": 38
+  },
+  "丑-壬寅": {
+   "inside": 61,
+   "outside": 40
+  },
+  "丑-戊寅": {
+   "inside": 59,
+   "outside": 36
+  },
+  "未-戊申": {
+   "inside": 62,
+   "outside": 46
+  }
+ },
+ "alternatives": {
+  "utc8_li_date": {
+   "windowDaysDiffering": 66,
+   "fiveContextFlips": 0,
+   "flips": []
+  },
+  "instant_onset_2h_rejected": {
+   "windowDaysDiffering": 66,
+   "fiveContextFlips": 2,
+   "flips": [
+    {
+     "date": "1939-01-17",
+     "context": "丑-甲寅",
+     "base": false,
+     "alt": true
+    },
+    {
+     "date": "2042-01-16",
+     "context": "丑-甲寅",
+     "base": false,
+     "alt": true
+    }
+   ]
+  }
+ },
+ "notAdopted": {
+  "hengqi_mean_terms": "恆氣 is the Ming 大統 practice; 協紀 is a Qing 時憲 work on 定氣 (true terms), the project-wide basis",
+  "solar_longitude_297_27_117_207": "modern 土用 rule, not in 協紀"
+ }
+}

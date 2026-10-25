@@ -1,0 +1,30 @@
+{
+ "version": "g1-soil-stage2-authority-diff-v1",
+ "from": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v3.json",
+  "version": "xieji-vol10-jiesha-faithful-v3",
+  "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe"
+ },
+ "to": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v4.json",
+  "version": "xieji-vol10-jiesha-faithful-v4"
+ },
+ "demolitionContexts": {
+  "APPLIED (static, unchanged)": 11,
+  "EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY → APPLIED_DATE_DEPENDENT": [
+   "丑甲寅",
+   "丑丙寅",
+   "丑壬寅",
+   "丑戊寅",
+   "未戊申"
+  ]
+ },
+ "selector": "tho-vuong-dung-su-rule-v1",
+ "selectorCells": {
+  "inside": "avoid",
+  "outside": "blank"
+ },
+ "cellsChanged": 0,
+ "countsChanged": false,
+ "otherCoverageChanged": 0
+}

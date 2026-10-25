@@ -1,0 +1,119 @@
+{
+ "version": "g1-soil-stage2-overlap-impact-classification-v1",
+ "artifact": "docs/audits/sources/p4-vol10/jiesha-overlap-impact-v1/raw.json",
+ "inputs": {
+  "locked(HEAD)": "a55c2d458142e3e7",
+  "f3c68c6": "8582a993fb0f922fbc0f512adafd2a2efbf7eed97888a76b462c3ab62fda300b",
+  "d5c005f": "985e406c5316f0aa2b61de47d9ac3c591046051f3a2cec0ca93d55d09dce9fec",
+  "v4": "5b0a769762c7e0634ec7ec48c6c72fe505f35a49bbed19fc425cb7a2adc6137d"
+ },
+ "soilInsideOccurrences": 303,
+ "steps": {
+  "locked→f3c68c6 (pre-existing, before G1 glyph)": {
+   "changedDates": 1636,
+   "fields": {
+    "A.activities.annotated": 13629,
+    "A.activities.changedRows": 13629,
+    "A.activities.hardWarning": 13629,
+    "A.activities.p4State": 13629,
+    "A.activities.score": 13629,
+    "A.activities.status": 13629,
+    "A.events.classification": 5020,
+    "A.events.score": 5020,
+    "A.vol10Log": 20273,
+    "B.activities.annotated": 13629,
+    "B.activities.changedRows": 13629,
+    "B.activities.hardWarning": 13629,
+    "B.activities.p4State": 13629,
+    "B.activities.score": 13629,
+    "B.activities.status": 13629,
+    "B.events.classification": 5020,
+    "B.events.score": 5020,
+    "B.vol10Log": 20273,
+    "top.vol10Log": 20273
+   },
+   "byActivityOrEvent": {
+    "activities:beam_raising": 12264,
+    "activities:bed_installation": 13596,
+    "activities:burial": 12228,
+    "activities:business": 3744,
+    "activities:construction": 19596,
+    "activities:contract": 1272,
+    "activities:demolition": 24,
+    "activities:engagement": 12264,
+    "activities:groundbreaking": 12384,
+    "activities:meeting": 11040,
+    "activities:moving": 12264,
+    "activities:opening": 3744,
+    "activities:pray_blessing": 8520,
+    "activities:pray_children": 8520,
+    "activities:renovation": 12384,
+    "activities:transaction": 1272,
+    "activities:warehouse_opening": 3780,
+    "activities:wedding": 14652,
+    "events:buy_property": 424,
+    "events:buy_vehicle": 424,
+    "events:groundbreaking": 4088,
+    "events:move_house": 4088,
+    "events:open_business": 1248,
+    "events:property_handover": 4512,
+    "events:sign_contract": 424,
+    "events:wedding": 4872,
+    "vol10Log:beam_raising": 3102,
+    "vol10Log:bed_installation": 3426,
+    "vol10Log:burial": 3066,
+    "vol10Log:business": 945,
+    "vol10Log:construction": 4908,
+    "vol10Log:contract": 3963,
+    "vol10Log:engagement": 3102,
+    "vol10Log:finance": 945,
+    "vol10Log:groundbreaking": 3102,
+    "vol10Log:livestock": 945,
+    "vol10Log:medical": 4908,
+    "vol10Log:meeting": 2784,
+    "vol10Log:moving": 3102,
+    "vol10Log:opening": 945,
+    "vol10Log:planting": 945,
+    "vol10Log:pray_blessing": 2157,
+    "vol10Log:pray_children": 2157,
+    "vol10Log:renovation": 3102,
+    "vol10Log:transaction": 3963,
+    "vol10Log:warehouse": 4608,
+    "vol10Log:warehouse_opening": 945,
+    "vol10Log:wedding": 3699
+   }
+  },
+  "f3c68c6→d5c005f (G1 glyph Stage 2, authority v3)": {
+   "changedDates": 1134,
+   "fields": {
+    "A.vol10Log": 1134,
+    "B.vol10Log": 1134,
+    "top.vol10Log": 1134
+   },
+   "byActivityOrEvent": {
+    "vol10Log:demolition": 3402
+   }
+  },
+  "d5c005f→v4 (G1-SOIL Stage 2, authority v4)": {
+   "changedDates": 303,
+   "fields": {
+    "A.vol10Log": 303,
+    "B.vol10Log": 303,
+    "top.vol10Log": 303
+   },
+   "byActivityOrEvent": {
+    "vol10Log:demolition": 909
+   },
+   "datesEqualSoilInside": true,
+   "domainDates": [
+    "2025-02-02",
+    "2026-01-28",
+    "2026-08-02",
+    "2027-01-23",
+    "2027-07-28"
+   ],
+   "onlyDemolition": true
+  }
+ },
+ "policy": "historical artifact kept as locked; regenerated outputs are comparison evidence only"
+}

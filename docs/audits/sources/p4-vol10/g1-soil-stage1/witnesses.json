@@ -1,0 +1,127 @@
+{
+ "version": "g1-soil-stage1-witnesses-v1",
+ "rule": "computed after the full envelope; first date ≥ 2028 per category unless noted",
+ "sameContextTwoDates": [
+  {
+   "date": "2028-01-18",
+   "context": "丑-壬寅",
+   "soil": true,
+   "cell": "avoid",
+   "r2": "20 avoid",
+   "v3": "35 watch"
+  },
+  {
+   "date": "2029-01-12",
+   "context": "丑-壬寅",
+   "soil": false,
+   "cell": "blank",
+   "r2": "unchanged (= v3 legacy output)"
+  }
+ ],
+ "entryBoundary": {
+  "date": "1914-07-21",
+  "context": "未-戊申",
+  "soil": true,
+  "before": "35 watch",
+  "after": "20 avoid",
+  "kiep": "kiep_sat:informational:no_annotation → kiep_sat:applied:avoid"
+ },
+ "exitBoundary": {
+  "date": "1915-02-04",
+  "context": "丑-丙寅",
+  "soil": true,
+  "before": "35 watch",
+  "after": "20 avoid",
+  "kiep": "kiep_sat:informational:no_annotation → kiep_sat:applied:avoid"
+ },
+ "watchToAvoid": {
+  "date": "2028-01-18",
+  "context": "丑-壬寅",
+  "soil": true,
+  "before": "35 watch",
+  "after": "20 avoid",
+  "kiep": "kiep_sat:informational:no_annotation → kiep_sat:applied:avoid"
+ },
+ "firstAfterDomain": {
+  "date": "2028-01-18",
+  "context": "丑-壬寅",
+  "soil": true,
+  "before": "35 watch",
+  "after": "20 avoid",
+  "kiep": "kiep_sat:informational:no_annotation → kiep_sat:applied:avoid"
+ },
+ "lastBeforeDomain": {
+  "date": "2023-01-20",
+  "context": "丑-戊寅"
+ },
+ "p4Masked": [
+  {
+   "date": "2025-02-02",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4": "only_ji"
+  },
+  {
+   "date": "2026-01-28",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4": "only_ji"
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "soil": true,
+   "p4": "only_ji"
+  },
+  {
+   "date": "2027-01-23",
+   "context": "丑-壬寅",
+   "soil": true,
+   "p4": "only_ji"
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "soil": true,
+   "p4": "only_ji"
+  }
+ ],
+ "controls": {
+  "2025-02-02": {
+   "context": "丑-壬寅",
+   "soil": true,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  },
+  "2025-04-06": {
+   "context": "辰-乙巳",
+   "soil": false,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  },
+  "2025-04-30": {
+   "context": "辰-己巳",
+   "soil": true,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  },
+  "2028-01-01": {
+   "context": "子-乙酉",
+   "soil": false,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  },
+  "2028-01-06": {
+   "context": "丑-庚寅",
+   "soil": false,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  },
+  "2028-04-14": {
+   "context": "辰-己巳",
+   "soil": false,
+   "demolitionUnchanged": true,
+   "allActivitiesUnchanged": true
+  }
+ }
+}

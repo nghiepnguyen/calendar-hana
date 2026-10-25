@@ -14,7 +14,7 @@ import { describe, expect, it, vi } from 'vitest'
 // day (no sampling) that g1-glyph-stage1/compare.py turns into the committed envelope.
 type Model =
   'forward' | 'fit' | 'inwindow' | 'm-applied-no-cells' | 'm-cells-while-excluded' | 'm-no-coverage'
-const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+const AUTH = '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
 const DIR = 'docs/audits/sources/p4-vol10/g1-glyph-stage1/'
 const V2_ID = 'xieji-vol10-jiesha-faithful-v2'
 const FIT_ID = 'xieji-vol10-jiesha-faithful-v3-candidate-g1'

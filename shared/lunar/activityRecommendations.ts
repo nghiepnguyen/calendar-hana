@@ -56,7 +56,7 @@ export interface ActivityInput {
   /** Explicit presence operands of source-locked or day-rule gods (diagnostics only). */
   godPresence?: Readonly<Record<string, readonly { operand: string; equals: number }[]>>
   /** Day operands for 協紀 卷十 (Month Jian branch, day stem/branch); needed for its scoring. */
-  classicalDay?: { monthJianBranch: number; dayStem: number; dayBranch: number }
+  classicalDay?: { monthJianBranch: number; dayStem: number; dayBranch: number; civilDate?: string }
   /** Overrides `manifest.policies.xiejiVol10Scoring` (tests and migration proof). */
   xiejiVol10Scoring?: boolean
   /** Overrides `manifest.policies.xiejiVol10BalancingEnabled` (tests and migration proof). */

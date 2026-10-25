@@ -1,4 +1,5 @@
-import authority from '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
+import authority from '../almanac-data/xieji-vol10-jiesha-authority-v4.json'
+import { THO_VUONG_DUNG_SU_RULE_ID, thoVuongDungSuState } from './thoVuongDungSuRule'
 
 /**
  * 協紀 卷十 劫煞, 辰戌丑未 months without 德: 「不與德神併凡所忌者則不註宜所宜者亦不註忌」. The old
@@ -11,6 +12,8 @@ import authority from '../almanac-data/xieji-vol10-jiesha-authority-v3.json'
  * the 卷十 headingAliases entry 立劵交易 → 立券交易 makes reachable; v1 stays frozen as rollback evidence.
  * Authority v3 (G1 glyph Stage 2, R3) applies demolition per context: 11 contexts APPLIED, the 5 whose cell
  * depends on 土王用事 EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY with no cell (G1-SOIL); v2 stays frozen as rollback.
+ * Authority v4 (G1-SOIL Stage 2, R2) applies those 5 as APPLIED_DATE_DEPENDENT: a declared calendar-rule selector
+ * (tho-vuong-dung-su-rule-v1) picks the cell from the civil date; v3 stays frozen as rollback.
  * The policy lives in `manifest.policies.xiejiVol10JieshaPolicy` (shipped: faithful-v1); production
  * callers pass it to resolveVol10, and historical tests pin `legacy-cancel-both` explicitly.
  */
@@ -26,13 +29,20 @@ export const VOL10_JIESHA_STATUSES = [
 /** Context-level states of an APPLIED_BY_CONTEXT activity. */
 export const VOL10_JIESHA_CONTEXT_STATUSES = [
   'APPLIED',
+  'APPLIED_DATE_DEPENDENT',
   'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY',
 ] as const
+/** Declared calendar-rule selectors for APPLIED_DATE_DEPENDENT contexts: id → civil date → state. */
+const SELECTORS: Record<string, (date: string) => 'inside' | 'outside'> = {
+  [THO_VUONG_DUNG_SU_RULE_ID]: thoVuongDungSuState,
+}
 type Status = (typeof VOL10_JIESHA_STATUSES)[number]
 type ContextStatus = (typeof VOL10_JIESHA_CONTEXT_STATUSES)[number]
 type ContextCoverage = {
   status: ContextStatus
   cell?: string
+  selector?: string
+  cells?: Record<string, string>
   grade?: unknown
   identityApproved?: boolean
   authorityApproved?: boolean
@@ -63,6 +73,18 @@ function contextOk(activity: string, c: Coverage): boolean {
     if (e.status === 'APPLIED')
       return (
         (cell === 'avoid' || cell === 'blank') && e.cell === cell && flags.every((f) => f === true)
+      )
+    // Date-dependent: a known selector with exactly {inside, outside} cells, no static cell, fully approved.
+    if (e.status === 'APPLIED_DATE_DEPENDENT')
+      return (
+        !(activity in CELLS[key]!) &&
+        e.cell === undefined &&
+        e.selector !== undefined &&
+        e.selector in SELECTORS &&
+        JSON.stringify(Object.keys(e.cells ?? {}).sort()) === '["inside","outside"]' &&
+        Object.values(e.cells!).every((v) => v === 'avoid' || v === 'blank') &&
+        flags.every((f) => f === true) &&
+        e.reason === undefined
       )
     // Excluded: no cell anywhere (never a static blank / avoid), production never approved.
     if (e.status === 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY')
@@ -98,8 +120,10 @@ function validate() {
       contextOk(a, c),
   )
   // A row holds every activity except an explicitly excluded (activity, context) pair, which is absent.
-  const expected = (ctx: string, a: string) =>
-    COVERAGE[a]?.contexts?.[ctx]?.status !== 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY'
+  const expected = (ctx: string, a: string) => {
+    const st = COVERAGE[a]?.contexts?.[ctx]?.status
+    return st !== 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY' && st !== 'APPLIED_DATE_DEPENDENT'
+  }
   const ok =
     authority.schema === 'xieji-vol10-jiesha-authority' &&
     JSON.stringify(counts) === JSON.stringify(authority.counts) &&
@@ -116,7 +140,12 @@ function validate() {
 validate()
 
 export type Vol10JieshaRuntime =
-  | { status: 'APPLIED'; cell: 'avoid' | 'blank' }
+  | {
+      status: 'APPLIED'
+      cell: 'avoid' | 'blank'
+      selector?: string
+      soilState?: 'inside' | 'outside'
+    }
   | { status: 'EXCLUDED_PENDING_GLYPH_AUDIT'; reason: string }
   | { status: 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY'; reason: string }
 
@@ -129,6 +158,7 @@ export function getVol10JieshaRuntime(
   month: string,
   pillar: string,
   activityId: string,
+  civilDate?: string,
 ): Vol10JieshaRuntime {
   const row = CELLS[month + pillar]
   if (!row) throw new Error(`${authority.version}: no context ${month}${pillar}`)
@@ -143,6 +173,20 @@ export function getVol10JieshaRuntime(
     // Excluded context: the exclusion is returned without reading the cell table.
     if (ctx.status === 'EXCLUDED_PENDING_DATE_DEPENDENT_AUTHORITY')
       return { status: ctx.status, reason: ctx.reason! }
+    // Date-dependent: the selector decides from the civil date; no date, no cell (never a silent default).
+    if (ctx.status === 'APPLIED_DATE_DEPENDENT') {
+      if (!civilDate)
+        throw new Error(`${authority.version}: ${activityId} ${month}${pillar} needs a civil date`)
+      const select = SELECTORS[ctx.selector!]
+      if (!select) throw new Error(`${authority.version}: unknown selector ${ctx.selector}`)
+      const soilState = select(civilDate)
+      const cell = ctx.cells![soilState]
+      if (cell !== 'avoid' && cell !== 'blank')
+        throw new Error(
+          `${authority.version}: no ${soilState} cell ${month}${pillar} ${activityId}`,
+        )
+      return { status: 'APPLIED', cell, selector: ctx.selector!, soilState }
+    }
     if (ctx.status !== 'APPLIED')
       throw new Error(`${authority.version}: ${activityId} ${month}${pillar} is ${ctx.status}`)
   } else if (coverage.status !== 'APPLIED')
