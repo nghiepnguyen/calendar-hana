@@ -13,7 +13,7 @@ Artifacts are in [`sources/p4-vol10/g1-glyph-stage1/`](sources/p4-vol10/g1-glyph
 | 1 | Is the heading identical? | **Yes.** `SAME_ACTIVITY_ALIAS_CONFIRMED`: G1-a, owner 2026-10-24, re-verified here and not re-decided. |
 | 2 | Are the authority cells known? | **11 of 16 yes, all avoid.** The other 5 (丑-甲寅, 丑-丙寅, 丑-壬寅, 丑-戊寅, 未-戊申) are known but **depend on the date**: blank outside 土王用事, avoid inside. The v2 schema cannot represent that. 0 cells are UNKNOWN. |
 | 3 | Is production currently authorized to use them? | **No.** Demolition is `EXCLUDED_PENDING_GLYPH_AUDIT` in authority v2. `authorityApproved = productionApproved = false`. |
-| 4 | Should Stage 2 change production access? | **Only after an owner ruling on the representation of the 5 date-dependent cells (§23).** The recommended option is R1. |
+| 4 | Should Stage 2 change production access? | **Only after an owner ruling on the representation of the 5 date-dependent cells (§23).** The recommended option is R3; R1 is the no-runtime-change alternative. |
 
 ## 1. Scope
 
@@ -182,7 +182,7 @@ See §5. The P4 adapter reads `canonicalP4HeadingKey`. On P4-domain days whose s
 **Totals.**
 - 0 cells are UNKNOWN.
 - The 5 date-dependent contexts cannot be keyed by Month Jian + pillar alone, because `getVol10JieshaRuntime(month, pillar, activity)` takes no date and `Vol10Day` has no soil field.
-- No approved activity among the 24 is date-dependent. Demolition would be the first, so its representation is an owner decision.
+- No approved activity among the 24 is date-dependent. The faithful report's status split is CONFIRMED 17,949 avoid and 21,315 blank, with SOURCE_DEPENDENT 0 and UNRESOLVED 0 (`p4-jiesha-faithful-vol10.md:123,140`). Demolition would be the first, so its representation is an owner decision.
 
 ## 10A. Production Access Matrix (`production-access-matrix.json`, `.tsv`)
 
@@ -223,15 +223,18 @@ Authority v1 (rollback) is the same, except that contract and transaction are `U
 
 | Option | Representation | Access after Stage 2 | Runtime change |
 |---|---|---|---|
-| **R1** (recommended) | v3 with all 16 cells: 11 avoid, 5 soil-absent blank | APPLIED 16/16 | none |
+| R1 | v3 with all 16 cells: 11 avoid, 5 soil-absent blank | APPLIED 16/16 | none |
 | R2 | v3 plus a date-aware cell (土王用事 flag) | APPLIED 16/16, with in-window avoid on the 5 | API change; grade C outside 2025–2027 |
-| R3 | per-context coverage: 11 APPLIED, 5 `EXCLUDED_PENDING_AUTHORITY` | partial | coverage becomes per-context |
+| **R3** (recommended) | per-context coverage: 11 APPLIED, 5 `EXCLUDED_PENDING_AUTHORITY` | partial | coverage becomes per-context |
 | R4 | keep excluded | unchanged | none |
 
-**R1 ≡ R3 in behaviour.**
-- A blank cell gives `no_annotation`, which is exactly the legacy verdict.
-- So R1 changes only the 11 avoid contexts. The fit envelope equals the prediction made from avoid contexts alone (§16).
-- R1 is never less faithful than today. It omits only the in-window 劫煞 忌 on the 5 contexts, which is measured at 298 days (§12).
+**R1 and R3: same scores, different authority semantics.**
+- A blank cell gives `no_annotation`, which is exactly the legacy verdict. So both change only the 11 avoid contexts, and their activity and event envelopes are identical: the fit envelope equals the prediction made from avoid contexts alone (§16).
+- They differ in what is asserted:
+  - R1 records an unconditional, authority-stamped `blank` on the 5 contexts.
+  - On the 298 in-window days outside the domain, the G1-a engine says `avoid`, so R1 asserts a value the source contradicts there. Today those days carry an honest `authorityExclusion`; R1 drops it.
+  - R3 keeps that exclusion.
+- R1 is acceptable only with an explicit provenance note on the 5 cells: "soil-absent cell; in-window value avoid not represented".
 
 **Transitions.**
 - Semantic now: `EXCLUDED_PENDING_GLYPH_AUDIT` → `EXCLUDED_PENDING_AUTHORITY`. Identity is settled; no runtime change.
@@ -245,7 +248,7 @@ Authority v1 (rollback) is the same, except that contract and transaction are `U
 |---|---|---|
 | `faithful-v1` | rollback, pre-G2 | excluded |
 | `faithful-v2` | production: contract/transaction APPLIED | excluded |
-| `faithful-v3` | hypothetical, exists only after an owner ruling | per the chosen option |
+| `faithful-v3` | hypothetical, exists only after an owner ruling | per the chosen option (R1, R2 or R3) |
 
 v2 is never mutated.
 
@@ -366,7 +369,7 @@ Every change sets Kiep Sat from `informational:no_annotation` to `applied:avoid`
 2. **R2 only:** does the 土王用事 window outside 2025–2027 count as authority? Today it is grade C: the P4 soil convention is adopted for 2025–2027 only, and outside it `getP4SoilPresence` returns `unknown`.
 3. **Evidence that is consistent but not discriminating:** the B grades on 戌×4, 丑-丙寅 (n75 月德) and 未-戊申 (n117).
 
-## 19. Stage 2 allowed changes (spec, given an owner ruling for R1)
+## 19. Stage 2 allowed changes (spec, given an owner ruling for R3; R1 differences noted)
 
 **Identity and heading.**
 - Identity: `SAME_ACTIVITY_ALIAS_CONFIRMED`.
@@ -379,7 +382,12 @@ Every change sets Kiep Sat from `informational:no_annotation` to `applied:avoid`
   - avoid: 辰乙巳, 辰己巳, 辰癸巳, 辰辛巳, 未丙申, 未壬申, 未庚申, 戌丁亥, 戌乙亥, 戌己亥, 戌癸亥;
   - blank: 丑甲寅, 丑丙寅, 丑壬寅, 丑戊寅, 未戊申.
 - Counts: 25 activities, 400 cells, 188 avoid, 212 blank.
-- Demolition coverage becomes `APPLIED`, and the provenance names the R1 ruling and this audit.
+- **R3:**
+  - Demolition coverage becomes `APPLIED` with a per-context exclusion `EXCLUDED_PENDING_AUTHORITY` on 丑甲寅, 丑丙寅, 丑壬寅, 丑戊寅 and 未戊申.
+  - Those 5 cells stay in the table only as provenance, or are omitted.
+  - `validate()` and `getVol10JieshaRuntime` gain per-context coverage, and an excluded context keeps the legacy verdict plus `authorityExclusion`, exactly as today.
+- **R1:** coverage is `APPLIED` for all 16 contexts, and each of the 5 blank cells carries the note "soil-absent cell; in-window value avoid not represented".
+- In both cases the provenance names the ruling and this audit.
 
 **Runtime and tests.**
 - `xiejiVol10JieshaAuthority.ts` imports v3, and the `validate()` invariants are kept.
@@ -392,7 +400,16 @@ Every change sets Kiep Sat from `informational:no_annotation` to `applied:avoid`
 - Witnesses and controls: as in §17, excluding the faithful-only rows. Under R1 those rows are expected unchanged, and are asserted unchanged.
 
 **Golden and versions.**
-- Golden successor: Scoring Golden v3 → v4. Only the case `jie-chen-demolition-excluded` (辰-乙巳) flips: verdict `avoid`, Kiep Sat `applied` −15.
+- Golden successor: Scoring Golden v3 → v4.
+  - The one expected flip is found by **grep, not computed**. `jie-chen-demolition-excluded` (辰-乙巳) is the only demolition × 劫煞 case in the authority branch, and it is expected to become verdict `avoid`, Kiep Sat `applied` −15.
+  - `jie-yin-demolition` (寅 month) is outside the branch and is expected unchanged.
+  - Stage 2 must compute the successor with the builder (`build_scoring_golden_v3.py` pattern), not hand-edit it.
+- **Every file that names `EXCLUDED_PENDING_GLYPH_AUDIT`** must be revisited in Stage 2:
+  - `xiejiVol10JieshaAuthority.ts` and its test;
+  - `xiejiVol10Resolution.ts` (the `authorityExclusion` branch stays for R3);
+  - `xiejiVol10ScoringV2.test.ts` and `xiejiVol10ScoringV3.test.ts`;
+  - `golden-xieji-vol10-scoring-v2.json` and `-v3.json`, which stay frozen; a v4 is added;
+  - `jiesha-option-c-migration-v1/build_authority.py` and `g2-stage2/build_authority_v2.py`, frozen generators that must keep verifying v1/v2.
 - P4 Score Golden v4 is unchanged (domain 0).
 
 **Stop conditions.** Stage 2 stops if any of these holds:
@@ -427,6 +444,7 @@ Stage 2 must not:
 
 - Rollback = authority v2 statically imported in place of v3. No other file differs.
 - Expected rollback output = shipped `f3c68c6` production, byte for byte, over the full-range dump. This follows the G2 `rollback.json` pattern.
+- R3 also reverts the per-context coverage code. That revert must leave the shipped `validate()` and `getVol10JieshaRuntime` behaviour unchanged for v2.
 - Re-enable = forward.
 
 ## 22. Versioning implications
@@ -434,7 +452,7 @@ Stage 2 must not:
 | Item | Under R1 / R2 |
 |---|---|
 | 劫煞 authority | `faithful-v3` required |
-| `datasetVersion` | bump recommended (1.2.1 → 1.2.2): user-visible scores change outside 2025–2027 |
+| `datasetVersion` | **owner decision.** G2 Stage 2 changed user-visible scores and kept 1.2.1 (precedent). A bump to 1.2.2 is optional, not the default. |
 | P4 adapter | unchanged (domain delta 0) |
 | `canonical-v1` | unchanged |
 | Scoring Golden (`golden-xieji-vol10-scoring`) | successor v4 required |
@@ -446,20 +464,22 @@ Under R3 the runtime coverage model also changes. Under R4 nothing changes.
 
 ## 23. Owner decisions required
 
-1. **Representation of the 5 date-dependent contexts.** Choose R1, R2, R3 or R4. Recommendation: **R1**.
-   - It needs no runtime change.
-   - It behaves the same as R3.
-   - It is never less faithful than today.
-   - Every cell it applies is grade A or B.
-   - In-window 劫煞 avoid on the 5 contexts remains a documented follow-up (R2 later).
-2. **Acceptance of the outside-domain blast radius.** 1,119 demolition days, all −15, which is the full transition table in §12. In the P4 domain the change is 0.
+1. **Representation of the 5 date-dependent contexts.** Choose R1, R2, R3 or R4. Recommendation: **R3**.
+   - It applies only cells that are grade A or B in every date state (the 11 date-invariant contexts).
+   - It keeps the honest `authorityExclusion` on the 5 contexts.
+   - Its scores are identical to R1.
+   - Cost: coverage becomes per-context, in `validate()` and `getVol10JieshaRuntime`.
+   - R1 is the alternative with no runtime change, but it asserts a source-contradicted `blank` on 298 in-window days (§10A), which needs the provenance note.
+   - In-window 劫煞 avoid on the 5 contexts remains a documented follow-up (R2).
+2. **Acceptance of the outside-domain blast radius** (same for R1 and R3). 1,119 demolition days, all −15, which is the full transition table in §12. In the P4 domain the change is 0.
 3. **Acceptance of the B-grade cells** whose 月表 pages do not discriminate: 戌×4, 丑-丙寅 and 未-戊申 out of window.
-4. **R2 only:** adopt the soil-window convention beyond 2025–2027 as authority, since it is grade C today.
+4. **R2 only:** adopt the soil-window convention beyond 2025–2027 as authority. It is grade C today, and no approved cell yet rests on that extension (SOURCE_DEPENDENT 0).
+5. **`datasetVersion`:** bump or keep, following the G2 precedent.
 
 Already-frozen matters (G1-b, G2, identity, canonical direction, 2025-02-02 soil boundary) are not re-asked.
 
 ## 24. Final Stage 1 decision
 
 - **`SAME_HEADING_AUTHORITY_PARTIAL`.**
-- Stage 2 recommendation: **proceed after the owner rulings in §23 (1–3).**
+- Stage 2 recommendation: **proceed after the owner rulings in §23 (1–3, and 5).**
 - Verdict: **`G1_GLYPH_STAGE_1_READY_FOR_REVIEW`**. This does not approve production activation. It means the evidence and the Stage 2 specification are ready for owner review.
