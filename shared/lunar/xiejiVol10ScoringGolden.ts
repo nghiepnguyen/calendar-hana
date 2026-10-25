@@ -1,5 +1,7 @@
 /** Test-only: runs a frozen 卷十 scoring Golden (golden-xieji-vol10-scoring-v*.json) against the resolver and
- * scorer of the caller's module graph (v2: pre-G2 rollback, v3: shipped G2 Stage 2). */
+ * scorer of the caller's module graph (v2: pre-G2 rollback, v3: G2 Stage 2, v4: G1 glyph Stage 2, v5: G1-SOIL
+ * Stage 2). v5 cases may carry a real civil `date` with its explicit `soilState` (both checked as calendar facts
+ * before scoring) and `expect.throws` (a date-dependent lookup without a date must fail loud). */
 import { describe, expect, it } from 'vitest'
 import type { Evidence } from './evidence'
 import type { resolveVol10 as ResolveVol10 } from './xiejiVol10Resolution'
@@ -19,8 +21,15 @@ type Golden = {
     officer: string
     gods: string[]
     activity: string
+    date?: string
+    soilState?: string
     rows: { source: string; ruleId: string; delta: number }[]
-    expect: { verdicts: Record<string, string | undefined>; rows: unknown[]; added: unknown[] }
+    expect: {
+      verdicts?: Record<string, string | undefined>
+      rows?: unknown[]
+      added?: unknown[]
+      throws?: string
+    }
   }[]
 }
 
@@ -81,18 +90,32 @@ export function describeScoringGolden(
     for (const c of golden.cases)
       it(c.id, async () => {
         const { resolveVol10, applyVol10Scoring, VOL10_SCORED_ENTRIES } = await engine()
-        const items = resolveVol10(
-          {
-            monthJianBranch: B(c.month),
-            dayStem: S(c.pillar[0]!),
-            dayBranch: B(c.pillar[1]!),
-            officerId: c.officer,
-            presentGods: new Set(c.gods),
-            unknownGods: new Set(),
-          },
-          [c.activity],
-          POLICY,
-        )
+        if (c.date !== undefined) {
+          // Calendar facts, not fixtures: the date is a real day of this Month Jian + pillar, and its 土王用事
+          // state under the rule service is the declared soilState.
+          const { thoVuongDungSuState } = await import('./thoVuongDungSuRule')
+          const { getAlmanac } = await import('./almanac')
+          const a = getAlmanac(c.date as never)
+          expect(
+            [a.selectionContext.MONTH_JIAN_BRANCH, a.dayCanChi.can, a.dayCanChi.chi],
+            c.id,
+          ).toEqual([B(c.month), S(c.pillar[0]!), B(c.pillar[1]!)])
+          expect(thoVuongDungSuState(c.date), c.id).toBe(c.soilState)
+        }
+        const day = {
+          monthJianBranch: B(c.month),
+          dayStem: S(c.pillar[0]!),
+          dayBranch: B(c.pillar[1]!),
+          officerId: c.officer,
+          presentGods: new Set(c.gods),
+          unknownGods: new Set<string>(),
+          ...(c.date !== undefined ? { civilDate: c.date } : {}),
+        }
+        if (c.expect.throws) {
+          expect(() => resolveVol10(day, [c.activity], POLICY), c.id).toThrow(c.expect.throws)
+          return
+        }
+        const items = resolveVol10(day, [c.activity], POLICY)
         const verdicts = Object.fromEntries(
           items.filter((i) => VOL10_SCORED_ENTRIES.has(i.entry)).map((i) => [i.entry, i.verdict]),
         )
