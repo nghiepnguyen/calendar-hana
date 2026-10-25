@@ -207,7 +207,18 @@ The repo has **two independent lineages**. The name "Score Golden v4" belongs to
 - Every other case is copied.
 - The builder asserts that the case diff is exactly this, so the flip is not a manual JSON patch.
 
-v1, v2 and v3 stay byte-frozen. The v3 test (`xiejiVol10ScoringV3.test.ts`) is pinned to the authority v2 rollback.
+v1, v2 and v3 stay byte-frozen.
+- `xiejiVol10ScoringV2.test.ts` stays on its existing pre-G2 pin: authority v1, alias removed.
+- `xiejiVol10ScoringV3.test.ts` is pinned to the authority v2 graph, which is the G1 Stage 2 rollback.
+
+**Naming note (departs from the owner's stated expectation; owner to confirm).**
+- The repo uses two names:
+  - **"Score Golden"** = the P4 lineage. `p4-g2-stage2-migration.md:177` names "Score Golden v4 (`p4-score-golden-v4/`)".
+  - **"Scoring Golden"** = the 卷十 lineage. `:192` names "Scoring Golden v3 (`golden-xieji-vol10-scoring-v3.json`)".
+- One commit title mixes them: `dbef7ba` "freeze G2 Score Golden v4" added `golden-xieji-vol10-scoring-v3.json`. That is the likely source of the expectation "Score Golden v5".
+- The demolition flip sits only in the 卷十 lineage. The P4 lineage has no demolition delta.
+- So the successor is **卷十 Scoring Golden v4** (`golden-xieji-vol10-scoring-v4.json`), and there is **no P4 Score Golden v5**.
+- To avoid another collision, Stage 2 docs, tests and commits always write the full name "卷十 Scoring Golden v4" and never "Score Golden v4".
 
 **Unchanged and asserted.**
 - `p4-adapter-baseline-v2`: the flag-OFF baseline pins `legacy-cancel-both`, which never consults the authority.
@@ -233,16 +244,51 @@ v1, v2 and v3 stay byte-frozen. The v3 test (`xiejiVol10ScoringV3.test.ts`) is p
 | `shared/lunar/xiejiVol10Resolution.ts` | `kept` via `vol10JieshaCell`; exclusion message; no other logic |
 | `shared/lunar/g1GlyphRollback.ts` | new test-only helper (authority v2) |
 | `shared/lunar/xiejiVol10JieshaAuthority.test.ts` | v3 invariants, pinned access set |
-| `shared/lunar/xiejiVol10ScoringV2.test.ts`, `xiejiVol10ScoringV3.test.ts` | pinned to the v2 rollback graph |
+| `shared/lunar/xiejiVol10ScoringV2.test.ts` | stays on authority v1 with the alias removed (pre-G2); mock retargeted (§12a) |
+| `shared/lunar/xiejiVol10ScoringV3.test.ts` | pinned to authority v2 (G1 Stage 2 rollback) |
 | `shared/lunar/xiejiVol10ScoringV4.test.ts`, `golden-xieji-vol10-scoring-v4.json` | new |
 | `shared/lunar/p4G2Stage2Migration.test.ts`, `p4G2Stage1Audit.test.ts`, `xiejiVol10Resolution.test.ts` | pin the authority v2 where they assert v2 |
 | `shared/lunar/p4G1GlyphStage1Audit.test.ts` | its `forward` model becomes the v2 rollback; Stage 1 artifacts stay byte-frozen |
 | `shared/lunar/p4G1GlyphStage2Migration.test.ts` | new: forward / rollback / re-enable dumps, envelope, witnesses, mutations, stamp gate |
 | `docs/audits/sources/p4-vol10/g1-glyph-stage2/` | new: `build_authority_v3.py`, `build_scoring_golden_v4.py`, `compare.py`, `summary.json`, `activity-diff.tsv`, `authority-stamp.json`, `rollback.json`, `mutation-results.json`, `lock.json` |
-| `scripts/audit-vol10-jiesha-mutations.py` | new context-level mutations |
+| `scripts/audit-vol10-jiesha-mutations.py` | retarget to the v3 import; new context-level mutations |
+| the 14 test files in §12a | mock path retargeted; authority-id assertion added |
 | `package.json` `ci:p4` | add the v3 builder, the scoring v4 builder and the Stage 2 gates |
 | `docs/audits/p4-g1-glyph-stage2-migration.md` | migration record |
 | `PROJECT_CONTEXT.md` | G1 row and debt list, once the change ships |
+
+## 12a. Authority mocks must be retargeted (silent-no-op hazard)
+
+Every pin today mocks the **v2 file path**. Once `xiejiVol10JieshaAuthority.ts` imports v3, mocking the v2 path does nothing: each "rollback" or "pinned" graph would quietly load v3. Most frozen-artifact tests would fail loudly, but a model that does not assert the authority id would pass on the wrong graph.
+
+**Hits on `origin/main`** (`git grep -n "xieji-vol10-jiesha-authority-v" -- '*.ts' 'scripts/*.py'`).
+
+Mocking the v2 path, to retarget to the v3 path with the same content:
+- `legacyGodsMonthJian.test.ts:18`
+- `p4AdapterBaseline.test.ts:13`
+- `p4G2Stage1Audit.test.ts:34`
+- `p4G2Stage2Migration.test.ts:16`
+- `p4MigrationDiff.test.ts:59`
+- `p4MigrationDiffV3.test.ts:469`
+- `p4MigrationRollback.test.ts:15`
+- `p4ScoreAdapterAlmanac.test.ts:17`
+- `p4ScoreGoldenV3.test.ts:14`
+- `sameHeadingDuplicateMigration.test.ts:13`
+- `xiejiVol10Activation.test.ts:12`
+- `xiejiVol10JieshaMigration.test.ts:24`
+- `xiejiVol10ScoringV2.test.ts:19`
+- `p4G1GlyphStage1Audit.test.ts` (`AUTH`)
+
+Other hits:
+- `g2Rollback.ts:4` imports v1 content and stays as it is. Only the mocked path in its callers changes.
+- `xiejiVol10JieshaAuthority.test.ts:7–8` imports v2 and v1 directly, and gains v3.
+- `scripts/audit-vol10-jiesha-mutations.py:21,52` points `DATA` and its v1-swap mutation at the v2 file. Retarget them to the v3 import, and keep a v2-content mutation.
+
+**Rules.**
+- Each retargeted mock keeps exactly the content it used before (v1, v2 or a Stage 1 candidate). Only the mocked path changes.
+- Every pinned model asserts `VOL10_JIESHA_AUTHORITY_ID` equals the version it expects. A mock that silently misses then fails.
+- A guard test fails if any `.test.ts` mocks a `xieji-vol10-jiesha-authority-v*.json` path other than the one `xiejiVol10JieshaAuthority.ts` imports.
+- Stage 2 re-runs the grep and must account for every hit in the migration record.
 
 ## 13. Rollback
 
@@ -278,7 +324,8 @@ Stop and report on any of these:
 - a mutation in §5 is not caught;
 - P4 Score Golden v4, `p4-adapter-baseline-v2`, Migration Diff v3 or the G2 frozen evidence changes;
 - rollback ≠ shipped bytes;
-- a persistent cache keyed by `datasetVersion` is found.
+- a persistent cache keyed by `datasetVersion` is found;
+- any authority mock still targets a path the runtime does not import (§12a).
 
 ## 16. Gates before review
 
