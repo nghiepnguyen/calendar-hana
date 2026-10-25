@@ -11,6 +11,15 @@ import { EVENT_OPTIONS } from './eventMapping'
 import { getDayInfo } from './index'
 import { LEGACY_LUNAR_GOD_IDS } from './xiejiGodPresence'
 
+// Frozen before G2 Stage 2 (立劵交易 alias + 劫煞 authority v2): pinned to the pre-G2 rollback (g2Rollback.ts).
+vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+  (await import('./g2Rollback')).withoutG2Alias(await load()),
+)
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', async () =>
+  (await import('./g2Rollback')).jieshaAuthorityV1(),
+)
+await vi.hoisted(async () => (await import('./g2Rollback')).reloadUnderG2Pins())
+
 // Roadmap 10: historical/frozen-config test, pinned to the pre-activation config (P4 balancing OFF).
 // Frozen before the 卷十 劫煞 faithful-v1 migration (2026-10-22): pinned to legacy-cancel-both.
 vi.mock('../almanac-data/manifest.json', async (importOriginal) => {

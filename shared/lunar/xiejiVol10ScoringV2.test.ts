@@ -1,91 +1,28 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import golden from '../almanac-data/golden-xieji-vol10-scoring-v2.json'
-import type { Evidence } from './evidence'
-import { resolveVol10 } from './xiejiVol10Resolution'
-import { applyVol10Scoring, VOL10_SCORED_ENTRIES } from './xiejiVol10Scoring'
+import { describeScoringGolden } from './xiejiVol10ScoringGolden'
 
-// Golden v2 (successor of v1): the 卷十 劫煞 faithful-v1 projection, pinned explicitly.
-const POLICY = { jieshaPolicy: 'faithful-v1' } as const
+// Golden v2 (successor of v1), frozen before G2 Stage 2: run on the pre-G2 rollback graph (g2Rollback.ts).
+// The shipped successor is golden-xieji-vol10-scoring-v3.json (xiejiVol10ScoringV3.test.ts).
+let graph: Promise<{
+  resolveVol10: typeof import('./xiejiVol10Resolution').resolveVol10
+  applyVol10Scoring: typeof import('./xiejiVol10Scoring').applyVol10Scoring
+  VOL10_SCORED_ENTRIES: ReadonlySet<string>
+}>
+const rollback = () =>
+  (graph ??= (async () => {
+    vi.resetModules()
+    const { withoutG2Alias, jieshaAuthorityV1 } = await import('./g2Rollback')
+    vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+      withoutG2Alias(await load()),
+    )
+    vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', () => jieshaAuthorityV1())
+    const { resolveVol10 } = await import('./xiejiVol10Resolution')
+    const { applyVol10Scoring, VOL10_SCORED_ENTRIES } = await import('./xiejiVol10Scoring')
+    return { resolveVol10, applyVol10Scoring, VOL10_SCORED_ENTRIES }
+  })())
 
-const B = (c: string) => '子丑寅卯辰巳午未申酉戌亥'.indexOf(c)
-const S = (c: string) => '甲乙丙丁戊己庚辛壬癸'.indexOf(c)
-const OFFICERS = [
-  'kien',
-  'tru',
-  'man',
-  'binh',
-  'dinh',
-  'chap',
-  'pha',
-  'nguy',
-  'thanh',
-  'thu',
-  'khai',
-  'be',
-]
-
-const row = (
-  activityId: string,
-  r: { source: string; ruleId: string; delta: number },
-): Evidence => ({
-  source: r.source as Evidence['source'],
-  ruleId: r.ruleId,
-  activityId,
-  scope: activityId,
-  label: r.ruleId,
-  sourcePhrase: r.ruleId,
-  sourceRef: '',
-  confidence: 'high',
-  status: 'applied',
-  rawDelta: r.delta,
-  scoreDelta: r.delta,
-  polarity: r.delta > 0 ? 'positive' : r.delta < 0 ? 'negative' : 'neutral',
-})
-
-describe('協紀 卷十 scoring policy — golden v2 (faithful-v1)', () => {
-  it('golden is frozen and internally consistent', () => {
-    expect(golden.status).toMatch(/^FROZEN/)
-    expect(golden.cases.length).toBeGreaterThanOrEqual(30)
-    for (const c of golden.cases) {
-      // Each case is a real day: the officer follows from Month Jian and day branch.
-      expect(OFFICERS[(B(c.pillar[1]!) - B(c.month) + 12) % 12], c.id).toBe(c.officer)
-      expect(S(c.pillar[0]!) % 2, c.id).toBe(B(c.pillar[1]!) % 2)
-    }
-  })
-
-  for (const c of golden.cases)
-    it(c.id, () => {
-      const items = resolveVol10(
-        {
-          monthJianBranch: B(c.month),
-          dayStem: S(c.pillar[0]!),
-          dayBranch: B(c.pillar[1]!),
-          officerId: c.officer,
-          presentGods: new Set(c.gods),
-          unknownGods: new Set(),
-        },
-        [c.activity],
-        POLICY,
-      )
-      const verdicts = Object.fromEntries(
-        items.filter((i) => VOL10_SCORED_ENTRIES.has(i.entry)).map((i) => [i.entry, i.verdict]),
-      )
-      expect(verdicts).toEqual(c.expect.verdicts)
-      const out = applyVol10Scoring(
-        c.rows.map((r) => row(c.activity, r)),
-        items,
-        { activityId: c.activity, scope: c.activity, badGodCap: -30 },
-      )
-      const shape = (r: Evidence) => ({
-        source: r.source,
-        ruleId: r.ruleId,
-        scoreDelta: r.scoreDelta,
-        status: r.status,
-      })
-      expect(out.slice(0, c.rows.length).map(shape)).toEqual(c.expect.rows)
-      expect(out.slice(c.rows.length).map(shape)).toEqual(c.expect.added)
-    })
-})
+describeScoringGolden('協紀 卷十 scoring policy — golden v2 (faithful-v1)', golden, rollback)
 
 describe('golden v2 provenance', () => {
   it('records the approved authority and the v1 projection', () => {

@@ -5,6 +5,9 @@ import gate from '../../docs/audits/sources/p4-vol10/option-c-final-gate-v1/gate
 import lock from '../../docs/audits/sources/p4-vol10/option-c-final-gate-v1/lock.json'
 import ruling from '../../docs/audits/sources/p4-vol10/option-c-final-gate-v1/owner-ruling.json'
 import golden from '../../docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
+import { lockFileDigests } from './lockAnchor'
+
+const GOLDEN_LOCK = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
 
 // Audit only: Option C final gate (docs/audits/p4-option-c-final-gate.md).
 const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('hex')
@@ -35,6 +38,11 @@ describe('Option C final gate lock', () => {
   it('Golden v2 lock is untouched', () => {
     const files = golden.files as { path: string; sha256: string }[]
     expect(files.length).toBeGreaterThan(0)
-    for (const f of files) expect(sha(f.path), f.path).toBe(f.sha256)
+    // Inputs outside the Golden directory as committed at its anchor (G2 Stage 2 adds a 卷十 alias).
+    const got = lockFileDigests(
+      GOLDEN_LOCK,
+      files.map((f) => f.path),
+    )
+    for (const f of files) expect(got.get(f.path), f.path).toBe(f.sha256)
   })
 })

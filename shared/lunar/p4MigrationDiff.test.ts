@@ -52,6 +52,15 @@ import {
 import { solarTermsForYear } from './solarTerms'
 import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 
+// Frozen before G2 Stage 2 (立劵交易 alias + 劫煞 authority v2): pinned to the pre-G2 rollback (g2Rollback.ts).
+vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+  (await import('./g2Rollback')).withoutG2Alias(await load()),
+)
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', async () =>
+  (await import('./g2Rollback')).jieshaAuthorityV1(),
+)
+await vi.hoisted(async () => (await import('./g2Rollback')).reloadUnderG2Pins())
+
 // Roadmap 9 harness (tasks/prd-p4-migration-diff.md §2, FR-02; owner §6.10), v2 for roadmap 9b
 // (tasks/prd-p4-9b.md §5: rules v2, Golden score v2, output p4-migration-diff-v2; v1 output is frozen and
 // read back as the roadmap 9 full run for invariant 15). Test-only: no runtime

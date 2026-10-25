@@ -1,4 +1,4 @@
-"""Sequential mutations against the 卷十 劫煞 faithful-v1 authority migration (Option C v1 projection).
+"""Sequential mutations against the 卷十 劫煞 faithful authority (Option C projection, G2 Stage 2 authority v2).
 
 Each mutation edits ONE runtime or authority file in place, runs ONE named test with `-t`, and restores the
 bytes. A clean control run comes first. Never touches a Golden, baseline or lock file (the manifest policy is mutated once). A mutation counts as
@@ -11,12 +11,15 @@ import subprocess
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-REPORT = root / 'docs/audits/sources/p4-vol10/jiesha-option-c-migration-v1/mutation-results.json'
+# v1 report (jiesha-option-c-migration-v1/mutation-results.json) is frozen; G2 Stage 2 writes its successor.
+REPORT = root / 'docs/audits/sources/p4-vol10/g2-stage2/mutation-results.json'
 AUTH_TEST = 'shared/lunar/xiejiVol10JieshaAuthority.test.ts'
-GOLDEN_TEST = 'shared/lunar/xiejiVol10ScoringV2.test.ts'
+GOLDEN_TEST = 'shared/lunar/xiejiVol10ScoringV3.test.ts'
+G2_TEST = 'shared/lunar/p4G2Stage2Migration.test.ts'
 RES = 'shared/lunar/xiejiVol10Resolution.ts'
 AUTH = 'shared/lunar/xiejiVol10JieshaAuthority.ts'
-DATA = 'shared/almanac-data/xieji-vol10-jiesha-authority-v1.json'
+DATA = 'shared/almanac-data/xieji-vol10-jiesha-authority-v2.json'
+VOL10 = 'shared/almanac-data/xiejibianfangshu-vol10-yiji.json'
 CAT = 'shared/lunar/catHungAuthority.ts'
 SCAN = 'every real Month Jian'
 NEVER = 'never applies in 子午卯酉'
@@ -40,16 +43,21 @@ mutations = [
     ('demolition_silent_fallback', AUTH_TEST, SCAN, 'authorityExclusion',
      [(AUTH, "    return { status: coverage.status, reason: coverage.reason! }",
        "    return { status: 'APPLIED', cell: 'blank' }")]),
-    ('jian_quan_normalized', AUTH_TEST, COVER, 'contract is UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION but was reached',
+    # G2 Stage 2: with the alias a NORM 劵→券 fold gives the same matching, so the guard is the no-fold check.
+    ('jian_quan_normalized', G2_TEST, 'alias:', 'AssertionError',
      [(RES, "  壞: '壊',", "  壞: '壊',\n  劵: '券',")]),
-    ('unreachable_reached_silently', AUTH_TEST, LOUD, 'AssertionError',
+    ('g2_alias_removed', AUTH_TEST, COVER, 'AssertionError',
+     [(VOL10, ',\n    "立劵交易": ["立券交易"]', '')]),
+    ('g2_authority_v1_restored', AUTH_TEST, COVER, 'contract is UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION but was reached',
+     [(AUTH, "xieji-vol10-jiesha-authority-v2.json'", "xieji-vol10-jiesha-authority-v1.json'")]),
+    ('unreachable_reached_silently', G2_TEST, 'authority v2 applies', 'AssertionError',
      [(AUTH, "    throw new Error(`${authority.version}: ${activityId} is ${coverage.status} but was reached`)",
        "    return { status: 'APPLIED', cell: 'blank' }")]),
     ('applied_cell_changed', AUTH_TEST, EQUAL, 'AssertionError',
      [(DATA, ('辰乙巳', 'wedding', 'avoid', 'blank'), None), (DATA, ('辰乙巳', 'travel', 'blank', 'avoid'), None)]),
     ('p17a_cell_removed', AUTH_TEST, FIX, 'AssertionError',
      [(DATA, ('未壬申', 'engagement', 'avoid', 'blank'), None), (DATA, ('未壬申', 'travel', 'blank', 'avoid'), None)]),
-    ('exclusion_reason_removed', AUTH_TEST, None, 'invalid xieji-vol10-jiesha-faithful-v1',
+    ('exclusion_reason_removed', AUTH_TEST, None, 'invalid xieji-vol10-jiesha-faithful-v2',
      [(DATA, '"debt": "G1",', '')]),
     # Each guard alone is redundant on current data (other gods' otherwise-cancel_both clauses all sit
     # outside 辰戌丑未; 劫煞's 子午卯酉 cancel_both is on the with-德 path), so removing one is an
@@ -79,7 +87,7 @@ original = {f: (root / f).read_bytes() for f in files}
 restore = lambda: [(root / f).write_bytes(b) for f, b in original.items()]  # noqa: E731
 results = []
 try:
-    for target in (AUTH_TEST, GOLDEN_TEST):
+    for target in (AUTH_TEST, GOLDEN_TEST, G2_TEST):
         control = run_test(target)
         if control.returncode != 0:
             raise RuntimeError('control run failed:\n' + control.stdout[-2000:])
@@ -110,7 +118,7 @@ try:
 finally:
     restore()
 report = {
-    'version': 'vol10-jiesha-mutations-v1',
+    'version': 'vol10-jiesha-mutations-v2',
     'control': 'clean',
     'mutations': len(results),
     'caught': sum(r['caughtByTest'] for r in results),

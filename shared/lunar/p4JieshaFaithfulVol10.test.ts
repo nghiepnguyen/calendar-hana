@@ -1,9 +1,12 @@
 import { createHash } from 'node:crypto'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { describe, expect, it, vi } from 'vitest'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 import goldenLock from '../../docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
+import { lockFileDigests } from './lockAnchor'
+
+const GOLDEN_LOCK = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
 
 // Audit only: faithful 卷十 劫煞 simulator (docs/audits/p4-jiesha-faithful-vol10.md). Not production.
 // Wrappers as in p4JieshaOverlapImpact.test.ts (the locked upper-bound harness, copied, not imported:
@@ -445,7 +448,11 @@ describe('faithful simulator safety', () => {
     const off = out(await graph(true))
     // Last: doUnmock removes the wrappers for the rest of this file.
     expect(out(await graph(false))).toEqual(off)
-    for (const f of goldenLock.files)
-      expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(f.sha256)
+    // Inputs outside the Golden directory as committed at its anchor (G2 Stage 2 adds a 卷十 alias).
+    const got = lockFileDigests(
+      GOLDEN_LOCK,
+      goldenLock.files.map((f) => f.path),
+    )
+    for (const f of goldenLock.files) expect(got.get(f.path), f.path).toBe(f.sha256)
   })
 })

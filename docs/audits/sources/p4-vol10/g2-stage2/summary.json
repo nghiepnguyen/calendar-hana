@@ -1,0 +1,128 @@
+{
+ "version": "g2-stage2-summary-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none: every day, every activity, every event × {no hour, hour 9}",
+ "migration": {
+  "domain": {
+   "days": 1095,
+   "evidenceOrStateChanged": 24,
+   "scoreChanged": 24,
+   "scoreLower": 0,
+   "scoreHigher": 24,
+   "statusChanged": 24,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 24,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 4330,
+   "eventScoreChanged": 108,
+   "eventClassificationChanged": 72,
+   "eventEvidenceOnly": 4222,
+   "statusTransitions": {
+    "watch>neutral": 22,
+    "avoid>neutral": 2
+   }
+  },
+  "outside": {
+   "days": 72319,
+   "evidenceOrStateChanged": 37372,
+   "scoreChanged": 13856,
+   "scoreLower": 2020,
+   "scoreHigher": 11836,
+   "statusChanged": 13254,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 13856,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 289270,
+   "eventScoreChanged": 62352,
+   "eventClassificationChanged": 44942,
+   "eventEvidenceOnly": 226918,
+   "statusTransitions": {
+    "watch>neutral": 5616,
+    "watch>recommended": 4022,
+    "avoid>neutral": 1596,
+    "no_evidence>avoid": 1810,
+    "watch>strong_avoid": 210
+   }
+  }
+ },
+ "authorityStampOnly": {
+  "domain": 252,
+  "outside": 19380
+ },
+ "eventChangedTotal": 293600,
+ "conclusionChangedDomainDates": [
+  "2025-07-14",
+  "2025-08-03",
+  "2025-08-22",
+  "2025-11-11",
+  "2026-05-03",
+  "2026-07-09",
+  "2026-07-29",
+  "2026-08-17",
+  "2027-04-28",
+  "2027-07-24",
+  "2027-08-12",
+  "2027-09-05"
+ ],
+ "domainRowsEqualFrozenStage1": true,
+ "dependsOnWeishenCell": {
+  "domain": {
+   "days": 1095,
+   "evidenceOrStateChanged": 0,
+   "scoreChanged": 0,
+   "scoreLower": 0,
+   "scoreHigher": 0,
+   "statusChanged": 0,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 20,
+   "eventScoreChanged": 0,
+   "eventClassificationChanged": 0,
+   "eventEvidenceOnly": 20,
+   "statusTransitions": {}
+  },
+  "outside": {
+   "days": 72319,
+   "evidenceOrStateChanged": 212,
+   "scoreChanged": 212,
+   "scoreLower": 212,
+   "scoreHigher": 0,
+   "statusChanged": 212,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 212,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 1060,
+   "eventScoreChanged": 954,
+   "eventClassificationChanged": 636,
+   "eventEvidenceOnly": 106,
+   "statusTransitions": {
+    "neutral>watch": 212
+   }
+  }
+ },
+ "frozenStage1Equal": {
+  "domain": true,
+  "outside": true,
+  "dependsOnWeishenCell": {
+   "domain": true,
+   "outside": true
+  }
+ },
+ "independentTextModel": {
+  "rowsDifferingFromForward": 0,
+  "eventChanged": 0,
+  "authorityStampOnly": {
+   "domain": 0,
+   "outside": 0
+  }
+ },
+ "unexpected": 0
+}

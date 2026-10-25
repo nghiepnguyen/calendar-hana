@@ -1,0 +1,80 @@
+{
+ "version": "g2-stage2-authority-diff-v1",
+ "from": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+  "version": "xieji-vol10-jiesha-faithful-v1",
+  "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+ },
+ "to": {
+  "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+  "version": "xieji-vol10-jiesha-faithful-v2"
+ },
+ "coverageChanged": {
+  "contract": [
+   "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "APPLIED"
+  ],
+  "transaction": [
+   "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+   "APPLIED"
+  ]
+ },
+ "cellsChanged": 0,
+ "countsChanged": false,
+ "otherCoverageChanged": 0,
+ "cellsNowApplied": {
+  "contract": {
+   "avoid": [
+    "未丙申",
+    "未壬申",
+    "未庚申"
+   ],
+   "blank": [
+    "丑丙寅",
+    "丑壬寅",
+    "丑戊寅",
+    "丑甲寅",
+    "戌丁亥",
+    "戌乙亥",
+    "戌己亥",
+    "戌癸亥",
+    "未戊申",
+    "辰乙巳",
+    "辰己巳",
+    "辰癸巳",
+    "辰辛巳"
+   ]
+  },
+  "transaction": {
+   "avoid": [
+    "未丙申",
+    "未壬申",
+    "未庚申"
+   ],
+   "blank": [
+    "丑丙寅",
+    "丑壬寅",
+    "丑戊寅",
+    "丑甲寅",
+    "戌丁亥",
+    "戌乙亥",
+    "戌己亥",
+    "戌癸亥",
+    "未戊申",
+    "辰乙巳",
+    "辰己巳",
+    "辰癸巳",
+    "辰辛巳"
+   ]
+  }
+ },
+ "appliedCells": {
+  "v1": 352,
+  "v2": 384,
+  "note": "demolition has no audit cells and stays EXCLUDED_PENDING_GLYPH_AUDIT"
+ },
+ "weishen": {
+  "contract": "blank",
+  "transaction": "blank"
+ }
+}

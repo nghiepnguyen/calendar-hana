@@ -5,12 +5,21 @@ import fullres from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1
 import faithful from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/faithful.json'
 import lock from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/lock.json'
 import status from '../../docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/status.json'
+import { committedWithDigest } from './lockAnchor'
 
 // Audit only: freezes the faithful 卷十 劫煞 simulator artifact (docs/audits/p4-jiesha-faithful-vol10.md).
 describe('faithful 卷十 劫煞 artifact', () => {
   it('keeps the harness, sweep, summary and full-resolution check byte-identical', () => {
+    // Files in the lock directory on the working tree. Harness files outside it are a historical proof
+    // (owner rule 2026-10-17, lockAnchor.ts): the locked bytes must be a committed version of that file.
+    // G2 Stage 2 later changed the harness's Full Golden v2 lock check only (not its simulator or sweep).
+    const DIR = 'docs/audits/sources/p4-vol10/jiesha-faithful-vol10-v1/'
     for (const f of lock.files)
-      expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(f.sha256)
+      if (f.path.startsWith(DIR))
+        expect(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.path).toBe(
+          f.sha256,
+        )
+      else expect(committedWithDigest(f.path, f.sha256), f.path).toBe(true)
   })
 
   it('records the three-way comparison', () => {

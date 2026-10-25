@@ -70,7 +70,14 @@ interface Day {
   headings: Record<string, P4HeadingInput>
   recs: Rec[]
 }
-function run(date: string, lookup: P4ScoreHeadingLookup): Day {
+type Graph = {
+  getAlmanac: typeof getAlmanac
+  getP4DayHeadings: typeof getP4DayHeadings
+  solarTermCacheStore: typeof solarTermCacheStore
+}
+const SHIPPED_GRAPH: Graph = { getAlmanac, getP4DayHeadings, solarTermCacheStore }
+function run(date: string, lookup: P4ScoreHeadingLookup, g: Graph = SHIPPED_GRAPH): Day {
+  const { getAlmanac, getP4DayHeadings, solarTermCacheStore } = g
   policy.lookup = lookup
   solarTermCacheStore('almanac').clear() // the getAlmanac memo key has no policy component
   const a = getAlmanac(date as never)
@@ -451,6 +458,21 @@ describe('G1-b Stage 2 isolation', () => {
   })
 })
 
+// Golden v2 / v3 predate G2 Stage 2 (their contract / transaction rows are pre-G2), so this proof runs on the
+// pre-G2 rollback graph (g2Rollback.ts); the gates above run on the shipped G2 graph.
+async function preG2Graph(): Promise<Graph> {
+  vi.resetModules()
+  const { withoutG2Alias, jieshaAuthorityV1 } = await import('./g2Rollback')
+  vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+    withoutG2Alias(await load()),
+  )
+  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', () => jieshaAuthorityV1())
+  const { getP4DayHeadings } = await import('./p4AlmanacHeadings')
+  const { getAlmanac } = await import('./almanac')
+  const { solarTermCacheStore } = await import('../astronomy/solarTerms/cache')
+  return { getAlmanac, getP4DayHeadings, solarTermCacheStore }
+}
+
 describe('G1-b Stage 2 rollback proof (configuration flip, no data change)', () => {
   const golden = (v: 'v2' | 'v3') =>
     new Map(
@@ -463,11 +485,11 @@ describe('G1-b Stage 2 rollback proof (configuration flip, no data change)', () 
     )
   const G2 = golden('v2')
   const G3 = golden('v3')
-  const mismatches = (lookup: P4ScoreHeadingLookup, want: Map<string, string>) => {
+  const mismatches = (lookup: P4ScoreHeadingLookup, want: Map<string, string>, g: Graph) => {
     policy.goldenConfig = true
     const bad: string[] = []
     for (const date of DOMAIN)
-      for (const r of run(date, lookup).recs)
+      for (const r of run(date, lookup, g).recs)
         if (`${r.score} ${r.status} ${r.hardWarning}` !== want.get(`${date}|${r.activityId}`))
           bad.push(`${date} ${r.activityId}`)
     return bad
@@ -477,11 +499,12 @@ describe('G1-b Stage 2 rollback proof (configuration flip, no data change)', () 
       .update(readFileSync('shared/almanac-data/xiejibianfangshu-yiji.json'))
       .digest('hex')
 
-  it('forward canonical-v1 = Golden v3, rollback source-key-v1 = Golden v2, re-enable = Golden v3', () => {
+  it('forward canonical-v1 = Golden v3, rollback source-key-v1 = Golden v2, re-enable = Golden v3', async () => {
+    const g = await preG2Graph()
     const src = sourceBytes()
     const steps: Record<string, unknown>[] = []
     const step = (name: string, lookup: P4ScoreHeadingLookup, want: 'v2' | 'v3') => {
-      const bad = mismatches(lookup, want === 'v2' ? G2 : G3)
+      const bad = mismatches(lookup, want === 'v2' ? G2 : G3, g)
       steps.push({
         step: name,
         p4ScoreHeadingLookup: lookup,
@@ -494,7 +517,7 @@ describe('G1-b Stage 2 rollback proof (configuration flip, no data change)', () 
     step('forward', 'canonical-v1', 'v3')
     step('rollback', 'source-key-v1', 'v2')
     for (const date of WITNESSES) {
-      const d = run(date, 'source-key-v1').recs.find((r) => r.activityId === 'demolition')!
+      const d = run(date, 'source-key-v1', g).recs.find((r) => r.activityId === 'demolition')!
       expect([d.score, d.status], date).toEqual([35, 'watch'])
     }
     step('re-enable', 'canonical-v1', 'v3')

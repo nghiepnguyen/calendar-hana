@@ -16,6 +16,12 @@ type Side = 'legacy' | 'production' | 'simulator'
 async function graph(side: Side) {
   vi.resetModules()
   vi.doUnmock('./xiejiVol10Resolution')
+  // Frozen before G2 Stage 2 (立劵交易 alias + 劫煞 authority v2): every side runs on the pre-G2 rollback.
+  const { withoutG2Alias, jieshaAuthorityV1 } = await import('./g2Rollback')
+  vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+    withoutG2Alias(await load()),
+  )
+  vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', () => jieshaAuthorityV1())
   vi.doMock('../almanac-data/manifest.json', async (orig) => {
     const real = (await orig<{ default: { policies: object } }>()).default
     const policy = side === 'production' ? 'faithful-v1' : 'legacy-cancel-both'

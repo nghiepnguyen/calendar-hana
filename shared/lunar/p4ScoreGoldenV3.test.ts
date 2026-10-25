@@ -7,6 +7,15 @@ import { getAlmanac } from './almanac'
 import { lockedDigests } from './lockAnchor'
 import { p4ActivityState } from './p4ScoreAdapter'
 
+// Frozen before G2 Stage 2 (立劵交易 alias + 劫煞 authority v2): pinned to the pre-G2 rollback (g2Rollback.ts).
+vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>
+  (await import('./g2Rollback')).withoutG2Alias(await load()),
+)
+vi.mock('../almanac-data/xieji-vol10-jiesha-authority-v2.json', async () =>
+  (await import('./g2Rollback')).jieshaAuthorityV1(),
+)
+await vi.hoisted(async () => (await import('./g2Rollback')).reloadUnderG2Pins())
+
 // G1-b Stage 2 (docs/audits/p4-g1b-score-lookup.md §4.3): the shipped canonical-v1 lookup against Score Golden
 // v3. Same configuration as the v2 almanac gate (p4ScoreAdapterAlmanac.test.ts) except the heading lookup,
 // which is the shipped manifest value, not a pin. npm test: every 10th P4 date + the 3 outside dates;

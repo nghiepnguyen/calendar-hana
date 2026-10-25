@@ -1,0 +1,54 @@
+{
+ "version": "g2-stage2-authority-stamp-v1",
+ "range": [
+  "1900-01-01",
+  "2100-12-31"
+ ],
+ "sampling": "none: every day × 11 events × {no hour, hour 9}",
+ "pre": "rollback graph (alias removed + authority v1) = pre-G2 main byte for byte (rollback.json)",
+ "post": "shipped Stage 2 (alias + authority v2)",
+ "normalized": "classicalResolution.items[].authority only, v2 → v1; the v2 id anywhere else throws",
+ "equality": "JSON.stringify of the whole event output (canonical serialized equality); stamp-only rows are also equal with the authority field deleted on both sides",
+ "counts": {
+  "domain": {
+   "evaluations": 24090,
+   "rawChanged": 4582,
+   "semanticChanged": 4330,
+   "semanticScore": 108,
+   "semanticClassification": 72,
+   "semanticEvidenceOnly": 4222,
+   "authorityStampOnly": 252,
+   "intersection": 0,
+   "unclassifiedRawChanges": 0
+  },
+  "outside": {
+   "evaluations": 1591018,
+   "rawChanged": 308650,
+   "semanticChanged": 289270,
+   "semanticScore": 62352,
+   "semanticClassification": 44942,
+   "semanticEvidenceOnly": 226918,
+   "authorityStampOnly": 19380,
+   "intersection": 0,
+   "unclassifiedRawChanges": 0
+  }
+ },
+ "total": {
+  "rawChanged": 313232,
+  "semanticChanged": 293600,
+  "authorityStampOnly": 19632
+ },
+ "stampOnly": {
+  "byEvent": {
+   "cut_hair": 3272,
+   "groundbreaking": 3272,
+   "move_house": 3272,
+   "open_business": 3272,
+   "start_journey": 3272,
+   "wedding": 3272
+  },
+  "dates": 1636,
+  "datesOutsideJieshaAuthorityScope": 0,
+  "onContractTransactionProfileEvents": 0
+ }
+}

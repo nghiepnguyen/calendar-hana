@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
 
 // Test-only. Owner rule 2026-10-17: a source/Golden lock is a historical proof. Files it pins outside its own
 // directory (runtime code, catalogs) are checked as committed at the earliest commit on HEAD's history that
@@ -38,4 +39,34 @@ export function lockedDigests(lockPath: string, paths: readonly string[]) {
     at = eol + 1 + size + 1
   }
   return digests
+}
+
+/** sha256 per locked path: files in the lock's own directory from the working tree, the rest at its anchor. */
+export function lockFileDigests(lockPath: string, paths: readonly string[]) {
+  const dir = lockPath.slice(0, lockPath.lastIndexOf('/') + 1)
+  const atAnchor = lockedDigests(
+    lockPath,
+    paths.filter((p) => !p.startsWith(dir)),
+  )
+  return new Map(
+    paths.map((p) => [
+      p,
+      atAnchor.get(p) ?? createHash('sha256').update(readFileSync(p)).digest('hex'),
+    ]),
+  )
+}
+
+/** True when `path` was committed with content `sha256` somewhere on HEAD's history. For a lock whose
+ * outside file was committed after the lock itself, so neither anchor holds it. */
+export function committedWithDigest(path: string, sha256: string) {
+  const commits = git(['log', '--format=%H', 'HEAD', '--', path])
+    .toString()
+    .split('\n')
+    .filter(Boolean)
+  return commits.some(
+    (c) =>
+      createHash('sha256')
+        .update(git(['show', `${c}:${path}`]))
+        .digest('hex') === sha256,
+  )
 }

@@ -1,0 +1,70 @@
+{
+ "version": "g2-stage2-event-diff-v1",
+ "note": "changed = event output differs with the 劫煞 authority id normalized; score / classification counts overlap and are not summed",
+ "byEvent": {
+  "buy_property": {
+   "domain": {
+    "changed": 866,
+    "score": 24,
+    "classification": 24
+   },
+   "outside": {
+    "changed": 57854,
+    "score": 13856,
+    "classification": 13044
+   }
+  },
+  "buy_vehicle": {
+   "domain": {
+    "changed": 866,
+    "score": 24,
+    "classification": 24
+   },
+   "outside": {
+    "changed": 57854,
+    "score": 13856,
+    "classification": 13044
+   }
+  },
+  "property_handover": {
+   "domain": {
+    "changed": 866,
+    "score": 24,
+    "classification": 0
+   },
+   "outside": {
+    "changed": 57854,
+    "score": 13856,
+    "classification": 4804
+   }
+  },
+  "receive_vehicle": {
+   "domain": {
+    "changed": 866,
+    "score": 12,
+    "classification": 0
+   },
+   "outside": {
+    "changed": 57854,
+    "score": 6928,
+    "classification": 1006
+   }
+  },
+  "sign_contract": {
+   "domain": {
+    "changed": 866,
+    "score": 24,
+    "classification": 24
+   },
+   "outside": {
+    "changed": 57854,
+    "score": 13856,
+    "classification": 13044
+   }
+  }
+ },
+ "authorityStampOnly": {
+  "domain": 252,
+  "outside": 19380
+ }
+}

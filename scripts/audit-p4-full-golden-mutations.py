@@ -96,6 +96,13 @@ def main():
     root = Path(run(['git', 'rev-parse', '--show-toplevel'], '.').stdout.strip())
     tmp = Path(tempfile.mkdtemp(prefix='p4-full-golden-mut-')) / 'wt'
     assert run(['git', 'worktree', 'add', '--detach', str(tmp), 'HEAD'], root).returncode == 0
+    # Owner rule 2026-10-17 (shared/lunar/lockAnchor.ts): inputs outside the Golden directory are the bytes
+    # committed at the lock's anchor (G2 Stage 2 later added a 卷十 headingAliases entry to one of them).
+    lock = json.loads((root / G / 'lock.json').read_text(encoding='utf-8'))
+    anchor = run(['git', 'log', '--reverse', '--format=%H', 'HEAD', '--', f'{G}/lock.json'], root).stdout.split()[0]
+    outside = [f['path'] for f in lock['files'] if not f['path'].startswith(G + '/')]
+    assert run(['git', 'checkout', anchor, '--', *outside], tmp).returncode == 0
+    run(['git', 'reset', '-q'], tmp)
     results = []
     try:
         # Control: the unmutated chain must pass every stage and reproduce the frozen bytes exactly.

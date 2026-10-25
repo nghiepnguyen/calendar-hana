@@ -11,6 +11,9 @@ import xiangdi from '../../docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/w
 import v2 from '../../docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json'
 import { getCatHungAuthorityByMonthJian } from './catHungAuthority'
 import { evaluateGroupBContext } from './groupB'
+import { lockFileDigests } from './lockAnchor'
+
+const GOLDEN_LOCK = 'docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json'
 
 // Audit only: 丑-丙寅 月德 source audit and the Option C candidate (docs/audits/p4-chou-bingyin-yuede.md).
 const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('hex')
@@ -93,7 +96,12 @@ describe('丑-丙寅 月德 audit lock', () => {
   })
 
   it('Golden v2 lock is untouched', () => {
-    for (const f of golden.files as { path: string; sha256: string }[])
-      expect(sha(f.path), f.path).toBe(f.sha256)
+    // Inputs outside the Golden directory as committed at its anchor (G2 Stage 2 adds a 卷十 alias).
+    const files = golden.files as { path: string; sha256: string }[]
+    const got = lockFileDigests(
+      GOLDEN_LOCK,
+      files.map((f) => f.path),
+    )
+    for (const f of files) expect(got.get(f.path), f.path).toBe(f.sha256)
   })
 })

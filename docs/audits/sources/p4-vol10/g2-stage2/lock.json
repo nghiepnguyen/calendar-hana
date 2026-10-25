@@ -1,0 +1,111 @@
+{
+ "version": "g2-stage2-lock-v1",
+ "date": "2026-10-25",
+ "base": "58faf3ad17154269459e94719a65ed3fdf0e9b5b",
+ "status": "PRODUCTION_MIGRATION_EVIDENCE",
+ "migration": "卷十 headingAliases 立劵交易 → [立券交易] + 劫煞 authority v2 (contract/transaction APPLIED); docs/audits/p4-g2-stage2-migration.md",
+ "reproduce": {
+  "authority": "python3 -I docs/audits/sources/p4-vol10/g2-stage2/build_authority_v2.py",
+  "scoringGoldenV3": "python3 -I docs/audits/sources/p4-vol10/g2-stage2/build_scoring_golden_v3.py",
+  "dumps": "G2S2_DUMP=forward | rollback,forward | text | weishen  G2S2_OUT=<dir>/{fwd,rb,text,weishen} npx vitest run shared/lunar/p4G2Stage2Migration.test.ts; pre-G2: G2S2_DUMP=forward on a 58faf3a worktree with the same test file + g2Rollback.ts → <dir>/pre",
+  "diff": "python3 -I docs/audits/sources/p4-vol10/g2-stage2/compare.py <dir>",
+  "mutations": "python3 scripts/audit-vol10-jiesha-mutations.py (writes mutation-results.json; not locked, it fails unless every mutation is caught)",
+  "authorityStamp": "G2S2_STAMP=1 npx vitest run shared/lunar/p4G2Stage2Migration.test.ts -t \"authority stamp gate\" (G2S2_WRITE=1 rewrites authority-stamp.json)"
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/build_authority_v2.py",
+   "sha256": "7aaf05ed2cdcfde10d206c2f8fa997fe320f9c83bbf95e61d915f76ad115ea8b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/authority-v1-v2.json",
+   "sha256": "ad0497c52783665a158c6e32631148cd29793add4c36044f3e4840be9ef36494"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/build_scoring_golden_v3.py",
+   "sha256": "0ce8f88b38d8d652edb95a0ca59d1944c019cdef355b4c6b2888256c22f03abd"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/compare.py",
+   "sha256": "d2609ecc982db42304126d178a7bef1a444fef03409df131ca6bf2f2a0d21a22"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/summary.json",
+   "sha256": "2d23a43bee2f630b56016a8e8b18b158e3157e15693d233d69a8b0a037e9cee2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/activity-diff.tsv",
+   "sha256": "f12cb97eccccead0cbb111a993ed04c4711475ab7bf0c7fb6b3611c9b0b505a2"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/event-diff.json",
+   "sha256": "1bef3067c2ef855d93084eb03925d4e9c062a622f8008e86db99a3884e41c229"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/rollback.json",
+   "sha256": "cf68ce53623a11bad350d443cdfae3f3972126b08d4f0f2a24c06f79901adebc"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage2/authority-stamp.json",
+   "sha256": "668ae7be01b0eb7f7247be9aac09e4cf490af044f17ad1455e012ec10846c976"
+  }
+ ],
+ "inputsAtFreeze": [
+  {
+   "path": "shared/almanac-data/xiejibianfangshu-vol10-yiji.json",
+   "sha256": "dc7b0a11a7354a0780d705f9c5fbc79a67fef57717f80ef5436997dbe5dd96e0"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v1.json",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3"
+  },
+  {
+   "path": "shared/almanac-data/xieji-vol10-jiesha-authority-v2.json",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v2.json",
+   "sha256": "77d8400479bec725a203a67331cd773c06a51d0d11aa576076d62a23e0bbfafd"
+  },
+  {
+   "path": "shared/almanac-data/golden-xieji-vol10-scoring-v3.json",
+   "sha256": "cb18c3c2df864350ac5bccc707f76913d3e9d02bc98d83faf2a58e9c67944e78"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10JieshaAuthority.ts",
+   "sha256": "73510ec7aad144f9a080d35c4f060fc04ade1528b70612c8a91c2c0c4154ead2"
+  },
+  {
+   "path": "shared/lunar/xiejiVol10Resolution.ts",
+   "sha256": "2d79c58f64fa9c8e62fdb6c110d3447c8c11fbfb9f64e4ff29b5a77a5fba3b27"
+  },
+  {
+   "path": "shared/lunar/p4G2Stage2Migration.test.ts",
+   "sha256": "60da11453feee8a0c46fbd392d502a391f4fe7923d990b2ecdddd83fb8b8f9bc"
+  },
+  {
+   "path": "shared/lunar/g2Rollback.ts",
+   "sha256": "1133fd10b44d4284bf734c4b07200964a10ced991569a636d39f4d7ddf378f78"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/lock.json",
+   "sha256": "eab7b9501ff68a20c0768586f53e55c6dde056bab0cf852b61b05721650f8c91"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/range-impact-events.json",
+   "sha256": "2a380550ffd963b90c0a5267b9ae19b94cdf4242e267a3fc695d18228b1e6f78"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.tsv",
+   "sha256": "b99de42b65e6ffce313095c9f7efc55f2a13682ee5519413ef52da8b6a45a955"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-adapter-baseline-v2/lock.json",
+   "sha256": "471c4237f0a89fe849dde77fc37202e1bab4779aedac2474b034121523343a60"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/lock.json",
+   "sha256": "0a897bdd49a549313cd1ff2a6cc50b687e76f644b9e0f9d6837ea2a944ddf61b"
+  }
+ ]
+}
