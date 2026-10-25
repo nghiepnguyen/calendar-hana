@@ -1,5 +1,5 @@
 {
- "version": "g2-stage1-range-v1",
+ "version": "g2-stage1-range-v2",
  "range": [
   "1900-01-01",
   "2100-12-31"
@@ -253,5 +253,41 @@
   "2098": 32,
   "2099": 34,
   "2100": 35
+ },
+ "dependsOnWeishenCell": {
+  "outside": {
+   "days": 72319,
+   "evidenceOrStateChanged": 212,
+   "scoreChanged": 212,
+   "scoreLower": 212,
+   "scoreHigher": 0,
+   "statusChanged": 212,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 212,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 0,
+   "eventScoreChanged": 0,
+   "eventClassificationChanged": 0,
+   "eventEvidenceOnly": 0,
+   "statusTransitions": {}
+  },
+  "domain": {
+   "days": 1095,
+   "evidenceOrStateChanged": 0,
+   "scoreChanged": 0,
+   "scoreLower": 0,
+   "scoreHigher": 0,
+   "statusChanged": 0,
+   "hardWarningChanged": 0,
+   "conclusionChanged": 0,
+   "p4StateChanged": 0,
+   "otherActivityChanged": 0,
+   "eventChanged": 0,
+   "eventScoreChanged": 0,
+   "eventClassificationChanged": 0,
+   "eventEvidenceOnly": 0,
+   "statusTransitions": {}
+  }
  }
 }

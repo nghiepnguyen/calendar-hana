@@ -27,7 +27,9 @@ The live mismatch is in `resolveVol10` 卷十 heading matching:
 
 The P4 path is **not** affected: P4 already folds 劵→券 through `canonP4Heading`.
 
-**Stage 2 is gated on three owner decisions (§11).** They do not affect the identity decision.
+**Stage 2 is gated on owner decisions (§11).** They do not affect the identity decision.
+
+**Owner ruling, 2026-10-25.** `未-戊申 × contract/transaction` stays **BLANK**, preserving current authority. The n117 discrepancy is `OUT_OF_SCOPE_AUTHORITY_DISCREPANCY`, deferred to a separate audit: [`p4-weishen-lijuan-authority-item.md`](p4-weishen-lijuan-authority-item.md).
 
 ## 1. Starting state (`394acbb`)
 
@@ -185,12 +187,28 @@ Two mechanisms were measured: B (alias table) and a text-rewrite model. They giv
 - **Direction.** Most changes are lifts: 卷十 `not_avoided` or `no_annotation` makes a legacy penalty informational. The keeps (avoid kept or added) are 2,020 lower scores in the full range.
 - **No change outside contract and transaction.** Other activities are 0 everywhere, which includes demolition (G1-b).
 
+**Dependency on the disputed cell** (owner ruling 2026-10-25).
+- **Method.** Model `weishen-avoid` is the same candidate with the 未-戊申 contract and transaction cells set to avoid. Comparing it with the ruling's blank isolates every row whose outcome depends on that cell. It is a measurement only, not a candidate.
+
+| Set | Activity rows depending on the cell | Events depending on the cell |
+|---|---|---|
+| P4 domain | 0 | 20, evidence only (full mode) |
+| 2028 | 2 (2028-07-22, contract and transaction) | 10 (9 score, 6 classification) |
+| 1900–2100 outside the domain | 212 (106 dates × 2): blank gives a higher score than 忌 on all of them | none in the 1-in-30 event sample |
+
+- **Two readings of "preserve the blank".**
+  - **(I1) The approved blank is applied once reached.** This is the envelope in the table above (24 domain / 13,856 outside), and it needs no new representation.
+  - **(I2) The cell stays inert, so those rows keep today's output.** The envelope is then 24 domain / 13,644 outside, with the 20 domain event rows unchanged as well.
+- **I2 needs new authority data.** The existing data model has no per-context "not reached" state: per-activity `EXCLUDED_PENDING_GLYPH_AUDIT` also gives `no_annotation`. So I2 needs a new, narrow per-context representation in authority v2. **The owner should confirm which reading the ruling means** before the Stage 2 envelope is frozen.
+
 **Independent bound** (`bound.py`, from frozen inputs only):
 - 26 domain days have contract on baseline (Score Golden v3 layer B) and at least one listing entry present (frozen presence input).
 - The runtime's 12 changed domain days are a subset of those 26.
 - **Limitation:** `bound.py` bounds which days can change. It does not recompute verdicts or scores, and no fully independent re-implementation of `resolveVol10` exists.
 
 ## 10. Candidate witnesses (not owner-approved)
+
+None of these depends on the disputed 未-戊申 cell (`weishen_cell_dependent = false` in `candidate-impact.tsv`). Per the owner ruling, 2028-07-22 (未-戊申) is removed from the G2 witnesses and kept as evidence for the separate authority item.
 
 Every row is `contract`; `transaction` is identical. P4 state is `baseline` in all of them, and the hard warning is `false` before and after.
 
@@ -203,7 +221,6 @@ Every row is `contract`; `transaction` is identical. P4 state is `baseline` in a
 | 2028-02-08 | 40 watch | 70 recommended | 刼煞 and 收日 not_avoided | Largest increase; moves to `recommended` |
 | 2028-03-10 | 30 watch | 45 watch | 平日 no_annotation | Score changes, status does not |
 | 2028-09-26 | 35 watch | 35 watch | 刼煞 avoid applied (approved cell) | Evidence changes only |
-| 2028-07-22 | 35 watch | 50 neutral | 刼煞 no_annotation (未-戊申 blank cell) | **Depends on owner gate (b)** |
 
 ## 11. Owner gates for Stage 2
 
@@ -211,11 +228,11 @@ None of these block the identity decision.
 
 **(a) Authority v2.** contract and transaction move from `UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION` to `APPLIED` in a new 劫煞 authority version. v1 and the approved candidate `b24f6f68` stay frozen.
 
-**(b) The 未-戊申 contract and transaction cell.**
-- It is `blank`, but 月表 page n117 prints 立券交易 on its 忌 line. H1-B lists it in `printedButUnnoted`.
-- The earlier owner ruling on that page was local to 納財.
-- The other 15 contexts agree with their pages.
-- The owner must either extend that ruling to contract and transaction or rule otherwise. The measured envelope assumes `blank`; the 2028-07-22 row above depends on it.
+**(b) The 未-戊申 contract and transaction cell. RULED 2026-10-25: keep BLANK; the discrepancy is deferred.**
+- Background: the approved cell is `blank`, but 月表 page n117 prints 立券交易 on its 忌 line (H1-B `printedButUnnoted`). The earlier ruling's reasoning covered 納財 only. The other 15 contexts agree with their pages.
+- Stage 2 consequence: authority v2 copies the approved blank for both activities. No new representation is needed, because the existing per-context cell already holds `blank`. There is no date-specific runtime exception.
+- The discrepancy (n117 vs blank) is `OUT_OF_SCOPE_AUTHORITY_DISCREPANCY` and goes to [`p4-weishen-lijuan-authority-item.md`](p4-weishen-lijuan-authority-item.md). `blank` stays production authority until that item is resolved.
+- **What "blank" does once reached.** The blank cell yields 劫煞 `no_annotation`, so 劫煞's penalty becomes informational. Today the cell is never reached: contract reads `not_listed` and 劫煞's penalty stays applied. The rows whose outcome depends on this cell are measured in §9 under "Dependency on the disputed cell".
 
 **(c) Scope.**
 - The owner accepts that G2 changes behaviour **outside the P4 domain** (13,856 activity-days in the full range) and in **events** on every date.

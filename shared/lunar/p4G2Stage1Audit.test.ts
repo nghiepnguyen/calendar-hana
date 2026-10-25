@@ -10,7 +10,9 @@ import { describe, expect, it, vi } from 'vitest'
 // (An activity-map respelling to 立劵交易 was tried and rejected: P4 data keyed 立券交易 no longer splits.)
 // The two candidates reach the same matching by different mechanisms (cross-check). npm test: sampled;
 // G2_FULL=1: 1,095 domain days + 3 outside controls + 2028 (outside sample); G2_WRITE=1 rewrites the JSON.
-type Model = 'current' | 'vol10-text' | 'alias-table'
+// weishen-avoid: vol10-text with the disputed 未-戊申 contract/transaction cells set to avoid, only to measure
+// which rows depend on that cell (owner ruling 2026-10-25 keeps it blank; it is not a candidate).
+type Model = 'current' | 'vol10-text' | 'alias-table' | 'weishen-avoid'
 // vi.doMock per model (a hoisted vi.mock factory result survives vi.resetModules, so it cannot switch).
 const fix = (v: unknown) => (typeof v === 'string' ? v.replaceAll('立劵交易', '立券交易') : v)
 const fixEntry = (e: Record<string, unknown>) =>
@@ -36,12 +38,24 @@ function mockModel(model: Model) {
     vi.doMock('../almanac-data/xieji-vol10-jiesha-authority-v1.json', async (load) => {
       const real = (
         (await load()) as {
-          default: { runtimeCoverage: { activities: Record<string, unknown> } }
+          default: {
+            runtimeCoverage: { activities: Record<string, unknown> }
+            cells: Record<string, Record<string, string>>
+            counts: { avoid: number; blank: number }
+          }
         }
       ).default
+      const avoid = model === 'weishen-avoid'
       return {
         default: {
           ...real,
+          ...(avoid && {
+            cells: {
+              ...real.cells,
+              未戊申: { ...real.cells['未戊申'], contract: 'avoid', transaction: 'avoid' },
+            },
+            counts: { ...real.counts, avoid: real.counts.avoid + 2, blank: real.counts.blank - 2 },
+          }),
           runtimeCoverage: {
             ...real.runtimeCoverage,
             activities: {
@@ -53,7 +67,7 @@ function mockModel(model: Model) {
         },
       }
     })
-  if (model === 'vol10-text')
+  if (model === 'vol10-text' || model === 'weishen-avoid')
     vi.doMock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) => {
       const real = ((await load()) as { default: { entries: Record<string, unknown>[] } }).default
       return { default: { ...real, entries: real.entries.map(fixEntry) } }
@@ -163,7 +177,7 @@ async function engine(model: Model) {
     unknownGods: new Set<string>(),
   }
   const jie = R.resolveVol10(jieDay, ['contract']).find((r) => r.entry === 'jie_sha')!.verdict
-  expect(jie, model).toBe(model === 'current' ? 'not_listed' : 'no_annotation')
+  expect(jie, model).toBe(model === 'current' ? 'not_listed' : 'no_annotation') // 辰-己巳 cell is blank
   return e
 }
 async function run(model: Model) {
@@ -265,6 +279,7 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
       const cur = await run('current')
       const v10 = await run('vol10-text')
       const act = await run('alias-table')
+      const wav = await run('weishen-avoid')
       // Current production facts (measured, not inferred).
       const sample = cur[SETS.domain[0]!]!
       expect(sample.keys).toEqual(['立券交易']) // provider key, canonical
@@ -298,6 +313,8 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
           {
             vol10Text: compare(cur, v10, dates).counts,
             aliasTable: compare(cur, act, dates).counts,
+            // Rows whose outcome depends on the disputed 未-戊申 cell (blank vs avoid).
+            dependsOnWeishenCell: compare(v10, wav, dates).counts,
           },
         ]),
       )
@@ -313,10 +330,17 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
         )
       expect(conclusions(v10)).toEqual(conclusions(act))
       const changeRows = (['domain', 'outsideControls', 'outsideSample2028'] as const).flatMap(
-        (set) => compare(cur, v10, SETS[set]).rows.map((r) => [set, ...r]),
+        (set) =>
+          compare(cur, v10, SETS[set]).rows.map((r) => {
+            const [d, id] = r as [string, string]
+            const x = v10[d]!.recs.get(id)!
+            const y = wav[d]!.recs.get(id)!
+            const dep = x.score !== y.score || x.status !== y.status || verdicts(x) !== verdicts(y)
+            return [set, ...r, String(dep)]
+          }),
       )
       const out = {
-        version: 'g2-stage1-impact-v1',
+        version: 'g2-stage1-impact-v2',
         full: FULL,
         currentProduction: {
           providerKeys: sample.keys,
@@ -328,7 +352,7 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
       }
       if (!FULL) return
       const header =
-        'set\tdate\tactivity\tp4_old\tp4_new\tscore_old\tscore_new\tstatus_old\tstatus_new\thard_old\thard_new\tvol10_old\tvol10_new'
+        'set\tdate\tactivity\tp4_old\tp4_new\tscore_old\tscore_new\tstatus_old\tstatus_new\thard_old\thard_new\tvol10_old\tvol10_new\tweishen_cell_dependent'
       const tsv = [header, ...changeRows.map((r) => r.join('\t'))].join('\n') + '\n'
       const json = JSON.stringify(out, null, 1) + '\n'
       if (WRITE) {
@@ -346,13 +370,21 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
     async () => {
       const cur = await engine('current')
       const cand = await engine('vol10-text')
+      const wav = await engine('weishen-avoid')
+      const dep: Record<string, ReturnType<typeof compare>['counts']> = {}
       const all = days('1900-01-01', '2100-12-31')
       const totals: Record<string, ReturnType<typeof compare>['counts']> = {}
       const byYear: Record<string, number> = {}
       all.forEach((d, i) => {
         const ev = i % 30 === 0
-        const c = compare({ [d]: day(cur, d, ev) }, { [d]: day(cand, d, ev) }, [d]).counts
+        const cd = day(cand, d, ev)
+        const c = compare({ [d]: day(cur, d, ev) }, { [d]: cd }, [d]).counts
         const set = DOMAIN.includes(d) ? 'domain' : 'outside'
+        const w = compare({ [d]: cd }, { [d]: day(wav, d, ev) }, [d]).counts
+        const u = (dep[set] ??= { ...w, days: 0, statusTransitions: {} })
+        for (const [k, v] of Object.entries(w))
+          if (typeof v === 'number')
+            (u as unknown as Record<string, number>)[k]! += k === 'days' ? 1 : v
         const t = (totals[set] ??= { ...c, days: 0, statusTransitions: {} })
         for (const [k, v] of Object.entries(c))
           if (typeof v === 'number')
@@ -365,12 +397,13 @@ describe('G2 Stage 1 audit (contract / transaction)', () => {
       const out =
         JSON.stringify(
           {
-            version: 'g2-stage1-range-v1',
+            version: 'g2-stage1-range-v2',
             range: ['1900-01-01', '2100-12-31'],
             days: all.length,
             eventSampling: 'every 30th day',
             totals,
             conclusionChangedDaysByYear: byYear,
+            dependsOnWeishenCell: dep,
           },
           null,
           1,

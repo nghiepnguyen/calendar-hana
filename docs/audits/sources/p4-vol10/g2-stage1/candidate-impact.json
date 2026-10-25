@@ -1,5 +1,5 @@
 {
- "version": "g2-stage1-impact-v1",
+ "version": "g2-stage1-impact-v2",
  "full": true,
  "currentProduction": {
   "providerKeys": [
@@ -185,6 +185,23 @@
      "watch>neutral": 22,
      "avoid>neutral": 2
     }
+   },
+   "dependsOnWeishenCell": {
+    "days": 1095,
+    "evidenceOrStateChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 20,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 20,
+    "statusTransitions": {}
    }
   },
   "outsideControls": {
@@ -220,6 +237,23 @@
     "eventScoreChanged": 0,
     "eventClassificationChanged": 0,
     "eventEvidenceOnly": 20,
+    "statusTransitions": {}
+   },
+   "dependsOnWeishenCell": {
+    "days": 3,
+    "evidenceOrStateChanged": 0,
+    "scoreChanged": 0,
+    "scoreLower": 0,
+    "scoreHigher": 0,
+    "statusChanged": 0,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 0,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 0,
+    "eventScoreChanged": 0,
+    "eventClassificationChanged": 0,
+    "eventEvidenceOnly": 0,
     "statusTransitions": {}
    }
   },
@@ -266,6 +300,25 @@
      "avoid>neutral": 10,
      "watch>recommended": 22,
      "no_evidence>avoid": 8
+    }
+   },
+   "dependsOnWeishenCell": {
+    "days": 365,
+    "evidenceOrStateChanged": 2,
+    "scoreChanged": 2,
+    "scoreLower": 2,
+    "scoreHigher": 0,
+    "statusChanged": 2,
+    "hardWarningChanged": 0,
+    "conclusionChanged": 2,
+    "p4StateChanged": 0,
+    "otherActivityChanged": 0,
+    "eventChanged": 10,
+    "eventScoreChanged": 9,
+    "eventClassificationChanged": 6,
+    "eventEvidenceOnly": 1,
+    "statusTransitions": {
+     "neutral>watch": 2
     }
    }
   }

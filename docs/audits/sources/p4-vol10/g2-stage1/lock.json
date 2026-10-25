@@ -67,15 +67,15 @@
   },
   {
    "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.json",
-   "sha256": "21a781cea9aafc9f78481ca04c1d701883de33ce4aa2755079eedfd26b1f92bc"
+   "sha256": "7400a38fa64ab38b068654b5a46306c69c4333f1ed65fe987a0959ea02c05409"
   },
   {
    "path": "docs/audits/sources/p4-vol10/g2-stage1/candidate-impact.tsv",
-   "sha256": "528d4e6d240b0c3f97fe888316f9a025879ec41cf9f33c8d7145c2cf513b074f"
+   "sha256": "b99de42b65e6ffce313095c9f7efc55f2a13682ee5519413ef52da8b6a45a955"
   },
   {
    "path": "docs/audits/sources/p4-vol10/g2-stage1/range-impact.json",
-   "sha256": "7626b13c6231bb4a161c2585d8f432ffdc4234ebacff651a57f71900d1d01553"
+   "sha256": "eea3c9b4642bad9387054377c1a4d5e28353e97b0b16457cf59d307542454c69"
   },
   {
    "path": "docs/audits/sources/p4-vol10/g2-stage1/blast-radius.json",
@@ -97,5 +97,6 @@
    "path": "docs/audits/sources/p4-vol10/g2-stage1/build_evidence.py",
    "sha256": "531974420e7f40b9e9c5496f6b06543cc46afbd19456e900301f4f619128aab4"
   }
- ]
+ ],
+ "ruling": "2026-10-25 owner: 未-戊申 contract/transaction BLANK (preserve current authority); n117 discrepancy OUT_OF_SCOPE_AUTHORITY_DISCREPANCY → docs/audits/p4-weishen-lijuan-authority-item.md; reading I1 vs I2 to confirm"
 }
