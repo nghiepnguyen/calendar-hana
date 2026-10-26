@@ -2698,3 +2698,15 @@ Mục production thay trong PROJECT_CONTEXT §2 ngày 2026-10-26:
 | [#105](https://github.com/nghiepnguyen/calendar-hana/pull/105) | `f66c74f` | #48 | audit | W1 `未-戊申 × 立券交易` đóng (owner D1(a) cục bộ), 0 thay đổi production. `docs/audits/p4-g2-n117-stage3-owner-ruling.md` |
 | [#106](https://github.com/nghiepnguyen/calendar-hana/pull/106) | `7a38f09` | #49 | **đổi output** | F1 R2: puzhu:06 v4 (Q4 không gỡ 五離 × 立券交易); 20 dòng activity −15, 2025–2027. `docs/audits/p4-f1-wuli-lijuan-stage3-migration.md` |
 | [#107](https://github.com/nghiepnguyen/calendar-hana/pull/107) | `6dac11a` | #50 | **đổi output** | Q4-REST: puzhu:06 v5 (R-JK/R-WX/R-XH `QL_NARROW` + R-F1Y); 121 dòng activity, 366 event, 2025–2027. `docs/audits/p4-q4-rest-stage3-migration.md` |
+
+## 46. Checkpoint post-Q4-REST, P21 partial migration — main `eb4dfd6`, PR #108 (2026-10-26, main `e15f047`)
+
+Mục production thay trong PROJECT_CONTEXT §2 ngày 2026-10-26:
+
+- Main `7a38f09` (PR #106, F1 R2), [Deploy #49 / 40268301142](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40268301142).
+- Main `6dac11a` (PR #107, Q4-REST), [Deploy #50 / 40290726192](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40290726192), bundle `/assets/index-YAZPGNPM.js`.
+
+| Push / PR | Commit | Deploy | Loại | Nội dung |
+|---|---|---|---|---|
+| push `main` (owner yêu cầu) | `f7ba333`, `c6d7997`, `eb4dfd6` | [#51 / 40335793972](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40335793972) | docs | PROJECT_CONTEXT lên `6dac11a`, tách `docs/project-context/`, checkpoint post-Q4-REST. 0 thay đổi production |
+| [#108](https://github.com/nghiepnguyen/calendar-hana/pull/108) | merge `e15f047` (13 commit Stage 1–4, không squash) | [#52 / 40336298796](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40336298796) | **đổi output** | P21: authority `p4-puzhu21-v1` (puzhu:21 contribution-scoped trên 亥-丁酉/亥-癸酉); 2025–2027: 3 ngày 亥-丁酉, 6 dòng contract/transaction 50 neutral → 20 avoid, 27 event (18 đổi phân loại), hard warning 0. Golden full v5, score v7. `docs/audits/p21-stage4-partial-migration.md` |
