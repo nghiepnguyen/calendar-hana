@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md
 
-> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-26 (giờ VN). Main `6dac11a` đã deploy (PR #107 **Q4-REST**, authority puzhu:06 `p4b-puzhu06-v5`, đổi output P4 2025–2027). Trước đó cùng ngày: PR #106 F1 R2 (puzhu:06 v4), #105 W1 đóng (không đổi output), #104 G1-SOIL (劫煞 authority v4), #103 G1 glyph Stage 2 (劫煞 authority v3), #102 G2 Stage 2 (alias 立劵交易 + 劫煞 authority v2). G1 (壞/壊) và G2 (劵/券) **ĐÓNG & DEPLOYED**; F1 五離 và Q4-REST **MIGRATED & DEPLOYED**. Roadmap P4 (1–10) xong, P4 ON. Việc tiếp theo: §4 (Y-CONVENTION, BAIJI-Y, P21, U4/U7, P4-劫…) khi owner yêu cầu.
+> Trạng thái hiện hành và quyết định của project. Cập nhật 2026-10-26 (giờ VN). Main `6dac11a` đã deploy (PR #107 **Q4-REST**, authority puzhu:06 `p4b-puzhu06-v5`, đổi output P4 2025–2027). Trước đó cùng ngày: PR #106 F1 R2 (puzhu:06 v4), #105 W1 đóng (không đổi output), #104 G1-SOIL (劫煞 authority v4), #103 G1 glyph Stage 2 (劫煞 authority v3), #102 G2 Stage 2 (alias 立劵交易 + 劫煞 authority v2). G1 (壞/壊) và G2 (劵/券) **ĐÓNG & DEPLOYED**; F1 五離 và Q4-REST **MIGRATED & DEPLOYED**. Roadmap P4 (1–10) xong, P4 ON. Checkpoint post-Q4-REST đóng băng (§4). Việc tiếp theo: **P21 Stage 1 — Authority Reconstruction**, trước Y-CONVENTION.
 > Tài liệu này không thay thế yêu cầu mới của người dùng.
 > File này chỉ giữ **trạng thái hiện hành + việc mở**. Chi tiết tách ra `docs/project-context/`:
 > - [`completed.md`](docs/project-context/completed.md): phase/migration đã đóng (bảng phase đầy đủ, 28 Tú, Option C v1, G1/G2, F1, Q4-REST, roadmap P4, mục độc lập đã đóng).
@@ -78,7 +78,23 @@ Chi tiết, authority và tài liệu từng hạng mục: [`completed.md`](docs
 
 ## 4. Vấn đề mở và việc tiếp theo
 
-Không có việc đã duyệt đang chờ. Chọn việc dưới đây khi owner yêu cầu; mục cần owner quyết thì dừng và hỏi, không tự chọn.
+**Checkpoint post-Q4-REST** (đóng băng 2026-10-26): PR #107 MERGED + DEPLOYED; Q4-REST MIGRATED / CLOSED; production `p4b-puzhu06-v5`.
+
+| Authority | Trạng thái |
+|---|---|
+| 九空 | R-JK migrated |
+| 五虛 | R-WX migrated |
+| 小耗 | R-XH migrated |
+| 五離 | R2 J-axis + R-F1Y migrated |
+| 五墓 | Không đổi từ Q4a. Q4-REST Stage 3 **không** cung cấp authority mới cho 五墓 |
+| G2/W1 | CLOSED |
+| Q4-REST | MIGRATED / CLOSED |
+| Y-CONVENTION | OPEN (~1.089 `both_present`) |
+| U4/U7 | QUARANTINED |
+| BAIJI-Y | OPEN |
+| P21 | OPEN — việc tiếp theo chính thức: **P21 Stage 1 — Authority Reconstruction**, trước Y-CONVENTION. Nợ liên quan từ G2: `未-戊申` |
+
+Chọn việc khác dưới đây khi owner yêu cầu; mục cần owner quyết thì dừng và hỏi, không tự chọn.
 
 | # | Vấn đề | Trạng thái / việc tiếp theo |
 |---|---|---|
@@ -86,7 +102,7 @@ Không có việc đã duyệt đang chờ. Chọn việc dưới đây khi owne
 | H1-B | Ghép 忌 sống sót với 相抵 (owner 2026-10-17) | **PARTIALLY_SOURCE_WITNESSED**, audit-only ([review](docs/audits/p4-h1b-yuebiao-witness.md)). 月表 xác nhận lớp 重日/復日 + 德 (7 trang, 0 mâu thuẫn). Phần 劫煞 辰戌丑未 không 德 (tiền đề 相抵 → 不註) đã giải quyết ở tầng 卷十 bằng Option C v1 (PR #87). Tầng P4 (2025–2027) vẫn `cancel_both` cho 劫煞 — xem P4-劫 |
 | X相抵 | 相抵 / `cancel_both` của 劫煞 辰戌丑未 không 德 | Tầng 卷十 xong (Option C v1, PR #87; `completed.md`). Còn mở: 災煞/月煞 (ứng viên 相抵 riêng), 月刑/天吏 có 德 UNRESOLVED (lẫn puzhu:06) — chưa audit, không đổi runtime |
 | P4-劫 | Tầng P4 (2025–2027) cho 劫煞 辰戌丑未 không 德 | **MORE_EVIDENCE_REQUIRED**, không đổi runtime. Engine P4 vẫn `cancel_both` + P17-0. Blocker riêng của P4: F1 (lan truyền xuyên thần, vd. 五離/五虛), mệnh đề con thứ hai của puzhu:17 (亥日/厭對/八專/四忌/四窮; điều kiện xảy ra ở 71 context), puzhu:06 Q4 vs 戌-癸亥 và lớp 四相 (UNDETERMINED), nhãn scope SPEC_GAP, bất thường adapter medical. Chuyển P4 sang P17-A sẽ đổi Golden v2 ở 2026-08-02, 2027-07-28. Báo cáo: [faithful](docs/audits/p4-jiesha-faithful-vol10.md), [puzhu:17](docs/audits/p4-puzhu17-bujiang.md), [納財](docs/audits/p4-weishen-nacai-puzhu21.md) |
-| P21 | puzhu:21 N-A vs N-C / 未-戊申 | **OPEN**. Câu hỏi: puzhu:21 bỏ **mọi** 忌 của heading, hay chỉ phần nguồn liên kết/bị ảnh hưởng? Production hiện đọc N-A (sau R2 vẫn gỡ 五離 trên 未-戊申). Chưa giải |
+| P21 | puzhu:21 N-A vs N-C / 未-戊申 | **OPEN**. Câu hỏi: puzhu:21 bỏ **mọi** 忌 của heading, hay chỉ phần nguồn liên kết/bị ảnh hưởng? Production hiện đọc N-A (sau R2 vẫn gỡ 五離 trên 未-戊申). Chưa giải. Tiếp theo: Stage 1 Authority Reconstruction (audit-only) |
 | Y-CONVENTION | 忌 không xếp hạng sống sót + 宜 độc lập: production `both_present` (mặc định cài đặt), 月表 in `only_ji` | **OPEN**. Chỉ có luật có phạm vi (Q4-REST) và R-F1Y. Còn ~1.089 dòng 2025–2027 (U4, U7 cách ly; 16 thần khác chưa kiểm). [Báo cáo](docs/audits/p4-q4-rest-stage2a1-y-axis-impact.md) |
 | BAIJI-Y | 百忌 + 宜 độc lập: production `both_present`, bản in `only_ji` (3 ô) | **OPEN**, chưa đo |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
@@ -134,4 +150,4 @@ P4-劫: độc lập với tầng 卷十; cần F1 lan truyền xuyên thần, p
 
 ## 7. Starter prompt
 
-> Đọc PROJECT_CONTEXT.md. Main `6dac11a` đã deploy (PR #107 Q4-REST: authority puzhu:06 `p4b-puzhu06-v5`, đổi output P4 2025–2027; Deploy #50, `/version.json` 26.10.26). Chuỗi 2026-10-25/26: G2 Stage 2 (#102, alias 立劵交易 + 劫煞 authority v2), G1 glyph (#103, v3), G1-SOIL (#104, v4 phụ thuộc 土王用事), W1 đóng (#105), F1 五離 R2 (#106, puzhu:06 v4), Q4-REST (#107). G1 壞/壊 và G2 劵/券 ĐÓNG; authority 劫煞 hiện hành `xieji-vol10-jiesha-faithful-v4` (`xiejiVol10JieshaPolicy: faithful-v1`). P4 ON (activation PR #71, `p4ScoreHeadingLookup: canonical-v1`), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4`/`ci:p4:full` chạy tay; `ci:p4:fast` chỉ là vòng dev), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Audit 28 Tú đóng & deploy (content 1.0.4, `DOUBLE_REVIEWED (semantic mapping)` bởi hai lượt AI-agent). Việc tiếp theo: §4 (Y-CONVENTION, BAIJI-Y, P21, U4/U7, P4-劫, S1, S2, R2–R4, E1) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest hoặc authority kế nhiệm + rollback pin; mutation runner chạy tuần tự. Hạng mục đã đóng ở `docs/project-context/completed.md`; lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn, §44 = PR #88–#100, §45 = PR #101–#107).
+> Đọc PROJECT_CONTEXT.md. Main `6dac11a` đã deploy (PR #107 Q4-REST: authority puzhu:06 `p4b-puzhu06-v5`, đổi output P4 2025–2027; Deploy #50, `/version.json` 26.10.26). Chuỗi 2026-10-25/26: G2 Stage 2 (#102, alias 立劵交易 + 劫煞 authority v2), G1 glyph (#103, v3), G1-SOIL (#104, v4 phụ thuộc 土王用事), W1 đóng (#105), F1 五離 R2 (#106, puzhu:06 v4), Q4-REST (#107). G1 壞/壊 và G2 劵/券 ĐÓNG; authority 劫煞 hiện hành `xieji-vol10-jiesha-faithful-v4` (`xiejiVol10JieshaPolicy: faithful-v1`). P4 ON (activation PR #71, `p4ScoreHeadingLookup: canonical-v1`), P1 天狗寅日 ON (PR #76), sao Sát Chủ/Sát Sư Ngọc Hạp ON (PR #78, #80). Repo public; CI chạy ở máy (`check` qua pre-push; `test:changed`, `ci:full`, `ci:p4`/`ci:p4:full` chạy tay; `ci:p4:fast` chỉ là vòng dev), GitHub chỉ deploy; merge/push main = deploy production, luôn hỏi owner, owner tự merge. Production: 卷十 ON (6 chain), P4 balancing ON (2025–2027, sau khi provider `p4AlmanacHeadings` nạp), mansion scoring OFF, 百忌日 甲/乙/丁/寅/酉/申/未/巳/亥 ON, 14 thần legacy theo Month Jian. Audit 28 Tú đóng & deploy (content 1.0.4, `DOUBLE_REVIEWED (semantic mapping)` bởi hai lượt AI-agent). Checkpoint post-Q4-REST ở §4 (五墓 giữ authority Q4a; U4/U7 QUARANTINED). Việc tiếp theo: P21 Stage 1 — Authority Reconstruction (trước Y-CONVENTION); còn lại §4 (BAIJI-Y, P4-劫, S1, S2, R2–R4, E1) khi owner yêu cầu. Golden trước code, không sửa Golden/authority/lock để test xanh; hành vi mới đổi output → policy manifest hoặc authority kế nhiệm + rollback pin; mutation runner chạy tuần tự. Hạng mục đã đóng ở `docs/project-context/completed.md`; lịch sử ở `docs/project-context/history.md` (§42 = bản đầy đủ trước khi thu gọn, §44 = PR #88–#100, §45 = PR #101–#107).
