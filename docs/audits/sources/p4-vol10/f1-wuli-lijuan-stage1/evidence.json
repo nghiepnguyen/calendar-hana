@@ -1,0 +1,303 @@
+{
+ "version": "f1-wuli-lijuan-stage1-v1",
+ "question": "Q4 (puzhu:06 trigger lifts 五離 on 立券交易) vs WULI-NARROW (五離 stays 忌 unless its own lifter applies)",
+ "repositorySearch": "no 戌-壬申 / 戌-庚申 scan, transcription or deleted file in tree or history; only model rows",
+ "leafCalibration": {
+  "n17": 6,
+  "n29": 6,
+  "n41": 6,
+  "n53": 6,
+  "n63": 6,
+  "n65": 6
+ },
+ "vol11立劵交易": {
+  "yi": "天願民日三合滿日六合五富五合",
+  "ji": "月破大耗平日收日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮五墓九空五離"
+ },
+ "wuliLiftQuote": "與天德月德天德合月德合天赦三合六合併則不忌",
+ "puzhu06Triggers": [
+  "天德",
+  "月德",
+  "天德合",
+  "月德合",
+  "天赦",
+  "天願",
+  "月恩",
+  "四相",
+  "時德"
+ ],
+ "witnesses": [
+  {
+   "witness": "06067696-n14",
+   "context": "戌-壬申",
+   "page": {
+    "collection": "archive.org 06067696.cn (欽定協紀辨方書 四庫全書本, 月表 卷二十八)",
+    "locator": "https://archive.org/download/06067696.cn/page/n14_w1200.jpg",
+    "predicted": "06067696-n14",
+    "actual": "06067696-n14",
+    "predictionCorrect": true,
+    "path": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/pages/06067696-n14.jpg",
+    "sha256": "a3a5180ff7d004d4acbbb7752ef41b192a6e2a8410b0546cf6881c0270b7c127",
+    "retrieval": "curl --fail of the w1200 page image, 2026-10-26; image unmodified",
+    "authentication": {
+     "header": "壬申劍鋒金義開日",
+     "foliation": "七",
+     "pillar": "壬申",
+     "officer": "開",
+     "monthFromContent": "戌: 開日 on a 申 day puts 建 on 戌",
+     "monthFromItemBlock": "戌 (leaf = cycle index + 6, as on every committed 戌月 leaf; supporting only)",
+     "archiveFilename": "n14_w1200.jpg",
+     "glyph": "立券交易 read with 券, as on every prior 月表 read; 劵/券 normalize to one heading",
+     "result": "AUTHENTICATED"
+    },
+    "jiShen": [
+     "月空",
+     "四相",
+     "王日",
+     "驛馬",
+     "天后",
+     "時陽",
+     "生氣",
+     "六儀",
+     "金堂",
+     "除神",
+     "金匱",
+     "鳴吠"
+    ],
+    "xiongShen": [
+     "厭對",
+     "招搖",
+     "五離"
+    ],
+    "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封｜入學出行上官赴任臨政親民移徙解除沐｜浴剃頭整手足甲求醫療病裁衣修造動土｜豎柱上梁開市納財開倉庫出貨財修置產｜室安碓磑掃舍宇栽種牧養",
+    "jiRaw": "會親友結婚姻納采問名嫁娶安牀立券交｜易開渠伐木畋獵取魚乘船渡水",
+    "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封入學出行上官赴任臨政親民移徙解除沐浴剃頭整手足甲求醫療病裁衣修造動土豎柱上梁開市納財開倉庫出貨財修置產室安碓磑掃舍宇栽種牧養",
+    "jiNormalized": "會親友結婚姻納采問名嫁娶安牀立券交易開渠伐木畋獵取魚乘船渡水",
+    "printed": {
+     "開市": "宜",
+     "立券交易": "忌",
+     "納財": "宜"
+    }
+   },
+   "sourceRule": {
+    "wuliPresent": true,
+    "wuliOwnLifters": [],
+    "wuliActive": true,
+    "puzhu06Triggers": [
+     "四相"
+    ],
+    "lijuanJiOperands": [
+     "五離"
+    ],
+    "lijuanYiOperands": [],
+    "otherXiongEntries": {
+     "厭對": "忌嫁娶",
+     "招搖": "忌取魚乘船渡水 (又為招摇)"
+    },
+    "puzhu06Exceptions": {
+     "graded": [],
+     "deForYouJi": [],
+     "otherXiongListLijuan": [],
+     "otherPuzhu": "only the 二至二分 line also names 立劵交易; it applies to solstice/equinox dates, not a pillar page"
+    },
+    "predictQ4": "立券交易 not on 忌",
+    "predictWuliNarrow": "立券交易 on 忌"
+   },
+   "project": {
+    "date": "2025-10-30",
+    "sweep": {
+     "安牀": {
+      "triggers": "四相",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_ji",
+      "after_final_state": "only_ji"
+     },
+     "立券交易": {
+      "triggers": "四相",
+      "classes": "QL",
+      "action": "lift",
+      "before_final_state": "only_ji",
+      "after_final_state": "not_recorded"
+     },
+     "納財": {
+      "triggers": "四相",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_yi",
+      "after_final_state": "only_yi"
+     },
+     "開市": {
+      "triggers": "四相",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_yi",
+      "after_final_state": "only_yi"
+     }
+    },
+    "rawJiSources": {
+     "開市": "",
+     "立券交易": "[{\"kind\":\"remaining\",\"name\":\"五離\",\"effect\":\"keep\",\"state\":\"kept\"}]",
+     "納財": "",
+     "安牀": "[]"
+    }
+   },
+   "production": "contract 50 no_evidence; 立券交易 not_recorded, ji [五離], puzhu06 lift:QL (G2-n117 Stage 2 probe)",
+   "decisive": true,
+   "observedMatches": "WULI-NARROW"
+  },
+  {
+   "witness": "06067696-n62",
+   "context": "戌-庚申",
+   "page": {
+    "collection": "archive.org 06067696.cn (欽定協紀辨方書 四庫全書本, 月表 卷二十八)",
+    "locator": "https://archive.org/download/06067696.cn/page/n62_w1200.jpg",
+    "predicted": "06067696-n62",
+    "actual": "06067696-n62",
+    "predictionCorrect": true,
+    "path": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/pages/06067696-n62.jpg",
+    "sha256": "6c2097b8787c0ea848340c45df1cb379e40503849347721b96349c9092c83a9a",
+    "retrieval": "curl --fail of the w1200 page image, 2026-10-26; image unmodified",
+    "authentication": {
+     "header": "庚申石榴木專開日",
+     "foliation": "三十一",
+     "pillar": "庚申",
+     "officer": "開",
+     "monthFromContent": "戌: 開日 on a 申 day puts 建 on 戌",
+     "monthFromItemBlock": "戌 (leaf = cycle index + 6, as on every committed 戌月 leaf; supporting only)",
+     "archiveFilename": "n62_w1200.jpg",
+     "glyph": "立券交易 read with 券, as on every prior 月表 read; 劵/券 normalize to one heading",
+     "result": "AUTHENTICATED"
+    },
+    "jiShen": [
+     "月恩",
+     "王日",
+     "驛馬",
+     "天后",
+     "時陽",
+     "生氣",
+     "六儀",
+     "金堂",
+     "除神",
+     "金匱",
+     "鳴吠"
+    ],
+    "xiongShen": [
+     "厭對",
+     "招搖",
+     "五離",
+     "八專"
+    ],
+    "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封｜入學出行上官赴任臨政親民移徙解除沐｜浴剃頭整手足甲求醫療病裁衣修造動土｜豎柱上梁開市開倉庫出貨財修置產室開｜渠穿井安碓磑掃舍宇栽種牧養",
+    "jiRaw": "會親友結婚姻納采問名嫁娶安牀經絡立｜券交易伐木畋獵取魚乘船渡水",
+    "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封入學出行上官赴任臨政親民移徙解除沐浴剃頭整手足甲求醫療病裁衣修造動土豎柱上梁開市開倉庫出貨財修置產室開渠穿井安碓磑掃舍宇栽種牧養",
+    "jiNormalized": "會親友結婚姻納采問名嫁娶安牀經絡立券交易伐木畋獵取魚乘船渡水",
+    "printed": {
+     "開市": "宜",
+     "立券交易": "忌",
+     "納財": "—"
+    }
+   },
+   "sourceRule": {
+    "wuliPresent": true,
+    "wuliOwnLifters": [],
+    "wuliActive": true,
+    "puzhu06Triggers": [
+     "月恩"
+    ],
+    "lijuanJiOperands": [
+     "五離"
+    ],
+    "lijuanYiOperands": [],
+    "otherXiongEntries": {
+     "厭對": "忌嫁娶",
+     "招搖": "忌取魚乘船渡水 (又為招摇)",
+     "八專": "忌安撫邊境選將訓兵出師結婚姻納采問名嫁娶與德合併猶忌與天願併止忌安撫邊境選將訓兵出師餘不忌"
+    },
+    "puzhu06Exceptions": {
+     "graded": [],
+     "deForYouJi": [],
+     "otherXiongListLijuan": [],
+     "otherPuzhu": "only the 二至二分 line also names 立劵交易; it applies to solstice/equinox dates, not a pillar page"
+    },
+    "predictQ4": "立券交易 not on 忌",
+    "predictWuliNarrow": "立券交易 on 忌"
+   },
+   "project": {
+    "date": "2025-10-18",
+    "sweep": {
+     "安牀": {
+      "triggers": "月恩",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_ji",
+      "after_final_state": "only_ji"
+     },
+     "立券交易": {
+      "triggers": "月恩",
+      "classes": "QL",
+      "action": "lift",
+      "before_final_state": "only_ji",
+      "after_final_state": "not_recorded"
+     },
+     "納財": {
+      "triggers": "月恩",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_yi",
+      "after_final_state": "only_yi"
+     },
+     "開市": {
+      "triggers": "月恩",
+      "classes": "",
+      "action": "untouched",
+      "before_final_state": "only_yi",
+      "after_final_state": "only_yi"
+     }
+    },
+    "rawJiSources": {
+     "開市": "",
+     "立券交易": "[{\"kind\":\"remaining\",\"name\":\"五離\",\"effect\":\"keep\",\"state\":\"kept\"}]",
+     "納財": "",
+     "安牀": "[]"
+    }
+   },
+   "production": "contract 50 no_evidence; 立券交易 not_recorded, ji [五離], puzhu06 lift:QL (G2-n117 Stage 2 probe)",
+   "decisive": true,
+   "observedMatches": "WULI-NARROW"
+  }
+ ],
+ "baselineN117": {
+  "context": "未-戊申",
+  "wuliActive": true,
+  "puzhu06Triggers": [
+   "四相"
+  ],
+  "lijuanJiOperands": [
+   "劫煞",
+   "五離"
+  ],
+  "printed": {
+   "開市": "—",
+   "立券交易": "忌",
+   "納財": "忌"
+  },
+  "decisive": false,
+  "reason": "劫煞 is a second 立券交易 忌 operand"
+ },
+ "sideObservations": [
+  "安牀 printed 忌 on both pages: raw-忌 sources empty in the baseline (fixed day rule), untouched by puzhu:06 in the model; not a puzhu:06 confound for 立券交易",
+  "庚申 page omits 納財 from both lines although 月恩 is in the 卷十一 納財 宜 list; the model has 納財 only_yi. Outside F1.",
+  "經絡 printed 忌 on 庚申 (八專 day); not modelled as a P4 heading; outside F1."
+ ],
+ "scope": "F1-B covers 五離 under a non-lifter puzhu:06 trigger (四相, 月恩) on 立券交易 only; not 九空/五虛/小耗/五墓, not other headings",
+ "stage2Sizing": {
+  "qlLiftRows2025_2027": 68,
+  "qlLiftRowsWhereOnlyRemainingSourceIs五離": {
+   "立券交易": 12
+  }
+ },
+ "classification": "F1-B",
+ "g2n117W1": "CLOSED",
+ "productionChanged": false
+}
