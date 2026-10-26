@@ -16,6 +16,7 @@ The rulings are recorded in `sources/p4-vol10/q4-rest-stage3/owner-ruling.json` 
 - **Provenance.** Each ruling is OWNER_RULING backed by direct source evidence. Source-witness provenance stays page/cell specific.
 - **Not decided:** global GOD-NARROW, global Y-CONVENTION, U4, U7, BAIJI-Y, 五墓, P21.
 - **Unchanged:** 五墓/Q4a, F1 R2 (J axis), G2/W1, P21.
+- **Supersedes F1 rule 3.** R-F1Y supersedes F1 R2 rule 3 (Y composition) for the sole-五離 + 宜 case; R2's J axis is unchanged. Authority v5 still records R2 itself unchanged (`ownerDecision.answers.R2`); the supersession is recorded here and in PROJECT_CONTEXT, and v5 adds `ownerDecision.answers.R-F1Y`.
 
 **Scoped Y count.** The owner text says 44 rows go only_yi → both_present under the J rulings alone; that is the Stage 2C per-ruling sum (27 + 14 + 3). With the rulings combined the count is **37**, because the 7 joint 九空+五虛 開倉庫 rows were counted twice. The ruling file records both numbers.
 
