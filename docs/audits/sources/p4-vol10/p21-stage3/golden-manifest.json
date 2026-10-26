@@ -1,6 +1,12 @@
 {
  "version": "p21-stage3-golden-manifest-v1",
  "scope": "MIGRATE rows only",
+ "completeness": "MINIMUM SET from data files holding the MIGRATE dates/contexts; no scratch fallout run. Stage 4 must stop on any failing suite outside this manifest and the rollback-pin list",
+ "ownerRulesGolden": "p4-full-golden-v4/compose is the owner-rules layer Golden (roadmap 7b lineage v2 -> v3 -> v4)",
+ "mutationRecords": [
+  "docs/audits/p4-owner-rules-mutation-results.json (p4OwnerRules.ts edited; refresh as b510dab did)",
+  "scripts/audit-p4-owner-rules-mutations.py anchors"
+ ],
  "changes": [
   {
    "golden": "p4-full-golden-v4",
@@ -41,7 +47,7 @@
  "unchanged": {
   "p4b-puzhu06-golden-v5": "no puzhu:06 trigger on 亥-丁酉/癸酉; row untouched",
   "p5-warehouse-golden-v1": "開倉庫/修倉庫 unchanged (no warehouse delta in the impact)",
-  "p4-adapter-baseline-v1/v2": "P4 OFF baseline (xiejiVol10BalancingEnabled OFF)",
+  "p4-adapter-baseline-v1/v2": "P4 OFF baseline (xiejiVol10BalancingEnabled OFF). Reverses the Stage 2 estimate, which listed an adapter-baseline lock revision",
   "events": "no event Golden; event deltas go to the Stage 4 migration diff"
  },
  "excludedRows": [

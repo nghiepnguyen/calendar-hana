@@ -12,17 +12,22 @@ import { getP4MuCangSoil } from './p4YiSoil'
 // Audit only: P21 Stage 3 (docs/audits/p21-stage3-authority-freeze.md). Recomputes, date by date over
 // 2025–2027, every puzhu:21 cell where N-C (H2) differs from production, straight from the production layer
 // (not from the Stage 1 freeze), with the trigger provenance Stage 3 classifies. Read-only.
-// npm test: the frozen matrix. P21S3_DUMP=1 rewrites affected-cells.json.
+// npm test: the 8 frozen dates plus a non-firing control. P21S3_FULL=1: the full 1,095-day sweep.
+// P21S3_DUMP=1 rewrites affected-cells.json.
 const OUT = 'docs/audits/sources/p4-vol10/p21-stage3/affected-cells.json'
 const TRIAD = ['開市', '立券交易', '納財']
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
 const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 const ALL_TRUE = Object.fromEntries(P4_DAY_HEADINGS.map((h) => [h, true]))
 
-function scan() {
-  const rows: unknown[] = []
-  for (let t = Date.parse('2025-01-01'); t <= Date.parse('2027-12-31'); t += 864e5) {
-    const date = new Date(t).toISOString().slice(0, 10)
+const ALL_DATES = Array.from(
+  { length: (Date.parse('2027-12-31') - Date.parse('2025-01-01')) / 864e5 + 1 },
+  (_, i) => new Date(Date.parse('2025-01-01') + i * 864e5).toISOString().slice(0, 10),
+)
+
+function scan(dates: readonly string[] = ALL_DATES) {
+  const rows: { date: string }[] = []
+  for (const date of dates) {
     const a = getAlmanac(date as never)
     const month = BRANCHES[a.selectionContext.MONTH_JIAN_BRANCH!]!
     const pillar = STEMS[a.dayCanChi.can]! + BRANCHES[a.dayCanChi.chi]!
@@ -87,7 +92,19 @@ describe('P21 Stage 3 affected matrix (audit only)', () => {
     )
   })
 
-  it('production still yields the frozen matrix', { timeout: 600_000 }, () => {
-    expect(scan()).toEqual(JSON.parse(readFileSync(OUT, 'utf8')).cells)
+  const frozen = () => JSON.parse(readFileSync(OUT, 'utf8')).cells as { date: string }[]
+
+  it('production still yields the frozen rows on their dates; a control date fires nothing', () => {
+    const f = frozen()
+    expect(scan(f.map((c) => c.date))).toEqual(f)
+    expect(scan(['2025-01-01'])).toEqual([])
   })
+
+  it.runIf(process.env.P21S3_FULL === '1')(
+    'full sweep matches the freeze',
+    { timeout: 600_000 },
+    () => {
+      expect(scan()).toEqual(frozen())
+    },
+  )
 })

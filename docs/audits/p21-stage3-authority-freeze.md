@@ -198,11 +198,18 @@ All of these must stay production-identical in Stage 4.
 | p4-score-golden-v6 | p4-score-golden-v7 | activity-states.tsv | 6 |
 | p4-score-golden-v6 | p4-score-golden-v7 | activity-scores.tsv | 6 |
 
+**This is a minimum set**, not a complete one. It was built from the data files that hold the MIGRATE dates and contexts; no scratch fallout run was made. Stage 4 must stop on any failing suite that is outside both this manifest and the rollback-pin list (§15).
+
+Notes on the Stage 2 estimate:
+
+- **"Owner-rules Goldens"** in the Stage 2 estimate means `p4-full-golden-v4/compose`, the owner-rules layer Golden (lineage v2 → v3 → v4). It is not a separate artifact.
+- **Mutation record.** `docs/audits/p4-owner-rules-mutation-results.json` and the anchors in `scripts/audit-p4-owner-rules-mutations.py` will need a refresh, because `p4OwnerRules.ts` changes. Q4-REST did the same in `b510dab`.
+
 Unchanged:
 
 - **p4b-puzhu06-golden-v5:** no puzhu:06 trigger on these contexts.
 - **p5-warehouse-golden-v1:** no warehouse delta.
-- **p4-adapter-baseline-v1 and v2:** P4 OFF baseline.
+- **p4-adapter-baseline-v1 and v2:** P4 OFF baseline. This **reverses** the Stage 2 estimate, which listed an adapter-baseline lock revision.
 - **Events:** there is no event Golden. Event deltas belong in the Stage 4 migration diff.
 
 ## 14. Event impact
@@ -222,7 +229,7 @@ Unchanged:
 
 | Option | Assessment |
 |---|---|
-| **A, recommended:** a contribution filter on puzhu:21 edges only, gated by an allowlist in a new authority `shared/almanac-data/p4-puzhu21-v1.json` (`eligibleContexts` 亥-丁酉, 亥-癸酉), with policy `p4Puzhu21Scope: contribution-v1` (`heading-v1` = rollback) | Encodes the semantic. The allowlist is auditable. The change is small: the propagation pass in `p4OwnerRules.ts` |
+| **A, recommended:** a contribution filter on puzhu:21 edges only, gated by an allowlist in a new authority `shared/almanac-data/p4-puzhu21-v1.json` (`eligibleContexts` 亥-丁酉, 亥-癸酉) | Encodes the semantic. The allowlist is auditable. The change is small: the propagation pass in `p4OwnerRules.ts` |
 | B: a context overlay (context, heading) → `only_ji` | The smallest diff, but it encodes the output rather than the semantic, and it drifts if other rules move |
 | C: a global filter with a blocklist for HOLD/QUARANTINE | Rejected: it fails open for new contexts |
 
@@ -233,6 +240,19 @@ Unchanged:
 3. If `remaining` is empty, lift as today. Otherwise keep `ji`, with state `only_ji` (or `both_present` if 宜 is noted).
 4. Protected 忌 keep blocking as today.
 5. Every other edge, line and context stays N-A.
+
+**Rollback.** Rollback follows the F1 and Q4-REST precedent (`f1R2Rollback.ts`, `q4RestRollback.ts`) rather than a manifest policy:
+
+- a test-only `p21Rollback.ts` mocks `p4-puzhu21-v1.json` with `eligibleContexts: []`, which gives N-A byte-equal;
+- the 21 historical suites that already pin F1/Q4-REST rollbacks pin it too (`rollbackPinnedSuites`).
+
+**Reproducibility.** The impact figures come from a provider-level override, not from option A itself. They still agree:
+
+- propagation is single-pass on pre-states;
+- 立券交易 enters that pass as H1-B `only_ji`;
+- so keeping its 忌 cannot re-trigger puzhu:22 or any other line.
+
+The Stage 4 migration diff is the proof.
 
 **Gates for Stage 4:**
 

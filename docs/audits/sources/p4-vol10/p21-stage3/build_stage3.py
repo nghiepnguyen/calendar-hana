@@ -166,10 +166,19 @@ def main():
     unchanged = {
         'p4b-puzhu06-golden-v5': 'no puzhu:06 trigger on 亥-丁酉/癸酉; row untouched',
         'p5-warehouse-golden-v1': '開倉庫/修倉庫 unchanged (no warehouse delta in the impact)',
-        'p4-adapter-baseline-v1/v2': 'P4 OFF baseline (xiejiVol10BalancingEnabled OFF)',
+        'p4-adapter-baseline-v1/v2': 'P4 OFF baseline (xiejiVol10BalancingEnabled OFF). Reverses the Stage 2 '
+                                     'estimate, which listed an adapter-baseline lock revision',
         'events': 'no event Golden; event deltas go to the Stage 4 migration diff',
     }
     dump('golden-manifest.json', {'version': 'p21-stage3-golden-manifest-v1', 'scope': 'MIGRATE rows only',
+                                  'completeness': 'MINIMUM SET from data files holding the MIGRATE dates/contexts; '
+                                                  'no scratch fallout run. Stage 4 must stop on any failing suite '
+                                                  'outside this manifest and the rollback-pin list',
+                                  'ownerRulesGolden': 'p4-full-golden-v4/compose is the owner-rules layer Golden '
+                                                      '(roadmap 7b lineage v2 -> v3 -> v4)',
+                                  'mutationRecords': ['docs/audits/p4-owner-rules-mutation-results.json (p4OwnerRules.ts '
+                                                      'edited; refresh as b510dab did)',
+                                                      'scripts/audit-p4-owner-rules-mutations.py anchors'],
                                   'changes': manifest, 'unchanged': unchanged,
                                   'excludedRows': sorted(r['date'] for r in rows if r['eligibility'] != 'MIGRATE')})
 
@@ -201,10 +210,9 @@ def main():
                                            'eligibleContexts': mctx}},
         'eligibleRows': sorted(mdates), 'eligibleContexts': mctx,
         'mustStayIdentical': sorted(r['date'] for r in rows if r['eligibility'] != 'MIGRATE'),
-        'expectedProductionFiles': ['shared/almanac-data/p4-puzhu21-v1.json (new)',
+        'expectedProductionFiles': ['shared/almanac-data/p4-puzhu21-v1.json (new authority, eligibleContexts)',
                                     'shared/lunar/p4OwnerRules.ts (propagation pass, puzhu:21 edges only)',
-                                    'shared/almanac-data/manifest.json (policy p4Puzhu21Scope: contribution-v1; '
-                                    'heading-v1 = rollback)'],
+                                    'shared/lunar/p21Rollback.ts (new, test-only rollback module)'],
         'algorithm': [
             'in the propagation pass, for a puzhu:21 edge whose target context is in eligibleContexts:',
             'cancelled = the 卷十 subject scopes whose state on each fired trigger is neither_recorded',
@@ -225,7 +233,19 @@ def main():
         'goldens': 'golden-manifest.json (successors only for MIGRATE rows)',
         'migrationDiff': 'every changed row must be a MIGRATE date; activity and event deltas must equal '
                          'impact.json MIGRATION_ELIGIBLE_ONLY; any HOLD/QUARANTINE date diff fails',
-        'rollback': 'policy p4Puzhu21Scope heading-v1 restores N-A byte-equal; historical tests pin heading-v1',
+        'rollback': 'authority successor + test-only rollback module, as F1 (f1R2Rollback.ts) and Q4-REST '
+                    '(q4RestRollback.ts): p21Rollback.ts mocks p4-puzhu21-v1.json with eligibleContexts [] = N-A '
+                    'byte-equal. No manifest policy: the last two P4 authority migrations used this pattern',
+        'rollbackPinnedSuites': ['p4F1R2Migration', 'p4F1WuliStage2Impact', 'p4JieshaFaithfulSensitivity',
+                                 'p4MigrationDiff', 'p4MigrationDiffV3', 'p4OwnerRules', 'p4OwnerRulesV3',
+                                 'p4Puzhu06', 'p4Puzhu06Sweep', 'p4Puzhu06V4', 'p4Q4RestStage1Models',
+                                 'p4Q4RestStage2A1Impact', 'p4Q4RestStage2AModels', 'p4Q4RestStage2BRuntime',
+                                 'p4Q4RestStage2CImpact', 'p4Q4RestStage3Migration', 'p4ScoreAdapterAlmanac',
+                                 'p4ScoreGoldenV3', 'p4ScoreGoldenV4', 'p4ScoreGoldenV5', 'p4WeishenNacaiAudit'],
+        'reproducibility': 'impact.json comes from a provider-level override, not option A. They agree because '
+                           'propagation is single-pass on pre-states and 立券交易 enters it as H1-B only_ji, so '
+                           'keeping its 忌 cannot re-trigger puzhu:22 or any other line; Stage 4 migration diff is '
+                           'the proof',
         'testsToRepoint': ['p4P21Stage1Projection.test.ts (pins N-A on 亥-丁酉/癸酉)',
                            'p4P21Stage2Candidates.test.ts', 'p4P21Stage2Impact.test.ts',
                            'p4P21Stage3Affected.test.ts'],
