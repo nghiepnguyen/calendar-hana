@@ -1,0 +1,2236 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "pages": {
+  "06067694-n50": {
+   "context": "午-戊申",
+   "triggers": [
+    "月恩",
+    "四相"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "滿日"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "入學": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "嫁娶": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "不將"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "安牀": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "百忌申"
+     ],
+     "yiOperands": [],
+     "production": "only_ji",
+     "productionJi": [
+      "百忌申"
+     ],
+     "prot": [
+      "百忌申"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "安葬": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "栽種": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "求嗣": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "天后",
+      "月恩",
+      "除神"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "祈福": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "天巫",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "天巫",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "滿日"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "keep:QL_EXCLUDED",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納畜": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "開市": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "除神"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌戊",
+     "百忌申"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  },
+  "06067697-n8": {
+   "context": "子-丙寅",
+   "triggers": [
+    "時德"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五虛"
+     ],
+     "yiOperands": [
+      "時德",
+      "滿日"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "入學": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "嫁娶": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "安牀": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "安葬": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "栽種": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "時德"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "求嗣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [
+      "時德"
+     ],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "滿日"
+     ],
+     "yiOperands": [
+      "天后",
+      "時德"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "滿日"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "時德"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "祈福": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [
+      "天巫",
+      "時德",
+      "福生"
+     ],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "百忌寅"
+     ],
+     "yiOperands": [
+      "天巫",
+      "時德",
+      "福生"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "百忌寅"
+     ],
+     "prot": [
+      "百忌寅"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五合",
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "納畜": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "時德",
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五虛"
+     ],
+     "yiOperands": [
+      "時德",
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "滿日"
+     ],
+     "yiOperands": [
+      "時德"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "滿日"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "滿日"
+     ],
+     "yiOperands": [
+      "五合",
+      "時德"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "滿日"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "時德"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "開市": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "滿日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "時德"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌丙",
+     "百忌寅"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  },
+  "06067693-n107": {
+   "context": "巳-戊戌",
+   "triggers": [
+    "四相"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "天賊",
+      "小耗"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "天賊",
+      "小耗"
+     ],
+     "prot": [
+      "天賊"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "入學": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "嫁娶": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "不將"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "安牀": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "安葬": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "栽種": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "求嗣": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "解神"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "祈福": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "小耗"
+     ],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [
+      "小耗"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納畜": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "小耗"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "小耗"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "天賊",
+      "小耗"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "天賊",
+      "小耗"
+     ],
+     "prot": [
+      "天賊"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "開市": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "小耗"
+     ],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [
+      "小耗"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌戊",
+     "百忌戌"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  },
+  "06067692-n86": {
+   "context": "卯-丁丑",
+   "triggers": [
+    "月恩",
+    "四相"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九坎",
+      "八風"
+     ],
+     "yiOperands": [],
+     "production": "only_ji",
+     "productionJi": [
+      "九坎",
+      "八風"
+     ],
+     "prot": [
+      "九坎"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空",
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "天倉",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "九空",
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "入學": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "嫁娶": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "不將"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "安牀": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "安葬": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "栽種": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九焦"
+     ],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "九焦"
+     ],
+     "prot": [
+      "九焦"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "求嗣": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "祈福": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納畜": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "天倉"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [
+      "四相",
+      "天倉",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空",
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空",
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "開市": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌丁",
+     "百忌丑"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  },
+  "06067697-n93": {
+   "context": "丑-甲申",
+   "triggers": [
+    "四相"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富",
+      "四相",
+      "母倉"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "入學": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "嫁娶": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "安牀": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "百忌申"
+     ],
+     "yiOperands": [
+      "危日"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "百忌申"
+     ],
+     "prot": [
+      "百忌申"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "安葬": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "鳴吠"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "栽種": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富",
+      "四相",
+      "母倉"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "求嗣": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "遊禍"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "遊禍"
+     ],
+     "prot": [
+      "遊禍"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "遊禍"
+     ],
+     "yiOperands": [
+      "四相",
+      "除神"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "遊禍"
+     ],
+     "prot": [
+      "遊禍"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富",
+      "四相",
+      "母倉"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "祈福": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "遊禍"
+     ],
+     "yiOperands": [
+      "四相",
+      "福生"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "遊禍"
+     ],
+     "prot": [
+      "遊禍"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "福生"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "五富"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "keep:QL_EXCLUDED",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納畜": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富",
+      "四相",
+      "母倉"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "百忌甲"
+     ],
+     "yiOperands": [
+      "五富",
+      "四相"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "百忌甲"
+     ],
+     "prot": [
+      "百忌甲"
+     ],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "五離"
+     ],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "both_present",
+     "productionJi": [
+      "五離"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "開市": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "五富"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "除神"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "四相"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌甲",
+     "百忌申"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  },
+  "06067694-n10": {
+   "context": "午-戊辰",
+   "triggers": [
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "headings": {
+    "乘船渡水": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "修倉庫": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空",
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [
+      "九空",
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "入學": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "嫁娶": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "安牀": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "安葬": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "栽種": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "求嗣": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "求醫療病": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "牧養": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "破屋壊垣": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "祈福": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "祭祀": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "納畜": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "undetermined",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "納財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空",
+      "五虛"
+     ],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空",
+      "五虛"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "納采問名": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "結婚姻": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "豎柱上梁": {
+     "printed": "only_yi",
+     "jiOperands": [],
+     "yiOperands": [
+      "四相",
+      "時德",
+      "月恩",
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "開市": {
+     "printed": "only_ji",
+     "jiOperands": [
+      "九空"
+     ],
+     "yiOperands": [
+      "開日"
+     ],
+     "production": "only_yi",
+     "productionJi": [
+      "九空"
+     ],
+     "prot": [],
+     "puzhu06": "lift:QL",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    },
+    "掃舍宇": {
+     "printed": "not_recorded",
+     "jiOperands": [],
+     "yiOperands": [],
+     "production": "not_recorded",
+     "productionJi": [],
+     "prot": [],
+     "puzhu06": "",
+     "triggers": [
+      "月恩",
+      "四相",
+      "時德"
+     ]
+    }
+   },
+   "other": {
+    "puzhu21_22": "no 相抵 on these headings (no neither_recorded state)",
+    "baiji": [
+     "百忌戊",
+     "百忌辰"
+    ],
+    "graded": "no graded subject among the 忌 sources of the tested headings"
+   }
+  }
+ }
+}

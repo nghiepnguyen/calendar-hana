@@ -1,0 +1,51 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "needed": true,
+ "reasons": [
+  "小耗 has one clean J page (巳-戊戌, 四相)"
+ ],
+ "minimum": [
+  {
+   "context": "戌-癸卯",
+   "god": "小耗",
+   "trigger": "四相",
+   "headings": [
+    "開市",
+    "立券交易",
+    "納財",
+    "開倉庫出貨財"
+   ],
+   "locator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS"
+   },
+   "productionJi": {
+    "開市": [
+     "小耗"
+    ],
+    "立券交易": [
+     "小耗"
+    ],
+    "納財": [
+     "小耗"
+    ],
+    "開倉庫出貨財": [
+     "小耗"
+    ]
+   },
+   "condition": "clean only if the grade model holds: a graded subject (大時) is present but holds no 忌 on these headings (production trace.ji = [小耗]); Stage 1 labelled it CONTAMINATED only because 大時 appears in the source list. Weaker than the six pages"
+  }
+ ],
+ "optional": [
+  {
+   "context": "午-壬辰",
+   "why": "九空 under 時德 alone (午-戊辰 carries 時德 with 月恩/四相)",
+   "locator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS"
+   }
+  }
+ ],
+ "f1y": "not needed: two clean direct witnesses agree",
+ "conflicts": "none"
+}

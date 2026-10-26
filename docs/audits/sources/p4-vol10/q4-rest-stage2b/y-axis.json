@@ -1,0 +1,629 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "cells": [
+  {
+   "witness": "06067694-n50",
+   "context": "午-戊申",
+   "heading": "立券交易",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "滿日"
+   ],
+   "family": "U5",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067694-n50",
+   "context": "午-戊申",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "五虛"
+   ],
+   "ungraded": [
+    "五虛"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "月恩",
+    "滿日"
+   ],
+   "family": "U1",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067694-n50",
+   "context": "午-戊申",
+   "heading": "納采問名",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "月恩"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067694-n50",
+   "context": "午-戊申",
+   "heading": "結婚姻",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "月恩"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "heading": "求醫療病",
+   "jiSources": [
+    "滿日"
+   ],
+   "ungraded": [
+    "滿日"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "天后",
+    "時德"
+   ],
+   "family": "ENGINE_UNDETERMINED",
+   "production": "undetermined",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "heading": "祭祀",
+   "jiSources": [
+    "百忌寅"
+   ],
+   "ungraded": [],
+   "prot": [
+    "百忌寅"
+   ],
+   "yiOperands": [
+    "天巫",
+    "時德",
+    "福生"
+   ],
+   "family": "BAIJI_ONLY (not ungraded)",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "五虛"
+   ],
+   "ungraded": [
+    "五虛"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "時德",
+    "滿日"
+   ],
+   "family": "U1",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "heading": "納采問名",
+   "jiSources": [
+    "滿日"
+   ],
+   "ungraded": [
+    "滿日"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "時德"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "heading": "結婚姻",
+   "jiSources": [
+    "滿日"
+   ],
+   "ungraded": [
+    "滿日"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "五合",
+    "時德"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067693-n107",
+   "context": "巳-戊戌",
+   "heading": "納財",
+   "jiSources": [
+    "小耗"
+   ],
+   "ungraded": [
+    "小耗"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相"
+   ],
+   "family": "U3",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067693-n107",
+   "context": "巳-戊戌",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "天賊",
+    "小耗"
+   ],
+   "ungraded": [
+    "天賊",
+    "小耗"
+   ],
+   "prot": [
+    "天賊"
+   ],
+   "yiOperands": [
+    "四相"
+   ],
+   "family": "U7",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067692-n86",
+   "context": "卯-丁丑",
+   "heading": "栽種",
+   "jiSources": [
+    "九焦"
+   ],
+   "ungraded": [
+    "九焦"
+   ],
+   "prot": [
+    "九焦"
+   ],
+   "yiOperands": [
+    "四相",
+    "月恩",
+    "開日"
+   ],
+   "family": "ENGINE_UNDETERMINED",
+   "production": "undetermined",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067692-n86",
+   "context": "卯-丁丑",
+   "heading": "納財",
+   "jiSources": [
+    "九空"
+   ],
+   "ungraded": [
+    "九空"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "天倉",
+    "月恩"
+   ],
+   "family": "U3",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067692-n86",
+   "context": "卯-丁丑",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "九空",
+    "五虛"
+   ],
+   "ungraded": [
+    "九空",
+    "五虛"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "月恩"
+   ],
+   "family": "U4",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067692-n86",
+   "context": "卯-丁丑",
+   "heading": "開市",
+   "jiSources": [
+    "九空"
+   ],
+   "ungraded": [
+    "九空"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "開日"
+   ],
+   "family": "U2",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "安牀",
+   "jiSources": [
+    "百忌申"
+   ],
+   "ungraded": [],
+   "prot": [
+    "百忌申"
+   ],
+   "yiOperands": [
+    "危日"
+   ],
+   "family": "BAIJI_ONLY (not ungraded)",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "求嗣",
+   "jiSources": [
+    "遊禍"
+   ],
+   "ungraded": [
+    "遊禍"
+   ],
+   "prot": [
+    "遊禍"
+   ],
+   "yiOperands": [
+    "四相"
+   ],
+   "family": "U7",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "求醫療病",
+   "jiSources": [
+    "遊禍"
+   ],
+   "ungraded": [
+    "遊禍"
+   ],
+   "prot": [
+    "遊禍"
+   ],
+   "yiOperands": [
+    "四相",
+    "除神"
+   ],
+   "family": "ENGINE_UNDETERMINED",
+   "production": "undetermined",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "祈福",
+   "jiSources": [
+    "遊禍"
+   ],
+   "ungraded": [
+    "遊禍"
+   ],
+   "prot": [
+    "遊禍"
+   ],
+   "yiOperands": [
+    "四相",
+    "福生"
+   ],
+   "family": "U7",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "五富"
+   ],
+   "family": "U5",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "百忌甲"
+   ],
+   "ungraded": [],
+   "prot": [
+    "百忌甲"
+   ],
+   "yiOperands": [
+    "五富",
+    "四相"
+   ],
+   "family": "BAIJI_ONLY (not ungraded)",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "納采問名",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "heading": "結婚姻",
+   "jiSources": [
+    "五離"
+   ],
+   "ungraded": [
+    "五離"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相"
+   ],
+   "family": "U3",
+   "production": "both_present",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": false,
+   "note": ""
+  },
+  {
+   "witness": "06067694-n10",
+   "context": "午-戊辰",
+   "heading": "納財",
+   "jiSources": [
+    "九空"
+   ],
+   "ungraded": [
+    "九空"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "時德",
+    "月恩"
+   ],
+   "family": "U3",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067694-n10",
+   "context": "午-戊辰",
+   "heading": "開倉庫出貨財",
+   "jiSources": [
+    "九空",
+    "五虛"
+   ],
+   "ungraded": [
+    "九空",
+    "五虛"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "四相",
+    "時德",
+    "月恩"
+   ],
+   "family": "U4",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  },
+  {
+   "witness": "06067694-n10",
+   "context": "午-戊辰",
+   "heading": "開市",
+   "jiSources": [
+    "九空"
+   ],
+   "ungraded": [
+    "九空"
+   ],
+   "prot": [],
+   "yiOperands": [
+    "開日"
+   ],
+   "family": "U2",
+   "production": "only_yi",
+   "printed": "only_ji",
+   "verdict": "Y-ONLY-JI",
+   "viaQ4Survival": true,
+   "note": "production lifts by Q4; the page keeps 忌, so Y is read on the surviving 忌"
+  }
+ ],
+ "byFamily": {
+  "BAIJI_ONLY (not ungraded)": {
+   "Y-ONLY-JI": 3
+  },
+  "ENGINE_UNDETERMINED": {
+   "Y-ONLY-JI": 3
+  },
+  "U1": {
+   "Y-ONLY-JI": 2
+  },
+  "U2": {
+   "Y-ONLY-JI": 2
+  },
+  "U3": {
+   "Y-ONLY-JI": 9
+  },
+  "U4": {
+   "Y-ONLY-JI": 2
+  },
+  "U5": {
+   "Y-ONLY-JI": 2
+  },
+  "U7": {
+   "Y-ONLY-JI": 3
+  }
+ },
+ "newOnlyJi": 26,
+ "newOnlyJiUngraded": 20,
+ "newOnlyJiSoleFamilies": 15,
+ "newOnlyJiBaiji": 3,
+ "engineUndetermined": [
+  "子-丙寅 求醫療病",
+  "卯-丁丑 栽種",
+  "丑-甲申 求醫療病"
+ ],
+ "baijiFinding": "BAIJI-Y: production gives both_present where a 百忌 heading meets an independent 宜; the pages print only_ji (子-丙寅 祭祀; 丑-甲申 安牀, 開倉庫出貨財). puzhu:07–10 withhold 宜 even from the companion heading. Separate debt; population not measured",
+ "newBothPresent": 0,
+ "counterexamples": 0,
+ "quarantine": "U4/U7 cells are source examples only; no extrapolation to the 767 U7 / 7 U4 rows",
+ "scope": "no global Y rule; evidence reported per family",
+ "excluded": "修倉庫 (conditional 宜, rule D); 宴會 (printed as 會親友); headings printed under other words"
+}
