@@ -1,0 +1,747 @@
+{
+ "version": "f1-wuli-lijuan-stage2-v1",
+ "stage1": {
+  "commit": "372c6be",
+  "classification": "F1-B",
+  "witnesses": {
+   "06067696-n14": "a3a5180ff7d004d4acbbb7752ef41b192a6e2a8410b0546cf6881c0270b7c127",
+   "06067696-n62": "6c2097b8787c0ea848340c45df1cb379e40503849347721b96349c9092c83a9a"
+  }
+ },
+ "q4Chain": [
+  {
+   "layer": "literal text",
+   "class": "SOURCE_FACT",
+   "where": "docs/audits/sources/p4-vol10/vol10.raw.txt offset 21817",
+   "text": "凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌"
+  },
+  {
+   "layer": "transcription",
+   "class": "SOURCE_FACT",
+   "where": "Wikisource 四庫 transcription (vol10.raw.txt); scan check in p4b-puzhu06 authority v1 (718e195)"
+  },
+  {
+   "layer": "normalization",
+   "class": "IMPLEMENTATION",
+   "where": "p4b-puzhu06 headings: 立劵交易 → P4 heading 立券交易; 徳 = 德"
+  },
+  {
+   "layer": "classification QL",
+   "class": "SOURCE_INTERPRETATION",
+   "where": "tasks/prd-p4b-puzhu06.md §8: class QL = remaining-ji with its own 「與…併則不忌」 list not naming the trigger"
+  },
+  {
+   "layer": "owner ruling Q4 = yes",
+   "class": "OWNER_RULING",
+   "date": "2026-10-16",
+   "where": "p4b-puzhu06-v1.json ownerDecision.Q4 (718e195); liftLists includes 五離",
+   "entry": "HERE: the proposition \"四相/月恩 lifts 五離 on 立券交易\" enters the project"
+  },
+  {
+   "layer": "authority data",
+   "class": "IMPLEMENTATION",
+   "where": "p4b-puzhu06-v3.json liftLists.五離, classes.QL"
+  },
+  {
+   "layer": "decision code",
+   "class": "IMPLEMENTATION",
+   "where": "shared/lunar/p4Puzhu06.ts classify (LIFT_GODS → QL) / decideP4Puzhu06 (43bffe9 ...)"
+  },
+  {
+   "layer": "runtime consumer",
+   "class": "IMPLEMENTATION",
+   "where": "p4OwnerRules.ts resolveP4OwnerRulesDay (4d6ad5c, 2026-10-17) → p4AlmanacHeadings.getP4DayHeadings (134ff00, 2026-10-18) → p4ScoreAdapter inside P4_DOMAIN 2025–2027"
+  }
+ ],
+ "puzhu06Literal": {
+  "says": "on 德/合/赦/願/月恩/四相/時德 days, do not note 忌 on the listed headings (立劵交易 among them), except on days of 遇徳猶忌 and 從忌不從宜, which still note 忌",
+  "doesNotSay": "which 忌 sources are withheld; whether a god with its own trigger-specific clause is covered",
+  "exceptionsNamed": [
+   "遇徳猶忌",
+   "從忌不從宜之日"
+  ],
+  "wuliIsYouJi": false,
+  "projectInference": "Q4 = yes: every remaining-ji god outside the two exceptions is lifted by any trigger (literal-leaning, but an inference about scope)",
+  "alternativeReading": "lex specialis: a god whose own entry enumerates its lifters (五離) or trigger-specific behaviour (八專 「與德合併猶忌與天願併止忌…」) follows its own entry; puzhu:06 governs the rest. SOURCE_INTERPRETATION supported by the 卷十 entry style and the Stage 1 prints."
+ },
+ "wuliAuthority": {
+  "entry": "忌慶賜賞賀宴㑹結婚姻納采問名立劵交易與天德月德天德合月德合天赦三合六合併則不忌",
+  "ji": [
+   "慶賜賞賀",
+   "宴會",
+   "結婚姻",
+   "納采問名",
+   "立劵交易"
+  ],
+  "explicitLifters": [
+   "天德",
+   "月德",
+   "天德合",
+   "月德合",
+   "天赦",
+   "三合",
+   "六合"
+  ],
+  "四相Included": false,
+  "月恩Included": false,
+  "triggersOutsideOwnList": [
+   "天願",
+   "月恩",
+   "四相",
+   "時德"
+  ],
+  "puzhu06TargetsIntersection": [
+   "立券交易"
+  ],
+  "note": "absence of 四相/月恩 is a source fact; read as exclusion only together with the n14/n62 prints"
+ },
+ "witnesses": {
+  "06067696-n14": {
+   "context": "戌-壬申",
+   "sha256": "a3a5180ff7d004d4acbbb7752ef41b192a6e2a8410b0546cf6881c0270b7c127",
+   "path": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/pages/06067696-n14.jpg",
+   "supports": [
+    "WULI-NARROW (五離 kept under a non-lifter trigger)",
+    "R2"
+   ],
+   "contradicts": [
+    "Q4 as applied to 五離 (predicts 立券交易 unnoted)"
+   ],
+   "cannotTest": [
+    "Q4 for 九空 / 五虛 / 小耗 / 五墓",
+    "puzhu:21 N-A vs N-C (no 相抵 on the triad)",
+    "other months or officers"
+   ]
+  },
+  "06067696-n62": {
+   "context": "戌-庚申",
+   "sha256": "6c2097b8787c0ea848340c45df1cb379e40503849347721b96349c9092c83a9a",
+   "path": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/pages/06067696-n62.jpg",
+   "supports": [
+    "WULI-NARROW (五離 kept under a non-lifter trigger)",
+    "R2"
+   ],
+   "contradicts": [
+    "Q4 as applied to 五離 (predicts 立券交易 unnoted)"
+   ],
+   "cannotTest": [
+    "Q4 for 九空 / 五虛 / 小耗 / 五墓",
+    "puzhu:21 N-A vs N-C (no 相抵 on the triad)",
+    "other months or officers"
+   ]
+  },
+  "06067694-n117": {
+   "context": "未-戊申",
+   "classification": "CONTAMINATED_BUT_SUPPORTIVE",
+   "weight": "non-decisive: 劫煞 is a second 立券交易 忌 operand; the print is consistent with WULI-NARROW and inconsistent with Q4 + N-A, but cannot separate 五離 from 劫煞",
+   "g2Cell": "out of scope: 劫煞 × 立券交易 = BLANK / I1 (LOCAL owner ruling D1(a)), unchanged"
+  }
+ },
+ "ruling": "R2",
+ "rulingStatus": "AUDIT_DETERMINATION; owner adoption required before migration (Q4 stays in force until then)",
+ "scopeBasis": "evidence-limited: n14/n62 test only 五離. The lex specialis reading would reach every Q4-class god; R3 is rejected for lack of evidence on 九空/五虛/小耗/五墓, which become an open, suspect class.",
+ "otherQ4Gods": {
+  "qlLiftRowsNot五離": 56,
+  "storedPageCandidates": [
+   {
+    "page": "06067692-n126.jpg",
+    "context": "卯-丁巳",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "月恩",
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067692-n58.jpg",
+    "context": "寅-丙辰",
+    "q4Gods": [
+     "九空"
+    ],
+    "triggers": [
+     "月德",
+     "月恩",
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "九空": "寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌"
+    }
+   },
+   {
+    "page": "06067692-n59.jpg",
+    "context": "寅-丁巳",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德",
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067692-n93.jpg",
+    "context": "卯-甲申",
+    "q4Gods": [
+     "小耗"
+    ],
+    "triggers": [
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    }
+   },
+   {
+    "page": "06067693-n105.jpg",
+    "context": "巳-丙申",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德合",
+     "天願"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067693-n125.jpg",
+    "context": "巳-丙辰",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德合",
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067693-n59.jpg",
+    "context": "辰-丁巳",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德合",
+     "月德合",
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067693-n95.jpg",
+    "context": "巳-丙戌",
+    "q4Gods": [
+     "小耗",
+     "五墓"
+    ],
+    "triggers": [
+     "天德合"
+    ],
+    "ownLiftQuote": {
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌",
+     "五墓": "五月十一月與月德併則不忌"
+    }
+   },
+   {
+    "page": "06067694-n117.jpg",
+    "context": "未-戊申",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067694-n28.jpg",
+    "context": "午-丙戌",
+    "q4Gods": [
+     "五墓"
+    ],
+    "triggers": [
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "五墓": "五月十一月與月德併則不忌"
+    }
+   },
+   {
+    "page": "06067694-n53.jpg",
+    "context": "午-辛亥",
+    "q4Gods": [
+     "小耗"
+    ],
+    "triggers": [
+     "月德合"
+    ],
+    "ownLiftQuote": {
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    }
+   },
+   {
+    "page": "06067694-n73.jpg",
+    "context": "未-甲子",
+    "q4Gods": [
+     "五虛",
+     "小耗"
+    ],
+    "triggers": [
+     "天德",
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌",
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    }
+   },
+   {
+    "page": "06067694-n93.jpg",
+    "context": "未-甲申",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德",
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067694-n98.jpg",
+    "context": "未-己丑",
+    "q4Gods": [
+     "九空"
+    ],
+    "triggers": [
+     "天德合",
+     "月德合",
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "九空": "寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌"
+    }
+   },
+   {
+    "page": "06067695-n29.jpg",
+    "context": "申-丁亥",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "月德合"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067695-n99.jpg",
+    "context": "酉-庚寅",
+    "q4Gods": [
+     "小耗"
+    ],
+    "triggers": [
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    }
+   },
+   {
+    "page": "06067696-n111.jpg",
+    "context": "亥-壬寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天願",
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067696-n53.jpg",
+    "context": "戌-辛亥",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德合",
+     "月德合"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067696-n65.jpg",
+    "context": "戌-癸亥",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "四相"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067696-n98.jpg",
+    "context": "亥-己丑",
+    "q4Gods": [
+     "九空"
+    ],
+    "triggers": [
+     "月德合"
+    ],
+    "ownLiftQuote": {
+     "九空": "寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n111.jpg",
+    "context": "丑-壬寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n123.jpg",
+    "context": "丑-甲寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "四相",
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n34.jpg",
+    "context": "子-壬辰",
+    "q4Gods": [
+     "五墓"
+    ],
+    "triggers": [
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "五墓": "五月十一月與月德併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n59.jpg",
+    "context": "子-丁巳",
+    "q4Gods": [
+     "小耗"
+    ],
+    "triggers": [
+     "月德合"
+    ],
+    "ownLiftQuote": {
+     "小耗": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    }
+   },
+   {
+    "page": "06067697-n75.jpg",
+    "context": "丑-丙寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "月德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n87.jpg",
+    "context": "丑-戊寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   },
+   {
+    "page": "06067697-n99.jpg",
+    "context": "丑-庚寅",
+    "q4Gods": [
+     "五虛"
+    ],
+    "triggers": [
+     "天德",
+     "月德",
+     "時德"
+    ],
+    "ownLiftQuote": {
+     "五虛": "與天德月德天德合月德合六合併則不忌"
+    }
+   }
+  ]
+ },
+ "scope": "For 五離 only: puzhu:06 triggers do not remove 五離's 忌 on 立券交易 unless the trigger is also one of 五離's own lifters (天德 月德 天德合 月德合 天赦; 三合 六合 are not puzhu:06 triggers). Not 九空/五虛/小耗/五墓, not other headings, not puzhu:21.",
+ "previousOwnerRuling": "Q4 = yes (2026-10-16), adopted before n117 (2026-10-21) and before n14/n62 (2026-10-26)",
+ "impact2025_2027": {
+  "range": [
+   "2025-01-01",
+   "2027-12-31"
+  ],
+  "puzhu06LiftToKeep": 12,
+  "puzhu06TagOnly": 7,
+  "puzhu06TagOnlyContexts": [
+   "午-己酉",
+   "卯-丁酉",
+   "戌-癸酉"
+  ],
+  "stage1Estimate": 12,
+  "headingRows": 10,
+  "headingRowsByTransition": {
+   "only_yi→both_present": 4,
+   "not_recorded→only_ji": 6
+  },
+  "decisionOnlyRows": [
+   "2026-08-02 未-戊申",
+   "2027-07-28 未-戊申"
+  ],
+  "decisionOnlyReason": "R2 keeps 五離 at puzhu:06 (keep:QL_EXCLUDED), then puzhu:21 from 納財 (neither_recorded) withholds it under the engine N-A reading; final state stays neither_recorded",
+  "activityRows": 20,
+  "activityByTransition": {
+   "contract:neutral→watch": 3,
+   "transaction:neutral→watch": 3,
+   "contract:recommended→watch": 1,
+   "transaction:recommended→watch": 1,
+   "contract:no_evidence→watch": 6,
+   "transaction:no_evidence→watch": 6
+  },
+  "scoreDelta": {
+   "-15": 20
+  },
+  "hardWarningChanges": 0,
+  "eventRecordsChanged": 100,
+  "eventClassificationChanges": 69,
+  "eventScoreChanges": 90,
+  "eventsByType": {
+   "receive_vehicle": 20,
+   "buy_vehicle": 20,
+   "sign_contract": 20,
+   "buy_property": 20,
+   "property_handover": 20
+  },
+  "dates": [
+   "2025-01-15",
+   "2025-06-08",
+   "2025-10-18",
+   "2025-10-30",
+   "2026-01-10",
+   "2026-10-13",
+   "2026-10-25",
+   "2027-01-05",
+   "2027-10-08",
+   "2027-10-20"
+  ],
+  "split": {
+   "witnessedShape": {
+    "contexts": [
+     "戌-壬申",
+     "戌-庚申"
+    ],
+    "note": "no 宜 on 立券交易: the n14/n62 shape",
+    "heading": 6,
+    "activity": 12,
+    "event": 60
+   },
+   "extrapolated": {
+    "contexts": [
+     "丑-甲申",
+     "午-戊申"
+    ],
+    "note": "立券交易 has its own 宜 (both_present under R2); no witness tests this shape",
+    "heading": 4,
+    "activity": 8,
+    "event": 40
+   }
+  }
+ },
+ "outside2025_2027": {
+  "status": "KNOWN (production) / NOT_AUDITABLE_WITH_CURRENT_GOLDEN (authority)",
+  "why": "the P4 layer that holds puzhu:06 runs only inside P4_DOMAIN (getP4DayHeadings returns {} outside); outside it 五離 is not a source-locked presence god, so production has no 五離 row to change",
+  "productionImpact": 0,
+  "diagnostic": {
+   "note": "context level, not frozen production impact",
+   "contexts": {
+    "子-乙酉": {
+     "current": "only_ji|keep:AN+QL",
+     "r2": "only_ji|keep:AN+QL_EXCLUDED"
+    },
+    "丑-甲申": {
+     "current": "only_yi|lift:QL",
+     "r2": "both_present|keep:QL_EXCLUDED"
+    },
+    "卯-丁酉": {
+     "current": "only_ji|keep:QL+ZHUSHI",
+     "r2": "only_ji|keep:QL_EXCLUDED+ZHUSHI"
+    },
+    "午-戊申": {
+     "current": "only_yi|lift:QL",
+     "r2": "both_present|keep:QL_EXCLUDED"
+    },
+    "午-己酉": {
+     "current": "only_ji|keep:AN+QL",
+     "r2": "only_ji|keep:AN+QL_EXCLUDED"
+    },
+    "未-戊申": {
+     "current": "neither_recorded|lift:QL",
+     "r2": "neither_recorded|keep:QL_EXCLUDED"
+    },
+    "未-辛酉": {
+     "current": "only_ji|keep:AN+QL",
+     "r2": "only_ji|keep:AN+QL_EXCLUDED"
+    },
+    "酉-壬申": {
+     "current": "only_yi|lift:QL",
+     "r2": "both_present|keep:QL_EXCLUDED"
+    },
+    "酉-癸酉": {
+     "current": "only_ji|keep:AN+QL",
+     "r2": "only_ji|keep:AN+QL_EXCLUDED"
+    },
+    "戌-壬申": {
+     "current": "not_recorded|lift:QL",
+     "r2": "only_ji|keep:QL_EXCLUDED"
+    },
+    "戌-癸酉": {
+     "current": "only_ji|keep:AN+QL",
+     "r2": "only_ji|keep:AN+QL_EXCLUDED"
+    },
+    "戌-庚申": {
+     "current": "not_recorded|lift:QL",
+     "r2": "only_ji|keep:QL_EXCLUDED"
+    }
+   },
+   "datesOutside2025_2027": {
+    "子-乙酉": 102,
+    "丑-甲申": 95,
+    "卯-丁酉": 99,
+    "午-戊申": 102,
+    "午-己酉": 102,
+    "未-戊申": 106,
+    "未-辛酉": 106,
+    "酉-壬申": 102,
+    "酉-癸酉": 102,
+    "戌-壬申": 98,
+    "戌-癸酉": 99,
+    "戌-庚申": 97
+   }
+  },
+  "diagnosticFinalStateContexts": [
+   "丑-甲申",
+   "午-戊申",
+   "戌-壬申",
+   "戌-庚申",
+   "酉-壬申"
+  ],
+  "diagnosticFinalStateDates": 494
+ },
+ "regressionBoundary": {
+  "measured": "R2 impact over 2025–2027: only 立券交易 headings and contract/transaction activities move",
+  "mustNotChange": [
+   "G2/W1: 劫煞 × 立券交易 = BLANK / I1 (authority v4 untouched)",
+   "劫煞 cells",
+   "納財 LOCAL ruling",
+   "開市, 納財, 安牀, 開倉庫出貨財 headings",
+   "puzhu:06 for 九空/五虛/小耗/五墓",
+   "Q4a 五墓 exclusion",
+   "puzhu:21 behaviour (N-A)",
+   "G1/G1-b demolition",
+   "activity aliases",
+   "every activity other than contract/transaction",
+   "dates outside 2025–2027"
+  ],
+  "witnessTests": [
+   "p4G2N117Stage3Lock",
+   "xiejiVol10JieshaAuthority",
+   "p4OptionCFinalGateLock",
+   "p4Puzhu06 (Q4a 巳丙戌 keep rows)",
+   "p4F1WuliStage2Impact (the 10-row envelope)"
+  ]
+ },
+ "migrationPlan": {
+  "decisionPoint": "shared/lunar/p4Puzhu06.ts classify(): remaining-ji in LIFT_GODS → QL / QL_EXCLUDED via EXCLUDED",
+  "change": "data only: new authority p4b-puzhu06-v4.json = v3 + liftExclusions.五離 = {triggers: [天願, 月恩, 四相, 時德], basis: 卷十 五離 entry quote}; p4Puzhu06.ts import moves v3 → v4. No date or witness condition.",
+  "goldens": [
+   "puzhu:06 Golden v4 (successor of v3)",
+   "P4 score Golden v5 (successor of v4)",
+   "migration-diff successor and lock",
+   "P4 full Golden layer C re-pin where the 10 rows sit"
+  ],
+  "failingSuitesIfV3EditedInPlace": {
+   "p4Puzhu06AuthorityV3.test.ts": "authority v3 lock / lineage (needs v4 successor)",
+   "p4Puzhu06.test.ts": "composer vs Golden v2 fixtures, 1,095 dates and 720 contexts",
+   "p4Puzhu06GoldenV3.test.ts": "Golden v3 lock (needs Golden v4 successor)",
+   "p4Puzhu06Sweep.test.ts": "before/after sweep",
+   "p4ScoreAdapterAlmanac.test.ts": "almanac wiring vs Golden v2 layer C",
+   "p4ScoreGoldenV3.test.ts": "P4 score Golden v3",
+   "p4ScoreGoldenV4.test.ts": "P4 score Golden v4 (current)",
+   "p4MigrationDiff.test.ts": "roadmap 9b migration diff lock",
+   "p4MigrationDiffV3.test.ts": "G1-b rollback proof against Golden v2/v3",
+   "p4JieshaFaithfulVol10Lock.test.ts": "faithful 卷十 劫煞 sweep artifact (P4 rows)",
+   "p4WeishenNacaiAuditLock.test.ts": "納財 audit artifacts (P4 engine rows)"
+  },
+  "tests": [
+   "R2 envelope = exactly the 10 heading / 20 activity / 100 event rows in impact.json",
+   "rollback to v3 = byte-identical current output",
+   "mutation: drop the 五離 exclusion → envelope empty",
+   "G2/W1 and 劫煞 cells unchanged"
+  ],
+  "artifacts": [
+   "docs/audits/p4-f1-wuli-lijuan-stage3-migration.md",
+   "f1-wuli-lijuan-stage3/ evidence + lock"
+  ],
+  "forbidden": [
+   "date conditions",
+   "witness/page conditions",
+   "editing p4b-puzhu06-v3.json in place"
+  ]
+ },
+ "residual": "puzhu:21 N-A still withholds 五離 on 未-戊申 立券交易 under R2; N-A vs N-C is a separate open question",
+ "g2W1": "CLOSED / UNCHANGED",
+ "productionChanged": false
+}
