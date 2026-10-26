@@ -19,9 +19,10 @@ import { getP4MuCangSoil } from './p4YiOperands'
 import { getXiejiGodPresence } from './xiejiGodPresence'
 import { splitHeadings } from './xiejiVol10Resolution'
 
-/** Roadmap 7b, audit-only: the P4 resolution layer with the owner rules of the accepted full Golden v2
+/** Roadmap 7b: the P4 resolution layer with the owner rules of the accepted full Golden v2
  * (c574e57): H1-B/F5, E3, H2-A, F1, E1, E5 and 德作建論 (i). Built on the engine's own fact layers with
- * opt-in hooks whose defaults keep the accepted P4 behaviour. Not imported by the production pipeline. */
+ * opt-in hooks whose defaults keep the accepted P4 behaviour. Production reaches it through
+ * getP4DayHeadings (p4AlmanacHeadings.ts) inside the P4 domain. */
 export type P4OwnerRow = {
   state: string
   ji: boolean | undefined

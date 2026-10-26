@@ -1,6 +1,10 @@
-# Open authority item: 未-戊申 × 立券交易 (contract / transaction)
+# Authority item W1: 未-戊申 × 立券交易 (contract / transaction)
 
-Opened 2026-10-25, split out of G2 Stage 1 by owner ruling. **Status: OPEN, deferred.** Nothing is decided here.
+Opened 2026-10-25, split out of G2 Stage 1 by owner ruling. **Status: CLOSED (2026-10-26).**
+
+**Closed by LOCAL OWNER RULING D1(a).** The local 未-戊申 納財 ruling propagates through the direct puzhu:21 consequence to 立券交易. Result: 劫煞 × 立券交易 remains BLANK / I1, not SOURCE_WITNESSED. No production migration required. See [`p4-g2-n117-stage3-owner-ruling.md`](p4-g2-n117-stage3-owner-ruling.md). 五離 × 立券交易 at heading level (F1) stays open and separate.
+
+**G2-n117 Stage 2 (2026-10-26):** classification C, owner ruling required ([`p4-g2-n117-stage2-resolution.md`](p4-g2-n117-stage2-resolution.md)).
 
 **G2-n117 Stage 1 (2026-10-26):** `UNRESOLVED_CONFLICT`; the cell stays BLANK / I1, not SOURCE_WITNESSED. See [`p4-g2-n117-authority-discrepancy.md`](p4-g2-n117-authority-discrepancy.md).
 

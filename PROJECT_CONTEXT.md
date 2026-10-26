@@ -148,7 +148,7 @@ Commit: `fe40968` (authority + runtime + policy), `db905d8` (Golden v2, migratio
 - Phán quyết owner 2026-10-25: authority v2 **DUYỆT**; phạm vi ngoài miền P4 + event **CHẤP NHẬN**; `未-戊申 × contract/transaction = BLANK` (giữ authority hiện hành); ngữ nghĩa BLANK = **I1**: authority hoạt động khi chạm tới (bỏ phạt 劫煞), hành vi "không khớp" cũ không phải authority, không thêm thiết lập tương thích.
 - Envelope I1 đã đóng băng (candidate vs production hiện hành): 2025–2027: 24 dòng activity đổi kết luận (12 ngày, 0 giảm / 24 tăng), status 24, hard warning 0, activity khác 0, P4 state 0; event 4.330 đổi (108 điểm / 72 phân loại). 1900–2100 ngoài miền: 13.856 dòng đổi kết luận (2.020 giảm / 11.836 tăng), status 13.254, hard warning 0, activity khác 0; event mỗi ngày 289.270 đổi (62.352 điểm / 44.942 phân loại). Gồm 212 dòng + 1.060 event phụ thuộc ô BLANK 未-戊申 = `EXPECTED_G2_MIGRATION_CHANGE`.
 - Stage 2 cần kế nhiệm (14 file test / 20 test trong `docs/audits/sources/p4-vol10/g2-stage1/blast-radius.json`): Score Golden v4 (24 dòng baseline contract/transaction), kế nhiệm baseline v1, `golden-xieji-vol10-scoring-v2` (`jie-chen-contract-unreachable`), test authority + lock Option C, migration event/activation, mutation guard `scripts/audit-vol10-jiesha-mutations.py:44`. Stage 2 tự quyết `datasetVersion` (có file data đổi, khác G1-b).
-- Mục authority riêng còn mở: `未-戊申 × 立券交易` ([item](docs/audits/p4-weishen-lijuan-authority-item.md)) — n117 in 立券交易 ở dòng 忌; bằng chứng sơ bộ cho thấy do 五離, không phải 劫煞. Không chặn G2; không đổi ô.
+- Mục authority `未-戊申 × 立券交易` (W1): **ĐÓNG** 2026-10-26 bằng phán quyết owner CỤC BỘ D1(a) — phán quyết 納財 cục bộ lan qua hệ quả trực tiếp puzhu:21 sang 立券交易; ô 劫煞 giữ BLANK / I1, không SOURCE_WITNESSED; không migration ([Stage 3](docs/audits/p4-g2-n117-stage3-owner-ruling.md)). 五離 × 立券交易 cấp heading (F1) vẫn mở, riêng.
 
 ## 4. Runtime pipeline
 
@@ -215,7 +215,7 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 | P4-劫 | Tầng P4 (2025–2027) cho 劫煞 辰戌丑未 không 德 | **MORE_EVIDENCE_REQUIRED**, không đổi runtime. Engine P4 vẫn `cancel_both` + P17-0. Blocker riêng của P4: F1 (lan truyền xuyên thần, vd. 五離/五虛), mệnh đề con thứ hai của puzhu:17 (亥日/厭對/八專/四忌/四窮; điều kiện xảy ra ở 71 context), puzhu:06 Q4 vs 戌-癸亥 và lớp 四相 (UNDETERMINED), nhãn scope SPEC_GAP, bất thường adapter medical. Chuyển P4 sang P17-A sẽ đổi Golden v2 ở 2026-08-02, 2027-07-28. Báo cáo: [faithful](docs/audits/p4-jiesha-faithful-vol10.md), [puzhu:17](docs/audits/p4-puzhu17-bujiang.md), [納財](docs/audits/p4-weishen-nacai-puzhu21.md) |
 | G1 | Nợ chữ 壞/壊 (demolition) | **ĐÓNG & DEPLOYED** (PR #97 audit, #99 `canonical-v1`). Còn lại: ô demolition authority 劫煞 (Option C v2) — 5 context phụ thuộc ngày qua 土王用事, `NON_BLOCKING_FOLLOW_UP`; demolition vẫn `EXCLUDED_PENDING_GLYPH_AUDIT` ở authority v1 |
 | G2 | Nợ chữ 劵/券 (contract/transaction) | **Stage 1 XONG** (PR #100). **Stage 2 sẵn sàng**: alias `headingAliases` 立劵交易 → [立券交易] + authority 劫煞 v2 (đã duyệt), envelope I1 đã đóng băng, phạm vi ngoài miền + event đã chấp nhận. Không gập `NORM`. Spec: `docs/audits/p4-g2-vol10-heading-match.md` |
-| W1 | `未-戊申 × 立券交易`: 月表 n117 in 立券交易 ở dòng 忌, ô authority BLANK | **OPEN**, tách riêng, không chặn G2 ([item](docs/audits/p4-weishen-lijuan-authority-item.md)). Sơ bộ: chữ in do 五離, không phải 劫煞. Đổi ô = migration authority riêng có impact riêng; đến khi xong, BLANK là authority |
+| W1 | `未-戊申 × 立券交易`: 月表 n117 in 立券交易 ở dòng 忌, ô authority BLANK | **ĐÓNG** 2026-10-26: phán quyết owner CỤC BỘ D1(a), ô giữ BLANK / I1, không SOURCE_WITNESSED, 0 thay đổi production ([Stage 1](docs/audits/p4-g2-n117-authority-discrepancy.md), [Stage 2](docs/audits/p4-g2-n117-stage2-resolution.md), [Stage 3](docs/audits/p4-g2-n117-stage3-owner-ruling.md)). F1 (五離 heading, puzhu:06 Q4 vs n117) vẫn mở; bằng chứng kế tiếp: 戌-壬申, 戌-庚申 |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
 | R1 | Review mapping lượt hai: mansion 115/115, 用事 29/29 | **XONG** (PR #84): `DOUBLE_REVIEWED (semantic mapping)`, hai lượt AI-agent, chưa có chuyên gia người; §3 "28 Tú — audit" |
 | R2 | Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích) | Đổi policy cả 11 event → phase riêng nếu muốn |
@@ -234,7 +234,7 @@ Roadmap P4: 4 ─► 5 ─► 6 ─► 7 ─► 7b ─► 8 ─► 9 ─► 9b �
 P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hiện hành
 S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
 Option C v1 (XONG) ─► G1 (XONG) ─► G2 Stage 1 (XONG) ─► G2 Stage 2 (authority 劫煞 v2) ─► Option C v2 (ô demolition, nếu owner duyệt)
-W1 (未-戊申 × 立券交易): độc lập, không chặn G2
+W1 (未-戊申 × 立券交易): ĐÓNG (owner D1(a), 2026-10-26)
 P4-劫: độc lập với tầng 卷十; cần F1, puzhu:17 mệnh đề 2, puzhu:06 Q4 trước khi đổi engine P4
 ```
 
