@@ -1,0 +1,1454 @@
+{
+ "version": "q4-rest-stage1-v1",
+ "question": "for 九空/五虛/小耗/五墓: does a generic puzhu:06 trigger lift the god's 忌 (Q4-GENERIC), or only the god's own lifters (GOD-NARROW)?",
+ "base": {
+  "main": "7a38f090bb27d878adba164efcafdb1f6ef731ed",
+  "authority": "p4b-puzhu06-v4"
+ },
+ "authority": {
+  "九空": {
+   "entry": "忌進人口修倉庫開市立劵交易納財開倉庫出貨財　　寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌己亥月值月厭從月厭論辰戌丑未月值破日從月破論",
+   "jiHeadingsInPuzhu06Scope": [
+    "開市",
+    "立券交易",
+    "納財",
+    "開倉庫出貨財"
+   ],
+   "ownLifters": {
+    "triggers": [
+     "月德",
+     "天德合",
+     "月德合"
+    ],
+    "nonTrigger": [],
+    "note": "officer clause 寅申→滿, 子午卯酉→開 is descriptive: 九空 (辰丑戌未 by month) always falls on that officer in those months (checked below), so the officer-AND-德 and 德-alone readings coincide"
+   },
+   "genericTriggersOutsideOwn": [
+    "天德",
+    "天赦",
+    "天願",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "defer": {
+    "巳": "月厭",
+    "亥": "月厭",
+    "辰": "月破",
+    "戌": "月破",
+    "丑": "月破",
+    "未": "月破"
+   },
+   "liftExclusionsV4": [],
+   "currentProduction": "QL: lift on any trigger not in liftExclusionsV4 (Q4 yes)",
+   "classes": {
+    "entry": "SOURCE_FACT",
+    "ownLifters": "SOURCE_INTERPRETATION",
+    "Q4": "OWNER_RULING (2026-10-16)",
+    "Q4a": null,
+    "liftLists": "IMPLEMENTATION (p4b-puzhu06-v4.json liftLists)"
+   }
+  },
+  "五虛": {
+   "entry": "忌修倉庫開倉庫出貨財　　與天德月德天德合月德合六合併則不忌{{SK notes|天赦不得與五虛併天願必是六合故不言而已在其中}}",
+   "jiHeadingsInPuzhu06Scope": [
+    "開倉庫出貨財"
+   ],
+   "ownLifters": {
+    "triggers": [
+     "天德",
+     "月德",
+     "天德合",
+     "月德合",
+     "天願"
+    ],
+    "nonTrigger": [
+     "六合"
+    ],
+    "note": "天願 by the 四庫 note 「天願必是六合故不言而已在其中」; 天赦 never meets 五虛 (same note)"
+   },
+   "genericTriggersOutsideOwn": [
+    "天赦",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "defer": null,
+   "liftExclusionsV4": [],
+   "currentProduction": "QL: lift on any trigger not in liftExclusionsV4 (Q4 yes)",
+   "classes": {
+    "entry": "SOURCE_FACT",
+    "ownLifters": "SOURCE_INTERPRETATION",
+    "Q4": "OWNER_RULING (2026-10-16)",
+    "Q4a": null,
+    "liftLists": "IMPLEMENTATION (p4b-puzhu06-v4.json liftLists)"
+   }
+  },
+  "小耗": {
+   "entry": "忌修倉庫開市立劵交易納財開倉庫出貨財與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌",
+   "jiHeadingsInPuzhu06Scope": [
+    "開市",
+    "立券交易",
+    "納財",
+    "開倉庫出貨財"
+   ],
+   "ownLifters": {
+    "triggers": [
+     "天德",
+     "月德",
+     "天德合",
+     "月德合",
+     "天願"
+    ],
+    "nonTrigger": [],
+    "note": "own exception 「子午卯酉月值刼煞雖與德合併猶忌」 (猶忌 survives its own lifters)"
+   },
+   "genericTriggersOutsideOwn": [
+    "天赦",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "defer": null,
+   "liftExclusionsV4": [],
+   "currentProduction": "QL: lift on any trigger not in liftExclusionsV4 (Q4 yes)",
+   "classes": {
+    "entry": "SOURCE_FACT",
+    "ownLifters": "SOURCE_INTERPRETATION",
+    "Q4": "OWNER_RULING (2026-10-16)",
+    "Q4a": null,
+    "liftLists": "IMPLEMENTATION (p4b-puzhu06-v4.json liftLists)"
+   }
+  },
+  "五墓": {
+   "entry": "忌冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宮室修宮室繕城郭興造動土豎柱上梁開市立劵交易修置産室栽種牧養納畜破土安葬啟攢　　{{SK anchor|五月十一月與月德併則不忌}}　　按五墓乃五行旺干臨於墓庫故所忌如此與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也",
+   "jiHeadingsInPuzhu06Scope": [
+    "安牀",
+    "開市",
+    "立券交易"
+   ],
+   "ownLifters": {
+    "triggers": [
+     "月德"
+    ],
+    "nonTrigger": [],
+    "note": "「五月十一月與月德併」: 月德 meets the 五墓 day only in 午/子 months (checked below); Q4a 「不取德合者」 excludes 天德合/月德合"
+   },
+   "genericTriggersOutsideOwn": [
+    "天德",
+    "天德合",
+    "月德合",
+    "天赦",
+    "天願",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "defer": null,
+   "liftExclusionsV4": [
+    "天德合",
+    "月德合"
+   ],
+   "currentProduction": "QL: lift on any trigger not in liftExclusionsV4 (Q4 yes, Q4a block 天德合/月德合)",
+   "classes": {
+    "entry": "SOURCE_FACT",
+    "ownLifters": "SOURCE_INTERPRETATION",
+    "Q4": "OWNER_RULING (2026-10-16)",
+    "Q4a": "OWNER_RULING (2026-10-16) on SOURCE_FACT 「不取德合者不同行也」",
+    "liftLists": "IMPLEMENTATION (p4b-puzhu06-v4.json liftLists)"
+   }
+  }
+ },
+ "q4a": {
+  "says": "五墓 「不取德合者不同行也」: 五墓's own lift needs 月德 itself; 德合 does not stand in",
+  "why": "without it, puzhu:06's 天德合/月德合 triggers would lift 五墓 on days its own entry refuses",
+  "headings": [
+   "安牀",
+   "開市",
+   "立券交易"
+  ],
+  "excludedTriggers": [
+   "天德合",
+   "月德合"
+  ],
+  "class": "OWNER_RULING (Q4a = block, 2026-10-16) applying a SOURCE_FACT clause",
+  "f1Validates": false,
+  "witnesses": "06067693-n95 巳-丙戌 (天德合): both models keep; consistent with Q4a, non-discriminating",
+  "observableQ4Difference": "none: over 720 contexts generic and narrow agree on every 五墓 row (non-德合 triggers only meet 五墓 alongside a keep-class source)"
+ },
+ "cleanCriteria": [
+  "target god active (on the page, no own lifter, not deferred)",
+  "a generic puzhu:06 trigger present",
+  "no own lifter of that god present (incl. non-trigger 六合 for 五虛)",
+  "no other 忌 operand on the heading (卷十一 list ∩ page operands, plus graded/又為 sources the composer reports)",
+  "heading not made uninterpretable (day rule, protected row)",
+  "page authenticated (stored hash = prior record hash, month from officer = month block)",
+  "heading maps canonically (劵/券 and glyph variants only)",
+  "the two models predict different final states for the context-heading"
+ ],
+ "independentYi": "kept, not contamination: recorded per cell as otherYi",
+ "models": {
+  "generic": "production v4 composer (resolveP4Puzhu06Day)",
+  "narrow": "same composer, liftExclusions[god] = puzhu:06 triggers outside the god's own lifters",
+  "dump": "docs/audits/sources/p4-vol10/q4-rest-stage1/models.json",
+  "harness": "shared/lunar/p4Q4RestStage1Models.test.ts",
+  "antiFitting": "predictions come mechanically from the shipped composer plus own-lifter sets read from the 卷十 text; the exclusion sets were not tuned to any page. models.json was dumped before the printed states were encoded, but n126 had already been read",
+  "byConstruction": "outside 九空 defer months, no puzhu:06 row carries a god together with one of its own lifters (P4-C applied the own list first): every QL row discriminates"
+ },
+ "inventory": {
+  "recordFiles": [
+   "docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/yuede-check.json",
+   "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/evidence.json",
+   "docs/audits/sources/p4-vol10/g2-n117-stage1/evidence.json",
+   "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/witness.json",
+   "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/witness.json",
+   "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+   "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+  ],
+  "storedPagesWithGodLists": 69,
+  "candidates": 27,
+  "stage2Count": 27,
+  "reconciled": "same 27 pages; a first pass missed 4 whose prior records store god lists as one space-separated string (n105, n117, 06067694-n93, 06067697-n75)"
+ },
+ "candidates": [
+  {
+   "witness": "06067692-n126",
+   "context": "卯-丁巳",
+   "month": "卯",
+   "pillar": "丁巳",
+   "officer": "滿",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067692.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067692-n126.jpg",
+   "sha256": "df862750b772adf9c08ae7fe248a38b310a9ffd3b3ddc1f0a16686b3b6da6a1e",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "卯",
+    "header": "丁巳沙中土專滿日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五虛",
+    "八風",
+    "四相",
+    "土符",
+    "大煞",
+    "天后",
+    "天巫",
+    "往亡",
+    "月恩",
+    "朱雀",
+    "相日",
+    "福德",
+    "聖心",
+    "重日",
+    "驛馬"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "月恩",
+    "四相"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀祈福求嗣會親友結婚姻納采問名解除裁衣豎柱上梁經絡開市立券交易納財牧養",
+   "jiRaw": "上冊受封上表章出行上官赴任臨政親民嫁娶進人口移徙剃頭求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣牆平治道塗破屋壞垣捕捉畋獵取魚乘船渡水栽種破土安葬啟攢",
+   "yiNormalized": "祭祀祈福求嗣會親友結婚姻納采問名解除裁衣豎柱上梁經絡開市立券交易納財牧養",
+   "jiNormalized": "上冊受封上表章出行上官赴任臨政親民嫁娶進人口移徙剃頭求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣牆平治道塗破屋壞垣捕捉畋獵取魚乘船渡水栽種破土安葬啟攢"
+  },
+  {
+   "witness": "06067692-n58",
+   "context": "寅-丙辰",
+   "month": "寅",
+   "pillar": "丙辰",
+   "officer": "滿",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067692.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067692-n58.jpg",
+   "sha256": "d022daf537bb2c95ccf2d3ccf2bd7e21374ef60be2ea2178066be42087baf07c",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "寅",
+    "header": "丙辰沙中土寶滿日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "九坎",
+    "九焦",
+    "九空",
+    "六儀",
+    "厭對",
+    "四相",
+    "天巫",
+    "守日",
+    "招搖",
+    "月德",
+    "月恩",
+    "福德",
+    "金匱",
+    "金堂"
+   ],
+   "activeGods": [
+    "九空"
+   ],
+   "q4Triggers": [
+    "月德",
+    "月恩",
+    "四相"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除求醫療病裁衣修造動土豎柱上梁修倉庫經絡開市立券交易納財開倉庫出貨財牧養納畜安葬",
+   "jiRaw": "鼓鑄補垣塞穴畋獵取魚乘船渡水栽種",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除求醫療病裁衣修造動土豎柱上梁修倉庫經絡開市立券交易納財開倉庫出貨財牧養納畜安葬",
+   "jiNormalized": "鼓鑄補垣塞穴畋獵取魚乘船渡水栽種"
+  },
+  {
+   "witness": "06067692-n59",
+   "context": "寅-丁巳",
+   "month": "寅",
+   "pillar": "丁巳",
+   "officer": "平",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067692.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067692-n59.jpg",
+   "sha256": "b36a3a85fc20800fa7a230b708a7a2589cd2c54cb4fcfeb0c242b2b1a046a73f",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "寅",
+    "header": "丁巳沙中土專平日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五虛",
+    "八風",
+    "四相",
+    "天德",
+    "天罡",
+    "寶光",
+    "月刑",
+    "月害",
+    "死神",
+    "相日",
+    "遊禍",
+    "重日"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德",
+    "四相"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀平治道塗",
+   "jiRaw": "祈福求嗣出行解除剃頭整手足甲求醫療病畋獵取魚",
+   "yiNormalized": "祭祀平治道塗",
+   "jiNormalized": "祈福求嗣出行解除剃頭整手足甲求醫療病畋獵取魚"
+  },
+  {
+   "witness": "06067692-n93",
+   "context": "卯-甲申",
+   "month": "卯",
+   "pillar": "甲申",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067692.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067692-n93.jpg",
+   "sha256": "8a965123cc60f2554790316bad5813076c06f6d182b1fbcdc8b17c29022adfad",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "卯",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五離",
+    "劫煞",
+    "天馬",
+    "小耗",
+    "月德",
+    "白虎",
+    "要安",
+    "解神",
+    "除神",
+    "鳴吠"
+   ],
+   "activeGods": [
+    "小耗"
+   ],
+   "q4Triggers": [
+    "月德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀沐浴掃舍宇捕捉",
+   "jiRaw": "安牀求醫療病修倉庫開市立券交易納財開倉庫出貨財畋獵取魚",
+   "yiNormalized": "祭祀沐浴掃舍宇捕捉",
+   "jiNormalized": "安牀求醫療病修倉庫開市立券交易納財開倉庫出貨財畋獵取魚"
+  },
+  {
+   "witness": "06067693-n105",
+   "context": "巳-丙申",
+   "month": "巳",
+   "pillar": "丙申",
+   "officer": "平",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067693.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067693-n105.jpg",
+   "sha256": "857ac01a05c352308cd23fd65a8f70b1aefcaf5014a8cc53cb36b38ee86614d0",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/g2-n117-stage1/evidence.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "巳",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五富",
+    "五虛",
+    "五離",
+    "六合",
+    "天刑",
+    "天德合",
+    "天願",
+    "復日",
+    "月刑",
+    "死神",
+    "河魁",
+    "相日",
+    "續世",
+    "血忌",
+    "遊禍",
+    "除神",
+    "鳴吠"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德合",
+    "天願"
+   ],
+   "transcription": "PRIOR_SUMMARY",
+   "yiRaw": "開市立券交易納財開倉庫出貨財",
+   "jiRaw": "",
+   "yiNormalized": "開市立券交易納財開倉庫出貨財",
+   "jiNormalized": ""
+  },
+  {
+   "witness": "06067693-n125",
+   "context": "巳-丙辰",
+   "month": "巳",
+   "pillar": "丙辰",
+   "officer": "閉",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067693.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n125.jpg",
+   "sha256": "5c4e530235d4a7e4bf1ba5a1f549d3a75e8fe5d0232bd6946d41e74ac245269c",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "巳",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五虛",
+    "司命",
+    "天德合",
+    "復日",
+    "時德",
+    "月煞",
+    "月虛",
+    "福生",
+    "血支",
+    "陽德"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德合",
+    "時德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀",
+   "jiRaw": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病療目針刺裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "yiNormalized": "祭祀",
+   "jiNormalized": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病療目針刺裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢"
+  },
+  {
+   "witness": "06067693-n59",
+   "context": "辰-丁巳",
+   "month": "辰",
+   "pillar": "丁巳",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067693.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067693-n59.jpg",
+   "sha256": "dece41bf6e89c4960ffa9fbaaeca7696a3fc7ada0226702e3dde47db22fc2783",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "辰",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五富",
+    "五虛",
+    "八風",
+    "劫煞",
+    "吉期",
+    "四相",
+    "天德合",
+    "明堂",
+    "月德合",
+    "相日",
+    "重日",
+    "金堂",
+    "陰德"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴整手足甲裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財掃舍宇栽種牧養納畜",
+   "jiRaw": "出行剃頭求醫療病畋獵取魚",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴整手足甲裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財掃舍宇栽種牧養納畜",
+   "jiNormalized": "出行剃頭求醫療病畋獵取魚"
+  },
+  {
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "month": "巳",
+   "pillar": "丙戌",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067693.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n95.jpg",
+   "sha256": "f65cd92dbe70801cd027bc3cd26a0bedf26c509c9fb864354b2d098ca923b53e",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "巳",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五墓",
+    "天德合",
+    "天賊",
+    "小耗",
+    "復日",
+    "玉宇",
+    "解神",
+    "金匱"
+   ],
+   "activeGods": [
+    "小耗",
+    "五墓"
+   ],
+   "q4Triggers": [
+    "天德合"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友沐浴剃頭整手足甲裁衣捕捉",
+   "jiRaw": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除求醫療病修造動土豎柱上梁修倉庫開市立券交易開倉庫出貨財修置產室畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友沐浴剃頭整手足甲裁衣捕捉",
+   "jiNormalized": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除求醫療病修造動土豎柱上梁修倉庫開市立券交易開倉庫出貨財修置產室畋獵取魚栽種牧養納畜破土安葬啟攢"
+  },
+  {
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "month": "未",
+   "pillar": "戊申",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/g2-n117-stage1/evidence.json",
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+    "docs/audits/sources/p4-vol10/puzhu17-bujiang-v1/witness.json",
+    "docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/witness.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "未",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五虛",
+    "五離",
+    "劫煞",
+    "司命",
+    "吉期",
+    "四相",
+    "天賊",
+    "益後",
+    "相日",
+    "除神",
+    "陽德"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "四相"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀沐浴掃舍宇",
+   "jiRaw": "上冊受封上表章會親友出行結婚姻納采問名安牀求醫療病修倉庫立券交易納財開倉庫出貨財破土安葬啟攢",
+   "yiNormalized": "祭祀沐浴掃舍宇",
+   "jiNormalized": "上冊受封上表章會親友出行結婚姻納采問名安牀求醫療病修倉庫立券交易納財開倉庫出貨財破土安葬啟攢"
+  },
+  {
+   "witness": "06067694-n28",
+   "context": "午-丙戌",
+   "month": "午",
+   "pillar": "丙戌",
+   "officer": "定",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067694-n28.jpg",
+   "sha256": "141cbbb06da366e1ed19e45bd0ca5290f086df8ca87fa8d7fc53e2e912e22ad1",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "午",
+    "header": "丙戌屋上土寶定日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "三合",
+    "不將",
+    "五墓",
+    "天倉",
+    "天刑",
+    "時陰",
+    "普護",
+    "月德",
+    "死氣",
+    "臨日"
+   ],
+   "activeGods": [
+    "五墓"
+   ],
+   "q4Triggers": [
+    "月德"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除裁衣修造動土豎柱上梁修倉庫經絡醞釀立券交易納財安碓磑栽種牧養納畜安葬",
+   "jiRaw": "求醫療病畋獵取魚",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除裁衣修造動土豎柱上梁修倉庫經絡醞釀立券交易納財安碓磑栽種牧養納畜安葬",
+   "jiNormalized": "求醫療病畋獵取魚"
+  },
+  {
+   "witness": "06067694-n53",
+   "context": "午-辛亥",
+   "month": "午",
+   "pillar": "辛亥",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067694-n53.jpg",
+   "sha256": "c0f976f455e3232cdf07340b4ae0b61dd391db7f72e5dbcbecefb30bb016bf43",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "午",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五富",
+    "劫煞",
+    "天恩",
+    "小耗",
+    "月德合",
+    "朱雀",
+    "福生",
+    "重日"
+   ],
+   "activeGods": [
+    "小耗"
+   ],
+   "q4Triggers": [
+    "月德合"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀沐浴捕捉",
+   "jiRaw": "嫁娶求醫療病修倉庫醞釀開市立券交易納財開倉庫出貨財畋獵取魚",
+   "yiNormalized": "祭祀沐浴捕捉",
+   "jiNormalized": "嫁娶求醫療病修倉庫醞釀開市立券交易納財開倉庫出貨財畋獵取魚"
+  },
+  {
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "month": "未",
+   "pillar": "甲子",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067694-n73.jpg",
+   "sha256": "d681b92712267094b3f44458f1c825b6055b9d002523c99ebcc1b7daac259b27",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "未",
+    "header": "甲子海中金義執日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "九坎",
+    "九焦",
+    "五虛",
+    "咸池",
+    "大敗",
+    "大時",
+    "天刑",
+    "天德",
+    "天恩",
+    "小耗",
+    "月害",
+    "月德",
+    "歸忌",
+    "解神",
+    "金堂"
+   ],
+   "activeGods": [
+    "五虛",
+    "小耗"
+   ],
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁修倉庫捕捉牧養納畜安葬",
+   "jiRaw": "移徙遠迴求醫療病鼓鑄開倉庫出貨財補垣塞穴畋獵取魚乘船渡水栽種",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁修倉庫捕捉牧養納畜安葬",
+   "jiNormalized": "移徙遠迴求醫療病鼓鑄開倉庫出貨財補垣塞穴畋獵取魚乘船渡水栽種"
+  },
+  {
+   "witness": "06067694-n93",
+   "context": "未-甲申",
+   "month": "未",
+   "pillar": "甲申",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067694-n93.jpg",
+   "sha256": "663aecbfcb6dc36d996ec7011caaff7595ce04e12e283f69bc2226b05f9b02d8",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/g2-n117-stage1/evidence.json",
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "未",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五虛",
+    "五離",
+    "八風",
+    "劫煞",
+    "司命",
+    "吉期",
+    "天德",
+    "天賊",
+    "月德",
+    "益後",
+    "相日",
+    "除神",
+    "陽德",
+    "鳴吠"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁掃舍宇栽種牧養納畜破土安葬",
+   "jiRaw": "出行安牀求醫療病修倉庫開倉庫出貨財畋獵取魚",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁掃舍宇栽種牧養納畜破土安葬",
+   "jiNormalized": "出行安牀求醫療病修倉庫開倉庫出貨財畋獵取魚"
+  },
+  {
+   "witness": "06067694-n98",
+   "context": "未-己丑",
+   "month": "未",
+   "pillar": "己丑",
+   "officer": "破",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067694.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n98.jpg",
+   "sha256": "c7af0209c44dc6825f20a5e720c8d45fb85b84d263a48a03ce5e62ae66fd28c9",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "未",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "九空",
+    "四擊",
+    "四相",
+    "大耗",
+    "天德合",
+    "復日",
+    "月刑",
+    "月德合",
+    "月破",
+    "朱雀"
+   ],
+   "activeGods": [
+    "九空"
+   ],
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀",
+   "jiRaw": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣伐木畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "yiNormalized": "祭祀",
+   "jiNormalized": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣伐木畋獵取魚栽種牧養納畜破土安葬啟攢"
+  },
+  {
+   "witness": "06067695-n29",
+   "context": "申-丁亥",
+   "month": "申",
+   "pillar": "丁亥",
+   "officer": "平",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067695.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067695-n29.jpg",
+   "sha256": "4cdd3cf22bfd5295566dfe303b96d7a01355e7f09596114c8f06eb04db57da5d",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "申",
+    "header": "丁亥屋上土伐平日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五虛",
+    "八風",
+    "勾陳",
+    "地囊",
+    "天罡",
+    "普護",
+    "月害",
+    "月德合",
+    "死神",
+    "相日",
+    "遊禍",
+    "重日"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "月德合"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名移徙沐浴裁衣豎柱上梁牧養納畜",
+   "jiRaw": "祈福求嗣嫁娶解除剃頭求醫療病築隄防修造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣牆平治道塗破屋壞垣畋獵取魚栽種破土",
+   "yiNormalized": "祭祀上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名移徙沐浴裁衣豎柱上梁牧養納畜",
+   "jiNormalized": "祈福求嗣嫁娶解除剃頭求醫療病築隄防修造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣牆平治道塗破屋壞垣畋獵取魚栽種破土"
+  },
+  {
+   "witness": "06067695-n99",
+   "context": "酉-庚寅",
+   "month": "酉",
+   "pillar": "庚寅",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067695.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067695-n99.jpg",
+   "sha256": "143f9b29a172cf4128a15731b069d51c110375f9e174c05bbdbc820550f248da",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "酉",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五合",
+    "劫煞",
+    "小耗",
+    "月德",
+    "歸忌",
+    "解神",
+    "青龍",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "小耗"
+   ],
+   "q4Triggers": [
+    "月德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "沐浴捕捉",
+   "jiRaw": "祭祀移徙遠迴求醫療病修倉庫經絡開市立券交易納財開倉庫出貨財畋獵取魚",
+   "yiNormalized": "沐浴捕捉",
+   "jiNormalized": "祭祀移徙遠迴求醫療病修倉庫經絡開市立券交易納財開倉庫出貨財畋獵取魚"
+  },
+  {
+   "witness": "06067696-n111",
+   "context": "亥-壬寅",
+   "month": "亥",
+   "pillar": "壬寅",
+   "officer": "平",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067696.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067696-n111.jpg",
+   "sha256": "a9b78765e9f87df43b4f4099c4853a7acb606a32ac0c516f8c23474fb19342a9",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "亥",
+    "header": "壬寅金箔金寶平日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五合",
+    "五富",
+    "五虛",
+    "六合",
+    "天牢",
+    "天願",
+    "復日",
+    "時德",
+    "死神",
+    "河魁",
+    "相日",
+    "遊禍",
+    "金堂",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天願",
+    "時德"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財修飾垣牆平治道塗栽種牧養納畜",
+   "jiRaw": "祭祀祈福求嗣解除求醫療病開渠",
+   "yiNormalized": "上冊受封上表章襲爵受封會親友出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙裁衣修造動土豎柱上梁修倉庫經絡醞釀開市立券交易納財開倉庫出貨財修飾垣牆平治道塗栽種牧養納畜",
+   "jiNormalized": "祭祀祈福求嗣解除求醫療病開渠"
+  },
+  {
+   "witness": "06067696-n53",
+   "context": "戌-辛亥",
+   "month": "戌",
+   "pillar": "辛亥",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067696.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067696-n53.jpg",
+   "sha256": "e42bd171cc7079b2d640e783e9b619d11e9105dbaabb92e2968010d740e6bebf",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "戌",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "九尾?",
+    "五富",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "四窮",
+    "土符",
+    "天德合",
+    "天恩",
+    "敬安",
+    "月德合",
+    "玉堂",
+    "相日",
+    "重日"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德合",
+    "月德合"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民移徙解除沐浴剃頭整手足甲裁衣豎柱上梁經絡掃舍宇牧養納畜",
+   "jiRaw": "結婚姻納采問名嫁娶進人口求醫療病築隄防修造動土修倉庫醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣畋獵取魚栽種破土安葬",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友出行上官赴任臨政親民移徙解除沐浴剃頭整手足甲裁衣豎柱上梁經絡掃舍宇牧養納畜",
+   "jiNormalized": "結婚姻納采問名嫁娶進人口求醫療病築隄防修造動土修倉庫醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣畋獵取魚栽種破土安葬"
+  },
+  {
+   "witness": "06067696-n65",
+   "context": "戌-癸亥",
+   "month": "戌",
+   "pillar": "癸亥",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067696.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n65.jpg",
+   "sha256": "90f0124dfe3cf288e6270dd599bae2c173093cb408d49d1cd87154563d3cb8fe",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "戌",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五富",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "四相",
+    "土符",
+    "敬安",
+    "玉堂",
+    "相日",
+    "重日"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "四相"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀沐浴掃舍宇",
+   "jiRaw": "上冊受封上表章嫁娶求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "yiNormalized": "祭祀沐浴掃舍宇",
+   "jiNormalized": "上冊受封上表章嫁娶求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢"
+  },
+  {
+   "witness": "06067696-n98",
+   "context": "亥-己丑",
+   "month": "亥",
+   "pillar": "己丑",
+   "officer": "滿",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067696.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n98.jpg",
+   "sha256": "70260734ed5fe7d2a5be246d6b0193d6d9e7439594d6dca44e6ee3a08e4a3bd8",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "亥",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "九空",
+    "地火",
+    "大煞",
+    "天巫",
+    "孤辰?",
+    "守日",
+    "月厭",
+    "月德合",
+    "歸忌",
+    "玉堂",
+    "玉宇",
+    "福德"
+   ],
+   "activeGods": [
+    "九空"
+   ],
+   "q4Triggers": [
+    "月德合"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "祭祀",
+   "jiRaw": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶移徙遠迴求醫療病伐木畋獵取魚栽種",
+   "yiNormalized": "祭祀",
+   "jiNormalized": "冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶移徙遠迴求醫療病伐木畋獵取魚栽種"
+  },
+  {
+   "witness": "06067697-n111",
+   "context": "丑-壬寅",
+   "month": "丑",
+   "pillar": "壬寅",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n111.jpg",
+   "sha256": "54a15c51a43d551753a4d87c945cafec8edc72a83b10cbe764a173c47ee78833",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "丑",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五合",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "天賊",
+    "時德",
+    "玉宇",
+    "相日",
+    "金匱",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "時德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "沐浴掃舍宇",
+   "jiRaw": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財開渠",
+   "yiNormalized": "沐浴掃舍宇",
+   "jiNormalized": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財開渠"
+  },
+  {
+   "witness": "06067697-n123",
+   "context": "丑-甲寅",
+   "month": "丑",
+   "pillar": "甲寅",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n123.jpg",
+   "sha256": "11d6479bd0749437cb2ef7ebf55dda757fdb29e2df164bb3ee52bf865697fabd",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "丑",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五合",
+    "五虛",
+    "八專",
+    "八風",
+    "劫煞",
+    "吉期",
+    "四相",
+    "天賊",
+    "時德",
+    "月空",
+    "玉宇",
+    "相日",
+    "金匱",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "四相",
+    "時德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "沐浴掃舍宇",
+   "jiRaw": "祭祀出行結婚姻納采問名嫁娶求醫療病修倉庫開倉庫出貨財取魚乘船渡水",
+   "yiNormalized": "沐浴掃舍宇",
+   "jiNormalized": "祭祀出行結婚姻納采問名嫁娶求醫療病修倉庫開倉庫出貨財取魚乘船渡水"
+  },
+  {
+   "witness": "06067697-n34",
+   "context": "子-壬辰",
+   "month": "子",
+   "pillar": "壬辰",
+   "officer": "定",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067697-n34.jpg",
+   "sha256": "98e4067f4d435685aa8e49aa6c2e977167771874b5a975258df6437b39960d5c",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+    "docs/audits/sources/p4-vol10/yuebiao-witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "子",
+    "header": "壬辰長流水伐定日",
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "三合",
+    "不將",
+    "五墓",
+    "天倉",
+    "天牢",
+    "時陰",
+    "月德",
+    "死氣",
+    "聖心",
+    "臨日"
+   ],
+   "activeGods": [
+    "五墓"
+   ],
+   "q4Triggers": [
+    "月德"
+   ],
+   "transcription": "STAGE1_READING",
+   "yiRaw": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除裁衣修造動土豎柱上梁修倉庫經絡醞釀立券交易納財安碓磑栽種牧養納畜安葬",
+   "jiRaw": "求醫療病開渠畋獵取魚",
+   "yiNormalized": "祭祀祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙解除裁衣修造動土豎柱上梁修倉庫經絡醞釀立券交易納財安碓磑栽種牧養納畜安葬",
+   "jiNormalized": "求醫療病開渠畋獵取魚"
+  },
+  {
+   "witness": "06067697-n59",
+   "context": "子-丁巳",
+   "month": "子",
+   "pillar": "丁巳",
+   "officer": "執",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067697-n59.jpg",
+   "sha256": "05ac603ad2fd216760ecc516604e337410253adad4a177eedcb28683baa36926",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "子",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五富",
+    "元武",
+    "劫煞",
+    "四廢",
+    "小耗",
+    "月德合",
+    "益後",
+    "重日"
+   ],
+   "activeGods": [
+    "小耗"
+   ],
+   "q4Triggers": [
+    "月德合"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "祭祀捕捉",
+   "jiRaw": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢",
+   "yiNormalized": "祭祀捕捉",
+   "jiNormalized": "祈福求嗣上冊受封上表章襲爵受封會親友冠帶出行上官赴任臨政親民結婚姻納采問名嫁娶進人口移徙安牀解除剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣畋獵取魚栽種牧養納畜破土安葬啟攢"
+  },
+  {
+   "witness": "06067697-n75",
+   "context": "丑-丙寅",
+   "month": "丑",
+   "pillar": "丙寅",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n75.jpg",
+   "sha256": "a86985f79083e16e7548be80d553e75e213410af89426576528cf0198b45d809",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/chou-bingyin-yuede-v1/yuede-check.json",
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "丑",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五合",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "天恩",
+    "天賊",
+    "月德",
+    "玉宇",
+    "相日",
+    "金匱",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "月德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "沐浴掃舍宇",
+   "jiRaw": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財",
+   "yiNormalized": "沐浴掃舍宇",
+   "jiNormalized": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財"
+  },
+  {
+   "witness": "06067697-n87",
+   "context": "丑-戊寅",
+   "month": "丑",
+   "pillar": "戊寅",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067697-n87.jpg",
+   "sha256": "30a9eb3e28218b5e53c100d351f768619b6debb9d680bd19a25aa9cde1f245f8",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "丑",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "五合",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "天賊",
+    "時德",
+    "玉堂",
+    "相日",
+    "金匱"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "時德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "yiRaw": "沐浴掃舍宇",
+   "jiRaw": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財破土安葬啟攢",
+   "yiNormalized": "沐浴掃舍宇",
+   "jiNormalized": "祭祀上冊受封上表章出行求醫療病修倉庫開倉庫出貨財破土安葬啟攢"
+  },
+  {
+   "witness": "06067697-n99",
+   "context": "丑-庚寅",
+   "month": "丑",
+   "pillar": "庚寅",
+   "officer": "除",
+   "edition": "欽定協紀辨方書 四庫全書本 月表 (archive.org 06067697.cn)",
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067697-n99.jpg",
+   "sha256": "1e292952c7e22ed14244ee2489b96dcf262b98f5883c00fbdad781280e764077",
+   "priorRecords": [
+    "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json"
+   ],
+   "authentication": {
+    "hashMatchesPriorRecords": true,
+    "monthFromOfficer": "丑",
+    "header": null,
+    "status": "AUTHENTICATED"
+   },
+   "gods": [
+    "不將",
+    "五合",
+    "五虛",
+    "劫煞",
+    "吉期",
+    "天德",
+    "天賊",
+    "時德",
+    "月德",
+    "玉宇",
+    "相日",
+    "金匱",
+    "鳴吠對"
+   ],
+   "activeGods": [
+    "五虛"
+   ],
+   "q4Triggers": [
+    "天德",
+    "月德",
+    "時德"
+   ],
+   "transcription": "PRIOR_RECORD:docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "yiRaw": "上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁立券交易納財掃舍宇栽種牧養納畜破土安葬啟攢",
+   "jiRaw": "祭祀出行求醫療病修倉庫經絡開倉庫出貨財畋獵取魚",
+   "yiNormalized": "上冊受封上表章襲爵受封會親友上官赴任臨政親民結婚姻納采問名嫁娶移徙解除沐浴剃頭整手足甲裁衣修造動土豎柱上梁立券交易納財掃舍宇栽種牧養納畜破土安葬啟攢",
+   "jiNormalized": "祭祀出行求醫療病修倉庫經絡開倉庫出貨財畋獵取魚"
+  }
+ ],
+ "aggregates": {
+  "九空": "INSUFFICIENT_EVIDENCE",
+  "五虛": "UNRESOLVED_CONFLICT",
+  "小耗": "INSUFFICIENT_EVIDENCE",
+  "五墓": "INSUFFICIENT_EVIDENCE"
+ },
+ "globalQ4Rest": "NOT_RULED",
+ "findings": {
+  "n126": "卯-丁巳 五虛 × 開倉庫出貨財 is the only clean witness. Printed only_ji. Generic predicts only_yi (wrong on 宜 and 忌); narrow predicts both_present (right on 忌, wrong on 宜). No model reproduces the page: classification C. On the 忌 axis alone the page supports GOD-NARROW.",
+  "yiAxis": "開倉庫出貨財 宜 operands 月恩+四相+滿日 are present and the 宜 line omits the heading: with 五虛's 忌 surviving, the page reads 從忌不從宜, not both_present. F1 R2 rule 3 (owner) states the opposite for 五離 × 立券交易 (independent 宜 + surviving 忌 = both_present), which governs the 4 extrapolated rows. Different god and heading, so no contradiction is established; open debt, not resolved here.",
+  "stage2Testable": "Stage 2 named 丑-戊寅, 丑-壬寅 and 戌-癸亥 as testable for 五虛: wrong. 劫煞 (and 天賊 on 丑 pages) is a second 開倉庫出貨財 忌 operand on all of them; 丑-寅 rows are not even touched by puzhu:06",
+  "wumu": "no observable Q4 difference for 五墓 anywhere in 720 contexts",
+  "jiukongXiaohaoKaicang": "九空 × 開倉庫出貨財 discriminating contexts all carry 五虛 too (joint only); 小耗 × 開倉庫出貨財 has only 戌-癸卯 with 大時 (contaminated)"
+ },
+ "f1": {
+  "ruling": "R2_APPROVED",
+  "rule3": "An independent 宜 on 立券交易 does not suppress the surviving 五離 忌 (both_present).",
+  "scope": "五離 × 立券交易 only; not extended here",
+  "extrapolatedRows": "SEMANTIC_CONSEQUENCE; not used as Q4-REST evidence"
+ },
+ "g2W1": "CLOSED",
+ "productionChanged": false
+}

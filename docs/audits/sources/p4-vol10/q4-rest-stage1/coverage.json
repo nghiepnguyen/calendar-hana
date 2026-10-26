@@ -1,0 +1,164 @@
+{
+ "qlLiftRowsDistinct": 56,
+ "byGod": {
+  "九空": {
+   "qlRows": 37,
+   "headings": [
+    "立券交易",
+    "納財",
+    "開倉庫出貨財",
+    "開市"
+   ],
+   "witnessCovered": 0,
+   "cleanCovered": 0,
+   "uncovered": 37
+  },
+  "五虛": {
+   "qlRows": 17,
+   "headings": [
+    "開倉庫出貨財"
+   ],
+   "witnessCovered": 3,
+   "cleanCovered": 0,
+   "uncovered": 17
+  },
+  "小耗": {
+   "qlRows": 9,
+   "headings": [
+    "立券交易",
+    "納財",
+    "開市"
+   ],
+   "witnessCovered": 0,
+   "cleanCovered": 0,
+   "uncovered": 9
+  },
+  "五墓": {
+   "qlRows": 0,
+   "headings": [],
+   "witnessCovered": 0,
+   "cleanCovered": 0,
+   "uncovered": 0
+  }
+ },
+ "byGodHeading": {
+  "九空×開市": {
+   "qlRows": 10,
+   "contexts": {
+    "卯-丁丑": 1,
+    "午-戊辰": 3,
+    "酉-癸未": 1,
+    "子-甲戌": 3,
+    "午-庚辰": 2
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "九空×立券交易": {
+   "qlRows": 10,
+   "contexts": {
+    "卯-丁丑": 1,
+    "午-戊辰": 3,
+    "酉-癸未": 1,
+    "子-甲戌": 3,
+    "午-庚辰": 2
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "九空×納財": {
+   "qlRows": 10,
+   "contexts": {
+    "卯-丁丑": 1,
+    "午-戊辰": 3,
+    "酉-癸未": 1,
+    "子-甲戌": 3,
+    "午-庚辰": 2
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "九空×開倉庫出貨財": {
+   "qlRows": 7,
+   "contexts": {
+    "卯-丁丑": 1,
+    "午-戊辰": 3,
+    "酉-癸未": 1,
+    "午-庚辰": 2
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "五虛×開倉庫出貨財": {
+   "qlRows": 17,
+   "contexts": {
+    "卯-丁丑": 1,
+    "午-戊申": 1,
+    "午-戊辰": 3,
+    "酉-癸未": 1,
+    "戌-癸亥": 3,
+    "子-丙寅": 3,
+    "子-戊寅": 3,
+    "午-庚辰": 2
+   },
+   "witnessCovered": 3,
+   "cleanCovered": 0
+  },
+  "小耗×開市": {
+   "qlRows": 3,
+   "contexts": {
+    "巳-戊戌": 3
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "小耗×立券交易": {
+   "qlRows": 3,
+   "contexts": {
+    "巳-戊戌": 3
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "小耗×納財": {
+   "qlRows": 3,
+   "contexts": {
+    "巳-戊戌": 3
+   },
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "小耗×開倉庫出貨財": {
+   "qlRows": 0,
+   "contexts": {},
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "五墓×安牀": {
+   "qlRows": 0,
+   "contexts": {},
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "五墓×開市": {
+   "qlRows": 0,
+   "contexts": {},
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  },
+  "五墓×立券交易": {
+   "qlRows": 0,
+   "contexts": {},
+   "witnessCovered": 0,
+   "cleanCovered": 0
+  }
+ },
+ "sharedRows": 7,
+ "godAttributions": 63,
+ "stage2Figure": {
+  "value": 56,
+  "how": "hard-coded 68 - 12 in f1-wuli-lijuan-stage2/build_evidence.py",
+  "recomputed": 56,
+  "reconciliation": "reproduced as distinct lift rows of Golden v4 2025–2027; per-god attributions sum higher because some rows carry 九空 and 五虛 together"
+ }
+}

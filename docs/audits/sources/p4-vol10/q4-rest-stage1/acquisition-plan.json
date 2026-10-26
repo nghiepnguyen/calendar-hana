@@ -1,0 +1,1139 @@
+{
+ "version": "q4-rest-stage1-v1",
+ "status": "HYPOTHESIS until authenticated",
+ "targets": [
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "午-壬辰",
+   "month": "午",
+   "pillar": "壬辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "午-庚辰",
+   "month": "午",
+   "pillar": "庚辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "午-戊辰",
+   "month": "午",
+   "pillar": "戊辰",
+   "requiredTrigger": "月恩+四相+時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "午-甲辰",
+   "month": "午",
+   "pillar": "甲辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n46",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "卯-丁丑",
+   "month": "卯",
+   "pillar": "丁丑",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067692",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "子-甲戌",
+   "month": "子",
+   "pillar": "甲戌",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n16",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "context": "酉-癸未",
+   "month": "酉",
+   "pillar": "癸未",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "午-壬辰",
+   "month": "午",
+   "pillar": "壬辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "午-庚辰",
+   "month": "午",
+   "pillar": "庚辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "午-戊辰",
+   "month": "午",
+   "pillar": "戊辰",
+   "requiredTrigger": "月恩+四相+時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "午-甲辰",
+   "month": "午",
+   "pillar": "甲辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n46",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "卯-丁丑",
+   "month": "卯",
+   "pillar": "丁丑",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067692",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "子-甲戌",
+   "month": "子",
+   "pillar": "甲戌",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n16",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "context": "酉-癸未",
+   "month": "酉",
+   "pillar": "癸未",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "午-壬辰",
+   "month": "午",
+   "pillar": "壬辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "午-庚辰",
+   "month": "午",
+   "pillar": "庚辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "午-戊辰",
+   "month": "午",
+   "pillar": "戊辰",
+   "requiredTrigger": "月恩+四相+時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "午-甲辰",
+   "month": "午",
+   "pillar": "甲辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n46",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "卯-丁丑",
+   "month": "卯",
+   "pillar": "丁丑",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067692",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "子-甲戌",
+   "month": "子",
+   "pillar": "甲戌",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n16",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "context": "酉-癸未",
+   "month": "酉",
+   "pillar": "癸未",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "context": "午-壬辰",
+   "month": "午",
+   "pillar": "壬辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [
+    "remaining:五虛"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "context": "午-庚辰",
+   "month": "午",
+   "pillar": "庚辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [
+    "remaining:五虛"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "context": "午-戊辰",
+   "month": "午",
+   "pillar": "戊辰",
+   "requiredTrigger": "月恩+四相+時德",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [
+    "remaining:五虛"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "context": "卯-丁丑",
+   "month": "卯",
+   "pillar": "丁丑",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [
+    "remaining:五虛"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067692",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "context": "酉-癸未",
+   "month": "酉",
+   "pillar": "癸未",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "competing": [
+    "remaining:五虛"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "午-壬辰",
+   "month": "午",
+   "pillar": "壬辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "remaining:九空"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "午-庚辰",
+   "month": "午",
+   "pillar": "庚辰",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "remaining:九空"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "午-戊申",
+   "month": "午",
+   "pillar": "戊申",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n50",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "午-戊辰",
+   "month": "午",
+   "pillar": "戊辰",
+   "requiredTrigger": "月恩+四相+時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "remaining:九空"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067694",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "卯-丁丑",
+   "month": "卯",
+   "pillar": "丁丑",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "remaining:九空"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067692",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "子-丙寅",
+   "month": "子",
+   "pillar": "丙寅",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n8",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "子-庚寅",
+   "month": "子",
+   "pillar": "庚寅",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n32",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "子-戊寅",
+   "month": "子",
+   "pillar": "戊寅",
+   "requiredTrigger": "時德",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067697",
+   "predictedLocator": {
+    "value": "06067697-n20",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "戌-癸亥",
+   "month": "戌",
+   "pillar": "癸亥",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "subject:刼煞"
+   ],
+   "usable": "CONTAMINATED_TARGET",
+   "predictGeneric": "neither_recorded",
+   "predictNarrow": "undetermined",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067696",
+   "predictedLocator": {
+    "value": "06067696-n65",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts neither_recorded, narrow undetermined: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "酉-癸亥",
+   "month": "酉",
+   "pillar": "癸亥",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n132",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "context": "酉-癸未",
+   "month": "酉",
+   "pillar": "癸未",
+   "requiredTrigger": "月恩+四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願",
+    "六合"
+   ],
+   "competing": [
+    "remaining:九空"
+   ],
+   "usable": "JOINT_ONLY",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067695",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "context": "巳-戊戌",
+   "month": "巳",
+   "pillar": "戊戌",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067693",
+   "predictedLocator": {
+    "value": "06067693-n107",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "context": "戌-癸卯",
+   "month": "戌",
+   "pillar": "癸卯",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [
+    "subject:大時"
+   ],
+   "usable": "CONTAMINATED_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067696",
+   "predictedLocator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "context": "巳-戊戌",
+   "month": "巳",
+   "pillar": "戊戌",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "not_recorded",
+   "predictNarrow": "only_ji",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067693",
+   "predictedLocator": {
+    "value": "06067693-n107",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts not_recorded, narrow only_ji: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "context": "戌-癸卯",
+   "month": "戌",
+   "pillar": "癸卯",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [
+    "subject:大時"
+   ],
+   "usable": "CONTAMINATED_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067696",
+   "predictedLocator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "context": "巳-戊戌",
+   "month": "巳",
+   "pillar": "戊戌",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [],
+   "usable": "CLEAN_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067693",
+   "predictedLocator": {
+    "value": "06067693-n107",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "context": "戌-癸卯",
+   "month": "戌",
+   "pillar": "癸卯",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [
+    "subject:大時"
+   ],
+   "usable": "CONTAMINATED_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067696",
+   "predictedLocator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "context": "戌-癸卯",
+   "month": "戌",
+   "pillar": "癸卯",
+   "requiredTrigger": "四相",
+   "mustExcludeOwnLifters": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "competing": [
+    "subject:大時"
+   ],
+   "usable": "CONTAMINATED_TARGET",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "preferredSource": "月表 (欽定協紀辨方書 四庫全書本), archive.org item 06067696",
+   "predictedLocator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "why": "generic predicts only_yi, narrow both_present: the 忌 line decides"
+  }
+ ]
+}
