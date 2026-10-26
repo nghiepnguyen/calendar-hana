@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
@@ -8,6 +8,9 @@ import { resolveP4OwnerRulesContext, resolveP4OwnerRulesDay, type P4OwnerDay } f
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { getP4MuCangSoil } from './p4YiOperands'
+// Frozen before Q4-REST Stage 3 (puzhu:06 authority v5): pinned to the v4 rollback (q4RestRollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // F1 Stage 3 (owner R2): the shipped owner-rules layer (puzhu:06 authority v4) against full Golden v3
 // (p4-full-golden-v3: the v2 composer under authority v4). The v2 suite (p4OwnerRules.test.ts) stays pinned

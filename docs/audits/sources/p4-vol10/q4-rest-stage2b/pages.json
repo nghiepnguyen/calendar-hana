@@ -1,0 +1,125 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "pages": [
+  {
+   "witness": "06067694-n50",
+   "context": "午-戊申",
+   "priority": "P0",
+   "archive": "06067694.cn",
+   "locator": "https://archive.org/download/06067694.cn/page/n50_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067694-n50.jpg",
+   "sha256": "3f099e36f18413b05838ec56cb29025789c252228a221e5e9851de5815f34a9e",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "戊申",
+    "officer": "滿",
+    "monthFromOfficer": "午",
+    "predictedLocator": "06067694-n50",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 50 = cycle 44 + 6",
+    "foliation": "[UNCERTAIN: 二十五]",
+    "status": "AUTHENTICATED"
+   }
+  },
+  {
+   "witness": "06067697-n8",
+   "context": "子-丙寅",
+   "priority": "P0",
+   "archive": "06067697.cn",
+   "locator": "https://archive.org/download/06067697.cn/page/n8_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067697-n8.jpg",
+   "sha256": "4504919b31c4a1633a939f66dbffe290dd7a02dcbb380eaa16e0f4c421fe1b1d",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "丙寅",
+    "officer": "滿",
+    "monthFromOfficer": "子",
+    "predictedLocator": "06067697-n8",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 8 = cycle 2 + 6",
+    "foliation": "四",
+    "status": "AUTHENTICATED"
+   }
+  },
+  {
+   "witness": "06067693-n107",
+   "context": "巳-戊戌",
+   "priority": "P0",
+   "archive": "06067693.cn",
+   "locator": "https://archive.org/download/06067693.cn/page/n107_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067693-n107.jpg",
+   "sha256": "87cf66ceddbcf2ebfe43c71e9ad467bcaa573607670d549bb17c02f38ddc87a8",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "戊戌",
+    "officer": "執",
+    "monthFromOfficer": "巳",
+    "predictedLocator": "06067693-n107",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 107 = cycle 34 + 73",
+    "foliation": "[UNCERTAIN: 三十]",
+    "status": "AUTHENTICATED"
+   }
+  },
+  {
+   "witness": "06067692-n86",
+   "context": "卯-丁丑",
+   "priority": "P1",
+   "archive": "06067692.cn",
+   "locator": "https://archive.org/download/06067692.cn/page/n86_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067692-n86.jpg",
+   "sha256": "6c57e127088c11c2d6757c3db3d98266a6f3966226984bbb612c61af191fccd9",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "丁丑",
+    "officer": "開",
+    "monthFromOfficer": "卯",
+    "predictedLocator": "06067692-n86",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 86 = cycle 13 + 73",
+    "foliation": "[NOT VISIBLE] (margin 卷二十一)",
+    "status": "AUTHENTICATED"
+   }
+  },
+  {
+   "witness": "06067697-n93",
+   "context": "丑-甲申",
+   "priority": "P1",
+   "archive": "06067697.cn",
+   "locator": "https://archive.org/download/06067697.cn/page/n93_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067697-n93.jpg",
+   "sha256": "f9995cbf344350d1d9f5578caac8a2fa4d57effa2c3a29a4dcb847d52a9ee645",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "甲申",
+    "officer": "危",
+    "monthFromOfficer": "丑",
+    "predictedLocator": "06067697-n93",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 93 = cycle 20 + 73",
+    "foliation": "十三",
+    "status": "AUTHENTICATED"
+   }
+  },
+  {
+   "witness": "06067694-n10",
+   "context": "午-戊辰",
+   "priority": "P1",
+   "archive": "06067694.cn",
+   "locator": "https://archive.org/download/06067694.cn/page/n10_w1200.jpg",
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage2b/pages/06067694-n10.jpg",
+   "sha256": "0ce9802b1f7f7bcf597da5581196fb6e567f42515f584642c18ba76640b75fb2",
+   "retrieval": "curl --fail, 2026-10-26; image unmodified",
+   "authentication": {
+    "headerPillar": "戊辰",
+    "officer": "開",
+    "monthFromOfficer": "午",
+    "predictedLocator": "06067694-n10",
+    "locatorConfirmed": true,
+    "leafCalibration": "leaf 10 = cycle 4 + 6",
+    "foliation": "五",
+    "status": "AUTHENTICATED"
+   }
+  }
+ ]
+}

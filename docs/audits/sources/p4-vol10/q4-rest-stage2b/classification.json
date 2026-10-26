@@ -1,0 +1,128 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "jAxis": {
+  "九空": {
+   "classification": "J-B",
+   "cleanCells": [
+    "06067692-n86 開市",
+    "06067692-n86 立券交易",
+    "06067692-n86 納財",
+    "06067694-n10 開市",
+    "06067694-n10 立券交易",
+    "06067694-n10 納財"
+   ],
+   "witnessPages": [
+    "06067692-n86",
+    "06067694-n10"
+   ],
+   "pageCount": 2,
+   "triggersTested": [
+    "四相",
+    "時德",
+    "月恩"
+   ],
+   "triggersUntested": [
+    "天德",
+    "天赦",
+    "天願"
+   ]
+  },
+  "五虛": {
+   "classification": "J-B",
+   "cleanCells": [
+    "06067694-n50 開倉庫出貨財",
+    "06067697-n8 開倉庫出貨財"
+   ],
+   "witnessPages": [
+    "06067694-n50",
+    "06067697-n8",
+    "06067692-n126 (卯-丁巳, 月恩+四相; Stage 1/2A: J-NARROW)"
+   ],
+   "pageCount": 3,
+   "triggersTested": [
+    "四相",
+    "時德",
+    "月恩"
+   ],
+   "triggersUntested": [
+    "天赦"
+   ]
+  },
+  "小耗": {
+   "classification": "J-B",
+   "cleanCells": [
+    "06067693-n107 開市",
+    "06067693-n107 立券交易",
+    "06067693-n107 納財"
+   ],
+   "witnessPages": [
+    "06067693-n107"
+   ],
+   "pageCount": 1,
+   "triggersTested": [
+    "四相"
+   ],
+   "triggersUntested": [
+    "天赦",
+    "時德",
+    "月恩"
+   ]
+  },
+  "五墓": {
+   "classification": "J-D (no discriminating context exists)",
+   "cleanCells": [],
+   "witnessPages": [],
+   "pageCount": 0,
+   "triggersTested": [],
+   "triggersUntested": [
+    "四相",
+    "天德",
+    "天德合",
+    "天赦",
+    "天願",
+    "時德",
+    "月德合",
+    "月恩"
+   ]
+  }
+ },
+ "f1y": "F1Y-E1",
+ "yAxis": {
+  "BAIJI_ONLY (not ungraded)": {
+   "Y-ONLY-JI": 3
+  },
+  "ENGINE_UNDETERMINED": {
+   "Y-ONLY-JI": 3
+  },
+  "U1": {
+   "Y-ONLY-JI": 2
+  },
+  "U2": {
+   "Y-ONLY-JI": 2
+  },
+  "U3": {
+   "Y-ONLY-JI": 9
+  },
+  "U4": {
+   "Y-ONLY-JI": 2
+  },
+  "U5": {
+   "Y-ONLY-JI": 2
+  },
+  "U7": {
+   "Y-ONLY-JI": 3
+  }
+ },
+ "gates": {
+  "九空": "READY_FOR_OWNER_RULING",
+  "五虛": "READY_FOR_OWNER_RULING",
+  "小耗": "NEEDS_REPLICATION (戌-癸卯, conditional)",
+  "F1-Y": "READY_FOR_OWNER_RULING",
+  "Y-CONVENTION": "EVIDENCE_EXPANDED"
+ },
+ "productionChanged": false,
+ "g2W1": "CLOSED",
+ "stage1Clean": [
+  "06067692-n126"
+ ]
+}

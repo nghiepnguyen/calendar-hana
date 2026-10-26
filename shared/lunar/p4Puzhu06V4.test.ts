@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import golden from '../almanac-data/golden-p4b-puzhu06-v4.json'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
@@ -10,6 +10,9 @@ import { decideP4Puzhu06, resolveP4Puzhu06Day, type P4Puzhu06Row } from './p4Puz
 import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4YiDay } from './p4YiDayComposition'
 import { getP4MuCangSoil } from './p4YiOperands'
+// Frozen before Q4-REST Stage 3 (puzhu:06 authority v5): pinned to the v4 rollback (q4RestRollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // F1 Stage 3 (owner R2): the shipped composer under authority v4 against the independent Golden v4
 // (p4b-puzhu06-golden-v4/derive.py); expected values come from the Golden files only. The v3 suite

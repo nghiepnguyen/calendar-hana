@@ -2,7 +2,7 @@
  * vi.doMock factories at the path production imports (p4Puzhu06.ts): puzhu:06 authority v3 = shipped before R2. */
 import puzhu06V3Data from '../almanac-data/p4b-puzhu06-v3.json'
 
-export const PUZHU06_PATH = '../almanac-data/p4b-puzhu06-v4.json'
+export const PUZHU06_PATH = '../almanac-data/p4b-puzhu06-v5.json'
 export const PUZHU06_V3_ID = 'p4b-puzhu06-v3'
 export const PUZHU06_V4_ID = 'p4b-puzhu06-v4'
 

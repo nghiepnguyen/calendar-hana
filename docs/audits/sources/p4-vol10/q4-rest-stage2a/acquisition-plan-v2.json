@@ -1,0 +1,291 @@
+{
+ "version": "q4-rest-stage2a-v1",
+ "supersedes": "docs/audits/sources/p4-vol10/q4-rest-stage1/acquisition-plan.json",
+ "status": "HYPOTHESIS until authenticated; not acquired",
+ "pages": [
+  {
+   "context": "午-壬辰",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開倉庫出貨財:NON_DECISIVE",
+    "九空×開市:J_AND_Y",
+    "五虛×開倉庫出貨財:NON_DECISIVE"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067694-n34",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "午-庚辰",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開倉庫出貨財:NON_DECISIVE",
+    "九空×開市:J_AND_Y",
+    "五虛×開倉庫出貨財:NON_DECISIVE"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067694-n22",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "午-戊申",
+   "priority": "P0",
+   "tests": [
+    "五虛×開倉庫出貨財:J_AND_Y",
+    "五離×立券交易:Y_ONLY (F1-Y)"
+   ],
+   "trigger": "月恩+四相",
+   "predictedLocator": {
+    "value": "06067694-n50",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "PRIMARY",
+   "covers": [
+    "五虛×四相",
+    "五虛×月恩"
+   ]
+  },
+  {
+   "context": "午-戊辰",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開倉庫出貨財:NON_DECISIVE",
+    "九空×開市:J_AND_Y",
+    "五虛×開倉庫出貨財:NON_DECISIVE"
+   ],
+   "trigger": "月恩+四相+時德",
+   "predictedLocator": {
+    "value": "06067694-n10",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "PRIMARY",
+   "covers": [
+    "九空×四相",
+    "九空×時德",
+    "九空×月恩"
+   ]
+  },
+  {
+   "context": "午-甲辰",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開市:J_AND_Y"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067694-n46",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "卯-丁丑",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開倉庫出貨財:NON_DECISIVE",
+    "九空×開市:J_AND_Y",
+    "五虛×開倉庫出貨財:NON_DECISIVE"
+   ],
+   "trigger": "月恩+四相",
+   "predictedLocator": {
+    "value": "06067692-n86",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "子-丙寅",
+   "priority": "P0",
+   "tests": [
+    "五虛×開倉庫出貨財:J_AND_Y"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067697-n8",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "PRIMARY",
+   "covers": [
+    "五虛×時德"
+   ]
+  },
+  {
+   "context": "子-庚寅",
+   "priority": "P0",
+   "tests": [
+    "五虛×開倉庫出貨財:J_AND_Y"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067697-n32",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "子-戊寅",
+   "priority": "P0",
+   "tests": [
+    "五虛×開倉庫出貨財:J_AND_Y"
+   ],
+   "trigger": "時德",
+   "predictedLocator": {
+    "value": "06067697-n20",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "子-甲戌",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開市:J_AND_Y"
+   ],
+   "trigger": "月恩+四相",
+   "predictedLocator": {
+    "value": "06067697-n16",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "巳-戊戌",
+   "priority": "P0",
+   "tests": [
+    "小耗×立券交易:J_ONLY",
+    "小耗×納財:J_AND_Y",
+    "小耗×開市:J_ONLY"
+   ],
+   "trigger": "四相",
+   "predictedLocator": {
+    "value": "06067693-n107",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "role": "PRIMARY",
+   "covers": [
+    "小耗×四相"
+   ]
+  },
+  {
+   "context": "戌-癸亥",
+   "priority": "P3",
+   "tests": [
+    "五虛×開倉庫出貨財:CONTAMINATED"
+   ],
+   "trigger": "四相",
+   "predictedLocator": {
+    "value": "06067696-n65",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "SUPPORTIVE"
+  },
+  {
+   "context": "戌-癸卯",
+   "priority": "P3",
+   "tests": [
+    "小耗×立券交易:CONTAMINATED",
+    "小耗×納財:CONTAMINATED",
+    "小耗×開倉庫出貨財:CONTAMINATED",
+    "小耗×開市:CONTAMINATED"
+   ],
+   "trigger": "四相",
+   "predictedLocator": {
+    "value": "06067696-n45",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [6] for item/month block"
+   },
+   "role": "SUPPORTIVE"
+  },
+  {
+   "context": "酉-癸亥",
+   "priority": "P0",
+   "tests": [
+    "五虛×開倉庫出貨財:J_AND_Y"
+   ],
+   "trigger": "月恩+四相",
+   "predictedLocator": {
+    "value": "06067695-n132",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "酉-癸未",
+   "priority": "P0",
+   "tests": [
+    "九空×立券交易:J_ONLY",
+    "九空×納財:J_AND_Y",
+    "九空×開倉庫出貨財:NON_DECISIVE",
+    "九空×開市:J_AND_Y",
+    "五虛×開倉庫出貨財:NON_DECISIVE"
+   ],
+   "trigger": "月恩+四相",
+   "predictedLocator": {
+    "value": "06067695-n92",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   },
+   "role": "REPLICATION"
+  },
+  {
+   "context": "丑-甲申",
+   "priority": "P2",
+   "role": "PRIMARY",
+   "tests": [
+    "五離×立券交易:Y_ONLY (F1-Y)"
+   ],
+   "trigger": "none required",
+   "covers": [
+    "F1-Y"
+   ],
+   "predictedLocator": {
+    "value": "06067697-n93",
+    "status": "HYPOTHESIS",
+    "basis": "leaf - cycle index offsets [73] for item/month block"
+   }
+  }
+ ],
+ "byPriority": {
+  "P0": 13,
+  "P3": 2,
+  "P2": 1
+ },
+ "primary": [
+  "午-戊申",
+  "午-戊辰",
+  "子-丙寅",
+  "巳-戊戌",
+  "丑-甲申"
+ ]
+}

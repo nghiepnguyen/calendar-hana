@@ -1,0 +1,79 @@
+{
+ "version": "q4-rest-stage2b-v1",
+ "rows": [
+  {
+   "context": "午-戊申",
+   "witness": "06067694-n50",
+   "wuliActive": true,
+   "wuliOwnLifters": [],
+   "independentYi": [
+    "滿日"
+   ],
+   "otherJi": [],
+   "printed": "only_ji",
+   "production": "both_present",
+   "clean": true,
+   "yiSourceControl": {
+    "開市": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五離"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五虛"
+     ]
+    }
+   }
+  },
+  {
+   "context": "丑-甲申",
+   "witness": "06067697-n93",
+   "wuliActive": true,
+   "wuliOwnLifters": [],
+   "independentYi": [
+    "五富"
+   ],
+   "otherJi": [],
+   "printed": "only_ji",
+   "production": "both_present",
+   "clean": true,
+   "yiSourceControl": {
+    "開市": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五離"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "otherJi": [
+      "百忌甲"
+     ]
+    }
+   }
+  }
+ ],
+ "classification": "F1Y-E1",
+ "productionStillBothPresent": true,
+ "f1Rule3": "An independent 宜 on 立券交易 does not suppress the surviving 五離 忌 (both_present).",
+ "migration": "NOT PERFORMED (owner gate)"
+}

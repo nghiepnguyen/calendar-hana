@@ -1,0 +1,27 @@
+{
+ "witness": "06067696-n45",
+ "context": "戌-癸卯",
+ "archive": "06067696.cn",
+ "locator": "https://archive.org/download/06067696.cn/page/n45_w1200.jpg",
+ "path": "docs/audits/sources/p4-vol10/q4-rest-stage2c/pages/06067696-n45.jpg",
+ "sha256": "71d6b5e87c16ee79de3b7109cff03898f307c97cfc74ad1a30b80b1b36a6208f",
+ "retrieval": "curl --fail, 2026-10-26; image unmodified",
+ "authentication": {
+  "header": "癸卯金箔金寶執日",
+  "officer": "執",
+  "monthFromOfficer": "戌",
+  "predictedLocator": "06067696-n45",
+  "locatorConfirmed": true,
+  "leafCalibration": "leaf 45 = cycle 39 + 6 (戌 block)",
+  "margin": "卷二十八",
+  "foliation": "[NOT VISIBLE]",
+  "godCrossChecks": {
+   "四相": "autumn 壬癸 ✓",
+   "六合": "戌 ↔ 卯 ✓",
+   "大時": "寅午戌 months → 卯 ✓",
+   "小耗": "戌 + 5 = 卯 ✓",
+   "五虛": "autumn 亥卯未 ✓"
+  },
+  "status": "AUTHENTICATED"
+ }
+}

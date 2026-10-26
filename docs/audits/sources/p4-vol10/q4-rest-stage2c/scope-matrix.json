@@ -1,0 +1,60 @@
+{
+ "version": "q4-rest-stage2c-v1",
+ "rows": [
+  {
+   "debt": "Q4-REST",
+   "god": "九空",
+   "headings": "開市 立券交易 納財 (direct); 開倉庫出貨財 (same-god heading extrapolation: only joint 九空+五虛 pages exist)",
+   "evidence": "J-NARROW",
+   "directWitnesses": 2,
+   "proposed": "R-JK",
+   "extrapolation": [
+    "same-god heading (開倉庫出貨財)",
+    "same-god trigger (天德, 天赦, 天願)"
+   ]
+  },
+  {
+   "debt": "Q4-REST",
+   "god": "五虛",
+   "headings": "開倉庫出貨財 (direct)",
+   "evidence": "J-NARROW",
+   "directWitnesses": 3,
+   "proposed": "R-WX",
+   "extrapolation": [
+    "same-god trigger (天赦, which never meets 五虛)"
+   ]
+  },
+  {
+   "debt": "Q4-REST",
+   "god": "小耗",
+   "headings": "開市 立券交易 納財 (2 pages); 開倉庫出貨財 (1 page: 戌-癸卯)",
+   "evidence": "J-NARROW",
+   "directWitnesses": 2,
+   "proposed": "R-XH",
+   "extrapolation": [
+    "same-god trigger (月恩, 時德, 天赦)"
+   ]
+  },
+  {
+   "debt": "Q4-REST",
+   "god": "五墓",
+   "headings": "none",
+   "evidence": "no discriminating context",
+   "directWitnesses": 0,
+   "proposed": "none",
+   "extrapolation": []
+  },
+  {
+   "debt": "F1-Y",
+   "god": "五離",
+   "headings": "立券交易 (direct)",
+   "evidence": "only_ji ×2 (F1Y-E1)",
+   "directWitnesses": 2,
+   "proposed": "R-F1Y",
+   "extrapolation": [
+    "same-heading context extrapolation to the 19 other 五離 × 立券交易 contexts/dates"
+   ]
+  }
+ ],
+ "crossGod": "NOT AUTHORIZED: no ruling reaches another god"
+}

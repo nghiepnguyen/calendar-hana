@@ -1,0 +1,77 @@
+{
+  "version": "golden-p4b-puzhu06-lock-v5",
+  "files": [
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/derive.py",
+      "sha256": "07ae8b82e77a38f3dca4269b285ff0ea5a2798d7721c2f2d4ab58301a58eb2ca"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/expected.json",
+      "sha256": "ec47b624b5dc86a60d0090efb351fe9454fcfe28df0e1920db356ff0aa2e869d"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/dated.tsv",
+      "sha256": "59439094c26a8c958dd557b1ef309e0bdbe349c96b58f5a90659d8eff70f843f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/context.tsv",
+      "sha256": "47f31aae3e035acdc640a81350b8e3371e55b0234c1209daeac0b41e6fc895cb"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/propagation.tsv",
+      "sha256": "67064f71bb4d0d8875285bd4952cba10a90dfb96e672fc195db311ce6a97a2d4"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/summary.json",
+      "sha256": "b3fbaaae70aaafe61d56efbad99b0f8d7f8824772339c0f33aaceb1f8e83e1d3"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/validation.json",
+      "sha256": "016d839ea51d20cf17afaa3a7919febcb4599e316e5400eb0715e3fc8c095afc"
+    },
+    {
+      "path": "shared/almanac-data/golden-p4b-puzhu06-v5.json",
+      "sha256": "d255f97505784c388a45c2955d574a0fda448bb8bc945ddf57dc028746c4fa91"
+    },
+    {
+      "path": "shared/almanac-data/p4b-puzhu06-v5.json",
+      "sha256": "6896a79d87647c063a5be93cea6d6f0dbeb4b7e582aa2b22ca2426247c254823"
+    },
+    {
+      "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+      "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+      "sha256": "98791ddd2fb9a735ed7b33483da9c28189aa69bac1c8c8ec6421131142968317"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+      "sha256": "00a573a1476f5a741af016596750524b301d0bf504c51cf34d986d901c783e6f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context-p4c.tsv",
+      "sha256": "0b4eac64a4ae53c552f2bdb78ac90f115c60d930ef70cc3a6e1c0a15c52cedd2"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/dated.tsv",
+      "sha256": "0af2e3540c2353c7c17af798eab3d4cfa4a812ef6d04e57e87552ee0cbf60338"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/propagation.tsv",
+      "sha256": "67064f71bb4d0d8875285bd4952cba10a90dfb96e672fc195db311ce6a97a2d4"
+    }
+  ]
+}

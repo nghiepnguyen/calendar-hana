@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import lock from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/lock.json'
 import diff from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/migration-diff.json'
 import ruling from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json'
+import { lockedDigests } from './lockAnchor'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getVol10JieshaRuntime } from './xiejiVol10JieshaAuthority'
 
@@ -15,8 +16,16 @@ const EXTRAPOLATED = new Set(['丑-甲申', '午-戊申'])
 
 describe('F1 Stage 3 R2 migration lock', () => {
   it('pins the ruling, envelope, rollback digests, authority and Goldens', () => {
-    for (const [path, hash] of Object.entries(lock.files)) expect(sha(path), path).toBe(hash)
-    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v4')
+    {
+      // lockAnchor rule (owner 2026-10-17): runtime code and harnesses outside the lock dir are checked as
+      // committed when the lock was added, so Q4-REST Stage 3 (authority v5) does not break this proof.
+      const code = Object.keys(lock.files).filter((p) => p.startsWith('shared/lunar/'))
+      const committed = lockedDigests('docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/lock.json', code)
+      for (const [path, hash] of Object.entries(lock.files))
+        expect(code.includes(path) ? committed.get(path) : sha(path), path).toBe(hash)
+    }
+    // Q4-REST Stage 3 moved production to v5; the v4 authority this stage audited stays pinned above.
+    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v5')
   })
 
   it('records R2 for 五離 × 立券交易 only', () => {

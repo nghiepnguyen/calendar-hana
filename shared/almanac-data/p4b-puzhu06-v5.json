@@ -1,0 +1,556 @@
+{
+  "version": "p4b-puzhu06-v5",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "status": "OWNER_ADOPTED",
+  "raw": {
+    "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+    "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+    "scan": "06067686.cn (卷十)"
+  },
+  "rule": {
+    "id": "puzhu:06",
+    "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+    "offset": 21817,
+    "length": 56,
+    "quote": "凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌",
+    "parts": {
+      "triggers": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21817,
+        "length": 16,
+        "quote": "凡徳合赦願月恩四相時徳等日不註忌"
+      },
+      "headings": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21833,
+        "length": 23,
+        "quote": "進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財"
+      },
+      "exceptionYouJi": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21856,
+        "length": 5,
+        "quote": "如遇徳猶忌"
+      },
+      "exceptionCongJi": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 21862,
+        "length": 11,
+        "quote": "從忌不從宜之日則仍註忌"
+      }
+    }
+  },
+  "headings": [
+    {
+      "raw": "進人口",
+      "p4": "進人口",
+      "scope": "OUT_OF_HEADING_SCOPE"
+    },
+    {
+      "raw": "安牀",
+      "p4": "安牀",
+      "scope": "IN_SCOPE"
+    },
+    {
+      "raw": "經絡",
+      "p4": "經絡",
+      "scope": "OUT_OF_HEADING_SCOPE"
+    },
+    {
+      "raw": "醖釀",
+      "p4": "醞釀",
+      "scope": "OUT_OF_HEADING_SCOPE"
+    },
+    {
+      "raw": "開市",
+      "p4": "開市",
+      "scope": "IN_SCOPE"
+    },
+    {
+      "raw": "立劵交易",
+      "p4": "立券交易",
+      "scope": "IN_SCOPE"
+    },
+    {
+      "raw": "納財",
+      "p4": "納財",
+      "scope": "IN_SCOPE"
+    },
+    {
+      "raw": "開倉庫出貨財",
+      "p4": "開倉庫出貨財",
+      "scope": "IN_SCOPE"
+    }
+  ],
+  "triggers": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天赦",
+    "天願",
+    "月恩",
+    "四相",
+    "時德"
+  ],
+  "triggerNotTriggers": [
+    "三合",
+    "六合",
+    "母倉",
+    "滿日"
+  ],
+  "grades": {
+    "shang": {
+      "label": "上",
+      "withDe": "only_yi",
+      "withoutDe": "only_yi",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9689,
+        "length": 9,
+        "quote": "吉足勝凶從宜不從忌"
+      }
+    },
+    "shang_ci": {
+      "label": "上次",
+      "withDe": "only_yi",
+      "withoutDe": "both_present",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9700,
+        "length": 18,
+        "quote": "吉足抵凶遇德從宜不從忌不遇從宜亦從忌"
+      }
+    },
+    "zhong": {
+      "label": "中",
+      "withDe": "only_yi",
+      "withoutDe": "only_ji",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9720,
+        "length": 21,
+        "quote": "吉不抵凶遇德則吉勝從宜不從忌不遇從忌不從宜"
+      }
+    },
+    "ci": {
+      "label": "次",
+      "withDe": "both_present",
+      "withoutDe": "only_ji",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9743,
+        "length": 21,
+        "quote": "凶勝於吉遇德始相抵從宜亦從忌不遇從忌不從宜"
+      }
+    },
+    "xia": {
+      "label": "下",
+      "withDe": "only_ji",
+      "withoutDe": "all_taboo",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9766,
+        "length": 17,
+        "quote": "凶又逢凶遇德從忌不從宜不遇諸事皆忌"
+      }
+    },
+    "xia_xia": {
+      "label": "下下",
+      "withDe": "all_taboo",
+      "withoutDe": "all_taboo",
+      "prose": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 9785,
+        "length": 11,
+        "quote": "凶叠大凶遇德仍諸事皆忌"
+      }
+    }
+  },
+  "puzhu27": {
+    "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+    "offset": 22604,
+    "length": 23,
+    "quote": "凡天吏大時不以死敗論者遇四廢嵗薄逐陣仍以死敗論"
+  },
+  "clauses": {
+    "月破:猶忌": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 8274,
+      "length": 6,
+      "quote": "猶忌之止不忌"
+    },
+    "月破:又為大耗": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 8200,
+      "length": 22,
+      "quote": "又為大耗忌修倉庫開市立劵交易納財開倉庫出貨財"
+    },
+    "災煞:辰戌丑未不與德神併如常例": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 11993,
+      "length": 13,
+      "quote": "辰戌丑未月不與德神併如常例"
+    },
+    "月煞:平日閉日與德併如常例": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 12298,
+      "length": 23,
+      "quote": "辰戌丑未月值平日與天德月德天德合月德合併如常例"
+    },
+    "月煞:又為月虛": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 12187,
+      "length": 14,
+      "quote": "又為月虛忌修倉庫開倉庫出貨財"
+    },
+    "九空:defer": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 18336,
+      "length": 22,
+      "quote": "己亥月值月厭從月厭論辰戌丑未月值破日從月破論"
+    }
+  },
+  "liftLists": {
+    "九空": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 18309,
+      "length": 27,
+      "quote": "寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌"
+    },
+    "五虛": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 17827,
+      "length": 17,
+      "quote": "與天德月德天德合月德合六合併則不忌"
+    },
+    "小耗": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 16748,
+      "length": 32,
+      "quote": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+    },
+    "五離": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 19501,
+      "length": 21,
+      "quote": "與天德月德天德合月德合天赦三合六合併則不忌"
+    },
+    "五墓": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 18173,
+      "length": 12,
+      "quote": "五月十一月與月德併則不忌"
+    }
+  },
+  "liftExclusions": {
+    "五墓": {
+      "triggers": [
+        "天德合",
+        "月德合"
+      ],
+      "basis": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 18232,
+        "length": 9,
+        "quote": "不取德合者不同行也"
+      }
+    },
+    "五離": {
+      "triggers": [
+        "天願",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "basis": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 19501,
+        "length": 21,
+        "quote": "與天德月德天德合月德合天赦三合六合併則不忌"
+      },
+      "ruling": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json (R2_APPROVED, 2026-10-26)"
+    },
+    "九空": {
+      "triggers": [
+        "天德",
+        "天赦",
+        "天願",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "basis": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 18309,
+        "length": 27,
+        "quote": "寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌"
+      },
+      "ruling": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json (R-JK ADOPT, 2026-10-26)",
+      "class": "QL_NARROW"
+    },
+    "五虛": {
+      "triggers": [
+        "天赦",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "basis": [
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 17827,
+          "length": 17,
+          "quote": "與天德月德天德合月德合六合併則不忌"
+        },
+        {
+          "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+          "offset": 17863,
+          "length": 14,
+          "quote": "天願必是六合故不言而已在其中"
+        }
+      ],
+      "ruling": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json (R-WX ADOPT, 2026-10-26)",
+      "class": "QL_NARROW"
+    },
+    "小耗": {
+      "triggers": [
+        "天赦",
+        "月恩",
+        "四相",
+        "時德"
+      ],
+      "basis": {
+        "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+        "offset": 16748,
+        "length": 32,
+        "quote": "與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌"
+      },
+      "ruling": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json (R-XH ADOPT, 2026-10-26)",
+      "class": "QL_NARROW"
+    }
+  },
+  "parent": {
+    "version": "p4b-puzhu06-v4",
+    "path": "shared/almanac-data/p4b-puzhu06-v4.json",
+    "sha256": "e5e54f5c26a38f6cb9f8e76ef70807f0e2f58a2ac8f1a72f9db5ed626a34fb1f"
+  },
+  "ownerDecision": {
+    "date": "2026-10-16",
+    "status": "OWNER_ADOPTED",
+    "canonical": false,
+    "convention": "yes = puzhu:06 lifts the 忌",
+    "answers": {
+      "Q1": {
+        "answer": "no",
+        "question": "如常例 with 等第 grade 從忌不從宜: lift?"
+      },
+      "Q2": {
+        "answer": "no",
+        "question": "「與德…併如常例」 (not 遇德猶忌): lift?"
+      },
+      "Q3": {
+        "answer": "no",
+        "question": "如常例 without a 等第 column (月破 without 德): lift?"
+      },
+      "Q4": {
+        "answer": "yes",
+        "question": "remaining-ji with its own 「與…併則不忌」 list: lift?"
+      },
+      "Q4a": {
+        "answer": "block",
+        "question": "does 五墓 「不取德合」 block puzhu:06's 德合 triggers?"
+      },
+      "R2": {
+        "answer": "block",
+        "question": "can a puzhu:06 trigger outside 五離's own lift list lift 五離 (立券交易)?",
+        "date": "2026-10-26",
+        "record": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json"
+      },
+      "R-JK": {
+        "answer": "block",
+        "question": "can a generic puzhu:06 trigger lift 九空?",
+        "date": "2026-10-26",
+        "record": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json"
+      },
+      "R-WX": {
+        "answer": "block",
+        "question": "can a generic puzhu:06 trigger lift 五虛 (開倉庫出貨財)?",
+        "date": "2026-10-26",
+        "record": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json"
+      },
+      "R-XH": {
+        "answer": "block",
+        "question": "can a generic puzhu:06 trigger lift 小耗?",
+        "date": "2026-10-26",
+        "record": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json"
+      },
+      "R-F1Y": {
+        "answer": "only_ji",
+        "question": "五離 sole surviving 忌 + independent 宜 on 立券交易: only_ji or both_present?",
+        "date": "2026-10-26",
+        "record": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json"
+      }
+    },
+    "record": "tasks/prd-p4b-puzhu06.md §8"
+  },
+  "classes": {
+    "YOUJI": {
+      "action": "keep",
+      "basis": "exceptionYouJi",
+      "when": "subject clauseEffect still_avoid"
+    },
+    "ZHUSHI": {
+      "action": "keep",
+      "basis": "exceptionCongJi (諸事皆忌 ⊇ 從忌不從宜)",
+      "when": "subject clauseEffect avoid_all"
+    },
+    "PUZHU27": {
+      "action": "keep",
+      "basis": "puzhu27",
+      "when": "puzhuEnd death-defeat restoration"
+    },
+    "AN": {
+      "action": "keep",
+      "basis": "Q1 no",
+      "when": "as_usual, 等第 grade present, 德 absent"
+    },
+    "AD": {
+      "action": "keep",
+      "basis": "Q1 no, Q2 no",
+      "when": "as_usual, 等第 grade present, 德 present"
+    },
+    "AU": {
+      "action": "keep",
+      "basis": "Q3 no",
+      "when": "as_usual, no 等第 column, clause owned by the subject"
+    },
+    "QL": {
+      "action": "lift",
+      "basis": "Q4 yes",
+      "when": "remaining-ji kept, god in liftLists, a trigger outside its exclusions"
+    },
+    "QL_EXCLUDED": {
+      "action": "keep",
+      "basis": "Q4a block (五墓); F1 R2 block (五離)",
+      "when": "remaining-ji kept, god in liftLists, every present trigger excluded for it"
+    },
+    "UNDETERMINED": {
+      "action": "hold",
+      "when": "P4-B scope undetermined, subject or remaining state undetermined, parent 相抵 or absent"
+    },
+    "PROTECTED": {
+      "action": "untouched",
+      "when": "remaining or 又為 state protected (row is protected)"
+    },
+    "QL_NARROW": {
+      "action": "keep",
+      "basis": "owner R-JK / R-WX / R-XH (2026-10-26)",
+      "when": "remaining-ji kept, god's liftExclusions entry has class QL_NARROW, every present trigger excluded for it",
+      "yi": {
+        "tag": "Q4_REST_OWNER_ONLY_JI",
+        "rule": "when every other class of the row lifts and the final state is both_present, the state is only_ji (the 忌 survives because of the ruling alone); otherwise the row is unchanged"
+      }
+    }
+  },
+  "inherit": {
+    "subjectVia": "as_usual without 等第 whose owner differs from the subject: class of the owner's own record",
+    "youwei": {
+      "大耗": "月破",
+      "月虛": "月煞"
+    },
+    "remainingDefer": {
+      "九空": [
+        {
+          "months": [
+            "巳",
+            "亥"
+          ],
+          "target": "月厭"
+        },
+        {
+          "months": [
+            "辰",
+            "戌",
+            "丑",
+            "未"
+          ],
+          "target": "月破"
+        }
+      ],
+      "滿日": [
+        {
+          "months": [
+            "辰",
+            "戌",
+            "丑",
+            "未"
+          ],
+          "target": "災煞"
+        },
+        {
+          "months": [
+            "巳",
+            "亥"
+          ],
+          "target": "月厭"
+        }
+      ]
+    },
+    "parentCancelBoth": "UNDETERMINED (P4-B 相抵 with an open 又為 list; P5 F3)"
+  },
+  "rowRule": {
+    "touch": "heading IN_SCOPE, a trigger present, ji true, protectedJi false, no dayRule",
+    "lift": "every source class has action lift",
+    "hold": "any source class UNDETERMINED → row unchanged",
+    "keep": "any keep class → row unchanged",
+    "unknownSource": "SPEC_GAP: stop, never guess"
+  },
+  "stateAfterLift": {
+    "ji": false,
+    "yi": "unchanged",
+    "state": {
+      "相抵 subject on the heading (cancel_both, neither_recorded)": "neither_recorded",
+      "else yi true": "only_yi",
+      "else yi false": "not_recorded",
+      "else yi unknown": "undetermined"
+    },
+    "neitherBasis": {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "offset": 21790,
+      "text": "凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌"
+    },
+    "propagation": {
+      "rule": "puzhu:06 runs before applyP4Propagation; a lift that leaves a 相抵 heading feeds the propagation lines like any 相抵 heading",
+      "artifact": {
+        "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+        "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+      },
+      "lines": [
+        "puzhu:11",
+        "puzhu:16",
+        "puzhu:17",
+        "puzhu:18",
+        "puzhu:19",
+        "puzhu:20",
+        "puzhu:21",
+        "puzhu:22",
+        "puzhu:23",
+        "puzhu:24"
+      ]
+    }
+  },
+  "reviewer": "Claude, single agent; no independent second review",
+  "yiComposition": [
+    {
+      "id": "R-F1Y",
+      "heading": "立券交易",
+      "soleJi": "五離",
+      "from": "both_present",
+      "to": "only_ji",
+      "rule": "on 立券交易, a both_present row whose only surviving 忌 is 五離 is only_ji",
+      "ruling": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json (R-F1Y ADOPT_ALL_21, 2026-10-26)"
+    }
+  ]
+}

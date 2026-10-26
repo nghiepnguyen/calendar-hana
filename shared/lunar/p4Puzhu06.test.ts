@@ -10,7 +10,9 @@ import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4YiDay } from './p4YiDayComposition'
 import { getP4MuCangSoil } from './p4YiOperands'
 // Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./f1R2Rollback')).puzhu06V3(),
+)
 await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // puzhu:06 task 4.2: red tests from the frozen Golden (v2 67af7c0, now v3 f0454cb after the 5.1 sweep

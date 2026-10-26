@@ -1,0 +1,64 @@
+{
+ "version": "q4-rest-stage3-prediction-v1",
+ "takenOn": "p4b-puzhu06-v4 tree, before any Stage 3 engine code",
+ "baselineDays": 1097,
+ "baselineDigest": "a1e854fbf02d7335a6d9c96d529ac628bbf8506784c77aa40a97d0e99dd4f4d3",
+ "jOnly": {
+  "decisionRows": 96,
+  "headingRows": 53,
+  "activityRows": 79,
+  "eventRows": 156,
+  "statusChanges": 79,
+  "activityScoreChanges": 79,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 104,
+  "eventScoreChanges": 143,
+  "headingTransitions": {
+   "not_recorded→only_ji": 16,
+   "only_yi→both_present": 37
+  }
+ },
+ "full": {
+  "decisionRows": 96,
+  "headingRows": 74,
+  "activityRows": 121,
+  "eventRows": 366,
+  "statusChanges": 79,
+  "activityScoreChanges": 121,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 104,
+  "eventScoreChanges": 332,
+  "headingTransitions": {
+   "both_present→only_ji": 21,
+   "not_recorded→only_ji": 16,
+   "only_yi→only_ji": 37
+  }
+ },
+ "stage2C": {
+  "reproduced": true,
+  "how": "J-only decisions equal 2C combined row for row; J-only heading rows ∪ 2C R-F1Y heading rows = 2C combined heading rows (disjoint)"
+ },
+ "fullVs2C": {
+  "decision": {
+   "sameKeys": true,
+   "identicalRows": 96,
+   "rows": 96
+  },
+  "heading": {
+   "sameKeys": true,
+   "identicalRows": 37,
+   "rows": 74
+  },
+  "activity": {
+   "sameKeys": true,
+   "identicalRows": 74,
+   "rows": 121
+  },
+  "event": {
+   "sameKeys": true,
+   "identicalRows": 288,
+   "rows": 366
+  }
+ },
+ "explainedDifference": "full differs from 2C combined only in model values on the scoped-Y rows: 37 heading rows only_yi→only_ji (2C J-only gave both_present) and their activity/event consequences; keys and counts are identical"
+}

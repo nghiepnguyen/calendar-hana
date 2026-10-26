@@ -1,0 +1,84 @@
+{
+ "version": "q4-rest-stage3-v1",
+ "shipped": {
+  "decisionRows": 96,
+  "headingRows": 74,
+  "activityRows": 121,
+  "eventRows": 366,
+  "statusChanges": 79,
+  "activityScoreChanges": 121,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 104,
+  "eventScoreChanges": 332,
+  "headingTransitions": {
+   "both_present→only_ji": 21,
+   "not_recorded→only_ji": 16,
+   "only_yi→only_ji": 37
+  }
+ },
+ "vsPrediction": {
+  "decision": {
+   "shipped": 96,
+   "predicted": 96,
+   "sameKeys": true,
+   "identicalRows": 0
+  },
+  "heading": {
+   "shipped": 74,
+   "predicted": 74,
+   "sameKeys": true,
+   "identicalRows": 74
+  },
+  "activity": {
+   "shipped": 121,
+   "predicted": 121,
+   "sameKeys": true,
+   "identicalRows": 121
+  },
+  "event": {
+   "shipped": 366,
+   "predicted": 366,
+   "sameKeys": true,
+   "identicalRows": 366
+  }
+ },
+ "decisionNote": "decision rows equal the prediction except the class name: QL_NARROW (v5) where the test-only prediction mocked QL_EXCLUDED",
+ "vsStage2C": {
+  "stage2C": {
+   "decisionRows": 96,
+   "headingRows": 74,
+   "activityRows": 121,
+   "eventRows": 366,
+   "statusChanges": 79,
+   "activityScoreChanges": 121,
+   "hardWarningChanges": 0,
+   "eventClassificationChanges": 104,
+   "eventScoreChanges": 332,
+   "headingTransitions": {
+    "both_present→only_ji": 21,
+    "not_recorded→only_ji": 16,
+    "only_yi→both_present": 37
+   }
+  },
+  "match": "DIFFERENCE (explained)",
+  "explanation": "same keys and counts; the 37 scoped-Y heading rows read only_ji where Stage 2C (J-only diagnostic) gave both_present, with their activity/event values. Frozen before any engine code in prediction-summary.json"
+ },
+ "regression": {
+  "otherUngradedGods": "unchanged: of the 1,110 both_present rows with a surviving ungraded 忌 (Stage 2A.1), only 21 changed, all 五離 × 立券交易 (R-F1Y); U4, U7, BAIJI and the 16 other gods are untouched",
+  "populationRowsChanged": 21,
+  "u7Changed": 0,
+  "u4Changed": 0,
+  "everyRowAttributed": true,
+  "qlExcludedPreserved": true,
+  "goldenV5Prd": {
+   "compared": [
+    "hold",
+    "keptBySourcedException",
+    "lift",
+    "q4aRows",
+    "r2Rows"
+   ],
+   "match": true
+  }
+ }
+}

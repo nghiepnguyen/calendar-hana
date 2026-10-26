@@ -3,7 +3,9 @@ import { describe, expect, it, vi } from 'vitest'
 import vol11 from '../almanac-data/xiejibianfangshu-yiji.json'
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
 // Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./f1R2Rollback')).puzhu06V3(),
+)
 await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // Audit only: sensitivity checks for the faithful 卷十 劫煞 simulator (copied prelude of

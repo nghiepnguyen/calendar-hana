@@ -1,0 +1,108 @@
+{
+ "version": "q4-rest-stage3-owner-ruling-v1",
+ "date": "2026-10-26",
+ "ruling": "OWNER_RULING",
+ "rulings": {
+  "R-JK": {
+   "decision": "ADOPT",
+   "god": "九空",
+   "rule": "For 九空's prohibited headings, generic puzhu:06 Q4 triggers do NOT remove 九空's 忌 unless an independently established 九空-specific lifter applies.",
+   "scope": "九空 × its own prohibited headings (卷十 九空 忌 ∩ puzhu:06 IN_SCOPE; currently 開市 立券交易 納財 開倉庫出貨財), derived from canonical authority",
+   "evidence": [
+    "06067692-n86 卯-丁丑",
+    "06067694-n10 午-戊辰"
+   ],
+   "directCells": "開市 立券交易 納財 on both pages",
+   "measured2025_2027": {
+    "testedTrigger": 30,
+    "untestedOnly": 0,
+    "kaicangOverlapWith五虛": 7
+   },
+   "provenance": "OWNER_RULING backed by direct source evidence"
+  },
+  "R-WX": {
+   "decision": "ADOPT",
+   "god": "五虛",
+   "rule": "For 五虛 × 開倉庫出貨財, generic puzhu:06 Q4 triggers do NOT remove 五虛's 忌 unless an independently established 五虛-specific lifter applies.",
+   "scope": "五虛 × 開倉庫出貨財 exactly",
+   "evidence": [
+    "06067692-n126 卯-丁巳",
+    "06067694-n50 午-戊申",
+    "06067697-n8 子-丙寅"
+   ],
+   "triggersTested": [
+    "月恩",
+    "四相",
+    "時德 (alone on 子-丙寅)"
+   ],
+   "untested": "天赦 (source: never coincides with 五虛)",
+   "provenance": "OWNER_RULING backed by direct source evidence"
+  },
+  "R-XH": {
+   "decision": "ADOPT",
+   "god": "小耗",
+   "rule": "For 小耗's own prohibited headings, generic puzhu:06 Q4 triggers do NOT remove 小耗's 忌 unless an independently established 小耗-specific lifter applies.",
+   "scope": "小耗 × its own prohibited headings (currently 開市 立券交易 納財 開倉庫出貨財)",
+   "evidence": [
+    "06067693-n107 巳-戊戌",
+    "06067696-n45 戌-癸卯"
+   ],
+   "cleanCells": 7,
+   "triggersTested": [
+    "四相"
+   ],
+   "measured2025_2027": {
+    "rowsWith四相": 9
+   },
+   "unchanged": "子午卯酉 months + 劫煞 → 猶忌",
+   "provenance": "OWNER_RULING backed by direct source evidence"
+  },
+  "R-F1Y": {
+   "decision": "ADOPT_ALL_21",
+   "god": "五離",
+   "rule": "For 五離 × 立券交易, when 五離's 忌 survives, 五離 is the only surviving 忌 for the heading, and an independent 宜 also applies, the final source state is only_ji, not both_present.",
+   "scope": "all 21 measured production rows satisfying the exact predicate; no hard-coded dates",
+   "evidence": [
+    "06067694-n50 午-戊申 (宜 滿日)",
+    "06067697-n93 丑-甲申 (宜 五富)"
+   ],
+   "control": "the same 宜 source prints on 開市 and 納財 on both pages",
+   "notGeneralizedTo": [
+    "other 五離 headings",
+    "other gods",
+    "U4",
+    "U7",
+    "百忌",
+    "global Y composition"
+   ],
+   "provenance": "OWNER_RULING backed by direct source evidence"
+  }
+ },
+ "scopedY": {
+  "rule": "for heading rows whose 忌 survives specifically because of R-JK/R-WX/R-XH and that also carry 宜, the migrated state is only_ji (tag Q4_REST_OWNER_ONLY_JI); not the global Y-CONVENTION",
+  "ownerTextCount": "44 heading rows only_yi → both_present under J alone (Stage 2C, per-ruling sum)",
+  "measuredCombined": 37,
+  "note": "the owner text sums the single-ruling transitions (27 + 14 + 3); the 7 joint 九空+五虛 開倉庫 rows are counted twice there. Combined J alone gives 37 such rows (prediction.json)"
+ },
+ "nonDecisions": [
+  "global GOD-NARROW",
+  "global Y-CONVENTION",
+  "U4 migration",
+  "U7 migration",
+  "BAIJI-Y migration",
+  "五墓 changes",
+  "P21 changes"
+ ],
+ "unchanged": [
+  "五墓 and Q4a",
+  "F1 R2 J-axis",
+  "G2/W1 CLOSED",
+  "P21 open"
+ ],
+ "provenanceRule": "source-witness provenance stays page/cell specific; extrapolated production rows are never SOURCE_WITNESSED",
+ "evidenceRefs": {
+  "packets": "docs/audits/sources/p4-vol10/q4-rest-stage2c/owner-packets.json",
+  "drafts": "docs/audits/sources/p4-vol10/q4-rest-stage2c/draft-rulings.json",
+  "diagnostic": "docs/audits/sources/p4-vol10/q4-rest-stage2c/diagnostic-impact.json"
+ }
+}

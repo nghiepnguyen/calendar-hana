@@ -6,6 +6,9 @@ import { getP4DayHeadings } from './p4AlmanacHeadings'
 import { getAlmanac } from './almanac'
 import { lockedDigests } from './lockAnchor'
 import { p4ActivityState } from './p4ScoreAdapter'
+// Frozen before Q4-REST Stage 3 (puzhu:06 authority v5): pinned to the v4 rollback (q4RestRollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // F1 Stage 3 (docs/audits/p4-f1-wuli-lijuan-stage3-migration.md): the shipped puzhu:06 authority v4 against
 // Score Golden v5. Same configuration as the v4 gate (p4ScoreGoldenV4.test.ts, now pinned to the pre-R2

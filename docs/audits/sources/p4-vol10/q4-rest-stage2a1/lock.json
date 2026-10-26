@@ -1,0 +1,28 @@
+{
+ "version": "q4-rest-stage2a1-v1",
+ "files": {
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/source-pattern.json": "8d7c39dd51c5c2f8c2821ea55aa97e2737c8042b96d76359652ccb0997d5a587",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/production-population.json": "a67849bce3627ee9772d3a138be4e119f17c8faa604f24d78d19925268bcc8c1",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/semantic-families.json": "82336664054da71f9655815679321ceaaaef7cbcef5e362b0ea2e1d74354f558",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/f1-y.json": "456afdf8c522b30a51b99a281ad425998f4f468558c3d6430640db6f3b60217f",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/provenance.json": "d42e3e0dcec8f0d306f6aeb39c64ceed289a546560e4a6a2f805546b7eafcf34",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/diagnostic-impact.json": "633b7d62a65640d4800900bda89f876f87b8a544f52efa7239c06870a591a4fa",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/acquisition-plan-v3.json": "8ca7873a1ab7b88f326eb423641ff8370447a37f1172e7195e677c5bd40b5fde",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/runtime.json": "729cc7274a6a7d2caff3c70221eeffae1c0b115b0b44780a69f6c6bf64858ad8",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/page-contexts.json": "048f68d0236937a79330603e9d5bfcbd0786b7b6eb01f223c7a3af2c09f62986",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a1/build_evidence.py": "e1cafe91458df39ae8e8ea0c3fc0d479d5ebf28c659f88b797316ba759d2ad51",
+  "shared/lunar/p4Q4RestStage2A1Impact.test.ts": "f145edef4704c3325f40ada5efc4744262d2c69f3dd25526dbe1030a5a51a191",
+  "docs/audits/sources/p4-vol10/vol10.raw.txt": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "shared/almanac-data/p4b-puzhu06-v4.json": "e5e54f5c26a38f6cb9f8e76ef70807f0e2f58a2ac8f1a72f9db5ed626a34fb1f",
+  "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage1/evidence.json": "b9fa49ac1d744a3ef618462d3b08a0e3a4eff8be2d1c10156fc125757321209b",
+  "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json": "c25414795c01fd75bd5d5d4d49a1d614307c1e99588ea108ee5ad627788bac22",
+  "docs/audits/sources/p4-vol10/g2-n117-stage3/owner-ruling.json": "a604e9e8b85da2c0bf54072331a2f8ee4232c0d84dcf6b0bd9b47fb6cc346606",
+  "docs/audits/sources/p4-vol10/q4-rest-stage1/lock.json": "14e7fb6f8b58241b8cf61dc6ccf7dd39298dfd9e94a01f2a1599a03a775b26c0",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a/lock.json": "01cd98d106271138d1a826fe86f7a5379d19fa8a33b1a28d47ac07e57ca84635",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a/corpus-pattern-search.json": "a30769d725d4f44dd90bcb7dfea3d538baa4a926870dc131f97ca866581125c4",
+  "docs/audits/sources/p4-vol10/q4-rest-stage2a/acquisition-plan-v2.json": "0c68c3fbfa2cbd356d3d2ca86f8c414254bb8fbaa6d93887e958806b6b004d68",
+  "shared/lunar/p4OwnerRules.ts": "c6ae338ed662ebfa4e17a0d43c13ee54a0d310eba8305d882ae89041b8d548ab",
+  "shared/lunar/p4Puzhu06.ts": "7c7b12d23c018e4d65b7e385f080f44b1dfa6933b104a919fdba97fc3f3edada",
+  "shared/almanac-data/golden-p4b-puzhu06-v4.json": "69a3882314eb62df51c64dbb5e764109f11a3143045c70f8ca830ee38e516174"
+ }
+}

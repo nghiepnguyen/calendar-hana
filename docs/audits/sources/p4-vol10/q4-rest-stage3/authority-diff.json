@@ -1,0 +1,92 @@
+{
+ "version": "q4-rest-stage3-v1",
+ "old": "p4b-puzhu06-v4",
+ "new": "p4b-puzhu06-v5",
+ "parent": "p4b-puzhu06-v4",
+ "diffFromV4": [
+  "classes",
+  "liftExclusions",
+  "ownerDecision",
+  "parent",
+  "version",
+  "yiComposition"
+ ],
+ "derived": {
+  "九空": {
+   "own": [
+    "月德",
+    "天德合",
+    "月德合"
+   ],
+   "excluded": [
+    "天德",
+    "天赦",
+    "天願",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "jiLine": "忌進人口修倉庫開市立劵交易納財開倉庫出貨財",
+   "puzhu06Headings": [
+    "開市",
+    "立券交易",
+    "納財",
+    "開倉庫出貨財"
+   ]
+  },
+  "五虛": {
+   "own": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "excluded": [
+    "天赦",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "jiLine": "忌修倉庫開倉庫出貨財",
+   "puzhu06Headings": [
+    "開倉庫出貨財"
+   ]
+  },
+  "小耗": {
+   "own": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天願"
+   ],
+   "excluded": [
+    "天赦",
+    "月恩",
+    "四相",
+    "時德"
+   ],
+   "jiLine": "忌修倉庫開市立劵交易納財開倉庫出貨財",
+   "puzhu06Headings": [
+    "開市",
+    "立券交易",
+    "納財",
+    "開倉庫出貨財"
+   ]
+  }
+ },
+ "unchanged": {
+  "liftExclusions": {
+   "五墓": true,
+   "五離": true
+  },
+  "liftLists": true
+ },
+ "added": [
+  "liftExclusions.九空/五虛/小耗 (class QL_NARROW)",
+  "classes.QL_NARROW (scoped only_ji rule)",
+  "yiComposition R-F1Y",
+  "ownerDecision R-JK/R-WX/R-XH/R-F1Y"
+ ]
+}

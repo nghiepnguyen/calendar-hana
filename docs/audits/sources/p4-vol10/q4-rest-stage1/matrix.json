@@ -1,0 +1,2379 @@
+{
+ "version": "q4-rest-stage1-v1",
+ "cells": [
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067692-n126",
+   "context": "卯-丁巳",
+   "q4Triggers": [
+    "月恩",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "月恩",
+    "四相"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "四相",
+    "月恩",
+    "滿日"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "only_yi",
+   "predictNarrow": "both_present",
+   "genericClasses": "QL",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "CLEAN",
+   "reason": "target god active, non-own trigger only, sole 忌 operand, authenticated",
+   "clean": true,
+   "decisive": true,
+   "classification": "C",
+   "jiAxis": "B",
+   "contaminatedNote": null,
+   "provenance": "DIRECT_SOURCE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "witness": "06067692-n58",
+   "context": "寅-丙辰",
+   "q4Triggers": [
+    "月德",
+    "月恩",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "月恩",
+    "四相"
+   ],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "witness": "06067692-n58",
+   "context": "寅-丙辰",
+   "q4Triggers": [
+    "月德",
+    "月恩",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "月恩",
+    "四相"
+   ],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "witness": "06067692-n58",
+   "context": "寅-丙辰",
+   "q4Triggers": [
+    "月德",
+    "月恩",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "月恩",
+    "四相"
+   ],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "四相",
+    "月恩",
+    "滿日"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "witness": "06067692-n58",
+   "context": "寅-丙辰",
+   "q4Triggers": [
+    "月德",
+    "月恩",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "月恩",
+    "四相"
+   ],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "四相",
+    "月恩",
+    "滿日"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067692-n59",
+   "context": "寅-丁巳",
+   "q4Triggers": [
+    "天德",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德"
+   ],
+   "otherYi": [
+    "四相"
+   ],
+   "otherJi": [
+    "平日",
+    "月刑",
+    "月害"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067692-n93",
+   "context": "卯-甲申",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067692-n93",
+   "context": "卯-甲申",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "五離",
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067692-n93",
+   "context": "卯-甲申",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067692-n93",
+   "context": "卯-甲申",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞",
+    "甲日"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067693-n105",
+   "context": "巳-丙申",
+   "q4Triggers": [
+    "天德合",
+    "天願"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合",
+    "天願",
+    "六合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "平日",
+    "月刑"
+   ],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合+天願+六合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067693-n125",
+   "context": "巳-丙辰",
+   "q4Triggers": [
+    "天德合",
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "時德"
+   ],
+   "ownLifters": [
+    "天德合"
+   ],
+   "otherYi": [
+    "時德"
+   ],
+   "otherJi": [
+    "月煞",
+    "月虛",
+    "閉日"
+   ],
+   "modelSources": [
+    "subject:月煞",
+    "subject:閉日",
+    "youwei:月虛"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "AD",
+   "narrowClasses": "AD",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067693-n59",
+   "context": "辰-丁巳",
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [
+    "五富",
+    "四相"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合+月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "五墓"
+   ],
+   "modelSources": [
+    "remaining:五墓"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "QL_EXCLUDED",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "五墓"
+   ],
+   "modelSources": [
+    "remaining:五墓"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "QL_EXCLUDED",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合"
+   ],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "安牀",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [
+    "天德合"
+   ],
+   "ownLifters": [],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "QL_EXCLUDED",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 keep: models agree",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "開市",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [
+    "天德合"
+   ],
+   "ownLifters": [],
+   "otherYi": [],
+   "otherJi": [
+    "小耗"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "QL_EXCLUDED",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 keep: models agree",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "立券交易",
+   "witness": "06067693-n95",
+   "context": "巳-丙戌",
+   "q4Triggers": [
+    "天德合"
+   ],
+   "nonOwnTriggers": [
+    "天德合"
+   ],
+   "ownLifters": [],
+   "otherYi": [],
+   "otherJi": [
+    "小耗"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "QL_EXCLUDED",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 keep: models agree",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "q4Triggers": [
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "四相"
+   ],
+   "otherJi": [
+    "劫煞",
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 untouched: models agree (row not touched: protected, day rule or 忌 already absent)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "安牀",
+   "witness": "06067694-n28",
+   "context": "午-丙戌",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "開市",
+   "witness": "06067694-n28",
+   "context": "午-丙戌",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "立券交易",
+   "witness": "06067694-n28",
+   "context": "午-丙戌",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "三合"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067694-n53",
+   "context": "午-辛亥",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067694-n53",
+   "context": "午-辛亥",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067694-n53",
+   "context": "午-辛亥",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n53",
+   "context": "午-辛亥",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大時",
+    "小耗",
+    "月害",
+    "甲日"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大時",
+    "月害"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大時",
+    "月害"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大時",
+    "月害"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n73",
+   "context": "未-甲子",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "五虛",
+    "大時",
+    "月害",
+    "甲日"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n93",
+   "context": "未-甲申",
+   "q4Triggers": [
+    "天德",
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞",
+    "天賊",
+    "甲日"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "witness": "06067694-n98",
+   "context": "未-己丑",
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大耗",
+    "月刑",
+    "月破"
+   ],
+   "modelSources": [
+    "subject:月刑",
+    "subject:月破",
+    "youwei:大耗"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "AD+YOUJI",
+   "narrowClasses": "AD+YOUJI",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月破 in 未 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "witness": "06067694-n98",
+   "context": "未-己丑",
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "大耗",
+    "月刑",
+    "月破"
+   ],
+   "modelSources": [
+    "subject:月刑",
+    "subject:月破",
+    "youwei:大耗"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "AD+YOUJI",
+   "narrowClasses": "AD+YOUJI",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月破 in 未 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "witness": "06067694-n98",
+   "context": "未-己丑",
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [
+    "四相"
+   ],
+   "otherJi": [
+    "大耗",
+    "月刑",
+    "月破"
+   ],
+   "modelSources": [
+    "subject:月刑",
+    "subject:月破",
+    "youwei:大耗"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "AD+YOUJI",
+   "narrowClasses": "AD+YOUJI",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月破 in 未 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "witness": "06067694-n98",
+   "context": "未-己丑",
+   "q4Triggers": [
+    "天德合",
+    "月德合",
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [
+    "四相"
+   ],
+   "otherJi": [
+    "大耗",
+    "月刑",
+    "月破"
+   ],
+   "modelSources": [
+    "subject:月刑",
+    "subject:月破",
+    "youwei:大耗"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "only_ji",
+   "predictNarrow": "only_ji",
+   "genericClasses": "AD+YOUJI",
+   "narrowClasses": "AD+YOUJI",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月破 in 未 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067695-n29",
+   "context": "申-丁亥",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "平日",
+    "月害"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067695-n99",
+   "context": "酉-庚寅",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067695-n99",
+   "context": "酉-庚寅",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "五合"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067695-n99",
+   "context": "酉-庚寅",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067695-n99",
+   "context": "酉-庚寅",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067696-n111",
+   "context": "亥-壬寅",
+   "q4Triggers": [
+    "天願",
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "時德"
+   ],
+   "ownLifters": [
+    "天願",
+    "六合"
+   ],
+   "otherYi": [
+    "五富",
+    "時德"
+   ],
+   "otherJi": [
+    "平日"
+   ],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天願+六合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067696-n53",
+   "context": "戌-辛亥",
+   "q4Triggers": [
+    "天德合",
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞",
+    "四窮"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德合+月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067696-n65",
+   "context": "戌-癸亥",
+   "q4Triggers": [
+    "四相"
+   ],
+   "nonOwnTriggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "五富",
+    "四相"
+   ],
+   "otherJi": [
+    "劫煞"
+   ],
+   "modelSources": [
+    "subject:刼煞"
+   ],
+   "printed": "only_ji",
+   "predictGeneric": "neither_recorded",
+   "predictNarrow": "undetermined",
+   "genericClasses": "QL",
+   "narrowClasses": "QL_EXCLUDED",
+   "status": "CONTAMINATED",
+   "reason": "other 忌 operand(s) on the heading: 劫煞",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": "CONTAMINATED_BUT_SUPPORTIVE",
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開市",
+   "witness": "06067696-n98",
+   "context": "亥-己丑",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [
+    "月厭"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月厭 in 亥 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "立券交易",
+   "witness": "06067696-n98",
+   "context": "亥-己丑",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [
+    "月厭"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月厭 in 亥 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "納財",
+   "witness": "06067696-n98",
+   "context": "亥-己丑",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [
+    "月厭"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月厭 in 亥 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "九空",
+   "heading": "開倉庫出貨財",
+   "witness": "06067696-n98",
+   "context": "亥-己丑",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "滿日"
+   ],
+   "otherJi": [
+    "月厭"
+   ],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NOT_Q4",
+   "reason": "九空 defers to 月厭 in 亥 months (remainingDefer)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n111",
+   "context": "丑-壬寅",
+   "q4Triggers": [
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "時德"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "時德"
+   ],
+   "otherJi": [
+    "劫煞",
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 untouched: models agree (row not touched: protected, day rule or 忌 already absent)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n123",
+   "context": "丑-甲寅",
+   "q4Triggers": [
+    "四相",
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "四相",
+    "時德"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "四相",
+    "時德"
+   ],
+   "otherJi": [
+    "劫煞",
+    "天賊",
+    "甲日"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 untouched: models agree (row not touched: protected, day rule or 忌 already absent)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "安牀",
+   "witness": "06067697-n34",
+   "context": "子-壬辰",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "開市",
+   "witness": "06067697-n34",
+   "context": "子-壬辰",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "not_recorded",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五墓",
+   "heading": "立券交易",
+   "witness": "06067697-n34",
+   "context": "子-壬辰",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [
+    "三合"
+   ],
+   "otherJi": [],
+   "modelSources": [],
+   "printed": "only_yi",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開市",
+   "witness": "06067697-n59",
+   "context": "子-丁巳",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞",
+    "四廢"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "立券交易",
+   "witness": "06067697-n59",
+   "context": "子-丁巳",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞",
+    "四廢"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "納財",
+   "witness": "06067697-n59",
+   "context": "子-丁巳",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞",
+    "四廢"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "小耗",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n59",
+   "context": "子-丁巳",
+   "q4Triggers": [
+    "月德合"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德合"
+   ],
+   "otherYi": [
+    "五富"
+   ],
+   "otherJi": [
+    "劫煞",
+    "四廢"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德合): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n75",
+   "context": "丑-丙寅",
+   "q4Triggers": [
+    "月德"
+   ],
+   "nonOwnTriggers": [],
+   "ownLifters": [
+    "月德"
+   ],
+   "otherYi": [],
+   "otherJi": [
+    "劫煞",
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n87",
+   "context": "丑-戊寅",
+   "q4Triggers": [
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "時德"
+   ],
+   "ownLifters": [],
+   "otherYi": [
+    "時德"
+   ],
+   "otherJi": [
+    "劫煞",
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "puzhu:06 untouched: models agree (row not touched: protected, day rule or 忌 already absent)",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  },
+  {
+   "god": "五虛",
+   "heading": "開倉庫出貨財",
+   "witness": "06067697-n99",
+   "context": "丑-庚寅",
+   "q4Triggers": [
+    "天德",
+    "月德",
+    "時德"
+   ],
+   "nonOwnTriggers": [
+    "時德"
+   ],
+   "ownLifters": [
+    "天德",
+    "月德"
+   ],
+   "otherYi": [
+    "時德"
+   ],
+   "otherJi": [
+    "劫煞",
+    "天賊"
+   ],
+   "modelSources": [],
+   "printed": "only_ji",
+   "predictGeneric": "untouched",
+   "predictNarrow": "untouched",
+   "genericClasses": "",
+   "narrowClasses": "",
+   "status": "NON_DISCRIMINATING",
+   "reason": "own lifter present (天德+月德): both models lift",
+   "clean": false,
+   "decisive": false,
+   "classification": null,
+   "jiAxis": null,
+   "contaminatedNote": null,
+   "provenance": "NON_DECISIVE_WITNESS"
+  }
+ ],
+ "godHeading": {
+  "九空": {
+   "開市": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n58"
+     ],
+     "NOT_Q4": [
+      "06067694-n98",
+      "06067696-n98"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "午-壬辰",
+     "午-庚辰",
+     "午-戊辰",
+     "午-甲辰",
+     "卯-丁丑",
+     "子-甲戌",
+     "酉-癸未"
+    ]
+   },
+   "立券交易": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n58"
+     ],
+     "NOT_Q4": [
+      "06067694-n98",
+      "06067696-n98"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "午-壬辰",
+     "午-庚辰",
+     "午-戊辰",
+     "午-甲辰",
+     "卯-丁丑",
+     "子-甲戌",
+     "酉-癸未"
+    ]
+   },
+   "納財": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n58"
+     ],
+     "NOT_Q4": [
+      "06067694-n98",
+      "06067696-n98"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "午-壬辰",
+     "午-庚辰",
+     "午-戊辰",
+     "午-甲辰",
+     "卯-丁丑",
+     "子-甲戌",
+     "酉-癸未"
+    ]
+   },
+   "開倉庫出貨財": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n58"
+     ],
+     "NOT_Q4": [
+      "06067694-n98",
+      "06067696-n98"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "午-壬辰",
+     "午-庚辰",
+     "午-戊辰",
+     "卯-丁丑",
+     "酉-癸未"
+    ]
+   }
+  },
+  "五虛": {
+   "開倉庫出貨財": {
+    "classification": "C",
+    "witnesses": {
+     "CLEAN": [
+      "06067692-n126"
+     ],
+     "CONTAMINATED": [
+      "06067696-n65"
+     ],
+     "NON_DISCRIMINATING": [
+      "06067692-n59",
+      "06067693-n105",
+      "06067693-n125",
+      "06067693-n59",
+      "06067694-n117",
+      "06067694-n73",
+      "06067694-n93",
+      "06067695-n29",
+      "06067696-n111",
+      "06067696-n53",
+      "06067697-n111",
+      "06067697-n123",
+      "06067697-n75",
+      "06067697-n87",
+      "06067697-n99"
+     ]
+    },
+    "decisive": [
+     "06067692-n126"
+    ],
+    "discriminatingContexts720": [
+     "午-壬辰",
+     "午-庚辰",
+     "午-戊申",
+     "午-戊辰",
+     "卯-丁丑",
+     "卯-丁巳",
+     "子-丙寅",
+     "子-庚寅",
+     "子-戊寅",
+     "戌-癸亥",
+     "酉-癸亥",
+     "酉-癸未"
+    ]
+   }
+  },
+  "小耗": {
+   "開市": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n93",
+      "06067693-n95",
+      "06067694-n53",
+      "06067694-n73",
+      "06067695-n99",
+      "06067697-n59"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "巳-戊戌",
+     "戌-癸卯"
+    ]
+   },
+   "立券交易": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n93",
+      "06067693-n95",
+      "06067694-n53",
+      "06067694-n73",
+      "06067695-n99",
+      "06067697-n59"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "巳-戊戌",
+     "戌-癸卯"
+    ]
+   },
+   "納財": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n93",
+      "06067693-n95",
+      "06067694-n53",
+      "06067694-n73",
+      "06067695-n99",
+      "06067697-n59"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "巳-戊戌",
+     "戌-癸卯"
+    ]
+   },
+   "開倉庫出貨財": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067692-n93",
+      "06067693-n95",
+      "06067694-n53",
+      "06067694-n73",
+      "06067695-n99",
+      "06067697-n59"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": [
+     "戌-癸卯"
+    ]
+   }
+  },
+  "五墓": {
+   "安牀": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067693-n95",
+      "06067694-n28",
+      "06067697-n34"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": []
+   },
+   "開市": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067693-n95",
+      "06067694-n28",
+      "06067697-n34"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": []
+   },
+   "立券交易": {
+    "classification": "D",
+    "witnesses": {
+     "NON_DISCRIMINATING": [
+      "06067693-n95",
+      "06067694-n28",
+      "06067697-n34"
+     ]
+    },
+    "decisive": [],
+    "discriminatingContexts720": []
+   }
+  }
+ },
+ "aggregates": {
+  "九空": "INSUFFICIENT_EVIDENCE",
+  "五虛": "UNRESOLVED_CONFLICT",
+  "小耗": "INSUFFICIENT_EVIDENCE",
+  "五墓": "INSUFFICIENT_EVIDENCE"
+ }
+}

@@ -14,6 +14,7 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 TARGET = root / 'shared/lunar/p4OwnerRules.ts'
 TEST = ['shared/lunar/p4OwnerRules.test.ts']
+V5_TEST = ['shared/lunar/p4OwnerRulesV4.test.ts']
 REPORT = root / 'docs/audits/p4-owner-rules-mutation-results.json'
 # (name, rule, old, new)
 mutations = [
@@ -37,9 +38,14 @@ mutations = [
      'false,'),
     ('puzhu28_dropped', 'puzhu:28', "    if (dayRule) row =", "    if (false) row ="),
     ('e5_dropped', 'E5 context', 'rows.every((r) => key(r) === key(rows[0]!))', 'true'),
+    # Q4-REST Stage 3 (authority v5): tested by the v5 suite (shipped owner rules vs full Golden v4).
+    ('q4rest_scoped_only_ji_dropped', 'Q4-REST scoped 宜 (R-JK/R-WX/R-XH)',
+     "p4Puzhu06NarrowOnlyJi(classes!.split('+'))", 'false', V5_TEST),
+    ('r_f1y_dropped', 'R-F1Y yiComposition', 'for (const rule of P4_PUZHU06_YI_COMPOSITION) {',
+     'for (const rule of [] as typeof P4_PUZHU06_YI_COMPOSITION) {', V5_TEST),
 ]
-def run_test():
-    return subprocess.run(['npx', 'vitest', 'run', *TEST], cwd=root, capture_output=True, text=True, timeout=1800)
+def run_test(tests=TEST):
+    return subprocess.run(['npx', 'vitest', 'run', *tests], cwd=root, capture_output=True, text=True, timeout=1800)
 
 
 original = TARGET.read_bytes()
@@ -48,13 +54,13 @@ try:
     control = run_test()
     if control.returncode != 0:
         raise RuntimeError('control run failed:\n' + control.stdout[-2000:])
-    for name, rule, old, new in mutations:
+    for name, rule, old, new, *tests in mutations:
         text = original.decode()
         if text.count(old) != 1:
             raise RuntimeError(f'mutation does not apply once: {name}: {old!r}')
         TARGET.write_text(text.replace(old, new))
         try:
-            r = run_test()
+            r = run_test(tests[0] if tests else TEST)
         finally:
             TARGET.write_bytes(original)
         out = r.stdout + r.stderr
@@ -66,7 +72,7 @@ finally:
 report = {
     'version': 'p4-owner-rules-mutations-v1',
     'target': str(TARGET.relative_to(root)),
-    'tests': TEST,
+    'tests': TEST + V5_TEST,
     'control': 'clean',
     'mutations': len(results),
     'caught': sum(r['caughtByTest'] for r in results),

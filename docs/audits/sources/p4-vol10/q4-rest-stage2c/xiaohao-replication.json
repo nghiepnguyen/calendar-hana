@@ -1,0 +1,146 @@
+{
+ "version": "q4-rest-stage2c-v1",
+ "witness": "06067696-n45",
+ "context": "戌-癸卯",
+ "triggers": [
+  "四相"
+ ],
+ "ownLifters": [],
+ "exception": "子午卯酉月值刼煞猶忌 does not apply (戌 month)",
+ "cells": [
+  {
+   "heading": "開市",
+   "jiOperands": [
+    "大時",
+    "小耗"
+   ],
+   "neutralised": {
+    "大時": "clause 「辰戌月值執日六合…餘皆不忌」"
+   },
+   "otherJi": [],
+   "triggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "yiOperands": [],
+   "printed": "only_ji",
+   "production": {
+    "state": "not_recorded",
+    "ji": [
+     "小耗"
+    ],
+    "puzhu06": "lift:QL"
+   },
+   "j": "J_CLEAN",
+   "jResult": "J-NARROW",
+   "y": "Y_NOT_TESTABLE",
+   "yResult": null
+  },
+  {
+   "heading": "立券交易",
+   "jiOperands": [
+    "大時",
+    "小耗"
+   ],
+   "neutralised": {
+    "大時": "clause 「辰戌月值執日六合…餘皆不忌」"
+   },
+   "otherJi": [],
+   "triggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "yiOperands": [
+    "五合",
+    "六合"
+   ],
+   "printed": "only_ji",
+   "production": {
+    "state": "only_yi",
+    "ji": [
+     "小耗"
+    ],
+    "puzhu06": "lift:QL"
+   },
+   "j": "J_CLEAN",
+   "jResult": "J-NARROW",
+   "y": "Y_CLEAN",
+   "yResult": "Y-ONLY-JI"
+  },
+  {
+   "heading": "納財",
+   "jiOperands": [
+    "大時",
+    "小耗"
+   ],
+   "neutralised": {
+    "大時": "clause 「辰戌月值執日六合…餘皆不忌」"
+   },
+   "otherJi": [],
+   "triggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "yiOperands": [
+    "六合",
+    "四相"
+   ],
+   "printed": "only_ji",
+   "production": {
+    "state": "only_yi",
+    "ji": [
+     "小耗"
+    ],
+    "puzhu06": "lift:QL"
+   },
+   "j": "J_CLEAN",
+   "jResult": "J-NARROW",
+   "y": "Y_CLEAN",
+   "yResult": "Y-ONLY-JI"
+  },
+  {
+   "heading": "開倉庫出貨財",
+   "jiOperands": [
+    "五虛",
+    "大時",
+    "小耗"
+   ],
+   "neutralised": {
+    "五虛": "lifted by its own 六合 「與天德月德天德合月德合六合併則不忌」",
+    "大時": "clause 「辰戌月值執日六合…餘皆不忌」"
+   },
+   "otherJi": [],
+   "triggers": [
+    "四相"
+   ],
+   "ownLifters": [],
+   "yiOperands": [
+    "四相"
+   ],
+   "printed": "only_ji",
+   "production": {
+    "state": "only_yi",
+    "ji": [
+     "小耗"
+    ],
+    "puzhu06": "lift:QL"
+   },
+   "j": "J_CLEAN",
+   "jResult": "J-NARROW",
+   "y": "Y_CLEAN",
+   "yResult": "Y-ONLY-JI"
+  }
+ ],
+ "firstWitness": {
+  "witness": "06067693-n107",
+  "context": "巳-戊戌",
+  "trigger": "四相",
+  "cells": [
+   "開市: J-NARROW",
+   "立券交易: J-NARROW",
+   "納財: J-NARROW"
+  ]
+ },
+ "classification": "XH-R1",
+ "note": "clean replication supports J-NARROW; same trigger (四相) as the first witness, so 時德/月恩/天赦 remain untested for 小耗"
+}

@@ -2,11 +2,12 @@
   "version": "p4-owner-rules-mutations-v1",
   "target": "shared/lunar/p4OwnerRules.ts",
   "tests": [
-    "shared/lunar/p4OwnerRules.test.ts"
+    "shared/lunar/p4OwnerRules.test.ts",
+    "shared/lunar/p4OwnerRulesV4.test.ts"
   ],
   "control": "clean",
-  "mutations": 12,
-  "caught": 12,
+  "mutations": 14,
+  "caught": 14,
   "restored": true,
   "results": [
     {
@@ -78,6 +79,18 @@
     {
       "mutation": "e5_dropped",
       "rule": "E5 context",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "q4rest_scoped_only_ji_dropped",
+      "rule": "Q4-REST scoped 宜 (R-JK/R-WX/R-XH)",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "r_f1y_dropped",
+      "rule": "R-F1Y yiComposition",
       "caughtByTest": true,
       "exitCode": 1
     }
