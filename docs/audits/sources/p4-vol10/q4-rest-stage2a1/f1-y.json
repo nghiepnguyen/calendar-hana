@@ -1,0 +1,233 @@
+{
+ "version": "q4-rest-stage2a1-v1",
+ "question": "when 五離's 忌 survives and an independent 宜 exists: only_ji or both_present?",
+ "f1Rule3": "An independent 宜 on 立券交易 does not suppress the surviving 五離 忌 (both_present).",
+ "r2JAxis": "unchanged: generic triggers do not lift 五離 on 立券交易 (v4)",
+ "productionRows": 67,
+ "byHeading": {
+  "宴會": 26,
+  "立券交易": 21,
+  "納采問名": 10,
+  "結婚姻": 10
+ },
+ "byFamily": {
+  "U3_SOLE_JISHEN_YI": 39,
+  "U5_PUZHU06_KEPT": 4,
+  "U7_PROTECTED_CO_OPERAND": 9,
+  "U2_SOLE_OFFICER_YI": 7,
+  "U1_SOLE_MIXED_YI": 8
+ },
+ "lijuanRows": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "yiGods": [
+    "五富"
+   ],
+   "ji": [
+    "五離"
+   ],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "coverage": "UNCOVERED"
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "heading": "立券交易",
+   "yiGods": [
+    "滿日"
+   ],
+   "ji": [
+    "五離"
+   ],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "coverage": "UNCOVERED"
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "yiGods": [
+    "五富"
+   ],
+   "ji": [
+    "五離"
+   ],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "coverage": "UNCOVERED"
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "yiGods": [
+    "五富"
+   ],
+   "ji": [
+    "五離"
+   ],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "coverage": "UNCOVERED"
+  }
+ ],
+ "lijuanContexts": [
+  "丑-甲申",
+  "午-戊申"
+ ],
+ "lijuanAllRows": 21,
+ "lijuanPreExistingRows": {
+  "count": 17,
+  "contexts": [
+   "丑-丙申",
+   "丑-戊申",
+   "午-壬申",
+   "午-庚申",
+   "午-甲申",
+   "酉-丙申",
+   "酉-甲申"
+  ],
+  "note": "no puzhu:06 trigger: both_present before and after F1; same composer default"
+ },
+ "scope": "WIDER_COMPOSER: F1 R2 rows are 4 of 21 五離 × 立券交易 both_present rows and 67 五離 rows; all come from the same IMPLEMENTATION_DEFAULT",
+ "lijuanDirectlyCovered": 0,
+ "lijuanStatus": "SEMANTIC_ONLY (no page tests 五離 × 立券交易 with independent 宜)",
+ "otherHeadingsDirect": 6,
+ "witnessTable": [
+  {
+   "witness": "06067696-n14",
+   "context": "戌-壬申",
+   "heading": "宴會",
+   "production": "both_present",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "NOT_COMPARED (printed as 會親友, not aliased)",
+   "yEvidence": "NOT_COMPARED"
+  },
+  {
+   "witness": "06067696-n14",
+   "context": "戌-壬申",
+   "heading": "結婚姻",
+   "production": "both_present",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "Y_ONLY_JI_SOLE"
+  },
+  {
+   "witness": "06067696-n14",
+   "context": "戌-壬申",
+   "heading": "納采問名",
+   "production": "both_present",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "Y_ONLY_JI_SOLE"
+  },
+  {
+   "witness": "06067696-n14",
+   "context": "戌-壬申",
+   "heading": "立券交易",
+   "production": "only_ji",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "NO_INDEPENDENT_YI"
+  },
+  {
+   "witness": "06067696-n62",
+   "context": "戌-庚申",
+   "heading": "宴會",
+   "production": "both_present",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "NOT_COMPARED (printed as 會親友, not aliased)",
+   "yEvidence": "NOT_COMPARED"
+  },
+  {
+   "witness": "06067696-n62",
+   "context": "戌-庚申",
+   "heading": "結婚姻",
+   "production": "both_present",
+   "jiSources": [
+    "五離",
+    "八專"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "Y_ONLY_JI_PROTECTED_CO_OPERAND"
+  },
+  {
+   "witness": "06067696-n62",
+   "context": "戌-庚申",
+   "heading": "納采問名",
+   "production": "both_present",
+   "jiSources": [
+    "五離",
+    "八專"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "Y_ONLY_JI_PROTECTED_CO_OPERAND"
+  },
+  {
+   "witness": "06067696-n62",
+   "context": "戌-庚申",
+   "heading": "立券交易",
+   "production": "only_ji",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "NO_INDEPENDENT_YI"
+  },
+  {
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "heading": "宴會",
+   "production": "only_ji",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "NOT_COMPARED (printed as 會親友, not aliased)",
+   "yEvidence": "NO_INDEPENDENT_YI"
+  },
+  {
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "heading": "結婚姻",
+   "production": "neither_recorded",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "NOT_Y (相抵 / other state)"
+  },
+  {
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "heading": "納采問名",
+   "production": "neither_recorded",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "NOT_Y (相抵 / other state)"
+  },
+  {
+   "witness": "06067694-n117",
+   "context": "未-戊申",
+   "heading": "立券交易",
+   "production": "neither_recorded",
+   "jiSources": [
+    "五離"
+   ],
+   "printed": "only_ji",
+   "yEvidence": "NOT_Y (相抵 / other state)"
+  }
+ ],
+ "classification": "F1Y-B"
+}

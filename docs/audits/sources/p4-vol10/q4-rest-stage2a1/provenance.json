@@ -1,0 +1,69 @@
+{
+ "version": "q4-rest-stage2a1-v1",
+ "rule": "surviving 忌 + independent 宜 → both_present (for an ungraded 凶煞)",
+ "chain": [
+  {
+   "layer": "卷十 等第 prose",
+   "class": "SOURCE_FACT",
+   "scope": "graded subjects only",
+   "text": "其上吉足勝凶從宜不從忌上次吉足抵凶遇德從宜不從忌不遇從宜亦從忌中等吉不抵凶遇德則…",
+   "note": "both_present = 從宜亦從忌, defined only per grade (上次/中次)"
+  },
+  {
+   "layer": "A04a heading annotation state model (P4HeadingState)",
+   "class": "IMPLEMENTATION",
+   "where": "shared/lunar/p4HeadingAnnotation.ts (3800d99, 2026-10-16)",
+   "note": "state vocabulary, per subject scope"
+  },
+  {
+   "layer": "A05 day composition rule",
+   "class": "IMPLEMENTATION_DEFAULT",
+   "where": "docs/audits/p4-vol10-day-composition.md 「宜 bị chặn nếu có phạm vi 從忌不從宜 / 不註 liệt kê heading đó」; shared/lunar/p4DayComposition.ts (3800d99, 2026-10-16)",
+   "note": "宜 is suppressed only by a scope marked 從忌不從宜 / 不註; ungraded scopes carry no such mark, so ji + 宜 falls through to both_present"
+  },
+  {
+   "layer": "P4-B remaining-ji",
+   "class": "IMPLEMENTATION",
+   "where": "docs/audits/p4-vol10-remaining-ji.md 「P4-B đặt 宜 = true để chỉ đọc 忌 (both_present = kept)」",
+   "note": "remaining scopes carry 忌 only; 宜 composed later by the A05 rule"
+  },
+  {
+   "layer": "owner-rules runtime",
+   "class": "IMPLEMENTATION",
+   "where": "shared/lunar/p4OwnerRules.ts resolveP4OwnerRulesDay (aef0a1e/4d6ad5c, 2026-10-17): suppress = yiOff | 相抵 | puzhu:27 | subject as_usual/still_avoid/avoid_all",
+   "note": "reproduces full Golden v2; remaining facts never suppress 宜"
+  },
+  {
+   "layer": "full Golden v2 acceptance",
+   "class": "OWNER_ACCEPTED_GOLDEN (wholesale, no Y-specific review)",
+   "where": "docs/audits/p4-full-golden-review.md (roadmap 7 acceptance, 2026-10-17); owner questions p4-full-golden-hold-questions.md were H1/H2 (相抵 / 德願); owner_checks.py checks (i), E1, E3, D",
+   "note": "the owner accepted the computed output as a whole; no question or check addressed ungraded 忌 + 宜. H1-B (an unprotected 忌 meeting another scope's 相抵 → 宜 not noted) is the nearest owner Y decision and points the other way for its own case"
+  },
+  {
+   "layer": "puzhu:06 PRD",
+   "class": "IMPLEMENTATION (inherited)",
+   "where": "tasks/prd-p4b-puzhu06.md: 「2025-01-15 丑甲申 立券交易 … Trạng thái hiện tại both_present」",
+   "note": "reads the existing state; makes no Y decision"
+  },
+  {
+   "layer": "F1 R2 rule 3",
+   "class": "OWNER_RULING (2026-10-26)",
+   "where": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json",
+   "note": "first explicit statement of the rule; it adopted the composer state measured in F1 Stage 2 (4 rows both_present) rather than a source finding"
+  }
+ ],
+ "firstArtifact": "docs/audits/p4-vol10-day-composition.md + shared/lunar/p4DayComposition.ts (3800d99, 2026-10-16)",
+ "classification": "IMPLEMENTATION_DEFAULT, accepted wholesale in Golden v2 (no Y-specific review); F1 rule 3 inherited it. Scope: sole-ungraded families U1–U3, U5; U4 and U7 unverified",
+ "sixGrades": {
+  "old": "舊本凡吉神遇凶煞皆從忌而不從宜",
+  "critique": "於理固屬不合於事尤為不便",
+  "replacement": "除建破等日條例簡易及專忌之日無庸分别外餘分為六等",
+  "grades": "其上吉足勝凶從宜不從忌上次吉足抵凶遇德從宜不從忌不遇從宜亦從忌中等吉不抵凶遇德則吉勝從宜不從忌不遇從忌不從宜中次凶勝於吉遇德始相抵從宜亦從忌不遇從忌不從宜其下凶又逢凶遇德從忌不從宜不遇諸事皆忌最下凶叠大凶遇德仍諸事皆忌",
+  "tableInRaw": false,
+  "tableAnchorOffset": 21611,
+  "gradedVsUngraded": "grades attach to the 宜忌等第表 cells (subject × month); ungraded 凶煞 entries carry only 「與…併則不忌」 / 猶忌 / 不註宜 clauses about their own 忌",
+  "ungradedVsYiDefined": false,
+  "absenceImplies": "NO_CONCLUSION: the prose replaces the blanket rule for what it grades and says nothing of the rest; 重日/復日 「則不忌亦不註宜」 speaks of 宜 only for the lifted case",
+  "yuebiaoConvention": "the 月表 prints only_ji on every comparable row: a printed convention not stated in the prose"
+ }
+}

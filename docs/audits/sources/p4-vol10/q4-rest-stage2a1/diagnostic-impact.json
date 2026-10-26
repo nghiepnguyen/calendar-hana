@@ -1,0 +1,321 @@
+{
+ "version": "q4-rest-stage2a1-v1",
+ "model": "Y-NARROW (diagnostic only; not approved)",
+ "hypothesis": "a both_present row whose surviving 忌 includes an ungraded remaining-ji god reads only_ji",
+ "scopes": {
+  "all": "every such row (the full hypothesis)",
+  "evidence": "evidence-bounded: rows whose ungraded god × family matches a source pattern (direct + pattern covered)",
+  "f1y": "F1-Y: rows where 五離 is the sole ungraded source",
+  "u7": "extrapolation cost: protected (U7) rows only"
+ },
+ "all": {
+  "headingRows": 1110,
+  "activityRows": 1082,
+  "eventRecords": 1330,
+  "activityStatusChanges": 559,
+  "activityScoreChanges": 1040,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 0,
+  "eventScoreChanges": 1245,
+  "statusMoves": {
+   "watch→avoid": 520,
+   "watch→watch": 464,
+   "avoid→avoid": 42,
+   "consider→avoid": 39,
+   "consider→consider": 17
+  },
+  "byActivity": {
+   "medical": 151,
+   "warehouse": 107,
+   "wedding": 89,
+   "planting": 88,
+   "moving": 65,
+   "engagement": 58,
+   "contract": 55,
+   "transaction": 55,
+   "travel": 54,
+   "groundbreaking": 52,
+   "renovation": 45,
+   "warehouse_opening": 45,
+   "finance": 40,
+   "pray_blessing": 35,
+   "construction": 25,
+   "pray_children": 25,
+   "opening": 23,
+   "business": 23,
+   "meeting": 17,
+   "beam_raising": 9,
+   "worship": 8,
+   "burial": 7,
+   "livestock": 6
+  },
+  "headingByHeading": {
+   "求醫療病": 165,
+   "修倉庫": 109,
+   "栽種": 93,
+   "嫁娶": 79,
+   "般移": 72,
+   "結婚姻": 61,
+   "納采問名": 58,
+   "立券交易": 55,
+   "行幸遣使": 54,
+   "興造動土": 52,
+   "修宮室": 45,
+   "開倉庫出貨財": 45,
+   "納財": 40,
+   "祈福": 35,
+   "宴會": 32,
+   "營建宮室": 25,
+   "求嗣": 25,
+   "開市": 23,
+   "安葬": 10,
+   "納畜": 9,
+   "豎柱上梁": 9,
+   "祭祀": 8,
+   "牧養": 6
+  },
+  "headingByGod": {
+   "往亡": 148,
+   "土符": 132,
+   "遊禍": 102,
+   "五墓": 99,
+   "九空": 80,
+   "八專": 80,
+   "死氣": 77,
+   "地囊": 74,
+   "五虛": 69,
+   "五離": 67,
+   "四窮": 45,
+   "滿日": 45,
+   "天賊": 40,
+   "歸忌": 37,
+   "小耗": 29,
+   "九焦": 28,
+   "厭對": 19,
+   "四廢": 14,
+   "四忌": 12,
+   "天狗": 8,
+   "復日": 2
+  },
+  "headingByFamily": {
+   "U7_PROTECTED_CO_OPERAND": 767,
+   "U3_SOLE_JISHEN_YI": 221,
+   "U5_PUZHU06_KEPT": 4,
+   "U2_SOLE_OFFICER_YI": 82,
+   "U4_MULTIPLE_JI": 7,
+   "U1_SOLE_MIXED_YI": 29
+  },
+  "headingByCoverage": {
+   "UNCOVERED": 911,
+   "PATTERN_COVERED": 152,
+   "DIRECT_SOURCE_COVERED": 47
+  }
+ },
+ "evidence": {
+  "headingRows": 198,
+  "activityRows": 211,
+  "eventRecords": 354,
+  "activityStatusChanges": 106,
+  "activityScoreChanges": 208,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 0,
+  "eventScoreChanges": 328,
+  "statusMoves": {
+   "watch→avoid": 106,
+   "watch→watch": 102,
+   "avoid→avoid": 3
+  },
+  "byActivity": {
+   "contract": 26,
+   "transaction": 26,
+   "warehouse_opening": 24,
+   "opening": 19,
+   "business": 19,
+   "warehouse": 17,
+   "wedding": 16,
+   "engagement": 16,
+   "beam_raising": 9,
+   "medical": 6,
+   "groundbreaking": 6,
+   "livestock": 6,
+   "finance": 5,
+   "meeting": 4,
+   "moving": 3,
+   "construction": 3,
+   "planting": 3,
+   "renovation": 3
+  },
+  "headingByHeading": {
+   "立券交易": 26,
+   "開倉庫出貨財": 24,
+   "開市": 19,
+   "修倉庫": 17,
+   "納采問名": 16,
+   "結婚姻": 16,
+   "宴會": 15,
+   "嫁娶": 12,
+   "納畜": 9,
+   "豎柱上梁": 9,
+   "求醫療病": 6,
+   "牧養": 6,
+   "興造動土": 6,
+   "納財": 5,
+   "栽種": 3,
+   "營建宮室": 3,
+   "般移": 3,
+   "修宮室": 3
+  },
+  "headingByGod": {
+   "五墓": 84,
+   "九空": 45,
+   "五離": 39,
+   "五虛": 30
+  },
+  "headingByFamily": {
+   "U3_SOLE_JISHEN_YI": 123,
+   "U2_SOLE_OFFICER_YI": 75
+  },
+  "headingByCoverage": {
+   "PATTERN_COVERED": 152,
+   "DIRECT_SOURCE_COVERED": 46
+  }
+ },
+ "f1y": {
+  "headingRows": 61,
+  "activityRows": 68,
+  "eventRecords": 224,
+  "activityStatusChanges": 2,
+  "activityScoreChanges": 65,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 0,
+  "eventScoreChanges": 203,
+  "statusMoves": {
+   "watch→watch": 63,
+   "avoid→avoid": 3,
+   "watch→avoid": 2
+  },
+  "byActivity": {
+   "contract": 21,
+   "transaction": 21,
+   "meeting": 12,
+   "wedding": 7,
+   "engagement": 7
+  },
+  "headingByHeading": {
+   "宴會": 26,
+   "立券交易": 21,
+   "納采問名": 7,
+   "結婚姻": 7
+  },
+  "headingByGod": {
+   "五離": 61
+  },
+  "headingByFamily": {
+   "U3_SOLE_JISHEN_YI": 39,
+   "U5_PUZHU06_KEPT": 4,
+   "U7_PROTECTED_CO_OPERAND": 3,
+   "U2_SOLE_OFFICER_YI": 7,
+   "U1_SOLE_MIXED_YI": 8
+  },
+  "headingByCoverage": {
+   "PATTERN_COVERED": 33,
+   "UNCOVERED": 22,
+   "DIRECT_SOURCE_COVERED": 6
+  }
+ },
+ "u7": {
+  "headingRows": 767,
+  "activityRows": 714,
+  "eventRecords": 648,
+  "activityStatusChanges": 395,
+  "activityScoreChanges": 690,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 0,
+  "eventScoreChanges": 635,
+  "statusMoves": {
+   "watch→avoid": 356,
+   "watch→watch": 278,
+   "consider→avoid": 39,
+   "avoid→avoid": 24,
+   "consider→consider": 17
+  },
+  "byActivity": {
+   "medical": 135,
+   "warehouse": 70,
+   "moving": 62,
+   "planting": 61,
+   "wedding": 58,
+   "travel": 54,
+   "groundbreaking": 46,
+   "renovation": 42,
+   "engagement": 36,
+   "pray_blessing": 35,
+   "pray_children": 25,
+   "construction": 22,
+   "warehouse_opening": 21,
+   "worship": 8,
+   "contract": 7,
+   "transaction": 7,
+   "finance": 7,
+   "meeting": 5,
+   "burial": 5,
+   "opening": 4,
+   "business": 4
+  },
+  "headingByHeading": {
+   "求醫療病": 142,
+   "修倉庫": 72,
+   "般移": 69,
+   "栽種": 63,
+   "嫁娶": 58,
+   "行幸遣使": 54,
+   "興造動土": 46,
+   "修宮室": 42,
+   "結婚姻": 39,
+   "納采問名": 36,
+   "祈福": 35,
+   "求嗣": 25,
+   "營建宮室": 22,
+   "開倉庫出貨財": 21,
+   "宴會": 9,
+   "安葬": 8,
+   "祭祀": 8,
+   "立券交易": 7,
+   "納財": 7,
+   "開市": 4
+  },
+  "headingByGod": {
+   "往亡": 148,
+   "土符": 132,
+   "遊禍": 102,
+   "八專": 80,
+   "地囊": 74,
+   "死氣": 50,
+   "四窮": 45,
+   "天賊": 40,
+   "歸忌": 37,
+   "九焦": 28,
+   "五虛": 24,
+   "滿日": 16,
+   "四廢": 14,
+   "九空": 13,
+   "五墓": 12,
+   "四忌": 12,
+   "厭對": 10,
+   "五離": 9,
+   "天狗": 8,
+   "小耗": 3
+  },
+  "headingByFamily": {
+   "U7_PROTECTED_CO_OPERAND": 767
+  },
+  "headingByCoverage": {
+   "UNCOVERED": 767
+  }
+ },
+ "evidenceScopeNote": "family match; direct rows whose dated 宜 changes the family are outside it",
+ "directOutsideEvidenceScope": [
+  "2025-08-09 申-庚戌 納財 (U1_SOLE_MIXED_YI)"
+ ],
+ "goldensChanged": false
+}

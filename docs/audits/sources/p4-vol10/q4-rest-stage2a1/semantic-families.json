@@ -1,0 +1,64 @@
+{
+ "version": "q4-rest-stage2a1-v1",
+ "definitions": {
+  "U1_SOLE_MIXED_YI": "one ungraded 忌, 宜 from officer and 吉神 together",
+  "U2_SOLE_OFFICER_YI": "one ungraded 忌, 宜 from the day officer only (滿日 …)",
+  "U3_SOLE_JISHEN_YI": "one ungraded 忌, 宜 from 吉神 only (德, 月恩/四相/時德, 三合 …)",
+  "U4_MULTIPLE_JI": "two or more surviving 忌 operands",
+  "U5_PUZHU06_KEPT": "one ungraded 忌 kept by puzhu:06 (QL_EXCLUDED: Q4a / F1 R2)",
+  "U7_PROTECTED_CO_OPERAND": "忌 protected by a co-operand (百忌, 專忌, 八專 …)"
+ },
+ "u7Total": 767,
+ "u7Split": {
+  "U7a_SELF_PROTECTED_UNGRADED": 741,
+  "U7b_BAIJI_ZHUANJI": 14,
+  "U7c_DATED": 6,
+  "U7d_SUBJECT_OR_OTHER": 6
+ },
+ "u7SelfProtectedGods": {
+  "往亡": 148,
+  "土符": 132,
+  "遊禍": 102,
+  "八專": 80,
+  "地囊": 74,
+  "四窮": 45,
+  "天賊": 40,
+  "死氣": 39,
+  "歸忌": 37,
+  "九焦": 28,
+  "四廢": 14,
+  "四忌": 12,
+  "天狗": 8
+ },
+ "u7SourceLines": {
+  "zhuanji": "「除建破等日條例簡易及專忌之日無庸分别」 takes 專忌 days out of the grade framework; puzhu:22 「如遇專忌之日則仍註忌」 keeps their 忌. Neither line says how 宜 combines",
+  "tufu": "「凡土府土符地囊止註忌補垣亦不註宜塞穴」: 宜 withheld for 塞穴 only (not a P4 heading)",
+  "siji": "「凡四忌四窮止忌安葬如遇鳴吠鳴吠對亦不註宜破土啟攢」: specific headings only",
+  "heidao": "六黑道 「與凶神併則從所忌與吉神併則從所宜」 concerns the 黑道 gods themselves",
+  "result": "no general source line on 宜 against a protected 忌; U7 rows reach both_present through the same A05 default in code, but their provenance is UNVERIFIED, not established"
+ },
+ "population": {
+  "U7_PROTECTED_CO_OPERAND": 767,
+  "U3_SOLE_JISHEN_YI": 221,
+  "U2_SOLE_OFFICER_YI": 82,
+  "U1_SOLE_MIXED_YI": 29,
+  "U4_MULTIPLE_JI": 7,
+  "U5_PUZHU06_KEPT": 4
+ },
+ "source": {
+  "U2_SOLE_OFFICER_YI": 13,
+  "U3_SOLE_JISHEN_YI": 8
+ },
+ "sourceSpansFamilies": [
+  "U2_SOLE_OFFICER_YI",
+  "U3_SOLE_JISHEN_YI"
+ ],
+ "familiesWithoutSource": [
+  "U1_SOLE_MIXED_YI",
+  "U4_MULTIPLE_JI",
+  "U5_PUZHU06_KEPT",
+  "U7_PROTECTED_CO_OPERAND"
+ ],
+ "provenanceScope": "IMPLEMENTATION_DEFAULT is established for the sole-ungraded families U1, U2, U3, U5; U4 and U7 are unverified",
+ "note": "puzhu:21/22 and 相抵 never produce both_present rows (they end in neither_recorded / lifted); propagation shows only as propagationBlocked on protected rows"
+}
