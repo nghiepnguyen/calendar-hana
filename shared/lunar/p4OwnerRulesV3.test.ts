@@ -9,7 +9,9 @@ import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { getP4MuCangSoil } from './p4YiOperands'
 // Frozen before Q4-REST Stage 3 (puzhu:06 authority v5): pinned to the v4 rollback (q4RestRollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./q4RestRollback')).puzhu06V4(),
+)
 await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // F1 Stage 3 (owner R2): the shipped owner-rules layer (puzhu:06 authority v4) against full Golden v3
@@ -104,9 +106,19 @@ function mismatches(
 }
 
 // The R2 rows (full Golden v3 v2-diff.txt) are always compared; the rest is sampled outside ci:p4.
-const R2 = readFileSync(G + 'compose/v2-diff.txt', 'utf8').trim().split('\n').map((l) => l.split(' '))
+const R2 = readFileSync(G + 'compose/v2-diff.txt', 'utf8')
+  .trim()
+  .split('\n')
+  .map((l) => l.split(' '))
 const R2_DATES = new Set(R2.filter((r) => r[0] === 'dated.tsv').map((r) => r[1]!))
 const R2_CONTEXTS = new Set(R2.filter((r) => r[0] === 'context.tsv').map((r) => r[1]!))
+
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
 
 describe('owner-rules layer vs full Golden v3 (F1 R2, shipped)', () => {
   it('loads puzhu:06 authority v4 and the locked Golden', () => {
@@ -117,7 +129,8 @@ describe('owner-rules layer vs full Golden v3 (F1 R2, shipped)', () => {
 
   it('dated: every row equals the Golden (state, 忌, protection and the deciding trace)', () => {
     const rows = golden('compose/dated.tsv').filter(
-      (r) => FULL || R2_DATES.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 45 === 0,
+      (r) =>
+        FULL || R2_DATES.has(r.date!) || dates.days.findIndex((d) => d.date === r.date) % 45 === 0,
     )
     const got = mismatches(rows, 'date', (k) => {
       const { month, pillar, operands } = dated(k)

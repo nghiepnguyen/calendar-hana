@@ -1,0 +1,30 @@
+{
+ "id": "p4-puzhu21-semantic-v1",
+ "rule": "puzhu:21",
+ "source": {
+  "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+  "offset": 22390
+ },
+ "semantic": "contribution-scoped-suppression",
+ "meaning": "the trigger's 相抵 gods' 忌 is withheld on the target; independent target 忌 survive",
+ "label": "N-C (audit/implementation label, not a source term)",
+ "status": "SUPPORTED_SEMANTIC_AUTHORITY",
+ "productionStatus": "NOT_MIGRATED",
+ "activeProductionAuthority": "p4b-puzhu06-v5 (puzhu:21 runs N-A in p4OwnerRules.ts)",
+ "evidence": [
+  "P21S2-06067696-n82",
+  "P21S2-06067696-n106"
+ ],
+ "evidenceLevel": "A",
+ "stage2": "cbe4cac",
+ "scope": "puzhu:21 only; not puzhu:22 or other propagation lines",
+ "eligibleContexts": [
+  "亥-丁酉",
+  "亥-癸酉"
+ ],
+ "debts": {
+  "PUZHU22_SEMANTIC_DEBT": "n82/n106 開倉庫出貨財 absence fits only a contribution-level puzhu:22 trigger; the 2026-10-17 owner precedent (H1-B, puzhu:22 withholds 月虛) stands; no reinterpretation, no change",
+  "X相抵": "災煞 相抵 effect witnessed on n30/n82/n106 only; not closed as a general item",
+  "P4-劫": "blocks 未-丙申/壬申/庚申"
+ }
+}

@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
 import { getP4MoonPhase } from './p4LunarPhase'
@@ -108,6 +108,13 @@ const R2 = readFileSync(G + 'compose/v3-diff.txt', 'utf8')
   .map((l) => l.split(' '))
 const R2_DATES = new Set(R2.filter((r) => r[0] === 'dated.tsv').map((r) => r[1]!))
 const R2_CONTEXTS = new Set(R2.filter((r) => r[0] === 'context.tsv').map((r) => r[1]!))
+
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
 
 describe('owner-rules layer vs full Golden v4 (Q4-REST, shipped)', () => {
   it('loads puzhu:06 authority v5 and the locked Golden', () => {

@@ -7,7 +7,9 @@ import { getAlmanac } from './almanac'
 import { lockedDigests } from './lockAnchor'
 import { p4ActivityState } from './p4ScoreAdapter'
 // Frozen before Q4-REST Stage 3 (puzhu:06 authority v5): pinned to the v4 rollback (q4RestRollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./q4RestRollback')).puzhu06V4(),
+)
 await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // F1 Stage 3 (docs/audits/p4-f1-wuli-lijuan-stage3-migration.md): the shipped puzhu:06 authority v4 against
@@ -37,9 +39,8 @@ const tsv = (path: string) => {
 }
 const FULL = process.env.P4_SCORE_ADAPTER_FULL === '1'
 const STATES = tsv(DIR + 'activity-states.tsv')
-const R2_DATES = (
-  JSON.parse(readFileSync(DIR + 'diff.json', 'utf8')) as { changedDates: string[] }
-).changedDates
+const R2_DATES = (JSON.parse(readFileSync(DIR + 'diff.json', 'utf8')) as { changedDates: string[] })
+  .changedDates
 const OUTSIDE = ['2024-12-31', '2028-01-01', '2035-06-15']
 const P4_DATES = [...new Set(STATES.map((r) => r.date!))]
   .filter((d) => !OUTSIDE.includes(d))
@@ -55,6 +56,13 @@ const headingsOf = (date: string) => {
     lunarDay: a.selectionContext.LUNAR_DAY!,
   })
 }
+
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
 
 describe('P4 score Golden v5 (F1 R2, puzhu:06 authority v4)', () => {
   it('the shipped lookup is canonical-v1 (not pinned here)', () => {

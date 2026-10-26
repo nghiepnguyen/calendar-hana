@@ -1,0 +1,52 @@
+{
+ "version": "p4-full-golden-lock-v5",
+ "scope": "P21_STAGE4_PUZHU21_V1",
+ "method": "full Golden v4 composer (sha-asserted) with puzhu:21 contribution-scoped on p4-puzhu21-v1.eligibleContexts; v4 kept as the pre-P21 rollback",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/compose.py --write",
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/compose.py",
+   "sha256": "b883963b189acb63326b405061b8a53ff790f830f90f6c5a3a5556f090b8d7e9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/context.tsv",
+   "sha256": "c622b424d4d0c84dbe1723d4380bf2f1f4fb74cf78f4ded1a0f4bf769bffad56"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/dated.tsv",
+   "sha256": "b908de5eb89cc90169411ee24d7250c1bec15531ce3189a6abae756d1ef97a33"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/h1b-changes.tsv",
+   "sha256": "9e857c6e2ccfc2cf867d882abbcb3ed57621d802c5c887e50c58d1d9175e59d9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/summary.json",
+   "sha256": "e8c0af38665b02d6b3a0b4466e8f74554a5871d069fa27535718376235b3bd5c"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/v4-diff.txt",
+   "sha256": "3d1fb0e67c6fd59bd8b189b47582a3497c5d55c6c879fbc072cbc2f38dd4aba5"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/compose.py",
+   "sha256": "17c7fea5d90dc62022e7c59e006f94b73d0d7360cd6a3081aa83705c84fbb491"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/lock.json",
+   "sha256": "9d415369be1cb63cd2d1c2b660e682628939eaae16f5f0721c7da26d45a2bc3e"
+  },
+  {
+   "path": "shared/almanac-data/p4-puzhu21-v1.json",
+   "sha256": "5fd0bc1b0df443810400ca8a7d1a2859414d685d044994a5b62f515241fb15a9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p21-stage3/eligibility.json",
+   "sha256": "7de3f9714f26d3118e00a2329597224a33b7d3196a5a0b6fb65e17dde6ec3a27"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p21-stage3/golden-manifest.json",
+   "sha256": "67ee6f788b4d339cbf735a70c420f7c482ad89d0402fb99aa8a5f5d67c7a4283"
+  }
+ ]
+}

@@ -15,6 +15,7 @@ root = Path(__file__).resolve().parents[1]
 TARGET = root / 'shared/lunar/p4OwnerRules.ts'
 TEST = ['shared/lunar/p4OwnerRules.test.ts']
 V5_TEST = ['shared/lunar/p4OwnerRulesV4.test.ts']
+P21_TEST = ['shared/lunar/p4OwnerRulesV5.test.ts']
 REPORT = root / 'docs/audits/p4-owner-rules-mutation-results.json'
 # (name, rule, old, new)
 mutations = [
@@ -43,6 +44,11 @@ mutations = [
      "p4Puzhu06NarrowOnlyJi(classes!.split('+'))", 'false', V5_TEST),
     ('r_f1y_dropped', 'R-F1Y yiComposition', 'for (const rule of P4_PUZHU06_YI_COMPOSITION) {',
      'for (const rule of [] as typeof P4_PUZHU06_YI_COMPOSITION) {', V5_TEST),
+    # P21 Stage 4 (p4-puzhu21-v1): tested by the v5 suite (shipped owner rules vs full Golden v5).
+    ('p21_scoped_dropped', 'P21 puzhu:21 contribution-scoped (eligible contexts)',
+     'const scoped = puzhu21.eligibleContexts.includes(`${month}-${pillar}`)', 'const scoped = false', P21_TEST),
+    ('p21_scoped_global', 'P21 allowlist (HOLD/QUARANTINE contexts stay N-A)',
+     'const scoped = puzhu21.eligibleContexts.includes(`${month}-${pillar}`)', 'const scoped = true', P21_TEST),
 ]
 def run_test(tests=TEST):
     return subprocess.run(['npx', 'vitest', 'run', *tests], cwd=root, capture_output=True, text=True, timeout=1800)
@@ -72,7 +78,7 @@ finally:
 report = {
     'version': 'p4-owner-rules-mutations-v1',
     'target': str(TARGET.relative_to(root)),
-    'tests': TEST + V5_TEST,
+    'tests': TEST + V5_TEST + P21_TEST,
     'control': 'clean',
     'mutations': len(results),
     'caught': sum(r['caughtByTest'] for r in results),

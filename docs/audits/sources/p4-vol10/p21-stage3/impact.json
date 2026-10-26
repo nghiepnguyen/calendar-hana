@@ -1,0 +1,43 @@
+{
+ "version": "p21-stage3-impact-v1",
+ "source": "docs/audits/sources/p4-vol10/p21-stage2/impact.json",
+ "ALL_H2_PROJECTED": {
+  "dates": [
+   "2025-07-26",
+   "2025-11-24",
+   "2026-07-21",
+   "2026-08-02",
+   "2026-11-19",
+   "2027-07-16",
+   "2027-07-28",
+   "2027-11-14"
+  ],
+  "activityRows": 16,
+  "scoreDelta": [
+   -30
+  ],
+  "statusChanges": [
+   "neutral->avoid"
+  ],
+  "hardWarningChanges": 0,
+  "eventRecords": 72,
+  "eventClassificationChanges": 48
+ },
+ "MIGRATION_ELIGIBLE_ONLY": {
+  "dates": [
+   "2025-11-24",
+   "2026-11-19",
+   "2027-11-14"
+  ],
+  "activityRows": 6,
+  "scoreDelta": [
+   -30
+  ],
+  "statusChanges": [
+   "neutral->avoid"
+  ],
+  "hardWarningChanges": 0,
+  "eventRecords": 27,
+  "eventClassificationChanges": 18
+ }
+}

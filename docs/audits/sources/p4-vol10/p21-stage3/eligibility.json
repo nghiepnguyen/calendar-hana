@@ -1,0 +1,668 @@
+{
+ "version": "p21-stage3-eligibility-v1",
+ "statuses": [
+  "MIGRATE",
+  "HOLD",
+  "QUARANTINE",
+  "NO_CHANGE"
+ ],
+ "contexts": {
+  "亥-丁酉": {
+   "eligibility": "MIGRATE",
+   "triggerAuthority": "SOURCE_AUTHORITY (witness-specific)",
+   "evidenceLevel": "A",
+   "evidence": [
+    "P21S2-06067696-n106 (this context: 開市 and 納財 unnoted, 立券交易 printed 忌)",
+    "P21S2-06067696-n82 (亥-癸酉, same clause)",
+    "卷十一 開市 宜 開日 / 納財 宜 母倉"
+   ],
+   "reason": "the witness page is this exact context: trigger realised by 相抵 (開市 has 宜 開日, 納財 has 宜 母倉) and the target output is observed. The output does not depend on the open X相抵 item: with a 宜 on the trigger it is unnoted under either 災煞 reading, and the target ends only_ji (五離) whether 災煞 on 立券交易 is cancelled locally (P4) or by puzhu:21 (source). Dated operands match the generic page: soil absent, 母倉 present, no protected 忌 on the target",
+   "blocking": null,
+   "note": "witness-specific authority; X相抵 (災煞) is NOT closed as a general item",
+   "productionRows": 3
+  },
+  "亥-癸酉": {
+   "eligibility": "MIGRATE",
+   "triggerAuthority": "SOURCE_AUTHORITY (witness-specific)",
+   "evidenceLevel": "A",
+   "evidence": [
+    "P21S2-06067696-n82 (this context)"
+   ],
+   "reason": "as 亥-丁酉; context-level only, no date in 2025–2027",
+   "blocking": null,
+   "note": "eligible, 0 production rows in the P4 domain",
+   "productionRows": 0
+  },
+  "未-戊申": {
+   "eligibility": "HOLD",
+   "triggerAuthority": "OWNER_CONVENTION (LOCAL ruling) + IMPLEMENTATION_CONVENTION (開市 via cancel_both)",
+   "evidenceLevel": "D",
+   "evidence": [
+    "option-c-final-gate-v1 OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (2026-10-22, LOCAL 未-戊申 納財)",
+    "g2-n117-stage3 D1(a) (2026-10-26, LOCAL; notExtendedTo \"other 五離 cases\")",
+    "n117: NOT_DISCRIMINATING (納財 printed)"
+   ],
+   "reason": "納財 is unnoted only by a LOCAL owner ruling against its own page; 開市 has no 宜 (unnoted only under P4 cancel_both); 四相 is a puzhu:06 trigger on the day (W6). D1(a) explicitly does not extend to 五離, which is exactly what H2 would keep",
+   "blocking": "owner ruling extending the LOCAL 納財 ruling to its H2 consequence on 五離, or a second edition of n117 (內府刊本, not acquired)",
+   "note": "if adopted, the basis must read OWNER_CONVENTION, not SOURCE_AUTHORITY",
+   "productionRows": 2
+  },
+  "未-丙申": {
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "evidence": [
+    "n105 (未-丙申) prints 開市, 立券交易 and 納財: trigger not realised at source",
+    "faithful 卷十 authority v4 未丙申 finance/opening/contract = avoid",
+    "H1-B 月表 review contradiction 1 (劫煞 相抵 effect, 辰/戌/未)"
+   ],
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)",
+   "note": "the source output (立券交易 忌) coincides with the H2 projection, by a different path; fix belongs to P4-劫, not P21",
+   "productionRows": 3
+  },
+  "未-壬申": {
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "evidence": [
+    "n81 prints the triad",
+    "faithful v4 avoid"
+   ],
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)",
+   "note": "quarantined, 0 production rows in the P4 domain",
+   "productionRows": 0
+  },
+  "未-庚申": {
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "evidence": [
+    "n129 prints the triad",
+    "faithful v4 avoid"
+   ],
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)",
+   "note": "quarantined, 0 production rows in the P4 domain",
+   "productionRows": 0
+  }
+ },
+ "rows": [
+  {
+   "date": "2025-07-26",
+   "context": "未-丙申",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": {
+    "opening": "avoid",
+    "finance": "avoid"
+   },
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)"
+  },
+  {
+   "date": "2025-11-24",
+   "context": "亥-丁酉",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": true,
+     "yiSources": [
+      "開日"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": true,
+     "yiSources": [
+      "母倉"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": null,
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "MIGRATE",
+   "triggerAuthority": "SOURCE_AUTHORITY (witness-specific)",
+   "evidenceLevel": "A",
+   "reason": "the witness page is this exact context: trigger realised by 相抵 (開市 has 宜 開日, 納財 has 宜 母倉) and the target output is observed. The output does not depend on the open X相抵 item: with a 宜 on the trigger it is unnoted under either 災煞 reading, and the target ends only_ji (五離) whether 災煞 on 立券交易 is cancelled locally (P4) or by puzhu:21 (source). Dated operands match the generic page: soil absent, 母倉 present, no protected 忌 on the target",
+   "blocking": null
+  },
+  {
+   "date": "2026-07-21",
+   "context": "未-丙申",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": {
+    "opening": "avoid",
+    "finance": "avoid"
+   },
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)"
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": true,
+     "yiSources": [
+      "四相"
+     ],
+     "xiangdi": [
+      "刼煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": {
+    "opening": "blank",
+    "finance": "blank"
+   },
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "HOLD",
+   "triggerAuthority": "OWNER_CONVENTION (LOCAL ruling) + IMPLEMENTATION_CONVENTION (開市 via cancel_both)",
+   "evidenceLevel": "D",
+   "reason": "納財 is unnoted only by a LOCAL owner ruling against its own page; 開市 has no 宜 (unnoted only under P4 cancel_both); 四相 is a puzhu:06 trigger on the day (W6). D1(a) explicitly does not extend to 五離, which is exactly what H2 would keep",
+   "blocking": "owner ruling extending the LOCAL 納財 ruling to its H2 consequence on 五離, or a second edition of n117 (內府刊本, not acquired)"
+  },
+  {
+   "date": "2026-11-19",
+   "context": "亥-丁酉",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": true,
+     "yiSources": [
+      "開日"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": true,
+     "yiSources": [
+      "母倉"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": null,
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "MIGRATE",
+   "triggerAuthority": "SOURCE_AUTHORITY (witness-specific)",
+   "evidenceLevel": "A",
+   "reason": "the witness page is this exact context: trigger realised by 相抵 (開市 has 宜 開日, 納財 has 宜 母倉) and the target output is observed. The output does not depend on the open X相抵 item: with a 宜 on the trigger it is unnoted under either 災煞 reading, and the target ends only_ji (五離) whether 災煞 on 立券交易 is cancelled locally (P4) or by puzhu:21 (source). Dated operands match the generic page: soil absent, 母倉 present, no protected 忌 on the target",
+   "blocking": null
+  },
+  {
+   "date": "2027-07-16",
+   "context": "未-丙申",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": {
+    "opening": "avoid",
+    "finance": "avoid"
+   },
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "QUARANTINE",
+   "triggerAuthority": "IMPLEMENTATION_CONVENTION (P4 cancel_both)",
+   "evidenceLevel": "C",
+   "reason": "Level A contradicts the trigger itself. At source puzhu:21 never fires here; the page prints 立券交易 because 劫煞 and 五離 both survive. Routing that output through P21 H2 would encode the unsupported cancel_both trigger",
+   "blocking": "P4-劫 (P4 layer still runs cancel_both for 劫煞 辰戌丑未 without 德)"
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": false,
+     "yiSources": [],
+     "xiangdi": [
+      "刼煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": true,
+     "yiSources": [
+      "四相"
+     ],
+     "xiangdi": [
+      "刼煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": {
+    "opening": "blank",
+    "finance": "blank"
+   },
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": "keep:QL_EXCLUDED",
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "HOLD",
+   "triggerAuthority": "OWNER_CONVENTION (LOCAL ruling) + IMPLEMENTATION_CONVENTION (開市 via cancel_both)",
+   "evidenceLevel": "D",
+   "reason": "納財 is unnoted only by a LOCAL owner ruling against its own page; 開市 has no 宜 (unnoted only under P4 cancel_both); 四相 is a puzhu:06 trigger on the day (W6). D1(a) explicitly does not extend to 五離, which is exactly what H2 would keep",
+   "blocking": "owner ruling extending the LOCAL 納財 ruling to its H2 consequence on 五離, or a second edition of n117 (內府刊本, not acquired)"
+  },
+  {
+   "date": "2027-11-14",
+   "context": "亥-丁酉",
+   "triggers": [
+    {
+     "heading": "開市",
+     "yi": true,
+     "yiSources": [
+      "開日"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    },
+    {
+     "heading": "納財",
+     "yi": true,
+     "yiSources": [
+      "母倉"
+     ],
+     "xiangdi": [
+      "災煞"
+     ]
+    }
+   ],
+   "triggerSourceFaithful": null,
+   "target": "立券交易",
+   "independentJi": [
+    "五離"
+   ],
+   "targetProt": [],
+   "puzhu06": null,
+   "current": "neither_recorded",
+   "h2": "only_ji",
+   "activityDelta": [
+    {
+     "activity": "contract",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    },
+    {
+     "activity": "transaction",
+     "from": {
+      "score": 50,
+      "status": "neutral",
+      "hardWarning": false
+     },
+     "to": {
+      "score": 20,
+      "status": "avoid",
+      "hardWarning": false
+     },
+     "scoreDelta": -30
+    }
+   ],
+   "eventRecords": 9,
+   "eventClassificationChanges": 6,
+   "eligibility": "MIGRATE",
+   "triggerAuthority": "SOURCE_AUTHORITY (witness-specific)",
+   "evidenceLevel": "A",
+   "reason": "the witness page is this exact context: trigger realised by 相抵 (開市 has 宜 開日, 納財 has 宜 母倉) and the target output is observed. The output does not depend on the open X相抵 item: with a 宜 on the trigger it is unnoted under either 災煞 reading, and the target ends only_ji (五離) whether 災煞 on 立券交易 is cancelled locally (P4) or by puzhu:21 (source). Dated operands match the generic page: soil absent, 母倉 present, no protected 忌 on the target",
+   "blocking": null
+  }
+ ]
+}

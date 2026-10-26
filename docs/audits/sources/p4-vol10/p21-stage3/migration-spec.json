@@ -1,0 +1,90 @@
+{
+ "version": "p21-stage4-spec-v1",
+ "status": "SPECIFICATION ONLY (not implemented)",
+ "successorAuthority": {
+  "id": "p4-puzhu21-v1",
+  "path": "shared/almanac-data/p4-puzhu21-v1.json",
+  "content": {
+   "line": "puzhu:21",
+   "semantic": "contribution-scoped",
+   "eligibleContexts": [
+    "亥-丁酉",
+    "亥-癸酉"
+   ]
+  }
+ },
+ "eligibleRows": [
+  "2025-11-24",
+  "2026-11-19",
+  "2027-11-14"
+ ],
+ "eligibleContexts": [
+  "亥-丁酉",
+  "亥-癸酉"
+ ],
+ "mustStayIdentical": [
+  "2025-07-26",
+  "2026-07-21",
+  "2026-08-02",
+  "2027-07-16",
+  "2027-07-28"
+ ],
+ "expectedProductionFiles": [
+  "shared/almanac-data/p4-puzhu21-v1.json (new authority, eligibleContexts)",
+  "shared/lunar/p4OwnerRules.ts (propagation pass, puzhu:21 edges only)",
+  "shared/lunar/p21Rollback.ts (new, test-only rollback module)"
+ ],
+ "algorithm": [
+  "in the propagation pass, for a puzhu:21 edge whose target context is in eligibleContexts:",
+  "cancelled = the 卷十 subject scopes whose state on each fired trigger is neither_recorded",
+  "remaining = target trace.ji minus cancelled; protected 忌 keep blocking as today",
+  "remaining empty -> current behaviour (lift); else keep ji, state only_ji (both_present if 宜 noted)",
+  "every other edge, line and context: unchanged (N-A)"
+ ],
+ "options": {
+  "A_rule_filter_with_allowlist": "contribution filter on puzhu:21 edges, gated by the authority allowlist (recommended: smallest change that encodes the semantic, auditable allowlist, one rollback policy)",
+  "B_context_overlay": "authority lists (context, heading) -> only_ji: smallest diff but encodes the output, not the semantic; drifts if other rules move",
+  "C_global_filter_with_blocklist": "filter on every puzhu:21 edge, block HOLD/QUARANTINE contexts: fails open for new contexts; rejected"
+ },
+ "provenance": "trace keeps 五離 in ji; add propagatedFrom and a cancelled list for puzhu:21 rows",
+ "goldens": "golden-manifest.json (successors only for MIGRATE rows)",
+ "migrationDiff": "every changed row must be a MIGRATE date; activity and event deltas must equal impact.json MIGRATION_ELIGIBLE_ONLY; any HOLD/QUARANTINE date diff fails",
+ "rollback": "authority successor + test-only rollback module, as F1 (f1R2Rollback.ts) and Q4-REST (q4RestRollback.ts): p21Rollback.ts mocks p4-puzhu21-v1.json with eligibleContexts [] = N-A byte-equal. No manifest policy: the last two P4 authority migrations used this pattern",
+ "rollbackPinnedSuites": [
+  "p4F1R2Migration",
+  "p4F1WuliStage2Impact",
+  "p4JieshaFaithfulSensitivity",
+  "p4MigrationDiff",
+  "p4MigrationDiffV3",
+  "p4OwnerRules",
+  "p4OwnerRulesV3",
+  "p4Puzhu06",
+  "p4Puzhu06Sweep",
+  "p4Puzhu06V4",
+  "p4Q4RestStage1Models",
+  "p4Q4RestStage2A1Impact",
+  "p4Q4RestStage2AModels",
+  "p4Q4RestStage2BRuntime",
+  "p4Q4RestStage2CImpact",
+  "p4Q4RestStage3Migration",
+  "p4ScoreAdapterAlmanac",
+  "p4ScoreGoldenV3",
+  "p4ScoreGoldenV4",
+  "p4ScoreGoldenV5",
+  "p4WeishenNacaiAudit"
+ ],
+ "reproducibility": "impact.json comes from a provider-level override, not option A. They agree because propagation is single-pass on pre-states and 立券交易 enters it as H1-B only_ji, so keeping its 忌 cannot re-trigger puzhu:22 or any other line; Stage 4 migration diff is the proof",
+ "testsToRepoint": [
+  "p4P21Stage1Projection.test.ts (pins N-A on 亥-丁酉/癸酉)",
+  "p4P21Stage2Candidates.test.ts",
+  "p4P21Stage2Impact.test.ts",
+  "p4P21Stage3Affected.test.ts"
+ ],
+ "gates": [
+  "npm run check",
+  "npm test",
+  "npm run ci:p4:full",
+  "check:audit-clean",
+  "mutation: removing an eligible context or adding 未-戊申/丙申 to the allowlist must fail"
+ ]
+}
