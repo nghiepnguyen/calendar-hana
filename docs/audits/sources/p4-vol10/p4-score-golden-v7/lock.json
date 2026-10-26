@@ -1,0 +1,72 @@
+{
+ "version": "p4-score-golden-lock-v7",
+ "scope": "P21_STAGE4_PUZHU21_V1",
+ "supersedes": "p4-score-golden-lock-v6 as forward evidence; v6 files kept unchanged as pre-P21 rollback evidence",
+ "migration": "docs/audits/p21-stage4-partial-migration.md",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-score-golden-v7/golden.py --write",
+ "headingLookup": "canonical-v1",
+ "method": "v6 golden.py (sha-asserted chain) with layer A swapped to p4-full-golden-v5/compose/dated.tsv",
+ "independentConstraint": "layer-B/C rows differing from v6 = the Stage 3 MIGRATE activity rows, same old/new score and status",
+ "diffFromV6": {
+  "layerBChangedRows": 6,
+  "changedRows": 6,
+  "changedDates": [
+   "2025-11-24",
+   "2026-11-19",
+   "2027-11-14"
+  ],
+  "changedActivities": [
+   "contract",
+   "transaction"
+  ],
+  "scoreDelta": [
+   -30
+  ],
+  "statusChanges": 6,
+  "layerBTransitions": [
+   "neither_recorded->only_ji"
+  ]
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v7/golden.py",
+   "sha256": "38bb5d587302c80ae42e3ad1d0dac8dce0eeeaf19d7c359b2c434010a0e13ac4"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v7/activity-states.tsv",
+   "sha256": "26b7fdb37213e27a1ebdfafa64d6f41f2f139636e3412dd6b5e02dc2b8eb6c4a"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v7/activity-scores.tsv",
+   "sha256": "f68d491fd660ab54f96e86936fc7182aa400254b8f6ef7c0e3b587723a8078cb"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v7/diff.json",
+   "sha256": "cc9e7556882cf328caa530ef4ee5a7122ef434b0fae109b819047f37402b329c"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/golden.py",
+   "sha256": "5f969aa6b2bf4dc2b9e9773c0d1195af38fe0387244dfe9b4655daad68e65459"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/lock.json",
+   "sha256": "c29585eaa6d9c5f4129100de26af97137353ef29640a33c598b790e4bc4b0d4e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/compose/dated.tsv",
+   "sha256": "b908de5eb89cc90169411ee24d7250c1bec15531ce3189a6abae756d1ef97a33"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v5/lock.json",
+   "sha256": "181ccac1f1d7e66d4cabadedb4979508b2fcd5878f24efe0b443e2f81c0565f6"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p21-stage3/eligibility.json",
+   "sha256": "7de3f9714f26d3118e00a2329597224a33b7d3196a5a0b6fb65e17dde6ec3a27"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p21-stage3/golden-manifest.json",
+   "sha256": "67ee6f788b4d339cbf735a70c420f7c482ad89d0402fb99aa8a5f5d67c7a4283"
+  }
+ ]
+}
