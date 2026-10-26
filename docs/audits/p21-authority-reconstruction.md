@@ -39,9 +39,23 @@ When puzhu:21 fires (one triad heading among 開市 / 立券交易 / 納財 is l
 | Engine | `p4OwnerRules.ts` propagation pass: an edge fires when the source heading is `neither_recorded`. The target then gets `ji: false` unless `protectedJi` holds, in which case it gets `propagationBlocked` | C |
 | N-A / N-C labels | [`p4-weishen-nacai-puzhu21.md`](p4-weishen-nacai-puzhu21.md) N2 (2026-10-22). Reused in G2 n117 Stage 2 §6–7 and F1 Stage 2/3 | D |
 | Earlier general form | [faithful study](p4-jiesha-faithful-vol10.md) "F1 — cross-god propagation: SOURCE_DEPENDENT" (all lines) | D |
+| Owner precedent | [`p4-full-golden-hold-questions.md`](p4-full-golden-hold-questions.md), owner decision 2026-10-17 (H1-B, H2-A; `OWNER_ADOPTED_SOURCE_DEPENDENT`). Its outcome table has puzhu:22 withhold the **independent** 月虛 忌 on 開倉庫出貨財 (11 dates; 月虛 is not 專忌), giving `neither_recorded`. The question posed was H1-B composition, not propagation scope, so heading-wide propagation was accepted **implicitly** as a consequence | D |
 | Debt record | F1 Stage 3 §4: 「puzhu:21 (N-A) then withholds it [五離] … N-A vs N-C remains a separate debt」; PROJECT_CONTEXT §4 P21 | D |
 
 **N-A and N-C are audit-internal labels, not source terms.**
+
+Search coverage (files with a hit, over `docs/`, `tasks/`, `shared/`, `scripts/` and `PROJECT_CONTEXT.md`; `graft/` and `graphify-out/` excluded):
+
+| Term | Files | Term | Files |
+|---|---:|---|---:|
+| 不註 | 178 | 開市 | 323 |
+| 立券 | 358 | 立劵 | 145 |
+| 交易 | 387 | 納財 | 326 |
+| 吉凶相抵 | 69 | 戊申 | 335 |
+| 未-戊申 | 174 | puzhu:21 | 51 |
+| N-A | 31 | N-C | 24 |
+
+The simplified variants 不注, 开市 and 纳财 have 0 hits each. The repository uses traditional forms, with 劵/券 normalized by `canonP4Heading`.
 
 ## 4. Primary source evidence (Level A)
 
@@ -79,7 +93,7 @@ Readings of the exception clauses:
 
 ## 6. N-A reconstruction
 
-- **Origin:** the engine as built (owner rules layer, 2026-10-17). It was later labelled "N-A" in the 納財 audit.
+- **Origin:** the engine as built (owner rules layer, 2026-10-17). The same day, the owner accepted heading-wide propagation **implicitly**: the H1-B decision table shows puzhu:22 withholding 月虛 (§3). It was later labelled "N-A" in the 納財 audit. It is owner-accepted, not source-established.
 - **Behaviour:** heading-wide removal, with one carve-out. Protected 忌 (專忌 / 百忌 / 止忌 / dated / `stop`) block every propagation line, puzhu:21 included, even though only puzhu:22 states a 專忌 exception. **Engine N-A is therefore H1 plus a protection convention (Level C), not pure literal H1.**
 - **Trigger condition:** any `neither_recorded` row. The engine does not check that the cause was 相抵 (E1 復日/重日 also reads `neither_recorded`). Every puzhu:21 cell found here does have a 相抵 god on its trigger, so this does not change the set.
 - **Trace:** `propagatedFrom` keeps only the last edge that fired. The harness re-derives edges from the lines.
@@ -168,6 +182,8 @@ Other analogues:
 - **puzhu:06** (n14 戌-壬申, n62 戌-庚申; F1 Stage 2). 「…日不註忌…立劵交易」 leaves 五離 printed. This is read as lex specialis: 五離's own lifter list governs. It is not a 相抵 line, and it carries its own exceptions, so it is an analogue only.
 - **puzhu:05 / H1-B.** Same-heading 相抵 keeps independent 忌. The 德-lift sub-class is SOURCE_WITNESSED; the 相抵 sub-class is OWNER_ADOPTED_SOURCE_DEPENDENT. This is the same question one step earlier, not puzhu:21 evidence.
 
+**The 辰 group is confounded.** On those cells, 開倉庫出貨財 also has its own 劫煞 相抵 (`preRule: H1-B`). Its absence fits H1 at puzhu:22, but it fits equally well with H1-B being wrong for the 相抵 sub-class (whole-heading 相抵 at puzhu:05), which is still SOURCE_DEPENDENT. The 戌 group needs H1-B and H2 together. So the split is contradictory, but not symmetric.
+
 **Result.** The one same-system line that can be tested, puzhu:22, is **split**: 3 pages fit H2 and 4 fit H1. Both groups share the operand structure (劫煞 相抵 on the triggers, 五虛 independent on the target). The faithful study already recorded this as F1 SOURCE_DEPENDENT. **Contradictory Level A evidence is unresolved.**
 
 ## 11. H1 projection
@@ -197,6 +213,7 @@ The score and event impact of H2 was **not measured**. That belongs to Stage 2.
 | **P4-劫** | **AUTHORITY DEPENDENCY.** The trigger premise of 未-壬申/丙申/庚申 exists only under P4 `cancel_both` |
 | **X相抵 (災煞)** | **AUTHORITY DEPENDENCY.** The trigger premise of 亥-丁酉/癸酉 |
 | H1-B | SEMANTIC OVERLAP. The same scope question at puzhu:05 |
+| Owner decision 2026-10-17 (H1-B / H2-A) | AUTHORITY DEPENDENCY. It is the implicit heading-wide precedent at puzhu:22, and adopting N-C would revise it |
 
 P21's scope question does not depend on Y-CONVENTION. The dependencies affect **which cells exist**, not what 不註 means. The classification is therefore UNDERDETERMINED rather than BLOCKED_BY_DEPENDENCY.
 
@@ -207,7 +224,7 @@ P21's scope question does not depend on Y-CONVENTION. The dependencies affect **
 | A | puzhu:05/06/17/20/21/22 text; 13 月表 pages | Text: scope unstated, with exception clauses pointing both ways. Pages: puzhu:21 untestable; puzhu:22 split |
 | B | faithful v4 cells; `projection.json` | 6 P4 cells, of which 1 has a settled trigger |
 | C | `p4OwnerRules.ts` (N-A + protection carve-out), Golden rows | What production does; not evidence of authority |
-| D | 納財 audit N2, G2 Stage 2, F1 Stage 2/3, faithful F1, LOCAL owner rulings | Framing only. 「n117 rules out N-A」 is conditional (§9) |
+| D | 納財 audit N2, G2 Stage 2, F1 Stage 2/3, faithful F1, LOCAL owner rulings, owner H1-B decision 2026-10-17 | Framing only. 「n117 rules out N-A」 is conditional (§9). The 2026-10-17 decision accepted heading-wide propagation at puzhu:22 as a consequence, not on evidence |
 
 Level C was not used to support any Level A claim.
 
@@ -235,7 +252,14 @@ Confidence that the evidence cannot decide: high. No lean is adopted.
 - 亥-丁酉 and 亥-癸酉 月表 pages (災煞 trigger premise, X相抵);
 - other 月表 pages in the 辰/戌 劫煞 groups that test puzhu:22, to explain the 辰-巳 vs 戌-亥 split (a 五虛 premise difference is possible).
 
-**Option 2: owner ruling.** Choose N-A or N-C as an explicit convention, `OWNER_ADOPTED_SOURCE_DEPENDENT`, scoped to puzhu:21 or to all propagation lines.
+A clean test needs four things on the same page:
+
+- the trigger printed unnoted by 相抵;
+- a target with **no 宜 and no 相抵 of its own**;
+- an independent, unprotected 忌 on that target;
+- no puzhu:06 trigger god on the day.
+
+**Option 2: owner ruling.** Confirm or revise the implicit 2026-10-17 precedent. Choose N-A or N-C as an explicit convention, `OWNER_ADOPTED_SOURCE_DEPENDENT`, scoped to puzhu:21 or to all propagation lines. N-C on all lines would also revise the puzhu:22 / 月虛 consequence of that decision.
 
 - **N-C changes production** on 8 dates in 2025–2027 (contract, transaction; 立券交易 `neither_recorded` → `only_ji`). That needs:
   - a successor authority or policy, with a rollback pin;

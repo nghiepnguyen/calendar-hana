@@ -1548,10 +1548,12 @@
    "G2 n117 Stage 2 §6–7",
    "F1 Stage 2/3 notes",
    "faithful study F1 (SOURCE_DEPENDENT)",
-   "LOCAL owner rulings (納財, D1(a))"
+   "LOCAL owner rulings (納財, D1(a))",
+   "owner H1-B decision 2026-10-17 (implicit puzhu:22 heading-wide precedent)"
   ]
  },
  "dependencies": {
+  "H1-B owner decision 2026-10-17": "AUTHORITY DEPENDENCY (implicit heading-wide precedent at puzhu:22; N-C would revise it)",
   "G2/W1": "DATA OVERLAP (未-戊申 劫煞 × 立券交易 cell blank under H1 and H2; not reopened)",
   "Q4a/五墓": "NONE",
   "Q4-REST (九空/五虛/小耗)": "NONE (no puzhu:21 cell carries them)",
@@ -1563,11 +1565,38 @@
   "X相抵 (災煞)": "AUTHORITY DEPENDENCY (trigger premise of 亥-丁酉/癸酉)",
   "H1-B": "SEMANTIC OVERLAP (same scope question at puzhu:05)"
  },
+ "ownerPrecedent": {
+  "source": "docs/audits/p4-full-golden-hold-questions.md (owner decision 2026-10-17: H1-B, H2-A)",
+  "class": "OWNER_ADOPTED_SOURCE_DEPENDENT (implicit for propagation scope)",
+  "content": "the adopted H1-B outcome table has puzhu:22 withhold the independent 月虛 忌 on 開倉庫出貨財 (11 dates, 月虛 not 專忌): heading-wide propagation accepted as a consequence; the propagation scope itself was never posed as a question",
+  "stage2Effect": "adopting N-C revises this precedent at least for puzhu:22"
+ },
+ "searchCoverage": {
+  "scope": "docs/, tasks/, shared/, scripts/, PROJECT_CONTEXT.md (graft/, graphify-out/ excluded)",
+  "filesWithTerm": {
+   "不註": 178,
+   "不注": 0,
+   "開市": 323,
+   "开市": 0,
+   "立券": 358,
+   "立劵": 145,
+   "交易": 387,
+   "納財": 326,
+   "纳财": 0,
+   "吉凶相抵": 69,
+   "戊申": 335,
+   "未-戊申": 174,
+   "puzhu:21": 51,
+   "N-A": 31,
+   "N-C": 24
+  }
+ },
  "conclusion": "UNDERDETERMINED",
  "conclusionBasis": [
   "puzhu:21 text names headings, not gods, and has no exception clause: scope not stated",
   "no stored page realises a source-level puzhu:21 trigger with an independent 忌 on the target",
-  "same-system analogue puzhu:22 is split: 戌-乙亥/丁亥/己亥 fit H2, 辰-己巳/辛巳/癸巳/乙巳 fit H1",
+  "same-system analogue puzhu:22 is split: 戌-乙亥/丁亥/己亥 fit H2, 辰-己巳/辛巳/癸巳/乙巳 fit H1 (辰 group confounded: the target has its own 劫煞 相抵, so whole-heading 相抵 at puzhu:05 also explains it)",
+  "the only owner precedent (2026-10-17) accepted heading-wide propagation implicitly, not on evidence",
   "textual exception argument (puzhu:22 專忌) points to H1; puzhu:06 n14/n62 lex specialis to H2",
   "only 未-戊申 has a settled trigger premise, and it rests on a LOCAL owner ruling over its page"
  ],
