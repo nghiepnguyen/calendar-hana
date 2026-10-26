@@ -1,0 +1,205 @@
+{
+ "version": "q4-rest-stage2c-v1",
+ "A_九空": {
+  "directWitnesses": [
+   "06067692-n86 卯-丁丑",
+   "06067694-n10 午-戊辰"
+  ],
+  "cleanCells": [
+   "卯-丁丑 開市 (月恩+四相): only_ji",
+   "卯-丁丑 立券交易 (月恩+四相): only_ji",
+   "卯-丁丑 納財 (月恩+四相): only_ji",
+   "午-戊辰 開市 (月恩+四相+時德): only_ji",
+   "午-戊辰 立券交易 (月恩+四相+時德): only_ji",
+   "午-戊辰 納財 (月恩+四相+時德): only_ji"
+  ],
+  "triggersTested": [
+   "四相",
+   "時德",
+   "月恩"
+  ],
+  "untested": [
+   "天德",
+   "天赦",
+   "天願"
+  ],
+  "ownLiftersExcluded": true,
+  "counterexamples": 0,
+  "triggerNote": "時德 only together with 月恩/四相 (午-戊辰); 天德/天赦/天願 untested",
+  "diagnosticImpact": {
+   "decisionRows": 37,
+   "headingRows": 37,
+   "activityRows": 57,
+   "eventRows": 120
+  },
+  "ready": true,
+  "headingSplit": {
+   "a_tested_trigger": 30,
+   "c_kaicang_joint": 7
+  },
+  "caveat": "天德/天赦/天願 untested; 開倉庫 rows are joint with 五虛 and also move under R-WX"
+ },
+ "B_五虛": {
+  "directWitnesses": [
+   "06067694-n50 午-戊申",
+   "06067697-n8 子-丙寅",
+   "06067692-n126 卯-丁巳 (Stage 1/2A)"
+  ],
+  "cleanCells": [
+   "午-戊申 開倉庫出貨財 (月恩+四相): only_ji",
+   "子-丙寅 開倉庫出貨財 (時德): only_ji",
+   "卯-丁巳 開倉庫出貨財 (月恩+四相): only_ji"
+  ],
+  "triggersTested": [
+   "四相",
+   "時德",
+   "月恩"
+  ],
+  "untested": [
+   "天赦"
+  ],
+  "ownLiftersExcluded": true,
+  "counterexamples": 0,
+  "byTrigger": {
+   "月恩": [
+    "卯-丁巳",
+    "午-戊申"
+   ],
+   "四相": [
+    "卯-丁巳",
+    "午-戊申"
+   ],
+   "時德 alone": [
+    "子-丙寅"
+   ],
+   "天赦": "UNTESTED (天赦 never meets 五虛: 四庫 note 「天赦不得與五虛併」)"
+  },
+  "diagnosticImpact": {
+   "decisionRows": 39,
+   "headingRows": 14,
+   "activityRows": 14,
+   "eventRows": 0
+  },
+  "ready": true,
+  "headingSplit": {
+   "a_tested_trigger": 14
+  },
+  "caveat": "天赦 untested (never meets 五虛)"
+ },
+ "C_小耗": {
+  "directWitnesses": [
+   "06067693-n107 巳-戊戌",
+   "06067696-n45 戌-癸卯"
+  ],
+  "cleanCells": [
+   "巳-戊戌 開市 (四相): only_ji",
+   "巳-戊戌 立券交易 (四相): only_ji",
+   "巳-戊戌 納財 (四相): only_ji",
+   "戌-癸卯 開市 (四相): only_ji",
+   "戌-癸卯 立券交易 (四相): only_ji",
+   "戌-癸卯 納財 (四相): only_ji",
+   "戌-癸卯 開倉庫出貨財 (四相): only_ji"
+  ],
+  "triggersTested": [
+   "四相"
+  ],
+  "untested": [
+   "天赦",
+   "時德",
+   "月恩"
+  ],
+  "ownLiftersExcluded": true,
+  "counterexamples": 0,
+  "triggerNote": "both witnesses test 四相 only; 時德/月恩/天赦 untested",
+  "exceptionKeptSeparate": "子午卯酉月值刼煞雖與德合併猶忌 (unchanged)",
+  "diagnosticImpact": {
+   "decisionRows": 30,
+   "headingRows": 9,
+   "activityRows": 15,
+   "eventRows": 36
+  },
+  "ready": true,
+  "headingSplit": {
+   "a_tested_trigger": 9
+  },
+  "caveat": "四相 only on both pages"
+ },
+ "D_F1Y": {
+  "directWitnesses": [
+   "06067694-n50 午-戊申",
+   "06067697-n93 丑-甲申"
+  ],
+  "independentYi": {
+   "午-戊申": [
+    "滿日"
+   ],
+   "丑-甲申": [
+    "五富"
+   ]
+  },
+  "printed": {
+   "午-戊申": "only_ji",
+   "丑-甲申": "only_ji"
+  },
+  "controls": {
+   "午-戊申": {
+    "開市": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五離"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五虛"
+     ]
+    }
+   },
+   "丑-甲申": {
+    "開市": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "立券交易": {
+     "printed": "only_ji",
+     "otherJi": [
+      "五離"
+     ]
+    },
+    "納財": {
+     "printed": "only_yi",
+     "otherJi": []
+    },
+    "開倉庫出貨財": {
+     "printed": "only_ji",
+     "otherJi": [
+      "百忌甲"
+     ]
+    }
+   }
+  },
+  "counterexamples": 0,
+  "classification": "F1Y-E1",
+  "diagnosticImpact": {
+   "decisionRows": 0,
+   "headingRows": 21,
+   "activityRows": 42,
+   "eventRows": 210
+  },
+  "ready": true,
+  "headingSplit": {
+   "a_witnessed_context": 4,
+   "b_other_context": 17
+  },
+  "caveat": "witnessed contexts 丑-甲申 / 午-戊申; the draft reaches 17 rows on other contexts"
+ }
+}

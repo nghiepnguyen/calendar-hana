@@ -1,0 +1,196 @@
+{
+ "version": "q4-rest-stage2c-v1",
+ "note": "diagnostic only; each ruling in its own module graph",
+ "yInteraction": "44 rows move only_yi→both_present under R-JK/R-WX/R-XH alone: the J rulings keep 忌, and the current Y default then notes both. Every comparable page prints only_ji there; the J rulings do not decide Y, and Y-CONVENTION stays a separate debt",
+ "perRuling": {
+  "jk": {
+   "decisionRows": 37,
+   "headingRows": 37,
+   "activityRows": 57,
+   "eventRows": 120,
+   "statusChanges": 57,
+   "activityScoreChanges": 57,
+   "hardWarningChanges": 0,
+   "eventClassificationChanges": 80,
+   "eventScoreChanges": 110,
+   "headingTransitions": {
+    "not_recorded→only_ji": 10,
+    "only_yi→both_present": 27
+   },
+   "byActivity": {
+    "opening": 10,
+    "business": 10,
+    "contract": 10,
+    "transaction": 10,
+    "finance": 10,
+    "warehouse_opening": 7
+   },
+   "contexts": [
+    "午-庚辰",
+    "午-戊辰",
+    "卯-丁丑",
+    "子-甲戌",
+    "酉-癸未"
+   ]
+  },
+  "wx": {
+   "decisionRows": 39,
+   "headingRows": 14,
+   "activityRows": 14,
+   "eventRows": 0,
+   "statusChanges": 14,
+   "activityScoreChanges": 14,
+   "hardWarningChanges": 0,
+   "eventClassificationChanges": 0,
+   "eventScoreChanges": 0,
+   "headingTransitions": {
+    "only_yi→both_present": 14
+   },
+   "byActivity": {
+    "warehouse_opening": 14
+   },
+   "contexts": [
+    "午-庚辰",
+    "午-戊申",
+    "午-戊辰",
+    "卯-丁丑",
+    "子-丙寅",
+    "子-戊寅",
+    "酉-癸未"
+   ]
+  },
+  "xh": {
+   "decisionRows": 30,
+   "headingRows": 9,
+   "activityRows": 15,
+   "eventRows": 36,
+   "statusChanges": 15,
+   "activityScoreChanges": 15,
+   "hardWarningChanges": 0,
+   "eventClassificationChanges": 24,
+   "eventScoreChanges": 33,
+   "headingTransitions": {
+    "not_recorded→only_ji": 6,
+    "only_yi→both_present": 3
+   },
+   "byActivity": {
+    "opening": 3,
+    "business": 3,
+    "contract": 3,
+    "transaction": 3,
+    "finance": 3
+   },
+   "contexts": [
+    "巳-戊戌"
+   ]
+  },
+  "f1y": {
+   "decisionRows": 0,
+   "headingRows": 21,
+   "activityRows": 42,
+   "eventRows": 210,
+   "statusChanges": 0,
+   "activityScoreChanges": 42,
+   "hardWarningChanges": 0,
+   "eventClassificationChanges": 0,
+   "eventScoreChanges": 189,
+   "headingTransitions": {
+    "both_present→only_ji": 21
+   },
+   "byActivity": {
+    "contract": 21,
+    "transaction": 21
+   },
+   "contexts": [
+    "丑-丙申",
+    "丑-戊申",
+    "丑-甲申",
+    "午-壬申",
+    "午-庚申",
+    "午-戊申",
+    "午-甲申",
+    "酉-丙申",
+    "酉-甲申"
+   ]
+  }
+ },
+ "combined": {
+  "decisionRows": 96,
+  "headingRows": 74,
+  "activityRows": 121,
+  "eventRows": 366,
+  "statusChanges": 79,
+  "activityScoreChanges": 121,
+  "hardWarningChanges": 0,
+  "eventClassificationChanges": 104,
+  "eventScoreChanges": 332,
+  "headingTransitions": {
+   "both_present→only_ji": 21,
+   "not_recorded→only_ji": 16,
+   "only_yi→both_present": 37
+  },
+  "byActivity": {
+   "contract": 34,
+   "transaction": 34,
+   "warehouse_opening": 14,
+   "opening": 13,
+   "business": 13,
+   "finance": 13
+  },
+  "contexts": [
+   "丑-丙申",
+   "丑-戊申",
+   "丑-甲申",
+   "午-壬申",
+   "午-庚申",
+   "午-庚辰",
+   "午-戊申",
+   "午-戊辰",
+   "午-甲申",
+   "卯-丁丑",
+   "子-丙寅",
+   "子-戊寅",
+   "子-甲戌",
+   "巳-戊戌",
+   "酉-丙申",
+   "酉-甲申",
+   "酉-癸未"
+  ]
+ },
+ "headingSplit": {
+  "jk": {
+   "a_tested_trigger": 30,
+   "c_kaicang_joint": 7
+  },
+  "wx": {
+   "a_tested_trigger": 14
+  },
+  "xh": {
+   "a_tested_trigger": 9
+  },
+  "f1y": {
+   "a_witnessed_context": 4,
+   "b_other_context": 17
+  }
+ },
+ "overlap": {
+  "jk∩wx": [
+   "午-庚辰 開倉庫出貨財",
+   "午-戊辰 開倉庫出貨財",
+   "卯-丁丑 開倉庫出貨財",
+   "酉-癸未 開倉庫出貨財"
+  ],
+  "jk∩wxRows": 7,
+  "jk∩xh": 0,
+  "wx∩xh": 0,
+  "f1y∩J": 0
+ },
+ "overlapNote": "the joint 九空+五虛 開倉庫 rows move under R-JK alone and under R-WX alone (decideP4Puzhu06 keeps a row when any class is keep); sum of single rulings 81 vs combined 74",
+ "wxDecisionBreakdown": {
+  "heading_moved": 14,
+  "tag_only": 22,
+  "lift_to_keep_final_unchanged": 3
+ },
+ "wxDecisionNote": "tag-only = QL→QL_EXCLUDED on rows another source already keeps; 戌-癸亥 = 劫煞 相抵 leaves the final state unchanged",
+ "goldensChanged": false
+}

@@ -1,0 +1,35 @@
+{
+ "entry": {
+  "ji": "忌祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直…修倉庫開市立劵交易納財開倉庫出貨財修置產室栽種牧養納畜",
+  "listsTestedHeadings": true,
+  "class": "SOURCE_FACT"
+ },
+ "condition": {
+  "clause": "辰戌月值執日六合止忌安撫邊境選將訓兵出師餘皆不忌",
+  "note": "辰戌月值執日六合太陽合月建不應以三合敗氣論故即不與德合赦願併亦止忌軍事餘皆不忌也",
+  "met": {
+   "month": true,
+   "officer執": true,
+   "六合": true
+  },
+  "class": "SOURCE_FACT"
+ },
+ "effectOnTestedHeadings": "none: 大時 keeps 忌 only on 安撫邊境/選將訓兵/出師; 「餘皆不忌」, and the note adds that this holds even without 德合赦願",
+ "productionAgrees": {
+  "開市": [
+   "小耗"
+  ],
+  "立券交易": [
+   "小耗"
+  ],
+  "納財": [
+   "小耗"
+  ],
+  "開倉庫出貨財": [
+   "小耗"
+  ]
+ },
+ "conclusion": "SOURCE_FACT: 大時 does not produce 忌 on 開市, 立券交易, 納財 or 開倉庫出貨財 on 戌-癸卯",
+ "stage1Label": "CONTAMINATED_TARGET (大時 present in the source list) — superseded by the entry clause",
+ "aliases": "大敗 = 大時 (卷十 notes 大敗 咸池); 咸池 is its 又為 (忌取魚乘船渡水), not a tested heading"
+}

@@ -1,0 +1,26 @@
+{
+ "version": "q4-rest-stage2c-v1",
+ "status": "DRAFT — not active, not implemented",
+ "R-JK": {
+  "text": "For 九空's own prohibited headings within puzhu:06 (開市, 立券交易, 納財, 開倉庫出貨財), generic puzhu:06 Q4 triggers do not remove 九空's 忌 unless an independently established 九空-specific lifter applies (月德, 天德合, 月德合). 九空's 巳亥/辰戌丑未 deferrals are unchanged.",
+  "scope": "九空 only",
+  "mechanism": "liftExclusions.九空 = [天德, 天赦, 天願, 月恩, 四相, 時德]"
+ },
+ "R-WX": {
+  "text": "For 五虛 × 開倉庫出貨財, generic puzhu:06 Q4 triggers do not remove 五虛's 忌 unless an independently established 五虛-specific lifter applies (天德, 月德, 天德合, 月德合, 六合; 天願 by the 四庫 note).",
+  "scope": "五虛 × 開倉庫出貨財 only",
+  "mechanism": "liftExclusions.五虛 = [天赦, 月恩, 四相, 時德]"
+ },
+ "R-XH": {
+  "text": "For 小耗's own prohibited headings within puzhu:06 (開市, 立券交易, 納財, 開倉庫出貨財), generic puzhu:06 Q4 triggers do not remove 小耗's 忌 unless an independently established 小耗-specific lifter applies (天德, 月德, 天德合, 月德合, 天願). The 子午卯酉月 + 刼煞 猶忌 clause is unchanged.",
+  "scope": "小耗 only",
+  "mechanism": "liftExclusions.小耗 = [天赦, 月恩, 四相, 時德]",
+  "evidenceCaveat": "two pages, both 四相"
+ },
+ "R-F1Y": {
+  "text": "For 五離 × 立券交易, when 五離's 忌 survives as the sole surviving 忌 and an independent 宜 also applies, the state is only_ji rather than both_present.",
+  "scope": "五離 × 立券交易 Y composition only; not F1 R2 J-axis, 五離 lifters, other 五離 headings or global Y",
+  "reach": "21 production rows 2025–2027 (all 五離 × 立券交易 both_present, including the 17 that never involved puzhu:06), not only the 4 R2 rows",
+  "mechanism": "composition rule on 立券交易 when the sole surviving 忌 is 五離"
+ }
+}
