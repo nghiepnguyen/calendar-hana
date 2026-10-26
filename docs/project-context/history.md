@@ -2682,3 +2682,19 @@ Mục production thay trong PROJECT_CONTEXT §2 ngày 2026-10-25:
 | [#100](https://github.com/nghiepnguyen/calendar-hana/pull/100) | `d47bcc6` | audit | G2 Stage 1: 立劵交易/立券交易 `SAME_ACTIVITY_ALIAS_CONFIRMED`; lệch ở khớp heading 卷十 của `resolveVol10`, không phải P4; phán quyết owner 2026-10-25 (未-戊申 BLANK, I1); đóng băng envelope I1. Deploy #43 / 40148584043. `docs/audits/p4-g2-vol10-heading-match.md` |
 
 Gate trước #99: `ci:p4:full` exit 0 (mọi mutation bị bắt), `ci:full` exit 0 (unit 250 file, emulator, Playwright), `check:audit-clean` sạch, build index Δ −3 B.
+
+## 45. G2 Stage 2, G1 glyph/SOIL, W1, F1 R2, Q4-REST — PR #101–#107 (2026-10-25 → 2026-10-26, main `6dac11a`)
+
+Mục production thay trong PROJECT_CONTEXT §2 ngày 2026-10-26:
+
+- Main `d47bcc6` (PR #100, G2 Stage 1), [Deploy #43 / 40148584043](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40148584043), bundle `/assets/index-BNiXJDPd.js` `23fef042…cccb`, `/version.json` `26.10.25`. Trước đó: `394acbb` (PR #99, Deploy #42).
+
+| PR | Merge | Deploy | Loại | Nội dung |
+|---|---|---|---|---|
+| [#101](https://github.com/nghiepnguyen/calendar-hana/pull/101) | `58faf3a` | #44 | docs | PROJECT_CONTEXT G1/G2 |
+| [#102](https://github.com/nghiepnguyen/calendar-hana/pull/102) | `f3c68c6` | #45 | **đổi output** | G2 Stage 2: `headingAliases` 立劵交易 → [立券交易] + authority 劫煞 v2 (352 → 384 ô APPLIED). 2025–2027: 24 dòng contract/transaction (12 ngày, 24 tăng); ngoài miền 13.856 dòng; event 293.600 đánh giá đổi (gồm evidence-only). `docs/audits/p4-g2-stage2-migration.md` |
+| [#103](https://github.com/nghiepnguyen/calendar-hana/pull/103) | `d5c005f` | #46 | **đổi output** | G1 glyph Stage 2 (R3): authority 劫煞 v3, +11 ô demolition; 2025–2027 = 0; ngoài miền 1.119 ngày −15. `docs/audits/p4-g1-glyph-stage2-migration.md` |
+| [#104](https://github.com/nghiepnguyen/calendar-hana/pull/104) | `aebcf2e` | #47 | **đổi output** | G1-SOIL (R2): rule service `tho-vuong-dung-su-rule-v1` + authority v4 (5 context `APPLIED_DATE_DEPENDENT`); 2025–2027 = 0; ngoài miền 298 ngày watch→avoid. `docs/audits/p4-g1-soil-stage2-migration.md` |
+| [#105](https://github.com/nghiepnguyen/calendar-hana/pull/105) | `f66c74f` | #48 | audit | W1 `未-戊申 × 立券交易` đóng (owner D1(a) cục bộ), 0 thay đổi production. `docs/audits/p4-g2-n117-stage3-owner-ruling.md` |
+| [#106](https://github.com/nghiepnguyen/calendar-hana/pull/106) | `7a38f09` | #49 | **đổi output** | F1 R2: puzhu:06 v4 (Q4 không gỡ 五離 × 立券交易); 20 dòng activity −15, 2025–2027. `docs/audits/p4-f1-wuli-lijuan-stage3-migration.md` |
+| [#107](https://github.com/nghiepnguyen/calendar-hana/pull/107) | `6dac11a` | #50 | **đổi output** | Q4-REST: puzhu:06 v5 (R-JK/R-WX/R-XH `QL_NARROW` + R-F1Y); 121 dòng activity, 366 event, 2025–2027. `docs/audits/p4-q4-rest-stage3-migration.md` |
