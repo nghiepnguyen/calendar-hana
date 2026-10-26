@@ -92,7 +92,7 @@ Chi tiết, authority và tài liệu từng hạng mục: [`completed.md`](docs
 | Y-CONVENTION | OPEN (~1.089 `both_present`) |
 | U4/U7 | QUARANTINED |
 | BAIJI-Y | OPEN |
-| P21 | OPEN — việc tiếp theo chính thức: **P21 Stage 1 — Authority Reconstruction**, trước Y-CONVENTION. Nợ liên quan từ G2: `未-戊申` |
+| P21 | **PARTIALLY MIGRATED** trên nhánh `claude/p21-stage4-partial-migration` (chưa merge/deploy): authority ngữ nghĩa H2_SUPPORTED; 亥 contexts migrated (`p4-puzhu21-v1`); 未-戊申 HOLD; 未-丙申 QUARANTINED |
 
 Chọn việc khác dưới đây khi owner yêu cầu; mục cần owner quyết thì dừng và hỏi, không tự chọn.
 
@@ -102,7 +102,7 @@ Chọn việc khác dưới đây khi owner yêu cầu; mục cần owner quyế
 | H1-B | Ghép 忌 sống sót với 相抵 (owner 2026-10-17) | **PARTIALLY_SOURCE_WITNESSED**, audit-only ([review](docs/audits/p4-h1b-yuebiao-witness.md)). 月表 xác nhận lớp 重日/復日 + 德 (7 trang, 0 mâu thuẫn). Phần 劫煞 辰戌丑未 không 德 (tiền đề 相抵 → 不註) đã giải quyết ở tầng 卷十 bằng Option C v1 (PR #87). Tầng P4 (2025–2027) vẫn `cancel_both` cho 劫煞 — xem P4-劫 |
 | X相抵 | 相抵 / `cancel_both` của 劫煞 辰戌丑未 không 德 | Tầng 卷十 xong (Option C v1, PR #87; `completed.md`). Còn mở: 災煞/月煞 (ứng viên 相抵 riêng), 月刑/天吏 có 德 UNRESOLVED (lẫn puzhu:06) — chưa audit, không đổi runtime |
 | P4-劫 | Tầng P4 (2025–2027) cho 劫煞 辰戌丑未 không 德 | **MORE_EVIDENCE_REQUIRED**, không đổi runtime. Engine P4 vẫn `cancel_both` + P17-0. Blocker riêng của P4: F1 (lan truyền xuyên thần, vd. 五離/五虛), mệnh đề con thứ hai của puzhu:17 (亥日/厭對/八專/四忌/四窮; điều kiện xảy ra ở 71 context), puzhu:06 Q4 vs 戌-癸亥 và lớp 四相 (UNDETERMINED), nhãn scope SPEC_GAP, bất thường adapter medical. Chuyển P4 sang P17-A sẽ đổi Golden v2 ở 2026-08-02, 2027-07-28. Báo cáo: [faithful](docs/audits/p4-jiesha-faithful-vol10.md), [puzhu:17](docs/audits/p4-puzhu17-bujiang.md), [納財](docs/audits/p4-weishen-nacai-puzhu21.md) |
-| P21 | puzhu:21 N-A vs N-C / 未-戊申 | **OPEN**. Câu hỏi: puzhu:21 bỏ **mọi** 忌 của heading, hay chỉ phần nguồn liên kết/bị ảnh hưởng? Production hiện đọc N-A (sau R2 vẫn gỡ 五離 trên 未-戊申). Chưa giải. Tiếp theo: Stage 1 Authority Reconstruction (audit-only) |
+| P21 | puzhu:21 N-A vs N-C / 未-戊申 | **PARTIALLY MIGRATED** (Stage 1–4, nhánh `claude/p21-stage4-partial-migration`, chưa merge/deploy). Authority ngữ nghĩa: **H2_SUPPORTED** (contribution-scoped; nhân chứng 月表 n82 亥-癸酉, n106 亥-丁酉; [Stage 2](docs/audits/p21-stage2-discriminating-witness.md)). Migration: authority `p4-puzhu21-v1` (eligibleContexts 亥-丁酉, 亥-癸酉) đổi 3 ngày 2025–2027 (contract/transaction 50 → 20; full Golden v5, score Golden v7; [Stage 4](docs/audits/p21-stage4-partial-migration.md)). Còn: 未-戊申 **HOLD** (cần owner ruling mở rộng LOCAL 納財 sang 五離); 未-丙申/壬申/庚申 **QUARANTINED** (P4-劫). Nợ mới: PUZHU22_SEMANTIC_DEBT; X相抵 (災煞) chưa đóng |
 | Y-CONVENTION | 忌 không xếp hạng sống sót + 宜 độc lập: production `both_present` (mặc định cài đặt), 月表 in `only_ji` | **OPEN**. Chỉ có luật có phạm vi (Q4-REST) và R-F1Y. Còn ~1.089 dòng 2025–2027 (U4, U7 cách ly; 16 thần khác chưa kiểm). [Báo cáo](docs/audits/p4-q4-rest-stage2a1-y-axis-impact.md) |
 | BAIJI-Y | 百忌 + 宜 độc lập: production `both_present`, bản in `only_ji` (3 ô) | **OPEN**, chưa đo |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
