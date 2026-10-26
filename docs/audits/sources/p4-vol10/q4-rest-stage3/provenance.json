@@ -1,0 +1,939 @@
+{
+ "version": "q4-rest-stage3-v1",
+ "rows": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-01-27",
+   "context": "丑-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-03-09",
+   "context": "卯-丁丑",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-03-09",
+   "context": "卯-丁丑",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-03-09",
+   "context": "卯-丁丑",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2025-03-09",
+   "context": "卯-丁丑",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-05-29",
+   "context": "巳-戊戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-05-29",
+   "context": "巳-戊戌",
+   "heading": "納財",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-05-29",
+   "context": "巳-戊戌",
+   "heading": "開市",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-06-20",
+   "context": "午-庚申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-06-28",
+   "context": "午-戊辰",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-06-28",
+   "context": "午-戊辰",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-06-28",
+   "context": "午-戊辰",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2025-06-28",
+   "context": "午-戊辰",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-07-02",
+   "context": "午-壬申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-09-11",
+   "context": "酉-癸未",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-09-11",
+   "context": "酉-癸未",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-09-11",
+   "context": "酉-癸未",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2025-09-11",
+   "context": "酉-癸未",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-09-12",
+   "context": "酉-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-09-24",
+   "context": "酉-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-12-23",
+   "context": "子-丙寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2025-12-31",
+   "context": "子-甲戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-12-31",
+   "context": "子-甲戌",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2025-12-31",
+   "context": "子-甲戌",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-01-04",
+   "context": "子-戊寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-01-22",
+   "context": "丑-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-02-03",
+   "context": "丑-戊申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-05-24",
+   "context": "巳-戊戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-05-24",
+   "context": "巳-戊戌",
+   "heading": "納財",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-05-24",
+   "context": "巳-戊戌",
+   "heading": "開市",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-06-15",
+   "context": "午-庚申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-06-23",
+   "context": "午-戊辰",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-06-23",
+   "context": "午-戊辰",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-06-23",
+   "context": "午-戊辰",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2026-06-23",
+   "context": "午-戊辰",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-06-27",
+   "context": "午-壬申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-07-05",
+   "context": "午-庚辰",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-07-05",
+   "context": "午-庚辰",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-07-05",
+   "context": "午-庚辰",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2026-07-05",
+   "context": "午-庚辰",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-09-07",
+   "context": "酉-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-09-19",
+   "context": "酉-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-12-18",
+   "context": "子-丙寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2026-12-26",
+   "context": "子-甲戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-12-26",
+   "context": "子-甲戌",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-12-26",
+   "context": "子-甲戌",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2026-12-30",
+   "context": "子-戊寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-01-17",
+   "context": "丑-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-01-29",
+   "context": "丑-戊申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-05-19",
+   "context": "巳-戊戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-05-19",
+   "context": "巳-戊戌",
+   "heading": "納財",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-05-19",
+   "context": "巳-戊戌",
+   "heading": "開市",
+   "rules": [
+    "R-XH"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-06-10",
+   "context": "午-庚申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-06-18",
+   "context": "午-戊辰",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-06-18",
+   "context": "午-戊辰",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-06-18",
+   "context": "午-戊辰",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2027-06-18",
+   "context": "午-戊辰",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-06-22",
+   "context": "午-壬申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-06-30",
+   "context": "午-庚辰",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-06-30",
+   "context": "午-庚辰",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-06-30",
+   "context": "午-庚辰",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-JK",
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "OVERLAP_OF_APPROVED_RULES",
+   "note": ""
+  },
+  {
+   "date": "2027-06-30",
+   "context": "午-庚辰",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-07-04",
+   "context": "午-甲申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-09-14",
+   "context": "酉-丙申",
+   "heading": "立券交易",
+   "rules": [
+    "R-F1Y"
+   ],
+   "from": "both_present",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-12-13",
+   "context": "子-丙寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "DIRECT_SOURCE_WITNESSED",
+   "note": "DIRECT = dated row on a page-witnessed context × heading; the page proves the cell, not every date"
+  },
+  {
+   "date": "2027-12-21",
+   "context": "子-甲戌",
+   "heading": "立券交易",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "not_recorded",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-12-21",
+   "context": "子-甲戌",
+   "heading": "納財",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-12-21",
+   "context": "子-甲戌",
+   "heading": "開市",
+   "rules": [
+    "R-JK"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  },
+  {
+   "date": "2027-12-25",
+   "context": "子-戊寅",
+   "heading": "開倉庫出貨財",
+   "rules": [
+    "R-WX"
+   ],
+   "from": "only_yi",
+   "to": "only_ji",
+   "evidenceClass": "SEMANTIC_OWNER_RULE",
+   "note": ""
+  }
+ ],
+ "byClass": {
+  "DIRECT_SOURCE_WITNESSED": 29,
+  "SEMANTIC_OWNER_RULE": 38,
+  "OVERLAP_OF_APPROVED_RULES": 7
+ },
+ "byRule": {
+  "R-JK": 37,
+  "R-WX": 14,
+  "R-XH": 9,
+  "R-F1Y": 21
+ },
+ "byRuleClass": {
+  "R-JK": {
+   "DIRECT_SOURCE_WITNESSED": 12,
+   "OVERLAP_OF_APPROVED_RULES": 7,
+   "SEMANTIC_OWNER_RULE": 18
+  },
+  "R-WX": {
+   "OVERLAP_OF_APPROVED_RULES": 7,
+   "DIRECT_SOURCE_WITNESSED": 4,
+   "SEMANTIC_OWNER_RULE": 3
+  },
+  "R-XH": {
+   "DIRECT_SOURCE_WITNESSED": 9
+  },
+  "R-F1Y": {
+   "DIRECT_SOURCE_WITNESSED": 4,
+   "SEMANTIC_OWNER_RULE": 17
+  }
+ },
+ "f1y": {
+  "witnessedContexts": [
+   "丑-甲申",
+   "午-戊申"
+  ],
+  "rowsOnWitnessedContexts": 4,
+  "rowsElsewhere": 17,
+  "note": "direct witness contexts ≠ all 21 production rows"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "version": "q4-rest-stage3-v1",
+ "model": "v4 at the v5 path (shared/lunar/q4RestRollback.ts)",
+ "days": 1097,
+ "rollbackEqualsBaseline": 1097,
+ "exact": true,
+ "shippedDiffersOn": 40,
+ "outsideDomainUnchanged": true,
+ "digest": {
+  "rollback": "a1e854fbf02d7335a6d9c96d529ac628bbf8506784c77aa40a97d0e99dd4f4d3",
+  "shipped": "ee9b13b69471ccc2e0ea7e7256dd4864a10dc59de9fcb3d40f709361ab1ac135",
+  "baseline": "a1e854fbf02d7335a6d9c96d529ac628bbf8506784c77aa40a97d0e99dd4f4d3"
+ },
+ "perRule": {
+  "R-JK": {
+   "headingRowsReverted": 30
+  },
+  "R-WX": {
+   "headingRowsReverted": 7
+  },
+  "R-XH": {
+   "headingRowsReverted": 9
+  },
+  "R-F1Y": {
+   "headingRowsReverted": 21
+  }
+ }
+}
