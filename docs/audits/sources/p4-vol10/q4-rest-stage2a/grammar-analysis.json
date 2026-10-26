@@ -1,0 +1,61 @@
+{
+ "puzhu06": {
+  "quote": "凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌",
+  "offset": 21817,
+  "clauses": [
+   {
+    "text": "凡徳合赦願月恩四相時徳等日",
+    "role": "condition: trigger days"
+   },
+   {
+    "text": "不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財",
+    "role": "action: do not note 忌 on the listed headings"
+   },
+   {
+    "text": "如遇徳猶忌",
+    "role": "exception 1: 猶忌 cases"
+   },
+   {
+    "text": "及從忌不從宜之日",
+    "role": "exception 2: days whose outcome is already 從忌不從宜 (之日 = a kind of day)"
+   },
+   {
+    "text": "則仍註忌",
+    "role": "consequence of the exceptions: 忌 is still noted"
+   }
+  ],
+  "says": "puzhu:06 only withholds 忌; it never adds, keeps or removes 宜",
+  "congjiScope": "從忌不從宜 is a day-class named as an exception; the rule does not define it, so it refers to an outcome fixed elsewhere (the 等第 grade prose)"
+ },
+ "gradeProse": {
+  "oldPractice": "舊本凡吉神遇凶煞皆從忌而不從宜",
+  "oldPracticeOffset": 9557,
+  "reform": "除建破等日條例簡易及專忌之日無庸分别外餘分為六等",
+  "grades": "中等吉不抵凶遇德則吉勝從宜不從忌不遇從忌不從宜 …",
+  "table": "宜忌等第表 is not in the raw text (empty anchor at 21611); the project grid holds its columns (graded subjects: 月建/月破/平/收/閉/劫煞/災煞/月煞/月刑/月厭/月害/大時/天吏 …)",
+  "reading": "the six grades replace the old blanket 吉神遇凶煞從忌不從宜 for the combinations the table grades; the text does not say what governs an ungraded 凶煞 (五虛, 九空, 小耗, 五墓, 五離 …) that keeps its 忌 against a 吉神's 宜"
+ },
+ "models": {
+  "LIFT_JI": {
+   "grammar": "permitted: the literal action on trigger days",
+   "n126": "contradicted (忌 printed)"
+  },
+  "KEEP_JI": {
+   "grammar": "permitted only if 從忌不從宜之日 or 猶忌 covers the day; the rule itself never yields both_present",
+   "n126": "忌 fits, 宜 contradicted"
+  },
+  "JI_DOMINATES": {
+   "grammar": "not required by puzhu:06; plausible only if the old blanket 從忌不從宜 (which the compilers present as superseded) still governs ungraded 凶煞, which would also make every such day a 從忌不從宜之日 and so an exception to puzhu:06",
+   "n126": "fits both axes"
+  }
+ },
+ "scope": {
+  "entirePuzhu06": false,
+  "subsetOfGods": "UNESTABLISHED (graded subjects certainly; ungraded remaining-ji only under the old-practice reading)",
+  "specificHeadings": false,
+  "operandCombos": "the 等第 grade of the day",
+  "differentClause": true,
+  "established": false
+ },
+ "classification": "CLAUSE_BOUNDARIES_CLEAR; CONGJI_SCOPE_UNESTABLISHED"
+}
