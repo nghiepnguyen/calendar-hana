@@ -1,0 +1,30 @@
+{
+  "version": "p4b-puzhu06-authority-validation-v4",
+  "wuliQuoteOffset": 19501,
+  "wuliExcludedTriggers": [
+    "天願",
+    "月恩",
+    "四相",
+    "時德"
+  ],
+  "wuliOwnTriggers": [
+    "天德",
+    "月德",
+    "天德合",
+    "月德合",
+    "天赦"
+  ],
+  "otherLiftListsUnchanged": [
+    "九空",
+    "五墓",
+    "五虛",
+    "小耗"
+  ],
+  "diffFromV3": [
+    "classes",
+    "liftExclusions",
+    "ownerDecision",
+    "parent",
+    "version"
+  ]
+}

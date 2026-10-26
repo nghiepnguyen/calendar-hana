@@ -5,12 +5,13 @@ import { describe, expect, it, vi } from 'vitest'
 // F1 Stage 2 (docs/audits/p4-f1-wuli-lijuan-stage2-authority-reconciliation.md): impact of the R2 design
 // (puzhu:06 cannot lift 五離 with a trigger outside 五離's own lift list) against current production.
 // Each model gets its own module graph (vi.doMock + vi.resetModules), as in p4G2Stage2Migration.test.ts:
-//   current  production as shipped (p4b-puzhu06-v3, Q4 lifts 五離)
-//   r2       the same authority with liftExclusions.五離 = the non-lifter triggers (Q4a mechanism)
+//   current  production as shipped at Stage 2 (p4b-puzhu06-v3, Q4 lifts 五離); since F1 Stage 3 production
+//            imports v4, so this model mocks the v4 path with v3 (f1R2Rollback.ts)
+//   r2       v3 with liftExclusions.五離 = the non-lifter triggers (Q4a mechanism), built here, not read from v4
 // npm test: the frozen witnesses only. F1S2_DUMP=1: full 2025–2027 comparison (headings, activities,
 // events, every day) written to f1-wuli-lijuan-stage2/impact.json.
 type Model = 'current' | 'r2'
-const PUZHU06 = '../almanac-data/p4b-puzhu06-v3.json'
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v4.json'
 const OUT = 'docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/impact.json'
 // 五離's own list 「與天德月德天德合月德合天赦三合六合併則不忌」 ∩ puzhu:06 triggers; the rest cannot lift it.
 const WULI_OWN = ['天德', '月德', '天德合', '月德合', '天赦']
@@ -18,9 +19,12 @@ const WULI_OWN = ['天德', '月德', '天德合', '月德合', '天赦']
 async function load(model: Model) {
   vi.resetModules()
   vi.doUnmock(PUZHU06)
+  if (model === 'current') vi.doMock(PUZHU06, async () => (await import('./f1R2Rollback')).puzhu06V3())
   if (model === 'r2')
-    vi.doMock(PUZHU06, async (orig) => {
-      const real = (await orig()) as { default: { triggers: string[]; liftExclusions: object } }
+    vi.doMock(PUZHU06, async () => {
+      const real = (await import('./f1R2Rollback')).puzhu06V3() as unknown as {
+        default: { triggers: string[]; liftExclusions: object }
+      }
       const a = real.default
       const triggers = a.triggers.filter((t) => !WULI_OWN.includes(t))
       return { default: { ...a, liftExclusions: { ...a.liftExclusions, 五離: { triggers } } } }

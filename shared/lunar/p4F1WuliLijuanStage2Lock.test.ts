@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import evidence from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/evidence.json'
 import lock from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/lock.json'
+import { committedWithDigest } from './lockAnchor'
 
 // Audit only: F1 Stage 2 (docs/audits/p4-f1-wuli-lijuan-stage2-authority-reconciliation.md). Freezes the R2
 // determination (pending owner adoption), its scope and the measured envelope; production is unchanged.
@@ -10,7 +11,12 @@ const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('
 
 describe('F1 Stage 2 authority reconciliation lock', () => {
   it('pins the evidence, impact dump, harness, Stage 1 and the witness scans', () => {
-    for (const [path, hash] of Object.entries(lock.files)) expect(sha(path), path).toBe(hash)
+    // Out-of-dir files (harness, authority) are a historical proof (owner rule 2026-10-17, lockAnchor.ts):
+    // F1 Stage 3 re-pointed the harness's mocks at the v4 path it now imports, nothing else.
+    const DIR = 'docs/audits/sources/p4-vol10/'
+    for (const [path, hash] of Object.entries(lock.files))
+      if (path.startsWith(DIR)) expect(sha(path), path).toBe(hash)
+      else expect(committedWithDigest(path, hash), path).toBe(true)
     expect(evidence.stage1.witnesses).toEqual({
       '06067696-n14': 'a3a5180ff7d004d4acbbb7752ef41b192a6e2a8410b0546cf6881c0270b7c127',
       '06067696-n62': '6c2097b8787c0ea848340c45df1cb379e40503849347721b96349c9092c83a9a',
