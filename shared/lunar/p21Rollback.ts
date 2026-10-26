@@ -13,12 +13,13 @@ export const puzhu21Off = () => ({
   },
 })
 
-/** A pinned graph must run N-A: a mock on a path production no longer imports would be a silent no-op. */
+/** A pinned graph must run N-A: a mock on a path production no longer imports would be a silent no-op. The check
+ * reads the scoped path's own marker, not the row state, so mutations of other owner rules still load. */
 export async function assertPuzhu21Off() {
   const { resolveP4OwnerRulesContext } = await import('./p4OwnerRules')
-  const state = resolveP4OwnerRulesContext('亥', '丁酉')['立券交易']!.state
-  if (state !== 'neither_recorded')
-    throw new Error(`pinned graph runs puzhu:21 scoped (亥-丁酉 ${state})`)
+  const kept = resolveP4OwnerRulesContext('亥', '丁酉')['立券交易']!.propagationKept
+  if (kept !== undefined)
+    throw new Error(`pinned graph runs puzhu:21 scoped (亥-丁酉 kept by ${kept})`)
 }
 
 /** src/test/setup.ts loads the P4 provider before a test file's vi.mock applies. Run from vi.hoisted after the
