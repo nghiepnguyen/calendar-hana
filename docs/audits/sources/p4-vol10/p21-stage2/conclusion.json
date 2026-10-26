@@ -1,0 +1,61 @@
+{
+ "audit": "P21",
+ "stage": 2,
+ "conclusion": "H2_SUPPORTED",
+ "scope": "puzhu:21 only: an independent 忌 (五離) on the target 立券交易 survives when the triad trigger is unnoted by 相抵 (災煞 寅申巳亥月 開日, no 德). Not extended to puzhu:22 or other lines",
+ "gate": {
+  "cleanH2": [
+   "P21S2-06067696-n82",
+   "P21S2-06067696-n106"
+  ],
+  "cleanH1": [],
+  "unresolvedContradictoryLevelA": []
+ },
+ "tally": {
+  "CLEAN_H2": 2,
+  "NOT_DISCRIMINATING": 4,
+  "CONTAMINATED": 12
+ },
+ "searchCoverage": {
+  "storedPages": 69,
+  "candidateCells": 123,
+  "cleanCandidates": 2,
+  "datedOnlyCellsOnPuzhu21Or22": 0
+ },
+ "limitations": [
+  "one edition (四庫全書本), two near-identical pages of one month block, one AI reader",
+  "n117 variant (內府刊本) not acquired: SOURCE_VARIANT_CONFLICT not tested",
+  "n30 control and the whole-page reading are post hoc; only n82/n106 are blind",
+  "開倉庫出貨財 is absent on n82/n106 without a 宜 of its own (卷十一 月恩四相時德滿日五富): it fits only if puzhu:22's trigger 「不註忌開市立劵交易」 is read per contribution as well; that is open, not part of P21",
+  "the 災煞 effect premise (X相抵) is witnessed on these pages only, not resolved as an authority item"
+ ],
+ "ownerPrecedent": "2026-10-17 H1-B decision (puzhu:22 withholds independent 月虛) is in tension with this result; it is project convention, not source authority. For Stage 3",
+ "impactPreliminary": {
+  "dates": [
+   "2025-07-26",
+   "2025-11-24",
+   "2026-07-21",
+   "2026-08-02",
+   "2026-11-19",
+   "2027-07-16",
+   "2027-07-28",
+   "2027-11-14"
+  ],
+  "activityRows": 16,
+  "eventRecords": 72,
+  "eventClassificationChanges": 48,
+  "premiseByDate": {
+   "未-丙申": "P4_LAYER_ONLY (P4-劫)",
+   "未-戊申": "LOCAL owner ruling",
+   "亥-丁酉": "SOURCE_WITNESSED (n106)"
+  },
+  "goldensToSucceed": [
+   "P4 score Golden v6",
+   "P4 full Golden v4",
+   "owner-rules Goldens",
+   "p4-adapter-baseline-v1 lock revision",
+   "migration diff"
+  ]
+ },
+ "productionChanged": false
+}

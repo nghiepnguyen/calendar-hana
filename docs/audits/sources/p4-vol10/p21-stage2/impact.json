@@ -1,0 +1,1105 @@
+{
+  "harness": "shared/lunar/p4P21Stage2Impact.test.ts",
+  "dates": [
+    "2025-07-26",
+    "2025-11-24",
+    "2026-07-21",
+    "2026-08-02",
+    "2026-11-19",
+    "2027-07-16",
+    "2027-07-28",
+    "2027-11-14"
+  ],
+  "activity": [
+    {
+      "date": "2025-07-26",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "activityId": "contract",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "activityId": "transaction",
+      "nA": {
+        "score": 50,
+        "status": "neutral",
+        "hardWarning": false
+      },
+      "nC": {
+        "score": 20,
+        "status": "avoid",
+        "hardWarning": false
+      }
+    }
+  ],
+  "event": [
+    {
+      "date": "2025-07-26",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "not_recommended"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2025-11-24",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "not_recommended"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-16",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-07-28",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "receive_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "not_recommended"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "buy_vehicle@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "buy_vehicle@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "sign_contract@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "sign_contract@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "buy_property@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "buy_property@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "not_recommended"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "property_handover@",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    },
+    {
+      "date": "2027-11-14",
+      "event": "property_handover@9",
+      "nA": {
+        "score": 50,
+        "classification": "caution"
+      },
+      "nC": {
+        "score": 20,
+        "classification": "caution"
+      }
+    }
+  ]
+}

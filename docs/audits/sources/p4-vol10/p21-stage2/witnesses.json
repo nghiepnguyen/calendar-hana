@@ -1,0 +1,712 @@
+{
+ "version": "p21-stage2-witnesses-v1",
+ "fetch": "curl --fail -L, 2026-10-26, https://archive.org/download/06067696.cn/page/<leaf>_w1200.jpg; image unmodified",
+ "newPages": {
+  "06067696-n82.jpg": {
+   "context": "亥-癸酉",
+   "header": "癸酉劒鋒金義開日",
+   "officer": "開",
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口求醫療病經絡醞釀立券交易伐木畋獵取魚",
+   "sha256": "734614ab6f267635a62070c5517bd76b10046e363611766c26265fc08e7dab7e"
+  },
+  "06067696-n106.jpg": {
+   "context": "亥-丁酉",
+   "header": "丁酉山下火制開日",
+   "officer": "開",
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口剃頭求醫療病經絡醞釀立券交易伐木畋獵取魚",
+   "sha256": "805a2be9d61acd22e9a8516aaed3a68370b85b0c075dc8c198e8c2abf246212c"
+  }
+ },
+ "witnesses": [
+  {
+   "id": "P21S2-06067696-n82",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/p21-stage2/pages/06067696-n82.jpg",
+   "sha256": "734614ab6f267635a62070c5517bd76b10046e363611766c26265fc08e7dab7e",
+   "context": "亥-癸酉",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 (宜 開日; 納財 宜 母倉)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口求醫療病經絡醞釀立券交易伐木畋獵取魚",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent from the 忌 line",
+   "H2Prediction": "立券交易 on the 忌 line (五離)",
+   "classification": "CLEAN_H2",
+   "notes": "W1–W8 hold; blind (fetched after the prediction freeze)",
+   "blind": true,
+   "level": "A",
+   "confidence": "medium-high (single edition, single AI reader, full-resolution re-read)"
+  },
+  {
+   "id": "P21S2-06067696-n106",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/p21-stage2/pages/06067696-n106.jpg",
+   "sha256": "805a2be9d61acd22e9a8516aaed3a68370b85b0c075dc8c198e8c2abf246212c",
+   "context": "亥-丁酉",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 (宜 開日; 納財 宜 母倉)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口剃頭求醫療病經絡醞釀立券交易伐木畋獵取魚",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent from the 忌 line",
+   "H2Prediction": "立券交易 on the 忌 line (五離)",
+   "classification": "CLEAN_H2",
+   "notes": "W1–W8 hold; blind (fetched after the prediction freeze)",
+   "blind": true,
+   "level": "A",
+   "confidence": "medium-high (single edition, single AI reader, full-resolution re-read)"
+  },
+  {
+   "id": "P21S2-06067692-n30",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067692.cn",
+   "page": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067692-n30.jpg",
+   "sha256": "9d1d6648e563416d59250356ed3716971ae20e9dc8d2ab8ba35de2fc199ac8d5",
+   "context": "寅-戊子",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 (宜 開日; 納財 宜 母倉)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [],
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "益後",
+    "青龍"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火"
+   ],
+   "yiLine": "祭祀入學沐浴",
+   "jiLine": "冠帶結婚姻納采問名嫁娶進人口求醫療病經絡醞釀伐木畋獵取魚破土安葬啟攢",
+   "observedTarget": "absent",
+   "H1Prediction": "—",
+   "H2Prediction": "—",
+   "classification": "NOT_DISCRIMINATING",
+   "notes": "control (post hoc): same 災煞 開日 clause, 立券交易 has no 宜 and no independent 忌 and is absent, so the compiler applies puzhu:21; 嫁娶/結婚姻 (no 宜, 災煞 only) printed, so no-宜 headings keep 災煞",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067694-n117",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067694.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "context": "未-戊申",
+   "line": "puzhu:21",
+   "triggerActivity": "納財 (宜 四相)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "四相",
+    "陽德",
+    "相日",
+    "吉期",
+    "不將",
+    "益後",
+    "除神",
+    "司命"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友出行結婚姻納采問名安牀求醫療病修倉庫立券交易納財開倉庫出貨財破土安葬啟攢",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent",
+   "H2Prediction": "立券交易 printed (五離)",
+   "classification": "NOT_DISCRIMINATING",
+   "notes": "納財 printed: the trigger is not realised on the page; W6 (四相 is a puzhu:06 trigger)",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067694-n81",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067694.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n81.jpg",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "context": "未-壬申",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 / 納財 (no 宜)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "陽德",
+    "相日",
+    "吉期",
+    "不將",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent",
+   "H2Prediction": "立券交易 printed (五離)",
+   "classification": "CONTAMINATED",
+   "notes": "W1: trigger only under P4 cancel_both; triad printed",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067694-n105",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067694.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n105.jpg",
+   "sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+   "context": "未-丙申",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 / 納財 (no 宜)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "陽德",
+    "相日",
+    "吉期",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent",
+   "H2Prediction": "立券交易 printed (五離)",
+   "classification": "CONTAMINATED",
+   "notes": "W1, as n81",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067694-n129",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067694.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n129.jpg",
+   "sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+   "context": "未-庚申",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 / 納財 (no 宜)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離"
+   ],
+   "jiShen": [
+    "月空",
+    "陽德",
+    "相日",
+    "吉期",
+    "益後",
+    "除神",
+    "司命",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "天賊",
+    "五虛",
+    "五離",
+    "八專"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立券交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent",
+   "H2Prediction": "立券交易 printed (五離)",
+   "classification": "CONTAMINATED",
+   "notes": "W1, as n81",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067696-n130",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n130.jpg",
+   "sha256": "5d94ec051470515aa8a8c1a09d2d3f0fd9b702ba90429a69084addc65d1408e6",
+   "context": "亥-辛酉",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 / 納財 (四耗 survives)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [
+    "五離",
+    "四耗"
+   ],
+   "jiShen": [
+    "母倉",
+    "時陽",
+    "生氣",
+    "聖心",
+    "除神",
+    "鳴吠"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "四耗",
+    "五離",
+    "朱雀"
+   ],
+   "yiLine": "祭祀入學沐浴掃舍宇",
+   "jiLine": "會親友冠帶結婚姻納采問名嫁娶進人口求醫療病修倉庫經絡醞釀開市立券交易納財開倉庫出貨財伐木畋獵取魚",
+   "observedTarget": "printed",
+   "H1Prediction": "立券交易 absent",
+   "H2Prediction": "立券交易 printed (五離+四耗)",
+   "classification": "NOT_DISCRIMINATING",
+   "notes": "triggers keep 四耗 and are printed; no trigger fires",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067693-n112",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067693.cn",
+   "page": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067693-n112.jpg",
+   "sha256": "6a0ef46fe8fc9570af9c6c4526719246133221336763af71f824d66bf2a3f6a2",
+   "context": "巳-癸卯",
+   "line": "puzhu:21",
+   "triggerActivity": "開市 (宜 開日)",
+   "targetHeading": "立券交易",
+   "independentTargetJi": [],
+   "jiShen": [
+    "母倉",
+    "陰德",
+    "時陽",
+    "生氣",
+    "普護",
+    "五合",
+    "鳴吠對"
+   ],
+   "xiongShen": [
+    "災煞",
+    "天火",
+    "元武"
+   ],
+   "yiLine": "祭祀入學",
+   "jiLine": "求醫療病經絡醞釀穿井伐木畋獵取魚",
+   "observedTarget": "absent",
+   "H1Prediction": "—",
+   "H2Prediction": "—",
+   "classification": "NOT_DISCRIMINATING",
+   "notes": "立券交易 has its own 宜 (五合): W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067696-n17",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n17.jpg",
+   "sha256": "c6d60edbc6b81be3e137ffe8efdc3b31cfd8794c545d974a91321bafe0c28535",
+   "context": "戌-乙亥",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "observedTarget": "printed",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5: target 宜 五富 and local 劫煞 相抵",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067696-n29",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n29.jpg",
+   "sha256": "5bcc7fb774552451ea82f7385fd6d1a2efa3e01941580e299aba8efffe951a56",
+   "context": "戌-丁亥",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "八風",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀剃頭求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣取魚乘船渡水栽種破土安葬啟攢",
+   "observedTarget": "printed",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067696-n41",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n41.jpg",
+   "sha256": "4a3509593e18675813353025dab5e757d1e9ba25bcdb49aee9c63e757beaa01b",
+   "context": "戌-己亥",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "observedTarget": "printed",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067696-n65",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067696.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067696-n65.jpg",
+   "sha256": "90f0124dfe3cf288e6270dd599bae2c173093cb408d49d1cd87154563d3cb8fe",
+   "context": "戌-癸亥",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "四相",
+    "相日",
+    "吉期",
+    "五富",
+    "敬安",
+    "玉堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "土符",
+    "重日"
+   ],
+   "yiLine": "祭祀沐浴掃舍宇",
+   "jiLine": "上冊受封上表章嫁娶求醫療病築隄防修造動土修倉庫開倉庫出貨財修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土安葬啟攢",
+   "observedTarget": "printed",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5/W6 (四相)",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067693-n11",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067693.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n11.jpg",
+   "sha256": "b069638864543bd1c79c513a9ad800c78793d11a268e75f19af91affeb3d068d",
+   "context": "辰-己巳",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "observedTarget": "absent",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067693-n23",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067693.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n23.jpg",
+   "sha256": "89c6ab6a15569ed23c3081e6befe307764ba37e79a71a3dc8c658ad4137be826",
+   "context": "辰-辛巳",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "天恩",
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄醞釀修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "observedTarget": "absent",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067693-n35",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067693.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n35.jpg",
+   "sha256": "57aec402505a2455e87d969aebdec66065d0554b4fc82a1b1084f87945a56871",
+   "context": "辰-癸巳",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣破土安葬啟攢",
+   "observedTarget": "absent",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067693-n47",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067693.cn",
+   "page": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067693-n47.jpg",
+   "sha256": "a3050acad6389747180d1dcf254c6d54f2ce74a242b209097dbb767afea12e41",
+   "context": "辰-乙巳",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 + 立券交易 (宜 五富)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "五虛"
+   ],
+   "jiShen": [
+    "陰德",
+    "相日",
+    "吉期",
+    "五富",
+    "金堂",
+    "明堂"
+   ],
+   "xiongShen": [
+    "劫煞",
+    "五虛",
+    "重日"
+   ],
+   "yiLine": "沐浴掃舍宇",
+   "jiLine": "祈福求嗣上冊受封上表章會親友冠帶出行結婚姻納采問名嫁娶進人口移徙安牀求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種破土安葬啟攢",
+   "observedTarget": "absent",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (五虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W4/W5",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  },
+  {
+   "id": "P21S2-06067692-n107",
+   "source": "欽定協紀辨方書 月表 (四庫全書本), archive.org 06067692.cn",
+   "page": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067692-n107.jpg",
+   "sha256": "b0fde3cbb874910532599f7d51cf216ded3cebea500ad9c8237af77386c72242",
+   "context": "卯-戊戌",
+   "line": "puzhu:22",
+   "triggerActivity": "開市 (no 宜) + 立券交易 (宜 六合)",
+   "targetHeading": "開倉庫出貨財",
+   "independentTargetJi": [
+    "月虛"
+   ],
+   "jiShen": [
+    "六合",
+    "金堂"
+   ],
+   "xiongShen": [
+    "月煞",
+    "月虛",
+    "四擊",
+    "天牢"
+   ],
+   "yiLine": "取魚",
+   "jiLine": "祈福求嗣上冊受封上表章襲爵受封出行上官赴任臨政親民解除剃頭整手足甲求醫療病裁衣築隄防修造動土豎柱上梁修倉庫鼓鑄修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養",
+   "observedTarget": "absent",
+   "H1Prediction": "開倉庫出貨財 absent",
+   "H2Prediction": "開倉庫出貨財 printed (月虛)",
+   "classification": "CONTAMINATED",
+   "notes": "W1 (開市 unnoted only under cancel_both); 月虛 is 月煞 又為 (W7)",
+   "blind": false,
+   "level": "A",
+   "confidence": null
+  }
+ ]
+}
