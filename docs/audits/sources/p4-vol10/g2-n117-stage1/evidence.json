@@ -1,0 +1,509 @@
+{
+ "version": "g2-n117-stage1-v1",
+ "target": {
+  "context": "未-戊申",
+  "cellKey": "未戊申",
+  "activities": [
+   "contract",
+   "transaction"
+  ],
+  "heading": "立券交易",
+  "witness": "06067694-n117 (卷二十五, 未月 戊申, 除)"
+ },
+ "framingCorrection": "The 四相 宜 納財 vs n117 忌 納財 conflict is the 納財 (finance) cell, already owner-ruled LOCAL in docs/audits/p4-option-c-final-gate.md. The target cell is 劫煞 × 立券交易; its conflict is n117 printing 立券交易 on the 忌 line while the 劫煞 cell is blank.",
+ "canonical": {
+  "立劵交易↔立券交易": "SAME_ACTIVITY_ALIAS_CONFIRMED (G2): headingAliases [\"立券交易\"]",
+  "activityMap": {
+   "contract": [
+    "立券交易"
+   ],
+   "transaction": [
+    "立券交易"
+   ],
+   "finance": [
+    "納財"
+   ],
+   "opening": [
+    "開市"
+   ],
+   "business": [
+    "開市"
+   ]
+  },
+  "aliasesTouching納財": [],
+  "納財→立券交易": "NOT a taxonomy/alias mapping. Source rule puzhu:21 (卷十 鋪註, triad 開市/立劵交易/納財) propagates 納財 unnoted-by-相抵 to 立券交易.",
+  "puzhu21InVol10Raw": true,
+  "puzhu06InVol10Raw": true
+ },
+ "vol11": {
+  "立劵交易": {
+   "line": 231,
+   "yi": "天願民日三合滿日六合五富五合",
+   "ji": "月破大耗平日收日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮五墓九空五離"
+  },
+  "納財": {
+   "line": 234,
+   "yi": "母倉天願月恩四相時徳民日三合滿日收日六合五富天倉",
+   "ji": "月破大耗平日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮九空"
+  },
+  "operandsOnN117For立券交易忌": [
+   "劫煞",
+   "五離"
+  ],
+  "operandsOnN117For立券交易宜": [],
+  "operandsOnN117For納財忌": [
+   "劫煞"
+  ],
+  "operandsOnN117For納財宜": [
+   "四相"
+  ]
+ },
+ "pages": [
+  {
+   "page": "06067694-n117",
+   "context": "未-戊申",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "jieshaPresent": true,
+   "sixiangPresent": true,
+   "wuliPresent": true,
+   "wuliLifters": [],
+   "wuliUnlifted": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": false,
+    "立券交易": true,
+    "納財": true,
+    "開倉庫出貨財": true
+   }
+  },
+  {
+   "page": "06067694-n81",
+   "context": "未-壬申",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "jieshaPresent": true,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [],
+   "wuliUnlifted": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true,
+    "開倉庫出貨財": true
+   }
+  },
+  {
+   "page": "06067694-n105",
+   "context": "未-丙申",
+   "sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+   "jieshaPresent": true,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [],
+   "wuliUnlifted": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true,
+    "開倉庫出貨財": true
+   }
+  },
+  {
+   "page": "06067694-n129",
+   "context": "未-庚申",
+   "sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+   "jieshaPresent": true,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [],
+   "wuliUnlifted": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true,
+    "開倉庫出貨財": true
+   }
+  },
+  {
+   "page": "06067694-n93",
+   "context": "未-甲申",
+   "sha256": "663aecbfcb6dc36d996ec7011caaff7595ce04e12e283f69bc2226b05f9b02d8",
+   "jieshaPresent": true,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [
+    "天德",
+    "月德"
+   ],
+   "wuliUnlifted": false,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false,
+    "開倉庫出貨財": true
+   }
+  },
+  {
+   "page": "06067695-n50",
+   "context": "申-戊申",
+   "sha256": "ce21b03bcca916b743206d89ddc1040545b233df6d49535bb329f6f4f520679d",
+   "jieshaPresent": false,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [
+    "天德合",
+    "天赦"
+   ],
+   "wuliUnlifted": false,
+   "lijuanJiOperands": [
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false,
+    "開倉庫出貨財": false
+   }
+  },
+  {
+   "page": "06067693-n105",
+   "context": "巳-丙申",
+   "sha256": "857ac01a05c352308cd23fd65a8f70b1aefcaf5014a8cc53cb36b38ee86614d0",
+   "jieshaPresent": false,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [
+    "天德合",
+    "六合"
+   ],
+   "wuliUnlifted": false,
+   "lijuanJiOperands": [
+    "月刑",
+    "五離"
+   ],
+   "lijuanYiOperands": [
+    "天願",
+    "六合",
+    "五富"
+   ],
+   "onJiLine": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false,
+    "開倉庫出貨財": false
+   }
+  },
+  {
+   "page": "06067692-n51",
+   "context": "寅-己酉",
+   "sha256": "352fbb0b6916763f54590d9538933515b1c6523e1f9a72bff5544d1576f31259",
+   "jieshaPresent": false,
+   "sixiangPresent": false,
+   "wuliPresent": true,
+   "wuliLifters": [],
+   "wuliUnlifted": true,
+   "lijuanJiOperands": [
+    "天吏",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "onJiLine": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true,
+    "開倉庫出貨財": true
+   }
+  }
+ ],
+ "pageTexts": {
+  "06067694-n117": {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n117.jpg",
+   "context": "未-戊申",
+   "officer": "除",
+   "ji_shen": "四相 陽德 相日 吉期 不將 益後 除神 司命",
+   "xiong_shen": "劫煞 天賊 五虛 五離",
+   "yi": "祭祀沐浴掃舍宇",
+   "ji": "上冊受封上表章會親友出行結婚姻納采｜問名安牀求醫療病修倉庫立券交易納財｜開倉庫出貨財破土安葬啟攢"
+  },
+  "06067694-n81": {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n81.jpg",
+   "context": "未-壬申",
+   "officer": "除",
+   "ji_shen": "陽德 相日 吉期 不將 益後 除神 司命 鳴吠",
+   "xiong_shen": "劫煞 天賊 五虛 五離",
+   "yi": "祭祀沐浴掃舍宇",
+   "ji": "上冊受封上表章會親友冠帶出行結婚姻｜納采問名進人口移徙安牀求醫療病裁衣｜築隄防修造動土豎柱上梁修倉庫鼓鑄經｜絡醞釀開市立券交易納財開倉庫出貨財｜修置產室開渠穿井安碓磑補垣塞穴修飾｜垣牆破屋壞垣栽種牧養納畜"
+  },
+  "06067694-n105": {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n105.jpg",
+   "context": "未-丙申",
+   "officer": "除",
+   "ji_shen": "陽德 相日 吉期 益後 除神 司命 鳴吠",
+   "xiong_shen": "劫煞 天賊 五虛 五離",
+   "yi": "祭祀沐浴掃舍宇",
+   "ji": "上冊受封上表章會親友冠帶出行結婚姻｜納采問名嫁娶進人口移徙安牀求醫療病｜裁衣築隄防修造動土豎柱上梁修倉庫鼓｜鑄經絡醞釀開市立券交易納財開倉庫出｜貨財修置產室開渠穿井安碓磑補垣塞穴｜修飾垣牆破屋壞垣栽種牧養納畜"
+  },
+  "06067694-n129": {
+   "path": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/pages/06067694-n129.jpg",
+   "context": "未-庚申",
+   "officer": "除",
+   "ji_shen": "月空 陽德 相日 吉期 益後 除神 司命 鳴吠",
+   "xiong_shen": "劫煞 天賊 五虛 五離 八專",
+   "yi": "祭祀沐浴掃舍宇",
+   "ji": "上冊受封上表章會親友冠帶出行結婚姻｜納采問名嫁娶進人口移徙安牀求醫療病｜裁衣築隄防修造動土豎柱上梁修倉庫鼓｜鑄經絡醞釀開市立券交易納財開倉庫出｜貨財修置產室開渠穿井安碓磑補垣塞穴｜修飾垣牆破屋壞垣栽種牧養納畜"
+  },
+  "06067694-n93": {
+   "path": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/pages/06067694-n93.jpg",
+   "context": "未-甲申",
+   "officer": "除",
+   "ji_shen": "天德 月德 陽德 相日 吉期 不將 益後 除神 司命 鳴吠",
+   "xiong_shen": "劫煞 天賊 五虛 八風 五離",
+   "yi": "(long list; 立券交易 and 納財 absent from both lines)",
+   "ji": "出行安牀求醫療病修倉庫開倉庫出貨財｜畋獵取魚"
+  },
+  "06067695-n50": {
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067695-n50.jpg",
+   "context": "申-戊申",
+   "officer": "建",
+   "ji_shen": "天德合 天赦 王日 天倉 不將 除神",
+   "xiong_shen": "月建 小時 土府 五離 天牢",
+   "yi": "(long list ending …納財掃舍宇牧養納畜安葬; 立券交易 absent)",
+   "ji": ""
+  },
+  "06067693-n105": {
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067693-n105.jpg",
+   "context": "巳-丙申",
+   "officer": "平",
+   "ji_shen": "天德合 天願 相日 六合 五富 不將 續世 除神 鳴吠",
+   "xiong_shen": "河魁 死神 月刑 遊禍 五虛 血忌 復日 五離 天刑",
+   "yi": "(long list containing …開市立券交易納財開倉庫出貨財…)",
+   "ji": ""
+  },
+  "06067692-n51": {
+   "path": "docs/audits/sources/p4-vol10/yuebiao/06067692-n51.jpg",
+   "context": "寅-己酉",
+   "officer": "危",
+   "ji_shen": "天恩 陰德 福生 除神 鳴吠",
+   "xiong_shen": "天吏 致死 五虛 五離 元武",
+   "yi": "祭祀沐浴剃頭整手足甲掃舍宇取魚破土安葬",
+   "ji": "祈福求嗣上冊受封上表章襲爵受封會親｜友冠帶出行上官赴任臨政親民結婚姻納｜采問名嫁娶進人口移徙安牀解除求醫療｜病築隄防修造動土豎柱上梁修倉庫開市｜立券交易納財開倉庫出貨財修置產室栽｜種牧養納畜"
+  }
+ },
+ "authority": {
+  "v1": {
+   "version": "xieji-vol10-jiesha-faithful-v1",
+   "sha256": "13ba27ee6ba5ebc0611b771982bd3da2f6540b5abee6d310584bc2a3c12259e3",
+   "cells": {
+    "未戊申": {
+     "contract": "blank",
+     "transaction": "blank",
+     "finance": "blank",
+     "opening": "blank",
+     "business": "blank"
+    },
+    "未壬申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未丙申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未庚申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    }
+   },
+   "coverage": {
+    "contract": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION",
+    "transaction": "UNREACHABLE_UNDER_CURRENT_VOL10_NORMALIZATION"
+   },
+   "provenanceNote": "OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (local); 納財 cell NOT SOURCE_WITNESSED; n117 prints 納財 忌 (docs/audits/p4-weishen-nacai-puzhu21.md, docs/audits/p4-option-c-final-gate.md)"
+  },
+  "v2": {
+   "version": "xieji-vol10-jiesha-faithful-v2",
+   "sha256": "4184778d9f4dea8c9e446b29f6c45f6f26c2002477ceec64606d42460eac8baf",
+   "cells": {
+    "未戊申": {
+     "contract": "blank",
+     "transaction": "blank",
+     "finance": "blank",
+     "opening": "blank",
+     "business": "blank"
+    },
+    "未壬申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未丙申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未庚申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    }
+   },
+   "coverage": {
+    "contract": "APPLIED",
+    "transaction": "APPLIED"
+   },
+   "provenanceNote": "OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (local); 納財 cell NOT SOURCE_WITNESSED; n117 prints 納財 忌 (docs/audits/p4-weishen-nacai-puzhu21.md, docs/audits/p4-option-c-final-gate.md)"
+  },
+  "v3": {
+   "version": "xieji-vol10-jiesha-faithful-v3",
+   "sha256": "4b6d2c7c241c521a719fb1733ddffd6cbd2a283da441a3324158a4476b8446fe",
+   "cells": {
+    "未戊申": {
+     "contract": "blank",
+     "transaction": "blank",
+     "finance": "blank",
+     "opening": "blank",
+     "business": "blank"
+    },
+    "未壬申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未丙申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未庚申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    }
+   },
+   "coverage": {
+    "contract": "APPLIED",
+    "transaction": "APPLIED"
+   },
+   "provenanceNote": "OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (local); 納財 cell NOT SOURCE_WITNESSED; n117 prints 納財 忌 (docs/audits/p4-weishen-nacai-puzhu21.md, docs/audits/p4-option-c-final-gate.md)"
+  },
+  "v4": {
+   "version": "xieji-vol10-jiesha-faithful-v4",
+   "sha256": "3d0827279b7ce825e3ce2420ad6805af5f8786ccb388d2696965cd37ac3f89f6",
+   "cells": {
+    "未戊申": {
+     "contract": "blank",
+     "transaction": "blank",
+     "finance": "blank",
+     "opening": "blank",
+     "business": "blank"
+    },
+    "未壬申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未丙申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    },
+    "未庚申": {
+     "contract": "avoid",
+     "transaction": "avoid",
+     "finance": "avoid",
+     "opening": "avoid",
+     "business": "avoid"
+    }
+   },
+   "coverage": {
+    "contract": "APPLIED",
+    "transaction": "APPLIED"
+   },
+   "provenanceNote": "OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (local); 納財 cell NOT SOURCE_WITNESSED; n117 prints 納財 忌 (docs/audits/p4-weishen-nacai-puzhu21.md, docs/audits/p4-option-c-final-gate.md)"
+  }
+ },
+ "productionNguLy": {
+  "id": "ngu_ly",
+  "han": "五離",
+  "label": "Ngũ Ly",
+  "tier": "major",
+  "activityIds": [
+   "wedding",
+   "engagement",
+   "contract",
+   "transaction",
+   "meeting"
+  ],
+  "sourceRef": "協紀辨方書 卷十一"
+ },
+ "baselineHashes": {
+  "shared/almanac-data/xiejibianfangshu-vol10-yiji.json": "dc7b0a11a7354a0780d705f9c5fbc79a67fef57717f80ef5436997dbe5dd96e0",
+  "shared/almanac-data/xiejibianfangshu-yiji.json": "7bf5edf7f618941abd3854ae9cff8c379cd03bb362a06bd2e65df90d8a69aa3f",
+  "shared/almanac-data/bad-gods.json": "e48196cac7cce2cb8d33feeb6784a7d66845e8c33f93343c3f7b764746bf25d2"
+ },
+ "runtimeObservation": {
+  "note": "getAlmanac at main aebcf2e, current behaviour, not authority",
+  "2026-08-02": "contract/transaction 50 neutral; kiep_sat no_annotation, ngu_ly no_annotation (P4 domain, N-A via puzhu:21: F1 debt)",
+  "2027-07-28": "same as 2026-08-02",
+  "2028-07-22": "contract/transaction 50 neutral; kiep_sat no_annotation (cell blank, I1); ngu_ly/tu_tuong not in auditedGodIds outside 2025-2027"
+ },
+ "hypotheses": {
+  "H1_printing_anomaly": "PARTIAL: n117 is irreconcilable on {納財 noted, 開市 unnoted}; nothing shows the 立券交易 print itself is an error",
+  "H2_month_table_precedence": "NO_EVIDENCE: no documented 月表-over-rule precedence; both prior owner rulings were LOCAL and went to the source side",
+  "H3_semantic_scope": "SOURCE_SUPPORTED_UNDER_PLAIN_TEXT, CONTRADICTED_BY_OWNER_ADOPTED_PUZHU06_Q4: 五離 explains the print, but owner Q4 (2026-10-16) makes 四相 lift 五離 on 立券交易, which n117 does not do"
+ },
+ "ruling": "UNRESOLVED_CONFLICT",
+ "witnessConflict": true,
+ "productionState": "BLANK / I1",
+ "sourceWitnessed": false
+}

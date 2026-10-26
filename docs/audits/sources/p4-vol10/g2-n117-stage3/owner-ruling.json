@@ -1,0 +1,37 @@
+{
+ "version": "g2-n117-stage3-v1",
+ "item": "W1",
+ "decision": "D1(a)",
+ "ruling": "LOCAL_OWNER_RULING",
+ "date": "2026-10-26",
+ "scope": "LOCAL: 未-戊申 × 劫煞 × 立券交易 (contract, transaction) only. Not a canonical source fact, not a global precedence rule, not a taxonomy alias, not SOURCE_WITNESSED evidence.",
+ "context": "未-戊申",
+ "entry": "jie_sha",
+ "heading": "立券交易",
+ "activities": ["contract", "transaction"],
+ "basis": {
+  "parentRuling": "option-c-final-gate-v1/owner-ruling.json: OWNER_RULING_SOURCE_OVERRIDES_INTERNALLY_INCONSISTENT_WITNESS (LOCAL, 未-戊申 納財)",
+  "propagation": "puzhu:21 (卷十 offset 22390) direct consequence: 納財 unnoted by 吉凶相抵 → 劫煞's 忌 withheld on 立券交易 (identical under N-A and N-C)",
+  "aliasRelation": "none: 納財 is not an alias of 立券交易; the link is a source-rule consequence"
+ },
+ "notExtendedTo": [
+  "開市",
+  "other months",
+  "other day stems or branches",
+  "other gods",
+  "other 五離 cases",
+  "other 納財 conflicts",
+  "other puzhu:21 contexts"
+ ],
+ "result": "BLANK / I1",
+ "witnessStatus": "NOT SOURCE_WITNESSED. Page 06067694-n117 prints 立券交易 on the 忌 line; the discrepancy is kept in provenance.",
+ "w1": "CLOSED",
+ "f1": "OPEN / SEPARATE: 五離 × 立券交易 heading-level behavior (puzhu:06 Q4 vs n117) is not decided here; next evidence 戌-壬申, 戌-庚申",
+ "productionMigration": "none",
+ "chain": [
+  "source evidence (納財 audit, P17-A table)",
+  "unresolved discrepancy (Stage 1, 3afb22d, UNRESOLVED_CONFLICT)",
+  "targeted investigation (Stage 2, 2752d02, classification C)",
+  "LOCAL OWNER RULING D1(a) (Stage 3)"
+ ]
+}
