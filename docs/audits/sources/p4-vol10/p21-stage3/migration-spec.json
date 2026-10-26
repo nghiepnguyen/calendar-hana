@@ -1,0 +1,66 @@
+{
+ "version": "p21-stage4-spec-v1",
+ "status": "SPECIFICATION ONLY (not implemented)",
+ "successorAuthority": {
+  "id": "p4-puzhu21-v1",
+  "path": "shared/almanac-data/p4-puzhu21-v1.json",
+  "content": {
+   "line": "puzhu:21",
+   "semantic": "contribution-scoped",
+   "eligibleContexts": [
+    "亥-丁酉",
+    "亥-癸酉"
+   ]
+  }
+ },
+ "eligibleRows": [
+  "2025-11-24",
+  "2026-11-19",
+  "2027-11-14"
+ ],
+ "eligibleContexts": [
+  "亥-丁酉",
+  "亥-癸酉"
+ ],
+ "mustStayIdentical": [
+  "2025-07-26",
+  "2026-07-21",
+  "2026-08-02",
+  "2027-07-16",
+  "2027-07-28"
+ ],
+ "expectedProductionFiles": [
+  "shared/almanac-data/p4-puzhu21-v1.json (new)",
+  "shared/lunar/p4OwnerRules.ts (propagation pass, puzhu:21 edges only)",
+  "shared/almanac-data/manifest.json (policy p4Puzhu21Scope: contribution-v1; heading-v1 = rollback)"
+ ],
+ "algorithm": [
+  "in the propagation pass, for a puzhu:21 edge whose target context is in eligibleContexts:",
+  "cancelled = the 卷十 subject scopes whose state on each fired trigger is neither_recorded",
+  "remaining = target trace.ji minus cancelled; protected 忌 keep blocking as today",
+  "remaining empty -> current behaviour (lift); else keep ji, state only_ji (both_present if 宜 noted)",
+  "every other edge, line and context: unchanged (N-A)"
+ ],
+ "options": {
+  "A_rule_filter_with_allowlist": "contribution filter on puzhu:21 edges, gated by the authority allowlist (recommended: smallest change that encodes the semantic, auditable allowlist, one rollback policy)",
+  "B_context_overlay": "authority lists (context, heading) -> only_ji: smallest diff but encodes the output, not the semantic; drifts if other rules move",
+  "C_global_filter_with_blocklist": "filter on every puzhu:21 edge, block HOLD/QUARANTINE contexts: fails open for new contexts; rejected"
+ },
+ "provenance": "trace keeps 五離 in ji; add propagatedFrom and a cancelled list for puzhu:21 rows",
+ "goldens": "golden-manifest.json (successors only for MIGRATE rows)",
+ "migrationDiff": "every changed row must be a MIGRATE date; activity and event deltas must equal impact.json MIGRATION_ELIGIBLE_ONLY; any HOLD/QUARANTINE date diff fails",
+ "rollback": "policy p4Puzhu21Scope heading-v1 restores N-A byte-equal; historical tests pin heading-v1",
+ "testsToRepoint": [
+  "p4P21Stage1Projection.test.ts (pins N-A on 亥-丁酉/癸酉)",
+  "p4P21Stage2Candidates.test.ts",
+  "p4P21Stage2Impact.test.ts",
+  "p4P21Stage3Affected.test.ts"
+ ],
+ "gates": [
+  "npm run check",
+  "npm test",
+  "npm run ci:p4:full",
+  "check:audit-clean",
+  "mutation: removing an eligible context or adding 未-戊申/丙申 to the allowlist must fail"
+ ]
+}

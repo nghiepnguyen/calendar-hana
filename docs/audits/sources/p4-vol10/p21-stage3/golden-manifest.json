@@ -1,0 +1,54 @@
+{
+ "version": "p21-stage3-golden-manifest-v1",
+ "scope": "MIGRATE rows only",
+ "changes": [
+  {
+   "golden": "p4-full-golden-v4",
+   "successor": "p4-full-golden-v5",
+   "file": "compose/dated.tsv",
+   "reason": "立券交易 final state neither_recorded -> only_ji (五離)",
+   "expectedRecords": 3
+  },
+  {
+   "golden": "p4-full-golden-v4",
+   "successor": "p4-full-golden-v5",
+   "file": "compose/context.tsv",
+   "reason": "same, context level",
+   "expectedRecords": 2
+  },
+  {
+   "golden": "p4-full-golden-v4",
+   "successor": "p4-full-golden-v5",
+   "file": "compose/h1b-changes.tsv",
+   "reason": "final_state of the H1-B rows",
+   "expectedRecords": 5
+  },
+  {
+   "golden": "p4-score-golden-v6",
+   "successor": "p4-score-golden-v7",
+   "file": "activity-states.tsv",
+   "reason": "contract/transaction state",
+   "expectedRecords": 6
+  },
+  {
+   "golden": "p4-score-golden-v6",
+   "successor": "p4-score-golden-v7",
+   "file": "activity-scores.tsv",
+   "reason": "contract/transaction 50 neutral -> 20 avoid",
+   "expectedRecords": 6
+  }
+ ],
+ "unchanged": {
+  "p4b-puzhu06-golden-v5": "no puzhu:06 trigger on 亥-丁酉/癸酉; row untouched",
+  "p5-warehouse-golden-v1": "開倉庫/修倉庫 unchanged (no warehouse delta in the impact)",
+  "p4-adapter-baseline-v1/v2": "P4 OFF baseline (xiejiVol10BalancingEnabled OFF)",
+  "events": "no event Golden; event deltas go to the Stage 4 migration diff"
+ },
+ "excludedRows": [
+  "2025-07-26",
+  "2026-07-21",
+  "2026-08-02",
+  "2027-07-16",
+  "2027-07-28"
+ ]
+}

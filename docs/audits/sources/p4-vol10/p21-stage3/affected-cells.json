@@ -1,0 +1,301 @@
+{
+  "harness": "shared/lunar/p4P21Stage3Affected.test.ts",
+  "cells": [
+    {
+      "date": "2025-07-26",
+      "context": "未-丙申",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2025-11-24",
+      "context": "亥-丁酉",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": true,
+          "yiSources": [
+            "開日"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": true,
+          "yiSources": [
+            "母倉"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2026-07-21",
+      "context": "未-丙申",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2026-08-02",
+      "context": "未-戊申",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": true,
+          "yiSources": [
+            "四相"
+          ],
+          "xiangdi": [
+            "刼煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": "keep:QL_EXCLUDED",
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2026-11-19",
+      "context": "亥-丁酉",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": true,
+          "yiSources": [
+            "開日"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": true,
+          "yiSources": [
+            "母倉"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2027-07-16",
+      "context": "未-丙申",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2027-07-28",
+      "context": "未-戊申",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": false,
+          "yiSources": [],
+          "xiangdi": [
+            "刼煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": true,
+          "yiSources": [
+            "四相"
+          ],
+          "xiangdi": [
+            "刼煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": "keep:QL_EXCLUDED",
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    },
+    {
+      "date": "2027-11-14",
+      "context": "亥-丁酉",
+      "triggers": [
+        {
+          "heading": "開市",
+          "yi": true,
+          "yiSources": [
+            "開日"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        },
+        {
+          "heading": "納財",
+          "yi": true,
+          "yiSources": [
+            "母倉"
+          ],
+          "xiangdi": [
+            "災煞"
+          ]
+        }
+      ],
+      "target": "立券交易",
+      "targetYi": false,
+      "targetJi": [
+        "五離"
+      ],
+      "targetProt": [],
+      "independent": [
+        "五離"
+      ],
+      "preRule": "H1-B",
+      "puzhu06": null,
+      "current": "neither_recorded",
+      "h2": "only_ji"
+    }
+  ]
+}
