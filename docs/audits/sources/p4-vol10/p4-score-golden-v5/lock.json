@@ -1,0 +1,80 @@
+{
+ "version": "p4-score-golden-lock-v5",
+ "scope": "F1_STAGE3_PUZHU06_AUTHORITY_V4",
+ "supersedes": "p4-score-golden-lock-v4 as forward evidence; v4 files kept unchanged as pre-R2 rollback evidence",
+ "ruling": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json (R2_APPROVED)",
+ "migration": "docs/audits/p4-f1-wuli-lijuan-stage3-migration.md",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-score-golden-v5/golden.py --write",
+ "headingLookup": "canonical-v1",
+ "method": "v4 golden.py (sha-asserted chain: v3 fold, v2 reference adapter, baseline v2) with layer A swapped to p4-full-golden-v3/compose/dated.tsv (full Golden v2 composer under puzhu:06 authority v4)",
+ "independentConstraint": "layer-C rows differing from v4 = the 20 activity rows of the frozen F1 Stage 2 impact.json (measured before Stage 3 code), same old/new score and status, hard warning false; layer B moves only contract/transaction on the 10 R2 dates",
+ "diffFromV4": {
+  "layerBChangedRows": 20,
+  "changedRows": 20,
+  "changedDates": [
+   "2025-01-15",
+   "2025-06-08",
+   "2025-10-18",
+   "2025-10-30",
+   "2026-01-10",
+   "2026-10-13",
+   "2026-10-25",
+   "2027-01-05",
+   "2027-10-08",
+   "2027-10-20"
+  ],
+  "changedActivities": [
+   "contract",
+   "transaction"
+  ],
+  "scoreDelta": [
+   -15
+  ],
+  "layerBTransitions": [
+   "baseline->only_ji",
+   "only_yi->both_present"
+  ]
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/golden.py",
+   "sha256": "362f7cb14182c6131ca6a6f53ff63637f3860c438b9b26b73abc2c78bb1ed0c0",
+   "role": "derive_script"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/activity-states.tsv",
+   "sha256": "4b7c4d9111b27acd001f629a5605d1810ef55c1e5fb4d0f82f928f83022bef46",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/activity-scores.tsv",
+   "sha256": "d325a9039c78e6732d5b0d6c16c8e7c1156a1827628ba66bc24b63eefffdba15",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/diff.json",
+   "sha256": "fc83c5822bb32a56ab3184893041e7e3078f0980c809674f4ff9d2dc98558236",
+   "role": "expected_output"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/golden.py",
+   "sha256": "fd422cb11b92b51de4ae48fe611c37a96d704b32e12825cc9d6a474aa258ba69",
+   "role": "frozen_generator"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v4/lock.json",
+   "sha256": "0a897bdd49a549313cd1ff2a6cc50b687e76f644b9e0f9d6837ea2a944ddf61b",
+   "role": "frozen_parent_lock"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/dated.tsv",
+   "sha256": "7d9094a366fd591b1f8ca7d04c7840a3a817a22a09e007bd83fe5e9e64dbd5cf",
+   "role": "layer_a_input"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/impact.json",
+   "sha256": "db675b424f69109e26879a87c6796f9e8f3ed284521352113ed6182e866247ad",
+   "role": "frozen_independent_constraint"
+  }
+ ]
+}

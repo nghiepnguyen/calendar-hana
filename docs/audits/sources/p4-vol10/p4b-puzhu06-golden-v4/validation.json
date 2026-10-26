@@ -1,0 +1,61 @@
+{
+  "version": "golden-p4b-puzhu06-validation-v4",
+  "engineBaseline": {
+    "compared": [
+      "triggers",
+      "puzhu28",
+      "yi",
+      "ji",
+      "protected_ji",
+      "state"
+    ],
+    "rows": 9075,
+    "mismatches": 0,
+    "examples": []
+  },
+  "prdCounts": {
+    "compared": [
+      "hold",
+      "keptBySourcedException",
+      "lift",
+      "q4aRows",
+      "r2Rows"
+    ],
+    "match": true
+  },
+  "v3ToV4": {
+    "changedRows": 12,
+    "unexpected": 0,
+    "rows": [
+      "2025-01-15 丑甲申 立券交易 keep both_present",
+      "2025-06-08 午戊申 立券交易 keep both_present",
+      "2025-10-18 戌庚申 立券交易 keep only_ji",
+      "2025-10-30 戌壬申 立券交易 keep only_ji",
+      "2026-01-10 丑甲申 立券交易 keep both_present",
+      "2026-08-02 未戊申 立券交易 keep undetermined",
+      "2026-10-13 戌庚申 立券交易 keep only_ji",
+      "2026-10-25 戌壬申 立券交易 keep only_ji",
+      "2027-01-05 丑甲申 立券交易 keep both_present",
+      "2027-07-28 未戊申 立券交易 keep undetermined",
+      "2027-10-08 戌庚申 立券交易 keep only_ji",
+      "2027-10-20 戌壬申 立券交易 keep only_ji"
+    ],
+    "propagationChanges": 0,
+    "propagationDiffVsV3": [
+      "2026-08-02\t開倉庫出貨財\ttrue\tonly_ji\t\t\ttrue\tonly_ji\t\t開市+立券交易",
+      "2027-07-28\t開倉庫出貨財\ttrue\tonly_ji\t\t\ttrue\tonly_ji\t\t開市+立券交易"
+    ]
+  },
+  "propagationMirror": {
+    "dated": {
+      "days": 1095,
+      "rows": 31755,
+      "mismatches": 0
+    },
+    "context": {
+      "days": 720,
+      "rows": 20880,
+      "mismatches": 0
+    }
+  }
+}

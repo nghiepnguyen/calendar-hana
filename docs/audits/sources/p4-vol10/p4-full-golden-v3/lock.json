@@ -1,0 +1,52 @@
+{
+ "version": "p4-full-golden-lock-v3",
+ "scope": "F1_STAGE3_PUZHU06_AUTHORITY_V4",
+ "method": "full Golden v2 composer (sha-asserted) with puzhu:06 authority v4 and puzhu:06 oracle Golden v4; v2 kept as pre-R2 rollback evidence",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/compose.py --write",
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/compose.py",
+   "sha256": "4f7518e572bed9234f3869fda8727e339130846291ea19d581f38ae3e8714869"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/dated.tsv",
+   "sha256": "7d9094a366fd591b1f8ca7d04c7840a3a817a22a09e007bd83fe5e9e64dbd5cf"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/context.tsv",
+   "sha256": "e80dc9ac9b7c0db398a688381c407d803ae1e97d9ffb14978661549d028997f8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/h1b-changes.tsv",
+   "sha256": "48556fe540ed669fc543c0133ee98ce0be587376312d15952a94c52d63ddf833"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/summary.json",
+   "sha256": "b69345f7a693a6742a3a9d431d60052a5962c099f8ec945e4b6d0e9f1547e232"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/v2-diff.txt",
+   "sha256": "e61a34880f472461ae0f8c732768c18fa6cdef76af4ea780b4aef2a8ffd367c9"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/compose.py",
+   "sha256": "e6b4dcfc5db5d67aeba106ade7ae52328ea3a3966a8d3ded61314a2ec619c761"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/lock.json",
+   "sha256": "b090991b860e5a9352b494a99fd2c6a2fe19fc338824c2ab29887e025007a67f"
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v4.json",
+   "sha256": "e5e54f5c26a38f6cb9f8e76ef70807f0e2f58a2ac8f1a72f9db5ed626a34fb1f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/dated.tsv",
+   "sha256": "0af2e3540c2353c7c17af798eab3d4cfa4a812ef6d04e57e87552ee0cbf60338"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/context.tsv",
+   "sha256": "d5e7f5b26ee3342a869328dc9125a6711a35c51a1362ba065f88e37e6c42d440"
+  }
+ ]
+}

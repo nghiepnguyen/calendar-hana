@@ -1,0 +1,3814 @@
+{
+  "version": "golden-p4b-puzhu06-expected-v4",
+  "authority": "p4b-puzhu06-v4",
+  "sources": {
+    "天德": {
+      "volume": 5,
+      "offset": 810,
+      "quote": "正月丁二月坤三月壬四月辛五月乾六月甲七月癸八月艮九月丙十月乙十一月巽十二月庚"
+    },
+    "天德合": {
+      "volume": 5,
+      "offset": 2871,
+      "quote": "正月壬三月丁四月丙六月巳七月戊九月辛十月庚十二月乙是也四仲之月天徳居四維故無合也"
+    },
+    "月德": {
+      "volume": 5,
+      "offset": 2490,
+      "quote": "月徳者正五九月在丙二六十月在甲三七十一月在壬四八十二月在庚"
+    },
+    "月德合": {
+      "volume": 5,
+      "offset": 3138,
+      "quote": "月徳合者正五九月在辛二六十月在巳三七十一月在丁四八十二月在乙"
+    },
+    "天赦": {
+      "volume": 5,
+      "offset": 4075,
+      "quote": "春戊寅夏甲午秋戊申冬甲子"
+    },
+    "天願": {
+      "volume": 5,
+      "offset": 5373,
+      "quote": "起例曰正月乙亥二月甲戌三月乙酉四月丙申五月丁未六月戊午七月己巳八月庚辰九月辛卯十月壬寅十一月癸丑十二月甲子"
+    },
+    "月恩": {
+      "volume": 5,
+      "offset": 5956,
+      "quote": "正月丙二月丁三月庚四月巳五月戊六月辛七月壬八月癸九月庚十月乙十一月甲十二月辛"
+    },
+    "四相": {
+      "volume": 5,
+      "offset": 6315,
+      "quote": "春丙丁夏戊巳秋壬癸冬甲乙"
+    },
+    "時德": {
+      "volume": 5,
+      "offset": 6594,
+      "quote": "春木生午火夏火生辰土秋金生子水冬水生寅木也四相取天干時徳取地支"
+    },
+    "puzhu:28": {
+      "volume": 10,
+      "offset": 22651,
+      "quote": "二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌"
+    }
+  },
+  "fixtures": [
+    {
+      "id": "class:YOUJI:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:YOUJI:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:YOUJI:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:ZHUSHI:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:ZHUSHI:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:ZHUSHI:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:PUZHU27:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:PUZHU27:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:PUZHU27:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:AN:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:AN:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:AN:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:AD:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:AD:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:AD:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:AU:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:AU:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:AU:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:QL:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "only_yi"
+      }
+    },
+    {
+      "id": "class:QL:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "class:QL:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "class:UNDETERMINED:yi=true",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "true",
+        "ji": true,
+        "protected": false,
+        "state": "both_present",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "both_present"
+      }
+    },
+    {
+      "id": "class:UNDETERMINED:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "class:UNDETERMINED:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "pair:YOUJI+ZHUSHI",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+PUZHU27",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+AD",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:YOUJI+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED",
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+PUZHU27",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+AD",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:ZHUSHI+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "avoid_all",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED",
+          "ZHUSHI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:PUZHU27+AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:PUZHU27+AD",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:PUZHU27+AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU",
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:PUZHU27+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27",
+          "QL"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:PUZHU27+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "PUZHU27",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AN+AD",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "AN"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AN+AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "AU"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AN+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "QL"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AN+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "AN",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AD+AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "AU"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AD+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AD",
+          "QL"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AD+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "as_usual",
+            "grade": "xia",
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "AD",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AU+QL",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU",
+          "QL"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:AU+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "AU",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "pair:QL+UNDETERMINED",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          },
+          {
+            "kind": "subject",
+            "name": "閉日",
+            "scope": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "QL",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "trigger:天德",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:月德",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月德"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:天德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:月德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:天赦",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天赦"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:天願",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天願"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:月恩",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:四相",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "四相"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "trigger:時德",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "時德"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "not-trigger:三合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "not-trigger:六合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "not-trigger:母倉",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "not-trigger:滿日",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "heading:安牀",
+      "input": {
+        "heading": "安牀",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "heading:開市",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "heading:立券交易",
+      "input": {
+        "heading": "立券交易",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "heading:納財",
+      "input": {
+        "heading": "納財",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "heading:開倉庫出貨財",
+      "input": {
+        "heading": "開倉庫出貨財",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "out-of-list:修倉庫",
+      "input": {
+        "heading": "修倉庫",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "protected",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": true,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "no-ji",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": false,
+        "protected": false,
+        "state": "not_recorded",
+        "sources": []
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "puzhu28",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "puzhu28",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "untouched",
+        "classes": [],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "via:AU->AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月建",
+            "owner": "月刑",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "subject",
+            "name": "月刑",
+            "owner": "月刑",
+            "clauseEffect": "as_usual",
+            "grade": "ci",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "via:AU->missing",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月建",
+            "owner": "月刑",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "youwei:大耗<-YOUJI",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "youwei",
+            "name": "大耗",
+            "parent": "月破",
+            "protected": false
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "youwei:大耗<-AU",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "youwei",
+            "name": "大耗",
+            "parent": "月破",
+            "protected": false
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "youwei:大耗<-none",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "youwei",
+            "name": "大耗",
+            "parent": "月破",
+            "protected": false
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "youwei:月虛<-cancel_both",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月煞",
+            "owner": "月煞",
+            "clauseEffect": "cancel_both",
+            "grade": "shang_ci",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "neither_recorded"
+          },
+          {
+            "kind": "youwei",
+            "name": "月虛",
+            "parent": "月煞",
+            "protected": false
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "youwei:protected",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "youwei",
+            "name": "土府",
+            "parent": "月建",
+            "protected": true
+          }
+        ]
+      },
+      "expected": {
+        "error": "SPEC_GAP",
+        "detail": "protected source on an unprotected row"
+      }
+    },
+    {
+      "id": "defer:九空丑->月破猶忌",
+      "input": {
+        "heading": "開市",
+        "month": "丑",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "still_avoid",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": true,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "defer",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "YOUJI"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "defer:九空辰->月破AU",
+      "input": {
+        "heading": "開市",
+        "month": "辰",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "月破",
+            "owner": "月破",
+            "clauseEffect": "as_usual",
+            "grade": null,
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "defer",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AU"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "defer:九空巳->月厭missing",
+      "input": {
+        "heading": "開市",
+        "month": "巳",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "defer",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "defer:九空卯->no-target",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "defer",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "error": "SPEC_GAP",
+        "detail": "defer 九空 in 卯"
+      }
+    },
+    {
+      "id": "ql:九空",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "ql:五墓",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "ql:五虛",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五虛",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "ql:五離",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五離",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL_EXCLUDED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "ql:小耗",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "小耗",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "ql+AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          },
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "QL"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "xiangdi+QL:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "刼煞",
+            "owner": "刼煞",
+            "clauseEffect": "cancel_both",
+            "grade": "shang_ci",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "neither_recorded"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "neither_recorded"
+      }
+    },
+    {
+      "id": "xiangdi+QL:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "刼煞",
+            "owner": "刼煞",
+            "clauseEffect": "cancel_both",
+            "grade": "shang_ci",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "neither_recorded"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "neither_recorded"
+      }
+    },
+    {
+      "id": "xiangdi+QL+AN",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "subject",
+            "name": "刼煞",
+            "owner": "刼煞",
+            "clauseEffect": "cancel_both",
+            "grade": "shang_ci",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "neither_recorded"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          },
+          {
+            "kind": "subject",
+            "name": "災煞",
+            "owner": "災煞",
+            "clauseEffect": "as_usual",
+            "grade": "zhong",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "only_ji"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "AN",
+          "QL"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "q4a:五墓+天德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL_EXCLUDED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "q4a:五墓+月德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL_EXCLUDED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "q4a:五墓+天德合+月德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合",
+          "月德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL_EXCLUDED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "q4a:五墓+天德合+月恩",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合",
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "q4a:五墓+天德",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "q4a:九空+天德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "lift",
+        "classes": [
+          "QL"
+        ],
+        "ji": false,
+        "state": "not_recorded"
+      }
+    },
+    {
+      "id": "q4a:五墓+九空+天德合",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "天德合"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "五墓",
+            "effect": "keep",
+            "state": "kept"
+          },
+          {
+            "kind": "remaining",
+            "name": "九空",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "QL",
+          "QL_EXCLUDED"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "only_avoid-undetermined:yi=false",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "大時",
+            "owner": "大時",
+            "clauseEffect": "only_avoid",
+            "grade": "shang",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "keep",
+        "classes": [
+          "PUZHU27"
+        ],
+        "ji": true,
+        "state": "only_ji"
+      }
+    },
+    {
+      "id": "only_avoid-undetermined:yi=unknown",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "unknown",
+        "ji": true,
+        "protected": false,
+        "state": "undetermined",
+        "sources": [
+          {
+            "kind": "puzhuEnd",
+            "name": "deathDefeat",
+            "subjects": [
+              "大時"
+            ]
+          },
+          {
+            "kind": "subject",
+            "name": "大時",
+            "owner": "大時",
+            "clauseEffect": "only_avoid",
+            "grade": "shang",
+            "gradeAction": null,
+            "dePresent": false,
+            "state": "undetermined"
+          }
+        ]
+      },
+      "expected": {
+        "action": "hold",
+        "classes": [
+          "PUZHU27",
+          "UNDETERMINED"
+        ],
+        "ji": true,
+        "state": "undetermined"
+      }
+    },
+    {
+      "id": "spec-gap:天賊",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "天賊",
+            "effect": "keep",
+            "state": "kept"
+          }
+        ]
+      },
+      "expected": {
+        "error": "SPEC_GAP",
+        "detail": "remaining 天賊 not in liftLists"
+      }
+    },
+    {
+      "id": "spec-gap:remaining-protected-on-open-row",
+      "input": {
+        "heading": "開市",
+        "month": "卯",
+        "triggers": [
+          "月恩"
+        ],
+        "day_rule": "",
+        "yi": "false",
+        "ji": true,
+        "protected": false,
+        "state": "only_ji",
+        "sources": [
+          {
+            "kind": "remaining",
+            "name": "小耗",
+            "effect": "keep",
+            "state": "protected"
+          }
+        ]
+      },
+      "expected": {
+        "error": "SPEC_GAP",
+        "detail": "protected source on an unprotected row"
+      }
+    }
+  ]
+}

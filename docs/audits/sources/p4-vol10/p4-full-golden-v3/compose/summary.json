@@ -1,0 +1,155 @@
+{
+ "stage": "3.3 day composition",
+ "inputs": {
+  "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/dated_ji.py": "b1a0d0fa65e32c3782727e08c210fbe4c0c5c5a054e66521ff80a71e760a6b33",
+  "docs/audits/sources/p4-vol10/p4-full-golden-v2/ji/grades.py": "fdd9dcb92d2b486e40971d2591d4dac932bed223c47f481cd81f7e5cdeb1cc82",
+  "shared/almanac-data/p4-vol10-season-days.json": "b24fc7a0568431914fa36fb271f982f3d3f697212d22fcc7833a1db7b6948242",
+  "docs/audits/sources/p4-vol10/yi-domains-v1/expected.tsv": "5bca2923e5f12cfd84a6fece3f64e53f3aea51f208b8b11aab1ba56c9e685e32",
+  "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/context.tsv": "30f4339e902cc04cd73d3dd8864246808c2b2e6363e4478f10e100755bf7da1e",
+  "docs/audits/sources/p4-vol10/p5-warehouse-golden-v1/dated.tsv": "e845c12e660b4f405e5d07fa45d50d20ec30281a17fa38ccaa414bf524630f47",
+  "shared/almanac-data/p4b-puzhu06-v4.json": "e5e54f5c26a38f6cb9f8e76ef70807f0e2f58a2ac8f1a72f9db5ed626a34fb1f",
+  "shared/almanac-data/p4-vol10-day-composition-v2.json": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+ },
+ "context": {
+  "rows": 20880,
+  "states": {
+   "both_present": 897,
+   "neither_recorded": 1055,
+   "not_recorded": 2996,
+   "only_ji": 7488,
+   "only_yi": 4007,
+   "undetermined": 4437
+  },
+  "H1-B": 58,
+  "puzhu06": {
+   "keep": 467,
+   "lift": 40,
+   "hold": 4
+  },
+  "propagated": 34,
+  "blocked": 69
+ },
+ "dated": {
+  "rows": 31755,
+  "states": {
+   "both_present": 1724,
+   "neither_recorded": 2125,
+   "not_recorded": 5874,
+   "only_ji": 14501,
+   "only_yi": 7530,
+   "undetermined": 1
+  },
+  "H1-B": 95,
+  "puzhu06": {
+   "keep": 652,
+   "lift": 56,
+   "hold": 6
+  },
+  "propagated": 59,
+  "blocked": 179
+ },
+ "H1-B list": "{('context', 'convention', 'neither_recorded'): 9, ('context', 'canonical', 'neither_recorded'): 26, ('context', 'canonical', 'only_ji'): 23, ('dated', 'convention', 'neither_recorded'): 25, ('dated', 'canonical', 'neither_recorded'): 37, ('dated', 'canonical', 'only_ji'): 31, ('dated', 'convention', 'only_ji'): 2}",
+ "ownerDecisionDeAsJian": {
+  "xiuCangKuChanged": [
+   [
+    "('巳', '丙午', 'absent')",
+    true,
+    false
+   ],
+   [
+    "('巳', '丙午', 'present')",
+    true,
+    false
+   ],
+   [
+    "('午', '丙午', 'absent')",
+    true,
+    false
+   ],
+   [
+    "('午', '丙午', 'present')",
+    true,
+    false
+   ],
+   [
+    "('未', '己巳', 'absent')",
+    true,
+    false
+   ],
+   [
+    "('未', '己未', 'absent')",
+    true,
+    false
+   ],
+   [
+    "('未', '己未', 'present')",
+    true,
+    false
+   ],
+   [
+    "('子', '壬子', 'absent')",
+    true,
+    false
+   ],
+   [
+    "('子', '壬子', 'present')",
+    true,
+    false
+   ],
+   [
+    "2025-06-06",
+    true,
+    false
+   ],
+   [
+    "2025-12-09",
+    true,
+    false
+   ],
+   [
+    "2026-06-01",
+    true,
+    false
+   ],
+   [
+    "2027-05-27",
+    true,
+    false
+   ]
+  ]
+ },
+ "oracles": {
+  "goldenPuzhu06V3:dated": {
+   "equal": 5442,
+   "OWNER_DECISION H1-B/F5": 28,
+   "OWNER_DECISION H2-A": 5
+  },
+  "goldenPuzhu06V3:context": {
+   "equal": 3469,
+   "CONTEXT_DATE_OPERAND_POLICY (母倉 soil)": 100,
+   "OWNER_DECISION H1-B/F5": 25,
+   "OWNER_DECISION DE_AS_JIAN_ALL (i)": 1,
+   "OWNER_DECISION H2-A": 5
+  },
+  "goldenDayCompositionV1": {
+   "equal": 30,
+   "explained": 2
+  },
+  "goldenDayCompositionV1:diffs": [
+   [
+    "卯甲申",
+    "整容剃頭",
+    "neither_recorded",
+    "undetermined",
+    "CONTEXT_DATE_OPERAND_POLICY (lunar day / phase / soil)"
+   ],
+   [
+    "寅丁未",
+    "嫁娶",
+    "only_yi",
+    "both_present",
+    "LATER_SCOPE (八專:protected)"
+   ]
+  ]
+ }
+}

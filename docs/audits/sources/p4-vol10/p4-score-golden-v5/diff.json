@@ -1,0 +1,27 @@
+{
+ "layerBChangedRows": 20,
+ "changedRows": 20,
+ "changedDates": [
+  "2025-01-15",
+  "2025-06-08",
+  "2025-10-18",
+  "2025-10-30",
+  "2026-01-10",
+  "2026-10-13",
+  "2026-10-25",
+  "2027-01-05",
+  "2027-10-08",
+  "2027-10-20"
+ ],
+ "changedActivities": [
+  "contract",
+  "transaction"
+ ],
+ "scoreDelta": [
+  -15
+ ],
+ "layerBTransitions": [
+  "baseline->only_ji",
+  "only_yi->both_present"
+ ]
+}

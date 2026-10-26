@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "p4b-puzhu06-golden-index-v1",
+  "version": "golden-p4b-puzhu06-v4",
+  "parent": {
+    "path": "shared/almanac-data/golden-p4b-puzhu06-v3.json",
+    "sha256": "990bd36b46e39c96a61682fef747ab3d15af8c7ca81389f2ba117b1201a1dd6b"
+  },
+  "date": "2026-10-26",
+  "status": "HASH_LOCKED_INDEPENDENT_OF_COMPOSER",
+  "scope": "AUDIT_ONLY",
+  "scoringReady": false,
+  "authority": {
+    "path": "shared/almanac-data/p4b-puzhu06-v4.json",
+    "sha256": "e5e54f5c26a38f6cb9f8e76ef70807f0e2f58a2ac8f1a72f9db5ed626a34fb1f",
+    "version": "p4b-puzhu06-v4"
+  },
+  "inputs": [
+    {
+      "path": "docs/audits/p4-vol10-yi-operands-2025-2027.tsv",
+      "sha256": "d46c19a7363c5ecc9e5a3ac8615c71cd28cbdf054bd59ecf0e74997afc396f37"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/baseline.tsv",
+      "sha256": "98791ddd2fb9a735ed7b33483da9c28189aa69bac1c8c8ec6421131142968317"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context.tsv",
+      "sha256": "00a573a1476f5a741af016596750524b301d0bf504c51cf34d986d901c783e6f"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol05.raw.txt",
+      "sha256": "db24a76178c520236d8caf127c5c82a13ebf6d2bc12c82b3ad2d4ff3a49a8cd6"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+      "sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-baseline-v1/context-p4c.tsv",
+      "sha256": "0b4eac64a4ae53c552f2bdb78ac90f115c60d930ef70cc3a6e1c0a15c52cedd2"
+    },
+    {
+      "path": "shared/almanac-data/p4-vol10-day-composition-v2.json",
+      "sha256": "fbd601faa2a84be78912d4f778a8c498dd095d2bb6f8e585addfef861172ea12"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/dated.tsv",
+      "sha256": "949ed7d16fcda64d7f4089945c53f8a10e503977759bf7e2f4c8b5fd29975de8"
+    },
+    {
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/propagation.tsv",
+      "sha256": "c5d272c789d465a0020239abae489eaddc2519095f0184f5cda117a0d9dbc583"
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "fixtures",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/expected.json",
+      "count": 105,
+      "sha256": "c0d81c5aeba02e31a1915a816b111b7b81821bbf54393e1c0d35994b2d8591d8"
+    },
+    {
+      "kind": "dated1095",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/dated.tsv",
+      "format": "TSV",
+      "count": 5475,
+      "sha256": "0af2e3540c2353c7c17af798eab3d4cfa4a812ef6d04e57e87552ee0cbf60338"
+    },
+    {
+      "kind": "context720",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/context.tsv",
+      "format": "TSV",
+      "count": 3600,
+      "sha256": "d5e7f5b26ee3342a869328dc9125a6711a35c51a1362ba065f88e37e6c42d440"
+    },
+    {
+      "kind": "propagation",
+      "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/propagation.tsv",
+      "format": "TSV",
+      "count": 0,
+      "sha256": "67064f71bb4d0d8875285bd4952cba10a90dfb96e672fc195db311ce6a97a2d4"
+    }
+  ],
+  "recordCount": 9180,
+  "lock": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v4/lock.json",
+  "reviewer": "Claude, single agent; no independent second review"
+}
