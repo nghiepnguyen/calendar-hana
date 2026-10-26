@@ -5,6 +5,7 @@ import lock from '../../docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/lo
 import result from '../../docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/result.json'
 import witness from '../../docs/audits/sources/p4-vol10/weishen-nacai-puzhu21-v1/witness.json'
 import vol10 from '../almanac-data/xiejibianfangshu-vol10-yiji.json'
+import { committedWithDigest } from './lockAnchor'
 
 // Audit only: lock of the 未-戊申 納財 / puzhu:21 audit (docs/audits/p4-weishen-nacai-puzhu21.md).
 const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('hex')
@@ -13,7 +14,11 @@ const vol11 = readFileSync('docs/audits/sources/p4-vol10/yi-sources-v1/vol11.raw
 
 describe('未-戊申 納財 / puzhu:21 audit lock', () => {
   it('pins every artifact and the reused page bytes', () => {
-    for (const [path, hash] of Object.entries(lock.files)) expect(sha(path), path).toBe(hash)
+    // The harness outside the lock directory is a historical proof (owner rule 2026-10-17, lockAnchor.ts);
+    // F1 Stage 3 pinned it to the pre-R2 puzhu:06 rollback, nothing else.
+    for (const [path, hash] of Object.entries(lock.files))
+      if (path.startsWith('docs/')) expect(sha(path), path).toBe(hash)
+      else expect(committedWithDigest(path, hash), path).toBe(true)
     expect(sha(witness.page.path)).toBe(witness.page.sha256)
   })
 

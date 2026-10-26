@@ -9,6 +9,9 @@ import goodGods from '../almanac-data/good-gods.json'
 import badGods from '../almanac-data/bad-gods.json'
 import { getP4DayHeadings } from './p4AlmanacHeadings'
 import { P4_DORMANT_GODS, P4_SCORE_ADAPTER_VERSION, p4ActivityState } from './p4ScoreAdapter'
+// Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // Frozen before G2 Stage 2 (立劵交易 alias + 劫煞 authority v2): pinned to the pre-G2 rollback (g2Rollback.ts).
 vi.mock('../almanac-data/xiejibianfangshu-vol10-yiji.json', async (load) =>

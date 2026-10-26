@@ -31,6 +31,7 @@
 | Deploy gần nhất | [Deploy #43 / 40148584043](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40148584043) `d47bcc6` SUCCESS 2026-10-25; `/version.json` `{"version":"26.10.25","build":"d47bcc6"}` (kiểm 2026-10-25). Trước đó [Deploy #42 / 40086414826](https://github.com/nghiepnguyen/calendar-hana/actions/runs/40086414826) `394acbb` SUCCESS 2026-10-24 (G1-b Stage 2). Smoke Playwright production theo §7 cho #99 chưa ghi lại |
 | Dataset | `datasetVersion` 1.2.1, `schemaVersion` 1.1.0 |
 | Catalog | 32 activities (đều enabled), 11 event profiles |
+| Authority puzhu:06 (P4, 2025–2027) | **`p4b-puzhu06-v4`** (F1 Stage 3, nhánh `claude/f1-r2-migration`, 2026-10-26, **chưa merge/deploy**): v3 + `liftExclusions.五離` (R2). `p4b-puzhu06-v3` giữ nguyên làm authority rollback |
 
 `shared/almanac-data/manifest.json` → `policies`:
 
@@ -58,6 +59,7 @@ Rollback (flag về false trên nhánh riêng → PR → deploy → smoke; khôn
 - `tiangouYinNoYi`: PR một dòng manifest, độc lập flag P4; test lịch sử ghim `false`, proof `shared/lunar/p1TiangouYinMigration.test.ts`.
 - `satChuNgocHapStars`: PR một dòng manifest; baseline/rollback/migration-diff/almanac legacy ghim `false`.
 - `p4ScoreHeadingLookup`: PR một dòng manifest về `source-key-v1` (= Score Golden v2, byte-equal output `1ed3828`); test v2 đã ghim `source-key-v1`; proof `shared/lunar/p4MigrationDiffV3.test.ts` (rollback forward/rollback/re-enable), `docs/audits/p4-g1b-stage2-migration.md`.
+- puzhu:06 authority v4 → v3 (F1 R2): PR một dòng đổi import `shared/lunar/p4Puzhu06.ts` về `p4b-puzhu06-v3.json`; v3, Golden v3/v4 cũ và test ghim rollback (`shared/lunar/f1R2Rollback.ts`) giữ nguyên; proof `shared/lunar/p4F1R2Migration.test.ts` (rollback/mutation), `docs/audits/p4-f1-wuli-lijuan-stage3-migration.md`.
 - `xiejiVol10JieshaPolicy`: PR một dòng manifest về `legacy-cancel-both`; authority, Golden v2 và test giữ nguyên; 9 test lịch sử đã ghim `legacy-cancel-both`; proof `shared/lunar/xiejiVol10JieshaMigration.test.ts` (legacy vs faithful-v1 toàn miền), `docs/audits/p4-jiesha-option-c-migration.md`.
 
 ## 3. Trạng thái theo phase
@@ -150,6 +152,25 @@ Commit: `fe40968` (authority + runtime + policy), `db905d8` (Golden v2, migratio
 - Stage 2 cần kế nhiệm (14 file test / 20 test trong `docs/audits/sources/p4-vol10/g2-stage1/blast-radius.json`): Score Golden v4 (24 dòng baseline contract/transaction), kế nhiệm baseline v1, `golden-xieji-vol10-scoring-v2` (`jie-chen-contract-unreachable`), test authority + lock Option C, migration event/activation, mutation guard `scripts/audit-vol10-jiesha-mutations.py:44`. Stage 2 tự quyết `datasetVersion` (có file data đổi, khác G1-b).
 - Mục authority `未-戊申 × 立券交易` (W1): **ĐÓNG** 2026-10-26 bằng phán quyết owner CỤC BỘ D1(a) — phán quyết 納財 cục bộ lan qua hệ quả trực tiếp puzhu:21 sang 立券交易; ô 劫煞 giữ BLANK / I1, không SOURCE_WITNESSED; không migration ([Stage 3](docs/audits/p4-g2-n117-stage3-owner-ruling.md)). 五離 × 立券交易 cấp heading (F1) vẫn mở, riêng.
 
+### F1 — 五離 × 立券交易 (MIGRATED / CLOSED 2026-10-26)
+
+Tên trùng: mục này **khác** dòng F1 cũ trong §5 (鋪註 puzhu:06 audit, P5 F1) và khác blocker "F1 lan truyền xuyên thần" của P4-劫. Không gộp với W1.
+
+- **Luật authority cuối (owner R2_APPROVED 2026-10-26):** trigger chung của puzhu:06 Q4 (天願, 月恩, 四相, 時德) **không** gỡ 忌 立券交易 của 五離. Lifter riêng của 五離 (卷十 「與天德月德天德合月德合天赦三合六合併則不忌」) vẫn là authority. 宜 độc lập của 立券交易 không xoá 忌 五離 còn sống (→ `both_present`).
+- **Phạm vi:** chỉ 五離 × 立券交易. **Không** áp cho 九空/五虛/小耗/五墓 (nợ Q4-REST, §5).
+- **Chuỗi provenance:**
+  - Stage 1 `372c6be`: lấy 2 witness quyết định cùng edition 四庫 (06067696 n14 戌-壬申, n62 戌-庚申), cả hai in 立券交易 ở dòng 忌 → **F1-B SUPPORTS WULI-NARROW** ([báo cáo](docs/audits/p4-f1-wuli-lijuan-stage1-witness-acquisition.md)).
+  - Stage 2 `2e3f50a`: đối chiếu authority, đề xuất **R2 REVISE Q4 FOR 五離 ONLY**, đo impact production ([báo cáo](docs/audits/p4-f1-wuli-lijuan-stage2-authority-reconciliation.md)).
+  - Stage 3: `d74eb23` đóng băng phán quyết owner R2 → `56d19a2` production chuyển sang authority puzhu:06 v4 → `906c5c2` đóng băng envelope migration → `4095343` cập nhật bản ghi mutation ([báo cáo](docs/audits/p4-f1-wuli-lijuan-stage3-migration.md)).
+- **Authority production:** `p4b-puzhu06-v4` (cơ chế `liftExclusions` như Q4a 五墓; danh sách trigger tính từ câu 卷十, không gõ tay). `p4b-puzhu06-v3` giữ làm rollback.
+- **Impact 2025–2027 (tính lại từ code đã ship, bằng đúng số Stage 2):** 12 quyết định lift→keep + 7 đổi tag; 10 dòng heading cuối (đều 立券交易); 20 dòng activity (contract/transaction), cả 20 điểm −15; 100 bản ghi event xét, 69 đổi phân loại, 90 đổi điểm; hard warning đổi 0.
+  - 6 dòng heading **có hình dạng witness trực tiếp** (戌-壬申, 戌-庚申).
+  - 4 dòng heading là **suy rộng ngữ nghĩa** (丑-甲申, 午-戊申, 立券交易 có 宜 độc lập), owner chấp nhận; **không** SOURCE_WITNESSED.
+- **G2/W1 không mở lại:** trên 未-戊申, R2 đổi quyết định trung gian của 五離 (keep) nhưng puzhu:21 sau đó vẫn gỡ, nên kết quả production cuối của G2/W1 (劫煞 × 立券交易 = BLANK / I1) không đổi.
+- **Golden kế nhiệm** (cũ giữ nguyên): puzhu:06 Golden v4, Full Golden P4 v3 (`p4-full-golden-v3/`), Score Golden v5; churn ngoài dự kiến: không. Hệ quả hạ nguồn duy nhất đã audit: ghi chú `blocked` của 開倉庫出貨財 trên 2 ngày 未-戊申 (trạng thái không đổi, không ra output production).
+- **Validation Stage 3:** `npm test` 275 file / 8.609 test PASS; `npm run check` PASS; `ci:p4` PASS; `test:p4:heading-lookup-full` PASS (cùng `ci:p4` = `ci:p4:full`); `ci:full` PASS. Rollback v4 → v3 tái tạo output trước R2; mutation bỏ exclusion 五離 tái tạo hành vi rollback; churn Golden ngoài dự kiến: không.
+- **Biên phạm vi production:** authority P4 chỉ chạy 2025–2027. Ngoài khoảng: hành vi production không đổi, authority chỉ PARTIALLY_KNOWN. Phép chiếu 494 ngày / 1900–2100 của Stage 2 chỉ là **chẩn đoán**, không phải phạm vi migration.
+
 ## 4. Runtime pipeline
 
 ```text
@@ -216,6 +237,9 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 | G1 | Nợ chữ 壞/壊 (demolition) | **ĐÓNG & DEPLOYED** (PR #97 audit, #99 `canonical-v1`). Còn lại: ô demolition authority 劫煞 (Option C v2) — 5 context phụ thuộc ngày qua 土王用事, `NON_BLOCKING_FOLLOW_UP`; demolition vẫn `EXCLUDED_PENDING_GLYPH_AUDIT` ở authority v1 |
 | G2 | Nợ chữ 劵/券 (contract/transaction) | **Stage 1 XONG** (PR #100). **Stage 2 sẵn sàng**: alias `headingAliases` 立劵交易 → [立券交易] + authority 劫煞 v2 (đã duyệt), envelope I1 đã đóng băng, phạm vi ngoài miền + event đã chấp nhận. Không gập `NORM`. Spec: `docs/audits/p4-g2-vol10-heading-match.md` |
 | W1 | `未-戊申 × 立券交易`: 月表 n117 in 立券交易 ở dòng 忌, ô authority BLANK | **ĐÓNG** 2026-10-26: phán quyết owner CỤC BỘ D1(a), ô giữ BLANK / I1, không SOURCE_WITNESSED, 0 thay đổi production ([Stage 1](docs/audits/p4-g2-n117-authority-discrepancy.md), [Stage 2](docs/audits/p4-g2-n117-stage2-resolution.md), [Stage 3](docs/audits/p4-g2-n117-stage3-owner-ruling.md)). F1 (五離 heading, puzhu:06 Q4 vs n117) vẫn mở; bằng chứng kế tiếp: 戌-壬申, 戌-庚申 |
+| F1 (五離) | 五離 × 立券交易, puzhu:06 Q4 | **MIGRATED / CLOSED** 2026-10-26 (owner R2_APPROVED; authority `p4b-puzhu06-v4`; §3 "F1 — 五離 × 立券交易"). Không gộp với W1 |
+| P21 | puzhu:21 N-A vs N-C / 未-戊申 | **OPEN**. Câu hỏi: puzhu:21 bỏ **mọi** 忌 của heading, hay chỉ phần nguồn liên kết/bị ảnh hưởng? Production hiện đọc N-A (sau R2 vẫn gỡ 五離 trên 未-戊申). Chưa giải |
+| Q4-REST | Authority puzhu:06 Q4 cho 九空 / 五虛 / 小耗 / 五墓 | **OPEN**. 56/68 dòng QL trước R2 thuộc 4 thần này; 27 trang witness đã lưu là ứng viên bằng chứng (`f1-wuli-lijuan-stage2/evidence.json` → `otherQ4Gods`). Production giữ hành vi Q4 hiện hành |
 | S2 | Sát Chủ: chưa có nguồn Hán văn tiền hiện đại | **OPEN** (nguồn offline). Tháng nhuận **đã chốt** (owner 2026-10-20): dùng bảng của tháng gốc (nhuận 4 → tháng 4) cho mọi bảng Sát Chủ/Sát Sư và giờ Sát Chủ; ngày Can Chi chạy liên tục. Ghi ở header `stars.ts` + test nhuận 6/2025 trong `satChuAuthority.test.ts`; golden `sat-chu-golden-v1.json` vẫn ghi `UNRESOLVED` vì bytes bị khóa bởi `yi-freeze-v1` |
 | R1 | Review mapping lượt hai: mansion 115/115, 用事 29/29 | **XONG** (PR #84): `DOUBLE_REVIEWED (semantic mapping)`, hai lượt AI-agent, chưa có chuyên gia người; §3 "28 Tú — audit" |
 | R2 | Thần chung giữa activity chính/phụ khác heading (giữ có chủ đích) | Đổi policy cả 11 event → phase riêng nếu muốn |
@@ -224,7 +248,7 @@ Evidence từng mục (số đo, mutation, quyết định owner): history §42 
 | E1 | Backlog `event_fit`: event không `very_high` lấy điểm trung bình profile (vd. 6 ngày `buy_property` recommended dù `moving` là `only_ji`, `docs/audits/p4-migration-diff.md`) | Owner giữ hiện hành ở go-live review; siết là phase riêng |
 | P2 | 「凡巳日忌出行不註宜出師遣使」 | Không có activity 出師 → không làm |
 | P1 | 天狗寅日 | XONG, PR #76 (§3) |
-| F1 | 鋪註 puzhu:06 | XONG audit-only, [PR #61](https://github.com/nghiepnguyen/calendar-hana/pull/61) `e427e2b`; [báo cáo](docs/audits/p4b-puzhu06.md); hold còn lại đã vào roadmap 7 |
+| F1 (puzhu:06 audit) | 鋪註 puzhu:06 (khác F1 五離 ở trên) | XONG audit-only, [PR #61](https://github.com/nghiepnguyen/calendar-hana/pull/61) `e427e2b`; [báo cáo](docs/audits/p4b-puzhu06.md); hold còn lại đã vào roadmap 7 |
 | R5 | Visual snapshot lệch do thiếu `.env.local` | XONG, [PR #63](https://github.com/nghiepnguyen/calendar-hana/pull/63) `3980183`: `playwright.config.ts` `webServer.env` đặt `VITE_FIREBASE_*` giả. Worktree mới cần `npm --prefix functions ci` trước `npm run build` |
 
 ### Phụ thuộc
@@ -235,6 +259,7 @@ P4 giữ nguyên 百忌日 (專忌 vẫn kỵ khi 吉凶相抵) và event_fit hi
 S1, S2, R2–R4, E1, P2: độc lập (R1 xong)
 Option C v1 (XONG) ─► G1 (XONG) ─► G2 Stage 1 (XONG) ─► G2 Stage 2 (authority 劫煞 v2) ─► Option C v2 (ô demolition, nếu owner duyệt)
 W1 (未-戊申 × 立券交易): ĐÓNG (owner D1(a), 2026-10-26)
+F1 五離 × 立券交易: MIGRATED (R2, authority puzhu:06 v4, 2026-10-26) ─► P21, Q4-REST (mở, độc lập)
 P4-劫: độc lập với tầng 卷十; cần F1, puzhu:17 mệnh đề 2, puzhu:06 Q4 trước khi đổi engine P4
 ```
 
@@ -292,7 +317,9 @@ P4_MIGRATION_V3_FULL=1 npx vitest run shared/lunar/p4MigrationDiffV3.test.ts
 # G2 Stage 1 (audit): impact toàn miền + 2028; dải 1900–2100 (thêm G2_EVENTS_FULL=1 cho event mỗi ngày, ~6 phút)
 G2_FULL=1 npx vitest run shared/lunar/p4G2Stage1Audit.test.ts
 G2_RANGE=1 npx vitest run shared/lunar/p4G2Stage1Audit.test.ts -t 'supported range'
-# puzhu:06: baseline/sweep verify bytes; P4B_PUZHU06_WRITE=1 ghi lại; Golden: python3 -I docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/derive.py
+# puzhu:06: baseline/sweep verify bytes; P4B_PUZHU06_WRITE=1 ghi lại; Golden: python3 -I docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v3/derive.py (v3, ghim rollback) và .../p4b-puzhu06-golden-v4/derive.py (v4, ship)
+# F1 R2: envelope toàn miền rollback vs ship (ghi migration-diff.json, rollback.json)
+F1S3_DUMP=1 npx vitest run shared/lunar/p4F1R2Migration.test.ts
 # Quét P4-B 1095 ngày (ghi TSV + summary)
 P4_B_REPORT=1 npx vitest run shared/lunar/p4RemainingJi.test.ts shared/lunar/p4FullDayComposition.test.ts shared/lunar/p4LunarDayComposition.test.ts shared/lunar/p4PuzhuEnd.test.ts shared/lunar/p4LunarPhase.test.ts
 npx playwright test --project=desktop

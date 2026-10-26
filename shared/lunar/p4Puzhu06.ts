@@ -1,12 +1,13 @@
-import authority from '../almanac-data/p4b-puzhu06-v3.json'
+import authority from '../almanac-data/p4b-puzhu06-v4.json'
 import { applyP4Propagation, type P4DayState } from './p4DayComposition'
 import { resolveP4Grades } from './p4GradeResolution'
 import { getP4YouweiScopes, resolveP4Headings } from './p4HeadingAnnotation'
 import { resolveP4YiDay, type P4YiDayOperands } from './p4YiDayComposition'
 
-/** Source audit only (P4-B follow-up, authority p4b-puzhu06-v3): 鋪註 puzhu:06
+/** P4-B follow-up (authority p4b-puzhu06-v4): 鋪註 puzhu:06
  * 「凡徳合赦願月恩四相時徳等日不註忌…如遇徳猶忌及從忌不從宜之日則仍註忌」 on the P4-C day.
- * Owner 2026-10-16: Q1-Q3 no, Q4 yes, Q4a block. Not imported by the production pipeline. */
+ * Owner 2026-10-16: Q1-Q3 no, Q4 yes, Q4a block; 2026-10-26 F1 R2 block (五離 only, its own lifters only).
+ * v3 is the rollback. Production reaches it through p4OwnerRules (getP4DayHeadings, P4 domain only). */
 export type P4Puzhu06Source = Readonly<Record<string, unknown>>
 export type P4Puzhu06Row = {
   heading: string
@@ -22,6 +23,7 @@ export type P4Puzhu06Row = {
 type Rec = Record<string, unknown> & { kind?: string; name?: string }
 type Decision = { action: string; classes: string[]; ji: boolean; state: string }
 
+export const P4_PUZHU06_AUTHORITY_ID = authority.version
 const IN_SCOPE = authority.headings.filter((h) => h.scope === 'IN_SCOPE').map((h) => h.p4)
 const TRIGGERS = authority.triggers
 const CLASSES = authority.classes as Record<string, { action: string }>

@@ -1,0 +1,2023 @@
+{
+ "range": [
+  "2025-01-01",
+  "2027-12-31"
+ ],
+ "decision": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "current": [
+    "only_yi",
+    "lift:QL"
+   ],
+   "r2": [
+    "both_present",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2025-03-29",
+   "context": "卯-丁酉",
+   "current": [
+    "only_ji",
+    "keep:QL+ZHUSHI"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED+ZHUSHI"
+   ]
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "current": [
+    "only_yi",
+    "lift:QL"
+   ],
+   "r2": [
+    "both_present",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2025-06-09",
+   "context": "午-己酉",
+   "current": [
+    "only_ji",
+    "keep:AN+QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:AN+QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2025-10-31",
+   "context": "戌-癸酉",
+   "current": [
+    "only_ji",
+    "keep:AN+QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:AN+QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "current": [
+    "only_yi",
+    "lift:QL"
+   ],
+   "r2": [
+    "both_present",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2026-03-24",
+   "context": "卯-丁酉",
+   "current": [
+    "only_ji",
+    "keep:QL+ZHUSHI"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED+ZHUSHI"
+   ]
+  },
+  {
+   "date": "2026-08-02",
+   "context": "未-戊申",
+   "current": [
+    "neither_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "neither_recorded",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2026-10-26",
+   "context": "戌-癸酉",
+   "current": [
+    "only_ji",
+    "keep:AN+QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:AN+QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "current": [
+    "only_yi",
+    "lift:QL"
+   ],
+   "r2": [
+    "both_present",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2027-03-19",
+   "context": "卯-丁酉",
+   "current": [
+    "only_ji",
+    "keep:QL+ZHUSHI"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED+ZHUSHI"
+   ]
+  },
+  {
+   "date": "2027-07-28",
+   "context": "未-戊申",
+   "current": [
+    "neither_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "neither_recorded",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "current": [
+    "not_recorded",
+    "lift:QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:QL_EXCLUDED"
+   ]
+  },
+  {
+   "date": "2027-10-21",
+   "context": "戌-癸酉",
+   "current": [
+    "only_ji",
+    "keep:AN+QL"
+   ],
+   "r2": [
+    "only_ji",
+    "keep:AN+QL_EXCLUDED"
+   ]
+  }
+ ],
+ "heading": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "current": {
+    "state": "only_yi"
+   },
+   "r2": {
+    "state": "both_present"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "heading": "立券交易",
+   "current": {
+    "state": "only_yi"
+   },
+   "r2": {
+    "state": "both_present"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "current": {
+    "state": "only_yi"
+   },
+   "r2": {
+    "state": "both_present"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "heading": "立券交易",
+   "current": {
+    "state": "only_yi"
+   },
+   "r2": {
+    "state": "both_present"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "heading": "立券交易",
+   "current": {
+    "state": "not_recorded"
+   },
+   "r2": {
+    "state": "only_ji"
+   }
+  }
+ ],
+ "activity": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "activityId": "contract",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:contract:no_evidence:"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "activityId": "transaction",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:transaction:no_evidence:"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "activityId": "contract",
+   "current": {
+    "score": 65,
+    "status": "recommended",
+    "hardWarning": false,
+    "rules": "man:contract:applied: ngu_ly:informational:not_avoided"
+   },
+   "r2": {
+    "score": 50,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "man:contract:applied: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "activityId": "transaction",
+   "current": {
+    "score": 65,
+    "status": "recommended",
+    "hardWarning": false,
+    "rules": "man:transaction:applied: ngu_ly:informational:not_avoided"
+   },
+   "r2": {
+    "score": 50,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "man:transaction:applied: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "activityId": "contract",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:contract:no_evidence:"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "activityId": "transaction",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:transaction:no_evidence:"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "activityId": "contract",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:contract:no_evidence:"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "activityId": "transaction",
+   "current": {
+    "score": 60,
+    "status": "neutral",
+    "hardWarning": false,
+    "rules": "ngu_ly:informational:not_avoided ngu_phu:applied: nguy:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 45,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "ngu_ly:applied: ngu_phu:applied: nguy:transaction:no_evidence:"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "activityId": "contract",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:contract:no_evidence: ngu_ly:applied:"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "activityId": "transaction",
+   "current": {
+    "score": 50,
+    "status": "no_evidence",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence:"
+   },
+   "r2": {
+    "score": 35,
+    "status": "watch",
+    "hardWarning": false,
+    "rules": "khai:transaction:no_evidence: ngu_ly:applied:"
+   }
+  }
+ ],
+ "event": [
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "buy_property@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "buy_property@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-01-15",
+   "context": "丑-甲申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 82.5,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 67.5,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 82.5,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 67.5,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "buy_property@",
+   "current": {
+    "score": 82.5,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 67.5,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "buy_property@9",
+   "current": {
+    "score": 82.5,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 67.5,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "property_handover@",
+   "current": {
+    "score": 75,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 60,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-06-08",
+   "context": "午-戊申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 75,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 60,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "context": "戌-庚申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "context": "戌-壬申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "buy_property@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "buy_property@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "context": "丑-甲申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "context": "戌-庚申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2026-10-25",
+   "context": "戌-壬申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 60,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 45,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "buy_property@",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "buy_property@9",
+   "current": {
+    "score": 70,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 55,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-01-05",
+   "context": "丑-甲申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "recommended"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-08",
+   "context": "戌-庚申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "receive_vehicle@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "buy_vehicle@9",
+   "current": {
+    "score": 55,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "sign_contract@",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "sign_contract@9",
+   "current": {
+    "score": 50,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 35,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "buy_property@",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "buy_property@9",
+   "current": {
+    "score": null,
+    "classification": "insufficient_evidence"
+   },
+   "r2": {
+    "score": 40,
+    "classification": "not_recommended"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "property_handover@",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  },
+  {
+   "date": "2027-10-20",
+   "context": "戌-壬申",
+   "event": "property_handover@9",
+   "current": {
+    "score": 65,
+    "classification": "caution"
+   },
+   "r2": {
+    "score": 50,
+    "classification": "caution"
+   }
+  }
+ ],
+ "outside": {
+  "decision": [
+   {
+    "date": "2024-11-04",
+    "context": "戌-壬申",
+    "current": [
+     "not_recorded",
+     "lift:QL"
+    ],
+    "r2": [
+     "only_ji",
+     "keep:QL_EXCLUDED"
+    ]
+   },
+   {
+    "date": "2028-10-14",
+    "context": "戌-壬申",
+    "current": [
+     "not_recorded",
+     "lift:QL"
+    ],
+    "r2": [
+     "only_ji",
+     "keep:QL_EXCLUDED"
+    ]
+   }
+  ],
+  "heading": [],
+  "activity": [],
+  "event": []
+ }
+}

@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import golden from '../almanac-data/golden-p4b-puzhu06-v3.json'
 import dates from './audit-fixtures/mansion-decision-baseline-v1.json'
 import { getAlmanac } from './almanac'
@@ -9,6 +9,9 @@ import { decideP4Puzhu06, resolveP4Puzhu06Day, type P4Puzhu06Row } from './p4Puz
 import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4YiDay } from './p4YiDayComposition'
 import { getP4MuCangSoil } from './p4YiOperands'
+// Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // puzhu:06 task 4.2: red tests from the frozen Golden (v2 67af7c0, now v3 f0454cb after the 5.1 sweep
 // found the 相抵 state bug); expected values are read from the Golden files only, never from the
