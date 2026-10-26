@@ -1,0 +1,802 @@
+{
+ "version": "g2-n117-stage2-v1",
+ "stage1": {
+  "commit": "3afb22d6ce367d1fe13713c1eb66dd35164cbbd4",
+  "ruling": "UNRESOLVED_CONFLICT",
+  "evidenceSha256": "e3fffc41da52f227699de871a5c5bd557dd203f373c80bba6c298e641037d165"
+ },
+ "sweepScope": {
+  "structuredPageRecords": 67,
+  "suibaoPages": 8,
+  "suibaoPillars": [
+   "丑-壬子",
+   "丑-戊子",
+   "亥-壬子",
+   "亥-戊子",
+   "巳-丙午",
+   "巳-戊午",
+   "未-丙午",
+   "未-戊午"
+  ],
+  "excluded": "yi-*/ phase-clause/ shixian-tohoku/ g1-glyph-stage1/ g2-stage1/: 卷五/十/十一 or non-月表 scans",
+  "shenYouPages": 11
+ },
+ "matrix": [
+  {
+   "page": "06067696-n130",
+   "context": "亥-辛酉",
+   "officer": "開",
+   "sha256": "5d94ec051470515aa8a8c1a09d2d3f0fd9b702ba90429a69084addc65d1408e6",
+   "lock": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "scanReread": "prior transcription",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "災煞",
+    "四耗",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": null,
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067692-n93",
+   "context": "卯-甲申",
+   "officer": "執",
+   "sha256": "8a965123cc60f2554790316bad5813076c06f6d182b1fbcdc8b17c29022adfad",
+   "lock": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "scanReread": "stage2",
+   "wuli": true,
+   "wuliOwnLifters": [
+    "月德"
+   ],
+   "puzhu06Triggers": [
+    "月德"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "小耗",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": {
+    "dates": [
+     "2025-03-16",
+     "2026-03-11",
+     "2027-03-06"
+    ],
+    "firstDate": "2025-03-16",
+    "立券交易": {
+     "triggers": "月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "true"
+    },
+    "納財": {
+     "triggers": "月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "true"
+    },
+    "開市": {
+     "triggers": "月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "true"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "subject",
+      "name": "刼煞",
+      "owner": "刼煞",
+      "clauseEffect": "cancel_both",
+      "grade": "ci",
+      "gradeAction": "both_present",
+      "dePresent": true,
+      "state": "neither_recorded"
+     },
+     {
+      "kind": "remaining",
+      "name": "小耗",
+      "effect": "keep",
+      "state": "protected"
+     }
+    ]
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067692-n51",
+   "context": "寅-己酉",
+   "officer": "危",
+   "sha256": "352fbb0b6916763f54590d9538933515b1c6523e1f9a72bff5544d1576f31259",
+   "lock": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "天吏",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": {
+    "dates": [
+     "2025-02-09",
+     "2026-02-04"
+    ],
+    "firstDate": "2025-02-09",
+    "立券交易": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_ji",
+     "after_final_state": "only_ji",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "subject",
+      "name": "天吏",
+      "owner": "天吏",
+      "clauseEffect": "as_usual",
+      "grade": "zhong",
+      "gradeAction": "only_ji",
+      "dePresent": false,
+      "state": "only_ji"
+     },
+     {
+      "kind": "remaining",
+      "name": "五離",
+      "effect": "keep",
+      "state": "kept"
+     }
+    ]
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067693-n105",
+   "context": "巳-丙申",
+   "officer": "平",
+   "sha256": "857ac01a05c352308cd23fd65a8f70b1aefcaf5014a8cc53cb36b38ee86614d0",
+   "lock": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [
+    "天德合",
+    "六合"
+   ],
+   "puzhu06Triggers": [
+    "天德合",
+    "天願"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "月刑",
+    "五離"
+   ],
+   "lijuanYiOperands": [
+    "天願",
+    "六合",
+    "五富"
+   ],
+   "printedJi": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false
+   },
+   "derived": {
+    "dates": [
+     "2025-05-27",
+     "2026-05-22",
+     "2027-05-17"
+    ],
+    "firstDate": "2025-05-27",
+    "立券交易": {
+     "triggers": "天德合+天願",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "天德合+天願",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "天德合+天願",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": ""
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067696-n63",
+   "context": "戌-辛酉",
+   "officer": "閉",
+   "sha256": "1922bb2b0b80a49a3536c12c24bf740701a0279e62375658d936d67bf976f65c",
+   "lock": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "scanReread": "stage2",
+   "wuli": true,
+   "wuliOwnLifters": [
+    "天德合",
+    "月德合"
+   ],
+   "puzhu06Triggers": [
+    "天德合",
+    "月德合"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": true,
+   "lijuanJiOperands": [
+    "月害",
+    "天吏",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false
+   },
+   "derived": {
+    "dates": [
+     "2025-10-19",
+     "2026-10-14",
+     "2027-10-09"
+    ],
+    "firstDate": "2025-10-19",
+    "立券交易": {
+     "triggers": "天德合+月德合",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "天德合+月德合",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "天德合+月德合",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": ""
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067694-n105",
+   "context": "未-丙申",
+   "officer": "除",
+   "sha256": "a602d98fbfd2f92ba5ed044b445d2a8f698800d46b2e13f9e57d78887b230bb0",
+   "lock": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": {
+    "dates": [
+     "2025-07-26",
+     "2026-07-21",
+     "2027-07-16"
+    ],
+    "firstDate": "2025-07-26",
+    "立券交易": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "undetermined",
+     "after_final_state": "undetermined",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "subject",
+      "name": "刼煞",
+      "owner": "刼煞",
+      "clauseEffect": "cancel_both",
+      "grade": "shang_ci",
+      "gradeAction": "both_present",
+      "dePresent": false,
+      "state": "neither_recorded"
+     },
+     {
+      "kind": "remaining",
+      "name": "五離",
+      "effect": "keep",
+      "state": "kept"
+     }
+    ]
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067694-n81",
+   "context": "未-壬申",
+   "officer": "除",
+   "sha256": "00898183b757baad12d20c8c8cabd10535bbde0851989a221e78b00923d61d50",
+   "lock": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": null,
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067694-n129",
+   "context": "未-庚申",
+   "officer": "除",
+   "sha256": "2e35e30c38b746a2241e931e35b44fbc060bc4bb86b926370250d34a71f9a9ff",
+   "lock": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": true,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": null,
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067694-n117",
+   "context": "未-戊申",
+   "officer": "除",
+   "sha256": "2e845be63a1f957130fc1d093af8bb023dc692c16e58fc9b0569a1d25c18c8f3",
+   "lock": "docs/audits/sources/p4-vol10/h1b-yuebiao-witness-v1/lock.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [],
+   "puzhu06Triggers": [
+    "四相"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": false,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": false,
+    "立券交易": true,
+    "納財": true
+   },
+   "derived": {
+    "dates": [
+     "2026-08-02",
+     "2027-07-28"
+    ],
+    "firstDate": "2026-08-02",
+    "立券交易": {
+     "triggers": "四相",
+     "classes": "QL",
+     "action": "lift",
+     "before_final_state": "undetermined",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "四相",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "四相",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "neither_recorded",
+     "after_final_state": "neither_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "subject",
+      "name": "刼煞",
+      "owner": "刼煞",
+      "clauseEffect": "cancel_both",
+      "grade": "shang_ci",
+      "gradeAction": "both_present",
+      "dePresent": false,
+      "state": "neither_recorded"
+     },
+     {
+      "kind": "remaining",
+      "name": "五離",
+      "effect": "keep",
+      "state": "kept"
+     }
+    ]
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067694-n93",
+   "context": "未-甲申",
+   "officer": "除",
+   "sha256": "663aecbfcb6dc36d996ec7011caaff7595ce04e12e283f69bc2226b05f9b02d8",
+   "lock": "docs/audits/sources/p4-vol10/xiangdi-cancel-both-v1/witness-lock.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [
+    "天德",
+    "月德"
+   ],
+   "puzhu06Triggers": [
+    "天德",
+    "月德"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": true,
+   "lijuanJiOperands": [
+    "劫煞",
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false
+   },
+   "derived": {
+    "dates": [
+     "2025-07-14",
+     "2026-07-09"
+    ],
+    "firstDate": "2025-07-14",
+    "立券交易": {
+     "triggers": "天德+月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "not_recorded",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "天德+月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "not_recorded",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "天德+月德",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "not_recorded",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": ""
+   },
+   "decisiveForQ4": false
+  },
+  {
+   "page": "06067695-n50",
+   "context": "申-戊申",
+   "officer": "建",
+   "sha256": "ce21b03bcca916b743206d89ddc1040545b233df6d49535bb329f6f4f520679d",
+   "lock": "docs/audits/sources/p4-vol10/yuebiao-witness-lock-v2.json",
+   "scanReread": "stage1",
+   "wuli": true,
+   "wuliOwnLifters": [
+    "天德合",
+    "天赦"
+   ],
+   "puzhu06Triggers": [
+    "天德合",
+    "天赦"
+   ],
+   "puzhu06TriggerIsAlsoWuliLifter": true,
+   "lijuanJiOperands": [
+    "五離"
+   ],
+   "lijuanYiOperands": [],
+   "printedJi": {
+    "開市": false,
+    "立券交易": false,
+    "納財": false
+   },
+   "derived": {
+    "dates": [
+     "2025-08-07"
+    ],
+    "firstDate": "2025-08-07",
+    "立券交易": {
+     "triggers": "天德合+天赦",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "not_recorded",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "天德合+天赦",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "天德合+天赦",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "not_recorded",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": ""
+   },
+   "decisiveForQ4": false
+  }
+ ],
+ "decisiveStored": [],
+ "decisiveTargetsNotStored": [
+  {
+   "context": "戌-壬申",
+   "derived": {
+    "dates": [
+     "2025-10-30",
+     "2026-10-25",
+     "2027-10-20"
+    ],
+    "firstDate": "2025-10-30",
+    "立券交易": {
+     "triggers": "四相",
+     "classes": "QL",
+     "action": "lift",
+     "before_final_state": "only_ji",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "四相",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "四相",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "remaining",
+      "name": "五離",
+      "effect": "keep",
+      "state": "kept"
+     }
+    ]
+   }
+  },
+  {
+   "context": "戌-庚申",
+   "derived": {
+    "dates": [
+     "2025-10-18",
+     "2026-10-13",
+     "2027-10-08"
+    ],
+    "firstDate": "2025-10-18",
+    "立券交易": {
+     "triggers": "月恩",
+     "classes": "QL",
+     "action": "lift",
+     "before_final_state": "only_ji",
+     "after_final_state": "not_recorded",
+     "after_final_protected_ji": "false"
+    },
+    "納財": {
+     "triggers": "月恩",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "開市": {
+     "triggers": "月恩",
+     "classes": "",
+     "action": "untouched",
+     "before_final_state": "only_yi",
+     "after_final_state": "only_yi",
+     "after_final_protected_ji": "false"
+    },
+    "rawJiSources立券交易": [
+     {
+      "kind": "remaining",
+      "name": "五離",
+      "effect": "keep",
+      "state": "kept"
+     }
+    ]
+   }
+  }
+ ],
+ "puzhu06": {
+  "text": "凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌",
+  "inVol10Raw": true,
+  "triggers": [
+   "天德",
+   "月德",
+   "天德合",
+   "月德合",
+   "天赦",
+   "天願",
+   "月恩",
+   "四相",
+   "時德"
+  ],
+  "wuliOwnLiftList": "與天德月德天德合月德合天赦三合六合併則不忌",
+  "ownerDecision": {
+   "date": "2026-10-16",
+   "status": "OWNER_ADOPTED",
+   "canonical": false,
+   "convention": "yes = puzhu:06 lifts the 忌",
+   "answers": {
+    "Q1": {
+     "answer": "no",
+     "question": "如常例 with 等第 grade 從忌不從宜: lift?"
+    },
+    "Q2": {
+     "answer": "no",
+     "question": "「與德…併如常例」 (not 遇德猶忌): lift?"
+    },
+    "Q3": {
+     "answer": "no",
+     "question": "如常例 without a 等第 column (月破 without 德): lift?"
+    },
+    "Q4": {
+     "answer": "yes",
+     "question": "remaining-ji with its own 「與…併則不忌」 list: lift?"
+    },
+    "Q4a": {
+     "answer": "block",
+     "question": "does 五墓 「不取德合」 block puzhu:06's 德合 triggers?"
+    }
+   },
+   "record": "tasks/prd-p4b-puzhu06.md §8"
+  },
+  "qlClass": {
+   "action": "lift",
+   "basis": "Q4 yes",
+   "when": "remaining-ji kept, god in liftLists, a trigger outside its exclusions"
+  }
+ },
+ "puzhu21": {
+  "text": "凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財",
+  "inVol10Raw": true,
+  "next": "凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌",
+  "nextInVol10Raw": true
+ },
+ "runtimeObservation": {
+  "note": "resolveP4OwnerRulesDay via getP4DayHeadings (production P4 path), Stage 2 base 3afb22d; current behaviour, not authority",
+  "2026-08-02 未戊申 立券交易": "neither_recorded; rule H1-B (五離 忌 kept) then puzhu06 lift:QL; contract 50 neutral, kiep_sat and ngu_ly no_annotation",
+  "2025-10-30 戌壬申 立券交易": "not_recorded; ji [五離], puzhu06 lift:QL; contract 50 no_evidence",
+  "2025-10-18 戌庚申 立券交易": "not_recorded; ji [五離], puzhu06 lift:QL; contract 50 no_evidence",
+  "2025-03-16 卯甲申 立券交易": "only_ji protected (小耗 猶忌); contract 20 avoid, kiep_sat and ngu_ly applied"
+ },
+ "classification": "C",
+ "ruling": "UNRESOLVED_CONFLICT",
+ "ownerDecisionRequired": true,
+ "productionState": "BLANK / I1",
+ "sourceWitnessed": false
+}
