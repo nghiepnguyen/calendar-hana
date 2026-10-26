@@ -56,6 +56,13 @@ const headingsOf = (date: string) => {
   })
 }
 
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
+
 describe('P4 score Golden v4 (G2 Stage 2, canonical-v1)', () => {
   it('the shipped lookup is canonical-v1 (not pinned here)', () => {
     expect(manifest.policies.p4ScoreHeadingLookup).toBe('canonical-v1')

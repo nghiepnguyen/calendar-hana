@@ -62,6 +62,13 @@ const ALIASES = [
   'Vãng Vong (Thổ Kỵ)',
 ]
 
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
+
 describe('roadmap 8 almanac wiring (flag ON)', () => {
   it('21 dormant gods appear on Month Jian exactly as the frozen Golden v2 presence', () => {
     const want = new Map(

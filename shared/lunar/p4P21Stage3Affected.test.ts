@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getAlmanac } from './almanac'
 import { P4_DAY_HEADINGS } from './p4DayComposition'
 import { resolveP4Headings } from './p4HeadingAnnotation'
@@ -79,6 +79,13 @@ function scan(dates: readonly string[] = ALL_DATES) {
   }
   return rows
 }
+
+// Frozen before P21 Stage 4 (p4-puzhu21-v1, puzhu:21 contribution-scoped on 亥-丁酉/亥-癸酉): pinned to the
+// pre-P21 rollback (p21Rollback.ts, puzhu:21 heading-wide everywhere).
+vi.mock('../almanac-data/p4-puzhu21-v1.json', async () =>
+  (await import('./p21Rollback')).puzhu21Off(),
+)
+await vi.hoisted(async () => (await import('./p21Rollback')).reloadUnderP21Pin())
 
 describe('P21 Stage 3 affected matrix (audit only)', () => {
   it.runIf(process.env.P21S3_DUMP === '1')('dumps the matrix', { timeout: 600_000 }, () => {

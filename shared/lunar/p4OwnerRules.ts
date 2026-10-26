@@ -1,4 +1,5 @@
 import art from '../almanac-data/p4-vol10-day-composition-v2.json'
+import puzhu21 from '../almanac-data/p4-puzhu21-v1.json'
 import remainingArt from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 import { resolveP4Context } from './p4ContextBridge'
 import { P4_DAY_HEADINGS } from './p4DayComposition'
@@ -42,6 +43,8 @@ export type P4OwnerRow = {
   propagationBlocked?: string
   /** Owner (i) changed this row's puzhu:06 trigger set ('reduced') or removed every trigger ('skipped'). */
   puzhu06Dropped?: 'reduced' | 'skipped'
+  /** puzhu:21 fired but kept the row's independent 忌 (p4-puzhu21-v1, contribution-scoped). */
+  propagationKept?: string
   /** Owner 宜 rule that made the row only_ji (Q4_REST_OWNER_ONLY_JI, R-F1Y; authority v5). */
   yiRule?: string
   /** Deciding trace, ids as in the Golden `code`: primary rule, 忌 sources, protecting sources. */
@@ -551,7 +554,12 @@ export function resolveP4OwnerRulesDay(
   // Propagation (鋪註 11, 16–24): one pass over the pre-propagation day. E3: a lift that leaves a 相抵
   // scope on the heading reads neither_recorded.
   const out: P4OwnerDay = Object.fromEntries(Object.entries(pre).map(([h, d]) => [h, { ...d }]))
+  // p4-puzhu21-v1: in an eligible context a puzhu:21 edge withholds only the 忌 of the gods whose 相抵 left
+  // its trigger unnoted; the target is decided after the pass from the union over its fired edges.
+  const scoped = puzhu21.eligibleContexts.includes(`${month}-${pillar}`)
+  const scopedTargets: Record<string, { fired: string[]; cancelled: Set<string> }> = {}
   for (const line of art.propagation.lines as {
+    id?: string
     from?: string[]
     to?: string[]
     pairs?: string[][]
@@ -572,6 +580,14 @@ export function resolveP4OwnerRulesDay(
           out[h]!.propagationBlocked = fired.join('+')
           continue
         }
+        if (scoped && line.id === 'puzhu:21') {
+          const t = (scopedTargets[h] ??= { fired: [], cancelled: new Set() })
+          t.fired.push(...fired)
+          for (const f of fired)
+            for (const x of facts[f]!)
+              if (x.state === 'neither_recorded') t.cancelled.add(traceId(x))
+          continue
+        }
         Object.assign(out[h]!, {
           ji: false,
           state: xiangdi[h] ? 'neither_recorded' : yiState(d.yiNoted),
@@ -579,6 +595,19 @@ export function resolveP4OwnerRulesDay(
         })
       }
     }
+  }
+  for (const [h, { fired, cancelled }] of Object.entries(scopedTargets)) {
+    const d = pre[h]!
+    const from = [...new Set(fired)].join('+')
+    const kept = (d.trace?.ji ?? []).filter((g) => !cancelled.has(g))
+    if (kept.length)
+      Object.assign(out[h]!, { propagationKept: from, trace: { ...d.trace!, ji: kept } })
+    else
+      Object.assign(out[h]!, {
+        ji: false,
+        state: xiangdi[h] ? 'neither_recorded' : yiState(d.yiNoted),
+        propagatedFrom: from,
+      })
   }
   // Owner 宜 rules (authority v5), after propagation so a later lift still restores 宜:
   //  - scoped: a row kept only by a QL_NARROW exclusion (R-JK / R-WX / R-XH) that notes 宜 reads only_ji;

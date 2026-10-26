@@ -1,0 +1,24 @@
+{
+  "version": "p4-puzhu21-v1",
+  "rule": "puzhu:21",
+  "source": {
+    "path": "docs/audits/sources/p4-vol10/vol10.raw.txt",
+    "offset": 22390,
+    "text": "凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財"
+  },
+  "semantic": "contribution-scoped-suppression",
+  "description": "On a puzhu:21 edge into an eligible context, only the 忌 of the gods whose 相抵 left the trigger unnoted is withheld on the target; independent target 忌 survive. Every other context, edge and line keeps heading-wide propagation (N-A).",
+  "eligibleContexts": ["亥-丁酉", "亥-癸酉"],
+  "provenance": {
+    "semanticAuthority": "p4-puzhu21-semantic-v1 (docs/audits/sources/p4-vol10/p21-stage3/authority.json)",
+    "witnesses": ["P21S2-06067696-n82", "P21S2-06067696-n106"],
+    "eligibility": "docs/audits/sources/p4-vol10/p21-stage3/eligibility.json (MIGRATE contexts only)",
+    "notEligible": {
+      "未-戊申": "HOLD: trigger rests on a LOCAL owner ruling not extended to 五離",
+      "未-丙申": "QUARANTINE: trigger exists only under P4 cancel_both (P4-劫)",
+      "未-壬申": "QUARANTINE (P4-劫)",
+      "未-庚申": "QUARANTINE (P4-劫)"
+    },
+    "notExtendedTo": "puzhu:22 and every other propagation line (PUZHU22_SEMANTIC_DEBT)"
+  }
+}
