@@ -1,0 +1,5862 @@
+{
+  "harness": "shared/lunar/p4P21Stage2Candidates.test.ts",
+  "stage1": "docs/audits/sources/p4-vol10/p21-stage1/projection.json",
+  "cells": [
+    {
+      "line": "puzhu:16",
+      "context": "子-丁亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "子-丁未",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月害",
+          "月煞"
+        ],
+        "開市": [
+          "月害",
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月害",
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "hold:UNDETERMINED",
+      "targetXiangdi": [
+        "月害",
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "丑-丙寅",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "天賊"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "天賊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "丑-戊寅",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "天賊"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "天賊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "丑-庚子",
+      "heading": "般移",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "天吏",
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "天吏",
+        "閉日"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "天吏",
+        "閉日"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "丑-庚子",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "天吏",
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "天吏",
+        "閉日"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "天吏",
+        "閉日"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "丑-庚子",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "天吏",
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "天吏",
+        "閉日"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "天吏",
+        "閉日"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "丑-庚子",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "天吏",
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "天吏",
+        "閉日"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "天吏"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "丑-庚子",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "天吏",
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "天吏",
+        "閉日"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": false,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "丑-壬寅",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "天賊"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "天賊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "丑-甲寅",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "天賊",
+        "百忌甲"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "天賊",
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相",
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "寅-甲子",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "災煞"
+        ],
+        "開市": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "百忌甲"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "立券交易": false,
+        "開市": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "寅-庚子",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "寅-庚子",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "卯-戊寅",
+      "heading": "般移",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天赦"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "卯-戊寅",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天赦"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "卯-甲申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "卯-甲申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "般移": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "卯-丙戌",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "hold:UNDETERMINED",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "卯-甲午",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "天吏",
+          "平日"
+        ],
+        "開市": [
+          "天吏",
+          "平日"
+        ]
+      },
+      "targetJi": [
+        "百忌甲"
+      ],
+      "cancelled": [
+        "天吏",
+        "平日"
+      ],
+      "independent": [
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "天吏",
+        "平日"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德",
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "卯-戊戌",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "卯-庚戌",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "卯-甲寅",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "卯-壬戌",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "辰-己巳",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "辰-壬申",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "月厭"
+        ]
+      },
+      "targetJi": [
+        "往亡"
+      ],
+      "cancelled": [
+        "月厭"
+      ],
+      "independent": [
+        "往亡"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "月厭"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "辰-辛巳",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "辰-壬辰",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "辰-壬辰",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "辰-壬辰",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德",
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "辰-癸巳",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "辰-乙巳",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "巳-壬申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "巳-壬申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "般移": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "巳-己卯",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "巳-己卯",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "巳-甲申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "巳-甲申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "般移": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "巳-甲申",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "平日",
+          "月刑"
+        ],
+        "開市": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌甲"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "巳-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "巳-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "平日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "平日",
+        "月刑"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "平日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "般移": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "午-辛卯",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "大時",
+          "收日"
+        ]
+      },
+      "targetJi": [
+        "往亡"
+      ],
+      "cancelled": [
+        "大時",
+        "收日"
+      ],
+      "independent": [
+        "往亡"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "大時",
+        "收日"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "午-辛卯",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "大時",
+          "收日"
+        ]
+      },
+      "targetJi": [
+        "往亡"
+      ],
+      "cancelled": [
+        "大時",
+        "收日"
+      ],
+      "independent": [
+        "往亡"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "大時",
+        "收日"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "午-辛丑",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月害",
+          "月煞"
+        ],
+        "開市": [
+          "月害",
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月害",
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "hold:UNDETERMINED",
+      "targetXiangdi": [
+        "月害",
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "午-辛亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "午-辛酉",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "天吏",
+          "平日"
+        ],
+        "開市": [
+          "天吏",
+          "平日"
+        ]
+      },
+      "targetJi": [
+        "天賊"
+      ],
+      "cancelled": [
+        "天吏",
+        "平日"
+      ],
+      "independent": [
+        "天賊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "天吏",
+        "平日"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "未-壬申",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-壬申",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": true
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-壬申",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": true
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-壬申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "未-壬申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "般移": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "未-壬申",
+      "heading": "立券交易",
+      "triggers": [
+        "納財",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "納財": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "納財": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "未-丙申",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-丙申",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-丙申",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-丙申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "未-丙申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "般移": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "未-丙申",
+      "heading": "立券交易",
+      "triggers": [
+        "納財",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "納財": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "納財": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "未-戊申",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-戊申",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-戊申",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "未-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "未-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "般移": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "未-戊申",
+      "heading": "立券交易",
+      "triggers": [
+        "納財",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "納財": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "keep:QL_EXCLUDED",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "納財": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "未-庚申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "般移": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "未-庚申",
+      "heading": "立券交易",
+      "triggers": [
+        "納財",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "納財": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "納財": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "申-甲午",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "災煞"
+        ],
+        "開市": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "百忌甲"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "立券交易": false,
+        "開市": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "酉-戊辰",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "酉-庚午",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "大時",
+          "收日"
+        ],
+        "開市": [
+          "大時",
+          "收日"
+        ]
+      },
+      "targetJi": [
+        "天賊"
+      ],
+      "cancelled": [
+        "大時",
+        "收日"
+      ],
+      "independent": [
+        "天賊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "大時",
+        "收日"
+      ],
+      "triggerYi": {
+        "立券交易": false,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "酉-乙酉",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "酉-乙酉",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "酉-乙酉",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "酉-庚寅",
+      "heading": "般移",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "酉-庚寅",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "酉-壬辰",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "hold:UNDETERMINED",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "酉-庚子",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "天吏",
+          "平日"
+        ]
+      },
+      "targetJi": [
+        "往亡"
+      ],
+      "cancelled": [
+        "天吏",
+        "平日"
+      ],
+      "independent": [
+        "往亡"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "天吏",
+        "平日"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德",
+        "時德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "酉-甲辰",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛",
+        "百忌甲"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛",
+        "百忌甲"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "開市+立券交易",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "酉-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天赦"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "酉-戊申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "般移": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天赦"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "酉-丙辰",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "月煞"
+        ],
+        "開市": [
+          "月煞"
+        ]
+      },
+      "targetJi": [
+        "月虛"
+      ],
+      "cancelled": [
+        "月煞"
+      ],
+      "independent": [
+        "月虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "月煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "酉-庚申",
+      "heading": "安牀",
+      "triggers": [
+        "般移"
+      ],
+      "triggerXiangdi": {
+        "般移": [
+          "閉日"
+        ]
+      },
+      "targetJi": [
+        "百忌申"
+      ],
+      "cancelled": [
+        "閉日"
+      ],
+      "independent": [
+        "百忌申"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "般移",
+      "targetXiangdi": [
+        "閉日"
+      ],
+      "triggerYi": {
+        "般移": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "月德"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-辛未",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "收日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "收日",
+        "月刑"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "收日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德合",
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-辛未",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "收日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "收日",
+        "月刑"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "收日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德合",
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-辛未",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "收日",
+          "月刑"
+        ]
+      },
+      "targetJi": [
+        "地囊"
+      ],
+      "cancelled": [
+        "收日",
+        "月刑"
+      ],
+      "independent": [
+        "地囊"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "收日",
+        "月刑"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德合",
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "戌-乙亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-乙亥",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-乙亥",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-乙亥",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "戌-乙亥",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "戌-丁亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-丁亥",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-丁亥",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-丁亥",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "戌-丁亥",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "戌-己亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-己亥",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-己亥",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-己亥",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "戌-己亥",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "戌-癸亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-癸亥",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-癸亥",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛",
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛",
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "戌-癸亥",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "土符"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "土符"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:22",
+      "context": "戌-癸亥",
+      "heading": "開倉庫出貨財",
+      "triggers": [
+        "立券交易",
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "立券交易": [
+          "刼煞"
+        ],
+        "開市": [
+          "刼煞"
+        ]
+      },
+      "targetJi": [
+        "五虛"
+      ],
+      "cancelled": [
+        "刼煞"
+      ],
+      "independent": [
+        "五虛"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "puzhu06": "keep:QL_NARROW",
+      "targetXiangdi": [
+        "刼煞"
+      ],
+      "triggerYi": {
+        "立券交易": true,
+        "開市": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-乙丑",
+      "heading": "般移",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "月厭"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "月厭"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "月厭"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "亥-乙丑",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "月厭"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "月厭"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "月厭"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "亥-癸酉",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-癸酉",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-癸酉",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "亥-癸酉",
+      "heading": "立券交易",
+      "triggers": [
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "開市": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "開市": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": true
+    },
+    {
+      "line": "puzhu:16",
+      "context": "亥-乙亥",
+      "heading": "嫁娶",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "百忌亥"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "百忌亥"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "結婚姻",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "結婚姻": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "亥-乙亥",
+      "heading": "修宮室",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "亥-乙亥",
+      "heading": "修倉庫",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:20",
+      "context": "亥-乙亥",
+      "heading": "破屋壊垣",
+      "triggers": [
+        "豎柱上梁"
+      ],
+      "triggerXiangdi": {
+        "豎柱上梁": [
+          "月刑",
+          "月建"
+        ]
+      },
+      "targetJi": [
+        "土府"
+      ],
+      "cancelled": [
+        "月刑",
+        "月建"
+      ],
+      "independent": [
+        "土府"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "豎柱上梁",
+      "targetXiangdi": [
+        "月刑",
+        "月建"
+      ],
+      "triggerYi": {
+        "豎柱上梁": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [
+        "天德",
+        "月恩",
+        "四相"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-己丑",
+      "heading": "般移",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "月厭"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "月厭"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "月厭"
+      ],
+      "triggerYi": {
+        "嫁娶": true
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:18",
+      "context": "亥-己丑",
+      "heading": "般移",
+      "triggers": [
+        "安牀"
+      ],
+      "triggerXiangdi": {
+        "安牀": [
+          "月厭"
+        ]
+      },
+      "targetJi": [
+        "歸忌"
+      ],
+      "cancelled": [
+        "月厭"
+      ],
+      "independent": [
+        "歸忌"
+      ],
+      "h1": "only_ji",
+      "h2": "only_ji",
+      "blocked": "安牀",
+      "targetXiangdi": [
+        "月厭"
+      ],
+      "triggerYi": {
+        "安牀": false
+      },
+      "targetYi": true,
+      "puzhu06Gods": [
+        "月德合"
+      ],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": false,
+        "W5": false,
+        "W6": false,
+        "W7": false
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:16",
+      "context": "亥-丁酉",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-丁酉",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-丁酉",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:21",
+      "context": "亥-丁酉",
+      "heading": "立券交易",
+      "triggers": [
+        "開市"
+      ],
+      "triggerXiangdi": {
+        "開市": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "開市": true
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": true,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": true
+    },
+    {
+      "line": "puzhu:16",
+      "context": "亥-辛酉",
+      "heading": "納采問名",
+      "triggers": [
+        "結婚姻"
+      ],
+      "triggerXiangdi": {
+        "結婚姻": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "結婚姻": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-辛酉",
+      "heading": "結婚姻",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    },
+    {
+      "line": "puzhu:17",
+      "context": "亥-辛酉",
+      "heading": "納采問名",
+      "triggers": [
+        "嫁娶"
+      ],
+      "triggerXiangdi": {
+        "嫁娶": [
+          "災煞"
+        ]
+      },
+      "targetJi": [
+        "五離"
+      ],
+      "cancelled": [
+        "災煞"
+      ],
+      "independent": [
+        "五離"
+      ],
+      "h1": "neither_recorded",
+      "h2": "only_ji",
+      "preRule": "H1-B",
+      "targetXiangdi": [
+        "災煞"
+      ],
+      "triggerYi": {
+        "嫁娶": false
+      },
+      "targetYi": false,
+      "puzhu06Gods": [],
+      "targetCancelBothMark": true,
+      "w": {
+        "W1": false,
+        "W2": true,
+        "W3": true,
+        "W4": true,
+        "W5": true,
+        "W6": true,
+        "W7": true
+      },
+      "passW1W7": false
+    }
+  ]
+}
