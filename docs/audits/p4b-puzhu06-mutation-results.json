@@ -1,5 +1,5 @@
 {
-  "scope": "P4B_PUZHU06_OWNER_ADOPTED (Q1-Q3 no, Q4 yes, Q4a block; authority p4b-puzhu06-v3)",
+  "scope": "P4B_PUZHU06_OWNER_ADOPTED (Q1-Q3 no, Q4 yes, Q4a block, R2 block, R-JK/R-WX/R-XH QL_NARROW + scoped only_ji; units on the v3 rollback, V5 on authority p4b-puzhu06-v5)",
   "mutations": [
     {
       "mutation": "drop_youji_exception",
@@ -146,11 +146,38 @@
       ],
       "caughtByAssertion": true,
       "exitCode": 1
+    },
+    {
+      "mutation": "narrow_class_as_excluded",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06V5.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "narrow_lifts",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06V5.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "drop_scoped_only_ji",
+      "file": "p4Puzhu06.ts",
+      "tests": [
+        "shared/lunar/p4Puzhu06V5.test.ts"
+      ],
+      "caughtByAssertion": true,
+      "exitCode": 1
     }
   ],
   "restored": true,
   "targetHashes": {
-    "shared/lunar/p4Puzhu06.ts": "7c7b12d23c018e4d65b7e385f080f44b1dfa6933b104a919fdba97fc3f3edada"
+    "shared/lunar/p4Puzhu06.ts": "047d6cf6cbd8917db2334c0e082e379a82473d844f49a81d00c21b6163f7bfe6"
   },
   "limits": "Audit-only gate; mutations target the composer only, never the authority, Golden or P4-B/P4-C code."
 }
