@@ -3,11 +3,12 @@
   "target": "shared/lunar/p4OwnerRules.ts",
   "tests": [
     "shared/lunar/p4OwnerRules.test.ts",
-    "shared/lunar/p4OwnerRulesV4.test.ts"
+    "shared/lunar/p4OwnerRulesV4.test.ts",
+    "shared/lunar/p4OwnerRulesV5.test.ts"
   ],
   "control": "clean",
-  "mutations": 14,
-  "caught": 14,
+  "mutations": 16,
+  "caught": 16,
   "restored": true,
   "results": [
     {
@@ -91,6 +92,18 @@
     {
       "mutation": "r_f1y_dropped",
       "rule": "R-F1Y yiComposition",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p21_scoped_dropped",
+      "rule": "P21 puzhu:21 contribution-scoped (eligible contexts)",
+      "caughtByTest": true,
+      "exitCode": 1
+    },
+    {
+      "mutation": "p21_scoped_global",
+      "rule": "P21 allowlist (HOLD/QUARANTINE contexts stay N-A)",
       "caughtByTest": true,
       "exitCode": 1
     }
