@@ -2,6 +2,8 @@
 
 Opened 2026-10-25, split out of G2 Stage 1 by owner ruling. **Status: OPEN, deferred.** Nothing is decided here.
 
+**G2-n117 Stage 1 (2026-10-26):** `UNRESOLVED_CONFLICT`; the cell stays BLANK / I1, not SOURCE_WITNESSED. See [`p4-g2-n117-authority-discrepancy.md`](p4-g2-n117-authority-discrepancy.md).
+
 ## Owner ruling (2026-10-25)
 
 - `未-戊申 × contract/transaction` stays **BLANK**, preserving current authority. It remains production authority until this item is resolved.
