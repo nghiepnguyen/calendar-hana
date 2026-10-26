@@ -1,0 +1,31 @@
+{
+ "version": "f1-wuli-lijuan-stage3-v1",
+ "item": "F1",
+ "decision": "R2_APPROVED",
+ "date": "2026-10-26",
+ "ruling": "OWNER_RULING",
+ "scope": "五離 × 立券交易 × puzhu:06 Q4 lifting only.",
+ "rule": [
+  "A generic puzhu:06 trigger (天願, 月恩, 四相, 時德) does not lift 五離's 忌 on 立券交易.",
+  "五離's own lifters remain authoritative: 「與天德月德天德合月德合天赦三合六合併則不忌」 (卷十 五離 entry).",
+  "An independent 宜 on 立券交易 does not suppress the surviving 五離 忌 (both_present)."
+ ],
+ "supersedes": "owner Q4 = yes (2026-10-16) as applied to 五離 only; Q4 is unchanged for every other god",
+ "excludedGods": ["九空", "五虛", "小耗", "五墓"],
+ "unchangedHeadings": ["開市", "納財", "安牀", "開倉庫出貨財"],
+ "rowGroups": {
+  "directlyWitnessShaped": {"headingRows": 6, "contexts": ["戌-壬申", "戌-庚申"], "basis": "06067696-n14, 06067696-n62 (F1 Stage 1)"},
+  "semanticExtrapolation": {"headingRows": 4, "contexts": ["丑-甲申", "午-戊申"], "basis": "owner-approved consequence of the same 五離 rule; NOT SOURCE_WITNESSED"},
+  "intermediateOnly": {"puzhu06Decisions": 2, "contexts": ["未-戊申"], "basis": "puzhu:21 (N-A) yields the same final state; N-A vs N-C stays open"}
+ },
+ "witnesses": {
+  "06067696-n14": "a3a5180ff7d004d4acbbb7752ef41b192a6e2a8410b0546cf6881c0270b7c127",
+  "06067696-n62": "6c2097b8787c0ea848340c45df1cb379e40503849347721b96349c9092c83a9a"
+ },
+ "notChanged": [
+  "G2-n117 / W1: CLOSED; 劫煞 × 立券交易 = BLANK / I1",
+  "puzhu:21 N-A vs N-C (separate debt)",
+  "Q4 for 九空 / 五虛 / 小耗 / 五墓 (separate debt)"
+ ],
+ "evidence": "docs/audits/p4-f1-wuli-lijuan-stage2-authority-reconciliation.md (2e3f50a)"
+}
