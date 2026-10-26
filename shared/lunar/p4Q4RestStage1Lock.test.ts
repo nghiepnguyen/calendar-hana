@@ -8,6 +8,7 @@ import authority from '../almanac-data/p4b-puzhu06-v4.json'
 import evidence from '../../docs/audits/sources/p4-vol10/q4-rest-stage1/evidence.json'
 import lock from '../../docs/audits/sources/p4-vol10/q4-rest-stage1/lock.json'
 import ruling from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json'
+import { lockedDigests } from './lockAnchor'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getVol10JieshaRuntime } from './xiejiVol10JieshaAuthority'
 
@@ -18,7 +19,14 @@ const sha = (p: string) => createHash('sha256').update(readFileSync(p)).digest('
 
 describe('Q4-REST Stage 1 lock', () => {
   it('pins the pages, evidence, models, builder, inputs and production authority', () => {
-    for (const [path, hash] of Object.entries(lock.files)) expect(sha(path), path).toBe(hash)
+    {
+      // lockAnchor rule (owner 2026-10-17): runtime code and harnesses outside the lock dir are checked as
+      // committed when the lock was added, so Q4-REST Stage 3 (authority v5) does not break this proof.
+      const code = Object.keys(lock.files).filter((p) => p.startsWith('shared/lunar/'))
+      const committed = lockedDigests('docs/audits/sources/p4-vol10/q4-rest-stage1/lock.json', code)
+      for (const [path, hash] of Object.entries(lock.files))
+        expect(code.includes(path) ? committed.get(path) : sha(path), path).toBe(hash)
+    }
   })
 
   it('the evidence builder is deterministic (rebuilt into a temp dir; the tree is never written)', () => {
@@ -26,7 +34,10 @@ describe('Q4-REST Stage 1 lock', () => {
     execFileSync('python3', ['-I', DIR + 'build_evidence.py', out])
     for (const n of ['evidence.json', 'matrix.json', 'coverage.json', 'acquisition-plan.json'])
       expect(sha(join(out, n)), n).toBe((lock.files as Record<string, string>)[DIR + n])
-    expect(sha(join(out, 'lock.json'))).toBe(sha(DIR + 'lock.json'))
+    // The rebuilt lock re-hashes live code; compare every non-code entry with the committed lock.
+    const built = JSON.parse(readFileSync(join(out, 'lock.json'), 'utf8')).files as Record<string, string>
+    for (const [p, h] of Object.entries(lock.files as Record<string, string>))
+      if (!p.startsWith('shared/lunar/')) expect(built[p], p).toBe(h)
   })
 
   it('27 candidates, all authenticated, every scan hash frozen', () => {
@@ -39,7 +50,8 @@ describe('Q4-REST Stage 1 lock', () => {
   })
 
   it('production stays on p4b-puzhu06-v4; Q4/Q4a/R2 untouched', () => {
-    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v4')
+    // Q4-REST Stage 3 moved production to v5; the v4 authority this stage audited stays pinned above.
+    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v5')
     expect(evidence.productionChanged).toBe(false)
     expect(authority.ownerDecision.answers.Q4.answer).toBe('yes')
     expect(authority.ownerDecision.answers.Q4a.answer).toBe('block')

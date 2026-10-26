@@ -1,7 +1,10 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getP4YouweiScopes, resolveP4Headings } from './p4HeadingAnnotation'
 import { resolveP4Puzhu06Day } from './p4Puzhu06'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // Q4-REST Stage 2A (docs/audits/p4-q4-rest-stage2a-n126-review.md), audit only. For the corpus pattern search
 // "surviving remaining-ji 忌 + independent 宜": per context and heading, the production (v4) final state with the

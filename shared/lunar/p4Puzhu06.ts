@@ -1,13 +1,15 @@
-import authority from '../almanac-data/p4b-puzhu06-v4.json'
+import authority from '../almanac-data/p4b-puzhu06-v5.json'
 import { applyP4Propagation, type P4DayState } from './p4DayComposition'
 import { resolveP4Grades } from './p4GradeResolution'
 import { getP4YouweiScopes, resolveP4Headings } from './p4HeadingAnnotation'
 import { resolveP4YiDay, type P4YiDayOperands } from './p4YiDayComposition'
 
-/** P4-B follow-up (authority p4b-puzhu06-v4): 鋪註 puzhu:06
+/** P4-B follow-up (authority p4b-puzhu06-v5): 鋪註 puzhu:06
  * 「凡徳合赦願月恩四相時徳等日不註忌…如遇徳猶忌及從忌不從宜之日則仍註忌」 on the P4-C day.
- * Owner 2026-10-16: Q1-Q3 no, Q4 yes, Q4a block; 2026-10-26 F1 R2 block (五離 only, its own lifters only).
- * v3 is the rollback. Production reaches it through p4OwnerRules (getP4DayHeadings, P4 domain only). */
+ * Owner 2026-10-16: Q1-Q3 no, Q4 yes, Q4a block; 2026-10-26 F1 R2 block (五離 only, its own lifters only);
+ * 2026-10-26 R-JK / R-WX / R-XH (九空 / 五虛 / 小耗 lifted only by their own lifters, class QL_NARROW with the
+ * scoped only_ji rule) and R-F1Y (yiComposition, applied by p4OwnerRules).
+ * v4 is the rollback (v3 before it). Production reaches it through p4OwnerRules (getP4DayHeadings, P4 domain only). */
 export type P4Puzhu06Source = Readonly<Record<string, unknown>>
 export type P4Puzhu06Row = {
   heading: string
@@ -31,6 +33,31 @@ const LIFT_GODS = new Set(Object.keys(authority.liftLists))
 const EXCLUDED = Object.fromEntries(
   Object.entries(authority.liftExclusions).map(([g, x]) => [g, x.triggers]),
 ) as Record<string, readonly string[]>
+// v5: an exclusion may name its own keep class (QL_NARROW, owner R-JK / R-WX / R-XH); v4 has none.
+const EXCLUDED_CLASS = Object.fromEntries(
+  Object.entries(authority.liftExclusions).map(([g, x]) => [
+    g,
+    (x as { class?: string }).class ?? 'QL_EXCLUDED',
+  ]),
+) as Record<string, string>
+export const P4_PUZHU06_ONLY_JI_TAG = 'Q4_REST_OWNER_ONLY_JI'
+/** Owner R-F1Y and any later heading-level 宜 composition rule (absent before v5). */
+export const P4_PUZHU06_YI_COMPOSITION = ((authority as { yiComposition?: unknown[] })
+  .yiComposition ?? []) as readonly {
+  id: string
+  heading: string
+  soleJi: string
+  from: string
+  to: string
+}[]
+
+/** Owner scoped 宜 rule (v5): the row is kept only because of a QL_NARROW exclusion (every other class lifts). */
+export function p4Puzhu06NarrowOnlyJi(classes: readonly string[]) {
+  return (
+    classes.includes('QL_NARROW') &&
+    classes.every((c) => c === 'QL_NARROW' || CLASSES[c]?.action === 'lift')
+  )
+}
 const YOUWEI = authority.inherit.youwei as Record<string, string>
 const DEFER = authority.inherit.remainingDefer as Record<
   string,
@@ -91,7 +118,7 @@ function classify(row: P4Puzhu06Row) {
       } else if (LIFT_GODS.has(s.name!)) {
         // Q4a: a trigger the god's own entry refuses (五墓 「不取德合」) cannot lift it.
         const excluded = EXCLUDED[s.name!] ?? []
-        out.add(row.triggers.some((t) => !excluded.includes(t)) ? 'QL' : 'QL_EXCLUDED')
+        out.add(row.triggers.some((t) => !excluded.includes(t)) ? 'QL' : EXCLUDED_CLASS[s.name!]!)
       } else specGap(`remaining ${s.name} not in liftLists`)
     } else if (s.kind === 'puzhuEnd') out.add('PUZHU27')
     else specGap(`source kind ${s.kind}`)
@@ -184,7 +211,7 @@ export function resolveP4Puzhu06Day(month: string, pillar: string, operands: P4Y
   const pre = { ...day.prePropagationHeadings }
   const puzhu06: Record<
     string,
-    Decision & { authorityId: string; triggers: string[]; sources: Rec[] }
+    Decision & { authorityId: string; triggers: string[]; sources: Rec[]; yiRule?: string }
   > = {}
   for (const h of IN_SCOPE) {
     const f = day.headings[h]!
@@ -203,11 +230,24 @@ export function resolveP4Puzhu06Day(month: string, pillar: string, operands: P4Y
     puzhu06[h] = { ...d, authorityId: authority.version, triggers, sources: row.sources as Rec[] }
     if (d.action === 'lift') pre[h] = { ...pre[h]!, ji: false, state: d.state as P4DayState }
   }
+  const headings = applyP4Propagation(pre)
+  // Owner scoped 宜 rule, after propagation: a heading kept only by QL_NARROW that still notes 宜 reads only_ji.
+  for (const h of IN_SCOPE) {
+    const d = puzhu06[h]!
+    if (
+      d.action === 'keep' &&
+      p4Puzhu06NarrowOnlyJi(d.classes) &&
+      headings[h]!.state === 'both_present'
+    ) {
+      headings[h] = { ...headings[h]!, state: 'only_ji', yi: false }
+      puzhu06[h] = { ...d, yiRule: P4_PUZHU06_ONLY_JI_TAG }
+    }
+  }
   return {
     ...day,
     version: 'p4b-puzhu06-day-v1' as const,
     prePropagationHeadings: pre,
-    headings: applyP4Propagation(pre),
+    headings,
     puzhu06,
   }
 }

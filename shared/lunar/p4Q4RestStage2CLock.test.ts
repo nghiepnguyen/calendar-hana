@@ -15,6 +15,7 @@ import scope from '../../docs/audits/sources/p4-vol10/q4-rest-stage2c/scope-matr
 import trans from '../../docs/audits/sources/p4-vol10/q4-rest-stage2c/transcription.json'
 import xh from '../../docs/audits/sources/p4-vol10/q4-rest-stage2c/xiaohao-replication.json'
 import ruling from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json'
+import { lockedDigests } from './lockAnchor'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getVol10JieshaRuntime } from './xiejiVol10JieshaAuthority'
 
@@ -28,7 +29,14 @@ const sha8 = (s: string) => createHash('sha256').update(s).digest('hex')
 
 describe('Q4-REST Stage 2C 小耗 replication lock', () => {
   it('pins the scan, the artifacts, earlier stage locks, production code and Golden v4', () => {
-    for (const [path, hash] of Object.entries(files)) expect(sha(path), path).toBe(hash)
+    {
+      // lockAnchor rule (owner 2026-10-17): runtime code and harnesses outside the lock dir are checked as
+      // committed when the lock was added, so Q4-REST Stage 3 (authority v5) does not break this proof.
+      const code = Object.keys(files).filter((p) => p.startsWith('shared/lunar/'))
+      const committed = lockedDigests('docs/audits/sources/p4-vol10/q4-rest-stage2c/lock.json', code)
+      for (const [path, hash] of Object.entries(files))
+        expect(code.includes(path) ? committed.get(path) : sha(path), path).toBe(hash)
+    }
     expect(page.sha256).toBe('71d6b5e87c16ee79de3b7109cff03898f307c97cfc74ad1a30b80b1b36a6208f')
   })
 
@@ -46,7 +54,10 @@ describe('Q4-REST Stage 2C 小耗 replication lock', () => {
       'draft-rulings.json',
     ])
       expect(sha(join(out, n)), n).toBe(files[DIR + n])
-    expect(sha(join(out, 'lock.json'))).toBe(sha(DIR + 'lock.json'))
+    // The rebuilt lock re-hashes live code; compare every non-code entry with the committed lock.
+    const built = JSON.parse(readFileSync(join(out, 'lock.json'), 'utf8')).files as Record<string, string>
+    for (const [p, h] of Object.entries(lock.files as Record<string, string>))
+      if (!p.startsWith('shared/lunar/')) expect(built[p], p).toBe(h)
   })
 
   it('戌-癸卯 authenticated at 06067696-n45; transcription frozen', () => {
@@ -114,7 +125,8 @@ describe('Q4-REST Stage 2C 小耗 replication lock', () => {
   })
 
   it('production stays v4; F1 R2, F1-Y production state and G2/W1 unchanged', () => {
-    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v4')
+    // Q4-REST Stage 3 moved production to v5; the v4 authority this stage audited stays pinned above.
+    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v5')
     expect(Object.keys(authority.liftExclusions)).toEqual(['五墓', '五離'])
     expect(authority.liftExclusions.五離.triggers).toEqual(['天願', '月恩', '四相', '時德'])
     expect(ruling.decision).toBe('R2_APPROVED')

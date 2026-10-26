@@ -17,7 +17,9 @@ import {
 } from './p4ScoreAdapter'
 import { canonicalP4HeadingKey } from './xiejiVol10Resolution'
 // Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./f1R2Rollback')).puzhu06V3(),
+)
 await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // G1-b Stage 2 (docs/audits/p4-g1b-score-lookup.md §4–§6): migration diff v3, source-key-v1 → canonical-v1 on

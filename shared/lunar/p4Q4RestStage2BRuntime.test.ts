@@ -1,8 +1,11 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { resolveP4OwnerRulesDay } from './p4OwnerRules'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { resolveP4YiDay } from './p4YiDayComposition'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () => (await import('./q4RestRollback')).puzhu06V4())
+await vi.hoisted(async () => (await import('./q4RestRollback')).reloadUnderQ4RestPin())
 
 // Q4-REST Stage 2B (docs/audits/p4-q4-rest-stage2b-witness-acquisition.md), audit only. Production (v4) owner-rules
 // rows for the six acquired contexts: state, 忌 sources, protection, puzhu:06 decision and the 宜 gods of the trace.

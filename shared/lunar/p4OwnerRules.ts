@@ -10,7 +10,14 @@ import {
   resolveP4Headings,
 } from './p4HeadingAnnotation'
 import { getP4MoonPhase } from './p4LunarPhase'
-import { decideP4Puzhu06, resolveP4Puzhu06Day, type P4Puzhu06Row } from './p4Puzhu06'
+import {
+  decideP4Puzhu06,
+  P4_PUZHU06_ONLY_JI_TAG,
+  P4_PUZHU06_YI_COMPOSITION,
+  p4Puzhu06NarrowOnlyJi,
+  resolveP4Puzhu06Day,
+  type P4Puzhu06Row,
+} from './p4Puzhu06'
 import { resolveP4RemainingJi } from './p4RemainingJi'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { resolveP4WarehouseDay } from './p4Warehouse'
@@ -35,6 +42,8 @@ export type P4OwnerRow = {
   propagationBlocked?: string
   /** Owner (i) changed this row's puzhu:06 trigger set ('reduced') or removed every trigger ('skipped'). */
   puzhu06Dropped?: 'reduced' | 'skipped'
+  /** Owner 宜 rule that made the row only_ji (Q4_REST_OWNER_ONLY_JI, R-F1Y; authority v5). */
+  yiRule?: string
   /** Deciding trace, ids as in the Golden `code`: primary rule, 忌 sources, protecting sources. */
   trace?: { primary: string; ji: string[]; prot: string[] }
 }
@@ -570,6 +579,24 @@ export function resolveP4OwnerRulesDay(
         })
       }
     }
+  }
+  // Owner 宜 rules (authority v5), after propagation so a later lift still restores 宜:
+  //  - scoped: a row kept only by a QL_NARROW exclusion (R-JK / R-WX / R-XH) that notes 宜 reads only_ji;
+  //  - R-F1Y (yiComposition): on its heading, a both_present row whose only surviving 忌 is the named god.
+  for (const h of PUZHU06_HEADINGS) {
+    const d = out[h]!
+    const [action, classes] = (d.puzhu06 ?? '').split(':')
+    if (
+      action === 'keep' &&
+      d.state === 'both_present' &&
+      p4Puzhu06NarrowOnlyJi(classes!.split('+'))
+    )
+      Object.assign(d, { state: 'only_ji', yiNoted: false, yiRule: P4_PUZHU06_ONLY_JI_TAG })
+  }
+  for (const rule of P4_PUZHU06_YI_COMPOSITION) {
+    const d = out[rule.heading]
+    if (d?.state === rule.from && d.trace?.ji.length === 1 && d.trace.ji[0] === rule.soleJi)
+      Object.assign(d, { state: rule.to, yiNoted: false, yiRule: rule.id })
   }
   return out
 }

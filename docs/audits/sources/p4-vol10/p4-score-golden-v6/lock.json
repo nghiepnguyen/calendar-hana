@@ -1,0 +1,118 @@
+{
+ "version": "p4-score-golden-lock-v6",
+ "scope": "Q4_REST_STAGE3_PUZHU06_AUTHORITY_V5",
+ "supersedes": "p4-score-golden-lock-v5 as forward evidence; v5 files kept unchanged as pre-Stage-3 rollback evidence",
+ "ruling": "docs/audits/sources/p4-vol10/q4-rest-stage3/owner-ruling.json",
+ "migration": "docs/audits/p4-q4-rest-stage3-migration.md",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-score-golden-v6/golden.py --write",
+ "headingLookup": "canonical-v1",
+ "method": "v5 golden.py (sha-asserted chain) with layer A swapped to p4-full-golden-v4/compose/dated.tsv",
+ "independentConstraint": "layer-C rows differing from v5 = the activity rows of the frozen Stage 3 prediction (measured on v4 before any Stage 3 code), same old/new score and status",
+ "diffFromV5": {
+  "layerBChangedRows": 121,
+  "changedRows": 121,
+  "changedDates": [
+   "2025-01-15",
+   "2025-01-27",
+   "2025-03-09",
+   "2025-05-29",
+   "2025-06-08",
+   "2025-06-20",
+   "2025-06-28",
+   "2025-07-02",
+   "2025-09-11",
+   "2025-09-12",
+   "2025-09-24",
+   "2025-12-23",
+   "2025-12-31",
+   "2026-01-04",
+   "2026-01-10",
+   "2026-01-22",
+   "2026-02-03",
+   "2026-05-24",
+   "2026-06-15",
+   "2026-06-23",
+   "2026-06-27",
+   "2026-07-05",
+   "2026-09-07",
+   "2026-09-19",
+   "2026-12-18",
+   "2026-12-26",
+   "2026-12-30",
+   "2027-01-05",
+   "2027-01-17",
+   "2027-01-29",
+   "2027-05-19",
+   "2027-06-10",
+   "2027-06-18",
+   "2027-06-22",
+   "2027-06-30",
+   "2027-07-04",
+   "2027-09-14",
+   "2027-12-13",
+   "2027-12-21",
+   "2027-12-25"
+  ],
+  "changedActivities": [
+   "business",
+   "contract",
+   "finance",
+   "opening",
+   "transaction",
+   "warehouse_opening"
+  ],
+  "scoreDelta": [
+   -60,
+   -50,
+   -45,
+   -35,
+   -25,
+   -15,
+   -10
+  ],
+  "statusChanges": 79,
+  "layerBTransitions": [
+   "baseline->only_ji",
+   "both_present->only_ji",
+   "only_yi->only_ji"
+  ]
+ },
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/golden.py",
+   "sha256": "5f969aa6b2bf4dc2b9e9773c0d1195af38fe0387244dfe9b4655daad68e65459"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/activity-states.tsv",
+   "sha256": "0c7812793aeaa6bf911c9ae34cbda6353527ceb5d787b1ea5c487351451ddeaa"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/activity-scores.tsv",
+   "sha256": "9f05e40925fbeb34f75f7d61bf5ba8fca02da8f1836ae743595e3071f713c4ee"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v6/diff.json",
+   "sha256": "8c3ebd457b1557966a2e834ed041a3979ea29e400ec8970c57b3f1e5ee995016"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/golden.py",
+   "sha256": "362f7cb14182c6131ca6a6f53ff63637f3860c438b9b26b73abc2c78bb1ed0c0"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-score-golden-v5/lock.json",
+   "sha256": "23a3bca23a120926bad41fc9205e9e19a945f028ae574aeaf0d766a4905092aa"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/dated.tsv",
+   "sha256": "90ba54eb4d11172a4bb8bebc57e35a3b41eba2607e95daa763a1f0db48e3508e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/lock.json",
+   "sha256": "9d415369be1cb63cd2d1c2b660e682628939eaae16f5f0721c7da26d45a2bc3e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage3/prediction.json",
+   "sha256": "a0350ebe77369a9786fc910f5c2e6feb4312af021d8fc604fad1030d25733e2a"
+  }
+ ]
+}

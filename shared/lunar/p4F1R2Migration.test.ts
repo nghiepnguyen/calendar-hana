@@ -10,7 +10,8 @@ import { describe, expect, it, vi } from 'vitest'
 // npm test: witnesses, regression boundary, mutation and outside dates. F1S3_DUMP=1: rollback vs shipped over
 // every day of 2025–2027 → f1-wuli-lijuan-stage3/migration-diff.json (+ rollback.json digests).
 type Model = 'shipped' | 'rollback' | 'mutation'
-const PUZHU06 = '../almanac-data/p4b-puzhu06-v4.json'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v5.json'
 const OUT = 'docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/'
 const STAGE2 = 'docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/impact.json'
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -19,10 +20,11 @@ const BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 async function load(model: Model) {
   vi.resetModules()
   vi.doUnmock(PUZHU06)
+  vi.doMock(PUZHU06, async () => (await import('./q4RestRollback')).puzhu06V4())
   if (model === 'rollback') vi.doMock(PUZHU06, async () => (await import('./f1R2Rollback')).puzhu06V3())
   if (model === 'mutation')
-    vi.doMock(PUZHU06, async (orig) => {
-      const a = ((await orig()) as { default: { liftExclusions: Record<string, unknown> } }).default
+    vi.doMock(PUZHU06, async () => {
+      const a = ((await import('./q4RestRollback')).puzhu06V4() as { default: { liftExclusions: Record<string, unknown> } }).default
       const { 五離: _drop, ...liftExclusions } = a.liftExclusions
       return { default: { ...a, version: 'p4b-puzhu06-v4-mutation', liftExclusions } }
     })

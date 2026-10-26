@@ -14,6 +14,8 @@ import remainingArt from '../almanac-data/p4-vol10-remaining-ji-v7.json'
 type Scope = 'all' | 'evidence' | 'f1y' | 'u7'
 type Model = 'production' | Scope
 const OWNER = './p4OwnerRules'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v5.json'
 const DIR = 'docs/audits/sources/p4-vol10/q4-rest-stage2a1/'
 const OUT = DIR + 'runtime.json'
 const STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -66,6 +68,7 @@ const inScope = (scope: Scope, r: Row, yiGods: string[]) => {
 async function load(model: Model) {
   vi.resetModules()
   vi.doUnmock(OWNER)
+  vi.doMock(PUZHU06, async () => (await import('./q4RestRollback')).puzhu06V4())
   if (model !== 'production')
     vi.doMock(OWNER, async (orig) => {
       const real = (await orig()) as typeof import('./p4OwnerRules')

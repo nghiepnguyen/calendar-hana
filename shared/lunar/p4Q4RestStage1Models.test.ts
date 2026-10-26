@@ -13,7 +13,8 @@ import { getP4MuCangSoil } from './p4YiOperands'
 // Q4R_DUMP=1 writes q4-rest-stage1/models.json (720 contexts and the 1,095 dated days); npm test re-derives
 // the witness contexts named in evidence.json against that dump. No production code or data is touched.
 type Model = 'generic' | 'narrow'
-const PUZHU06 = '../almanac-data/p4b-puzhu06-v4.json'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v5.json'
 const DIR = 'docs/audits/sources/p4-vol10/q4-rest-stage1/'
 const OUT = DIR + 'models.json'
 const B = '子丑寅卯辰巳午未申酉戌亥'
@@ -32,9 +33,10 @@ export const Q4_REST_OWN: Record<string, readonly string[]> = {
 async function load(model: Model) {
   vi.resetModules()
   vi.doUnmock(PUZHU06)
+  vi.doMock(PUZHU06, async () => (await import('./q4RestRollback')).puzhu06V4())
   if (model === 'narrow')
-    vi.doMock(PUZHU06, async (orig) => {
-      const a = ((await orig()) as { default: { triggers: string[]; liftExclusions: object } }).default
+    vi.doMock(PUZHU06, async () => {
+      const a = ((await import('./q4RestRollback')).puzhu06V4() as { default: { triggers: string[]; liftExclusions: object } }).default
       const extra = Object.fromEntries(
         Q4_REST_GODS.map((g) => [g, { triggers: a.triggers.filter((t) => !Q4_REST_OWN[g]!.includes(t)) }]),
       )

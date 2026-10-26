@@ -13,6 +13,7 @@ import pages from '../../docs/audits/sources/p4-vol10/q4-rest-stage2b/pages.json
 import trans from '../../docs/audits/sources/p4-vol10/q4-rest-stage2b/transcriptions.json'
 import yaxis from '../../docs/audits/sources/p4-vol10/q4-rest-stage2b/y-axis.json'
 import ruling from '../../docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage3/owner-ruling.json'
+import { lockedDigests } from './lockAnchor'
 import { P4_PUZHU06_AUTHORITY_ID } from './p4Puzhu06'
 import { getVol10JieshaRuntime } from './xiejiVol10JieshaAuthority'
 
@@ -25,7 +26,14 @@ const sha8 = (s: string) => createHash('sha256').update(s).digest('hex')
 
 describe('Q4-REST Stage 2B acquisition lock', () => {
   it('pins the six scans, the artifacts, earlier stage locks, production code and Golden v4', () => {
-    for (const [path, hash] of Object.entries(files)) expect(sha(path), path).toBe(hash)
+    {
+      // lockAnchor rule (owner 2026-10-17): runtime code and harnesses outside the lock dir are checked as
+      // committed when the lock was added, so Q4-REST Stage 3 (authority v5) does not break this proof.
+      const code = Object.keys(files).filter((p) => p.startsWith('shared/lunar/'))
+      const committed = lockedDigests('docs/audits/sources/p4-vol10/q4-rest-stage2b/lock.json', code)
+      for (const [path, hash] of Object.entries(files))
+        expect(code.includes(path) ? committed.get(path) : sha(path), path).toBe(hash)
+    }
   })
 
   it('the builder is deterministic (rebuilt into a temp dir; the tree is never written)', () => {
@@ -42,7 +50,10 @@ describe('Q4-REST Stage 2B acquisition lock', () => {
       'replication-plan.json',
     ])
       expect(sha(join(out, n)), n).toBe(files[DIR + n])
-    expect(sha(join(out, 'lock.json'))).toBe(sha(DIR + 'lock.json'))
+    // The rebuilt lock re-hashes live code; compare every non-code entry with the committed lock.
+    const built = JSON.parse(readFileSync(join(out, 'lock.json'), 'utf8')).files as Record<string, string>
+    for (const [p, h] of Object.entries(lock.files as Record<string, string>))
+      if (!p.startsWith('shared/lunar/')) expect(built[p], p).toBe(h)
   })
 
   it('six pages authenticated at the predicted locators', () => {
@@ -139,7 +150,8 @@ describe('Q4-REST Stage 2B acquisition lock', () => {
       五虛: 'READY_FOR_OWNER_RULING',
     })
     expect(classification.productionChanged).toBe(false)
-    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v4')
+    // Q4-REST Stage 3 moved production to v5; the v4 authority this stage audited stays pinned above.
+    expect(P4_PUZHU06_AUTHORITY_ID).toBe('p4b-puzhu06-v5')
     expect(authority.liftExclusions.五離.triggers).toEqual(['天願', '月恩', '四相', '時德'])
     expect(ruling.decision).toBe('R2_APPROVED')
     for (const a of ['contract', 'transaction'])

@@ -8,7 +8,9 @@ import { resolveP4Puzhu06Day } from './p4Puzhu06'
 import { getP4SoilPresence } from './p4SoilConvention'
 import { getP4MuCangSoil } from './p4YiOperands'
 // Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./f1R2Rollback')).puzhu06V3(),
+)
 await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // puzhu:06 task 5.1 sweep: the 1,095 dates x 29 headings of the P4-C sweep, now through the

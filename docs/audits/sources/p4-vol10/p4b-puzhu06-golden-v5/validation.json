@@ -1,0 +1,104 @@
+{
+  "version": "golden-p4b-puzhu06-validation-v5",
+  "engineBaseline": {
+    "compared": [
+      "triggers",
+      "puzhu28",
+      "yi",
+      "ji",
+      "protected_ji",
+      "state"
+    ],
+    "rows": 9075,
+    "mismatches": 0,
+    "examples": []
+  },
+  "prdCounts": {
+    "compared": [
+      "hold",
+      "keptBySourcedException",
+      "lift",
+      "q4aRows",
+      "r2Rows"
+    ],
+    "match": true
+  },
+  "v4ToV5": {
+    "changedRows": 56,
+    "unexpected": 0,
+    "onlyJi": 37,
+    "tagOnlyRows": 40,
+    "rows": [
+      "2025-03-09 卯丁丑 立券交易 QL_NARROW keep only_ji",
+      "2025-03-09 卯丁丑 納財 QL_NARROW keep only_ji",
+      "2025-03-09 卯丁丑 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2025-03-09 卯丁丑 開市 QL_NARROW keep only_ji",
+      "2025-05-29 巳戊戌 立券交易 QL_NARROW keep only_ji",
+      "2025-05-29 巳戊戌 納財 QL_NARROW keep only_ji",
+      "2025-05-29 巳戊戌 開市 QL_NARROW keep only_ji",
+      "2025-06-08 午戊申 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2025-06-28 午戊辰 立券交易 QL_NARROW keep only_ji",
+      "2025-06-28 午戊辰 納財 QL_NARROW keep only_ji",
+      "2025-06-28 午戊辰 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2025-06-28 午戊辰 開市 QL_NARROW keep only_ji",
+      "2025-09-11 酉癸未 立券交易 QL_NARROW keep only_ji",
+      "2025-09-11 酉癸未 納財 QL_NARROW keep only_ji",
+      "2025-09-11 酉癸未 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2025-09-11 酉癸未 開市 QL_NARROW keep only_ji",
+      "2025-10-21 戌癸亥 開倉庫出貨財 QL_NARROW keep undetermined",
+      "2025-12-23 子丙寅 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2025-12-31 子甲戌 立券交易 QL_NARROW keep only_ji",
+      "2025-12-31 子甲戌 納財 QL_NARROW keep only_ji",
+      "2025-12-31 子甲戌 開市 QL_NARROW keep only_ji",
+      "2026-01-04 子戊寅 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2026-05-24 巳戊戌 立券交易 QL_NARROW keep only_ji",
+      "2026-05-24 巳戊戌 納財 QL_NARROW keep only_ji",
+      "2026-05-24 巳戊戌 開市 QL_NARROW keep only_ji",
+      "2026-06-23 午戊辰 立券交易 QL_NARROW keep only_ji",
+      "2026-06-23 午戊辰 納財 QL_NARROW keep only_ji",
+      "2026-06-23 午戊辰 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2026-06-23 午戊辰 開市 QL_NARROW keep only_ji",
+      "2026-07-05 午庚辰 立券交易 QL_NARROW keep only_ji",
+      "2026-07-05 午庚辰 納財 QL_NARROW keep only_ji",
+      "2026-07-05 午庚辰 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2026-07-05 午庚辰 開市 QL_NARROW keep only_ji",
+      "2026-10-16 戌癸亥 開倉庫出貨財 QL_NARROW keep undetermined",
+      "2026-12-18 子丙寅 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2026-12-26 子甲戌 立券交易 QL_NARROW keep only_ji",
+      "2026-12-26 子甲戌 納財 QL_NARROW keep only_ji",
+      "2026-12-26 子甲戌 開市 QL_NARROW keep only_ji",
+      "2026-12-30 子戊寅 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2027-05-19 巳戊戌 立券交易 QL_NARROW keep only_ji",
+      "2027-05-19 巳戊戌 納財 QL_NARROW keep only_ji",
+      "2027-05-19 巳戊戌 開市 QL_NARROW keep only_ji",
+      "2027-06-18 午戊辰 立券交易 QL_NARROW keep only_ji",
+      "2027-06-18 午戊辰 納財 QL_NARROW keep only_ji",
+      "2027-06-18 午戊辰 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2027-06-18 午戊辰 開市 QL_NARROW keep only_ji",
+      "2027-06-30 午庚辰 立券交易 QL_NARROW keep only_ji",
+      "2027-06-30 午庚辰 納財 QL_NARROW keep only_ji",
+      "2027-06-30 午庚辰 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2027-06-30 午庚辰 開市 QL_NARROW keep only_ji",
+      "2027-10-11 戌癸亥 開倉庫出貨財 QL_NARROW keep undetermined",
+      "2027-12-13 子丙寅 開倉庫出貨財 QL_NARROW keep only_ji",
+      "2027-12-21 子甲戌 立券交易 QL_NARROW keep only_ji",
+      "2027-12-21 子甲戌 納財 QL_NARROW keep only_ji",
+      "2027-12-21 子甲戌 開市 QL_NARROW keep only_ji",
+      "2027-12-25 子戊寅 開倉庫出貨財 QL_NARROW keep only_ji"
+    ],
+    "propagationChanges": 0,
+    "propagationDiffVsV4": []
+  },
+  "propagationMirror": {
+    "dated": {
+      "days": 1095,
+      "rows": 31755,
+      "mismatches": 0
+    },
+    "context": {
+      "days": 720,
+      "rows": 20880,
+      "mismatches": 0
+    }
+  }
+}

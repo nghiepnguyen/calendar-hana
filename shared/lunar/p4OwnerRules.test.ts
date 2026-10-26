@@ -15,7 +15,9 @@ import {
 import { getP4SoilPresence } from './p4SoilConvention'
 import { getP4MuCangSoil } from './p4YiOperands'
 // Frozen before F1 Stage 3 (puzhu:06 authority v4, owner R2): pinned to the pre-R2 rollback (f1R2Rollback.ts).
-vi.mock('../almanac-data/p4b-puzhu06-v4.json', async () => (await import('./f1R2Rollback')).puzhu06V3())
+vi.mock('../almanac-data/p4b-puzhu06-v5.json', async () =>
+  (await import('./f1R2Rollback')).puzhu06V3(),
+)
 await vi.hoisted(async () => (await import('./f1R2Rollback')).reloadUnderR2Pin())
 
 // Roadmap 7b: the owner-rules layer must reproduce the accepted full Golden v2 (c574e57). The Golden is

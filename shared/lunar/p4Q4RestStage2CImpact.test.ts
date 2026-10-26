@@ -13,7 +13,8 @@ import { describe, expect, it, vi } from 'vitest'
 // re-derives the 戌-癸卯 rows.
 type Ruling = 'jk' | 'wx' | 'xh' | 'f1y'
 type Model = 'production' | Ruling | 'all'
-const PUZHU06 = '../almanac-data/p4b-puzhu06-v4.json'
+// Production imports authority v5 since Q4-REST Stage 3; this proof stays pinned to v4 (q4RestRollback.ts).
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v5.json'
 const OWNER = './p4OwnerRules'
 const DIR = 'docs/audits/sources/p4-vol10/q4-rest-stage2c/'
 const OUT = DIR + 'runtime.json'
@@ -31,13 +32,14 @@ type Row = { state: string; yiNoted?: boolean; puzhu06?: string; trace?: { ji: s
 async function load(model: Model) {
   vi.resetModules()
   vi.doUnmock(PUZHU06)
+  vi.doMock(PUZHU06, async () => (await import('./q4RestRollback')).puzhu06V4())
   vi.doUnmock(OWNER)
   const rulings: Ruling[] =
     model === 'all' ? ['jk', 'wx', 'xh', 'f1y'] : model === 'production' ? [] : [model]
   const gods = rulings.map((r) => J_GOD[r]).filter((g): g is string => Boolean(g))
   if (gods.length)
-    vi.doMock(PUZHU06, async (orig) => {
-      const a = ((await orig()) as { default: { triggers: string[]; liftExclusions: object } })
+    vi.doMock(PUZHU06, async () => {
+      const a = ((await import('./q4RestRollback')).puzhu06V4() as { default: { triggers: string[]; liftExclusions: object } })
         .default
       const extra = Object.fromEntries(
         gods.map((g) => [g, { triggers: a.triggers.filter((t) => !OWN[g]!.includes(t)) }]),

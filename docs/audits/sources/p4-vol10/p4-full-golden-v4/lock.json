@@ -1,0 +1,60 @@
+{
+ "version": "p4-full-golden-lock-v4",
+ "scope": "Q4_REST_STAGE3_PUZHU06_AUTHORITY_V5",
+ "method": "full Golden v3 composer (sha-asserted, loads v2) with puzhu:06 authority v5, oracle Golden v5, QL_NARROW classes and the owner 宜 rules after propagation; v3 kept as the pre-Stage-3 rollback",
+ "generation": "python3 -I docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/compose.py --write",
+ "files": [
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/compose.py",
+   "sha256": "17c7fea5d90dc62022e7c59e006f94b73d0d7360cd6a3081aa83705c84fbb491"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/context.tsv",
+   "sha256": "ed8f5879b4ca2b6fb06cc92efb773639d66beb707513a3fc4ac8f412ca905fd8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/dated.tsv",
+   "sha256": "90ba54eb4d11172a4bb8bebc57e35a3b41eba2607e95daa763a1f0db48e3508e"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/h1b-changes.tsv",
+   "sha256": "1edd26e7cd83377c0f1337cf966efbd58b6d84c474cdddd10a27210979361b14"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/summary.json",
+   "sha256": "3e31bbb7c311cee0a201223da5706c0be951369dcd97740fd470a5054cbb9441"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v4/compose/v3-diff.txt",
+   "sha256": "5aff90717256b34842edc059e3c9a26f337e4de84072b9915c222ec6f72833f8"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/compose/compose.py",
+   "sha256": "4f7518e572bed9234f3869fda8727e339130846291ea19d581f38ae3e8714869"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v3/lock.json",
+   "sha256": "a00f0c86adf2d438dd25dd8a0a12952e288356f5f5feb486e28b9171ba6e0c4b"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4-full-golden-v2/compose/compose.py",
+   "sha256": "e6b4dcfc5db5d67aeba106ade7ae52328ea3a3966a8d3ded61314a2ec619c761"
+  },
+  {
+   "path": "shared/almanac-data/p4b-puzhu06-v5.json",
+   "sha256": "6896a79d87647c063a5be93cea6d6f0dbeb4b7e582aa2b22ca2426247c254823"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/dated.tsv",
+   "sha256": "59439094c26a8c958dd557b1ef309e0bdbe349c96b58f5a90659d8eff70f843f"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/p4b-puzhu06-golden-v5/context.tsv",
+   "sha256": "47f31aae3e035acdc640a81350b8e3371e55b0234c1209daeac0b41e6fc895cb"
+  },
+  {
+   "path": "docs/audits/sources/p4-vol10/q4-rest-stage3/prediction.json",
+   "sha256": "a0350ebe77369a9786fc910f5c2e6feb4312af021d8fc604fad1030d25733e2a"
+  }
+ ]
+}

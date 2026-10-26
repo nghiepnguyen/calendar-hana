@@ -11,7 +11,7 @@ import { describe, expect, it, vi } from 'vitest'
 // npm test: the frozen witnesses only. F1S2_DUMP=1: full 2025–2027 comparison (headings, activities,
 // events, every day) written to f1-wuli-lijuan-stage2/impact.json.
 type Model = 'current' | 'r2'
-const PUZHU06 = '../almanac-data/p4b-puzhu06-v4.json'
+const PUZHU06 = '../almanac-data/p4b-puzhu06-v5.json'
 const OUT = 'docs/audits/sources/p4-vol10/f1-wuli-lijuan-stage2/impact.json'
 // 五離's own list 「與天德月德天德合月德合天赦三合六合併則不忌」 ∩ puzhu:06 triggers; the rest cannot lift it.
 const WULI_OWN = ['天德', '月德', '天德合', '月德合', '天赦']
