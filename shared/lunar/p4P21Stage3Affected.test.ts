@@ -26,7 +26,7 @@ const ALL_DATES = Array.from(
 )
 
 function scan(dates: readonly string[] = ALL_DATES) {
-  const rows: { date: string }[] = []
+  const rows: { date: string; [k: string]: unknown }[] = []
   for (const date of dates) {
     const a = getAlmanac(date as never)
     const month = BRANCHES[a.selectionContext.MONTH_JIAN_BRANCH!]!
